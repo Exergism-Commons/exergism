@@ -35,11 +35,12 @@ Hidden doctrinal changes inside migration, formatting, generated output or bulk 
 
 ## 5. Anti-capture rules
 
-Repository administrators and maintainers are custodians of this lineage, not owners of the community's ability to study or continue the work.
+Repository administrators and maintainers are custodians of this lineage, not owners of the community's ability to study or continue the work. **Exergism Commons' stewardship role does not itself transfer copyright or other independently held contributor rights to the organization.**
 
 Accordingly:
 
 - no contribution requires copyright assignment merely to participate;
+- contributors retain the rights they hold in their own contributions unless a separate valid transfer or applicable legal rule provides otherwise;
 - public releases remain available under the license under which they were released;
 - release tags are immutable records and must not be force-moved to different content;
 - the project should remain clonable and reconstructable with open, documented formats;
@@ -49,7 +50,7 @@ Accordingly:
 
 ## 6. Maintainers
 
-Maintainers may review and merge changes, manage releases and maintain infrastructure. Those operational permissions do not constitute a philosophical veto or a grant of permanent doctrinal authority.
+Maintainers may review and merge changes, manage releases and maintain infrastructure. Those operational permissions do not constitute copyright ownership, a philosophical veto or a grant of permanent doctrinal authority.
 
 At the initial public stage, administrative access may be concentrated for practical reasons. This is an implementation constraint to be reduced over time, not a normative property of Exergism.
 
