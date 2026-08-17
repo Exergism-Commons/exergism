@@ -39,6 +39,12 @@ Copyright © 2026 Daniel Molinero Lucas and contributors, where applicable.
 
 The canonical license text is in `LICENSES/Apache-2.0.txt`; attribution notices are in `NOTICE`.
 
+## Authorship and stewardship
+
+**Exergism Commons maintains the canonical public development lineage of Exergism.** That stewardship role does not, by itself, transfer copyright from Daniel Molinero Lucas or any contributor to Exergism Commons, and repository administration does not imply ownership of independently held contributor rights.
+
+Unless a separate written transfer or other applicable legal rule provides otherwise, contributors retain the rights they hold in their own contributions while licensing those contributions under the license governing the target file or directory.
+
 ## No ECL inheritance
 
 The Exergic Commons License (ECL) is a downstream application of Exergism. ECL does **not** license this repository merely because it draws on this repository's concepts or analytical lineage. Conversely, the licenses above do not determine the operative legal terms of ECL.
