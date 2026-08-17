@@ -27,7 +27,9 @@ version-controlled tree.
   philosophical corpus.
 - `canonical_content_schema.json` — structural contract for `content/*.json`.
 - `scripts/` — validation, migration and ontology-generation tooling.
-- `manifest.json` — inventory and canonical reading order.
+- `manifest.json` — inventory, canonical reading order and release state.
+- `GOVERNANCE.md` — canonical-change and anti-capture governance.
+- `LICENSE.md` — explicit mixed-license boundary for corpus and tooling.
 
 ## Canonicality
 
@@ -63,12 +65,17 @@ outcomes belong to ECL and are not inferred merely from this repository.
 
 ## Development status
 
-The corpus remains under active development. `manifest.json` identifies this
-state as a canonicalization candidate rather than a philosophical 1.0 release.
+The corpus remains under active development. The current hardening target is
+**v0.1.0**, an auditable first canonical public release. A `0.x` release does not
+claim that the philosophical system or formal model is complete or final.
+
+Known formal ambiguities are recorded in `formal/FORMAL-MODEL-STATUS.md` rather
+than silently normalized or guessed.
 
 ## Licensing
 
-No public-content license is selected by this repository state. A license for
-the philosophical corpus, data and tooling must be chosen explicitly before a
-public release; it must not be inferred from ECL merely because ECL derives
-from Exergism.
+The philosophical corpus, formal model, examples and project documentation are
+licensed under **CC BY-SA 4.0**. Repository software/tooling and the canonical
+schema are licensed under **Apache-2.0**. See `LICENSE.md` for the exact scope.
+
+ECL does not license this repository and these licenses do not alter ECL.

@@ -3,7 +3,7 @@
   "name": "Metafisica emergentista de la liberacion",
   "short_name": "Exergismo",
   "english_short_name": "Exergism",
-  "status": "canonicalization-candidate",
+  "status": "release-candidate",
   "canonical_content_schema": "canonical_content_schema.json",
   "philosophical_corpus": {
     "directory": "content",
@@ -31,5 +31,10 @@
   "examples": [
     "examples/exergic-analysis/iran",
     "examples/exergic-analysis/toma-de-kabul"
-  ]
+  ],
+  "release": {
+    "version": "0.1.0",
+    "tag": "v0.1.0",
+    "status": "ready"
+  }
 }

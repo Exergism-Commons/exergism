@@ -21,3 +21,23 @@ jobs:
 
       - name: Validate repository
         run: python scripts/validate_repository.py
+
+      - name: Regenerate ontology and require clean output
+        run: |
+          python scripts/generate_ontology.py
+          git diff --exit-code -- ontology.owl
+
+      - name: Build candidate release manifest
+        run: |
+          VERSION="$(python -c 'import json; print(json.load(open("manifest.json"))["release"]["version"])')"
+          python scripts/build_release_manifest.py \
+            --version "$VERSION" \
+            --git-commit "$GITHUB_SHA" \
+            --output release-manifest.json
+
+      - name: Upload candidate release manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: exergism-release-manifest-${{ github.sha }}
+          path: release-manifest.json
+          if-no-files-found: error

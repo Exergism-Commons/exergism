@@ -1,0 +1,10 @@
+Creative Commons Attribution-ShareAlike 4.0 International
+SPDX-License-Identifier: CC-BY-SA-4.0
+
+Canonical license:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Legal code:
+https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
+
+This repository applies the unmodified Creative Commons Attribution-ShareAlike 4.0 International license by reference to the materials identified in ../LICENSE.md.

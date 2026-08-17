@@ -1,0 +1,84 @@
+name: Publish ready Exergism release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact main commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Read release state
+        id: state
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          m=json.load(open('manifest.json'))
+          r=m.get('release', {})
+          print(f"version={r.get('version','')}")
+          print(f"tag={r.get('tag','')}")
+          print(f"status={r.get('status','')}")
+          PY
+
+      - name: Stop unless release is ready
+        if: steps.state.outputs.status != 'ready'
+        run: echo "Release state is not ready; nothing to publish."
+
+      - name: Validate exact release commit
+        if: steps.state.outputs.status == 'ready'
+        run: python scripts/validate_repository.py
+
+      - name: Check whether tag already exists
+        if: steps.state.outputs.status == 'ready'
+        id: tagcheck
+        shell: bash
+        run: |
+          if git ls-remote --exit-code --tags origin "refs/tags/${{ steps.state.outputs.tag }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build release assets
+        if: steps.state.outputs.status == 'ready' && steps.tagcheck.outputs.exists == 'false'
+        shell: bash
+        run: |
+          VERSION="${{ steps.state.outputs.version }}"
+          python scripts/build_release_manifest.py \
+            --version "$VERSION" \
+            --git-commit "$GITHUB_SHA" \
+            --output release-manifest.json
+          git archive --format=tar.gz --prefix="exergism-$VERSION/" -o "exergism-$VERSION.tar.gz" "$GITHUB_SHA"
+          sha256sum release-manifest.json "exergism-$VERSION.tar.gz" > SHA256SUMS
+
+      - name: Create immutable tag and GitHub release
+        if: steps.state.outputs.status == 'ready' && steps.tagcheck.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          TAG="${{ steps.state.outputs.tag }}"
+          VERSION="${{ steps.state.outputs.version }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$TAG" "$GITHUB_SHA" -m "Exergism $VERSION"
+          git push origin "$TAG"
+          gh release create "$TAG" \
+            --verify-tag \
+            --title "Exergism $VERSION" \
+            --notes-file docs/release-notes-v0.1.0.md \
+            release-manifest.json "exergism-$VERSION.tar.gz" SHA256SUMS
