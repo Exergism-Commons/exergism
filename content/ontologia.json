@@ -1,0 +1,2557 @@
+{
+  "schema_version": 2,
+  "source_format": "legacy-normalized",
+  "domain": {
+    "id": "ontologia",
+    "key": "ontologia",
+    "label": "Ontologia",
+    "source_file": "ontologia.json"
+  },
+  "root": {
+    "id": "ontologia",
+    "canonical_id": "realidad",
+    "key": "ontologia",
+    "label": "Ontologia",
+    "kind": "concept",
+    "source_path": "ontologia",
+    "fields": [
+      {
+        "key": "tesis_central",
+        "label": "Tesis central",
+        "role": "thesis",
+        "value_type": "text",
+        "value": "La realidad total existe como verdad absoluta. El ser humano, como caso particular de conciencia reflexiva, solo puede acceder a capas parciales de ella.",
+        "source_path": "ontologia.tesis_central"
+      }
+    ],
+    "collections": [],
+    "children": [
+      {
+        "id": "ontologia_estructura_de_lo_real",
+        "key": "estructura_de_lo_real",
+        "label": "Estructura de lo real",
+        "kind": "concept",
+        "source_path": "ontologia.estructura_de_lo_real",
+        "fields": [],
+        "collections": [],
+        "children": [
+          {
+            "id": "ontologia_estructura_de_lo_real_fundamento_ultimo",
+            "key": "fundamento_ultimo",
+            "label": "Fundamento ultimo",
+            "kind": "concept",
+            "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo",
+            "fields": [],
+            "collections": [],
+            "children": [
+              {
+                "id": "ontologia_estructura_de_lo_real_fundamento_ultimo_verdad_absoluta",
+                "key": "verdad_absoluta",
+                "label": "Verdad absoluta",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "La totalidad de lo real, incluyendo todos los mecanismos del universo y lo que hay detras y mas alla.",
+                    "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta.definicion"
+                  },
+                  {
+                    "key": "caracter_ontologico",
+                    "label": "Caracter ontologico",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No constituye una entidad personal ni antropomorfica. Si contiene algo analogo a la conciencia o a la voluntad, ello no puede entenderse en sentido humano, psicologico, secuencial ni individual, sino como una forma radicalmente superior en la que toda perspectiva parcial estaria contenida sin quedar sometida al tiempo, a la fragmentacion ni a la experiencia sucesiva propias de las conciencias finitas.",
+                    "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta.caracter_ontologico"
+                  },
+                  {
+                    "key": "relacion_con_el_tiempo",
+                    "label": "Relacion con el tiempo",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La verdad absoluta no esta contenida por el tiempo propio del universo conocido. El tiempo pertenece a la realidad manifestada, cambiante y finita, mientras que la verdad absoluta excede todo marco temporal particular y no puede entenderse como sometida a sucesion, antes o despues en sentido cosmico.",
+                    "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta.relacion_con_el_tiempo",
+                    "target_hints": [
+                      "tiempo"
+                    ],
+                    "target_ids": [
+                      "tiempo"
+                    ]
+                  },
+                  {
+                    "key": "equivalencia_analogica",
+                    "label": "Equivalencia analogica",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Puede pensarse de forma analogica como una especie de 'monada absoluta': una totalidad impersonal, no reducible a ninguna perspectiva particular, supratemporal y de complejidad infinita, que contiene sin agotarse todos los niveles, procesos y formas de lo real.",
+                    "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta.equivalencia_analogica"
+                  },
+                  {
+                    "key": "precaucion_conceptual",
+                    "label": "Precaucion conceptual",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Esta equivalencia no implica identidad con la nocion clasica de monada, sino un uso analogico para señalar unidad, totalidad y profundidad ontologica sin introducir personalizacion ni multiplicidad discreta.",
+                    "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta.precaucion_conceptual"
+                  },
+                  {
+                    "key": "precaucion_conceptual_2",
+                    "label": "Precaucion conceptual 2",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Terminos como conciencia, experiencia o voluntad solo pueden aplicarse a la verdad absoluta de forma analogica y extremadamente limitada, porque pertenecen al modo finito, temporal, perspectival y fragmentario en que los seres particulares acceden a lo real.",
+                    "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta.precaucion_conceptual_2"
+                  },
+                  {
+                    "key": "relacion_con_el_humano",
+                    "label": "Relacion con el humano",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "Atrae y orienta al ser humano hacia la trascendencia, aunque nunca pueda ser poseida completamente.",
+                    "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta.relacion_con_el_humano",
+                    "target_hints": [
+                      "humano"
+                    ],
+                    "target_ids": [
+                      "humano"
+                    ]
+                  },
+                  {
+                    "key": "hipotesis_metafisica_abierta",
+                    "label": "Hipotesis metafisica abierta",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Si la verdad absoluta coincide con el origen ultimo de todos los medios envolventes de lo real, entonces toda conciencia podria ser una manifestacion parcial de esa totalidad.",
+                    "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta.hipotesis_metafisica_abierta"
+                  },
+                  {
+                    "key": "hipotesis_metafisica_abierta_2",
+                    "label": "Hipotesis metafisica abierta 2",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Si toda conciencia finita es una manifestacion parcial de la verdad absoluta, entonces cualquier forma de conciencia atribuible analogicamente a esta no consistiria en una experiencia secuencial como la humana, sino en una simultaneidad no fragmentada de todas las perspectivas parciales contenidas en ella.",
+                    "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta.hipotesis_metafisica_abierta_2"
+                  }
+                ],
+                "collections": [
+                  {
+                    "id": "ontologia_estructura_de_lo_real_fundamento_ultimo_verdad_absoluta_propiedades_collection",
+                    "key": "propiedades",
+                    "label": "Propiedades",
+                    "source_path": "ontologia.estructura_de_lo_real.fundamento_ultimo.verdad_absoluta.propiedades",
+                    "item_kind_hint": "collection_item",
+                    "items": [
+                      {
+                        "order_index": 1,
+                        "value_type": "text",
+                        "value": "inagotable"
+                      },
+                      {
+                        "order_index": 2,
+                        "value_type": "text",
+                        "value": "inalcanzable en plenitud"
+                      },
+                      {
+                        "order_index": 3,
+                        "value_type": "text",
+                        "value": "fundamento ultimo"
+                      },
+                      {
+                        "order_index": 4,
+                        "value_type": "text",
+                        "value": "horizonte de toda conciencia capaz de trascendencia"
+                      },
+                      {
+                        "order_index": 5,
+                        "value_type": "text",
+                        "value": "impersonal"
+                      },
+                      {
+                        "order_index": 6,
+                        "value_type": "text",
+                        "value": "no antropomorfica"
+                      },
+                      {
+                        "order_index": 7,
+                        "value_type": "text",
+                        "value": "infinitamente compleja"
+                      },
+                      {
+                        "order_index": 8,
+                        "value_type": "text",
+                        "value": "supratemporal"
+                      }
+                    ]
+                  }
+                ],
+                "children": [],
+                "canonical_id": "verdad_absoluta"
+              }
+            ],
+            "canonical_id": "fundamento_ultimo"
+          },
+          {
+            "id": "ontologia_estructura_de_lo_real_realidad_manifestada",
+            "key": "realidad_manifestada",
+            "label": "Realidad manifestada",
+            "kind": "concept",
+            "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada",
+            "fields": [],
+            "collections": [],
+            "children": [
+              {
+                "id": "ontologia_estructura_de_lo_real_realidad_manifestada_universo",
+                "key": "universo",
+                "label": "Universo",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Medio envolvente total del que emergen la materia, la vida, la conciencia, las estructuras humanas y todos los procesos fisicos conocidos. No es un objeto externo separado de nosotros, sino el campo mismo en el que existimos y del que somos manifestaciones parciales.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.definicion"
+                  },
+                  {
+                    "key": "naturaleza",
+                    "label": "Naturaleza",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "abierta, dinamica, cambiante y estructurable temporalmente",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.naturaleza"
+                  },
+                  {
+                    "key": "relacion_con_la_materia",
+                    "label": "Relacion con la materia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La materia es una de las expresiones fundamentales del universo, surgida de sus reglas fisicas y de sus componentes mas esenciales.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.relacion_con_la_materia",
+                    "target_hints": [
+                      "materia"
+                    ],
+                    "target_ids": [
+                      "materia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_vida",
+                    "label": "Relacion con la vida",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La vida es una organizacion temporal y localizada de la materia capaz de mantener orden interno durante un tiempo a costa de transformar su entorno y aumentar la entropia exterior.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.relacion_con_la_vida",
+                    "target_hints": [
+                      "vida"
+                    ],
+                    "target_ids": [
+                      "vida"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_conciencia",
+                    "label": "Relacion con la conciencia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "Los seres conscientes son manifestaciones del universo que permiten que este se observe parcialmente a si mismo a traves de estructuras materiales capaces de integrar informacion y generar experiencia.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.relacion_con_la_conciencia",
+                    "target_hints": [
+                      "conciencia"
+                    ],
+                    "target_ids": [
+                      "conciencia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_el_ser_humano",
+                    "label": "Relacion con el ser humano",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El ser humano es una configuracion material y consciente del universo que ha desarrollado reflexividad, lenguaje, memoria historica y capacidad de orientarse hacia la verdad.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.relacion_con_el_ser_humano",
+                    "target_hints": [
+                      "ser_humano"
+                    ],
+                    "target_ids": [
+                      "ser_humano"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_el_espiritu_humano",
+                    "label": "Relacion con el espiritu humano",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El espiritu humano es una expresion historico-colectiva de la capacidad del universo para producir formas de conciencia que acumulen experiencia, conocimiento y apertura hacia la verdad.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.relacion_con_el_espiritu_humano",
+                    "target_hints": [
+                      "espiritu_humano"
+                    ],
+                    "target_ids": [
+                      "espiritu_humano"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_verdad_absoluta",
+                    "label": "Relacion con la verdad absoluta",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El universo conocido puede ser una capa, manifestacion o medio parcial de la verdad absoluta, sin agotarla necesariamente.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.relacion_con_la_verdad_absoluta",
+                    "target_hints": [
+                      "verdad_absoluta"
+                    ],
+                    "target_ids": [
+                      "verdad_absoluta"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_libertad",
+                    "label": "Relacion con la libertad",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El universo no es una estructura totalmente cerrada, sino un campo de despliegue de posibilidades en el que pueden emerger nuevos estados, formas y procesos.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.relacion_con_la_libertad",
+                    "target_hints": [
+                      "libertad"
+                    ],
+                    "target_ids": [
+                      "libertad"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_entropia",
+                    "label": "Relacion con la entropia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El universo conocido presenta una dinamica entrópica por la cual las formas complejas y ordenadas son temporales y existen dentro de una tendencia mas amplia al cambio, a la dispersion y a la apertura de estados posibles.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.relacion_con_la_entropia",
+                    "target_hints": [
+                      "entropia"
+                    ],
+                    "target_ids": [
+                      "entropia"
+                    ]
+                  },
+                  {
+                    "key": "condicion_cosmologica",
+                    "label": "Condicion cosmologica",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Las estructuras organizadas del universo, incluida la vida, no son estados permanentes sino configuraciones locales y transitorias dentro de una realidad fisica mucho mas amplia.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.condicion_cosmologica"
+                  },
+                  {
+                    "key": "hipotesis_metafisica_abierta",
+                    "label": "Hipotesis metafisica abierta",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Si el universo es solo un medio envolvente entre otros y todos los niveles de realidad remiten a un origen ultimo, entonces la conciencia podria ser una forma parcial de autorrevelacion de la totalidad.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.universo.hipotesis_metafisica_abierta"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "universo"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_realidad_manifestada_tiempo",
+                "key": "tiempo",
+                "label": "Tiempo",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.tiempo",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Dimension de la realidad en la que se despliegan el cambio, la entropia, la vida, la conciencia, la historia y la posibilidad de trascendencia.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.tiempo.definicion"
+                  },
+                  {
+                    "key": "estado_ontologico",
+                    "label": "Estado ontologico",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "condicion estructural de toda realidad manifestada y cambiante",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.tiempo.estado_ontologico"
+                  },
+                  {
+                    "key": "relacion_con_el_cambio",
+                    "label": "Relacion con el cambio",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El cambio solo puede desplegarse en el tiempo, y por ello el tiempo es la condicion de posibilidad de toda transformacion.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.tiempo.relacion_con_el_cambio",
+                    "target_hints": [
+                      "cambio"
+                    ],
+                    "target_ids": [
+                      "cambio"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_entropia",
+                    "label": "Relacion con la entropia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La entropia da al tiempo una direccion fisica observable en el universo conocido, haciendo que las estructuras organizadas sean temporales y finitas.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.tiempo.relacion_con_la_entropia",
+                    "target_hints": [
+                      "entropia"
+                    ],
+                    "target_ids": [
+                      "entropia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_vida",
+                    "label": "Relacion con la vida",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La vida existe como organizacion temporal que mantiene orden local durante un intervalo limitado.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.tiempo.relacion_con_la_vida",
+                    "target_hints": [
+                      "vida"
+                    ],
+                    "target_ids": [
+                      "vida"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_conciencia",
+                    "label": "Relacion con la conciencia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La conciencia interpreta secuencias, memoria, expectativa y transformacion, y por ello esta profundamente ligada al tiempo.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.tiempo.relacion_con_la_conciencia",
+                    "target_hints": [
+                      "conciencia"
+                    ],
+                    "target_ids": [
+                      "conciencia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_el_mundo_humano",
+                    "label": "Relacion con el mundo humano",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La historia humana es una expresion temporal del conflicto entre apertura, dominacion, conocimiento y reproduccion del ciclo.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.tiempo.relacion_con_el_mundo_humano",
+                    "target_hints": [
+                      "mundo_humano"
+                    ],
+                    "target_ids": [
+                      "mundo_humano"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_trascendencia",
+                    "label": "Relacion con la trascendencia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La trascendencia no ocurre fuera del tiempo humano, sino mediante aperturas sucesivas dentro de el.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.tiempo.relacion_con_la_trascendencia",
+                    "target_hints": [
+                      "trascendencia"
+                    ],
+                    "target_ids": [
+                      "trascendencia"
+                    ]
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Todo ser y toda estructura concreta estan atravesados por el tiempo y expuestos a transformacion, desgaste y fin.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.tiempo.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "tiempo"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_realidad_manifestada_materia",
+                "key": "materia",
+                "label": "Materia",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Sustrato fisico del universo del que emergen los cuerpos, la vida, la conciencia y todas las estructuras materiales conocidas.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.definicion"
+                  },
+                  {
+                    "key": "fundamento_fisico",
+                    "label": "Fundamento fisico",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Es consecuencia de las reglas, desequilibrios y componentes esenciales del universo, y no una realidad autosuficiente separada del campo cosmologico total en el que aparece.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.fundamento_fisico"
+                  },
+                  {
+                    "key": "caracter_emergente",
+                    "label": "Caracter emergente",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "La materia no debe entenderse solo como base inerte, sino como una forma emergente de organizacion del universo capaz de producir nuevas configuraciones, niveles y propiedades irreductibles a sus estados mas simples.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.caracter_emergente"
+                  },
+                  {
+                    "key": "consecuencias_emergentes",
+                    "label": "Consecuencias emergentes",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "De la materia emergen no solo objetos y cuerpos, sino tambien dinamicas, relaciones, estructuras, vida, sensibilidad, conciencia, historia y formas complejas de organizacion que no estaban dadas como entidades separadas desde el inicio, aunque estuvieran posibilitadas por la apertura del universo.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.consecuencias_emergentes"
+                  },
+                  {
+                    "key": "contexto_cosmologico",
+                    "label": "Contexto cosmologico",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "La existencia de un universo material depende de un desequilibrio primitivo entre materia y antimateria que permitio la permanencia de la materia y la posterior formacion de estructuras cada vez mas complejas.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.contexto_cosmologico"
+                  },
+                  {
+                    "key": "dinamica_ontologica",
+                    "label": "Dinamica ontologica",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "La materia esta atravesada por cambio, entropia, composicion y reorganizacion. No permanece fija, sino que constituye el medio a partir del cual emergen formas temporales de orden, estabilidad relativa y complejidad creciente.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.dinamica_ontologica"
+                  },
+                  {
+                    "key": "valor_ontologico",
+                    "label": "Valor ontologico",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No es mala en si misma; es la condicion de posibilidad de la existencia material y de todos sus fenomenos emergentes. Su ambivalencia proviene no de una maldad intrinseca, sino de que puede dar lugar tanto a apertura, vida y conciencia como a captura, sufrimiento, destruccion y finitud.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.valor_ontologico"
+                  },
+                  {
+                    "key": "relacion_con_la_vida",
+                    "label": "Relacion con la vida",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La vida constituye una forma emergente de organizacion material en la que la materia alcanza niveles de coherencia, metabolismo, reproduccion y adaptacion superiores a los de la fisica no viva.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.relacion_con_la_vida",
+                    "target_hints": [
+                      "vida"
+                    ],
+                    "target_ids": [
+                      "vida"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_conciencia",
+                    "label": "Relacion con la conciencia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La conciencia surge cuando ciertas configuraciones materiales o estructurales alcanzan niveles suficientes de organizacion, integracion e interpretacion de la realidad.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.relacion_con_la_conciencia",
+                    "target_hints": [
+                      "conciencia"
+                    ],
+                    "target_ids": [
+                      "conciencia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_el_humano",
+                    "label": "Relacion con el humano",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El ser humano es una configuracion material compleja de la que emergen la conciencia, la experiencia, la memoria, la reflexividad y la capacidad de orientacion hacia la verdad.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.relacion_con_el_humano",
+                    "target_hints": [
+                      "humano"
+                    ],
+                    "target_ids": [
+                      "humano"
+                    ]
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Aunque la materia haga posibles la vida y la conciencia, no agota por si sola el significado de las propiedades emergentes superiores, que poseen dinamicas propias y no pueden reducirse sin resto a una descripcion fisica elemental.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.materia.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "materia"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_realidad_manifestada_libertad",
+                "key": "libertad",
+                "label": "Libertad",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "La libertad es la apertura fundamental de la realidad a nuevos estados, caminos, procesos y configuraciones. Las estructuras estables reducen esa apertura para producir orden, permanencia, forma y control.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.definicion"
+                  },
+                  {
+                    "key": "estado_ontologico",
+                    "label": "Estado ontologico",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "fundamento dinamico de lo real anterior a toda fijacion completa",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.estado_ontologico"
+                  },
+                  {
+                    "key": "relacion_con_la_entropia",
+                    "label": "Relacion con la entropia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La entropia expresa fisicamente la tendencia del universo al cambio, a la dispersion y a la apertura de estados posibles. Por ello esta ligada a la libertad en su nivel mas basal, aunque no se identifica sin mas con el bien ni con toda forma de liberacion.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.relacion_con_la_entropia",
+                    "target_hints": [
+                      "entropia"
+                    ],
+                    "target_ids": [
+                      "entropia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_el_cambio",
+                    "label": "Relacion con el cambio",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El cambio es una manifestacion esencial de la libertad. Sin cambio no hay posibilidad de romper ciclos, abrir caminos nuevos, transformar estructuras opresivas ni generar nuevas formas de organizacion y conciencia.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.relacion_con_el_cambio",
+                    "target_hints": [
+                      "cambio"
+                    ],
+                    "target_ids": [
+                      "cambio"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_el_orden",
+                    "label": "Relacion con el orden",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El orden no es malo en si mismo; es una forma temporal de estabilizacion de la realidad. Se vuelve opresivo cuando se absolutiza, se rigidiza y cancela la apertura necesaria para la transformacion.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.relacion_con_el_orden",
+                    "target_hints": [
+                      "orden"
+                    ],
+                    "target_ids": [
+                      "orden"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_vida",
+                    "label": "Relacion con la vida",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La vida es una forma localizada de organizacion que resiste temporalmente la dispersion total, pero solo puede existir dentro de un universo abierto al cambio. Por eso la vida no niega la libertad fundamental, sino que la encarna en una forma inestable y finita.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.relacion_con_la_vida",
+                    "target_hints": [
+                      "vida"
+                    ],
+                    "target_ids": [
+                      "vida"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_conciencia",
+                    "label": "Relacion con la conciencia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La conciencia es una expresion superior de la libertad cuando un sistema material alcanza suficiente complejidad para integrar realidad, responder a ella y, en ciertos casos, reinterpretarla.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.relacion_con_la_conciencia",
+                    "target_hints": [
+                      "conciencia"
+                    ],
+                    "target_ids": [
+                      "conciencia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_el_ser_humano",
+                    "label": "Relacion con el ser humano",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "En el dominio humano, la libertad no es solo posibilidad fisica, sino capacidad de liberarse parcialmente de la dominacion externa, del impulso ciego, de la ignorancia y de la captura por estructuras demiurgicas.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.relacion_con_el_ser_humano",
+                    "target_hints": [
+                      "ser_humano"
+                    ],
+                    "target_ids": [
+                      "ser_humano"
+                    ]
+                  },
+                  {
+                    "key": "sentido_humano_superior",
+                    "label": "Sentido humano superior",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "En el dominio humano, la libertad consiste en orientar la apertura del cambio hacia formas de vida menos opresivas, mas conscientes, mas autonomas y mas cercanas a la verdad.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.sentido_humano_superior"
+                  },
+                  {
+                    "key": "riesgo",
+                    "label": "Riesgo",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "La apertura entrópica puede producir tanto liberacion como destruccion esteril, caos improductivo o reorganizacion de nuevas formas de dominio.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.riesgo"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "La libertad humana nunca es absoluta dentro de la existencia material, porque toda forma de vida esta condicionada por cuerpo, entorno, historia y estructura.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.limite"
+                  }
+                ],
+                "collections": [
+                  {
+                    "id": "ontologia_estructura_de_lo_real_realidad_manifestada_libertad_condiciones_para_la_libertad_humana_collection",
+                    "key": "condiciones_para_la_libertad_humana",
+                    "label": "Condiciones para la libertad humana",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.condiciones_para_la_libertad_humana",
+                    "item_kind_hint": "collection_item",
+                    "items": [
+                      {
+                        "order_index": 1,
+                        "value_type": "text",
+                        "value": "reduccion de la dominacion externa"
+                      },
+                      {
+                        "order_index": 2,
+                        "value_type": "text",
+                        "value": "seguridad material suficiente"
+                      },
+                      {
+                        "order_index": 3,
+                        "value_type": "text",
+                        "value": "capacidad de autogobierno"
+                      },
+                      {
+                        "order_index": 4,
+                        "value_type": "text",
+                        "value": "conocimiento de las estructuras opresivas"
+                      },
+                      {
+                        "order_index": 5,
+                        "value_type": "text",
+                        "value": "superacion parcial del miedo, el apego y la servidumbre al impulso"
+                      },
+                      {
+                        "order_index": 6,
+                        "value_type": "text",
+                        "value": "acceso a verdad, educacion y desarrollo de conciencia"
+                      }
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "ontologia_estructura_de_lo_real_realidad_manifestada_libertad_dimensiones",
+                    "key": "dimensiones",
+                    "label": "Dimensiones",
+                    "kind": "section",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.dimensiones",
+                    "fields": [
+                      {
+                        "key": "libertad_fisica",
+                        "label": "Libertad fisica",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Apertura basal del universo a transformacion, variacion y despliegue de estados posibles.",
+                        "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.dimensiones.libertad_fisica"
+                      },
+                      {
+                        "key": "libertad_biologica",
+                        "label": "Libertad biologica",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Capacidad temporal de los seres vivos para sostener su organizacion, actuar y adaptarse dentro de un medio cambiante.",
+                        "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.dimensiones.libertad_biologica"
+                      },
+                      {
+                        "key": "libertad_consciente",
+                        "label": "Libertad consciente",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Capacidad de un sistema consciente para no quedar totalmente fijado por su estructura inmediata y generar respuestas, interpretaciones y trayectorias nuevas.",
+                        "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.dimensiones.libertad_consciente"
+                      },
+                      {
+                        "key": "libertad_humana",
+                        "label": "Libertad humana",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Capacidad de un ser humano o de una sociedad para reducir servidumbre, superar estructuras opresivas y vivir segun reglas asumidas con inteligencia y no solo impuestas desde fuera.",
+                        "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.libertad.dimensiones.libertad_humana"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "ontologia_estructura_de_lo_real_realidad_manifestada_libertad_dimensiones"
+                  }
+                ],
+                "canonical_id": "libertad"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_realidad_manifestada_cambio",
+                "key": "cambio",
+                "label": "Cambio",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Proceso por el cual la realidad pasa de unos estados, formas o configuraciones a otros. Es una consecuencia directa de la apertura fundamental del universo y una de las expresiones mas visibles de la libertad.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.definicion"
+                  },
+                  {
+                    "key": "estado_ontologico",
+                    "label": "Estado ontologico",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "principio estructural de la realidad manifestada",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.estado_ontologico"
+                  },
+                  {
+                    "key": "relacion_con_la_libertad",
+                    "label": "Relacion con la libertad",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El cambio expresa que la realidad no esta cerrada sobre una unica forma fija, sino abierta a nuevas trayectorias, reorganizaciones y desarrollos.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.relacion_con_la_libertad",
+                    "target_hints": [
+                      "libertad"
+                    ],
+                    "target_ids": [
+                      "libertad"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_entropia",
+                    "label": "Relacion con la entropia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El cambio esta intrinsecamente ligado a la entropia, ya que en un universo abierto a la dispersion y a la transformacion las configuraciones no permanecen inmoviles indefinidamente.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.relacion_con_la_entropia",
+                    "target_hints": [
+                      "entropia"
+                    ],
+                    "target_ids": [
+                      "entropia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_vida",
+                    "label": "Relacion con la vida",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La vida existe como gestion temporal del cambio, manteniendo organizacion interna mientras transforma continuamente materia, energia y entorno.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.relacion_con_la_vida",
+                    "target_hints": [
+                      "vida"
+                    ],
+                    "target_ids": [
+                      "vida"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_conciencia",
+                    "label": "Relacion con la conciencia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La conciencia surge en sistemas capaces de registrar, integrar e interpretar el cambio, y en sus niveles mas altos puede incluso intervenir en su direccion.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.relacion_con_la_conciencia",
+                    "target_hints": [
+                      "conciencia"
+                    ],
+                    "target_ids": [
+                      "conciencia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_el_mundo_humano",
+                    "label": "Relacion con el mundo humano",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "En el dominio humano, el cambio puede romper estructuras opresivas, abrir nuevas posibilidades historicas y permitir la superacion parcial del ciclo.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.relacion_con_el_mundo_humano",
+                    "target_hints": [
+                      "mundo_humano"
+                    ],
+                    "target_ids": [
+                      "mundo_humano"
+                    ]
+                  },
+                  {
+                    "key": "valor_ambivalente",
+                    "label": "Valor ambivalente",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "El cambio no es bueno por si mismo. Puede liberar, destruir, reorganizar, degradar o abrir condiciones para nuevas formas de verdad o nuevas formas de dominacion.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.valor_ambivalente"
+                  },
+                  {
+                    "key": "funcion_en_la_liberacion",
+                    "label": "Funcion en la liberacion",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Sin cambio no puede romperse ningun ciclo. La liberacion solo es posible donde existe la posibilidad real de transformacion.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.funcion_en_la_liberacion"
+                  },
+                  {
+                    "key": "peligro",
+                    "label": "Peligro",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Cuando el cambio no va acompañado de conciencia, conocimiento y criterio, puede limitarse a destruir una forma de orden para reinstaurar otra prision distinta.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.peligro"
+                  },
+                  {
+                    "key": "horizonte_final",
+                    "label": "Horizonte final",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "A escala cosmica, el cambio acompaña toda la existencia del universo conocido, desde sus primeras configuraciones hasta sus estados ultimos de disipacion y agotamiento estructural.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.horizonte_final"
+                  }
+                ],
+                "collections": [],
+                "children": [
+                  {
+                    "id": "ontologia_estructura_de_lo_real_realidad_manifestada_cambio_formas",
+                    "key": "formas",
+                    "label": "Formas",
+                    "kind": "section",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.formas",
+                    "fields": [
+                      {
+                        "key": "cambio_fisico",
+                        "label": "Cambio fisico",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Transformacion de estados materiales y energeticos segun las reglas del universo.",
+                        "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.formas.cambio_fisico"
+                      },
+                      {
+                        "key": "cambio_biologico",
+                        "label": "Cambio biologico",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Adaptacion, evolucion, nacimiento, muerte y reorganizacion de los seres vivos.",
+                        "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.formas.cambio_biologico"
+                      },
+                      {
+                        "key": "cambio_historico",
+                        "label": "Cambio historico",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Transformacion de instituciones, valores, relaciones de poder y formas de organizacion social.",
+                        "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.formas.cambio_historico"
+                      },
+                      {
+                        "key": "cambio_espiritual",
+                        "label": "Cambio espiritual",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Apertura de nuevas capas de comprension, conciencia y orientacion hacia la verdad.",
+                        "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.formas.cambio_espiritual"
+                      },
+                      {
+                        "key": "cambio_politico",
+                        "label": "Cambio politico",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Alteracion de las estructuras de poder, dominacion y acceso a la libertad dentro de una sociedad.",
+                        "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.cambio.formas.cambio_politico"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "ontologia_estructura_de_lo_real_realidad_manifestada_cambio_formas"
+                  }
+                ],
+                "canonical_id": "cambio"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_realidad_manifestada_entropia",
+                "key": "entropia",
+                "label": "Entropia",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.entropia",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Tendencia fisica de los sistemas materiales a la dispersion de energia util, a la degradacion de configuraciones localmente ordenadas y al aumento de estados posibles accesibles.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.entropia.definicion"
+                  },
+                  {
+                    "key": "estado_ontologico",
+                    "label": "Estado ontologico",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "condicion termodinamica y cosmologica de la realidad manifestada, inseparable del tiempo y del cambio",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.entropia.estado_ontologico"
+                  },
+                  {
+                    "key": "relacion_con_el_tiempo",
+                    "label": "Relacion con el tiempo",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La entropia da al tiempo una direccion fisica observable en el universo conocido, haciendo temporales y finitas las estructuras organizadas.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.entropia.relacion_con_el_tiempo",
+                    "target_hints": [
+                      "tiempo"
+                    ],
+                    "target_ids": [
+                      "tiempo"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_el_cambio",
+                    "label": "Relacion con el cambio",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El cambio material aparece en un universo entropico donde ninguna configuracion compleja permanece inmovil indefinidamente.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.entropia.relacion_con_el_cambio",
+                    "target_hints": [
+                      "cambio"
+                    ],
+                    "target_ids": [
+                      "cambio"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_vida",
+                    "label": "Relacion con la vida",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La vida solo puede sostener orden local durante un tiempo porque intercambia materia y energia con un entorno mas amplio en el que aumenta la entropia exterior.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.entropia.relacion_con_la_vida",
+                    "target_hints": [
+                      "vida"
+                    ],
+                    "target_ids": [
+                      "vida"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_exergia",
+                    "label": "Relacion con la exergia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La exergia nombra la fraccion de capacidad transformadora util disponible en sistemas finitos; la entropia expresa su degradacion o perdida progresiva.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.entropia.relacion_con_la_exergia",
+                    "target_hints": [
+                      "exergia"
+                    ],
+                    "target_ids": [
+                      "exergia"
+                    ]
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "entropia"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_realidad_manifestada_orden",
+                "key": "orden",
+                "label": "Orden",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.orden",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Forma temporal de estabilizacion relativa por la cual una configuracion material, vital, simbolica o social mantiene estructura, coherencia y capacidad de persistir durante un intervalo limitado.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.orden.definicion"
+                  },
+                  {
+                    "key": "estado_ontologico",
+                    "label": "Estado ontologico",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "configuracion local y transitoria de estabilidad dentro de una realidad abierta al cambio",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.orden.estado_ontologico"
+                  },
+                  {
+                    "key": "relacion_con_la_entropia",
+                    "label": "Relacion con la entropia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El orden solo existe como estabilizacion parcial y temporal dentro de un universo entropico que tiende a degradar las configuraciones complejas.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.orden.relacion_con_la_entropia",
+                    "target_hints": [
+                      "entropia"
+                    ],
+                    "target_ids": [
+                      "entropia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_libertad",
+                    "label": "Relacion con la libertad",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El orden fija parcialmente la apertura de la realidad para producir forma, permanencia y coordinacion, pero no debe absolutizarse hasta cancelar la libertad de transformacion.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.orden.relacion_con_la_libertad",
+                    "target_hints": [
+                      "libertad"
+                    ],
+                    "target_ids": [
+                      "libertad"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_vida",
+                    "label": "Relacion con la vida",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La vida constituye una forma localizada de orden capaz de sostener organizacion interna mientras transforma continuamente su entorno.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.orden.relacion_con_la_vida",
+                    "target_hints": [
+                      "vida"
+                    ],
+                    "target_ids": [
+                      "vida"
+                    ]
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "El orden no es malo en si mismo, pero se vuelve opresivo cuando se absolutiza, se rigidiza y cancela la apertura necesaria para la transformacion.",
+                    "source_path": "ontologia.estructura_de_lo_real.realidad_manifestada.orden.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "orden"
+              }
+            ],
+            "canonical_id": "realidad_manifestada"
+          },
+          {
+            "id": "ontologia_estructura_de_lo_real_niveles_emergentes",
+            "key": "niveles_emergentes",
+            "label": "Niveles emergentes",
+            "kind": "concept",
+            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes",
+            "fields": [],
+            "collections": [],
+            "children": [
+              {
+                "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida",
+                "key": "vida",
+                "label": "Vida",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Forma emergente de organizacion material capaz de mantener coherencia interna temporal, metabolizar o parasitar flujos del entorno, reproducir estructura total o parcialmente, adaptarse, evolucionar y generar niveles superiores de complejidad.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.definicion"
+                  },
+                  {
+                    "key": "tesis_emergentista",
+                    "label": "Tesis emergentista",
+                    "role": "thesis",
+                    "value_type": "text",
+                    "value": "La vida no constituye una sustancia separada de la materia, sino una configuracion emergente de esta cuando alcanza formas de organizacion capaces de sostener orden relativo, transformacion interna, reproduccion diferencial y apertura evolutiva.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.tesis_emergentista"
+                  },
+                  {
+                    "key": "criterio_general",
+                    "label": "Criterio general",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Los seres vivos y proto-vivos pueden distinguirse segun su grado de complejidad emergente, autonomia organizativa, capacidad reproductiva, integracion funcional y nivel de composicion supraindividual.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.criterio_general"
+                  }
+                ],
+                "collections": [],
+                "children": [
+                  {
+                    "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital",
+                    "key": "escala_de_complejidad_vital",
+                    "label": "Escala de complejidad vital",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital",
+                    "fields": [],
+                    "collections": [],
+                    "children": [
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_1_protoorganizaciones_precelulares",
+                        "key": "nivel_1_protoorganizaciones_precelulares",
+                        "label": "Nivel 1 protoorganizaciones precelulares",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_1_protoorganizaciones_precelulares",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Estructuras materiales con capacidad parcial de replicacion, transmision de patron o parasitismo informacional, pero sin autonomia celular plena.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_1_protoorganizaciones_precelulares.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "umbral pre-vivo o proto-vivo",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_1_protoorganizaciones_precelulares.estado_ontologico"
+                          },
+                          {
+                            "key": "limite",
+                            "label": "Limite",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "No constituyen vida plena en sentido fuerte porque dependen de estructuras vivas mas complejas o carecen de metabolismo y cierre organizativo propio.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_1_protoorganizaciones_precelulares.limite"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_1_protoorganizaciones_precelulares_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_1_protoorganizaciones_precelulares.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "proteinas autocataliticas"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "acidos nucleicos"
+                              },
+                              {
+                                "order_index": 3,
+                                "value_type": "text",
+                                "value": "priones"
+                              },
+                              {
+                                "order_index": 4,
+                                "value_type": "text",
+                                "value": "virus"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_1_protoorganizaciones_precelulares"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_2_seres_unicelulares_no_coloniales",
+                        "key": "nivel_2_seres_unicelulares_no_coloniales",
+                        "label": "Nivel 2 seres unicelulares no coloniales",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_2_seres_unicelulares_no_coloniales",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Entidades celulares individuales con autonomia metabolica y reproductiva suficiente para sostener vida plena en escala minima.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_2_seres_unicelulares_no_coloniales.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "vida individual elemental",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_2_seres_unicelulares_no_coloniales.estado_ontologico"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_2_seres_unicelulares_no_coloniales_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_2_seres_unicelulares_no_coloniales.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "bacterias (Escherichia coli)"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "arqueas"
+                              },
+                              {
+                                "order_index": 3,
+                                "value_type": "text",
+                                "value": "protozoos individuales (Amoeba, Paramecium)"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_2_seres_unicelulares_no_coloniales"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_3_seres_unicelulares_coloniales",
+                        "key": "nivel_3_seres_unicelulares_coloniales",
+                        "label": "Nivel 3 seres unicelulares coloniales",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_3_seres_unicelulares_coloniales",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Agrupaciones de entidades unicelulares que cooperan, reparten parcialmente funciones o estabilizan ventajas adaptativas sin constituir todavia un organismo multicelular plenamente integrado.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_3_seres_unicelulares_coloniales.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "vida cooperativa pre-multicelular",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_3_seres_unicelulares_coloniales.estado_ontologico"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_3_seres_unicelulares_coloniales_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_3_seres_unicelulares_coloniales.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "colonias de bacterias (biofilms)"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "Volvox"
+                              },
+                              {
+                                "order_index": 3,
+                                "value_type": "text",
+                                "value": "colonias de cianobacterias"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_3_seres_unicelulares_coloniales"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_4_organismos_multicelulares",
+                        "key": "nivel_4_organismos_multicelulares",
+                        "label": "Nivel 4 organismos multicelulares",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_4_organismos_multicelulares",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Entidades compuestas por multiples celulas diferenciadas e integradas en una unidad funcional con fuerte coordinacion interna, reproduccion organizada y relativa individuacion biologica.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_4_organismos_multicelulares.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "vida organica compleja individual",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_4_organismos_multicelulares.estado_ontologico"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_4_organismos_multicelulares_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_4_organismos_multicelulares.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "animales (mamiferos, insectos)"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "plantas"
+                              },
+                              {
+                                "order_index": 3,
+                                "value_type": "text",
+                                "value": "hongos"
+                              },
+                              {
+                                "order_index": 4,
+                                "value_type": "text",
+                                "value": "algas multicelulares"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_4_organismos_multicelulares"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_5_seres_multicelulares_coloniales",
+                        "key": "nivel_5_seres_multicelulares_coloniales",
+                        "label": "Nivel 5 seres multicelulares coloniales",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_5_seres_multicelulares_coloniales",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Organizaciones compuestas por multiples organismos multicelulares de la misma especie que mantienen una conexion fisica o funcional estable, reparten funciones o coordinan su actividad, sin perder completamente su autonomia individual.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_5_seres_multicelulares_coloniales.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "vida multicelular colonial intraespecifica",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_5_seres_multicelulares_coloniales.estado_ontologico"
+                          },
+                          {
+                            "key": "limite",
+                            "label": "Limite",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "La unidad colectiva puede mostrar propiedades emergentes, pero la individuacion no se disuelve completamente en una unica entidad integrada.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_5_seres_multicelulares_coloniales.limite"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_5_seres_multicelulares_coloniales_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_5_seres_multicelulares_coloniales.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "corales"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "esponjas modulares"
+                              },
+                              {
+                                "order_index": 3,
+                                "value_type": "text",
+                                "value": "sifonoforos (Physalia physalis)"
+                              },
+                              {
+                                "order_index": 4,
+                                "value_type": "text",
+                                "value": "colonias clonales de plantas (bosques de aspens)"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_5_seres_multicelulares_coloniales"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_6_seres_multicelulares_extraespecie",
+                        "key": "nivel_6_seres_multicelulares_extraespecie",
+                        "label": "Nivel 6 seres multicelulares extraespecie",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_6_seres_multicelulares_extraespecie",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Unidades vivas complejas cuya estabilidad depende de la integracion funcional de organismos multicelulares de especies distintas en una relacion persistente de simbiosis, codependencia o composicion vital.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_6_seres_multicelulares_extraespecie.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "vida compuesta interespecifica",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_6_seres_multicelulares_extraespecie.estado_ontologico"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_6_seres_multicelulares_extraespecie_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_6_seres_multicelulares_extraespecie.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "holobiontes (humano + microbiota)"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "liquenes (hongo + alga/cianobacteria)"
+                              },
+                              {
+                                "order_index": 3,
+                                "value_type": "text",
+                                "value": "corales con zooxantelas"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_6_seres_multicelulares_extraespecie"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_7_seres_multicelulares_coloniales_extraespecie",
+                        "key": "nivel_7_seres_multicelulares_coloniales_extraespecie",
+                        "label": "Nivel 7 seres multicelulares coloniales extraespecie",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_7_seres_multicelulares_coloniales_extraespecie",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Colectividades interespecificas de organismos multicelulares que alcanzan una coordinacion suficientemente estable como para producir funciones emergentes, persistencia conjunta y dinamicas cuasi-organismicas.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_7_seres_multicelulares_coloniales_extraespecie.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "vida supraorganismica colonial",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_7_seres_multicelulares_coloniales_extraespecie.estado_ontologico"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_7_seres_multicelulares_coloniales_extraespecie_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_7_seres_multicelulares_coloniales_extraespecie.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "arrecifes de coral"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "superorganismos como colonias de hormigas con simbiontes"
+                              },
+                              {
+                                "order_index": 3,
+                                "value_type": "text",
+                                "value": "sistemas bosque-micorrizas"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_7_seres_multicelulares_coloniales_extraespecie"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_8_supraser_ecosistemico",
+                        "key": "nivel_8_supraser_ecosistemico",
+                        "label": "Nivel 8 supraser ecosistemico",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_8_supraser_ecosistemico",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Sistema ecologico de interdependencias entre multiples especies y medios materiales que mantiene dinamicas de autorregulacion relativa, reciclaje, resiliencia y continuidad funcional.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_8_supraser_ecosistemico.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "vida emergente ecosistemica",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_8_supraser_ecosistemico.estado_ontologico"
+                          },
+                          {
+                            "key": "limite",
+                            "label": "Limite",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Su unidad es mas difusa que la de un organismo, pero posee propiedades sistemicas irreductibles a la suma de sus componentes.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_8_supraser_ecosistemico.limite"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_8_supraser_ecosistemico_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_8_supraser_ecosistemico.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "selva amazonica"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "ecosistema marino costero"
+                              },
+                              {
+                                "order_index": 3,
+                                "value_type": "text",
+                                "value": "sabana africana"
+                              },
+                              {
+                                "order_index": 4,
+                                "value_type": "text",
+                                "value": "bosque boreal"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_8_supraser_ecosistemico"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_9_supraser_sistemico",
+                        "key": "nivel_9_supraser_sistemico",
+                        "label": "Nivel 9 supraser sistemico",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_9_supraser_sistemico",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Sistema vital de orden superior que integra multiples ecosistemas, flujos materiales, relaciones bioticas y procesos de coevolucion en una estructura de alcance regional o global con dinamicas emergentes propias.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_9_supraser_sistemico.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "vida sistemica de gran escala",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_9_supraser_sistemico.estado_ontologico"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_9_supraser_sistemico_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_9_supraser_sistemico.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "biosfera terrestre regional interconectada"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "sistema oceano-atmosfera-biosfera"
+                              },
+                              {
+                                "order_index": 3,
+                                "value_type": "text",
+                                "value": "red global de ecosistemas interdependientes"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_9_supraser_sistemico"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_10_supraser_planetal",
+                        "key": "nivel_10_supraser_planetal",
+                        "label": "Nivel 10 supraser planetal",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_10_supraser_planetal",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Unidad emergente de la vida planetaria considerada como totalidad funcionalmente interdependiente entre biosfera, atmosfera, geologia, hidrologia y redes biologicas.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_10_supraser_planetal.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "vida planetaria integrada",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_10_supraser_planetal.estado_ontologico"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_10_supraser_planetal_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_10_supraser_planetal.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "biosfera de la Tierra (hipotesis Gaia)"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "sistema Tierra como totalidad biogeoquimica"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_10_supraser_planetal"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_11_supraser_transplanetal",
+                        "key": "nivel_11_supraser_transplanetal",
+                        "label": "Nivel 11 supraser transplanetal",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_11_supraser_transplanetal",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Posible forma de vida o metaorganizacion vital extendida a traves de multiples cuerpos planetarios o entornos cosmicos conectados por intercambios materiales, informacionales o reproductivos suficientemente estables.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_11_supraser_transplanetal.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "hipotesis de vida cosmica distribuida",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_11_supraser_transplanetal.estado_ontologico"
+                          },
+                          {
+                            "key": "estado_teorico",
+                            "label": "Estado teorico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "posibilidad abierta",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_11_supraser_transplanetal.estado_teorico"
+                          }
+                        ],
+                        "collections": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_escala_de_complejidad_vital_nivel_11_supraser_transplanetal_ejemplos_collection",
+                            "key": "ejemplos",
+                            "label": "Ejemplos",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.escala_de_complejidad_vital.nivel_11_supraser_transplanetal.ejemplos",
+                            "item_kind_hint": "collection_item",
+                            "items": [
+                              {
+                                "order_index": 1,
+                                "value_type": "text",
+                                "value": "red hipotetica de vida distribuida entre planetas"
+                              },
+                              {
+                                "order_index": 2,
+                                "value_type": "text",
+                                "value": "ecosistemas interestelares teoricos"
+                              },
+                              {
+                                "order_index": 3,
+                                "value_type": "text",
+                                "value": "civilizaciones biologico-tecnologicas que conectan biosferas"
+                              }
+                            ]
+                          }
+                        ],
+                        "children": [],
+                        "canonical_id": "nivel_11_supraser_transplanetal"
+                      }
+                    ],
+                    "canonical_id": "escala_de_complejidad_vital"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_horizonte_metafisico",
+                    "key": "horizonte_metafisico",
+                    "label": "Horizonte metafisico",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.horizonte_metafisico",
+                    "fields": [
+                      {
+                        "key": "hipotesis_del_supraser_universal",
+                        "label": "Hipotesis del supraser universal",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Si la vida es una configuracion emergente de la materia capaz de producir niveles crecientes de integracion, composicion y complejidad, entonces puede plantearse la hipotesis de que su despliegue no tenga como limite necesario el nivel planetario o transplanetal, sino una posible convergencia hacia el universo mismo como composicion ultima de supraser.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.horizonte_metafisico.hipotesis_del_supraser_universal"
+                      },
+                      {
+                        "key": "alcance",
+                        "label": "Alcance",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Esta hipotesis no afirma que el universo conocido sea ya un ser vivo en sentido fuerte, sino que la vida podria ser uno de los procesos mediante los cuales el universo avanza hacia formas mas amplias de integracion de materia, conciencia, memoria y organizacion.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.horizonte_metafisico.alcance"
+                      },
+                      {
+                        "key": "relacion_con_la_conciencia",
+                        "label": "Relacion con la conciencia",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "Si la conciencia es una forma parcial por la que el universo se observa a si mismo, la vida compleja podria ser tambien una via parcial por la que el universo se organiza progresivamente en niveles superiores de unidad emergente.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.horizonte_metafisico.relacion_con_la_conciencia",
+                        "target_hints": [
+                          "conciencia"
+                        ],
+                        "target_ids": [
+                          "conciencia"
+                        ]
+                      },
+                      {
+                        "key": "estado_teorico",
+                        "label": "Estado teorico",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "hipotesis metafisica abierta",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.horizonte_metafisico.estado_teorico"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "horizonte_metafisico"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_niveles_emergentes_vida_aclaraciones",
+                    "key": "aclaraciones",
+                    "label": "Aclaraciones",
+                    "kind": "section",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.aclaraciones",
+                    "fields": [
+                      {
+                        "key": "sobre_la_linealidad",
+                        "label": "Sobre la linealidad",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "La escala no implica una jerarquia moral simple ni una progresion necesaria, sino una tipologia de niveles de organizacion y emergencia vital.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.aclaraciones.sobre_la_linealidad"
+                      },
+                      {
+                        "key": "sobre_la_individuacion",
+                        "label": "Sobre la individuacion",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "La relacion entre complejidad vital e individuacion no es lineal, sino aproximadamente curvilinea: la individuacion tiende a crecer en los niveles intermedios de complejidad, alcanza un apogeo relativo en organismos altamente integrados, y se vuelve mas difusa en formas superiores de organizacion supraindividual.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.aclaraciones.sobre_la_individuacion"
+                      },
+                      {
+                        "key": "sobre_el_valor_ontologico",
+                        "label": "Sobre el valor ontologico",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Un mayor grado de individuacion no implica por si mismo una superioridad ontologica absoluta, sino una forma distinta de unidad vital dentro de la escala emergente.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.aclaraciones.sobre_el_valor_ontologico"
+                      },
+                      {
+                        "key": "sobre_la_conciencia",
+                        "label": "Sobre la conciencia",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "La complejidad vital no equivale automaticamente a conciencia compleja, aunque puede ampliar las condiciones de posibilidad para su emergencia.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.aclaraciones.sobre_la_conciencia"
+                      },
+                      {
+                        "key": "sobre_el_ser_humano",
+                        "label": "Sobre el ser humano",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "El ser humano pertenece biologicamente al nivel de organismo multicelular, pero participa tambien en niveles supraindividuales ecosistemicos, sociales e historicos.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.vida.aclaraciones.sobre_el_ser_humano"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "aclaraciones_sobre_la_vida"
+                  }
+                ],
+                "canonical_id": "vida"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu",
+                "key": "espiritu",
+                "label": "Espiritu",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Propiedad emergente historico-estructural por la cual una o varias conciencias complejas acumulan experiencia, conocimiento, memoria, orientacion y capacidad de abrir capas de realidad mas alla de la reaccion inmediata.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.definicion"
+                  },
+                  {
+                    "key": "estado_ontologico",
+                    "label": "Estado ontologico",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "propiedad emergente colectiva o transindividual de sistemas conscientes suficientemente complejos, no sustancia separada",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.estado_ontologico"
+                  },
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Articular la tendencia de una conciencia o de una colectividad hacia la verdad, la comprension, la creacion, la memoria y la trascendencia parcial de su condicion inmediata.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.funcion"
+                  },
+                  {
+                    "key": "alcance",
+                    "label": "Alcance",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No se limita necesariamente al ser humano. Puede existir en otras formas de conciencia compleja individuales, colectivas o civilizatorias si alcanzan suficiente capacidad de acumulacion historica, simbolica o reflexiva.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.alcance"
+                  },
+                  {
+                    "key": "relacion_con_la_conciencia",
+                    "label": "Relacion con la conciencia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El espiritu surge de la conciencia cuando esta alcanza niveles capaces de integrar memoria, simbolizacion, transmision y orientacion acumulativa hacia capas mas profundas de realidad.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.relacion_con_la_conciencia",
+                    "target_hints": [
+                      "conciencia"
+                    ],
+                    "target_ids": [
+                      "conciencia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_verdad_absoluta",
+                    "label": "Relacion con la verdad absoluta",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El espiritu tiende hacia la verdad absoluta sin poder agotarla, funcionando como principio de apertura progresiva y no como posesion plena de lo real.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.relacion_con_la_verdad_absoluta",
+                    "target_hints": [
+                      "verdad_absoluta"
+                    ],
+                    "target_ids": [
+                      "verdad_absoluta"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_exergia",
+                    "label": "Relacion con la exergia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "Cuanto mayor exergia consciente, historica o colectiva posee un sistema, mayor puede ser su capacidad espiritual para sostener apertura, creacion, verdad y transformacion no capturada.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.relacion_con_la_exergia",
+                    "target_hints": [
+                      "exergia"
+                    ],
+                    "target_ids": [
+                      "exergia"
+                    ]
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "El espiritu no garantiza verdad ni bondad por si mismo. Puede orientarse hacia apertura real o quedar capturado por dominacion, autoengaño, rigidez o formas superiores del ciclo.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [
+                  {
+                    "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_formas_posibles",
+                    "key": "formas_posibles",
+                    "label": "Formas posibles",
+                    "kind": "section",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.formas_posibles",
+                    "fields": [
+                      {
+                        "key": "espiritu_individual",
+                        "label": "Espiritu individual",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Forma limitada en la que una conciencia singular acumula orientacion, experiencia y apertura hacia la verdad.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.formas_posibles.espiritu_individual"
+                      },
+                      {
+                        "key": "espiritu_colectivo",
+                        "label": "Espiritu colectivo",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Forma en la que varias conciencias generan memoria, conocimiento, simbolos y direccion compartida.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.formas_posibles.espiritu_colectivo"
+                      },
+                      {
+                        "key": "espiritu_civilizatorio",
+                        "label": "Espiritu civilizatorio",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Forma historica amplia en la que una civilizacion desarrolla acumulacion reflexiva, orientacion epistemica y capacidad de reorganizacion de gran escala.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.formas_posibles.espiritu_civilizatorio"
+                      },
+                      {
+                        "key": "espiritus_no_humanos_posibles",
+                        "label": "Espiritus no humanos posibles",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Posibles formas de espiritu en conciencias no humanas o extraterrestres si estas desarrollan memoria historica, simbolizacion, acumulacion de conocimiento y orientacion hacia capas de realidad.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.formas_posibles.espiritus_no_humanos_posibles"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_formas_posibles"
+                  }
+                ],
+                "canonical_id": "espiritu",
+                "aliases": [
+                  "espiritu_general"
+                ]
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_humano",
+                "key": "espiritu_humano",
+                "label": "Espiritu humano",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu_humano",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Forma especificamente humana del espiritu: abstraccion emergente del conjunto de experiencias humanas, creaciones, conocimiento acumulado y progreso historico de la humanidad.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu_humano.definicion"
+                  },
+                  {
+                    "key": "estado_ontologico",
+                    "label": "Estado ontologico",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "propiedad emergente historico-colectiva de la especie humana, no sustancia separada",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu_humano.estado_ontologico"
+                  },
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Orientar a la humanidad hacia la verdad y hacer posible la apertura progresiva de capas de comprension.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu_humano.funcion"
+                  },
+                  {
+                    "key": "alcance",
+                    "label": "Alcance",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No representa el limite superior de la conciencia en el universo, sino la forma particular en que el espiritu se expresa historicamente en la humanidad.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu_humano.alcance"
+                  },
+                  {
+                    "key": "relacion_con_el_humano",
+                    "label": "Relacion con el humano",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "Es lo que caracteriza al ser humano como animal capaz de trascender parcialmente su condicion inmediata mediante memoria, simbolo, conocimiento y organizacion historica.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu_humano.relacion_con_el_humano",
+                    "target_hints": [
+                      "humano"
+                    ],
+                    "target_ids": [
+                      "humano"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_conciencia",
+                    "label": "Relacion con la conciencia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "Surge de la suma historica y estructural de conciencias individuales humanas, pero no se reduce a una sola de ellas.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu_humano.relacion_con_la_conciencia",
+                    "target_hints": [
+                      "conciencia"
+                    ],
+                    "target_ids": [
+                      "conciencia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_la_verdad_absoluta",
+                    "label": "Relacion con la verdad absoluta",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "Tiende hacia la verdad absoluta sin poder agotarla.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu_humano.relacion_con_la_verdad_absoluta",
+                    "target_hints": [
+                      "verdad_absoluta"
+                    ],
+                    "target_ids": [
+                      "verdad_absoluta"
+                    ]
+                  },
+                  {
+                    "key": "orientacion_epistemica",
+                    "label": "Orientacion epistemica",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "El espiritu humano tiende naturalmente a desbloquear capas de realidad y subverdades, sin poder agotar nunca la verdad absoluta.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu_humano.orientacion_epistemica"
+                  },
+                  {
+                    "key": "relacion_con_el_espiritu_general",
+                    "label": "Relacion con el espiritu general",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "Es un caso particular del espiritu en cuanto propiedad emergente de una conciencia colectiva historica determinada.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu_humano.relacion_con_el_espiritu_general",
+                    "target_hints": [
+                      "espiritu_general"
+                    ],
+	                    "target_ids": [
+	                      "espiritu"
+	                    ]
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "espiritu_humano"
+              }
+            ],
+            "canonical_id": "niveles_emergentes"
+          },
+          {
+            "id": "ontologia_estructura_de_lo_real_dominio_humano_y_clausura",
+            "key": "dominio_humano_y_clausura",
+            "label": "Dominio humano y clausura",
+            "kind": "concept",
+            "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura",
+            "fields": [],
+            "collections": [],
+            "children": [
+              {
+                "id": "ontologia_estructura_de_lo_real_dominio_humano_y_clausura_mundo_humano",
+                "key": "mundo_humano",
+                "label": "Mundo humano",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.mundo_humano",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Dominio de la experiencia humana donde emergen sociedad, poder, lenguaje, moral, alienacion y posibilidad de liberacion.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.mundo_humano.definicion"
+                  },
+                  {
+                    "key": "relacion_con_la_verdad_absoluta",
+                    "label": "Relacion con la verdad absoluta",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "Es una capa parcial y deformada del acceso humano a lo real.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.mundo_humano.relacion_con_la_verdad_absoluta",
+                    "target_hints": [
+                      "verdad_absoluta"
+                    ],
+                    "target_ids": [
+                      "verdad_absoluta"
+                    ]
+                  }
+                ],
+                "collections": [
+                  {
+                    "id": "ontologia_estructura_de_lo_real_dominio_humano_y_clausura_mundo_humano_propiedades_collection",
+                    "key": "propiedades",
+                    "label": "Propiedades",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.mundo_humano.propiedades",
+                    "item_kind_hint": "collection_item",
+                    "items": [
+                      {
+                        "order_index": 1,
+                        "value_type": "text",
+                        "value": "historico"
+                      },
+                      {
+                        "order_index": 2,
+                        "value_type": "text",
+                        "value": "simbolico"
+                      },
+                      {
+                        "order_index": 3,
+                        "value_type": "text",
+                        "value": "estructural"
+                      },
+                      {
+                        "order_index": 4,
+                        "value_type": "text",
+                        "value": "instintivo"
+                      }
+                    ]
+                  }
+                ],
+                "children": [],
+                "canonical_id": "mundo_humano"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_dominio_humano_y_clausura_demiurgo",
+                "key": "demiurgo",
+                "label": "Demiurgo",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.demiurgo",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Principio estructural de captura, dominacion, ignorancia organizada y repeticion que puede emerger cuando una o varias conciencias complejas organizan poder, conocimiento y relacion social de forma clausurante.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.demiurgo.definicion"
+                  },
+                  {
+                    "key": "caso_humano",
+                    "label": "Caso humano",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "En el estado actual del sistema, su forma mejor conocida y desarrollada es la humana: surge de la sociedad humana y de la naturaleza animal humana cuando se organizan en estructuras de poder, dominacion e instrumentalizacion del conocimiento.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.demiurgo.caso_humano"
+                  },
+                  {
+                    "key": "alcance",
+                    "label": "Alcance",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No debe entenderse como un absoluto cosmico ni como un dios total, sino como una logica emergente de captura posible alli donde la conciencia compleja genera estructuras de organizacion susceptibles de clausura.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.demiurgo.alcance"
+                  },
+                  {
+                    "key": "hipotesis_abierta",
+                    "label": "Hipotesis abierta",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No puede asegurarse que otras formas de conciencia produzcan demiurgo en sentido estricto, pero tampoco puede excluirse que aparezcan abstracciones o estructuras analogas en conciencias no humanas, colectividades extraterrestres o formas civilizatorias desconocidas.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.demiurgo.hipotesis_abierta"
+                  },
+                  {
+                    "key": "criterio_minimo",
+                    "label": "Criterio minimo",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Para que exista algo analogo al demiurgo deben concurrir al menos organizacion compleja, capacidad de captura, reproduccion estructural, opacidad o instrumentalizacion del otro.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.demiurgo.criterio_minimo"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "demiurgo"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_dominio_humano_y_clausura_carcel_del_mundo",
+                "key": "carcel_del_mundo",
+                "label": "Carcel del mundo",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.carcel_del_mundo",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Condicion de encierro de una conciencia o de una colectividad en ciclos de ignorancia, apego, dominacion, sufrimiento y repeticion, cuando las estructuras emergentes de su mundo bloquean o capturan la apertura hacia mayor verdad y libertad.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.carcel_del_mundo.definicion"
+                  },
+                  {
+                    "key": "caso_humano",
+                    "label": "Caso humano",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "En su forma desarrollada conocida, designa la condicion historica, social, simbolica y espiritual del mundo humano cuando este queda atrapado por el demiurgo.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.carcel_del_mundo.caso_humano"
+                  },
+                  {
+                    "key": "alcance",
+                    "label": "Alcance",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No describe necesariamente toda forma posible de conciencia en el universo, pero puede servir como concepto analogo para nombrar situaciones equivalentes de clausura estructural en otros dominios conscientes si existieran.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.carcel_del_mundo.alcance"
+                  },
+                  {
+                    "key": "hipotesis_abierta",
+                    "label": "Hipotesis abierta",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No puede comprobarse que otras conciencias habiten carceles del mundo analogas a la humana, aunque es razonable especular con esa posibilidad alli donde emerjan poder, repeticion, captura y reduccion de la apertura consciente.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.carcel_del_mundo.hipotesis_abierta"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "La nocion nace del analisis del caso humano y no debe universalizarse dogmaticamente sin mediacion comparativa o evidencia suficiente.",
+                    "source_path": "ontologia.estructura_de_lo_real.dominio_humano_y_clausura.carcel_del_mundo.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "carcel_del_mundo"
+              }
+            ],
+            "canonical_id": "dominio_humano_y_clausura"
+          },
+          {
+            "id": "ontologia_estructura_de_lo_real_limites_de_la_individualidad",
+            "key": "limites_de_la_individualidad",
+            "label": "Limites de la individualidad",
+            "kind": "concept",
+            "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad",
+            "fields": [],
+            "collections": [],
+            "children": [
+              {
+                "id": "ontologia_estructura_de_lo_real_limites_de_la_individualidad_alma",
+                "key": "alma",
+                "label": "Alma",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.alma",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "El alma clasica no existe como una sustancia personal separada del cuerpo, autosuficiente o demostrablemente superviviente a la muerte.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.alma.definicion"
+                  },
+                  {
+                    "key": "estado_ontologico",
+                    "label": "Estado ontologico",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "negado en sentido sustancial clasico",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.alma.estado_ontologico"
+                  },
+                  {
+                    "key": "aclaracion_principal",
+                    "label": "Aclaracion principal",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Lo mas cercano a lo que las tradiciones llamaron alma es la composicion emergente de conciencia y espiritu, en cuanto una conciencia singular puede participar de memoria, orientacion, apertura a la verdad y trascendencia parcial de su condicion inmediata.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.alma.aclaracion_principal"
+                  },
+                  {
+                    "key": "relacion_con_la_conciencia",
+                    "label": "Relacion con la conciencia",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La conciencia aporta experiencia, interioridad, percepcion, interpretacion y continuidad vivida del sujeto.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.alma.relacion_con_la_conciencia",
+                    "target_hints": [
+                      "conciencia"
+                    ],
+                    "target_ids": [
+                      "conciencia"
+                    ]
+                  },
+                  {
+                    "key": "relacion_con_el_espiritu",
+                    "label": "Relacion con el espiritu",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "El espiritu aporta acumulacion de sentido, memoria, orientacion hacia la verdad, apertura reflexiva y capacidad de trascender parcialmente la inmediatez.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.alma.relacion_con_el_espiritu",
+                    "target_hints": [
+                      "espiritu"
+                    ],
+                    "target_ids": [
+                      "espiritu"
+                    ]
+                  },
+                  {
+                    "key": "composicion_funcional",
+                    "label": "Composicion funcional",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Si se quiere conservar el termino alma en sentido no clasico, este solo puede designar una unidad funcional emergente entre conciencia y espiritu, no una entidad separada, simple o eterna.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.alma.composicion_funcional"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Aun en este sentido funcional, el alma no constituye una sustancia independiente ni garantiza supervivencia personal tras la muerte.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.alma.limite"
+                  },
+                  {
+                    "key": "posibilidad_futura",
+                    "label": "Posibilidad futura",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Si en el futuro hubiera evidencia de una esencia individual persistente, el sistema deberia revisarse.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.alma.posibilidad_futura"
+                  },
+                  {
+                    "key": "relacion_con_la_muerte",
+                    "label": "Relacion con la muerte",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "Con la muerte cesa la conciencia individual dependiente del cuerpo, y con ello se rompe tambien la unidad funcional que podria llamarse alma en sentido emergente.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.alma.relacion_con_la_muerte",
+                    "target_hints": [
+                      "muerte"
+                    ],
+                    "target_ids": [
+                      "muerte"
+                    ]
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "alma"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_limites_de_la_individualidad_muerte",
+                "key": "muerte",
+                "label": "Muerte",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.muerte",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Fin de la vida individual y de la conciencia personal humana.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.muerte.definicion"
+                  },
+                  {
+                    "key": "efecto_sobre_la_conciencia",
+                    "label": "Efecto sobre la conciencia",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "La conciencia cesa con la muerte al depender del cerebro como fenomeno emergente.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.muerte.efecto_sobre_la_conciencia"
+                  },
+                  {
+                    "key": "efecto_sobre_el_cuerpo",
+                    "label": "Efecto sobre el cuerpo",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "El cuerpo entra en descomposicion y pasa a formar parte del ciclo trofico.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.muerte.efecto_sobre_el_cuerpo"
+                  },
+                  {
+                    "key": "significado_ontologico",
+                    "label": "Significado ontologico",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "La muerte marca el fin del individuo consciente y el reinicio de la participacion material en la red de la vida.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.muerte.significado_ontologico"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "muerte"
+              }
+            ],
+            "canonical_id": "limites_de_la_individualidad"
+          }
+        ],
+        "canonical_id": "estructura_de_lo_real"
+      }
+    ],
+    "aliases": [
+      "ontologia"
+    ]
+  }
+}

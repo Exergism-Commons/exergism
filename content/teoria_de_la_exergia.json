@@ -1,0 +1,1280 @@
+{
+  "schema_version": 2,
+  "source_format": "legacy-normalized",
+  "domain": {
+    "id": "teoria_de_la_exergia",
+    "key": "teoria_de_la_exergia",
+    "label": "Teoria de la exergia",
+    "source_file": "teoria_de_la_exergia.json"
+  },
+  "root": {
+    "id": "teoria_de_la_exergia",
+    "canonical_id": "exergia",
+    "key": "teoria_de_la_exergia",
+    "label": "Teoria de la exergia",
+    "kind": "concept",
+    "source_path": "teoria_de_la_exergia",
+    "fields": [],
+    "collections": [
+      {
+        "id": "teoria_de_la_exergia_axiomas_posibles_collection",
+        "key": "axiomas_posibles",
+        "label": "Axiomas posibles",
+        "source_path": "teoria_de_la_exergia.axiomas_posibles",
+        "item_kind_hint": "axiom",
+        "items": [
+          {
+            "order_index": 1,
+            "value_type": "text",
+            "value": "La verdad absoluta es el horizonte total; la exergia es el margen efectivo de una conciencia o una sociedad para orientarse hacia ella."
+          },
+          {
+            "order_index": 2,
+            "value_type": "text",
+            "value": "La libertad abre la posibilidad; la exergia mide su capacidad efectiva de transformacion."
+          },
+          {
+            "order_index": 3,
+            "value_type": "text",
+            "value": "No todo cambio es exergico; solo lo es aquel que aumenta margen real de reorganizacion y liberacion."
+          },
+          {
+            "order_index": 4,
+            "value_type": "text",
+            "value": "El demiurgo captura exergia al convertir potencia en dominacion, repeticion o disipacion esteril."
+          },
+          {
+            "order_index": 5,
+            "value_type": "text",
+            "value": "Escapar del demiurgo significa recuperar exergia capturada y reorientarla hacia verdad, autonomia y liberacion colectiva."
+          },
+          {
+            "order_index": 6,
+            "value_type": "text",
+            "value": "Una sociedad libre debe conservar exergia suficiente para autocorregirse, defenderse y evitar su rigidizacion."
+          }
+        ]
+      }
+    ],
+    "children": [
+      {
+        "id": "teoria_de_la_exergia_definicion_general",
+        "key": "definicion_general",
+        "label": "Definicion general",
+        "kind": "section",
+        "source_path": "teoria_de_la_exergia.definicion_general",
+        "fields": [
+          {
+            "key": "definicion_fisica",
+            "label": "Definicion fisica",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Cantidad maxima de trabajo util que un sistema puede entregar al alcanzar el equilibrio con su entorno.",
+            "source_path": "teoria_de_la_exergia.definicion_general.definicion_fisica"
+          },
+          {
+            "key": "definicion_filosofica",
+            "label": "Definicion filosofica",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Capacidad efectiva de una estructura, una conciencia, una institucion o una sociedad para producir transformacion real antes de quedar absorbida por el equilibrio, la disipacion, la rigidez o la captura.",
+            "source_path": "teoria_de_la_exergia.definicion_general.definicion_filosofica"
+          },
+          {
+            "key": "funcion_en_el_sistema",
+            "label": "Funcion en el sistema",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Concepto sintetico que une verdad, libertad, cambio, potencia transformadora y margen real de liberacion dentro de un universo entropico.",
+            "source_path": "teoria_de_la_exergia.definicion_general.funcion_en_el_sistema"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "definicion_general_exergia"
+      },
+      {
+        "id": "teoria_de_la_exergia_fundamento_y_relaciones_principales",
+        "key": "fundamento_y_relaciones_principales",
+        "label": "Fundamento y relaciones principales",
+        "kind": "section",
+        "source_path": "teoria_de_la_exergia.fundamento_y_relaciones_principales",
+        "fields": [
+          {
+            "key": "relacion_con_la_entropia",
+            "label": "Relacion con la entropia",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La generacion de entropia destruye exergia. Cuanto mas se aproxima un sistema al equilibrio sin capacidad de reorganizacion, menos exergia conserva.",
+            "source_path": "teoria_de_la_exergia.fundamento_y_relaciones_principales.relacion_con_la_entropia",
+            "target_hints": [
+              "entropia"
+            ],
+            "target_ids": [
+              "entropia"
+            ]
+          },
+          {
+            "key": "relacion_con_la_libertad",
+            "label": "Relacion con la libertad",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La libertad expresa la apertura fundamental de lo real; la exergia expresa el margen concreto y util que un sistema tiene para convertir esa apertura en transformacion efectiva.",
+            "source_path": "teoria_de_la_exergia.fundamento_y_relaciones_principales.relacion_con_la_libertad",
+            "target_hints": [
+              "libertad"
+            ],
+            "target_ids": [
+              "libertad"
+            ]
+          },
+          {
+            "key": "relacion_con_el_cambio",
+            "label": "Relacion con el cambio",
+            "role": "relation",
+            "value_type": "text",
+            "value": "El cambio es la manifestacion dinamica de la libertad; la exergia es la medida de cuanta capacidad real tiene un sistema para orientar o producir cambio antes de degradarse o quedar fijado.",
+            "source_path": "teoria_de_la_exergia.fundamento_y_relaciones_principales.relacion_con_el_cambio",
+            "target_hints": [
+              "cambio"
+            ],
+            "target_ids": [
+              "cambio"
+            ]
+          },
+          {
+            "key": "relacion_con_la_conciencia",
+            "label": "Relacion con la conciencia",
+            "role": "relation",
+            "value_type": "text",
+            "value": "Una conciencia con mayor exergia posee mayor capacidad de interpretar, reorganizar, decidir y abrir trayectorias nuevas sin quedar completamente sometida a la inercia del ciclo.",
+            "source_path": "teoria_de_la_exergia.fundamento_y_relaciones_principales.relacion_con_la_conciencia",
+            "target_hints": [
+              "conciencia"
+            ],
+            "target_ids": [
+              "conciencia"
+            ]
+          },
+          {
+            "key": "relacion_con_el_mundo_humano",
+            "label": "Relacion con el mundo humano",
+            "role": "relation",
+            "value_type": "text",
+            "value": "En el dominio humano, la exergia puede expresarse como potencia de transformacion historica, autonomia efectiva, creatividad, organizacion colectiva y capacidad de romper estructuras opresivas.",
+            "source_path": "teoria_de_la_exergia.fundamento_y_relaciones_principales.relacion_con_el_mundo_humano",
+            "target_hints": [
+              "mundo_humano"
+            ],
+            "target_ids": [
+              "mundo_humano"
+            ]
+          }
+        ],
+        "collections": [],
+        "children": [
+          {
+            "id": "teoria_de_la_exergia_fundamento_y_relaciones_principales_relacion_con_la_verdad_absoluta",
+            "key": "relacion_con_la_verdad_absoluta",
+            "label": "Relacion con la verdad absoluta",
+            "kind": "concept",
+            "source_path": "teoria_de_la_exergia.fundamento_y_relaciones_principales.relacion_con_la_verdad_absoluta",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "La verdad absoluta es el horizonte total de lo real; la exergia es la capacidad parcial y efectiva de una conciencia o una estructura para orientarse hacia ella y abrir transformaciones coherentes con esa orientacion.",
+                "source_path": "teoria_de_la_exergia.fundamento_y_relaciones_principales.relacion_con_la_verdad_absoluta.definicion"
+              },
+              {
+                "key": "tesis_central",
+                "label": "Tesis central",
+                "role": "thesis",
+                "value_type": "text",
+                "value": "La exergia no sustituye a la verdad absoluta, sino que mide el margen real que un sistema tiene para aproximarse a ella, expresarla o encarnarla historicamente.",
+                "source_path": "teoria_de_la_exergia.fundamento_y_relaciones_principales.relacion_con_la_verdad_absoluta.tesis_central"
+              },
+              {
+                "key": "limite",
+                "label": "Limite",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Ninguna cantidad de exergia agota la verdad absoluta; solo permite aperturas parciales, revisables y situadas.",
+                "source_path": "teoria_de_la_exergia.fundamento_y_relaciones_principales.relacion_con_la_verdad_absoluta.limite"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "relacion_con_la_verdad_absoluta"
+          }
+        ],
+        "canonical_id": "fundamentos_relacionales_de_la_exergia",
+        "aliases": [
+          "fundamento_y_relaciones_principales"
+        ]
+      },
+      {
+        "id": "teoria_de_la_exergia_relacion_con_el_demiurgo_y_la_liberacion",
+        "key": "relacion_con_el_demiurgo_y_la_liberacion",
+        "label": "Relacion con el demiurgo y la liberacion",
+        "kind": "section",
+        "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion",
+        "fields": [],
+        "collections": [],
+        "children": [
+          {
+            "id": "teoria_de_la_exergia_relacion_con_el_demiurgo_y_la_liberacion_relacion_con_el_demiurgo",
+            "key": "relacion_con_el_demiurgo",
+            "label": "Relacion con el demiurgo",
+            "kind": "concept",
+            "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion.relacion_con_el_demiurgo",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "El demiurgo captura, concentra o esteriliza la exergia humana cuando convierte potencia de transformacion en servidumbre, repeticion, dominacion o disipacion improductiva.",
+                "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion.relacion_con_el_demiurgo.definicion"
+              },
+              {
+                "key": "efecto",
+                "label": "Efecto",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Reduce la capacidad real de una persona o una sociedad para orientarse hacia la verdad absoluta y para reorganizarse fuera del ciclo.",
+                "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion.relacion_con_el_demiurgo.efecto"
+              }
+            ],
+            "collections": [
+              {
+                "id": "teoria_de_la_exergia_relacion_con_el_demiurgo_y_la_liberacion_relacion_con_el_demiurgo_mecanismo_collection",
+                "key": "mecanismo",
+                "label": "Mecanismo",
+                "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion.relacion_con_el_demiurgo.mecanismo",
+                "item_kind_hint": "collection_item",
+                "items": [
+                  {
+                    "order_index": 1,
+                    "value_type": "text",
+                    "value": "captura del conocimiento"
+                  },
+                  {
+                    "order_index": 2,
+                    "value_type": "text",
+                    "value": "desviacion del deseo"
+                  },
+                  {
+                    "order_index": 3,
+                    "value_type": "text",
+                    "value": "concentracion del poder"
+                  },
+                  {
+                    "order_index": 4,
+                    "value_type": "text",
+                    "value": "rigidizacion institucional"
+                  },
+                  {
+                    "order_index": 5,
+                    "value_type": "text",
+                    "value": "produccion de miedo, dependencia y servidumbre"
+                  }
+                ]
+              }
+            ],
+            "children": [],
+            "canonical_id": "relacion_con_el_demiurgo"
+          },
+          {
+            "id": "teoria_de_la_exergia_relacion_con_el_demiurgo_y_la_liberacion_motivo_del_escape_del_demiurgo",
+            "key": "motivo_del_escape_del_demiurgo",
+            "label": "Motivo del escape del demiurgo",
+            "kind": "concept",
+            "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion.motivo_del_escape_del_demiurgo",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Escapar del demiurgo significa recuperar la exergia capturada por estructuras de dominacion para reorientarla hacia la verdad absoluta, la autonomia y la liberacion colectiva.",
+                "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion.motivo_del_escape_del_demiurgo.definicion"
+              },
+              {
+                "key": "tesis_central",
+                "label": "Tesis central",
+                "role": "thesis",
+                "value_type": "text",
+                "value": "El motivo ultimo del escape no es solo huir del sufrimiento o del control, sino liberar la potencia humana secuestrada por el ciclo y volver a ponerla al servicio de la verdad.",
+                "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion.motivo_del_escape_del_demiurgo.tesis_central"
+              },
+              {
+                "key": "dimension_individual",
+                "label": "Dimension individual",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Recuperar autonomia, conciencia y capacidad de no servir al miedo, al apego y a la dominacion.",
+                "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion.motivo_del_escape_del_demiurgo.dimension_individual"
+              },
+              {
+                "key": "dimension_colectiva",
+                "label": "Dimension colectiva",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Reconstruir instituciones, relaciones y formas de vida que no consuman la exergia social en repeticion, captura y servidumbre.",
+                "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion.motivo_del_escape_del_demiurgo.dimension_colectiva"
+              },
+              {
+                "key": "criterio",
+                "label": "Criterio",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Una fuga real del demiurgo no consiste solo en destruir su orden, sino en impedir que la potencia liberada vuelva a ser capturada por una nueva forma del ciclo.",
+                "source_path": "teoria_de_la_exergia.relacion_con_el_demiurgo_y_la_liberacion.motivo_del_escape_del_demiurgo.criterio"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "motivo_del_escape_del_demiurgo"
+          }
+        ],
+        "canonical_id": "relacion_con_el_demiurgo_y_la_liberacion"
+      },
+      {
+        "id": "teoria_de_la_exergia_tipos_de_exergia",
+        "key": "tipos_de_exergia",
+        "label": "Tipos de exergia",
+        "kind": "section",
+        "source_path": "teoria_de_la_exergia.tipos_de_exergia",
+        "fields": [
+          {
+            "key": "exergia_fisica",
+            "label": "Exergia fisica",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Capacidad de un sistema material para producir trabajo util en relacion con su entorno.",
+            "source_path": "teoria_de_la_exergia.tipos_de_exergia.exergia_fisica"
+          },
+          {
+            "key": "exergia_biologica",
+            "label": "Exergia biologica",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Capacidad de un ser vivo para mantener organizacion, adaptarse y actuar antes de degradarse o morir.",
+            "source_path": "teoria_de_la_exergia.tipos_de_exergia.exergia_biologica"
+          },
+          {
+            "key": "exergia_consciente",
+            "label": "Exergia consciente",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Capacidad de una conciencia para interpretar la realidad, orientar su accion y resistir captura por impulso, miedo o estructura.",
+            "source_path": "teoria_de_la_exergia.tipos_de_exergia.exergia_consciente"
+          },
+          {
+            "key": "exergia_social",
+            "label": "Exergia social",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Capacidad de una sociedad para reorganizarse, corregirse, redistribuir poder y abrir posibilidades reales de liberacion.",
+            "source_path": "teoria_de_la_exergia.tipos_de_exergia.exergia_social"
+          },
+          {
+            "key": "exergia_historica",
+            "label": "Exergia historica",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Margen de transformacion efectiva disponible en una epoca o situacion historica determinada.",
+            "source_path": "teoria_de_la_exergia.tipos_de_exergia.exergia_historica"
+          },
+          {
+            "key": "exergia_espiritual",
+            "label": "Exergia espiritual",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Capacidad de una conciencia o una colectividad para sostener orientacion hacia la verdad absoluta sin quedar absorbida por la repeticion del ciclo.",
+            "source_path": "teoria_de_la_exergia.tipos_de_exergia.exergia_espiritual"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "teoria_de_la_exergia_tipos_de_exergia"
+      },
+      {
+        "id": "teoria_de_la_exergia_integraciones_sistemicas",
+        "key": "integraciones_sistemicas",
+        "label": "Integraciones sistemicas",
+        "kind": "section",
+        "source_path": "teoria_de_la_exergia.integraciones_sistemicas",
+        "fields": [],
+        "collections": [],
+        "children": [
+          {
+            "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_la_verdad_absoluta",
+            "key": "integracion_con_la_verdad_absoluta",
+            "label": "Integracion con la verdad absoluta",
+            "kind": "concept",
+            "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_la_verdad_absoluta",
+            "fields": [
+              {
+                "key": "tesis_central",
+                "label": "Tesis central",
+                "role": "thesis",
+                "value_type": "text",
+                "value": "La verdad absoluta es el horizonte total de lo real; la exergia es la capacidad finita de una conciencia o una sociedad para orientarse activamente hacia ese horizonte sin quedar fijada por el ciclo.",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_la_verdad_absoluta.tesis_central"
+              },
+              {
+                "key": "consecuencia",
+                "label": "Consecuencia",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Una sociedad o una conciencia con baja exergia puede intuir la verdad, pero carecer de margen efectivo para encarnarla historicamente.",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_la_verdad_absoluta.consecuencia"
+              }
+            ],
+            "collections": [
+              {
+                "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_la_verdad_absoluta_relacion_collection",
+                "key": "relacion",
+                "label": "Relacion",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_la_verdad_absoluta.relacion",
+                "item_kind_hint": "collection_item",
+                "items": [
+                  {
+                    "order_index": 1,
+                    "value_type": "text",
+                    "value": "La verdad absoluta da direccion."
+                  },
+                  {
+                    "order_index": 2,
+                    "value_type": "text",
+                    "value": "La libertad abre posibilidad."
+                  },
+                  {
+                    "order_index": 3,
+                    "value_type": "text",
+                    "value": "El cambio manifiesta movimiento."
+                  },
+                  {
+                    "order_index": 4,
+                    "value_type": "text",
+                    "value": "La exergia convierte esa posibilidad en transformacion efectiva."
+                  }
+                ]
+              }
+            ],
+            "children": [],
+            "canonical_id": "integracion_con_la_verdad_absoluta"
+          },
+          {
+            "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_escape_del_demiurgo",
+            "key": "integracion_con_el_escape_del_demiurgo",
+            "label": "Integracion con el escape del demiurgo",
+            "kind": "concept",
+            "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo",
+            "fields": [
+              {
+                "key": "tesis_central",
+                "label": "Tesis central",
+                "role": "thesis",
+                "value_type": "text",
+                "value": "El escape del demiurgo es un proceso exergico: consiste en recuperar, proteger y reorientar la potencia capturada por el ciclo hacia una vida mas verdadera, libre y autoconsciente.",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo.tesis_central"
+              }
+            ],
+            "collections": [],
+            "children": [
+              {
+                "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_escape_del_demiurgo_etapas",
+                "key": "etapas",
+                "label": "Etapas",
+                "kind": "section",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo.etapas",
+                "fields": [
+                  {
+                    "key": "diagnostico",
+                    "label": "Diagnostico",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Reconocer como el demiurgo captura exergia mediante miedo, deseo, dominacion y rigidez.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo.etapas.diagnostico"
+                  },
+                  {
+                    "key": "ruptura",
+                    "label": "Ruptura",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Debilitar estructuras que esterilizan o secuestran potencia transformadora.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo.etapas.ruptura"
+                  },
+                  {
+                    "key": "reapropiacion",
+                    "label": "Reapropiacion",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Recuperar autonomia, conocimiento, organizacion y margen real de accion.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo.etapas.reapropiacion"
+                  },
+                  {
+                    "key": "reorientacion",
+                    "label": "Reorientacion",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Dirigir la exergia liberada hacia verdad absoluta, justicia, conciencia y construccion de vida no capturada.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo.etapas.reorientacion"
+                  },
+                  {
+                    "key": "proteccion",
+                    "label": "Proteccion",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Evitar que la potencia liberada vuelva a ser absorbida por nuevas formas de dominacion.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo.etapas.proteccion"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_escape_del_demiurgo_etapas"
+              },
+              {
+                "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_escape_del_demiurgo_distincion_clave",
+                "key": "distincion_clave",
+                "label": "Distincion clave",
+                "kind": "section",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo.distincion_clave",
+                "fields": [
+                  {
+                    "key": "fuga_aparente",
+                    "label": "Fuga aparente",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Destruir una forma de orden sin recuperar exergia real ni orientar la potencia liberada.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo.distincion_clave.fuga_aparente"
+                  },
+                  {
+                    "key": "fuga_real",
+                    "label": "Fuga real",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Romper el ciclo y aumentar la capacidad efectiva de una conciencia o una sociedad para vivir con mas verdad, autonomia y apertura.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_escape_del_demiurgo.distincion_clave.fuga_real"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_escape_del_demiurgo_distincion_clave"
+              }
+            ],
+            "canonical_id": "integracion_con_el_escape_del_demiurgo"
+          },
+          {
+            "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_cambio",
+            "key": "integracion_con_el_cambio",
+            "label": "Integracion con el cambio",
+            "kind": "concept",
+            "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_cambio",
+            "fields": [
+              {
+                "key": "tesis_central",
+                "label": "Tesis central",
+                "role": "thesis",
+                "value_type": "text",
+                "value": "El cambio necesita exergia para ser historicamente efectivo. Sin exergia, el cambio puede existir como ruido, destruccion o desplazamiento superficial, pero no como transformacion liberadora duradera.",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_cambio.tesis_central"
+              }
+            ],
+            "collections": [
+              {
+                "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_cambio_relacion_collection",
+                "key": "relacion",
+                "label": "Relacion",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_cambio.relacion",
+                "item_kind_hint": "collection_item",
+                "items": [
+                  {
+                    "order_index": 1,
+                    "value_type": "text",
+                    "value": "La libertad abre posibilidades."
+                  },
+                  {
+                    "order_index": 2,
+                    "value_type": "text",
+                    "value": "El cambio manifiesta esas posibilidades."
+                  },
+                  {
+                    "order_index": 3,
+                    "value_type": "text",
+                    "value": "La exergia determina cuanta de esa posibilidad puede convertirse en transformacion real."
+                  },
+                  {
+                    "order_index": 4,
+                    "value_type": "text",
+                    "value": "La verdad absoluta da orientacion final a ese proceso."
+                  }
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_cambio_distincion_clave",
+                "key": "distincion_clave",
+                "label": "Distincion clave",
+                "kind": "section",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_cambio.distincion_clave",
+                "fields": [
+                  {
+                    "key": "cambio_sin_exergia",
+                    "label": "Cambio sin exergia",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Movimiento, crisis o alteracion que no abre capacidad real de reorganizacion, conciencia o autonomia.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_cambio.distincion_clave.cambio_sin_exergia"
+                  },
+                  {
+                    "key": "cambio_con_exergia",
+                    "label": "Cambio con exergia",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Transformacion que conserva o produce margen efectivo para nuevas formas de organizacion, verdad y liberacion.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_cambio.distincion_clave.cambio_con_exergia"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_cambio_distincion_clave"
+              },
+              {
+                "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_cambio_ejemplos",
+                "key": "ejemplos",
+                "label": "Ejemplos",
+                "kind": "section",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_cambio.ejemplos",
+                "fields": [
+                  {
+                    "key": "crisis_sin_salida",
+                    "label": "Crisis sin salida",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Puede haber mucho cambio visible pero poca exergia social si la ruptura solo produce caos, agotamiento y nueva captura.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_cambio.ejemplos.crisis_sin_salida"
+                  },
+                  {
+                    "key": "ruptura_fecunda",
+                    "label": "Ruptura fecunda",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Puede haber cambio con alta exergia cuando una desestabilizacion abre conocimiento, autonomia material, redistribucion del poder y nuevas trayectorias historicas.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_cambio.ejemplos.ruptura_fecunda"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_cambio_ejemplos"
+              }
+            ],
+            "canonical_id": "integracion_con_el_cambio"
+          },
+          {
+            "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_aceleracionismo_anti_demiurgico",
+            "key": "integracion_con_el_aceleracionismo_anti_demiurgico",
+            "label": "Integracion con el aceleracionismo anti demiurgico",
+            "kind": "concept",
+            "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico",
+            "fields": [
+              {
+                "key": "tesis_central",
+                "label": "Tesis central",
+                "role": "thesis",
+                "value_type": "text",
+                "value": "El aceleracionismo anti-demiurgico no consiste solo en intensificar el cambio, sino en aumentar o liberar exergia historica, social, institucional y consciente para que la ruptura del ciclo sea realmente posible y quede orientada hacia la verdad.",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.tesis_central"
+              },
+              {
+                "key": "principio_general",
+                "label": "Principio general",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Acelerar sin exergia produce desgaste, colapso esteril o nueva captura. Acelerar con exergia puede abrir salidas reales del ciclo.",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.principio_general"
+              },
+              {
+                "key": "criterio_exergico_de_legitimidad",
+                "label": "Criterio exergico de legitimidad",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Es legitimo acelerar aquello que no solo rompa estructuras viejas, sino que aumente la capacidad efectiva de conciencia, autonomia, organizacion y verdad compartida.",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.criterio_exergico_de_legitimidad"
+              }
+            ],
+            "collections": [],
+            "children": [
+              {
+                "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_aceleracionismo_anti_demiurgico_durante_la_transicion",
+                "key": "durante_la_transicion",
+                "label": "Durante la transicion",
+                "kind": "section",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.durante_la_transicion",
+                "fields": [
+                  {
+                    "key": "funcion_de_la_exergia",
+                    "label": "Funcion de la exergia",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Detectar y ampliar margenes efectivos de ruptura, reorganizacion y apertura historica dentro de contextos tragicos o inestables.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.durante_la_transicion.funcion_de_la_exergia"
+                  },
+                  {
+                    "key": "riesgo",
+                    "label": "Riesgo",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Acelerar procesos destructivos sin producir exergia social o consciente solo multiplica sufrimiento y facilita nuevas dominaciones.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.durante_la_transicion.riesgo"
+                  }
+                ],
+                "collections": [
+                  {
+                    "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_aceleracionismo_anti_demiurgico_durante_la_transicion_procesos_exergicos_collection",
+                    "key": "procesos_exergicos",
+                    "label": "Procesos exergicos",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.durante_la_transicion.procesos_exergicos",
+                    "item_kind_hint": "collection_item",
+                    "items": [
+                      {
+                        "order_index": 1,
+                        "value_type": "text",
+                        "value": "difusion subversiva del conocimiento"
+                      },
+                      {
+                        "order_index": 2,
+                        "value_type": "text",
+                        "value": "deslegitimacion de estructuras opresivas"
+                      },
+                      {
+                        "order_index": 3,
+                        "value_type": "text",
+                        "value": "descentralizacion del poder"
+                      },
+                      {
+                        "order_index": 4,
+                        "value_type": "text",
+                        "value": "autonomia material frente a centros de captura"
+                      },
+                      {
+                        "order_index": 5,
+                        "value_type": "text",
+                        "value": "organizacion consciente de momentos de crisis"
+                      },
+                      {
+                        "order_index": 6,
+                        "value_type": "text",
+                        "value": "construccion de redes capaces de sobrevivir a la ruptura"
+                      }
+                    ]
+                  }
+                ],
+                "children": [],
+                "canonical_id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_aceleracionismo_anti_demiurgico_durante_la_transicion"
+              },
+              {
+                "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_aceleracionismo_anti_demiurgico_durante_la_sociedad_liberada",
+                "key": "durante_la_sociedad_liberada",
+                "label": "Durante la sociedad liberada",
+                "kind": "section",
+                "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.durante_la_sociedad_liberada",
+                "fields": [
+                  {
+                    "key": "funcion_de_la_exergia",
+                    "label": "Funcion de la exergia",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Mantener capacidad de autocorreccion, innovacion, autonomia y resistencia frente a recaidas del ciclo.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.durante_la_sociedad_liberada.funcion_de_la_exergia"
+                  },
+                  {
+                    "key": "riesgo",
+                    "label": "Riesgo",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "La perdida de exergia en una sociedad liberada aparece como rigidizacion institucional, acumulacion opaca de poder, agotamiento de autonomia y reaparicion del demiurgo bajo nuevas formas.",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.durante_la_sociedad_liberada.riesgo"
+                  }
+                ],
+                "collections": [
+                  {
+                    "id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_aceleracionismo_anti_demiurgico_durante_la_sociedad_liberada_procesos_exergicos_collection",
+                    "key": "procesos_exergicos",
+                    "label": "Procesos exergicos",
+                    "source_path": "teoria_de_la_exergia.integraciones_sistemicas.integracion_con_el_aceleracionismo_anti_demiurgico.durante_la_sociedad_liberada.procesos_exergicos",
+                    "item_kind_hint": "collection_item",
+                    "items": [
+                      {
+                        "order_index": 1,
+                        "value_type": "text",
+                        "value": "transparencia institucional"
+                      },
+                      {
+                        "order_index": 2,
+                        "value_type": "text",
+                        "value": "educacion critica"
+                      },
+                      {
+                        "order_index": 3,
+                        "value_type": "text",
+                        "value": "distribucion del conocimiento"
+                      },
+                      {
+                        "order_index": 4,
+                        "value_type": "text",
+                        "value": "innovacion liberadora"
+                      },
+                      {
+                        "order_index": 5,
+                        "value_type": "text",
+                        "value": "participacion colectiva real"
+                      },
+                      {
+                        "order_index": 6,
+                        "value_type": "text",
+                        "value": "preservacion de autonomia material y simbolica"
+                      }
+                    ]
+                  }
+                ],
+                "children": [],
+                "canonical_id": "teoria_de_la_exergia_integraciones_sistemicas_integracion_con_el_aceleracionismo_anti_demiurgico_durante_la_sociedad_liberada"
+              }
+            ],
+            "canonical_id": "integracion_con_el_aceleracionismo_anti_demiurgico"
+          }
+        ],
+        "canonical_id": "integraciones_sistemicas_de_la_exergia",
+        "aliases": [
+          "integraciones_sistemicas"
+        ]
+      },
+      {
+        "id": "teoria_de_la_exergia_criterios_y_riesgos",
+        "key": "criterios_y_riesgos",
+        "label": "Criterios y riesgos",
+        "kind": "section",
+        "source_path": "teoria_de_la_exergia.criterios_y_riesgos",
+        "fields": [
+          {
+            "key": "criterio_de_juicio",
+            "label": "Criterio de juicio",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "La exergia no debe medirse solo por intensidad o violencia, sino por capacidad real de abrir transformaciones sostenibles, conscientes y no capturadas por el ciclo.",
+            "source_path": "teoria_de_la_exergia.criterios_y_riesgos.criterio_de_juicio"
+          }
+        ],
+        "collections": [
+          {
+            "id": "teoria_de_la_exergia_criterios_y_riesgos_riesgos_collection",
+            "key": "riesgos",
+            "label": "Riesgos",
+            "source_path": "teoria_de_la_exergia.criterios_y_riesgos.riesgos",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "disipacion esteril de potencia"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "captura del margen transformador por elites o instituciones"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "confusion entre exergia y mera destruccion"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "agotamiento de la capacidad de cambio por rigidez o colapso"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "criterios_y_riesgos_de_la_exergia",
+        "aliases": [
+          "criterios_y_riesgos"
+        ]
+      },
+      {
+        "id": "teoria_de_la_exergia_lectura_negativa_del_exergismo",
+        "key": "lectura_negativa_del_exergismo",
+        "label": "Lectura negativa del exergismo",
+        "kind": "concept",
+        "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Interpretacion invertida del exergismo en la que la exergia no se orienta hacia verdad, autonomia y liberacion, sino hacia maximizacion de capacidad efectiva de captura, dominacion, estabilizacion oligárquica y reproduccion inteligente del ciclo demiurgico.",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.definicion"
+          },
+          {
+            "key": "tesis_central",
+            "label": "Tesis central",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "Todo conocimiento exergico puede ser leido en clave liberadora o en clave demiurgica. En la segunda, el problema no es como liberar potencia capturada, sino como capturar mas potencia, protegerla de la disidencia y dirigirla hacia una dominacion mas eficiente, profunda y durable.",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.tesis_central"
+          },
+          {
+            "key": "fundamento",
+            "label": "Fundamento",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Dado que la exergia es capacidad efectiva de transformacion y no bondad automatica, un actor demiurgico puede apropiarse de ella para perfeccionar control, manipulacion, organizacion y resiliencia de estructuras opresivas.",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.fundamento"
+          },
+          {
+            "key": "objetivo_demiurgico",
+            "label": "Objetivo demiurgico",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Construir la sociedad mas establemente capturada posible: alta capacidad de coordinacion, alta produccion material, alta manipulacion simbolica, baja autonomia real, baja posibilidad de ruptura y maxima dificultad de fuga del ciclo.",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.objetivo_demiurgico"
+          },
+          {
+            "key": "criterio_de_exito_demiurgico",
+            "label": "Criterio de exito demiurgico",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Una estructura demiurgica exergicamente optimizada es aquella que conserva alta capacidad de reorganizacion interna, absorbe crisis sin perder control, produce obediencia con bajo coste, anticipa rupturas y convierte incluso la energia contestataria en combustible de su propia reproduccion.",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.criterio_de_exito_demiurgico"
+          },
+          {
+            "key": "relacion_con_la_sociedad_liberada",
+            "label": "Relacion con la sociedad liberada",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La existencia de una lectura negativa del exergismo obliga a distinguir siempre entre aumento de potencia transformadora y orientacion moral, politica y epistemica de esa potencia.",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.relacion_con_la_sociedad_liberada",
+            "target_hints": [
+              "sociedad_liberada"
+            ],
+            "target_ids": [
+              "modelo_de_sociedad_liberada"
+            ]
+          },
+          {
+            "key": "sentencia",
+            "label": "Sentencia",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Tu les conoces a ellos y ellos te conocen a ti, pero la naturaleza del universo y de la verdad absoluta no miente: las conciencias que forman el espiritu humano progresan hacia la verdad absoluta de forma instintiva a lo largo de la historia.",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.sentencia"
+          },
+          {
+            "key": "advertencia",
+            "label": "Advertencia",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Cuanto mas fino y verdadero sea un sistema de analisis liberador, mas util puede volverse tambien para un lector demiurgico que quiera perfeccionar dominacion en lugar de romperla.",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.advertencia"
+          }
+        ],
+        "collections": [
+          {
+            "id": "teoria_de_la_exergia_lectura_negativa_del_exergismo_mecanismos_collection",
+            "key": "mecanismos",
+            "label": "Mecanismos",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.mecanismos",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "captura del conocimiento social y psicologico"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "produccion planificada de deseo inducido"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "gestion estrategica de miedo y desesperacion"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "monopolizacion de tecnologia y datos"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "simulacion de participacion sin poder real"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "transparencia asimetrica: total hacia abajo, opaca hacia arriba"
+              },
+              {
+                "order_index": 7,
+                "value_type": "text",
+                "value": "distribucion selectiva de recompensa para estabilizar obediencia"
+              },
+              {
+                "order_index": 8,
+                "value_type": "text",
+                "value": "absorcion de innovacion en circuitos de control"
+              },
+              {
+                "order_index": 9,
+                "value_type": "text",
+                "value": "autocorreccion del sistema no para liberarse, sino para blindarse mejor"
+              },
+              {
+                "order_index": 10,
+                "value_type": "text",
+                "value": "neutralizacion preventiva de focos exergicos no capturados"
+              }
+            ]
+          },
+          {
+            "id": "teoria_de_la_exergia_lectura_negativa_del_exergismo_formas_politicas_collection",
+            "key": "formas_politicas",
+            "label": "Formas politicas",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.formas_politicas",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "tecnocracia anticritica"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "oligarquia adaptativa"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "capitalismo de captura total"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "burocracia inteligente de alta vigilancia"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "autoritarismo flexible con legitimacion participativa simulada"
+              }
+            ]
+          }
+        ],
+        "children": [
+          {
+            "id": "teoria_de_la_exergia_lectura_negativa_del_exergismo_potencia_capturada",
+            "key": "potencia_capturada",
+            "label": "Potencia capturada",
+            "kind": "concept",
+            "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.potencia_capturada",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Parte de la potencia transformadora potencial de sujetos, colectividades, instituciones o epocas que deja de estar disponible para la liberacion porque es absorbida, desviada, degradada o reconvertida por el ciclo demiurgico.",
+                "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.potencia_capturada.definicion"
+              },
+              {
+                "key": "funcion_en_la_lectura_negativa",
+                "label": "Funcion en la lectura negativa",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "La lectura negativa del exergismo no busca aumentar exergia liberadora, sino maximizar potencia capturada y convertirla en capacidad estable de reproduccion del orden opresivo.",
+                "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.potencia_capturada.funcion_en_la_lectura_negativa"
+              },
+              {
+                "key": "criterio",
+                "label": "Criterio",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Cuanto mayor es la potencia capturada por una estructura, menor es la exergia real disponible para una reorganizacion liberadora.",
+                "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.potencia_capturada.criterio"
+              }
+            ],
+            "collections": [
+              {
+                "id": "teoria_de_la_exergia_lectura_negativa_del_exergismo_potencia_capturada_formas_collection",
+                "key": "formas",
+                "label": "Formas",
+                "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.potencia_capturada.formas",
+                "item_kind_hint": "collection_item",
+                "items": [
+                  {
+                    "order_index": 1,
+                    "value_type": "text",
+                    "value": "absorcion de energia contestataria"
+                  },
+                  {
+                    "order_index": 2,
+                    "value_type": "text",
+                    "value": "reconversion del conocimiento en instrumento de control"
+                  },
+                  {
+                    "order_index": 3,
+                    "value_type": "text",
+                    "value": "canalizacion de creatividad hacia circuitos de captura"
+                  },
+                  {
+                    "order_index": 4,
+                    "value_type": "text",
+                    "value": "transformacion del miedo en obediencia"
+                  },
+                  {
+                    "order_index": 5,
+                    "value_type": "text",
+                    "value": "transformacion del deseo en autoexplotacion"
+                  },
+                  {
+                    "order_index": 6,
+                    "value_type": "text",
+                    "value": "reutilizacion de crisis para concentrar poder"
+                  },
+                  {
+                    "order_index": 7,
+                    "value_type": "text",
+                    "value": "conversión de innovacion en ventaja oligárquica"
+                  },
+                  {
+                    "order_index": 8,
+                    "value_type": "text",
+                    "value": "neutralizacion preventiva de focos autonomos"
+                  }
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "teoria_de_la_exergia_lectura_negativa_del_exergismo_potencia_capturada_distincion_clave",
+                "key": "distincion_clave",
+                "label": "Distincion clave",
+                "kind": "section",
+                "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.potencia_capturada.distincion_clave",
+                "fields": [
+                  {
+                    "key": "potencia_disipada",
+                    "label": "Potencia disipada",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Potencia perdida, agotada o esterilizada sin generar apertura liberadora ni consolidacion autonoma.",
+                    "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.potencia_capturada.distincion_clave.potencia_disipada"
+                  },
+                  {
+                    "key": "potencia_demiurgizada",
+                    "label": "Potencia demiurgizada",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Potencia que no solo se pierde para la liberacion, sino que es reconvertida activamente en dominacion, control, captura o reproduccion inteligente del ciclo.",
+                    "source_path": "teoria_de_la_exergia.lectura_negativa_del_exergismo.potencia_capturada.distincion_clave.potencia_demiurgizada"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "teoria_de_la_exergia_lectura_negativa_del_exergismo_potencia_capturada_distincion_clave"
+              }
+            ],
+            "canonical_id": "potencia_capturada"
+          }
+        ],
+        "canonical_id": "lectura_negativa_del_exergismo"
+      },
+      {
+        "id": "teoria_de_la_exergia_familia_lexica",
+        "key": "familia_lexica",
+        "label": "Familia lexica",
+        "kind": "section",
+        "source_path": "teoria_de_la_exergia.familia_lexica",
+        "fields": [
+          {
+            "key": "termino_principal",
+            "label": "Termino principal",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Exergia",
+            "source_path": "teoria_de_la_exergia.familia_lexica.termino_principal"
+          },
+          {
+            "key": "doctrina",
+            "label": "Doctrina",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "exergismo",
+            "source_path": "teoria_de_la_exergia.familia_lexica.doctrina"
+          },
+          {
+            "key": "sujeto",
+            "label": "Sujeto",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "exergista",
+            "source_path": "teoria_de_la_exergia.familia_lexica.sujeto"
+          },
+          {
+            "key": "adjetivo",
+            "label": "Adjetivo",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "exergico",
+            "source_path": "teoria_de_la_exergia.familia_lexica.adjetivo"
+          },
+          {
+            "key": "definicion_del_exergismo",
+            "label": "Definicion del exergismo",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Corriente filosofica y politica que interpreta la liberacion como aumento, proteccion y orientacion de la exergia humana, social e historica frente a su captura demiurgica y en direccion a la verdad absoluta.",
+            "source_path": "teoria_de_la_exergia.familia_lexica.definicion_del_exergismo"
+          },
+          {
+            "key": "definicion_del_exergista",
+            "label": "Definicion del exergista",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Quien orienta su pensamiento o su accion a aumentar la capacidad real de transformacion liberadora y a impedir su captura por estructuras opresivas.",
+            "source_path": "teoria_de_la_exergia.familia_lexica.definicion_del_exergista"
+          },
+          {
+            "key": "definicion_de_lo_exergico",
+            "label": "Definicion de lo exergico",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Aquello que conserva, libera, concentra o dirige potencia transformadora util hacia verdad, autonomia y ruptura del ciclo.",
+            "source_path": "teoria_de_la_exergia.familia_lexica.definicion_de_lo_exergico"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "familia_lexica_de_la_exergia",
+        "aliases": [
+          "familia_lexica"
+        ]
+      }
+    ],
+    "aliases": [
+      "teoria_de_la_exergia"
+    ]
+  }
+}

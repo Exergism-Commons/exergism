@@ -1,0 +1,585 @@
+{
+  "schema_version": 2,
+  "source_format": "legacy-normalized",
+  "domain": {
+    "id": "soteriologia_o_teoria_de_la_liberacion",
+    "key": "soteriologia_o_teoria_de_la_liberacion",
+    "label": "Soteriologia o teoria de la liberacion",
+    "source_file": "soteriologia_o_teoria_de_la_liberacion.json"
+  },
+  "root": {
+    "id": "soteriologia_o_teoria_de_la_liberacion",
+    "canonical_id": "liberacion",
+    "key": "soteriologia_o_teoria_de_la_liberacion",
+    "label": "Soteriologia o teoria de la liberacion",
+    "kind": "concept",
+    "source_path": "soteriologia_o_teoria_de_la_liberacion",
+    "fields": [
+      {
+        "key": "tesis_central",
+        "label": "Tesis central",
+        "role": "thesis",
+        "value_type": "text",
+        "value": "Trascender no es alcanzar la verdad absoluta, sino abrir capas hacia ella y ayudar a otros a hacer lo mismo.",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.tesis_central"
+      }
+    ],
+    "collections": [
+      {
+        "id": "soteriologia_o_teoria_de_la_liberacion_obstaculos_collection",
+        "key": "obstaculos",
+        "label": "Obstaculos",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.obstaculos",
+        "item_kind_hint": "collection_item",
+        "items": [
+          {
+            "order_index": 1,
+            "value_type": "text",
+            "value": "apego al placer fisico"
+          },
+          {
+            "order_index": 2,
+            "value_type": "text",
+            "value": "voluntad de poder"
+          },
+          {
+            "order_index": 3,
+            "value_type": "text",
+            "value": "ignorancia"
+          },
+          {
+            "order_index": 4,
+            "value_type": "text",
+            "value": "reaccion instintiva no elaborada"
+          },
+          {
+            "order_index": 5,
+            "value_type": "text",
+            "value": "perpetuacion del ciclo"
+          }
+        ]
+      }
+    ],
+    "children": [
+      {
+        "id": "soteriologia_o_teoria_de_la_liberacion_trascendencia",
+        "key": "trascendencia",
+        "label": "Trascendencia",
+        "kind": "concept",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.trascendencia",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Movimiento de apertura progresiva hacia la verdad absoluta sabiendo que nunca se llega del todo.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.trascendencia.definicion"
+          }
+        ],
+        "collections": [
+          {
+            "id": "soteriologia_o_teoria_de_la_liberacion_trascendencia_formas_collection",
+            "key": "formas",
+            "label": "Formas",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.trascendencia.formas",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "personal"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "colectiva"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "creativa"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "intelectual"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "espiritual"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "historica"
+              },
+              {
+                "order_index": 7,
+                "value_type": "text",
+                "value": "cosmica"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "trascendencia"
+      },
+      {
+        "id": "soteriologia_o_teoria_de_la_liberacion_medios_de_liberacion",
+        "key": "medios_de_liberacion",
+        "label": "Medios de liberacion",
+        "kind": "concept",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.medios_de_liberacion",
+        "fields": [
+          {
+            "key": "meditacion",
+            "label": "Meditacion",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.medios_de_liberacion.meditacion"
+          },
+          {
+            "key": "conocimiento",
+            "label": "Conocimiento",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.medios_de_liberacion.conocimiento"
+          },
+          {
+            "key": "creacion",
+            "label": "Creacion",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.medios_de_liberacion.creacion"
+          },
+          {
+            "key": "divulgacion",
+            "label": "Divulgacion",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.medios_de_liberacion.divulgacion"
+          },
+          {
+            "key": "dialogo",
+            "label": "Dialogo",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.medios_de_liberacion.dialogo"
+          },
+          {
+            "key": "ascetica",
+            "label": "Ascetica",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.medios_de_liberacion.ascetica"
+          },
+          {
+            "key": "practica_politica",
+            "label": "Practica politica",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.medios_de_liberacion.practica_politica"
+          },
+          {
+            "key": "arte",
+            "label": "Arte",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.medios_de_liberacion.arte"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "medios_de_liberacion"
+      },
+      {
+        "id": "soteriologia_o_teoria_de_la_liberacion_rol_de_la_creacion",
+        "key": "rol_de_la_creacion",
+        "label": "Rol de la creacion",
+        "kind": "concept",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.rol_de_la_creacion",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Crear cosas abstractas o fisicas que, al ser divulgadas, desbloqueen capas de verdad para otras personas.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.rol_de_la_creacion.definicion"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "rol_de_la_creacion"
+      },
+      {
+        "id": "soteriologia_o_teoria_de_la_liberacion_rol_de_la_sociedad",
+        "key": "rol_de_la_sociedad",
+        "label": "Rol de la sociedad",
+        "kind": "concept",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.rol_de_la_sociedad",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Una sociedad puede trascender si profundiza en conocimiento verdadero de la naturaleza humana y de sus estructuras, aumenta su exergia colectiva y reduce las formas de captura que impiden una orientacion historica compartida hacia la verdad.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.rol_de_la_sociedad.definicion"
+          },
+          {
+            "key": "horizonte_ampliado",
+            "label": "Horizonte ampliado",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "En su forma mas desarrollada, una sociedad liberada puede convertirse en parte del proceso de constitucion de una humanidad cosmica.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.rol_de_la_sociedad.horizonte_ampliado"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "rol_de_la_sociedad"
+      },
+      {
+        "id": "soteriologia_o_teoria_de_la_liberacion_estado_final",
+        "key": "estado_final",
+        "label": "Estado final",
+        "kind": "concept",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "No existe una supervivencia individual del yo o del alma clasica despues de la muerte.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final.definicion"
+          }
+        ],
+        "collections": [],
+        "children": [
+          {
+            "id": "soteriologia_o_teoria_de_la_liberacion_estado_final_reencarnacion",
+            "key": "reencarnacion",
+            "label": "Reencarnacion",
+            "kind": "concept",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final.reencarnacion",
+            "fields": [
+              {
+                "key": "tipo",
+                "label": "Tipo",
+                "role": "core",
+                "value_type": "text",
+                "value": "material o fisica",
+                "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final.reencarnacion.tipo"
+              },
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "La unica reencarnacion afirmada en el sistema es la reintegracion del cuerpo en el ciclo trofico, pasando su materia a formar parte de otros seres vivos y procesos naturales.",
+                "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final.reencarnacion.definicion"
+              }
+            ],
+            "collections": [
+              {
+                "id": "soteriologia_o_teoria_de_la_liberacion_estado_final_reencarnacion_niega_collection",
+                "key": "niega",
+                "label": "Niega",
+                "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final.reencarnacion.niega",
+                "item_kind_hint": "collection_item",
+                "items": [
+                  {
+                    "order_index": 1,
+                    "value_type": "text",
+                    "value": "reencarnacion personal"
+                  },
+                  {
+                    "order_index": 2,
+                    "value_type": "text",
+                    "value": "transmigracion del alma"
+                  },
+                  {
+                    "order_index": 3,
+                    "value_type": "text",
+                    "value": "continuidad individual de la conciencia"
+                  }
+                ]
+              }
+            ],
+            "children": [],
+            "canonical_id": "reencarnacion"
+          },
+          {
+            "id": "soteriologia_o_teoria_de_la_liberacion_estado_final_persistencia",
+            "key": "persistencia",
+            "label": "Persistencia",
+            "kind": "concept",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final.persistencia",
+            "fields": [
+              {
+                "key": "de_la_identidad_personal",
+                "label": "De la identidad personal",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "no",
+                "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final.persistencia.de_la_identidad_personal"
+              },
+              {
+                "key": "de_la_conciencia",
+                "label": "De la conciencia",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "no",
+                "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final.persistencia.de_la_conciencia"
+              },
+              {
+                "key": "de_la_materia",
+                "label": "De la materia",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "si",
+                "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final.persistencia.de_la_materia"
+              },
+              {
+                "key": "de_la_influencia_de_los_actos",
+                "label": "De la influencia de los actos",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "si",
+                "source_path": "soteriologia_o_teoria_de_la_liberacion.estado_final.persistencia.de_la_influencia_de_los_actos"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "persistencia"
+          }
+        ],
+        "canonical_id": "estado_final"
+      },
+      {
+        "id": "soteriologia_o_teoria_de_la_liberacion_liberacion_de_la_humanidad",
+        "key": "liberacion_de_la_humanidad",
+        "label": "Liberacion de la humanidad",
+        "kind": "concept",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.liberacion_de_la_humanidad",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La liberacion no debe limitarse al progreso interior de individuos aislados, sino orientarse a la emancipacion progresiva del conjunto de la humanidad respecto a estructuras de dominacion, ignorancia, guerra y captura demiurgica.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.liberacion_de_la_humanidad.definicion"
+          },
+          {
+            "key": "tesis_central",
+            "label": "Tesis central",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "Una liberacion parcial que deje a la mayor parte de la humanidad atrapada en el ciclo sigue siendo incompleta desde el punto de vista exergico y espiritual.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.liberacion_de_la_humanidad.tesis_central"
+          }
+        ],
+        "collections": [
+          {
+            "id": "soteriologia_o_teoria_de_la_liberacion_liberacion_de_la_humanidad_criterios_collection",
+            "key": "criterios",
+            "label": "Criterios",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.liberacion_de_la_humanidad.criterios",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "aumento de autonomia colectiva"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "distribucion del conocimiento verdadero"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "reduccion de opresion estructural"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "capacidad de cooperacion no capturada"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "orientacion compartida hacia verdad y conciencia"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "liberacion_de_la_humanidad"
+      },
+      {
+        "id": "soteriologia_o_teoria_de_la_liberacion_humanidad_cosmica",
+        "key": "humanidad_cosmica",
+        "label": "Humanidad cosmica",
+        "kind": "concept",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.humanidad_cosmica",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Etapa superior de la liberacion historica en la que la humanidad, habiendo alcanzado suficiente cohesion exergica y reduccion de divisiones ficticias, puede orientarse a la exploracion del cosmos, al encuentro con otras inteligencias y a la ampliacion de su horizonte de verdad.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.humanidad_cosmica.definicion"
+          }
+        ],
+        "collections": [
+          {
+            "id": "soteriologia_o_teoria_de_la_liberacion_humanidad_cosmica_condiciones_de_posibilidad_collection",
+            "key": "condiciones_de_posibilidad",
+            "label": "Condiciones de posibilidad",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.humanidad_cosmica.condiciones_de_posibilidad",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "superacion parcial de divisiones ficticias intrahumanas"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "madurez etica y politica suficiente"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "capacidad tecnologica no capturada"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "alta exergia social e historica"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "baja tendencia a expansion demiurgica"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "humanidad_cosmica"
+      },
+      {
+        "id": "soteriologia_o_teoria_de_la_liberacion_relacion_con_otras_inteligencias",
+        "key": "relacion_con_otras_inteligencias",
+        "label": "Relacion con otras inteligencias",
+        "kind": "concept",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.relacion_con_otras_inteligencias",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "El encuentro con otras formas de inteligencia deberia orientarse a conocimiento reciproco, cooperacion libre y ampliacion comun de comprension, no a conquista, absorcion o imposicion doctrinal.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.relacion_con_otras_inteligencias.definicion"
+          },
+          {
+            "key": "principio_de_traduccion_moral",
+            "label": "Principio de traduccion moral",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "El encuentro con otras formas de inteligencia exigiria construir sistemas de traduccion moral entre conciencias distintas, partiendo de minimos compartidos de daño, apertura, evitacion, cooperacion y autonomia, sin imponer sin mas la moral humana como universal cerrada.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.relacion_con_otras_inteligencias.principio_de_traduccion_moral"
+          }
+        ],
+        "collections": [
+          {
+            "id": "soteriologia_o_teoria_de_la_liberacion_relacion_con_otras_inteligencias_principios_collection",
+            "key": "principios",
+            "label": "Principios",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.relacion_con_otras_inteligencias.principios",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "humildad ontologica"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "respeto a autonomia ajena"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "intercambio altruista de conocimiento"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "discernimiento mutuo"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "rechazo de colonizacion espiritual o material"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "relacion_con_otras_inteligencias"
+      },
+      {
+        "id": "soteriologia_o_teoria_de_la_liberacion_mision_exergica_universal",
+        "key": "mision_exergica_universal",
+        "label": "Mision exergica universal",
+        "kind": "concept",
+        "source_path": "soteriologia_o_teoria_de_la_liberacion.mision_exergica_universal",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Si la humanidad alcanzara suficiente madurez, podria asumir una funcion exergica universal: no dominar otras civilizaciones, sino contribuir, cuando sea legitimo y posible, a aumentar verdad, autonomia y liberacion en escalas mas amplias que la terrestre.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.mision_exergica_universal.definicion"
+          },
+          {
+            "key": "limite",
+            "label": "Limite",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Esta funcion nunca legitima superioridad absoluta, imposicion, violencia evangelizadora ni paternalismo cosmico.",
+            "source_path": "soteriologia_o_teoria_de_la_liberacion.mision_exergica_universal.limite"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "mision_exergica_universal"
+      }
+    ],
+    "aliases": [
+      "soteriologia"
+    ]
+  }
+}

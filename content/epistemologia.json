@@ -1,0 +1,624 @@
+{
+  "schema_version": 2,
+  "source_format": "legacy-normalized",
+  "domain": {
+    "id": "epistemologia",
+    "key": "epistemologia",
+    "label": "Epistemologia",
+    "source_file": "epistemologia.json"
+  },
+  "root": {
+    "id": "epistemologia",
+    "canonical_id": "epistemologia",
+    "key": "epistemologia",
+    "label": "Epistemologia",
+    "kind": "concept",
+    "source_path": "epistemologia",
+    "fields": [
+      {
+        "key": "tesis_central",
+        "label": "Tesis central",
+        "role": "thesis",
+        "value_type": "text",
+        "value": "Conocer no equivale necesariamente a liberarse. Existe un conocimiento que abre capas de verdad y otro que solo perfecciona la dominacion.",
+        "source_path": "epistemologia.tesis_central"
+      }
+    ],
+    "collections": [],
+    "children": [
+      {
+        "id": "epistemologia_tipos_de_conocimiento",
+        "key": "tipos_de_conocimiento",
+        "label": "Tipos de conocimiento",
+        "kind": "concept",
+        "source_path": "epistemologia.tipos_de_conocimiento",
+        "fields": [],
+        "collections": [],
+        "children": [
+          {
+            "id": "epistemologia_tipos_de_conocimiento_gnosis_verdadera",
+            "key": "gnosis_verdadera",
+            "label": "Gnosis verdadera",
+            "kind": "concept",
+            "source_path": "epistemologia.tipos_de_conocimiento.gnosis_verdadera",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Apertura progresiva hacia la verdad absoluta, sin pretension de poseerla totalmente.",
+                "source_path": "epistemologia.tipos_de_conocimiento.gnosis_verdadera.definicion"
+              },
+              {
+                "key": "efecto",
+                "label": "Efecto",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Libera, descentra el ego y rompe parcialmente el ciclo.",
+                "source_path": "epistemologia.tipos_de_conocimiento.gnosis_verdadera.efecto"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "gnosis_verdadera"
+          },
+          {
+            "id": "epistemologia_tipos_de_conocimiento_revelacion_demiurgica",
+            "key": "revelacion_demiurgica",
+            "label": "Revelacion demiurgica",
+            "kind": "concept",
+            "source_path": "epistemologia.tipos_de_conocimiento.revelacion_demiurgica",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Comprension del funcionamiento del mundo humano, sus estructuras y su psicologia, usada para manipular y dominar.",
+                "source_path": "epistemologia.tipos_de_conocimiento.revelacion_demiurgica.definicion"
+              },
+              {
+                "key": "efecto",
+                "label": "Efecto",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Aumenta el poder dentro de la carcel, pero no libera de ella.",
+                "source_path": "epistemologia.tipos_de_conocimiento.revelacion_demiurgica.efecto"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "revelacion_demiurgica"
+          },
+          {
+            "id": "epistemologia_tipos_de_conocimiento_conocimiento_social",
+            "key": "conocimiento_social",
+            "label": "Conocimiento social",
+            "kind": "concept",
+            "source_path": "epistemologia.tipos_de_conocimiento.conocimiento_social",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Estudio de la naturaleza humana y de las estructuras sociales como medio de trascendencia colectiva.",
+                "source_path": "epistemologia.tipos_de_conocimiento.conocimiento_social.definicion"
+              },
+              {
+                "key": "efecto",
+                "label": "Efecto",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Puede liberar o dominar segun su uso.",
+                "source_path": "epistemologia.tipos_de_conocimiento.conocimiento_social.efecto"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "conocimiento_social"
+          }
+        ],
+        "canonical_id": "tipos_de_conocimiento"
+      },
+      {
+        "id": "epistemologia_limites_del_conocimiento",
+        "key": "limites_del_conocimiento",
+        "label": "Limites del conocimiento",
+        "kind": "concept",
+        "source_path": "epistemologia.limites_del_conocimiento",
+        "fields": [
+          {
+            "key": "conocimiento_total",
+            "label": "Conocimiento total",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "imposible",
+            "source_path": "epistemologia.limites_del_conocimiento.conocimiento_total"
+          },
+          {
+            "key": "certeza_humana",
+            "label": "Certeza humana",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "parcial",
+            "source_path": "epistemologia.limites_del_conocimiento.certeza_humana"
+          },
+          {
+            "key": "error",
+            "label": "Error",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "siempre posible",
+            "source_path": "epistemologia.limites_del_conocimiento.error"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "limites_del_conocimiento"
+      },
+      {
+        "id": "epistemologia_criterios_de_verdad",
+        "key": "criterios_de_verdad",
+        "label": "Criterios de verdad",
+        "kind": "concept",
+        "source_path": "epistemologia.criterios_de_verdad",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La verdad humana parcial se reconoce por su capacidad de describir con mayor profundidad la realidad, reducir error, revelar estructuras ocultas y orientar la conciencia sin reforzar la dominacion.",
+            "source_path": "epistemologia.criterios_de_verdad.definicion"
+          },
+          {
+            "key": "limite",
+            "label": "Limite",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Ningun criterio humano agota la verdad absoluta.",
+            "source_path": "epistemologia.criterios_de_verdad.limite"
+          }
+        ],
+        "collections": [
+          {
+            "id": "epistemologia_criterios_de_verdad_criterios_collection",
+            "key": "criterios",
+            "label": "Criterios",
+            "source_path": "epistemologia.criterios_de_verdad.criterios",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "coherencia interna"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "correspondencia parcial con la realidad observable"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "capacidad explicativa"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "capacidad de integrar niveles distintos de realidad sin contradiccion innecesaria"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "potencia para revelar mecanismos ocultos del mundo humano y natural"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "potencial liberador sin convertirse en instrumento de nueva dominacion"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "criterios_de_verdad"
+      },
+      {
+        "id": "epistemologia_discernimiento_de_orientacion_hacia_la_verdad",
+        "key": "discernimiento_de_orientacion_hacia_la_verdad",
+        "label": "Discernimiento de orientacion hacia la verdad",
+        "kind": "concept",
+        "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Una orientacion real hacia la verdad absoluta se distingue de una proyeccion refinada de preferencias cuando supera simultaneamente filtros morales, epistemicos, exergicos e historico-temporales.",
+            "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.definicion"
+          },
+          {
+            "key": "tesis_central",
+            "label": "Tesis central",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "La verdad absoluta no puede ser poseida por una conciencia finita, pero si pueden distinguirse orientaciones mas reales o mas falsas hacia ella segun su relacion con la moral intrahumana, la coherencia, la realidad, la exergia y la persistencia historica de sus efectos.",
+            "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.tesis_central"
+          },
+          {
+            "key": "fundamento_ontologico",
+            "label": "Fundamento ontologico",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "La moral del dominio humano es intrinseca a la existencia humana y, por tanto, manifestacion parcial del universo mismo, del cual el ser humano no esta separado sino que forma parte.",
+            "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.fundamento_ontologico"
+          },
+          {
+            "key": "criterio_sintetico",
+            "label": "Criterio sintetico",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Una orientacion real hacia la verdad absoluta es aquella que, sin pretender poseerla plenamente, reduce dominacion, supera filtros epistemicos exigentes, aumenta exergia real y deja un saldo historico menos capturado.",
+            "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.criterio_sintetico"
+          }
+        ],
+        "collections": [],
+        "children": [
+          {
+            "id": "epistemologia_discernimiento_de_orientacion_hacia_la_verdad_relacion_con_la_verdad_absoluta",
+            "key": "relacion_con_la_verdad_absoluta",
+            "label": "Relacion con la verdad absoluta",
+            "kind": "concept",
+            "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.relacion_con_la_verdad_absoluta",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "La verdad absoluta es la verdad de todas las verdades y el supramedio envolvente de todos los medios envolventes y de todas las subverdades contenidas en ellos.",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.relacion_con_la_verdad_absoluta.definicion"
+              },
+              {
+                "key": "limite",
+                "label": "Limite",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Al ser infinita, la verdad absoluta no puede alcanzarse plenamente por ninguna conciencia finita.",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.relacion_con_la_verdad_absoluta.limite"
+              },
+              {
+                "key": "nota_formal",
+                "label": "Nota formal",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Puede pensarse de manera analogica como horizonte de totalidad que contiene todos los niveles parciales de verdad sin agotarse en ninguno de ellos.",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.relacion_con_la_verdad_absoluta.nota_formal"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "concept_ref": "relacion_con_la_verdad_absoluta"
+          },
+          {
+            "id": "epistemologia_discernimiento_de_orientacion_hacia_la_verdad_busqueda_de_la_verdad",
+            "key": "busqueda_de_la_verdad",
+            "label": "Busqueda de la verdad",
+            "kind": "concept",
+            "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.busqueda_de_la_verdad",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "La busqueda de la verdad consiste en los procesos por los cuales una conciencia o una colectividad descubren subverdades y desbloquean capas de realidad.",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.busqueda_de_la_verdad.definicion"
+              },
+              {
+                "key": "relacion_con_el_espiritu_humano",
+                "label": "Relacion con el espiritu humano",
+                "role": "relation",
+                "value_type": "text",
+                "value": "El objetivo natural del espiritu humano es desbloquear capas de realidad que contienen verdades parciales, orientandose progresivamente hacia la verdad absoluta sin agotarla.",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.busqueda_de_la_verdad.relacion_con_el_espiritu_humano",
+                "target_hints": [
+                  "espiritu_humano"
+                ],
+                "target_ids": [
+                  "espiritu_humano"
+                ]
+              },
+              {
+                "key": "extrapolacion",
+                "label": "Extrapolacion",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Es posible que otras conciencias complejas produzcan formas analogas de espiritu historico o colectivo en funcion de su estructura y desarrollo.",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.busqueda_de_la_verdad.extrapolacion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "busqueda_de_la_verdad"
+          },
+          {
+            "id": "epistemologia_discernimiento_de_orientacion_hacia_la_verdad_filtros_de_discernimiento",
+            "key": "filtros_de_discernimiento",
+            "label": "Filtros de discernimiento",
+            "kind": "concept",
+            "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.filtros_de_discernimiento",
+            "fields": [],
+            "collections": [],
+            "children": [
+              {
+                "id": "epistemologia_discernimiento_de_orientacion_hacia_la_verdad_filtros_de_discernimiento_filtro_moral_intrahumano",
+                "key": "filtro_moral_intrahumano",
+                "label": "Filtro moral intrahumano",
+                "kind": "concept",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.filtros_de_discernimiento.filtro_moral_intrahumano",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "La moral intrahumana filtra orientaciones falsas que refuerzan dominacion, clausura, instrumentalizacion, ignorancia organizada o perpetuacion del ciclo.",
+                    "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.filtros_de_discernimiento.filtro_moral_intrahumano.definicion"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "filtro_moral_intrahumano"
+              },
+              {
+                "id": "epistemologia_discernimiento_de_orientacion_hacia_la_verdad_filtros_de_discernimiento_filtro_epistemico",
+                "key": "filtro_epistemico",
+                "label": "Filtro epistemico",
+                "kind": "concept",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.filtros_de_discernimiento.filtro_epistemico",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Una verdad parcial no se valida solo por intencion moral ni por intensidad subjetiva, sino tambien por su capacidad de sostenerse frente a la experiencia, el analisis y la critica.",
+                    "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.filtros_de_discernimiento.filtro_epistemico.definicion"
+                  }
+                ],
+                "collections": [
+                  {
+                    "id": "epistemologia_discernimiento_de_orientacion_hacia_la_verdad_filtros_de_discernimiento_filtro_epistemico_criterios_collection",
+                    "key": "criterios",
+                    "label": "Criterios",
+                    "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.filtros_de_discernimiento.filtro_epistemico.criterios",
+                    "item_kind_hint": "collection_item",
+                    "items": [
+                      {
+                        "order_index": 1,
+                        "value_type": "text",
+                        "value": "coherencia interna"
+                      },
+                      {
+                        "order_index": 2,
+                        "value_type": "text",
+                        "value": "contraste con realidad"
+                      },
+                      {
+                        "order_index": 3,
+                        "value_type": "text",
+                        "value": "capacidad explicativa"
+                      },
+                      {
+                        "order_index": 4,
+                        "value_type": "text",
+                        "value": "resistencia al autoengaño"
+                      }
+                    ]
+                  }
+                ],
+                "children": [],
+                "canonical_id": "filtro_epistemico"
+              },
+              {
+                "id": "epistemologia_discernimiento_de_orientacion_hacia_la_verdad_filtros_de_discernimiento_filtro_exergico",
+                "key": "filtro_exergico",
+                "label": "Filtro exergico",
+                "kind": "concept",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.filtros_de_discernimiento.filtro_exergico",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Una orientacion es mas real cuando aumenta exergia consciente, social o historica y abre transformacion liberadora no capturada.",
+                    "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.filtros_de_discernimiento.filtro_exergico.definicion"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "filtro_exergico"
+              },
+              {
+                "id": "epistemologia_discernimiento_de_orientacion_hacia_la_verdad_filtros_de_discernimiento_filtro_historico_temporal",
+                "key": "filtro_historico_temporal",
+                "label": "Filtro historico temporal",
+                "kind": "concept",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.filtros_de_discernimiento.filtro_historico_temporal",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Una orientacion no debe juzgarse solo por su efecto inmediato, sino por su deuda temporal, su persistencia y su capacidad de reducir recaida, captura y clausura en el tiempo.",
+                    "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.filtros_de_discernimiento.filtro_historico_temporal.definicion"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "filtro_historico_temporal"
+              }
+            ],
+            "canonical_id": "filtros_de_discernimiento"
+          },
+          {
+            "id": "epistemologia_discernimiento_de_orientacion_hacia_la_verdad_advertencia_sobre_las_emociones",
+            "key": "advertencia_sobre_las_emociones",
+            "label": "Advertencia sobre las emociones",
+            "kind": "concept",
+            "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.advertencia_sobre_las_emociones",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Las emociones humanas ante procesos de clausura pueden ser exergicas, pero no por ello son necesariamente eticamente buenas ni necesariamente verdaderas.",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.advertencia_sobre_las_emociones.definicion"
+              },
+              {
+                "key": "riesgo",
+                "label": "Riesgo",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Una movilizacion afectiva intensa puede romper inercias y sin embargo perpetuar el ciclo, reforzar dominacion o producir falsa apertura.",
+                "source_path": "epistemologia.discernimiento_de_orientacion_hacia_la_verdad.advertencia_sobre_las_emociones.riesgo"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "advertencia_sobre_las_emociones"
+          }
+        ],
+        "canonical_id": "discernimiento_de_orientacion_hacia_la_verdad"
+      },
+      {
+        "id": "epistemologia_conjetura_de_traduccion_moral_interconsciente",
+        "key": "conjetura_de_traduccion_moral_interconsciente",
+        "label": "Conjetura de traduccion moral interconsciente",
+        "kind": "concept",
+        "source_path": "epistemologia.conjetura_de_traduccion_moral_interconsciente",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Aunque no pueda saberse con certeza hasta que punto la moral intrahumana refleja una estructura universal del ser o solo una emergencia local de la especie humana, un sujeto humano puede proyectar provisionalmente su moral hacia otras formas de conciencia y corregirla mediante contraste, reciprocidad y aprendizaje mutuo.",
+            "source_path": "epistemologia.conjetura_de_traduccion_moral_interconsciente.definicion"
+          },
+          {
+            "key": "tesis_central",
+            "label": "Tesis central",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "Es posible construir sistemas de traduccion moral entre conciencias distintas si existen estructuras compartidas minimas de estimulo, daño, apertura, evitacion, cooperacion o preservacion.",
+            "source_path": "epistemologia.conjetura_de_traduccion_moral_interconsciente.tesis_central"
+          },
+          {
+            "key": "fundamento_minimo",
+            "label": "Fundamento minimo",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Los estimulos positivos y negativos, asi como las dinamicas de daño, conservacion, atraccion y rechazo, pueden constituir un nucleo axiologico minimo ligado al fenomeno emergente de la vida y de la conciencia.",
+            "source_path": "epistemologia.conjetura_de_traduccion_moral_interconsciente.fundamento_minimo"
+          },
+          {
+            "key": "limite",
+            "label": "Limite",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Este nucleo minimo no equivale por si solo a una moral completa ni garantiza equivalencia total entre sistemas morales heterogeneos.",
+            "source_path": "epistemologia.conjetura_de_traduccion_moral_interconsciente.limite"
+          },
+          {
+            "key": "riesgo",
+            "label": "Riesgo",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "La proyeccion moral humana sobre otras conciencias puede degenerar en imperialismo moral si no se corrige mediante aprendizaje real y reconocimiento de alteridad.",
+            "source_path": "epistemologia.conjetura_de_traduccion_moral_interconsciente.riesgo"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "conjetura_de_traduccion_moral_interconsciente"
+      },
+      {
+        "id": "epistemologia_fuentes_del_conocimiento",
+        "key": "fuentes_del_conocimiento",
+        "label": "Fuentes del conocimiento",
+        "kind": "concept",
+        "source_path": "epistemologia.fuentes_del_conocimiento",
+        "fields": [
+          {
+            "key": "experiencia_interior",
+            "label": "Experiencia interior",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "epistemologia.fuentes_del_conocimiento.experiencia_interior"
+          },
+          {
+            "key": "meditacion",
+            "label": "Meditacion",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "epistemologia.fuentes_del_conocimiento.meditacion"
+          },
+          {
+            "key": "analisis_social",
+            "label": "Analisis social",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "epistemologia.fuentes_del_conocimiento.analisis_social"
+          },
+          {
+            "key": "creacion",
+            "label": "Creacion",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "presente",
+            "source_path": "epistemologia.fuentes_del_conocimiento.creacion"
+          },
+          {
+            "key": "ciencia",
+            "label": "Ciencia",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Fuente privilegiada de conocimiento parcial sobre los mecanismos observables del universo. No agota la verdad absoluta, pero permite reducir error y ampliar comprension objetiva del mundo fisico, biologico y social.",
+            "source_path": "epistemologia.fuentes_del_conocimiento.ciencia"
+          },
+          {
+            "key": "revelacion",
+            "label": "Revelacion",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Fuente posible de intuiciones o simbolos orientados a la verdad, pero no valida por si sola sin examen critico, coherencia y contraste con experiencia y realidad.",
+            "source_path": "epistemologia.fuentes_del_conocimiento.revelacion"
+          },
+          {
+            "key": "tradicion",
+            "label": "Tradicion",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Deposito historico de conocimiento, simbolos y practicas que puede conservar aperturas valiosas o reproducir formas del ciclo segun como se interprete.",
+            "source_path": "epistemologia.fuentes_del_conocimiento.tradicion"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "fuentes_del_conocimiento"
+      }
+    ]
+  }
+}

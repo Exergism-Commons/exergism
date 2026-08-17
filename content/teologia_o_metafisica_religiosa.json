@@ -1,0 +1,1018 @@
+{
+  "schema_version": 2,
+  "source_format": "legacy-normalized",
+  "domain": {
+    "id": "teologia_o_metafisica_religiosa",
+    "key": "teologia_o_metafisica_religiosa",
+    "label": "Teologia o metafisica religiosa",
+    "source_file": "teologia_o_metafisica_religiosa.json"
+  },
+  "root": {
+    "id": "teologia_o_metafisica_religiosa",
+    "canonical_id": "teologia",
+    "key": "teologia_o_metafisica_religiosa",
+    "label": "Teologia o metafisica religiosa",
+    "kind": "concept",
+    "source_path": "teologia_o_metafisica_religiosa",
+    "fields": [
+      {
+        "key": "estado_de_desarrollo",
+        "label": "Estado de desarrollo",
+        "role": "attribute",
+        "value_type": "text",
+        "value": "ampliado",
+        "source_path": "teologia_o_metafisica_religiosa.estado_de_desarrollo"
+      }
+    ],
+    "collections": [],
+    "children": [
+      {
+        "id": "teologia_o_metafisica_religiosa_dios_verdadero",
+        "key": "dios_verdadero",
+        "label": "Dios verdadero",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.dios_verdadero",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Nombre simbolico para la verdad absoluta o para el fundamento ultimo de todo lo real, del cual el universo conocido podria ser una manifestacion parcial.",
+            "source_path": "teologia_o_metafisica_religiosa.dios_verdadero.definicion"
+          },
+          {
+            "key": "tipo",
+            "label": "Tipo",
+            "role": "core",
+            "value_type": "text",
+            "value": "no personal segun el estado actual del sistema",
+            "source_path": "teologia_o_metafisica_religiosa.dios_verdadero.tipo"
+          },
+          {
+            "key": "relacion_con_la_exergia",
+            "label": "Relacion con la exergia",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La verdad absoluta no es exergia ni una magnitud operable. La exergia es el margen finito que una conciencia, una estructura o una sociedad posee para orientarse hacia ella y encarnarla parcialmente en la historia.",
+            "source_path": "teologia_o_metafisica_religiosa.dios_verdadero.relacion_con_la_exergia",
+            "target_hints": [
+              "exergia"
+            ],
+            "target_ids": [
+              "exergia"
+            ]
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "dios_verdadero"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_dios_cristiano",
+        "key": "dios_cristiano",
+        "label": "Dios cristiano",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.dios_cristiano",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "El dios abramico en gran medida es la ejemplificacion del demiurgo, de los deseos de control humanos. Ningún dios verdadero sería personal, ni tendría crueldad o bondad, eso son dominios humanos.",
+            "source_path": "teologia_o_metafisica_religiosa.dios_cristiano.definicion"
+          },
+          {
+            "key": "tipo",
+            "label": "Tipo",
+            "role": "core",
+            "value_type": "text",
+            "value": "personal y demiurgico segun el sistema actual",
+            "source_path": "teologia_o_metafisica_religiosa.dios_cristiano.tipo"
+          },
+          {
+            "key": "nota_hermeneutica",
+            "label": "Nota hermeneutica",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Las religiones historicas pueden contener intuiciones parciales de verdad, pero tambien mecanismos de captura, miedo, obediencia y sacralizacion del poder.",
+            "source_path": "teologia_o_metafisica_religiosa.dios_cristiano.nota_hermeneutica"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "dios_cristiano"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_teologia_negativa",
+        "key": "teologia_negativa",
+        "label": "Teologia negativa",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.teologia_negativa",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La verdad absoluta solo puede pensarse de forma limitada, indirecta y apofatica. Todo lenguaje positivo sobre el fundamento ultimo es parcial, simbolico y revisable.",
+            "source_path": "teologia_o_metafisica_religiosa.teologia_negativa.definicion"
+          },
+          {
+            "key": "funcion",
+            "label": "Funcion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Evitar que el pensamiento religioso convierta la verdad absoluta en idolo conceptual o en proyeccion del ego humano.",
+            "source_path": "teologia_o_metafisica_religiosa.teologia_negativa.funcion"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "teologia_negativa"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_manifestacion_y_revelacion",
+        "key": "manifestacion_y_revelacion",
+        "label": "Manifestacion y revelacion",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.manifestacion_y_revelacion",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "No hay revelacion perfecta ni definitiva dentro del mundo humano. Solo hay aperturas parciales, simbolos, intuiciones y procesos de desocultamiento.",
+            "source_path": "teologia_o_metafisica_religiosa.manifestacion_y_revelacion.definicion"
+          },
+          {
+            "key": "riesgo",
+            "label": "Riesgo",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Una revelacion puede ser verdadera en parte y demiurgica en otra parte.",
+            "source_path": "teologia_o_metafisica_religiosa.manifestacion_y_revelacion.riesgo"
+          }
+        ],
+        "collections": [
+          {
+            "id": "teologia_o_metafisica_religiosa_manifestacion_y_revelacion_criterio_de_discernimiento_collection",
+            "key": "criterio_de_discernimiento",
+            "label": "Criterio de discernimiento",
+            "source_path": "teologia_o_metafisica_religiosa.manifestacion_y_revelacion.criterio_de_discernimiento",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "coherencia interna"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "capacidad explicativa"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "correspondencia parcial con la realidad"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "potencial liberador"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "baja tendencia a justificar dominacion"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "manifestacion_y_revelacion"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_experiencia_espiritual",
+        "key": "experiencia_espiritual",
+        "label": "Experiencia espiritual",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.experiencia_espiritual",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Apertura vivida de la conciencia hacia capas de realidad, verdad, unidad o desidentificacion respecto al ego y al ciclo.",
+            "source_path": "teologia_o_metafisica_religiosa.experiencia_espiritual.definicion"
+          },
+          {
+            "key": "criterio_de_validez",
+            "label": "Criterio de validez",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "No se juzga solo por intensidad subjetiva, sino por sus efectos sobre autonomia, verdad, lucidez, reduccion del apego y disminucion de la captura.",
+            "source_path": "teologia_o_metafisica_religiosa.experiencia_espiritual.criterio_de_validez"
+          }
+        ],
+        "collections": [
+          {
+            "id": "teologia_o_metafisica_religiosa_experiencia_espiritual_tipos_collection",
+            "key": "tipos",
+            "label": "Tipos",
+            "source_path": "teologia_o_metafisica_religiosa.experiencia_espiritual.tipos",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "silencio contemplativo"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "lucidez tragica"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "insight moral"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "experiencia de unidad parcial"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "descentramiento del yo"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "creacion exergica"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "experiencia_espiritual"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_mistica_exergica",
+        "key": "mistica_exergica",
+        "label": "Mistica exergica",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.mistica_exergica",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Forma de espiritualidad orientada no a fusionarse imaginariamente con un absoluto personal, sino a aumentar la exergia consciente, resistir la captura y sostener una apertura lucida hacia la verdad absoluta.",
+            "source_path": "teologia_o_metafisica_religiosa.mistica_exergica.definicion"
+          }
+        ],
+        "collections": [
+          {
+            "id": "teologia_o_metafisica_religiosa_mistica_exergica_rasgos_collection",
+            "key": "rasgos",
+            "label": "Rasgos",
+            "source_path": "teologia_o_metafisica_religiosa.mistica_exergica.rasgos",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "descentramiento del ego"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "disciplina de atencion"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "soporte de verdad incomoda"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "rechazo de servidumbre interior"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "orientacion a lucidez y no a consuelo ilusorio"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "mistica_exergica"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_culto_y_practica",
+        "key": "culto_y_practica",
+        "label": "Culto y practica",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.culto_y_practica",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "El culto no consiste primariamente en agradar a una divinidad personal, sino en ordenar la vida de forma que aumente la exergia consciente, social y espiritual.",
+            "source_path": "teologia_o_metafisica_religiosa.culto_y_practica.definicion"
+          }
+        ],
+        "collections": [
+          {
+            "id": "teologia_o_metafisica_religiosa_culto_y_practica_formas_legitimas_collection",
+            "key": "formas_legitimas",
+            "label": "Formas legitimas",
+            "source_path": "teologia_o_metafisica_religiosa.culto_y_practica.formas_legitimas",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "meditacion"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "estudio"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "creacion"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "cuidado"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "divulgacion del conocimiento"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "practicas de disciplina interior"
+              },
+              {
+                "order_index": 7,
+                "value_type": "text",
+                "value": "accion politica liberadora"
+              },
+              {
+                "order_index": 8,
+                "value_type": "text",
+                "value": "rituales simbolicos no idolatricos"
+              }
+            ]
+          },
+          {
+            "id": "teologia_o_metafisica_religiosa_culto_y_practica_formas_ilegitimas_o_riesgosas_collection",
+            "key": "formas_ilegítimas_o_riesgosas",
+            "label": "Formas ilegítimas o riesgosas",
+            "source_path": "teologia_o_metafisica_religiosa.culto_y_practica.formas_ilegítimas_o_riesgosas",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "obediencia ciega"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "sacralizacion del lider"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "culpabilizacion ritualista"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "renuncia a la critica"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "rituales que refuercen captura o dependencia"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "culto_y_practica"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_ritual",
+        "key": "ritual",
+        "label": "Ritual",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.ritual",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Un ritual es un proceso formal entre humanos destinado a conectar con la verdad absoluta. En la mayoría de casos es innecesario para un exergista, aunque puede tener valor como ejercicio simbolico, pedagogico, ascetico o comunitario.",
+            "source_path": "teologia_o_metafisica_religiosa.ritual.definicion"
+          },
+          {
+            "key": "criterio_de_legitimidad",
+            "label": "Criterio de legitimidad",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Solo es legitimo cuando aumenta lucidez, autonomia y comunidad no capturada, y no cuando produce supersticion, jerarquia sacralizada o anulacion critica.",
+            "source_path": "teologia_o_metafisica_religiosa.ritual.criterio_de_legitimidad"
+          }
+        ],
+        "collections": [
+          {
+            "id": "teologia_o_metafisica_religiosa_ritual_funciones_posibles_collection",
+            "key": "funciones_posibles",
+            "label": "Funciones posibles",
+            "source_path": "teologia_o_metafisica_religiosa.ritual.funciones_posibles",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "recordar la orientacion hacia la verdad"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "fortalecer disciplina y atencion"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "marcar transiciones vitales o colectivas"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "proteger la memoria de luchas liberadoras"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "reducir dispersion psiquica y social"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "ritual"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_oracion",
+        "key": "oracion",
+        "label": "Oracion",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.oracion",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La oracion no es peticion a un dios personal que interviene arbitrariamente, sino ejercicio de concentracion, orientacion interior, recuerdo de la verdad y reordenacion de la conciencia.",
+            "source_path": "teologia_o_metafisica_religiosa.oracion.definicion"
+          },
+          {
+            "key": "estado_de_desarrollo",
+            "label": "Estado de desarrollo",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "ampliado",
+            "source_path": "teologia_o_metafisica_religiosa.oracion.estado_de_desarrollo"
+          }
+        ],
+        "collections": [
+          {
+            "id": "teologia_o_metafisica_religiosa_oracion_formas_posibles_collection",
+            "key": "formas_posibles",
+            "label": "Formas posibles",
+            "source_path": "teologia_o_metafisica_religiosa.oracion.formas_posibles",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "silencio"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "mantra filosofico"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "formulas de descentramiento del ego"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "meditacion verbal breve"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "afirmacion de compromiso con verdad y liberacion"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "oracion"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_ascetica",
+        "key": "ascetica",
+        "label": "Ascetica",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.ascetica",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Conjunto de practicas destinadas a reducir apego, miedo, servidumbre al impulso y dispersion interior, con el fin de aumentar autonomia y exergia consciente.",
+            "source_path": "teologia_o_metafisica_religiosa.ascetica.definicion"
+          },
+          {
+            "key": "peligro",
+            "label": "Peligro",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Puede degenerar en culto al sufrimiento, orgullo espiritual o nueva forma de identidad narcisista.",
+            "source_path": "teologia_o_metafisica_religiosa.ascetica.peligro"
+          }
+        ],
+        "collections": [
+          {
+            "id": "teologia_o_metafisica_religiosa_ascetica_formas_collection",
+            "key": "formas",
+            "label": "Formas",
+            "source_path": "teologia_o_metafisica_religiosa.ascetica.formas",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "disciplina corporal"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "sobriedad voluntaria"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "vigilancia del ego"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "silencio"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "estudio riguroso"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "autocontrol afectivo"
+              },
+              {
+                "order_index": 7,
+                "value_type": "text",
+                "value": "limitacion del consumo compulsivo"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "ascetica"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_comunidad_espiritual",
+        "key": "comunidad_espiritual",
+        "label": "Comunidad espiritual",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.comunidad_espiritual",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Grupo humano orientado a acercarse a la verdad absoluta, aumentar exergia consciente y social, y resistir colectivamente las formas de captura demiurgica.",
+            "source_path": "teologia_o_metafisica_religiosa.comunidad_espiritual.definicion"
+          }
+        ],
+        "collections": [
+          {
+            "id": "teologia_o_metafisica_religiosa_comunidad_espiritual_principios_collection",
+            "key": "principios",
+            "label": "Principios",
+            "source_path": "teologia_o_metafisica_religiosa.comunidad_espiritual.principios",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "lucidez compartida"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "disciplina sin servidumbre"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "autoridad critica y no dogmatica"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "transparencia"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "autocorreccion"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "primacia de la verdad sobre el consuelo"
+              },
+              {
+                "order_index": 7,
+                "value_type": "text",
+                "value": "vinculo entre vida interior y liberacion historica"
+              }
+            ]
+          },
+          {
+            "id": "teologia_o_metafisica_religiosa_comunidad_espiritual_riesgos_collection",
+            "key": "riesgos",
+            "label": "Riesgos",
+            "source_path": "teologia_o_metafisica_religiosa.comunidad_espiritual.riesgos",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "sectarismo"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "culto al lider"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "cierres doctrinales"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "mistificacion del sufrimiento"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "confusion entre cohesion y verdad"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "comunidad_espiritual"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_sacralidad",
+        "key": "sacralidad",
+        "label": "Sacralidad",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.sacralidad",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Lo sagrado no designa un objeto magico o una autoridad intocable, sino aquello que pone a la conciencia ante el misterio de lo real, la gravedad del bien y el mal, y la exigencia de no reducir la verdad a posesion instrumental.",
+            "source_path": "teologia_o_metafisica_religiosa.sacralidad.definicion"
+          },
+          {
+            "key": "nota",
+            "label": "Nota",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Puede haber sacralidad sin sobrenaturalismo personalista.",
+            "source_path": "teologia_o_metafisica_religiosa.sacralidad.nota"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "sacralidad"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_mal_metafisico_y_mal_religioso",
+        "key": "mal_metafisico_y_mal_religioso",
+        "label": "Mal metafisico y mal religioso",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.mal_metafisico_y_mal_religioso",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "El mal no es una fuerza cosmica absoluta equiparable a la verdad absoluta. En el dominio religioso humano aparece como captura, falseamiento, idolatria del poder, sacralizacion de la dominacion y desviacion de la exergia hacia el ciclo.",
+            "source_path": "teologia_o_metafisica_religiosa.mal_metafisico_y_mal_religioso.definicion"
+          },
+          {
+            "key": "forma_religiosa_del_demiurgo",
+            "label": "Forma religiosa del demiurgo",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Toda religion que absolutiza obediencia, miedo, pureza identitaria o dominio institucional puede convertirse en forma religiosa del demiurgo.",
+            "source_path": "teologia_o_metafisica_religiosa.mal_metafisico_y_mal_religioso.forma_religiosa_del_demiurgo"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "mal_metafisico_y_mal_religioso"
+      },
+      {
+        "id": "teologia_o_metafisica_religiosa_escatologia_exergica",
+        "key": "escatologia_exergica",
+        "label": "Escatologia exergica",
+        "kind": "concept",
+        "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La escatologia exergica es el horizonte historico y transhistorico en el que la humanidad busca aumentar su exergia colectiva hasta romper formas mayores de captura, superar divisiones ficticias internas y abrir una fase de desarrollo consciente orientada hacia la verdad absoluta.",
+            "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.definicion"
+          },
+          {
+            "key": "tesis_central",
+            "label": "Tesis central",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "La liberacion autentica no debe detenerse en individuos aislados ni en comunidades parciales, sino tender a la liberacion progresiva del conjunto de la humanidad como sujeto historico capaz de verdad, autonomia y cooperacion no capturada.",
+            "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.tesis_central"
+          },
+          {
+            "key": "limite_final",
+            "label": "Limite final",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "La humanidad cosmica no agotaria la verdad absoluta. Incluso una civilizacion expandida entre estrellas seguiria siendo finita, revisable y expuesta a recaida, captura o error.",
+            "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.limite_final"
+          },
+          {
+            "key": "pregunta_escatologica_central",
+            "label": "Pregunta escatologica central",
+            "role": "question",
+            "value_type": "text",
+            "value": "Puede la humanidad aumentar suficiente exergia consciente y colectiva como para dejar de ser una especie atrapada en ciclos locales de dominacion y convertirse en agente cosmico de verdad, libertad y cooperacion no demiurgica.",
+            "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.pregunta_escatologica_central"
+          }
+        ],
+        "collections": [],
+        "children": [
+          {
+            "id": "teologia_o_metafisica_religiosa_escatologia_exergica_primera_fase",
+            "key": "primera_fase",
+            "label": "Primera fase",
+            "kind": "concept",
+            "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.primera_fase",
+            "fields": [
+              {
+                "key": "nombre",
+                "label": "Nombre",
+                "role": "core",
+                "value_type": "text",
+                "value": "liberacion de la humanidad terrestre",
+                "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.primera_fase.nombre"
+              },
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Superacion progresiva de divisiones ficticias, estructuras de dominacion, ignorancia organizada y formas historicas de captura que impiden a la humanidad actuar como comunidad consciente mas amplia.",
+                "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.primera_fase.definicion"
+              }
+            ],
+            "collections": [
+              {
+                "id": "teologia_o_metafisica_religiosa_escatologia_exergica_primera_fase_criterios_collection",
+                "key": "criterios",
+                "label": "Criterios",
+                "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.primera_fase.criterios",
+                "item_kind_hint": "collection_item",
+                "items": [
+                  {
+                    "order_index": 1,
+                    "value_type": "text",
+                    "value": "reduccion de dominacion estructural"
+                  },
+                  {
+                    "order_index": 2,
+                    "value_type": "text",
+                    "value": "disminucion de guerra intrahumana"
+                  },
+                  {
+                    "order_index": 3,
+                    "value_type": "text",
+                    "value": "aumento de verdad compartida"
+                  },
+                  {
+                    "order_index": 4,
+                    "value_type": "text",
+                    "value": "distribucion del conocimiento"
+                  },
+                  {
+                    "order_index": 5,
+                    "value_type": "text",
+                    "value": "incremento de autonomia material y simbolica"
+                  },
+                  {
+                    "order_index": 6,
+                    "value_type": "text",
+                    "value": "capacidad comun de autocorreccion"
+                  }
+                ]
+              }
+            ],
+            "children": [],
+            "canonical_id": "primera_fase"
+          },
+          {
+            "id": "teologia_o_metafisica_religiosa_escatologia_exergica_segunda_fase",
+            "key": "segunda_fase",
+            "label": "Segunda fase",
+            "kind": "concept",
+            "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.segunda_fase",
+            "fields": [
+              {
+                "key": "nombre",
+                "label": "Nombre",
+                "role": "core",
+                "value_type": "text",
+                "value": "era de la humanidad cosmica",
+                "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.segunda_fase.nombre"
+              },
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Etapa en la que la humanidad, habiendo reducido significativamente sus divisiones internas ficticias, orienta parte de su exergia historica hacia la exploracion cosmica, la comunicacion interestelar y la ampliacion de su horizonte de verdad mas alla de la Tierra.",
+                "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.segunda_fase.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "segunda_fase"
+          },
+          {
+            "id": "teologia_o_metafisica_religiosa_escatologia_exergica_encuentro_con_otras_inteligencias",
+            "key": "encuentro_con_otras_inteligencias",
+            "label": "Encuentro con otras inteligencias",
+            "kind": "concept",
+            "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.encuentro_con_otras_inteligencias",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Si la humanidad entrara en contacto con seres inteligentes no terrestres, ese encuentro deberia entenderse como una oportunidad de conocimiento reciproco, ampliacion de conciencia y contraste de formas distintas de acceso parcial a la realidad.",
+                "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.encuentro_con_otras_inteligencias.definicion"
+              },
+              {
+                "key": "riesgo",
+                "label": "Riesgo",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "La expansion cosmica podria reproducir el demiurgo en escala superior si la humanidad convierte su desarrollo exergico en voluntad de control, conquista, evangelizacion o captura de otras inteligencias.",
+                "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.encuentro_con_otras_inteligencias.riesgo"
+              }
+            ],
+            "collections": [
+              {
+                "id": "teologia_o_metafisica_religiosa_escatologia_exergica_encuentro_con_otras_inteligencias_principios_collection",
+                "key": "principios",
+                "label": "Principios",
+                "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.encuentro_con_otras_inteligencias.principios",
+                "item_kind_hint": "collection_item",
+                "items": [
+                  {
+                    "order_index": 1,
+                    "value_type": "text",
+                    "value": "reciprocidad"
+                  },
+                  {
+                    "order_index": 2,
+                    "value_type": "text",
+                    "value": "prudencia"
+                  },
+                  {
+                    "order_index": 3,
+                    "value_type": "text",
+                    "value": "no dominacion"
+                  },
+                  {
+                    "order_index": 4,
+                    "value_type": "text",
+                    "value": "intercambio altruista de conocimiento"
+                  },
+                  {
+                    "order_index": 5,
+                    "value_type": "text",
+                    "value": "respeto a la autonomia de otras conciencias o civilizaciones"
+                  },
+                  {
+                    "order_index": 6,
+                    "value_type": "text",
+                    "value": "apertura al aprendizaje mutuo"
+                  }
+                ]
+              }
+            ],
+            "children": [],
+            "canonical_id": "encuentro_con_otras_inteligencias"
+          },
+          {
+            "id": "teologia_o_metafisica_religiosa_escatologia_exergica_guia_intercivilizatoria",
+            "key": "guia_intercivilizatoria",
+            "label": "Guia intercivilizatoria",
+            "kind": "concept",
+            "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.guia_intercivilizatoria",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Solo seria legitimo intentar orientar o ayudar a otras civilizaciones si ello fuera solicitado, compatible con su autonomia, y realmente dirigido a ampliar verdad, libertad y exergia sin imponer dependencia o subordinacion.",
+                "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.guia_intercivilizatoria.definicion"
+              },
+              {
+                "key": "criterio_de_legitimidad",
+                "label": "Criterio de legitimidad",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Ninguna civilizacion tiene derecho a presentarse como poseedora de la verdad absoluta. Toda orientacion debe ser ofrecida como apertura parcial, nunca como dominio sagrado o superioridad ontologica.",
+                "source_path": "teologia_o_metafisica_religiosa.escatologia_exergica.guia_intercivilizatoria.criterio_de_legitimidad"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "concept_ref": "guia_intercivilizatoria"
+          }
+        ],
+        "canonical_id": "escatologia_exergica"
+      }
+    ]
+  }
+}

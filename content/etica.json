@@ -1,0 +1,834 @@
+{
+  "schema_version": 2,
+  "source_format": "legacy-normalized",
+  "domain": {
+    "id": "etica",
+    "key": "etica",
+    "label": "Etica",
+    "source_file": "etica.json"
+  },
+  "root": {
+    "id": "etica",
+    "canonical_id": "etica",
+    "key": "etica",
+    "label": "Etica",
+    "kind": "concept",
+    "source_path": "etica",
+    "fields": [
+      {
+        "key": "tesis_central",
+        "label": "Tesis central",
+        "role": "thesis",
+        "value_type": "text",
+        "value": "El bien y el mal no son absolutos cosmicos, pero si categorias objetivas dentro del dominio humano; su juicio exige integrar verdad, ruptura del ciclo, sufrimiento, responsabilidad, exergia y riesgo de captura.",
+        "source_path": "etica.tesis_central"
+      }
+    ],
+    "collections": [],
+    "children": [
+      {
+        "id": "etica_fundamento",
+        "key": "fundamento",
+        "label": "Fundamento",
+        "kind": "concept",
+        "source_path": "etica.fundamento",
+        "fields": [
+          {
+            "key": "tipo",
+            "label": "Tipo",
+            "role": "core",
+            "value_type": "text",
+            "value": "objetividad intrahumana",
+            "source_path": "etica.fundamento.tipo"
+          },
+          {
+            "key": "descripcion",
+            "label": "Descripcion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La bondad y la maldad emergen de estructuras reales de conciencia, sociabilidad, poder y orientacion vital.",
+            "source_path": "etica.fundamento.descripcion"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "fundamento"
+      },
+      {
+        "id": "etica_bien",
+        "key": "bien",
+        "label": "Bien",
+        "kind": "concept",
+        "source_path": "etica.bien",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Orientacion humana hacia la apertura, la verdad, la liberacion, la reduccion del sufrimiento y la ruptura del ciclo.",
+            "source_path": "etica.bien.definicion"
+          }
+        ],
+        "collections": [
+          {
+            "id": "etica_bien_criterios_collection",
+            "key": "criterios",
+            "label": "Criterios",
+            "source_path": "etica.bien.criterios",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "amplia conciencia"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "reduce dominacion"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "favorece conocimiento verdadero"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "interrumpe ciclos de daño"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "ayuda a otros a abrir capas de verdad"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "bien"
+      },
+      {
+        "id": "etica_mal",
+        "key": "mal",
+        "label": "Mal",
+        "kind": "concept",
+        "source_path": "etica.mal",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Orientacion humana hacia la clausura, la dominacion, el apego, el engaño y la perpetuacion consciente o semiconsciente del ciclo.",
+            "source_path": "etica.mal.definicion"
+          }
+        ],
+        "collections": [
+          {
+            "id": "etica_mal_criterios_collection",
+            "key": "criterios",
+            "label": "Criterios",
+            "source_path": "etica.mal.criterios",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "instrumentaliza a otros"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "usa el conocimiento para dominar"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "cronifica la ignorancia"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "refuerza jerarquias opresivas"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "prefiere placer y poder a trascendencia"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "mal"
+      },
+      {
+        "id": "etica_grises",
+        "key": "grises",
+        "label": "Grises",
+        "kind": "concept",
+        "source_path": "etica.grises",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La mayoria de las personas oscilan entre tendencias de apertura y de clausura. Es el estado natural humano y el que da potencial al bien y al mal.",
+            "source_path": "etica.grises.definicion"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "grises"
+      },
+      {
+        "id": "etica_responsabilidad_moral",
+        "key": "responsabilidad_moral",
+        "label": "Responsabilidad moral",
+        "kind": "concept",
+        "source_path": "etica.responsabilidad_moral",
+        "fields": [
+          {
+            "key": "ignorancia",
+            "label": "Ignorancia",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "reduce responsabilidad fuerte",
+            "source_path": "etica.responsabilidad_moral.ignorancia"
+          },
+          {
+            "key": "lucidez_parcial",
+            "label": "Lucidez parcial",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "aumenta responsabilidad",
+            "source_path": "etica.responsabilidad_moral.lucidez_parcial"
+          },
+          {
+            "key": "lucidez_instrumentalizada",
+            "label": "Lucidez instrumentalizada",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "configura maldad fuerte",
+            "source_path": "etica.responsabilidad_moral.lucidez_instrumentalizada"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "responsabilidad_moral"
+      },
+      {
+        "id": "etica_juicio_moral",
+        "key": "juicio_moral",
+        "label": "Juicio moral",
+        "kind": "concept",
+        "source_path": "etica.juicio_moral",
+        "fields": [
+          {
+            "key": "es_objetivo",
+            "label": "Es objetivo",
+            "role": "attribute",
+            "value_type": "boolean",
+            "value": true,
+            "source_path": "etica.juicio_moral.es_objetivo"
+          },
+          {
+            "key": "es_simple",
+            "label": "Es simple",
+            "role": "attribute",
+            "value_type": "boolean",
+            "value": false,
+            "source_path": "etica.juicio_moral.es_simple"
+          }
+        ],
+        "collections": [
+          {
+            "id": "etica_juicio_moral_necesita_collection",
+            "key": "necesita",
+            "label": "Necesita",
+            "source_path": "etica.juicio_moral.necesita",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "discernimiento"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "analisis del contexto"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "distincion entre ignorancia y manipulacion"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "distincion entre daño puntual y perpetuacion estructural"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "juicio_moral"
+      },
+      {
+        "id": "etica_primacia_axiologica",
+        "key": "primacia_axiologica",
+        "label": "Primacia axiologica",
+        "kind": "concept",
+        "source_path": "etica.primacia_axiologica",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Cuando verdad, ruptura del ciclo y reduccion del sufrimiento entran en tension, el juicio etico debe ordenarlos segun su primacia estructural, estrategica y moduladora.",
+            "source_path": "etica.primacia_axiologica.definicion"
+          },
+          {
+            "key": "tesis_central",
+            "label": "Tesis central",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "La verdad tiene primacia estructural porque funda la liberacion real; la ruptura del ciclo tiene primacia estrategica cuando preserva condiciones de verdad futura; la reduccion del sufrimiento opera como limite modulador y criterio de minimizacion, pero no como principio supremo absoluto.",
+            "source_path": "etica.primacia_axiologica.tesis_central"
+          }
+        ],
+        "collections": [
+          {
+            "id": "etica_primacia_axiologica_orden_collection",
+            "key": "orden",
+            "label": "Orden",
+            "source_path": "etica.primacia_axiologica.orden",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "verdad"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "ruptura del ciclo"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "reduccion inmediata del sufrimiento"
+              }
+            ]
+          },
+          {
+            "id": "etica_primacia_axiologica_condiciones_collection",
+            "key": "condiciones",
+            "label": "Condiciones",
+            "source_path": "etica.primacia_axiologica.condiciones",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "la verdad debe comunicarse del modo menos destructivo posible"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "el sufrimiento debe ser minimizado incluso cuando no puede eliminarse"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "la magnitud y gravedad del sufrimiento deben ser evaluadas de forma diferenciada"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "la interpretacion negativa del exergismo obliga a asumir que no toda situacion permite pureza moral"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "primacia_axiologica"
+      },
+      {
+        "id": "etica_verdad_y_comunicacion",
+        "key": "verdad_y_comunicacion",
+        "label": "Verdad y comunicacion",
+        "kind": "concept",
+        "source_path": "etica.verdad_y_comunicacion",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La verdad no deja de ser verdad por producir dolor, pero su comunicacion debe evaluarse tambien por su forma humana, su oportunidad y su capacidad de no destruir innecesariamente al receptor.",
+            "source_path": "etica.verdad_y_comunicacion.definicion"
+          },
+          {
+            "key": "tesis_central",
+            "label": "Tesis central",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "Una verdad dicha sin tacto puede seguir siendo verdadera y en ciertos casos moralmente necesaria, pero la forma de comunicarla debe orientarse a minimizar sufrimiento evitable sin caer en mentira protectora o manipulacion compasiva.",
+            "source_path": "etica.verdad_y_comunicacion.tesis_central"
+          }
+        ],
+        "collections": [
+          {
+            "id": "etica_verdad_y_comunicacion_criterios_collection",
+            "key": "criterios",
+            "label": "Criterios",
+            "source_path": "etica.verdad_y_comunicacion.criterios",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "veracidad del contenido"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "minimizacion del sufrimiento evitable"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "adecuacion del modo de comunicacion"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "rechazo de la mentira compasiva cuando prolonga ignorancia estructural"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "verdad_y_comunicacion"
+      },
+      {
+        "id": "etica_dano_tragico_y_residuo_moral",
+        "key": "dano_tragico_y_residuo_moral",
+        "label": "Daño tragico y residuo moral",
+        "kind": "concept",
+        "source_path": "etica.dano_tragico_y_residuo_moral",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Hay situaciones en las que puede infligirse un daño grave para impedir una captura o una dominacion mayor, pero ese daño no queda moralmente purificado por su necesidad.",
+            "source_path": "etica.dano_tragico_y_residuo_moral.definicion"
+          },
+          {
+            "key": "tesis_central",
+            "label": "Tesis central",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "Todo daño directo deliberado deja una mancha o residuo moral incluso cuando resulta tragicamente necesario; su permisibilidad depende de que reduzca una captura mayor sin consolidar el mismo patron que combate.",
+            "source_path": "etica.dano_tragico_y_residuo_moral.tesis_central"
+          },
+          {
+            "key": "clasificacion_basica",
+            "label": "Clasificacion basica",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "mal necesario y tragico",
+            "source_path": "etica.dano_tragico_y_residuo_moral.clasificacion_basica"
+          }
+        ],
+        "collections": [
+          {
+            "id": "etica_dano_tragico_y_residuo_moral_condiciones_de_permisibilidad_collection",
+            "key": "condiciones_de_permisibilidad",
+            "label": "Condiciones de permisibilidad",
+            "source_path": "etica.dano_tragico_y_residuo_moral.condiciones_de_permisibilidad",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "existencia de una amenaza o estructura de dominacion mayor"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "analisis exergico previo cuando el tiempo lo permita"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "best effort en casos de extrema necesidad"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "minimizacion del daño y de su extension"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "vigilancia estricta del riesgo de reproducir el mismo patron combatido"
+              }
+            ]
+          },
+          {
+            "id": "etica_dano_tragico_y_residuo_moral_efectos_collection",
+            "key": "efectos",
+            "label": "Efectos",
+            "source_path": "etica.dano_tragico_y_residuo_moral.efectos",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "residuo moral en el agente"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "persistencia psiquica intermitente del acto"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "riesgo de trauma, endurecimiento o racionalizacion"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "reintroduccion indirecta del ciclo a traves de secuelas psicologicas"
+              }
+            ]
+          },
+          {
+            "id": "etica_dano_tragico_y_residuo_moral_obligaciones_posteriores_collection",
+            "key": "obligaciones_posteriores",
+            "label": "Obligaciones posteriores",
+            "source_path": "etica.dano_tragico_y_residuo_moral.obligaciones_posteriores",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "reparacion de las victimas cuando sea posible"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "acompañamiento psicologico y moral de los agentes implicados"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "procesamiento colectivo del daño para impedir su sedimentacion"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "revision posterior del juicio que legitimo la accion"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "dano_tragico_y_residuo_moral"
+      },
+      {
+        "id": "etica_poder_liberador_y_demiurgico",
+        "key": "poder_liberador_y_demiurgico",
+        "label": "Poder liberador y demiurgico",
+        "kind": "concept",
+        "source_path": "etica.poder_liberador_y_demiurgico",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "El poder liberador y el poder demiurgico no se distinguen por la mera forma externa de sus herramientas, sino por su orientacion real, su funcion estructural y sus efectos sobre la autonomia compartida.",
+            "source_path": "etica.poder_liberador_y_demiurgico.definicion"
+          },
+          {
+            "key": "tesis_central",
+            "label": "Tesis central",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "La fuerza, el secreto, la disciplina, la estrategia y la organizacion pueden aparecer en ambos tipos de poder; la frontera real esta en si esas herramientas se subordinan a la liberacion o a la captura.",
+            "source_path": "etica.poder_liberador_y_demiurgico.tesis_central"
+          }
+        ],
+        "collections": [
+          {
+            "id": "etica_poder_liberador_y_demiurgico_criterios_del_poder_liberador_collection",
+            "key": "criterios_del_poder_liberador",
+            "label": "Criterios del poder liberador",
+            "source_path": "etica.poder_liberador_y_demiurgico.criterios_del_poder_liberador",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "subordinacion a verdad, bondad y liberacion compartida"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "uso estrategico de medios duros sin cristalizacion de casta"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "incremento de autonomia y capacidad de autocorreccion en otros"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "transitoriedad funcional de la concentracion cuando sea necesaria"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "analisis exergico no sumatorio de fines, medios, limites, reversibilidad y autocorreccion"
+              }
+            ]
+          },
+          {
+            "id": "etica_poder_liberador_y_demiurgico_signos_de_deriva_demiurgica_collection",
+            "key": "signos_de_deriva_demiurgica",
+            "label": "Signos de deriva demiurgica",
+            "source_path": "etica.poder_liberador_y_demiurgico.signos_de_deriva_demiurgica",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "perpetuacion de estructuras equivalentes a las que se dice combatir"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "condensacion personal del proyecto o del poder"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "intento de capturar instituciones como fin en si mismo"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "normalizacion permanente de la excepcion"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "formacion de elites que se justifican con relato liberador"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "poder_liberador_y_demiurgico"
+      },
+      {
+        "id": "etica_etica_organizativa_exergista",
+        "key": "etica_organizativa_exergista",
+        "label": "Etica organizativa exergista",
+        "kind": "concept",
+        "source_path": "etica.etica_organizativa_exergista",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Una organizacion liberadora debe impedir que los medios excepcionales o duros deriven en captura mediante practicas continuas de formacion, autocorreccion, distribucion del poder y juicio compartido.",
+            "source_path": "etica.etica_organizativa_exergista.definicion"
+          },
+          {
+            "key": "tesis_central",
+            "label": "Tesis central",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "La preservacion exergica de una organizacion no depende solo de sus fines declarados, sino de su capacidad institucional para revisar, rotar, transparentar, deliberar y corregirse sin perder eficacia estrategica ni convertir el desacuerdo en enemistad automatica.",
+            "source_path": "etica.etica_organizativa_exergista.tesis_central"
+          }
+        ],
+        "collections": [
+          {
+            "id": "etica_etica_organizativa_exergista_requisitos_formativos_collection",
+            "key": "requisitos_formativos",
+            "label": "Requisitos formativos",
+            "source_path": "etica.etica_organizativa_exergista.requisitos_formativos",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "educacion general en todos los campos"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "especializacion profesional o funcional"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "participacion cultural y social continuada"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "vida con proposito y disfrute no capturado"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "apoyo mutuo entre agentes para ser mejores sin ejercer fuerzas demiurgicas"
+              }
+            ]
+          },
+          {
+            "id": "etica_etica_organizativa_exergista_controles_internos_collection",
+            "key": "controles_internos",
+            "label": "Controles internos",
+            "source_path": "etica.etica_organizativa_exergista.controles_internos",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "rotacion continua del poder"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "transparencia"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "democracia grupal"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "rendicion de cuentas"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "revision externa"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "posibilidad de disenso y critica interna"
+              },
+              {
+                "order_index": 7,
+                "value_type": "text",
+                "value": "limites temporales para medidas excepcionales"
+              },
+              {
+                "order_index": 8,
+                "value_type": "text",
+                "value": "analisis exergico reproducible y contrastado por multiples personas"
+              },
+              {
+                "order_index": 9,
+                "value_type": "text",
+                "value": "best effort solo en situaciones de extrema necesidad"
+              }
+            ]
+          },
+          {
+            "id": "etica_etica_organizativa_exergista_senales_de_corrupcion_collection",
+            "key": "senales_de_corrupcion",
+            "label": "Senales de corrupcion",
+            "source_path": "etica.etica_organizativa_exergista.senales_de_corrupcion",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "concentracion del poder"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "instrumentalizacion humana"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "costumbre de la excepcion"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "debilitamiento del consenso real"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "supresion sistematica del desacuerdo y de la autocorreccion"
+              }
+            ]
+          },
+          {
+            "id": "etica_etica_organizativa_exergista_principios_de_resiliencia_collection",
+            "key": "principios_de_resiliencia",
+            "label": "Principios de resiliencia",
+            "source_path": "etica.etica_organizativa_exergista.principios_de_resiliencia",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "grupos reducidos y funcionales"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "comunidades lo mas autosostenidas posible"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "duplicacion de colectividades para reducir fragilidad"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "movilidad libre entre colectividades cuando exista experiencia pertinente"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "sentido de comunidad, pertenencia y plenitud sin clausura sectaria"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "etica_organizativa_exergista"
+      }
+    ]
+  }
+}

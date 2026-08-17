@@ -1,0 +1,54 @@
+{
+  "schema_version": 2,
+  "source_format": "legacy-normalized",
+  "domain": {
+    "id": "sistema_filosofico",
+    "key": "sistema_filosofico",
+    "label": "Sistema filosofico",
+    "source_file": "sistema_filosofico.json"
+  },
+  "root": {
+    "id": "sistema_filosofico",
+    "canonical_id": "sistema_filosofico",
+    "key": "sistema_filosofico",
+    "label": "Sistema filosofico",
+    "kind": "system",
+    "source_path": "sistema_filosofico",
+    "fields": [
+      {
+        "key": "nombre_completo",
+        "label": "Nombre completo",
+        "role": "attribute",
+        "value_type": "text",
+        "value": "Metafisica emergentista de la liberacion",
+        "source_path": "sistema_filosofico.nombre_completo"
+      },
+      {
+        "key": "nombre_doctrinal",
+        "label": "Nombre doctrinal",
+        "role": "attribute",
+        "value_type": "text",
+        "value": "Exergismo",
+        "source_path": "sistema_filosofico.nombre_doctrinal"
+      },
+      {
+        "key": "descripcion_general",
+        "label": "Descripcion general",
+        "role": "core",
+        "value_type": "text",
+        "value": "Sistema filosofico que entiende la realidad como un sistema emergente y el mundo humano como una estructura de verdad parcial, alienacion, poder y posibilidad de trascendencia. La verdad absoluta es inalcanzable, pero orienta el espiritu humano. El mal y el bien no son absolutos cosmicos, pero si categorias objetivas dentro del dominio humano.",
+        "source_path": "sistema_filosofico.descripcion_general"
+      },
+      {
+        "key": "estado_de_desarrollo",
+        "label": "Estado de desarrollo",
+        "role": "attribute",
+        "value_type": "text",
+        "value": "parcial",
+        "source_path": "sistema_filosofico.estado_de_desarrollo"
+      }
+    ],
+    "collections": [],
+    "children": []
+  }
+}

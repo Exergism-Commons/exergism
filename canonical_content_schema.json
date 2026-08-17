@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.exergia.org/schemas/canonical-content.schema.json",
+  "title": "Canonical Exergia Content v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_format",
+    "domain",
+    "root"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 2
+    },
+    "source_format": {
+      "type": "string",
+      "enum": [
+        "legacy-normalized"
+      ]
+    },
+    "domain": {
+      "$ref": "#/$defs/domain"
+    },
+    "root": {
+      "$ref": "#/$defs/node"
+    }
+  },
+  "$defs": {
+    "string_array": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "key",
+        "label",
+        "source_file"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "source_file": {
+          "type": "string"
+        }
+      }
+    },
+    "node_base": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "key",
+        "label",
+        "kind",
+        "source_path",
+        "fields",
+        "collections",
+        "children"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "concept",
+            "section",
+            "system"
+          ]
+        },
+        "source_path": {
+          "type": "string"
+        },
+        "canonical_id": {
+          "type": "string"
+        },
+        "concept_ref": {
+          "type": "string"
+        },
+        "aliases": {
+          "$ref": "#/$defs/string_array"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/field"
+          }
+        },
+        "collections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/collection"
+          }
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          }
+        }
+      }
+    },
+    "node": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/node_base"
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "canonical_id"
+              ],
+              "not": {
+                "required": [
+                  "concept_ref"
+                ]
+              }
+            },
+            {
+              "required": [
+                "concept_ref"
+              ],
+              "not": {
+                "required": [
+                  "canonical_id"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "label",
+        "role",
+        "value_type",
+        "value",
+        "source_path"
+      ],
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "core",
+            "attribute",
+            "relation",
+            "thesis",
+            "question"
+          ]
+        },
+        "value_type": {
+          "type": "string",
+          "enum": [
+            "text",
+            "boolean",
+            "number",
+            "json"
+          ]
+        },
+        "value": {},
+        "source_path": {
+          "type": "string"
+        },
+        "target_hints": {
+          "$ref": "#/$defs/string_array"
+        },
+        "target_ids": {
+          "$ref": "#/$defs/string_array"
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "key",
+        "label",
+        "source_path",
+        "item_kind_hint",
+        "items"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "source_path": {
+          "type": "string"
+        },
+        "item_kind_hint": {
+          "type": "string",
+          "enum": [
+            "collection_item",
+            "axiom",
+            "question"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/collection_item"
+          }
+        }
+      }
+    },
+    "collection_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "order_index",
+        "value_type",
+        "value"
+      ],
+      "properties": {
+        "order_index": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "value_type": {
+          "type": "string",
+          "enum": [
+            "text",
+            "boolean",
+            "number",
+            "json"
+          ]
+        },
+        "value": {}
+      }
+    }
+  }
+}

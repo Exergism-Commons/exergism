@@ -1,0 +1,374 @@
+{
+  "serie": {
+    "titulo_general_en": "Metaphysics of Emergentist Liberation",
+    "titulo_general_es": "Metafisica emergentista de la liberacion",
+    "nombre_corto_doctrinal": {
+      "en": "Exergism",
+      "es": "Exergismo"
+    },
+    "relacion_entre_nombre_largo_y_nombre_corto": {
+      "definicion": "Exergismo es la formulacion abreviada, doctrinal y operativa de la Metafisica emergentista de la liberacion, en cuanto interpreta la liberacion como aumento, proteccion y orientacion de la exergia hacia la verdad absoluta.",
+      "criterio": "No designan dos sistemas distintos, sino dos niveles de denominacion del mismo sistema: uno integral y filosofico, otro condensado y doctrinal."
+    },
+    "descripcion": "Serie filosofica que desarrolla una ontologia del mundo y de la conciencia, una etica de la autonomia y del bien y el mal intrahumanos, una politica de la liberacion frente al ciclo demiurgico, y una teoria de la exergia con su metodo de analisis aplicado a procesos, crisis, instituciones y rupturas historicas. En su nombre doctrinal abreviado, el sistema completo se denomina exergismo.",
+    "encuadernacion": "cubierta dura, terciopelo gris ceniza de calidad, estampas en plata, cobre u oro, silueta de polilla como emblema, paginas color canela suave. El resultado debe ser un libro hermoso y maduro en todos los aspectos.",
+    "estructura_general": {
+      "libro_1": "ontologia_y_metafisica",
+      "libro_2": "etica_y_antropologia_filosofica",
+      "libro_3": "politica_historia_y_liberacion_colectiva",
+      "libro_4": "teoria_de_la_exergia_y_metodo"
+    },
+    "criterio_de_unidad": "Los cuatro libros deben compartir una identidad visual, un lenguaje conceptual coherente y una progresion clara desde la descripcion de la realidad hacia la evaluacion moral, la accion colectiva y finalmente el analisis exergico y metodologico de procesos reales. La exergia debe aparecer desde el inicio como nervio del sistema y no solo como herramienta tardia.",
+    "asociacion_entre_libros": {
+      "elementos_comunes": [
+        "subtitulo general compartido",
+        "estructura de serie numerada",
+        "terminologia comun",
+        "progresion filosofica de ontologia a etica, politica, historia, exergia y metodo",
+        "motivos recurrentes: verdad, conciencia, ciclo, poder, liberacion, captura, ruptura, exergia"
+      ],
+      "identidad_de_serie": {
+        "en": "Metaphysics of Emergentist Liberation",
+        "es": "Metafisica emergentista de la liberacion"
+      }
+    }
+  },
+  "libros": [
+    {
+      "numero": 1,
+      "titulo_en": "World Jail",
+      "titulo_es": "Carcel del Mundo",
+      "subtitulo_de_serie_en": "Metaphysics of Emergentist Liberation",
+      "subtitulo_de_serie_es": "Metafisica emergentista de la liberacion",
+      "subtitulo_propiedad_en": "Ontology of Truth, Consciousness, Exergy and the Cycle",
+      "subtitulo_propiedad_es": "Ontologia de la verdad, la conciencia, la exergia y el ciclo",
+      "funcion_en_la_serie": "Fundar la base metafisica del sistema. Explica que es la realidad, que es la verdad absoluta, que es el universo, como emergen materia, vida, conciencia y espiritu, por que el mundo humano se convierte en carcel y por que la exergia debe entenderse ya desde el principio como margen real de transformacion dentro de un universo entropico.",
+      "pregunta_central": "Que es el mundo, como emerge en el la posibilidad de verdad, libertad, conciencia y exergia, y por que la existencia humana queda atrapada en un ciclo de alienacion, dominacion y apertura frustrada hacia la verdad.",
+      "tesis_central": "La realidad total existe como verdad absoluta, pero el ser humano solo accede a capas parciales de ella dentro de un universo abierto, cambiante y atravesado por la emergencia de conciencia, libertad, cambio, espiritu, exergia y ciclo.",
+      "bloques_principales": [
+        {
+          "nombre": "Verdad absoluta y universo",
+          "contenido": [
+            "verdad absoluta",
+            "universo como medio envolvente",
+            "hipotesis metafisica abierta",
+            "relacion entre universo y totalidad"
+          ]
+        },
+        {
+          "nombre": "Materia, tiempo, libertad, cambio y exergia",
+          "contenido": [
+            "materia",
+            "tiempo",
+            "libertad ontologica",
+            "entropia",
+            "cambio como expresion de la libertad",
+            "exergia como margen real de transformacion"
+          ]
+        },
+        {
+          "nombre": "Vida, conciencia y espiritu",
+          "contenido": [
+            "emergencia de la vida",
+            "conciencia gradual",
+            "autoconciencia reflexiva",
+            "espiritu",
+            "espiritu humano",
+            "relacion entre conciencia y exergia",
+            "lugar del ser humano en el universo"
+          ]
+        },
+        {
+          "nombre": "Demiurgo y carcel del mundo",
+          "contenido": [
+            "mundo humano",
+            "demiurgo",
+            "carcel del mundo",
+            "captura de la exergia",
+            "alma",
+            "muerte"
+          ]
+        }
+      ],
+      "objetivo_del_libro": "Dar al lector una vision coherente del mundo, de la conciencia, del espiritu, de la exergia y del origen estructural de la alienacion humana.",
+      "tono": "metafisico, cosmologico, filosofico, oscuro pero sistematico",
+      "motivos_clave": [
+        "carcel",
+        "verdad",
+        "universo",
+        "emergencia",
+        "conciencia",
+        "espiritu",
+        "exergia",
+        "ciclo"
+      ]
+    },
+    {
+      "numero": 2,
+      "titulo_en": "Doomed Light",
+      "titulo_es": "Luz Condenada",
+      "subtitulo_de_serie_en": "Metaphysics of Emergentist Liberation",
+      "subtitulo_de_serie_es": "Metafisica emergentista de la liberacion",
+      "subtitulo_propiedad_en": "Ethics of Autonomy, Good, Evil and the Human Gray",
+      "subtitulo_propiedad_es": "Etica de la autonomia, el bien, el mal y la zona gris humana",
+      "funcion_en_la_serie": "Desarrollar la dimension moral y antropologica del sistema. Explica por que el bien y el mal existen objetivamente en el dominio humano, como funciona la responsabilidad y que lugar ocupan instinto, ego, deseo, emociones, conciencia, autonomia y exergia consciente.",
+      "pregunta_central": "Que hace buena o mala a una conciencia humana y como puede una persona orientarse hacia la verdad sin reproducir el ciclo.",
+      "tesis_central": "El bien y el mal no son absolutos cosmicos, pero si categorias objetivas dentro del dominio humano, determinadas por la orientacion de la conciencia, la autonomia, el uso del poder y la relacion entre apertura, clausura, lucidez, captura y exergia moralmente orientada o degradada.",
+      "bloques_principales": [
+        {
+          "nombre": "Fundamento del bien y del mal",
+          "contenido": [
+            "objetividad intrahumana",
+            "bien",
+            "mal",
+            "grises",
+            "responsabilidad moral"
+          ]
+        },
+        {
+          "nombre": "Estructura interior del humano",
+          "contenido": [
+            "instinto",
+            "ego",
+            "deseo liberador",
+            "deseo demiurgico",
+            "emociones"
+          ]
+        },
+        {
+          "nombre": "Conciencia, autonomia y exergia humana",
+          "contenido": [
+            "conciencia y realidad",
+            "autonomia humana",
+            "relacion entre autonomia y responsabilidad",
+            "exergia consciente",
+            "tension entre libertad y captura"
+          ]
+        },
+        {
+          "nombre": "Juicio moral y tragedia humana",
+          "contenido": [
+            "juicio moral no simplista",
+            "lucidez y culpa",
+            "emociones exergicas pero no necesariamente buenas",
+            "posibilidad de usar el poder para el bien o el mal",
+            "limites del sujeto humano"
+          ]
+        }
+      ],
+      "objetivo_del_libro": "Mostrar como la luz de la conciencia humana puede orientarse hacia liberacion o condenarse a reforzar el ciclo.",
+      "tono": "etico, existencial, tragico, introspectivo",
+      "motivos_clave": [
+        "luz",
+        "condena",
+        "autonomia",
+        "ego",
+        "bien",
+        "mal",
+        "zona gris",
+        "exergia"
+      ]
+    },
+    {
+      "numero": 3,
+      "titulo_en": "Break the Cycle",
+      "titulo_es": "Romper el Ciclo",
+      "subtitulo_de_serie_en": "Metaphysics of Emergentist Liberation",
+      "subtitulo_de_serie_es": "Metafisica emergentista de la liberacion",
+      "subtitulo_propiedad_en": "Power, Transition, History and the Politics of Liberation",
+      "subtitulo_propiedad_es": "Poder, transicion, historia y politica de la liberacion",
+      "funcion_en_la_serie": "Llevar el sistema al terreno politico, institucional, historico y escatologico. Explica como se reproduce el ciclo en la sociedad, como funcionan las formas de poder y que estrategias, instituciones y procesos pueden abrir una salida colectiva sin reproducir una nueva carcel, incluyendo la dimension de exergia social e historica.",
+      "pregunta_central": "Como se organiza el poder en el mundo humano, como se perpetua el ciclo y que condiciones permiten romperlo sin recaer en una nueva forma de captura.",
+      "tesis_central": "La liberacion colectiva exige comprender las formas del poder, la logica de las elites, la etica de transicion, la estructura de la historia, la captura de la exergia social y la posibilidad de una humanidad mas amplia, para construir instituciones y trayectorias que limiten el demiurgo en lugar de reproducirlo.",
+      "bloques_principales": [
+        {
+          "nombre": "Poder, dominacion y captura",
+          "contenido": [
+            "poder",
+            "imperium",
+            "potestas",
+            "auctoritas",
+            "relacion entre poder, autonomia y bien o mal",
+            "captura de la exergia colectiva"
+          ]
+        },
+        {
+          "nombre": "Sociedad, elites e instituciones",
+          "contenido": [
+            "sociedad como abstraccion real",
+            "elites",
+            "opresion",
+            "instituciones",
+            "institucion no demiurgica",
+            "justicia"
+          ]
+        },
+        {
+          "nombre": "Transicion, ruptura y recaida",
+          "contenido": [
+            "etica de transicion",
+            "aceleracionismo anti-demiurgico",
+            "cambio social",
+            "exergia historica",
+            "riesgos de la ruptura",
+            "problema de la recaida"
+          ]
+        },
+        {
+          "nombre": "Historia, escatologia y humanidad cosmica",
+          "contenido": [
+            "teoria de la historia",
+            "progreso ambiguo",
+            "liberacion de la humanidad",
+            "humanidad cosmica",
+            "encuentro con otras inteligencias",
+            "ruptura final"
+          ]
+        }
+      ],
+      "objetivo_del_libro": "Proponer una teoria del poder, de la transicion, de la historia y de la organizacion colectiva capaz de orientar una salida real del ciclo demiurgico.",
+      "tono": "politico, estrategico, sociologico, historico, combativo pero sistematico",
+      "motivos_clave": [
+        "ciclo",
+        "ruptura",
+        "poder",
+        "transicion",
+        "instituciones",
+        "historia",
+        "liberacion",
+        "exergia"
+      ]
+    },
+    {
+      "numero": 4,
+      "titulo_en": "Exergic Reason",
+      "titulo_es": "Razon Exergica",
+      "subtitulo_de_serie_en": "Metaphysics of Emergentist Liberation",
+      "subtitulo_de_serie_es": "Metafisica emergentista de la liberacion",
+      "subtitulo_propiedad_en": "Theory of Exergy, Philosophical Method and Applied Historical Analysis",
+      "subtitulo_propiedad_es": "Teoria de la exergia, metodo filosofico y analisis historico aplicado",
+      "funcion_en_la_serie": "Convertir el sistema filosofico en un metodo general de discernimiento y analisis aplicado. No introduce por primera vez la exergia, sino que la sistematiza plenamente. Explica como opera entre verdad, libertad y cambio, como se usa para juzgar procesos, estructuras y conocimientos, y como construir un metodo filosofico capaz de dialogar con cualquier dominio del saber humano.",
+      "pregunta_central": "Como analizar rigurosamente procesos, instituciones, crisis, ideas y practicas sin confundir cambio con liberacion, intensidad con exergia ni sofisticacion conceptual con verdad.",
+      "tesis_central": "Un proceso, una doctrina o una estructura solo pueden comprenderse con precision cuando se evalua su capacidad real de abrir transformacion no capturada, distinguiendo entre potencia, daño, clausura, liberacion, persistencia y recaida mediante una teoria sistematica de la exergia y un metodo filosofico de segundo orden.",
+      "bloques_principales": [
+        {
+          "nombre": "Fundamentos de la teoria de la exergia",
+          "contenido": [
+            "definicion fisica y filosofica de exergia",
+            "relacion entre exergia, verdad, libertad y cambio",
+            "tipos de exergia",
+            "captura demiurgica de la exergia",
+            "criterios y riesgos"
+          ]
+        },
+        {
+          "nombre": "Metodo filosofico y discernimiento",
+          "contenido": [
+            "capas del metodo",
+            "criterios de validez",
+            "discernimiento de verdad parcial",
+            "relacion con ciencia, espiritualidad y moral intrahumana",
+            "dialogo con los dominios del conocimiento humano"
+          ]
+        },
+        {
+          "nombre": "Analisis exergico de procesos",
+          "contenido": [
+            "lectura de crisis",
+            "estructuras de apertura y clausura",
+            "captura y recaida",
+            "deuda temporal",
+            "tipologia de procesos historicos"
+          ]
+        },
+        {
+          "nombre": "Composicion de macroeventos y casos aplicados",
+          "contenido": [
+            "descomposicion en subeventos",
+            "integracion temporal",
+            "lectura de indices",
+            "comparacion de procesos historicos",
+            "revoluciones, guerras, colapsos y transiciones"
+          ]
+        },
+        {
+          "nombre": "Critica y autocritica del metodo",
+          "contenido": [
+            "subjetividad de las puntuaciones",
+            "sesgo ideologico",
+            "problemas de medicion",
+            "analisis de sensibilidad",
+            "limites de la matematizacion filosofica",
+            "riesgo de uso ornamental del modelo"
+          ]
+        }
+      ],
+      "objetivo_del_libro": "Mostrar que la metafisica emergentista de la liberacion, o exergismo, puede operar no solo como ontologia, etica y politica, sino tambien como teoria sistematica de la exergia, metodo filosofico y herramienta aplicada de analisis historico, estrategico y epistemico.",
+      "tono": "analitico, metodologico, riguroso, transversal y accesible",
+      "motivos_clave": [
+        "exergia",
+        "criterio",
+        "analisis",
+        "captura",
+        "ruptura",
+        "metodo",
+        "historia"
+      ]
+    }
+  ],
+  "coherencia_de_la_serie": {
+    "progresion_filosofica": [
+      "Libro I: que es el mundo y como emerge en el la posibilidad de exergia",
+      "Libro II: que hace bueno o malo al humano dentro de ese mundo y como se orienta o degrada su exergia",
+      "Libro III: como reorganizar el mundo humano para salir del ciclo y abrir una historia distinta mediante exergia colectiva",
+      "Libro IV: como pensar, sistematizar, medir y analizar rigurosamente procesos, doctrinas y rupturas desde la exergia"
+    ],
+    "progresion_existencial": [
+      "comprender la carcel",
+      "comprender la luz humana y su ambivalencia",
+      "organizar la fuga colectiva",
+      "aprender a discernir, analizar y no autoengañarse"
+    ],
+    "progresion_politica": [
+      "diagnostico ontologico",
+      "criterio moral",
+      "accion historica e institucional",
+      "analisis exergico y metodologico de procesos y crisis"
+    ],
+    "elementos_visuales_recurrentes": [
+      "motivos de carcel, luz, ruptura y cartografia del conflicto",
+      "simbolica oscura pero ascendente",
+      "continuidad cromatica entre los cuatro libros",
+      "numeracion clara de serie"
+    ]
+  },
+  "opciones_de_presentacion_de_la_serie": {
+    "formato_largo": {
+      "en": "World Jail / Doomed Light / Break the Cycle / Exergic Reason — Metaphysics of Emergentist Liberation",
+      "es": "Carcel del Mundo / Luz Condenada / Romper el Ciclo / Razon Exergica — Metafisica emergentista de la liberacion"
+    },
+    "formato_numerado": {
+      "en": [
+        "Book I: World Jail",
+        "Book II: Doomed Light",
+        "Book III: Break the Cycle",
+        "Book IV: Exergic Reason"
+      ],
+      "es": [
+        "Libro I: Carcel del Mundo",
+        "Libro II: Luz Condenada",
+        "Libro III: Romper el Ciclo",
+        "Libro IV: Razon Exergica"
+      ]
+    }
+  },
+  "pendientes_antes_de_escritura": [
+    "cerrar si los subtitulos propios son definitivos o provisionales",
+    "decidir tono exacto de cada libro",
+    "establecer indice detallado de capitulos para cada uno",
+    "decidir cuanto espacio ocupa la teologia o metafisica religiosa dentro de los cuatro libros o si merece un quinto volumen futuro",
+    "decidir cuantos estudios de caso tendra el cuarto libro",
+    "decidir si mantener algunas preguntas abiertas al final de cada libro o concentrarlas en el ultimo",
+    "definir la identidad visual comun de la serie"
+  ]
+}

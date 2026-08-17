@@ -1,0 +1,1339 @@
+{
+  "sistema_matematico_exergico": {
+    "nombre": "Sistema formal multicriterio exergico de evaluacion moral, estrategica y temporal",
+    "proposito_general": "Formalizar la evaluacion de acciones, procesos, instituciones, relaciones y eventos segun su capacidad de producir transformacion liberadora, captura demiurgica, daño estructural o apertura real hacia verdad, autonomia y ruptura del ciclo, sin reducir el juicio filosofico a una sola puntuacion ni permitir explosiones de escala o compensaciones opacas.",
+
+    "aclaraciones_metodologicas": {
+      "tesis_general_de_uso": "El sistema formal multicriterio exergico de evaluacion moral, estrategica y temporal debe entenderse como una herramienta de analisis multinivel orientada a maximizar rigor comparativo, trazabilidad y consistencia interna, no como un modelo matematico perfecto ni como una maquina de objetividad absoluta.",
+      "advertencia_de_sesgo": "Toda puntuacion esta atravesada por sesgos de informacion, sesgos de observador, sesgos de contexto, sesgos ideologicos y limites de disponibilidad empirica. El objetivo del sistema no es eliminar completamente esos sesgos, sino reducir arbitrariedad mediante reglas explicitas, normalizacion comparativa, trazabilidad de decisiones y contraste entre evaluadores.",
+      "principio_de_rigor": "Cuanto mas importante sea el juicio historico, politico o moral derivado del sistema, mayor debe ser la exigencia de justificar la asignacion de variables, documentar sus fuentes, declarar incertidumbres y comparar resultados con escenarios alternativos."
+    },
+
+    "alcance": {
+      "descripcion": "El sistema se aplica principalmente al dominio humano, pero admite evaluacion parcial de relaciones con animales, plantas, ambientes, infraestructuras, objetos no animados y posibles conciencias no humanas.",
+      "uso_principal": [
+        "evaluacion etica inmediata",
+        "evaluacion estrategica de procesos historicos",
+        "evaluacion temporal de daños y beneficios acumulados",
+        "evaluacion de captura y riesgo de reproduccion del ciclo",
+        "comparacion entre acciones, instituciones o transformaciones",
+        "evaluacion jerarquica de macroeventos compuestos por subeventos",
+        "deteccion de atrocity flags, puntos de recaida y compensaciones ilegitimas"
+      ],
+      "limites": [
+        "no demuestra matematicamente el bien y el mal como absolutos cosmicos",
+        "no sustituye juicio filosofico, historico o contextual",
+        "depende de estimaciones de variables finitas",
+        "la verdad absoluta no puede ser reducida a una magnitud finita",
+        "es un sistema formal multicriterio normativo, no una axiomatica matematica cerrada en sentido fuerte",
+        "sus salidas deben leerse junto con trazabilidad de variables, subeventos y contexto"
+      ]
+    },
+
+    "fundamentos_filosoficos": {
+      "principios": [
+        "La verdad absoluta es el horizonte total de lo real, pero ninguna estructura finita la agota.",
+        "La libertad abre posibilidades; la exergia mide la capacidad efectiva de convertir esas posibilidades en transformacion real.",
+        "No todo cambio es liberador; solo el cambio suficientemente exergico y no capturado puede abrir ruptura del ciclo.",
+        "El bien y el mal se formulan con plena fuerza en el dominio humano, pero puede haber evaluacion moral parcial de relaciones con otros seres o estructuras cuando median daño, cuidado, captura o apertura.",
+        "La evaluacion debe distinguir entre valor etico inmediato, valor estrategico-historico, imputacion moral y saldo temporal.",
+        "La evaluacion completa requiere una linea temporal que compare daños cortos, beneficios largos, irreversibilidades y riesgos de recaida.",
+        "Las magnitudes agregadas no deben ocultar subeventos atrozmente dañinos ni permitir su absolucion automatica por beneficios futuros abstractos."
+      ],
+      "tesis_de_uso": "El sistema formal no reemplaza la filosofia, sino que expresa de forma estructurada los criterios internos de la metafisica emergentista de la liberacion mediante un modelo multicriterio con variables acotadas, penalizaciones estables y reglas de interpretacion no compensatorias en casos extremos."
+    },
+
+    "constantes_globales": {
+      "verdad_absoluta": {
+        "simbolo": "T_abs",
+        "tipo": "constante ideal",
+        "valor": "infinito",
+        "definicion": "Horizonte total de lo real. No es una cantidad numerica operable dentro del modelo finito, sino la referencia limite que orienta la variable finita de verdad.",
+        "regla_de_uso": "T_abs no se suma, resta ni multiplica directamente en las formulas evaluativas. Su papel es justificar que las variables epistemicas siempre sean finitas, parciales y orientadas asintoticamente a un horizonte infinito."
+      },
+      "epsilon": {
+        "simbolo": "e",
+        "tipo": "constante tecnica",
+        "valor_sugerido": 0.01,
+        "definicion": "Constante positiva pequeña usada para estabilizar expresiones tecnicas auxiliares."
+      },
+      "intervalo_estandar": {
+        "tipo": "normalizacion",
+        "valor_minimo": 0.0,
+        "valor_maximo": 1.0,
+        "definicion": "Intervalo recomendado para todas las variables finitas normalizadas salvo saldos temporales, penalizaciones agregadas y banderas criticas."
+      },
+      "q_dano": {
+        "simbolo": "q_S",
+        "tipo": "exponente moral",
+        "valor_sugerido": 2.0,
+        "definicion": "Exponente para hacer no lineal el peso del sufrimiento y penalizar desproporcionadamente daños altos."
+      },
+      "q_captura": {
+        "simbolo": "q_C",
+        "tipo": "exponente politico",
+        "valor_sugerido": 2.0,
+        "definicion": "Exponente para hacer no lineal el peso de capturas altas o estructuralmente densas."
+      },
+      "s_critico": {
+        "simbolo": "S_crit",
+        "tipo": "umbral",
+        "valor_sugerido": 0.85,
+        "definicion": "Umbral a partir del cual el sufrimiento entra en zona de alerta extrema."
+      },
+      "c_critico": {
+        "simbolo": "C_crit",
+        "tipo": "umbral",
+        "valor_sugerido": 0.80,
+        "definicion": "Umbral a partir del cual la captura entra en zona de alerta extrema."
+      }
+    },
+
+    "variables_principales": {
+      "P": {
+        "nombre": "potencia_transformadora_real",
+        "dominio": "[0,1]",
+        "definicion": "Capacidad de una accion, proceso o estructura para producir cambio real no superficial en relaciones, instituciones, conciencias o condiciones materiales."
+      },
+      "A": {
+        "nombre": "autonomia_efectiva",
+        "dominio": "[0,1]",
+        "definicion": "Capacidad real del sujeto o sistema para actuar sin quedar completamente sometido al impulso ciego, la coaccion externa, la dependencia total o la captura estructural."
+      },
+      "V_ep": {
+        "nombre": "verdad_epistemica_parcial",
+        "dominio": "[0,1]",
+        "definicion": "Grado finito y parcial en que una accion, proceso o estructura se ajusta a coherencia, evidencia, contraste y capacidad explicativa bajo el horizonte ideal de la verdad absoluta."
+      },
+      "L": {
+        "nombre": "orientacion_liberadora_no_manipuladora",
+        "dominio": "[0,1]",
+        "definicion": "Grado en que un proceso usa conocimiento, interpretacion o discurso para abrir autonomia y comprension sin convertirlos en instrumento de dominacion."
+      },
+      "O": {
+        "nombre": "apertura_de_posibilidades",
+        "dominio": "[0,1]",
+        "definicion": "Grado en que se abren trayectorias futuras de reorganizacion, libertad, aprendizaje, autonomia o transformacion."
+      },
+      "C": {
+        "nombre": "captura_demiurgica",
+        "dominio": "[0,1]",
+        "definicion": "Grado en que un proceso reproduce dominacion, concentracion de poder, manipulacion, servidumbre, opacidad o apropiacion del margen transformador."
+      },
+      "S": {
+        "nombre": "sufrimiento_estructural",
+        "dominio": "[0,1]",
+        "definicion": "Daño humano, biologico, social o sensible causado por una accion o proceso, incluyendo sufrimiento directo e indirecto."
+      },
+      "R": {
+        "nombre": "riesgo_de_recaida",
+        "dominio": "[0,1]",
+        "definicion": "Probabilidad estructural de que un proceso reinstaure el ciclo o una forma equivalente de captura, dominacion o nueva prision."
+      },
+      "Ecol": {
+        "nombre": "impacto_ecologico",
+        "dominio": "[0,1]",
+        "definicion": "Impacto sobre ecosistemas, equilibrio ambiental, habitabilidad, contaminacion y condiciones materiales de continuidad de la vida."
+      },
+      "U": {
+        "nombre": "utilidad_exergica",
+        "dominio": "[0,1]",
+        "definicion": "Fraccion del potencial disponible que se convierte en transformacion real util en vez de disiparse como destruccion esteril, ruido o desgaste improductivo."
+      },
+      "D_p": {
+        "nombre": "coeficiente_de_paciente_moral",
+        "dominio": "[0,1]",
+        "definicion": "Peso moral del tipo de entidad o sistema afectado por el acto."
+      },
+      "D_a": {
+        "nombre": "coeficiente_de_agencia_imputable",
+        "dominio": "[0,1]",
+        "definicion": "Grado en que el agente es realmente imputable por capacidad de decision, lucidez y margen de accion."
+      },
+      "I": {
+        "nombre": "intencionalidad_de_dominio",
+        "dominio": "[0,1]",
+        "definicion": "Grado en que el daño, la manipulacion o la captura son buscados deliberadamente."
+      },
+      "Lz": {
+        "nombre": "lucidez_del_agente",
+        "dominio": "[0,1]",
+        "definicion": "Grado en que el agente comprende las consecuencias, la estructura y la carga moral o politica de lo que hace."
+      },
+      "G": {
+        "nombre": "gratuidad_del_dano",
+        "dominio": "[0,1]",
+        "definicion": "Grado en que el daño infligido carece de necesidad fuerte incluso dentro de una etica tragica de transicion."
+      }
+    },
+
+    "normalizacion_y_escalas": {
+      "principio_general": "Todas las variables principales en dominio [0,1] deben asignarse mediante una escala normalizada que compare el subevento evaluado con un minimo hipotetico y un maximo hipotetico definidos ex ante para el dominio de analisis.",
+      "objetivo": "Reducir arbitrariedad, facilitar comparacion entre subeventos, fases y macroeventos, y evitar que la puntuacion dependa solo de intuiciones locales no comparables.",
+      "regla_de_normalizacion_basica": {
+        "formula": "x_normalizado = (x_observado - x_min_hipotetico) / (x_max_hipotetico - x_min_hipotetico)",
+        "acotacion": "Si el resultado es menor que 0, fijarlo en 0. Si es mayor que 1, fijarlo en 1.",
+        "nota": "Cuando la variable no se mide directamente en magnitudes cuantitativas continuas, debe traducirse mediante una rubrica ordinal previamente definida."
+      },
+      "maximos_y_minimos_hipoteticos": {
+        "definicion": "Los maximos y minimos hipoteticos son puntos de referencia construidos para cada tipo de dominio analitico. No son necesariamente casos reales observados, sino anclas comparativas plausibles que delimitan el rango de la variable.",
+        "tipos": {
+          "minimo_hipotetico": "Caso ideal o casi nulo de manifestacion de la variable en el dominio analizado.",
+          "maximo_hipotetico": "Caso extremo, limite o casi extremo de manifestacion de la variable en el dominio analizado."
+        },
+        "regla": "Los maximos y minimos hipoteticos deben fijarse antes de puntuar los subeventos de una serie, y mantenerse estables durante toda la evaluacion salvo justificacion metodologica explicita."
+      },
+      "niveles_de_rubrica_sugeridos": {
+        "cinco_niveles": {
+          "0_00_a_0_19": "muy_bajo",
+          "0_20_a_0_39": "bajo",
+          "0_40_a_0_59": "medio",
+          "0_60_a_0_79": "alto",
+          "0_80_a_1_00": "muy_alto"
+        },
+        "uso": "La rubrica de cinco niveles puede emplearse cuando no existan datos cuantitativos suficientes, siempre que el evaluador justifique por que el subevento cae en un tramo y no en otro."
+      }
+    },
+
+    "protocolo_de_asignacion_de_variables": {
+      "objetivo": "Hacer la puntuacion lo mas objetiva, comparable y rigurosa posible dentro de los limites del modelo.",
+      "pasos": [
+        "Definir con precision el dominio del analisis: interpersonal, institucional, historico, geopolítico, ecológico, etc.",
+        "Fijar ex ante maximos hipoteticos y minimos hipoteticos para cada variable relevante.",
+        "Determinar si la variable se puntuara por medicion cuantitativa directa, estimacion experta con rubrica o combinacion de ambas.",
+        "Asignar una puntuacion preliminar.",
+        "Justificar la puntuacion con una nota breve y trazable.",
+        "Registrar el grado de incertidumbre asociado a la variable.",
+        "Si es posible, realizar doble puntuacion independiente y comparar desviaciones.",
+        "Consolidar la puntuacion final solo despues de revisar consistencia entre variables relacionadas."
+      ],
+      "modos_de_asignacion": {
+        "modo_cuantitativo_directo": {
+          "descripcion": "Se usa cuando existe una magnitud empirica clara que puede normalizarse, por ejemplo numero de victimas, duracion del daño, porcentaje de destruccion o nivel de concentracion institucional."
+        },
+        "modo_rubrica_estructurada": {
+          "descripcion": "Se usa cuando la variable no es directamente medible, por ejemplo orientacion liberadora no manipuladora, lucidez del agente o apertura de posibilidades."
+        },
+        "modo_hibrido": {
+          "descripcion": "Combina datos cuantitativos y juicio experto bajo reglas explicitas, por ejemplo impacto ecologico o riesgo de recaida."
+        }
+      },
+      "registro_de_incertidumbre": {
+        "descripcion": "Cada variable debe acompañarse de un nivel de confianza o incertidumbre.",
+        "escala_sugerida": {
+          "alta_confianza": "datos abundantes y consistentes",
+          "media_confianza": "datos suficientes pero incompletos o parcialmente interpretativos",
+          "baja_confianza": "datos escasos, indirectos o muy controvertidos"
+        },
+        "regla_de_uso": "Las puntuaciones con baja confianza no deben usarse como base unica de una conclusion fuerte."
+      }
+    },
+
+    "guia_de_puntuacion_variable_por_variable": {
+      "potencia_transformadora_real": {
+        "criterio": "Mide capacidad efectiva de alterar estructuras, relaciones, instituciones, territorios, recursos o trayectorias historicas.",
+        "minimo_hipotetico": "acto sin efecto estructural identificable",
+        "maximo_hipotetico": "acto o proceso que reconfigura de forma inmediata y profunda multiples dimensiones de un sistema",
+        "indicadores_sugeridos": [
+          "alcance del cambio",
+          "profundidad institucional",
+          "duracion esperada del efecto",
+          "numero de actores o sistemas afectados"
+        ]
+      },
+      "autonomia_efectiva": {
+        "criterio": "Mide margen real de accion no totalmente sometido a coaccion, dependencia o captura.",
+        "minimo_hipotetico": "accion totalmente heterodirigida o mecanica",
+        "maximo_hipotetico": "accion altamente autoconsciente, deliberada y no capturada",
+        "indicadores_sugeridos": [
+          "grado de coaccion externa",
+          "margen de eleccion",
+          "dependencia material",
+          "autonomia simbolica"
+        ]
+      },
+      "verdad_epistemica_parcial": {
+        "criterio": "Mide ajuste a coherencia, evidencia, explicacion y resistencia al autoengaño.",
+        "minimo_hipotetico": "narrativa puramente falsa, manipuladora o internamente inconsistente",
+        "maximo_hipotetico": "interpretacion altamente coherente, bien apoyada y resistente a sesgo",
+        "indicadores_sugeridos": [
+          "coherencia interna",
+          "correspondencia empirica",
+          "calidad explicativa",
+          "resistencia al autoengaño"
+        ]
+      },
+      "orientacion_liberadora_no_manipuladora": {
+        "criterio": "Mide si el proceso abre autonomia y comprension sin instrumentalizar a otros.",
+        "minimo_hipotetico": "uso completamente instrumental y manipulador del discurso o de la accion",
+        "maximo_hipotetico": "apertura fuerte de autonomia ajena con alta transparencia y no instrumentalizacion",
+        "indicadores_sugeridos": [
+          "transparencia",
+          "no manipulacion",
+          "no instrumentalizacion",
+          "apertura de autonomia ajena"
+        ]
+      },
+      "apertura_de_posibilidades": {
+        "criterio": "Mide cuantas trayectorias futuras reales se abren.",
+        "minimo_hipotetico": "cierre casi total del horizonte de accion",
+        "maximo_hipotetico": "apertura amplia y durable de nuevas trayectorias",
+        "indicadores_sugeridos": [
+          "numero de futuros plausibles abiertos",
+          "reversibilidad del cierre",
+          "margen de reorganizacion futura"
+        ]
+      },
+      "captura_demiurgica": {
+        "criterio": "Mide concentracion de poder, opacidad, manipulacion y apropiacion del margen transformador.",
+        "minimo_hipotetico": "ausencia casi total de captura",
+        "maximo_hipotetico": "captura extrema, centralizada, opaca y dificilmente reversible",
+        "indicadores_sugeridos": [
+          "concentracion de poder",
+          "captura institucional",
+          "captura simbolica",
+          "captura tecnica o tecnologica"
+        ]
+      },
+      "sufrimiento_estructural": {
+        "criterio": "Mide daño humano, biologico o sensible, directo e indirecto.",
+        "minimo_hipotetico": "ausencia de daño relevante",
+        "maximo_hipotetico": "daño extremo masivo, intenso y persistente",
+        "indicadores_sugeridos": [
+          "victimas",
+          "intensidad del daño",
+          "duracion del daño",
+          "extension del daño"
+        ]
+      },
+      "riesgo_de_recaida": {
+        "criterio": "Mide probabilidad de reinstalar captura, dominacion o nueva prision.",
+        "minimo_hipotetico": "proceso muy estable frente a recaida",
+        "maximo_hipotetico": "probabilidad extrema de restauracion del ciclo",
+        "indicadores_sugeridos": [
+          "fragilidad institucional",
+          "legitimacion de crueldad",
+          "probabilidad de nueva jerarquia opresiva",
+          "inercia cultural"
+        ]
+      },
+      "impacto_ecologico": {
+        "criterio": "Mide degradacion, perdida de sostenibilidad, persistencia del daño y riesgo sistemico.",
+        "minimo_hipotetico": "sin impacto ecologico apreciable",
+        "maximo_hipotetico": "daño ecologico persistente, amplio e irreversible",
+        "indicadores_sugeridos": [
+          "degradacion del entorno",
+          "duracion del daño",
+          "perdida de habitabilidad",
+          "riesgo de colapso o contaminacion"
+        ]
+      },
+      "utilidad_exergica": {
+        "criterio": "Mide cuanto del potencial disponible se convierte en transformacion real util.",
+        "minimo_hipotetico": "movimiento esteril o disipativo",
+        "maximo_hipotetico": "aprovechamiento casi completo del potencial en cambio efectivo",
+        "indicadores_sugeridos": [
+          "proporcion entre esfuerzo y resultado",
+          "grado de disipacion esteril",
+          "eficacia real de la transformacion"
+        ]
+      }
+    },
+
+    "coeficientes_morales": {
+      "coeficiente_de_paciente_moral": {
+        "descripcion_general": "Escala que ajusta la intensidad del juicio moral segun el tipo de entidad o dominio afectado.",
+        "tabla_orientativa": {
+          "humano_humano": 1.0,
+          "humano_ser_consciente_no_humano_reflexivo": 0.95,
+          "humano_animal_complejo": 0.7,
+          "humano_animal_basico": 0.6,
+          "humano_planta": 0.3,
+          "humano_ecosistema_ambiente": 0.5,
+          "humano_objeto_no_animado_aislado": 0.1,
+          "humano_infraestructura_critica_con_impacto_social_o_ecologico": 0.8
+        },
+        "regla_general": "Cuanto mayor sea la conciencia, la autonomia, la sensibilidad al daño o la mediacion estructural sobre la vida y la libertad, mayor debe ser D_p."
+      },
+      "coeficiente_de_agencia_imputable": {
+        "descripcion_general": "Escala que ajusta la fuerza de imputacion segun capacidad real del agente para comprender y decidir.",
+        "tabla_orientativa": {
+          "agente_plenamente_lucido_y_autonomo": 1.0,
+          "agente_lucido_pero_parcialmente_coaccionado": 0.8,
+          "agente_con_lucidez_parcial": 0.6,
+          "agente_fuertemente_coaccionado_o_heterodirigido": 0.4,
+          "agente_con_agencia_minima_o_refleja": 0.2
+        },
+        "regla_general": "D_a sube con autonomia real, capacidad de comprension, margen de decision y menor dependencia de coaccion extrema."
+      }
+    },
+
+    "submodelos": {
+      "autonomia": {
+        "simbolo": "A",
+        "formula": "A = (Ai + Am + As + Ac) / 4",
+        "definicion": "Autonomia efectiva agregada obtenida como promedio de dimensiones interior, material, simbolica y colectiva.",
+        "componentes": {
+          "Ai": {
+            "nombre": "autonomia_interior",
+            "definicion": "Capacidad de ordenar impulsos, miedos, deseos y decisiones sin quedar totalmente absorbido por ellos."
+          },
+          "Am": {
+            "nombre": "autonomia_material",
+            "definicion": "Grado de independencia practica respecto a necesidades materiales, dependencia extrema o privacion."
+          },
+          "As": {
+            "nombre": "autonomia_simbolica",
+            "definicion": "Capacidad de pensar y juzgar sin quedar totalmente capturado por marcos ideologicos, manipulacion o miedo simbolico."
+          },
+          "Ac": {
+            "nombre": "autonomia_colectiva",
+            "definicion": "Capacidad de una comunidad o estructura para sostener autogobierno, autocorreccion y no subordinacion."
+          }
+        }
+      },
+      "verdad_epistemica": {
+        "simbolo": "V_ep",
+        "formula": "V_ep = (Co + Cr + Ce + Rs) / 4",
+        "definicion": "Orientacion finita y parcial hacia verdad epistemica bajo el horizonte infinito de T_abs.",
+        "componentes": {
+          "Co": {
+            "nombre": "coherencia_interna",
+            "definicion": "Ausencia relativa de contradicciones innecesarias dentro del marco evaluado."
+          },
+          "Cr": {
+            "nombre": "correspondencia_parcial",
+            "definicion": "Grado de ajuste a la realidad observable o verificable disponible."
+          },
+          "Ce": {
+            "nombre": "capacidad_explicativa",
+            "definicion": "Grado en que el proceso o juicio explica lo que ocurre mejor que alternativas rivales."
+          },
+          "Rs": {
+            "nombre": "resistencia_al_autoengaño",
+            "definicion": "Grado en que el juicio resiste sesgo, racionalizacion interesada y autojustificacion."
+          }
+        },
+        "nota": "V_ep nunca puede alcanzar T_abs porque toda verdad situada es parcial."
+      },
+      "orientacion_liberadora": {
+        "simbolo": "L",
+        "formula": "L = (Lm + Ln + La + Lt) / 4",
+        "definicion": "Orientacion no manipuladora del proceso hacia autonomia y apertura real.",
+        "componentes": {
+          "Lm": {
+            "nombre": "no_manipulacion",
+            "definicion": "Grado en que el proceso no usa verdad o discurso como instrumento de dominio."
+          },
+          "Ln": {
+            "nombre": "no_instrumentalizacion",
+            "definicion": "Grado en que otros no son reducidos a medios prescindibles."
+          },
+          "La": {
+            "nombre": "apertura_de_autonomia_ajena",
+            "definicion": "Grado en que el proceso aumenta el margen de autogobierno de otros."
+          },
+          "Lt": {
+            "nombre": "transparencia_orientativa",
+            "definicion": "Grado en que la orientacion del proceso es inteligible y criticable publicamente."
+          }
+        }
+      },
+      "captura": {
+        "simbolo": "C",
+        "formula": "C = (Cp + Ci + Cs + Ct) / 4",
+        "definicion": "Agregado de formas de captura demiurgica.",
+        "componentes": {
+          "Cp": {
+            "nombre": "concentracion_de_poder",
+            "definicion": "Grado de acumulacion de mando o control en pocos agentes o centros."
+          },
+          "Ci": {
+            "nombre": "captura_institucional",
+            "definicion": "Grado de rigidez, opacidad o apropiacion de instituciones por intereses de dominio."
+          },
+          "Cs": {
+            "nombre": "captura_simbolica",
+            "definicion": "Grado de manipulacion de imaginarios, lenguaje, sentido o percepcion."
+          },
+          "Ct": {
+            "nombre": "captura_tecnica_o_tecnologica",
+            "definicion": "Grado en que la tecnica, informacion o infraestructura se usan para dominacion y no para autonomia compartida."
+          }
+        }
+      },
+      "recaida": {
+        "simbolo": "R",
+        "formula": "R = (Rh + Rj + Rp + Rc) / 4",
+        "definicion": "Agregado del riesgo de reproduccion del ciclo.",
+        "componentes": {
+          "Rh": {
+            "nombre": "riesgo_de_nueva_jerarquia_opresiva",
+            "definicion": "Probabilidad de que emerja una estructura de mando arbitrario similar a la previa."
+          },
+          "Rj": {
+            "nombre": "riesgo_de_justificacion_de_crueldad",
+            "definicion": "Probabilidad de normalizar daño y violencia bajo discurso emancipador."
+          },
+          "Rp": {
+            "nombre": "riesgo_de_nueva_prision_politica",
+            "definicion": "Probabilidad de sustitucion del orden previo por otro igual o peor en captura."
+          },
+          "Rc": {
+            "nombre": "riesgo_de_recaida_cultural",
+            "definicion": "Probabilidad de que la cultura, costumbre o simbolica arrastren de nuevo al ciclo."
+          }
+        }
+      },
+      "impacto_ecologico": {
+        "simbolo": "Ecol",
+        "formula": "Ecol = (Ed + El + Ep + Er) / 4",
+        "definicion": "Agregado del impacto ambiental y material sobre las condiciones generales de vida.",
+        "componentes": {
+          "Ed": {
+            "nombre": "degradacion_del_entorno",
+            "definicion": "Grado de destruccion o alteracion dañina del ambiente."
+          },
+          "El": {
+            "nombre": "perdida_de_sostenibilidad_de_la_vida",
+            "definicion": "Grado en que el acto o proceso reduce la capacidad futura de sostener vida."
+          },
+          "Ep": {
+            "nombre": "persistencia_temporal_del_dano_ecologico",
+            "definicion": "Duracion o irreversibilidad del daño ambiental."
+          },
+          "Er": {
+            "nombre": "riesgo_de_colapso_o_contaminacion",
+            "definicion": "Probabilidad de consecuencias ecologicas sistemicas graves."
+          }
+        }
+      },
+      "utilidad_exergica": {
+        "simbolo": "U",
+        "formula": "U = Tr / (Tr + De + e)",
+        "definicion": "Fraccion del potencial que se traduce en transformacion real util.",
+        "componentes": {
+          "Tr": {
+            "nombre": "transformacion_real_lograda",
+            "definicion": "Cambio efectivo logrado con orientacion util hacia autonomia, verdad o reorganizacion."
+          },
+          "De": {
+            "nombre": "disipacion_esteril",
+            "definicion": "Energia, daño o movimiento gastado sin apertura real de reorganizacion liberadora."
+          }
+        }
+      },
+      "penalizacion_estructural": {
+        "simbolo": "Pen",
+        "formula": "Pen = pc * C^q_C + pr * R + pe * Ecol",
+        "definicion": "Penalizacion estructural acotada y estable que reduce exergia real e indice estrategico sin producir explosiones por denominadores cercanos a cero."
+      },
+      "imputacion_moral_fuerte": {
+        "simbolo": "M_f",
+        "formula": "M_f = D_p * D_a * ( m1 * I + m2 * Lz + m3 * G + m4 * C + m5 * S )",
+        "definicion": "Indice de imputacion moral fuerte del agente. Distingue daño producido de maldad o responsabilidad fuerte."
+      }
+    },
+
+    "formulas_principales": {
+      "exergia_filosofica_bruta": {
+        "simbolo": "Ex_b",
+        "formula": "Ex_b = (P * A * V_ep * L * O * U)^(1/6)",
+        "definicion": "Capacidad transformadora liberadora bruta antes de descontar captura, recaida y daño estructural. Se usa media geometrica para evitar aplastamiento excesivo de escala sin perder interdependencia."
+      },
+      "exergia_real": {
+        "simbolo": "Ex_r",
+        "formula": "Ex_r = Ex_b / (1 + Pen)",
+        "definicion": "Capacidad transformadora efectiva ajustada por penalizacion estructural estable.",
+        "rango_aproximado": "[0,1]"
+      },
+      "indice_etico_inmediato": {
+        "simbolo": "E_i",
+        "formula": "E_i = D_p * [ a1(A * V_ep) + a2(L * O * U) - a3(S^q_S) - a4(C^q_C) - a5(Ecol) ]",
+        "definicion": "Valor etico inmediato de un acto o proceso segun el dominio moral, la autonomia, la verdad epistemica, la orientacion liberadora, la apertura y los daños generados."
+      },
+      "indice_estrategico_historico": {
+        "simbolo": "X_h",
+        "formula": "X_h = ((P * O * A * U)^(1/4)) / (1 + Pen)",
+        "definicion": "Potencial exergico de un proceso para abrir reorganizacion historica real, independientemente de su costo moral inmediato.",
+        "rango_aproximado": "[0,1]"
+      },
+      "balance_structural_inicial": {
+        "simbolo": "B_0",
+        "formula": "B_0 = b1(Ex_b) + b2(L) - b3(C^q_C) - b4(S^q_S) - b5(R) - b6(Ecol)",
+        "definicion": "Balance estructural inicial del proceso antes de integrar su despliegue temporal."
+      },
+      "penalizacion_de_atrocidad": {
+        "simbolo": "P_atr",
+        "formula": "P_atr = r1 * max(0, S - S_crit)^2 + r2 * max(0, C - C_crit)^2 + r3 * Rj",
+        "definicion": "Penalizacion adicional para impedir que daño extremo, captura extrema o justificacion de crueldad queden absorbidos opacamente por indices agregados."
+      },
+      "indice_etico_ajustado_por_atrocidad": {
+        "simbolo": "E_i_adj",
+        "formula": "E_i_adj = E_i - P_atr",
+        "definicion": "Indice etico inmediato tras introducir restriccion no compensatoria por atrocidad."
+      }
+    },
+
+    "modulacion_por_contexto": {
+      "descripcion": "Los pesos cambian segun el contexto, porque la etica de transicion no es identica a la etica de una sociedad liberada ni a la de un conflicto cotidiano.",
+      "transicion": {
+        "descripcion": "Contexto de ruptura del ciclo donde se tolera mas coste inmediato si existe potencial exergico real, pero sin absolucion automatica de crueldad extrema.",
+        "pesos": {
+          "a1": 0.22,
+          "a2": 0.18,
+          "a3": 0.22,
+          "a4": 0.16,
+          "a5": 0.12,
+          "b1": 0.28,
+          "b2": 0.12,
+          "b3": 0.16,
+          "b4": 0.16,
+          "b5": 0.14,
+          "b6": 0.14,
+          "pc": 0.40,
+          "pr": 0.30,
+          "pe": 0.30,
+          "m1": 0.25,
+          "m2": 0.20,
+          "m3": 0.20,
+          "m4": 0.20,
+          "m5": 0.15,
+          "r1": 0.50,
+          "r2": 0.30,
+          "r3": 0.20
+        }
+      },
+      "sociedad_liberada": {
+        "descripcion": "Contexto donde el daño, la recaida y la captura pesan mas porque ya no se trata de romper una carcel total sino de no reproducirla.",
+        "pesos": {
+          "a1": 0.24,
+          "a2": 0.16,
+          "a3": 0.24,
+          "a4": 0.18,
+          "a5": 0.18,
+          "b1": 0.24,
+          "b2": 0.14,
+          "b3": 0.18,
+          "b4": 0.18,
+          "b5": 0.13,
+          "b6": 0.13,
+          "pc": 0.45,
+          "pr": 0.30,
+          "pe": 0.25,
+          "m1": 0.20,
+          "m2": 0.20,
+          "m3": 0.20,
+          "m4": 0.20,
+          "m5": 0.20,
+          "r1": 0.45,
+          "r2": 0.35,
+          "r3": 0.20
+        }
+      },
+      "interaccion_mundana": {
+        "descripcion": "Contexto cotidiano o interpersonal donde el sufrimiento, la manipulacion y la captura interpersonal pesan mas directamente.",
+        "pesos": {
+          "a1": 0.26,
+          "a2": 0.16,
+          "a3": 0.24,
+          "a4": 0.20,
+          "a5": 0.14,
+          "b1": 0.26,
+          "b2": 0.14,
+          "b3": 0.18,
+          "b4": 0.18,
+          "b5": 0.12,
+          "b6": 0.12,
+          "pc": 0.40,
+          "pr": 0.25,
+          "pe": 0.35,
+          "m1": 0.25,
+          "m2": 0.20,
+          "m3": 0.25,
+          "m4": 0.15,
+          "m5": 0.15,
+          "r1": 0.50,
+          "r2": 0.30,
+          "r3": 0.20
+        }
+      }
+    },
+
+    "integracion_temporal": {
+      "descripcion": "El juicio completo debe comparar el daño y el beneficio a lo largo de una timeline. Un proceso puede ser eticamente malo en el instante y sin embargo dejar saldo historico positivo, o al reves. Sin embargo, daños extremos e irreversibles no deben ser compensados linealmente como si fueran simples costes fungibles.",
+      "variables_temporales": {
+        "t": {
+          "nombre": "instante_temporal",
+          "definicion": "Unidad discreta de tiempo en la serie evaluada."
+        },
+        "T": {
+          "nombre": "horizonte_total",
+          "definicion": "Limite de tiempo hasta el cual se integra el proceso."
+        },
+        "lambda": {
+          "nombre": "factor_de_descuento_temporal",
+          "definicion": "Parametro que reduce el peso de eventos mas lejanos en el tiempo."
+        },
+        "delta": {
+          "nombre": "peso_de_persistencia_del_dano",
+          "definicion": "Factor que permite modelar que ciertos daños persisten con más fuerza que otros."
+        },
+        "gamma": {
+          "nombre": "peso_de_persistencia_del_beneficio",
+          "definicion": "Factor que permite modelar que ciertos beneficios liberadores persisten o se debilitan con el tiempo."
+        },
+        "Irr": {
+          "nombre": "irreversibilidad",
+          "definicion": "Factor adicional que incrementa el peso de daños no recuperables o apenas recuperables."
+        }
+      },
+      "formulas_temporales": {
+        "dano_acumulado": {
+          "simbolo": "D_acc",
+          "formula": "D_acc = SUMA_t=0^T [ ( S_t^q_S + Ecol_t + C_t^q_C + P_atr_t ) * exp(-lambda * t) * delta_t * (1 + Irr_t) ]",
+          "definicion": "Daño total acumulado ponderado temporalmente, con penalizacion no lineal e irreversibilidad."
+        },
+        "beneficio_acumulado": {
+          "simbolo": "B_acc",
+          "formula": "B_acc = SUMA_t=0^T [ ( Ex_b_t + O_t + A_t * V_ep_t + L_t ) * exp(-lambda * t) * gamma_t ]",
+          "definicion": "Beneficio total acumulado ponderado temporalmente."
+        },
+        "saldo_temporal_aproximado": {
+          "simbolo": "N_t",
+          "formula": "N_t = B_acc - D_acc",
+          "definicion": "Balance historico aproximado entre beneficios liberadores acumulados y daños acumulados a lo largo de una linea temporal."
+        }
+      },
+      "interpretacion_de_N_t": {
+        "positivo": "El proceso deja saldo exergico-liberador neto a medio y largo plazo.",
+        "cercano_a_cero": "El proceso es gris, ambiguo o muy dependiente del horizonte temporal y de la ponderacion elegida.",
+        "negativo": "El proceso deja mas captura, daño o disipacion que liberacion efectiva."
+      },
+      "restriccion_no_compensatoria": {
+        "descripcion": "Si existen subeventos o tramos con atrocidad extrema e irreversibilidad alta, N_t positivo no equivale automaticamente a legitimidad moral final.",
+        "regla_sugerida": "Si P_atr_t > 0.25 en cualquier tramo critico y D_acc asociado es alto e irreversible, el proceso debe quedar marcado como 'saldo positivo con mancha no compensable' hasta evaluacion filosofica adicional."
+      }
+    },
+
+    "tratamiento_de_dominios_no_humanos_y_no_animados": {
+      "principio_general": "La imputacion moral fuerte se formula primariamente para el dominio humano, pero el sistema evalua tambien relaciones con animales, plantas, ambientes, infraestructuras y objetos no animados en la medida en que median daño, cuidado, soporte de vida, captura o apertura.",
+      "reglas": [
+        "Si la entidad afectada posee conciencia compleja o autonomia reflexiva, su tratamiento se aproxima al dominio humano.",
+        "Si la entidad afectada no posee conciencia comparable, la evaluacion se centra mas en daño, cuidado, gratuidad, captura y consecuencias ecologicas o sociales.",
+        "Los ambientes y ecosistemas no son sujetos morales fuertes en sentido humano, pero su destruccion puede tener peso moral alto por su funcion de soporte de vida y libertad futura.",
+        "Las infraestructuras se evaluan por sus efectos sobre autonomia, daño, captura, utilidad exergica y riesgo sistemico.",
+        "D_p y D_a no deben confundirse: el primero pesa la entidad afectada y el segundo la fuerza de imputacion del agente."
+      ]
+    },
+
+    "clasificacion": {
+      "etica_inmediata_ajustada": {
+        "muy_bueno": "E_i_adj > 0.25",
+        "bueno": "0.08 < E_i_adj <= 0.25",
+        "gris": "-0.08 <= E_i_adj <= 0.08",
+        "malo": "-0.25 <= E_i_adj < -0.08",
+        "muy_malo": "E_i_adj < -0.25"
+      },
+      "exergia_estrategica": {
+        "alta": "X_h > 0.66",
+        "media": "0.40 <= X_h <= 0.66",
+        "baja": "X_h < 0.40"
+      },
+      "saldo_temporal": {
+        "liberador": "N_t > 0",
+        "ambiguo": "N_t ~= 0",
+        "capturado": "N_t < 0"
+      },
+      "imputacion_moral_fuerte": {
+        "muy_alta": "M_f > 0.75",
+        "alta": "0.55 < M_f <= 0.75",
+        "media": "0.35 < M_f <= 0.55",
+        "baja": "0.15 < M_f <= 0.35",
+        "muy_baja": "M_f <= 0.15"
+      },
+      "alertas_criticas": {
+        "atrocidad": "P_atr > 0.20",
+        "captura_extrema": "C > C_crit",
+        "sufrimiento_extremo": "S > S_crit",
+        "recaida_ideologica": "Rj > 0.70"
+      }
+    },
+
+    "reglas_de_lectura": {
+      "bueno_y_exergico": "E_i_adj > 0 y X_h > 0.50 y N_t > 0",
+      "gris_tragico": "E_i_adj < 0 pero X_h > 0.50 y N_t puede terminar siendo positivo",
+      "malo_capturado": "E_i_adj < 0 y X_h < 0.40 y N_t < 0",
+      "danino_sin_maldad_fuerte": "Caso aplicable a plantas, ambientes u objetos cuando hay daño real pero menor imputacion moral directa o baja agencia del agente",
+      "maldad_fuerte": "M_f alto o muy alto con E_i_adj muy negativo",
+      "saldo_positivo_no_absolutorio": "Caso en que N_t > 0 pero existe P_atr alto o daño irreversible alto",
+      "advertencia": "Un alto X_h no absuelve automaticamente un E_i_adj muy negativo ni una imputacion moral fuerte elevada. La distincion entre etica inmediata, estrategia historica, imputacion moral y saldo temporal es constitutiva del sistema."
+    },
+
+    "casuistica_estructural": {
+      "dominio_humano_humano": {
+        "D_p_sugerido": 1.0,
+        "D_a_sugerido": "0.4 a 1.0 segun lucidez y coaccion",
+        "foco_principal": [
+          "autonomia",
+          "verdad_epistemica",
+          "orientacion_liberadora",
+          "captura",
+          "sufrimiento",
+          "riesgo_de_recaida",
+          "imputacion_fuerte"
+        ]
+      },
+      "dominio_humano_animal": {
+        "D_p_sugerido": 0.6,
+        "variacion": "hasta 0.7 en animales complejos",
+        "foco_principal": [
+          "sufrimiento_del_animal",
+          "gratuidad_o_necesidad_del_acto",
+          "impacto_formativo_sobre_el_humano",
+          "relacion_de_cuidado_o_dominio",
+          "imputacion_fuerte_del_agente"
+        ]
+      },
+      "dominio_humano_planta": {
+        "D_p_sugerido": 0.3,
+        "foco_principal": [
+          "gratuidad_del_dano",
+          "impacto_ecologico",
+          "simbolica_de_dominio_o_cuidado",
+          "agencia_del_acto"
+        ]
+      },
+      "dominio_humano_ser_inteligente_no_humano": {
+        "D_p_sugerido": 0.95,
+        "foco_principal": [
+          "autonomia_de_la_otra_conciencia",
+          "verdad_o_manipulacion",
+          "captura",
+          "reciprocidad_moral",
+          "potencial_de_dominio",
+          "imputacion_fuerte"
+        ]
+      },
+      "dominio_humano_ambiente_objeto": {
+        "D_p_sugerido_base": 0.1,
+        "D_p_ajustado_por_impacto": "0.3 a 0.8",
+        "foco_principal": [
+          "impacto_ecologico",
+          "impacto_social",
+          "utilidad_exergica",
+          "riesgo_futuro",
+          "captura_o_liberacion_indirecta",
+          "irreversibilidad"
+        ]
+      }
+    },
+
+    "procedimiento_de_evaluacion": {
+      "pasos": [
+        "Identificar el dominio relacional principal y asignar D_p.",
+        "Evaluar la agencia del actor y asignar D_a.",
+        "Elegir el contexto: transicion, sociedad_liberada o interaccion_mundana.",
+        "Asignar valores a P, A, V_ep, L, O, C, S, R, Ecol, U, I, Lz y G.",
+        "Si el objeto de estudio es un macroevento, descomponerlo en subeventos, asignar pesos causales, persistencias, irreversibilidades y posicion temporal.",
+        "Calcular Pen, Ex_b, Ex_r, E_i, P_atr, E_i_adj, X_h, B_0 y M_f.",
+        "Si el proceso tiene duracion o consecuencias diferidas, construir una timeline y calcular D_acc, B_acc y N_t.",
+        "Calcular agregados de macroevento: Ex_r_M, E_i_M, E_i_adj_M, X_h_M, B_0_M, En_n_M, D_acc_M, B_acc_M, N_t_M y M_f_M.",
+        "Registrar alertas criticas por atrocidad, irreversibilidad, captura extrema y justificacion de crueldad.",
+        "Interpretar conjuntamente etica inmediata ajustada, exergia estrategica, imputacion moral fuerte y saldo temporal.",
+        "No confundir alto cambio con alta exergia ni alto daño con maldad fuerte en todos los dominios."
+      ]
+    },
+
+    "composicion_jerarquica_de_eventos": {
+      "descripcion_general": "Permite evaluar macroeventos historicos, politicos o institucionales como composiciones de subeventos discretos o semidiscretos, preservando el analisis micro de decisiones y el balance macro del proceso completo.",
+      "tesis_central": "Un macroevento no debe evaluarse solo como bloque unitario. Debe poder descomponerse en subeventos con peso causal, persistencia, irreversibilidad, posicion temporal y relaciones de dependencia, de modo que la exergia real, la etica inmediata, la estrategia historica, el balance estructural, la imputacion y la energia del sistema puedan analizarse tanto a escala micro como agregada.",
+
+      "niveles_de_analisis": {
+        "microevento": {
+          "definicion": "Unidad minima evaluable dentro de un proceso. Puede ser una decision, decreto, represion, concesion, sabotaje, alianza, reforma, discurso, innovacion, colapso logistico o cualquier evento con efectos identificables."
+        },
+        "fase": {
+          "definicion": "Agrupacion intermedia de microeventos que forman una etapa del proceso, como detonacion, ruptura, doble poder, estabilizacion, expansion o consolidacion."
+        },
+        "macroevento": {
+          "definicion": "Proceso historico completo compuesto por multiples fases y subeventos interrelacionados."
+        }
+      },
+
+      "variables_de_composicion": {
+        "n": {
+          "nombre": "numero_total_de_subeventos",
+          "definicion": "Cantidad de subeventos considerados en la composicion del macroevento."
+        },
+        "i": {
+          "nombre": "indice_de_subevento",
+          "definicion": "Indice que identifica cada subevento dentro del conjunto total."
+        },
+        "w_i": {
+          "nombre": "peso_causal_del_subevento",
+          "dominio": "[0, infinito)",
+          "definicion": "Peso relativo del subevento segun su importancia causal, estructural o historica dentro del macroevento."
+        },
+        "pi_d_i": {
+          "nombre": "persistencia_del_dano_del_subevento",
+          "dominio": "[0,1]",
+          "definicion": "Factor que mide cuanto persisten en el tiempo los daños producidos por ese subevento."
+        },
+        "pi_b_i": {
+          "nombre": "persistencia_del_beneficio_del_subevento",
+          "dominio": "[0,1]",
+          "definicion": "Factor que mide cuanto persisten en el tiempo los beneficios liberadores producidos por ese subevento."
+        },
+        "irr_i": {
+          "nombre": "irreversibilidad_del_subevento",
+          "dominio": "[0,1]",
+          "definicion": "Factor que mide en que grado los daños del subevento son dificilmente reversibles."
+        },
+        "tau_i": {
+          "nombre": "instante_temporal_del_subevento",
+          "definicion": "Posicion temporal del subevento dentro de la timeline del macroevento."
+        },
+        "kappa_i": {
+          "nombre": "coeficiente_de_dependencia_contextual",
+          "dominio": "[0,1]",
+          "definicion": "Factor que mide hasta que punto el subevento depende de condiciones heredadas de subeventos anteriores o del contexto estructural.",
+          "regla_de_uso": "Debe usarse como marcador interpretativo de responsabilidad y genealogia, no como descuento automatico de daño."
+        }
+      },
+
+      "estructura_minima_del_subevento": {
+        "campos_recomendados": [
+          "id_del_subevento",
+          "nombre_del_subevento",
+          "descripcion",
+          "fase",
+          "instante_temporal",
+          "peso_causal",
+          "persistencia_del_dano",
+          "persistencia_del_beneficio",
+          "irreversibilidad",
+          "coeficiente_de_dependencia_contextual",
+          "potencia_transformadora_real",
+          "autonomia_efectiva",
+          "verdad_epistemica_parcial",
+          "orientacion_liberadora_no_manipuladora",
+          "apertura_de_posibilidades",
+          "captura_demiurgica",
+          "sufrimiento_estructural",
+          "riesgo_de_recaida",
+          "impacto_ecologico",
+          "utilidad_exergica",
+          "coeficiente_de_paciente_moral",
+          "coeficiente_de_agencia_imputable",
+          "intencionalidad_de_dominio",
+          "lucidez_del_agente",
+          "gratuidad_del_dano"
+        ],
+        "nota": "Cada subevento puede evaluarse con las mismas variables principales y formulas del sistema general."
+      },
+
+      "formulas_por_subevento": {
+        "exergia_filosofica_bruta_del_subevento": {
+          "simbolo": "Ex_b_i",
+          "formula": "Ex_b_i = (P_i * A_i * V_ep_i * L_i * O_i * U_i)^(1/6)",
+          "definicion": "Capacidad transformadora liberadora bruta del subevento i."
+        },
+        "penalizacion_estructural_del_subevento": {
+          "simbolo": "Pen_i",
+          "formula": "Pen_i = pc * C_i^q_C + pr * R_i + pe * Ecol_i",
+          "definicion": "Penalizacion estructural del subevento i."
+        },
+        "exergia_real_del_subevento": {
+          "simbolo": "Ex_r_i",
+          "formula": "Ex_r_i = Ex_b_i / (1 + Pen_i)",
+          "definicion": "Exergia real del subevento i tras ajustar captura, recaida e impacto ecologico."
+        },
+        "indice_etico_inmediato_del_subevento": {
+          "simbolo": "E_i_i",
+          "formula": "E_i_i = D_p_i * [ a1(A_i * V_ep_i) + a2(L_i * O_i * U_i) - a3(S_i^q_S) - a4(C_i^q_C) - a5(Ecol_i) ]",
+          "definicion": "Indice etico inmediato del subevento i."
+        },
+        "penalizacion_de_atrocidad_del_subevento": {
+          "simbolo": "P_atr_i",
+          "formula": "P_atr_i = r1 * max(0, S_i - S_crit)^2 + r2 * max(0, C_i - C_crit)^2 + r3 * Rj_i",
+          "definicion": "Penalizacion de atrocidad del subevento i."
+        },
+        "indice_etico_ajustado_del_subevento": {
+          "simbolo": "E_i_adj_i",
+          "formula": "E_i_adj_i = E_i_i - P_atr_i",
+          "definicion": "Indice etico inmediato ajustado del subevento i."
+        },
+        "indice_estrategico_historico_del_subevento": {
+          "simbolo": "X_h_i",
+          "formula": "X_h_i = ((P_i * O_i * A_i * U_i)^(1/4)) / (1 + Pen_i)",
+          "definicion": "Potencial estrategico-historico del subevento i."
+        },
+        "balance_estructural_inicial_del_subevento": {
+          "simbolo": "B_0_i",
+          "formula": "B_0_i = b1(Ex_b_i) + b2(L_i) - b3(C_i^q_C) - b4(S_i^q_S) - b5(R_i) - b6(Ecol_i)",
+          "definicion": "Balance estructural inicial del subevento i."
+        },
+        "imputacion_moral_fuerte_del_subevento": {
+          "simbolo": "M_f_i",
+          "formula": "M_f_i = D_p_i * D_a_i * ( m1 * I_i + m2 * Lz_i + m3 * G_i + m4 * C_i + m5 * S_i )",
+          "definicion": "Indice de imputacion moral fuerte del subevento i."
+        }
+      },
+
+      "energia_del_sistema": {
+        "descripcion_general": "Magnitudes agregadas auxiliares para visualizar la distribucion de fuerzas liberadoras y degradativas dentro de un subevento, una fase o un macroevento.",
+        "energia_liberadora_del_subevento": {
+          "simbolo": "En_l_i",
+          "formula": "En_l_i = P_i + A_i + V_ep_i + L_i + O_i + U_i",
+          "definicion": "Suma auxiliar de magnitudes liberadoras activas del subevento i."
+        },
+        "energia_degradativa_del_subevento": {
+          "simbolo": "En_d_i",
+          "formula": "En_d_i = C_i + S_i + R_i + Ecol_i",
+          "definicion": "Suma auxiliar de magnitudes degradativas activas del subevento i."
+        },
+        "energia_neta_del_subevento": {
+          "simbolo": "En_n_i",
+          "formula": "En_n_i = En_l_i - En_d_i",
+          "definicion": "Diferencia auxiliar entre fuerza liberadora y fuerza degradativa del subevento i."
+        },
+        "advertencia_metodologica": "La energia del sistema no sustituye a Ex_r, E_i_adj, X_h, B_0, M_f ni a N_t. Sirve solo como herramienta complementaria de lectura agregada y comparacion rapida."
+      },
+
+      "agregacion_por_fase_y_macroevento": {
+        "principio_general": "Las magnitudes del macroevento deben obtenerse mediante agregacion ponderada de subeventos y mediante integracion temporal del proceso completo, sin ocultar extremos ni atrocidades.",
+        "peso_normalizado": {
+          "simbolo": "omega_i",
+          "formula": "omega_i = w_i / SUMA_j=1^n (w_j)",
+          "definicion": "Peso causal normalizado del subevento i dentro del macroevento."
+        },
+        "exergia_real_agregada": {
+          "simbolo": "Ex_r_M",
+          "formula": "Ex_r_M = SUMA_i=1^n [ omega_i * Ex_r_i ]",
+          "definicion": "Exergia real agregada del macroevento como promedio ponderado de subeventos."
+        },
+        "indice_etico_inmediato_agregado": {
+          "simbolo": "E_i_M",
+          "formula": "E_i_M = SUMA_i=1^n [ omega_i * E_i_i ]",
+          "definicion": "Indice etico inmediato agregado del macroevento."
+        },
+        "indice_etico_ajustado_agregado": {
+          "simbolo": "E_i_adj_M",
+          "formula": "E_i_adj_M = SUMA_i=1^n [ omega_i * E_i_adj_i ] - z1 * MAX_i(P_atr_i)",
+          "definicion": "Indice etico agregado ajustado por atrocidad maxima."
+        },
+        "indice_estrategico_historico_agregado": {
+          "simbolo": "X_h_M",
+          "formula": "X_h_M = SUMA_i=1^n [ omega_i * X_h_i ]",
+          "definicion": "Indice estrategico-historico agregado del macroevento."
+        },
+        "balance_estructural_inicial_agregado": {
+          "simbolo": "B_0_M",
+          "formula": "B_0_M = SUMA_i=1^n [ omega_i * B_0_i ]",
+          "definicion": "Balance estructural inicial agregado del macroevento."
+        },
+        "imputacion_moral_fuerte_agregada": {
+          "simbolo": "M_f_M",
+          "formula": "M_f_M = SUMA_i=1^n [ omega_i * M_f_i ] + z2 * MAX_i(M_f_i * P_atr_i)",
+          "definicion": "Imputacion moral fuerte agregada, sensible a picos de atrocity con alta agencia."
+        },
+        "energia_liberadora_agregada": {
+          "simbolo": "En_l_M",
+          "formula": "En_l_M = SUMA_i=1^n [ omega_i * En_l_i ]",
+          "definicion": "Energia liberadora media ponderada del macroevento."
+        },
+        "energia_degradativa_agregada": {
+          "simbolo": "En_d_M",
+          "formula": "En_d_M = SUMA_i=1^n [ omega_i * En_d_i ]",
+          "definicion": "Energia degradativa media ponderada del macroevento."
+        },
+        "energia_neta_agregada": {
+          "simbolo": "En_n_M",
+          "formula": "En_n_M = SUMA_i=1^n [ omega_i * En_n_i ]",
+          "definicion": "Energia neta media ponderada del macroevento."
+        },
+        "extremos_criticos": {
+          "simbolo": "Ext_M",
+          "formula": "Ext_M = { MAX_i(S_i), MAX_i(C_i), MAX_i(P_atr_i), MAX_i(M_f_i) }",
+          "definicion": "Conjunto de extremos criticos del macroevento. Debe leerse siempre junto a los promedios."
+        }
+      },
+
+      "integracion_temporal_de_subeventos": {
+        "descripcion": "Permite integrar la secuencia de subeventos en una timeline unica, manteniendo el analisis microscopico de las decisiones.",
+        "dano_acumulado_de_subeventos": {
+          "simbolo": "D_acc_M",
+          "formula": "D_acc_M = SUMA_i=1^n [ (S_i^q_S + Ecol_i + C_i^q_C + P_atr_i) * exp(-lambda * tau_i) * pi_d_i * (1 + irr_i) * omega_i ]",
+          "definicion": "Daño acumulado ponderado por tiempo, persistencia, irreversibilidad y peso causal."
+        },
+        "beneficio_acumulado_de_subeventos": {
+          "simbolo": "B_acc_M",
+          "formula": "B_acc_M = SUMA_i=1^n [ (Ex_b_i + O_i + A_i * V_ep_i + L_i) * exp(-lambda * tau_i) * pi_b_i * omega_i ]",
+          "definicion": "Beneficio acumulado ponderado por tiempo, persistencia y peso causal."
+        },
+        "saldo_temporal_del_macroevento": {
+          "simbolo": "N_t_M",
+          "formula": "N_t_M = B_acc_M - D_acc_M",
+          "definicion": "Saldo temporal agregado del macroevento como resultado de la secuencia de subeventos."
+        }
+      },
+
+      "reglas_de_uso": {
+        "principios": [
+          "Un macroevento no debe reducirse a una sola puntuacion sin conservar la trazabilidad de sus subeventos.",
+          "La agregacion no debe ocultar subeventos extremadamente dañinos ni puntos de recaida estructural.",
+          "Se recomienda combinar siempre indices agregados con timeline, distribuciones, extremos criticos y lectura cualitativa.",
+          "La energia neta del sistema puede ser positiva aunque algunos subeventos sean eticamente muy malos, y puede ser negativa aunque exista potencia de cambio visible.",
+          "Un alto indice estrategico agregado no absuelve automaticamente una cadena de subeventos con daño extremo persistente.",
+          "kappa_i debe informar la genealogia y complejidad contextual del subevento, pero no borrar por si mismo la imputacion moral fuerte.",
+          "MAX_i(P_atr_i) y MAX_i(M_f_i) deben mostrarse siempre junto a E_i_adj_M y N_t_M."
+        ]
+      },
+
+      "salidas_recomendadas": {
+        "principio_general": "La salida final del sistema no debe saturarse de magnitudes auxiliares. Debe priorizar los indicadores mas interpretativamente robustos y reservar los auxiliares para capas secundarias de lectura.",
+        "criterio_de_presentacion": "Las formulas pueden conservar simbolos tecnicos en el nivel formal del sistema, pero la salida recomendada debe privilegiar nombres semanticamente claros para facilitar lectura, comparacion y uso analitico.",
+        "indicadores_prioritarios_para_output_final": [
+          "exergia_real",
+          "indice_etico_ajustado",
+          "indice_estrategico_historico",
+          "balance_estructural_inicial",
+          "imputacion_moral_fuerte",
+          "energia_neta",
+          "dano_acumulado",
+          "beneficio_acumulado",
+          "saldo_temporal",
+          "extremos_criticos"
+        ],
+        "indicadores_secundarios": [
+          "exergia_filosofica_bruta",
+          "indice_etico_inmediato",
+          "penalizacion_estructural",
+          "penalizacion_de_atrocidad",
+          "energia_liberadora",
+          "energia_degradativa"
+        ],
+        "recomendacion_especifica_sobre_energia": {
+          "tesis": "En la salida final se recomienda extraer la energia de los graficos de magnitudes y mostrar prioritariamente solo la energia_neta.",
+          "motivo": "La energia_liberadora y la energia_degradativa son utiles para diagnostico interno, pero su visualizacion prominente puede inducir interpretaciones confusas o dar una falsa apariencia de equivalencia moral entre fuerza de transformacion y fuerza de liberacion real.",
+          "regla_de_uso": "energia_liberadora y energia_degradativa deben quedar disponibles en anexos tecnicos, capas secundarias del dashboard o apendices metodologicos. energia_neta debe ser la representacion energetica principal en la salida final."
+        },
+        "micro": {
+          "salidas": [
+            "tabla completa de subeventos",
+            "ranking de subeventos mas liberadores",
+            "ranking de subeventos mas degradativos",
+            "deteccion de puntos de inflexion",
+            "deteccion de eventos de captura y recaida",
+            "deteccion de atrocity flags",
+            "deteccion de subeventos con maldad fuerte"
+          ],
+          "indicadores_clave": [
+            "exergia_real_del_subevento",
+            "indice_etico_ajustado_del_subevento",
+            "indice_estrategico_historico_del_subevento",
+            "balance_estructural_inicial_del_subevento",
+            "imputacion_moral_fuerte_del_subevento",
+            "energia_neta_del_subevento"
+          ],
+          "simbolos_asociados": [
+            "Ex_r_i",
+            "E_i_adj_i",
+            "X_h_i",
+            "B_0_i",
+            "M_f_i",
+            "En_n_i"
+          ]
+        },
+        "meso": {
+          "salidas": [
+            "comparacion entre fases",
+            "energia neta por fase",
+            "exergia real agregada por fase",
+            "saldo temporal parcial por fase",
+            "maximos de atrocidad por fase",
+            "imputacion fuerte por fase"
+          ],
+          "indicadores_clave": [
+            "exergia_real_agregada_por_fase",
+            "indice_etico_ajustado_agregado_por_fase",
+            "indice_estrategico_historico_agregado_por_fase",
+            "balance_estructural_inicial_agregado_por_fase",
+            "imputacion_moral_fuerte_agregada_por_fase",
+            "energia_neta_agregada_por_fase",
+            "saldo_temporal_parcial_por_fase",
+            "maximos_de_atrocidad_por_fase"
+          ],
+          "nota": "El nivel meso debe servir para identificar fases estructuralmente liberadoras, fases ambiguas y fases claramente capturadas sin perder trazabilidad de subeventos."
+        },
+        "macro": {
+          "salidas": [
+            "exergia_real_agregada_del_macroevento",
+            "indice_etico_inmediato_agregado_del_macroevento",
+            "indice_etico_ajustado_agregado_del_macroevento",
+            "indice_estrategico_historico_agregado_del_macroevento",
+            "balance_estructural_inicial_agregado_del_macroevento",
+            "imputacion_moral_fuerte_agregada_del_macroevento",
+            "energia_neta_agregada_del_macroevento",
+            "dano_acumulado_del_macroevento",
+            "beneficio_acumulado_del_macroevento",
+            "saldo_temporal_del_macroevento",
+            "extremos_criticos_del_macroevento"
+          ],
+          "simbolos_asociados": [
+            "Ex_r_M",
+            "E_i_M",
+            "E_i_adj_M",
+            "X_h_M",
+            "B_0_M",
+            "M_f_M",
+            "En_n_M",
+            "D_acc_M",
+            "B_acc_M",
+            "N_t_M",
+            "Ext_M"
+          ],
+          "regla_de_lectura": "La salida macro debe leerse siempre junto con extremos criticos, penalizacion de atrocidad maxima y trazabilidad de fases, para evitar que un promedio estable o una agregacion elegante oculten un proceso moralmente podrido."
+        }
+      },
+
+      "plantilla_minima_de_datos": {
+        "columnas_sugeridas": [
+          "id_del_subevento",
+          "nombre_del_subevento",
+          "fase",
+          "instante_temporal",
+          "peso_causal",
+          "persistencia_del_dano",
+          "persistencia_del_beneficio",
+          "irreversibilidad",
+          "coeficiente_de_dependencia_contextual",
+          "potencia_transformadora_real",
+          "autonomia_efectiva",
+          "verdad_epistemica_parcial",
+          "orientacion_liberadora_no_manipuladora",
+          "apertura_de_posibilidades",
+          "captura_demiurgica",
+          "sufrimiento_estructural",
+          "riesgo_de_recaida",
+          "impacto_ecologico",
+          "utilidad_exergica",
+          "coeficiente_de_paciente_moral",
+          "coeficiente_de_agencia_imputable",
+          "intencionalidad_de_dominio",
+          "lucidez_del_agente",
+          "gratuidad_del_dano",
+          "penalizacion_estructural",
+          "exergia_filosofica_bruta",
+          "exergia_real",
+          "indice_etico_inmediato",
+          "penalizacion_de_atrocidad",
+          "indice_etico_ajustado",
+          "indice_estrategico_historico",
+          "balance_estructural_inicial",
+          "imputacion_moral_fuerte",
+          "energia_liberadora",
+          "energia_degradativa",
+          "energia_neta"
+        ]
+      }
+    },
+
+    "documentacion_de_interpretacion": {
+      "sobre_la_verdad": "La verdad absoluta no entra como cantidad finita operable. V_ep expresa solo la orientacion epistemica parcial y situada de un proceso hacia dicha verdad.",
+      "sobre_la_orientacion_liberadora": "L se separa de V_ep para evitar meter moral dentro del indice epistemico. Un proceso puede ser cognitivamente agudo y a la vez manipulador.",
+      "sobre_el_cambio": "El cambio por si solo no basta. Solo el cambio con exergia suficiente, orientacion liberadora y baja captura puede abrir liberacion efectiva.",
+      "sobre_la_exergia": "La exergia filosofica mide la capacidad real de convertir apertura y libertad en transformacion efectiva antes de disiparse o ser capturada. Se usa media geometrica y penalizacion estable para evitar hundimientos o explosiones artificiales.",
+      "sobre_los_danos_cortos_y_beneficios_largos": "La timeline integrada evita confundir daño inmediato con saldo historico final y evita tambien justificar cualquier daño en nombre de un beneficio futuro abstracto.",
+      "sobre_los_objetos_no_animados": "Su valor moral directo es bajo, pero puede aumentar mucho cuando median daño ecologico, sufrimiento humano, captura o soporte de autonomia colectiva.",
+      "sobre_la_imputacion_moral": "No todo daño equivale a maldad fuerte. M_f distingue gravedad del daño de intencionalidad, lucidez, gratuidad y agencia real.",
+      "sobre_las_atrocidades": "El sistema incorpora P_atr para impedir que crueldad extrema, captura extrema o justificacion sistemica de violencia queden diluidas en medias y saldos positivos globales."
+    },
+
+    "graficos_recomendados": {
+      "micro": [
+        {
+          "nombre": "heat_map_de_variables_por_subevento",
+          "funcion": "Permite detectar concentraciones, patrones y subeventos atipicos."
+        },
+        {
+          "nombre": "timeline_de_exergia_real_indice_etico_ajustado_e_indice_estrategico_historico",
+          "funcion": "Permite observar divergencias entre eficacia exergica, coste moral inmediato y valor historico."
+        },
+        {
+          "nombre": "barra_de_balance_estructural_inicial_por_subevento",
+          "funcion": "Muestra que subeventos nacen estructuralmente orientados a apertura o a degradacion."
+        },
+        {
+          "nombre": "scatter_exergia_real_vs_indice_etico_ajustado_con_tamano_por_imputacion_moral_fuerte",
+          "funcion": "Permite detectar cuadrantes criticos y eventos de alta capacidad con etica muy negativa."
+        }
+      ],
+      "meso": [
+        {
+          "nombre": "comparacion_entre_fases",
+          "funcion": "Resume Ex_r, X_h, B_0, energia_neta y N_t parcial por fase."
+        },
+        {
+          "nombre": "maximos_de_atrocidad_por_fase",
+          "funcion": "Evita que los promedios oculten picos extremos."
+        }
+      ],
+      "macro": [
+        {
+          "nombre": "integracion_temporal_del_macroevento",
+          "funcion": "Debe mostrar dano_acumulado, beneficio_acumulado y saldo_temporal."
+        },
+        {
+          "nombre": "resumen_macro_de_indicadores_prioritarios",
+          "funcion": "Debe mostrar Ex_r_M, E_i_adj_M, X_h_M, B_0_M, M_f_M, En_n_M, D_acc_M, B_acc_M y N_t_M."
+        },
+        {
+          "nombre": "heat_map_de_correlaciones",
+          "funcion": "Permite ver que variables empujan o deprimen los indicadores clave."
+        }
+      ]
+    },
+
+    "protocolo_de_output_final": {
+      "orden_recomendado": [
+        "1. contexto y dominio del analisis",
+        "2. criterios de puntuacion, fuentes y nivel de incertidumbre",
+        "3. tabla de subeventos con trazabilidad",
+        "4. graficos micro",
+        "5. agregacion por fase",
+        "6. indicadores macro prioritarios",
+        "7. integracion temporal",
+        "8. extremos criticos y alertas",
+        "9. conclusion interpretativa"
+      ],
+      "regla_de_sintesis": "La conclusion final nunca debe apoyarse en un unico indicador. Debe integrar exergia_real, indice_etico_ajustado, indice_estrategico_historico, balance_estructural_inicial, imputacion_moral_fuerte, energia_neta y saldo_temporal.",
+      "regla_de_transparencia": "Toda salida final debe declarar explicitamente si alguna variable fue puntuada con alta incertidumbre o con escasez de evidencia."
+    },
+
+    "objetividad_y_rigor": {
+      "tesis": "La puntuacion debe ser lo mas objetiva y rigurosa posible, sabiendo siempre que esta sesgada y que el sistema no es un modelo matematico perfecto sino una herramienta de analisis multinivel.",
+      "mecanismos_de_reduccion_de_arbitrariedad": [
+        "normalizacion con maximos y minimos hipoteticos",
+        "rubricas explicitas",
+        "doble evaluacion independiente cuando sea posible",
+        "registro de incertidumbre",
+        "trazabilidad de la asignacion",
+        "comparacion con escenarios alternativos",
+        "revision critica posterior"
+      ],
+      "criterio_final": "La objetividad en este sistema no consiste en eliminar toda interpretacion, sino en disciplinarla, exponerla y volverla revisable."
+    },
+
+    "axiomas_formalizables": [
+      "La verdad absoluta es infinita y solo puede orientar, no ser agotada por el modelo.",
+      "La libertad abre posibilidades; la exergia mide la capacidad efectiva de realizarlas.",
+      "No todo cambio es exergico; solo aquel que abre reorganizacion real sin captura dominante.",
+      "La captura demiurgica reduce la exergia util al convertir potencia en repeticion, servidumbre o disipacion.",
+      "La evaluacion moral completa requiere distinguir entre etica inmediata, exergia estrategica, imputacion moral fuerte y saldo temporal.",
+      "Los daños extremos y las capturas extremas no deben ser tratados como costes linealmente compensables.",
+      "La agregacion de macroeventos es invalida si oculta extremos criticos, atrocidades o recaidas fuertes."
+    ]
+  }
+}

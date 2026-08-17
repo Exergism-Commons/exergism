@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Metafisica emergentista de la liberacion",
+  "short_name": "Exergismo",
+  "english_short_name": "Exergism",
+  "status": "canonicalization-candidate",
+  "canonical_content_schema": "canonical_content_schema.json",
+  "philosophical_corpus": {
+    "directory": "content",
+    "order": [
+      "sistema_filosofico.json",
+      "ontologia.json",
+      "epistemologia.json",
+      "antropologia_filosofica.json",
+      "teoria_de_la_historia.json",
+      "teoria_de_la_exergia.json",
+      "etica.json",
+      "filosofia_politica.json",
+      "soteriologia_o_teoria_de_la_liberacion.json",
+      "psicologia_moral.json",
+      "teologia_o_metafisica_religiosa.json",
+      "metodo_filosofico.json",
+      "axiomas_provisionales.json",
+      "preguntas_abiertas.json"
+    ]
+  },
+  "books": "books/libros.json",
+  "formal_exergic_analysis": "formal/sistema_analitico_exergico.json",
+  "derived_ontology": "ontology.owl",
+  "symbol": "assets/simbolo.jpeg",
+  "examples": [
+    "examples/exergic-analysis/iran",
+    "examples/exergic-analysis/toma-de-kabul"
+  ]
+}

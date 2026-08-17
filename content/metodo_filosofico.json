@@ -1,0 +1,1054 @@
+{
+  "schema_version": 2,
+  "source_format": "legacy-normalized",
+  "domain": {
+    "id": "metodo_filosofico",
+    "key": "metodo_filosofico",
+    "label": "Metodo filosofico",
+    "source_file": "metodo_filosofico.json"
+  },
+  "root": {
+    "id": "metodo_filosofico",
+    "canonical_id": "metodo_filosofico",
+    "key": "metodo_filosofico",
+    "label": "Metodo filosofico",
+    "kind": "concept",
+    "source_path": "metodo_filosofico",
+    "fields": [
+      {
+        "key": "definicion",
+        "label": "Definicion",
+        "role": "core",
+        "value_type": "text",
+        "value": "Metodo de construccion, evaluacion y correccion filosofica que integra introspeccion, analisis conceptual, observacion historica, contraste empirico, discernimiento moral, evaluacion exergica y dialogo critico con cualquier dominio del conocimiento humano.",
+        "source_path": "metodo_filosofico.definicion"
+      },
+      {
+        "key": "tesis_central",
+        "label": "Tesis central",
+        "role": "thesis",
+        "value_type": "text",
+        "value": "El pensamiento filosofico valido no debe limitarse a interpretar conceptos ni a producir sistemas internamente bellos, sino que debe aumentar verdad parcial, reducir error, resistir captura, integrar niveles de realidad y orientar transformacion real sin confundir intuicion, poder o intensidad con verdad.",
+        "source_path": "metodo_filosofico.tesis_central"
+      },
+      {
+        "key": "funcion_general",
+        "label": "Funcion general",
+        "role": "core",
+        "value_type": "text",
+        "value": "Actuar como metodo de segundo orden capaz de examinar, articular, criticar e integrar conocimientos, practicas, simbolos, instituciones y experiencias procedentes de dominios distintos, evaluando su orientacion hacia verdad, su riesgo de captura y su potencia exergica real.",
+        "source_path": "metodo_filosofico.funcion_general"
+      },
+      {
+        "key": "limite",
+        "label": "Limite",
+        "role": "attribute",
+        "value_type": "text",
+        "value": "El metodo no garantiza acceso total a la verdad absoluta, solo aperturas parciales, revisables y situadas. Su validez depende de su capacidad de autocorreccion, de su resistencia a captura y de su dialogo honesto con la realidad y con otros dominios del saber.",
+        "source_path": "metodo_filosofico.limite"
+      }
+    ],
+    "collections": [
+      {
+        "id": "metodo_filosofico_fuentes_collection",
+        "key": "fuentes",
+        "label": "Fuentes",
+        "source_path": "metodo_filosofico.fuentes",
+        "item_kind_hint": "collection_item",
+        "items": [
+          {
+            "order_index": 1,
+            "value_type": "text",
+            "value": "experiencia interior"
+          },
+          {
+            "order_index": 2,
+            "value_type": "text",
+            "value": "meditacion"
+          },
+          {
+            "order_index": 3,
+            "value_type": "text",
+            "value": "analisis social"
+          },
+          {
+            "order_index": 4,
+            "value_type": "text",
+            "value": "observacion historica"
+          },
+          {
+            "order_index": 5,
+            "value_type": "text",
+            "value": "reflexion metafisica"
+          },
+          {
+            "order_index": 6,
+            "value_type": "text",
+            "value": "coherencia sistemica"
+          },
+          {
+            "order_index": 7,
+            "value_type": "text",
+            "value": "evaluacion exergica"
+          },
+          {
+            "order_index": 8,
+            "value_type": "text",
+            "value": "contraste con ciencia y realidad empirica"
+          },
+          {
+            "order_index": 9,
+            "value_type": "text",
+            "value": "dialogo critico con otras tradiciones filosoficas"
+          },
+          {
+            "order_index": 10,
+            "value_type": "text",
+            "value": "resultados de dominios especializados del conocimiento humano"
+          },
+          {
+            "order_index": 11,
+            "value_type": "text",
+            "value": "creacion simbolica, artistica y conceptual"
+          }
+        ]
+      },
+      {
+        "id": "metodo_filosofico_principios_metodologicos_collection",
+        "key": "principios_metodologicos",
+        "label": "Principios metodologicos",
+        "source_path": "metodo_filosofico.principios_metodologicos",
+        "item_kind_hint": "collection_item",
+        "items": [
+          {
+            "order_index": 1,
+            "value_type": "text",
+            "value": "primacia de la verdad sobre el consuelo"
+          },
+          {
+            "order_index": 2,
+            "value_type": "text",
+            "value": "coherencia sin dogmatismo"
+          },
+          {
+            "order_index": 3,
+            "value_type": "text",
+            "value": "apertura a revision"
+          },
+          {
+            "order_index": 4,
+            "value_type": "text",
+            "value": "distincion entre intuicion, hipotesis, interpretacion y demostracion"
+          },
+          {
+            "order_index": 5,
+            "value_type": "text",
+            "value": "distincion entre valor simbolico, valor moral y valor empirico"
+          },
+          {
+            "order_index": 6,
+            "value_type": "text",
+            "value": "atencion a captura ideologica, afectiva e institucional"
+          },
+          {
+            "order_index": 7,
+            "value_type": "text",
+            "value": "evaluacion de efectos exergicos reales"
+          },
+          {
+            "order_index": 8,
+            "value_type": "text",
+            "value": "integracion critica de saberes heterogeneos"
+          },
+          {
+            "order_index": 9,
+            "value_type": "text",
+            "value": "rechazo de reduccionismos unilaterales"
+          },
+          {
+            "order_index": 10,
+            "value_type": "text",
+            "value": "aceptacion de la parcialidad situada del conocimiento humano"
+          }
+        ]
+      },
+      {
+        "id": "metodo_filosofico_procedimiento_general_collection",
+        "key": "procedimiento_general",
+        "label": "Procedimiento general",
+        "source_path": "metodo_filosofico.procedimiento_general",
+        "item_kind_hint": "collection_item",
+        "items": [
+          {
+            "order_index": 1,
+            "value_type": "text",
+            "value": "identificar el fenomeno, problema o afirmacion"
+          },
+          {
+            "order_index": 2,
+            "value_type": "text",
+            "value": "determinar en que nivel o niveles opera: ontologico, epistemico, moral, politico, simbolico, tecnico, historico o espiritual"
+          },
+          {
+            "order_index": 3,
+            "value_type": "text",
+            "value": "describir su aparicion en la experiencia, en la historia y en sus condiciones materiales o simbolicas"
+          },
+          {
+            "order_index": 4,
+            "value_type": "text",
+            "value": "clarificar sus conceptos y distinguir sus ambiguedades"
+          },
+          {
+            "order_index": 5,
+            "value_type": "text",
+            "value": "analizar sus mecanismos de captura, daño, apertura o reorganizacion"
+          },
+          {
+            "order_index": 6,
+            "value_type": "text",
+            "value": "contrastar la interpretacion con evidencia empirica, conocimiento especializado y objeciones fuertes"
+          },
+          {
+            "order_index": 7,
+            "value_type": "text",
+            "value": "evaluar su coherencia interna, su capacidad explicativa y su resistencia al autoengaño"
+          },
+          {
+            "order_index": 8,
+            "value_type": "text",
+            "value": "evaluar su exergia real, su potencial de recaida y su deuda temporal"
+          },
+          {
+            "order_index": 9,
+            "value_type": "text",
+            "value": "reformular conceptos si aparecen contradicciones, ilusiones o simplificaciones"
+          },
+          {
+            "order_index": 10,
+            "value_type": "text",
+            "value": "extraer consecuencias teoricas, practicas, espirituales, institucionales o historicas"
+          }
+        ]
+      },
+      {
+        "id": "metodo_filosofico_vicios_metodologicos_a_evitar_collection",
+        "key": "vicios_metodologicos_a_evitar",
+        "label": "Vicios metodologicos a evitar",
+        "source_path": "metodo_filosofico.vicios_metodologicos_a_evitar",
+        "item_kind_hint": "collection_item",
+        "items": [
+          {
+            "order_index": 1,
+            "value_type": "text",
+            "value": "dogmatismo metafisico"
+          },
+          {
+            "order_index": 2,
+            "value_type": "text",
+            "value": "mistificacion del lenguaje"
+          },
+          {
+            "order_index": 3,
+            "value_type": "text",
+            "value": "uso ornamental de formulas"
+          },
+          {
+            "order_index": 4,
+            "value_type": "text",
+            "value": "confusion entre intensidad emocional y verdad"
+          },
+          {
+            "order_index": 5,
+            "value_type": "text",
+            "value": "sesgo de confirmacion"
+          },
+          {
+            "order_index": 6,
+            "value_type": "text",
+            "value": "captura sectaria"
+          },
+          {
+            "order_index": 7,
+            "value_type": "text",
+            "value": "reduccion de toda complejidad a una sola causa"
+          },
+          {
+            "order_index": 8,
+            "value_type": "text",
+            "value": "justificacion retrospectiva de intuiciones previas"
+          },
+          {
+            "order_index": 9,
+            "value_type": "text",
+            "value": "imperialismo epistemico de un dominio sobre todos los demas"
+          },
+          {
+            "order_index": 10,
+            "value_type": "text",
+            "value": "desprecio de saberes validos por no encajar en una sola metodologia"
+          },
+          {
+            "order_index": 11,
+            "value_type": "text",
+            "value": "confusion entre poder institucional de un saber y verdad real"
+          }
+        ]
+      }
+    ],
+    "children": [
+      {
+        "id": "metodo_filosofico_capas_del_metodo",
+        "key": "capas_del_metodo",
+        "label": "Capas del metodo",
+        "kind": "concept",
+        "source_path": "metodo_filosofico.capas_del_metodo",
+        "fields": [],
+        "collections": [],
+        "children": [
+          {
+            "id": "metodo_filosofico_capas_del_metodo_fenomenologica",
+            "key": "fenomenologica",
+            "label": "Fenomenologica",
+            "kind": "concept",
+            "source_path": "metodo_filosofico.capas_del_metodo.fenomenologica",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Descripcion de experiencia, conciencia, sufrimiento, deseo, apertura y conflicto tal como aparecen.",
+                "source_path": "metodo_filosofico.capas_del_metodo.fenomenologica.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "fenomenologica"
+          },
+          {
+            "id": "metodo_filosofico_capas_del_metodo_analitica",
+            "key": "analitica",
+            "label": "Analitica",
+            "kind": "concept",
+            "source_path": "metodo_filosofico.capas_del_metodo.analitica",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Clarificacion conceptual, distincion de niveles, definicion de terminos y eliminacion de contradicciones innecesarias.",
+                "source_path": "metodo_filosofico.capas_del_metodo.analitica.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "analitica"
+          },
+          {
+            "id": "metodo_filosofico_capas_del_metodo_logico_estructural",
+            "key": "logico-estructural",
+            "label": "Logico-estructural",
+            "kind": "concept",
+            "source_path": "metodo_filosofico.capas_del_metodo.logico-estructural",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Examen de consistencia formal, relaciones entre conceptos, jerarquias de categorias y estructura inferencial del sistema.",
+                "source_path": "metodo_filosofico.capas_del_metodo.logico-estructural.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "logico_estructural"
+          },
+          {
+            "id": "metodo_filosofico_capas_del_metodo_genealogica",
+            "key": "genealogica",
+            "label": "Genealogica",
+            "kind": "concept",
+            "source_path": "metodo_filosofico.capas_del_metodo.genealogica",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Rastreo del origen historico, psicologico, politico y simbolico de ideas, instituciones, valores y estructuras.",
+                "source_path": "metodo_filosofico.capas_del_metodo.genealogica.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "genealogica"
+          },
+          {
+            "id": "metodo_filosofico_capas_del_metodo_hermeneutica",
+            "key": "hermeneutica",
+            "label": "Hermeneutica",
+            "kind": "concept",
+            "source_path": "metodo_filosofico.capas_del_metodo.hermeneutica",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Interpretacion de textos, simbolos, tradiciones, imaginarios y producciones culturales sin reducirlos inmediatamente a una sola lectura.",
+                "source_path": "metodo_filosofico.capas_del_metodo.hermeneutica.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "hermeneutica"
+          },
+          {
+            "id": "metodo_filosofico_capas_del_metodo_critico_empirica",
+            "key": "critico-empirica",
+            "label": "Critico-empirica",
+            "kind": "concept",
+            "source_path": "metodo_filosofico.capas_del_metodo.critico-empirica",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Contraste con historia, ciencia, comportamiento observable, datos disponibles y efectos institucionales o materiales.",
+                "source_path": "metodo_filosofico.capas_del_metodo.critico-empirica.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "critico_empirica"
+          },
+          {
+            "id": "metodo_filosofico_capas_del_metodo_moral",
+            "key": "moral",
+            "label": "Moral",
+            "kind": "concept",
+            "source_path": "metodo_filosofico.capas_del_metodo.moral",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Evaluacion de orientaciones segun apertura o clausura, dominacion o liberacion, daño o reduccion del ciclo en el dominio humano.",
+                "source_path": "metodo_filosofico.capas_del_metodo.moral.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "moral"
+          },
+          {
+            "id": "metodo_filosofico_capas_del_metodo_exergica",
+            "key": "exergica",
+            "label": "Exergica",
+            "kind": "concept",
+            "source_path": "metodo_filosofico.capas_del_metodo.exergica",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Evaluacion de la capacidad real de un proceso, practica, conocimiento o estructura para producir transformacion liberadora y no capturada.",
+                "source_path": "metodo_filosofico.capas_del_metodo.exergica.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "exergica"
+          },
+          {
+            "id": "metodo_filosofico_capas_del_metodo_historico_temporal",
+            "key": "historico-temporal",
+            "label": "Historico-temporal",
+            "kind": "concept",
+            "source_path": "metodo_filosofico.capas_del_metodo.historico-temporal",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Analisis de persistencia, deuda temporal, recaida, saldo acumulado y consecuencias a medio y largo plazo.",
+                "source_path": "metodo_filosofico.capas_del_metodo.historico-temporal.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "historico_temporal"
+          },
+          {
+            "id": "metodo_filosofico_capas_del_metodo_constructiva",
+            "key": "constructiva",
+            "label": "Constructiva",
+            "kind": "concept",
+            "source_path": "metodo_filosofico.capas_del_metodo.constructiva",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Propuesta de conceptos, practicas, instituciones y orientaciones que aumenten verdad, autonomia, justicia y capacidad de ruptura del ciclo.",
+                "source_path": "metodo_filosofico.capas_del_metodo.constructiva.definicion"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "constructiva"
+          }
+        ],
+        "canonical_id": "capas_del_metodo"
+      },
+      {
+        "id": "metodo_filosofico_protocolo_de_discernimiento_de_verdad_parcial",
+        "key": "protocolo_de_discernimiento_de_verdad_parcial",
+        "label": "Protocolo de discernimiento de verdad parcial",
+        "kind": "concept",
+        "source_path": "metodo_filosofico.protocolo_de_discernimiento_de_verdad_parcial",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Secuencia metodologica para distinguir una orientacion real hacia la verdad absoluta de una proyeccion refinada de preferencias, deseos o formas de captura.",
+            "source_path": "metodo_filosofico.protocolo_de_discernimiento_de_verdad_parcial.definicion"
+          }
+        ],
+        "collections": [
+          {
+            "id": "metodo_filosofico_protocolo_de_discernimiento_de_verdad_parcial_pasos_collection",
+            "key": "pasos",
+            "label": "Pasos",
+            "source_path": "metodo_filosofico.protocolo_de_discernimiento_de_verdad_parcial.pasos",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "identificar la afirmacion, intuicion, doctrina, simbolo o proceso que reclama orientacion hacia la verdad"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "examinar si refuerza dominacion, clausura, instrumentalizacion o perpetuacion del ciclo en el dominio humano"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "evaluar su coherencia interna y su contraste con la realidad observable, historica o experiencial pertinente"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "examinar su capacidad explicativa y su resistencia al autoengaño, a la racionalizacion interesada y a la captura ideologica"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "evaluar sus efectos exergicos reales sobre conciencia, autonomia, organizacion, creatividad y apertura"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "analizar su deuda temporal y su saldo historico para distinguir apertura duradera de falsa ruptura"
+              },
+              {
+                "order_index": 7,
+                "value_type": "text",
+                "value": "clasificar el resultado como apertura valida, apertura ambigua o clausura disfrazada de verdad"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "protocolo_de_discernimiento_de_verdad_parcial"
+      },
+      {
+        "id": "metodo_filosofico_criterios_de_validez",
+        "key": "criterios_de_validez",
+        "label": "Criterios de validez",
+        "kind": "concept",
+        "source_path": "metodo_filosofico.criterios_de_validez",
+        "fields": [
+          {
+            "key": "nota",
+            "label": "Nota",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Ningun criterio aislado basta por si solo. La validez aumenta cuando varios criterios convergen sin contradiccion fuerte.",
+            "source_path": "metodo_filosofico.criterios_de_validez.nota"
+          }
+        ],
+        "collections": [
+          {
+            "id": "metodo_filosofico_criterios_de_validez_criterios_collection",
+            "key": "criterios",
+            "label": "Criterios",
+            "source_path": "metodo_filosofico.criterios_de_validez.criterios",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "coherencia interna"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "capacidad explicativa"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "correspondencia parcial con la realidad"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "capacidad de integrar niveles distintos sin confusion"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "fecundidad analitica"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "potencial liberador no manipulador"
+              },
+              {
+                "order_index": 7,
+                "value_type": "text",
+                "value": "resistencia a captura ideologica"
+              },
+              {
+                "order_index": 8,
+                "value_type": "text",
+                "value": "resistencia a autoengaño"
+              },
+              {
+                "order_index": 9,
+                "value_type": "text",
+                "value": "adecuacion al dominio evaluado"
+              },
+              {
+                "order_index": 10,
+                "value_type": "text",
+                "value": "capacidad de correccion y revision"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "criterios_de_validez"
+      },
+      {
+        "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano",
+        "key": "relacion_con_los_dominios_del_conocimiento_humano",
+        "label": "Relacion con los dominios del conocimiento humano",
+        "kind": "concept",
+        "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano",
+        "fields": [
+          {
+            "key": "principio_general",
+            "label": "Principio general",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "El metodo filosofico no sustituye los dominios especializados del conocimiento humano, pero puede dialogar con todos ellos, integrarlos criticamente, examinar sus limites y evaluar su orientacion epistemica, moral, historica y exergica.",
+            "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.principio_general"
+          }
+        ],
+        "collections": [],
+        "children": [
+          {
+            "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios",
+            "key": "dominios",
+            "label": "Dominios",
+            "kind": "section",
+            "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios",
+            "fields": [],
+            "collections": [],
+            "children": [
+              {
+                "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_logica_y_matematicas",
+                "key": "logica_y_matematicas",
+                "label": "Logica y matematicas",
+                "kind": "section",
+                "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.logica_y_matematicas",
+                "fields": [
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Aportan precision formal, estructura inferencial, modelizacion, consistencia y exploracion de relaciones abstractas.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.logica_y_matematicas.funcion"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No agotan por si solas el contenido empirico, moral, historico o existencial de la realidad.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.logica_y_matematicas.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_logica_y_matematicas"
+              },
+              {
+                "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_ciencias_naturales",
+                "key": "ciencias_naturales",
+                "label": "Ciencias naturales",
+                "kind": "section",
+                "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.ciencias_naturales",
+                "fields": [
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Aportan conocimiento riguroso sobre mecanismos observables del universo, la materia, la vida y la mente.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.ciencias_naturales.funcion"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No determinan por si solas el sentido ultimo, el valor moral ni la orientacion politica de ese conocimiento.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.ciencias_naturales.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_ciencias_naturales"
+              },
+              {
+                "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_ciencias_sociales",
+                "key": "ciencias_sociales",
+                "label": "Ciencias sociales",
+                "kind": "section",
+                "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.ciencias_sociales",
+                "fields": [
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Permiten analizar estructuras, instituciones, conflicto, lenguaje, poder, comportamiento colectivo y reproduccion historica del ciclo.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.ciencias_sociales.funcion"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Pueden quedar capturadas por ideologia, intereses de poder o reduccionismos metodologicos.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.ciencias_sociales.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_ciencias_sociales"
+              },
+              {
+                "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_historia",
+                "key": "historia",
+                "label": "Historia",
+                "kind": "section",
+                "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.historia",
+                "fields": [
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Permite rastrear genealogias, cambios, permanencias, recaidas y saldos temporales reales.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.historia.funcion"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No ofrece sentido por si sola sin marco interpretativo, pero corrige fantasias teoricas despegadas del devenir real.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.historia.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_historia"
+              },
+              {
+                "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_arte_y_creacion",
+                "key": "arte_y_creacion",
+                "label": "Arte y creacion",
+                "kind": "section",
+                "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.arte_y_creacion",
+                "fields": [
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Abren acceso simbolico, afectivo, imaginativo y sensible a capas de verdad que no siempre son reducibles a lenguaje tecnico.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.arte_y_creacion.funcion"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Su potencia reveladora no las exime de ambiguedad, autoengaño o captura estetizada.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.arte_y_creacion.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_arte_y_creacion"
+              },
+              {
+                "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_tecnica_e_ingenieria",
+                "key": "tecnica_e_ingenieria",
+                "label": "Tecnica e ingenieria",
+                "kind": "section",
+                "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.tecnica_e_ingenieria",
+                "fields": [
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Transforman materialmente el mundo y amplian capacidad de accion, organizacion y produccion.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.tecnica_e_ingenieria.funcion"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Sin discernimiento moral y exergico pueden convertirse en instrumentos de captura, dependencia o devastacion.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.tecnica_e_ingenieria.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_tecnica_e_ingenieria"
+              },
+              {
+                "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_derecho_y_pensamiento_normativo",
+                "key": "derecho_y_pensamiento_normativo",
+                "label": "Derecho y pensamiento normativo",
+                "kind": "section",
+                "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.derecho_y_pensamiento_normativo",
+                "fields": [
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Formalizan reglas, procedimientos, limites al poder y marcos de justicia operativa.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.derecho_y_pensamiento_normativo.funcion"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Pueden estabilizar la libertad o burocratizar la dominacion segun su forma institucional.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.derecho_y_pensamiento_normativo.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_derecho_y_pensamiento_normativo"
+              },
+              {
+                "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_teologia_y_tradiciones_espirituales",
+                "key": "teologia_y_tradiciones_espirituales",
+                "label": "Teologia y tradiciones espirituales",
+                "kind": "section",
+                "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.teologia_y_tradiciones_espirituales",
+                "fields": [
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Conservan simbolos, practicas, intuiciones y lenguajes historicos de trascendencia, comunidad y disciplina interior.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.teologia_y_tradiciones_espirituales.funcion"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Pueden contener aperturas valiosas o formas muy refinadas de demiurgo religioso.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.teologia_y_tradiciones_espirituales.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_teologia_y_tradiciones_espirituales"
+              },
+              {
+                "id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_filosofia",
+                "key": "filosofia",
+                "label": "Filosofia",
+                "kind": "section",
+                "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.filosofia",
+                "fields": [
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Opera como espacio integrador, critico y de segundo orden que examina fundamentos, articula niveles y corrige confusiones entre dominios.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.filosofia.funcion"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Degenera cuando se desconecta de la realidad, se encierra en retorica o absolutiza su propio lenguaje.",
+                    "source_path": "metodo_filosofico.relacion_con_los_dominios_del_conocimiento_humano.dominios.filosofia.limite"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios_filosofia"
+              }
+            ],
+            "canonical_id": "metodo_filosofico_relacion_con_los_dominios_del_conocimiento_humano_dominios"
+          }
+        ],
+        "canonical_id": "relacion_con_los_dominios_del_conocimiento_humano"
+      },
+      {
+        "id": "metodo_filosofico_relacion_con_la_ciencia",
+        "key": "relacion_con_la_ciencia",
+        "label": "Relacion con la ciencia",
+        "kind": "concept",
+        "source_path": "metodo_filosofico.relacion_con_la_ciencia",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La ciencia es fuente privilegiada de conocimiento parcial sobre los mecanismos observables del mundo. El metodo filosofico debe integrarla siempre que sea pertinente, sin reducir toda la realidad a cientificismo ni negar evidencia empirica por fidelidad doctrinal.",
+            "source_path": "metodo_filosofico.relacion_con_la_ciencia.definicion"
+          }
+        ],
+        "collections": [
+          {
+            "id": "metodo_filosofico_relacion_con_la_ciencia_funcion_collection",
+            "key": "funcion",
+            "label": "Funcion",
+            "source_path": "metodo_filosofico.relacion_con_la_ciencia.funcion",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "corregir errores factuales"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "limitar especulacion gratuita"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "ampliar conocimiento del universo, la vida y la mente"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "servir de contraste para hipotesis metafisicas"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "relacion_con_la_ciencia"
+      },
+      {
+        "id": "metodo_filosofico_relacion_con_la_espiritualidad",
+        "key": "relacion_con_la_espiritualidad",
+        "label": "Relacion con la espiritualidad",
+        "kind": "concept",
+        "source_path": "metodo_filosofico.relacion_con_la_espiritualidad",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La experiencia espiritual puede abrir intuiciones valiosas, pero debe someterse a examen critico, a contraste con sus efectos y a discernimiento respecto a captura, autoengaño y fantasia compensatoria.",
+            "source_path": "metodo_filosofico.relacion_con_la_espiritualidad.definicion"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "relacion_con_la_espiritualidad"
+      },
+      {
+        "id": "metodo_filosofico_relacion_con_la_exergia",
+        "key": "relacion_con_la_exergia",
+        "label": "Relacion con la exergia",
+        "kind": "concept",
+        "source_path": "metodo_filosofico.relacion_con_la_exergia",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La exergia introduce un criterio de eficacia filosofica real: no basta con formular conceptos bellos; hay que evaluar si aumentan la capacidad de verdad, autonomia, reorganizacion y ruptura del ciclo.",
+            "source_path": "metodo_filosofico.relacion_con_la_exergia.definicion"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "relacion_con_la_exergia"
+      },
+      {
+        "id": "metodo_filosofico_relacion_con_la_moral_intrahumana",
+        "key": "relacion_con_la_moral_intrahumana",
+        "label": "Relacion con la moral intrahumana",
+        "kind": "concept",
+        "source_path": "metodo_filosofico.relacion_con_la_moral_intrahumana",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "La moral intrahumana actua como filtro contra orientaciones falsas que, aunque puedan parecer profundas, refuercen dominacion, clausura, instrumentalizacion o perpetuacion del ciclo.",
+            "source_path": "metodo_filosofico.relacion_con_la_moral_intrahumana.definicion"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "relacion_con_la_moral_intrahumana"
+      }
+    ]
+  }
+}

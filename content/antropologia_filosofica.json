@@ -1,0 +1,1815 @@
+{
+  "schema_version": 2,
+  "source_format": "legacy-normalized",
+  "domain": {
+    "id": "antropologia_filosofica",
+    "key": "antropologia_filosofica",
+    "label": "Antropologia filosofica",
+    "source_file": "antropologia_filosofica.json"
+  },
+  "root": {
+    "id": "antropologia_filosofica",
+    "canonical_id": "ser_humano",
+    "key": "antropologia_filosofica",
+    "label": "Antropologia filosofica",
+    "kind": "concept",
+    "source_path": "antropologia_filosofica",
+    "fields": [
+      {
+        "key": "tesis_central",
+        "label": "Tesis central",
+        "role": "thesis",
+        "value_type": "text",
+        "value": "El ser humano es una forma de conciencia reflexiva atravesada por la tension entre su base animal-instintiva y su capacidad de orientarse hacia la verdad, la autonomia y la trascendencia.",
+        "source_path": "antropologia_filosofica.tesis_central"
+      }
+    ],
+    "collections": [],
+    "children": [
+      {
+        "id": "antropologia_filosofica_conciencia",
+        "key": "conciencia",
+        "label": "Conciencia",
+        "kind": "concept",
+        "source_path": "antropologia_filosofica.conciencia",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Propiedad emergente de ciertos sistemas materiales complejos por la cual un ser o estructura mantiene relacion con su entorno, integra informacion y expresa algun grado de orientacion, interpretacion o respuesta ante la realidad.",
+            "source_path": "antropologia_filosofica.conciencia.definicion"
+          },
+          {
+            "key": "tesis_general",
+            "label": "Tesis general",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "La conciencia no es exclusiva del ser humano, de los animales ni necesariamente de la vida conocida en la Tierra. Puede existir en multiples grados, formas y arquitecturas materiales dentro del universo.",
+            "source_path": "antropologia_filosofica.conciencia.tesis_general"
+          },
+          {
+            "key": "relacion_con_la_realidad",
+            "label": "Relacion con la realidad",
+            "role": "relation",
+            "value_type": "text",
+            "value": "Cuanta mayor capacidad de integracion e interpretacion posee un sistema consciente, mayor puede ser su acceso a capas de una realidad que siempre ha estado ahi.",
+            "source_path": "antropologia_filosofica.conciencia.relacion_con_la_realidad",
+            "target_hints": [
+              "realidad"
+            ],
+            "target_ids": [
+              "realidad"
+            ]
+          },
+          {
+            "key": "relacion_con_el_alma",
+            "label": "Relacion con el alma",
+            "role": "relation",
+            "value_type": "text",
+            "value": "No implica una sustancia separada o inmortal; designa un fenomeno emergente o un conjunto de grados emergentes de relacion con la realidad.",
+            "source_path": "antropologia_filosofica.conciencia.relacion_con_el_alma",
+            "target_hints": [
+              "alma"
+            ],
+            "target_ids": [
+              "alma"
+            ]
+          },
+          {
+            "key": "relacion_con_la_materia",
+            "label": "Relacion con la materia",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La conciencia surge de la materia o de estructuras fisicas equivalentes cuando alcanzan ciertos niveles de organizacion e integracion.",
+            "source_path": "antropologia_filosofica.conciencia.relacion_con_la_materia",
+            "target_hints": [
+              "materia"
+            ],
+            "target_ids": [
+              "materia"
+            ]
+          },
+          {
+            "key": "relacion_con_el_ser_humano",
+            "label": "Relacion con el ser humano",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La conciencia humana es solo un caso particular conocido de conciencia compleja y reflexiva, no su forma suprema necesaria.",
+            "source_path": "antropologia_filosofica.conciencia.relacion_con_el_ser_humano",
+            "target_hints": [
+              "ser_humano"
+            ],
+            "target_ids": [
+              "ser_humano"
+            ]
+          },
+          {
+            "key": "relacion_con_el_espiritu_humano",
+            "label": "Relacion con el espiritu humano",
+            "role": "relation",
+            "value_type": "text",
+            "value": "Las conciencias humanas individuales contribuyen a la formacion del espiritu humano como abstraccion historico-colectiva propia de la humanidad, sin agotar el campo total de la conciencia posible en el universo.",
+            "source_path": "antropologia_filosofica.conciencia.relacion_con_el_espiritu_humano",
+            "target_hints": [
+              "espiritu_humano"
+            ],
+            "target_ids": [
+              "espiritu_humano"
+            ]
+          }
+        ],
+        "collections": [
+          {
+            "id": "antropologia_filosofica_conciencia_caracteristicas_collection",
+            "key": "caracteristicas",
+            "label": "Caracteristicas",
+            "source_path": "antropologia_filosofica.conciencia.caracteristicas",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "emergente"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "gradual"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "dependiente de la organizacion material o estructural"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "capaz de existir en distintos niveles de complejidad"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "no limitada a la experiencia humana"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "potencialmente diversa en escalas y formas desconocidas"
+              }
+            ]
+          }
+        ],
+        "children": [
+          {
+            "id": "antropologia_filosofica_conciencia_niveles",
+            "key": "niveles",
+            "label": "Niveles",
+            "kind": "section",
+            "source_path": "antropologia_filosofica.conciencia.niveles",
+            "fields": [],
+            "collections": [],
+            "children": [
+              {
+                "id": "antropologia_filosofica_conciencia_niveles_proto_conciencia",
+                "key": "proto_conciencia",
+                "label": "Proto conciencia",
+                "kind": "concept",
+                "source_path": "antropologia_filosofica.conciencia.niveles.proto_conciencia",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Grado minimo hipotetico de orientacion o respuesta presente en ciertas estructuras materiales no vivas que mantienen forma, reproducen patrones o seleccionan estados fisicos estables.",
+                    "source_path": "antropologia_filosofica.conciencia.niveles.proto_conciencia.definicion"
+                  },
+                  {
+                    "key": "estado_teorico",
+                    "label": "Estado teorico",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "hipotesis abierta",
+                    "source_path": "antropologia_filosofica.conciencia.niveles.proto_conciencia.estado_teorico"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "proto_conciencia"
+              },
+              {
+                "id": "antropologia_filosofica_conciencia_niveles_conciencia_biologica_basica",
+                "key": "conciencia_biologica_basica",
+                "label": "Conciencia biologica basica",
+                "kind": "concept",
+                "source_path": "antropologia_filosofica.conciencia.niveles.conciencia_biologica_basica",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Forma de conciencia presente en seres vivos capaces de responder al entorno, preservar estructura y mantener procesos internos.",
+                    "source_path": "antropologia_filosofica.conciencia.niveles.conciencia_biologica_basica.definicion"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "conciencia_biologica_basica"
+              },
+              {
+                "id": "antropologia_filosofica_conciencia_niveles_conciencia_compleja",
+                "key": "conciencia_compleja",
+                "label": "Conciencia compleja",
+                "kind": "concept",
+                "source_path": "antropologia_filosofica.conciencia.niveles.conciencia_compleja",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Forma de conciencia capaz de integrar gran cantidad de informacion, construir modelos del entorno y producir experiencia subjetiva rica.",
+                    "source_path": "antropologia_filosofica.conciencia.niveles.conciencia_compleja.definicion"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "conciencia_compleja"
+              },
+              {
+                "id": "antropologia_filosofica_conciencia_niveles_autoconciencia_reflexiva",
+                "key": "autoconciencia_reflexiva",
+                "label": "Autoconciencia reflexiva",
+                "kind": "concept",
+                "source_path": "antropologia_filosofica.conciencia.niveles.autoconciencia_reflexiva",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Nivel de conciencia en el que un ser puede pensarse a si mismo, construir simbolos, producir conocimiento acumulativo y orientar su existencia hacia capas mas profundas de la realidad.",
+                    "source_path": "antropologia_filosofica.conciencia.niveles.autoconciencia_reflexiva.definicion"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "autoconciencia_reflexiva"
+              },
+              {
+                "id": "antropologia_filosofica_conciencia_niveles_conciencias_no_humanas_desconocidas",
+                "key": "conciencias_no_humanas_desconocidas",
+                "label": "Conciencias no humanas desconocidas",
+                "kind": "concept",
+                "source_path": "antropologia_filosofica.conciencia.niveles.conciencias_no_humanas_desconocidas",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Posibles formas de conciencia radicalmente distintas a la humana o terrestre, con otros modos de percepcion, integracion, temporalidad y acceso a la realidad.",
+                    "source_path": "antropologia_filosofica.conciencia.niveles.conciencias_no_humanas_desconocidas.definicion"
+                  },
+                  {
+                    "key": "estado_teorico",
+                    "label": "Estado teorico",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "posibilidad abierta",
+                    "source_path": "antropologia_filosofica.conciencia.niveles.conciencias_no_humanas_desconocidas.estado_teorico"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "conciencias_no_humanas_desconocidas"
+              }
+            ],
+            "canonical_id": "antropologia_filosofica_conciencia_niveles"
+          }
+        ],
+        "canonical_id": "conciencia"
+      },
+      {
+        "id": "antropologia_filosofica_procesos_basales_conscientes",
+        "key": "procesos_basales_conscientes",
+        "label": "Procesos basales conscientes",
+        "kind": "concept",
+        "source_path": "antropologia_filosofica.procesos_basales_conscientes",
+        "fields": [
+          {
+            "key": "tesis",
+            "label": "Tesis",
+            "role": "thesis",
+            "value_type": "text",
+            "value": "Los estimulos positivos y negativos, la evitacion del daño y la busqueda de conservacion o apertura constituyen un nucleo axiologico minimo inherente al fenomeno emergente de la vida",
+            "source_path": "antropologia_filosofica.procesos_basales_conscientes.tesis"
+          }
+        ],
+        "collections": [],
+        "children": [
+          {
+            "id": "antropologia_filosofica_procesos_basales_conscientes_instinto",
+            "key": "instinto",
+            "label": "Instinto",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.procesos_basales_conscientes.instinto",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Base primaria de reaccion de los seres vivos y de otras formas de conciencia sensible ante estimulos, amenazas, oportunidades o alteraciones del entorno.",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.instinto.definicion"
+              },
+              {
+                "key": "funcion",
+                "label": "Funcion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Permite respuestas inmediatas de conservacion, defensa, aproximacion, evitacion y orientacion practica previa a la reflexion elaborada.",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.instinto.funcion"
+              },
+              {
+                "key": "papel_moral",
+                "label": "Papel moral",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "En el ser humano constituye una base inicial de las intuiciones de bondad y maldad, aunque por si solo no produce juicio moral verdadero.",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.instinto.papel_moral"
+              },
+              {
+                "key": "limites",
+                "label": "Limites",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Puede detectar, anticipar o señalar, pero no basta por si solo para verdad, justicia ni discernimiento perfecto.",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.instinto.limites"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "instinto"
+          },
+          {
+            "id": "antropologia_filosofica_procesos_basales_conscientes_impulso",
+            "key": "impulso",
+            "label": "Impulso",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.procesos_basales_conscientes.impulso",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Base primaria de las necesidades y tendencias de accion orientadas a conservar estructura, satisfacer carencias, descargar tension o buscar realizacion.",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.impulso.definicion"
+              },
+              {
+                "key": "funcion",
+                "label": "Funcion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Expresa la dinamica basal que empuja a un ser o sistema consciente hacia movimiento, satisfaccion, descarga, apropiacion, busqueda o transformacion.",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.impulso.funcion"
+              },
+              {
+                "key": "relacion_con_el_ser_humano",
+                "label": "Relacion con el ser humano",
+                "role": "relation",
+                "value_type": "text",
+                "value": "En el ser humano adopta formas biologicas, afectivas, simbolicas y espirituales, pudiendo orientarse tanto a la supervivencia como al dominio o a la trascendencia.",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.impulso.relacion_con_el_ser_humano",
+                "target_hints": [
+                  "ser_humano"
+                ],
+                "target_ids": [
+                  "ser_humano"
+                ]
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "impulso"
+          },
+          {
+            "id": "antropologia_filosofica_procesos_basales_conscientes_sensibilidad",
+            "key": "sensibilidad",
+            "label": "Sensibilidad",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.procesos_basales_conscientes.sensibilidad",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Base primaria de la experiencia afectiva por la cual un ser consciente registra valor, amenaza, atraccion, rechazo, perdida, vinculacion o apertura en su relacion con la realidad.",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.sensibilidad.definicion"
+              },
+              {
+                "key": "funcion",
+                "label": "Funcion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Hace posible la emergencia de emociones como modulaciones de la experiencia vivida, orientando la atencion, la memoria, la valoracion y la respuesta.",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.sensibilidad.funcion"
+              },
+              {
+                "key": "relacion_con_el_ser_humano",
+                "label": "Relacion con el ser humano",
+                "role": "relation",
+                "value_type": "text",
+                "value": "En el ser humano esta sensibilidad adquiere especial complejidad simbolica, reflexiva y moral, pero no se reduce exclusivamente a la experiencia humana.",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.sensibilidad.relacion_con_el_ser_humano",
+                "target_hints": [
+                  "ser_humano"
+                ],
+                "target_ids": [
+                  "ser_humano"
+                ]
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "sensibilidad"
+          },
+          {
+            "id": "antropologia_filosofica_procesos_basales_conscientes_emociones_reactivas",
+            "key": "emociones_reactivas",
+            "label": "Emociones reactivas",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas",
+            "fields": [],
+            "collections": [],
+            "children": [
+              {
+                "id": "antropologia_filosofica_procesos_basales_conscientes_emociones_reactivas_miedo",
+                "key": "miedo",
+                "label": "Miedo",
+                "kind": "concept",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas.miedo",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Respuesta afectiva y practica ante amenaza, perdida, incertidumbre, vulnerabilidad o riesgo percibido.",
+                    "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas.miedo.definicion"
+                  },
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Activa mecanismos de defensa, evitacion, cautela, huida, sumision o anticipacion protectora.",
+                    "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas.miedo.funcion"
+                  },
+                  {
+                    "key": "limite",
+                    "label": "Limite",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Cuando domina la conciencia, puede reforzar servidumbre, apego, cierre cognitivo y disposicion a someterse o dominar.",
+                    "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas.miedo.limite"
+                  },
+                  {
+                    "key": "relacion_con_el_ser_humano",
+                    "label": "Relacion con el ser humano",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "En el ser humano el miedo puede ser biologico, social, simbolico, politico o existencial, y constituye una de las bases mas frecuentes de la reproduccion del ciclo.",
+                    "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas.miedo.relacion_con_el_ser_humano",
+                    "target_hints": [
+                      "ser_humano"
+                    ],
+                    "target_ids": [
+                      "ser_humano"
+                    ]
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "miedo"
+              },
+              {
+                "id": "antropologia_filosofica_procesos_basales_conscientes_emociones_reactivas_agresividad",
+                "key": "agresividad",
+                "label": "Agresividad",
+                "kind": "concept",
+                "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas.agresividad",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Respuesta energetica y conductual de confrontacion frente a obstaculos, amenazas, frustraciones, invasiones o luchas por afirmacion.",
+                    "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas.agresividad.definicion"
+                  },
+                  {
+                    "key": "funcion",
+                    "label": "Funcion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Permite defensa, resistencia, imposicion, ruptura de limites o descarga de tension acumulada.",
+                    "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas.agresividad.funcion"
+                  },
+                  {
+                    "key": "ambivalencia",
+                    "label": "Ambivalencia",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "No es mala en si misma; puede operar como defensa legitima o degradarse en violencia, crueldad, dominio y reproduccion del daño.",
+                    "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas.agresividad.ambivalencia"
+                  },
+                  {
+                    "key": "relacion_con_el_ser_humano",
+                    "label": "Relacion con el ser humano",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "En el ser humano puede quedar capturada por miedo, resentimiento, ego o voluntad de poder, convirtiendose facilmente en fuerza demiurgica.",
+                    "source_path": "antropologia_filosofica.procesos_basales_conscientes.emociones_reactivas.agresividad.relacion_con_el_ser_humano",
+                    "target_hints": [
+                      "ser_humano"
+                    ],
+                    "target_ids": [
+                      "ser_humano"
+                    ]
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "agresividad"
+              }
+            ],
+            "canonical_id": "emociones_reactivas"
+          }
+        ],
+        "canonical_id": "procesos_basales_conscientes"
+      },
+      {
+        "id": "antropologia_filosofica_procesos_de_elaboracion_consciente",
+        "key": "procesos_de_elaboracion_consciente",
+        "label": "Procesos de elaboracion consciente",
+        "kind": "concept",
+        "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente",
+        "fields": [],
+        "collections": [],
+        "children": [
+          {
+            "id": "antropologia_filosofica_procesos_de_elaboracion_consciente_deseo",
+            "key": "deseo",
+            "label": "Deseo",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.deseo",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Dinamica consciente o semiconsciente por la cual el impulso se organiza como orientacion persistente hacia objetos, estados, experiencias, vinculos o fines valorados.",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.deseo.definicion"
+              },
+              {
+                "key": "funcion",
+                "label": "Funcion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Proyecta la necesidad y la sensibilidad hacia busqueda, apego, placer, realizacion, dominio o apertura.",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.deseo.funcion"
+              },
+              {
+                "key": "relacion_con_el_impulso",
+                "label": "Relacion con el impulso",
+                "role": "relation",
+                "value_type": "text",
+                "value": "Constituye una elaboracion mas compleja del impulso basal, especialmente intensa en seres con memoria, imaginacion, simbolizacion y anticipacion.",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.deseo.relacion_con_el_impulso",
+                "target_hints": [
+                  "impulso"
+                ],
+                "target_ids": [
+                  "impulso"
+                ]
+              },
+              {
+                "key": "relacion_con_el_ser_humano",
+                "label": "Relacion con el ser humano",
+                "role": "relation",
+                "value_type": "text",
+                "value": "En el ser humano puede orientarse tanto hacia la satisfaccion inmediata, el poder y la permanencia, como hacia conocimiento, creacion, autonomia y trascendencia.",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.deseo.relacion_con_el_ser_humano",
+                "target_hints": [
+                  "ser_humano"
+                ],
+                "target_ids": [
+                  "ser_humano"
+                ]
+              }
+            ],
+            "collections": [],
+            "children": [
+              {
+                "id": "antropologia_filosofica_procesos_de_elaboracion_consciente_deseo_tipos",
+                "key": "tipos",
+                "label": "Tipos",
+                "kind": "section",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.deseo.tipos",
+                "fields": [
+                  {
+                    "key": "deseo_liberador",
+                    "label": "Deseo liberador",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Impulso orientado hacia conocimiento, creacion, apertura, autonomia y superacion de la servidumbre al placer inmediato y al dominio.",
+                    "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.deseo.tipos.deseo_liberador"
+                  },
+                  {
+                    "key": "deseo_demiurgico",
+                    "label": "Deseo demiurgico",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Busqueda de placer, dominio, permanencia y control.",
+                    "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.deseo.tipos.deseo_demiurgico"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "antropologia_filosofica_procesos_de_elaboracion_consciente_deseo_tipos"
+              }
+            ],
+            "canonical_id": "deseo"
+          },
+          {
+            "id": "antropologia_filosofica_procesos_de_elaboracion_consciente_odio",
+            "key": "odio",
+            "label": "Odio",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Dinamica consciente o semiconsciente por la cual miedo, agresividad, resentimiento o daño interiorizado se fijan de manera hostil y persistente contra un sujeto, grupo, realidad o simbolo percibido como amenaza, ofensa, obstaculo o enemigo.",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio.definicion"
+              },
+              {
+                "key": "funcion",
+                "label": "Funcion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Organiza afectos reactivos en una orientacion relativamente estable de rechazo, hostilidad, desvalorizacion o voluntad de dañamiento, alimentando clausura, conflicto y reproduccion del daño.",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio.funcion"
+              },
+              {
+                "key": "relacion_con_las_emociones_reactivas",
+                "label": "Relacion con las emociones reactivas",
+                "role": "relation",
+                "value_type": "text",
+                "value": "Puede surgir de la sedimentacion del miedo, la agresividad, la humillacion, el resentimiento o la frustracion, cuando estos dejan de ser solo respuestas puntuales y se convierten en disposicion hostil persistente.",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio.relacion_con_las_emociones_reactivas",
+                "target_hints": [
+                  "emociones_reactivas"
+                ],
+                "target_ids": [
+                  "emociones_reactivas"
+                ]
+              },
+              {
+                "key": "relacion_con_el_ser_humano",
+                "label": "Relacion con el ser humano",
+                "role": "relation",
+                "value_type": "text",
+                "value": "En el ser humano puede adquirir formas personales, sociales, politicas, simbolicas o historicas, y convertirse en uno de los motores mas fuertes de venganza, deshumanizacion, persecucion y perpetuacion del ciclo.",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio.relacion_con_el_ser_humano",
+                "target_hints": [
+                  "ser_humano"
+                ],
+                "target_ids": [
+                  "ser_humano"
+                ]
+              },
+              {
+                "key": "ambivalencia",
+                "label": "Ambivalencia",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "No constituye una fuerza liberadora en sentido estricto, aunque pueda nacer de daños reales o de experiencias de opresion; solo se vuelve politicamente valioso cuando su energia es transformada en lucidez, resistencia justa o ruptura del ciclo sin quedar fijada como voluntad de destruccion.",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio.ambivalencia"
+              },
+              {
+                "key": "riesgo",
+                "label": "Riesgo",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Cuando se estabiliza y se legitima, el odio facilita la instrumentalizacion del otro, la justificacion de crueldad y la cristalizacion de estructuras demiurgicas.",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio.riesgo"
+              }
+            ],
+            "collections": [],
+            "children": [
+              {
+                "id": "antropologia_filosofica_procesos_de_elaboracion_consciente_odio_tipos",
+                "key": "tipos",
+                "label": "Tipos",
+                "kind": "section",
+                "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio.tipos",
+                "fields": [
+                  {
+                    "key": "odio_reactivo",
+                    "label": "Odio reactivo",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Nace de daño, miedo, humillacion o agresion percibida y busca respuesta hostil o defensiva.",
+                    "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio.tipos.odio_reactivo"
+                  },
+                  {
+                    "key": "odio_resentido",
+                    "label": "Odio resentido",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Se alimenta de memoria del agravio, comparacion, impotencia y fijacion prolongada sobre una ofensa real o imaginada.",
+                    "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio.tipos.odio_resentido"
+                  },
+                  {
+                    "key": "odio_demiurgico",
+                    "label": "Odio demiurgico",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Se organiza como voluntad de degradar, perseguir, instrumentalizar o destruir al otro, legitimando dominacion, crueldad y reproduccion del ciclo.",
+                    "source_path": "antropologia_filosofica.procesos_de_elaboracion_consciente.odio.tipos.odio_demiurgico"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "antropologia_filosofica_procesos_de_elaboracion_consciente_odio_tipos"
+              }
+            ],
+            "canonical_id": "odio"
+          }
+        ],
+        "canonical_id": "procesos_de_elaboracion_consciente"
+      },
+      {
+        "id": "antropologia_filosofica_procesos_secundarios_conscientes",
+        "key": "procesos_secundarios_conscientes",
+        "label": "Procesos secundarios conscientes",
+        "kind": "concept",
+        "source_path": "antropologia_filosofica.procesos_secundarios_conscientes",
+        "fields": [],
+        "collections": [],
+        "children": [
+          {
+            "id": "antropologia_filosofica_procesos_secundarios_conscientes_ego",
+            "key": "ego",
+            "label": "Ego",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.ego",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Estructura de autoidentificacion que organiza la experiencia individual y permite orientacion practica, pero que puede absolutizarse y convertirse en foco de apego, miedo y dominacion.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.ego.definicion"
+              },
+              {
+                "key": "riesgo",
+                "label": "Riesgo",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Cuando se rigidiza, el ego refuerza la separacion, la defensa del poder y la reproduccion del ciclo.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.ego.riesgo"
+              },
+              {
+                "key": "defensa",
+                "label": "Defensa",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "El ego funciona frecuentemente como mecanismo de defensa frente a la ignorancia, la inseguridad, el miedo y la amenaza a la propia identidad.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.ego.defensa"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "ego"
+          },
+          {
+            "id": "antropologia_filosofica_procesos_secundarios_conscientes_alteridad",
+            "key": "alteridad",
+            "label": "Alteridad",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.alteridad",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Capacidad de reconocer a otros seres conscientes como realidades distintas de uno mismo, dotadas de perspectiva, valor propio y posible interioridad irreductible.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.alteridad.definicion"
+              },
+              {
+                "key": "funcion",
+                "label": "Funcion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Hace posible salir parcialmente del encierro egocentrico, abrirse a la reciprocidad, al reconocimiento, al cuidado, al dialogo y a la comprension de que la realidad no se agota en la propia experiencia.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.alteridad.funcion"
+              },
+              {
+                "key": "limite",
+                "label": "Limite",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "No garantiza por si misma justicia ni bondad, porque puede ser reducida a conocimiento instrumental del otro y ponerse al servicio de la manipulacion, el dominio o la captura.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.alteridad.limite"
+              },
+              {
+                "key": "relacion_con_el_ser_humano",
+                "label": "Relacion con el ser humano",
+                "role": "relation",
+                "value_type": "text",
+                "value": "En el ser humano la alteridad alcanza una especial profundidad moral, simbolica y politica, porque permite reconocer al otro no solo como presencia, sino como sujeto de dignidad, conflicto, cooperacion y liberacion posible.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.alteridad.relacion_con_el_ser_humano",
+                "target_hints": [
+                  "ser_humano"
+                ],
+                "target_ids": [
+                  "ser_humano"
+                ]
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "alteridad"
+          },
+          {
+            "id": "antropologia_filosofica_procesos_secundarios_conscientes_abstraccion",
+            "key": "abstraccion",
+            "label": "Abstraccion",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.abstraccion",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Capacidad de separar, generalizar, simbolizar y reorganizar aspectos de la experiencia para formar conceptos, patrones, modelos y estructuras de comprension no reducidas a lo inmediatamente presente.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.abstraccion.definicion"
+              },
+              {
+                "key": "funcion",
+                "label": "Funcion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Permite memoria organizada, lenguaje, anticipacion, comparacion, planificacion, construccion teorica y apertura de niveles superiores de conocimiento.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.abstraccion.funcion"
+              },
+              {
+                "key": "ambivalencia",
+                "label": "Ambivalencia",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Puede servir tanto a la verdad como a la dominacion, porque hace posible comprender estructuras profundas de la realidad, pero tambien construir ficciones justificadoras, ideologias cerradas o tecnologias simbolicas de control.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.abstraccion.ambivalencia"
+              },
+              {
+                "key": "relacion_con_el_ser_humano",
+                "label": "Relacion con el ser humano",
+                "role": "relation",
+                "value_type": "text",
+                "value": "En el ser humano constituye una de las bases de la reflexividad, de la produccion historica de conocimiento y de la capacidad de organizar sentido, institucion y mundo simbolico.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.abstraccion.relacion_con_el_ser_humano",
+                "target_hints": [
+                  "ser_humano"
+                ],
+                "target_ids": [
+                  "ser_humano"
+                ]
+              }
+            ],
+            "collections": [
+              {
+                "id": "antropologia_filosofica_procesos_secundarios_conscientes_abstraccion_operaciones_derivadas_collection",
+                "key": "operaciones_derivadas",
+                "label": "Operaciones derivadas",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.abstraccion.operaciones_derivadas",
+                "item_kind_hint": "collection_item",
+                "items": [
+                  {
+                    "order_index": 1,
+                    "value_type": "text",
+                    "value": "clasificacion"
+                  },
+                  {
+                    "order_index": 2,
+                    "value_type": "text",
+                    "value": "simbolizacion"
+                  },
+                  {
+                    "order_index": 3,
+                    "value_type": "text",
+                    "value": "comparacion"
+                  },
+                  {
+                    "order_index": 4,
+                    "value_type": "text",
+                    "value": "generalizacion"
+                  },
+                  {
+                    "order_index": 5,
+                    "value_type": "text",
+                    "value": "descomposicion"
+                  },
+                  {
+                    "order_index": 6,
+                    "value_type": "text",
+                    "value": "composicion"
+                  }
+                ]
+              }
+            ],
+            "children": [],
+            "canonical_id": "abstraccion"
+          },
+          {
+            "id": "antropologia_filosofica_procesos_secundarios_conscientes_imaginacion",
+            "key": "imaginacion",
+            "label": "Imaginacion",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Capacidad de la conciencia para proyectar, simular, recombinar o figurar posibilidades, escenarios, relaciones o cursos de accion no presentes de forma inmediata en la experiencia.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.definicion"
+              },
+              {
+                "key": "funcion",
+                "label": "Funcion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Permite anticipar, planificar, ensayar mentalmente, crear, interpretar y abrir alternativas frente a la reaccion inmediata, ampliando el campo de accion de la conciencia dentro de una realidad abierta al cambio.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.funcion"
+              },
+              {
+                "key": "relacion_con_la_conciencia",
+                "label": "Relacion con la conciencia",
+                "role": "relation",
+                "value_type": "text",
+                "value": "Se apoya en la capacidad de la conciencia para integrar memoria, interpretar secuencias temporales y construir modelos parciales de la realidad.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.relacion_con_la_conciencia",
+                "target_hints": [
+                  "conciencia"
+                ],
+                "target_ids": [
+                  "conciencia"
+                ]
+              },
+              {
+                "key": "relacion_con_el_tiempo",
+                "label": "Relacion con el tiempo",
+                "role": "relation",
+                "value_type": "text",
+                "value": "Esta ligada a la expectativa y a la proyeccion de futuros posibles, conectando pasado, presente y posibilidad.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.relacion_con_el_tiempo",
+                "target_hints": [
+                  "tiempo"
+                ],
+                "target_ids": [
+                  "tiempo"
+                ]
+              },
+              {
+                "key": "relacion_con_la_supervivencia",
+                "label": "Relacion con la supervivencia",
+                "role": "relation",
+                "value_type": "text",
+                "value": "En sus formas basicas permite anticipacion adaptativa, evitacion del peligro y preparacion de respuestas; en sus formas complejas hace posible estrategia, innovacion y proyecto historico.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.relacion_con_la_supervivencia",
+                "target_hints": [
+                  "supervivencia"
+                ],
+                "target_ids": [
+                  "supervivencia"
+                ]
+              },
+              {
+                "key": "ambivalencia",
+                "label": "Ambivalencia",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Puede abrir conocimiento, creacion y liberacion, pero tambien generar autoengaño, paranoia, ficciones ideologicas o modelos usados para la dominacion.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.ambivalencia"
+              },
+              {
+                "key": "relacion_con_la_abstraccion",
+                "label": "Relacion con la abstraccion",
+                "role": "relation",
+                "value_type": "text",
+                "value": "Puede operar sin abstraccion compleja en formas basicas, pero en la conciencia reflexiva se articula con ella para producir modelos, teorias y construcciones simbolicas.",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.relacion_con_la_abstraccion",
+                "target_hints": [
+                  "abstraccion"
+                ],
+                "target_ids": [
+                  "abstraccion"
+                ]
+              }
+            ],
+            "collections": [],
+            "children": [
+              {
+                "id": "antropologia_filosofica_procesos_secundarios_conscientes_imaginacion_modalidades",
+                "key": "modalidades",
+                "label": "Modalidades",
+                "kind": "section",
+                "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.modalidades",
+                "fields": [
+                  {
+                    "key": "anticipacion",
+                    "label": "Anticipacion",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Proyeccion de escenarios futuros para orientar decision y adaptacion.",
+                    "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.modalidades.anticipacion"
+                  },
+                  {
+                    "key": "simulacion",
+                    "label": "Simulacion",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Ensayo interno de acciones, consecuencias o configuraciones sin ejecucion directa.",
+                    "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.modalidades.simulacion"
+                  },
+                  {
+                    "key": "invencion",
+                    "label": "Invencion",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Recombinacion creadora de elementos para producir nuevas formas, ideas o soluciones.",
+                    "source_path": "antropologia_filosofica.procesos_secundarios_conscientes.imaginacion.modalidades.invencion"
+                  }
+                ],
+                "collections": [],
+                "children": [],
+                "canonical_id": "antropologia_filosofica_procesos_secundarios_conscientes_imaginacion_modalidades"
+              }
+            ],
+            "canonical_id": "imaginacion"
+          }
+        ],
+        "canonical_id": "procesos_secundarios_conscientes"
+      },
+      {
+        "id": "antropologia_filosofica_naturaleza_humana",
+        "key": "naturaleza_humana",
+        "label": "Naturaleza humana",
+        "kind": "concept",
+        "source_path": "antropologia_filosofica.naturaleza_humana",
+        "fields": [],
+        "collections": [],
+        "children": [
+          {
+            "id": "antropologia_filosofica_naturaleza_humana_componente_animal",
+            "key": "componente_animal",
+            "label": "Componente animal",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.naturaleza_humana.componente_animal",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Base instintiva que genera reacciones, necesidades y emociones vinculadas a la genealogia biologica humana, e inseparables del ser humano.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.componente_animal.definicion"
+              },
+              {
+                "key": "funcion",
+                "label": "Funcion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Constituye el sustrato primario de conservacion, defensa, apego, competencia y respuesta inmediata, del que emergen gran parte de las necesidades, afectos reactivos y orientaciones primeras del ser humano.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.componente_animal.funcion"
+              },
+              {
+                "key": "relacion_con_el_instinto",
+                "label": "Relacion con el instinto",
+                "role": "relation",
+                "value_type": "text",
+                "value": "Opera como base de las reacciones humanas primarias y del primer registro afectivo y moral, aunque no basta por si sola para juicio verdadero ni para orientacion justa.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.componente_animal.relacion_con_el_instinto",
+                "target_hints": [
+                  "instinto"
+                ],
+                "target_ids": [
+                  "instinto"
+                ]
+              },
+              {
+                "key": "limite",
+                "label": "Limite",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "No esta mediado necesariamente por la etica, la verdad ni la autonomia reflexiva, por lo que puede orientar la accion hacia la supervivencia, el dominio, la repeticion o la satisfaccion inmediata.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.componente_animal.limite"
+              },
+              {
+                "key": "efecto_social",
+                "label": "Efecto social",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Cuando se organiza socialmente sin suficiente verdad, conciencia y autonomia, produce patrones subciclicos de apego, jerarquia, sometimiento, violencia, imitacion, resentimiento y lucha por poder que favorecen la reproduccion del ciclo demiurgico.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.componente_animal.efecto_social"
+              },
+              {
+                "key": "relacion_con_el_demiurgo",
+                "label": "Relacion con el demiurgo",
+                "role": "relation",
+                "value_type": "text",
+                "value": "Constituye una de las bases antropologicas de la emergencia del demiurgo, en la medida en que el instinto humano, al volverse inteligencia social organizada, puede cristalizar en estructuras de dominacion, ignorancia y repeticion.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.componente_animal.relacion_con_el_demiurgo",
+                "target_hints": [
+                  "demiurgo"
+                ],
+                "target_ids": [
+                  "demiurgo"
+                ]
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "componente_animal"
+          },
+          {
+            "id": "antropologia_filosofica_naturaleza_humana_componente_trascendente",
+            "key": "componente_trascendente",
+            "label": "Componente trascendente",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.naturaleza_humana.componente_trascendente",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Capacidad de buscar verdad, abrir capas de comprension y crear vias de liberacion para uno mismo y otros.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.componente_trascendente.definicion"
+              },
+              {
+                "key": "funcion",
+                "label": "Funcion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Permite al ser humano distanciarse parcialmente del impulso inmediato, orientar su conciencia hacia la verdad, desarrollar autonomia y transformar conocimiento en apertura en lugar de dominacion.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.componente_trascendente.funcion"
+              },
+              {
+                "key": "relacion_con_el_espiritu",
+                "label": "Relacion con el espiritu",
+                "role": "relation",
+                "value_type": "text",
+                "value": "Expresa en el individuo la orientacion del espiritu humano hacia una apertura progresiva de comprension, sin agotar nunca la verdad absoluta.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.componente_trascendente.relacion_con_el_espiritu",
+                "target_hints": [
+                  "espiritu"
+                ],
+                "target_ids": [
+                  "espiritu"
+                ]
+              },
+              {
+                "key": "limite",
+                "label": "Limite",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "No elimina el componente animal ni garantiza por si mismo liberacion, porque tambien puede ser capturado por el ego, el deseo de dominio o la instrumentalizacion del conocimiento.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.componente_trascendente.limite"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "componente_trascendente"
+          },
+          {
+            "id": "antropologia_filosofica_naturaleza_humana_dualidad_humana",
+            "key": "dualidad_humana",
+            "label": "Dualidad humana",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.naturaleza_humana.dualidad_humana",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "La naturaleza humana esta atravesada por una tension estructural entre la base animal-instintiva y la capacidad de orientarse hacia la verdad, la autonomia y la trascendencia.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.dualidad_humana.definicion"
+              },
+              {
+                "key": "rasgo_central",
+                "label": "Rasgo central",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "El ser humano no es pura animalidad ni pura lucidez, sino una unidad conflictiva en la que conviven impulso, conciencia, deseo, miedo, verdad posible y tendencia a la captura.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.dualidad_humana.rasgo_central"
+              },
+              {
+                "key": "paradoja",
+                "label": "Paradoja",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Puede conocer el mecanismo de la carcel y aun asi elegir perpetuarla, porque el conocimiento no libera automaticamente y puede ponerse al servicio del poder, del apego o del miedo.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.dualidad_humana.paradoja"
+              },
+              {
+                "key": "consecuencia_moral",
+                "label": "Consecuencia moral",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "La lucidez aumenta la responsabilidad, pero no anula la posibilidad de clausura; por eso la autonomia humana hace posible una eleccion mas real entre apertura y dominacion, sin garantizar nunca la bondad.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.dualidad_humana.consecuencia_moral"
+              },
+              {
+                "key": "consecuencia_politica",
+                "label": "Consecuencia politica",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "La reproduccion del ciclo no nace solo de la ignorancia, sino tambien de la capacidad humana de instrumentalizar conocimiento, organizar socialmente el instinto y convertir la comprension en tecnologia de dominio.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.dualidad_humana.consecuencia_politica"
+              },
+              {
+                "key": "clave_del_sistema",
+                "label": "Clave del sistema",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "La tragedia humana consiste en que la misma criatura capaz de trascender parcialmente su condicion inmediata es tambien capaz de refinar su servidumbre, justificarla y extenderla.",
+                "source_path": "antropologia_filosofica.naturaleza_humana.dualidad_humana.clave_del_sistema"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "dualidad_humana"
+          }
+        ],
+        "canonical_id": "naturaleza_humana"
+      },
+      {
+        "id": "antropologia_filosofica_supervivencia",
+        "key": "supervivencia",
+        "label": "Supervivencia",
+        "kind": "concept",
+        "source_path": "antropologia_filosofica.supervivencia",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Orientacion basal de un ser o una conciencia a conservar su integridad funcional, evitar la destruccion inmediata y sostener las condiciones minimas de continuidad vital o historica.",
+            "source_path": "antropologia_filosofica.supervivencia.definicion"
+          },
+          {
+            "key": "estado_ontologico",
+            "label": "Estado ontologico",
+            "role": "core",
+            "value_type": "text",
+            "value": "funcion basal de conservacion y continuidad relativa, no fin ultimo del sistema",
+            "source_path": "antropologia_filosofica.supervivencia.estado_ontologico"
+          },
+          {
+            "key": "relacion_con_la_vida",
+            "label": "Relacion con la vida",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La supervivencia protege la persistencia inmediata de formas vivas y conscientes dentro de un universo material finito, pero no agota por si misma el sentido de la vida.",
+            "source_path": "antropologia_filosofica.supervivencia.relacion_con_la_vida",
+            "target_hints": [
+              "vida"
+            ],
+            "target_ids": [
+              "vida"
+            ]
+          },
+          {
+            "key": "relacion_con_el_impulso",
+            "label": "Relacion con el impulso",
+            "role": "relation",
+            "value_type": "text",
+            "value": "En su nivel mas basal, la supervivencia se expresa como impulso de conservacion, evitacion del daño y busqueda de condiciones minimas de continuidad.",
+            "source_path": "antropologia_filosofica.supervivencia.relacion_con_el_impulso",
+            "target_hints": [
+              "impulso"
+            ],
+            "target_ids": [
+              "impulso"
+            ]
+          },
+          {
+            "key": "relacion_con_la_imaginacion",
+            "label": "Relacion con la imaginacion",
+            "role": "relation",
+            "value_type": "text",
+            "value": "En formas complejas, la imaginacion amplifica la supervivencia al permitir anticipacion, estrategia, innovacion y proyecto historico, no solo reaccion inmediata.",
+            "source_path": "antropologia_filosofica.supervivencia.relacion_con_la_imaginacion",
+            "target_hints": [
+              "imaginacion"
+            ],
+            "target_ids": [
+              "imaginacion"
+            ]
+          },
+          {
+            "key": "limite",
+            "label": "Limite",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Cuando se absolutiza, la supervivencia subordina verdad, autonomia y apertura a la mera conservacion, y puede volverse soporte de dominio, miedo o repeticion.",
+            "source_path": "antropologia_filosofica.supervivencia.limite"
+          }
+        ],
+        "collections": [],
+        "children": [],
+        "canonical_id": "supervivencia"
+      },
+      {
+        "id": "antropologia_filosofica_autonomia",
+        "key": "autonomia",
+        "label": "Autonomia",
+        "kind": "concept",
+        "source_path": "antropologia_filosofica.autonomia",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Capacidad gradual de una conciencia individual o colectiva para orientar su interpretacion, su decision y su accion segun criterio relativamente propio, sin quedar completamente sometida al impulso, a la coaccion externa o a estructuras de captura.",
+            "source_path": "antropologia_filosofica.autonomia.definicion"
+          },
+          {
+            "key": "estado_ontologico",
+            "label": "Estado ontologico",
+            "role": "core",
+            "value_type": "text",
+            "value": "propiedad emergente gradual de la conciencia y de ciertas formas de organizacion colectiva",
+            "source_path": "antropologia_filosofica.autonomia.estado_ontologico"
+          },
+          {
+            "key": "relacion_con_la_conciencia",
+            "label": "Relacion con la conciencia",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La autonomia surge cuando la conciencia adquiere suficiente capacidad de integrar experiencia, distanciarse del impulso inmediato y orientar su accion con criterio propio.",
+            "source_path": "antropologia_filosofica.autonomia.relacion_con_la_conciencia",
+            "target_hints": [
+              "conciencia"
+            ],
+            "target_ids": [
+              "conciencia"
+            ]
+          },
+          {
+            "key": "relacion_con_el_poder",
+            "label": "Relacion con el poder",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La autonomia determina en gran medida si el poder se ejerce como dominio ciego o como fuerza orientada a la liberacion, la justicia y la apertura.",
+            "source_path": "antropologia_filosofica.autonomia.relacion_con_el_poder",
+            "target_hints": [
+              "poder"
+            ],
+            "target_ids": [
+              "poder"
+            ]
+          },
+          {
+            "key": "relacion_con_la_autonomia_humana",
+            "label": "Relacion con la autonomia humana",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La autonomia humana es la forma historicamente desarrollada y mas explicitamente reflexiva de esta capacidad dentro del caso humano.",
+            "source_path": "antropologia_filosofica.autonomia.relacion_con_la_autonomia_humana",
+            "target_hints": [
+              "autonomia_humana"
+            ],
+            "target_ids": [
+              "autonomia_humana"
+            ]
+          },
+          {
+            "key": "limite",
+            "label": "Limite",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "La autonomia no garantiza bondad ni verdad por si sola; puede aumentar responsabilidad real o hacer posible una dominacion mas refinada cuando se pone al servicio de la captura.",
+            "source_path": "antropologia_filosofica.autonomia.limite"
+          }
+        ],
+        "collections": [
+          {
+            "id": "antropologia_filosofica_autonomia_formas_collection",
+            "key": "formas",
+            "label": "Formas",
+            "source_path": "antropologia_filosofica.autonomia.formas",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "autonomia interior"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "autonomia material"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "autonomia simbolica"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "autonomia colectiva"
+              }
+            ]
+          }
+        ],
+        "children": [],
+        "canonical_id": "autonomia"
+      },
+      {
+        "id": "antropologia_filosofica_autonomia_humana",
+        "key": "autonomia_humana",
+        "label": "Autonomia humana",
+        "kind": "concept",
+        "source_path": "antropologia_filosofica.autonomia_humana",
+        "fields": [
+          {
+            "key": "definicion",
+            "label": "Definicion",
+            "role": "core",
+            "value_type": "text",
+            "value": "Capacidad del ser humano para orientar su conciencia, su deseo y su accion segun criterio propio, sin quedar completamente sometido al impulso, a la coaccion externa o a las estructuras del ciclo.",
+            "source_path": "antropologia_filosofica.autonomia_humana.definicion"
+          },
+          {
+            "key": "relacion_con_la_autonomia_general",
+            "label": "Relacion con la autonomia general",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La autonomia humana es un caso especialmente reflexivo, moral e historico de la autonomia en general, tal como aparece en una conciencia capaz de lenguaje, memoria y responsabilidad ampliada.",
+            "source_path": "antropologia_filosofica.autonomia_humana.relacion_con_la_autonomia_general",
+            "target_hints": [
+              "autonomia"
+            ],
+            "target_ids": [
+              "autonomia"
+            ]
+          },
+          {
+            "key": "relacion_con_el_poder",
+            "label": "Relacion con el poder",
+            "role": "relation",
+            "value_type": "text",
+            "value": "La autonomia determina si el poder se ejerce como dominio ciego o como fuerza orientada a la liberacion. Cuanto menor es la autonomia, mas probable es que el poder reproduzca servidumbre; cuanto mayor es, mas posible es que se convierta en herramienta de verdad, justicia y apertura.",
+            "source_path": "antropologia_filosofica.autonomia_humana.relacion_con_el_poder",
+            "target_hints": [
+              "poder"
+            ],
+            "target_ids": [
+              "poder"
+            ]
+          },
+          {
+            "key": "funcion_moral",
+            "label": "Funcion moral",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "La autonomia hace posible responsabilidad real, porque permite que una persona no sea solo efecto de sus impulsos o de su contexto, sino agente parcial de sus decisiones.",
+            "source_path": "antropologia_filosofica.autonomia_humana.funcion_moral"
+          },
+          {
+            "key": "riesgo",
+            "label": "Riesgo",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "Sin autonomia suficiente, incluso una persona con buenas intenciones puede ejercer poder de forma demiurgica al quedar dominada por miedo, ego, resentimiento o deseo de control.",
+            "source_path": "antropologia_filosofica.autonomia_humana.riesgo"
+          },
+          {
+            "key": "tension_central",
+            "label": "Tension central",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "La autonomia humana no garantiza bondad; solo hace posible una eleccion mas real entre apertura y clausura.",
+            "source_path": "antropologia_filosofica.autonomia_humana.tension_central"
+          }
+        ],
+        "collections": [
+          {
+            "id": "antropologia_filosofica_autonomia_humana_limites_collection",
+            "key": "limites",
+            "label": "Limites",
+            "source_path": "antropologia_filosofica.autonomia_humana.limites",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "instinto"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "miedo"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "apego"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "ignorancia"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "presion social"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "captura institucional"
+              },
+              {
+                "order_index": 7,
+                "value_type": "text",
+                "value": "dependencia material"
+              },
+              {
+                "order_index": 8,
+                "value_type": "text",
+                "value": "manipulacion simbolica"
+              }
+            ]
+          },
+          {
+            "id": "antropologia_filosofica_autonomia_humana_formas_de_desarrollo_collection",
+            "key": "formas_de_desarrollo",
+            "label": "Formas de desarrollo",
+            "source_path": "antropologia_filosofica.autonomia_humana.formas_de_desarrollo",
+            "item_kind_hint": "collection_item",
+            "items": [
+              {
+                "order_index": 1,
+                "value_type": "text",
+                "value": "disciplina interior"
+              },
+              {
+                "order_index": 2,
+                "value_type": "text",
+                "value": "educacion"
+              },
+              {
+                "order_index": 3,
+                "value_type": "text",
+                "value": "conocimiento"
+              },
+              {
+                "order_index": 4,
+                "value_type": "text",
+                "value": "experiencia reflexiva"
+              },
+              {
+                "order_index": 5,
+                "value_type": "text",
+                "value": "autocontrol"
+              },
+              {
+                "order_index": 6,
+                "value_type": "text",
+                "value": "practica dialogica"
+              },
+              {
+                "order_index": 7,
+                "value_type": "text",
+                "value": "independencia material relativa"
+              },
+              {
+                "order_index": 8,
+                "value_type": "text",
+                "value": "capacidad de soportar verdad incomoda"
+              }
+            ]
+          }
+        ],
+        "children": [
+          {
+            "id": "antropologia_filosofica_autonomia_humana_potencial",
+            "key": "potencial",
+            "label": "Potencial",
+            "kind": "section",
+            "source_path": "antropologia_filosofica.autonomia_humana.potencial",
+            "fields": [
+              {
+                "key": "para_el_bien",
+                "label": "Para el bien",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Permite usar el poder para proteger, organizar, liberar, distribuir conocimiento y abrir posibilidades de desarrollo comun.",
+                "source_path": "antropologia_filosofica.autonomia_humana.potencial.para_el_bien"
+              },
+              {
+                "key": "para_el_mal",
+                "label": "Para el mal",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Tambien permite una dominacion mas refinada cuando alguien posee lucidez suficiente para instrumentalizar a otros de manera consciente.",
+                "source_path": "antropologia_filosofica.autonomia_humana.potencial.para_el_mal"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "canonical_id": "antropologia_filosofica_autonomia_humana_potencial"
+          }
+        ],
+        "canonical_id": "autonomia_humana"
+      },
+      {
+        "id": "antropologia_filosofica_gnosticismo_antropologico",
+        "key": "gnosticismo_antropologico",
+        "label": "Gnosticismo antropologico",
+        "kind": "concept",
+        "source_path": "antropologia_filosofica.gnosticismo_antropologico",
+        "fields": [
+          {
+            "key": "nota_de_alcance",
+            "label": "Nota de alcance",
+            "role": "attribute",
+            "value_type": "text",
+            "value": "El demiurgo y la carcel del mundo se desarrollan primariamente a partir del caso humano, porque es el unico accesible con suficiente profundidad historica, psicologica y politica. Sin embargo, el sistema deja abierta la posibilidad de que estructuras analogas emerjan en otras conciencias complejas o colectividades no humanas si estas desarrollan formas comparables de poder, captura y clausura.",
+            "source_path": "antropologia_filosofica.gnosticismo_antropologico.nota_de_alcance"
+          }
+        ],
+        "collections": [],
+        "children": [
+          {
+            "id": "antropologia_filosofica_gnosticismo_antropologico_demiurgo",
+            "key": "demiurgo",
+            "label": "Demiurgo",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.gnosticismo_antropologico.demiurgo",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Abstraccion de la sociedad humana y de la naturaleza animal humana cuando se organiza en estructuras de poder, dominacion, ignorancia y repeticion.",
+                "source_path": "antropologia_filosofica.gnosticismo_antropologico.demiurgo.definicion"
+              },
+              {
+                "key": "tipo_de_entidad",
+                "label": "Tipo de entidad",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "principio estructural humano-social",
+                "source_path": "antropologia_filosofica.gnosticismo_antropologico.demiurgo.tipo_de_entidad"
+              },
+              {
+                "key": "origen",
+                "label": "Origen",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Ligado a la naturaleza animal humana y a la formacion historica de sociedades.",
+                "source_path": "antropologia_filosofica.gnosticismo_antropologico.demiurgo.origen"
+              },
+              {
+                "key": "alcance",
+                "label": "Alcance",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "No es total; opera dentro del dominio humano.",
+                "source_path": "antropologia_filosofica.gnosticismo_antropologico.demiurgo.alcance"
+              }
+            ],
+            "collections": [
+              {
+                "id": "antropologia_filosofica_gnosticismo_antropologico_demiurgo_no_es_collection",
+                "key": "no_es",
+                "label": "No es",
+                "source_path": "antropologia_filosofica.gnosticismo_antropologico.demiurgo.no_es",
+                "item_kind_hint": "collection_item",
+                "items": [
+                  {
+                    "order_index": 1,
+                    "value_type": "text",
+                    "value": "un dios total"
+                  },
+                  {
+                    "order_index": 2,
+                    "value_type": "text",
+                    "value": "un absoluto cosmico"
+                  },
+                  {
+                    "order_index": 3,
+                    "value_type": "text",
+                    "value": "la verdad absoluta"
+                  }
+                ]
+              },
+              {
+                "id": "antropologia_filosofica_gnosticismo_antropologico_demiurgo_si_es_collection",
+                "key": "si_es",
+                "label": "Si es",
+                "source_path": "antropologia_filosofica.gnosticismo_antropologico.demiurgo.si_es",
+                "item_kind_hint": "collection_item",
+                "items": [
+                  {
+                    "order_index": 1,
+                    "value_type": "text",
+                    "value": "la inteligencia social del instinto cuando se convierte en sistema"
+                  },
+                  {
+                    "order_index": 2,
+                    "value_type": "text",
+                    "value": "la logica del poder humano autonomizado"
+                  },
+                  {
+                    "order_index": 3,
+                    "value_type": "text",
+                    "value": "el mecanismo que perpetua la carcel del mundo humano"
+                  }
+                ]
+              }
+            ],
+            "children": [],
+            "concept_ref": "demiurgo"
+          },
+          {
+            "id": "antropologia_filosofica_gnosticismo_antropologico_carcel_del_mundo",
+            "key": "carcel_del_mundo",
+            "label": "Carcel del mundo",
+            "kind": "concept",
+            "source_path": "antropologia_filosofica.gnosticismo_antropologico.carcel_del_mundo",
+            "fields": [
+              {
+                "key": "definicion",
+                "label": "Definicion",
+                "role": "core",
+                "value_type": "text",
+                "value": "Condicion de encierro humano en ciclos de ignorancia, apego, dominacion, sufrimiento y repeticion.",
+                "source_path": "antropologia_filosofica.gnosticismo_antropologico.carcel_del_mundo.definicion"
+              },
+              {
+                "key": "naturaleza",
+                "label": "Naturaleza",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "humana, historica, social y espiritual",
+                "source_path": "antropologia_filosofica.gnosticismo_antropologico.carcel_del_mundo.naturaleza"
+              },
+              {
+                "key": "mecanismo",
+                "label": "Mecanismo",
+                "role": "attribute",
+                "value_type": "text",
+                "value": "Se perpetua cuando el conocimiento del mundo se usa para dominar en lugar de trascender.",
+                "source_path": "antropologia_filosofica.gnosticismo_antropologico.carcel_del_mundo.mecanismo"
+              }
+            ],
+            "collections": [],
+            "children": [],
+            "concept_ref": "carcel_del_mundo"
+          }
+        ],
+        "canonical_id": "gnosticismo_antropologico"
+      }
+    ],
+    "aliases": [
+      "humano"
+    ]
+  }
+}
