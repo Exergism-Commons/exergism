@@ -11,7 +11,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout exact main commit
+      - name: Checkout main with full history
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -38,47 +38,104 @@ jobs:
         if: steps.state.outputs.status != 'ready'
         run: echo "Release state is not ready; nothing to publish."
 
-      - name: Validate exact release commit
+      - name: Resolve immutable release state
         if: steps.state.outputs.status == 'ready'
-        run: python scripts/validate_repository.py
-
-      - name: Check whether tag already exists
-        if: steps.state.outputs.status == 'ready'
-        id: tagcheck
-        shell: bash
-        run: |
-          if git ls-remote --exit-code --tags origin "refs/tags/${{ steps.state.outputs.tag }}" >/dev/null 2>&1; then
-            echo "exists=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "exists=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Build release assets
-        if: steps.state.outputs.status == 'ready' && steps.tagcheck.outputs.exists == 'false'
-        shell: bash
-        run: |
-          VERSION="${{ steps.state.outputs.version }}"
-          python scripts/build_release_manifest.py \
-            --version "$VERSION" \
-            --git-commit "$GITHUB_SHA" \
-            --output release-manifest.json
-          git archive --format=tar.gz --prefix="exergism-$VERSION/" -o "exergism-$VERSION.tar.gz" "$GITHUB_SHA"
-          sha256sum release-manifest.json "exergism-$VERSION.tar.gz" > SHA256SUMS
-
-      - name: Create immutable tag and GitHub release
-        if: steps.state.outputs.status == 'ready' && steps.tagcheck.outputs.exists == 'false'
+        id: resolve
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
+          set -euo pipefail
+          TAG="${{ steps.state.outputs.tag }}"
+          git fetch --force --tags origin
+
+          if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
+            RELEASE_COMMIT="$(git rev-list -n 1 "$TAG")"
+            echo "tag_exists=true" >> "$GITHUB_OUTPUT"
+          else
+            RELEASE_COMMIT="$GITHUB_SHA"
+            echo "tag_exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "release_exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "release_exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          echo "release_commit=$RELEASE_COMMIT" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout exact release commit
+        if: steps.state.outputs.status == 'ready'
+        shell: bash
+        run: git checkout --detach "${{ steps.resolve.outputs.release_commit }}"
+
+      - name: Validate exact release commit
+        if: steps.state.outputs.status == 'ready'
+        run: |
+          python scripts/validate_repository.py
+          python scripts/generate_ontology.py
+          git diff --exit-code -- ontology.owl
+
+      - name: Build release assets
+        if: steps.state.outputs.status == 'ready' && steps.resolve.outputs.release_exists == 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="${{ steps.state.outputs.version }}"
+          RELEASE_COMMIT="${{ steps.resolve.outputs.release_commit }}"
+          python scripts/build_release_manifest.py \
+            --version "$VERSION" \
+            --git-commit "$RELEASE_COMMIT" \
+            --output release-manifest.json
+          git archive --format=tar.gz --prefix="exergism-$VERSION/" -o "exergism-$VERSION.tar.gz" "$RELEASE_COMMIT"
+          sha256sum release-manifest.json "exergism-$VERSION.tar.gz" > SHA256SUMS
+
+      - name: Create immutable tag when absent
+        if: steps.state.outputs.status == 'ready' && steps.resolve.outputs.release_exists == 'false' && steps.resolve.outputs.tag_exists == 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
           TAG="${{ steps.state.outputs.tag }}"
           VERSION="${{ steps.state.outputs.version }}"
+          RELEASE_COMMIT="${{ steps.resolve.outputs.release_commit }}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git tag -a "$TAG" "$GITHUB_SHA" -m "Exergism $VERSION"
+          git tag -a "$TAG" "$RELEASE_COMMIT" -m "Exergism $VERSION"
           git push origin "$TAG"
-          gh release create "$TAG" \
-            --verify-tag \
-            --title "Exergism $VERSION" \
-            --notes-file docs/release-notes-v0.1.0.md \
-            release-manifest.json "exergism-$VERSION.tar.gz" SHA256SUMS
+
+      - name: Verify immutable tag target
+        if: steps.state.outputs.status == 'ready'
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${{ steps.state.outputs.tag }}"
+          EXPECTED="${{ steps.resolve.outputs.release_commit }}"
+          git fetch --force --tags origin
+          ACTUAL="$(git rev-list -n 1 "$TAG")"
+          test "$ACTUAL" = "$EXPECTED"
+
+      - name: Create missing GitHub release
+        if: steps.state.outputs.status == 'ready' && steps.resolve.outputs.release_exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${{ steps.state.outputs.tag }}"
+          VERSION="${{ steps.state.outputs.version }}"
+          for attempt in 1 2 3; do
+            if gh release create "$TAG" \
+              --verify-tag \
+              --title "Exergism $VERSION" \
+              --notes-file docs/release-notes-v0.1.0.md \
+              release-manifest.json "exergism-$VERSION.tar.gz" SHA256SUMS; then
+              exit 0
+            fi
+            if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Failed to create GitHub release after retries" >&2
+          exit 1
