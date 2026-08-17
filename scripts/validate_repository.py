@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 from __future__ import annotations
 
 import json
@@ -19,6 +20,26 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_VARIABLES = {"P", "A", "V_ep", "L", "O", "U", "C", "S", "R", "Ecol"}
 REQUIRED_FORMULA_SYMBOLS = {"Ex_b", "Ex_r", "E_i", "X_h", "B_0", "P_atr", "E_i_adj"}
 REQUIRED_TEMPORAL_SYMBOLS = {"B_acc", "D_acc", "N_t"}
+REQUIRED_PROJECT_FILES = {
+    "LICENSE.md",
+    "LICENSES/CC-BY-SA-4.0.txt",
+    "LICENSES/Apache-2.0.txt",
+    "NOTICE",
+    "CONTRIBUTING.md",
+    "GOVERNANCE.md",
+    "docs/canonical-boundaries.md",
+    "docs/release-process.md",
+    "formal/FORMAL-MODEL-STATUS.md",
+    "reviews/2026-08-17-v0.1.0-adversarial-review.md",
+}
+
+FORBIDDEN_ONTOLOGY_TERMS = {
+    "RestrictedParty",
+    "GovernanceDecision",
+    "ECLCriterion",
+    "ScheduleEntry",
+}
+
 EXPECTED_BOOKS = {
     1: ("Carcel del Mundo", "World Jail"),
     2: ("Luz Condenada", "Doomed Light"),
@@ -38,12 +59,30 @@ def load_json(path: Path) -> dict:
         raise AssertionError(f"Invalid JSON: {path.relative_to(ROOT)}: {exc}") from exc
 
 
+def validate_project_contract() -> None:
+    for relative in sorted(REQUIRED_PROJECT_FILES):
+        if not (ROOT / relative).is_file():
+            fail(f"Required project contract file missing: {relative}")
+
+    licensing = (ROOT / "LICENSE.md").read_text(encoding="utf-8")
+    for marker in ("CC BY-SA 4.0", "Apache-2.0", "No ECL inheritance"):
+        if marker not in licensing:
+            fail(f"LICENSE.md missing required boundary marker: {marker}")
+
+
 def validate_manifest() -> dict:
     manifest = load_json(ROOT / "manifest.json")
     if manifest.get("manifest_version") != 2:
         fail("manifest_version must be 2")
     if manifest.get("name") != "Metafisica emergentista de la liberacion":
         fail("Unexpected canonical system name")
+    release = manifest.get("release")
+    if not isinstance(release, dict):
+        fail("manifest.release must be an object")
+    if release.get("version") != "0.1.0" or release.get("tag") != "v0.1.0":
+        fail("Unexpected v0.1.0 release identity")
+    if release.get("status") not in {"candidate", "ready"}:
+        fail("release.status must be candidate or ready")
 
     ordered = manifest["philosophical_corpus"]["order"]
     actual = sorted(path.name for path in CONTENT_DIR.glob("*.json"))
@@ -68,12 +107,18 @@ def validate_canonical_content() -> None:
     seen_node_ids: set[str] = set()
     canonical_ids: set[str] = set()
     concept_refs: list[tuple[str, str]] = []
+    source_paths: dict[str, set[str]] = {}
 
     def walk(node: dict, source_name: str) -> None:
         node_id = node["id"]
         if node_id in seen_node_ids:
             fail(f"Duplicate node id: {node_id}")
         seen_node_ids.add(node_id)
+        source_path = node["source_path"]
+        paths_for_source = source_paths.setdefault(source_name, set())
+        if source_path in paths_for_source:
+            fail(f"Duplicate source_path in {source_name}: {source_path}")
+        paths_for_source.add(source_path)
         if "canonical_id" in node:
             canonical_id = node["canonical_id"]
             if canonical_id in canonical_ids:
@@ -137,6 +182,29 @@ def validate_formal_model(path: Path) -> None:
     if missing_symbols:
         fail(f"formal model missing formula symbols: {sorted(missing_symbols)}")
 
+    contextual = model.get("modulacion_por_contexto")
+    if not isinstance(contextual, dict):
+        fail("formal model lacks modulacion_por_contexto")
+    transition_weights = contextual.get("transicion", {}).get("pesos", {})
+    if not isinstance(transition_weights, dict):
+        fail("formal model lacks recovered transition weights")
+    recovered_a_sum = sum(float(transition_weights[f"a{i}"]) for i in range(1, 6))
+    if abs(recovered_a_sum - 0.90) > 1e-12:
+        fail("Recovered transition a1..a5 weights changed; resolve doctrinally before altering the v0.1.0 baseline")
+
+    formal_status = (ROOT / "formal/FORMAL-MODEL-STATUS.md").read_text(encoding="utf-8")
+    for marker in ("0.90", "`z1`", "`z2`", "MUST NOT"):
+        if marker not in formal_status:
+            fail(f"Formal-model status does not expose known ambiguity: {marker}")
+
+    macro = model.get("composicion_jerarquica_de_eventos", {}).get("agregacion_por_fase_y_macroevento", {})
+    macro_formulas = "\n".join(
+        value.get("formula", "") for value in macro.values() if isinstance(value, dict)
+    )
+    for symbol in ("z1", "z2"):
+        if symbol not in macro_formulas:
+            fail(f"Expected recovered open macroevent parameter missing: {symbol}")
+
     temporal = model.get("integracion_temporal")
     if not isinstance(temporal, dict) or not isinstance(temporal.get("formulas_temporales"), dict):
         fail("formal model lacks temporal integration formulas")
@@ -171,9 +239,13 @@ def validate_ontology_reproducibility() -> None:
     checked_in = ONTOLOGY_PATH.read_text(encoding="utf-8")
     if rendered != checked_in:
         fail("ontology.owl is stale; run python scripts/generate_ontology.py")
+    for term in FORBIDDEN_ONTOLOGY_TERMS:
+        if term in checked_in:
+            fail(f"Derived ontology contains downstream legal/governance term: {term}")
 
 
 def main() -> None:
+    validate_project_contract()
     manifest = validate_manifest()
     validate_canonical_content()
     validate_books(ROOT / manifest["books"])
