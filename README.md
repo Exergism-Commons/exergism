@@ -41,6 +41,17 @@ The OWL projection does not supersede philosophical wording, and numerical
 formalism does not silently convert philosophical claims into legal or
 institutional conclusions.
 
+## Authorship and stewardship
+
+The canonical corpus originates with **Daniel Molinero Lucas** and is developed
+with its contributors. Copyright notices therefore use **Daniel Molinero Lucas
+and contributors**, where applicable.
+
+**Exergism Commons** maintains the canonical public development lineage and its
+infrastructure. Stewardship or repository administration does not, by itself,
+transfer contributor copyright to Exergism Commons or make the organization a
+philosophical authority by ownership.
+
 ## Validate
 
 ```bash
@@ -65,9 +76,9 @@ outcomes belong to ECL and are not inferred merely from this repository.
 
 ## Development status
 
-The corpus remains under active development. The current hardening target is
-**v0.1.0**, an auditable first canonical public release. A `0.x` release does not
-claim that the philosophical system or formal model is complete or final.
+**Exergism v0.1.0** is the first canonical public release. Development continues
+on the `0.x` line; this does not claim that the philosophical system or formal
+model is complete or final.
 
 Known formal ambiguities are recorded in `formal/FORMAL-MODEL-STATUS.md` rather
 than silently normalized or guessed.
