@@ -1,6 +1,6 @@
 # Exergism
 
-**Metafísica emergentista de la liberación** (*Exergismo / Exergism*) is a
+**Emergentist Metaphysics of Liberation** (*Exergism*) is a
 philosophical system centered on emergence, truth, consciousness, autonomy,
 exergy, capture, liberation and the possibility of breaking recurrent cycles
 of domination.
