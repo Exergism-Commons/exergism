@@ -1,0 +1,46 @@
+name: Materialize v0.2 ID ontology
+
+on:
+  push:
+    branches:
+      - id-namespace-migration-v0.2
+    paths:
+      - 'formal/sistema_analitico_exergico.json'
+      - 'scripts/generate_id_ontology.py'
+      - '.github/workflows/materialize-id-ontology.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout migration branch
+        uses: actions/checkout@v4
+        with:
+          ref: id-namespace-migration-v0.2
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate migrated ontology
+        run: python scripts/generate_id_ontology.py
+
+      - name: Commit generated projection when changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- ontology.owl; then
+            echo 'ontology.owl already materialized'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ontology.owl
+          git commit -m 'Materialize formal variables in Exergism v0.2 ontology'
+          git push origin HEAD:id-namespace-migration-v0.2
