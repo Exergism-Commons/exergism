@@ -32,9 +32,15 @@
     "examples/exergic-analysis/iran",
     "examples/exergic-analysis/toma-de-kabul"
   ],
+  "semantic_identifiers": {
+    "vocabulary_namespace": "https://id.exergism.org/exergism#",
+    "ontology_iri": "https://id.exergism.org/ontology/exergism",
+    "previous_vocabulary_namespace": "http://www.exergia.org/ns/",
+    "migration": "docs/id-namespace-migration-v0.2.md"
+  },
   "release": {
-    "version": "0.1.0",
-    "tag": "v0.1.0",
-    "status": "ready"
+    "version": "0.2.0",
+    "tag": "v0.2.0",
+    "status": "candidate"
   }
 }
