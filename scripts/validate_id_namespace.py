@@ -18,6 +18,7 @@ import validate_repository as legacy
 
 VOCABULARY_NAMESPACE = generate_id_ontology.VOCABULARY_NAMESPACE
 ONTOLOGY_IRI = generate_id_ontology.ONTOLOGY_IRI
+HISTORICAL_NAMESPACE = "http://www.exergia.org/ns/"
 EXPECTED_VERSION = "0.2.0"
 EXPECTED_TAG = "v0.2.0"
 
@@ -41,7 +42,7 @@ def validate_manifest_v02() -> dict:
         fail("manifest vocabulary namespace mismatch")
     if identifiers.get("ontology_iri") != ONTOLOGY_IRI:
         fail("manifest ontology IRI mismatch")
-    if identifiers.get("previous_vocabulary_namespace") != "http://www.exergia.org/ns/":
+    if identifiers.get("previous_vocabulary_namespace") != HISTORICAL_NAMESPACE:
         fail("historical namespace boundary missing")
     migration = identifiers.get("migration")
     if migration != "docs/id-namespace-migration-v0.2.md" or not (legacy.ROOT / migration).is_file():
@@ -85,6 +86,18 @@ def validate_formal_variable_projection(root: ET.Element) -> None:
             fail(f"Exergism ontology must never mint ECL variable identity {historical_iri}")
 
 
+def legacy_iri_occurrences(root: ET.Element) -> list[str]:
+    """Return precise RDF/XML locations that still carry the historical namespace."""
+    occurrences: list[str] = []
+    for element in root.iter():
+        for attribute, value in element.attrib.items():
+            if HISTORICAL_NAMESPACE in value:
+                occurrences.append(f"{element.tag} {attribute}={value}")
+        if element.text and HISTORICAL_NAMESPACE in element.text:
+            occurrences.append(f"{element.tag} text={element.text.strip()}")
+    return occurrences
+
+
 def validate_migrated_ontology() -> None:
     checked_in = generate_ontology.ONTOLOGY_PATH.read_text(encoding="utf-8")
     try:
@@ -99,8 +112,16 @@ def validate_migrated_ontology() -> None:
         fail("ontology vocabulary base is not the id.exergism.org namespace")
     if f'<owl:Ontology rdf:about="{ONTOLOGY_IRI}"/>' not in checked_in:
         fail("ontology document IRI is not canonical")
-    if "http://www.exergia.org/ns/" in checked_in:
-        fail("new ontology projection reintroduced the historical namespace")
+
+    legacy_occurrences = legacy_iri_occurrences(root)
+    if legacy_occurrences:
+        preview = "\n  - ".join(legacy_occurrences[:25])
+        suffix = "" if len(legacy_occurrences) <= 25 else f"\n  ... and {len(legacy_occurrences) - 25} more"
+        fail(
+            "new ontology projection reintroduced the historical namespace at:\n"
+            f"  - {preview}{suffix}"
+        )
+
     for term in legacy.FORBIDDEN_ONTOLOGY_TERMS:
         if term in checked_in:
             fail(f"derived ontology contains downstream legal/governance term: {term}")
