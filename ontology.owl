@@ -30050,4 +30050,116 @@
     <orderIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</orderIndex>
   </owl:NamedIndividual>
 
+
+  <!-- Canonical formal exergic-analysis variables (v0.2 projection). -->
+  <owl:Class rdf:about="https://id.exergism.org/exergism#ExergicVariable">
+    <rdfs:label xml:lang="en">Exergic variable</rdfs:label>
+    <rdfs:comment xml:lang="en">A named variable from the canonical Exergism formal exergic-analysis model.</rdfs:comment>
+  </owl:Class>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#P">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">potencia_transformadora_real</rdfs:label>
+    <rdfs:comment xml:lang="es">Capacidad de una accion, proceso o estructura para producir cambio real no superficial en relaciones, instituciones, conciencias o condiciones materiales.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol P; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#A">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">autonomia_efectiva</rdfs:label>
+    <rdfs:comment xml:lang="es">Capacidad real del sujeto o sistema para actuar sin quedar completamente sometido al impulso ciego, la coaccion externa, la dependencia total o la captura estructural.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol A; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#V_ep">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">verdad_epistemica_parcial</rdfs:label>
+    <rdfs:comment xml:lang="es">Grado finito y parcial en que una accion, proceso o estructura se ajusta a coherencia, evidencia, contraste y capacidad explicativa bajo el horizonte ideal de la verdad absoluta.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol V_ep; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#L">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">orientacion_liberadora_no_manipuladora</rdfs:label>
+    <rdfs:comment xml:lang="es">Grado en que un proceso usa conocimiento, interpretacion o discurso para abrir autonomia y comprension sin convertirlos en instrumento de dominacion.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol L; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#O">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">apertura_de_posibilidades</rdfs:label>
+    <rdfs:comment xml:lang="es">Grado en que se abren trayectorias futuras de reorganizacion, libertad, aprendizaje, autonomia o transformacion.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol O; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#C">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">captura_demiurgica</rdfs:label>
+    <rdfs:comment xml:lang="es">Grado en que un proceso reproduce dominacion, concentracion de poder, manipulacion, servidumbre, opacidad o apropiacion del margen transformador.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol C; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#S">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">sufrimiento_estructural</rdfs:label>
+    <rdfs:comment xml:lang="es">Daño humano, biologico, social o sensible causado por una accion o proceso, incluyendo sufrimiento directo e indirecto.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol S; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#R">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">riesgo_de_recaida</rdfs:label>
+    <rdfs:comment xml:lang="es">Probabilidad estructural de que un proceso reinstaure el ciclo o una forma equivalente de captura, dominacion o nueva prision.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol R; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#Ecol">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">impacto_ecologico</rdfs:label>
+    <rdfs:comment xml:lang="es">Impacto sobre ecosistemas, equilibrio ambiental, habitabilidad, contaminacion y condiciones materiales de continuidad de la vida.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol Ecol; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#U">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">utilidad_exergica</rdfs:label>
+    <rdfs:comment xml:lang="es">Fraccion del potencial disponible que se convierte en transformacion real util en vez de disiparse como destruccion esteril, ruido o desgaste improductivo.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol U; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#D_p">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">coeficiente_de_paciente_moral</rdfs:label>
+    <rdfs:comment xml:lang="es">Peso moral del tipo de entidad o sistema afectado por el acto.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol D_p; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#D_a">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">coeficiente_de_agencia_imputable</rdfs:label>
+    <rdfs:comment xml:lang="es">Grado en que el agente es realmente imputable por capacidad de decision, lucidez y margen de accion.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol D_a; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#I">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">intencionalidad_de_dominio</rdfs:label>
+    <rdfs:comment xml:lang="es">Grado en que el daño, la manipulacion o la captura son buscados deliberadamente.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol I; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#Lz">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">lucidez_del_agente</rdfs:label>
+    <rdfs:comment xml:lang="es">Grado en que el agente comprende las consecuencias, la estructura y la carga moral o politica de lo que hace.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol Lz; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="https://id.exergism.org/exergism#G">
+    <rdf:type rdf:resource="https://id.exergism.org/exergism#ExergicVariable"/>
+    <rdfs:label xml:lang="es">gratuidad_del_dano</rdfs:label>
+    <rdfs:comment xml:lang="es">Grado en que el daño infligido carece de necesidad fuerte incluso dentro de una etica tragica de transicion.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Formal symbol G; canonical normalized domain [0,1].</rdfs:comment>
+  </owl:NamedIndividual>
+
 </rdf:RDF>
