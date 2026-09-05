@@ -19,12 +19,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validate repository
-        run: python scripts/validate_repository.py
+      - name: Validate repository and v0.2 semantic identifiers
+        run: python scripts/validate_id_namespace.py
 
-      - name: Regenerate ontology and require clean output
+      - name: Regenerate v0.2 ontology and require clean output
         run: |
-          python scripts/generate_ontology.py
+          python scripts/generate_id_ontology.py
           git diff --exit-code -- ontology.owl
 
       - name: Build candidate release manifest
