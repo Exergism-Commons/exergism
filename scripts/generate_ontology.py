@@ -10,7 +10,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 
-BASE_IRI = "http://www.exergia.org/ns/"
+BASE_IRI = "https://id.exergism.org/exergism#"
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT_DIR = ROOT / "content"
 ONTOLOGY_PATH = ROOT / "ontology.owl"
