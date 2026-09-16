@@ -217,6 +217,12 @@
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
   </owl:DatatypeProperty>
 
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_alimentacion_desde_el_espiritu">
+    <rdfs:label xml:lang="es">Alimentacion desde el espiritu</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
   <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_ambivalencia">
     <rdfs:label xml:lang="es">Ambivalencia</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -369,6 +375,12 @@
 
   <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_condicion_cosmologica">
     <rdfs:label xml:lang="es">Condicion cosmologica</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_condicion_de_reconocimiento">
+    <rdfs:label xml:lang="es">Condicion de reconocimiento</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
   </owl:DatatypeProperty>
@@ -715,6 +727,18 @@
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
   </owl:DatatypeProperty>
 
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_eje_espectral">
+    <rdfs:label xml:lang="es">Eje espectral</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_eje_espiritual">
+    <rdfs:label xml:lang="es">Eje espiritual</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
   <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_equivalencia_analogica">
     <rdfs:label xml:lang="es">Equivalencia analogica</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -849,6 +873,12 @@
 
   <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_forma_religiosa_del_demiurgo">
     <rdfs:label xml:lang="es">Forma religiosa del demiurgo</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_frontera_conceptual">
+    <rdfs:label xml:lang="es">Frontera conceptual</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
   </owl:DatatypeProperty>
@@ -1003,6 +1033,12 @@
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
   </owl:DatatypeProperty>
 
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_independencia_espectral">
+    <rdfs:label xml:lang="es">Independencia espectral</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
   <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_inevitabilismo_defensivo">
     <rdfs:label xml:lang="es">Inevitabilismo defensivo</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -1083,6 +1119,12 @@
 
   <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_limite_final">
     <rdfs:label xml:lang="es">Limite final</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_limite_formal">
+    <rdfs:label xml:lang="es">Limite formal</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
   </owl:DatatypeProperty>
@@ -1197,6 +1239,18 @@
 
   <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_nota_hermeneutica">
     <rdfs:label xml:lang="es">Nota hermeneutica</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_notacion">
+    <rdfs:label xml:lang="es">Notacion</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_notacion_local">
+    <rdfs:label xml:lang="es">Notacion local</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
   </owl:DatatypeProperty>
@@ -1741,6 +1795,12 @@
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
   </owl:DatatypeProperty>
 
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_relacion_con_los_dos_ejes">
+    <rdfs:label xml:lang="es">Relacion con los dos ejes</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
   <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_reorientacion">
     <rdfs:label xml:lang="es">Reorientacion</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -1839,6 +1899,12 @@
 
   <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_sujeto">
     <rdfs:label xml:lang="es">Sujeto</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://www.exergia.org/ns/field_tendencia_de_captura">
+    <rdfs:label xml:lang="es">Tendencia de captura</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
   </owl:DatatypeProperty>
@@ -2384,6 +2450,8 @@
     <hasConcept rdf:resource="http://www.exergia.org/ns/siembra_espectral"/>
     <hasConcept rdf:resource="http://www.exergia.org/ns/espectralizacion_adversarial"/>
     <hasConcept rdf:resource="http://www.exergia.org/ns/desacoplamiento_espectral"/>
+    <hasConcept rdf:resource="http://www.exergia.org/ns/persistencia_espiritual"/>
+    <hasConcept rdf:resource="http://www.exergia.org/ns/espacio_espiritu_espectro"/>
     <hasConcept rdf:resource="http://www.exergia.org/ns/espiritu_humano"/>
     <hasConcept rdf:resource="http://www.exergia.org/ns/dominio_humano_y_clausura"/>
     <hasConcept rdf:resource="http://www.exergia.org/ns/mundo_humano"/>
@@ -3023,14 +3091,19 @@
     <relatedTo rdf:resource="http://www.exergia.org/ns/colonizacion_del_futuro_representacional"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/autonomia"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/desacoplamiento_espectral"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/exergia"/>
     <field_aclaracion_fenomenologica xml:lang="es">El termino atrapamiento describe la captura del patron historico-informacional, no el encarcelamiento fenomenologico de una conciencia superviviente.</field_aclaracion_fenomenologica>
+    <field_alimentacion_desde_el_espiritu xml:lang="es">En fases tempranas, la captura espectral se alimenta de elementos del espiritu de origen al convertir ideas, frases, gestos, obras o valores en unidades representacionales reproducibles. A medida que aumenta el desacoplamiento, nuevas instancias pueden alimentarse principalmente de otras instancias espectrales en vez del espiritu.</field_alimentacion_desde_el_espiritu>
     <field_criterio_de_exclusion xml:lang="es">No constituye atrapamiento espectral la mera malinterpretacion, parodia, difamacion, idealizacion, perdida de control reputacional o existencia de representaciones no autorizadas. El salto cualitativo requiere autonomia reproductiva y desacoplamiento suficientes.</field_criterio_de_exclusion>
     <field_definicion xml:lang="es">Condicion limite en la que un espectro alcanza suficiente distribucion, recursividad y desacoplamiento para que no exista soberania efectiva sobre sus futuras instanciaciones y para que su reproduccion ya no dependa materialmente de volver a la persona, a su corpus original o a una autoridad interpretativa central.</field_definicion>
     <field_irreversibilidad xml:lang="es">No afirma eternidad metafisica ni irreversibilidad absoluta: describe una perdida efectiva de soberania cuya reversibilidad disminuye a medida que el patron se distribuye, se desacopla del origen y alimenta nuevas cadenas generativas.</field_irreversibilidad>
+    <field_limite_formal xml:lang="es">Este marco no modifica ni extiende el analisis exergico formal. Sus escalares son conceptuales, no variables matematicas canonicas del modelo exergico.</field_limite_formal>
     <field_mecanismo xml:lang="es">La copia distribuida, la reutilizacion, la variacion memetica, la generacion automatica y la incorporacion de nuevas salidas a corpus o memorias posteriores pueden convertir una representacion en un sistema cultural reproductivo cuya dinamica excede a cualquier custodio singular.</field_mecanismo>
     <field_objeto_del_atrapamiento xml:lang="es">Lo capturado no es una conciencia superviviente, sino la relacion futura entre el espectro y su origen: el espacio de posibilidades mediante el cual otras conciencias podran reconstruir, interpretar y utilizar esa identidad historica.</field_objeto_del_atrapamiento>
     <field_relacion_con_el_desacoplamiento xml:lang="es">Presupone un grado alto de desacoplamiento espectral: las nuevas instanciaciones deben poder producir otras nuevas sin retorno materialmente necesario al corpus de origen.</field_relacion_con_el_desacoplamiento>
     <field_relacion_con_el_futuro_representacional xml:lang="es">Puede entenderse como colonizacion generativa del futuro representacional cuando un patron suficientemente autonomo condiciona de forma persistente las reconstrucciones futuras de la persona.</field_relacion_con_el_futuro_representacional>
+    <field_tendencia_de_captura xml:lang="es">La captura puede aumentar la distancia espectral sin destruir materialmente el espiritu: basta con volverlo progresivamente menos necesario para reproducir la identidad representada. El caso limite es un espectro cuya dinamica se explica sobre todo por otras instancias del propio espectro.</field_tendencia_de_captura>
     <hasDefinition xml:lang="es">Condicion limite en la que un espectro alcanza suficiente distribucion, recursividad y desacoplamiento para que no exista soberania efectiva sobre sus futuras instanciaciones y para que su reproduccion ya no dependa materialmente de volver a la persona, a su corpus original o a una autoridad interpretativa central.</hasDefinition>
     <hasName xml:lang="es">Atrapamiento espectral</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
@@ -4111,9 +4184,12 @@
     <partOf rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/materia"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/exergia"/>
     <field_definicion xml:lang="es">Riqueza, diversidad y disponibilidad de material capaz de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.</field_definicion>
     <field_distincion_del_espiritu xml:lang="es">Una alta densidad espectral no implica gran persistencia espiritual, y una gran persistencia espiritual puede coexistir con baja densidad espectral. Las ideas de una persona pueden perdurar cuando casi no puede reconstruirse su presencia, o su presencia puede proliferar mientras sus ideas se vacian.</field_distincion_del_espiritu>
     <field_estado_de_medicion xml:lang="es">Dimension teorica susceptible de operacionalizacion futura; el corpus canonico no fija todavia una escala cuantitativa.</field_estado_de_medicion>
+    <field_notacion_local xml:lang="es">Puede representarse convencionalmente como E dentro del espacio espiritu-espectro. Esta notacion es heuristica y no pertenece al analisis exergico formal.</field_notacion_local>
     <hasDefinition xml:lang="es">Riqueza, diversidad y disponibilidad de material capaz de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.</hasDefinition>
     <hasName xml:lang="es">Densidad espectral</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
@@ -4574,6 +4650,7 @@
     <field_definicion xml:lang="es">Grado en que una instancia espectral puede ser comprendida, utilizada o reproducida sin conocimiento relevante del individuo historico ni retorno a su corpus original.</field_definicion>
     <field_estado_de_medicion xml:lang="es">Dimension teorica susceptible de operacionalizacion futura; no se establece una metrica canonica en esta fase.</field_estado_de_medicion>
     <field_interpretacion xml:lang="es">A mayor distancia espectral, mayor autonomia funcional de la representacion respecto de su origen historico.</field_interpretacion>
+    <field_relacion_con_el_espiritu xml:lang="es">La distancia espectral aumenta cuando comprender, utilizar o reproducir una instancia requiere cada vez menos acceso al espiritu de origen. Puede crecer aunque el espiritu siga conservado documentalmente.</field_relacion_con_el_espiritu>
     <hasDefinition xml:lang="es">Grado en que una instancia espectral puede ser comprendida, utilizada o reproducida sin conocimiento relevante del individuo historico ni retorno a su corpus original.</hasDefinition>
     <hasName xml:lang="es">Distancia espectral</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
@@ -5110,6 +5187,33 @@
     <jsonKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">escatologia_exergica</jsonKey>
   </owl:NamedIndividual>
 
+  <owl:NamedIndividual rdf:about="http://www.exergia.org/ns/espacio_espiritu_espectro">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.exergia.org/ns/Concept"/>
+    <rdfs:label xml:lang="es">Espacio espiritu-espectro</rdfs:label>
+    <appearsIn rdf:resource="http://www.exergia.org/ns/ontologia"/>
+    <belongsToConcept rdf:resource="http://www.exergia.org/ns/espiritu"/>
+    <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
+    <hasPart rdf:resource="http://www.exergia.org/ns/ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espacio_espiritu_espectro_tesis_de_independencia"/>
+    <hasThesis rdf:resource="http://www.exergia.org/ns/ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espacio_espiritu_espectro_tesis_de_independencia"/>
+    <partOf rdf:resource="http://www.exergia.org/ns/espiritu"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/exergia"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/persistencia_espiritual"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/densidad_espectral"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/materia"/>
+    <field_definicion xml:lang="es">Modelo conceptual bidimensional para describir identidades historicas mediante dos magnitudes parcialmente independientes: persistencia espiritual y densidad espectral.</field_definicion>
+    <field_eje_espectral xml:lang="es">La densidad espectral describe riqueza y disponibilidad de materia representacional capaz de sostener nuevas instancias reconocibles.</field_eje_espectral>
+    <field_eje_espiritual xml:lang="es">La persistencia espiritual describe continuidad de significado, contenido y eficacia historico-causal.</field_eje_espiritual>
+    <field_frontera_conceptual xml:lang="es">El espiritu requiere continuidad de significado; el espectro requiere continuidad de reconocimiento. Una representacion puede seguir siendo espectralmente reconocible aun cuando su reproduccion ya no conserve ni consulte de forma relevante el contenido espiritual de origen.</field_frontera_conceptual>
+    <field_notacion xml:lang="es">De forma puramente local y heuristica puede escribirse S para persistencia espiritual y E para densidad espectral. S y E no son variables del analisis exergico formal, no modifican sus formulas y no deben confundirse con sus simbolos matematicos.</field_notacion>
+    <hasDefinition xml:lang="es">Modelo conceptual bidimensional para describir identidades historicas mediante dos magnitudes parcialmente independientes: persistencia espiritual y densidad espectral.</hasDefinition>
+    <hasName xml:lang="es">Espacio espiritu-espectro</hasName>
+    <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
+    <hasSourcePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro</hasSourcePath>
+    <jsonKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">espacio_espiritu_espectro</jsonKey>
+  </owl:NamedIndividual>
+
   <owl:NamedIndividual rdf:about="http://www.exergia.org/ns/espectralizacion_adversarial">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.exergia.org/ns/Concept"/>
@@ -5137,6 +5241,7 @@
     <appearsIn rdf:resource="http://www.exergia.org/ns/ontologia"/>
     <belongsToConcept rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
+    <develops rdf:resource="http://www.exergia.org/ns/espiritu"/>
     <hasConcept rdf:resource="http://www.exergia.org/ns/atrapamiento_espectral"/>
     <hasPart rdf:resource="http://www.exergia.org/ns/atrapamiento_espectral"/>
     <partOf rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
@@ -5144,6 +5249,7 @@
     <relatedTo rdf:resource="http://www.exergia.org/ns/conciencia"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/muerte_de_la_soberania_autobiografica"/>
+    <field_condicion_de_reconocimiento xml:lang="es">El espectro puede persistir por continuidad de reconocimiento aun cuando disminuya la continuidad de significado con el espiritu de origen. Esta divergencia permite que exista un espectro fuerte con espiritu debilmente accesible.</field_condicion_de_reconocimiento>
     <field_condicion_generativa xml:lang="es">No basta la conservacion pasiva de archivos o recuerdos: el patron debe poder originar nuevas instanciaciones o transformaciones causalmente activas en el presente.</field_condicion_generativa>
     <field_definicion xml:lang="es">Configuracion post mortem de un espiritu generativo en la que patrones identificables asociados a una conciencia extinguida continuan siendo reinstanciados, combinados o transformados por otras conciencias o por sistemas generativos.</field_definicion>
     <field_distincion_del_espiritu xml:lang="es">El espiritu designa persistencia historico-causal de conocimiento, orientaciones, simbolos y otras estructuras transindividuales; el espectro designa persistencia representacional generativa asociada recognosciblemente a una conciencia extinguida. Pueden crecer, debilitarse o divergir de manera independiente.</field_distincion_del_espiritu>
@@ -5170,9 +5276,15 @@
     <emergesFrom rdf:resource="http://www.exergia.org/ns/universo"/>
     <emergesFrom rdf:resource="http://www.exergia.org/ns/conciencia"/>
     <emergesFrom rdf:resource="http://www.exergia.org/ns/realidad"/>
+    <grounds rdf:resource="http://www.exergia.org/ns/distancia_espectral"/>
+    <grounds rdf:resource="http://www.exergia.org/ns/espacio_espiritu_espectro"/>
     <hasConcept rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
+    <hasConcept rdf:resource="http://www.exergia.org/ns/persistencia_espiritual"/>
+    <hasConcept rdf:resource="http://www.exergia.org/ns/espacio_espiritu_espectro"/>
     <hasPart rdf:resource="http://www.exergia.org/ns/ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_formas_posibles"/>
     <hasPart rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
+    <hasPart rdf:resource="http://www.exergia.org/ns/persistencia_espiritual"/>
+    <hasPart rdf:resource="http://www.exergia.org/ns/espacio_espiritu_espectro"/>
     <partOf rdf:resource="http://www.exergia.org/ns/niveles_emergentes"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/niveles_emergentes"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/conciencia"/>
@@ -7846,6 +7958,31 @@
     <jsonKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">persistencia</jsonKey>
   </owl:NamedIndividual>
 
+  <owl:NamedIndividual rdf:about="http://www.exergia.org/ns/persistencia_espiritual">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.exergia.org/ns/Concept"/>
+    <rdfs:label xml:lang="es">Persistencia espiritual</rdfs:label>
+    <appearsIn rdf:resource="http://www.exergia.org/ns/ontologia"/>
+    <belongsToConcept rdf:resource="http://www.exergia.org/ns/espiritu"/>
+    <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
+    <grounds rdf:resource="http://www.exergia.org/ns/distancia_espectral"/>
+    <partOf rdf:resource="http://www.exergia.org/ns/espiritu"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/conciencia"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/exergia"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/densidad_espectral"/>
+    <field_definicion xml:lang="es">Magnitud conceptual que expresa en que grado ideas, metodos, valores, obras, contradicciones, orientaciones y otras estructuras historico-causales asociadas a una conciencia siguen siendo accesibles y causalmente activas en conciencias y sistemas posteriores.</field_definicion>
+    <field_estado_teorico xml:lang="es">Escalar conceptual cualitativo susceptible de operacionalizacion futura, sin escala cuantitativa canonica y sin integracion actual en el analisis exergico formal.</field_estado_teorico>
+    <field_independencia_espectral xml:lang="es">La persistencia espiritual puede variar independientemente de la densidad espectral: puede existir gran continuidad historico-causal con poca reconstructibilidad de presencia, o gran reconstructibilidad con escasa continuidad del contenido espiritual.</field_independencia_espectral>
+    <field_notacion_local xml:lang="es">Puede representarse convencionalmente como S dentro de este marco conceptual. Esta notacion no pertenece al analisis exergico formal ni introduce una nueva variable en el modelo matematico de Exergism.</field_notacion_local>
+    <hasDefinition xml:lang="es">Magnitud conceptual que expresa en que grado ideas, metodos, valores, obras, contradicciones, orientaciones y otras estructuras historico-causales asociadas a una conciencia siguen siendo accesibles y causalmente activas en conciencias y sistemas posteriores.</hasDefinition>
+    <hasName xml:lang="es">Persistencia espiritual</hasName>
+    <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
+    <hasSourcePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual</hasSourcePath>
+    <hasTheoreticalStatus xml:lang="es">Escalar conceptual cualitativo susceptible de operacionalizacion futura, sin escala cuantitativa canonica y sin integracion actual en el analisis exergico formal.</hasTheoreticalStatus>
+    <jsonKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">persistencia_espiritual</jsonKey>
+  </owl:NamedIndividual>
+
   <owl:NamedIndividual rdf:about="http://www.exergia.org/ns/plano_cosmologico">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.exergia.org/ns/Concept"/>
@@ -8902,9 +9039,11 @@
     <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
     <partOf rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/materia"/>
     <field_definicion xml:lang="es">Capacidad de un corpus biografico, intelectual o documental para dificultar su compresion estable en una representacion unica, simple y altamente reproducible.</field_definicion>
     <field_factores xml:lang="es">Puede aumentar mediante documentacion contextual, contradicciones preservadas, cambios de opinion, retractaciones, versiones largas, pluralidad de testimonios y otros elementos que obliguen a retornar al corpus para comprender la trayectoria.</field_factores>
     <field_limite xml:lang="es">La resistencia nunca garantiza inmunidad: una dinamica memetica o institucional puede seleccionar una representacion dominante ignorando la complejidad disponible.</field_limite>
+    <field_relacion_con_los_dos_ejes xml:lang="es">Una combinacion de alta persistencia espiritual y baja densidad espectral tiende conceptualmente a ofrecer menos materia inmediata para la captura, aunque no la impide. La resistencia depende ademas de diversidad, contexto y dificultad de compresion del corpus.</field_relacion_con_los_dos_ejes>
     <hasDefinition xml:lang="es">Capacidad de un corpus biografico, intelectual o documental para dificultar su compresion estable en una representacion unica, simple y altamente reproducible.</hasDefinition>
     <hasName xml:lang="es">Resistencia espectral</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
@@ -11149,6 +11288,21 @@
     <hasSourcePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.tesis_central</hasSourcePath>
     <hasText xml:lang="es">La muerte de una conciencia no extingue necesariamente sus efectos historicos ni sus representaciones, pero si extingue su privilegio de primera persona para intervenir en las reconstrucciones futuras de su trayectoria. Desde ese punto, su identidad historica queda necesariamente mediada por otras conciencias, instituciones, archivos y sistemas tecnicos.</hasText>
     <jsonKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tesis_central</jsonKey>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.exergia.org/ns/ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espacio_espiritu_espectro_tesis_de_independencia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.exergia.org/ns/Thesis"/>
+    <rdfs:label xml:lang="es">Tesis de independencia</rdfs:label>
+    <appearsIn rdf:resource="http://www.exergia.org/ns/ontologia"/>
+    <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
+    <grounds rdf:resource="http://www.exergia.org/ns/espacio_espiritu_espectro"/>
+    <partOf rdf:resource="http://www.exergia.org/ns/espacio_espiritu_espectro"/>
+    <hasName xml:lang="es">Tesis de independencia</hasName>
+    <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
+    <hasSourcePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.tesis_de_independencia</hasSourcePath>
+    <hasText xml:lang="es">Persistencia espiritual y densidad espectral no forman una unica escala. Una puede mantenerse alta mientras la otra es baja y pueden divergir historicamente.</hasText>
+    <jsonKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tesis_de_independencia</jsonKey>
   </owl:NamedIndividual>
 
   <owl:NamedIndividual rdf:about="http://www.exergia.org/ns/ontologia_estructura_de_lo_real_niveles_emergentes_vida_tesis_emergentista">
