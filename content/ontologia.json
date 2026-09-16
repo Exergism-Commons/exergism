@@ -2265,6 +2265,14 @@
                             "target_ids": [
                               "muerte_de_la_soberania_autobiografica"
                             ]
+                          },
+                          {
+                            "key": "condicion_de_reconocimiento",
+                            "label": "Condicion de reconocimiento",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "El espectro puede persistir por continuidad de reconocimiento aun cuando disminuya la continuidad de significado con el espiritu de origen. Esta divergencia permite que exista un espectro fuerte con espiritu debilmente accesible.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.condicion_de_reconocimiento"
                           }
                         ],
                         "collections": [],
@@ -2353,6 +2361,30 @@
                                 "target_ids": [
                                   "desacoplamiento_espectral"
                                 ]
+                              },
+                              {
+                                "key": "alimentacion_desde_el_espiritu",
+                                "label": "Alimentacion desde el espiritu",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "En fases tempranas, la captura espectral se alimenta de elementos del espiritu de origen al convertir ideas, frases, gestos, obras o valores en unidades representacionales reproducibles. A medida que aumenta el desacoplamiento, nuevas instancias pueden alimentarse principalmente de otras instancias espectrales en vez del espiritu.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.alimentacion_desde_el_espiritu"
+                              },
+                              {
+                                "key": "tendencia_de_captura",
+                                "label": "Tendencia de captura",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "La captura puede aumentar la distancia espectral sin destruir materialmente el espiritu: basta con volverlo progresivamente menos necesario para reproducir la identidad representada. El caso limite es un espectro cuya dinamica se explica sobre todo por otras instancias del propio espectro.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.tendencia_de_captura"
+                              },
+                              {
+                                "key": "limite_formal",
+                                "label": "Limite formal",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "Este marco no modifica ni extiende el analisis exergico formal. Sus escalares son conceptuales, no variables matematicas canonicas del modelo exergico.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.limite_formal"
                               }
                             ],
                             "collections": [],
@@ -2429,6 +2461,14 @@
                             "value_type": "text",
                             "value": "Dimension teorica susceptible de operacionalizacion futura; el corpus canonico no fija todavia una escala cuantitativa.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.densidad_espectral.estado_de_medicion"
+                          },
+                          {
+                            "key": "notacion_local",
+                            "label": "Notacion local",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Puede representarse convencionalmente como E dentro del espacio espiritu-espectro. Esta notacion es heuristica y no pertenece al analisis exergico formal.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.densidad_espectral.notacion_local"
                           }
                         ],
                         "collections": [],
@@ -2465,6 +2505,22 @@
                             "value_type": "text",
                             "value": "Dimension teorica susceptible de operacionalizacion futura; no se establece una metrica canonica en esta fase.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.distancia_espectral.estado_de_medicion"
+                          },
+                          {
+                            "key": "relacion_con_el_espiritu",
+                            "label": "Relacion con el espiritu",
+                            "role": "relation",
+                            "value_type": "text",
+                            "value": "La distancia espectral aumenta cuando comprender, utilizar o reproducir una instancia requiere cada vez menos acceso al espiritu de origen. Puede crecer aunque el espiritu siga conservado documentalmente.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.distancia_espectral.relacion_con_el_espiritu",
+                            "target_hints": [
+                              "persistencia_espiritual",
+                              "espiritu"
+                            ],
+                            "target_ids": [
+                              "persistencia_espiritual",
+                              "espiritu"
+                            ]
                           }
                         ],
                         "collections": [],
@@ -2501,6 +2557,14 @@
                             "value_type": "text",
                             "value": "La resistencia nunca garantiza inmunidad: una dinamica memetica o institucional puede seleccionar una representacion dominante ignorando la complejidad disponible.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.resistencia_espectral.limite"
+                          },
+                          {
+                            "key": "relacion_con_los_dos_ejes",
+                            "label": "Relacion con los dos ejes",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Una combinacion de alta persistencia espiritual y baja densidad espectral tiende conceptualmente a ofrecer menos materia inmediata para la captura, aunque no la impide. La resistencia depende ademas de diversidad, contexto y dificultad de compresion del corpus.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.resistencia_espectral.relacion_con_los_dos_ejes"
                           }
                         ],
                         "collections": [],
@@ -2615,6 +2679,128 @@
                       }
                     ],
                     "canonical_id": "espiritu_generativo"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_persistencia_espiritual",
+                    "key": "persistencia_espiritual",
+                    "label": "Persistencia espiritual",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Magnitud conceptual que expresa en que grado ideas, metodos, valores, obras, contradicciones, orientaciones y otras estructuras historico-causales asociadas a una conciencia siguen siendo accesibles y causalmente activas en conciencias y sistemas posteriores.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual.definicion"
+                      },
+                      {
+                        "key": "notacion_local",
+                        "label": "Notacion local",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Puede representarse convencionalmente como S dentro de este marco conceptual. Esta notacion no pertenece al analisis exergico formal ni introduce una nueva variable en el modelo matematico de Exergism.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual.notacion_local"
+                      },
+                      {
+                        "key": "independencia_espectral",
+                        "label": "Independencia espectral",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "La persistencia espiritual puede variar independientemente de la densidad espectral: puede existir gran continuidad historico-causal con poca reconstructibilidad de presencia, o gran reconstructibilidad con escasa continuidad del contenido espiritual.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual.independencia_espectral",
+                        "target_hints": [
+                          "densidad_espectral"
+                        ],
+                        "target_ids": [
+                          "densidad_espectral"
+                        ]
+                      },
+                      {
+                        "key": "estado_teorico",
+                        "label": "Estado teorico",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Escalar conceptual cualitativo susceptible de operacionalizacion futura, sin escala cuantitativa canonica y sin integracion actual en el analisis exergico formal.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual.estado_teorico"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "persistencia_espiritual"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espacio_espiritu_espectro",
+                    "key": "espacio_espiritu_espectro",
+                    "label": "Espacio espiritu-espectro",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Modelo conceptual bidimensional para describir identidades historicas mediante dos magnitudes parcialmente independientes: persistencia espiritual y densidad espectral.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.definicion"
+                      },
+                      {
+                        "key": "notacion",
+                        "label": "Notacion",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "De forma puramente local y heuristica puede escribirse S para persistencia espiritual y E para densidad espectral. S y E no son variables del analisis exergico formal, no modifican sus formulas y no deben confundirse con sus simbolos matematicos.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.notacion"
+                      },
+                      {
+                        "key": "eje_espiritual",
+                        "label": "Eje espiritual",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "La persistencia espiritual describe continuidad de significado, contenido y eficacia historico-causal.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.eje_espiritual",
+                        "target_hints": [
+                          "persistencia_espiritual"
+                        ],
+                        "target_ids": [
+                          "persistencia_espiritual"
+                        ]
+                      },
+                      {
+                        "key": "eje_espectral",
+                        "label": "Eje espectral",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "La densidad espectral describe riqueza y disponibilidad de materia representacional capaz de sostener nuevas instancias reconocibles.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.eje_espectral",
+                        "target_hints": [
+                          "densidad_espectral"
+                        ],
+                        "target_ids": [
+                          "densidad_espectral"
+                        ]
+                      },
+                      {
+                        "key": "tesis_de_independencia",
+                        "label": "Tesis de independencia",
+                        "role": "thesis",
+                        "value_type": "text",
+                        "value": "Persistencia espiritual y densidad espectral no forman una unica escala. Una puede mantenerse alta mientras la otra es baja y pueden divergir historicamente.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.tesis_de_independencia"
+                      },
+                      {
+                        "key": "frontera_conceptual",
+                        "label": "Frontera conceptual",
+                        "role": "thesis",
+                        "value_type": "text",
+                        "value": "El espiritu requiere continuidad de significado; el espectro requiere continuidad de reconocimiento. Una representacion puede seguir siendo espectralmente reconocible aun cuando su reproduccion ya no conserve ni consulte de forma relevante el contenido espiritual de origen.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.frontera_conceptual"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "espacio_espiritu_espectro"
                   }
                 ],
                 "canonical_id": "espiritu",
