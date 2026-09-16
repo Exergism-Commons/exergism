@@ -2043,6 +2043,28 @@
                     "value_type": "text",
                     "value": "El espiritu no garantiza verdad ni bondad por si mismo. Puede orientarse hacia apertura real o quedar capturado por dominacion, autoengaño, rigidez o formas superiores del ciclo.",
                     "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.limite"
+                  },
+                  {
+                    "key": "relacion_con_la_muerte",
+                    "label": "Relacion con la muerte",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La muerte extingue la conciencia individual, pero no necesariamente las estructuras transindividuales de memoria, simbolos, conocimiento y orientacion en las que esa conciencia participo. Su persistencia no implica supervivencia de la conciencia personal ni del alma.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.relacion_con_la_muerte",
+                    "target_hints": [
+                      "muerte"
+                    ],
+                    "target_ids": [
+                      "muerte"
+                    ]
+                  },
+                  {
+                    "key": "dependencia_de_soporte",
+                    "label": "Dependencia de soporte",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Toda persistencia del espiritu requiere instanciacion material o estructural en conciencias, practicas, simbolos, instituciones, registros u otros soportes capaces de conservar o transformar informacion; no constituye una sustancia desencarnada.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.dependencia_de_soporte"
                   }
                 ],
                 "collections": [],
@@ -2090,6 +2112,190 @@
                     "collections": [],
                     "children": [],
                     "canonical_id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_formas_posibles"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo",
+                    "key": "espiritu_generativo",
+                    "label": "Espiritu generativo",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Forma de espiritu transindividual en la que patrones heredados de una o varias conciencias quedan inscritos en soportes capaces de producir nuevas representaciones, combinaciones o transformaciones de esos patrones sin intervencion directa de las conciencias de origen.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.definicion"
+                      },
+                      {
+                        "key": "estado_ontologico",
+                        "label": "Estado ontologico",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "proceso emergente historico-informacional y transindividual, no conciencia por si mismo",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.estado_ontologico"
+                      },
+                      {
+                        "key": "relacion_con_el_espiritu",
+                        "label": "Relacion con el espiritu",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "Es una modalidad del espiritu en la que la acumulacion historica adquiere capacidad productiva: el soporte no solo conserva huellas, sino que permite generar nuevas instanciaciones derivadas de ellas.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.relacion_con_el_espiritu",
+                        "target_hints": [
+                          "espiritu"
+                        ],
+                        "target_ids": [
+                          "espiritu"
+                        ]
+                      },
+                      {
+                        "key": "recursividad_generativa",
+                        "label": "Recursividad generativa",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Las representaciones generadas pueden convertirse a su vez en datos, memoria cultural o entradas de sistemas posteriores, formando linajes recursivos capaces de continuar transformando el patron sin retorno necesario a la fuente original.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.recursividad_generativa"
+                      },
+                      {
+                        "key": "relacion_con_la_agencia",
+                        "label": "Relacion con la agencia",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "La capacidad generativa puede persistir fuera del control directo de quienes originaron o encarnaron los patrones que la hicieron posible.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.relacion_con_la_agencia"
+                      },
+                      {
+                        "key": "limite_de_identidad",
+                        "label": "Limite de identidad",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "La semejanza, reconocibilidad o continuidad causal de una representacion generada no demuestra identidad personal, continuidad fenomenologica ni recreacion de la conciencia que contribuyo al patron.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.limite_de_identidad"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_espectro",
+                        "key": "espectro",
+                        "label": "Espectro",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Configuracion post mortem de un espiritu generativo en la que patrones identificables asociados a una conciencia extinguida continuan siendo reinstanciados, combinados o transformados por otras conciencias o por sistemas generativos.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "proceso transindividual post mortem; no sujeto consciente, fantasma sustancial ni supervivencia personal",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.estado_ontologico"
+                          },
+                          {
+                            "key": "relacion_con_el_espiritu_generativo",
+                            "label": "Relacion con el espiritu generativo",
+                            "role": "relation",
+                            "value_type": "text",
+                            "value": "Es un caso limite del espiritu generativo en el que la fuente consciente original ya no puede intervenir en las nuevas instanciaciones asociadas a su patron.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.relacion_con_el_espiritu_generativo",
+                            "target_hints": [
+                              "espiritu_generativo"
+                            ],
+                            "target_ids": [
+                              "espiritu_generativo"
+                            ]
+                          },
+                          {
+                            "key": "relacion_con_la_muerte",
+                            "label": "Relacion con la muerte",
+                            "role": "relation",
+                            "value_type": "text",
+                            "value": "Requiere que haya cesado la conciencia individual cuya trayectoria contribuyo de manera identificable al patron, aunque las estructuras informacionales e historicas derivadas de ella continuen activas.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.relacion_con_la_muerte",
+                            "target_hints": [
+                              "muerte"
+                            ],
+                            "target_ids": [
+                              "muerte"
+                            ]
+                          },
+                          {
+                            "key": "condicion_generativa",
+                            "label": "Condicion generativa",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "No basta la conservacion pasiva de archivos o recuerdos: el patron debe poder originar nuevas instanciaciones o transformaciones causalmente activas en el presente.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.condicion_generativa"
+                          },
+                          {
+                            "key": "limite_fenomenologico",
+                            "label": "Limite fenomenologico",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "La existencia de un espectro no implica que la persona fallecida perciba, experimente o sufra las transformaciones de su patron.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.limite_fenomenologico"
+                          }
+                        ],
+                        "collections": [],
+                        "children": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_espectro_atrapamiento_espectral",
+                            "key": "atrapamiento_espectral",
+                            "label": "Atrapamiento espectral",
+                            "kind": "concept",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral",
+                            "fields": [
+                              {
+                                "key": "definicion",
+                                "label": "Definicion",
+                                "role": "core",
+                                "value_type": "text",
+                                "value": "Condicion en la que un espectro queda distribuido entre soportes y agentes de tal modo que ninguna conciencia de origen puede ejercer soberania sobre sus futuras instanciaciones y la recuperacion completa del control puede resultar practicamente imposible.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.definicion"
+                              },
+                              {
+                                "key": "mecanismo",
+                                "label": "Mecanismo",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "La copia distribuida, la reutilizacion, la generacion automatica y la incorporacion de nuevas salidas a posteriores corpus o memorias pueden dispersar el patron y aumentar su independencia respecto de cualquier custodio singular.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.mecanismo"
+                              },
+                              {
+                                "key": "irreversibilidad",
+                                "label": "Irreversibilidad",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "No afirma eternidad metafisica ni irreversibilidad absoluta: describe una perdida efectiva de soberania cuya reversibilidad disminuye a medida que las instanciaciones se distribuyen y alimentan nuevos procesos generativos.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.irreversibilidad"
+                              },
+                              {
+                                "key": "aclaracion_fenomenologica",
+                                "label": "Aclaracion fenomenologica",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "El termino atrapamiento describe la captura del patron historico-informacional, no el encarcelamiento fenomenologico de una conciencia superviviente.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.aclaracion_fenomenologica"
+                              }
+                            ],
+                            "collections": [],
+                            "children": [],
+                            "canonical_id": "atrapamiento_espectral"
+                          }
+                        ],
+                        "canonical_id": "espectro"
+                      }
+                    ],
+                    "canonical_id": "espiritu_generativo"
                   }
                 ],
                 "canonical_id": "espiritu",
@@ -2196,9 +2402,9 @@
                     "target_hints": [
                       "espiritu_general"
                     ],
-	                    "target_ids": [
-	                      "espiritu"
-	                    ]
+                    "target_ids": [
+                      "espiritu"
+                    ]
                   }
                 ],
                 "collections": [],
