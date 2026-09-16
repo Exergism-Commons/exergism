@@ -4312,10 +4312,9 @@
     <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
     <partOf rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
-    <relatedTo rdf:resource="http://www.exergia.org/ns/autonomia"/>
     <field_criterio xml:lang="es">No basta una tergiversacion, parodia o perdida ordinaria de reputacion; debe existir capacidad reproductiva del patron suficientemente independiente del retorno al corpus de origen.</field_criterio>
     <field_definicion xml:lang="es">Fase en la que nuevas instanciaciones de un patron representacional pueden seguir produciendo significado y nuevas variantes sin volver de forma materialmente necesaria a la persona, a su corpus original o a una autoridad interpretativa relativamente central.</field_definicion>
-    <field_trayectoria xml:lang="es">Puede representarse como persona -&gt; representacion -&gt; meme -&gt; variacion -&gt; convencion -&gt; simbolo autonomo: a medida que avanza la cadena, disminuye la dependencia funcional respecto del origen.</field_trayectoria>
+    <field_trayectoria xml:lang="es">Puede representarse como persona -&gt; representacion -&gt; meme -&gt; variacion -&gt; convencion -&gt; simbolo autosostenido: a medida que avanza la cadena, disminuye la dependencia funcional respecto del origen y aumenta la capacidad del patron para reproducirse desde instancias derivadas.</field_trayectoria>
     <hasDefinition xml:lang="es">Fase en la que nuevas instanciaciones de un patron representacional pueden seguir produciendo significado y nuevas variantes sin volver de forma materialmente necesaria a la persona, a su corpus original o a una autoridad interpretativa relativamente central.</hasDefinition>
     <hasName xml:lang="es">Desacoplamiento espectral</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
