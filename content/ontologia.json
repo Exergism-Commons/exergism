@@ -2675,7 +2675,7 @@
                             "label": "Trayectoria",
                             "role": "attribute",
                             "value_type": "text",
-                            "value": "Puede representarse como persona -> representacion -> meme -> variacion -> convencion -> simbolo autonomo: a medida que avanza la cadena, disminuye la dependencia funcional respecto del origen.",
+                            "value": "Puede representarse como persona -> representacion -> meme -> variacion -> convencion -> simbolo autosostenido: a medida que avanza la cadena, disminuye la dependencia funcional respecto del origen y aumenta la capacidad del patron para reproducirse desde instancias derivadas.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.desacoplamiento_espectral.trayectoria"
                           },
                           {
