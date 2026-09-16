@@ -2141,7 +2141,7 @@
                         "label": "Relacion con el espiritu",
                         "role": "relation",
                         "value_type": "text",
-                        "value": "Es una modalidad del espiritu en la que la acumulacion historica adquiere capacidad productiva: el soporte no solo conserva huellas, sino que permite generar nuevas instanciaciones derivadas de ellas.",
+                        "value": "Es una modalidad del espiritu en la que la acumulacion historica adquiere capacidad productiva: el soporte no solo conserva huellas, sino que genera nuevas instanciaciones derivadas de ellas.",
                         "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.relacion_con_el_espiritu",
                         "target_hints": [
                           "espiritu"
@@ -2271,7 +2271,7 @@
                             "label": "Condicion de reconocimiento",
                             "role": "attribute",
                             "value_type": "text",
-                            "value": "El espectro puede persistir por continuidad de reconocimiento aun cuando disminuya la continuidad de significado con el espiritu de origen. Esta divergencia permite que exista un espectro fuerte con espiritu debilmente accesible.",
+                            "value": "El espectro puede persistir por continuidad de reconocimiento aun cuando disminuya la continuidad de significado con el espiritu de origen. En esa divergencia puede existir un espectro fuerte mientras el espiritu resulta debilmente accesible.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.condicion_de_reconocimiento"
                           }
                         ],
@@ -2321,7 +2321,7 @@
                                 "label": "Criterio de exclusion",
                                 "role": "attribute",
                                 "value_type": "text",
-                                "value": "No constituye atrapamiento espectral la mera malinterpretacion, parodia, difamacion, idealizacion, perdida de control reputacional o existencia de representaciones no autorizadas. El salto cualitativo requiere autonomia reproductiva y desacoplamiento suficientes.",
+                                "value": "No constituye atrapamiento espectral la mera malinterpretacion, parodia, difamacion, idealizacion, perdida de control reputacional o existencia de representaciones no autorizadas. El salto cualitativo requiere suficiente independencia reproductiva y desacoplamiento.",
                                 "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.criterio_de_exclusion"
                               },
                               {
@@ -2337,7 +2337,7 @@
                                 "label": "Relacion con el futuro representacional",
                                 "role": "relation",
                                 "value_type": "text",
-                                "value": "Puede entenderse como colonizacion generativa del futuro representacional cuando un patron suficientemente autonomo condiciona de forma persistente las reconstrucciones futuras de la persona.",
+                                "value": "Puede entenderse como colonizacion generativa del futuro representacional cuando un patron suficientemente independiente condiciona de forma persistente las reconstrucciones futuras de la persona.",
                                 "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.relacion_con_el_futuro_representacional",
                                 "target_hints": [
                                   "futuro_representacional",
@@ -2385,6 +2385,20 @@
                                 "value_type": "text",
                                 "value": "Este marco no modifica ni extiende el analisis exergico formal. Sus escalares son conceptuales, no variables matematicas canonicas del modelo exergico.",
                                 "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.limite_formal"
+                              },
+                              {
+                                "key": "relacion_con_la_autonomia_reproductiva_espectral",
+                                "label": "Relacion con la autonomia reproductiva espectral",
+                                "role": "relation",
+                                "value_type": "text",
+                                "value": "El atrapamiento requiere que esta capacidad de reproduccion independiente alcance un grado suficiente junto con distribucion, recursividad y desacoplamiento.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.relacion_con_la_autonomia_reproductiva_espectral",
+                                "target_hints": [
+                                  "autonomia_reproductiva_espectral"
+                                ],
+                                "target_ids": [
+                                  "autonomia_reproductiva_espectral"
+                                ]
                               }
                             ],
                             "collections": [],
@@ -2495,7 +2509,7 @@
                             "label": "Interpretacion",
                             "role": "attribute",
                             "value_type": "text",
-                            "value": "A mayor distancia espectral, mayor autonomia funcional de la representacion respecto de su origen historico.",
+                            "value": "A mayor distancia espectral, mayor independencia funcional de la representacion respecto de su origen historico.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.distancia_espectral.interpretacion"
                           },
                           {
@@ -2676,6 +2690,42 @@
                         "collections": [],
                         "children": [],
                         "canonical_id": "desacoplamiento_espectral"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_autonomia_reproductiva_espectral",
+                        "key": "autonomia_reproductiva_espectral",
+                        "label": "Autonomia reproductiva espectral",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.autonomia_reproductiva_espectral",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Independencia funcional alcanzada por un patron representacional cuando puede sostener nuevas instanciaciones y variaciones sin depender materialmente de la agencia de la conciencia de origen.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.autonomia_reproductiva_espectral.definicion"
+                          },
+                          {
+                            "key": "distincion_de_agencia",
+                            "label": "Distincion de agencia",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "No designa autodeterminacion consciente, libertad personal ni capacidad de una conciencia para gobernarse. Describe independencia reproductiva de un patron no consciente.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.autonomia_reproductiva_espectral.distincion_de_agencia"
+                          },
+                          {
+                            "key": "limite",
+                            "label": "Limite",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Una alta independencia reproductiva no convierte al patron en sujeto, agente consciente ni portador de voluntad propia.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.autonomia_reproductiva_espectral.limite"
+                          }
+                        ],
+                        "collections": [],
+                        "children": [],
+                        "canonical_id": "autonomia_reproductiva_espectral"
                       }
                     ],
                     "canonical_id": "espiritu_generativo"
@@ -3442,7 +3492,7 @@
                         "label": "No equivalencia con atrapamiento",
                         "role": "relation",
                         "value_type": "text",
-                        "value": "La muerte de la soberania autobiografica es universal para una conciencia humana fallecida; el atrapamiento espectral es una condicion adicional y no universal que exige autonomia reproductiva, distribucion y desacoplamiento del patron representacional.",
+                        "value": "La muerte de la soberania autobiografica es universal para una conciencia humana fallecida; el atrapamiento espectral es una condicion adicional y no universal que exige independencia reproductiva, distribucion y desacoplamiento del patron representacional.",
                         "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.muerte_de_la_soberania_autobiografica.no_equivalencia_con_atrapamiento",
                         "target_hints": [
                           "atrapamiento_espectral"
