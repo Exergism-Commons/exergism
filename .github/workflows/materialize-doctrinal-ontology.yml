@@ -1,24 +1,20 @@
 name: Materialize doctrinal ontology
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
-    types:
-      - opened
-      - synchronize
+      - doctrine/generative-spirit-spectre
 
 permissions:
   contents: write
 
 jobs:
   materialize:
-    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'doctrine/generative-spirit-spectre'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: doctrine/generative-spirit-spectre
           fetch-depth: 1
 
       - name: Regenerate derived ontology
@@ -35,4 +31,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ontology.owl
           git commit -m "Regenerate ontology projection"
-          git push origin HEAD:${{ github.event.pull_request.head.ref }}
+          git push origin HEAD:doctrine/generative-spirit-spectre
