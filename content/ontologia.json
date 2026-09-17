@@ -3538,10 +3538,16 @@
                       {
                         "key": "apertura",
                         "label": "Apertura",
-                        "role": "attribute",
+                        "role": "relation",
                         "value_type": "text",
-                        "value": "Su amplitud depende de la diversidad del corpus, de la pluralidad de custodios e interpretaciones y de la resistencia de la trayectoria historica a ser comprimida en una representacion dominante.",
-                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.futuro_representacional.apertura"
+                        "value": "Su amplitud depende de la diversidad del corpus, de la pluralidad de custodios e interpretaciones y de la resistencia espectral de la trayectoria historica a ser comprimida en una representacion dominante.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.futuro_representacional.apertura",
+                        "target_hints": [
+                          "resistencia_espectral"
+                        ],
+                        "target_ids": [
+                          "resistencia_espectral"
+                        ]
                       }
                     ],
                     "collections": [],

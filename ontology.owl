@@ -5905,7 +5905,7 @@
     <partOf rdf:resource="http://www.exergia.org/ns/teoria_muerte_soberania_autobiografica"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/teoria_muerte_soberania_autobiografica"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/conciencia"/>
-    <field_apertura xml:lang="es">Su amplitud depende de la diversidad del corpus, de la pluralidad de custodios e interpretaciones y de la resistencia de la trayectoria historica a ser comprimida en una representacion dominante.</field_apertura>
+    <field_apertura xml:lang="es">Su amplitud depende de la diversidad del corpus, de la pluralidad de custodios e interpretaciones y de la resistencia espectral de la trayectoria historica a ser comprimida en una representacion dominante.</field_apertura>
     <field_definicion xml:lang="es">Conjunto abierto de reconstrucciones, usos, interpretaciones y transformaciones mediante los cuales conciencias futuras pueden relacionarse con una identidad historica.</field_definicion>
     <hasDefinition xml:lang="es">Conjunto abierto de reconstrucciones, usos, interpretaciones y transformaciones mediante los cuales conciencias futuras pueden relacionarse con una identidad historica.</hasDefinition>
     <hasName xml:lang="es">Futuro representacional</hasName>
@@ -9057,6 +9057,7 @@
     <appearsIn rdf:resource="http://www.exergia.org/ns/ontologia"/>
     <belongsToConcept rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
+    <grounds rdf:resource="http://www.exergia.org/ns/futuro_representacional"/>
     <partOf rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/persistencia_espiritual"/>
