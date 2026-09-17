@@ -2219,7 +2219,7 @@
                             "label": "Relacion con la muerte",
                             "role": "relation",
                             "value_type": "text",
-                            "value": "Requiere que haya cesado la conciencia individual cuya trayectoria contribuyo de manera identificable al patron, aunque las estructuras informacionales e historicas derivadas de ella continuen activas.",
+                            "value": "La condicion post mortem comienza con la muerte del individuo cuya trayectoria contribuyo de manera identificable al patron; las estructuras informacionales e historicas derivadas de esa trayectoria pueden continuar activas.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.relacion_con_la_muerte",
                             "target_hints": [
                               "muerte"
@@ -2457,7 +2457,7 @@
                             "label": "Definicion",
                             "role": "core",
                             "value_type": "text",
-                            "value": "Riqueza, diversidad y disponibilidad de material capaz de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.",
+                            "value": "Riqueza, diversidad y disponibilidad de recursos representacionales capaces de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.densidad_espectral.definicion"
                           },
                           {
@@ -2575,10 +2575,18 @@
                           {
                             "key": "relacion_con_los_dos_ejes",
                             "label": "Relacion con los dos ejes",
-                            "role": "attribute",
+                            "role": "relation",
                             "value_type": "text",
-                            "value": "Una combinacion de alta persistencia espiritual y baja densidad espectral tiende conceptualmente a ofrecer menos materia inmediata para la captura, aunque no la impide. La resistencia depende ademas de diversidad, contexto y dificultad de compresion del corpus.",
-                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.resistencia_espectral.relacion_con_los_dos_ejes"
+                            "value": "Una combinacion de alta persistencia espiritual y baja densidad espectral tiende conceptualmente a ofrecer menos recursos representacionales inmediatos para la captura, aunque no la impide. La resistencia depende ademas de diversidad, contexto y dificultad de compresion del corpus.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.resistencia_espectral.relacion_con_los_dos_ejes",
+                            "target_hints": [
+                              "persistencia_espiritual",
+                              "densidad_espectral"
+                            ],
+                            "target_ids": [
+                              "persistencia_espiritual",
+                              "densidad_espectral"
+                            ]
                           }
                         ],
                         "collections": [],
@@ -2822,7 +2830,7 @@
                         "label": "Eje espectral",
                         "role": "relation",
                         "value_type": "text",
-                        "value": "La densidad espectral describe riqueza y disponibilidad de materia representacional capaz de sostener nuevas instancias reconocibles.",
+                        "value": "La densidad espectral describe riqueza y disponibilidad de recursos representacionales capaces de sostener nuevas instancias reconocibles.",
                         "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.eje_espectral",
                         "target_hints": [
                           "densidad_espectral"
