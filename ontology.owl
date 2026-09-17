@@ -3783,7 +3783,6 @@
     <emergesFrom rdf:resource="http://www.exergia.org/ns/universo"/>
     <emergesFrom rdf:resource="http://www.exergia.org/ns/libertad"/>
     <grounds rdf:resource="http://www.exergia.org/ns/imaginacion"/>
-    <grounds rdf:resource="http://www.exergia.org/ns/espectro"/>
     <grounds rdf:resource="http://www.exergia.org/ns/espiritu"/>
     <grounds rdf:resource="http://www.exergia.org/ns/soberania_autobiografica"/>
     <hasConcept rdf:resource="http://www.exergia.org/ns/proto_conciencia"/>
@@ -4210,14 +4209,13 @@
     <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
     <partOf rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
-    <relatedTo rdf:resource="http://www.exergia.org/ns/materia"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/exergia"/>
-    <field_definicion xml:lang="es">Riqueza, diversidad y disponibilidad de material capaz de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.</field_definicion>
+    <field_definicion xml:lang="es">Riqueza, diversidad y disponibilidad de recursos representacionales capaces de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.</field_definicion>
     <field_distincion_del_espiritu xml:lang="es">Una alta densidad espectral no implica gran persistencia espiritual, y una gran persistencia espiritual puede coexistir con baja densidad espectral. Las ideas de una persona pueden perdurar cuando casi no puede reconstruirse su presencia, o su presencia puede proliferar mientras sus ideas se vacian.</field_distincion_del_espiritu>
     <field_estado_de_medicion xml:lang="es">Dimension teorica susceptible de operacionalizacion futura; el corpus canonico no fija todavia una escala cuantitativa.</field_estado_de_medicion>
     <field_notacion_local xml:lang="es">Puede representarse convencionalmente como E dentro del espacio espiritu-espectro. Esta notacion es heuristica y no pertenece al analisis exergico formal.</field_notacion_local>
-    <hasDefinition xml:lang="es">Riqueza, diversidad y disponibilidad de material capaz de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.</hasDefinition>
+    <hasDefinition xml:lang="es">Riqueza, diversidad y disponibilidad de recursos representacionales capaces de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.</hasDefinition>
     <hasName xml:lang="es">Densidad espectral</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
     <hasSourcePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.densidad_espectral</hasSourcePath>
@@ -5230,9 +5228,8 @@
     <relatedTo rdf:resource="http://www.exergia.org/ns/exergia"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/persistencia_espiritual"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/densidad_espectral"/>
-    <relatedTo rdf:resource="http://www.exergia.org/ns/materia"/>
     <field_definicion xml:lang="es">Modelo conceptual bidimensional para describir identidades historicas mediante dos magnitudes parcialmente independientes: persistencia espiritual y densidad espectral.</field_definicion>
-    <field_eje_espectral xml:lang="es">La densidad espectral describe riqueza y disponibilidad de materia representacional capaz de sostener nuevas instancias reconocibles.</field_eje_espectral>
+    <field_eje_espectral xml:lang="es">La densidad espectral describe riqueza y disponibilidad de recursos representacionales capaces de sostener nuevas instancias reconocibles.</field_eje_espectral>
     <field_eje_espiritual xml:lang="es">La persistencia espiritual describe continuidad de significado, contenido y eficacia historico-causal.</field_eje_espiritual>
     <field_notacion xml:lang="es">De forma puramente local y heuristica puede escribirse S para persistencia espiritual y E para densidad espectral. S y E no son variables del analisis exergico formal, no modifican sus formulas y no deben confundirse con sus simbolos matematicos.</field_notacion>
     <hasDefinition xml:lang="es">Modelo conceptual bidimensional para describir identidades historicas mediante dos magnitudes parcialmente independientes: persistencia espiritual y densidad espectral.</hasDefinition>
@@ -5275,6 +5272,7 @@
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/conciencia"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/muerte"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/muerte_de_la_soberania_autobiografica"/>
     <field_condicion_de_reconocimiento xml:lang="es">El espectro puede persistir por continuidad de reconocimiento aun cuando disminuya la continuidad de significado con el espiritu de origen. En esa divergencia puede existir un espectro fuerte mientras el espiritu resulta debilmente accesible.</field_condicion_de_reconocimiento>
     <field_condicion_generativa xml:lang="es">No basta la conservacion pasiva de archivos o recuerdos: el patron debe poder originar nuevas instanciaciones o transformaciones causalmente activas en el presente.</field_condicion_generativa>
@@ -5283,7 +5281,7 @@
     <field_estado_ontologico xml:lang="es">proceso transindividual post mortem; no sujeto consciente, fantasma sustancial ni supervivencia personal</field_estado_ontologico>
     <field_limite_fenomenologico xml:lang="es">La existencia de un espectro no implica que la persona fallecida perciba, experimente o sufra las transformaciones de su patron.</field_limite_fenomenologico>
     <field_relacion_con_el_espiritu_generativo xml:lang="es">Es un caso limite del espiritu generativo en el que la fuente consciente original ya no puede intervenir en las nuevas instanciaciones asociadas a su patron.</field_relacion_con_el_espiritu_generativo>
-    <field_relacion_con_la_muerte xml:lang="es">Requiere que haya cesado la conciencia individual cuya trayectoria contribuyo de manera identificable al patron, aunque las estructuras informacionales e historicas derivadas de ella continuen activas.</field_relacion_con_la_muerte>
+    <field_relacion_con_la_muerte xml:lang="es">La condicion post mortem comienza con la muerte del individuo cuya trayectoria contribuyo de manera identificable al patron; las estructuras informacionales e historicas derivadas de esa trayectoria pueden continuar activas.</field_relacion_con_la_muerte>
     <field_relacion_con_la_soberania_autobiografica xml:lang="es">El espectro opera despues de la muerte de la soberania autobiografica: ya no existe una agencia de primera persona capaz de gobernar o corregir las nuevas instanciaciones, aunque otros agentes puedan conservar corpus, criterios y contextos.</field_relacion_con_la_soberania_autobiografica>
     <hasDefinition xml:lang="es">Configuracion post mortem de un espiritu generativo en la que patrones identificables asociados a una conciencia extinguida continuan siendo reinstanciados, combinados o transformados por otras conciencias o por sistemas generativos.</hasDefinition>
     <hasName xml:lang="es">Espectro</hasName>
@@ -7381,7 +7379,6 @@
     <appearsIn rdf:resource="http://www.exergia.org/ns/ontologia"/>
     <belongsToConcept rdf:resource="http://www.exergia.org/ns/limites_de_la_individualidad"/>
     <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
-    <grounds rdf:resource="http://www.exergia.org/ns/espectro"/>
     <partOf rdf:resource="http://www.exergia.org/ns/limites_de_la_individualidad"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/limites_de_la_individualidad"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/conciencia"/>
@@ -9063,11 +9060,12 @@
     <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
     <partOf rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
-    <relatedTo rdf:resource="http://www.exergia.org/ns/materia"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/persistencia_espiritual"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/densidad_espectral"/>
     <field_definicion xml:lang="es">Capacidad de un corpus biografico, intelectual o documental para dificultar su compresion estable en una representacion unica, simple y altamente reproducible.</field_definicion>
     <field_factores xml:lang="es">Puede aumentar mediante documentacion contextual, contradicciones preservadas, cambios de opinion, retractaciones, versiones largas, pluralidad de testimonios y otros elementos que obliguen a retornar al corpus para comprender la trayectoria.</field_factores>
     <field_limite xml:lang="es">La resistencia nunca garantiza inmunidad: una dinamica memetica o institucional puede seleccionar una representacion dominante ignorando la complejidad disponible.</field_limite>
-    <field_relacion_con_los_dos_ejes xml:lang="es">Una combinacion de alta persistencia espiritual y baja densidad espectral tiende conceptualmente a ofrecer menos materia inmediata para la captura, aunque no la impide. La resistencia depende ademas de diversidad, contexto y dificultad de compresion del corpus.</field_relacion_con_los_dos_ejes>
+    <field_relacion_con_los_dos_ejes xml:lang="es">Una combinacion de alta persistencia espiritual y baja densidad espectral tiende conceptualmente a ofrecer menos recursos representacionales inmediatos para la captura, aunque no la impide. La resistencia depende ademas de diversidad, contexto y dificultad de compresion del corpus.</field_relacion_con_los_dos_ejes>
     <hasDefinition xml:lang="es">Capacidad de un corpus biografico, intelectual o documental para dificultar su compresion estable en una representacion unica, simple y altamente reproducible.</hasDefinition>
     <hasName xml:lang="es">Resistencia espectral</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
