@@ -2043,6 +2043,28 @@
                     "value_type": "text",
                     "value": "El espiritu no garantiza verdad ni bondad por si mismo. Puede orientarse hacia apertura real o quedar capturado por dominacion, autoengaño, rigidez o formas superiores del ciclo.",
                     "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.limite"
+                  },
+                  {
+                    "key": "relacion_con_la_muerte",
+                    "label": "Relacion con la muerte",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La muerte extingue la conciencia individual, pero no necesariamente las estructuras transindividuales de memoria, simbolos, conocimiento y orientacion en las que esa conciencia participo. Su persistencia no implica supervivencia de la conciencia personal ni del alma.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.relacion_con_la_muerte",
+                    "target_hints": [
+                      "muerte"
+                    ],
+                    "target_ids": [
+                      "muerte"
+                    ]
+                  },
+                  {
+                    "key": "dependencia_de_soporte",
+                    "label": "Dependencia de soporte",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "Toda persistencia del espiritu requiere instanciacion material o estructural en conciencias, practicas, simbolos, instituciones, registros u otros soportes capaces de conservar o transformar informacion; no constituye una sustancia desencarnada.",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.dependencia_de_soporte"
                   }
                 ],
                 "collections": [],
@@ -2090,6 +2112,759 @@
                     "collections": [],
                     "children": [],
                     "canonical_id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_formas_posibles"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo",
+                    "key": "espiritu_generativo",
+                    "label": "Espiritu generativo",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Forma de espiritu transindividual en la que patrones heredados de una o varias conciencias quedan inscritos en soportes capaces de producir nuevas representaciones, combinaciones o transformaciones de esos patrones sin intervencion directa de las conciencias de origen.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.definicion"
+                      },
+                      {
+                        "key": "estado_ontologico",
+                        "label": "Estado ontologico",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "proceso emergente historico-informacional y transindividual, no conciencia por si mismo",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.estado_ontologico"
+                      },
+                      {
+                        "key": "relacion_con_el_espiritu",
+                        "label": "Relacion con el espiritu",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "Es una modalidad del espiritu en la que la acumulacion historica adquiere capacidad productiva: el soporte no solo conserva huellas, sino que genera nuevas instanciaciones derivadas de ellas.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.relacion_con_el_espiritu",
+                        "target_hints": [
+                          "espiritu"
+                        ],
+                        "target_ids": [
+                          "espiritu"
+                        ]
+                      },
+                      {
+                        "key": "recursividad_generativa",
+                        "label": "Recursividad generativa",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Las representaciones generadas pueden convertirse a su vez en datos, memoria cultural o entradas de sistemas posteriores, formando linajes recursivos capaces de continuar transformando el patron sin retorno necesario a la fuente original.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.recursividad_generativa"
+                      },
+                      {
+                        "key": "relacion_con_la_agencia",
+                        "label": "Relacion con la agencia",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "La capacidad generativa puede persistir fuera del control directo de quienes originaron o encarnaron los patrones que la hicieron posible.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.relacion_con_la_agencia"
+                      },
+                      {
+                        "key": "limite_de_identidad",
+                        "label": "Limite de identidad",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "La semejanza, reconocibilidad o continuidad causal de una representacion generada no demuestra identidad personal, continuidad fenomenologica ni recreacion de la conciencia que contribuyo al patron.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.limite_de_identidad"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_espectro",
+                        "key": "espectro",
+                        "label": "Espectro",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Configuracion post mortem de un espiritu generativo en la que patrones identificables asociados a una conciencia extinguida continuan siendo reinstanciados, combinados o transformados por otras conciencias o por sistemas generativos.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.definicion"
+                          },
+                          {
+                            "key": "estado_ontologico",
+                            "label": "Estado ontologico",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "proceso transindividual post mortem; no sujeto consciente, fantasma sustancial ni supervivencia personal",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.estado_ontologico"
+                          },
+                          {
+                            "key": "relacion_con_el_espiritu_generativo",
+                            "label": "Relacion con el espiritu generativo",
+                            "role": "relation",
+                            "value_type": "text",
+                            "value": "Es un caso limite del espiritu generativo en el que la fuente consciente original ya no puede intervenir en las nuevas instanciaciones asociadas a su patron.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.relacion_con_el_espiritu_generativo",
+                            "target_hints": [
+                              "espiritu_generativo"
+                            ],
+                            "target_ids": [
+                              "espiritu_generativo"
+                            ]
+                          },
+                          {
+                            "key": "relacion_con_la_muerte",
+                            "label": "Relacion con la muerte",
+                            "role": "relation",
+                            "value_type": "text",
+                            "value": "La condicion post mortem comienza con la muerte del individuo cuya trayectoria contribuyo de manera identificable al patron; las estructuras informacionales e historicas derivadas de esa trayectoria pueden continuar activas.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.relacion_con_la_muerte",
+                            "target_hints": [
+                              "muerte"
+                            ],
+                            "target_ids": [
+                              "muerte"
+                            ]
+                          },
+                          {
+                            "key": "condicion_generativa",
+                            "label": "Condicion generativa",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "No basta la conservacion pasiva de archivos o recuerdos: el patron debe poder originar nuevas instanciaciones o transformaciones causalmente activas en el presente.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.condicion_generativa"
+                          },
+                          {
+                            "key": "limite_fenomenologico",
+                            "label": "Limite fenomenologico",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "La existencia de un espectro no implica que la persona fallecida perciba, experimente o sufra las transformaciones de su patron.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.limite_fenomenologico"
+                          },
+                          {
+                            "key": "distincion_del_espiritu",
+                            "label": "Distincion del espiritu",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "El espiritu designa persistencia historico-causal de conocimiento, orientaciones, simbolos y otras estructuras transindividuales; el espectro designa persistencia representacional generativa asociada recognosciblemente a una conciencia extinguida. Pueden crecer, debilitarse o divergir de manera independiente.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.distincion_del_espiritu"
+                          },
+                          {
+                            "key": "relacion_con_la_soberania_autobiografica",
+                            "label": "Relacion con la soberania autobiografica",
+                            "role": "relation",
+                            "value_type": "text",
+                            "value": "El espectro opera despues de la muerte de la soberania autobiografica: ya no existe una agencia de primera persona capaz de gobernar o corregir las nuevas instanciaciones, aunque otros agentes puedan conservar corpus, criterios y contextos.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.relacion_con_la_soberania_autobiografica",
+                            "target_hints": [
+                              "muerte_de_la_soberania_autobiografica"
+                            ],
+                            "target_ids": [
+                              "muerte_de_la_soberania_autobiografica"
+                            ]
+                          },
+                          {
+                            "key": "condicion_de_reconocimiento",
+                            "label": "Condicion de reconocimiento",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "El espectro puede persistir por continuidad de reconocimiento aun cuando disminuya la continuidad de significado con el espiritu de origen. En esa divergencia puede existir un espectro fuerte mientras el espiritu resulta debilmente accesible.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.condicion_de_reconocimiento"
+                          }
+                        ],
+                        "collections": [],
+                        "children": [
+                          {
+                            "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_espectro_atrapamiento_espectral",
+                            "key": "atrapamiento_espectral",
+                            "label": "Atrapamiento espectral",
+                            "kind": "concept",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral",
+                            "fields": [
+                              {
+                                "key": "definicion",
+                                "label": "Definicion",
+                                "role": "core",
+                                "value_type": "text",
+                                "value": "Condicion limite en la que un espectro alcanza suficiente distribucion, recursividad y desacoplamiento para que no exista soberania efectiva sobre sus futuras instanciaciones y para que su reproduccion ya no dependa materialmente de volver a la persona, a su corpus original o a una autoridad interpretativa central.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.definicion"
+                              },
+                              {
+                                "key": "mecanismo",
+                                "label": "Mecanismo",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "La copia distribuida, la reutilizacion, la variacion memetica, la generacion automatica y la incorporacion de nuevas salidas a corpus o memorias posteriores pueden convertir una representacion en un sistema cultural reproductivo cuya dinamica excede a cualquier custodio singular.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.mecanismo"
+                              },
+                              {
+                                "key": "irreversibilidad",
+                                "label": "Irreversibilidad",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "No afirma eternidad metafisica ni irreversibilidad absoluta: describe una perdida efectiva de soberania cuya reversibilidad disminuye a medida que el patron se distribuye, se desacopla del origen y alimenta nuevas cadenas generativas.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.irreversibilidad"
+                              },
+                              {
+                                "key": "aclaracion_fenomenologica",
+                                "label": "Aclaracion fenomenologica",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "El termino atrapamiento describe la captura del patron historico-informacional, no el encarcelamiento fenomenologico de una conciencia superviviente.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.aclaracion_fenomenologica"
+                              },
+                              {
+                                "key": "criterio_de_exclusion",
+                                "label": "Criterio de exclusion",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "No constituye atrapamiento espectral la mera malinterpretacion, parodia, difamacion, idealizacion, perdida de control reputacional o existencia de representaciones no autorizadas. El salto cualitativo requiere suficiente independencia reproductiva y desacoplamiento.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.criterio_de_exclusion"
+                              },
+                              {
+                                "key": "objeto_del_atrapamiento",
+                                "label": "Objeto del atrapamiento",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "Lo capturado no es una conciencia superviviente, sino la relacion futura entre el espectro y su origen: el espacio de posibilidades mediante el cual otras conciencias podran reconstruir, interpretar y utilizar esa identidad historica.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.objeto_del_atrapamiento"
+                              },
+                              {
+                                "key": "relacion_con_el_futuro_representacional",
+                                "label": "Relacion con el futuro representacional",
+                                "role": "relation",
+                                "value_type": "text",
+                                "value": "Puede entenderse como colonizacion generativa del futuro representacional cuando un patron suficientemente independiente condiciona de forma persistente las reconstrucciones futuras de la persona.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.relacion_con_el_futuro_representacional",
+                                "target_hints": [
+                                  "futuro_representacional",
+                                  "colonizacion_del_futuro_representacional"
+                                ],
+                                "target_ids": [
+                                  "futuro_representacional",
+                                  "colonizacion_del_futuro_representacional"
+                                ]
+                              },
+                              {
+                                "key": "relacion_con_el_desacoplamiento",
+                                "label": "Relacion con el desacoplamiento",
+                                "role": "relation",
+                                "value_type": "text",
+                                "value": "Presupone un grado alto de desacoplamiento espectral: las nuevas instanciaciones deben poder producir otras nuevas sin retorno materialmente necesario al corpus de origen.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.relacion_con_el_desacoplamiento",
+                                "target_hints": [
+                                  "desacoplamiento_espectral"
+                                ],
+                                "target_ids": [
+                                  "desacoplamiento_espectral"
+                                ]
+                              },
+                              {
+                                "key": "alimentacion_desde_el_espiritu",
+                                "label": "Alimentacion desde el espiritu",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "En fases tempranas, la captura espectral se alimenta de elementos del espiritu de origen al convertir ideas, frases, gestos, obras o valores en unidades representacionales reproducibles. A medida que aumenta el desacoplamiento, nuevas instancias pueden alimentarse principalmente de otras instancias espectrales en vez del espiritu.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.alimentacion_desde_el_espiritu"
+                              },
+                              {
+                                "key": "tendencia_de_captura",
+                                "label": "Tendencia de captura",
+                                "role": "relation",
+                                "value_type": "text",
+                                "value": "La captura puede aumentar la distancia espectral sin destruir materialmente el espiritu: basta con volverlo progresivamente menos necesario para reproducir la identidad representada. El caso limite es un espectro cuya dinamica se explica sobre todo por otras instancias del propio espectro.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.tendencia_de_captura",
+                                "target_hints": [
+                                  "distancia_espectral"
+                                ],
+                                "target_ids": [
+                                  "distancia_espectral"
+                                ]
+                              },
+                              {
+                                "key": "limite_formal",
+                                "label": "Limite formal",
+                                "role": "attribute",
+                                "value_type": "text",
+                                "value": "Este marco no modifica ni extiende el sistema analitico formal del repositorio. Sus escalares son conceptuales y no constituyen variables matematicas canonicas de ese modelo.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.limite_formal"
+                              },
+                              {
+                                "key": "relacion_con_la_autonomia_reproductiva_espectral",
+                                "label": "Relacion con la autonomia reproductiva espectral",
+                                "role": "relation",
+                                "value_type": "text",
+                                "value": "El atrapamiento requiere que esta capacidad de reproduccion independiente alcance un grado suficiente junto con distribucion, recursividad y desacoplamiento.",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.relacion_con_la_autonomia_reproductiva_espectral",
+                                "target_hints": [
+                                  "autonomia_reproductiva_espectral"
+                                ],
+                                "target_ids": [
+                                  "autonomia_reproductiva_espectral"
+                                ]
+                              }
+                            ],
+                            "collections": [],
+                            "children": [
+                              {
+                                "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_espectro_atrapamiento_espectral_modalidades",
+                                "key": "modalidades",
+                                "label": "Modalidades",
+                                "kind": "section",
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.modalidades",
+                                "fields": [
+                                  {
+                                    "key": "atrapamiento_degradante",
+                                    "label": "Atrapamiento degradante",
+                                    "role": "attribute",
+                                    "value_type": "text",
+                                    "value": "El patron dominante comprime la identidad hacia caricatura, ridiculizacion, absurdizacion o degradacion reproducible.",
+                                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.modalidades.atrapamiento_degradante"
+                                  },
+                                  {
+                                    "key": "atrapamiento_hagiografico",
+                                    "label": "Atrapamiento hagiografico",
+                                    "role": "attribute",
+                                    "value_type": "text",
+                                    "value": "El patron dominante comprime la identidad hacia santo, martir, heroe, fundador o figura idealizada cuya reproduccion desplaza la complejidad historica.",
+                                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.modalidades.atrapamiento_hagiografico"
+                                  }
+                                ],
+                                "collections": [],
+                                "children": [],
+                                "canonical_id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_espectro_atrapamiento_espectral_modalidades"
+                              }
+                            ],
+                            "canonical_id": "atrapamiento_espectral"
+                          }
+                        ],
+                        "canonical_id": "espectro"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_densidad_espectral",
+                        "key": "densidad_espectral",
+                        "label": "Densidad espectral",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.densidad_espectral",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Riqueza, diversidad y disponibilidad de recursos representacionales capaces de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.densidad_espectral.definicion"
+                          },
+                          {
+                            "key": "distincion_del_espiritu",
+                            "label": "Distincion del espiritu",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Una alta densidad espectral no implica gran persistencia espiritual, y una gran persistencia espiritual puede coexistir con baja densidad espectral. Las ideas de una persona pueden perdurar cuando casi no puede reconstruirse su presencia, o su presencia puede proliferar mientras sus ideas se vacian.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.densidad_espectral.distincion_del_espiritu"
+                          },
+                          {
+                            "key": "estado_de_medicion",
+                            "label": "Estado de medicion",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Dimension teorica susceptible de operacionalizacion futura; el corpus canonico no fija todavia una escala cuantitativa.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.densidad_espectral.estado_de_medicion"
+                          },
+                          {
+                            "key": "notacion_local",
+                            "label": "Notacion local",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Puede representarse convencionalmente como E dentro del espacio espiritu-espectro. Esta notacion es heuristica y no pertenece al sistema analitico formal del repositorio.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.densidad_espectral.notacion_local"
+                          }
+                        ],
+                        "collections": [],
+                        "children": [],
+                        "canonical_id": "densidad_espectral"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_distancia_espectral",
+                        "key": "distancia_espectral",
+                        "label": "Distancia espectral",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.distancia_espectral",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Grado en que una instancia espectral puede ser comprendida, utilizada o reproducida sin conocimiento relevante del individuo historico ni retorno a su corpus original.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.distancia_espectral.definicion"
+                          },
+                          {
+                            "key": "interpretacion",
+                            "label": "Interpretacion",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "A mayor distancia espectral, mayor independencia funcional de la representacion respecto de su origen historico.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.distancia_espectral.interpretacion"
+                          },
+                          {
+                            "key": "estado_de_medicion",
+                            "label": "Estado de medicion",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Dimension teorica susceptible de operacionalizacion futura; no se establece una metrica canonica en esta fase.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.distancia_espectral.estado_de_medicion"
+                          },
+                          {
+                            "key": "relacion_con_el_espiritu",
+                            "label": "Relacion con el espiritu",
+                            "role": "relation",
+                            "value_type": "text",
+                            "value": "La distancia espectral aumenta en la medida en que una instancia puede comprenderse, utilizarse o reproducirse con menor acceso al espiritu de origen. Puede crecer aunque el espiritu y su persistencia historico-causal sigan conservados documentalmente.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.distancia_espectral.relacion_con_el_espiritu",
+                            "target_hints": [
+                              "persistencia_espiritual",
+                              "espiritu"
+                            ],
+                            "target_ids": [
+                              "persistencia_espiritual",
+                              "espiritu"
+                            ]
+                          }
+                        ],
+                        "collections": [],
+                        "children": [],
+                        "canonical_id": "distancia_espectral"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_resistencia_espectral",
+                        "key": "resistencia_espectral",
+                        "label": "Resistencia espectral",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.resistencia_espectral",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Capacidad de un corpus biografico, intelectual o documental para dificultar su compresion estable en una representacion unica, simple y altamente reproducible.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.resistencia_espectral.definicion"
+                          },
+                          {
+                            "key": "factores",
+                            "label": "Factores",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Puede aumentar mediante documentacion contextual, contradicciones preservadas, cambios de opinion, retractaciones, versiones largas, pluralidad de testimonios y otros elementos que obliguen a retornar al corpus para comprender la trayectoria.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.resistencia_espectral.factores"
+                          },
+                          {
+                            "key": "limite",
+                            "label": "Limite",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "La resistencia nunca garantiza inmunidad: una dinamica memetica o institucional puede seleccionar una representacion dominante ignorando la complejidad disponible.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.resistencia_espectral.limite"
+                          },
+                          {
+                            "key": "relacion_con_los_dos_ejes",
+                            "label": "Relacion con los dos ejes",
+                            "role": "relation",
+                            "value_type": "text",
+                            "value": "Una combinacion de alta persistencia espiritual y baja densidad espectral tiende conceptualmente a ofrecer menos recursos representacionales inmediatos para la captura, aunque no la impide. La resistencia depende ademas de diversidad, contexto y dificultad de compresion del corpus.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.resistencia_espectral.relacion_con_los_dos_ejes",
+                            "target_hints": [
+                              "persistencia_espiritual",
+                              "densidad_espectral"
+                            ],
+                            "target_ids": [
+                              "persistencia_espiritual",
+                              "densidad_espectral"
+                            ]
+                          }
+                        ],
+                        "collections": [],
+                        "children": [],
+                        "canonical_id": "resistencia_espectral"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_siembra_espectral",
+                        "key": "siembra_espectral",
+                        "label": "Siembra espectral",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.siembra_espectral",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Produccion deliberada o sistematica, durante la vida o despues de ella, de representaciones simples, reconocibles, reproducibles y afectivamente potentes de una persona que facilitan posteriores linajes de variacion.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.siembra_espectral.definicion"
+                          },
+                          {
+                            "key": "agencia",
+                            "label": "Agencia",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Puede ser realizada por adversarios, admiradores, instituciones, comunidades, sistemas tecnicos o por la propia persona mediante auto-siembra espectral.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.siembra_espectral.agencia"
+                          },
+                          {
+                            "key": "neutralidad",
+                            "label": "Neutralidad",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "La siembra no es necesariamente hostil ni implica por si sola atrapamiento; describe una condicion de reproducibilidad que puede servir a caricatura, veneracion, autopresentacion u otros fines.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.siembra_espectral.neutralidad"
+                          },
+                          {
+                            "key": "auto_siembra_espectral",
+                            "label": "Auto-siembra espectral",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Una persona puede contribuir deliberadamente durante su vida a construir una representacion simplificada y altamente reproducible de si misma. La auto-siembra no garantiza que conserve control sobre las transformaciones posteriores de ese patron.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.siembra_espectral.auto_siembra_espectral"
+                          }
+                        ],
+                        "collections": [],
+                        "children": [],
+                        "canonical_id": "siembra_espectral"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_espectralizacion_adversarial",
+                        "key": "espectralizacion_adversarial",
+                        "label": "Espectralizacion adversarial",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectralizacion_adversarial",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Proceso por el que representaciones simplificadas de una persona compiten activamente con su trayectoria documentada y adquieren mayor capacidad de reproduccion, variacion y reconocimiento que las correcciones o contextualizaciones del propio sujeto o de su corpus.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectralizacion_adversarial.definicion"
+                          },
+                          {
+                            "key": "relacion_con_la_erosion_autobiografica",
+                            "label": "Relacion con la erosion autobiografica",
+                            "role": "relation",
+                            "value_type": "text",
+                            "value": "Puede erosionar la soberania autobiografica durante la vida al reducir la eficacia de la intervencion de primera persona frente a representaciones con mayor fuerza reproductiva.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectralizacion_adversarial.relacion_con_la_erosion_autobiografica",
+                            "target_hints": [
+                              "erosion_soberania_autobiografica"
+                            ],
+                            "target_ids": [
+                              "erosion_soberania_autobiografica"
+                            ]
+                          }
+                        ],
+                        "collections": [],
+                        "children": [],
+                        "canonical_id": "espectralizacion_adversarial"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_desacoplamiento_espectral",
+                        "key": "desacoplamiento_espectral",
+                        "label": "Desacoplamiento espectral",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.desacoplamiento_espectral",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Fase en la que nuevas instanciaciones de un patron representacional pueden seguir produciendo significado y nuevas variantes sin volver de forma materialmente necesaria a la persona, a su corpus original o a una autoridad interpretativa relativamente central.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.desacoplamiento_espectral.definicion"
+                          },
+                          {
+                            "key": "trayectoria",
+                            "label": "Trayectoria",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Puede representarse como persona -> representacion -> meme -> variacion -> convencion -> simbolo independiente: a medida que avanza la cadena, disminuye la dependencia funcional respecto del origen y aumenta la capacidad del patron para reproducirse desde instancias derivadas.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.desacoplamiento_espectral.trayectoria"
+                          },
+                          {
+                            "key": "criterio",
+                            "label": "Criterio",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "No basta una tergiversacion, parodia o perdida ordinaria de reputacion; debe existir capacidad reproductiva del patron suficientemente independiente del retorno al corpus de origen.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.desacoplamiento_espectral.criterio"
+                          }
+                        ],
+                        "collections": [],
+                        "children": [],
+                        "canonical_id": "desacoplamiento_espectral"
+                      },
+                      {
+                        "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espiritu_generativo_autonomia_reproductiva_espectral",
+                        "key": "autonomia_reproductiva_espectral",
+                        "label": "Autonomia reproductiva espectral",
+                        "kind": "concept",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.autonomia_reproductiva_espectral",
+                        "fields": [
+                          {
+                            "key": "definicion",
+                            "label": "Definicion",
+                            "role": "core",
+                            "value_type": "text",
+                            "value": "Independencia funcional alcanzada por un patron representacional cuando puede sostener nuevas instanciaciones y variaciones sin depender materialmente de la agencia de la conciencia de origen.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.autonomia_reproductiva_espectral.definicion"
+                          },
+                          {
+                            "key": "distincion_de_agencia",
+                            "label": "Distincion de agencia",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "No designa autodeterminacion consciente, libertad personal ni capacidad de una conciencia para gobernarse. Describe independencia reproductiva de un patron no consciente.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.autonomia_reproductiva_espectral.distincion_de_agencia"
+                          },
+                          {
+                            "key": "limite",
+                            "label": "Limite",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Una alta independencia reproductiva no convierte al patron en sujeto, agente consciente ni portador de voluntad propia.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.autonomia_reproductiva_espectral.limite"
+                          }
+                        ],
+                        "collections": [],
+                        "children": [],
+                        "canonical_id": "autonomia_reproductiva_espectral"
+                      }
+                    ],
+                    "canonical_id": "espiritu_generativo"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_persistencia_espiritual",
+                    "key": "persistencia_espiritual",
+                    "label": "Persistencia espiritual",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Magnitud conceptual que expresa en que grado ideas, metodos, valores, obras, contradicciones, orientaciones y otras estructuras historico-causales asociadas a una conciencia siguen siendo accesibles y causalmente activas en conciencias y sistemas posteriores.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual.definicion"
+                      },
+                      {
+                        "key": "notacion_local",
+                        "label": "Notacion local",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Puede representarse convencionalmente como S dentro de este marco conceptual. Esta notacion no pertenece al sistema analitico formal del repositorio ni introduce una nueva variable en ese modelo matematico.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual.notacion_local"
+                      },
+                      {
+                        "key": "independencia_espectral",
+                        "label": "Independencia espectral",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "La persistencia espiritual puede variar independientemente de la densidad espectral: puede existir gran continuidad historico-causal con poca reconstructibilidad de presencia, o gran reconstructibilidad con escasa continuidad del contenido espiritual.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual.independencia_espectral",
+                        "target_hints": [
+                          "densidad_espectral"
+                        ],
+                        "target_ids": [
+                          "densidad_espectral"
+                        ]
+                      },
+                      {
+                        "key": "estado_teorico",
+                        "label": "Estado teorico",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Escalar conceptual cualitativo susceptible de operacionalizacion futura, sin escala cuantitativa canonica y sin integracion actual en el sistema analitico formal del repositorio.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual.estado_teorico"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "persistencia_espiritual"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espacio_espiritu_espectro",
+                    "key": "espacio_espiritu_espectro",
+                    "label": "Espacio espiritu-espectro",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Modelo conceptual bidimensional para describir identidades historicas mediante dos magnitudes parcialmente independientes: persistencia espiritual y densidad espectral.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.definicion"
+                      },
+                      {
+                        "key": "notacion",
+                        "label": "Notacion",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "De forma puramente local y heuristica puede escribirse S para persistencia espiritual y E para densidad espectral. S y E no son variables del sistema analitico formal del repositorio, no modifican sus formulas y no deben confundirse con sus simbolos matematicos.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.notacion"
+                      },
+                      {
+                        "key": "eje_espiritual",
+                        "label": "Eje espiritual",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "La persistencia espiritual describe continuidad de significado, contenido y eficacia historico-causal.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.eje_espiritual",
+                        "target_hints": [
+                          "persistencia_espiritual"
+                        ],
+                        "target_ids": [
+                          "persistencia_espiritual"
+                        ]
+                      },
+                      {
+                        "key": "eje_espectral",
+                        "label": "Eje espectral",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "La densidad espectral describe riqueza y disponibilidad de recursos representacionales capaces de sostener nuevas instancias reconocibles.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.eje_espectral",
+                        "target_hints": [
+                          "densidad_espectral"
+                        ],
+                        "target_ids": [
+                          "densidad_espectral"
+                        ]
+                      },
+                      {
+                        "key": "tesis_de_independencia",
+                        "label": "Tesis de independencia",
+                        "role": "thesis",
+                        "value_type": "text",
+                        "value": "Persistencia espiritual y densidad espectral no forman una unica escala. Una puede mantenerse alta mientras la otra es baja y pueden divergir historicamente.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.tesis_de_independencia"
+                      },
+                      {
+                        "key": "tesis_frontera_conceptual",
+                        "label": "Tesis de frontera conceptual",
+                        "role": "thesis",
+                        "value_type": "text",
+                        "value": "El espiritu requiere continuidad de significado; el espectro requiere continuidad de reconocimiento. Una representacion puede seguir siendo espectralmente reconocible aun cuando su reproduccion ya no conserve ni consulte de forma relevante el contenido espiritual de origen.",
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.tesis_frontera_conceptual"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "espacio_espiritu_espectro"
                   }
                 ],
                 "canonical_id": "espiritu",
@@ -2196,9 +2971,9 @@
                     "target_hints": [
                       "espiritu_general"
                     ],
-	                    "target_ids": [
-	                      "espiritu"
-	                    ]
+                    "target_ids": [
+                      "espiritu"
+                    ]
                   }
                 ],
                 "collections": [],
@@ -2537,11 +3312,298 @@
                     "value_type": "text",
                     "value": "La muerte marca el fin del individuo consciente y el reinicio de la participacion material en la red de la vida.",
                     "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.muerte.significado_ontologico"
+                  },
+                  {
+                    "key": "efecto_sobre_la_soberania_autobiografica",
+                    "label": "Efecto sobre la soberania autobiografica",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La muerte elimina definitivamente la capacidad de la conciencia individual para revisar, contextualizar, retractar, ampliar o disputar en primera persona las representaciones futuras de su propia trayectoria.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.muerte.efecto_sobre_la_soberania_autobiografica",
+                    "target_hints": [
+                      "soberania_autobiografica",
+                      "muerte_de_la_soberania_autobiografica"
+                    ],
+                    "target_ids": [
+                      "soberania_autobiografica",
+                      "muerte_de_la_soberania_autobiografica"
+                    ]
                   }
                 ],
                 "collections": [],
                 "children": [],
                 "canonical_id": "muerte"
+              },
+              {
+                "id": "ontologia_estructura_de_lo_real_limites_de_la_individualidad_teoria_muerte_soberania_autobiografica",
+                "key": "teoria_muerte_soberania_autobiografica",
+                "label": "Teoria de la muerte de la soberania autobiografica",
+                "kind": "concept",
+                "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica",
+                "fields": [
+                  {
+                    "key": "definicion",
+                    "label": "Definicion",
+                    "role": "core",
+                    "value_type": "text",
+                    "value": "Marco para analizar que ocurre con la capacidad de una conciencia para intervenir en la construccion de su propia identidad historica cuando esa agencia se erosiona, cesa o deja de poder corregir las representaciones que otros sistemas producen de ella.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.definicion"
+                  },
+                  {
+                    "key": "tesis_central",
+                    "label": "Tesis central",
+                    "role": "thesis",
+                    "value_type": "text",
+                    "value": "La muerte de una conciencia no extingue necesariamente sus efectos historicos ni sus representaciones, pero si extingue su privilegio de primera persona para intervenir en las reconstrucciones futuras de su trayectoria. Desde ese punto, su identidad historica queda necesariamente mediada por otras conciencias, instituciones, archivos y sistemas tecnicos.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.tesis_central"
+                  },
+                  {
+                    "key": "distincion_normativa",
+                    "label": "Distincion normativa",
+                    "role": "attribute",
+                    "value_type": "text",
+                    "value": "La soberania autobiografica es una capacidad descriptiva y relacional, no un derecho absoluto a determinar como deben interpretar a una persona las demas conciencias ni una propiedad exclusiva sobre todo significado social asociado a ella.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.distincion_normativa"
+                  },
+                  {
+                    "key": "relacion_con_el_espectro",
+                    "label": "Relacion con el espectro",
+                    "role": "relation",
+                    "value_type": "text",
+                    "value": "La teoria proporciona el marco general dentro del cual la espectralizacion describe una forma particular de persistencia representacional generativa. Toda muerte autobiografica abre un regimen de reconstruccion por terceros, pero no toda persona muerta posee un espectro significativo ni queda atrapada espectralmente.",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.relacion_con_el_espectro",
+                    "target_hints": [
+                      "espectro",
+                      "atrapamiento_espectral"
+                    ],
+                    "target_ids": [
+                      "espectro",
+                      "atrapamiento_espectral"
+                    ]
+                  }
+                ],
+                "collections": [],
+                "children": [
+                  {
+                    "id": "ontologia_estructura_de_lo_real_limites_de_la_individualidad_teoria_muerte_soberania_autobiografica_soberania_autobiografica",
+                    "key": "soberania_autobiografica",
+                    "label": "Soberania autobiografica",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.soberania_autobiografica",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Capacidad efectiva, parcial y nunca absoluta de una conciencia viva para intervenir de forma privilegiada en la narracion, revision, contextualizacion y contestacion de las representaciones de su propia trayectoria.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.soberania_autobiografica.definicion"
+                      },
+                      {
+                        "key": "estado_ontologico",
+                        "label": "Estado ontologico",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "capacidad relacional emergente dependiente de conciencia, memoria, agencia y medios materiales de expresion",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.soberania_autobiografica.estado_ontologico"
+                      },
+                      {
+                        "key": "limite",
+                        "label": "Limite",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Nunca existe soberania total sobre la propia imagen o significado social: otras conciencias interpretan, recuerdan, critican, olvidan y transforman. La soberania autobiografica designa la capacidad singular del sujeto para seguir interviniendo en ese proceso mientras conserva agencia.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.soberania_autobiografica.limite"
+                      },
+                      {
+                        "key": "relacion_con_la_conciencia",
+                        "label": "Relacion con la conciencia",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "Requiere una conciencia capaz de memoria reflexiva, autorreferencia y accion comunicativa suficiente para revisar o disputar narraciones acerca de si misma.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.soberania_autobiografica.relacion_con_la_conciencia",
+                        "target_hints": [
+                          "conciencia"
+                        ],
+                        "target_ids": [
+                          "conciencia"
+                        ]
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "soberania_autobiografica"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_limites_de_la_individualidad_teoria_muerte_soberania_autobiografica_erosion_soberania_autobiografica",
+                    "key": "erosion_soberania_autobiografica",
+                    "label": "Erosion de la soberania autobiografica",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.erosion_soberania_autobiografica",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Reduccion progresiva, durante la vida, de la capacidad efectiva de una conciencia para corregir, contextualizar o competir con representaciones de si misma que circulan con mayor fuerza reproductiva que sus propias intervenciones.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.erosion_soberania_autobiografica.definicion"
+                      },
+                      {
+                        "key": "limite",
+                        "label": "Limite",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "La erosion puede ser severa sin equivaler a muerte de la soberania autobiografica mientras siga existiendo una agencia de primera persona capaz de intervenir de forma materialmente relevante.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.erosion_soberania_autobiografica.limite"
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "erosion_soberania_autobiografica"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_limites_de_la_individualidad_teoria_muerte_soberania_autobiografica_muerte_soberania_autobiografica",
+                    "key": "muerte_de_la_soberania_autobiografica",
+                    "label": "Muerte de la soberania autobiografica",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.muerte_de_la_soberania_autobiografica",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Cese definitivo de la agencia de primera persona capaz de revisar o disputar las futuras representaciones de una trayectoria individual. En el ser humano, la muerte biologica produce necesariamente este cese al extinguir la conciencia personal.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.muerte_de_la_soberania_autobiografica.definicion"
+                      },
+                      {
+                        "key": "consecuencia",
+                        "label": "Consecuencia",
+                        "role": "attribute",
+                        "value_type": "text",
+                        "value": "Tras este cese, ninguna nueva representacion puede ser corregida por el sujeto original; solo puede ser confrontada con registros, obras, testimonios, interpretaciones o reconstrucciones producidas por terceros.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.muerte_de_la_soberania_autobiografica.consecuencia"
+                      },
+                      {
+                        "key": "relacion_con_la_muerte",
+                        "label": "Relacion con la muerte",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "Es una consecuencia representacional de la muerte de la conciencia individual, no una segunda muerte biologica ni la desaparicion del espiritu.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.muerte_de_la_soberania_autobiografica.relacion_con_la_muerte",
+                        "target_hints": [
+                          "muerte",
+                          "espiritu"
+                        ],
+                        "target_ids": [
+                          "muerte",
+                          "espiritu"
+                        ]
+                      },
+                      {
+                        "key": "no_equivalencia_con_atrapamiento",
+                        "label": "No equivalencia con atrapamiento",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "La muerte de la soberania autobiografica es universal para una conciencia humana fallecida; el atrapamiento espectral es una condicion adicional y no universal que exige independencia reproductiva, distribucion y desacoplamiento del patron representacional.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.muerte_de_la_soberania_autobiografica.no_equivalencia_con_atrapamiento",
+                        "target_hints": [
+                          "atrapamiento_espectral"
+                        ],
+                        "target_ids": [
+                          "atrapamiento_espectral"
+                        ]
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "muerte_de_la_soberania_autobiografica"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_limites_de_la_individualidad_teoria_muerte_soberania_autobiografica_futuro_representacional",
+                    "key": "futuro_representacional",
+                    "label": "Futuro representacional",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.futuro_representacional",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Conjunto abierto de reconstrucciones, usos, interpretaciones y transformaciones mediante los cuales conciencias futuras pueden relacionarse con una identidad historica.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.futuro_representacional.definicion"
+                      },
+                      {
+                        "key": "apertura",
+                        "label": "Apertura",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "La resistencia espectral de la trayectoria historica es una dimension relevante para la amplitud del futuro representacional, junto con la diversidad del corpus y la pluralidad de custodios e interpretaciones.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.futuro_representacional.apertura",
+                        "target_hints": [
+                          "resistencia_espectral"
+                        ],
+                        "target_ids": [
+                          "resistencia_espectral"
+                        ]
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "futuro_representacional"
+                  },
+                  {
+                    "id": "ontologia_estructura_de_lo_real_limites_de_la_individualidad_teoria_muerte_soberania_autobiografica_colonizacion_futuro_representacional",
+                    "key": "colonizacion_del_futuro_representacional",
+                    "label": "Colonizacion del futuro representacional",
+                    "kind": "concept",
+                    "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.colonizacion_del_futuro_representacional",
+                    "fields": [
+                      {
+                        "key": "definicion",
+                        "label": "Definicion",
+                        "role": "core",
+                        "value_type": "text",
+                        "value": "Reduccion persistente de la apertura del futuro representacional cuando una representacion o familia de representaciones adquiere tal ventaja reproductiva que condiciona de forma desproporcionada como las conciencias futuras pueden reconstruir o utilizar una identidad historica.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.colonizacion_del_futuro_representacional.definicion"
+                      },
+                      {
+                        "key": "relacion_con_el_atrapamiento_espectral",
+                        "label": "Relacion con el atrapamiento espectral",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "El atrapamiento espectral es una forma generativa extrema de colonizacion del futuro representacional, pero la colonizacion tambien puede producirse mediante instituciones, relatos hagiograficos, propaganda, canonizacion cultural u otros mecanismos no generativos.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.colonizacion_del_futuro_representacional.relacion_con_el_atrapamiento_espectral",
+                        "target_hints": [
+                          "atrapamiento_espectral"
+                        ],
+                        "target_ids": [
+                          "atrapamiento_espectral"
+                        ]
+                      },
+                      {
+                        "key": "relacion_con_el_futuro_representacional",
+                        "label": "Relacion con el futuro representacional",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "La colonizacion reduce de forma persistente la apertura del futuro representacional al concentrar una parte desproporcionada de las reconstrucciones futuras alrededor de una representacion o familia de representaciones.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.colonizacion_del_futuro_representacional.relacion_con_el_futuro_representacional",
+                        "target_hints": [
+                          "futuro_representacional"
+                        ],
+                        "target_ids": [
+                          "futuro_representacional"
+                        ]
+                      }
+                    ],
+                    "collections": [],
+                    "children": [],
+                    "canonical_id": "colonizacion_del_futuro_representacional"
+                  }
+                ],
+                "canonical_id": "teoria_muerte_soberania_autobiografica"
               }
             ],
             "canonical_id": "limites_de_la_individualidad"
