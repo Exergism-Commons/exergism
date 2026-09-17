@@ -3098,6 +3098,7 @@
     <relatedTo rdf:resource="http://www.exergia.org/ns/colonizacion_del_futuro_representacional"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/desacoplamiento_espectral"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/distancia_espectral"/>
     <field_aclaracion_fenomenologica xml:lang="es">El termino atrapamiento describe la captura del patron historico-informacional, no el encarcelamiento fenomenologico de una conciencia superviviente.</field_aclaracion_fenomenologica>
     <field_alimentacion_desde_el_espiritu xml:lang="es">En fases tempranas, la captura espectral se alimenta de elementos del espiritu de origen al convertir ideas, frases, gestos, obras o valores en unidades representacionales reproducibles. A medida que aumenta el desacoplamiento, nuevas instancias pueden alimentarse principalmente de otras instancias espectrales en vez del espiritu.</field_alimentacion_desde_el_espiritu>
     <field_criterio_de_exclusion xml:lang="es">No constituye atrapamiento espectral la mera malinterpretacion, parodia, difamacion, idealizacion, perdida de control reputacional o existencia de representaciones no autorizadas. El salto cualitativo requiere suficiente independencia reproductiva y desacoplamiento.</field_criterio_de_exclusion>
@@ -3656,8 +3657,10 @@
     <relatedTo rdf:resource="http://www.exergia.org/ns/teoria_muerte_soberania_autobiografica"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/conciencia"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/atrapamiento_espectral"/>
+    <relatedTo rdf:resource="http://www.exergia.org/ns/futuro_representacional"/>
     <field_definicion xml:lang="es">Reduccion persistente de la apertura del futuro representacional cuando una representacion o familia de representaciones adquiere tal ventaja reproductiva que condiciona de forma desproporcionada como las conciencias futuras pueden reconstruir o utilizar una identidad historica.</field_definicion>
     <field_relacion_con_el_atrapamiento_espectral xml:lang="es">El atrapamiento espectral es una forma generativa extrema de colonizacion del futuro representacional, pero la colonizacion tambien puede producirse mediante instituciones, relatos hagiograficos, propaganda, canonizacion cultural u otros mecanismos no generativos.</field_relacion_con_el_atrapamiento_espectral>
+    <field_relacion_con_el_futuro_representacional xml:lang="es">La colonizacion reduce de forma persistente la apertura del futuro representacional al concentrar una parte desproporcionada de las reconstrucciones futuras alrededor de una representacion o familia de representaciones.</field_relacion_con_el_futuro_representacional>
     <hasDefinition xml:lang="es">Reduccion persistente de la apertura del futuro representacional cuando una representacion o familia de representaciones adquiere tal ventaja reproductiva que condiciona de forma desproporcionada como las conciencias futuras pueden reconstruir o utilizar una identidad historica.</hasDefinition>
     <hasName xml:lang="es">Colonizacion del futuro representacional</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
@@ -9466,6 +9469,7 @@
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/vida"/>
     <field_agencia xml:lang="es">Puede ser realizada por adversarios, admiradores, instituciones, comunidades, sistemas tecnicos o por la propia persona mediante auto-siembra espectral.</field_agencia>
+    <field_auto_siembra_espectral xml:lang="es">Una persona puede contribuir deliberadamente durante su vida a construir una representacion simplificada y altamente reproducible de si misma. La auto-siembra no garantiza que conserve control sobre las transformaciones posteriores de ese patron.</field_auto_siembra_espectral>
     <field_definicion xml:lang="es">Produccion deliberada o sistematica, durante la vida o despues de ella, de representaciones simples, reconocibles, reproducibles y afectivamente potentes de una persona que facilitan posteriores linajes de variacion.</field_definicion>
     <field_neutralidad xml:lang="es">La siembra no es necesariamente hostil ni implica por si sola atrapamiento; describe una condicion de reproducibilidad que puede servir a caricatura, veneracion, autopresentacion u otros fines.</field_neutralidad>
     <hasDefinition xml:lang="es">Produccion deliberada o sistematica, durante la vida o despues de ella, de representaciones simples, reconocibles, reproducibles y afectivamente potentes de una persona que facilitan posteriores linajes de variacion.</hasDefinition>
@@ -10685,10 +10689,8 @@
     <appearsIn rdf:resource="http://www.exergia.org/ns/ontologia"/>
     <belongsToDomain rdf:resource="http://www.exergia.org/ns/ontologia"/>
     <partOf rdf:resource="http://www.exergia.org/ns/atrapamiento_espectral"/>
-    <relatedTo rdf:resource="http://www.exergia.org/ns/vida"/>
     <field_atrapamiento_degradante xml:lang="es">El patron dominante comprime la identidad hacia caricatura, ridiculizacion, absurdizacion o degradacion reproducible.</field_atrapamiento_degradante>
     <field_atrapamiento_hagiografico xml:lang="es">El patron dominante comprime la identidad hacia santo, martir, heroe, fundador o figura idealizada cuya reproduccion desplaza la complejidad historica.</field_atrapamiento_hagiografico>
-    <field_auto_siembra_espectral xml:lang="es">Una persona puede contribuir deliberadamente durante su vida a construir una representacion simplificada y altamente reproducible de si misma. La auto-siembra no garantiza que conserve control sobre las transformaciones posteriores de ese patron.</field_auto_siembra_espectral>
     <hasName xml:lang="es">Modalidades</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
     <hasSourcePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.modalidades</hasSourcePath>
