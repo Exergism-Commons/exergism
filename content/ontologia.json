@@ -2383,7 +2383,7 @@
                                 "label": "Limite formal",
                                 "role": "attribute",
                                 "value_type": "text",
-                                "value": "Este marco no modifica ni extiende el analisis exergico formal. Sus escalares son conceptuales, no variables matematicas canonicas del modelo exergico.",
+                                "value": "Este marco no modifica ni extiende el sistema analitico formal del repositorio. Sus escalares son conceptuales y no constituyen variables matematicas canonicas de ese modelo.",
                                 "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.limite_formal"
                               },
                               {
@@ -2481,7 +2481,7 @@
                             "label": "Notacion local",
                             "role": "attribute",
                             "value_type": "text",
-                            "value": "Puede representarse convencionalmente como E dentro del espacio espiritu-espectro. Esta notacion es heuristica y no pertenece al analisis exergico formal.",
+                            "value": "Puede representarse convencionalmente como E dentro del espacio espiritu-espectro. Esta notacion es heuristica y no pertenece al sistema analitico formal del repositorio.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.densidad_espectral.notacion_local"
                           }
                         ],
@@ -2758,7 +2758,7 @@
                         "label": "Notacion local",
                         "role": "attribute",
                         "value_type": "text",
-                        "value": "Puede representarse convencionalmente como S dentro de este marco conceptual. Esta notacion no pertenece al analisis exergico formal ni introduce una nueva variable en el modelo matematico de Exergism.",
+                        "value": "Puede representarse convencionalmente como S dentro de este marco conceptual. Esta notacion no pertenece al sistema analitico formal del repositorio ni introduce una nueva variable en ese modelo matematico.",
                         "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual.notacion_local"
                       },
                       {
@@ -2780,7 +2780,7 @@
                         "label": "Estado teorico",
                         "role": "attribute",
                         "value_type": "text",
-                        "value": "Escalar conceptual cualitativo susceptible de operacionalizacion futura, sin escala cuantitativa canonica y sin integracion actual en el analisis exergico formal.",
+                        "value": "Escalar conceptual cualitativo susceptible de operacionalizacion futura, sin escala cuantitativa canonica y sin integracion actual en el sistema analitico formal del repositorio.",
                         "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual.estado_teorico"
                       }
                     ],
@@ -2808,7 +2808,7 @@
                         "label": "Notacion",
                         "role": "attribute",
                         "value_type": "text",
-                        "value": "De forma puramente local y heuristica puede escribirse S para persistencia espiritual y E para densidad espectral. S y E no son variables del analisis exergico formal, no modifican sus formulas y no deben confundirse con sus simbolos matematicos.",
+                        "value": "De forma puramente local y heuristica puede escribirse S para persistencia espiritual y E para densidad espectral. S y E no son variables del sistema analitico formal del repositorio, no modifican sus formulas y no deben confundirse con sus simbolos matematicos.",
                         "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.notacion"
                       },
                       {
