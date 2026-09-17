@@ -2373,10 +2373,16 @@
                               {
                                 "key": "tendencia_de_captura",
                                 "label": "Tendencia de captura",
-                                "role": "attribute",
+                                "role": "relation",
                                 "value_type": "text",
                                 "value": "La captura puede aumentar la distancia espectral sin destruir materialmente el espiritu: basta con volverlo progresivamente menos necesario para reproducir la identidad representada. El caso limite es un espectro cuya dinamica se explica sobre todo por otras instancias del propio espectro.",
-                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.tendencia_de_captura"
+                                "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.tendencia_de_captura",
+                                "target_hints": [
+                                  "distancia_espectral"
+                                ],
+                                "target_ids": [
+                                  "distancia_espectral"
+                                ]
                               },
                               {
                                 "key": "limite_formal",
@@ -2425,14 +2431,6 @@
                                     "value_type": "text",
                                     "value": "El patron dominante comprime la identidad hacia santo, martir, heroe, fundador o figura idealizada cuya reproduccion desplaza la complejidad historica.",
                                     "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.modalidades.atrapamiento_hagiografico"
-                                  },
-                                  {
-                                    "key": "auto_siembra_espectral",
-                                    "label": "Auto-siembra espectral",
-                                    "role": "attribute",
-                                    "value_type": "text",
-                                    "value": "Una persona puede contribuir deliberadamente durante su vida a construir una representacion simplificada y altamente reproducible de si misma. La auto-siembra no garantiza que conserve control sobre las transformaciones posteriores de ese patron.",
-                                    "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.espectro.atrapamiento_espectral.modalidades.auto_siembra_espectral"
                                   }
                                 ],
                                 "collections": [],
@@ -2623,6 +2621,14 @@
                             "value_type": "text",
                             "value": "La siembra no es necesariamente hostil ni implica por si sola atrapamiento; describe una condicion de reproducibilidad que puede servir a caricatura, veneracion, autopresentacion u otros fines.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.siembra_espectral.neutralidad"
+                          },
+                          {
+                            "key": "auto_siembra_espectral",
+                            "label": "Auto-siembra espectral",
+                            "role": "attribute",
+                            "value_type": "text",
+                            "value": "Una persona puede contribuir deliberadamente durante su vida a construir una representacion simplificada y altamente reproducible de si misma. La auto-siembra no garantiza que conserve control sobre las transformaciones posteriores de ese patron.",
+                            "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.siembra_espectral.auto_siembra_espectral"
                           }
                         ],
                         "collections": [],
@@ -3569,6 +3575,20 @@
                         ],
                         "target_ids": [
                           "atrapamiento_espectral"
+                        ]
+                      },
+                      {
+                        "key": "relacion_con_el_futuro_representacional",
+                        "label": "Relacion con el futuro representacional",
+                        "role": "relation",
+                        "value_type": "text",
+                        "value": "La colonizacion reduce de forma persistente la apertura del futuro representacional al concentrar una parte desproporcionada de las reconstrucciones futuras alrededor de una representacion o familia de representaciones.",
+                        "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.colonizacion_del_futuro_representacional.relacion_con_el_futuro_representacional",
+                        "target_hints": [
+                          "futuro_representacional"
+                        ],
+                        "target_ids": [
+                          "futuro_representacional"
                         ]
                       }
                     ],
