@@ -3540,7 +3540,7 @@
                         "label": "Apertura",
                         "role": "relation",
                         "value_type": "text",
-                        "value": "Su amplitud depende de la diversidad del corpus, de la pluralidad de custodios e interpretaciones y de la resistencia espectral de la trayectoria historica a ser comprimida en una representacion dominante.",
+                        "value": "La resistencia espectral de la trayectoria historica es una dimension relevante para la amplitud del futuro representacional, junto con la diversidad del corpus y la pluralidad de custodios e interpretaciones.",
                         "source_path": "ontologia.estructura_de_lo_real.limites_de_la_individualidad.teoria_muerte_soberania_autobiografica.futuro_representacional.apertura",
                         "target_hints": [
                           "resistencia_espectral"
