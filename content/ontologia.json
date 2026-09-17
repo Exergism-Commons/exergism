@@ -2525,7 +2525,7 @@
                             "label": "Relacion con el espiritu",
                             "role": "relation",
                             "value_type": "text",
-                            "value": "La distancia espectral aumenta cuando comprender, utilizar o reproducir una instancia requiere cada vez menos acceso al espiritu de origen. Puede crecer aunque el espiritu siga conservado documentalmente.",
+                            "value": "La distancia espectral aumenta en la medida en que una instancia puede comprenderse, utilizarse o reproducirse con menor acceso al espiritu de origen. Puede crecer aunque el espiritu y su persistencia historico-causal sigan conservados documentalmente.",
                             "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espiritu_generativo.distancia_espectral.relacion_con_el_espiritu",
                             "target_hints": [
                               "persistencia_espiritual",
@@ -2840,12 +2840,12 @@
                         "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.tesis_de_independencia"
                       },
                       {
-                        "key": "frontera_conceptual",
-                        "label": "Frontera conceptual",
+                        "key": "tesis_frontera_conceptual",
+                        "label": "Tesis de frontera conceptual",
                         "role": "thesis",
                         "value_type": "text",
                         "value": "El espiritu requiere continuidad de significado; el espectro requiere continuidad de reconocimiento. Una representacion puede seguir siendo espectralmente reconocible aun cuando su reproduccion ya no conserve ni consulte de forma relevante el contenido espiritual de origen.",
-                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.frontera_conceptual"
+                        "source_path": "ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.espacio_espiritu_espectro.tesis_frontera_conceptual"
                       }
                     ],
                     "collections": [],
