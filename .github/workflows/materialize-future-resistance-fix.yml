@@ -50,9 +50,9 @@ jobs:
 
           apertura['role'] = 'relation'
           apertura['value'] = (
-              'Su amplitud depende de la diversidad del corpus, de la pluralidad de custodios '
-              'e interpretaciones y de la resistencia espectral de la trayectoria historica a '
-              'ser comprimida en una representacion dominante.'
+              'La resistencia espectral de la trayectoria historica es una dimension relevante '
+              'para la amplitud del futuro representacional, junto con la diversidad del corpus '
+              'y la pluralidad de custodios e interpretaciones.'
           )
           apertura['target_hints'] = ['resistencia_espectral']
           apertura['target_ids'] = ['resistencia_espectral']
@@ -67,5 +67,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add content/ontologia.json ontology.owl
-          git commit -m "Project representational future onto spectral resistance"
+          git commit -m "Project future openness onto spectral resistance"
           git push origin HEAD:doctrine/generative-spirit-spectre
