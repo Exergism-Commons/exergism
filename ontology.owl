@@ -3098,13 +3098,12 @@
     <relatedTo rdf:resource="http://www.exergia.org/ns/colonizacion_del_futuro_representacional"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/desacoplamiento_espectral"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
-    <relatedTo rdf:resource="http://www.exergia.org/ns/exergia"/>
     <field_aclaracion_fenomenologica xml:lang="es">El termino atrapamiento describe la captura del patron historico-informacional, no el encarcelamiento fenomenologico de una conciencia superviviente.</field_aclaracion_fenomenologica>
     <field_alimentacion_desde_el_espiritu xml:lang="es">En fases tempranas, la captura espectral se alimenta de elementos del espiritu de origen al convertir ideas, frases, gestos, obras o valores en unidades representacionales reproducibles. A medida que aumenta el desacoplamiento, nuevas instancias pueden alimentarse principalmente de otras instancias espectrales en vez del espiritu.</field_alimentacion_desde_el_espiritu>
     <field_criterio_de_exclusion xml:lang="es">No constituye atrapamiento espectral la mera malinterpretacion, parodia, difamacion, idealizacion, perdida de control reputacional o existencia de representaciones no autorizadas. El salto cualitativo requiere suficiente independencia reproductiva y desacoplamiento.</field_criterio_de_exclusion>
     <field_definicion xml:lang="es">Condicion limite en la que un espectro alcanza suficiente distribucion, recursividad y desacoplamiento para que no exista soberania efectiva sobre sus futuras instanciaciones y para que su reproduccion ya no dependa materialmente de volver a la persona, a su corpus original o a una autoridad interpretativa central.</field_definicion>
     <field_irreversibilidad xml:lang="es">No afirma eternidad metafisica ni irreversibilidad absoluta: describe una perdida efectiva de soberania cuya reversibilidad disminuye a medida que el patron se distribuye, se desacopla del origen y alimenta nuevas cadenas generativas.</field_irreversibilidad>
-    <field_limite_formal xml:lang="es">Este marco no modifica ni extiende el analisis exergico formal. Sus escalares son conceptuales, no variables matematicas canonicas del modelo exergico.</field_limite_formal>
+    <field_limite_formal xml:lang="es">Este marco no modifica ni extiende el sistema analitico formal del repositorio. Sus escalares son conceptuales y no constituyen variables matematicas canonicas de ese modelo.</field_limite_formal>
     <field_mecanismo xml:lang="es">La copia distribuida, la reutilizacion, la variacion memetica, la generacion automatica y la incorporacion de nuevas salidas a corpus o memorias posteriores pueden convertir una representacion en un sistema cultural reproductivo cuya dinamica excede a cualquier custodio singular.</field_mecanismo>
     <field_objeto_del_atrapamiento xml:lang="es">Lo capturado no es una conciencia superviviente, sino la relacion futura entre el espectro y su origen: el espacio de posibilidades mediante el cual otras conciencias podran reconstruir, interpretar y utilizar esa identidad historica.</field_objeto_del_atrapamiento>
     <field_relacion_con_el_desacoplamiento xml:lang="es">Presupone un grado alto de desacoplamiento espectral: las nuevas instanciaciones deben poder producir otras nuevas sin retorno materialmente necesario al corpus de origen.</field_relacion_con_el_desacoplamiento>
@@ -4210,11 +4209,10 @@
     <partOf rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu_generativo"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
-    <relatedTo rdf:resource="http://www.exergia.org/ns/exergia"/>
     <field_definicion xml:lang="es">Riqueza, diversidad y disponibilidad de recursos representacionales capaces de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.</field_definicion>
     <field_distincion_del_espiritu xml:lang="es">Una alta densidad espectral no implica gran persistencia espiritual, y una gran persistencia espiritual puede coexistir con baja densidad espectral. Las ideas de una persona pueden perdurar cuando casi no puede reconstruirse su presencia, o su presencia puede proliferar mientras sus ideas se vacian.</field_distincion_del_espiritu>
     <field_estado_de_medicion xml:lang="es">Dimension teorica susceptible de operacionalizacion futura; el corpus canonico no fija todavia una escala cuantitativa.</field_estado_de_medicion>
-    <field_notacion_local xml:lang="es">Puede representarse convencionalmente como E dentro del espacio espiritu-espectro. Esta notacion es heuristica y no pertenece al analisis exergico formal.</field_notacion_local>
+    <field_notacion_local xml:lang="es">Puede representarse convencionalmente como E dentro del espacio espiritu-espectro. Esta notacion es heuristica y no pertenece al sistema analitico formal del repositorio.</field_notacion_local>
     <hasDefinition xml:lang="es">Riqueza, diversidad y disponibilidad de recursos representacionales capaces de sostener nuevas representaciones reconocibles de una identidad: imagen, voz, gestos, lenguaje, conductas registradas, relatos, imitaciones y otros patrones reconstruibles.</hasDefinition>
     <hasName xml:lang="es">Densidad espectral</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
@@ -5225,13 +5223,12 @@
     <hasThesis rdf:resource="http://www.exergia.org/ns/ontologia_estructura_de_lo_real_niveles_emergentes_espiritu_espacio_espiritu_espectro_tesis_frontera_conceptual"/>
     <partOf rdf:resource="http://www.exergia.org/ns/espiritu"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
-    <relatedTo rdf:resource="http://www.exergia.org/ns/exergia"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/persistencia_espiritual"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/densidad_espectral"/>
     <field_definicion xml:lang="es">Modelo conceptual bidimensional para describir identidades historicas mediante dos magnitudes parcialmente independientes: persistencia espiritual y densidad espectral.</field_definicion>
     <field_eje_espectral xml:lang="es">La densidad espectral describe riqueza y disponibilidad de recursos representacionales capaces de sostener nuevas instancias reconocibles.</field_eje_espectral>
     <field_eje_espiritual xml:lang="es">La persistencia espiritual describe continuidad de significado, contenido y eficacia historico-causal.</field_eje_espiritual>
-    <field_notacion xml:lang="es">De forma puramente local y heuristica puede escribirse S para persistencia espiritual y E para densidad espectral. S y E no son variables del analisis exergico formal, no modifican sus formulas y no deben confundirse con sus simbolos matematicos.</field_notacion>
+    <field_notacion xml:lang="es">De forma puramente local y heuristica puede escribirse S para persistencia espiritual y E para densidad espectral. S y E no son variables del sistema analitico formal del repositorio, no modifican sus formulas y no deben confundirse con sus simbolos matematicos.</field_notacion>
     <hasDefinition xml:lang="es">Modelo conceptual bidimensional para describir identidades historicas mediante dos magnitudes parcialmente independientes: persistencia espiritual y densidad espectral.</hasDefinition>
     <hasName xml:lang="es">Espacio espiritu-espectro</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
@@ -7990,17 +7987,16 @@
     <partOf rdf:resource="http://www.exergia.org/ns/espiritu"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/espiritu"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/conciencia"/>
-    <relatedTo rdf:resource="http://www.exergia.org/ns/exergia"/>
     <relatedTo rdf:resource="http://www.exergia.org/ns/densidad_espectral"/>
     <field_definicion xml:lang="es">Magnitud conceptual que expresa en que grado ideas, metodos, valores, obras, contradicciones, orientaciones y otras estructuras historico-causales asociadas a una conciencia siguen siendo accesibles y causalmente activas en conciencias y sistemas posteriores.</field_definicion>
-    <field_estado_teorico xml:lang="es">Escalar conceptual cualitativo susceptible de operacionalizacion futura, sin escala cuantitativa canonica y sin integracion actual en el analisis exergico formal.</field_estado_teorico>
+    <field_estado_teorico xml:lang="es">Escalar conceptual cualitativo susceptible de operacionalizacion futura, sin escala cuantitativa canonica y sin integracion actual en el sistema analitico formal del repositorio.</field_estado_teorico>
     <field_independencia_espectral xml:lang="es">La persistencia espiritual puede variar independientemente de la densidad espectral: puede existir gran continuidad historico-causal con poca reconstructibilidad de presencia, o gran reconstructibilidad con escasa continuidad del contenido espiritual.</field_independencia_espectral>
-    <field_notacion_local xml:lang="es">Puede representarse convencionalmente como S dentro de este marco conceptual. Esta notacion no pertenece al analisis exergico formal ni introduce una nueva variable en el modelo matematico de Exergism.</field_notacion_local>
+    <field_notacion_local xml:lang="es">Puede representarse convencionalmente como S dentro de este marco conceptual. Esta notacion no pertenece al sistema analitico formal del repositorio ni introduce una nueva variable en ese modelo matematico.</field_notacion_local>
     <hasDefinition xml:lang="es">Magnitud conceptual que expresa en que grado ideas, metodos, valores, obras, contradicciones, orientaciones y otras estructuras historico-causales asociadas a una conciencia siguen siendo accesibles y causalmente activas en conciencias y sistemas posteriores.</hasDefinition>
     <hasName xml:lang="es">Persistencia espiritual</hasName>
     <hasSourceFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.json</hasSourceFile>
     <hasSourcePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontologia.estructura_de_lo_real.niveles_emergentes.espiritu.persistencia_espiritual</hasSourcePath>
-    <hasTheoreticalStatus xml:lang="es">Escalar conceptual cualitativo susceptible de operacionalizacion futura, sin escala cuantitativa canonica y sin integracion actual en el analisis exergico formal.</hasTheoreticalStatus>
+    <hasTheoreticalStatus xml:lang="es">Escalar conceptual cualitativo susceptible de operacionalizacion futura, sin escala cuantitativa canonica y sin integracion actual en el sistema analitico formal del repositorio.</hasTheoreticalStatus>
     <jsonKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">persistencia_espiritual</jsonKey>
   </owl:NamedIndividual>
 
