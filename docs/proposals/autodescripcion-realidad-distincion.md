@@ -1163,6 +1163,73 @@ para alguna cadena \(\mathcal C\).
 
 Conceptualmente, \(\Omega_{\infty}\) concentra exactamente aquellas restricciones capaces de permitir toda aproximación finita/acotada y bloquear, sin embargo, la realización conjunta del límite dirigido.
 
+### [D5d.1] Obstrucciones de contenido y obstrucciones de alcance
+
+No todas las aparentes \(\Omega_{\infty}\) tienen el mismo estatuto.
+
+Se distingue provisionalmente:
+
+$
+\boxed{
+\Omega_{\infty}
+=
+\Omega_{\infty}^{\mathrm{content}}
+\cup
+\Omega_{\infty}^{\mathrm{scope}}.
+}
+$
+
+#### Obstrucciones de contenido
+
+Una:
+
+$
+\lambda_{\infty}^{\mathrm{content}}
+\in
+\Omega_{\infty}^{\mathrm{content}}
+$
+
+prohíbe una propiedad estructural global del contenido real: por ejemplo, una regresión infinita, una inconsistencia causal global o alguna propiedad topológica incompatible.
+
+Pero si una cadena:
+
+$
+\mathcal C^{A}\subseteq\mathfrak D_i^{A}
+$
+
+es realmente co-actual y todas las relaciones que generan la propiedad global ya son reales, entonces dicha propiedad no aparece por el acto de formar un scope \(U\): ya pertenece al contenido actual de la cadena.
+
+Por ello una obstrucción de contenido debe responder a:
+
+$
+\boxed{
+\text{¿cómo pueden ser co-reales todos los hechos que constituyen }P_{\infty}
+\text{ sin que }P_{\infty}\text{ sea ya una propiedad real?}
+}
+$
+
+#### Obstrucciones de alcance
+
+Una:
+
+$
+\lambda_{\infty}^{\mathrm{scope}}
+\in
+\Omega_{\infty}^{\mathrm{scope}}
+$
+
+no prohíbe el contenido co-real, sino la existencia de un único alcance o dominio que lo abarque.
+
+Ejemplo abstracto:
+
+> todo dominio admisible debe ser finito.
+
+Aunque cada estadio finito sea real, se prohíbe cualquier dominio que los abarque todos.
+
+Este tipo de restricción requiere una cautela adicional porque \(R\) no se define como conjunto, recipiente físico o megaobjeto. Si \(\lambda_{\infty}^{\mathrm{scope}}\) equivale meramente a «ningún alcance exhaustivo es admisible», entonces corre el riesgo de reintroducir No-\(R\) como premisa.
+
+Por [H12], una obstrucción de scope genuina debe identificar una propiedad ontológica independiente del propio acto semántico de totalización.
+
 ### [I6a.2] Ausencia de obstrucciones no compactas implica [C1*] bajo representación adecuada
 
 Bajo las condiciones formales de [H8] o [H10], si:
@@ -1447,44 +1514,59 @@ X\preceq P_{\mathcal C}.
 }
 $$
 
-### [O5d] Potencialismo ontológico como negación fuerte de [C1*]
+### [O5d] Potencialismo ontológico radical como rival superviviente
 
-El rival natural de [H9] es un **potencialismo ontológico**:
+Tras distinguir \(\mathfrak D_i^{A}\) de \(\mathfrak D_i^{P}\) y separar obstrucciones de contenido y de scope, el rival más fuerte de [C1*] deja de ser una restricción global arbitraria y pasa a ser un **potencialismo ontológico radical**.
 
-> para cada estadio existe un estadio posterior posible o real, pero la totalidad de la secuencia no existe como un dominio o proceso completado.
+El potencialista no afirma que existe una cadena actual completa que carece misteriosamente de cota. Afirma algo más profundo:
+
+> para todo estadio actualmente realizado puede haber un estadio real posterior, pero no existe nunca una pluralidad o proceso infinito actualmente completado que contenga todos los estadios.
 
 Esquemáticamente:
 
-$$
-\forall n\,\exists X_{n+1}>X_n
-$$
+$
+\forall X\in\mathfrak D_i^{A}\,
+\exists Y\in\mathfrak D_i^{A}:
+X\prec Y,
+$
 
-sin:
+sin comprometerse con:
 
-$$
-\exists U\,\forall n\,X_n\preceq U.
-$$
+$
+\exists\mathcal C^{A}
+\text{ infinita actualmente determinada}
+$
+
+ni con:
+
+$
+\exists U\,
+\forall X\in\mathcal C^{A}:
+X\preceq U.
+$
 
 Así, una forma fuerte de No-\(R\) puede caracterizarse provisionalmente mediante:
 
-$$
+$
 \boxed{
 \text{extensibilidad ontológica indefinida}
 +
-\text{negación de completitud dirigida}.
+\text{negación de infinitud actual dirigida}.
 }
-$$
+$
 
-La disputa sobre [C1*] queda entonces concentrada en una pregunta:
+Esta posición ataca el argumento antes de [C1*]: niega que la cadena infinita relevante exista ontológicamente como una totalidad actual sobre la que pueda aplicarse un principio de cota superior.
 
-$$
+La disputa central pasa a ser:
+
+$
 \boxed{
-\text{¿puede ser real una extensión indefinidamente continuable
-sin que sea real ninguna totalidad o proceso que abarque sus estadios?}
+\text{¿puede la realidad estar indefinidamente abierta a extensión
+sin que exista ninguna pluralidad, estructura o proceso infinito actualmente determinado?}
 }
-$$
+$
 
-La propuesta no presupone todavía la respuesta.
+Esta cuestión no se resuelve definiendo \(R\), ni mediante Zorn por sí solo, porque el potencialista puede aceptar la construcción matemática en el metalenguaje y negar su compromiso ontológico.
 
 ### [I6b] Existencia condicional de un punto fijo maximal
 
@@ -1510,21 +1592,71 @@ El uso de un principio tipo Zorn es aquí **explícito y condicional**. La futur
 
 Maximalidad no significa todavía exhaustividad.
 
+### [D5e] Dominios actuales frente a modelos meramente posibles
+
+El teorema de existencia de \(R_i\) no debe cuantificar indistintamente sobre estructuras posibles y fragmentos realmente co-existentes.
+
+Se distingue:
+
+$$
+\mathfrak D_i^{A}
+:=
+\text{dominios actuales, co-reales y coherentemente inclusivos del índice }i,
+$$
+
+de un posible espacio modal:
+
+$$
+\mathfrak D_i^{P}
+:=
+\text{dominios posibles o modelos admisibles compatibles con las restricciones del índice}.
+$$
+
+El programa fuerte de prueba de \(R_i\) opera primariamente sobre:
+
+$$
+\boxed{
+\mathfrak D_i^{A}.
+}
+$$
+
+Una cadena relevante para [C1*]:
+
+$$
+\mathcal C^{A}
+=
+\{X_\alpha\}
+\subseteq
+\mathfrak D_i^{A}
+$$
+
+no representa alternativas contrafácticas incompatibles, sino fragmentos del mismo régimen actual que son co-reales y preservan la inclusión ontológica:
+
+$$
+X_\alpha\preceq X_\beta
+\quad
+(\alpha\le\beta).
+$$
+
+Esta distinción bloquea un falso contraejemplo frecuente: una familia de modelos posibles puede ser finitamente compatible sin que todos sus miembros sean conjuntamente actuales. Eso no basta para refutar [C1*] sobre realidad actual.
+
+Las rutas lógicas de [H10] pueden seguir utilizando modelos como instrumento formal, pero deben demostrar que el modelo común obtenido representa correctamente una cota de la cadena **actual** y no una mera posibilidad alternativa.
+
 ### [D5c] Índice ontológico como régimen dirigido de co-realización
 
 La pertenencia a un mismo índice ontológico no se trata como una etiqueta primitiva añadida desde fuera.
 
-Definimos provisionalmente un **régimen ontológico dirigido** \(\mathfrak D_i\) como una familia de dominios admisibles tal que, para cualesquiera:
+Definimos provisionalmente un **régimen ontológico dirigido actual** \(\mathfrak D_i^{A}\) como una familia de dominios actuales co-reales tal que, para cualesquiera:
 
 $$
-X,Y\in\mathfrak D_i,
+X,Y\in\mathfrak D_i^{A},
 $$
 
 existe algún dominio admisible del mismo régimen que los contiene conjuntamente:
 
 $$
 \boxed{
-\exists Z\in\mathfrak D_i:
+\exists Z\in\mathfrak D_i^{A}:
 X\preceq Z
 \land
 Y\preceq Z.
@@ -1535,7 +1667,7 @@ En lenguaje de teoría de órdenes:
 
 $$
 \boxed{
-\mathfrak D_i
+\mathfrak D_i^{A}
 \text{ es dirigido hacia arriba respecto de pares finitos.}
 }
 $$
@@ -4267,6 +4399,8 @@ La propuesta puede auditarse paso a paso:
 | 13b.3a | [D/I] | \(\Omega_{\infty}\) reúne restricciones no compactas: si \(\Omega_{\infty}=\varnothing\) bajo una representación adecuada, no puede existir un fallo puramente infinitario de [C1*]. |
 | 13b.4 | [H/I] | Vía categórica: si la categoría de dominios admite y preserva el colímite dirigido de la cadena, ese colímite es la cota superior requerida por [C1*]. |
 | 13b.5 | [H/O] | Diferencia ontológica fundada: toda \(\lambda_{\infty}\in\Omega_{\infty}\) debe señalar una propiedad global real y un mecanismo de inadmisibilidad; «el límite no existe» no basta. |
+| 13b.5a | [D/O] | Se distingue \(\mathfrak D_i^{A}\) (dominios actuales co-reales) de \(\mathfrak D_i^{P}\) (modelos posibles) y \(\Omega_{\infty}^{content}\) de \(\Omega_{\infty}^{scope}\). |
+| 13b.5b | [O] | Rival superviviente: potencialismo ontológico radical, que permite extensión indefinida pero niega que exista una cadena infinita actualmente completada sobre la que aplicar [C1*]. |
 | 13b.6 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
@@ -4610,6 +4744,10 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 62. comparar las rutas de localidad, compacidad lógica y colímites dirigidos y demostrar formalmente qué clase de \(\Omega_{\infty}\) bloquea cada una;
 63. formalizar el Principio de Diferencia Ontológica Fundada [H12] y exigir a toda \(\lambda_{\infty}\) candidata una propiedad global \(P_{\infty}\) y un mecanismo independiente de inadmisibilidad;
 64. construir el contraejemplo ontológicamente más fuerte posible con \(\Omega_{\infty}\neq\varnothing\) y evaluar si presupone No-\(R\) o posee motivación independiente.
+65. separar formalmente \(\mathfrak D_i^{A}\) de \(\mathfrak D_i^{P}\) y garantizar que el teorema de \(R_i\) cuantifique sobre dominios actuales co-reales, no sobre alternativas modales incompatibles;
+66. clasificar \(\Omega_{\infty}\) en obstrucciones de contenido y de scope y determinar cuáles sobreviven cuando la cadena es co-actual;
+67. analizar si una obstrucción de scope puede tener fundamento ontológico independiente sin equivaler simplemente a negar la totalizabilidad;
+68. formalizar el potencialismo ontológico radical como rival de la existencia de cadenas infinitas actualmente determinadas y comparar su fuerza con No-\(R\).
 
 ---
 
@@ -4641,6 +4779,9 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se define \(\Omega_{\infty}\) como el conjunto de obstrucciones ontológicas no compactas capaces de preservar toda satisfacibilidad finita y bloquear únicamente el límite dirigido; bajo una representación adecuada, \(\Omega_{\infty}=\varnothing\Rightarrow[C1*]\);
 - se añade una tercera ruta categórica: si la categoría de dominios \(\mathbf D_i\) admite un colímite dirigido preservado para la cadena, ese colímite suministra directamente la cota superior de [C1*];
 - se introduce el **Principio de Diferencia Ontológica Fundada**: una \(\lambda_{\infty}\) genuina debe identificar una propiedad global real y un mecanismo independiente que fundamente la inadmisibilidad del límite;
+- se distingue \(\mathfrak D_i^{A}\), formado por dominios actuales co-reales, de \(\mathfrak D_i^{P}\), formado por modelos posibles; el teorema fuerte de \(R_i\) debe operar sobre el primero;
+- \(\Omega_{\infty}\) se separa en obstrucciones de contenido y de scope; las primeras deben explicar cómo una propiedad global no sería ya real si todos sus constituyentes son co-actuales, y las segundas no pueden limitarse a prohibir por definición un alcance exhaustivo;
+- se identifica el **potencialismo ontológico radical** como rival superviviente: extensibilidad indefinida sin compromiso con ninguna cadena o pluralidad infinita actualmente completada;
 - No-\(R\) fuerte debe ahora exhibir una restricción \(\lambda_{\infty}\in\Omega_{\infty}\) o rechazar algún otro puente formal, en vez de limitarse a negar la totalidad;
 - se mantiene además una ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
 - se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
