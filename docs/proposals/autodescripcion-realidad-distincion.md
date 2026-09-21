@@ -810,15 +810,17 @@ El uso de un principio tipo Zorn es aquí **explícito y condicional**. La futur
 
 Maximalidad no significa todavía exhaustividad.
 
-### [C2] Amalgamación ontológica dentro de un índice
+### [D5c] Índice ontológico como régimen dirigido de co-realización
 
-Para cualesquiera dos dominios admisibles pertenecientes al mismo índice ontológico:
+La pertenencia a un mismo índice ontológico no se trata como una etiqueta primitiva añadida desde fuera.
+
+Definimos provisionalmente un **régimen ontológico dirigido** \(\mathfrak D_i\) como una familia de dominios admisibles tal que, para cualesquiera:
 
 $$
 X,Y\in\mathfrak D_i,
 $$
 
-se adopta provisionalmente:
+existe algún dominio admisible del mismo régimen que los contiene conjuntamente:
 
 $$
 \boxed{
@@ -829,11 +831,97 @@ Y\preceq Z.
 }
 $$
 
-[C2] afirma que los dominios pertenecientes al **mismo régimen ontológico** pueden ser incluidos conjuntamente en algún dominio admisible mayor.
+En lenguaje de teoría de órdenes:
 
-No afirma todavía que exista un dominio máximo.
+$$
+\boxed{
+\mathfrak D_i
+\text{ es dirigido hacia arriba respecto de pares finitos.}
+}
+$$
 
-En lenguaje de teoría de órdenes, \(\mathfrak D_i\) sería dirigido hacia arriba respecto de pares finitos.
+Conceptualmente, esto expresa **co-realizabilidad ontológica**: si \(X\) e \(Y\) pertenecen al mismo régimen de realidad, deben poder formar parte conjuntamente de algún dominio ontológico admisible, aunque ese dominio no sea todavía máximo ni exhaustivo.
+
+Definimos entonces:
+
+$$
+\boxed{
+\operatorname{SameIndex}(X,Y)
+\Rightarrow
+\operatorname{JointlyRealizable}(X,Y)
+}
+$$
+
+y:
+
+$$
+\boxed{
+\operatorname{JointlyRealizable}(X,Y)
+\Rightarrow
+\exists Z[
+X\preceq Z
+\land
+Y\preceq Z
+].
+}
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{SameIndex}(X,Y)
+\Rightarrow
+\exists Z\in\mathfrak D_i[
+X\preceq Z
+\land
+Y\preceq Z
+].
+}
+$$
+
+La antigua [C2] deja así de ser una hipótesis ontológica independiente y pasa a ser una **condición constitutiva de qué significa pertenecer al mismo índice ontológico**.
+
+Si dos dominios no admiten absolutamente ningún dominio común:
+
+$$
+\boxed{
+\nexists Z[
+X\preceq Z
+\land
+Y\preceq Z
+],
+}
+$$
+
+entonces, dentro de esta taxonomía, no pertenecen al mismo régimen ontológico.
+
+### [C2] Amalgamación derivada dentro de un índice
+
+A partir de [D5c]:
+
+$$
+\boxed{
+X,Y\in\mathfrak D_i
+\Rightarrow
+\exists Z\in\mathfrak D_i:
+X\preceq Z
+\land
+Y\preceq Z.
+}
+$$
+
+[C2] queda conservada como nombre operativo de la propiedad utilizada por el teorema, pero su estatus cambia:
+
+$$
+\boxed{
+[C2]\text{ es derivada/constitutiva respecto de [D5c], no una premisa empírica adicional.}
+}
+$$
+
+Esto no demuestra que exista un \(R_i\), un dominio máximo ni una totalidad exhaustiva. Solo fija la estructura mínima requerida para que varios dominios cuenten como partes del **mismo** índice ontológico.
+
+Queda abierta una cuestión técnica posterior: si los regímenes dirigidos maximales forman una descomposición única y no solapada de \(\mathfrak D\), o si pueden existir distintas extensiones dirigidas máximas compatibles con un mismo dominio parcial. Esa cuestión afecta a la individuación de índices, no a la inferencia local [C2] dentro de un índice ya fijado.
 
 ### [I6c] Maximalidad + cobertura + amalgamación implican exhaustividad indexada
 
@@ -955,7 +1043,7 @@ Bajo:
 4. [F3] idempotencia;
 5. [C1] cota superior para toda cadena de puntos fijos;
 6. un principio de maximalidad aplicable;
-7. [C2] amalgamación ontológica dentro del índice;
+7. [D5c]/[C2] pertenencia al mismo índice entendida como régimen dirigido de co-realización;
 
 se deriva:
 
@@ -973,7 +1061,7 @@ Es decir:
 
 $$
 \boxed{
-C0+F1+F2+F3+C1+C2+\operatorname{Max}
+C0+F1+F2+F3+C1+[D5c]+\operatorname{Max}
 \Rightarrow
 \exists R_i[
 R_i=F(R_i)
@@ -987,7 +1075,7 @@ La existencia de \(R_i\) ya no aparece como premisa de la demostración.
 
 ### [I6e] Generalidad global y One-\(R\)
 
-Si [C0], [C1] y [C2] no se limitan a un índice sino que valen sobre un único dominio ontológico general:
+Si [C0], [C1] y la direccionalidad constitutiva de [D5c] no se limitan a un índice sino que valen sobre un único régimen ontológico general:
 
 $$
 \mathfrak D_G,
@@ -1022,9 +1110,9 @@ La demostración también localiza con precisión dónde puede aparecer Many-\(R
 Puede ocurrir que:
 
 $$
-\forall i,quad
+\forall i,\quad
 \mathfrak D_i
-\text{ satisfaga [C0], [C1] y [C2]},
+\text{ satisfaga [C0] y [C1], y sea dirigido por [D5c]},
 $$
 
 pero no exista amalgamación entre dominios de índices distintos:
@@ -1061,7 +1149,7 @@ $$
 }
 $$
 
-puede reinterpretarse estructuralmente como la cuestión de si [C2] posee alcance global o solo indexado.
+puede reinterpretarse estructuralmente como la cuestión de si existe un único régimen dirigido global o varios regímenes ontológicos no amalgamables entre sí.
 
 Si posteriormente aparece conectividad real suficiente para construir un dominio común:
 
@@ -1073,31 +1161,42 @@ la separación absoluta falla y reaparece el mecanismo de Cluster-\(R\).
 
 ### [O5a] Obligaciones de prueba restantes
 
-El programa deja de tener una obligación difusa de «demostrar exhaustividad» y queda concentrado principalmente en:
+El programa deja de tener dos obligaciones simétricas.
+
+[C2] ya no aparece como una ley adicional que deba justificarse después de fijar el índice: queda incorporada por [D5c] a la propia noción de **mismo régimen ontológico**.
+
+La obligación de prueba principal pasa a ser:
 
 $$
 \boxed{
-[C1]\quad\text{y}\quad[C2].
+[C1].
 }
 $$
 
-En particular:
+Debe justificarse por qué una cadena compatible de cierres ontológicos:
 
-- **[C1]** debe justificar por qué una cadena compatible de cierres ontológicos admite una cota superior ontológicamente admisible;
-- **[C2]** debe justificar por qué dos dominios pertenecientes al mismo régimen ontológico pueden amalgamarse en un dominio común.
+$$
+X_0\preceq X_1\preceq X_2\preceq\cdots
+$$
 
-La recurrencia emergente multiescalar [O-E] puede aportar motivación para [C1], pero no constituye todavía una prueba formal.
+admite una cota superior ontológicamente admisible sin presuponer ya una totalidad final.
 
-La conectividad y relacionalidad reales parecen candidatas naturales para derivar o restringir [C2]. Esta cuestión queda abierta para análisis específico.
+Subsisten además dos cuestiones auxiliares:
 
-La dificultad central de [O5] queda reformulada como:
+1. justificar que la definición [D5c] de índice como régimen dirigido captura correctamente la noción de «misma realidad» sin introducir una totalidad máxima;
+2. determinar si los regímenes dirigidos maximales individualizan índices de forma única o pueden solaparse.
+
+Pero ninguna de ellas exige ya postular [C2] como hecho independiente.
+
+La dificultad central de [O5] queda, por tanto, reformulada como:
 
 $$
 \boxed{
-\text{derivar [C1] y [C2] desde propiedades ontológicas más primitivas
+\text{derivar [C1] desde propiedades ontológicas más primitivas
 sin presuponer ya }R.
 }
 $$
+
 
 
 ---
@@ -3442,9 +3541,9 @@ La propuesta puede auditarse paso a paso:
 | 13a | [O] | Programa de prueba fuerte: investigar si una definición independiente de \(\mathcal E\) y \(F\) permite derivar la existencia de una clausura exhaustiva \(R\) sin presuponerla. |
 | 13b | [I] | [F1-F3] implican que todo \(F(X)\) es punto fijo; por tanto existen cierres emergentes siempre que exista algún dominio admisible. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
-| 13d | [C/I] | Cobertura [C0] + amalgamación [C2] convierten maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
-| 13e | [I] | Teorema provisional de Clausura Ontológica Maximal: \(C0+F1+F2+F3+C1+C2+Max\Rightarrow\exists R_i[R_i=F(R_i)\land Exhaustive_i(R_i)]\). |
-| 13f | [I/O] | One-\(R\) vs Many-\(R\) puede localizarse en el alcance de [C2]: amalgamación global produce candidato global; amalgamación solo indexada produce \(R_i\) separados. |
+| 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
+| 13e | [I] | Teorema provisional de Clausura Ontológica Maximal: \(C0+F1+F2+F3+C1+[D5c]+Max\Rightarrow\exists R_i[R_i=F(R_i)\land Exhaustive_i(R_i)]\). |
+| 13f | [I/O] | One-\(R\) vs Many-\(R\) puede localizarse en la estructura de índices: un único régimen dirigido global produce candidato global; varios regímenes no amalgamables producen \(R_i\) separados. |
 | 14 | [H] | Toda emergencia posee condiciones constitutivas descomponibles mediante \(\mathcal D\), sin que \(\mathcal D=\mathcal E^{-1}\). |
 | 15 | [D/H] | \(\Delta\) se trata como diferencia estructural derivada, no como primitiva ontológica. |
 | 16 | [I] | Un dominio propio puede satisfacer \(S=F(S)\); por tanto, ser punto fijo de \(F\) no basta para ser \(R\). |
@@ -3767,7 +3866,7 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 46. formalizar \((\mathfrak D_i,\preceq_i)\) y [C0] sin asumir una totalidad previa;
 47. demostrar o rechazar [F2] monotonía e [F3] idempotencia para el cierre emergente propuesto;
 48. determinar la formulación exacta de [C1] y qué principio de maximalidad puede aplicarse sin problemas de tamaño o circularidad;
-49. atacar [C2] amalgamación ontológica y determinar si puede derivarse de relacionalidad, conectividad, co-realidad o pertenencia a un mismo índice;
+49. formalizar [D5c]: índice ontológico como régimen dirigido de co-realización, estudiar si sus extensiones maximales son únicas/no solapadas y mantener [C2] como propiedad derivada;
 50. comprobar si el Teorema provisional de Clausura Ontológica Maximal sobrevive con clases propias, plural quantification o formalismos no conjuntistas.
 
 ---
@@ -3791,8 +3890,9 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - \(F\) se define directamente como el cierre recursivo del espacio de emergencias accesibles de un dominio;
 - de la clausura emergente de la totalidad se deriva condicionalmente:
   \(R=F(R)\);
-- se preserva como objetivo central un **programa de prueba fuerte** y se formula el **Teorema provisional de Clausura Ontológica Maximal**: desde cobertura [C0], un operador de cierre [F1-F3], cotas de cadenas [C1], un principio de maximalidad y amalgamación [C2], se deriva la existencia de un punto fijo exhaustivo \(R_i=F(R_i)\) sin introducir \(R_i\) como premisa;
-- se localiza la diferencia One-\(R\)/Many-\(R\) en el alcance de la amalgamación: [C2] global permite el candidato exhaustivo global; [C2] solo indexada produce totalidades \(R_i\) sin cierre común;
+- se preserva como objetivo central un **programa de prueba fuerte** y se formula el **Teorema provisional de Clausura Ontológica Maximal**: desde cobertura [C0], un operador de cierre [F1-F3], cotas de cadenas [C1], un principio de maximalidad y la definición [D5c] del índice como régimen dirigido, se deriva la existencia de un punto fijo exhaustivo \(R_i=F(R_i)\) sin introducir \(R_i\) como premisa;
+- [C2] deja de ser una hipótesis ontológica independiente: se deriva constitutivamente de [D5c], porque pertenecer al mismo índice significa co-realizabilidad dentro de un régimen dirigido;
+- se localiza la diferencia One-\(R\)/Many-\(R\) en si existe un único régimen dirigido global o varios regímenes no amalgamables entre sí;
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
 - se introduce el **Muro de la singularidad de \(R\)** como límite epistemológico general: un horizonte cerrado puede ser compatible con cuasisingularidad, One-\(R\), monismo indexado, Many-\(R\) o No-\(R\), por lo que la clausura observada no determina por sí sola la metaontología última;
 - se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
