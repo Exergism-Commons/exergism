@@ -1233,6 +1233,176 @@ $$
 
 Una restricción introducida únicamente para impedir \(R\) no constituye por sí sola justificación suficiente; debe poseer motivación ontológica independiente dentro de \(\Lambda\).
 
+### [H11] Vía categórica por colímites dirigidos
+
+Existe una tercera ruta hacia [C1*] que evita identificar necesariamente la ontología con una teoría de primer orden.
+
+Considérese una categoría de dominios ontológicos admisibles:
+
+$$
+\mathbf D_i,
+$$
+
+cuyos objetos son dominios de \(\mathfrak D_i\) y cuyos morfismos representan la relación estructural correspondiente a \(\preceq\).
+
+Una cadena:
+
+$$
+X_0\preceq X_1\preceq X_2\preceq\cdots
+$$
+
+determina un diagrama dirigido:
+
+$$
+X_0\longrightarrow X_1\longrightarrow X_2\longrightarrow\cdots
+$$
+
+Si existe en \(\mathbf D_i\) un colímite dirigido:
+
+$$
+U:=\operatorname{colim}\mathcal C,
+$$
+
+con cocono estructural:
+
+$$
+\iota_X:X\longrightarrow U
+\qquad
+\forall X\in\mathcal C,
+$$
+
+y dichos morfismos preservan la lectura ontológica de \(\preceq\), entonces:
+
+$$
+\boxed{
+\forall X\in\mathcal C,
+\quad
+X\preceq U.
+}
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{DirectedColimit}(\mathbf D_i,\mathcal C)
+\Rightarrow
+[C1*].
+}
+$$
+
+Esta vía no presupone que el colímite sea una unión conjuntista literal. Solo requiere que el formalismo de dominios admita una realización estructural común universal para el diagrama dirigido.
+
+Sin embargo:
+
+$$
+\boxed{
+\text{«}\mathbf D_i\text{ admite colímites dirigidos»}
+}
+$$
+
+no debe introducirse como sinónimo oculto de [C1*].
+
+Debe derivarse de propiedades más primitivas de los dominios y de sus morfismos, o justificarse por una construcción explícita del colímite.
+
+### [I6a.3] Convergencia de las tres rutas hacia el mismo obstáculo
+
+Las rutas [H8], [H10] y [H11] formulan el mismo problema desde tres perspectivas:
+
+$$
+\begin{array}{rcl}
+\text{localidad ontológica}
+&\Rightarrow&
+[C1*],\\
+\text{compacidad lógica}
+&\Rightarrow&
+[C1*],\\
+\text{colímite dirigido preservado}
+&\Rightarrow&
+[C1*].
+\end{array}
+$$
+
+Las tres fallan precisamente cuando la acumulación completa viola alguna restricción global que no bloquea ninguno de sus fragmentos relevantes.
+
+Por ello:
+
+$$
+\boxed{
+\Omega_{\infty}
+}
+$$
+
+funciona como obstáculo común a las tres vías.
+
+### [H12] Principio de Diferencia Ontológica Fundada
+
+Se propone además el siguiente principio metodológico:
+
+> si dos configuraciones difieren en admisibilidad ontológica, esa diferencia debe estar fundada en alguna diferencia estructural ontológicamente relevante.
+
+Esquemáticamente:
+
+$$
+\boxed{
+\operatorname{Adm}(X)
+\land
+\neg\operatorname{Adm}(Y)
+\Rightarrow
+\exists\delta\;
+\operatorname{Grounds}_{\mathrm{ont}}
+(\delta,\Delta_{\operatorname{Adm}}(X,Y)).
+}
+$$
+
+Aplicado a una cadena cuyos estadios son todos admisibles pero cuyo límite dirigido \(U_{\mathcal C}\) no lo fuese:
+
+$$
+\forall X\in\mathcal C,
+\quad
+\operatorname{Adm}(X),
+$$
+
+$$
+\neg\operatorname{Adm}(U_{\mathcal C}),
+$$
+
+debería existir una propiedad global real:
+
+$$
+\boxed{
+\Delta_{\infty}
+}
+$$
+
+que aparezca en la acumulación completa y fundamente su inadmisibilidad.
+
+Por tanto, una supuesta:
+
+$$
+\lambda_{\infty}\in\Omega_{\infty}
+$$
+
+no puede funcionar meramente como la frase:
+
+> el límite no existe.
+
+Debe especificar, al menos provisionalmente:
+
+1. una **propiedad global real** \(P_{\infty}\);
+2. una **restricción real** \(\lambda_{\infty}\) sensible a ella;
+3. un **mecanismo de inadmisibilidad**:
+
+$$
+P_{\infty}(U)
+\land
+\lambda_{\infty}
+\Rightarrow
+\neg\operatorname{Adm}(U).
+$$
+
+Así se distingue una obstrucción ontológica genuina de una negación de \(R\) reintroducida como premisa.
+
 ### [H9] Vía procesual hacia [C1*]
 
 Existe una segunda vía potencialmente más fuerte.
@@ -1571,7 +1741,7 @@ Bajo:
 2. [F1] extensividad;
 3. [F2] monotonía;
 4. [F3] idempotencia;
-5. [C1] cota superior para toda cadena de puntos fijos, obtenida directamente o derivada mediante [H8] o [H10];
+5. [C1] cota superior para toda cadena de puntos fijos, obtenida directamente o derivada mediante [H8], [H10] o [H11];
 6. un principio de maximalidad aplicable;
 7. [D5c]/[C2] pertenencia al mismo índice entendida como régimen dirigido de co-realización;
 
@@ -1715,7 +1885,10 @@ y:
 
 $
 \boxed{
-[H10]\;\text{compacidad lógica bajo una formalización adecuada}.
+[H10]\;\text{compacidad lógica bajo una formalización adecuada},
+\qquad
+[H11]\;\text{colímites dirigidos preservados}.
+
 }
 $
 
@@ -1738,9 +1911,9 @@ La dificultad central de [O5] queda, por tanto, reformulada como:
 
 $
 \boxed{
-\text{derivar [C1*]/[C1] mediante localidad, compacidad o estructura procesual,
+\text{derivar [C1*]/[C1] mediante localidad, compacidad, colímites o estructura procesual,
 o identificar una }\lambda_{\infty}\in\Omega_{\infty}
-\text{ con motivación ontológica independiente,
+\text{ con propiedad global y mecanismo de inadmisibilidad independientes,
 sin presuponer ya }R.
 }
 $
@@ -4092,7 +4265,9 @@ La propuesta puede auditarse paso a paso:
 | 13b.2 | [H/I] | Si la inadmisibilidad posee testigos locales/acotados y la admisibilidad es hereditaria, la compatibilidad finitaria de una cadena implica [C1*]. |
 | 13b.3 | [H/I] | Vía formal: si la admisibilidad es axiomatizable en un lenguaje compacto y los dominios admiten diagramas/embeddings coherentes, la satisfacibilidad finita de la cadena implica un modelo común \(U\), derivando [C1*]. |
 | 13b.3a | [D/I] | \(\Omega_{\infty}\) reúne restricciones no compactas: si \(\Omega_{\infty}=\varnothing\) bajo una representación adecuada, no puede existir un fallo puramente infinitario de [C1*]. |
-| 13b.4 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
+| 13b.4 | [H/I] | Vía categórica: si la categoría de dominios admite y preserva el colímite dirigido de la cadena, ese colímite es la cota superior requerida por [C1*]. |
+| 13b.5 | [H/O] | Diferencia ontológica fundada: toda \(\lambda_{\infty}\in\Omega_{\infty}\) debe señalar una propiedad global real y un mecanismo de inadmisibilidad; «el límite no existe» no basta. |
+| 13b.6 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
 | 13e | [I] | Teorema provisional de Clausura Ontológica Maximal: \(C0+F1+F2+F3+C1+[D5c]+Max\Rightarrow\exists R_i[R_i=F(R_i)\land Exhaustive_i(R_i)]\). |
@@ -4431,6 +4606,10 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 58. formalizar \(\Lambda=\Lambda_{\mathrm{comp}}\cup\Lambda_{\infty}\) y definir rigurosamente \(\Omega_{\infty}\);
 59. determinar si existe alguna restricción ontológica candidata \(\lambda_{\infty}\in\Omega_{\infty}\) con motivación independiente de la necesidad de bloquear \(R\);
 60. comprobar si \(\Omega_{\infty}=\varnothing\) puede derivarse de propiedades estructurales más primitivas de \(\Lambda\), en vez de adoptarse como supuesto.
+61. modelar \(\mathbf D_i\) categóricamente y determinar bajo qué condiciones admite colímites dirigidos que preserven admisibilidad e inclusión ontológica;
+62. comparar las rutas de localidad, compacidad lógica y colímites dirigidos y demostrar formalmente qué clase de \(\Omega_{\infty}\) bloquea cada una;
+63. formalizar el Principio de Diferencia Ontológica Fundada [H12] y exigir a toda \(\lambda_{\infty}\) candidata una propiedad global \(P_{\infty}\) y un mecanismo independiente de inadmisibilidad;
+64. construir el contraejemplo ontológicamente más fuerte posible con \(\Omega_{\infty}\neq\varnothing\) y evaluar si presupone No-\(R\) o posee motivación independiente.
 
 ---
 
@@ -4460,6 +4639,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se formula una ruta de derivación de [C1*] mediante **localidad/compactitud ontológica**: si toda inadmisibilidad tiene un testigo acotado y la admisibilidad es hereditaria, una cadena finitamente compatible no puede volverse inadmisible solo en el límite;
 - se formula una segunda ruta **formal por compacidad**: si la admisibilidad del índice es axiomatizable en un lenguaje lógico compacto y los dominios admiten diagramas/embeddings coherentes, la satisfacibilidad finita de toda cadena obliga a la existencia de un modelo común y por tanto deriva [C1*];
 - se define \(\Omega_{\infty}\) como el conjunto de obstrucciones ontológicas no compactas capaces de preservar toda satisfacibilidad finita y bloquear únicamente el límite dirigido; bajo una representación adecuada, \(\Omega_{\infty}=\varnothing\Rightarrow[C1*]\);
+- se añade una tercera ruta categórica: si la categoría de dominios \(\mathbf D_i\) admite un colímite dirigido preservado para la cadena, ese colímite suministra directamente la cota superior de [C1*];
+- se introduce el **Principio de Diferencia Ontológica Fundada**: una \(\lambda_{\infty}\) genuina debe identificar una propiedad global real y un mecanismo independiente que fundamente la inadmisibilidad del límite;
 - No-\(R\) fuerte debe ahora exhibir una restricción \(\lambda_{\infty}\in\Omega_{\infty}\) o rechazar algún otro puente formal, en vez de limitarse a negar la totalidad;
 - se mantiene además una ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
 - se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
