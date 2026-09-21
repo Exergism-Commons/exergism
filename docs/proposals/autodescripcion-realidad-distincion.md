@@ -657,7 +657,275 @@ No se presupone que esta secuencia converja matemáticamente a \(R\).
 
 ---
 
-## 13. Cadena de derivación resumida
+## 13. El Muro de la singularidad de \(R\)
+
+La distinción entre \(R\) y nuestros modelos de \(R\) conduce a un problema adicional: una totalidad **relativamente cerrada** puede ser indistinguible, para sus observadores internos, de la totalidad ontológica absoluta.
+
+### [D7] Singularidad ontológica de \(R\)
+
+En esta propuesta, **singularidad de \(R\)** no significa singularidad matemática ni singularidad física.
+
+Se usa en un sentido ontológico local:
+
+> \(R\) es singular porque, siendo la totalidad de lo real, no puede situarse dentro de un exterior real desde el cual pueda ser comparado, contenido o delimitado como una realidad parcial.
+
+Por [I2]:
+
+$
+\nexists X\,[\operatorname{Real}(X)\land X\not\preceq_R R]
+$
+
+Todo supuesto exterior real de \(R\) queda, por el hecho de ser real, ontológicamente incluido en \(R\).
+
+Esta singularidad es por tanto una propiedad de **totalidad absoluta**, no una afirmación de divergencia, infinitud matemática o ruptura de leyes físicas.
+
+### [D8] Horizonte de realidad accesible a un observador
+
+Sea \(o\) un observador interno a algún medio.
+
+Definimos provisionalmente:
+
+$
+\widehat R_o:=\text{máximo horizonte de realidad que }o\text{ puede reconstruir a partir de su acceso}
+$
+
+No se afirma que exista siempre un máximo matemático bien definido; la notación expresa el horizonte epistemológico efectivo del observador.
+
+Puede ocurrir:
+
+$
+\widehat R_o\subsetneq R
+$
+
+sin que \(o\) disponga de evidencia interna capaz de demostrar esa desigualdad.
+
+### [D9] Sandbox ontológica relativa
+
+Sea \(S\) un dominio real tal que:
+
+$
+S\prec_R R.
+$
+
+Si las interacciones accesibles a observadores internos quedan completamente contenidas en \(S\), este puede comportarse para ellos como una totalidad cerrada.
+
+En el caso límite, \(S\) puede estar **perfectamente sandboxeado** respecto de niveles exteriores: ninguna observación, intervención o señal accesible desde dentro permite detectar que:
+
+$
+S\subsetneq R.
+$
+
+Esto puede ocurrir en una simulación perfecta, pero el concepto no depende de que \(S\) sea computacional. Cualquier dominio relativamente cerrado podría desempeñar el mismo papel.
+
+### [I8] Un punto fijo de \(F\) no identifica necesariamente a \(R\)
+
+Esta consecuencia es central.
+
+Puede existir un dominio propio \(S\subsetneq R\) que sea cerrado bajo todas las emergencias disponibles dentro de él:
+
+$
+S=F(S)
+$
+
+sin que:
+
+$
+S=R.
+$
+
+Por tanto:
+
+$
+\boxed{X=F(X)\not\Rightarrow X=R}
+$
+
+La ecuación de punto fijo expresa **clausura emergente**, no totalidad ontológica absoluta.
+
+En consecuencia:
+
+$
+\boxed{R=F(R)}
+$
+
+sigue siendo una propiedad necesaria de \(R\) bajo esta propuesta, pero no una condición suficiente para reconocerlo de manera única.
+
+Esto corrige una posible lectura excesiva del argumento anterior.
+
+### [D10] Clausura absoluta y clausura relativa
+
+Debe distinguirse:
+
+$
+\operatorname{Closed}_{\mathcal E}(X)
+$
+
+de:
+
+$
+\operatorname{Total}(X).
+$
+
+Un dominio puede ser emergentemente cerrado:
+
+$
+X=F(X)
+$
+
+y, sin embargo, estar ontológicamente contenido en una realidad mayor:
+
+$
+X\subsetneq R.
+$
+
+Para \(R\), en cambio, la clausura se combina con su definición de totalidad:
+
+$
+\operatorname{Total}(R)
+\land
+R=F(R).
+$
+
+La diferencia entre \(R\) y una sandbox perfecta no reside, por tanto, solo en su comportamiento emergente interno, sino en:
+
+$
+\boxed{\text{totalidad ontológica absoluta frente a clausura relativa}.}
+$
+
+### [D11] Cuasisingularidad
+
+Llamamos provisionalmente **cuasisingularidad de \(R\)** a un dominio \(S\subsetneq R\) que, respecto de un observador interno \(o\), reproduce las propiedades epistemológicamente accesibles que este esperaría de una totalidad absoluta.
+
+Esquemáticamente:
+
+$
+Q_R(S,o)
+$
+
+cuando:
+
+1. \(S\subsetneq R\);
+2. \(o\preceq_R S\);
+3. \(S\) aparece cerrado respecto de toda interacción y emergencia accesibles a \(o\);
+4. ninguna observación disponible para \(o\) permite distinguir entre:
+   - \(H_{\mathrm{abs}}\): \(S\) es la totalidad de lo real;
+   - \(H_{\mathrm{emb}}\): \(S\) es un dominio propio contenido en una realidad mayor.
+
+Si \(\operatorname{Obs}_o(H)\) representa las consecuencias observables de una hipótesis para \(o\), el caso ideal del muro sería:
+
+$
+\operatorname{Obs}_o(H_{\mathrm{abs}})
+=
+\operatorname{Obs}_o(H_{\mathrm{emb}}).
+$
+
+En ese caso, \(S\) funciona como una **falsa singularidad** desde el punto de vista del observador, aunque ontológicamente sea solo una cuasisingularidad.
+
+### [D12] El Muro de la singularidad de \(R\)
+
+Se denomina provisionalmente **Muro de la singularidad de \(R\)** al límite epistemológico por el cual un observador interno no puede inferir, solo a partir de clausura y observaciones internas, que el dominio máximo al que accede coincide con la Realidad Total.
+
+Su forma mínima es:
+
+$
+\boxed{
+\text{clausura observable}
+\not\Rightarrow
+\text{totalidad ontológica absoluta}
+}
+$
+
+o, respecto de un observador:
+
+$
+\boxed{
+\widehat R_o\text{ parece total}
+\not\Rightarrow
+\widehat R_o=R.
+}
+$
+
+El muro no afirma que todo observador esté necesariamente encerrado para siempre en una sandbox perfecta. Afirma algo más débil: **la ausencia de un exterior detectable no constituye por sí sola una demostración de que no exista un exterior ontológico al dominio observado**.
+
+### [I9] Descubrir un exterior desplaza el horizonte, no \(R\)
+
+Si un observador toma inicialmente:
+
+$
+\widehat R_o=S_0
+$
+
+y después detecta un nivel más amplio:
+
+$
+S_0\prec_R S_1,
+$
+
+entonces actualiza su horizonte:
+
+$
+\widehat R_o:S_0\longrightarrow S_1.
+$
+
+Puede repetirse:
+
+$
+S_0\prec_R S_1\prec_R S_2\prec_R\cdots
+$
+
+sin que \(R\) cambie.
+
+Lo que cambia es la identificación epistemológica de la totalidad.
+
+### [I10] Puede concebirse \(R\) sin poder identificar empíricamente qué dominio es \(R\)
+
+Un observador dentro de una cuasisingularidad puede definir correctamente:
+
+$
+R:=\text{la totalidad de todo lo real}
+$
+
+y equivocarse, sin embargo, al afirmar:
+
+$
+\widehat R_o=R.
+$
+
+Por tanto, debe distinguirse:
+
+- **concepto de \(R\):** apunta por definición a la totalidad absoluta;
+- **candidato empírico a \(R\):** el dominio que un observador identifica provisionalmente con esa totalidad.
+
+El error puede residir en la identificación del candidato, no en el concepto.
+
+### [H4] Hipótesis fuerte del Muro
+
+Una versión fuerte, todavía no demostrada, sería:
+
+> ningún observador estrictamente interno puede certificar mediante evidencia puramente interna que su horizonte ontológico accesible coincide con \(R\).
+
+Esta afirmación requeriría una formalización precisa de observador, acceso, indistinguibilidad y evidencia. Por ello permanece como hipótesis y no como consecuencia ya establecida.
+
+### Consecuencia epistemológica
+
+El Muro proporciona una posible justificación estructural de una tesis ya central en el exergismo: una conciencia finita puede orientarse hacia la Verdad Absoluta sin poseerla plenamente.
+
+No solo porque su capacidad cognitiva sea limitada, sino porque puede existir una diferencia irreductible entre:
+
+$
+R
+$
+
+y:
+
+$
+\widehat R_o.
+$
+
+La trascendencia epistemológica consistiría entonces en atravesar falsas totalidades sucesivas sin confundir ninguna ampliación concreta del horizonte con posesión definitiva de \(R\).
+
+---
+
+## 14. Cadena de derivación resumida
 
 La propuesta puede auditarse paso a paso:
 
@@ -678,12 +946,15 @@ La propuesta puede auditarse paso a paso:
 | 13 | [I] | Por extensividad y clausura emergente, \(R=F(R)\). |
 | 14 | [H] | Toda emergencia posee condiciones constitutivas descomponibles mediante \(\mathcal D\), sin que \(\mathcal D=\mathcal E^{-1}\). |
 | 15 | [D/H] | \(\Delta\) se trata como diferencia estructural derivada, no como primitiva ontológica. |
+| 16 | [I] | Un dominio propio puede satisfacer \(S=F(S)\); por tanto, ser punto fijo de \(F\) no basta para ser \(R\). |
+| 17 | [D] | Se distingue clausura emergente relativa de totalidad ontológica absoluta. |
+| 18 | [D/H] | Una cuasisingularidad puede ser indistinguible de \(R\) para observadores internos: aparece el Muro de la singularidad. |
 
 La parte que requiere investigación ya no es «inventar una \(F\) cualquiera», sino comprobar si **emergencia** puede definirse con suficiente precisión como para sostener esta arquitectura sin circularidad.
 
 ---
 
-## 14. Qué no afirma esta propuesta
+## 15. Qué no afirma esta propuesta
 
 Esta propuesta no afirma que:
 
@@ -695,6 +966,8 @@ Esta propuesta no afirma que:
 - todo lo lógicamente imaginable sea una posibilidad real;
 - la interpretación de muchos mundos sea correcta;
 - vivamos en una simulación;
+- toda clausura observacional sea una sandbox;
+- el Muro fuerte sea ya un teorema;
 - exista realmente una cadena infinita de supramedios parciales;
 - la emergencia sea ya una noción formalizada de manera suficiente;
 - \(\mathcal D=\mathcal E^{-1}\);
@@ -704,9 +977,9 @@ Esta propuesta no afirma que:
 
 ---
 
-## 15. Objeciones serias
+## 16. Objeciones serias
 
-### 15.1 Riesgo de circularidad en la emergencia
+### 16.1 Riesgo de circularidad en la emergencia
 
 Si «emergencia» significa simplemente «todo lo que aparece realmente», entonces:
 
@@ -718,15 +991,15 @@ sería casi tautológico.
 
 La siguiente fase debe restringir \(\mathcal E\) independientemente mediante condiciones estructurales evaluables.
 
-### 15.2 El salto desde nuestro universo a \(R\)
+### 16.2 El salto desde nuestro universo a \(R\)
 
 Que la emergencia sea ubicua en el dominio conocido no demuestra que toda capa ontológica superior tenga que organizarse de la misma forma. La continuidad de la estructura medio-emergencia fuera del dominio observado permanece como [H1], no como deducción.
 
-### 15.3 «Supramedio» puede reificar la totalidad
+### 16.3 «Supramedio» puede reificar la totalidad
 
 Llamar a \(R\) supramedio no debe convertirlo accidentalmente en una caja espacial o en un último universo físico. Debe aclararse si «medio» conserva el mismo significado cuando se aplica a \(R\) o si \(R\) es el límite ontológico del concepto.
 
-### 15.4 Actualidad y posibilidad
+### 16.4 Actualidad y posibilidad
 
 Incluir posibilidades reales en \(R\) exige definir qué hace que una posibilidad sea real y distinguir:
 
@@ -738,15 +1011,35 @@ Incluir posibilidades reales en \(R\) exige definir qué hace que una posibilida
 
 Sin esta distinción, \(P\) puede volverse trivialmente ilimitado.
 
-### 15.5 Emergencia y reducción
+### 16.5 Emergencia y reducción
 
 Una estructura emergente puede depender completamente de niveles constitutivos y aun así admitir distintas formas de reducción explicativa. Debe aclararse qué tipo de novedad —causal, organizativa, informacional, efectiva o descriptiva— exige el término «emergencia».
 
-### 15.6 Identidad y distinción
+### 16.6 Identidad y distinción
 
 Definir \(\Delta_R\) mediante no equivalencia estructural desplaza el problema hacia «equivalencia». Será necesario especificar qué invariantes cuentan y a qué nivel.
 
-### 15.7 El problema de la explicación última
+### 16.7 «Singularidad» como término potencialmente equívoco
+
+El uso de «singularidad» en esta propuesta es estrictamente ontológico y local. No debe confundirse con singularidades gravitacionales, divergencias matemáticas, puntos singulares de variedades ni singularidad tecnológica.
+
+Si el término genera más ambigüedad que capacidad explicativa, deberá sustituirse por «totalidad absoluta» o una denominación equivalente.
+
+### 16.8 El Muro puede ser demasiado fuerte
+
+La indistinguibilidad perfecta entre una sandbox y \(R\) solo se sigue bajo condiciones de aislamiento suficientemente fuertes. Un dominio aparentemente cerrado puede contener anomalías, acoplamientos, fugas de información o regularidades que permitan inferir estructura exterior.
+
+Por ello:
+
+$
+\text{no detectar exterior}
+\not\Rightarrow
+\text{exterior indetectable en principio}.
+$
+
+La versión fuerte del Muro requiere demostrar qué clases de observadores y dominios generan indistinguibilidad principial y cuáles solo presentan ignorancia contingente.
+
+### 16.9 El problema de la explicación última
 
 Incluso si \(R\) es cerrado bajo emergencia y no necesita un exterior, sigue abierta:
 
@@ -756,7 +1049,7 @@ Puede ocurrir que la pregunta admita una explicación interna más profunda, una
 
 ---
 
-## 16. Programa de investigación
+## 17. Programa de investigación
 
 Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse al menos:
 
@@ -772,11 +1065,15 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 10. cómo formalizar \(\mathcal D\) como descomposición constitutiva y qué condiciones justificarían que toda emergencia sea ontológicamente descomponible sin hacerla epistemológicamente reconstruible;
 11. cómo definir equivalencia estructural y, a partir de ella, \(\Delta_R\);
 12. qué consecuencias observables o conceptuales diferenciarían esta arquitectura de ontologías competidoras;
-13. cómo mantener separada esta ontología del sistema cuantitativo de análisis exérgico hasta que exista un puente formal explícitamente justificado.
+13. cómo mantener separada esta ontología del sistema cuantitativo de análisis exérgico hasta que exista un puente formal explícitamente justificado;
+14. definir formalmente observador, horizonte accesible \(\widehat R_o\) e indistinguibilidad observacional;
+15. determinar bajo qué condiciones un dominio propio puede satisfacer \(S=F(S)\);
+16. caracterizar cuasisingularidades y distinguir aislamiento contingente de indistinguibilidad en principio;
+17. evaluar si la versión fuerte del Muro puede demostrarse o debe permanecer como límite epistemológico heurístico.
 
 ---
 
-## 17. Delta doctrinal propuesto
+## 18. Delta doctrinal propuesto
 
 Esta propuesta **expande** la ontología existente como programa de investigación, sin modificar todavía el corpus canónico.
 
@@ -791,6 +1088,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - \(F\) se define directamente como el cierre recursivo del espacio de emergencias accesibles de un dominio;
 - de la clausura emergente de la totalidad se deriva:
   \(R=F(R)\);
+- se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
+- se introduce el **Muro de la singularidad de \(R\)** para distinguir clausura observable, cuasisingularidad y totalidad ontológica absoluta;
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
 - la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia y se introduce la diferencia entre descomponibilidad ontológica y reconstruibilidad epistemológica.
 
