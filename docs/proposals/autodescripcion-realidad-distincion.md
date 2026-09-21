@@ -209,6 +209,146 @@ La propuesta no decide si una bifurcación:
 Lo que sí afirma es que una descripción de \(R\) no puede reducirse a una instantánea de lo actualmente observado si la estructura real contiene capacidades, disposiciones o restricciones que hacen objetivamente accesibles estados diferentes.
 
 
+### [H2a] Continuidad modal ontológica y novedad bruta
+
+La posibilidad de que aparezcan nuevas estructuras debe distinguirse del crecimiento del propio alcance ontológico.
+
+Para una transición entre estados actuales:
+
+$$
+A_t\longrightarrow A_{t+1},
+$$
+
+pueden distinguirse tres casos:
+
+#### [P1] Exterior actual
+
+Existe ya realidad actual no incluida en el dominio considerado:
+
+$$
+\exists Y[
+\operatorname{Real}_t(Y)
+\land
+Y\not\preceq X_t
+].
+$$
+
+Esto corresponde a una extensión ontológica actual del candidato \(X_t\), no a mera potencialidad.
+
+#### [P2] Actualización interna de una posibilidad permitida
+
+Una estructura \(Y\) no es actual en \(t\), pero está permitida por las capacidades/restricciones reales:
+
+$$
+Y\notin A_t,
+\qquad
+Y\in P_{\Lambda_t},
+$$
+
+y posteriormente:
+
+$$
+Y\in A_{t+1}.
+$$
+
+Entonces:
+
+$$
+\boxed{
+A_t\to A_{t+1}
+}
+$$
+
+puede representar cambio interno sin exigir:
+
+$$
+R_t\prec R_{t+1}.
+$$
+
+La emergencia no determinista pertenece ordinariamente a este caso:
+
+$$
+Permits(C,Y)
+\not\Rightarrow
+Necessitates(C,Y).
+$$
+
+#### [P3] Novedad ontológica fuerte
+
+Una estructura se actualiza sin haber estado permitida por ninguna capacidad, condición o restricción real previa relevante:
+
+$$
+Y\notin A_t,
+\qquad
+Y\notin P_{\Lambda_t},
+\qquad
+Y\in A_{t+1}.
+$$
+
+Definimos provisionalmente:
+
+$$
+\boxed{
+\operatorname{BruteNovelty}(Y,t)
+}
+$$
+
+cuando:
+
+$$
+\operatorname{Real}_{t+1}(Y)
+\land
+\nexists C_t[
+\operatorname{Real}_t(C_t)
+\land
+\operatorname{Permits}(C_t,Y)
+].
+$$
+
+[H2a] propone un **Principio de Continuidad Modal Ontológica**:
+
+$$
+\boxed{
+\operatorname{Real}_{t+1}(Y)
+\Rightarrow
+\exists C_t[
+\operatorname{Real}_t(C_t)
+\land
+\operatorname{Permits}(C_t,Y)
+]
+}
+$$
+
+para toda transición en la que tenga sentido hablar de prioridad temporal.
+
+En formulación no temporal más general:
+
+$$
+\boxed{
+\operatorname{Actualized}(Y)
+\Rightarrow
+\exists C[
+\operatorname{Real}(C)
+\land
+\operatorname{GroundsPossibility}(C,Y)
+].
+}
+$$
+
+Este principio **no implica determinismo** ni que cada futuro posible sea ya una entidad real. Solo exige que la actualización de una novedad tenga alguna base real que funde su posibilidad.
+
+Así:
+
+$$
+\boxed{
+\text{novedad emergente}
+\neq
+\operatorname{BruteNovelty}.
+}
+$$
+
+
+
 ---
 
 ## 4. Paso 2 — Clausura ontológica
@@ -1567,6 +1707,131 @@ sin que exista ninguna pluralidad, estructura o proceso infinito actualmente det
 $
 
 Esta cuestión no se resuelve definiendo \(R\), ni mediante Zorn por sí solo, porque el potencialista puede aceptar la construcción matemática en el metalenguaje y negar su compromiso ontológico.
+
+### [O5e] Tricotomía del potencialismo y rival creativo fuerte
+
+La expresión «siempre puede haber más» es ambigua y debe dividirse:
+
+$$
+\boxed{
+\begin{array}{ll}
+P1:& \text{hay ya más realidad actual fuera del dominio considerado};\\
+P2:& \text{puede actualizarse nueva estructura ya permitida por }\Lambda;\\
+P3:& \text{puede aparecer realidad cuya posibilidad no estaba fundada previamente.}
+\end{array}
+}
+$$
+
+Solo [P1] y [P3] amenazan directamente la clausura ontológica.
+
+[P2] es compatible con:
+
+$$
+R=(A,\Lambda,P_{\Lambda})
+$$
+
+y con:
+
+$$
+R=F(R),
+$$
+
+porque el cambio puede consistir en:
+
+$$
+A_t\to A_{t+1}
+$$
+
+sin ampliación del alcance ontológico total.
+
+[P1] reproduce la tesis de exterior actual:
+
+$$
+\forall X\,
+\exists Y[
+\operatorname{Real}(Y)
+\land
+X\prec Y
+].
+$$
+
+[P3] es más fuerte: exige crecimiento del propio espacio ontológico de posibilidades.
+
+Definimos provisionalmente **potencialismo ontológico creativo fuerte** como la tesis:
+
+$$
+\boxed{
+\exists Y,t:
+\operatorname{BruteNovelty}(Y,t).
+}
+$$
+
+Para que [P3] sea genuino, no debe existir ninguna condición real previa que funde la posibilidad de \(Y\). Si aparece tal condición:
+
+$$
+\exists C_t[
+\operatorname{Real}_t(C_t)
+\land
+\operatorname{Permits}(C_t,Y)
+],
+$$
+
+entonces el caso colapsa de [P3] a [P2].
+
+Por tanto, el rival fuerte debe sostener:
+
+$$
+\boxed{
+\operatorname{Real}_{t+1}(Y)
+\land
+\nexists C_t[
+\operatorname{Real}_t(C_t)
+\land
+\operatorname{Permits}(C_t,Y)
+].
+}
+$$
+
+Esto no es una contradicción lógica, pero sí una tesis metafísica específica: **novedad ontológica absolutamente infundada respecto del estado previo**.
+
+### [I6a.4] Neutralización del potencialismo ordinario bajo continuidad modal
+
+Si [H2a] vale, entonces toda novedad actualizable pertenece previamente al espacio de posibilidades fundado por realidad:
+
+$$
+\operatorname{Real}_{t+1}(Y)
+\Rightarrow
+Y\in P_{\Lambda_t}
+$$
+
+en la representación temporal correspondiente.
+
+Luego:
+
+$$
+\boxed{
+[H2a]
+\Rightarrow
+\neg P3.
+}
+$$
+
+y el potencialismo ordinario de [P2] deja de constituir una objeción a la inampliabilidad de \(R\).
+
+El problema residual queda reducido a:
+
+1. [P1]: realidad actual ya exterior a todo candidato parcial;
+2. rechazo de [H2a] mediante \(\operatorname{BruteNovelty}\);
+3. potencialismo radical que niega incluso la actualidad de la cadena infinita requerida por [C1*].
+
+La pregunta crítica pasa a ser:
+
+$$
+\boxed{
+\text{¿puede llegar a ser real algo cuya posibilidad
+no estaba fundada en ninguna realidad previa o constitutiva?}
+}
+$$
 
 ### [I6b] Existencia condicional de un punto fijo maximal
 
@@ -4401,6 +4666,8 @@ La propuesta puede auditarse paso a paso:
 | 13b.5 | [H/O] | Diferencia ontológica fundada: toda \(\lambda_{\infty}\in\Omega_{\infty}\) debe señalar una propiedad global real y un mecanismo de inadmisibilidad; «el límite no existe» no basta. |
 | 13b.5a | [D/O] | Se distingue \(\mathfrak D_i^{A}\) (dominios actuales co-reales) de \(\mathfrak D_i^{P}\) (modelos posibles) y \(\Omega_{\infty}^{content}\) de \(\Omega_{\infty}^{scope}\). |
 | 13b.5b | [O] | Rival superviviente: potencialismo ontológico radical, que permite extensión indefinida pero niega que exista una cadena infinita actualmente completada sobre la que aplicar [C1*]. |
+| 13b.5c | [D/H] | Tricotomía potencialista: [P1] exterior actual; [P2] actualización interna permitida por \(\Lambda\); [P3] \(\operatorname{BruteNovelty}\). Solo [P1]/[P3] amenazan directamente la clausura. |
+| 13b.5d | [H/I] | Continuidad Modal Ontológica [H2a]: toda novedad actualizada tiene alguna base real que funda su posibilidad; esto excluye [P3] sin volver determinista a \(\mathcal E\). |
 | 13b.6 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
@@ -4748,6 +5015,10 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 66. clasificar \(\Omega_{\infty}\) en obstrucciones de contenido y de scope y determinar cuáles sobreviven cuando la cadena es co-actual;
 67. analizar si una obstrucción de scope puede tener fundamento ontológico independiente sin equivaler simplemente a negar la totalizabilidad;
 68. formalizar el potencialismo ontológico radical como rival de la existencia de cadenas infinitas actualmente determinadas y comparar su fuerza con No-\(R\).
+69. formalizar la tricotomía [P1]/[P2]/[P3] y distinguir extensión actual, actualización interna y crecimiento del espacio ontológico de posibilidades;
+70. formalizar \(\operatorname{BruteNovelty}\) y el Principio de Continuidad Modal Ontológica [H2a] sin introducir determinismo;
+71. determinar si toda emergencia genuina requiere una base real que funde su posibilidad o si existe una concepción coherente y motivada de novedad ontológica absolutamente infundada;
+72. evaluar si el potencialismo creativo fuerte aporta un modelo independiente de No-\(R\) o simplemente traslada la extensibilidad a \(P_{\Lambda}\).
 
 ---
 
@@ -4782,6 +5053,9 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se distingue \(\mathfrak D_i^{A}\), formado por dominios actuales co-reales, de \(\mathfrak D_i^{P}\), formado por modelos posibles; el teorema fuerte de \(R_i\) debe operar sobre el primero;
 - \(\Omega_{\infty}\) se separa en obstrucciones de contenido y de scope; las primeras deben explicar cómo una propiedad global no sería ya real si todos sus constituyentes son co-actuales, y las segundas no pueden limitarse a prohibir por definición un alcance exhaustivo;
 - se identifica el **potencialismo ontológico radical** como rival superviviente: extensibilidad indefinida sin compromiso con ninguna cadena o pluralidad infinita actualmente completada;
+- se distingue una tricotomía del «siempre puede haber más»: [P1] exterior actual, [P2] actualización interna de posibilidades ya fundadas y [P3] novedad ontológica fuerte;
+- [P2] se declara compatible con \(R=(A,\Lambda,P_{\Lambda})\) y con \(R=F(R)\): novedad emergente no equivale a ampliación ontológica;
+- se introduce \(\operatorname{BruteNovelty}\) para [P3] y un **Principio de Continuidad Modal Ontológica [H2a]**: toda actualización debe poseer alguna base real que funde su posibilidad, sin exigir determinismo;
 - No-\(R\) fuerte debe ahora exhibir una restricción \(\lambda_{\infty}\in\Omega_{\infty}\) o rechazar algún otro puente formal, en vez de limitarse a negar la totalidad;
 - se mantiene además una ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
 - se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
