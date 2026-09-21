@@ -733,17 +733,77 @@ $$
 
 sin que \(S\) sea exhaustivo.
 
-### [C1] Cotas superiores para cadenas de cierres
+### [I6a.1] Compatibilidad finitaria de una cadena creciente
 
-Sea una cadena de puntos fijos:
+Sea una cadena:
 
 $$
 X_0\preceq X_1\preceq X_2\preceq\cdots
 $$
 
-o, más generalmente, cualquier cadena \(\mathcal C\subseteq\operatorname{Fix}(F_i)\).
+o, más generalmente, una cadena totalmente ordenada \(\mathcal C\).
 
-Se adopta provisionalmente:
+Toda subfamilia finita de \(\mathcal C\) posee un elemento superior dentro de la propia cadena.
+
+Para:
+
+$$
+X_{i_1},\ldots,X_{i_n}\in\mathcal C,
+$$
+
+existe algún \(X_k\in\mathcal C\) tal que:
+
+$$
+X_{i_1},\ldots,X_{i_n}\preceq X_k.
+$$
+
+Por tanto, una cadena no introduce incompatibilidad ontológica finita entre sus estadios:
+
+$$
+\boxed{
+\operatorname{FiniteCompatible}(\mathcal C).
+}
+$$
+
+Este resultado **no** implica todavía que exista un dominio que contenga simultáneamente toda la cadena. Precisamente esa transición finito \(\rightarrow\) dirigido/infinito constituye el contenido no trivial de [C1].
+
+### [C1*] Principio provisional de Continuidad Ontológica Dirigida
+
+Sea \(\mathcal C\subseteq\mathfrak D_i\) una cadena ontológicamente compatible.
+
+Se propone investigar el principio:
+
+$$
+\boxed{
+\operatorname{DirectedCompatible}(\mathcal C)
+\Rightarrow
+\exists U\in\mathfrak D_i:
+\forall X\in\mathcal C,;
+X\preceq U.
+}
+$$
+
+Equivalentemente, cuando el formalismo lo permita, puede expresarse mediante un límite dirigido o colímite:
+
+$$
+\boxed{
+U\simeq\operatorname{colim}\mathcal C.
+}
+$$
+
+La notación \(\operatorname{colim}\) es estructural: no presupone que los dominios sean conjuntos ni que el límite sea una unión conjuntista literal.
+
+[C1*] expresa una **continuidad ontológica**: una cadena de dominios que permanece compatible en cada estadio no pierde automáticamente admisibilidad por el mero hecho de considerar conjuntamente su desarrollo completo.
+
+### [C1] Cotas superiores para cadenas de cierres
+
+Para el teorema de maximalidad basta aplicar [C1*] a cadenas de puntos fijos:
+
+$$
+\mathcal C\subseteq\operatorname{Fix}(F_i).
+$$
+
+Así:
 
 $$
 \boxed{
@@ -785,6 +845,52 @@ F(U)\in\operatorname{Fix}(F_i)
 $$
 
 y \(F(U)\) es una cota superior de la cadena **dentro de los puntos fijos**.
+
+### [O5b] La única forma de negar [C1*]: obstrucción ontológica infinitaria
+
+[I6a.1] muestra que cada fragmento finito de una cadena creciente ya es co-realizable dentro de algún estadio posterior.
+
+Por tanto, si se sostuviera:
+
+$$
+\forall X\in\mathcal C,quad
+\operatorname{Adm}(X)
+$$
+
+pero:
+
+$$
+\neg\exists U\in\mathfrak D_i:
+\forall X\in\mathcal C,;
+X\preceq U,
+$$
+
+la obstrucción no podría consistir en una incompatibilidad finita ordinaria entre los estadios.
+
+Tendría que aparecer únicamente al nivel de la acumulación completa:
+
+$$
+\boxed{
+\operatorname{FiniteCompatible}(\mathcal C)
+\land
+\neg\operatorname{DirectedAdmissible}(\mathcal C).
+}
+$$
+
+Llamamos provisionalmente a esto **obstrucción ontológica infinitaria**.
+
+La propuesta no declara todavía imposible tal obstrucción. Pero su existencia requiere contenido ontológico positivo: alguna restricción de \(\Lambda\), principio de cardinalidad, incompatibilidad global o propiedad no detectable en ningún estadio finito que impida la co-realización del límite.
+
+Por ello se adopta como hipótesis metodológica de continuidad:
+
+$$
+\boxed{
+\text{una cadena compatible admite límite dirigido
+salvo obstrucción ontológica positiva.}
+}
+$$
+
+Esto desplaza la carga del rival No-\(R\): no basta con afirmar que la cadena «no termina». Debe explicar por qué todos sus estadios pueden ser reales y crecientemente compatibles mientras la acumulación conjunta carece de cualquier dominio ontológico admisible.
 
 ### [I6b] Existencia condicional de un punto fijo maximal
 
@@ -1133,7 +1239,7 @@ Entonces la prueba produce:
 
 $$
 \boxed{
-\forall i,quad R_i=F_i(R_i)
+\forall i,\quad R_i=F_i(R_i)
 }
 $$
 
@@ -1173,13 +1279,13 @@ $$
 }
 $$
 
-Debe justificarse por qué una cadena compatible de cierres ontológicos:
+Debe justificarse [C1*]: por qué una cadena compatible de cierres ontológicos:
 
-$$
+$
 X_0\preceq X_1\preceq X_2\preceq\cdots
-$$
+$
 
-admite una cota superior ontológicamente admisible sin presuponer ya una totalidad final.
+admite una cota superior o límite dirigido ontológicamente admisible sin presuponer ya una totalidad final. [I6a.1] garantiza compatibilidad finitaria, pero el paso a la acumulación completa sigue siendo la obligación no trivial.
 
 Subsisten además dos cuestiones auxiliares:
 
@@ -1192,7 +1298,8 @@ La dificultad central de [O5] queda, por tanto, reformulada como:
 
 $$
 \boxed{
-\text{derivar [C1] desde propiedades ontológicas más primitivas
+\text{derivar [C1*]/[C1] desde continuidad ontológica dirigida
+o identificar una obstrucción infinitaria real,
 sin presuponer ya }R.
 }
 $$
@@ -3540,6 +3647,7 @@ La propuesta puede auditarse paso a paso:
 | 13 | [I] | Condicional a [D1], por extensividad y clausura emergente, \(R=F(R)\). |
 | 13a | [O] | Programa de prueba fuerte: investigar si una definición independiente de \(\mathcal E\) y \(F\) permite derivar la existencia de una clausura exhaustiva \(R\) sin presuponerla. |
 | 13b | [I] | [F1-F3] implican que todo \(F(X)\) es punto fijo; por tanto existen cierres emergentes siempre que exista algún dominio admisible. |
+| 13b.1 | [I/O] | Toda cadena es finitamente compatible; [C1*] propone continuidad ontológica dirigida: la cadena admite un límite/cota superior salvo obstrucción ontológica infinitaria positiva. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
 | 13e | [I] | Teorema provisional de Clausura Ontológica Maximal: \(C0+F1+F2+F3+C1+[D5c]+Max\Rightarrow\exists R_i[R_i=F(R_i)\land Exhaustive_i(R_i)]\). |
@@ -3865,9 +3973,10 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 45. precisar el uso doctrinal de «Dios» como nombre apofático de \(R\) sin convertir «fundamento último» en una propiedad explicativa no demostrada;
 46. formalizar \((\mathfrak D_i,\preceq_i)\) y [C0] sin asumir una totalidad previa;
 47. demostrar o rechazar [F2] monotonía e [F3] idempotencia para el cierre emergente propuesto;
-48. determinar la formulación exacta de [C1] y qué principio de maximalidad puede aplicarse sin problemas de tamaño o circularidad;
+48. formalizar [C1*] como principio de continuidad ontológica dirigida, determinar cuándo existen colímites/cotas superiores admisibles y qué principio de maximalidad puede aplicarse sin problemas de tamaño o circularidad;
 49. formalizar [D5c]: índice ontológico como régimen dirigido de co-realización, estudiar si sus extensiones maximales son únicas/no solapadas y mantener [C2] como propiedad derivada;
-50. comprobar si el Teorema provisional de Clausura Ontológica Maximal sobrevive con clases propias, plural quantification o formalismos no conjuntistas.
+50. comprobar si el Teorema provisional de Clausura Ontológica Maximal sobrevive con clases propias, plural quantification o formalismos no conjuntistas;
+51. construir o descartar modelos de **obstrucción ontológica infinitaria**: cadenas cuyos fragmentos finitos son todos co-realizables pero cuyo límite dirigido no es ontológicamente admisible.
 
 ---
 
@@ -3893,6 +4002,7 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se preserva como objetivo central un **programa de prueba fuerte** y se formula el **Teorema provisional de Clausura Ontológica Maximal**: desde cobertura [C0], un operador de cierre [F1-F3], cotas de cadenas [C1], un principio de maximalidad y la definición [D5c] del índice como régimen dirigido, se deriva la existencia de un punto fijo exhaustivo \(R_i=F(R_i)\) sin introducir \(R_i\) como premisa;
 - [C2] deja de ser una hipótesis ontológica independiente: se deriva constitutivamente de [D5c], porque pertenecer al mismo índice significa co-realizabilidad dentro de un régimen dirigido;
 - se localiza la diferencia One-\(R\)/Many-\(R\) en si existe un único régimen dirigido global o varios regímenes no amalgamables entre sí;
+- [C1] se reduce a un **Principio de Continuidad Ontológica Dirigida [C1*]**: toda cadena es finitamente compatible, y su falta de cota superior exigiría una obstrucción ontológica genuinamente infinitaria que no aparece en ningún estadio finito;
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
 - se introduce el **Muro de la singularidad de \(R\)** como límite epistemológico general: un horizonte cerrado puede ser compatible con cuasisingularidad, One-\(R\), monismo indexado, Many-\(R\) o No-\(R\), por lo que la clausura observada no determina por sí sola la metaontología última;
 - se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
