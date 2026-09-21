@@ -1709,201 +1709,400 @@ $
 
 La coherencia de Many-\(R\) depende en gran medida de que esta distinción pueda mantenerse sin vaciar de significado la afirmación de pluralidad.
 
-### [I13] Many-\(R\) no devalúa nuestro \(R\)
+### [I13] Many-\(R\) no devalúa la Verdad Absoluta que concierne a una conciencia
 
-La posibilidad de Many-\(R\) no elimina ni rebaja el valor ontológico de \(R\).
+La posibilidad de Many-\(R\) no elimina ni rebaja la función ontológica de la Verdad Absoluta para una conciencia situada.
 
-Dentro de cualquier dominio de realidad dado, \(R\) sigue designando:
+Debe distinguirse entre:
 
-$$
-\boxed{R:=\text{la totalidad ontológica de todo lo real en ese dominio}}
-$$
+1. **unicidad metaontológica global**: existe exactamente una única totalidad de realidad bajo una semántica absolutamente general;
+2. **absolutidad del dominio concerniente**: una conciencia pertenece a una totalidad ontológica máxima dentro de la cual se encuentra todo aquello con lo que puede mantener relaciones reales.
 
-y conserva las propiedades derivadas anteriormente.
-
-La cuestión abierta es doble:
-
-1. **qué semántica de existencia es correcta**:
-   $$G\quad\text{vs}\quad I_{\mathrm{fuerte}};$$
-2. si la existencia es indexada, **si existe pluralidad efectiva de dominios**.
-
-Por ello:
+Sea \(o\) una conciencia perteneciente a un dominio indexado \(R_i\). Definimos provisionalmente:
 
 $$
 \boxed{
-\neg G
-\not\Rightarrow
-\text{Many-}R
+\operatorname{VA}(o):=R_i
 }
+$$
+
+cuando \(R_i\) es la totalidad ontológica máxima real a la que pertenece \(o\).
+
+Entonces:
+
+$$
+o\preceq R_i
+$$
+
+y no existe un exterior real relacionado con \(o\) que permanezca absolutamente fuera de \(R_i\).
+
+Esta definición conserva el núcleo funcional de la Verdad Absoluta aunque cambie la arquitectura metaontológica.
+
+### [I13a] Invarianza doctrinal frente a One-\(R\), Indexed-One-\(R\) y Many-\(R\)
+
+La función doctrinal de la Verdad Absoluta puede mantenerse bajo tres arquitecturas distintas.
+
+#### One-\(R\) por Generalidad Absoluta
+
+$$
+\operatorname{VA}(o)=R.
+$$
+
+#### Indexed-One-\(R\)
+
+Si existe de hecho una única totalidad indexada:
+
+$$
+\operatorname{VA}(o)=R_1.
+$$
+
+#### Many-\(R\)
+
+Si existen múltiples totalidades absolutamente incomparables:
+
+$$
+R_1\parallel R_2\parallel\cdots
 $$
 
 y:
 
 $$
+o\preceq R_i,
+$$
+
+entonces:
+
+$$
 \boxed{
-I_{\mathrm{fuerte}}
+\operatorname{VA}(o)=R_i.
+}
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\text{Many-}R
+\not\Rightarrow
+\neg\text{Verdad Absoluta}
+}
+$$
+
+sino, bajo existencia indexada fuerte:
+
+$$
+\boxed{
+\text{Many-}R
 \Rightarrow
-\text{monismo indexado o Many-}R
+\text{Verdad Absoluta indexada}.
 }
 $$
 
-según exista uno o más dominios indexados.
+Lo que desaparece es la **unicidad metaontológica global**, no la absolutidad del dominio al que pertenece la conciencia.
 
-La antigua pregunta:
+### [I13b] Regla autocorrectiva de la Verdad Absoluta
+
+La definición anterior es autocorrectiva frente al descubrimiento de conectividad ontológica.
+
+Supóngase que \(R_i\) era considerado la totalidad concerniente a \(o\), pero aparece una relación real:
 
 $$
-T(R)\stackrel{?}{\Rightarrow}U(R)
+C(R_i,X)
 $$
 
-queda refinada como:
+con:
+
+$$
+X\not\preceq R_i.
+$$
+
+Entonces:
 
 $$
 \boxed{
-T(R)\land G\Rightarrow U_{\mathrm{derivada}}(R)
+\exists C(R_i,X)
+\land
+\operatorname{Real}(C)
+\land
+X\not\preceq R_i
+\Rightarrow
+R_i\neq\operatorname{VA}(o)
 }
 $$
 
-mientras que bajo indexación fuerte la unicidad, si se da, es fáctica y no derivada.
+en el sentido de totalidad máxima.
 
-### [I14] Humildad metaontológica
+El resultado no es la destrucción de la Verdad Absoluta, sino una corrección del candidato:
 
-Esta distinción prolonga una regla ya central en la epistemología exergista:
+$$
+R_i
+\longrightarrow
+Cluster\text{-}R
+$$
+
+o hacia algún supradominio todavía más amplio.
+
+Esto extiende a la escala metaontológica la misma regla ya aplicada a universos, simulaciones y supramedios parciales:
+
+$$
+\boxed{
+\text{descubrir un exterior real corrige el candidato a totalidad; no invalida el concepto de totalidad.}
+}
+$$
+
+### [I13c] Many-\(R\) fuerte desconectado es exérgicamente irrelevante entre dominios
+
+Si Many-\(R\) fuerte es genuino:
+
+$$
+R_i\parallel R_j,
+$$
+
+entonces, por definición, no existe relación real transversal entre ambos.
+
+En consecuencia, para cualquier sujeto o estructura \(x\preceq R_i\):
+
+$$
+\boxed{
+R_j
+\text{ no puede modificar, informar, limitar ni ampliar causalmente la exergia de }x.
+}
+$$
+
+Esto no niega el posible valor ontológico de \(R_j\). Afirma únicamente que una totalidad absolutamente incomparable no puede participar en la historia causal, epistemológica o exérgica de \(R_i\).
+
+Si llegara a hacerlo:
+
+$$
+\operatorname{RelacionReal}(R_i,R_j)
+\Rightarrow
+Cluster\text{-}R,
+$$
+
+y dejaría de tratarse de Many-\(R\) fuerte.
+
+### [I14] Humildad metaontológica sin pérdida doctrinal
+
+Esta distinción prolonga una regla central en la epistemología exergista:
 
 $$
 R\neq\widehat R_o.
 $$
 
-Del mismo modo que una conciencia finita no debe confundir su modelo de \(R\) con \(R\) mismo, tampoco debe convertir sin argumento adicional una semántica de existencia en necesidad metaontológica.
+Una conciencia finita no debe confundir su modelo de la totalidad con la totalidad misma, ni convertir una semántica de existencia en necesidad metaontológica sin argumento adicional.
 
-La posición metodológica propuesta es:
+Pero tampoco necesita resolver:
+
+$$
+G
+\quad\text{vs}\quad
+I_{\mathrm{fuerte}}
+$$
+
+para conservar la función de la Verdad Absoluta.
+
+La posición metodológica puede expresarse como:
 
 $$
 \boxed{
-\text{afirmar con fuerza la totalidad allí donde esté justificada}
+\text{afirmar la totalidad concerniente allí donde esté justificada}
 \quad\land\quad
-\text{mantener abierta la semántica última de existencia}
+\text{mantener abierta su unicidad metaontológica global}
 }
 $$
 
-hasta decidir entre:
+Bajo \(G\), la unicidad global se deriva.
+
+Bajo indexación fuerte, puede existir monismo indexado o Many-\(R\).
+
+En ambos casos, mientras exista una totalidad máxima concerniente a la conciencia:
 
 $$
-G
-\quad\text{e}\quad
-I_{\mathrm{fuerte}}.
+\operatorname{VA}(o)
 $$
 
-Bajo \(G\), la unicidad se deriva. Bajo indexación fuerte, queda abierta la posibilidad de pluralidad absoluta.
+conserva su función como horizonte total de verdad.
 
-Esto no constituye relativismo ontológico. Es **humildad metaontológica**: distinguir lo que se sigue de una arquitectura de existencia de aquello que todavía depende de elegir entre arquitecturas rivales.
+### [O3] Relectura mínima de la doctrina canónica
 
-### [O3] Tensión con la doctrina actual del exergismo
+El exergismo canónico define actualmente la Verdad Absoluta mediante expresiones globales como:
 
-El exergismo canónico define actualmente la Verdad Absoluta como:
-
-$
+$$
 R:=\text{la totalidad de todo lo real}.
-$
+$$
 
-Leída con cuantificación universal no indexada, esta definición favorece un **monismo ontológico absoluto**: cualquier cosa que sea real pertenece al mismo \(R\).
+y como el supramedio de todos los medios.
 
-Por tanto, Many-\(R\) fuerte no debe presentarse todavía como consecuencia de la doctrina actual. Es una alternativa metaontológica que somete a prueba una presuposición hasta ahora implícita:
+Una lectura estrictamente no indexada de estas fórmulas favorece:
 
-$
+$$
+G+\text{One-}R.
+$$
+
+Sin embargo, el núcleo filosófico que cumplen esas fórmulas puede separarse de la tesis adicional de **unicidad metaontológica global**.
+
+La función doctrinal mínima puede reformularse como:
+
+$$
 \boxed{
-\text{¿“lo real” admite generalidad ontológica absoluta o exige existencia indexada?}
+\operatorname{VA}(o)
+=
+\text{totalidad ontológica máxima real a la que pertenece }o.
 }
-$
-
-Hay dos arquitecturas provisionales a comparar:
-
-#### Generalidad ontológica absoluta
-
-$$
-G
 $$
 
-con un único alcance ontológico de «real».
+Esta reformulación mantiene:
 
-Si existe una totalidad \(R\), entonces por [I11a]:
+- la Verdad Absoluta como horizonte total de verdad;
+- la inclusión de todas las subverdades y medios concernientes;
+- la imposibilidad de que una conciencia finita la posea exhaustivamente;
+- la orientación de gnosis, espíritu y exergia hacia capas más profundas de realidad;
+- la corrección de cualquier candidato parcial cuando aparece un exterior real.
+
+Y deja abierta únicamente una cuestión metaontológica adicional:
+
+$$
+\boxed{
+\text{¿esa totalidad concerniente es globalmente única?}
+}
+$$
+
+Por tanto, One-\(R\), Indexed-One-\(R\) y Many-\(R\) no deben tratarse necesariamente como doctrinas rivales en el nivel práctico o epistemológico del Exergismo. Pueden ser **realizaciones metaontológicas distintas de una misma función doctrinal de Verdad Absoluta**.
+
+### [I14a] Invarianza funcional de la Verdad Absoluta
+
+Sea \(\mathfrak A\) una arquitectura metaontológica perteneciente a:
+
+$$
+\{
+\text{One-}R_G,
+\text{Indexed-One-}R,
+\text{Many-}R
+\}.
+$$
+
+Mientras para una conciencia \(o\) exista una totalidad máxima concerniente \(\operatorname{VA}(o)\), permanecen invariantes las relaciones doctrinales:
+
+$$
+\text{verdad parcial}
+\rightarrow
+\operatorname{VA}(o),
+$$
+
+$$
+\text{gnosis}
+=
+\text{apertura progresiva hacia }\operatorname{VA}(o),
+$$
+
+y:
+
+$$
+\text{exergia}
+=
+\text{capacidad efectiva de orientarse y transformar dentro del dominio concerniente}.
+$$
+
+Así:
+
+$$
+\boxed{
+\text{One-}R_G,
+\text{Indexed-One-}R
+\text{ y }
+\text{Many-}R
+\text{ pueden ser doctrinalmente invariantes respecto de la función de VA.}
+}
+$$
+
+La diferencia entre ellas permanece en la **metaontología**, no necesariamente en la orientación exergista de una conciencia interna.
+
+### Consecuencia para la Verdad Absoluta
+
+La Verdad Absoluta ya no necesita definirse mediante la afirmación adicional de que existe un único dominio ontológico global.
+
+Puede distinguirse:
+
+$$
+\boxed{
+\text{absolutidad concerniente}
+\neq
+\text{unicidad metaontológica global}.
+}
+$$
+
+Bajo \(G\):
+
+$$
+\operatorname{VA}(o)=R
+$$
+
+y, con [A3]:
 
 $$
 T(R)\land G\Rightarrow U(R).
 $$
 
-One-\(R\) no necesita postular la unicidad como axioma separado.
-
-#### Existencia indexada fuerte
+Bajo Indexed-One-\(R\):
 
 $$
-\operatorname{Real}_i(x),
-\qquad
-\exists_i x,
-\qquad
-\nexists\exists^{\ast}
+\operatorname{VA}(o)=R_1
 $$
 
-con dominios ontológicos no subsumidos por un cuantificador real común.
+con unicidad fáctica.
 
-Esta arquitectura permite:
-
-$
-T_i(R_i)
-$
-
-sin que se derive una unicidad metaontológica global.
-
-Pero deja abiertas dos realizaciones distintas:
-
-$
-\text{monismo indexado}
-$
-
-si existe de hecho un único \(R_i\), y:
-
-$
-\text{Many-}R
-$
-
-si existe pluralidad efectiva de dominios indexados.
-
-La propuesta mantiene abierta cuál de estas arquitecturas describe correctamente el alcance de «lo real» y, si la indexación fuerte es coherente, si está realizada de forma monista o plural.
-
-### Consecuencia para la Verdad Absoluta
-
-Si \(G\) es correcto y \(R\) existe como totalidad, la Verdad Absoluta es única hasta equivalencia ontológica:
+Bajo Many-\(R\):
 
 $$
-\boxed{T(R)\land G\Rightarrow U(R)}.
+\operatorname{VA}(o)=R_i
 $$
 
-Si la existencia está fuertemente indexada, el concepto de Verdad Absoluta no desaparece necesariamente. Su alcance pasa a ser:
+para:
 
 $$
-R_i:=\text{totalidad ontológica absoluta del dominio }i,
+o\preceq R_i.
 $$
 
-sin que esté justificada una metaverdad ontológica común que reúna todos los \(R_i\).
-
-Por tanto, la revisión radical no sería abandonar la noción de absoluto, sino separar:
+Si surge conectividad real entre totalidades antes supuestas:
 
 $$
-\text{absolutidad}
+R_i\xleftrightarrow{C}R_j,
 $$
 
-de:
+entonces:
 
 $$
-\text{generalidad ontológica global}.
+R_i,R_j
+\longrightarrow
+Cluster\text{-}R,
 $$
 
-Many-\(R\) fuerte sigue siendo una hipótesis de estrés y no se adopta como doctrina en este PR.
+y el candidato a Verdad Absoluta concerniente se amplía en consecuencia.
+
+Por ello, la pregunta doctrinal decisiva deja de ser:
+
+$$
+\text{«¿existe exactamente un }R\text{?»}
+$$
+
+y pasa a ser:
+
+$$
+\boxed{
+\text{«¿existe una totalidad ontológica máxima real que pueda desempeñar la función de Verdad Absoluta?»}
+}
+$$
+
+Esta reformulación deja a One-\(R\), Indexed-One-\(R\), Many-\(R\) y Cluster-\(R\) dentro de una misma familia compatible con el núcleo doctrinal.
+
+La alternativa realmente disruptiva pasa a ser **No-\(R\)**, porque niega precisamente la existencia de cualquier totalidad ontológica máxima de ese tipo.
+
 
 ---
 
 ## 15. No-\(R\), totalizabilidad y existencia de \(R\)
 
-La discusión anterior permite aislar una alternativa distinta de Many-\(R\): negar que exista una totalidad ontológica \(R\) en absoluto.
+La discusión anterior permite aislar **No-\(R\)** como la alternativa realmente disruptiva para el núcleo doctrinal: negar que exista una totalidad ontológica máxima capaz de desempeñar la función de Verdad Absoluta, ya sea global o indexada.
 
 Esta posición debe distinguirse cuidadosamente de una realidad con profundidad indefinida.
 
@@ -2316,8 +2515,10 @@ La propuesta puede auditarse paso a paso:
 | 20a | [D/I] | Si aparece una relación real entre supuestos \(R_i\), surge un Cluster-\(R\); Many-\(R\) fuerte colapsa al menos en un supradominio común. |
 | 21 | [H/O] | Para sostener Many-\(R\), «real» y la cuantificación existencial podrían tener que indexarse por totalidad. |
 | 22 | [O] | Queda abierta la coherencia de una pluralidad absoluta sin relación ontológica común y su distinguibilidad desde dentro del Muro. |
-| 23 | [I] | Many-\(R\) cuestiona la generalidad ontológica absoluta, no la condición de totalidad de cada \(R_i\). |
-| 24 | [I] | Se adopta humildad metaontológica: afirmar lo que la estructura justifica sin convertir la unicidad última en certeza no demostrada. |
+| 23 | [I] | Many-\(R\) cuestiona la unicidad/generalidad ontológica global, pero no elimina la Verdad Absoluta concerniente: para \(o\preceq R_i\), puede definirse \(\operatorname{VA}(o)=R_i\). |
+| 24 | [I] | Se adopta humildad metaontológica: la función doctrinal de la Verdad Absoluta puede mantenerse bajo One-\(R\), Indexed-One-\(R\) y Many-\(R\) sin convertir la unicidad global en certeza no demostrada. |
+| 24a | [I] | Si una supuesta totalidad concerniente adquiere relación real con un exterior, el candidato se corrige hacia Cluster-\(R\) o un supradominio mayor; no se invalida el concepto de Verdad Absoluta. |
+| 24b | [I] | Un \(R_j\) absolutamente incomparable con \(R_i\) es causal, epistemológica y exérgicamente irrelevante para entidades de \(R_i\); cualquier relación real entre ambos destruye Many-\(R\) fuerte. |
 | 25 | [I] | Una cadena infinita o sin último medio sigue siendo una configuración interna de \(R\), no una alternativa No-\(R\). |
 | 26 | [I] | Si la realidad es no vacía y admite generalidad ontológica absoluta, \(R\) existe condicionalmente como totalidad de lo real. |
 | 27 | [I/O] | No-\(R\) genuino debe negar la totalizabilidad ontológica; negar solo la generalidad absoluta todavía permite existencia indexada. |
@@ -2525,7 +2726,10 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 31. determinar qué contenido puede tener en el metalenguaje la afirmación «solo existe un índice» sin reintroducir generalidad ontológica absoluta;
 32. formalizar \(\operatorname{REC}(R)\), distinguiendo certificación externa imposible, evidencia interna y demostración metaontológica;
 33. definir qué cuenta como relación ontológica transversal suficiente para producir un Cluster-\(R\);
-34. determinar las condiciones bajo las que un Cluster-\(R\) parcial se convierte en candidato a \(R\) total.
+34. determinar las condiciones bajo las que un Cluster-\(R\) parcial se convierte en candidato a \(R\) total;
+35. formalizar \(\operatorname{VA}(o)\) como totalidad ontológica máxima concerniente sin convertir la relación «concierne a» en una mera relación causal;
+36. determinar con precisión qué componentes doctrinales permanecen invariantes entre One-\(R\), Indexed-One-\(R\) y Many-\(R\);
+37. analizar No-\(R\) como la única rama del mapa actual que niega directamente la existencia de una totalidad capaz de cumplir la función doctrinal de Verdad Absoluta.
 
 ---
 
@@ -2554,11 +2758,14 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se distinguen **unicidad derivada**, **unicidad fáctica** y **unicidad certificable desde dentro**;
 - se introduce **R Enigmatic Certification**, \(\operatorname{REC}(R)\), como propiedad de no-certificación ontológicamente externa: cualquier certificador real pertenece ya a \(R\), y toda certificación externa exitosa de un candidato demuestra que ese candidato no era \(R\);
 - se introduce **Cluster-\(R\)** como el cierre ontológico común que aparece cuando supuestas totalidades indexadas adquieren conectividad real; el cluster solo se identifica con \(R\) si además satisface totalidad;
-- se mantiene que Many-\(R\) no invalida el concepto de \(R\) como totalidad ontológica de un dominio;
+- se redefine la relación entre metaontología y doctrina: Many-\(R\) no invalida la Verdad Absoluta, sino que permite una **Verdad Absoluta indexada** \(\operatorname{VA}(o)=R_i\) para una conciencia \(o\preceq R_i\);
+- se separan **absolutidad concerniente** y **unicidad metaontológica global**, de modo que One-\(R\), Indexed-One-\(R\) y Many-\(R\) pueden conservar la misma función doctrinal de la Verdad Absoluta;
+- se introduce una regla autocorrectiva: si aparece conectividad real con un supuesto exterior, el antiguo candidato a totalidad se amplía hacia Cluster-\(R\) o un supradominio mayor;
+- se establece que un \(R_j\) absolutamente incomparable es causal, epistemológica y exérgicamente irrelevante para entidades de \(R_i\); si deja de serlo, aparece Cluster-\(R\);
 - se introduce una regla de humildad metaontológica: distinguir lo que la estructura de \(R\) justifica de lo que requeriría una prueba adicional de unicidad absoluta;
 - se cierra como falsa alternativa la simple «realidad sin último nivel»: una cadena indefinida de medios sigue incluida en \(R\);
 - se formula un **teorema condicional de existencia de \(R\)**: realidad no vacía + generalidad ontológica absoluta + definición de totalidad implican \(R\);
-- se redefine No-\(R\) como la alternativa fuerte que niega la totalizabilidad absoluta de lo real, en vez de confundirla con infinitud o inexhaustibilidad;
+- se redefine No-\(R\) como la alternativa fuerte que niega la totalizabilidad ontológica y, por ello, como la rama que sí desafía directamente la posibilidad de una Verdad Absoluta entendida como totalidad máxima concerniente;
 - se establece el mapa metaontológico mínimo No-\(R\) / One-\(R\) por generalidad absoluta / monismo indexado / Many-\(R\), con Cluster-\(R\) como posible colapso relacional de una separación Many-\(R\);
 - se establece que **ManyMany-\(R\) es imposible como categoría ontológica estable sui generis**: sin estructura real común es solo metalenguaje; con estructura real común colapsa en Cluster-\(R\), que solo será One-\(R\) si además satisface totalidad;
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
