@@ -1096,41 +1096,142 @@ $$
 
 Esto convierte una parte importante del problema de [C1] en una cuestión de **expresividad formal**: una ontología que necesite restricciones genuinamente infinitarias o un lenguaje no compacto puede bloquear esta ruta; una ontología capturable por restricciones compactas de primer orden no puede hacerlo del mismo modo.
 
-### [O5c] El verdadero rival: restricciones ontológicas no locales
+### [D5d] Descomposición provisional de restricciones y obstrucciones no compactas
 
-La derivación anterior falla exactamente si existen restricciones de \(\Lambda\) cuya violación solo aparece globalmente y no posee ningún testigo acotado.
+Para aislar con precisión qué puede bloquear [C1*], se distingue provisionalmente:
 
-Ejemplos matemáticos abstractos muestran que esto es coherente:
+$$
+\Lambda
+=
+\Lambda_{\mathrm{comp}}
+\cup
+\Lambda_{\infty},
+$$
 
-- una clase que solo admite dominios finitos;
-- propiedades de bien-fundación que pueden fallar únicamente en un límite infinito;
-- cotas globales de cardinalidad o complejidad;
-- otras restricciones genuinamente infinitarias.
+donde:
 
-Por tanto:
+- \(\Lambda_{\mathrm{comp}}\) contiene restricciones cuya violación puede representarse dentro de un marco compacto apropiado o posee testigos acotados;
+- \(\Lambda_{\infty}\) contiene restricciones genuinamente globales cuya violación puede aparecer únicamente al considerar una acumulación dirigida completa.
+
+Esta partición es metodológica y todavía no presupone que \(\Lambda_{\infty}\) sea no vacía.
+
+Definimos provisionalmente el conjunto de **obstrucciones ontológicas no compactas**:
 
 $$
 \boxed{
-\operatorname{FiniteCompatible}(\mathcal C)
-\not\Rightarrow
-[C1*]
+\Omega_{\infty}
 }
 $$
 
-sin una condición adicional de localidad, compactitud o continuidad.
+de modo que una restricción \(\lambda\) pertenece a \(\Omega_{\infty}\) cuando existe alguna cadena \(\mathcal C\) para la cual:
+
+$$
+\forall
+\mathcal C_0
+\subseteq_{\mathrm{fin}}
+\mathcal C,
+\quad
+\exists U_0:
+\operatorname{Adm}_{\lambda}(U_0)
+\land
+\mathcal C_0\preceq U_0,
+$$
+
+pero no existe ningún dominio admisible que realice conjuntamente toda la cadena:
+
+$$
+\nexists U:
+\operatorname{Adm}_{\lambda}(U)
+\land
+\mathcal C\preceq U.
+$$
+
+Así:
+
+$$
+\boxed{
+\lambda\in\Omega_{\infty}
+\iff
+\operatorname{FiniteSatisfiable}_{\lambda}(\mathcal C)
+\land
+\neg
+\operatorname{DirectedSatisfiable}_{\lambda}(\mathcal C)
+}
+$$
+
+para alguna cadena \(\mathcal C\).
+
+Conceptualmente, \(\Omega_{\infty}\) concentra exactamente aquellas restricciones capaces de permitir toda aproximación finita/acotada y bloquear, sin embargo, la realización conjunta del límite dirigido.
+
+### [I6a.2] Ausencia de obstrucciones no compactas implica [C1*] bajo representación adecuada
+
+Bajo las condiciones formales de [H8] o [H10], si:
+
+$$
+\boxed{
+\Omega_{\infty}=\varnothing,
+}
+$$
+
+entonces no existe una restricción ontológica capaz de mantener todos los fragmentos finitos de una cadena como admisibles mientras bloquea exclusivamente su realización dirigida completa.
+
+Por tanto, para las cadenas cubiertas por la formalización:
+
+$$
+\boxed{
+\Omega_{\infty}=\varnothing
+\Rightarrow
+[C1*].
+}
+$$
+
+Esta inferencia sigue siendo condicional a que la noción de dominio, admisibilidad e inclusión esté correctamente representada por el formalismo escogido.
+
+### [O5c] El verdadero rival: \(\Omega_{\infty}\neq\varnothing\)
+
+La cuestión crítica deja de ser simplemente si «puede fallar una cadena».
+
+Una negación estructural de [C1*] debe exhibir al menos una restricción:
+
+$$
+\boxed{
+\lambda_{\infty}\in\Omega_{\infty}.
+}
+$$
+
+Ejemplos matemáticos abstractos de comportamiento no compacto incluyen:
+
+- exigir que todo dominio sea finito;
+- imponer bien-fundación global;
+- imponer determinadas cotas cardinales o de complejidad;
+- usar condiciones esencialmente infinitarias no reducibles a testigos acotados.
+
+Estos ejemplos demuestran coherencia formal del fenómeno, no que la realidad posea efectivamente una restricción de ese tipo.
+
+Así, una versión fuerte de No-\(R\) ya no puede limitarse a:
+
+> no existe una totalidad.
+
+Debe sostener algo estructuralmente equivalente a:
+
+$$
+\boxed{
+\Omega_{\infty}\neq\varnothing
+}
+$$
+
+o rechazar alguno de los otros puentes formales del teorema.
 
 La cuestión ontológica precisa pasa a ser:
 
 $$
 \boxed{
-\text{¿las restricciones fundamentales }\Lambda
-\text{ son localmente testificables?}
+\text{¿existe alguna propiedad fundamental de la realidad
+que sea esencialmente no compacta?}
 }
 $$
 
-Si la respuesta es afirmativa, [C1*] queda fuertemente apoyado.
-
-Si la respuesta es negativa, No-\(R\) obtiene una vía estructural concreta: una **obstrucción infinitaria no local** que permite todos los estadios parciales pero prohíbe su clausura conjunta.
+Una restricción introducida únicamente para impedir \(R\) no constituye por sí sola justificación suficiente; debe poseer motivación ontológica independiente dentro de \(\Lambda\).
 
 ### [H9] Vía procesual hacia [C1*]
 
@@ -1637,9 +1738,9 @@ La dificultad central de [O5] queda, por tanto, reformulada como:
 
 $
 \boxed{
-\text{derivar [C1*]/[C1] mediante localidad/continuidad ontológica
-o demostrar que el proceso dirigido mismo constituye una cota,
-frente a posibles obstrucciones infinitarias no locales o potencialismo,
+\text{derivar [C1*]/[C1] mediante localidad, compacidad o estructura procesual,
+o identificar una }\lambda_{\infty}\in\Omega_{\infty}
+\text{ con motivación ontológica independiente,
 sin presuponer ya }R.
 }
 $
@@ -3990,6 +4091,7 @@ La propuesta puede auditarse paso a paso:
 | 13b.1 | [I/O] | Toda cadena es finitamente compatible; [C1*] propone continuidad ontológica dirigida: la cadena admite un límite/cota superior salvo obstrucción ontológica infinitaria positiva. |
 | 13b.2 | [H/I] | Si la inadmisibilidad posee testigos locales/acotados y la admisibilidad es hereditaria, la compatibilidad finitaria de una cadena implica [C1*]. |
 | 13b.3 | [H/I] | Vía formal: si la admisibilidad es axiomatizable en un lenguaje compacto y los dominios admiten diagramas/embeddings coherentes, la satisfacibilidad finita de la cadena implica un modelo común \(U\), derivando [C1*]. |
+| 13b.3a | [D/I] | \(\Omega_{\infty}\) reúne restricciones no compactas: si \(\Omega_{\infty}=\varnothing\) bajo una representación adecuada, no puede existir un fallo puramente infinitario de [C1*]. |
 | 13b.4 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
@@ -4326,6 +4428,9 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 55. construir una formalización de \(T_i\) y \(\operatorname{Diag}(X)\) que permita aplicar el teorema de compacidad sin identificar indebidamente inclusión ontológica con pertenencia conjuntista;
 56. determinar si \(\preceq\) debe corresponder a embedding, subestructura, embedding elemental o una noción categórica distinta;
 57. estudiar qué restricciones de \(\Lambda\) requieren lógicas no compactas o cuantificación infinitaria y si tales restricciones poseen motivación ontológica independiente.
+58. formalizar \(\Lambda=\Lambda_{\mathrm{comp}}\cup\Lambda_{\infty}\) y definir rigurosamente \(\Omega_{\infty}\);
+59. determinar si existe alguna restricción ontológica candidata \(\lambda_{\infty}\in\Omega_{\infty}\) con motivación independiente de la necesidad de bloquear \(R\);
+60. comprobar si \(\Omega_{\infty}=\varnothing\) puede derivarse de propiedades estructurales más primitivas de \(\Lambda\), en vez de adoptarse como supuesto.
 
 ---
 
@@ -4354,6 +4459,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - [C1] se reduce a un **Principio de Continuidad Ontológica Dirigida [C1*]**: toda cadena es finitamente compatible, y su falta de cota superior exigiría una obstrucción ontológica genuinamente infinitaria que no aparece en ningún estadio finito;
 - se formula una ruta de derivación de [C1*] mediante **localidad/compactitud ontológica**: si toda inadmisibilidad tiene un testigo acotado y la admisibilidad es hereditaria, una cadena finitamente compatible no puede volverse inadmisible solo en el límite;
 - se formula una segunda ruta **formal por compacidad**: si la admisibilidad del índice es axiomatizable en un lenguaje lógico compacto y los dominios admiten diagramas/embeddings coherentes, la satisfacibilidad finita de toda cadena obliga a la existencia de un modelo común y por tanto deriva [C1*];
+- se define \(\Omega_{\infty}\) como el conjunto de obstrucciones ontológicas no compactas capaces de preservar toda satisfacibilidad finita y bloquear únicamente el límite dirigido; bajo una representación adecuada, \(\Omega_{\infty}=\varnothing\Rightarrow[C1*]\);
+- No-\(R\) fuerte debe ahora exhibir una restricción \(\lambda_{\infty}\in\Omega_{\infty}\) o rechazar algún otro puente formal, en vez de limitarse a negar la totalidad;
 - se mantiene además una ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
 - se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
