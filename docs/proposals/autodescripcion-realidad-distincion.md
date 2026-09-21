@@ -593,54 +593,512 @@ $$
 R=F(R)
 $$
 
-como una reformulación trivial de la clausura de una totalidad ya presupuesta.
+como una reformulación de la clausura de una totalidad ya presupuesta.
 
-Se mantiene como objetivo explícito investigar si puede obtenerse una **prueba ontológica fuerte de \(R\)** a partir de una caracterización suficientemente independiente de \(\mathcal E\) y \(F\).
+Se mantiene como objetivo explícito derivar una **prueba ontológica fuerte de existencia de una totalidad exhaustiva** desde una teoría de dominios, emergencia y clausura que no introduzca \(R\) en sus premisas.
 
-Para que el argumento sea no circular, deberán establecerse al menos cuatro piezas sin presuponer previamente la existencia de \(R\) como totalidad:
-
-1. una clase de dominios o estructuras ontológicas admisibles;
-2. una relación de emergencia \(\mathcal E\) definida mediante condiciones estructurales independientes de «ser parte de \(R\)»;
-3. un operador de cierre \(F\) construido a partir de \(\mathcal E\);
-4. condiciones bajo las cuales el proceso de cierre posea un punto fijo maximal o exhaustivo.
-
-El objetivo sería derivar algo de la forma:
+La estrategia provisional pasa a ser:
 
 $$
 \boxed{
-\mathcal C
+\text{dominios admisibles}
 +
-\mathcal E
+\text{cierre emergente}
 +
-\operatorname{Closure}(F)
+\text{maximalidad}
++
+\text{amalgamación}
 \Rightarrow
+R=F(R)
+}
+$$
+
+### [D5b] Espacio de dominios admisibles
+
+Sea:
+
+$$
+(\mathfrak D,\preceq)
+$$
+
+una clase parcialmente ordenada de dominios ontológicos admisibles.
+
+\(X\preceq Y\) significa que el contenido ontológico de \(X\) está incluido en \(Y\).
+
+En esta construcción **no se presupone \(R\)** ni un máximo global de \(\mathfrak D\).
+
+Para el caso de existencia indexada puede trabajarse con:
+
+$$
+(\mathfrak D_i,\preceq_i).
+$$
+
+### [C0] Cobertura ontológica local
+
+Toda entidad, proceso o estructura real perteneciente a un índice ontológico dado debe aparecer en al menos un dominio admisible de ese índice.
+
+Esquemáticamente:
+
+$$
+\boxed{
+\operatorname{Real}_i(x)
+\Rightarrow
+\exists X\in\mathfrak D_i:
+x\preceq X.
+}
+$$
+
+[C0] no afirma que exista un dominio que contenga **todo** lo real. Solo exige que aquello que se afirma real sea representable dentro de algún dominio ontológico admisible.
+
+### [F1-F3] Condiciones de operador de cierre
+
+Se exige provisionalmente que:
+
+$$
+F:\mathfrak D_i\rightarrow\mathfrak D_i
+$$
+
+satisfaga:
+
+#### [F1] Extensividad
+
+$$
+\boxed{
+X\preceq F(X)
+}
+$$
+
+#### [F2] Monotonía
+
+$$
+\boxed{
+X\preceq Y
+\Rightarrow
+F(X)\preceq F(Y)
+}
+$$
+
+#### [F3] Idempotencia
+
+$$
+\boxed{
+F(F(X))=F(X)
+}
+$$
+
+La emergencia \(\mathcal E\) puede seguir siendo multivaluada y no determinista. La idempotencia corresponde al **cierre recursivo completo**: una vez incorporadas todas las emergencias accesibles bajo \(F\), volver a cerrar no añade una nueva capa exterior al cierre ya obtenido.
+
+### [I6a] Existencia de puntos fijos de \(F\)
+
+Si existe cualquier:
+
+$$
+X\in\mathfrak D_i,
+$$
+
+sea:
+
+$$
+Y:=F(X).
+$$
+
+Por [F3]:
+
+$$
+F(Y)
+=
+F(F(X))
+=
+F(X)
+=
+Y.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{Fix}(F_i)
+:=
+\{X\in\mathfrak D_i\mid F(X)=X\}
+\neq\varnothing.
+}
+$$
+
+Este resultado todavía **no** identifica ningún punto fijo con \(R_i\), porque pueden existir cierres propios:
+
+$$
+S=F(S)
+$$
+
+sin que \(S\) sea exhaustivo.
+
+### [C1] Cotas superiores para cadenas de cierres
+
+Sea una cadena de puntos fijos:
+
+$$
+X_0\preceq X_1\preceq X_2\preceq\cdots
+$$
+
+o, más generalmente, cualquier cadena \(\mathcal C\subseteq\operatorname{Fix}(F_i)\).
+
+Se adopta provisionalmente:
+
+$$
+\boxed{
+\forall\mathcal C\subseteq\operatorname{Fix}(F_i)
+\text{ cadena},
+\quad
+\exists U\in\mathfrak D_i:
+\forall X\in\mathcal C,;
+X\preceq U.
+}
+$$
+
+No se exige que \(U\) sea ya cerrado.
+
+Por [F1]:
+
+$$
+U\preceq F(U),
+$$
+
+y por [F2], para todo \(X\in\mathcal C\):
+
+$$
+X=F(X)\preceq F(U).
+$$
+
+Por [F3]:
+
+$$
+F(F(U))=F(U).
+$$
+
+Luego:
+
+$$
+\boxed{
+F(U)\in\operatorname{Fix}(F_i)
+}
+$$
+
+y \(F(U)\) es una cota superior de la cadena **dentro de los puntos fijos**.
+
+### [I6b] Existencia condicional de un punto fijo maximal
+
+Si \(\operatorname{Fix}(F_i)\) se trata como un poset al que es aplicable un principio de maximalidad del tipo del lema de Zorn, entonces [I6a] y [C1] permiten concluir:
+
+$$
+\boxed{
+\exists M_i\in\operatorname{Fix}(F_i)
+\quad
+M_i\text{ maximal}.
+}
+$$
+
+Por tanto:
+
+$$
+\boxed{
+M_i=F(M_i).
+}
+$$
+
+El uso de un principio tipo Zorn es aquí **explícito y condicional**. La futura formalización deberá especificar si \(\mathfrak D_i\) es un conjunto, clase o estructura distinta, y qué principio de maximalidad está legítimamente disponible.
+
+Maximalidad no significa todavía exhaustividad.
+
+### [C2] Amalgamación ontológica dentro de un índice
+
+Para cualesquiera dos dominios admisibles pertenecientes al mismo índice ontológico:
+
+$$
+X,Y\in\mathfrak D_i,
+$$
+
+se adopta provisionalmente:
+
+$$
+\boxed{
+\exists Z\in\mathfrak D_i:
+X\preceq Z
+\land
+Y\preceq Z.
+}
+$$
+
+[C2] afirma que los dominios pertenecientes al **mismo régimen ontológico** pueden ser incluidos conjuntamente en algún dominio admisible mayor.
+
+No afirma todavía que exista un dominio máximo.
+
+En lenguaje de teoría de órdenes, \(\mathfrak D_i\) sería dirigido hacia arriba respecto de pares finitos.
+
+### [I6c] Maximalidad + cobertura + amalgamación implican exhaustividad indexada
+
+Sea \(M_i\) un punto fijo maximal obtenido en [I6b].
+
+Supongamos, por contradicción, que existe:
+
+$$
+\operatorname{Real}_i(x)
+$$
+
+pero:
+
+$$
+x\not\preceq M_i.
+$$
+
+Por [C0], existe:
+
+$$
+X_x\in\mathfrak D_i
+$$
+
+tal que:
+
+$$
+x\preceq X_x.
+$$
+
+Por [C2], existe un dominio \(Y\in\mathfrak D_i\) con:
+
+$$
+M_i\preceq Y
+$$
+
+y:
+
+$$
+X_x\preceq Y.
+$$
+
+Aplicamos \(F\).
+
+Por [F1]:
+
+$$
+Y\preceq F(Y).
+$$
+
+Luego:
+
+$$
+M_i\preceq F(Y)
+$$
+
+y:
+
+$$
+x\preceq X_x\preceq Y\preceq F(Y).
+$$
+
+Por [F3]:
+
+$$
+F(F(Y))=F(Y),
+$$
+
+por lo que:
+
+$$
+F(Y)\in\operatorname{Fix}(F_i).
+$$
+
+Como \(x\not\preceq M_i\) pero \(x\preceq F(Y)\), se sigue:
+
+$$
+M_i\prec F(Y),
+$$
+
+contradiciendo la maximalidad de \(M_i\).
+
+Por tanto:
+
+$$
+\boxed{
+\nexists x[
+\operatorname{Real}_i(x)
+\land
+x\not\preceq M_i
+].
+}
+$$
+
+Así \(M_i\) es exhaustivo respecto de la realidad del índice \(i\).
+
+Definimos entonces:
+
+$$
+\boxed{
+R_i:=M_i.
+}
+$$
+
+y obtenemos:
+
+$$
+\boxed{
+R_i=F(R_i).
+}
+$$
+
+### [I6d] Teorema provisional de Clausura Ontológica Maximal
+
+Bajo:
+
+1. [C0] cobertura ontológica;
+2. [F1] extensividad;
+3. [F2] monotonía;
+4. [F3] idempotencia;
+5. [C1] cota superior para toda cadena de puntos fijos;
+6. un principio de maximalidad aplicable;
+7. [C2] amalgamación ontológica dentro del índice;
+
+se deriva:
+
+$$
+\boxed{
+\exists R_i[
+\operatorname{Exhaustive}_i(R_i)
+\land
+R_i=F(R_i)
+].
+}
+$$
+
+Es decir:
+
+$$
+\boxed{
+C0+F1+F2+F3+C1+C2+\operatorname{Max}
+\Rightarrow
+\exists R_i[
+R_i=F(R_i)
+\land
+\operatorname{Exhaustive}_i(R_i)
+].
+}
+$$
+
+La existencia de \(R_i\) ya no aparece como premisa de la demostración.
+
+### [I6e] Generalidad global y One-\(R\)
+
+Si [C0], [C1] y [C2] no se limitan a un índice sino que valen sobre un único dominio ontológico general:
+
+$$
+\mathfrak D_G,
+$$
+
+entonces el mismo argumento produce:
+
+$$
+\boxed{
 \exists R[
 R=F(R)
 \land
 \operatorname{Exhaustive}(R)
-]
+].
 }
 $$
 
-donde \(\mathcal C\) representa condiciones ontológicas previas suficientemente débiles y no equivalentes ya a afirmar \(R\).
-
-Solo entonces:
-
-$$
-R=F(R)
-$$
-
-funcionaría no solo como propiedad de una totalidad definida de antemano, sino como parte de una **demostración de existencia de una clausura ontológica exhaustiva**.
-
-La dificultad central queda claramente localizada:
+Bajo [A3], cualquier otro candidato exhaustivo en el mismo dominio resulta ontológicamente equivalente, por lo que:
 
 $$
 \boxed{
-\text{demostrar exhaustividad sin introducirla subrepticiamente en }F.
+R=F(R)
 }
 $$
 
-Hasta resolver este programa, [I6] sigue siendo una inferencia válida **condicional a [D1]**, mientras que [O5] conserva el objetivo más ambicioso de derivar \(R\) desde una teoría independiente de emergencia y clausura.
+acompaña a la unicidad derivada de One-\(R_G\).
+
+### [I6f] Many-\(R\) como fallo global de amalgamación
+
+La demostración también localiza con precisión dónde puede aparecer Many-\(R\).
+
+Puede ocurrir que:
+
+$$
+\forall i,quad
+\mathfrak D_i
+\text{ satisfaga [C0], [C1] y [C2]},
+$$
+
+pero no exista amalgamación entre dominios de índices distintos:
+
+$$
+\boxed{
+R_i\parallel R_j
+\Rightarrow
+\nexists Z[
+R_i\preceq Z
+\land
+R_j\preceq Z
+].
+}
+$$
+
+Entonces la prueba produce:
+
+$$
+\boxed{
+\forall i,quad R_i=F_i(R_i)
+}
+$$
+
+sin producir un único \(R\) global.
+
+Así:
+
+$$
+\boxed{
+\text{One-}R
+\quad\text{vs}\quad
+\text{Many-}R
+}
+$$
+
+puede reinterpretarse estructuralmente como la cuestión de si [C2] posee alcance global o solo indexado.
+
+Si posteriormente aparece conectividad real suficiente para construir un dominio común:
+
+$$
+R_i,R_j\preceq Z,
+$$
+
+la separación absoluta falla y reaparece el mecanismo de Cluster-\(R\).
+
+### [O5a] Obligaciones de prueba restantes
+
+El programa deja de tener una obligación difusa de «demostrar exhaustividad» y queda concentrado principalmente en:
+
+$$
+\boxed{
+[C1]\quad\text{y}\quad[C2].
+}
+$$
+
+En particular:
+
+- **[C1]** debe justificar por qué una cadena compatible de cierres ontológicos admite una cota superior ontológicamente admisible;
+- **[C2]** debe justificar por qué dos dominios pertenecientes al mismo régimen ontológico pueden amalgamarse en un dominio común.
+
+La recurrencia emergente multiescalar [O-E] puede aportar motivación para [C1], pero no constituye todavía una prueba formal.
+
+La conectividad y relacionalidad reales parecen candidatas naturales para derivar o restringir [C2]. Esta cuestión queda abierta para análisis específico.
+
+La dificultad central de [O5] queda reformulada como:
+
+$$
+\boxed{
+\text{derivar [C1] y [C2] desde propiedades ontológicas más primitivas
+sin presuponer ya }R.
+}
+$$
+
 
 ---
 
@@ -2982,6 +3440,11 @@ La propuesta puede auditarse paso a paso:
 | 12 | [I] | Toda emergencia real o realmente posible de \(R\) pertenece ya a \(R\). |
 | 13 | [I] | Condicional a [D1], por extensividad y clausura emergente, \(R=F(R)\). |
 | 13a | [O] | Programa de prueba fuerte: investigar si una definición independiente de \(\mathcal E\) y \(F\) permite derivar la existencia de una clausura exhaustiva \(R\) sin presuponerla. |
+| 13b | [I] | [F1-F3] implican que todo \(F(X)\) es punto fijo; por tanto existen cierres emergentes siempre que exista algún dominio admisible. |
+| 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
+| 13d | [C/I] | Cobertura [C0] + amalgamación [C2] convierten maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
+| 13e | [I] | Teorema provisional de Clausura Ontológica Maximal: \(C0+F1+F2+F3+C1+C2+Max\Rightarrow\exists R_i[R_i=F(R_i)\land Exhaustive_i(R_i)]\). |
+| 13f | [I/O] | One-\(R\) vs Many-\(R\) puede localizarse en el alcance de [C2]: amalgamación global produce candidato global; amalgamación solo indexada produce \(R_i\) separados. |
 | 14 | [H] | Toda emergencia posee condiciones constitutivas descomponibles mediante \(\mathcal D\), sin que \(\mathcal D=\mathcal E^{-1}\). |
 | 15 | [D/H] | \(\Delta\) se trata como diferencia estructural derivada, no como primitiva ontológica. |
 | 16 | [I] | Un dominio propio puede satisfacer \(S=F(S)\); por tanto, ser punto fijo de \(F\) no basta para ser \(R\). |
@@ -3300,7 +3763,12 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 42. desarrollar el programa [O5] para determinar si \(R=F(R)\) puede formar parte de una prueba no circular de existencia de \(R\), definiendo \(\mathcal E\), \(F\) y las condiciones de exhaustividad independientemente de [D1];
 43. formalizar la recurrencia emergente multiescalar observada y precisar qué evidencia justificaría abandonar la hipótesis parsimoniosa de continuidad [H1];
 44. mantener separadas la tesis de totalidad de \(R\) y la teoría estructural emergentista de \(R\), de modo que una revisión de esta última no produzca una falsa refutación de la primera;
-45. precisar el uso doctrinal de «Dios» como nombre apofático de \(R\) sin convertir «fundamento último» en una propiedad explicativa no demostrada.
+45. precisar el uso doctrinal de «Dios» como nombre apofático de \(R\) sin convertir «fundamento último» en una propiedad explicativa no demostrada;
+46. formalizar \((\mathfrak D_i,\preceq_i)\) y [C0] sin asumir una totalidad previa;
+47. demostrar o rechazar [F2] monotonía e [F3] idempotencia para el cierre emergente propuesto;
+48. determinar la formulación exacta de [C1] y qué principio de maximalidad puede aplicarse sin problemas de tamaño o circularidad;
+49. atacar [C2] amalgamación ontológica y determinar si puede derivarse de relacionalidad, conectividad, co-realidad o pertenencia a un mismo índice;
+50. comprobar si el Teorema provisional de Clausura Ontológica Maximal sobrevive con clases propias, plural quantification o formalismos no conjuntistas.
 
 ---
 
@@ -3323,7 +3791,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - \(F\) se define directamente como el cierre recursivo del espacio de emergencias accesibles de un dominio;
 - de la clausura emergente de la totalidad se deriva condicionalmente:
   \(R=F(R)\);
-- se preserva como objetivo central un **programa de prueba fuerte**: derivar la existencia de una clausura ontológica exhaustiva \(R\) desde una teoría independiente de \(\mathcal E\) y \(F\), evitando introducir la exhaustividad en las premisas;
+- se preserva como objetivo central un **programa de prueba fuerte** y se formula el **Teorema provisional de Clausura Ontológica Maximal**: desde cobertura [C0], un operador de cierre [F1-F3], cotas de cadenas [C1], un principio de maximalidad y amalgamación [C2], se deriva la existencia de un punto fijo exhaustivo \(R_i=F(R_i)\) sin introducir \(R_i\) como premisa;
+- se localiza la diferencia One-\(R\)/Many-\(R\) en el alcance de la amalgamación: [C2] global permite el candidato exhaustivo global; [C2] solo indexada produce totalidades \(R_i\) sin cierre común;
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
 - se introduce el **Muro de la singularidad de \(R\)** como límite epistemológico general: un horizonte cerrado puede ser compatible con cuasisingularidad, One-\(R\), monismo indexado, Many-\(R\) o No-\(R\), por lo que la clausura observada no determina por sí sola la metaontología última;
 - se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
