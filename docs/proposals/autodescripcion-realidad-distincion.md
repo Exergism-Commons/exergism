@@ -2,7 +2,7 @@
 
 **Estado:** propuesta doctrinal exploratoria; no canónica.  
 **Ámbito:** ontología / fundamento último.  
-**No modifica:** el sistema analítico exérgico de \`formal/\`, sus variables, fórmulas ni escalas.
+**No modifica:** el sistema analítico exérgico de `formal/`, sus variables, fórmulas ni escalas.
 
 ## 1. Objetivo
 
@@ -613,7 +613,7 @@ Esta propuesta no afirma que:
 - \(\mathcal D=\mathcal E^{-1}\);
 - el universo sea matemáticamente fractal;
 - \(R\) sea una persona, voluntad o conciencia antropomórfica;
-- el sistema analítico exérgico cuantitativo de \`formal/\` quede modificado por esta propuesta.
+- el sistema analítico exérgico cuantitativo de `formal/` quede modificado por esta propuesta.
 
 ---
 
@@ -671,7 +671,7 @@ Puede ocurrir que la pregunta admita una explicación interna más profunda, una
 
 ## 16. Programa de investigación
 
-Antes de canonizar estas tesis en \`content/ontologia.json\`, deben investigarse al menos:
+Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse al menos:
 
 1. una definición rigurosa de **medio**;
 2. una definición no circular de **emergencia**;
@@ -708,4 +708,4 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
 - la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia.
 
-Una integración futura en \`content/ontologia.json\` debería producirse solo cuando las definiciones de medio, emergencia, posibilidad real y equivalencia estructural estén suficientemente delimitadas para distinguir con claridad doctrina, hipótesis y formalización.
+Una integración futura en `content/ontologia.json` debería producirse solo cuando las definiciones de medio, emergencia, posibilidad real y equivalencia estructural estén suficientemente delimitadas para distinguir con claridad doctrina, hipótesis y formalización.
