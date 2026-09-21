@@ -925,7 +925,283 @@ La trascendencia epistemológica consistiría entonces en atravesar falsas total
 
 ---
 
-## 14. Cadena de derivación resumida
+## 14. Hipótesis Many-\(R\): pluralidad ontológica absoluta
+
+El Muro de la singularidad abre una posibilidad más radical que una sandbox, una simulación o un multiverso causalmente desconectado.
+
+Debe distinguirse primero entre:
+
+$
+\text{inaccesibilidad causal}
+$
+
+y:
+
+$
+\text{separación ontológica absoluta}.
+$
+
+Dos universos pueden ser mutuamente inaccesibles y, sin embargo, pertenecer al mismo \(R\). La ausencia de interacción no basta para producir múltiples Realidades Totales.
+
+### [D13] Many-\(R\) débil no es Many-\(R\) genuino
+
+Supónganse dominios:
+
+$
+R_1,R_2,\ldots,R_n
+$
+
+mutuamente inaccesibles, pero tales que existe un supramedio real \(R^\ast\) que los contiene:
+
+$
+\forall i,\quad R_i\preceq_{R^\ast}R^\ast.
+$
+
+Entonces, por [D1], el verdadero candidato a Realidad Total es:
+
+$
+R=R^\ast.
+$
+
+Los \(R_i\) pueden ser universos, multiversos, simulaciones cerradas o supramedios parciales, pero no son \(R\) en el sentido absoluto de esta propuesta.
+
+Por tanto:
+
+$
+\boxed{
+\text{inaccesibilidad mutua}
+\not\Rightarrow
+\text{pluralidad de }R
+}
+$
+
+### [H5] Many-\(R\) fuerte
+
+La hipótesis **Many-\(R\) fuerte** propone algo distinto:
+
+> podrían existir múltiples totalidades ontológicas absolutamente separadas, \(R_1,R_2,\ldots\), sin un supramedio real común, sin relación causal común y sin una totalidad ontológica superior que las contenga.
+
+Esquemáticamente:
+
+$
+R_1\parallel R_2\parallel R_3\parallel\cdots
+$
+
+donde \(\parallel\) no representa distancia espacial ni mera desconexión causal. Representa, provisionalmente, **incomparabilidad ontológica absoluta**.
+
+En esta hipótesis no existe un \(R^\ast\) real tal que:
+
+$
+R_1,R_2\preceq_{R^\ast}R^\ast.
+$
+
+Si tal \(R^\ast\) existiera realmente, Many-\(R\) colapsaría de nuevo en un único \(R\).
+
+### [I11] El problema del metadominio
+
+La expresión:
+
+$
+\{R_1,R_2,\ldots\}
+$
+
+es peligrosa porque puede sugerir que existe una colección real que contiene a todas las realidades.
+
+Debe distinguirse entre:
+
+1. **metanotación:** nuestro lenguaje usa índices \(R_1,R_2,\ldots\) para comparar hipótesis;
+2. **metadominio ontológico:** existe realmente una estructura \(\mathfrak R\) que contiene o relaciona esas totalidades.
+
+Solo la segunda destruye Many-\(R\).
+
+Si:
+
+$
+\operatorname{Real}(\mathfrak R)
+\land
+\forall i\;R_i\preceq\mathfrak R,
+$
+
+entonces:
+
+$
+\boxed{\mathfrak R=R}
+$
+
+o, al menos, \(\mathfrak R\) pasa a ser el nuevo candidato a la totalidad absoluta.
+
+Por ello, en Many-\(R\) fuerte, \(\mathfrak R\) solo puede utilizarse como recurso del **metalenguaje**, no como entidad real común.
+
+### [H6] Existencia indexada
+
+La consecuencia más radical de Many-\(R\) fuerte es que el predicado universal:
+
+$
+\operatorname{Real}(x)
+$
+
+podría no poseer un dominio ontológico único.
+
+En su lugar habría que considerar algo como:
+
+$
+\operatorname{Real}_i(x)
+$
+
+o cuantificadores indexados:
+
+$
+\exists_i x
+$
+
+cuyo dominio es \(R_i\).
+
+Entonces:
+
+$
+R_i:=\text{totalidad de lo real}_i
+$
+
+sin que sea legítimo formar ontológicamente:
+
+$
+R_1\cup R_2
+$
+
+ni afirmar la existencia de una totalidad superior solo porque el metalenguaje pueda hablar hipotéticamente de ambas.
+
+Esto obligaría a revisar la definición actual de \(R\), porque «todo lo real» dejaría de tener necesariamente un dominio universal.
+
+### [O2] ¿Tiene sentido decir que hay «dos» realidades absolutamente incomparables?
+
+Many-\(R\) fuerte reabre el problema de \(\Delta\) en la escala máxima.
+
+Para afirmar:
+
+$
+R_1\neq R_2
+$
+
+parece necesario algún criterio de individuación o comparación.
+
+Pero si esa comparación fuese una relación **real** compartida por \(R_1\) y \(R_2\), podría constituir ya una estructura común y amenazar su separación absoluta.
+
+No se sigue, sin embargo, que el simple hecho de que nuestro **metalenguaje** distinga dos modelos cree una relación ontológica real entre ellos.
+
+Por tanto, deben separarse:
+
+$
+\text{distinguibilidad semántica en el metalenguaje}
+$
+
+de:
+
+$
+\text{relación ontológica entre dominios}.
+$
+
+La coherencia de Many-\(R\) depende en gran medida de que esta distinción pueda mantenerse sin vaciar de significado la afirmación de pluralidad.
+
+### [I12] Many-\(R\) amplía el Muro
+
+Desde la perspectiva de un observador interno \(o\), pueden existir al menos tres hipótesis estructuralmente distintas:
+
+$
+H_1:\quad \widehat R_o=R
+$
+
+$
+H_2:\quad \widehat R_o=S\subsetneq R
+$
+
+$
+H_3:\quad \widehat R_o=R_i
+\quad\text{y existen otros }R_j\text{ sin supramedio ontológico común}.
+$
+
+- \(H_1\): el horizonte accesible coincide con una única Realidad Total;
+- \(H_2\): el horizonte accesible es una cuasisingularidad o falsa totalidad dentro de una realidad mayor;
+- \(H_3\): el horizonte accesible puede ser una totalidad ontológica genuina y, sin embargo, no ser la única totalidad.
+
+Si:
+
+$
+\operatorname{Obs}_o(H_1)
+=
+\operatorname{Obs}_o(H_2)
+=
+\operatorname{Obs}_o(H_3),
+$
+
+entonces el Muro no solo impide decidir si existe un exterior accesible o inaccesible. Impide decidir, desde la evidencia interna disponible, **si la totalidad ontológica es única**.
+
+### [O3] Tensión con la doctrina actual del exergismo
+
+El exergismo canónico define actualmente la Verdad Absoluta como:
+
+$
+R:=\text{la totalidad de todo lo real}.
+$
+
+Leída con cuantificación universal no indexada, esta definición favorece un **monismo ontológico absoluto**: cualquier cosa que sea real pertenece al mismo \(R\).
+
+Por tanto, Many-\(R\) fuerte no debe presentarse todavía como consecuencia de la doctrina actual. Es una alternativa metaontológica que somete a prueba una presuposición hasta ahora implícita:
+
+$
+\boxed{
+\text{¿es único el dominio de “lo real”?}
+}
+$
+
+Hay dos respuestas provisionales coherentes:
+
+#### Monismo absoluto
+
+$
+\forall x\,[\operatorname{Real}(x)\Rightarrow x\preceq_R R]
+$
+
+con un único dominio de realidad, aunque contenga regiones totalmente inaccesibles entre sí.
+
+#### Pluralismo ontológico absoluto
+
+$
+\operatorname{Real}_i(x)
+$
+
+con múltiples dominios de realidad mutuamente no contenidos y sin cuantificador ontológico universal común.
+
+La propuesta mantiene Many-\(R\) como pregunta abierta hasta determinar si el segundo modelo es coherente y qué significaría exactamente «pluralidad» sin una estructura ontológica común.
+
+### Consecuencia para la Verdad Absoluta
+
+Si el monismo absoluto se mantiene, la Verdad Absoluta sigue siendo única:
+
+$
+\boxed{R}
+$
+
+y cualquier supuesto Many-\(R\) observable se reduce a pluralidad interna de medios.
+
+Si Many-\(R\) fuerte fuese coherente, habría que reemplazar:
+
+$
+\text{Verdad Absoluta}
+$
+
+por una familia indexada:
+
+$
+R_1,R_2,\ldots
+$
+
+sin una metaverdad ontológica común.
+
+Eso constituiría una revisión doctrinal mayor y no se adopta en este PR.
+
+---
+
+## 15. Cadena de derivación resumida
 
 La propuesta puede auditarse paso a paso:
 
@@ -949,12 +1225,16 @@ La propuesta puede auditarse paso a paso:
 | 16 | [I] | Un dominio propio puede satisfacer \(S=F(S)\); por tanto, ser punto fijo de \(F\) no basta para ser \(R\). |
 | 17 | [D] | Se distingue clausura emergente relativa de totalidad ontológica absoluta. |
 | 18 | [D/H] | Una cuasisingularidad puede ser indistinguible de \(R\) para observadores internos: aparece el Muro de la singularidad. |
+| 19 | [I] | Múltiples dominios causalmente inaccesibles siguen perteneciendo a un único \(R\) si existe un supramedio real común. |
+| 20 | [H] | Many-\(R\) fuerte exige múltiples totalidades sin supramedio ontológico común. |
+| 21 | [H/O] | Para sostener Many-\(R\), «real» y la cuantificación existencial podrían tener que indexarse por totalidad. |
+| 22 | [O] | Queda abierta la coherencia de una pluralidad absoluta sin relación ontológica común y su distinguibilidad desde dentro del Muro. |
 
 La parte que requiere investigación ya no es «inventar una \(F\) cualquiera», sino comprobar si **emergencia** puede definirse con suficiente precisión como para sostener esta arquitectura sin circularidad.
 
 ---
 
-## 15. Qué no afirma esta propuesta
+## 16. Qué no afirma esta propuesta
 
 Esta propuesta no afirma que:
 
@@ -968,6 +1248,9 @@ Esta propuesta no afirma que:
 - vivamos en una simulación;
 - toda clausura observacional sea una sandbox;
 - el Muro fuerte sea ya un teorema;
+- Many-\(R\) fuerte sea verdadero;
+- la mera inaccesibilidad causal implique múltiples realidades ontológicas absolutas;
+- pueda hablarse de varios \(R_i\) sin resolver antes si «real» posee un dominio universal o indexado;
 - exista realmente una cadena infinita de supramedios parciales;
 - la emergencia sea ya una noción formalizada de manera suficiente;
 - \(\mathcal D=\mathcal E^{-1}\);
@@ -977,9 +1260,9 @@ Esta propuesta no afirma que:
 
 ---
 
-## 16. Objeciones serias
+## 17. Objeciones serias
 
-### 16.1 Riesgo de circularidad en la emergencia
+### 17.1 Riesgo de circularidad en la emergencia
 
 Si «emergencia» significa simplemente «todo lo que aparece realmente», entonces:
 
@@ -991,15 +1274,15 @@ sería casi tautológico.
 
 La siguiente fase debe restringir \(\mathcal E\) independientemente mediante condiciones estructurales evaluables.
 
-### 16.2 El salto desde nuestro universo a \(R\)
+### 17.2 El salto desde nuestro universo a \(R\)
 
 Que la emergencia sea ubicua en el dominio conocido no demuestra que toda capa ontológica superior tenga que organizarse de la misma forma. La continuidad de la estructura medio-emergencia fuera del dominio observado permanece como [H1], no como deducción.
 
-### 16.3 «Supramedio» puede reificar la totalidad
+### 17.3 «Supramedio» puede reificar la totalidad
 
 Llamar a \(R\) supramedio no debe convertirlo accidentalmente en una caja espacial o en un último universo físico. Debe aclararse si «medio» conserva el mismo significado cuando se aplica a \(R\) o si \(R\) es el límite ontológico del concepto.
 
-### 16.4 Actualidad y posibilidad
+### 17.4 Actualidad y posibilidad
 
 Incluir posibilidades reales en \(R\) exige definir qué hace que una posibilidad sea real y distinguir:
 
@@ -1011,21 +1294,21 @@ Incluir posibilidades reales en \(R\) exige definir qué hace que una posibilida
 
 Sin esta distinción, \(P\) puede volverse trivialmente ilimitado.
 
-### 16.5 Emergencia y reducción
+### 17.5 Emergencia y reducción
 
 Una estructura emergente puede depender completamente de niveles constitutivos y aun así admitir distintas formas de reducción explicativa. Debe aclararse qué tipo de novedad —causal, organizativa, informacional, efectiva o descriptiva— exige el término «emergencia».
 
-### 16.6 Identidad y distinción
+### 17.6 Identidad y distinción
 
 Definir \(\Delta_R\) mediante no equivalencia estructural desplaza el problema hacia «equivalencia». Será necesario especificar qué invariantes cuentan y a qué nivel.
 
-### 16.7 «Singularidad» como término potencialmente equívoco
+### 17.7 «Singularidad» como término potencialmente equívoco
 
 El uso de «singularidad» en esta propuesta es estrictamente ontológico y local. No debe confundirse con singularidades gravitacionales, divergencias matemáticas, puntos singulares de variedades ni singularidad tecnológica.
 
 Si el término genera más ambigüedad que capacidad explicativa, deberá sustituirse por «totalidad absoluta» o una denominación equivalente.
 
-### 16.8 El Muro puede ser demasiado fuerte
+### 17.8 El Muro puede ser demasiado fuerte
 
 La indistinguibilidad perfecta entre una sandbox y \(R\) solo se sigue bajo condiciones de aislamiento suficientemente fuertes. Un dominio aparentemente cerrado puede contener anomalías, acoplamientos, fugas de información o regularidades que permitan inferir estructura exterior.
 
@@ -1039,7 +1322,17 @@ $$
 
 La versión fuerte del Muro requiere demostrar qué clases de observadores y dominios generan indistinguibilidad principial y cuáles solo presentan ignorancia contingente.
 
-### 16.9 El problema de la explicación última
+### 17.9 Many-\(R\) puede ser incoherente por definición
+
+Si «real» posee un único dominio universal, entonces cualquier \(R_i\) del que pueda afirmarse que es real pertenece ya a la totalidad de ese dominio. Many-\(R\) fuerte solo puede sobrevivir si la existencia misma es indexada o si la pluralidad puede formularse sin un dominio ontológico común.
+
+### 17.10 El metalenguaje puede simular una unidad inexistente
+
+Que una teoría escriba \(R_1,R_2\) y cuantifique sobre ambos no demuestra que exista una estructura real común que los relacione. El metalenguaje puede comparar modelos incompatibles o mutuamente excluyentes.
+
+Sin embargo, si la tesis Many-\(R\) pretende afirmar que **ambos son efectivamente reales**, deberá explicar qué contenido tiene esa afirmación sin reintroducir un sentido universal de realidad.
+
+### 17.11 El problema de la explicación última
 
 Incluso si \(R\) es cerrado bajo emergencia y no necesita un exterior, sigue abierta:
 
@@ -1049,7 +1342,7 @@ Puede ocurrir que la pregunta admita una explicación interna más profunda, una
 
 ---
 
-## 17. Programa de investigación
+## 18. Programa de investigación
 
 Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse al menos:
 
@@ -1069,11 +1362,16 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 14. definir formalmente observador, horizonte accesible \(\widehat R_o\) e indistinguibilidad observacional;
 15. determinar bajo qué condiciones un dominio propio puede satisfacer \(S=F(S)\);
 16. caracterizar cuasisingularidades y distinguir aislamiento contingente de indistinguibilidad en principio;
-17. evaluar si la versión fuerte del Muro puede demostrarse o debe permanecer como límite epistemológico heurístico.
+17. evaluar si la versión fuerte del Muro puede demostrarse o debe permanecer como límite epistemológico heurístico;
+18. distinguir formalmente inaccesibilidad causal, clausura relativa y separación ontológica absoluta;
+19. determinar si la definición de Realidad Total exige un único dominio universal de cuantificación;
+20. explorar si una semántica de existencia indexada \(\operatorname{Real}_i\) o \(\exists_i\) puede formular Many-\(R\) sin reintroducir un metadominio real;
+21. establecer si la pluralidad de totalidades absolutamente incomparables posee contenido ontológico o solo metalingüístico;
+22. analizar si \(H_1\), \(H_2\) y \(H_3\) pueden ser observacionalmente equivalentes para un observador interno.
 
 ---
 
-## 18. Delta doctrinal propuesto
+## 19. Delta doctrinal propuesto
 
 Esta propuesta **expande** la ontología existente como programa de investigación, sin modificar todavía el corpus canónico.
 
@@ -1090,7 +1388,9 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
   \(R=F(R)\);
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
 - se introduce el **Muro de la singularidad de \(R\)** para distinguir clausura observable, cuasisingularidad y totalidad ontológica absoluta;
+- se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
+- se explicita que Many-\(R\) fuerte tensiona la definición canónica de Verdad Absoluta y permanece como alternativa abierta, no como doctrina adoptada;
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
 - la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia y se introduce la diferencia entre descomponibilidad ontológica y reconstruibilidad epistemológica.
 
-Una integración futura en `content/ontologia.json` debería producirse solo cuando las definiciones de medio, emergencia, posibilidad real y equivalencia estructural estén suficientemente delimitadas para distinguir con claridad doctrina, hipótesis y formalización.
+Una integración futura en `content/ontologia.json` debería producirse solo cuando las definiciones de medio, emergencia, posibilidad real, equivalencia estructural y unicidad o indexación del dominio de realidad estén suficientemente delimitadas para distinguir con claridad doctrina, hipótesis y formalización.
