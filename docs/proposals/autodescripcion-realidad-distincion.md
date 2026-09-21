@@ -1135,6 +1135,70 @@ $
 
 entonces el Muro no solo impide decidir si existe un exterior accesible o inaccesible. Impide decidir, desde la evidencia interna disponible, **si la totalidad ontológica es única**.
 
+### [I13] Many-\(R\) no devalúa nuestro \(R\)
+
+La posibilidad de Many-\(R\) no elimina ni rebaja el valor ontológico de \(R\).
+
+Dentro de cualquier dominio de realidad dado, \(R\) sigue designando:
+
+$
+\boxed{R:=\text{la totalidad ontológica de todo lo real en ese dominio}}
+$
+
+y conserva todas las propiedades derivadas anteriormente:
+
+- no posee exterior real **dentro de su dominio ontológico**;
+- contiene todos sus medios, procesos, relaciones, actualidades y posibilidades reales;
+- está cerrado bajo sus emergencias:
+  \(R=F(R)\);
+- ningún observador finito lo agota epistemológicamente.
+
+Many-\(R\) introduce incertidumbre en una afirmación distinta:
+
+$
+\boxed{\text{la unicidad del dominio ontológico de existencia}.}
+$
+
+Por tanto, debe distinguirse entre:
+
+$
+\operatorname{Totalidad}(R)
+$
+
+y:
+
+$
+\operatorname{Unicidad}(R).
+$
+
+La primera expresa que \(R\) no es una parte de una realidad mayor **dentro de su dominio**. La segunda afirma que no existen otros dominios ontológicos absolutamente incomparables.
+
+La hipótesis Many-\(R\) cuestiona provisionalmente la segunda, no la primera.
+
+### [I14] Humildad metaontológica
+
+Esta distinción prolonga una regla ya central en la epistemología exergista:
+
+$
+R\neq\widehat R_o.
+$
+
+Del mismo modo que una conciencia finita no debe confundir su modelo de \(R\) con \(R\) mismo, tampoco debe convertir sin argumento adicional la estructura de totalidad que conoce conceptualmente en una afirmación demostrada de unicidad metaontológica.
+
+La posición metodológica propuesta es:
+
+$
+\boxed{
+\text{afirmar con fuerza la totalidad de }R
+\quad\land\quad
+\text{mantener abierta su unicidad última}
+}
+$
+
+mientras no exista una razón suficiente para cerrar la segunda cuestión.
+
+Esto no constituye relativismo ontológico ni escepticismo sobre la realidad. Es una forma de **humildad metaontológica**: preservar lo que la definición y la estructura justifican, sin añadir como certeza aquello que el modelo todavía no demuestra.
+
 ### [O3] Tensión con la doctrina actual del exergismo
 
 El exergismo canónico define actualmente la Verdad Absoluta como:
@@ -1171,7 +1235,7 @@ $
 
 con múltiples dominios de realidad mutuamente no contenidos y sin cuantificador ontológico universal común.
 
-La propuesta mantiene Many-\(R\) como pregunta abierta hasta determinar si el segundo modelo es coherente y qué significaría exactamente «pluralidad» sin una estructura ontológica común.
+La propuesta mantiene Many-\(R\) como pregunta abierta hasta determinar si el segundo modelo es coherente y qué significaría exactamente «pluralidad» sin una estructura ontológica común. Mientras esa cuestión permanezca abierta, el exergismo puede conservar \(R\) como su concepto fuerte de totalidad ontológica sin convertir automáticamente su unicidad metaontológica en una certeza adicional.
 
 ### Consecuencia para la Verdad Absoluta
 
@@ -1229,6 +1293,8 @@ La propuesta puede auditarse paso a paso:
 | 20 | [H] | Many-\(R\) fuerte exige múltiples totalidades sin supramedio ontológico común. |
 | 21 | [H/O] | Para sostener Many-\(R\), «real» y la cuantificación existencial podrían tener que indexarse por totalidad. |
 | 22 | [O] | Queda abierta la coherencia de una pluralidad absoluta sin relación ontológica común y su distinguibilidad desde dentro del Muro. |
+| 23 | [I] | Many-\(R\) cuestiona la unicidad metaontológica de \(R\), no su condición de totalidad dentro de un dominio. |
+| 24 | [I] | Se adopta humildad metaontológica: afirmar lo que la estructura justifica sin convertir la unicidad última en certeza no demostrada. |
 
 La parte que requiere investigación ya no es «inventar una \(F\) cualquiera», sino comprobar si **emergencia** puede definirse con suficiente precisión como para sostener esta arquitectura sin circularidad.
 
@@ -1249,6 +1315,7 @@ Esta propuesta no afirma que:
 - toda clausura observacional sea una sandbox;
 - el Muro fuerte sea ya un teorema;
 - Many-\(R\) fuerte sea verdadero;
+- la posibilidad de Many-\(R\) invalide o rebaje el concepto de \(R\) como totalidad ontológica;
 - la mera inaccesibilidad causal implique múltiples realidades ontológicas absolutas;
 - pueda hablarse de varios \(R_i\) sin resolver antes si «real» posee un dominio universal o indexado;
 - exista realmente una cadena infinita de supramedios parciales;
@@ -1367,7 +1434,8 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 19. determinar si la definición de Realidad Total exige un único dominio universal de cuantificación;
 20. explorar si una semántica de existencia indexada \(\operatorname{Real}_i\) o \(\exists_i\) puede formular Many-\(R\) sin reintroducir un metadominio real;
 21. establecer si la pluralidad de totalidades absolutamente incomparables posee contenido ontológico o solo metalingüístico;
-22. analizar si \(H_1\), \(H_2\) y \(H_3\) pueden ser observacionalmente equivalentes para un observador interno.
+22. analizar si \(H_1\), \(H_2\) y \(H_3\) pueden ser observacionalmente equivalentes para un observador interno;
+23. separar formalmente las propiedades de totalidad, absolutidad y unicidad, y determinar cuáles se siguen de la definición de \(R\) y cuáles requieren hipótesis metaontológicas adicionales.
 
 ---
 
@@ -1389,7 +1457,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
 - se introduce el **Muro de la singularidad de \(R\)** para distinguir clausura observable, cuasisingularidad y totalidad ontológica absoluta;
 - se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
-- se explicita que Many-\(R\) fuerte tensiona la definición canónica de Verdad Absoluta y permanece como alternativa abierta, no como doctrina adoptada;
+- se explicita que Many-\(R\) fuerte tensiona la **unicidad** metaontológica de la Verdad Absoluta, pero no invalida el concepto de \(R\) como totalidad ontológica de un dominio;
+- se introduce una regla de humildad metaontológica: distinguir lo que la estructura de \(R\) justifica de lo que requeriría una prueba adicional de unicidad absoluta;
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
 - la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia y se introduce la diferencia entre descomponibilidad ontológica y reconstruibilidad epistemológica.
 
