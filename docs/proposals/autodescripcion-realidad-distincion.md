@@ -1265,7 +1265,261 @@ Eso constituiría una revisión doctrinal mayor y no se adopta en este PR.
 
 ---
 
-## 15. Cadena de derivación resumida
+## 15. No-\(R\), totalizabilidad y existencia de \(R\)
+
+La discusión anterior permite aislar una alternativa distinta de Many-\(R\): negar que exista una totalidad ontológica \(R\) en absoluto.
+
+Esta posición debe distinguirse cuidadosamente de una realidad con profundidad indefinida.
+
+### [I15] Una cadena sin último medio no implica No-\(R\)
+
+Puede existir:
+
+$
+M_0\prec M_1\prec M_2\prec\cdots
+$
+
+sin que exista un último medio parcial \(M_n\).
+
+Eso ya estaba contemplado por [I5]. Si todos esos medios son reales dentro de un mismo dominio ontológico, entonces:
+
+$
+\forall n,\quad M_n\preceq_R R.
+$
+
+Por tanto:
+
+$
+\boxed{
+\text{ausencia de último medio}
+\not\Rightarrow
+\text{ausencia de }R
+}
+$
+
+La infinitud vertical, la inexhaustibilidad estructural o la imposibilidad de completar epistemológicamente una cadena de medios no constituyen alternativas a \(R\). Son configuraciones posibles **dentro de \(R\)**.
+
+### [D14] Generalidad ontológica absoluta
+
+Llamamos provisionalmente **generalidad ontológica absoluta** a la posibilidad de usar «real» con un dominio no restringido dentro de una ontología:
+
+$
+\operatorname{Real}(x)
+$
+
+de manera que cualquier cosa real quede dentro del alcance del mismo dominio de cuantificación.
+
+Esto no exige que todas las cosas formen un conjunto ni que \(R\) sea un objeto adicional.
+
+### [I16] Teorema condicional de existencia de \(R\)
+
+Sean las siguientes premisas:
+
+1. **realidad no vacía**:
+
+$
+\exists x\,\operatorname{Real}(x);
+$
+
+2. **generalidad ontológica absoluta**: «real» puede aplicarse sin restricción a todo aquello que es real;
+
+3. **definición de \(R\)**:
+
+$
+R:=\text{la totalidad ontológica de todo lo real}.
+$
+
+Entonces:
+
+$
+\boxed{
+\text{realidad no vacía}
++
+\text{generalidad ontológica absoluta}
+\Rightarrow
+R
+}
+$
+
+Este resultado es **condicional y conceptual**, no un teorema matemático independiente de las premisas.
+
+Su fuerza consiste en que, bajo esas premisas, negar \(R\) no describe una cuarta estructura ontológica: contradice el uso absolutamente general de «lo real» que permitió formular la totalidad.
+
+### [I17] Lo que debe negar una posición No-\(R\) fuerte
+
+Una posición No-\(R\) sofisticada no puede apoyarse simplemente en:
+
+- que no exista un último nivel;
+- que ningún observador pueda enumerar toda la realidad;
+- que no exista un conjunto universal;
+- que \(R\) no sea accesible como objeto empírico.
+
+Nada de eso afecta a la definición usada aquí.
+
+Para sostener:
+
+$
+\neg R
+$
+
+manteniendo que hay realidad, debe rechazarse al menos la generalidad ontológica absoluta.
+
+Es decir, la tesis rival relevante pasa a ser:
+
+$
+\boxed{
+\text{ningún dominio de “lo real” es absolutamente totalizable}
+}
+$
+
+o alguna variante en la que cualquier cuantificación pretendidamente absoluta sea necesariamente restringida, contextual o extensible.
+
+Por ello, dentro de esta arquitectura:
+
+$
+\boxed{
+\neg R
+\Rightarrow
+\neg\text{ generalidad ontológica absoluta}
+}
+$
+
+como contraposición conceptual del resultado anterior.
+
+### [O4] El problema de autoaplicación de No-\(R\)
+
+Una posición que sostenga:
+
+> «ningún dominio abarca todo lo real»
+
+debe explicar cómo esa propia afirmación consigue referirse a todos los dominios relevantes sin reintroducir el tipo de generalidad que pretende negar.
+
+Esquemáticamente, una formulación como:
+
+$
+\forall D\;\exists x\,
+[\operatorname{Real}(x)\land x\not\preceq D]
+$
+
+parece requerir un metalenguaje capaz de hablar con mayor generalidad que cada \(D\).
+
+Esto no basta para refutar todas las teorías No-\(R\), porque el rival puede distinguir entre:
+
+- cuantificación ontológica;
+- esquemas abiertos;
+- metalenguaje;
+- contextualismo;
+- extensibilidad indefinida.
+
+Pero obliga a que No-\(R\) especifique cómo evita convertir su negación de la totalidad en una nueva forma de totalidad semántica u ontológica.
+
+### [D15] Mapa metaontológico mínimo
+
+La discusión produce tres familias principales.
+
+#### One-\(R\)
+
+Existe un único dominio ontológico absolutamente general:
+
+$
+\boxed{\exists!R}
+$
+
+y todas las realidades, medios y niveles pertenecen a él.
+
+#### Many-\(R\)
+
+Existen totalidades indexadas:
+
+$
+R_i
+$
+
+con:
+
+$
+\operatorname{Real}_i(x),
+\qquad
+\exists_i x,
+$
+
+sin que esté justificado un cuantificador ontológico universal común.
+
+Many-\(R\) conserva **totalidad**, pero cuestiona **unicidad**.
+
+#### No-\(R\)
+
+Se niega que exista una totalidad ontológica completada siquiera en el sentido requerido por \(R\).
+
+Para que esta posición sea genuinamente distinta, debe cuestionar la **totalizabilidad absoluta de lo real**, no simplemente la existencia de un último nivel.
+
+Así, los tres ejes quedan separados:
+
+$
+\boxed{
+\begin{array}{rcl}
+\text{One-}R &:& \text{totalidad + unicidad}\\
+\text{Many-}R &:& \text{totalidad sin unicidad global demostrada}\\
+\text{No-}R &:& \text{negación de totalizabilidad absoluta}
+\end{array}
+}
+$
+
+### [I18] ManyMany-\(R\) no constituye un cuarto nivel ontológico estable
+
+Si una estructura \(\mathfrak M\) reúne realmente varios \(R_i\):
+
+$
+R_i\preceq\mathfrak M,
+$
+
+entonces \(\mathfrak M\) pasa a ser el candidato superior a totalidad y Many-\(R\) colapsa en One-\(R\).
+
+Si \(\mathfrak M\) solo organiza \(R_i\) en nuestro metalenguaje, no constituye una capa ontológica adicional.
+
+Por tanto:
+
+$
+\boxed{
+\text{ManyMany-}R
+\Rightarrow
+\text{One-}R
+\quad\text{o}\quad
+\text{metalenguaje}
+}
+$
+
+bajo las definiciones actuales.
+
+Esto marca un límite del **metaapilamiento ontológico**, no un límite del número de estructuras, medios o hipótesis que puedan existir dentro de una ontología.
+
+### Consecuencia para la conjetura
+
+La conjetura ya no necesita tratar «R infinito», «R sin último medio» o «ManyMany-\(R\)» como alternativas independientes.
+
+El espacio metaontológico relevante queda concentrado en dos preguntas:
+
+$
+\boxed{
+\text{¿es lo real absolutamente totalizable?}
+}
+$
+
+y, si lo es:
+
+$
+\boxed{
+\text{¿esa totalidad es necesariamente única?}
+}
+$
+
+La primera separa \(R\) de No-\(R\).
+
+La segunda separa One-\(R\) de Many-\(R\).
+
+---
+
+## 16. Cadena de derivación resumida
 
 La propuesta puede auditarse paso a paso:
 
@@ -1295,12 +1549,17 @@ La propuesta puede auditarse paso a paso:
 | 22 | [O] | Queda abierta la coherencia de una pluralidad absoluta sin relación ontológica común y su distinguibilidad desde dentro del Muro. |
 | 23 | [I] | Many-\(R\) cuestiona la unicidad metaontológica de \(R\), no su condición de totalidad dentro de un dominio. |
 | 24 | [I] | Se adopta humildad metaontológica: afirmar lo que la estructura justifica sin convertir la unicidad última en certeza no demostrada. |
+| 25 | [I] | Una cadena infinita o sin último medio sigue siendo una configuración interna de \(R\), no una alternativa No-\(R\). |
+| 26 | [I] | Si la realidad es no vacía y admite generalidad ontológica absoluta, \(R\) existe condicionalmente como totalidad de lo real. |
+| 27 | [I/O] | No-\(R\) genuino debe negar o restringir la totalizabilidad absoluta de «lo real». |
+| 28 | [I] | ManyMany-\(R\) colapsa en un nuevo \(R\) si es ontológicamente real, o permanece como metalenguaje si no lo es. |
+| 29 | [D] | El mapa mínimo queda One-\(R\) / Many-\(R\) / No-\(R\), separados por totalizabilidad y unicidad. |
 
 La parte que requiere investigación ya no es «inventar una \(F\) cualquiera», sino comprobar si **emergencia** puede definirse con suficiente precisión como para sostener esta arquitectura sin circularidad.
 
 ---
 
-## 16. Qué no afirma esta propuesta
+## 17. Qué no afirma esta propuesta
 
 Esta propuesta no afirma que:
 
@@ -1315,6 +1574,8 @@ Esta propuesta no afirma que:
 - toda clausura observacional sea una sandbox;
 - el Muro fuerte sea ya un teorema;
 - Many-\(R\) fuerte sea verdadero;
+- No-\(R\) haya sido refutado sin premisas compartidas;
+- el teorema condicional de existencia de \(R\) sea una demostración matemática independiente de la generalidad ontológica absoluta;
 - la posibilidad de Many-\(R\) invalide o rebaje el concepto de \(R\) como totalidad ontológica;
 - la mera inaccesibilidad causal implique múltiples realidades ontológicas absolutas;
 - pueda hablarse de varios \(R_i\) sin resolver antes si «real» posee un dominio universal o indexado;
@@ -1327,9 +1588,9 @@ Esta propuesta no afirma que:
 
 ---
 
-## 17. Objeciones serias
+## 18. Objeciones serias
 
-### 17.1 Riesgo de circularidad en la emergencia
+### 18.1 Riesgo de circularidad en la emergencia
 
 Si «emergencia» significa simplemente «todo lo que aparece realmente», entonces:
 
@@ -1341,15 +1602,15 @@ sería casi tautológico.
 
 La siguiente fase debe restringir \(\mathcal E\) independientemente mediante condiciones estructurales evaluables.
 
-### 17.2 El salto desde nuestro universo a \(R\)
+### 18.2 El salto desde nuestro universo a \(R\)
 
 Que la emergencia sea ubicua en el dominio conocido no demuestra que toda capa ontológica superior tenga que organizarse de la misma forma. La continuidad de la estructura medio-emergencia fuera del dominio observado permanece como [H1], no como deducción.
 
-### 17.3 «Supramedio» puede reificar la totalidad
+### 18.3 «Supramedio» puede reificar la totalidad
 
 Llamar a \(R\) supramedio no debe convertirlo accidentalmente en una caja espacial o en un último universo físico. Debe aclararse si «medio» conserva el mismo significado cuando se aplica a \(R\) o si \(R\) es el límite ontológico del concepto.
 
-### 17.4 Actualidad y posibilidad
+### 18.4 Actualidad y posibilidad
 
 Incluir posibilidades reales en \(R\) exige definir qué hace que una posibilidad sea real y distinguir:
 
@@ -1361,21 +1622,21 @@ Incluir posibilidades reales en \(R\) exige definir qué hace que una posibilida
 
 Sin esta distinción, \(P\) puede volverse trivialmente ilimitado.
 
-### 17.5 Emergencia y reducción
+### 18.5 Emergencia y reducción
 
 Una estructura emergente puede depender completamente de niveles constitutivos y aun así admitir distintas formas de reducción explicativa. Debe aclararse qué tipo de novedad —causal, organizativa, informacional, efectiva o descriptiva— exige el término «emergencia».
 
-### 17.6 Identidad y distinción
+### 18.6 Identidad y distinción
 
 Definir \(\Delta_R\) mediante no equivalencia estructural desplaza el problema hacia «equivalencia». Será necesario especificar qué invariantes cuentan y a qué nivel.
 
-### 17.7 «Singularidad» como término potencialmente equívoco
+### 18.7 «Singularidad» como término potencialmente equívoco
 
 El uso de «singularidad» en esta propuesta es estrictamente ontológico y local. No debe confundirse con singularidades gravitacionales, divergencias matemáticas, puntos singulares de variedades ni singularidad tecnológica.
 
 Si el término genera más ambigüedad que capacidad explicativa, deberá sustituirse por «totalidad absoluta» o una denominación equivalente.
 
-### 17.8 El Muro puede ser demasiado fuerte
+### 18.8 El Muro puede ser demasiado fuerte
 
 La indistinguibilidad perfecta entre una sandbox y \(R\) solo se sigue bajo condiciones de aislamiento suficientemente fuertes. Un dominio aparentemente cerrado puede contener anomalías, acoplamientos, fugas de información o regularidades que permitan inferir estructura exterior.
 
@@ -1389,17 +1650,29 @@ $$
 
 La versión fuerte del Muro requiere demostrar qué clases de observadores y dominios generan indistinguibilidad principial y cuáles solo presentan ignorancia contingente.
 
-### 17.9 Many-\(R\) puede ser incoherente por definición
+### 18.9 Many-\(R\) puede ser incoherente por definición
 
 Si «real» posee un único dominio universal, entonces cualquier \(R_i\) del que pueda afirmarse que es real pertenece ya a la totalidad de ese dominio. Many-\(R\) fuerte solo puede sobrevivir si la existencia misma es indexada o si la pluralidad puede formularse sin un dominio ontológico común.
 
-### 17.10 El metalenguaje puede simular una unidad inexistente
+### 18.10 El metalenguaje puede simular una unidad inexistente
 
 Que una teoría escriba \(R_1,R_2\) y cuantifique sobre ambos no demuestra que exista una estructura real común que los relacione. El metalenguaje puede comparar modelos incompatibles o mutuamente excluyentes.
 
 Sin embargo, si la tesis Many-\(R\) pretende afirmar que **ambos son efectivamente reales**, deberá explicar qué contenido tiene esa afirmación sin reintroducir un sentido universal de realidad.
 
-### 17.11 El problema de la explicación última
+### 18.11 No-\(R\) puede rechazar la generalidad absoluta
+
+El argumento condicional de existencia de \(R\) no obliga a una teoría rival que rechace explícitamente que exista un dominio absolutamente general de cuantificación ontológica.
+
+Por tanto, la disputa con No-\(R\) no puede resolverse solo mediante [D1]. Debe investigarse si la generalidad ontológica absoluta es coherente, necesaria o sustituible por una semántica indefinidamente extensible.
+
+### 18.12 El metalenguaje no debe confundirse con una prueba ontológica
+
+Que podamos formular desde fuera One-\(R\), Many-\(R\) y No-\(R\) en un mismo documento no demuestra que exista una metarrealidad que contenga las tres posibilidades.
+
+El mapa es teórico. Solo genera compromiso ontológico cuando alguna de sus estructuras se postula como real.
+
+### 18.13 El problema de la explicación última
 
 Incluso si \(R\) es cerrado bajo emergencia y no necesita un exterior, sigue abierta:
 
@@ -1409,7 +1682,7 @@ Puede ocurrir que la pregunta admita una explicación interna más profunda, una
 
 ---
 
-## 18. Programa de investigación
+## 19. Programa de investigación
 
 Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse al menos:
 
@@ -1435,11 +1708,15 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 20. explorar si una semántica de existencia indexada \(\operatorname{Real}_i\) o \(\exists_i\) puede formular Many-\(R\) sin reintroducir un metadominio real;
 21. establecer si la pluralidad de totalidades absolutamente incomparables posee contenido ontológico o solo metalingüístico;
 22. analizar si \(H_1\), \(H_2\) y \(H_3\) pueden ser observacionalmente equivalentes para un observador interno;
-23. separar formalmente las propiedades de totalidad, absolutidad y unicidad, y determinar cuáles se siguen de la definición de \(R\) y cuáles requieren hipótesis metaontológicas adicionales.
+23. separar formalmente las propiedades de totalidad, absolutidad y unicidad, y determinar cuáles se siguen de la definición de \(R\) y cuáles requieren hipótesis metaontológicas adicionales;
+24. formalizar la noción de generalidad ontológica absoluta sin reificar \(R\) como conjunto u objeto colector;
+25. comparar el modelo de \(R\) con teorías de dominios indefinidamente extensibles y determinar qué versión de No-\(R\) constituye una alternativa genuina;
+26. analizar el problema de autoaplicación: cómo puede No-\(R\) negar toda totalidad sin presuponer una generalidad semántica u ontológica superior;
+27. formalizar el criterio de colapso de ManyMany-\(R\) en One-\(R\) o metalenguaje.
 
 ---
 
-## 19. Delta doctrinal propuesto
+## 20. Delta doctrinal propuesto
 
 Esta propuesta **expande** la ontología existente como programa de investigación, sin modificar todavía el corpus canónico.
 
@@ -1459,6 +1736,11 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
 - se explicita que Many-\(R\) fuerte tensiona la **unicidad** metaontológica de la Verdad Absoluta, pero no invalida el concepto de \(R\) como totalidad ontológica de un dominio;
 - se introduce una regla de humildad metaontológica: distinguir lo que la estructura de \(R\) justifica de lo que requeriría una prueba adicional de unicidad absoluta;
+- se cierra como falsa alternativa la simple «realidad sin último nivel»: una cadena indefinida de medios sigue incluida en \(R\);
+- se formula un **teorema condicional de existencia de \(R\)**: realidad no vacía + generalidad ontológica absoluta + definición de totalidad implican \(R\);
+- se redefine No-\(R\) como la alternativa fuerte que niega la totalizabilidad absoluta de lo real, en vez de confundirla con infinitud o inexhaustibilidad;
+- se establece el mapa metaontológico mínimo One-\(R\) / Many-\(R\) / No-\(R\);
+- se observa que ManyMany-\(R\) no añade un nivel ontológico estable: o colapsa en un \(R\) superior o permanece en el metalenguaje;
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
 - la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia y se introduce la diferencia entre descomponibilidad ontológica y reconstruibilidad epistemológica.
 
