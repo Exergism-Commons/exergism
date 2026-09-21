@@ -2169,7 +2169,25 @@ La cuestión de unicidad deja de ser una bifurcación primitiva:
 - bajo \(G\), se deriva;
 - bajo indexación fuerte, puede darse de hecho o fallar según exista pluralidad efectiva.
 
-### [I18] ManyMany-\(R\) no constituye un cuarto nivel ontológico estable
+### [I18] Imposibilidad de ManyMany-\(R\) como categoría ontológica estable
+
+Bajo las definiciones actuales, **ManyMany-\(R\) no puede constituir una categoría ontológica sui generis estable**.
+
+Solo hay dos posibilidades.
+
+#### Caso 1: no existe estructura real común
+
+Si «ManyMany-\(R\)» solo agrupa varios \(R_i\) desde nuestro metalenguaje, entonces no designa una realidad adicional.
+
+$
+\boxed{
+\text{ManyMany-}R_{\mathrm{sin\ estructura\ real\ común}}
+\Rightarrow
+\text{metalenguaje}
+}
+$
+
+#### Caso 2: existe estructura real común
 
 Si una estructura \(\mathfrak M\) reúne realmente varios \(R_i\):
 
@@ -2177,30 +2195,53 @@ $
 R_i\preceq\mathfrak M,
 $
 
-entonces \(\mathfrak M\) constituye un **Cluster-\(R\)** y los antiguos \(R_i\) dejan de ser totalidades absolutamente separadas.
+o los relaciona mediante una conectividad ontológica real, entonces \(\mathfrak M\) constituye un **Cluster-\(R\)** y los antiguos \(R_i\) dejan de ser totalidades absolutamente separadas.
 
-Si ese Cluster-\(R\) es además la totalidad de todo lo real bajo el dominio relevante, colapsa en One-\(R\) hasta equivalencia ontológica.
-
-Si \(\mathfrak M\) solo organiza \(R_i\) en nuestro metalenguaje, no constituye una capa ontológica adicional.
+$
+\boxed{
+\text{ManyMany-}R_{\mathrm{real}}
+\Rightarrow
+\text{Cluster-}R
+}
+$
 
 Por tanto:
 
 $
 \boxed{
 \text{ManyMany-}R
-\Rightarrow
-\text{Cluster-}R
-\Rightarrow
+=
 \begin{cases}
-\text{One-}R, & \text{si el cluster es total},\\
-\text{supradominio parcial}, & \text{si no lo es},
+\text{metalenguaje}, & \text{si no hay estructura real común},\\
+\text{Cluster-}R, & \text{si hay estructura real común}.
 \end{cases}
 }
 $
 
-o bien permanece como metalenguaje si no existe ninguna estructura real común.
+En consecuencia:
 
-Esto marca un límite del **metaapilamiento ontológico**, no un límite del número de estructuras, medios o hipótesis que puedan existir dentro de una ontología.
+$
+\boxed{
+\nexists\,
+\text{ManyMany-}R_{\mathrm{ontológicamente\ estable}}
+}
+$
+
+como categoría distinta tanto del metalenguaje como de Cluster-\(R\).
+
+Si ese Cluster-\(R\) es además la totalidad de todo lo real bajo el dominio relevante, entonces:
+
+$
+Cluster\text{-}R\equiv_{\mathrm{ont}}R
+$
+
+hasta las condiciones de identidad adoptadas. Si no lo es, permanece como supradominio parcial:
+
+$
+Cluster\text{-}R\prec R.
+$
+
+Este resultado marca un límite del **metaapilamiento ontológico estable**: intentar convertir un «many de many» en una estructura ontológicamente real introduce conectividad común y, por ello, deja de ser ManyMany-\(R\) para convertirse en Cluster-\(R\).
 
 ### Consecuencia para la conjetura
 
@@ -2280,7 +2321,7 @@ La propuesta puede auditarse paso a paso:
 | 25 | [I] | Una cadena infinita o sin último medio sigue siendo una configuración interna de \(R\), no una alternativa No-\(R\). |
 | 26 | [I] | Si la realidad es no vacía y admite generalidad ontológica absoluta, \(R\) existe condicionalmente como totalidad de lo real. |
 | 27 | [I/O] | No-\(R\) genuino debe negar la totalizabilidad ontológica; negar solo la generalidad absoluta todavía permite existencia indexada. |
-| 28 | [I] | ManyMany-\(R\) colapsa en Cluster-\(R\) si introduce estructura real común; el cluster solo equivale a One-\(R\) si además es totalidad, y de otro modo permanece como supradominio parcial. |
+| 28 | [I] | ManyMany-\(R\) es imposible como categoría ontológica estable sui generis: sin estructura real común es metalenguaje; con estructura real común colapsa en Cluster-\(R\). |
 | 29 | [D] | El mapa mínimo queda: totalizabilidad vs No-\(R\); después Generalidad Absoluta vs Existencia Indexada fuerte; bajo indexación, monismo indexado vs Many-\(R\) según exista pluralidad efectiva. |
 | 30 | [A/I] | Bajo antisimetría de inclusión entre totalidades, \(T(R)\land G\Rightarrow U(R)\): la unicidad se deriva de totalidad + generalidad absoluta. |
 | 31 | [I] | La existencia indexada fuerte bloquea esa derivación, pero admite tanto monismo indexado como Many-\(R\); la pluralidad efectiva es una cuestión adicional. |
@@ -2477,7 +2518,7 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 24. formalizar la noción de generalidad ontológica absoluta sin reificar \(R\) como conjunto u objeto colector y distinguirla de totalizabilidad ontológica;
 25. comparar el modelo de \(R\) con teorías de dominios indefinidamente extensibles y determinar qué versión de No-\(R\) constituye una alternativa genuina;
 26. analizar el problema de autoaplicación: cómo puede No-\(R\) negar toda totalidad sin presuponer una generalidad semántica u ontológica superior;
-27. formalizar el criterio de colapso de ManyMany-\(R\) en Cluster-\(R\), y distinguir cuándo el cluster es una totalidad One-\(R\), un supradominio parcial o solo metalenguaje;
+27. formalizar la imposibilidad de ManyMany-\(R\) como categoría ontológica estable y el criterio binario: metalenguaje sin estructura real común, Cluster-\(R\) con estructura real común;
 28. distinguir formalmente indexación débil de existencia indexada fuerte y comprobar si esta última puede formularse sin un metadominio ontológico;
 29. determinar si la antisimetría de inclusión ontológica entre totalidades basta para identidad o solo para equivalencia ontológica;
 30. formalizar el monismo indexado y distinguir unicidad derivada, unicidad fáctica y unicidad epistemicamente certificable;
@@ -2519,7 +2560,7 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se formula un **teorema condicional de existencia de \(R\)**: realidad no vacía + generalidad ontológica absoluta + definición de totalidad implican \(R\);
 - se redefine No-\(R\) como la alternativa fuerte que niega la totalizabilidad absoluta de lo real, en vez de confundirla con infinitud o inexhaustibilidad;
 - se establece el mapa metaontológico mínimo No-\(R\) / One-\(R\) por generalidad absoluta / monismo indexado / Many-\(R\), con Cluster-\(R\) como posible colapso relacional de una separación Many-\(R\);
-- se observa que ManyMany-\(R\) no añade un nivel ontológico estable: si introduce una estructura real común colapsa en Cluster-\(R\), que solo será One-\(R\) si además satisface totalidad; en ausencia de estructura real común permanece en el metalenguaje;
+- se establece que **ManyMany-\(R\) es imposible como categoría ontológica estable sui generis**: sin estructura real común es solo metalenguaje; con estructura real común colapsa en Cluster-\(R\), que solo será One-\(R\) si además satisface totalidad;
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
 - la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia y se introduce la diferencia entre descomponibilidad ontológica y reconstruibilidad epistemológica.
 
