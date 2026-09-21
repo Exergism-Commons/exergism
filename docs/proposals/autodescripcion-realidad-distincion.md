@@ -19,10 +19,10 @@ $$
 y ahora \(F\) recibe un significado concreto:
 
 $$
-F(X):=\text{cierre recursivo de }X\text{ bajo emergencia }\mathcal E
+F(X):=\operatorname{Cl}_{\mathcal E,\mathcal M}(X)
 $$
 
-donde \(\mathcal E\) representa **emergencia**. \(F\) no es una segunda operación ontológica independiente: es la construcción formal que expresa qué resulta al incluir \(X\), lo que puede emerger realmente de \(X\), lo que puede emerger de esas nuevas estructuras y así recursivamente, siempre bajo las restricciones reales de posibilidad del propio dominio.
+donde \(\mathcal E\) representa **emergencia estructural** y \(\mathcal M\) representa **transformación real del propio espacio modal**: cambios de capacidades, restricciones o reglas de transformación que estén a su vez permitidos por alguna estructura real. \(F\) no es una segunda operación ontológica independiente: expresa el cierre recursivo de \(X\) bajo ambas clases de transformación.
 
 La fórmula no pretende demostrar toda la metafísica del exergismo. Expresa una propiedad más limitada: **si \(R\) es realmente la totalidad de lo real, entonces nada que emerja realmente puede quedar ontológicamente fuera de \(R\)**.
 
@@ -209,7 +209,7 @@ La propuesta no decide si una bifurcación:
 Lo que sí afirma es que una descripción de \(R\) no puede reducirse a una instantánea de lo actualmente observado si la estructura real contiene capacidades, disposiciones o restricciones que hacen objetivamente accesibles estados diferentes.
 
 
-### [H2a] Continuidad modal ontológica y novedad bruta
+### [H2a] Continuidad modal ontológica, meta-capacidades y novedad absoluta
 
 La posibilidad de que aparezcan nuevas estructuras debe distinguirse del crecimiento del propio alcance ontológico.
 
@@ -219,7 +219,7 @@ $$
 A_t\longrightarrow A_{t+1},
 $$
 
-pueden distinguirse tres casos:
+pueden distinguirse tres casos básicos:
 
 #### [P1] Exterior actual
 
@@ -268,28 +268,82 @@ $$
 La emergencia no determinista pertenece ordinariamente a este caso:
 
 $$
-Permits(C,Y)
+\operatorname{Permits}(C,Y)
 \not\Rightarrow
-Necessitates(C,Y).
+\operatorname{Necessitates}(C,Y).
 $$
 
-#### [P3] Novedad ontológica fuerte
+#### [P3] Novedad modal de orden superior
 
-Una estructura se actualiza sin haber estado permitida por ninguna capacidad, condición o restricción real previa relevante:
+Puede ocurrir que:
 
 $$
-Y\notin A_t,
-\qquad
 Y\notin P_{\Lambda_t},
-\qquad
-Y\in A_{t+1}.
 $$
 
-Definimos provisionalmente:
+pero que exista una transformación real del propio sistema de restricciones:
+
+$$
+\Lambda_t
+\xrightarrow{\mathcal M}
+\Lambda_{t+1},
+$$
+
+tal que:
+
+$$
+Y\in P_{\Lambda_{t+1}}.
+$$
+
+Si la transformación:
+
+$$
+\Lambda_t\to\Lambda_{t+1}
+$$
+
+está permitida por alguna capacidad o estructura real anterior, entonces la novedad no es ontológicamente bruta. Es una **metaemergencia modal**.
+
+Se introduce:
 
 $$
 \boxed{
-\operatorname{BruteNovelty}(Y,t)
+\mathcal M(\Lambda)
+:=
+\text{transformaciones de capacidades/restricciones realmente permitidas por la estructura real}
+}
+$$
+
+y el cierre modal de orden superior:
+
+$$
+\boxed{
+\Lambda^{*}
+:=
+\operatorname{Cl}_{\mathcal M}(\Lambda).
+}
+$$
+
+El espacio de posibilidades relevante para evaluar novedad fuerte pasa a ser:
+
+$$
+\boxed{
+P_{\Lambda^{*}}.
+}
+$$
+
+Así, una novedad puede no estar directamente en \(P_{\Lambda}\) y, sin embargo, estar fundada mediante una cadena real de transformaciones modales:
+
+$$
+Y\in P_{\Lambda^{*}}.
+$$
+
+#### [P4] Novedad ontológica absolutamente bruta
+
+Definimos:
+
+$$
+\boxed{
+\operatorname{AbsoluteBruteNovelty}(Y,t)
 }
 $$
 
@@ -298,30 +352,24 @@ cuando:
 $$
 \operatorname{Real}_{t+1}(Y)
 \land
-\nexists C_t[
-\operatorname{Real}_t(C_t)
-\land
-\operatorname{Permits}(C_t,Y)
-].
+Y\notin P_{\Lambda_t^{*}}.
 $$
 
-[H2a] propone un **Principio de Continuidad Modal Ontológica**:
+Equivalentemente, no existe ninguna cadena finita o estructuralmente admisible de capacidades, meta-capacidades o transformaciones reales que funde la posibilidad de \(Y\).
+
+[H2a] se reformula entonces como **Principio de Continuidad Modal Ontológica fuerte**:
 
 $$
 \boxed{
 \operatorname{Real}_{t+1}(Y)
 \Rightarrow
-\exists C_t[
-\operatorname{Real}_t(C_t)
-\land
-\operatorname{Permits}(C_t,Y)
-]
+Y\in P_{\Lambda_t^{*}}
 }
 $$
 
-para toda transición en la que tenga sentido hablar de prioridad temporal.
+cuando tenga sentido una relación de prioridad temporal.
 
-En formulación no temporal más general:
+En formulación no temporal:
 
 $$
 \boxed{
@@ -330,23 +378,35 @@ $$
 \exists C[
 \operatorname{Real}(C)
 \land
-\operatorname{GroundsPossibility}(C,Y)
+\operatorname{GroundsPossibility}^{*}(C,Y)
 ].
 }
 $$
 
-Este principio **no implica determinismo** ni que cada futuro posible sea ya una entidad real. Solo exige que la actualización de una novedad tenga alguna base real que funde su posibilidad.
+Este principio no implica determinismo, ni que cada futuro posible sea ya una entidad real, ni que las propias restricciones de la realidad sean inmutables.
 
-Así:
+Permite:
+
+- emergencia estructural;
+- indeterminismo;
+- cambio de capacidades;
+- cambio de restricciones;
+- aparición de nuevas reglas efectivas;
+- expansión local del espacio de posibilidades;
+
+siempre que exista alguna cadena real que funde esas transformaciones.
+
+Por tanto:
 
 $$
 \boxed{
 \text{novedad emergente}
 \neq
-\operatorname{BruteNovelty}.
+\text{metaemergencia modal}
+\neq
+\operatorname{AbsoluteBruteNovelty}.
 }
 $$
-
 
 
 ---
@@ -526,6 +586,39 @@ para cada emergencia accesible bajo las condiciones efectivas del medio.
 
 La misma clase de medio puede admitir más de una trayectoria emergente, y la aparición concreta de una estructura puede depender de historia, condiciones iniciales, fluctuaciones, relaciones y restricciones contextuales.
 
+### [D4b] Metaemergencia modal
+
+La emergencia puede afectar no solo a estructuras dentro de un espacio de posibilidades dado, sino también a las propias restricciones, capacidades o reglas efectivas que delimitan ese espacio.
+
+Se representa:
+
+$$
+\Lambda
+\xrightarrow{\mathcal M}
+\Lambda',
+$$
+
+donde \(\mathcal M\) no significa una modificación arbitraria de las leyes, sino una transformación modal que está a su vez fundada en alguna estructura real.
+
+Por tanto:
+
+$$
+\boxed{
+\mathcal M
+\text{ puede ser no determinista sin ser ontológicamente infundada.}
+}
+$$
+
+La distinción es:
+
+$$
+\operatorname{Permits}(C,\Lambda')
+\not\Rightarrow
+\operatorname{Necessitates}(C,\Lambda').
+$$
+
+Así, una realidad cuyas propias restricciones evolucionan sigue siendo compatible con clausura ontológica siempre que dichas transformaciones pertenezcan al espacio de meta-posibilidades realmente fundado.
+
 ### [H2] Reproducibilidad y escala
 
 Se propone investigar la hipótesis de que, al ascender hacia medios con mayor complejidad organizativa, la reproducción exacta de una emergencia puede requerir reconstruir un conjunto creciente de condiciones constitutivas y contextuales.
@@ -644,38 +737,73 @@ $$
 
 Aquí aparece el significado concreto de \(F\).
 
-### [D5] Operación de cierre emergente
+### [D5] Operación de cierre estructural y modal
 
-Definimos \(F\) directamente:
+Definimos:
 
 $$
-F(X):=\text{cierre recursivo de }X\text{ bajo }\mathcal E
+\boxed{
+F(X)
+:=
+\operatorname{Cl}_{\mathcal E,\mathcal M}(X).
+}
 $$
 
-Esto significa que \(F(X)\) incorpora:
+Esto significa que \(F(X)\) incorpora recursivamente:
 
 1. \(X\);
-2. lo que puede emerger realmente de \(X\);
-3. lo que puede emerger de las estructuras así obtenidas;
-4. y así recursivamente, bajo las restricciones reales de posibilidad del dominio.
+2. las emergencias estructurales realmente permitidas por \(X\);
+3. las transformaciones reales de capacidades, restricciones o reglas efectivas permitidas por \(X\);
+4. las emergencias permitidas por las nuevas estructuras modales obtenidas;
+5. nuevas meta-transformaciones fundadas por los estados así alcanzados;
+6. y así recursivamente hasta alcanzar clausura respecto de \(\mathcal E\) y \(\mathcal M\).
 
-No se introduce un operador ontológico adicional. Las primitivas provisionales siguen siendo el dominio y la emergencia; \(F\) es nuestra forma compacta de expresar el resultado de cerrar recursivamente un dominio bajo \(\mathcal E\).
+Esquemáticamente:
+
+$$
+F(X)
+=
+\operatorname{Cl}
+\left(
+X,
+\mathcal E,
+\mathcal M
+\right).
+$$
+
+No se presupone una torre rígida de meta-niveles. \(\Lambda^{*}\) es una abreviatura para el cierre de las capacidades reales bajo aquellas transformaciones modales que estén ellas mismas realmente permitidas.
 
 Formalmente, \(F\) debe satisfacer al menos:
 
 $$
-X\preceq F(X)
+X\preceq F(X),
+$$
+
+$$
+\mathcal E(F(X))\preceq F(X),
 $$
 
 y:
 
 $$
-\mathcal E(F(X))\preceq F(X)
+\mathcal M(F(X))\preceq F(X),
 $$
 
-La primera propiedad expresa **extensividad**: el cierre conserva aquello desde lo que parte. La segunda expresa **clausura emergente**: una vez alcanzado \(F(X)\), nuevas emergencias permitidas por esa estructura no conducen fuera de \(F(X)\).
+entendiendo las dos últimas expresiones como abreviaturas estructurales para que ninguna emergencia ni meta-transformación realmente accesible desde el cierre conduzca fuera de él.
 
-### [I6] \(R\) ya está cerrado bajo emergencia
+Así:
+
+$$
+\boxed{
+R=F(R)
+}
+$$
+
+no significa que las «leyes» o restricciones de \(R\) sean estáticas.
+
+Significa que todo cambio real de estructura y todo cambio real de las propias capacidades de cambio quedan dentro de la clausura ontológica.
+
+### [I6] \(R\) ya está cerrado bajo emergencia y metaemergencia
 
 Si una estructura \(y\) emerge realmente dentro de \(R\), entonces \(y\) pertenece ontológicamente a la realidad total.
 
@@ -687,7 +815,7 @@ $
 
 Las emergencias todavía no actualizadas se tratan mediante las capacidades y restricciones reales \(\Lambda\) de [D2], sin exigir que cada posibilidad individual sea ya una entidad real.
 
-Por tanto, aplicar el cierre emergente a \(R\) no añade nada ontológicamente exterior:
+Por tanto, aplicar el cierre estructural y modal a \(R\) no añade nada ontológicamente exterior:
 
 $$
 F(R)\preceq_R R
@@ -709,7 +837,7 @@ Esta igualdad es más fuerte y más precisa que la formulación inicial \(R\cong
 
 No significa que una operación externa actúe sobre \(R\) en el tiempo. Expresa una propiedad estructural de punto fijo:
 
-> \(R\) es cerrado bajo emergencia: desplegar recursivamente todas las emergencias reales o realmente posibles de la realidad total no produce una realidad exterior adicional.
+> \(R\) es cerrado bajo emergencia y metaemergencia: desplegar recursivamente las estructuras y transformaciones modales realmente permitidas por la realidad total no produce una realidad exterior adicional.
 
 Es importante no confundir:
 
@@ -1708,41 +1836,38 @@ $
 
 Esta cuestión no se resuelve definiendo \(R\), ni mediante Zorn por sí solo, porque el potencialista puede aceptar la construcción matemática en el metalenguaje y negar su compromiso ontológico.
 
-### [O5e] Tricotomía del potencialismo y rival creativo fuerte
+### [O5e] Refinamiento del potencialismo creativo
 
-La expresión «siempre puede haber más» es ambigua y debe dividirse:
+La expresión «siempre puede haber más» debe distinguir ahora cuatro casos:
 
 $$
 \boxed{
 \begin{array}{ll}
 P1:& \text{hay ya más realidad actual fuera del dominio considerado};\\
-P2:& \text{puede actualizarse nueva estructura ya permitida por }\Lambda;\\
-P3:& \text{puede aparecer realidad cuya posibilidad no estaba fundada previamente.}
+P2:& \text{se actualiza estructura directamente permitida por }\Lambda;\\
+P3:& \text{cambia el propio espacio modal mediante una transformación real }\mathcal M;\\
+P4:& \text{aparece realidad fuera incluso de }P_{\Lambda^{*}}.
 \end{array}
 }
 $$
 
-Solo [P1] y [P3] amenazan directamente la clausura ontológica.
-
-[P2] es compatible con:
+[P2] y [P3] son compatibles con:
 
 $$
 R=(A,\Lambda,P_{\Lambda})
 $$
 
-y con:
+entendido dinámicamente, y con:
 
 $$
 R=F(R),
 $$
 
-porque el cambio puede consistir en:
+si:
 
 $$
-A_t\to A_{t+1}
+F=\operatorname{Cl}_{\mathcal E,\mathcal M}.
 $$
-
-sin ampliación del alcance ontológico total.
 
 [P1] reproduce la tesis de exterior actual:
 
@@ -1755,81 +1880,97 @@ X\prec Y
 ].
 $$
 
-[P3] es más fuerte: exige crecimiento del propio espacio ontológico de posibilidades.
-
-Definimos provisionalmente **potencialismo ontológico creativo fuerte** como la tesis:
+[P4] constituye el rival creativo irreducible:
 
 $$
 \boxed{
 \exists Y,t:
-\operatorname{BruteNovelty}(Y,t).
+\operatorname{AbsoluteBruteNovelty}(Y,t).
 }
 $$
 
-Para que [P3] sea genuino, no debe existir ninguna condición real previa que funde la posibilidad de \(Y\). Si aparece tal condición:
+Si existe alguna regla, capacidad, meta-capacidad o estructura real \(Q\) que haga posible la transición hacia \(Y\), entonces:
 
 $$
-\exists C_t[
-\operatorname{Real}_t(C_t)
-\land
-\operatorname{Permits}(C_t,Y)
-],
+Q
+\Rightarrow
+Y\in P_{\Lambda_t^{*}},
 $$
 
-entonces el caso colapsa de [P3] a [P2].
+y el supuesto [P4] colapsa a [P3].
 
-Por tanto, el rival fuerte debe sostener:
+Por tanto, para mantener [P4] debe sostenerse:
 
 $$
 \boxed{
 \operatorname{Real}_{t+1}(Y)
 \land
-\nexists C_t[
-\operatorname{Real}_t(C_t)
+\nexists Q_t[
+\operatorname{Real}_t(Q_t)
 \land
-\operatorname{Permits}(C_t,Y)
+\operatorname{GroundsPossibility}^{*}(Q_t,Y)
 ].
 }
 $$
 
-Esto no es una contradicción lógica, pero sí una tesis metafísica específica: **novedad ontológica absolutamente infundada respecto del estado previo**.
+Esto no equivale a azar ni a indeterminismo.
 
-### [I6a.4] Neutralización del potencialismo ordinario bajo continuidad modal
+La diferencia es:
 
-Si [H2a] vale, entonces toda novedad actualizable pertenece previamente al espacio de posibilidades fundado por realidad:
+$$
+\boxed{
+\begin{array}{rcl}
+\text{determinismo} &:& C\Rightarrow Y,\\
+\text{indeterminismo} &:& C\Rightarrow\{Y_1,Y_2,\ldots\},\\
+\text{metaemergencia} &:& C\Rightarrow\Lambda'\Rightarrow Y,\\
+\text{novedad absoluta} &:& \nexists C\;\operatorname{GroundsPossibility}^{*}(C,Y).
+\end{array}
+}
+$$
+
+### [I6a.4] Neutralización del potencialismo creativo ordinario
+
+Si [H2a] vale:
 
 $$
 \operatorname{Real}_{t+1}(Y)
 \Rightarrow
-Y\in P_{\Lambda_t}
+Y\in P_{\Lambda_t^{*}},
 $$
 
-en la representación temporal correspondiente.
-
-Luego:
+entonces:
 
 $$
 \boxed{
 [H2a]
 \Rightarrow
-\neg P3.
+\neg P4.
 }
 $$
 
-y el potencialismo ordinario de [P2] deja de constituir una objeción a la inampliabilidad de \(R\).
+Esto no elimina:
+
+- novedad;
+- emergencia;
+- indeterminismo;
+- evolución de restricciones;
+- aparición de nuevas reglas efectivas;
+
+sino únicamente la actualización de una estructura sin ninguna base real, ni directa ni de metaorden, que funde su posibilidad.
 
 El problema residual queda reducido a:
 
 1. [P1]: realidad actual ya exterior a todo candidato parcial;
-2. rechazo de [H2a] mediante \(\operatorname{BruteNovelty}\);
-3. potencialismo radical que niega incluso la actualidad de la cadena infinita requerida por [C1*].
+2. potencialismo radical que niega la actualidad de la cadena infinita requerida por [C1*];
+3. rechazo de [H2a] mediante \(\operatorname{AbsoluteBruteNovelty}\).
 
 La pregunta crítica pasa a ser:
 
 $$
 \boxed{
-\text{¿puede llegar a ser real algo cuya posibilidad
-no estaba fundada en ninguna realidad previa o constitutiva?}
+\text{¿puede ocurrir algo real sin ninguna estructura real,
+de ningún metaorden relevante,
+que funde siquiera su posibilidad?}
 }
 $$
 
@@ -4666,8 +4807,9 @@ La propuesta puede auditarse paso a paso:
 | 13b.5 | [H/O] | Diferencia ontológica fundada: toda \(\lambda_{\infty}\in\Omega_{\infty}\) debe señalar una propiedad global real y un mecanismo de inadmisibilidad; «el límite no existe» no basta. |
 | 13b.5a | [D/O] | Se distingue \(\mathfrak D_i^{A}\) (dominios actuales co-reales) de \(\mathfrak D_i^{P}\) (modelos posibles) y \(\Omega_{\infty}^{content}\) de \(\Omega_{\infty}^{scope}\). |
 | 13b.5b | [O] | Rival superviviente: potencialismo ontológico radical, que permite extensión indefinida pero niega que exista una cadena infinita actualmente completada sobre la que aplicar [C1*]. |
-| 13b.5c | [D/H] | Tricotomía potencialista: [P1] exterior actual; [P2] actualización interna permitida por \(\Lambda\); [P3] \(\operatorname{BruteNovelty}\). Solo [P1]/[P3] amenazan directamente la clausura. |
-| 13b.5d | [H/I] | Continuidad Modal Ontológica [H2a]: toda novedad actualizada tiene alguna base real que funda su posibilidad; esto excluye [P3] sin volver determinista a \(\mathcal E\). |
+| 13b.5c | [D/H] | Cuatripartición potencialista: [P1] exterior actual; [P2] actualización directa; [P3] metaemergencia modal \(\Lambda\to\Lambda'\); [P4] \(\operatorname{AbsoluteBruteNovelty}\). |
+| 13b.5d | [H/I] | Continuidad Modal Ontológica fuerte [H2a]: toda novedad actualizada pertenece a \(P_{\Lambda^{*}}\); excluye [P4] sin volver deterministas ni estáticas a \(\mathcal E\) o \(\Lambda\). |
+| 13b.5e | [D] | \(F=\operatorname{Cl}_{\mathcal E,\mathcal M}\): el cierre ontológico incluye tanto emergencia estructural como transformaciones reales del propio espacio de posibilidades. |
 | 13b.6 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
@@ -5019,6 +5161,10 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 70. formalizar \(\operatorname{BruteNovelty}\) y el Principio de Continuidad Modal Ontológica [H2a] sin introducir determinismo;
 71. determinar si toda emergencia genuina requiere una base real que funde su posibilidad o si existe una concepción coherente y motivada de novedad ontológica absolutamente infundada;
 72. evaluar si el potencialismo creativo fuerte aporta un modelo independiente de No-\(R\) o simplemente traslada la extensibilidad a \(P_{\Lambda}\).
+73. formalizar \(\mathcal M\) como transformación real de restricciones/capacidades y definir \(\Lambda^{*}=\operatorname{Cl}_{\mathcal M}(\Lambda)\) sin regresión artificial de meta-niveles;
+74. redefinir y probar las propiedades [F1-F3] para \(F=\operatorname{Cl}_{\mathcal E,\mathcal M}\);
+75. formalizar \(\operatorname{AbsoluteBruteNovelty}\) como actualización fuera de \(P_{\Lambda^{*}}\) y determinar si puede poseer contenido ontológico coherente independiente;
+76. distinguir formalmente azar, indeterminismo, metaemergencia y novedad ontológica absolutamente infundada.
 
 ---
 
@@ -5055,7 +5201,10 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se identifica el **potencialismo ontológico radical** como rival superviviente: extensibilidad indefinida sin compromiso con ninguna cadena o pluralidad infinita actualmente completada;
 - se distingue una tricotomía del «siempre puede haber más»: [P1] exterior actual, [P2] actualización interna de posibilidades ya fundadas y [P3] novedad ontológica fuerte;
 - [P2] se declara compatible con \(R=(A,\Lambda,P_{\Lambda})\) y con \(R=F(R)\): novedad emergente no equivale a ampliación ontológica;
-- se introduce \(\operatorname{BruteNovelty}\) para [P3] y un **Principio de Continuidad Modal Ontológica [H2a]**: toda actualización debe poseer alguna base real que funde su posibilidad, sin exigir determinismo;
+- se introduce \(\mathcal M\) para transformaciones reales de capacidades/restricciones y \(\Lambda^{*}=\operatorname{Cl}_{\mathcal M}(\Lambda)\) como cierre modal de orden superior;
+- \(F\) pasa a definirse como \(\operatorname{Cl}_{\mathcal E,\mathcal M}\): clausura conjunta bajo emergencia estructural y metaemergencia modal;
+- se distingue \(\operatorname{AbsoluteBruteNovelty}\) como actualización fuera incluso de \(P_{\Lambda^{*}}\), separándola de azar, indeterminismo y cambio de reglas;
+- el **Principio de Continuidad Modal Ontológica [H2a]** exige solo que toda actualización posea alguna base real, directa o de metaorden, que funde su posibilidad; no exige determinismo ni leyes estáticas;
 - No-\(R\) fuerte debe ahora exhibir una restricción \(\lambda_{\infty}\in\Omega_{\infty}\) o rechazar algún otro puente formal, en vez de limitarse a negar la totalidad;
 - se mantiene además una ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
 - se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
