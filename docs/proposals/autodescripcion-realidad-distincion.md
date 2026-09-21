@@ -52,7 +52,7 @@ $$
 R := \text{la totalidad de todo lo real}
 $$
 
-En esta propuesta, **Verdad Absoluta**, **Realidad Total** y, en el uso metafísico no antropomórfico del exergismo, **Dios**, apuntan al mismo referente ontológico \(R\).
+En esta propuesta, **Verdad Absoluta** designa ontológicamente a \(R\), y **Dios** es el nombre metafísico/apofático que el exergismo emplea para esa misma realidad total. No se introduce con «Dios» una entidad adicional distinta de \(R\), ni se deduce desde \(R\) un sujeto personal, una voluntad antropomórfica o un agente exterior.
 
 \(R\) no designa simplemente:
 
@@ -122,28 +122,92 @@ Por ello, \(R\) no tiene por qué ser:
 
 Esta distinción será crucial frente a No-\(R\): negar que exista un objeto que contenga todas las cosas no basta para negar que la realidad posea un alcance ontológico exhaustivo.
 
-### [D2] Actualidad y posibilidad
+### [D1b] Separación entre totalidad y estructura de la totalidad
+
+La propuesta distingue dos preguntas que no deben confundirse:
+
+$$
+\boxed{
+\text{¿existe una totalidad de lo real?}
+}
+$$
+
+y:
+
+$$
+\boxed{
+\text{¿qué estructura tiene esa totalidad?}
+}
+$$
+
+[D1] fija el significado de \(R\) como totalidad ontológica. No deduce por sí sola que \(R\) sea emergente, recursivo, fractal, temporal, consciente, causalmente cerrado ni estructuralmente homogéneo.
+
+Las tesis sobre emergencia y recursividad pertenecen a un segundo nivel argumentativo apoyado en:
+
+1. la estructura observada de la realidad conocida;
+2. una hipótesis explícita de continuidad más allá de lo observado;
+3. la formalización independiente de \(\mathcal E\) y \(F\).
+
+Por tanto:
+
+$$
+\boxed{
+\text{existencia/totalidad de }R
+\neq
+\text{teoría estructural de }R.
+}
+$$
+
+Esta separación permite revisar la teoría de la estructura de \(R\) sin abandonar automáticamente el concepto de Realidad Total.
+
+### [D2] Actualidad, capacidad y espacio de posibilidad
 
 Se distingue esquemáticamente:
 
 $$
-R = (A,P,\Lambda)
+R=(A,\Lambda,P_{\Lambda})
 $$
 
 donde:
 
-- \(A\) = lo actualizado;
-- \(P\) = las posibilidades reales;
-- \(\Lambda\) = restricciones, relaciones y condiciones que determinan qué posibilidades son compatibles, accesibles o realizables.
+- \(A\) = estados, procesos y estructuras actualizados;
+- \(\Lambda\) = restricciones, relaciones, disposiciones y capacidades reales;
+- \(P_{\Lambda}\) = espacio de posibilidades permitido por \(\Lambda\).
 
-Esta expresión no afirma todavía una ontología modal concreta. No decide si una bifurcación:
+La propuesta **no exige** que cada posibilidad no actualizada sea una entidad real independiente.
+
+La tesis mínima es más austera:
+
+$$
+\boxed{
+\operatorname{Real}(\Lambda)
+\Rightarrow
+P_{\Lambda}
+\text{ puede describir posibilidades objetivamente permitidas}
+}
+$$
+
+sin concluir automáticamente:
+
+$$
+p\in P_{\Lambda}
+\Rightarrow
+\operatorname{Real}(p)
+$$
+
+para cada posibilidad individual \(p\).
+
+Esto permite hablar de posibilidad real como **capacidad o apertura estructural de lo actual** sin adoptar todavía una ontología modal fuerte.
+
+La propuesta no decide si una bifurcación:
 
 - actualiza una sola rama;
 - actualiza múltiples ramas;
-- produce ramas que permanecen causalmente separadas;
+- produce ramas causalmente separadas;
 - o requiere una descripción distinta de la metáfora de branching.
 
-Solo afirma que una descripción de la Verdad Absoluta no puede reducirse a una instantánea de lo actualmente observado si las posibilidades forman parte real de la estructura del mundo.
+Lo que sí afirma es que una descripción de \(R\) no puede reducirse a una instantánea de lo actualmente observado si la estructura real contiene capacidades, disposiciones o restricciones que hacen objetivamente accesibles estados diferentes.
+
 
 ---
 
@@ -348,18 +412,64 @@ La notación no exige que los niveles sean lineales. Una representación futura 
 
 ## 7. Paso 5 — Hipótesis de continuidad emergente
 
-### [H1] La estructura medio-emergencia puede no terminar en los límites de nuestro universo
+### [O-E] Observación de recurrencia emergente multiescalar
 
-Observamos recurrencia de organización emergente dentro del dominio conocido. No disponemos actualmente de una deducción que obligue a lo que exista más allá de nuestro universo, si existe algo así, a conservar exactamente la misma estructura.
+En el dominio conocido observamos repetidamente estructuras en las que un medio organizado permite la aparición de nuevas formas que, una vez estabilizadas, pasan a constituir condiciones para emergencias posteriores.
 
-Sin embargo, la hipótesis parsimoniosa que se propone investigar es:
+Esquemáticamente:
 
-> si existen medios ontológicamente más amplios que nuestro universo, la relación medio-emergencia puede continuar en ellos salvo evidencia o argumento que exija una discontinuidad.
+$$
+M_0\xrightarrow{\mathcal E}M_1
+\xrightarrow{\mathcal E}M_2
+\xrightarrow{\mathcal E}M_3.
+$$
+
+La secuencia no debe interpretarse como una escalera universal rígida. Puede realizarse mediante redes, ramificaciones, bucles, recombinaciones y jerarquías parciales.
+
+La expresión **recurrencia emergente multiescalar** designa esta repetición estructural observada.
+
+La intuición «fractal» del exergismo se conserva en este sentido estructural:
+
+$$
+\boxed{
+\text{autosimilitud aproximada de patrones medio-emergencia entre escalas conocidas}
+}
+$$
+
+y **no** como afirmación matemática de autosimilitud exacta, dimensión fractal o invariancia estricta de escala.
+
+### [H1] Hipótesis de continuidad emergente más allá de lo observado
+
+A partir de [O-E] se adopta provisionalmente la hipótesis de continuidad:
+
+> si existen medios ontológicamente más amplios que nuestro universo o dominio observable, la recurrencia medio-emergencia continúa salvo evidencia o argumento suficiente para introducir una discontinuidad.
+
+Esquemáticamente:
+
+$$
+\boxed{
+O_E
+\Rightarrow_{\mathrm{prima\ facie}}
+H_E
+}
+$$
+
+donde \(O_E\) es la recurrencia emergente multiescalar observada y \(H_E\) su continuidad provisional más allá de lo observado.
+
+Esto no pretende demostrar:
+
+$$
+O_E
+\Rightarrow
+\text{emergencia universal necesaria}.
+$$
+
+La justificación es metodológica y parsimoniosa: una discontinuidad ontológica no observada es posible, pero no recibe el mismo peso explicativo que la prolongación provisional de un patrón repetidamente observado sin evidencia independiente a favor de la ruptura.
 
 Podría existir:
 
 $$
-U_0 \prec M_1 \prec M_2 \prec M_3 \prec \cdots
+U_0\prec M_1\prec M_2\prec M_3\prec\cdots
 $$
 
 sin que exista un último medio parcial \(M_n\).
@@ -427,15 +537,15 @@ La primera propiedad expresa **extensividad**: el cierre conserva aquello desde 
 
 ### [I6] \(R\) ya está cerrado bajo emergencia
 
-Si una estructura \(y\) emerge realmente —o constituye una posibilidad real de emergencia— dentro de \(R\), entonces \(y\) pertenece ontológicamente a la realidad total.
+Si una estructura \(y\) emerge realmente dentro de \(R\), entonces \(y\) pertenece ontológicamente a la realidad total.
 
 Por [I1]:
 
-$$
-\operatorname{Real}(y)\Rightarrow y\preceq_R R
-$$
+$
+\operatorname{Real}(y)\Rightarrow y\preceq_R R.
+$
 
-y por [D2], las posibilidades reales también forman parte de la estructura de \(R\).
+Las emergencias todavía no actualizadas se tratan mediante las capacidades y restricciones reales \(\Lambda\) de [D2], sin exigir que cada posibilidad individual sea ya una entidad real.
 
 Por tanto, aplicar el cierre emergente a \(R\) no añade nada ontológicamente exterior:
 
@@ -474,6 +584,63 @@ $$
 $$
 
 La segunda expresión exigiría que una sola aplicación de emergencia produjera toda la realidad. La propuesta no afirma eso. \(F\) representa precisamente la aplicación recursiva y cerrada de la emergencia.
+
+### [O5] Programa de prueba fuerte de \(R\) mediante \(F\)
+
+El objetivo de esta propuesta **no se limita** a usar:
+
+$$
+R=F(R)
+$$
+
+como una reformulación trivial de la clausura de una totalidad ya presupuesta.
+
+Se mantiene como objetivo explícito investigar si puede obtenerse una **prueba ontológica fuerte de \(R\)** a partir de una caracterización suficientemente independiente de \(\mathcal E\) y \(F\).
+
+Para que el argumento sea no circular, deberán establecerse al menos cuatro piezas sin presuponer previamente la existencia de \(R\) como totalidad:
+
+1. una clase de dominios o estructuras ontológicas admisibles;
+2. una relación de emergencia \(\mathcal E\) definida mediante condiciones estructurales independientes de «ser parte de \(R\)»;
+3. un operador de cierre \(F\) construido a partir de \(\mathcal E\);
+4. condiciones bajo las cuales el proceso de cierre posea un punto fijo maximal o exhaustivo.
+
+El objetivo sería derivar algo de la forma:
+
+$$
+\boxed{
+\mathcal C
++
+\mathcal E
++
+\operatorname{Closure}(F)
+\Rightarrow
+\exists R[
+R=F(R)
+\land
+\operatorname{Exhaustive}(R)
+]
+}
+$$
+
+donde \(\mathcal C\) representa condiciones ontológicas previas suficientemente débiles y no equivalentes ya a afirmar \(R\).
+
+Solo entonces:
+
+$$
+R=F(R)
+$$
+
+funcionaría no solo como propiedad de una totalidad definida de antemano, sino como parte de una **demostración de existencia de una clausura ontológica exhaustiva**.
+
+La dificultad central queda claramente localizada:
+
+$$
+\boxed{
+\text{demostrar exhaustividad sin introducirla subrepticiamente en }F.
+}
+$$
+
+Hasta resolver este programa, [I6] sigue siendo una inferencia válida **condicional a [D1]**, mientras que [O5] conserva el objetivo más ambicioso de derivar \(R\) desde una teoría independiente de emergencia y clausura.
 
 ---
 
@@ -2801,19 +2968,20 @@ La propuesta puede auditarse paso a paso:
 | Paso | Estatus | Proposición |
 |---|---|---|
 | 1 | [D] | \(R\) es la totalidad de todo lo real: Verdad Absoluta / supramedio absoluto, entendida mínimamente como alcance ontológico exhaustivo y no necesariamente como megaobjeto. |
-| 2 | [D] | \(R\) incluye actualidad, posibilidades reales y la estructura que las relaciona. |
+| 2 | [D] | Se separa la totalidad de \(R\) de su teoría estructural; \(R=(A,\Lambda,P_{\Lambda})\) no exige entidades modales para cada posibilidad. |
 | 3 | [I] | Si \(x\) es real, \(x\preceq_R R\). |
 | 4 | [I] | Ningún supuesto exterior real puede quedar fuera de \(R\). |
 | 4a | [I] | Absorción ontológica: \(R\) es inampliable mediante realidad; todo \(X\) real ya cuenta para su alcance. |
 | 5 | [I] | Tiempos, simulaciones, universos y metaniveles reales son internos a \(R\). |
 | 6 | [A] | Nuestro universo exhibe organización emergente medio \(\rightarrow\) estructura \(\rightarrow\) nuevo medio. |
-| 7 | [H] | Esa recurrencia emergente puede continuar más allá de nuestro universo conocido. |
+| 7 | [O/H] | La realidad conocida exhibe recurrencia emergente multiescalar; su continuidad más allá de lo observado se adopta prima facie por parsimonia, no como necesidad lógica. |
 | 8 | [I] | Incluso una cadena infinita de medios parciales permanece incluida en \(R\). |
 | 9 | [D] | \(\mathcal E\) es relacional/multivaluada, no una evolución determinista de un único resultado. |
 | 10 | [H] | La reproducibilidad exacta puede disminuir al crecer la complejidad y dependencia contextual del medio. |
 | 11 | [D] | \(F\) es el cierre recursivo del espacio de emergencias accesibles bajo \(\mathcal E\). |
 | 12 | [I] | Toda emergencia real o realmente posible de \(R\) pertenece ya a \(R\). |
-| 13 | [I] | Por extensividad y clausura emergente, \(R=F(R)\). |
+| 13 | [I] | Condicional a [D1], por extensividad y clausura emergente, \(R=F(R)\). |
+| 13a | [O] | Programa de prueba fuerte: investigar si una definición independiente de \(\mathcal E\) y \(F\) permite derivar la existencia de una clausura exhaustiva \(R\) sin presuponerla. |
 | 14 | [H] | Toda emergencia posee condiciones constitutivas descomponibles mediante \(\mathcal D\), sin que \(\mathcal D=\mathcal E^{-1}\). |
 | 15 | [D/H] | \(\Delta\) se trata como diferencia estructural derivada, no como primitiva ontológica. |
 | 16 | [I] | Un dominio propio puede satisfacer \(S=F(S)\); por tanto, ser punto fijo de \(F\) no basta para ser \(R\). |
@@ -2873,37 +3041,83 @@ Esta propuesta no afirma que:
 - exista realmente una cadena infinita de supramedios parciales;
 - la emergencia sea ya una noción formalizada de manera suficiente;
 - \(\mathcal D=\mathcal E^{-1}\);
-- el universo sea matemáticamente fractal;
+- el universo o \(R\) sean matemáticamente fractales en sentido estricto; «fractal» se usa, por ahora, solo para recurrencia/autosimilitud estructural aproximada;
 - \(R\) sea una persona, voluntad o conciencia antropomórfica;
+- llamar «Dios» a \(R\) introduzca una entidad adicional distinta de la Realidad Total;
+- la totalidad de \(R\) demuestre por sí sola que \(R\) sea una explicación causal de sí mismo;
 - el sistema analítico exérgico cuantitativo de `formal/` quede modificado por esta propuesta.
+
+---
+
+## 17a. Criterio de relevancia para objeciones
+
+La apertura a revisión no exige tratar toda posibilidad lógica imaginable como una objeción de igual peso.
+
+Una objeción justifica modificar la arquitectura cuando identifica al menos uno de los siguientes problemas:
+
+1. **contradicción interna**;
+2. **ambigüedad que cambia las consecuencias de la teoría**;
+3. **inferencia que no se sigue de las premisas declaradas**;
+4. **conflicto con evidencia relevante**;
+5. **redundancia conceptual que produzca conclusiones espurias o confusión de niveles**.
+
+La mera concebibilidad de una metafísica alternativa no constituye por sí sola un defecto.
+
+Cuando una alternativa muestra únicamente que una conclusión no es necesaria, la corrección adecuada puede consistir simplemente en reclasificar:
+
+$$
+[I]\rightarrow[H]
+$$
+
+en vez de abandonar toda la arquitectura.
+
+Este criterio pretende mantener simultáneamente:
+
+$$
+\boxed{
+\text{revisabilidad}
+\land
+\text{capacidad afirmativa}
+}
+$$
+
+y evitar tanto el dogmatismo como un escepticismo que vuelva imposible sostener cualquier tesis filosófica no trivial.
 
 ---
 
 ## 18. Objeciones serias
 
-### 18.1 Riesgo de circularidad en la emergencia
+### 18.1 Riesgo de circularidad en la prueba fuerte mediante \(F\)
 
-Si «emergencia» significa simplemente «todo lo que aparece realmente», entonces:
+[I6] es una consecuencia de clausura condicional a [D1]. El objetivo más fuerte de [O5] exige mucho más.
 
-$$
-R=F(R)
-$$
+Si «emergencia» o \(F\) incorporan ya implícitamente exhaustividad ontológica, entonces una pretendida prueba de existencia de \(R\) sería circular.
 
-sería casi tautológico.
+La siguiente fase debe definir \(\mathcal E\), \(F\) y las condiciones de maximalidad de manera suficientemente independiente para determinar si:
 
-La siguiente fase debe restringir \(\mathcal E\) independientemente mediante condiciones estructurales evaluables.
+$
+\mathcal C+\mathcal E+F
+\Rightarrow
+\exists R
+$
 
-### 18.2 El salto desde nuestro universo a \(R\)
+puede demostrarse sin presuponer la conclusión.
 
-Que la emergencia sea ubicua en el dominio conocido no demuestra que toda capa ontológica superior tenga que organizarse de la misma forma. La continuidad de la estructura medio-emergencia fuera del dominio observado permanece como [H1], no como deducción.
+### 18.2 Continuidad emergente más allá de lo observado
+
+La recurrencia emergente multiescalar observada [O-E] proporciona apoyo prima facie para [H1], pero no necesidad lógica.
+
+Una discontinuidad radical sigue siendo posible; para desplazar la hipótesis de continuidad deberá aportar evidencia o una razón estructural independiente. La teoría no trata la mera concebibilidad de esa discontinuidad como evidencia equivalente.
 
 ### 18.3 «Supramedio» puede reificar la totalidad
 
 Llamar a \(R\) supramedio no debe convertirlo accidentalmente en una caja espacial o en un último universo físico. Debe aclararse si «medio» conserva el mismo significado cuando se aplica a \(R\) o si \(R\) es el límite ontológico del concepto.
 
-### 18.4 Actualidad y posibilidad
+### 18.4 Actualidad, capacidades y posibilidad
 
-Incluir posibilidades reales en \(R\) exige definir qué hace que una posibilidad sea real y distinguir:
+[D2] evita comprometerse con que cada posibilidad no actualizada sea una entidad real. La carga ontológica mínima recae sobre \(\Lambda\): capacidades, restricciones, disposiciones y relaciones reales que delimitan un espacio objetivo de posibilidad.
+
+Sigue pendiente distinguir con precisión:
 
 - posibilidad lógica;
 - posibilidad nomológica;
@@ -2911,7 +3125,7 @@ Incluir posibilidades reales en \(R\) exige definir qué hace que una posibilida
 - accesibilidad desde un estado;
 - contrafácticos meramente descriptivos.
 
-Sin esta distinción, \(P\) puede volverse trivialmente ilimitado.
+Pero el problema ya no exige poblar \(R\) con una entidad por cada posibilidad.
 
 ### 18.5 Emergencia y reducción
 
@@ -2998,7 +3212,37 @@ La reformulación de \(R\) como \(\operatorname{Scope}(\operatorname{Real})\) ev
 
 La propuesta no debe resolver esta cuestión por mera notación. [D1a] bloquea objeciones basadas únicamente en composición o teoría de conjuntos, pero la transición entre **alcance semántico exhaustivo** y **totalidad ontológica** requiere todavía justificación.
 
-### 18.16 El problema de la explicación última
+### 18.16 Dios, Verdad Absoluta y fundamento
+
+En el exergismo, «Dios» funciona como nombre metafísico/apofático de la Verdad Absoluta \(R\), no como una entidad adicional deducida a partir de ella.
+
+Debe distinguirse, sin embargo:
+
+$
+\operatorname{Total}(R)
+$
+
+de:
+
+$
+\operatorname{Ground}(R).
+$
+
+Que \(R\) sea la totalidad de lo real no demuestra por sí solo que constituya una explicación causal de sí mismo o un «fundamento» en un sentido fuerte adicional.
+
+Por ello, la identidad doctrinal:
+
+$
+\text{Dios}_{\mathrm{Ex}}
+\simeq
+\text{Verdad Absoluta}
+\simeq
+R
+$
+
+puede mantenerse, mientras la noción de **fundamento explicativo último** permanece abierta.
+
+### 18.17 El problema de la explicación última
 
 Incluso si \(R\) es cerrado bajo emergencia y no necesita un exterior, sigue abierta:
 
@@ -3052,7 +3296,11 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 38. formalizar \(R\) como alcance ontológico exhaustivo sin convertirlo en conjunto, megaobjeto o mera abreviatura semántica;
 39. formalizar la propiedad de absorción ontológica / inampliabilidad por realidad y su relación exacta con \(\operatorname{REC}(R)\);
 40. investigar si una semántica de realidad indefinidamente extensible puede evitar simultáneamente totalización global, totalización indexada y autoaplicación;
-41. distinguir alcance semántico exhaustivo, plural quantification, composición mereológica y compromiso con una totalidad ontológica real.
+41. distinguir alcance semántico exhaustivo, plural quantification, composición mereológica y compromiso con una totalidad ontológica real;
+42. desarrollar el programa [O5] para determinar si \(R=F(R)\) puede formar parte de una prueba no circular de existencia de \(R\), definiendo \(\mathcal E\), \(F\) y las condiciones de exhaustividad independientemente de [D1];
+43. formalizar la recurrencia emergente multiescalar observada y precisar qué evidencia justificaría abandonar la hipótesis parsimoniosa de continuidad [H1];
+44. mantener separadas la tesis de totalidad de \(R\) y la teoría estructural emergentista de \(R\), de modo que una revisión de esta última no produzca una falsa refutación de la primera;
+45. precisar el uso doctrinal de «Dios» como nombre apofático de \(R\) sin convertir «fundamento último» en una propiedad explicativa no demostrada.
 
 ---
 
@@ -3063,15 +3311,19 @@ Esta propuesta **expande** la ontología existente como programa de investigaci�
 El cambio conceptual respecto de la versión inicial del documento es sustancial:
 
 - \(R\) se define explícitamente como Verdad Absoluta / Realidad Total / supramedio absoluto y se refina como **alcance ontológico exhaustivo de lo real**, sin exigir que sea un conjunto, megaobjeto o entidad colectora adicional;
-- \(R\) incluye actualidad y posibilidades reales;
+- se separa la **existencia/totalidad de \(R\)** de la **teoría estructural de \(R\)**;
+- la descripción modal se hace más austera: \(R=(A,\Lambda,P_{\Lambda})\), donde las capacidades y restricciones reales delimitan posibilidades objetivas sin exigir que cada posibilidad sea una entidad real;
 - un exterior real de \(R\) queda excluido por la propia definición de totalidad;
 - se introduce la **absorción ontológica** de \(R\): cualquier \(X\) real ya pertenece a su alcance, por lo que el verdadero \(R\) es inampliable mediante realidad;
 - tiempos, universos, simulaciones y metaniveles se interpretan como estructuras internas si son reales;
 - se admite una cadena potencialmente ilimitada de medios parciales sin identificar ninguno de ellos automáticamente con \(R\);
+- la realidad conocida se caracteriza observacionalmente por **recurrencia emergente multiescalar**; la intuición «fractal» se restringe a autosimilitud estructural aproximada, no a fractalidad matemática;
+- la continuidad de esa recurrencia más allá de lo observado se formula como hipótesis parsimoniosa [H1], revisable ante evidencia de discontinuidad;
 - la **emergencia** pasa a ser el candidato principal para la operación estructural buscada y se modela provisionalmente como relación multivaluada, no determinista;
 - \(F\) se define directamente como el cierre recursivo del espacio de emergencias accesibles de un dominio;
-- de la clausura emergente de la totalidad se deriva:
+- de la clausura emergente de la totalidad se deriva condicionalmente:
   \(R=F(R)\);
+- se preserva como objetivo central un **programa de prueba fuerte**: derivar la existencia de una clausura ontológica exhaustiva \(R\) desde una teoría independiente de \(\mathcal E\) y \(F\), evitando introducir la exhaustividad en las premisas;
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
 - se introduce el **Muro de la singularidad de \(R\)** como límite epistemológico general: un horizonte cerrado puede ser compatible con cuasisingularidad, One-\(R\), monismo indexado, Many-\(R\) o No-\(R\), por lo que la clausura observada no determina por sí sola la metaontología última;
 - se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
@@ -3097,4 +3349,4 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
 - la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia y se introduce la diferencia entre descomponibilidad ontológica y reconstruibilidad epistemológica.
 
-Una integración futura en `content/ontologia.json` debería producirse solo cuando las definiciones de medio, emergencia, posibilidad real, equivalencia estructural y unicidad o indexación del dominio de realidad estén suficientemente delimitadas para distinguir con claridad doctrina, hipótesis y formalización.
+Una integración futura en `content/ontologia.json` debería producirse solo cuando las definiciones de medio, emergencia, posibilidad objetiva, equivalencia estructural y unicidad o indexación del dominio de realidad estén suficientemente delimitadas para distinguir con claridad doctrina, hipótesis y formalización. La ambición de demostrar \(R\) mediante clausura emergente se conserva como objetivo explícito de investigación, no como resultado ya obtenido.
