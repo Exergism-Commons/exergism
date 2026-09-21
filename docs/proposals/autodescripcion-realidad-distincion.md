@@ -899,45 +899,56 @@ Por tanto, debe distinguirse:
 
 El error puede residir en la identificación del candidato, no en el concepto.
 
-### [I12] Cuatro estructuras compatibles con un mismo horizonte
+### [I12] Cinco estructuras compatibles con un mismo horizonte
 
-Tras introducir Many-\(R\) y No-\(R\), el Muro debe distinguir al menos cuatro posibilidades metaontológicas para un observador interno \(o\):
+Tras distinguir generalidad absoluta, monismo indexado, Many-\(R\) y No-\(R\), el Muro debe separar al menos cinco posibilidades metaontológicas para un observador interno \(o\).
 
-$$
-H_1:\quad \widehat R_o=S\subsetneq R
-$$
+Para no confundirlas con las hipótesis numeradas del resto del documento, se etiquetan aquí \(W_1\)–\(W_5\):
 
 $$
-H_2:\quad \widehat R_o=R
+W_1:\quad \widehat R_o=S\subsetneq R
 $$
 
 $$
-H_3:\quad \widehat R_o=R_i
-\quad\text{y existen otros }R_j\text{ sin supramedio ontológico común}
+W_2:\quad \widehat R_o=R
+\quad\text{bajo }G
 $$
 
 $$
-H_4:\quad
-\widehat R_o\text{ es un horizonte parcial y No-}R\text{ es correcto.}
+W_3:\quad \widehat R_o=R_1
+\quad\text{bajo monismo indexado}
+$$
+
+$$
+W_4:\quad \widehat R_o=R_i
+\quad\text{y existen otros }R_j
+$$
+
+$$
+W_5:\quad
+\widehat R_o\text{ es parcial y No-}R\text{ es correcto.}
 $$
 
 Interpretación:
 
-- \(H_1\): **cuasisingularidad**; el horizonte parece total pero está contenido en una realidad mayor;
-- \(H_2\): **One-\(R\)**; el horizonte coincide realmente con la única totalidad ontológica;
-- \(H_3\): **Many-\(R\)**; el horizonte coincide con una totalidad genuina \(R_i\), pero su unicidad metaontológica no está garantizada;
-- \(H_4\): **No-\(R\)**; ningún horizonte accesible coincide con una totalidad ontológica completada porque la realidad no es absolutamente totalizable.
+- \(W_1\): **cuasisingularidad**; el horizonte parece total pero está contenido en una realidad mayor;
+- \(W_2\): **One-\(R\) por generalidad absoluta**; el horizonte coincide con la totalidad única y su unicidad es derivable;
+- \(W_3\): **monismo indexado**; el horizonte coincide con la única totalidad indexada que existe de hecho, pero esa unicidad no se deriva internamente;
+- \(W_4\): **Many-\(R\)**; el horizonte coincide con una totalidad indexada genuina y existen otras;
+- \(W_5\): **No-\(R\)**; ningún horizonte coincide con una totalidad ontológica completada.
 
 Puede ocurrir, al menos conceptualmente, que:
 
 $$
-\operatorname{Obs}_o(H_1)
+\operatorname{Obs}_o(W_1)
 =
-\operatorname{Obs}_o(H_2)
+\operatorname{Obs}_o(W_2)
 =
-\operatorname{Obs}_o(H_3)
+\operatorname{Obs}_o(W_3)
 =
-\operatorname{Obs}_o(H_4).
+\operatorname{Obs}_o(W_4)
+=
+\operatorname{Obs}_o(W_5).
 $$
 
 En ese caso, la evidencia interna disponible no decide entre:
@@ -946,21 +957,33 @@ $$
 \boxed{
 \text{falsa totalidad}
 \;|\;
-\text{totalidad única}
+\text{unicidad derivada}
 \;|\;
-\text{totalidad indexada}
+\text{unicidad fáctica indexada}
 \;|\;
-\text{ausencia de totalidad completada}
+\text{pluralidad indexada}
+\;|\;
+\text{ausencia de totalidad}
 }
 $$
 
-Por ello, una formulación desarrollada del Muro es:
+El Muro adquiere así una consecuencia adicional:
 
 $$
 \boxed{
-\text{ninguna clausura accesible a }o
-\text{ determina por sí sola si estamos ante }
-S\subsetneq R,\ R,\ R_i\text{ o No-}R
+\text{unicidad ontológica de hecho}
+\not\Rightarrow
+\text{unicidad certificable desde dentro}
+}
+$$
+
+y conserva su formulación general:
+
+$$
+\boxed{
+\widehat R_o
+\not\Rightarrow
+\text{estructura metaontológica última}
 }
 $$
 
@@ -968,7 +991,7 @@ $$
 
 Una versión fuerte, todavía no demostrada, sería:
 
-> ningún observador estrictamente interno puede certificar mediante evidencia puramente interna cuál de las estructuras metaontológicas compatibles con su horizonte accesible —cuasisingularidad, One-\(R\), Many-\(R\) o No-\(R\)— describe la realidad última.
+> ningún observador estrictamente interno puede certificar mediante evidencia puramente interna cuál de las estructuras metaontológicas compatibles con su horizonte accesible —cuasisingularidad, One-\(R\) por generalidad absoluta, monismo indexado, Many-\(R\) o No-\(R\)— describe la realidad última.
 
 Esta afirmación requeriría una formalización precisa de observador, acceso, indistinguibilidad, evidencia y equivalencia observacional. Por ello permanece como hipótesis y no como consecuencia ya establecida.
 
@@ -1283,33 +1306,17 @@ hasta equivalencia ontológica, y hasta identidad estricta cuando esta quede for
 
 La **unicidad deja así de ser una premisa independiente** en el modelo One-\(R\): se deriva de totalidad + generalidad ontológica absoluta.
 
-### [I11b] Existencia indexada bloquea esa derivación
+### [I11b] Existencia indexada bloquea la derivación de unicidad
 
-Bajo indexación fuerte no existe un único dominio sobre el que pueda ejecutarse el argumento anterior.
+Bajo indexación fuerte no existe un único dominio ontológico sobre el que pueda ejecutarse el argumento de [I11a].
 
 Puede ocurrir:
 
 $$
-T_1(R_1)
+T_i(R_i)
 $$
 
-y:
-
-$$
-T_2(R_2)
-$$
-
-sin que tenga sentido interno exigir:
-
-$$
-R_2\preceq R_1
-$$
-
-o:
-
-$$
-R_1\preceq R_2.
-$$
+sin que tenga sentido interno cuantificar sobre supuestos \(R_j\) externos al dominio de \(\exists_i\).
 
 Por tanto:
 
@@ -1317,46 +1324,143 @@ $$
 \boxed{
 T_i(R_i)
 \not\Rightarrow
-U(R_i)
+U_{\mathrm{global}}
 }
 $$
 
-en sentido metaontológico global.
+La indexación fuerte bloquea la **derivación** de unicidad, pero no implica por sí sola pluralidad efectiva.
 
-La existencia indexada **no demuestra Many-\(R\)**, pero elimina la inferencia automática hacia One-\(R\) y hace coherente, al menos provisionalmente, investigar múltiples totalidades absolutamente incomparables.
+### [I11c] Monismo indexado
 
-### [I11c] La bifurcación fundamental
-
-Una vez admitida alguna forma de totalidad ontológica, la bifurcación profunda ya no es:
+Es coherente considerar el caso en que la existencia esté fuertemente indexada:
 
 $$
-\text{Totalidad}
-\quad\text{vs}\quad
-\text{Unicidad}.
+\neg G
+\land
+I_{\mathrm{fuerte}}
 $$
 
-Es:
+y, sin embargo, solo haya de hecho una totalidad indexada:
+
+$$
+R_1.
+$$
+
+Llamamos provisionalmente a esta arquitectura **monismo indexado** o **Indexed-One-\(R\)**.
+
+En ella:
+
+$$
+T_1(R_1)
+$$
+
+pero la unicidad no se obtiene mediante:
+
+$$
+T(R)\land G\Rightarrow U(R),
+$$
+
+porque \(G\) ha sido rechazado.
+
+Debe distinguirse entonces entre:
+
+$$
+\boxed{U_{\mathrm{derivada}}}
+$$
+
+y:
+
+$$
+\boxed{U_{\mathrm{fáctica}}}.
+$$
+
+- **unicidad derivada:** bajo \(G\), cualquier segunda totalidad real colapsa ontológicamente con la primera;
+- **unicidad fáctica:** bajo indexación fuerte, el modelo contiene de hecho un solo dominio indexado, pero la semántica no excluye estructuralmente otros.
+
+Así:
 
 $$
 \boxed{
-\text{Generalidad ontológica absoluta}
-\quad\text{vs}\quad
-\text{Existencia indexada fuerte}
+I_{\mathrm{fuerte}}
+\not\Rightarrow
+\text{Many-}R
 }
 $$
 
-porque la unicidad queda aguas abajo:
+y también:
+
+$$
+\boxed{
+I_{\mathrm{fuerte}}
+\not\Rightarrow
+\text{pluralidad}
+}
+$$
+
+### [O2a] ¿Puede afirmarse internamente la unicidad fáctica?
+
+En un dominio indexado \(R_1\), la afirmación:
+
+> «no existe ningún otro \(R_j\)»
+
+no puede expresarse sin cuidado mediante un cuantificador interno \(\exists_1\), porque cualquier supuesto \(R_j\) queda precisamente fuera de su dominio.
+
+Por tanto, la afirmación:
+
+$$
+\text{«solo existe }R_1\text{»}
+$$
+
+puede pertenecer únicamente al **metalenguaje del modelo**.
+
+Esto introduce una nueva distinción:
+
+$$
+\boxed{
+\text{unicidad ontológica de hecho}
+\neq
+\text{unicidad certificable desde dentro}
+}
+$$
+
+Un observador interno a \(R_1\) puede habitar un universo metaontológicamente monista sin disponer de recursos internos para demostrar que no existe otro dominio indexado.
+
+### [I11d] La bifurcación fundamental y la pluralidad efectiva
+
+Una vez admitida alguna forma de totalidad ontológica, la primera bifurcación sigue siendo:
+
+$$
+\boxed{
+G
+\quad\text{vs}\quad
+I_{\mathrm{fuerte}}
+}
+$$
+
+pero esta bifurcación determina **si la unicidad puede derivarse**, no directamente cuántas totalidades existen.
+
+El árbol correcto es:
 
 $$
 \boxed{
 \begin{array}{rcl}
-T+G &\Rightarrow& \text{One-}R\\
-T+I_{\mathrm{fuerte}} &\Rightarrow& \text{Many-}R\text{ posible, no demostrado}
+T+G &\Rightarrow& \text{One-}R\text{ con unicidad derivada}\\
+T+I_{\mathrm{fuerte}} &\Rightarrow& 
+\begin{cases}
+\text{monismo indexado}, & \text{si hay un solo }R_i,\\
+\text{Many-}R, & \text{si hay pluralidad efectiva de }R_i.
+\end{cases}
 \end{array}
 }
 $$
 
-donde \(I_{\mathrm{fuerte}}\) niega un cuantificador ontológico universal común.
+Por tanto, bajo indexación fuerte aparece una segunda cuestión independiente:
+
+$$
+\boxed{
+\text{¿hay pluralidad ontológica efectiva de dominios indexados?}
+}
+$$
 
 ### [O2] ¿Tiene sentido decir que hay «dos» realidades absolutamente incomparables?
 
@@ -1400,19 +1504,33 @@ $$
 
 y conserva las propiedades derivadas anteriormente.
 
-La cuestión abierta no es si una totalidad deja de ser totalidad, sino **qué semántica de existencia es correcta**:
+La cuestión abierta es doble:
 
-- bajo \(G\), la totalidad conduce a One-\(R\);
-- bajo existencia indexada fuerte, la totalidad puede permanecer local a cada \(R_i\) sin que se derive una unicidad global.
+1. **qué semántica de existencia es correcta**:
+   $$G\quad\text{vs}\quad I_{\mathrm{fuerte}};$$
+2. si la existencia es indexada, **si existe pluralidad efectiva de dominios**.
 
-Así:
+Por ello:
 
 $$
 \boxed{
-\text{Many-}R\text{ cuestiona }G,
-\text{ no }T(R).
+\neg G
+\not\Rightarrow
+\text{Many-}R
 }
 $$
+
+y:
+
+$$
+\boxed{
+I_{\mathrm{fuerte}}
+\Rightarrow
+\text{monismo indexado o Many-}R
+}
+$$
+
+según exista uno o más dominios indexados.
 
 La antigua pregunta:
 
@@ -1424,17 +1542,11 @@ queda refinada como:
 
 $$
 \boxed{
-T(R)\land G\Rightarrow U(R)
+T(R)\land G\Rightarrow U_{\mathrm{derivada}}(R)
 }
 $$
 
-mientras que, bajo indexación fuerte:
-
-$$
-\boxed{
-T_i(R_i)\not\Rightarrow U_{\mathrm{global}}.
-}
-$$
+mientras que bajo indexación fuerte la unicidad, si se da, es fáctica y no derivada.
 
 ### [I14] Humildad metaontológica
 
@@ -1516,15 +1628,29 @@ $$
 
 con dominios ontológicos no subsumidos por un cuantificador real común.
 
-Esta arquitectura no demuestra Many-\(R\), pero permite:
+Esta arquitectura permite:
 
-$$
+$
 T_i(R_i)
-$$
+$
 
 sin que se derive una unicidad metaontológica global.
 
-La propuesta mantiene abierta cuál de estas dos arquitecturas describe correctamente el alcance de «lo real». Many-\(R\) fuerte solo permanece como posibilidad si la segunda puede formularse coherentemente.
+Pero deja abiertas dos realizaciones distintas:
+
+$
+\text{monismo indexado}
+$
+
+si existe de hecho un único \(R_i\), y:
+
+$
+\text{Many-}R
+$
+
+si existe pluralidad efectiva de dominios indexados.
+
+La propuesta mantiene abierta cuál de estas arquitecturas describe correctamente el alcance de «lo real» y, si la indexación fuerte es coherente, si está realizada de forma monista o plural.
 
 ### Consecuencia para la Verdad Absoluta
 
@@ -1717,7 +1843,7 @@ Pero obliga a que No-\(R\) especifique cómo evita convertir su negación de la 
 
 ### [D17] Mapa metaontológico mínimo
 
-El mapa se vuelve más preciso si se ordena como un árbol de decisiones conceptuales.
+El mapa se ordena como un árbol de decisiones conceptuales.
 
 Primera pregunta:
 
@@ -1730,90 +1856,101 @@ $$
 Si la respuesta es negativa:
 
 $$
-\boxed{\text{No-}R}
+\boxed{\text{No-}R}.
 $$
 
-y debe explicarse por qué todo intento de totalización falla.
-
-Si la respuesta es afirmativa, aparece la bifurcación fundamental:
+Si la respuesta es afirmativa, aparece la bifurcación semántica:
 
 $$
 \boxed{
 G
 \quad\text{vs}\quad
-I_{\mathrm{fuerte}}
+I_{\mathrm{fuerte}}.
 }
 $$
 
-#### One-\(R\)
+#### Rama de Generalidad Absoluta
 
-Bajo generalidad ontológica absoluta:
+Bajo \(G\):
 
 $$
-T(R)\land G
-\Rightarrow
-U(R).
+T(R)\land G\Rightarrow U_{\mathrm{derivada}}(R).
 $$
 
 Por tanto:
 
 $$
 \boxed{
-\text{One-}R
+\text{One-}R_G
 =
 \text{totalidad}
 +
-\text{generalidad ontológica absoluta}
+\text{generalidad absoluta}
 }
 $$
 
-con la unicidad como consecuencia, no como premisa independiente.
+con unicidad derivada.
 
-#### Many-\(R\)
+#### Rama de Existencia Indexada
 
-Bajo existencia indexada fuerte:
+Bajo \(I_{\mathrm{fuerte}}\), la unicidad global ya no se deriva.
+
+Aparece entonces una nueva pregunta factual:
 
 $$
-T_i(R_i)
+\boxed{
+\text{¿existe pluralidad efectiva de dominios indexados?}
+}
 $$
 
-puede mantenerse sin un cuantificador ontológico común.
+Si no:
 
-Por tanto:
+$$
+\boxed{
+\text{Indexed-One-}R
+}
+$$
+
+o **monismo indexado**: existe un único \(R_i\) de hecho, aunque su unicidad no sea consecuencia de la semántica.
+
+Si sí:
 
 $$
 \boxed{
 \text{Many-}R
-=
-\text{totalidad indexada}
-+
-\text{pluralidad efectiva de dominios}
 }
 $$
 
-pero la existencia indexada por sí sola **no demuestra** que haya más de un \(R_i\); únicamente hace coherente esa posibilidad.
+con múltiples totalidades indexadas absolutamente incomparables.
 
-#### No-\(R\)
+#### Rama No-(R)
 
-No-\(R\) niega que exista una totalidad ontológica en el sentido requerido, incluso después de distinguir entre generalidad absoluta e indexación.
+No-\(R\) niega que exista una totalidad ontológica en el sentido requerido, ya sea global o indexado.
 
 Así, el mapa queda:
 
 $$
 \boxed{
 \begin{array}{c}
-\text{¿hay totalidad?}\\[4pt]
+\text{¿hay totalidad ontológica?}\\[4pt]
 \swarrow\qquad\searrow\\
 \text{No} \qquad \text{Sí}\\
 \downarrow \qquad \downarrow\\
 \text{No-}R \qquad G\ \text{vs}\ I_{\mathrm{fuerte}}\\
 \qquad\qquad \swarrow\qquad\searrow\\
-\qquad\text{One-}R \qquad \text{Many-}R\text{ posible}
+\qquad\text{One-}R_G \qquad \text{¿pluralidad efectiva?}\\
+\qquad\qquad\qquad\swarrow\qquad\searrow\\
+\qquad\qquad\text{No}\qquad\text{Sí}\\
+\qquad\qquad\downarrow\qquad\downarrow\\
+\qquad\text{Indexed-One-}R\qquad\text{Many-}R
 \end{array}
 }
 $$
 
-La cuestión de unicidad ya no funciona como bifurcación primitiva: bajo \(G\) se deriva; bajo indexación fuerte queda abierta.
+La cuestión de unicidad deja de ser una bifurcación primitiva:
+
+- bajo \(G\), se deriva;
+- bajo indexación fuerte, puede darse de hecho o fallar según exista pluralidad efectiva.
 
 ### [I18] ManyMany-\(R\) no constituye un cuarto nivel ontológico estable
 
@@ -1847,11 +1984,11 @@ Esto marca un límite del **metaapilamiento ontológico**, no un límite del nú
 
 La conjetura ya no necesita tratar «R infinito», «R sin último medio» o «ManyMany-\(R\)» como alternativas independientes.
 
-El espacio metaontológico relevante queda organizado en dos decisiones:
+El espacio metaontológico relevante queda organizado en tres preguntas sucesivas:
 
 $$
 \boxed{
-\text{¿admite la realidad alguna forma de totalidad ontológica?}
+\text{1. ¿admite la realidad alguna forma de totalidad ontológica?}
 }
 $$
 
@@ -1861,33 +1998,28 @@ $$
 \text{No-}R.
 $$
 
-Si sí, la bifurcación central es:
+Si sí:
 
 $$
 \boxed{
-G
-\quad\text{vs}\quad
-I_{\mathrm{fuerte}}.
+\text{2. ¿la existencia posee generalidad absoluta o está fuertemente indexada?}
 }
 $$
 
-Bajo \(G\):
+Bajo \(G\), la unicidad se deriva.
+
+Bajo indexación fuerte aparece todavía:
 
 $$
-T(R)\Rightarrow U(R)
+\boxed{
+\text{3. ¿hay pluralidad ontológica efectiva de dominios indexados?}
+}
 $$
 
-dadas las condiciones de [A3].
+- si no, **monismo indexado**;
+- si sí, **Many-\(R\)**.
 
-Bajo existencia indexada fuerte:
-
-$$
-T_i(R_i)
-$$
-
-no determina unicidad global y Many-\(R\) permanece como posibilidad.
-
-Así, **unicidad deja de ser el eje primitivo**: es una consecuencia de la semántica de existencia adoptada.
+Por tanto, la semántica de existencia determina **si la unicidad es derivable**; la pluralidad efectiva determina **si la unicidad fáctica se cumple** bajo indexación.
 
 ---
 
@@ -1925,9 +2057,10 @@ La propuesta puede auditarse paso a paso:
 | 26 | [I] | Si la realidad es no vacía y admite generalidad ontológica absoluta, \(R\) existe condicionalmente como totalidad de lo real. |
 | 27 | [I/O] | No-\(R\) genuino debe negar la totalizabilidad ontológica; negar solo la generalidad absoluta todavía permite existencia indexada. |
 | 28 | [I] | ManyMany-\(R\) colapsa en un nuevo \(R\) si es ontológicamente real, o permanece como metalenguaje si no lo es. |
-| 29 | [D] | El mapa mínimo queda: primero totalizabilidad vs No-\(R\); después, si hay totalidad, Generalidad Absoluta vs Existencia Indexada fuerte. |
+| 29 | [D] | El mapa mínimo queda: totalizabilidad vs No-\(R\); después Generalidad Absoluta vs Existencia Indexada fuerte; bajo indexación, monismo indexado vs Many-\(R\) según exista pluralidad efectiva. |
 | 30 | [A/I] | Bajo antisimetría de inclusión entre totalidades, \(T(R)\land G\Rightarrow U(R)\): la unicidad se deriva de totalidad + generalidad absoluta. |
-| 31 | [I] | La existencia indexada fuerte bloquea esa derivación y hace posible Many-\(R\), aunque no demuestra que exista más de una totalidad. |
+| 31 | [I] | La existencia indexada fuerte bloquea esa derivación, pero admite tanto monismo indexado como Many-\(R\); la pluralidad efectiva es una cuestión adicional. |
+| 32 | [I/O] | Bajo monismo indexado puede haber unicidad fáctica sin unicidad derivada ni certificabilidad interna de que no existen otros índices. |
 
 La parte que requiere investigación ya no es «inventar una \(F\) cualquiera», sino comprobar si **emergencia** puede definirse con suficiente precisión como para sostener esta arquitectura sin circularidad.
 
@@ -1954,6 +2087,7 @@ Esta propuesta no afirma que:
 - la mera inaccesibilidad causal implique múltiples realidades ontológicas absolutas;
 - pueda hablarse de varios \(R_i\) sin resolver antes si «real» posee un dominio universal o indexado;
 - la existencia indexada fuerte implique por sí sola que existen múltiples \(R_i\);
+- que un dominio indexado único pueda demostrar internamente su propia unicidad metaontológica;
 - la antisimetría provisional [A3] constituya ya una teoría completa de identidad ontológica;
 - exista realmente una cadena infinita de supramedios parciales;
 - la emergencia sea ya una noción formalizada de manera suficiente;
@@ -2092,7 +2226,9 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 26. analizar el problema de autoaplicación: cómo puede No-\(R\) negar toda totalidad sin presuponer una generalidad semántica u ontológica superior;
 27. formalizar el criterio de colapso de ManyMany-\(R\) en One-\(R\) o metalenguaje;
 28. distinguir formalmente indexación débil de existencia indexada fuerte y comprobar si esta última puede formularse sin un metadominio ontológico;
-29. determinar si la antisimetría de inclusión ontológica entre totalidades basta para identidad o solo para equivalencia ontológica.
+29. determinar si la antisimetría de inclusión ontológica entre totalidades basta para identidad o solo para equivalencia ontológica;
+30. formalizar el monismo indexado y distinguir unicidad derivada, unicidad fáctica y unicidad epistemicamente certificable;
+31. determinar qué contenido puede tener en el metalenguaje la afirmación «solo existe un índice» sin reintroducir generalidad ontológica absoluta.
 
 ---
 
@@ -2117,6 +2253,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se identifica la bifurcación metaontológica fundamental como **Generalidad Ontológica Absoluta vs Existencia Indexada fuerte**;
 - se deriva provisionalmente que \(T(R)\land G\Rightarrow U(R)\), de modo que la unicidad deja de ser una premisa independiente de One-\(R\);
 - se explicita que Many-\(R\) fuerte requiere bloquear esa derivación mediante existencia indexada fuerte, sin que la indexación por sí sola demuestre pluralidad;
+- se introduce **monismo indexado / Indexed-One-\(R\)** como caso de existencia indexada fuerte sin pluralidad ontológica efectiva;
+- se distinguen **unicidad derivada**, **unicidad fáctica** y **unicidad certificable desde dentro**;
 - se mantiene que Many-\(R\) no invalida el concepto de \(R\) como totalidad ontológica de un dominio;
 - se introduce una regla de humildad metaontológica: distinguir lo que la estructura de \(R\) justifica de lo que requeriría una prueba adicional de unicidad absoluta;
 - se cierra como falsa alternativa la simple «realidad sin último nivel»: una cadena indefinida de medios sigue incluida en \(R\);
