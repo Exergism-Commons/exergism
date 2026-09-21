@@ -1105,41 +1105,258 @@ Por ello, en Many-\(R\) fuerte, \(\mathfrak R\) solo puede utilizarse como recur
 
 La consecuencia más radical de Many-\(R\) fuerte es que el predicado universal:
 
-$
+$$
 \operatorname{Real}(x)
-$
+$$
 
 podría no poseer un dominio ontológico único.
 
-En su lugar habría que considerar algo como:
+Debe distinguirse entre dos sentidos de indexación.
 
-$
-\operatorname{Real}_i(x)
-$
+#### Indexación débil
 
-o cuantificadores indexados:
+Un cuantificador:
 
-$
+$$
 \exists_i x
-$
+$$
 
-cuyo dominio es \(R_i\).
+puede limitarse a una región, teoría o subdominio dentro de una realidad común.
+
+Eso es compatible con un cuantificador ontológico más general:
+
+$$
+\exists^{\ast}x
+$$
+
+y, por tanto, **no basta para sostener Many-\(R\) fuerte**.
+
+#### Indexación fuerte
+
+La hipótesis relevante para Many-\(R\) es:
+
+$$
+\operatorname{Real}_i(x),
+\qquad
+\exists_i x,
+$$
+
+con dominio ontológico \(R_i\), y sin un cuantificador ontológico real más general que atraviese todos los índices:
+
+$$
+\boxed{\nexists\,\exists^{\ast}}
+$$
+
+en sentido ontológico.
 
 Entonces:
 
-$
+$$
 R_i:=\text{totalidad de lo real}_i
-$
+$$
 
 sin que sea legítimo formar ontológicamente:
 
-$
+$$
 R_1\cup R_2
-$
+$$
 
 ni afirmar la existencia de una totalidad superior solo porque el metalenguaje pueda hablar hipotéticamente de ambas.
 
-Esto obligaría a revisar la definición actual de \(R\), porque «todo lo real» dejaría de tener necesariamente un dominio universal.
+La afirmación:
+
+$$
+R_j\notin\operatorname{Dom}(\exists_i)
+$$
+
+debe preferirse a:
+
+$$
+\neg\operatorname{Real}_i(R_j),
+$$
+
+porque esta última expresión podría introducir a \(R_j\) como objeto del propio dominio que pretende excluir.
+
+### [D14] Generalidad ontológica absoluta
+
+Definimos provisionalmente:
+
+$$
+G:=\text{existe un dominio ontológico absolutamente general de “lo real”}.
+$$
+
+Equivalentemente, existe un uso no indexado de:
+
+$$
+\operatorname{Real}(x)
+$$
+
+y de la cuantificación existencial que abarca cualquier entidad, relación, proceso o dominio que sea real.
+
+Esto **no** exige:
+
+- un conjunto universal;
+- que \(R\) sea un objeto entre otros;
+- ni que todo lo real pueda enumerarse.
+
+Exige únicamente que «real» posea un único alcance ontológico absolutamente general.
+
+### [D15] Totalidad y unicidad
+
+Sea:
+
+$$
+T(R):=\operatorname{Totalidad}(R)
+$$
+
+y:
+
+$$
+U(R):=\operatorname{Unicidad}(R).
+$$
+
+La totalidad significa que nada real dentro del dominio relevante queda ontológicamente fuera de \(R\).
+
+La unicidad significa que no existe otra totalidad ontológica distinta e incomparable con \(R\).
+
+Estas propiedades no son idénticas:
+
+$$
+\boxed{T(R)\not\Rightarrow U(R)}
+$$
+
+si el dominio de existencia puede estar indexado.
+
+### [A3] Antisimetría de la inclusión ontológica entre totalidades
+
+Para candidatos a totalidad dentro de un mismo dominio ontológico se adopta provisionalmente:
+
+$$
+X\preceq Y
+\land
+Y\preceq X
+\Rightarrow
+X\equiv_{\mathrm{ont}}Y.
+$$
+
+Si la identidad ontológica estricta puede definirse, esta equivalencia podrá fortalecerse a:
+
+$$
+X=Y.
+$$
+
+La formulación con equivalencia evita introducir prematuramente una teoría fuerte de identidad de totalidades.
+
+### [I11a] Bajo generalidad absoluta, la totalidad implica unicidad
+
+Supónganse dos candidatos a totalidad \(R_1\) y \(R_2\) bajo el mismo dominio absolutamente general \(G\).
+
+Si ambos son reales, entonces por totalidad:
+
+$$
+R_2\preceq R_1
+$$
+
+y:
+
+$$
+R_1\preceq R_2.
+$$
+
+Por [A3]:
+
+$$
+R_1\equiv_{\mathrm{ont}}R_2.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+T(R)\land G
+\Rightarrow
+U(R)
+}
+$$
+
+hasta equivalencia ontológica, y hasta identidad estricta cuando esta quede formalizada.
+
+La **unicidad deja así de ser una premisa independiente** en el modelo One-\(R\): se deriva de totalidad + generalidad ontológica absoluta.
+
+### [I11b] Existencia indexada bloquea esa derivación
+
+Bajo indexación fuerte no existe un único dominio sobre el que pueda ejecutarse el argumento anterior.
+
+Puede ocurrir:
+
+$$
+T_1(R_1)
+$$
+
+y:
+
+$$
+T_2(R_2)
+$$
+
+sin que tenga sentido interno exigir:
+
+$$
+R_2\preceq R_1
+$$
+
+o:
+
+$$
+R_1\preceq R_2.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+T_i(R_i)
+\not\Rightarrow
+U(R_i)
+}
+$$
+
+en sentido metaontológico global.
+
+La existencia indexada **no demuestra Many-\(R\)**, pero elimina la inferencia automática hacia One-\(R\) y hace coherente, al menos provisionalmente, investigar múltiples totalidades absolutamente incomparables.
+
+### [I11c] La bifurcación fundamental
+
+Una vez admitida alguna forma de totalidad ontológica, la bifurcación profunda ya no es:
+
+$$
+\text{Totalidad}
+\quad\text{vs}\quad
+\text{Unicidad}.
+$$
+
+Es:
+
+$$
+\boxed{
+\text{Generalidad ontológica absoluta}
+\quad\text{vs}\quad
+\text{Existencia indexada fuerte}
+}
+$$
+
+porque la unicidad queda aguas abajo:
+
+$$
+\boxed{
+\begin{array}{rcl}
+T+G &\Rightarrow& \text{One-}R\\
+T+I_{\mathrm{fuerte}} &\Rightarrow& \text{Many-}R\text{ posible, no demostrado}
+\end{array}
+}
+$$
+
+donde \(I_{\mathrm{fuerte}}\) niega un cuantificador ontológico universal común.
 
 ### [O2] ¿Tiene sentido decir que hay «dos» realidades absolutamente incomparables?
 
@@ -1171,78 +1388,53 @@ $
 
 La coherencia de Many-\(R\) depende en gran medida de que esta distinción pueda mantenerse sin vaciar de significado la afirmación de pluralidad.
 
-### [I12] Many-\(R\) amplía el Muro
-
-Desde la perspectiva de un observador interno \(o\), pueden existir al menos tres hipótesis estructuralmente distintas:
-
-$
-H_1:\quad \widehat R_o=R
-$
-
-$
-H_2:\quad \widehat R_o=S\subsetneq R
-$
-
-$
-H_3:\quad \widehat R_o=R_i
-\quad\text{y existen otros }R_j\text{ sin supramedio ontológico común}.
-$
-
-- \(H_1\): el horizonte accesible coincide con una única Realidad Total;
-- \(H_2\): el horizonte accesible es una cuasisingularidad o falsa totalidad dentro de una realidad mayor;
-- \(H_3\): el horizonte accesible puede ser una totalidad ontológica genuina y, sin embargo, no ser la única totalidad.
-
-Si:
-
-$
-\operatorname{Obs}_o(H_1)
-=
-\operatorname{Obs}_o(H_2)
-=
-\operatorname{Obs}_o(H_3),
-$
-
-entonces el Muro no solo impide decidir si existe un exterior accesible o inaccesible. Impide decidir, desde la evidencia interna disponible, **si la totalidad ontológica es única**.
-
 ### [I13] Many-\(R\) no devalúa nuestro \(R\)
 
 La posibilidad de Many-\(R\) no elimina ni rebaja el valor ontológico de \(R\).
 
 Dentro de cualquier dominio de realidad dado, \(R\) sigue designando:
 
-$
+$$
 \boxed{R:=\text{la totalidad ontológica de todo lo real en ese dominio}}
-$
+$$
 
-y conserva todas las propiedades derivadas anteriormente:
+y conserva las propiedades derivadas anteriormente.
 
-- no posee exterior real **dentro de su dominio ontológico**;
-- contiene todos sus medios, procesos, relaciones, actualidades y posibilidades reales;
-- está cerrado bajo sus emergencias:
-  \(R=F(R)\);
-- ningún observador finito lo agota epistemológicamente.
+La cuestión abierta no es si una totalidad deja de ser totalidad, sino **qué semántica de existencia es correcta**:
 
-Many-\(R\) introduce incertidumbre en una afirmación distinta:
+- bajo \(G\), la totalidad conduce a One-\(R\);
+- bajo existencia indexada fuerte, la totalidad puede permanecer local a cada \(R_i\) sin que se derive una unicidad global.
 
-$
-\boxed{\text{la unicidad del dominio ontológico de existencia}.}
-$
+Así:
 
-Por tanto, debe distinguirse entre:
+$$
+\boxed{
+\text{Many-}R\text{ cuestiona }G,
+\text{ no }T(R).
+}
+$$
 
-$
-\operatorname{Totalidad}(R)
-$
+La antigua pregunta:
 
-y:
+$$
+T(R)\stackrel{?}{\Rightarrow}U(R)
+$$
 
-$
-\operatorname{Unicidad}(R).
-$
+queda refinada como:
 
-La primera expresa que \(R\) no es una parte de una realidad mayor **dentro de su dominio**. La segunda afirma que no existen otros dominios ontológicos absolutamente incomparables.
+$$
+\boxed{
+T(R)\land G\Rightarrow U(R)
+}
+$$
 
-La hipótesis Many-\(R\) cuestiona provisionalmente la segunda, no la primera.
+mientras que, bajo indexación fuerte:
+
+$$
+\boxed{
+T_i(R_i)\not\Rightarrow U_{\mathrm{global}}.
+}
+$$
 
 ### [I14] Humildad metaontológica
 
@@ -1282,7 +1474,7 @@ Por tanto, Many-\(R\) fuerte no debe presentarse todavía como consecuencia de l
 
 $
 \boxed{
-\text{¿es único el dominio de “lo real”?}
+\text{¿“lo real” admite generalidad ontológica absoluta o exige existencia indexada?}
 }
 $
 
@@ -1482,57 +1674,105 @@ Esto no basta para refutar todas las teorías No-\(R\), porque el rival puede di
 
 Pero obliga a que No-\(R\) especifique cómo evita convertir su negación de la totalidad en una nueva forma de totalidad semántica u ontológica.
 
-### [D15] Mapa metaontológico mínimo
+### [D17] Mapa metaontológico mínimo
 
-La discusión produce tres familias principales.
+El mapa se vuelve más preciso si se ordena como un árbol de decisiones conceptuales.
+
+Primera pregunta:
+
+$$
+\boxed{
+\text{¿la realidad admite alguna forma de totalidad ontológica?}
+}
+$$
+
+Si la respuesta es negativa:
+
+$$
+\boxed{\text{No-}R}
+$$
+
+y debe explicarse por qué todo intento de totalización falla.
+
+Si la respuesta es afirmativa, aparece la bifurcación fundamental:
+
+$$
+\boxed{
+G
+\quad\text{vs}\quad
+I_{\mathrm{fuerte}}
+}
+$$
 
 #### One-\(R\)
 
-Existe un único dominio ontológico absolutamente general:
+Bajo generalidad ontológica absoluta:
 
-$
-\boxed{\exists!R}
-$
+$$
+T(R)\land G
+\Rightarrow
+U(R).
+$$
 
-y todas las realidades, medios y niveles pertenecen a él.
+Por tanto:
+
+$$
+\boxed{
+\text{One-}R
+=
+\text{totalidad}
++
+\text{generalidad ontológica absoluta}
+}
+$$
+
+con la unicidad como consecuencia, no como premisa independiente.
 
 #### Many-\(R\)
 
-Existen totalidades indexadas:
+Bajo existencia indexada fuerte:
 
-$
-R_i
-$
+$$
+T_i(R_i)
+$$
 
-con:
+puede mantenerse sin un cuantificador ontológico común.
 
-$
-\operatorname{Real}_i(x),
-\qquad
-\exists_i x,
-$
+Por tanto:
 
-sin que esté justificado un cuantificador ontológico universal común.
+$$
+\boxed{
+\text{Many-}R
+=
+\text{totalidad indexada}
++
+\text{pluralidad efectiva de dominios}
+}
+$$
 
-Many-\(R\) conserva **totalidad**, pero cuestiona **unicidad**.
+pero la existencia indexada por sí sola **no demuestra** que haya más de un \(R_i\); únicamente hace coherente esa posibilidad.
 
 #### No-\(R\)
 
-Se niega que exista una totalidad ontológica completada siquiera en el sentido requerido por \(R\).
+No-\(R\) niega que exista una totalidad ontológica en el sentido requerido, incluso después de distinguir entre generalidad absoluta e indexación.
 
-Para que esta posición sea genuinamente distinta, debe cuestionar la **totalizabilidad absoluta de lo real**, no simplemente la existencia de un último nivel.
+Así, el mapa queda:
 
-Así, los tres ejes quedan separados:
-
-$
+$$
 \boxed{
-\begin{array}{rcl}
-\text{One-}R &:& \text{totalidad + unicidad}\\
-\text{Many-}R &:& \text{totalidad sin unicidad global demostrada}\\
-\text{No-}R &:& \text{negación de totalizabilidad absoluta}
+\begin{array}{c}
+\text{¿hay totalidad?}\\[4pt]
+\swarrow\qquad\searrow\\
+\text{No} \qquad \text{Sí}\\
+\downarrow \qquad \downarrow\\
+\text{No-}R \qquad G\ \text{vs}\ I_{\mathrm{fuerte}}\\
+\qquad\qquad \swarrow\qquad\searrow\\
+\qquad\text{One-}R \qquad \text{Many-}R\text{ posible}
 \end{array}
 }
-$
+$$
+
+La cuestión de unicidad ya no funciona como bifurcación primitiva: bajo \(G\) se deriva; bajo indexación fuerte queda abierta.
 
 ### [I18] ManyMany-\(R\) no constituye un cuarto nivel ontológico estable
 
@@ -1616,13 +1856,15 @@ La propuesta puede auditarse paso a paso:
 | 20 | [H] | Many-\(R\) fuerte exige múltiples totalidades sin supramedio ontológico común. |
 | 21 | [H/O] | Para sostener Many-\(R\), «real» y la cuantificación existencial podrían tener que indexarse por totalidad. |
 | 22 | [O] | Queda abierta la coherencia de una pluralidad absoluta sin relación ontológica común y su distinguibilidad desde dentro del Muro. |
-| 23 | [I] | Many-\(R\) cuestiona la unicidad metaontológica de \(R\), no su condición de totalidad dentro de un dominio. |
+| 23 | [I] | Many-\(R\) cuestiona la generalidad ontológica absoluta, no la condición de totalidad de cada \(R_i\). |
 | 24 | [I] | Se adopta humildad metaontológica: afirmar lo que la estructura justifica sin convertir la unicidad última en certeza no demostrada. |
 | 25 | [I] | Una cadena infinita o sin último medio sigue siendo una configuración interna de \(R\), no una alternativa No-\(R\). |
 | 26 | [I] | Si la realidad es no vacía y admite generalidad ontológica absoluta, \(R\) existe condicionalmente como totalidad de lo real. |
 | 27 | [I/O] | No-\(R\) genuino debe negar o restringir la totalizabilidad absoluta de «lo real». |
 | 28 | [I] | ManyMany-\(R\) colapsa en un nuevo \(R\) si es ontológicamente real, o permanece como metalenguaje si no lo es. |
-| 29 | [D] | El mapa mínimo queda One-\(R\) / Many-\(R\) / No-\(R\), separados por totalizabilidad y unicidad. |
+| 29 | [D] | El mapa mínimo queda: primero totalizabilidad vs No-\(R\); después, si hay totalidad, Generalidad Absoluta vs Existencia Indexada fuerte. |
+| 30 | [A/I] | Bajo antisimetría de inclusión entre totalidades, \(T(R)\land G\Rightarrow U(R)\): la unicidad se deriva de totalidad + generalidad absoluta. |
+| 31 | [I] | La existencia indexada fuerte bloquea esa derivación y hace posible Many-\(R\), aunque no demuestra que exista más de una totalidad. |
 
 La parte que requiere investigación ya no es «inventar una \(F\) cualquiera», sino comprobar si **emergencia** puede definirse con suficiente precisión como para sostener esta arquitectura sin circularidad.
 
@@ -1648,6 +1890,8 @@ Esta propuesta no afirma que:
 - la posibilidad de Many-\(R\) invalide o rebaje el concepto de \(R\) como totalidad ontológica;
 - la mera inaccesibilidad causal implique múltiples realidades ontológicas absolutas;
 - pueda hablarse de varios \(R_i\) sin resolver antes si «real» posee un dominio universal o indexado;
+- la existencia indexada fuerte implique por sí sola que existen múltiples \(R_i\);
+- la antisimetría provisional [A3] constituya ya una teoría completa de identidad ontológica;
 - exista realmente una cadena infinita de supramedios parciales;
 - la emergencia sea ya una noción formalizada de manera suficiente;
 - \(\mathcal D=\mathcal E^{-1}\);
@@ -1719,9 +1963,11 @@ $$
 
 La versión fuerte del Muro requiere demostrar qué clases de observadores y dominios generan indistinguibilidad principial y cuáles solo presentan ignorancia contingente.
 
-### 18.9 Many-\(R\) puede ser incoherente por definición
+### 18.9 Many-\(R\) depende de negar la generalidad ontológica absoluta
 
-Si «real» posee un único dominio universal, entonces cualquier \(R_i\) del que pueda afirmarse que es real pertenece ya a la totalidad de ese dominio. Many-\(R\) fuerte solo puede sobrevivir si la existencia misma es indexada o si la pluralidad puede formularse sin un dominio ontológico común.
+Si \(G\) es correcto, cualquier \(R_i\) real cae bajo el mismo dominio absolutamente general. Entonces, por [I11a], dos candidatos a totalidad se incluyen mutuamente y resultan ontológicamente equivalentes.
+
+Many-\(R\) fuerte solo puede sobrevivir si la existencia está fuertemente indexada y no existe un cuantificador ontológico universal común. La carga argumentativa principal de Many-\(R\) se desplaza así desde «puede haber varias totalidades» hacia «puede haber existencia sin generalidad ontológica absoluta».
 
 ### 18.10 El metalenguaje puede simular una unidad inexistente
 
@@ -1777,11 +2023,13 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 20. explorar si una semántica de existencia indexada \(\operatorname{Real}_i\) o \(\exists_i\) puede formular Many-\(R\) sin reintroducir un metadominio real;
 21. establecer si la pluralidad de totalidades absolutamente incomparables posee contenido ontológico o solo metalingüístico;
 22. analizar si \(H_1\), \(H_2\), \(H_3\) y \(H_4\) pueden ser observacionalmente equivalentes para un observador interno;
-23. separar formalmente las propiedades de totalidad, absolutidad y unicidad, y determinar cuáles se siguen de la definición de \(R\) y cuáles requieren hipótesis metaontológicas adicionales;
+23. separar formalmente totalidad, generalidad ontológica absoluta y unicidad, y probar bajo qué condiciones exactas \(T(R)\land G\Rightarrow U(R)\);
 24. formalizar la noción de generalidad ontológica absoluta sin reificar \(R\) como conjunto u objeto colector;
 25. comparar el modelo de \(R\) con teorías de dominios indefinidamente extensibles y determinar qué versión de No-\(R\) constituye una alternativa genuina;
 26. analizar el problema de autoaplicación: cómo puede No-\(R\) negar toda totalidad sin presuponer una generalidad semántica u ontológica superior;
-27. formalizar el criterio de colapso de ManyMany-\(R\) en One-\(R\) o metalenguaje.
+27. formalizar el criterio de colapso de ManyMany-\(R\) en One-\(R\) o metalenguaje;
+28. distinguir formalmente indexación débil de existencia indexada fuerte y comprobar si esta última puede formularse sin un metadominio ontológico;
+29. determinar si la antisimetría de inclusión ontológica entre totalidades basta para identidad o solo para equivalencia ontológica.
 
 ---
 
@@ -1803,7 +2051,10 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
 - se introduce el **Muro de la singularidad de \(R\)** como límite epistemológico general: un horizonte cerrado puede ser compatible con cuasisingularidad, One-\(R\), Many-\(R\) o No-\(R\), por lo que la clausura observada no determina por sí sola la metaontología última;
 - se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
-- se explicita que Many-\(R\) fuerte tensiona la **unicidad** metaontológica de la Verdad Absoluta, pero no invalida el concepto de \(R\) como totalidad ontológica de un dominio;
+- se identifica la bifurcación metaontológica fundamental como **Generalidad Ontológica Absoluta vs Existencia Indexada fuerte**;
+- se deriva provisionalmente que \(T(R)\land G\Rightarrow U(R)\), de modo que la unicidad deja de ser una premisa independiente de One-\(R\);
+- se explicita que Many-\(R\) fuerte requiere bloquear esa derivación mediante existencia indexada fuerte, sin que la indexación por sí sola demuestre pluralidad;
+- se mantiene que Many-\(R\) no invalida el concepto de \(R\) como totalidad ontológica de un dominio;
 - se introduce una regla de humildad metaontológica: distinguir lo que la estructura de \(R\) justifica de lo que requeriría una prueba adicional de unicidad absoluta;
 - se cierra como falsa alternativa la simple «realidad sin último nivel»: una cadena indefinida de medios sigue incluida en \(R\);
 - se formula un **teorema condicional de existencia de \(R\)**: realidad no vacía + generalidad ontológica absoluta + definición de totalidad implican \(R\);
