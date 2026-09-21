@@ -1440,25 +1440,33 @@ $$
 
 Esta distinción prolonga una regla ya central en la epistemología exergista:
 
-$
+$$
 R\neq\widehat R_o.
-$
+$$
 
-Del mismo modo que una conciencia finita no debe confundir su modelo de \(R\) con \(R\) mismo, tampoco debe convertir sin argumento adicional la estructura de totalidad que conoce conceptualmente en una afirmación demostrada de unicidad metaontológica.
+Del mismo modo que una conciencia finita no debe confundir su modelo de \(R\) con \(R\) mismo, tampoco debe convertir sin argumento adicional una semántica de existencia en necesidad metaontológica.
 
 La posición metodológica propuesta es:
 
-$
+$$
 \boxed{
-\text{afirmar con fuerza la totalidad de }R
+\text{afirmar con fuerza la totalidad allí donde esté justificada}
 \quad\land\quad
-\text{mantener abierta su unicidad última}
+\text{mantener abierta la semántica última de existencia}
 }
-$
+$$
 
-mientras no exista una razón suficiente para cerrar la segunda cuestión.
+hasta decidir entre:
 
-Esto no constituye relativismo ontológico ni escepticismo sobre la realidad. Es una forma de **humildad metaontológica**: preservar lo que la definición y la estructura justifican, sin añadir como certeza aquello que el modelo todavía no demuestra.
+$$
+G
+\quad\text{e}\quad
+I_{\mathrm{fuerte}}.
+$$
+
+Bajo \(G\), la unicidad se deriva. Bajo indexación fuerte, queda abierta la posibilidad de pluralidad absoluta.
+
+Esto no constituye relativismo ontológico. Es **humildad metaontológica**: distinguir lo que se sigue de una arquitectura de existencia de aquello que todavía depende de elegir entre arquitecturas rivales.
 
 ### [O3] Tensión con la doctrina actual del exergismo
 
@@ -1478,51 +1486,75 @@ $
 }
 $
 
-Hay dos respuestas provisionales coherentes:
+Hay dos arquitecturas provisionales a comparar:
 
-#### Monismo absoluto
+#### Generalidad ontológica absoluta
 
-$
-\forall x\,[\operatorname{Real}(x)\Rightarrow x\preceq_R R]
-$
+$$
+G
+$$
 
-con un único dominio de realidad, aunque contenga regiones totalmente inaccesibles entre sí.
+con un único alcance ontológico de «real».
 
-#### Pluralismo ontológico absoluto
+Si existe una totalidad \(R\), entonces por [I11a]:
 
-$
-\operatorname{Real}_i(x)
-$
+$$
+T(R)\land G\Rightarrow U(R).
+$$
 
-con múltiples dominios de realidad mutuamente no contenidos y sin cuantificador ontológico universal común.
+One-\(R\) no necesita postular la unicidad como axioma separado.
 
-La propuesta mantiene Many-\(R\) como pregunta abierta hasta determinar si el segundo modelo es coherente y qué significaría exactamente «pluralidad» sin una estructura ontológica común. Mientras esa cuestión permanezca abierta, el exergismo puede conservar \(R\) como su concepto fuerte de totalidad ontológica sin convertir automáticamente su unicidad metaontológica en una certeza adicional.
+#### Existencia indexada fuerte
+
+$$
+\operatorname{Real}_i(x),
+\qquad
+\exists_i x,
+\qquad
+\nexists\exists^{\ast}
+$$
+
+con dominios ontológicos no subsumidos por un cuantificador real común.
+
+Esta arquitectura no demuestra Many-\(R\), pero permite:
+
+$$
+T_i(R_i)
+$$
+
+sin que se derive una unicidad metaontológica global.
+
+La propuesta mantiene abierta cuál de estas dos arquitecturas describe correctamente el alcance de «lo real». Many-\(R\) fuerte solo permanece como posibilidad si la segunda puede formularse coherentemente.
 
 ### Consecuencia para la Verdad Absoluta
 
-Si el monismo absoluto se mantiene, la Verdad Absoluta sigue siendo única:
+Si \(G\) es correcto y \(R\) existe como totalidad, la Verdad Absoluta es única hasta equivalencia ontológica:
 
-$
-\boxed{R}
-$
+$$
+\boxed{T(R)\land G\Rightarrow U(R)}.
+$$
 
-y cualquier supuesto Many-\(R\) observable se reduce a pluralidad interna de medios.
+Si la existencia está fuertemente indexada, el concepto de Verdad Absoluta no desaparece necesariamente. Su alcance pasa a ser:
 
-Si Many-\(R\) fuerte fuese coherente, habría que reemplazar:
+$$
+R_i:=\text{totalidad ontológica absoluta del dominio }i,
+$$
 
-$
-\text{Verdad Absoluta}
-$
+sin que esté justificada una metaverdad ontológica común que reúna todos los \(R_i\).
 
-por una familia indexada:
+Por tanto, la revisión radical no sería abandonar la noción de absoluto, sino separar:
 
-$
-R_1,R_2,\ldots
-$
+$$
+\text{absolutidad}
+$$
 
-sin una metaverdad ontológica común.
+de:
 
-Eso constituiría una revisión doctrinal mayor y no se adopta en este PR.
+$$
+\text{generalidad ontológica global}.
+$$
+
+Many-\(R\) fuerte sigue siendo una hipótesis de estrés y no se adopta como doctrina en este PR.
 
 ---
 
@@ -1560,17 +1592,31 @@ $
 
 La infinitud vertical, la inexhaustibilidad estructural o la imposibilidad de completar epistemológicamente una cadena de medios no constituyen alternativas a \(R\). Son configuraciones posibles **dentro de \(R\)**.
 
-### [D14] Generalidad ontológica absoluta
+### [D16] Totalizabilidad absoluta y No-\(R\)
 
-Llamamos provisionalmente **generalidad ontológica absoluta** a la posibilidad de usar «real» con un dominio no restringido dentro de una ontología:
+La generalidad ontológica absoluta \(G\) ya ha sido definida en [D14].
 
-$
-\operatorname{Real}(x)
-$
+Para esta sección, llamamos **totalizabilidad absoluta** a la posibilidad de que el dominio ontológico relevante admita una totalidad \(R\) que comprenda todo aquello que cuenta como real bajo su semántica de existencia.
 
-de manera que cualquier cosa real quede dentro del alcance del mismo dominio de cuantificación.
+Debe distinguirse:
 
-Esto no exige que todas las cosas formen un conjunto ni que \(R\) sea un objeto adicional.
+$$
+\text{generalidad del cuantificador}
+$$
+
+de:
+
+$$
+\text{existencia de una totalidad ontológica}.
+$$
+
+Bajo \(G\), ambas nociones quedan estrechamente relacionadas por [I16]. Bajo existencia indexada fuerte, la totalizabilidad puede darse localmente como:
+
+$$
+T_i(R_i)
+$$
+
+sin producir una totalidad global.
 
 ### [I16] Teorema condicional de existencia de \(R\)
 
@@ -1615,37 +1661,32 @@ Una posición No-\(R\) sofisticada no puede apoyarse simplemente en:
 - que no exista un conjunto universal;
 - que \(R\) no sea accesible como objeto empírico.
 
-Nada de eso afecta a la definición usada aquí.
+Nada de eso afecta por sí solo a la posibilidad de totalidad.
 
-Para sostener:
+Para sostener No-\(R\), debe negarse que exista una totalidad ontológica en cualquiera de las semánticas admitidas por la teoría.
 
-$
-\neg R
-$
+En particular:
 
-manteniendo que hay realidad, debe rechazarse al menos la generalidad ontológica absoluta.
+- bajo \(G\), debe rechazarse que el dominio absolutamente general pueda totalizarse como \(R\);
+- bajo existencia indexada fuerte, debe rechazarse que los dominios relevantes admitan totalidades \(R_i\) en el sentido requerido por Many-\(R\).
 
-Es decir, la tesis rival relevante pasa a ser:
+Por tanto, No-\(R\) es más radical que la mera negación de \(G\):
 
-$
+$$
 \boxed{
-\text{ningún dominio de “lo real” es absolutamente totalizable}
-}
-$
-
-o alguna variante en la que cualquier cuantificación pretendidamente absoluta sea necesariamente restringida, contextual o extensible.
-
-Por ello, dentro de esta arquitectura:
-
-$
-\boxed{
-\neg R
+\text{No-}R
 \Rightarrow
-\neg\text{ generalidad ontológica absoluta}
+\text{negación de totalizabilidad ontológica}
 }
-$
+$$
 
-como contraposición conceptual del resultado anterior.
+mientras que:
+
+$$
+\neg G
+$$
+
+por sí solo todavía puede conducir a existencia indexada y Many-\(R\).
 
 ### [O4] El problema de autoaplicación de No-\(R\)
 
@@ -1806,25 +1847,47 @@ Esto marca un límite del **metaapilamiento ontológico**, no un límite del nú
 
 La conjetura ya no necesita tratar «R infinito», «R sin último medio» o «ManyMany-\(R\)» como alternativas independientes.
 
-El espacio metaontológico relevante queda concentrado en dos preguntas:
+El espacio metaontológico relevante queda organizado en dos decisiones:
 
-$
+$$
 \boxed{
-\text{¿es lo real absolutamente totalizable?}
+\text{¿admite la realidad alguna forma de totalidad ontológica?}
 }
-$
+$$
 
-y, si lo es:
+Si no:
 
-$
+$$
+\text{No-}R.
+$$
+
+Si sí, la bifurcación central es:
+
+$$
 \boxed{
-\text{¿esa totalidad es necesariamente única?}
+G
+\quad\text{vs}\quad
+I_{\mathrm{fuerte}}.
 }
-$
+$$
 
-La primera separa \(R\) de No-\(R\).
+Bajo \(G\):
 
-La segunda separa One-\(R\) de Many-\(R\).
+$$
+T(R)\Rightarrow U(R)
+$$
+
+dadas las condiciones de [A3].
+
+Bajo existencia indexada fuerte:
+
+$$
+T_i(R_i)
+$$
+
+no determina unicidad global y Many-\(R\) permanece como posibilidad.
+
+Así, **unicidad deja de ser el eje primitivo**: es una consecuencia de la semántica de existencia adoptada.
 
 ---
 
@@ -1860,7 +1923,7 @@ La propuesta puede auditarse paso a paso:
 | 24 | [I] | Se adopta humildad metaontológica: afirmar lo que la estructura justifica sin convertir la unicidad última en certeza no demostrada. |
 | 25 | [I] | Una cadena infinita o sin último medio sigue siendo una configuración interna de \(R\), no una alternativa No-\(R\). |
 | 26 | [I] | Si la realidad es no vacía y admite generalidad ontológica absoluta, \(R\) existe condicionalmente como totalidad de lo real. |
-| 27 | [I/O] | No-\(R\) genuino debe negar o restringir la totalizabilidad absoluta de «lo real». |
+| 27 | [I/O] | No-\(R\) genuino debe negar la totalizabilidad ontológica; negar solo la generalidad absoluta todavía permite existencia indexada. |
 | 28 | [I] | ManyMany-\(R\) colapsa en un nuevo \(R\) si es ontológicamente real, o permanece como metalenguaje si no lo es. |
 | 29 | [D] | El mapa mínimo queda: primero totalizabilidad vs No-\(R\); después, si hay totalidad, Generalidad Absoluta vs Existencia Indexada fuerte. |
 | 30 | [A/I] | Bajo antisimetría de inclusión entre totalidades, \(T(R)\land G\Rightarrow U(R)\): la unicidad se deriva de totalidad + generalidad absoluta. |
@@ -2024,7 +2087,7 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 21. establecer si la pluralidad de totalidades absolutamente incomparables posee contenido ontológico o solo metalingüístico;
 22. analizar si \(H_1\), \(H_2\), \(H_3\) y \(H_4\) pueden ser observacionalmente equivalentes para un observador interno;
 23. separar formalmente totalidad, generalidad ontológica absoluta y unicidad, y probar bajo qué condiciones exactas \(T(R)\land G\Rightarrow U(R)\);
-24. formalizar la noción de generalidad ontológica absoluta sin reificar \(R\) como conjunto u objeto colector;
+24. formalizar la noción de generalidad ontológica absoluta sin reificar \(R\) como conjunto u objeto colector y distinguirla de totalizabilidad ontológica;
 25. comparar el modelo de \(R\) con teorías de dominios indefinidamente extensibles y determinar qué versión de No-\(R\) constituye una alternativa genuina;
 26. analizar el problema de autoaplicación: cómo puede No-\(R\) negar toda totalidad sin presuponer una generalidad semántica u ontológica superior;
 27. formalizar el criterio de colapso de ManyMany-\(R\) en One-\(R\) o metalenguaje;
