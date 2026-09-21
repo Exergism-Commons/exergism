@@ -970,6 +970,130 @@ $$
 }
 $$
 
+### [H10] Vía formal por compacidad lógica
+
+Existe una ruta formal más fuerte hacia [C1*] si la admisibilidad ontológica de un índice puede representarse adecuadamente mediante una teoría de primer orden.
+
+Sea:
+
+$$
+T_i
+$$
+
+una teoría que caracteriza los dominios admisibles del índice \(i\), y sea:
+
+$$
+\mathcal C=
+\{X_\alpha\}_{\alpha\in A}
+$$
+
+una cadena de dominios con embeddings coherentes respecto de \(\preceq\).
+
+Para cada \(X_\alpha\), considérese un diagrama estructural \(\operatorname{Diag}(X_\alpha)\) suficientemente rico para garantizar una inmersión del dominio representado en cualquier modelo del diagrama.
+
+Formamos:
+
+$$
+\Sigma_{\mathcal C}
+=
+T_i
+\cup
+\bigcup_{\alpha\in A}
+\operatorname{Diag}(X_\alpha).
+$$
+
+Toda subteoría finita:
+
+$$
+\Sigma_0\subseteq\Sigma_{\mathcal C}
+$$
+
+menciona solo información procedente de un número finito de estadios de la cadena.
+
+Como \(\mathcal C\) está totalmente ordenada, existe algún \(X_\beta\) posterior que contiene coherentemente esos estadios finitos. Bajo la correspondencia formal elegida entre \(\preceq\) y los embeddings de la teoría:
+
+$$
+X_\beta\models\Sigma_0.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\forall\Sigma_0\subseteq_{\mathrm{fin}}\Sigma_{\mathcal C},
+\quad
+\operatorname{Sat}(\Sigma_0).
+}
+$$
+
+Si el formalismo lógico usado satisface compacidad:
+
+$$
+\boxed{
+\operatorname{Sat}(\Sigma_{\mathcal C}).
+}
+$$
+
+Luego existe un modelo \(U\models T_i\) en el que cada \(X_\alpha\) se representa mediante el embedding exigido por su diagrama:
+
+$$
+\boxed{
+\forall\alpha\in A,
+\quad
+X_\alpha\preceq U.
+}
+$$
+
+Así:
+
+$$
+\boxed{
+\operatorname{Compact}(T_i)
++
+\operatorname{CoherentDiagram}(\mathcal C)
+\Rightarrow
+[C1*].
+}
+$$
+
+Esta derivación no identifica necesariamente \(U\) con la unión literal de los dominios.
+
+La conclusión mínima es la existencia de **algún dominio común admisible** que realiza conjuntamente la información estructural de toda la cadena.
+
+Si, en una formalización más fuerte, las inclusiones de la cadena corresponden a subestructuras elementales, puede estudiarse además una ruta mediante un teorema de cadenas elementales, en el que la unión creciente conserva la estructura elemental relevante.
+
+### [O5b.1] Condiciones de validez de la ruta por compacidad
+
+[H10] no autoriza todavía a identificar sin más «ontología» con lógica de primer orden.
+
+La derivación exige especificar:
+
+1. qué lenguaje formal expresa \(T_i\);
+2. qué significa exactamente \(X\preceq Y\) en términos de embeddings o subestructuras;
+3. qué diagrama debe usarse para preservar la estructura ontológica relevante;
+4. que cada subconjunto finito de \(\Sigma_{\mathcal C}\) sea realmente satisfacible en algún estadio posterior;
+5. que el formalismo conserve el teorema de compacidad.
+
+Por tanto:
+
+$$
+\boxed{
+\text{compacidad lógica}
+\neq
+\text{compacidad ontológica automáticamente}.
+}
+$$
+
+Pero sí proporciona un puente preciso:
+
+$$
+\boxed{
+\text{si la admisibilidad ontológica es formalizable en un marco compacto apropiado, entonces [C1*] se deriva.}
+}
+$$
+
+Esto convierte una parte importante del problema de [C1] en una cuestión de **expresividad formal**: una ontología que necesite restricciones genuinamente infinitarias o un lenguaje no compacto puede bloquear esta ruta; una ontología capturable por restricciones compactas de primer orden no puede hacerlo del mismo modo.
+
 ### [O5c] El verdadero rival: restricciones ontológicas no locales
 
 La derivación anterior falla exactamente si existen restricciones de \(\Lambda\) cuya violación solo aparece globalmente y no posee ningún testigo acotado.
@@ -1344,7 +1468,7 @@ Bajo:
 2. [F1] extensividad;
 3. [F2] monotonía;
 4. [F3] idempotencia;
-5. [C1] cota superior para toda cadena de puntos fijos;
+5. [C1] cota superior para toda cadena de puntos fijos, obtenida directamente o derivada mediante [H8] o [H10];
 6. un principio de maximalidad aplicable;
 7. [D5c]/[C2] pertenencia al mismo índice entendida como régimen dirigido de co-realización;
 
@@ -1470,11 +1594,27 @@ El programa deja de tener dos obligaciones simétricas.
 
 La obligación de prueba principal pasa a ser:
 
-$$
+$
 \boxed{
-[C1].
+[C1],
 }
-$$
+$
+
+pero [C1] ya dispone de dos rutas de reducción explícitas:
+
+$
+\boxed{
+[H8]\;\text{localidad/compactitud ontológica}
+}
+$
+
+y:
+
+$
+\boxed{
+[H10]\;\text{compacidad lógica bajo una formalización adecuada}.
+}
+$
 
 Debe justificarse [C1*]: por qué una cadena compatible de cierres ontológicos:
 
@@ -3847,7 +3987,8 @@ La propuesta puede auditarse paso a paso:
 | 13b | [I] | [F1-F3] implican que todo \(F(X)\) es punto fijo; por tanto existen cierres emergentes siempre que exista algún dominio admisible. |
 | 13b.1 | [I/O] | Toda cadena es finitamente compatible; [C1*] propone continuidad ontológica dirigida: la cadena admite un límite/cota superior salvo obstrucción ontológica infinitaria positiva. |
 | 13b.2 | [H/I] | Si la inadmisibilidad posee testigos locales/acotados y la admisibilidad es hereditaria, la compatibilidad finitaria de una cadena implica [C1*]. |
-| 13b.3 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
+| 13b.3 | [H/I] | Vía formal: bajo una teoría \(T_i\) compacta y diagramas coherentes, la satisfacibilidad finita de la cadena implica un modelo común \(U\), derivando [C1*]. |
+| 13b.4 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
 | 13e | [I] | Teorema provisional de Clausura Ontológica Maximal: \(C0+F1+F2+F3+C1+[D5c]+Max\Rightarrow\exists R_i[R_i=F(R_i)\land Exhaustive_i(R_i)]\). |
@@ -4179,7 +4320,10 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 51. construir o descartar modelos de **obstrucción ontológica infinitaria**: cadenas cuyos fragmentos finitos son todos co-realizables pero cuyo límite dirigido no es ontológicamente admisible;
 52. formalizar un principio de **localidad/compactitud ontológica de la inadmisibilidad** y determinar si las restricciones fundamentales \(\Lambda\) admiten siempre testigos acotados;
 53. analizar la vía procesual [H9]: si una extensión dirigida real constituye por sí misma un dominio que contiene ontológicamente sus estadios;
-54. comparar [C1*] con posiciones potencialistas: extensibilidad indefinida sin totalidad dirigida completada.
+54. comparar [C1*] con posiciones potencialistas: extensibilidad indefinida sin totalidad dirigida completada;
+55. construir una formalización de \(T_i\) y \(\operatorname{Diag}(X)\) que permita aplicar el teorema de compacidad sin identificar indebidamente inclusión ontológica con pertenencia conjuntista;
+56. determinar si \(\preceq\) debe corresponder a embedding, subestructura, embedding elemental o una noción categórica distinta;
+57. estudiar qué restricciones de \(\Lambda\) requieren lógicas no compactas o cuantificación infinitaria y si tales restricciones poseen motivación ontológica independiente.
 
 ---
 
@@ -4207,7 +4351,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se localiza la diferencia One-\(R\)/Many-\(R\) en si existe un único régimen dirigido global o varios regímenes no amalgamables entre sí;
 - [C1] se reduce a un **Principio de Continuidad Ontológica Dirigida [C1*]**: toda cadena es finitamente compatible, y su falta de cota superior exigiría una obstrucción ontológica genuinamente infinitaria que no aparece en ningún estadio finito;
 - se formula una ruta de derivación de [C1*] mediante **localidad/compactitud ontológica**: si toda inadmisibilidad tiene un testigo acotado y la admisibilidad es hereditaria, una cadena finitamente compatible no puede volverse inadmisible solo en el límite;
-- se formula una segunda ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
+- se formula una segunda ruta **formal por compacidad**: si la admisibilidad del índice se representa mediante una teoría compacta y diagramas coherentes de los dominios, la satisfacibilidad finita de toda cadena obliga a la existencia de un modelo común y por tanto deriva [C1*];
+- se mantiene además una ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
 - se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
 - se introduce el **Muro de la singularidad de \(R\)** como límite epistemológico general: un horizonte cerrado puede ser compatible con cuasisingularidad, One-\(R\), monismo indexado, Many-\(R\) o No-\(R\), por lo que la clausura observada no determina por sí sola la metaontología última;
