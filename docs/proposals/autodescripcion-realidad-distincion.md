@@ -778,7 +778,7 @@ $$
 \operatorname{DirectedCompatible}(\mathcal C)
 \Rightarrow
 \exists U\in\mathfrak D_i:
-\forall X\in\mathcal C,;
+\forall X\in\mathcal C,
 X\preceq U.
 }
 $$
@@ -811,7 +811,7 @@ $$
 \text{ cadena},
 \quad
 \exists U\in\mathfrak D_i:
-\forall X\in\mathcal C,;
+\forall X\in\mathcal C,
 X\preceq U.
 }
 $$
@@ -846,14 +846,14 @@ $$
 
 y \(F(U)\) es una cota superior de la cadena **dentro de los puntos fijos**.
 
-### [O5b] La única forma de negar [C1*]: obstrucción ontológica infinitaria
+### [O5b] Obstrucción ontológica infinitaria y principio de localidad
 
-[I6a.1] muestra que cada fragmento finito de una cadena creciente ya es co-realizable dentro de algún estadio posterior.
+[I6a.1] muestra que toda subfamilia finita de una cadena creciente es co-realizable dentro de algún estadio posterior.
 
-Por tanto, si se sostuviera:
+Por tanto, si:
 
 $$
-\forall X\in\mathcal C,quad
+\forall X\in\mathcal C,\quad
 \operatorname{Adm}(X)
 $$
 
@@ -861,13 +861,13 @@ pero:
 
 $$
 \neg\exists U\in\mathfrak D_i:
-\forall X\in\mathcal C,;
+\forall X\in\mathcal C,\;
 X\preceq U,
 $$
 
-la obstrucción no podría consistir en una incompatibilidad finita ordinaria entre los estadios.
+la obstrucción no puede consistir en una incompatibilidad finita ordinaria entre los estadios.
 
-Tendría que aparecer únicamente al nivel de la acumulación completa:
+Debe aparecer únicamente al nivel de la acumulación completa:
 
 $$
 \boxed{
@@ -877,20 +877,217 @@ $$
 }
 $$
 
-Llamamos provisionalmente a esto **obstrucción ontológica infinitaria**.
+Llamamos a esto **obstrucción ontológica infinitaria**.
 
-La propuesta no declara todavía imposible tal obstrucción. Pero su existencia requiere contenido ontológico positivo: alguna restricción de \(\Lambda\), principio de cardinalidad, incompatibilidad global o propiedad no detectable en ningún estadio finito que impida la co-realización del límite.
+#### [H8] Principio de localidad ontológica de la inadmisibilidad
 
-Por ello se adopta como hipótesis metodológica de continuidad:
+Se propone investigar la siguiente condición más primitiva que [C1*]:
 
 $$
 \boxed{
-\text{una cadena compatible admite límite dirigido
-salvo obstrucción ontológica positiva.}
+\neg\operatorname{Adm}(U)
+\Rightarrow
+\exists W\preceq U:
+\operatorname{Bounded}(W)
+\land
+\neg\operatorname{Adm}(W).
 }
 $$
 
-Esto desplaza la carga del rival No-\(R\): no basta con afirmar que la cadena «no termina». Debe explicar por qué todos sus estadios pueden ser reales y crecientemente compatibles mientras la acumulación conjunta carece de cualquier dominio ontológico admisible.
+La noción \(\operatorname{Bounded}(W)\) deberá formalizarse; puede significar finitamente generado, compacto o localmente testificable según el formalismo adoptado.
+
+Intuitivamente:
+
+> toda inadmisibilidad ontológica debe poseer un testigo estructural real que aparezca ya en alguna parte acotada de la configuración.
+
+Se añade además una condición hereditaria natural:
+
+$$
+\boxed{
+\operatorname{Adm}(X)
+\land
+Y\preceq X
+\Rightarrow
+\operatorname{Adm}(Y).
+}
+$$
+
+Bajo estas dos condiciones, [C1*] se deriva para cadenas crecientes.
+
+Sea \(U_{\mathcal C}\) la acumulación formal de \(\mathcal C\). Supóngase:
+
+$$
+\neg\operatorname{Adm}(U_{\mathcal C}).
+$$
+
+Por localidad de la inadmisibilidad existe un testigo acotado:
+
+$$
+W\preceq U_{\mathcal C}
+$$
+
+tal que:
+
+$$
+\neg\operatorname{Adm}(W).
+$$
+
+Si \(W\) depende solo de una parte finita/acotada del contenido de la cadena, [I6a.1] garantiza algún \(X_k\in\mathcal C\) con:
+
+$$
+W\preceq X_k.
+$$
+
+Como \(X_k\) es admisible y la admisibilidad es hereditaria:
+
+$$
+\operatorname{Adm}(W),
+$$
+
+contradicción.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{Adm}(U_{\mathcal C}).
+}
+$$
+
+y se obtiene [C1*].
+
+Esquemáticamente:
+
+$$
+\boxed{
+\operatorname{HereditaryAdm}
++
+\operatorname{LocalWitness}
++
+\operatorname{FiniteCompatible}(\mathcal C)
+\Rightarrow
+[C1*].
+}
+$$
+
+### [O5c] El verdadero rival: restricciones ontológicas no locales
+
+La derivación anterior falla exactamente si existen restricciones de \(\Lambda\) cuya violación solo aparece globalmente y no posee ningún testigo acotado.
+
+Ejemplos matemáticos abstractos muestran que esto es coherente:
+
+- una clase que solo admite dominios finitos;
+- propiedades de bien-fundación que pueden fallar únicamente en un límite infinito;
+- cotas globales de cardinalidad o complejidad;
+- otras restricciones genuinamente infinitarias.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{FiniteCompatible}(\mathcal C)
+\not\Rightarrow
+[C1*]
+}
+$$
+
+sin una condición adicional de localidad, compactitud o continuidad.
+
+La cuestión ontológica precisa pasa a ser:
+
+$$
+\boxed{
+\text{¿las restricciones fundamentales }\Lambda
+\text{ son localmente testificables?}
+}
+$$
+
+Si la respuesta es afirmativa, [C1*] queda fuertemente apoyado.
+
+Si la respuesta es negativa, No-\(R\) obtiene una vía estructural concreta: una **obstrucción infinitaria no local** que permite todos los estadios parciales pero prohíbe su clausura conjunta.
+
+### [H9] Vía procesual hacia [C1*]
+
+Existe una segunda vía potencialmente más fuerte.
+
+Sea una cadena real de extensiones:
+
+$$
+X_0\to X_1\to X_2\to\cdots
+$$
+
+Si el propio proceso de extensión:
+
+$$
+P_{\mathcal C}
+$$
+
+es ontológicamente real y un proceso real incluye ontológicamente sus estadios, entonces:
+
+$$
+\forall X\in\mathcal C,\quad
+X\preceq P_{\mathcal C}.
+$$
+
+En tal caso:
+
+$$
+\boxed{
+P_{\mathcal C}
+}
+$$
+
+funciona directamente como cota superior de la cadena, y [C1*] se obtiene sin recurrir a una unión o colímite adicional.
+
+La condición crítica sería:
+
+$$
+\boxed{
+\operatorname{RealProcess}(P_{\mathcal C})
+\Rightarrow
+\forall X\in\mathcal C,
+X\preceq P_{\mathcal C}.
+}
+$$
+
+### [O5d] Potencialismo ontológico como negación fuerte de [C1*]
+
+El rival natural de [H9] es un **potencialismo ontológico**:
+
+> para cada estadio existe un estadio posterior posible o real, pero la totalidad de la secuencia no existe como un dominio o proceso completado.
+
+Esquemáticamente:
+
+$$
+\forall n\,\exists X_{n+1}>X_n
+$$
+
+sin:
+
+$$
+\exists U\,\forall n\,X_n\preceq U.
+$$
+
+Así, una forma fuerte de No-\(R\) puede caracterizarse provisionalmente mediante:
+
+$$
+\boxed{
+\text{extensibilidad ontológica indefinida}
++
+\text{negación de completitud dirigida}.
+}
+$$
+
+La disputa sobre [C1*] queda entonces concentrada en una pregunta:
+
+$$
+\boxed{
+\text{¿puede ser real una extensión indefinidamente continuable
+sin que sea real ninguna totalidad o proceso que abarque sus estadios?}
+}
+$$
+
+La propuesta no presupone todavía la respuesta.
 
 ### [I6b] Existencia condicional de un punto fijo maximal
 
@@ -1296,13 +1493,14 @@ Pero ninguna de ellas exige ya postular [C2] como hecho independiente.
 
 La dificultad central de [O5] queda, por tanto, reformulada como:
 
-$$
+$
 \boxed{
-\text{derivar [C1*]/[C1] desde continuidad ontológica dirigida
-o identificar una obstrucción infinitaria real,
+\text{derivar [C1*]/[C1] mediante localidad/continuidad ontológica
+o demostrar que el proceso dirigido mismo constituye una cota,
+frente a posibles obstrucciones infinitarias no locales o potencialismo,
 sin presuponer ya }R.
 }
-$$
+$
 
 
 
@@ -3648,6 +3846,8 @@ La propuesta puede auditarse paso a paso:
 | 13a | [O] | Programa de prueba fuerte: investigar si una definición independiente de \(\mathcal E\) y \(F\) permite derivar la existencia de una clausura exhaustiva \(R\) sin presuponerla. |
 | 13b | [I] | [F1-F3] implican que todo \(F(X)\) es punto fijo; por tanto existen cierres emergentes siempre que exista algún dominio admisible. |
 | 13b.1 | [I/O] | Toda cadena es finitamente compatible; [C1*] propone continuidad ontológica dirigida: la cadena admite un límite/cota superior salvo obstrucción ontológica infinitaria positiva. |
+| 13b.2 | [H/I] | Si la inadmisibilidad posee testigos locales/acotados y la admisibilidad es hereditaria, la compatibilidad finitaria de una cadena implica [C1*]. |
+| 13b.3 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
 | 13e | [I] | Teorema provisional de Clausura Ontológica Maximal: \(C0+F1+F2+F3+C1+[D5c]+Max\Rightarrow\exists R_i[R_i=F(R_i)\land Exhaustive_i(R_i)]\). |
@@ -3976,7 +4176,10 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 48. formalizar [C1*] como principio de continuidad ontológica dirigida, determinar cuándo existen colímites/cotas superiores admisibles y qué principio de maximalidad puede aplicarse sin problemas de tamaño o circularidad;
 49. formalizar [D5c]: índice ontológico como régimen dirigido de co-realización, estudiar si sus extensiones maximales son únicas/no solapadas y mantener [C2] como propiedad derivada;
 50. comprobar si el Teorema provisional de Clausura Ontológica Maximal sobrevive con clases propias, plural quantification o formalismos no conjuntistas;
-51. construir o descartar modelos de **obstrucción ontológica infinitaria**: cadenas cuyos fragmentos finitos son todos co-realizables pero cuyo límite dirigido no es ontológicamente admisible.
+51. construir o descartar modelos de **obstrucción ontológica infinitaria**: cadenas cuyos fragmentos finitos son todos co-realizables pero cuyo límite dirigido no es ontológicamente admisible;
+52. formalizar un principio de **localidad/compactitud ontológica de la inadmisibilidad** y determinar si las restricciones fundamentales \(\Lambda\) admiten siempre testigos acotados;
+53. analizar la vía procesual [H9]: si una extensión dirigida real constituye por sí misma un dominio que contiene ontológicamente sus estadios;
+54. comparar [C1*] con posiciones potencialistas: extensibilidad indefinida sin totalidad dirigida completada.
 
 ---
 
@@ -4003,6 +4206,9 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - [C2] deja de ser una hipótesis ontológica independiente: se deriva constitutivamente de [D5c], porque pertenecer al mismo índice significa co-realizabilidad dentro de un régimen dirigido;
 - se localiza la diferencia One-\(R\)/Many-\(R\) en si existe un único régimen dirigido global o varios regímenes no amalgamables entre sí;
 - [C1] se reduce a un **Principio de Continuidad Ontológica Dirigida [C1*]**: toda cadena es finitamente compatible, y su falta de cota superior exigiría una obstrucción ontológica genuinamente infinitaria que no aparece en ningún estadio finito;
+- se formula una ruta de derivación de [C1*] mediante **localidad/compactitud ontológica**: si toda inadmisibilidad tiene un testigo acotado y la admisibilidad es hereditaria, una cadena finitamente compatible no puede volverse inadmisible solo en el límite;
+- se formula una segunda ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
+- se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
 - se introduce el **Muro de la singularidad de \(R\)** como límite epistemológico general: un horizonte cerrado puede ser compatible con cuasisingularidad, One-\(R\), monismo indexado, Many-\(R\) o No-\(R\), por lo que la clausura observada no determina por sí sola la metaontología última;
 - se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
