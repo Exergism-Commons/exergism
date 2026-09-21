@@ -822,9 +822,9 @@ En ese caso, \(S\) funciona como una **falsa singularidad** desde el punto de vi
 
 ### [D12] El Muro de la singularidad de \(R\)
 
-Se denomina provisionalmente **Muro de la singularidad de \(R\)** al límite epistemológico por el cual un observador interno no puede inferir, solo a partir de clausura y observaciones internas, que el dominio máximo al que accede coincide con la Realidad Total.
+Se denomina provisionalmente **Muro de la singularidad de \(R\)** al límite epistemológico por el cual un observador interno no puede inferir, solo a partir de clausura y observaciones internas, cuál es la estructura metaontológica última que explica su horizonte accesible.
 
-Su forma mínima es:
+La formulación mínima anterior:
 
 $$
 \boxed{
@@ -834,17 +834,19 @@ $$
 }
 $$
 
-o, respecto de un observador:
+se conserva como caso particular.
+
+La formulación general pasa a ser:
 
 $$
 \boxed{
-\widehat R_o\text{ parece total}
+\widehat R_o
 \not\Rightarrow
-\widehat R_o=R.
+\text{estructura metaontológica última}
 }
 $$
 
-El muro no afirma que todo observador esté necesariamente encerrado para siempre en una sandbox perfecta. Afirma algo más débil: **la ausencia de un exterior detectable no constituye por sí sola una demostración de que no exista un exterior ontológico al dominio observado**.
+El muro no afirma que todo observador esté necesariamente encerrado para siempre ni que todas las hipótesis metaontológicas sean siempre indistinguibles. Afirma algo más débil: **la estructura interna de un horizonte observado no basta por sí sola para certificar qué estatus ontológico tiene ese horizonte respecto de la realidad última**.
 
 ### [I9] Descubrir un exterior desplaza el horizonte, no \(R\)
 
@@ -897,13 +899,78 @@ Por tanto, debe distinguirse:
 
 El error puede residir en la identificación del candidato, no en el concepto.
 
+### [I12] Cuatro estructuras compatibles con un mismo horizonte
+
+Tras introducir Many-\(R\) y No-\(R\), el Muro debe distinguir al menos cuatro posibilidades metaontológicas para un observador interno \(o\):
+
+$$
+H_1:\quad \widehat R_o=S\subsetneq R
+$$
+
+$$
+H_2:\quad \widehat R_o=R
+$$
+
+$$
+H_3:\quad \widehat R_o=R_i
+\quad\text{y existen otros }R_j\text{ sin supramedio ontológico común}
+$$
+
+$$
+H_4:\quad
+\widehat R_o\text{ es un horizonte parcial y No-}R\text{ es correcto.}
+$$
+
+Interpretación:
+
+- \(H_1\): **cuasisingularidad**; el horizonte parece total pero está contenido en una realidad mayor;
+- \(H_2\): **One-\(R\)**; el horizonte coincide realmente con la única totalidad ontológica;
+- \(H_3\): **Many-\(R\)**; el horizonte coincide con una totalidad genuina \(R_i\), pero su unicidad metaontológica no está garantizada;
+- \(H_4\): **No-\(R\)**; ningún horizonte accesible coincide con una totalidad ontológica completada porque la realidad no es absolutamente totalizable.
+
+Puede ocurrir, al menos conceptualmente, que:
+
+$$
+\operatorname{Obs}_o(H_1)
+=
+\operatorname{Obs}_o(H_2)
+=
+\operatorname{Obs}_o(H_3)
+=
+\operatorname{Obs}_o(H_4).
+$$
+
+En ese caso, la evidencia interna disponible no decide entre:
+
+$$
+\boxed{
+\text{falsa totalidad}
+\;|\;
+\text{totalidad única}
+\;|\;
+\text{totalidad indexada}
+\;|\;
+\text{ausencia de totalidad completada}
+}
+$$
+
+Por ello, una formulación desarrollada del Muro es:
+
+$$
+\boxed{
+\text{ninguna clausura accesible a }o
+\text{ determina por sí sola si estamos ante }
+S\subsetneq R,\ R,\ R_i\text{ o No-}R
+}
+$$
+
 ### [H4] Hipótesis fuerte del Muro
 
 Una versión fuerte, todavía no demostrada, sería:
 
-> ningún observador estrictamente interno puede certificar mediante evidencia puramente interna que su horizonte ontológico accesible coincide con \(R\).
+> ningún observador estrictamente interno puede certificar mediante evidencia puramente interna cuál de las estructuras metaontológicas compatibles con su horizonte accesible —cuasisingularidad, One-\(R\), Many-\(R\) o No-\(R\)— describe la realidad última.
 
-Esta afirmación requeriría una formalización precisa de observador, acceso, indistinguibilidad y evidencia. Por ello permanece como hipótesis y no como consecuencia ya establecida.
+Esta afirmación requeriría una formalización precisa de observador, acceso, indistinguibilidad, evidencia y equivalencia observacional. Por ello permanece como hipótesis y no como consecuencia ya establecida.
 
 ### Consecuencia epistemológica
 
@@ -921,7 +988,9 @@ $$
 \widehat R_o.
 $$
 
-La trascendencia epistemológica consistiría entonces en atravesar falsas totalidades sucesivas sin confundir ninguna ampliación concreta del horizonte con posesión definitiva de \(R\).
+Después de Many-\(R\) y No-\(R\), esta humildad debe formularse de manera aún más general: ampliar el horizonte epistemológico no equivale a certificar la metaontología última.
+
+La trascendencia epistemológica consistiría entonces en ampliar sucesivamente el horizonte sin confundir ninguna clausura alcanzada con una demostración de que hemos identificado definitivamente la estructura última de lo real.
 
 ---
 
@@ -1542,7 +1611,7 @@ La propuesta puede auditarse paso a paso:
 | 15 | [D/H] | \(\Delta\) se trata como diferencia estructural derivada, no como primitiva ontológica. |
 | 16 | [I] | Un dominio propio puede satisfacer \(S=F(S)\); por tanto, ser punto fijo de \(F\) no basta para ser \(R\). |
 | 17 | [D] | Se distingue clausura emergente relativa de totalidad ontológica absoluta. |
-| 18 | [D/H] | Una cuasisingularidad puede ser indistinguible de \(R\) para observadores internos: aparece el Muro de la singularidad. |
+| 18 | [D/H] | El Muro expresa que un mismo horizonte puede ser compatible con cuasisingularidad, One-\(R\), Many-\(R\) o No-\(R\); la clausura observada no determina por sí sola la metaontología última. |
 | 19 | [I] | Múltiples dominios causalmente inaccesibles siguen perteneciendo a un único \(R\) si existe un supramedio real común. |
 | 20 | [H] | Many-\(R\) fuerte exige múltiples totalidades sin supramedio ontológico común. |
 | 21 | [H/O] | Para sostener Many-\(R\), «real» y la cuantificación existencial podrían tener que indexarse por totalidad. |
@@ -1707,7 +1776,7 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 19. determinar si la definición de Realidad Total exige un único dominio universal de cuantificación;
 20. explorar si una semántica de existencia indexada \(\operatorname{Real}_i\) o \(\exists_i\) puede formular Many-\(R\) sin reintroducir un metadominio real;
 21. establecer si la pluralidad de totalidades absolutamente incomparables posee contenido ontológico o solo metalingüístico;
-22. analizar si \(H_1\), \(H_2\) y \(H_3\) pueden ser observacionalmente equivalentes para un observador interno;
+22. analizar si \(H_1\), \(H_2\), \(H_3\) y \(H_4\) pueden ser observacionalmente equivalentes para un observador interno;
 23. separar formalmente las propiedades de totalidad, absolutidad y unicidad, y determinar cuáles se siguen de la definición de \(R\) y cuáles requieren hipótesis metaontológicas adicionales;
 24. formalizar la noción de generalidad ontológica absoluta sin reificar \(R\) como conjunto u objeto colector;
 25. comparar el modelo de \(R\) con teorías de dominios indefinidamente extensibles y determinar qué versión de No-\(R\) constituye una alternativa genuina;
@@ -1732,7 +1801,7 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - de la clausura emergente de la totalidad se deriva:
   \(R=F(R)\);
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
-- se introduce el **Muro de la singularidad de \(R\)** para distinguir clausura observable, cuasisingularidad y totalidad ontológica absoluta;
+- se introduce el **Muro de la singularidad de \(R\)** como límite epistemológico general: un horizonte cerrado puede ser compatible con cuasisingularidad, One-\(R\), Many-\(R\) o No-\(R\), por lo que la clausura observada no determina por sí sola la metaontología última;
 - se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
 - se explicita que Many-\(R\) fuerte tensiona la **unicidad** metaontológica de la Verdad Absoluta, pero no invalida el concepto de \(R\) como totalidad ontológica de un dominio;
 - se introduce una regla de humildad metaontológica: distinguir lo que la estructura de \(R\) justifica de lo que requeriría una prueba adicional de unicidad absoluta;
