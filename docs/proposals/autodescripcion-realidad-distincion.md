@@ -16,13 +16,13 @@ $$
 R = F(R)
 $$
 
-pero ahora \(F\) recibe un candidato concreto:
+y ahora \(F\) recibe un significado concreto:
 
-$$
-F(X) := \operatorname{Cl}_{\mathcal E}(X)
-$$
+$
+F(X):=\text{cierre recursivo de }X\text{ bajo emergencia }\mathcal E
+$
 
-donde \(\mathcal E\) representa **emergencia** y \(\operatorname{Cl}_{\mathcal E}\) el cierre de un dominio bajo todas las emergencias reales o realmente posibles que su propia estructura permite.
+donde \(\mathcal E\) representa **emergencia**. \(F\) no es una segunda operación ontológica independiente: es la construcción formal que expresa qué resulta al incluir \(X\), lo que puede emerger realmente de \(X\), lo que puede emerger de esas nuevas estructuras y así recursivamente, siempre bajo las restricciones reales de posibilidad del propio dominio.
 
 La fórmula no pretende demostrar toda la metafísica del exergismo. Expresa una propiedad más limitada: **si \(R\) es realmente la totalidad de lo real, entonces nada que emerja realmente puede quedar ontológicamente fuera de \(R\)**.
 
@@ -276,76 +276,90 @@ $$
 
 ---
 
-## 8. Paso 6 — Cierre bajo emergencia
+## 8. Paso 6 — \(F\) como cierre recursivo bajo emergencia
 
-Aquí aparece el candidato concreto para la operación \(F\).
+Aquí aparece el significado concreto de \(F\).
 
-### [D5] Clausura emergente
+### [D5] Operación de cierre emergente
 
-Sea:
+Definimos \(F\) directamente:
 
-$$
-F(X):=\operatorname{Cl}_{\mathcal E}(X)
-$$
+$
+F(X):=\text{cierre recursivo de }X\text{ bajo }\mathcal E
+$
 
-donde \(\operatorname{Cl}_{\mathcal E}(X)\) contiene:
+Esto significa que \(F(X)\) incorpora:
 
 1. \(X\);
-2. todo lo que puede emerger realmente de \(X\);
-3. todo lo que puede emerger de esas estructuras;
-4. y así recursivamente, bajo las restricciones reales de posibilidad de \(X\).
+2. lo que puede emerger realmente de \(X\);
+3. lo que puede emerger de las estructuras así obtenidas;
+4. y así recursivamente, bajo las restricciones reales de posibilidad del dominio.
 
-Por definición del cierre:
+No se introduce un operador ontológico adicional. Las primitivas provisionales siguen siendo el dominio y la emergencia; \(F\) es nuestra forma compacta de expresar el resultado de cerrar recursivamente un dominio bajo \(\mathcal E\).
 
-$$
-X\preceq \operatorname{Cl}_{\mathcal E}(X)
-$$
+Formalmente, \(F\) debe satisfacer al menos:
 
-### [I6] Nada emergente de \(R\) puede quedar fuera de \(R\)
+$
+X\preceq F(X)
+$
 
-Si una estructura \(y\) emerge realmente de \(R\):
+y:
 
-$$
-y\in \operatorname{Cl}_{\mathcal E}(R)
-$$
+$
+\mathcal E(F(X))\preceq F(X)
+$
 
-entonces \(y\) es real o una posibilidad real incluida en la estructura modal de \(R\).
+La primera propiedad expresa **extensividad**: el cierre conserva aquello desde lo que parte. La segunda expresa **clausura emergente**: una vez alcanzado \(F(X)\), nuevas emergencias permitidas por esa estructura no conducen fuera de \(F(X)\).
+
+### [I6] \(R\) ya está cerrado bajo emergencia
+
+Si una estructura \(y\) emerge realmente —o constituye una posibilidad real de emergencia— dentro de \(R\), entonces \(y\) pertenece ontológicamente a la realidad total.
 
 Por [I1]:
 
-$$
-y\preceq_R R
-$$
+$
+\operatorname{Real}(y)\Rightarrow y\preceq_R R
+$
 
-Por tanto:
+y por [D2], las posibilidades reales también forman parte de la estructura de \(R\).
 
-$$
-\operatorname{Cl}_{\mathcal E}(R)\preceq_R R
-$$
+Por tanto, aplicar el cierre emergente a \(R\) no añade nada ontológicamente exterior:
 
-Pero, por extensividad del cierre:
+$
+F(R)\preceq_R R
+$
 
-$$
-R\preceq_R \operatorname{Cl}_{\mathcal E}(R)
-$$
+Pero por extensividad de \(F\):
 
-Por ambas inclusiones:
+$
+R\preceq_R F(R)
+$
 
-$$
-\boxed{R=\operatorname{Cl}_{\mathcal E}(R)}
-$$
+Por ambas relaciones:
 
-y, usando [D5]:
-
-$$
+$
 \boxed{R=F(R)}
-$$
+$
 
-Esta igualdad es más fuerte y más precisa que la formulación inicial \(R\cong F(R)\), **si** \(F\) se define específicamente como clausura ontológica bajo emergencia.
+Esta igualdad es más fuerte y más precisa que la formulación inicial \(R\cong F(R)\), dado el significado específico que ahora recibe \(F\).
 
-No significa que una operación externa «actúe sobre» \(R\) en el tiempo. Expresa una propiedad estructural de punto fijo:
+No significa que una operación externa actúe sobre \(R\) en el tiempo. Expresa una propiedad estructural de punto fijo:
 
-> desplegar todas las emergencias reales o realmente posibles de la realidad total no produce una realidad exterior adicional.
+> \(R\) es cerrado bajo emergencia: desplegar recursivamente todas las emergencias reales o realmente posibles de la realidad total no produce una realidad exterior adicional.
+
+Es importante no confundir:
+
+$
+F(R)=R
+$
+
+con:
+
+$
+\mathcal E(R)=R
+$
+
+La segunda expresión exigiría que una sola aplicación de emergencia produjera toda la realidad. La propuesta no afirma eso. \(F\) representa precisamente la aplicación recursiva y cerrada de la emergencia.
 
 ---
 
@@ -587,9 +601,9 @@ La propuesta puede auditarse paso a paso:
 | 6 | [A] | Nuestro universo exhibe organización emergente medio \(\rightarrow\) estructura \(\rightarrow\) nuevo medio. |
 | 7 | [H] | Esa recurrencia emergente puede continuar más allá de nuestro universo conocido. |
 | 8 | [I] | Incluso una cadena infinita de medios parciales permanece incluida en \(R\). |
-| 9 | [D] | \(\mathcal E\) designa emergencia y \(F(X)=\operatorname{Cl}_{\mathcal E}(X)\). |
+| 9 | [D] | \(\mathcal E\) designa emergencia y \(F\) el cierre recursivo de un dominio bajo \(\mathcal E\). |
 | 10 | [I] | Toda emergencia real o realmente posible de \(R\) pertenece ya a \(R\). |
-| 11 | [I] | Por extensividad y clausura, \(R=\operatorname{Cl}_{\mathcal E}(R)=F(R)\). |
+| 11 | [I] | Por extensividad y clausura emergente, \(R=F(R)\). |
 | 12 | [D/H] | \(\Delta\) se trata como diferencia estructural derivada, no como primitiva ontológica. |
 
 La parte que requiere investigación ya no es «inventar una \(F\) cualquiera», sino comprobar si **emergencia** puede definirse con suficiente precisión como para sostener esta arquitectura sin circularidad.
@@ -623,9 +637,9 @@ Esta propuesta no afirma que:
 
 Si «emergencia» significa simplemente «todo lo que aparece realmente», entonces:
 
-$$
-R=\operatorname{Cl}_{\mathcal E}(R)
-$$
+$
+R=F(R)
+$
 
 sería casi tautológico.
 
@@ -676,7 +690,7 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 1. una definición rigurosa de **medio**;
 2. una definición no circular de **emergencia**;
 3. si la emergencia debe modelarse como función, relación, operador, funtor, dinámica o proceso;
-4. qué tipo de clausura representa correctamente \(\operatorname{Cl}_{\mathcal E}\);
+4. qué propiedades matemáticas debe satisfacer \(F\) como cierre recursivo bajo emergencia;
 5. cómo representar actualidad y posibilidad sin confundir posibilidad lógica con posibilidad real;
 6. si \(R\) puede tratarse matemáticamente como punto fijo sin reificarlo como conjunto universal;
 7. qué significado formal debe tener «supramedio»;
@@ -701,9 +715,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - tiempos, universos, simulaciones y metaniveles se interpretan como estructuras internas si son reales;
 - se admite una cadena potencialmente ilimitada de medios parciales sin identificar ninguno de ellos automáticamente con \(R\);
 - la **emergencia** pasa a ser el candidato principal para la operación estructural buscada;
-- \(F\) se concreta como cierre bajo emergencia:
-  \(F(X)=\operatorname{Cl}_{\mathcal E}(X)\);
-- de la clausura de la totalidad se deriva:
+- \(F\) se define directamente como el cierre recursivo de un dominio bajo emergencia;
+- de la clausura emergente de la totalidad se deriva:
   \(R=F(R)\);
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
 - la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia.
