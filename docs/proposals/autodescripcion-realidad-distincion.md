@@ -216,6 +216,34 @@ donde una estructura \(E\) **emerge** de un medio \(M\) cuando depende constitut
 
 Esta definición es todavía provisional y deberá contrastarse con teorías formales de emergencia.
 
+### [D4a] Emergencia no determinista
+
+La notación \(M\xrightarrow{\mathcal E}E\) no debe interpretarse como una función determinista que asigne a cada medio un único resultado.
+
+De manera más fiel a la propuesta:
+
+$
+\mathcal E(M)=\{E_i\mid E_i\text{ es una emergencia realmente permitida por }M\}
+$
+
+o, de forma relacional:
+
+$
+M\xrightarrow{\mathcal E}E_i
+$
+
+para cada emergencia accesible bajo las condiciones efectivas del medio.
+
+La misma clase de medio puede admitir más de una trayectoria emergente, y la aparición concreta de una estructura puede depender de historia, condiciones iniciales, fluctuaciones, relaciones y restricciones contextuales.
+
+### [H2] Reproducibilidad y escala
+
+Se propone investigar la hipótesis de que, al ascender hacia medios con mayor complejidad organizativa, la reproducción exacta de una emergencia puede requerir reconstruir un conjunto creciente de condiciones constitutivas y contextuales.
+
+Esto no se formula todavía como una ley monotónica universal. La tesis mínima es:
+
+> mayor nivel emergente no implica mayor determinismo; una emergencia puede volverse menos reproducible exactamente aunque su dependencia constitutiva siga siendo analizable.
+
 ### [A2] Nuestro universo exhibe organización emergente
 
 El exergismo ya adopta una lectura emergentista de nuestro universo: medios producen estructuras que pueden convertirse a su vez en condiciones de nuevas emergencias.
@@ -363,51 +391,93 @@ La segunda expresión exigiría que una sola aplicación de emergencia produjera
 
 ---
 
-## 9. La emergencia no tiene por qué ser reversible
+## 9. Asimetría entre emergencia y descomposición constitutiva
+
+La propuesta introduce una asimetría importante entre ascender por emergencia y descender por análisis constitutivo.
 
 Si:
 
-$$
+$
 M_0\xrightarrow{\mathcal E}M_1\xrightarrow{\mathcal E}M_2
-$$
+$
 
-podemos investigar \(M_2\) para reconstruir condiciones constitutivas de niveles anteriores. Pero no se asume:
+la dirección ascendente no es, en general, determinista ni exactamente reproducible. Un mismo medio puede admitir varias emergencias posibles, y reproducir una emergencia concreta puede exigir reconstruir condiciones históricas y contextuales que no están determinadas por una descripción gruesa del medio.
 
-$$
+Por ello no se asume:
+
+$
 \mathcal E^{-1}
-$$
+$
 
-como una inversa matemática general.
+como inversa matemática general.
 
-Dos configuraciones microestructurales distintas podrían producir una misma descripción macroestructural:
+### [H3] Descomponibilidad constitutiva
 
-$$
-\mathcal E(m_1)=\mathcal E(m_2)=M
-$$
+Se propone, en cambio, una hipótesis más fuerte en la dirección descendente:
 
-Por ello se introduce provisionalmente una relación distinta:
+> toda estructura genuinamente emergente depende de algún medio y de alguna organización constitutiva que pueden, al menos ontológicamente, ser descompuestos como condiciones de esa emergencia.
 
-$$
-\mathcal D(M)
-$$
+Se introduce:
 
-donde \(\mathcal D\) representa **descomposición, resolución o análisis constitutivo**.
+$
+\mathcal D(E)
+$
 
-\(\mathcal D\) puede revelar medios y relaciones de los que depende una emergencia sin recuperar necesariamente una historia microfísica única.
+donde \(\mathcal D\) representa **descomposición o resolución constitutiva**.
 
-Esto permite recorrer conceptualmente:
+Si:
 
-$$
-\text{emergencia:}\quad M_0\rightarrow M_1\rightarrow M_2
-$$
+$
+M\xrightarrow{\mathcal E}E
+$
 
-y:
+entonces debe existir una descripción constitutiva relevante tal que:
 
-$$
-\text{análisis constitutivo:}\quad M_2\rightsquigarrow M_1\rightsquigarrow M_0
-$$
+$
+M\preceq \mathcal D(E)
+$
 
-sin afirmar reversibilidad ontológica perfecta.
+sin exigir que \(\mathcal D(E)\) recupere una única historia causal ni un microestado originario exacto.
+
+Dos configuraciones distintas pueden desembocar en una estructura emergente equivalente:
+
+$
+m_1\xrightarrow{\mathcal E}E
+\qquad
+m_2\xrightarrow{\mathcal E}E
+$
+
+por lo que:
+
+$
+\mathcal D\neq\mathcal E^{-1}
+$
+
+en general.
+
+### [D5a] Descomponibilidad ontológica frente a reconstruibilidad epistemológica
+
+Debe distinguirse:
+
+$
+\boxed{\text{descomponibilidad ontológica}\neq\text{reconstruibilidad epistemológica}}
+$
+
+Que una emergencia dependa realmente de medios y relaciones constitutivos no implica que una conciencia finita pueda reconstruirlos exhaustivamente a partir del resultado emergente.
+
+La asimetría provisional es, por tanto:
+
+$
+\text{ascenso:}\quad
+M\xrightarrow[\text{multivaluado/contextual}]{\mathcal E}E
+$
+
+$
+\text{descenso:}\quad
+E\xrightarrow[\text{constitutivo}]{\mathcal D}\{M,\text{relaciones, restricciones},\ldots\}
+$
+
+La dirección descendente identifica aquello de lo que la emergencia depende; no rebobina necesariamente la historia exacta que la produjo.
 
 ---
 
@@ -601,10 +671,13 @@ La propuesta puede auditarse paso a paso:
 | 6 | [A] | Nuestro universo exhibe organización emergente medio \(\rightarrow\) estructura \(\rightarrow\) nuevo medio. |
 | 7 | [H] | Esa recurrencia emergente puede continuar más allá de nuestro universo conocido. |
 | 8 | [I] | Incluso una cadena infinita de medios parciales permanece incluida en \(R\). |
-| 9 | [D] | \(\mathcal E\) designa emergencia y \(F\) el cierre recursivo de un dominio bajo \(\mathcal E\). |
-| 10 | [I] | Toda emergencia real o realmente posible de \(R\) pertenece ya a \(R\). |
-| 11 | [I] | Por extensividad y clausura emergente, \(R=F(R)\). |
-| 12 | [D/H] | \(\Delta\) se trata como diferencia estructural derivada, no como primitiva ontológica. |
+| 9 | [D] | \(\mathcal E\) es relacional/multivaluada, no una evolución determinista de un único resultado. |
+| 10 | [H] | La reproducibilidad exacta puede disminuir al crecer la complejidad y dependencia contextual del medio. |
+| 11 | [D] | \(F\) es el cierre recursivo del espacio de emergencias accesibles bajo \(\mathcal E\). |
+| 12 | [I] | Toda emergencia real o realmente posible de \(R\) pertenece ya a \(R\). |
+| 13 | [I] | Por extensividad y clausura emergente, \(R=F(R)\). |
+| 14 | [H] | Toda emergencia posee condiciones constitutivas descomponibles mediante \(\mathcal D\), sin que \(\mathcal D=\mathcal E^{-1}\). |
+| 15 | [D/H] | \(\Delta\) se trata como diferencia estructural derivada, no como primitiva ontológica. |
 
 La parte que requiere investigación ya no es «inventar una \(F\) cualquiera», sino comprobar si **emergencia** puede definirse con suficiente precisión como para sostener esta arquitectura sin circularidad.
 
@@ -689,14 +762,14 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 
 1. una definición rigurosa de **medio**;
 2. una definición no circular de **emergencia**;
-3. si la emergencia debe modelarse como función, relación, operador, funtor, dinámica o proceso;
-4. qué propiedades matemáticas debe satisfacer \(F\) como cierre recursivo bajo emergencia;
+3. qué formalismo relacional o multivaluado representa mejor la emergencia sin introducir determinismo ficticio;
+4. qué propiedades matemáticas debe satisfacer \(F\) como cierre recursivo del espacio de emergencias accesibles;
 5. cómo representar actualidad y posibilidad sin confundir posibilidad lógica con posibilidad real;
 6. si \(R\) puede tratarse matemáticamente como punto fijo sin reificarlo como conjunto universal;
 7. qué significado formal debe tener «supramedio»;
 8. cómo modelar cadenas o redes potencialmente infinitas de medios;
 9. qué relación existe entre emergencia y composición;
-10. cómo formalizar \(\mathcal D\) sin asumir reversibilidad;
+10. cómo formalizar \(\mathcal D\) como descomposición constitutiva y qué condiciones justificarían que toda emergencia sea ontológicamente descomponible sin hacerla epistemológicamente reconstruible;
 11. cómo definir equivalencia estructural y, a partir de ella, \(\Delta_R\);
 12. qué consecuencias observables o conceptuales diferenciarían esta arquitectura de ontologías competidoras;
 13. cómo mantener separada esta ontología del sistema cuantitativo de análisis exérgico hasta que exista un puente formal explícitamente justificado.
@@ -714,11 +787,11 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - un exterior real de \(R\) queda excluido por la propia definición de totalidad;
 - tiempos, universos, simulaciones y metaniveles se interpretan como estructuras internas si son reales;
 - se admite una cadena potencialmente ilimitada de medios parciales sin identificar ninguno de ellos automáticamente con \(R\);
-- la **emergencia** pasa a ser el candidato principal para la operación estructural buscada;
-- \(F\) se define directamente como el cierre recursivo de un dominio bajo emergencia;
+- la **emergencia** pasa a ser el candidato principal para la operación estructural buscada y se modela provisionalmente como relación multivaluada, no determinista;
+- \(F\) se define directamente como el cierre recursivo del espacio de emergencias accesibles de un dominio;
 - de la clausura emergente de la totalidad se deriva:
   \(R=F(R)\);
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
-- la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia.
+- la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia y se introduce la diferencia entre descomponibilidad ontológica y reconstruibilidad epistemológica.
 
 Una integración futura en `content/ontologia.json` debería producirse solo cuando las definiciones de medio, emergencia, posibilidad real y equivalencia estructural estén suficientemente delimitadas para distinguir con claridad doctrina, hipótesis y formalización.
