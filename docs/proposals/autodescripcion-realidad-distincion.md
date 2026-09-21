@@ -1048,7 +1048,9 @@ Así:
 
 $$
 \boxed{
-\operatorname{Compact}(T_i)
+\operatorname{FOAxiomatizable}(\operatorname{Adm}_i)
++
+\operatorname{Compact}(L_i)
 +
 \operatorname{CoherentDiagram}(\mathcal C)
 \Rightarrow
@@ -1088,7 +1090,7 @@ Pero sí proporciona un puente preciso:
 
 $$
 \boxed{
-\text{si la admisibilidad ontológica es formalizable en un marco compacto apropiado, entonces [C1*] se deriva.}
+\text{si la admisibilidad ontológica es axiomatizable en un lenguaje lógico compacto apropiado y la inclusión ontológica puede representarse mediante diagramas/embeddings coherentes, entonces [C1*] se deriva.}
 }
 $$
 
@@ -3987,7 +3989,7 @@ La propuesta puede auditarse paso a paso:
 | 13b | [I] | [F1-F3] implican que todo \(F(X)\) es punto fijo; por tanto existen cierres emergentes siempre que exista algún dominio admisible. |
 | 13b.1 | [I/O] | Toda cadena es finitamente compatible; [C1*] propone continuidad ontológica dirigida: la cadena admite un límite/cota superior salvo obstrucción ontológica infinitaria positiva. |
 | 13b.2 | [H/I] | Si la inadmisibilidad posee testigos locales/acotados y la admisibilidad es hereditaria, la compatibilidad finitaria de una cadena implica [C1*]. |
-| 13b.3 | [H/I] | Vía formal: bajo una teoría \(T_i\) compacta y diagramas coherentes, la satisfacibilidad finita de la cadena implica un modelo común \(U\), derivando [C1*]. |
+| 13b.3 | [H/I] | Vía formal: si la admisibilidad es axiomatizable en un lenguaje compacto y los dominios admiten diagramas/embeddings coherentes, la satisfacibilidad finita de la cadena implica un modelo común \(U\), derivando [C1*]. |
 | 13b.4 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
@@ -4351,7 +4353,7 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se localiza la diferencia One-\(R\)/Many-\(R\) en si existe un único régimen dirigido global o varios regímenes no amalgamables entre sí;
 - [C1] se reduce a un **Principio de Continuidad Ontológica Dirigida [C1*]**: toda cadena es finitamente compatible, y su falta de cota superior exigiría una obstrucción ontológica genuinamente infinitaria que no aparece en ningún estadio finito;
 - se formula una ruta de derivación de [C1*] mediante **localidad/compactitud ontológica**: si toda inadmisibilidad tiene un testigo acotado y la admisibilidad es hereditaria, una cadena finitamente compatible no puede volverse inadmisible solo en el límite;
-- se formula una segunda ruta **formal por compacidad**: si la admisibilidad del índice se representa mediante una teoría compacta y diagramas coherentes de los dominios, la satisfacibilidad finita de toda cadena obliga a la existencia de un modelo común y por tanto deriva [C1*];
+- se formula una segunda ruta **formal por compacidad**: si la admisibilidad del índice es axiomatizable en un lenguaje lógico compacto y los dominios admiten diagramas/embeddings coherentes, la satisfacibilidad finita de toda cadena obliga a la existencia de un modelo común y por tanto deriva [C1*];
 - se mantiene además una ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
 - se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
