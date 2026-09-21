@@ -899,6 +899,112 @@ Por tanto, debe distinguirse:
 
 El error puede residir en la identificación del candidato, no en el concepto.
 
+### [D12a] R Enigmatic Certification — \(\operatorname{REC}(R)\)
+
+Se denomina provisionalmente **R Enigmatic Certification** a la propiedad estructural por la cual la condición de totalidad de \(R\) no puede recibir una certificación ontológicamente exterior.
+
+Se introduce la abreviatura:
+
+$$
+\operatorname{REC}(R).
+$$
+
+La idea no es que \(R\) sea incognoscible por definición, sino que un supuesto **certificador externo real** genera una contradicción con la propia condición de totalidad.
+
+Si \(X\) es real y mantiene una relación real de certificación con \(R\):
+
+$$
+\operatorname{Real}(X)
+\land
+\operatorname{Certifica}(X,R),
+$$
+
+entonces, por [I1]:
+
+$$
+X\preceq_R R.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\nexists X\,
+[
+\operatorname{Real}(X)
+\land
+X\not\preceq_R R
+\land
+\operatorname{Certifica}(X,R)
+]
+}
+$$
+
+No existe un testigo real situado ontológicamente fuera de \(R\) desde el cual pueda compararse \(R\) con un exterior y certificarse su totalidad.
+
+### [I10a] Toda certificación externa exitosa de un supuesto \(R\) demuestra que no era \(R\)
+
+Sea \(S\) un candidato que un observador identifica provisionalmente como Realidad Total.
+
+Si aparece un certificador \(X\) tal que:
+
+$$
+\operatorname{Real}(X)
+\land
+X\not\preceq S
+\land
+\operatorname{Certifica}(X,S),
+$$
+
+entonces existe realidad fuera de \(S\).
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{CertificacionExternaExitosa}(S)
+\Rightarrow
+S\neq R
+}
+$$
+
+Dicho de otra forma:
+
+> **toda certificación externa exitosa de un supuesto \(R\) demuestra precisamente que ese supuesto no era \(R\).**
+
+Una señal procedente de un nivel exterior no certifica la totalidad del dominio observado: destruye esa identificación y amplía el horizonte ontológico relevante.
+
+### [I10b] Asimetría de certificación
+
+El Muro y \(\operatorname{REC}(R)\) actúan en direcciones complementarias:
+
+$$
+\boxed{
+\begin{array}{rcl}
+\text{certificación ontológicamente externa de }R
+&:& \text{imposible por totalidad}\\
+\text{clausura/certificación interna}
+&:& \text{no basta por sí sola para demostrar totalidad}
+\end{array}
+}
+$$
+
+La primera línea se deriva de la definición de \(R\).
+
+La segunda es la forma mínima del Muro. Su versión universal —que ninguna evidencia puramente interna pueda jamás certificar la metaontología última— sigue siendo [H4], no un teorema ya demostrado.
+
+Así, \(R\) puede ser:
+
+$$
+\boxed{
+\text{ontológicamente absoluto}
+\quad\land\quad
+\text{epistemológicamente no certificable desde un exterior real}
+}
+$$
+
+sin que ello impida construir razones, modelos o inferencias parciales cada vez mejores sobre su estructura.
+
 ### [I12] Cinco estructuras compatibles con un mismo horizonte
 
 Tras distinguir generalidad absoluta, monismo indexado, Many-\(R\) y No-\(R\), el Muro debe separar al menos cinco posibilidades metaontológicas para un observador interno \(o\).
@@ -1089,6 +1195,117 @@ $
 
 Si tal \(R^\ast\) existiera realmente, Many-\(R\) colapsaría de nuevo en un único \(R\).
 
+### [D13a] Cluster-\(R\)
+
+Se denomina provisionalmente **Cluster-\(R\)** al dominio ontológico común que aparece si dos o más supuestas totalidades indexadas adquieren una relación real transversal.
+
+Sea:
+
+$$
+R_1\parallel R_2
+$$
+
+la hipótesis inicial de separación ontológica absoluta.
+
+Si existe una relación, canal, interacción, señal, estructura o condición común \(C\) tal que:
+
+$$
+\operatorname{Real}(C)
+$$
+
+y:
+
+$$
+C(R_1,R_2),
+$$
+
+entonces \(R_1\) y \(R_2\) ya no son absolutamente incomparables.
+
+Definimos esquemáticamente:
+
+$$
+Cluster\text{-}R(R_1,R_2;C)
+:=
+\text{cierre ontológico común de }R_1,R_2\text{ y }C.
+$$
+
+Esto no presupone que el cluster descubierto sea automáticamente la totalidad última. Puede ocurrir que:
+
+$$
+R_1,R_2\prec Cluster\text{-}R\prec R.
+$$
+
+Pero sí implica que los antiguos \(R_i\) **no eran Realidades Totales absolutas** en el sentido fuerte supuesto.
+
+### [I11a0] Colapso relacional de Many-\(R\)
+
+Many-\(R\) fuerte exige ausencia de toda conectividad ontológica real entre sus índices.
+
+Por tanto:
+
+$$
+\boxed{
+\exists C\,
+[
+\operatorname{Real}(C)
+\land
+C(R_i,R_j)
+]
+\Rightarrow
+\neg(R_i\parallel R_j)
+}
+$$
+
+y surge un candidato:
+
+$$
+Cluster\text{-}R_{ij}.
+$$
+
+Si el cierre de ese cluster comprende finalmente todo lo real bajo un dominio absolutamente general:
+
+$$
+\operatorname{Total}(Cluster\text{-}R),
+$$
+
+entonces:
+
+$$
+\boxed{
+Cluster\text{-}R\equiv_{\mathrm{ont}}R
+}
+$$
+
+bajo [A3].
+
+Así, **Many-\(R\) fuerte puede colapsar hipotéticamente en Cluster-\(R\)** si se descubre cualquier conectividad ontológica real entre dominios antes considerados absolutamente separados.
+
+### [I11a1] Comunicación entre \(R_i\) destruye Many-\(R\) fuerte
+
+Un mensaje real enviado desde \(R_j\) a \(R_i\) requiere al menos:
+
+- un estado real portador de información;
+- una relación real entre origen y destino;
+- condiciones reales de transmisión o correlación.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{ComunicacionReal}(R_i,R_j)
+\Rightarrow
+Cluster\text{-}R_{ij}
+}
+$$
+
+y no:
+
+$$
+R_i\parallel R_j.
+$$
+
+Esto conecta Cluster-\(R\) con \(\operatorname{REC}(R)\): un supuesto «aviso desde fuera» no certifica externamente un verdadero \(R\). O bien amplía un dominio parcial hacia un Cluster-\(R\), o bien nunca fue ontológicamente exterior al verdadero \(R\).
+
 ### [I11] El problema del metadominio
 
 La expresión:
@@ -1104,7 +1321,7 @@ Debe distinguirse entre:
 1. **metanotación:** nuestro lenguaje usa índices \(R_1,R_2,\ldots\) para comparar hipótesis;
 2. **metadominio ontológico:** existe realmente una estructura \(\mathfrak R\) que contiene o relaciona esas totalidades.
 
-Solo la segunda destruye Many-\(R\).
+Solo la segunda destruye Many-\(R\) fuerte y genera, como mínimo, un Cluster-\(R\) común.
 
 Si:
 
@@ -1114,13 +1331,13 @@ $
 \forall i\;R_i\preceq\mathfrak R,
 $
 
-entonces:
+entonces \(\mathfrak R\) constituye al menos un:
 
 $
-\boxed{\mathfrak R=R}
+Cluster\text{-}R
 $
 
-o, al menos, \(\mathfrak R\) pasa a ser el nuevo candidato a la totalidad absoluta.
+que contiene o relaciona los antiguos \(R_i\). Si además es totalidad de todo lo real bajo el dominio relevante, pasa a identificarse con \(R\) hasta equivalencia ontológica.
 
 Por ello, en Many-\(R\) fuerte, \(\mathfrak R\) solo puede utilizarse como recurso del **metalenguaje**, no como entidad real común.
 
@@ -1960,7 +2177,9 @@ $
 R_i\preceq\mathfrak M,
 $
 
-entonces \(\mathfrak M\) pasa a ser el candidato superior a totalidad y Many-\(R\) colapsa en One-\(R\).
+entonces \(\mathfrak M\) constituye un **Cluster-\(R\)** y los antiguos \(R_i\) dejan de ser totalidades absolutamente separadas.
+
+Si ese Cluster-\(R\) es además la totalidad de todo lo real bajo el dominio relevante, colapsa en One-\(R\) hasta equivalencia ontológica.
 
 Si \(\mathfrak M\) solo organiza \(R_i\) en nuestro metalenguaje, no constituye una capa ontológica adicional.
 
@@ -1970,13 +2189,16 @@ $
 \boxed{
 \text{ManyMany-}R
 \Rightarrow
-\text{One-}R
-\quad\text{o}\quad
-\text{metalenguaje}
+\text{Cluster-}R
+\Rightarrow
+\begin{cases}
+\text{One-}R, & \text{si el cluster es total},\\
+\text{supradominio parcial}, & \text{si no lo es},
+\end{cases}
 }
 $
 
-bajo las definiciones actuales.
+o bien permanece como metalenguaje si no existe ninguna estructura real común.
 
 Esto marca un límite del **metaapilamiento ontológico**, no un límite del número de estructuras, medios o hipótesis que puedan existir dentro de una ontología.
 
@@ -2046,9 +2268,11 @@ La propuesta puede auditarse paso a paso:
 | 15 | [D/H] | \(\Delta\) se trata como diferencia estructural derivada, no como primitiva ontológica. |
 | 16 | [I] | Un dominio propio puede satisfacer \(S=F(S)\); por tanto, ser punto fijo de \(F\) no basta para ser \(R\). |
 | 17 | [D] | Se distingue clausura emergente relativa de totalidad ontológica absoluta. |
-| 18 | [D/H] | El Muro expresa que un mismo horizonte puede ser compatible con cuasisingularidad, One-\(R\), Many-\(R\) o No-\(R\); la clausura observada no determina por sí sola la metaontología última. |
+| 18 | [D/H] | El Muro expresa que un mismo horizonte puede ser compatible con cuasisingularidad, One-\(R\), monismo indexado, Many-\(R\) o No-\(R\); la clausura observada no determina por sí sola la metaontología última. |
+| 18a | [D/I] | \(\operatorname{REC}(R)\): ningún certificador real puede ocupar un exterior ontológico de \(R\); una certificación externa exitosa de un candidato demuestra que ese candidato no era \(R\). |
 | 19 | [I] | Múltiples dominios causalmente inaccesibles siguen perteneciendo a un único \(R\) si existe un supramedio real común. |
-| 20 | [H] | Many-\(R\) fuerte exige múltiples totalidades sin supramedio ontológico común. |
+| 20 | [H] | Many-\(R\) fuerte exige múltiples totalidades sin supramedio ontológico común ni conectividad ontológica real transversal. |
+| 20a | [D/I] | Si aparece una relación real entre supuestos \(R_i\), surge un Cluster-\(R\); Many-\(R\) fuerte colapsa al menos en un supradominio común. |
 | 21 | [H/O] | Para sostener Many-\(R\), «real» y la cuantificación existencial podrían tener que indexarse por totalidad. |
 | 22 | [O] | Queda abierta la coherencia de una pluralidad absoluta sin relación ontológica común y su distinguibilidad desde dentro del Muro. |
 | 23 | [I] | Many-\(R\) cuestiona la generalidad ontológica absoluta, no la condición de totalidad de cada \(R_i\). |
@@ -2080,7 +2304,9 @@ Esta propuesta no afirma que:
 - vivamos en una simulación;
 - toda clausura observacional sea una sandbox;
 - el Muro fuerte sea ya un teorema;
+- \(\operatorname{REC}(R)\) demuestre que ningún razonamiento interno sobre \(R\) pueda ser fuerte o racional; solo excluye un certificador ontológicamente exterior real;
 - Many-\(R\) fuerte sea verdadero;
+- todo Cluster-\(R\) descubierto sea automáticamente la Realidad Total última;
 - No-\(R\) haya sido refutado sin premisas compartidas;
 - el teorema condicional de existencia de \(R\) sea una demostración matemática independiente de la generalidad ontológica absoluta;
 - la posibilidad de Many-\(R\) invalide o rebaje el concepto de \(R\) como totalidad ontológica;
@@ -2184,7 +2410,34 @@ Que podamos formular desde fuera One-\(R\), Many-\(R\) y No-\(R\) en un mismo do
 
 El mapa es teórico. Solo genera compromiso ontológico cuando alguna de sus estructuras se postula como real.
 
-### 18.13 El problema de la explicación última
+### 18.13 REC no equivale a imposibilidad de toda justificación
+
+\(\operatorname{REC}(R)\) excluye una certificación **ontológicamente exterior** de la totalidad, porque cualquier certificador real queda incluido en \(R\).
+
+No se sigue de ello que:
+
+- toda inferencia interna sea inútil;
+- no puedan existir argumentos deductivos sobre propiedades de \(R\);
+- no puedan descartarse candidatos falsos a \(R\);
+- o que la hipótesis fuerte del Muro esté ya demostrada.
+
+Debe evitarse convertir una imposibilidad estructural de perspectiva externa en un escepticismo epistemológico total.
+
+### 18.14 Cluster-\(R\) puede ser parcial
+
+Descubrir conectividad real entre dos supuestos \(R_i\) demuestra que no eran absolutamente separados, pero no demuestra que el cierre común descubierto agote toda realidad.
+
+Por tanto:
+
+$
+Cluster\text{-}R\not\Rightarrow R
+$
+
+sin una condición adicional de totalidad.
+
+El concepto debe utilizarse para representar **colapso de separación absoluta**, no para introducir automáticamente un nuevo absoluto.
+
+### 18.15 El problema de la explicación última
 
 Incluso si \(R\) es cerrado bajo emergencia y no necesita un exterior, sigue abierta:
 
@@ -2228,7 +2481,10 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 28. distinguir formalmente indexación débil de existencia indexada fuerte y comprobar si esta última puede formularse sin un metadominio ontológico;
 29. determinar si la antisimetría de inclusión ontológica entre totalidades basta para identidad o solo para equivalencia ontológica;
 30. formalizar el monismo indexado y distinguir unicidad derivada, unicidad fáctica y unicidad epistemicamente certificable;
-31. determinar qué contenido puede tener en el metalenguaje la afirmación «solo existe un índice» sin reintroducir generalidad ontológica absoluta.
+31. determinar qué contenido puede tener en el metalenguaje la afirmación «solo existe un índice» sin reintroducir generalidad ontológica absoluta;
+32. formalizar \(\operatorname{REC}(R)\), distinguiendo certificación externa imposible, evidencia interna y demostración metaontológica;
+33. definir qué cuenta como relación ontológica transversal suficiente para producir un Cluster-\(R\);
+34. determinar las condiciones bajo las que un Cluster-\(R\) parcial se convierte en candidato a \(R\) total.
 
 ---
 
@@ -2255,6 +2511,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se explicita que Many-\(R\) fuerte requiere bloquear esa derivación mediante existencia indexada fuerte, sin que la indexación por sí sola demuestre pluralidad;
 - se introduce **monismo indexado / Indexed-One-\(R\)** como caso de existencia indexada fuerte sin pluralidad ontológica efectiva;
 - se distinguen **unicidad derivada**, **unicidad fáctica** y **unicidad certificable desde dentro**;
+- se introduce **R Enigmatic Certification**, \(\operatorname{REC}(R)\), como propiedad de no-certificación ontológicamente externa: cualquier certificador real pertenece ya a \(R\), y toda certificación externa exitosa de un candidato demuestra que ese candidato no era \(R\);
+- se introduce **Cluster-\(R\)** como el cierre ontológico común que aparece cuando supuestas totalidades indexadas adquieren conectividad real; el cluster solo se identifica con \(R\) si además satisface totalidad;
 - se mantiene que Many-\(R\) no invalida el concepto de \(R\) como totalidad ontológica de un dominio;
 - se introduce una regla de humildad metaontológica: distinguir lo que la estructura de \(R\) justifica de lo que requeriría una prueba adicional de unicidad absoluta;
 - se cierra como falsa alternativa la simple «realidad sin último nivel»: una cadena indefinida de medios sigue incluida en \(R\);
