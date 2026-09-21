@@ -2280,7 +2280,7 @@ La propuesta puede auditarse paso a paso:
 | 25 | [I] | Una cadena infinita o sin último medio sigue siendo una configuración interna de \(R\), no una alternativa No-\(R\). |
 | 26 | [I] | Si la realidad es no vacía y admite generalidad ontológica absoluta, \(R\) existe condicionalmente como totalidad de lo real. |
 | 27 | [I/O] | No-\(R\) genuino debe negar la totalizabilidad ontológica; negar solo la generalidad absoluta todavía permite existencia indexada. |
-| 28 | [I] | ManyMany-\(R\) colapsa en un nuevo \(R\) si es ontológicamente real, o permanece como metalenguaje si no lo es. |
+| 28 | [I] | ManyMany-\(R\) colapsa en Cluster-\(R\) si introduce estructura real común; el cluster solo equivale a One-\(R\) si además es totalidad, y de otro modo permanece como supradominio parcial. |
 | 29 | [D] | El mapa mínimo queda: totalizabilidad vs No-\(R\); después Generalidad Absoluta vs Existencia Indexada fuerte; bajo indexación, monismo indexado vs Many-\(R\) según exista pluralidad efectiva. |
 | 30 | [A/I] | Bajo antisimetría de inclusión entre totalidades, \(T(R)\land G\Rightarrow U(R)\): la unicidad se deriva de totalidad + generalidad absoluta. |
 | 31 | [I] | La existencia indexada fuerte bloquea esa derivación, pero admite tanto monismo indexado como Many-\(R\); la pluralidad efectiva es una cuestión adicional. |
@@ -2472,12 +2472,12 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 19. determinar si la definición de Realidad Total exige un único dominio universal de cuantificación;
 20. explorar si una semántica de existencia indexada \(\operatorname{Real}_i\) o \(\exists_i\) puede formular Many-\(R\) sin reintroducir un metadominio real;
 21. establecer si la pluralidad de totalidades absolutamente incomparables posee contenido ontológico o solo metalingüístico;
-22. analizar si \(H_1\), \(H_2\), \(H_3\) y \(H_4\) pueden ser observacionalmente equivalentes para un observador interno;
+22. analizar si \(W_1\), \(W_2\), \(W_3\), \(W_4\) y \(W_5\) pueden ser observacionalmente equivalentes para un observador interno;
 23. separar formalmente totalidad, generalidad ontológica absoluta y unicidad, y probar bajo qué condiciones exactas \(T(R)\land G\Rightarrow U(R)\);
 24. formalizar la noción de generalidad ontológica absoluta sin reificar \(R\) como conjunto u objeto colector y distinguirla de totalizabilidad ontológica;
 25. comparar el modelo de \(R\) con teorías de dominios indefinidamente extensibles y determinar qué versión de No-\(R\) constituye una alternativa genuina;
 26. analizar el problema de autoaplicación: cómo puede No-\(R\) negar toda totalidad sin presuponer una generalidad semántica u ontológica superior;
-27. formalizar el criterio de colapso de ManyMany-\(R\) en One-\(R\) o metalenguaje;
+27. formalizar el criterio de colapso de ManyMany-\(R\) en Cluster-\(R\), y distinguir cuándo el cluster es una totalidad One-\(R\), un supradominio parcial o solo metalenguaje;
 28. distinguir formalmente indexación débil de existencia indexada fuerte y comprobar si esta última puede formularse sin un metadominio ontológico;
 29. determinar si la antisimetría de inclusión ontológica entre totalidades basta para identidad o solo para equivalencia ontológica;
 30. formalizar el monismo indexado y distinguir unicidad derivada, unicidad fáctica y unicidad epistemicamente certificable;
@@ -2504,7 +2504,7 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - de la clausura emergente de la totalidad se deriva:
   \(R=F(R)\);
 - se demuestra que \(R=F(R)\) no caracteriza de forma única a \(R\), porque un dominio propio relativamente cerrado puede ser también un punto fijo de \(F\);
-- se introduce el **Muro de la singularidad de \(R\)** como límite epistemológico general: un horizonte cerrado puede ser compatible con cuasisingularidad, One-\(R\), Many-\(R\) o No-\(R\), por lo que la clausura observada no determina por sí sola la metaontología última;
+- se introduce el **Muro de la singularidad de \(R\)** como límite epistemológico general: un horizonte cerrado puede ser compatible con cuasisingularidad, One-\(R\), monismo indexado, Many-\(R\) o No-\(R\), por lo que la clausura observada no determina por sí sola la metaontología última;
 - se introduce **Many-\(R\)** como prueba de estrés metaontológica: múltiples dominios inaccesibles no bastan para producir varios \(R\), y el pluralismo ontológico fuerte exigiría totalidades sin supramedio común y posiblemente existencia indexada;
 - se identifica la bifurcación metaontológica fundamental como **Generalidad Ontológica Absoluta vs Existencia Indexada fuerte**;
 - se deriva provisionalmente que \(T(R)\land G\Rightarrow U(R)\), de modo que la unicidad deja de ser una premisa independiente de One-\(R\);
@@ -2518,8 +2518,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se cierra como falsa alternativa la simple «realidad sin último nivel»: una cadena indefinida de medios sigue incluida en \(R\);
 - se formula un **teorema condicional de existencia de \(R\)**: realidad no vacía + generalidad ontológica absoluta + definición de totalidad implican \(R\);
 - se redefine No-\(R\) como la alternativa fuerte que niega la totalizabilidad absoluta de lo real, en vez de confundirla con infinitud o inexhaustibilidad;
-- se establece el mapa metaontológico mínimo One-\(R\) / Many-\(R\) / No-\(R\);
-- se observa que ManyMany-\(R\) no añade un nivel ontológico estable: o colapsa en un \(R\) superior o permanece en el metalenguaje;
+- se establece el mapa metaontológico mínimo No-\(R\) / One-\(R\) por generalidad absoluta / monismo indexado / Many-\(R\), con Cluster-\(R\) como posible colapso relacional de una separación Many-\(R\);
+- se observa que ManyMany-\(R\) no añade un nivel ontológico estable: si introduce una estructura real común colapsa en Cluster-\(R\), que solo será One-\(R\) si además satisface totalidad; en ausencia de estructura real común permanece en el metalenguaje;
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
 - la descomposición constitutiva \(\mathcal D\) se distingue de una falsa inversa general de la emergencia y se introduce la diferencia entre descomponibilidad ontológica y reconstruibilidad epistemológica.
 
