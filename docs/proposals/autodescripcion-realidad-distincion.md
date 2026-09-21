@@ -76,6 +76,52 @@ Designa la totalidad ontológica que incluye, si son reales:
 
 La verdad proposicional sería secundaria respecto de \(R\): una proposición es verdadera en la medida en que representa adecuadamente algún aspecto de la estructura de \(R\).
 
+### [D1a] \(R\) como alcance ontológico exhaustivo, no como megaobjeto
+
+La definición de [D1] no exige que \(R\) sea una entidad adicional situada junto a aquello que contiene.
+
+No se afirma:
+
+$$
+R\in R
+$$
+
+ni que exista un conjunto universal:
+
+$$
+R=\{x\mid \operatorname{Real}(x)\}.
+$$
+
+La lectura mínima es:
+
+$$
+\boxed{
+R:=\operatorname{Scope}(\operatorname{Real})
+}
+$$
+
+cuando existe generalidad ontológica absoluta, entendiendo \(\operatorname{Scope}\) no como operación conjuntista sino como **alcance ontológico exhaustivo**.
+
+Conceptualmente:
+
+$$
+\boxed{
+R=
+\text{la realidad considerada en la totalidad de su alcance ontológico}.
+}
+$$
+
+Por ello, \(R\) no tiene por qué ser:
+
+- una sustancia separada;
+- un objeto colector;
+- una última capa;
+- un último medio parcial;
+- una suma mereológica universal;
+- ni una entidad situada «dentro» de la propia realidad.
+
+Esta distinción será crucial frente a No-\(R\): negar que exista un objeto que contenga todas las cosas no basta para negar que la realidad posea un alcance ontológico exhaustivo.
+
 ### [D2] Actualidad y posibilidad
 
 Se distingue esquemáticamente:
@@ -132,6 +178,46 @@ $$
 $$
 
 Esto no significa que \(R\) sea un recipiente espacial. «Interior» y «exterior» son aquí relaciones ontológicas, no geométricas.
+
+### [I2a] Absorción ontológica e inampliabilidad por realidad
+
+De [D1] y [I1] se sigue una propiedad estructural:
+
+$$
+\boxed{
+\operatorname{Real}(X)
+\Rightarrow
+X\preceq_R R.
+}
+$$
+
+Por tanto, ningún descubrimiento de algo real puede **ampliar al verdadero \(R\)**. Puede ampliar únicamente nuestro candidato o representación de \(R\).
+
+Esquemáticamente, si \(\oplus\) significa aquí «intentar ampliar el alcance ontológico con»:
+
+$$
+\boxed{
+R\oplus X=R
+\qquad
+\forall X\,[\operatorname{Real}(X)]
+}
+$$
+
+como abreviatura conceptual, no como ecuación algebraica formal.
+
+Llamamos provisionalmente a esta propiedad **absorción ontológica de \(R\)**.
+
+Equivalentemente:
+
+$$
+\boxed{
+R\text{ es inampliable mediante realidad.}
+}
+$$
+
+Esto no significa que \(R\) sea estático. Puede contener emergencia, novedad, cambio, ramificación y posibilidades no actualizadas. La inampliabilidad es **externa y ontológica**: nada que sea real puede añadirse desde un exterior absoluto.
+
+Esta propiedad anticipa \(\operatorname{REC}(R)\): cualquier supuesto certificador externo que sea real queda absorbido por el mismo alcance que pretendía certificar desde fuera.
 
 ### [I3] Una simulación no altera qué es \(R\)
 
@@ -2138,27 +2224,47 @@ La infinitud vertical, la inexhaustibilidad estructural o la imposibilidad de co
 
 La generalidad ontológica absoluta \(G\) ya ha sido definida en [D14].
 
-Para esta sección, llamamos **totalizabilidad absoluta** a la posibilidad de que el dominio ontológico relevante admita una totalidad \(R\) que comprenda todo aquello que cuenta como real bajo su semántica de existencia.
+Para esta sección, llamamos **totalizabilidad ontológica** a que el dominio relevante posea un alcance exhaustivo dentro del cual quede comprendido todo aquello que cuenta como real bajo su semántica de existencia.
+
+Esta definición no exige que la totalidad sea un objeto colector.
 
 Debe distinguirse:
 
 $$
-\text{generalidad del cuantificador}
+\text{existencia de realidad}
 $$
 
 de:
 
 $$
-\text{existencia de una totalidad ontológica}.
+\text{totalizabilidad de la realidad}.
 $$
 
-Bajo \(G\), ambas nociones quedan estrechamente relacionadas por [I16]. Bajo existencia indexada fuerte, la totalizabilidad puede darse localmente como:
+La negación trivial:
 
 $$
-T_i(R_i)
+\neg\exists x\,\operatorname{Real}(x)
 $$
 
-sin producir una totalidad global.
+no es el No-\(R\) relevante para esta propuesta.
+
+El rival serio concede:
+
+$$
+\exists x\,\operatorname{Real}(x)
+$$
+
+pero niega:
+
+$$
+\exists R\,T(R)
+$$
+
+y, bajo indexación fuerte, también cualquier totalidad pertinente:
+
+$$
+\forall i\,\neg T_i(R_i).
+$$
 
 ### [I16] Teorema condicional de existencia de \(R\)
 
@@ -2166,96 +2272,299 @@ Sean las siguientes premisas:
 
 1. **realidad no vacía**:
 
-$
+$$
 \exists x\,\operatorname{Real}(x);
-$
+$$
 
-2. **generalidad ontológica absoluta**: «real» puede aplicarse sin restricción a todo aquello que es real;
+2. **generalidad ontológica absoluta**: «real» puede aplicarse sin restricción ontológica a todo aquello que es real;
 
-3. **definición de \(R\)**:
+3. **lectura de \(R\) como alcance exhaustivo**:
 
-$
-R:=\text{la totalidad ontológica de todo lo real}.
-$
+$$
+R:=\operatorname{Scope}(\operatorname{Real}).
+$$
 
 Entonces:
 
-$
+$$
 \boxed{
 \text{realidad no vacía}
 +
-\text{generalidad ontológica absoluta}
+G
++
+\text{totalizabilidad del alcance de Real}
 \Rightarrow
 R
 }
-$
+$$
 
-Este resultado es **condicional y conceptual**, no un teorema matemático independiente de las premisas.
+Este resultado es **condicional y conceptual**, no un teorema matemático independiente de sus premisas.
 
-Su fuerza consiste en que, bajo esas premisas, negar \(R\) no describe una cuarta estructura ontológica: contradice el uso absolutamente general de «lo real» que permitió formular la totalidad.
+Su función es aislar dónde puede resistir No-\(R\): debe atacar la totalizabilidad o la generalidad del alcance, no la finitud, la enumerabilidad o la existencia de un último nivel.
 
-### [I17] Lo que debe negar una posición No-\(R\) fuerte
+### [I17] Eliminación de las versiones débiles de No-\(R\)
 
-Una posición No-\(R\) sofisticada no puede apoyarse simplemente en:
+Las siguientes tesis no implican No-\(R\):
 
-- que no exista un último nivel;
-- que ningún observador pueda enumerar toda la realidad;
-- que no exista un conjunto universal;
-- que \(R\) no sea accesible como objeto empírico.
+#### a) No existe un último nivel
 
-Nada de eso afecta por sí solo a la posibilidad de totalidad.
+$$
+M_0\prec M_1\prec M_2\prec\cdots
+$$
 
-Para sostener No-\(R\), debe negarse que exista una totalidad ontológica en cualquiera de las semánticas admitidas por la teoría.
+puede satisfacerse mientras:
 
-En particular:
+$$
+\forall n\;M_n\preceq_R R.
+$$
 
-- bajo \(G\), debe rechazarse que el dominio absolutamente general pueda totalizarse como \(R\);
-- bajo existencia indexada fuerte, debe rechazarse que los dominios relevantes admitan totalidades \(R_i\) en el sentido requerido por Many-\(R\).
-
-Por tanto, No-\(R\) es más radical que la mera negación de \(G\):
+Por tanto:
 
 $$
 \boxed{
-\text{No-}R
-\Rightarrow
-\text{negación de totalizabilidad ontológica}
+\text{infinita profundidad ontológica}
+\not\Rightarrow
+\text{No-}R.
 }
 $$
 
-mientras que:
+#### b) Nuestro conocimiento siempre puede ampliarse
+
+Que:
 
 $$
+\widehat R_o
+\rightarrow
+\widehat R'_o
+\rightarrow
+\widehat R''_o
+\rightarrow\cdots
+$$
+
+no demuestra que \(R\) carezca de totalidad. Puede expresar únicamente inexhaustibilidad epistemológica.
+
+$$
+\boxed{
+\text{inagotabilidad epistemológica}
+\not\Rightarrow
+\text{no-totalidad ontológica}.
+}
+$$
+
+#### c) No existe un conjunto universal
+
+La inexistencia de:
+
+$$
+\{x\mid\operatorname{Real}(x)\}
+$$
+
+como conjunto no afecta por sí sola a [D1a].
+
+$$
+\boxed{
+\text{no conjunto universal}
+\not\Rightarrow
+\text{No-}R.
+}
+$$
+
+#### d) El todo no constituye una entidad adicional
+
+Incluso si se niega una entidad \(R\) «por encima» de todos sus constituyentes, todavía puede mantenerse \(R\) como alcance ontológico exhaustivo.
+
+Por tanto:
+
+$$
+\boxed{
+\text{no megaobjeto}
+\not\Rightarrow
+\text{No-}R.
+}
+$$
+
+#### e) Siempre descubrimos un supuesto exterior
+
+Por [I2a] y el Muro, descubrir \(X\) fuera de un candidato \(S\) demuestra:
+
+$$
+S\neq R,
+$$
+
+no:
+
+$$
+\neg R.
+$$
+
+El descubrimiento amplía:
+
+$$
+\widehat R_o,
+$$
+
+no el verdadero alcance de \(R\).
+
+### [I17a] Dilema de No-\(R\)
+
+Supóngase que No-\(R\) concede:
+
+$$
+\exists x\,\operatorname{Real}(x).
+$$
+
+Preguntamos entonces si «real» admite un alcance ontológico absolutamente general.
+
+#### Si acepta \(G\)
+
+y acepta además que ese alcance sea totalizable, entonces por [I16]:
+
+$$
+R.
+$$
+
+No-\(R\) falla.
+
+#### Si rechaza \(G\)
+
+todavía puede admitir existencia indexada:
+
+$$
+\operatorname{Real}_i(x).
+$$
+
+Si algún dominio indexado admite:
+
+$$
+T_i(R_i),
+$$
+
+entonces reaparecen Indexed-One-\(R\) o Many-\(R\).
+
+Por tanto, para sostener No-\(R\) dentro del mapa actual debe mantenerse, como mínimo:
+
+$$
+\boxed{
 \neg G
+\land
+\forall i\,\neg T_i(R_i)
+}
 $$
 
-por sí solo todavía puede conducir a existencia indexada y Many-\(R\).
+o una tesis equivalente que bloquee toda totalización global e indexada relevante.
 
-### [O4] El problema de autoaplicación de No-\(R\)
+No-\(R\) deja así de ser una simple arquitectura alternativa de la realidad y pasa a cuestionar la legitimidad misma de un **alcance ontológico exhaustivo**.
 
-Una posición que sostenga:
+### [H7] Forma fuerte superviviente: extensibilidad ontológica indefinida
 
-> «ningún dominio abarca todo lo real»
+Una vía sofisticada para defender No-\(R\) consiste en sostener que «real» es **indefinidamente extensible**: cualquier dominio presentado como exhaustivo puede ser legítimamente ampliado sin que exista una extensión final completada.
 
-debe explicar cómo esa propia afirmación consigue referirse a todos los dominios relevantes sin reintroducir el tipo de generalidad que pretende negar.
+Esquemáticamente:
 
-Esquemáticamente, una formulación como:
+$$
+\forall D\;\exists D'
+\quad
+D\prec D'.
+$$
 
-$
+Una formulación más agresiva sería:
+
+$$
 \forall D\;\exists x\,
-[\operatorname{Real}(x)\land x\not\preceq D]
-$
+[
+\operatorname{Real}(x)
+\land
+x\not\preceq D
+].
+$$
 
-parece requerir un metalenguaje capaz de hablar con mayor generalidad que cada \(D\).
+Pero esta notación debe tomarse con cautela: el cuantificador global puede introducir precisamente la generalidad que la posición pretende negar.
 
-Esto no basta para refutar todas las teorías No-\(R\), porque el rival puede distinguir entre:
+Por eso la extensibilidad indefinida se registra como **hipótesis rival fuerte**, no como caracterización ya demostrada de todo No-\(R\).
 
-- cuantificación ontológica;
+El defensor podría recurrir en su lugar a:
+
 - esquemas abiertos;
-- metalenguaje;
-- contextualismo;
-- extensibilidad indefinida.
+- contextualismo ontológico;
+- cuantificación siempre local;
+- pluralidad no totalizable;
+- u otras semánticas que nieguen una extensión completada de «Real».
 
-Pero obliga a que No-\(R\) especifique cómo evita convertir su negación de la totalidad en una nueva forma de totalidad semántica u ontológica.
+### [O4] Problema de autoaplicación y determinación global
+
+Toda versión fuerte de No-\(R\) debe explicar cómo puede afirmar algo sobre la imposibilidad de totalizar la realidad sin reconstruir el alcance que niega.
+
+Si afirma:
+
+> «ningún dominio abarca todo lo real»,
+
+la expresión «todo lo real» parece poseer ya una generalidad superior a cada dominio.
+
+Si evita esa expresión mediante un esquema metalingüístico, debe explicar qué estatus tiene la verdad del esquema y por qué su iteración no determina, ni siquiera de manera abierta, un alcance ontológico común.
+
+La cuestión puede formularse así:
+
+$$
+\boxed{
+\text{¿No-}R\text{ niega una totalidad-objeto}
+\quad\text{o niega que exista un hecho global determinado acerca de lo real?}
+}
+$$
+
+La primera negación no basta contra [D1a].
+
+La segunda es mucho más radical: implica que la realidad no admite **determinación ontológica global** en el sentido requerido por \(R\).
+
+Por ello, el núcleo superviviente de No-\(R\) parece desplazarse hacia:
+
+$$
+\boxed{
+\text{no-totalizabilidad}
++
+\text{ausencia de alcance ontológico exhaustivo}.
+}
+$$
+
+### [I17b] Relación entre absorción ontológica, REC y el Muro
+
+La estructura de \(R\) produce dos límites complementarios.
+
+Por [I2a]:
+
+$$
+\text{exterior real}
+\Rightarrow
+\text{absorción en }R.
+$$
+
+Por \(\operatorname{REC}(R)\):
+
+$$
+\text{certificador real externo}
+\Rightarrow
+\text{no era externo a }R.
+$$
+
+Por el Muro:
+
+$$
+\text{clausura interna observada}
+\not\Rightarrow
+\text{certificación de que el candidato sea }R.
+$$
+
+Así:
+
+$$
+\boxed{
+\begin{array}{c}
+\text{desde fuera: todo exterior real queda absorbido}\\[2mm]
+\text{desde dentro: la clausura no certifica totalidad}
+\end{array}
+}
+$$
+
+Esto no demuestra por sí solo que No-\(R\) sea incoherente, pero estrecha su espacio conceptual: debe negar que exista el tipo de alcance exhaustivo al que se aplican estas propiedades.
 
 ### [D17] Mapa metaontológico mínimo
 
@@ -2263,11 +2572,11 @@ El mapa se ordena como un árbol de decisiones conceptuales.
 
 Primera pregunta:
 
-$$
+$
 \boxed{
-\text{¿la realidad admite alguna forma de totalidad ontológica?}
+\text{¿la realidad admite un alcance ontológico exhaustivo o alguna forma de totalidad máxima?}
 }
-$$
+$
 
 Si la respuesta es negativa:
 
@@ -2339,9 +2648,9 @@ $$
 
 con múltiples totalidades indexadas absolutamente incomparables.
 
-#### Rama No-(R)
+#### Rama No-\(R\)
 
-No-\(R\) niega que exista una totalidad ontológica en el sentido requerido, ya sea global o indexado.
+No-\(R\) niega que exista un alcance ontológico exhaustivo o una totalidad máxima en el sentido requerido, ya sea global o indexado. Dentro de esta propuesta, sus versiones no triviales deben resistir tanto la lectura de \(R\) como alcance —no megaobjeto— como el problema de autoaplicación.
 
 Así, el mapa queda:
 
@@ -2491,10 +2800,11 @@ La propuesta puede auditarse paso a paso:
 
 | Paso | Estatus | Proposición |
 |---|---|---|
-| 1 | [D] | \(R\) es la totalidad de todo lo real: Verdad Absoluta / supramedio absoluto. |
+| 1 | [D] | \(R\) es la totalidad de todo lo real: Verdad Absoluta / supramedio absoluto, entendida mínimamente como alcance ontológico exhaustivo y no necesariamente como megaobjeto. |
 | 2 | [D] | \(R\) incluye actualidad, posibilidades reales y la estructura que las relaciona. |
 | 3 | [I] | Si \(x\) es real, \(x\preceq_R R\). |
 | 4 | [I] | Ningún supuesto exterior real puede quedar fuera de \(R\). |
+| 4a | [I] | Absorción ontológica: \(R\) es inampliable mediante realidad; todo \(X\) real ya cuenta para su alcance. |
 | 5 | [I] | Tiempos, simulaciones, universos y metaniveles reales son internos a \(R\). |
 | 6 | [A] | Nuestro universo exhibe organización emergente medio \(\rightarrow\) estructura \(\rightarrow\) nuevo medio. |
 | 7 | [H] | Esa recurrencia emergente puede continuar más allá de nuestro universo conocido. |
@@ -2521,7 +2831,9 @@ La propuesta puede auditarse paso a paso:
 | 24b | [I] | Un \(R_j\) absolutamente incomparable con \(R_i\) es causal, epistemológica y exérgicamente irrelevante para entidades de \(R_i\); cualquier relación real entre ambos destruye Many-\(R\) fuerte. |
 | 25 | [I] | Una cadena infinita o sin último medio sigue siendo una configuración interna de \(R\), no una alternativa No-\(R\). |
 | 26 | [I] | Si la realidad es no vacía y admite generalidad ontológica absoluta, \(R\) existe condicionalmente como totalidad de lo real. |
-| 27 | [I/O] | No-\(R\) genuino debe negar la totalizabilidad ontológica; negar solo la generalidad absoluta todavía permite existencia indexada. |
+| 27 | [I/O] | No-\(R\) genuino debe negar el alcance ontológico exhaustivo/totalizabilidad; infinitud, inexhaustibilidad epistemológica, ausencia de último nivel, ausencia de conjunto universal o ausencia de megaobjeto no bastan. |
+| 27a | [I] | Si No-\(R\) rechaza \(G\), todavía debe bloquear toda totalidad indexada \(T_i(R_i)\); de otro modo reaparecen Indexed-One-\(R\) o Many-\(R\). |
+| 27b | [H/O] | La forma fuerte superviviente puede requerir extensibilidad ontológica indefinida, contextualismo u otra semántica sin alcance completado; queda abierta su coherencia frente al problema de autoaplicación. |
 | 28 | [I] | ManyMany-\(R\) es imposible como categoría ontológica estable sui generis: sin estructura real común es metalenguaje; con estructura real común colapsa en Cluster-\(R\). |
 | 29 | [D] | El mapa mínimo queda: totalizabilidad vs No-\(R\); después Generalidad Absoluta vs Existencia Indexada fuerte; bajo indexación, monismo indexado vs Many-\(R\) según exista pluralidad efectiva. |
 | 30 | [A/I] | Bajo antisimetría de inclusión entre totalidades, \(T(R)\land G\Rightarrow U(R)\): la unicidad se deriva de totalidad + generalidad absoluta. |
@@ -2550,6 +2862,7 @@ Esta propuesta no afirma que:
 - Many-\(R\) fuerte sea verdadero;
 - todo Cluster-\(R\) descubierto sea automáticamente la Realidad Total última;
 - No-\(R\) haya sido refutado sin premisas compartidas;
+- toda semántica no totalizable tenga necesariamente la forma simple de una cadena \(D_0\prec D_1\prec\cdots\);
 - el teorema condicional de existencia de \(R\) sea una demostración matemática independiente de la generalidad ontológica absoluta;
 - la posibilidad de Many-\(R\) invalide o rebaje el concepto de \(R\) como totalidad ontológica;
 - la mera inaccesibilidad causal implique múltiples realidades ontológicas absolutas;
@@ -2679,7 +2992,13 @@ sin una condición adicional de totalidad.
 
 El concepto debe utilizarse para representar **colapso de separación absoluta**, no para introducir automáticamente un nuevo absoluto.
 
-### 18.15 El problema de la explicación última
+### 18.15 Alcance ontológico no equivale automáticamente a entidad existente
+
+La reformulación de \(R\) como \(\operatorname{Scope}(\operatorname{Real})\) evita reificarlo como conjunto o megaobjeto, pero abre una cuestión semántico-ontológica propia: ¿cuándo el alcance de un predicado ontológico autoriza hablar de una totalidad real y no solo de una forma de cuantificación?
+
+La propuesta no debe resolver esta cuestión por mera notación. [D1a] bloquea objeciones basadas únicamente en composición o teoría de conjuntos, pero la transición entre **alcance semántico exhaustivo** y **totalidad ontológica** requiere todavía justificación.
+
+### 18.16 El problema de la explicación última
 
 Incluso si \(R\) es cerrado bajo emergencia y no necesita un exterior, sigue abierta:
 
@@ -2729,7 +3048,11 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 34. determinar las condiciones bajo las que un Cluster-\(R\) parcial se convierte en candidato a \(R\) total;
 35. formalizar \(\operatorname{VA}(o)\) como totalidad ontológica máxima concerniente sin convertir la relación «concierne a» en una mera relación causal;
 36. determinar con precisión qué componentes doctrinales permanecen invariantes entre One-\(R\), Indexed-One-\(R\) y Many-\(R\);
-37. analizar No-\(R\) como la única rama del mapa actual que niega directamente la existencia de una totalidad capaz de cumplir la función doctrinal de Verdad Absoluta.
+37. analizar No-\(R\) como la única rama del mapa actual que niega directamente la existencia de una totalidad capaz de cumplir la función doctrinal de Verdad Absoluta;
+38. formalizar \(R\) como alcance ontológico exhaustivo sin convertirlo en conjunto, megaobjeto o mera abreviatura semántica;
+39. formalizar la propiedad de absorción ontológica / inampliabilidad por realidad y su relación exacta con \(\operatorname{REC}(R)\);
+40. investigar si una semántica de realidad indefinidamente extensible puede evitar simultáneamente totalización global, totalización indexada y autoaplicación;
+41. distinguir alcance semántico exhaustivo, plural quantification, composición mereológica y compromiso con una totalidad ontológica real.
 
 ---
 
@@ -2739,9 +3062,10 @@ Esta propuesta **expande** la ontología existente como programa de investigaci�
 
 El cambio conceptual respecto de la versión inicial del documento es sustancial:
 
-- \(R\) se define explícitamente como Verdad Absoluta / Realidad Total / supramedio absoluto;
+- \(R\) se define explícitamente como Verdad Absoluta / Realidad Total / supramedio absoluto y se refina como **alcance ontológico exhaustivo de lo real**, sin exigir que sea un conjunto, megaobjeto o entidad colectora adicional;
 - \(R\) incluye actualidad y posibilidades reales;
 - un exterior real de \(R\) queda excluido por la propia definición de totalidad;
+- se introduce la **absorción ontológica** de \(R\): cualquier \(X\) real ya pertenece a su alcance, por lo que el verdadero \(R\) es inampliable mediante realidad;
 - tiempos, universos, simulaciones y metaniveles se interpretan como estructuras internas si son reales;
 - se admite una cadena potencialmente ilimitada de medios parciales sin identificar ninguno de ellos automáticamente con \(R\);
 - la **emergencia** pasa a ser el candidato principal para la operación estructural buscada y se modela provisionalmente como relación multivaluada, no determinista;
@@ -2765,7 +3089,9 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - se introduce una regla de humildad metaontológica: distinguir lo que la estructura de \(R\) justifica de lo que requeriría una prueba adicional de unicidad absoluta;
 - se cierra como falsa alternativa la simple «realidad sin último nivel»: una cadena indefinida de medios sigue incluida en \(R\);
 - se formula un **teorema condicional de existencia de \(R\)**: realidad no vacía + generalidad ontológica absoluta + definición de totalidad implican \(R\);
-- se redefine No-\(R\) como la alternativa fuerte que niega la totalizabilidad ontológica y, por ello, como la rama que sí desafía directamente la posibilidad de una Verdad Absoluta entendida como totalidad máxima concerniente;
+- se somete No-\(R\) a una reducción crítica: infinitud, falta de último nivel, inexhaustibilidad epistemológica, ausencia de conjunto universal y ausencia de megaobjeto no bastan; el No-\(R\) fuerte debe negar todo alcance ontológico exhaustivo, global e indexado;
+- se identifica la **extensibilidad ontológica indefinida** como una posible forma fuerte superviviente de No-\(R\), manteniéndola como hipótesis rival por el problema de autoaplicación y por alternativas contextualistas o esquemáticas;
+- No-\(R\) queda así como la rama que desafía directamente la posibilidad de una Verdad Absoluta entendida como totalidad máxima concerniente;
 - se establece el mapa metaontológico mínimo No-\(R\) / One-\(R\) por generalidad absoluta / monismo indexado / Many-\(R\), con Cluster-\(R\) como posible colapso relacional de una separación Many-\(R\);
 - se establece que **ManyMany-\(R\) es imposible como categoría ontológica estable sui generis**: sin estructura real común es solo metalenguaje; con estructura real común colapsa en Cluster-\(R\), que solo será One-\(R\) si además satisface totalidad;
 - \(\Delta\) deja de tratarse como fundamento y pasa a ser una propiedad derivada de no equivalencia estructural;
