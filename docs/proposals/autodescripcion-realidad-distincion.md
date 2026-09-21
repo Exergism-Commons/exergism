@@ -18,9 +18,9 @@ $$
 
 y ahora \(F\) recibe un significado concreto:
 
-$
+$$
 F(X):=\text{cierre recursivo de }X\text{ bajo emergencia }\mathcal E
-$
+$$
 
 donde \(\mathcal E\) representa **emergencia**. \(F\) no es una segunda operación ontológica independiente: es la construcción formal que expresa qué resulta al incluir \(X\), lo que puede emerger realmente de \(X\), lo que puede emerger de esas nuevas estructuras y así recursivamente, siempre bajo las restricciones reales de posibilidad del propio dominio.
 
@@ -222,15 +222,15 @@ La notación \(M\xrightarrow{\mathcal E}E\) no debe interpretarse como una funci
 
 De manera más fiel a la propuesta:
 
-$
+$$
 \mathcal E(M)=\{E_i\mid E_i\text{ es una emergencia realmente permitida por }M\}
-$
+$$
 
 o, de forma relacional:
 
-$
+$$
 M\xrightarrow{\mathcal E}E_i
-$
+$$
 
 para cada emergencia accesible bajo las condiciones efectivas del medio.
 
@@ -312,9 +312,9 @@ Aquí aparece el significado concreto de \(F\).
 
 Definimos \(F\) directamente:
 
-$
+$$
 F(X):=\text{cierre recursivo de }X\text{ bajo }\mathcal E
-$
+$$
 
 Esto significa que \(F(X)\) incorpora:
 
@@ -327,15 +327,15 @@ No se introduce un operador ontológico adicional. Las primitivas provisionales 
 
 Formalmente, \(F\) debe satisfacer al menos:
 
-$
+$$
 X\preceq F(X)
-$
+$$
 
 y:
 
-$
+$$
 \mathcal E(F(X))\preceq F(X)
-$
+$$
 
 La primera propiedad expresa **extensividad**: el cierre conserva aquello desde lo que parte. La segunda expresa **clausura emergente**: una vez alcanzado \(F(X)\), nuevas emergencias permitidas por esa estructura no conducen fuera de \(F(X)\).
 
@@ -345,29 +345,29 @@ Si una estructura \(y\) emerge realmente —o constituye una posibilidad real de
 
 Por [I1]:
 
-$
+$$
 \operatorname{Real}(y)\Rightarrow y\preceq_R R
-$
+$$
 
 y por [D2], las posibilidades reales también forman parte de la estructura de \(R\).
 
 Por tanto, aplicar el cierre emergente a \(R\) no añade nada ontológicamente exterior:
 
-$
+$$
 F(R)\preceq_R R
-$
+$$
 
 Pero por extensividad de \(F\):
 
-$
+$$
 R\preceq_R F(R)
-$
+$$
 
 Por ambas relaciones:
 
-$
+$$
 \boxed{R=F(R)}
-$
+$$
 
 Esta igualdad es más fuerte y más precisa que la formulación inicial \(R\cong F(R)\), dado el significado específico que ahora recibe \(F\).
 
@@ -377,15 +377,15 @@ No significa que una operación externa actúe sobre \(R\) en el tiempo. Expresa
 
 Es importante no confundir:
 
-$
+$$
 F(R)=R
-$
+$$
 
 con:
 
-$
+$$
 \mathcal E(R)=R
-$
+$$
 
 La segunda expresión exigiría que una sola aplicación de emergencia produjera toda la realidad. La propuesta no afirma eso. \(F\) representa precisamente la aplicación recursiva y cerrada de la emergencia.
 
@@ -397,17 +397,17 @@ La propuesta introduce una asimetría importante entre ascender por emergencia y
 
 Si:
 
-$
+$$
 M_0\xrightarrow{\mathcal E}M_1\xrightarrow{\mathcal E}M_2
-$
+$$
 
 la dirección ascendente no es, en general, determinista ni exactamente reproducible. Un mismo medio puede admitir varias emergencias posibles, y reproducir una emergencia concreta puede exigir reconstruir condiciones históricas y contextuales que no están determinadas por una descripción gruesa del medio.
 
 Por ello no se asume:
 
-$
+$$
 \mathcal E^{-1}
-$
+$$
 
 como inversa matemática general.
 
@@ -419,39 +419,39 @@ Se propone, en cambio, una hipótesis más fuerte en la dirección descendente:
 
 Se introduce:
 
-$
+$$
 \mathcal D(E)
-$
+$$
 
 donde \(\mathcal D\) representa **descomposición o resolución constitutiva**.
 
 Si:
 
-$
+$$
 M\xrightarrow{\mathcal E}E
-$
+$$
 
 entonces debe existir una descripción constitutiva relevante tal que:
 
-$
+$$
 M\preceq \mathcal D(E)
-$
+$$
 
 sin exigir que \(\mathcal D(E)\) recupere una única historia causal ni un microestado originario exacto.
 
 Dos configuraciones distintas pueden desembocar en una estructura emergente equivalente:
 
-$
+$$
 m_1\xrightarrow{\mathcal E}E
 \qquad
 m_2\xrightarrow{\mathcal E}E
-$
+$$
 
 por lo que:
 
-$
+$$
 \mathcal D\neq\mathcal E^{-1}
-$
+$$
 
 en general.
 
@@ -459,23 +459,23 @@ en general.
 
 Debe distinguirse:
 
-$
+$$
 \boxed{\text{descomponibilidad ontológica}\neq\text{reconstruibilidad epistemológica}}
-$
+$$
 
 Que una emergencia dependa realmente de medios y relaciones constitutivos no implica que una conciencia finita pueda reconstruirlos exhaustivamente a partir del resultado emergente.
 
 La asimetría provisional es, por tanto:
 
-$
+$$
 \text{ascenso:}\quad
 M\xrightarrow[\text{multivaluado/contextual}]{\mathcal E}E
-$
+$$
 
-$
+$$
 \text{descenso:}\quad
 E\xrightarrow[\text{constitutivo}]{\mathcal D}\{M,\text{relaciones, restricciones},\ldots\}
-$
+$$
 
 La dirección descendente identifica aquello de lo que la emergencia depende; no rebobina necesariamente la historia exacta que la produjo.
 
@@ -671,9 +671,9 @@ Se usa en un sentido ontológico local:
 
 Por [I2]:
 
-$
+$$
 \nexists X\,[\operatorname{Real}(X)\land X\not\preceq_R R]
-$
+$$
 
 Todo supuesto exterior real de \(R\) queda, por el hecho de ser real, ontológicamente incluido en \(R\).
 
@@ -685,17 +685,17 @@ Sea \(o\) un observador interno a algún medio.
 
 Definimos provisionalmente:
 
-$
+$$
 \widehat R_o:=\text{máximo horizonte de realidad que }o\text{ puede reconstruir a partir de su acceso}
-$
+$$
 
 No se afirma que exista siempre un máximo matemático bien definido; la notación expresa el horizonte epistemológico efectivo del observador.
 
 Puede ocurrir:
 
-$
+$$
 \widehat R_o\subsetneq R
-$
+$$
 
 sin que \(o\) disponga de evidencia interna capaz de demostrar esa desigualdad.
 
@@ -703,17 +703,17 @@ sin que \(o\) disponga de evidencia interna capaz de demostrar esa desigualdad.
 
 Sea \(S\) un dominio real tal que:
 
-$
+$$
 S\prec_R R.
-$
+$$
 
 Si las interacciones accesibles a observadores internos quedan completamente contenidas en \(S\), este puede comportarse para ellos como una totalidad cerrada.
 
 En el caso límite, \(S\) puede estar **perfectamente sandboxeado** respecto de niveles exteriores: ninguna observación, intervención o señal accesible desde dentro permite detectar que:
 
-$
+$$
 S\subsetneq R.
-$
+$$
 
 Esto puede ocurrir en una simulación perfecta, pero el concepto no depende de que \(S\) sea computacional. Cualquier dominio relativamente cerrado podría desempeñar el mismo papel.
 
@@ -723,73 +723,73 @@ Esta consecuencia es central.
 
 Puede existir un dominio propio \(S\subsetneq R\) que sea cerrado bajo todas las emergencias disponibles dentro de él:
 
-$
+$$
 S=F(S)
-$
+$$
 
 sin que:
 
-$
+$$
 S=R.
-$
+$$
 
 Por tanto:
 
-$
+$$
 \boxed{X=F(X)\not\Rightarrow X=R}
-$
+$$
 
 La ecuación de punto fijo expresa **clausura emergente**, no totalidad ontológica absoluta.
 
 En consecuencia:
 
-$
+$$
 \boxed{R=F(R)}
-$
+$$
 
 sigue siendo una propiedad necesaria de \(R\) bajo esta propuesta, pero no una condición suficiente para reconocerlo de manera única.
 
 Esto corrige una posible lectura excesiva del argumento anterior.
 
-### [D10] Clausura absoluta y clausura relativa
+### [D10] Clausura emergente y totalidad ontológica
 
 Debe distinguirse:
 
-$
+$$
 \operatorname{Closed}_{\mathcal E}(X)
-$
+$$
 
 de:
 
-$
+$$
 \operatorname{Total}(X).
-$
+$$
 
 Un dominio puede ser emergentemente cerrado:
 
-$
+$$
 X=F(X)
-$
+$$
 
 y, sin embargo, estar ontológicamente contenido en una realidad mayor:
 
-$
+$$
 X\subsetneq R.
-$
+$$
 
 Para \(R\), en cambio, la clausura se combina con su definición de totalidad:
 
-$
+$$
 \operatorname{Total}(R)
 \land
 R=F(R).
-$
+$$
 
 La diferencia entre \(R\) y una sandbox perfecta no reside, por tanto, solo en su comportamiento emergente interno, sino en:
 
-$
+$$
 \boxed{\text{totalidad ontológica absoluta frente a clausura relativa}.}
-$
+$$
 
 ### [D11] Cuasisingularidad
 
@@ -797,9 +797,9 @@ Llamamos provisionalmente **cuasisingularidad de \(R\)** a un dominio \(S\subset
 
 Esquemáticamente:
 
-$
+$$
 Q_R(S,o)
-$
+$$
 
 cuando:
 
@@ -812,11 +812,11 @@ cuando:
 
 Si \(\operatorname{Obs}_o(H)\) representa las consecuencias observables de una hipótesis para \(o\), el caso ideal del muro sería:
 
-$
+$$
 \operatorname{Obs}_o(H_{\mathrm{abs}})
 =
 \operatorname{Obs}_o(H_{\mathrm{emb}}).
-$
+$$
 
 En ese caso, \(S\) funciona como una **falsa singularidad** desde el punto de vista del observador, aunque ontológicamente sea solo una cuasisingularidad.
 
@@ -826,23 +826,23 @@ Se denomina provisionalmente **Muro de la singularidad de \(R\)** al límite epi
 
 Su forma mínima es:
 
-$
+$$
 \boxed{
 \text{clausura observable}
 \not\Rightarrow
 \text{totalidad ontológica absoluta}
 }
-$
+$$
 
 o, respecto de un observador:
 
-$
+$$
 \boxed{
 \widehat R_o\text{ parece total}
 \not\Rightarrow
 \widehat R_o=R.
 }
-$
+$$
 
 El muro no afirma que todo observador esté necesariamente encerrado para siempre en una sandbox perfecta. Afirma algo más débil: **la ausencia de un exterior detectable no constituye por sí sola una demostración de que no exista un exterior ontológico al dominio observado**.
 
@@ -850,27 +850,27 @@ El muro no afirma que todo observador esté necesariamente encerrado para siempr
 
 Si un observador toma inicialmente:
 
-$
+$$
 \widehat R_o=S_0
-$
+$$
 
 y después detecta un nivel más amplio:
 
-$
+$$
 S_0\prec_R S_1,
-$
+$$
 
 entonces actualiza su horizonte:
 
-$
+$$
 \widehat R_o:S_0\longrightarrow S_1.
-$
+$$
 
 Puede repetirse:
 
-$
+$$
 S_0\prec_R S_1\prec_R S_2\prec_R\cdots
-$
+$$
 
 sin que \(R\) cambie.
 
@@ -880,15 +880,15 @@ Lo que cambia es la identificación epistemológica de la totalidad.
 
 Un observador dentro de una cuasisingularidad puede definir correctamente:
 
-$
+$$
 R:=\text{la totalidad de todo lo real}
-$
+$$
 
 y equivocarse, sin embargo, al afirmar:
 
-$
+$$
 \widehat R_o=R.
-$
+$$
 
 Por tanto, debe distinguirse:
 
@@ -911,15 +911,15 @@ El Muro proporciona una posible justificación estructural de una tesis ya centr
 
 No solo porque su capacidad cognitiva sea limitada, sino porque puede existir una diferencia irreductible entre:
 
-$
+$$
 R
-$
+$$
 
 y:
 
-$
+$$
 \widehat R_o.
-$
+$$
 
 La trascendencia epistemológica consistiría entonces en atravesar falsas totalidades sucesivas sin confundir ninguna ampliación concreta del horizonte con posesión definitiva de \(R\).
 
@@ -983,9 +983,9 @@ Esta propuesta no afirma que:
 
 Si «emergencia» significa simplemente «todo lo que aparece realmente», entonces:
 
-$
+$$
 R=F(R)
-$
+$$
 
 sería casi tautológico.
 
@@ -1031,11 +1031,11 @@ La indistinguibilidad perfecta entre una sandbox y \(R\) solo se sigue bajo cond
 
 Por ello:
 
-$
+$$
 \text{no detectar exterior}
 \not\Rightarrow
 \text{exterior indetectable en principio}.
-$
+$$
 
 La versión fuerte del Muro requiere demostrar qué clases de observadores y dominios generan indistinguibilidad principial y cuáles solo presentan ignorancia contingente.
 
