@@ -146,19 +146,19 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - Si existe una función de progreso estricta a lo largo de todas las aristas emergentes, el grafo es acíclico y no puede degenerar de ese modo cuando tiene más de un estado.
 ## REC y Muro — asimetría de certificación
 
-- **REC** se aplica propiamente solo a un candidato que ya satisface $\operatorname{OntTotal}_i$: $\operatorname{OntTotal}_i(R_i)\Rightarrow\operatorname{REC}_i(R_i)$. No es una premisa del puente REV-24.
-- Si aparece un certificador real ontológicamente exterior a un candidato $C$, ese hecho descarta $\operatorname{OntTotal}_i(C)$; no certifica que $C$ sea $R_i$.
-- **El Muro** opera sobre horizontes/candidatos: ausencia de extensión accesible de $U_i$ no implica $\operatorname{ExhaustsOntScope}_i(U_i)$, y $\operatorname{SemTotal}_i(S_i)$ no implica $\exists R_i[\operatorname{Presents}_i(S_i,R_i)\land\operatorname{OntTotal}_i(R_i)]$.
+- **REC** se aplica a una realidad genealógica ya establecida: $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$ implica exhaustividad de su scope y, por tanto, $\operatorname{REC}_i(R_i)$. No es una premisa de REV-07 ni de REV-24.
+- Si aparece un certificador real ontológicamente exterior a un candidato $C$, ese hecho descarta que $C$ sea una totalidad genealógica exhaustiva; no certifica que sea $R_i$.
+- **El Muro** opera sobre horizontes/candidatos: ausencia de extensión accesible de $U_i$ no implica exhaustividad ontológica, y $\operatorname{SemTotal}_i(S_i)$ no implica ni $\operatorname{GeneTotal}_i$ ni $\operatorname{Presents}_i(S_i,R_i)$.
 - Una sandbox/cuasisingularidad puede imitar epistemológicamente la ausencia de certificador exterior sin poseer REC en sentido ontológico.
 - La versión universal del Muro —imposibilidad de discriminación metaontológica por cualquier evidencia interna— permanece OPEN bajo REV-15.
 
 ## Targets de existencia y restricción del Muro
 
-- `ExistsRegR := ∃i∃R_i OntTotal_i(R_i)` es el target **local/indexado** de REV-24.
-- `WitnessedRegR` añade un máximo semántico $S_i$ y `Presents_i(S_i,R_i)`.
-- `ExistsAbsR := ∃R_abs AbsTotal(R_abs)` es el target fiel al $R$ original —totalidad de todo lo real—.
-- Se reserva `ExistsR := ExistsAbsR`. Bajo AG, la negación clásica es `NoR_AG := ¬ExistsAbsR`; bajo generality relativism la alternativa se formula como `NoAbsFinality`, no como la misma oración objeto.
-- Por tanto `WitnessedRegR ⇒ ExistsRegR`, pero `ExistsRegR ↛ ExistsAbsR`; REV-26 registra el Globalization Bridge pendiente.
+- `ExistsRegR` exige alguna $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$ y pertenece ontológicamente a REV-07.
+- `WitnessedRegR` añade un máximo semántico $S_i$ y $\operatorname{Presents}_i(S_i,R_i)$; éste es el target de REV-24.
+- $\mathcal R_{ext}:=Scope(Real)$ conserva el mero alcance extensional y **no** se identifica con $R$.
+- `ExistsR := ExistsAbsR` exige $\operatorname{AbsGeneTotal}(\mathcal O_{abs},R_{abs})$: origen común + clausura exhaustiva + scope realization.
+- Por tanto `WitnessedRegR ⇒ ExistsRegR`, pero `ExistsRegR ↛ ExistsR`; REV-26 concentra la Common-Origin Thesis absoluta.
 - K1 no puede justificarse por muestreo interno: el Muro impide convertir observación parcial del régimen en certificación universal.
 - $U_i$ es horizonte físico/empírico y $\operatorname{Rep}_i(U_i)\preceq_i S_i$ es representacional; ausencia de extensión accesible no implica totalidad ontológica.
 - Una ruta alternativa a set-size global de $\mathfrak D_i^{proc}$ puede usar un esqueleto cofinal set-sized; la ruta generalizada puede usar `CSet/TransClSmall`.
@@ -168,7 +168,7 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - Se adopta normativamente $\operatorname{Adm}_i:=\operatorname{StructAdm}_i$: dominio = fragmento semántico positivo, actual y well-formed del régimen, no entidad ontológica adicional.
 - **REV-18 RESOLVED:** incidencia y `EClosed_i` quedan tipados sobre ese contenido semántico.
 - **REV-09 RESOLVED en alcance set-indexed:** uniones de cadenas preservan StructAdm y `EClosed`.
-- **K3_i queda derivada:** la unión de dos dominios del mismo régimen es una cota común admisible; REV-07 queda reducido a la justificación de $\Lambda_*$.
+- **K3_i queda derivada:** la unión de dos dominios del mismo régimen es una cota común admisible; REV-07 queda concentrado en justificar origen/base, generación y clausura. $\Lambda_*$/$\mathcal C_*$ son reconstrucciones candidatas.
 - **REV-20 PARTIAL:** OEA/CUA se derivan; K1 sigue si además vale LSE_i (emergencia localmente set-like).
 ## Reducción final de REV-20
 
@@ -186,15 +186,15 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - PON + REV-25 hace set-sized el poset de fragmentos, por lo que REV-22 queda resuelta condicionalmente en su ruta A una vez justificadas esas premisas.
 - **REV-23 OPEN:** falta justificar PON sin construir smallness por definición.
 - **REV-25 OPEN:** falta justificar la smallness/definibilidad necesaria para formar el universo de hechos actuales.
-- **REV-24 OPEN local:** incluso obteniendo $\operatorname{SemTotal}$, falta justificar `Presents/OntTotal` para llegar a `ExistsRegR`.
-- **REV-26 OPEN global:** incluso cerrando REV-24, falta justificar el paso `ExistsRegR → ExistsAbsR` o adoptar explícitamente una semántica irreduciblemente indexada.
+- **REV-24 OPEN local:** dado un $R_i$ genealógico de REV-07, falta justificar OA/MC/RA para llegar a `WitnessedRegR`; no produce `ExistsRegR`.
+- **REV-26 OPEN global:** falta justificar AG y, sobre todo, CO$_{abs}$: que todo lo real derive de una base ontológica común. APC/scope realization es auxiliar.
 ## Alcance de algunos cierres
 - **REV-01 está RESOLVED solo en alcance formal.** F1/F2-interna/F3 son propiedades de la clausura reflexivo-transitiva de cualquier relación binaria del tipo adecuado; no constituyen por sí mismas contenido emergentista. El contenido específico vive en $\mathcal E_M$ y por eso REV-03 sigue PARTIAL.
 - **REV-04 está RESOLVED solo respecto de su criterio mínimo original:** existe un punto fijo propio explícito. No prueba no-degeneración en sistemas ricos; esa deuda queda separada como REV-21.
 - **DOC-02/DOC-03 tuvieron una regresión por acreción durante esta tanda.** Se corrige extrayendo las antiguas secciones 3.1–3.7 a un documento técnico no normativo y marcando allí el diagnóstico erróneo sobre F2 como SUPERSEDED.
 
 - **REV-05 y REV-06 están RESOLVED únicamente como problemas de presentación y clasificación.** Se corrigió la retórica: los resultados analíticos se etiquetan como analíticos/definicionales y se separan del programa sustantivo. Esto **no constituye avance ontológico** ni responde al hecho de que gran parte de lo actualmente demostrado siga siendo analítico.
-- **REV-15 vuelve a OPEN.** La deuda se restringe al Muro y a la discriminabilidad metaontológica interna. REC queda fuera de esta deuda: una vez supuesto `OntTotal`, la inexistencia de un certificador real ontológicamente exterior es una consecuencia estructural, no una tesis empírica discriminante.
+- **REV-15 vuelve a OPEN.** La deuda se restringe al Muro y a la discriminabilidad metaontológica interna. REC queda fuera: una vez establecida una totalidad genealógica, la inexistencia de un certificador real ontológicamente exterior es una consecuencia estructural.
 
 ## Regla de trazabilidad
 
