@@ -2182,14 +2182,157 @@ Como antecedente metodológico, Lewis usa conexión espaciotemporal para determi
 
 ## 6. Generalidad absoluta, No-$R$ y potencialismo — REV-26
 
-REV-26 es ahora el blocker que separa una totalidad indexada de la Realidad Total original. No se asigna una carga privilegiada a ninguna de las dos posiciones.
+REV-26 es el blocker que separa una totalidad indexada de régimen de la Realidad Total original.
 
-- El **absolutista** debe justificar que puede hablar coherentemente de absolutamente todo.
-- El **restrictionist/expansionist/potentialist** debe justificar su semántica de dominios siempre restringibles o expandibles.
+### 6.1. AG — generalidad absoluta
 
-La propuesta no toma el debate como resuelto.
+Llamamos:
 
-**Estado del debate:** REV-11 permanece RESOLVED como corrección de carga argumentativa; **REV-26 = OPEN** para el Globalization Bridge/target alignment.
+$$
+\mathrm{AG}
+$$
+
+a la condición metalingüística de que el cuantificador usado en:
+
+$$
+\operatorname{Real}(x)
+$$
+
+pueda recorrer **absolutamente todo lo real**, sin una restricción contextual/indexada oculta.
+
+AG no afirma que exista un set o dominio-objeto de todas las cosas. Es una tesis sobre el alcance legítimo de la cuantificación.
+
+### 6.2. APC$_{Real}$ — comprensión plural absoluta relevante
+
+La instancia de comprensión plural necesaria es:
+
+$$
+\mathrm{APC}_{Real}:
+\quad
+(\exists x\,\operatorname{Real}(x))
+\Rightarrow
+\exists rr_{\mathrm{abs}}\;
+\forall x[
+x\prec rr_{\mathrm{abs}}
+\Longleftrightarrow
+\operatorname{Real}(x)
+].
+$$
+
+Esta fórmula no postula un conjunto de todas las cosas: $rr_{\mathrm{abs}}$ es una variable plural. Pero la legitimidad de aplicar comprensión a un dominio absolutamente general sigue siendo una cuestión filosófica real; critical plural logic y las objeciones por extensibilidad indefinida impiden tratarla como gratuita.
+
+### 6.3. Teorema condicional de existencia absoluta
+
+Si la doctrina adopta la semántica plural de alcance ya usada en REV-24d, entonces:
+
+$$
+\boxed{
+\mathrm{AG}
++
+\mathrm{APC}_{Real}
++
+\exists x\,\operatorname{Real}(x)
+\Rightarrow
+\operatorname{ExistsAbsR}.
+}
+$$
+
+**Demostración.** APC$_{Real}$ produce unas cosas $rr_{\mathrm{abs}}$ tales que, para todo $x$, $x$ es una de ellas si y solo si $x$ es real. Bajo la lectura de $R$ como **alcance ontológico** y no como megaobjeto/set, esa pluralidad realiza exactamente el scope de `Real`. Por tanto existe Realidad Total en el sentido plural-scope adoptado. $\square$
+
+Este resultado es deliberadamente austero. No usa:
+
+- emergencia;
+- $F$;
+- Zorn;
+- PON;
+- $S_i$;
+- REV-24;
+- causalidad;
+- ni una hipótesis física sobre nuestro universo.
+
+Por tanto, si el objetivo es **solo la existencia de $R$ como alcance de todo lo real**, la carga decisiva no está en la maquinaria emergentista: está en AG + APC$_{Real}$ + la semántica plural de scope.
+
+### 6.4. Qué no demuestra este teorema
+
+No demuestra que $R$ sea:
+
+- único como objeto —no se ha postulado objeto alguno—;
+- estructuralmente conectado;
+- un régimen de $\operatorname{CoReal}$;
+- emergente o E-closed;
+- cognoscible desde dentro;
+- representable por un único $S_i$;
+- ni que One-$R$ sea la metaontología correcta en el sentido fuerte.
+
+Tampoco demuestra AG o APC$_{Real}$: **condiciona `ExistsAbsR` a ellas**.
+
+### 6.5. Ruta restrictionist/expansionist
+
+El rival fuerte no necesita sostener que «hay un objeto real fuera de $R$». Puede negar que exista una cuantificación/pluralidad absolutamente exhaustiva.
+
+Dos estrategias quedan abiertas:
+
+1. **restricción/contextualismo:** todo uso efectivo de `Real` está indexado a un dominio/contexto $c$;
+2. **expansionismo/extensibilidad indefinida:** para todo dominio legítimo $D_c$ existe una expansión legítima $D_{c'}$ que permite cuantificar sobre más.
+
+En esa semántica, la propia fórmula APC$_{Real}$ puede carecer de una instancia absolutamente general legítima. Entonces no obtenemos:
+
+$$
+\operatorname{ExistsAbsR}.
+$$
+
+Pero de ello tampoco se sigue automáticamente `NoR` como una proposición ordinaria formulada desde un supuesto metalenguaje absolutamente general: el restrictionist debe explicar cómo expresa su propia tesis sin reintroducir la generalidad que niega.
+
+### 6.6. Globalización desde regímenes indexados
+
+Existe una segunda ruta posible, independiente de AG directa. Supóngase que tenemos totalidades de régimen $R_i$. Para obtener $R_{\mathrm{abs}}$ hace falta una estructura real $G$ capaz de abarcar **todos** los índices relevantes sin que quede otro índice real fuera de su alcance.
+
+Esquemáticamente:
+
+$$
+\mathrm{GB}:
+\quad
+\{R_i\}_{i\in I}
+\leadsto
+R_{\mathrm{abs}}.
+$$
+
+Pero GB no puede definirse simplemente como «hay un scope que contiene todos los $R_i$», porque eso presupone la conclusión. Debe venir de una semántica global legítima o de una estructura ontológica común independientemente justificada.
+
+Si cada supuesto conjunto de índices admite siempre un índice adicional no cubierto, obtenemos una versión metaontológica del expansionismo y GB falla.
+
+### 6.7. Estado de REV-26
+
+- **REV-26a / AG:** OPEN.
+- **REV-26b / APC$_{Real}$:** OPEN.
+- **REV-26c / GB:** OPEN como ruta alternativa desde `ExistsRegR`.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{ExistsRegR}
+\not\Rightarrow
+\operatorname{ExistsAbsR}
+}
+$$
+
+pero también:
+
+$$
+\boxed{
+\mathrm{AG}
++
+\mathrm{APC}_{Real}
++
+\operatorname{NonEmptyReality}
+\Rightarrow
+\operatorname{ExistsAbsR}.
+}
+$$
+
+**Estado del debate:** REV-11 permanece RESOLVED como corrección de carga argumentativa; REV-26 concentra ahora el problema de existencia del $R$ doctrinal original.
+
 
 ## 7. One-$R$, Many-$R$ y niveles de exhaustividad
 
