@@ -4636,27 +4636,49 @@ para el puente entre ambos.
 
 #### 8.1. REV-24a — Ontological Anchoring (OA)
 
-Sea $\operatorname{Den}_i(a,x)$ la relación por la que un token semántico $a$ denota/realiza contenido ontológico $x$. El requisito mínimo de anclaje es:
+OA se formula sobre la misma relación ontológica independiente que MC:
 
 $$
-\mathrm{OA}_i(S)
+\mathrm{OA}_i(S;q)
 :=
 \forall a\in T_S\;
 \exists x\,
 [
 \operatorname{Actual}(x)
 \land
-\operatorname{Reg}_i(x)
+\operatorname{CoReal}(x,q)
 \land
 \operatorname{Den}_i(a,x)
 ].
 $$
 
-Para hechos $\varphi\in\Phi_S$ se exige correspondientemente que sus relata denoten contenido actual y que la relación afirmada tenga un correlato ontológico actual. OA impide que una estructura formal sin anclaje cuente como evidencia ontológica.
+Para el carrier directo $T_i=[q]_{\sim}$ y la denotación canónica:
 
-OA **no** implica completitud: puede haber miembros del régimen que $S$ no represente.
+$$
+\mathrm{CD}_i:
+\quad
+x\in T_i
+\Rightarrow
+\operatorname{Den}_i(x,x).
+$$
 
-Para $S_i^*$, el anclaje de **tokens** está parcialmente descargado por construcción: $T_i=[q]_{\sim}$ se forma con tokens actuales y $\bowtie$ se define usando instancias actuales de enlaces declarados ontológicos. Esto sigue siendo condicional a la corrección filosófica de REV-07. El anclaje de **hechos** no queda resuelto por esa observación y depende de la interpretación de $\operatorname{Actual}_i$, REV-25 y RA.
+Entonces:
+
+$$
+\boxed{
+\mathrm{RS}_{\Lambda}
++
+\mathrm{CD}_i
+\Rightarrow
+\mathrm{OA}_i(S_i^*;q).
+}
+$$
+
+**Demostración.** Sea $a\in T_i=[q]_{\sim}$. Por RS, $\operatorname{CoReal}(a,q)$. Como $a$ es un token actual del carrier, CD da $\operatorname{Den}_i(a,a)$. Tomando $x=a$ se obtiene OA. $\square$
+
+Así RS controla **sobreinclusión** y OA del carrier; RC controla **subinclusión** y MC. Bajo RS + RC + CD, el carrier de $S_i^*$ coincide extensionalmente, vía denotación canónica, con la co-realidad relativa a $q$.
+
+El anclaje/fidelidad de hechos $\Phi_i^{\mathrm{all}}$ sigue abierto y pertenece a RA/REV-25.
 
 #### 8.2. REV-24b — Membership Completeness (MC)
 
