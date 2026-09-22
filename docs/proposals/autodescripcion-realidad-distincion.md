@@ -97,12 +97,10 @@ Esto **todavía no demuestra una metafísica emergentista de $R$** porque falta 
 Los bloqueadores activos relevantes pasan a ser:
 
 - **REV-18:** puente entre eventos/configuraciones actualizadas y dominios ontológicos cerrados;
-- **REV-19:** tipado procesual y relación entre proceso y sección sincrónica;
 - **REV-07:** identidad independiente de cada régimen $i$ y justificación de $K3_i$;
 - **REV-09:** admisibilidad ontológica de las cotas de cadenas;
 - **REV-20:** cofinalidad $K1_i$;
 - **REV-15:** consecuencias metaontológicas discriminantes;
-- **REV-21:** poder discriminante de $F_i$ en grafos ricos de emergencia.
 
 ## 3.1. Resumen formal vigente
 
@@ -115,10 +113,11 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-03 | PARTIAL | Existe una definición de emergencia event-local, independiente de $R$, basada en macro-invariancia, testigo organizacional y capacidad dinámica habilitada. Sigue pendiente validar su alcance doctrinal en casos ricos. |
 | REV-04 | RESOLVED mínimo | El toy de cuatro componentes produce un punto fijo propio explícito de $F_M$. Esto demuestra que el operador no es necesariamente «la unión de todo», pero no caracteriza todavía sistemas ricos. |
 | REV-18 | PARTIAL | Existe un puente mínimo por incidencia de estados/eventos en dominios y un predicado $\operatorname{EClosed}$. Falta justificar ontológicamente esa incidencia. |
-| REV-19 | PARTIAL | La ruta emergentista se tipa provisionalmente sobre dominios procesuales, no snapshots sincrónicos. $T_{\mathrm{proc}}$ y $T_{\mathrm{syn}}$ quedan separados. |
+| REV-19 | RESOLVED tipado | El objeto primario queda fijado como fragmento procesual semántico $X=(T_X,\Phi_X)$; $\preceq_i^{\mathrm{proc}}$ es inclusión de contenido positivo actual. Admisibilidad ontológica se separa como $\operatorname{Adm}_i$ y queda en REV-18/20/09/07. |
 | REV-20 | OPEN | La cofinalidad K1 de dominios E-closed no está demostrada ontológicamente. |
 | REV-09 | PARTIAL | `EClosed` se preserva formalmente bajo uniones de cadenas procesuales compatibles; falta demostrar que la cota formal sea ontológicamente admisible. |
 | REV-10 | RESOLVED vigente | La ruta actual ya no usa la inferencia oculta de StageFactorization/presentabilidad criticada en H8. |
+| REV-21 | RESOLVED formal | Los puntos fijos de $F_i$ son exactamente los subconjuntos forward-closed del grafo emergente; la degeneración al único punto fijo no vacío $\Sigma_i$ ocurre exactamente cuando el grafo es fuertemente conexo. |
 
 ### Corrección histórica importante sobre F2
 
@@ -162,10 +161,9 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 El cuello de botella ya no está en F1–F3 ni en resolver One-R. Está en conectar el formalismo local con la ontología **de cada régimen $i$** sin introducir su unidad o exhaustividad en las premisas:
 
 1. **REV-18:** interpretar ontológicamente incidencia y `EClosed_i`;
-2. **REV-19:** fijar rigurosamente el tipo y orden de los dominios procesuales de $i$;
-3. **REV-20:** demostrar cofinalidad $K1_i$ sin presuponer ya $R_i$;
-4. **REV-09:** justificar la admisibilidad ontológica de cotas de cadenas dentro de $i$;
-5. **REV-07:** justificar la identidad de $i$ y $K3_i$ sin definir el régimen como «lo amalgamable».
+2. **REV-20:** demostrar cofinalidad $K1_i$ sin presuponer ya $R_i$;
+3. **REV-09:** justificar la admisibilidad ontológica de cotas de cadenas dentro de $i$;
+4. **REV-07:** justificar $\Lambda_*$, EEA/OAM y por tanto $K3_i$ sin circularidad.
 
 ---
 
@@ -1004,6 +1002,11 @@ $$
 
 quedan abiertas junto con la cuestión One-$R$/Many-$R$.
 
+
+**Concesión doctrinal explícita.** Esta retirada es sustantiva, no terminológica. La arquitectura formal vigente ya no contiene una inferencia desde emergencia/clausura local hacia una única realidad total ni hacia una «Verdad Absoluta». La pieza histórica que pretendía conectar el formalismo con esa doctrina —$\operatorname{VA}(o)=R_i$— ha sido eliminada porque no estaba justificada.
+
+En consecuencia, el programa actual demuestra o intenta demostrar propiedades **internas a cada régimen $i$**. Recuperar una tesis sobre $R_{\mathrm{abs}}$ o $\operatorname{Truth}_{\mathrm{abs}}$ exigiría un argumento metaontológico nuevo e independiente.
+
 ### 7.4. Consecuencia para los antiguos índices
 
 Los $i$ del teorema ya no se definen como «subconjuntos dirigidos maximales» para fabricar K3. Deben corresponder a regímenes cuya identidad ontológica tenga un criterio independiente.
@@ -1041,7 +1044,52 @@ La compacidad lógica y la maquinaria categórica pueden seguir siendo herramien
 
 ## 9. Proceso, branching, fractalidad y novedad modal
 
-El **proceso** ya no está diferido: REV-19 establece provisionalmente que la ruta emergentista opera sobre dominios procesuales de cada régimen $i$, porque la emergencia event-local es diacrónica.
+REV-19 queda **RESOLVED en tipado y orden**.
+
+El objeto primario del teorema emergentista es un fragmento procesual semántico:
+
+$$
+X=(T_X,\Phi_X),
+$$
+
+donde $T_X$ contiene tokens ontológicos actuales y $\Phi_X$ hechos relacionales actuales.
+
+El orden procesual es:
+
+$$
+\boxed{
+X\preceq_i^{\mathrm{proc}}Y
+\iff
+T_X\subseteq T_Y
+\land
+\Phi_X\subseteq\Phi_Y.
+}
+$$
+
+Es inclusión de **contenido positivo actual**. Una extensión puede añadir nuevos hechos o capacidades; no es la extensión conductualmente conservativa de REV-02.
+
+La cuestión de si un fragmento es ontológicamente admisible se separa mediante:
+
+$$
+\operatorname{Adm}_i(X),
+$$
+
+y:
+
+$$
+\mathfrak D_i^{\mathrm{proc}}
+=
+\{X\mid X\text{ es well-formed y }\operatorname{Adm}_i(X)\}.
+$$
+
+Esto localiza las deudas restantes:
+
+- REV-18: semántica ontológica de actualidad/incidencia/admisibilidad;
+- REV-20: existencia de extensiones admisibles E-closed;
+- REV-09: admisibilidad de uniones/límites de cadenas;
+- REV-07: EEA/OAM como propiedades locales de preservación de admisibilidad.
+
+Una sección sincrónica $\operatorname{Slice}_t(X)$, si alguna vez se necesita, será una operación derivada dependiente de una teoría temporal adicional. No es premisa del teorema procesual.
 
 Siguen fuera del núcleo demostrado:
 
@@ -1057,8 +1105,6 @@ Dos límites permanecen firmes:
 2. branching/no linealidad no implica fractalidad.
 
 «Fractal» no participa en ninguna inferencia vigente.
-
-**Estado:** proceso = PARTIAL bajo REV-19; extensiones restantes = DEFERRED.
 
 
 ## 10. REC, Muro y función regulativa
