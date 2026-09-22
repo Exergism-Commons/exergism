@@ -3416,7 +3416,13 @@ $$
 +
 \mathrm{OTB}_i
 \Rightarrow
-\operatorname{OntTotal}_i(S_i)
+\exists R_i[
+\operatorname{Presents}_i(S_i,R_i)
+\land
+\operatorname{OntTotal}_i(R_i)
+]
+\Rightarrow
+\operatorname{WitnessedR}
 \Rightarrow
 \operatorname{ExistsR}.
 $$
