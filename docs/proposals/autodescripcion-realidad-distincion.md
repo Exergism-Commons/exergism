@@ -1306,6 +1306,26 @@ $$
 
 Para reutilizar el teorema semántico directo se exige además que la clausura sea estable bajo los eventos procesuales que generan `EClosed`. Con CSet, `SigSmall`, `ActualSep` y esa estabilidad, la construcción de $S_i^*$ puede repetirse sobre $T_i^{\mathcal C}$.
 
+Formalmente, definiendo $S_i^{\mathcal C}$ sobre $T_i^{\mathcal C}$ y restringiendo los fragmentos admisibles al carrier de esa clausura:
+
+$$
+\boxed{
+\mathrm{CSet}
++
+\mathrm{CProcStable}
++
+\mathrm{SigSmall}_i
++
+\mathrm{ActualSep}_i
++
+\operatorname{StructAdm}
+\Rightarrow
+\operatorname{SemTotal}_{i,\mathcal C}(S_i^{\mathcal C}).
+}
+$$
+
+La demostración es la misma construcción directa: todos los fragmentos relativos a la clausura se incluyen en $S_i^{\mathcal C}$ y `CProcStable` proporciona `EClosed`. CS/CC no hacen trabajo en la maximalidad semántica; hacen el trabajo ontológico de justificar que la clausura elegida coincide con el régimen pretendido.
+
 Así, un contraejemplo a FID no implica:
 
 $$
