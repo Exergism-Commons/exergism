@@ -5123,6 +5123,103 @@ No se presupone que tal $\kappa$ exista. Si la clausura requiere recorrido prope
 
 Esta formulación muestra exactamente qué perderíamos al abandonar FID: no la posibilidad de construir $S_i$, sino la prueba sencilla de smallness mediante niveles finitos $n<\omega$.
 
+##### Teorema directo parametrizado por clausura de régimen
+
+Sea un seed actual $q$ y sea:
+
+$$
+T_i^{\mathcal C}:=\mathcal C_*(\{q\}).
+$$
+
+Definimos la familia semántica relativa a esa clausura:
+
+$$
+\mathfrak D_{i,\mathcal C}^{\mathrm{proc}}
+:=
+\{
+X=(T_X,\Phi_X)
+\mid
+\operatorname{StructAdm}(X)
+\land
+T_X\subseteq T_i^{\mathcal C}
+\land
+\Phi_X\subseteq\operatorname{Atoms}_{\mathcal L_i}(T_i^{\mathcal C})
+\}.
+$$
+
+Bajo `CSet` y $\mathrm{SigSmall}_i$, el conjunto de átomos candidatos sobre $T_i^{\mathcal C}$ es set-sized. Bajo $\mathrm{ActualSep}_i$ definimos:
+
+$$
+\Phi_i^{\mathrm{all},\mathcal C}
+:=
+\{
+\varphi\in\operatorname{Atoms}_{\mathcal L_i}(T_i^{\mathcal C})
+\mid
+\operatorname{Actual}_i(\varphi)
+\}.
+$$
+
+y:
+
+$$
+S_i^{\mathcal C}
+:=
+(T_i^{\mathcal C},\Phi_i^{\mathrm{all},\mathcal C}).
+$$
+
+Para todo:
+
+$$
+X\in\mathfrak D_{i,\mathcal C}^{\mathrm{proc}},
+$$
+
+se tiene por construcción:
+
+$$
+X\preceq_i S_i^{\mathcal C}.
+$$
+
+Si además `CProcStable` garantiza que todo evento emergente actual cuyo source cae en $T_i^{\mathcal C}$ mantiene dentro de la clausura los tokens/eventos/targets requeridos, entonces:
+
+$$
+\operatorname{EClosed}_i(S_i^{\mathcal C}).
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\mathrm{CSet}
++
+\mathrm{CProcStable}
++
+\mathrm{SigSmall}_i
++
+\mathrm{ActualSep}_i
++
+\operatorname{StructAdm}
+\Rightarrow
+\operatorname{SemTotal}_{i,\mathcal C}(S_i^{\mathcal C}).
+}
+$$
+
+Este teorema es exactamente tan semántico como la ruta finita. `CS/CC` no son necesarios para demostrar la maximalidad formal, sino para justificar que la clausura parametrizante corresponde al régimen ontológico pretendido.
+
+La ruta original se obtiene escogiendo:
+
+$$
+\mathcal C_*(\{q\})=[q]_{\sim},
+$$
+
+con PON como prueba de `CSet` y con la estabilidad procesual derivada de que source/event/target están unidos por enlaces de $\Lambda_*$.
+
+Esto separa definitivamente dos problemas:
+
+1. **semantic construction:** basta una clausura de régimen set-sized y process-stable;
+2. **ontological adequacy:** CS/CC o, en la ruta finita, RS/RC.
+
+En consecuencia, PON permanece como blocker de la instanciación finita vigente, no como condición necesaria de cualquier ruta a $\operatorname{SemTotal}$.
+
 ##### FID no es generación local finita
 
 FID restringe la **longitud del camino de integración**, no el número de relata de cada relación. Si una relación global actual $g$ tiene set-many relata y la ontología admite su instancia como token relacional, puede mediar una conexión finita por incidencia.
