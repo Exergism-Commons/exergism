@@ -846,35 +846,32 @@ El potencialismo ordinario de «siempre hay una extensión más» no basta para 
 
 PSB es independiente de REV-22: resuelve la smallness **local del cierre de cada dominio**, mientras REV-22 pregunta por la smallness/aplicabilidad global de Zorn sobre la colección de dominios.
 
-## 4. Núcleo matemático — ruta directa a Exists-$R$ y ruta Zorn
+## 4. Núcleo formal vigente
 
-### 4.0. Teorema directo de exhaustividad semántica de régimen
+Esta sección contiene solo los **enunciados normativos** necesarios para auditar la propuesta. Las demostraciones completas, contraejemplos, rutas alternativas y stress tests viven en [derivaciones técnicas](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md).
 
-La ruta directa al máximo semántico ya no necesita Zorn.
+La separación es deliberada: el documento normativo no debe volver a crecer por acreción técnica.
 
-Definimos el vecindario ontológico inmediato:
+### 4.1. Ruta A — exhaustividad semántica sobre régimen finitamente conectado
 
-$$
-N(q):=\{r\mid q\bowtie r\}.
-$$
-
-y:
+Para un token actual $q$, la ruta finita usa:
 
 $$
-\mathrm{PON}:\quad \forall q,\;N(q)\text{ es set-sized}.
+T_i:=[q]_{\sim},
 $$
 
-Como $q\sim r$ significa que existe un camino **finito** de $\bowtie$ entre ambos, PON implica que:
+donde $\sim$ es la clausura por caminos finitos de la relación ontológica candidata $\bowtie$.
+
+La hipótesis local de smallness es:
 
 $$
-T_i:=[q]_{\sim}
+\mathrm{PON}:\quad
+\forall q,\;
+N(q)=\{r\mid q\bowtie r\}
+\text{ es set-sized}.
 $$
 
-es set-sized, construyendo los niveles finitos de vecindad y tomando su unión sobre $\omega$.
-
-La elección de clausura por caminos finitos hace trabajo ontológico real: el teorema totaliza exactamente el componente finitamente conectado. REV-07 permanece abierto respecto de por qué esa es la noción correcta de co-régimen y qué ocurre ante dependencias esencialmente transfinitarias.
-
-Definimos además:
+Con:
 
 $$
 \mathrm{SigSmall}_i:
@@ -882,479 +879,55 @@ $$
 \mathcal L_i\text{ es set-sized}
 \land
 \forall\sigma\in\mathcal L_i,\;
-\operatorname{ar}(\sigma)\text{ es set-sized}.
+\operatorname{ar}(\sigma)\text{ es set-sized},
 $$
 
-La aridad finita es un caso suficiente de $\mathrm{SigSmall}_i$, pero no es matemáticamente necesaria. Bajo $\mathrm{SigSmall}_i$, la colección de todos los átomos posibles sobre el set $T_i$ es un conjunto.
-
-Para aplicar Separation a «actualmente verdadero» exigimos además $\mathrm{ActualSep}_i$: el predicado de actualidad relevante debe estar disponible en la metateoría como condición definible sobre ese conjunto de átomos. Entonces:
+y $\mathrm{ActualSep}_i$, definimos:
 
 $$
 \Phi_i^{\mathrm{all}}
 =
-\{\varphi\in\operatorname{Atoms}_{\mathcal L_i}(T_i)
-\mid \operatorname{Actual}_i(\varphi)\}
+\{
+\varphi\in
+\operatorname{Atoms}_{\mathcal L_i}(T_i)
+\mid
+\operatorname{Actual}_i(\varphi)
+\},
 $$
 
-es un conjunto.
-
-Definimos:
-
 $$
-\boxed{S_i^*:=(T_i,\Phi_i^{\mathrm{all}}).}
+S_i^*:=(T_i,\Phi_i^{\mathrm{all}}).
 $$
 
-Por StructAdm, $S_i^*$ es un dominio admisible. Para cualquier $X=(T_X,\Phi_X)\in\mathfrak D_i^{\mathrm{proc}}$ se tiene $T_X\subseteq T_i$ y $\Phi_X\subseteq\Phi_i^{\mathrm{all}}$. Por tanto:
-
-$$
-\forall X\in\mathfrak D_i^{\mathrm{proc}},
-\quad X\preceq_i S_i^*.
-$$
-
-Además, si un evento emergente actual tiene source en $T_i$, sus relaciones source/event/target son enlaces procesuales actuales; evento y target pertenecen a la misma clase $[q]_{\sim}$ y sus hechos están en $\Phi_i^{\mathrm{all}}$. Luego:
-
-$$
-\operatorname{EClosed}_i(S_i^*).
-$$
-
-Así:
+El resultado matemático vigente es:
 
 $$
 \boxed{
 \mathrm{PON}
-+\mathrm{SigSmall}_i
-+\mathrm{ActualSep}_i
-+\operatorname{StructAdm}
++
+\mathrm{SigSmall}_i
++
+\mathrm{ActualSep}_i
++
+\operatorname{StructAdm}_i
 \Rightarrow
 \operatorname{SemTotal}_i(S_i^*).
 }
 $$
 
-Este es el resultado matemático directo. No contiene todavía ninguna inferencia a un objeto de tipo ontológico.
+Esto demuestra **exhaustividad semántica local al régimen candidato**. No demuestra $\operatorname{ExistsRegR}$ ni $\operatorname{ExistsAbsR}$.
 
-### REV-24 — descomposición del puente semántica → ontología
+PON pertenece solo a esta instanciación finita. No es una condición doctrinal general de existencia.
 
-El puente no se expresa ya como $\operatorname{OntTotal}_i(S_i^*)$, porque $S_i^*$ es semántico y $R_i$ es ontológico. El objetivo de REV-24 es establecer, sin circularidad:
+### 4.2. Ruta B — clausura integrativa generalizada pre-ontológica
 
-$$
-\boxed{
-\operatorname{SemTotal}_i(S_i)
-+
-\mathrm{OA}_i(S_i;q)
-+
-\mathrm{MC}_i(S_i;q)
-+
-\mathrm{RA}_i(S_i)
-+
-\mathrm{SR}_i(q)
-\Rightarrow
-\exists R_i
-[
-\operatorname{Presents}_i(S_i,R_i)
-\land
-\operatorname{OntTotal}_i(R_i)
-].
-}
-$$
-
-Esta caja es un **esquema objetivo, no un teorema ya demostrado**. Abreviamos por $\mathrm{OTB}_i$ una justificación suficiente de ese esquema. REV-24a/b/c controlan adecuación de la presentación; REV-24d controla la existencia del objeto de tipo alcance.
-
-#### REV-24a — OA: anclaje ontológico
-
-Como disciplina de tipos:
-
-$$
-\mathrm{CRType}:
-\quad
-\operatorname{CoReal}(x,q)
-\Rightarrow
-\operatorname{Actual}(x)
-\land
-\operatorname{Actual}(q).
-$$
-
-CRType no define la co-realidad; solo establece que sus relata son actuales.
-
-Para mantener la misma base ontológica independiente que usa MC, OA se formula también respecto de un token semilla actual $q$ y $\operatorname{CoReal}$:
-
-$$
-\mathrm{OA}_i(S;q):
-\quad
-\forall a\in T_S\;
-\exists x\,
-[
-\operatorname{Actual}(x)
-\land
-\operatorname{CoReal}(x,q)
-\land
-\operatorname{Den}_i(a,x)
-].
-$$
-
-OA expresa **soundness del carrier**: ningún elemento semántico de $S$ debe denotar contenido ajeno al alcance ontológico cuya presentación se pretende.
-
-Para el candidato directo:
-
-$$
-T_i=[q]_{\sim}
-$$
-
-y se dispone de la denotación canónica:
-
-$$
-\mathrm{CD}_i:
-\quad
-x\in T_i
-\Rightarrow
-\operatorname{Den}_i(x,x).
-$$
-
-Por tanto:
-
-$$
-\boxed{
-\mathrm{RS}_{\Lambda}
-+
-\mathrm{CD}_i
-\Rightarrow
-\mathrm{OA}_i(S_i^*;q).
-}
-$$
-
-En efecto, si $a\in T_i=[q]_{\sim}$, RS proporciona $\operatorname{CoReal}(a,q)$; CRType proporciona $\operatorname{Actual}(a)$ y CD proporciona $\operatorname{Den}_i(a,a)$.
-
-Esta derivación descarga condicionalmente el anclaje de **tokens**. El anclaje y fidelidad de los hechos $\Phi_i^{\mathrm{all}}$ no quedan resueltos por ello y permanecen en REV-24c/REV-25.
-
-#### REV-24b — MC: completitud de pertenencia
-
-Para evitar una variable intermedia de pertenencia no justificada, MC se formula directamente respecto de la relación ontológica objetivo $\operatorname{CoReal}$ y de un token semilla actual $q$:
-
-$$
-\mathrm{MC}_i(S;q):
-\quad
-\forall x,
-[
-\operatorname{Actual}(x)
-\land
-\operatorname{CoReal}(x,q)
-\Rightarrow
-\exists a\in T_S\;\operatorname{Den}_i(a,x)
-].
-$$
-
-$\operatorname{CoReal}(x,q)$ significa que $x$ y $q$ co-pertenecen al mismo régimen ontológico en el sentido que la doctrina pretende capturar. Debe recibir contenido independientemente de $S_i$, $R_i$, K3 y de la propia conectividad $[q]_{\sim}$.
-
-Si posteriormente resulta útil escribir una extensión del régimen relativa a $q$, puede introducirse solo como abreviatura derivada:
-
-$$
-\operatorname{Reg}^{\mathrm{ont}}_q(x)
-:\Longleftrightarrow
-\operatorname{Actual}(x)
-\land
-\operatorname{CoReal}(x,q),
-$$
-
-sin añadir contenido nuevo.
-
-##### Soundness y completeness de $\Lambda_*$
-
-El criterio formal candidato generado por $\Lambda_*$ es:
-
-$$
-\operatorname{Reg}^{\Lambda}(x;q)
-:\Longleftrightarrow
-x\in[q]_{\sim}.
-$$
-
-Se distinguen dos obligaciones:
-
-$$
-\mathrm{RS}_{\Lambda}:
-\quad
-\operatorname{Reg}^{\Lambda}(x;q)
-\Rightarrow
-\operatorname{CoReal}(x,q),
-$$
-
-**soundness de régimen**: la clausura de $\Lambda_*$ no incorpora tokens que no co-pertenecen realmente;
-
-y:
-
-$$
-\mathrm{RC}_{\Lambda}:
-\quad
-\operatorname{CoReal}(x,q)
-\Rightarrow
-\operatorname{Reg}^{\Lambda}(x;q),
-$$
-
-**completeness de régimen**: ningún modo ontológicamente genuino de co-pertenencia queda fuera de la clausura finita.
-
-Estas direcciones hacen trabajos distintos. Para la construcción directa:
-
-$$
-T_i=[q]_{\sim}.
-$$
-
-Además, el carrier usa los propios tokens actuales como elementos semánticos; por tanto dispone de la denotación canónica:
-
-$$
-\mathrm{CD}_i:
-\quad
-x\in T_i
-\Rightarrow
-\operatorname{Den}_i(x,x).
-$$
-
-Entonces $\mathrm{RC}_{\Lambda}$, sin necesitar $\mathrm{RS}_{\Lambda}$, basta para la cobertura:
-
-$$
-\boxed{
-\mathrm{RC}_{\Lambda}
-+
-\mathrm{CD}_i
-\Rightarrow
-\mathrm{MC}_i(S_i^*;q).
-}
-$$
-
-En efecto, si $\operatorname{CoReal}(x,q)$, RC da $x\in[q]_{\sim}=T_i$ y CD proporciona un representante $a=x$ con $\operatorname{Den}_i(a,x)$.
-
-$\mathrm{RS}_{\Lambda}$ cumple la obligación complementaria: evita que el carrier contenga tokens ajenos al alcance ontológico pretendido. Así, bajo RS + RC:
-
-$$
-\operatorname{CoReal}(x,q)
-\Longleftrightarrow
-x\in[q]_{\sim},
-$$
-
-pero solo RC interviene en la demostración de MC.
-
-Los seis criterios actuales de §5 están orientados principalmente a $\mathrm{RS}_{\Lambda}$. El verdadero cuello de botella de completitud es $\mathrm{RC}_{\Lambda}$.
-
-La pregunta queda reducida a:
-
-> ¿existe algún modo actual de co-pertenencia ontológica que no pueda descomponerse en una cadena finita de relaciones integradoras token-specific pertenecientes a $\Lambda_*$?
-
-Dependencias de límite, integración esencialmente global, relaciones infinitarias no reducibles a incidencias locales o una ontología holista fuerte son contraejemplos candidatos. Si alguno funciona, $\mathrm{RC}_{\Lambda}$ falla y la construcción actual totaliza solo un subalcance.
-
-Si una relación infinitaria de aridad set-sized puede representarse mediante un **token de relación actual** enlazado por incidencias a sus relata, cada relatum queda a distancia finita del token relacional y no se requiere por ello una clausura transfinita. Una aridad o vecindad proper-class vuelve a chocar con REV-23.
-
-Esta reducción **no cierra REV-24b**. Si $\operatorname{CoReal}$ no puede caracterizarse independientemente de $\Lambda_*$, RC sería una estipulación y no una prueba.
-
-##### FID significa profundidad finita, no generación local finita
-
-El stress test físico obliga a precisar FID. No se exige que todo contenido global sea generado por un número finito de observables locales, ni que toda relación integradora tenga aridad finita.
-
-La tesis relevante es únicamente que la **profundidad del testigo ontológico** sea finita. Una instancia relacional actual $g$ puede tener set-many relata y actuar como nodo de incidencia:
-
-$$
-\operatorname{Inc}(x,g)
-\land
-\operatorname{Inc}(y,g).
-$$
-
-Si $g$ satisface los criterios independientes de admisibilidad de $\Lambda_*$, entonces $x$ e $y$ quedan conectados por un camino de longitud dos aunque $g$ sea una relación global o infinitaria. Por tanto:
-
-$$
-\boxed{
-\text{aridad infinita set-sized}
-\not\Rightarrow
-\neg\mathrm{FID}.
-}
-$$
-
-Lo que sí falsaría FID sería **integración sin testigo finitamente alcanzable**:
-
-$$
-\operatorname{CoReal}(x,q)
-\land
-\neg\exists\text{ cadena finita de instancias relacionales actuales admisibles}
-\Rightarrow
-\neg\mathrm{FID}.
-$$
-
-Esto impide confundir «no local» con «no finitamente conectable».
-
-##### Stress test físico: gauge, superselección y completaciones
-
-Tres familias conocidas fuerzan esta cautela:
-
-1. **Gauge/gravedad.** Las restricciones de gauge obstaculizan la factorización ingenua de subsistemas; formulaciones con fronteras introducen edge/boundary data para describir el pegado. Esto desafía una ontología de subsistemas puramente local, pero por sí solo no refuta FID: esos grados de libertad pueden funcionar como testigos relacionales extendidos si se consideran ontológicamente reales.
-2. **Superselección y pérdida de aditividad.** Hay QFTs donde ciertos operadores de una región no son generados por las álgebras de regiones menores; en ejemplos discutidos por Casini–Huerta–Magán–Pontello aparecen operadores que no pertenecen a la unión de ningún número finito de regiones locales y emergen al completar/tomar doble conmutante. Esto refuta cualquier lectura de FID como «todo es finitariamente generado por partes locales», pero no una lectura por testigos relacionales.
-3. **AQFT/cuasilocalidad.** El álgebra cuasilocal es un $C^*$-inductive limit/completion de las álgebras locales; la unión local es densa, no tiene por qué coincidir con el álgebra completa. Por tanto existen candidatos matemáticos cuyo estatuto es esencialmente de límite. Si una ontología física trata uno de esos elementos como token actual co-real con tokens locales, pero no reconoce ninguna instancia relacional actual que testimonie la relación de límite, obtenemos exactamente un contraejemplo candidato a FID.
-
-La salida «introducir un token $g$ que representa el límite» solo es legítima si $g$ satisface un criterio independiente de admisibilidad. No puede crearse un nodo relacional ad hoc únicamente para forzar conectividad. Llamamos a esa condición:
-
-$$
-\mathrm{WA}(g)
-$$
-
-(**Witness Admissibility**), que exige al menos:
-
-- actualidad independiente del argumento de totalización;
-- carácter ontológico, no mera relación entre descripciones;
-- relata identificables sin usar $R_i$ o $\operatorname{CoReal}$;
-- rol integrador justificable;
-- invariancia bajo recodificación fiel;
-- incidencia set-sized o una revisión explícita de REV-23;
-- ausencia de definición circular del tipo «$g$ existe porque sus relata son co-reales».
-
-Así, un límite, constraint global, Wilson loop, edge mode o relación infinitaria puede salvar FID **solo si** su instancia cumple WA.
-
-Véase el [mapa de literatura](autodescripcion-realidad-distincion-references.md#identidad-de-régimen-y-relaciones-de-worldmate) para los precedentes usados en este stress test.
-
-##### Contraejemplo matemático: conectividad sin caminos
-
-FID no es una consecuencia lógica de una noción genérica de unidad. La curva seno del topólogo proporciona un contraesquema matemático estándar: existe un espacio $X$ que es **conexo pero no conexo por caminos**.
-
-Tomemos una interpretación de prueba:
-
-$$
-\operatorname{CoReal}_X(x,q)
-:\Longleftrightarrow
-x\text{ y }q\text{ pertenecen a la misma componente conexa de }X,
-$$
-
-y:
-
-$$
-\operatorname{AdmIntRel}_X(x,y)
-:\Longleftrightarrow
-\text{existe un camino en }X\text{ de }x\text{ a }y.
-$$
-
-En la curva seno del topólogo existen $q,x\in X$ con:
-
-$$
-\operatorname{CoReal}_X(x,q)
-$$
-
-pero:
-
-$$
-\neg\operatorname{AdmIntRel}_X(q,x).
-$$
-
-Además, ninguna cadena finita de pares path-connected puede salvar la situación: los caminos se concatenan, por lo que una cadena finita:
-
-$$
-q=z_0,\dots,z_n=x
-$$
-
-con cada $\operatorname{AdmIntRel}_X(z_k,z_{k+1})$ produciría un camino de $q$ a $x$, contradicción.
-
-Por tanto existe un modelo matemático coherente con:
-
-$$
-\boxed{
-\operatorname{CoReal}_X(x,q)
-\land
-\neg\mathrm{FID}_X.
-}
-$$
-
-Esto **no** prueba que la co-realidad física o metafísica tenga estructura topológica de este tipo. Sí prueba algo metodológicamente importante: FID no puede presentarse como verdad lógica derivada de «unidad» o «conectividad» sin una premisa ontológica adicional.
-
-##### Contraejemplo metafísico candidato: dependencia a distancia transfinita
-
-La literatura sobre regressos de grounding distingue entre que exista un fundamento y que cada entidad llegue a él mediante una cadena **finita**. Puede haber una secuencia:
-
-$$
-E_1
-\succ E_{1/2}
-\succ E_{1/4}
-\succ\cdots
-$$
-
-tal que cada miembro dependa del siguiente y, sin embargo, la estructura completa esté ultimadamente anclada en un fundamento $F$ al que solo se llega atravesando infinitos intermediarios.
-
-Si las instancias de dependencia inmediata son los únicos testigos WA-admisibles y una caracterización independiente de co-realidad coloca $E_1$ y $F$ dentro del mismo entramado ontológico, entonces:
-
-$$
-\operatorname{CoReal}(E_1,F)
-$$
-
-pero no existe ninguna cadena **finita** de $\operatorname{AdmIntRel}$ desde $E_1$ hasta $F$. En ese modelo:
-
-$$
-\neg\mathrm{FID}.
-$$
-
-Esto tampoco prueba que nuestra realidad contenga dependencia de longitud transfinita. Sí muestra que FID excluye una familia metafísica reconocible y, por tanto, debe defenderse o sustituirse; no puede presentarse como neutral respecto de infinitismo/fundacionalismo.
-
-##### Dos rutas para REV-24b
-
-La construcción vigente por caminos finitos es por tanto una **instanciación**, no la única arquitectura posible.
-
-**Ruta A — finite-witness closure.**
-
-Se mantiene:
-
-$$
-T_i=[q]_{\sim}
-$$
-
-y se intenta justificar:
-
-$$
-\mathrm{FID}+\mathrm{LA}
-\Rightarrow
-\mathrm{RC}_{\Lambda}.
-$$
-
-Esta ruta es fuerte y simple cuando toda integración dispone de profundidad finita de testigos WA-admisibles.
-
-**Ruta B — generalized integrative closure.**
-
-Si FID falla, puede introducirse un operador pre-régimen independiente:
+Si la clausura finita es insuficiente, se permite una clausura candidata:
 
 $$
 \mathcal C_*:A\mapsto\mathcal C_*(A),
 $$
 
-generado por reglas integrativas admisibles que pueden incluir, si se justifican independientemente, reglas de límite/globales además de enlaces finitos. Debe definirse sin usar $R_i$, $S_i$, `Presents` ni `OntTotal`.
-
-Para impedir que esta generalización trivialice el problema definiendo simplemente:
-
-$$
-\mathcal C_*(\{q\})
-:=
-\{x\mid\operatorname{CoReal}(x,q)\},
-$$
-
-se exige una **independencia generativa** explícita. Sea $\mathfrak G_*$ una familia de reglas integrativas pre-régimen. Cada regla debe especificarse sin usar:
-
-$$
-\operatorname{CoReal},
-R_i,
-S_i,
-\operatorname{Presents},
-\operatorname{OntTotal}
-\text{ ni el resultado final de }\mathcal C_*.
-$$
-
-Y $\mathcal C_*$ debe ser la **menor clausura** generada por esas reglas. Esquemáticamente:
-
-$$
-\mathrm{CMin}:
-\quad
-A\subseteq\mathcal C_*(A)
-$$
-
-y para toda estructura $B$ que contiene $A$ y es cerrada bajo todas las reglas de $\mathfrak G_*$:
-
-$$
-\mathcal C_*(A)\subseteq B.
-$$
-
-Llamamos a la restricción de independencia:
-
-$$
-\mathrm{CGI}
-$$
-
-(**Closure-Generation Independence**). Bajo CGI+CMin, CS y CC vuelven a ser afirmaciones sustantivas que pueden fallar; no quedan satisfechas por definición.
+generada por reglas integrativas especificadas mediante CGI/CMin sin usar $\operatorname{CoReal}$, $R_i$, $S_i$, $\operatorname{Presents}$, $\operatorname{OntTotal}$ ni el resultado final de la propia clausura.
 
 Para un seed $q$:
 
@@ -1362,62 +935,23 @@ $$
 T_q^{\mathcal C}:=\mathcal C_*(\{q\}).
 $$
 
-La ruta requiere al menos:
+Mientras CS/CC no estén justificadas, este carrier **no se denomina régimen** y no recibe índice ontológico $i$.
+
+El teorema semántico closure-relative usa únicamente:
 
 $$
-\mathrm{CS}:\quad
-x\in T_q^{\mathcal C}
-\Rightarrow
-\operatorname{CoReal}(x,q),
+\mathrm{CSet}
++
+\mathrm{CWF}
++
+\mathrm{CProcStable}
++
+\mathrm{SigSmall}_{\mathcal C}
++
+\mathrm{ActualSep}_{\mathcal C}.
 $$
 
-$$
-\mathrm{CC}:\quad
-\operatorname{CoReal}(x,q)
-\Rightarrow
-x\in T_q^{\mathcal C},
-$$
-
-y:
-
-$$
-\mathrm{CSet}:\quad
-T_q^{\mathcal C}\text{ es set-sized}.
-$$
-
-CS hace para la clausura candidata el trabajo extensional de no sobreinclusión y CC el de no subinclusión respecto de $\operatorname{CoReal}$. Mientras no se hayan justificado ambas, no se asigna todavía un índice ontológico $i$ ni se invocan OA/MC tipadas por régimen.
-
-Una vez justificadas CS+CC, CRType y la realización local de scope, la clausura puede reindexarse como $T_i^{\mathcal C}$ y los lemas de OA/MC se transfieren a esa presentación.
-
-La construcción semántica de la Ruta B se mantiene **pre-ontológica** mientras CS/CC estén abiertas. Por ello no usa $\operatorname{StructAdm}_i$ ni presupone que $\mathcal C_*(\{q\})$ sea ya un régimen.
-
-Sea:
-
-$$
-T_q^{\mathcal C}:=\mathcal C_*(\{q\}).
-$$
-
-$\operatorname{CFragAdm}_{\mathcal C}(X)$ exige únicamente well-formedness positiva relativa a ese carrier: inclusión de tokens, hechos bien formados con sus relata, source/target únicos, coherencia de dependencia y monotonicidad del contenido. **No exige actualidad de todos los tokens ni pertenencia previa a un mismo régimen.**
-
-Definimos sobre esa familia el orden $\preceq_{\mathcal C}$ por inclusión de carrier y hechos, y una propiedad closure-relative $\operatorname{CEClosed}_{\mathcal C}$.
-
-Con:
-
-- CSet: $T_q^{\mathcal C}$ es set-sized;
-- CWF: el candidato completo satisface $\operatorname{CFragAdm}_{\mathcal C}$;
-- CProcStable: los eventos actuales relevantes no fuerzan tokens fuera de $T_q^{\mathcal C}$;
-- $\mathrm{SigSmall}_{\mathcal C}$;
-- $\mathrm{ActualSep}_{\mathcal C}$;
-
-se construye:
-
-$$
-S_q^{\mathcal C}
-=
-(T_q^{\mathcal C},\Phi_q^{\mathrm{all},\mathcal C})
-$$
-
-y se demuestra:
+Con esas premisas se construye $S_q^{\mathcal C}$ y:
 
 $$
 \boxed{
@@ -1435,149 +969,115 @@ $$
 }
 $$
 
-Este teorema **no contiene** CS, CC, $\operatorname{CoReal}$ ni $\operatorname{StructAdm}_i$. CS/CC hacen después el trabajo distinto de justificar que la clausura candidata coincide con un régimen ontológico. Solo tras ese puente se reindexa legítimamente $S_q^{\mathcal C}$ como un $S_i^{\mathcal C}$.
+Este teorema es deliberadamente **pre-ontológico**. No contiene $\operatorname{StructAdm}_i$, SameRegime, CS, CC ni $\operatorname{CoReal}$ entre sus premisas.
 
-CGI/CMin tampoco son premisas matemáticas de maximalidad; son condiciones de no circularidad sobre cómo se genera $\mathcal C_*.
-Así, un contraejemplo a FID no implica ni:
-
-$$
-\neg\operatorname{ExistsRegR}
-$$
-
-ni, por sí solo:
+Solo después se investigan:
 
 $$
-\neg\operatorname{ExistsAbsR}.
-$$
-
-Implica únicamente que la **ruta finita** $[q]_{\sim}$ no basta para caracterizar el régimen. La PR no adoptará FID como axioma doctrinal mientras la ruta de clausura generalizada permanezca abierta.
-
-##### Requisito de independencia para $\operatorname{CoReal}$
-
-Para que $\mathrm{RC}_{\Lambda}$ cuente como apoyo ontológico y no como una tautología encubierta, cualquier caracterización candidata $C(x,q)$ de co-realidad debe satisfacer:
-
-$$
-\mathrm{IR}_{\mathrm{CoReal}}:
-\quad
-C(x,q)
-\text{ no puede definirse usando }
-\Lambda_*,
-\sim,
-S_i,
-R_i,
-K3_i,
-\operatorname{Presents}_i
-\text{ ni }\operatorname{OntTotal}_i.
-$$
-
-Después debe poder argumentarse, y no estipularse:
-
-$$
-C(x,q)
+\mathrm{CS}:\quad
+x\in T_q^{\mathcal C}
 \Rightarrow
-x\in[q]_{\sim}.
+\operatorname{CoReal}(x,q),
 $$
 
-El criterio de falsación queda igualmente claro:
+$$
+\mathrm{CC}:\quad
+\operatorname{CoReal}(x,q)
+\Rightarrow
+x\in T_q^{\mathcal C},
+$$
+
+junto con CRType y la realización de scope. Si esas obligaciones se cierran, la construcción puede reindexarse como $S_i^{\mathcal C}$.
+
+FID es solamente una condición suficiente de la Ruta A; un fallo de FID no implica $\neg\operatorname{ExistsRegR}$ ni $\neg\operatorname{ExistsAbsR}$.
+
+### 4.3. REV-24 — puente local semántica → ontología
+
+$S_i$ y $R_i$ son tipos distintos.
+
+La disciplina de actualidad es:
 
 $$
-\boxed{
-C(x,q)
+\mathrm{CRType}:
+\quad
+\operatorname{CoReal}(x,q)
+\Rightarrow
+\operatorname{Actual}(x)
 \land
-x\notin[q]_{\sim}
-\Rightarrow
-\neg\mathrm{RC}_{\Lambda}.
-}
+\operatorname{Actual}(q).
 $$
 
-Por tanto REV-24b admite contraejemplos reales: basta un caso de co-pertenencia justificado independientemente que escape de la clausura de $\Lambda_*$.
+REV-24 se divide en cuatro obligaciones.
 
-##### Candidatos examinados para $C(x,q)$
-
-Ninguno se adopta todavía como definición universal:
-
-1. **conexión espaciotemporal:** es un precedente metodológico fuerte —Lewis usa una noción de mundo como totalidad máxima espaciotemporalmente conectada—, pero resulta demasiado estrecha para una propuesta que admite relaciones ontológicas no espaciotemporales y posibles estructuras físicas no separables;
-2. **conexión causal:** es también demasiado estrecha; co-realidad no debería depender de que exista una cadena causal efectiva entre cualesquiera dos regiones del mismo alcance;
-3. **dependencia/grounding:** amplía correctamente el espacio de enlaces, pero usar cualquier ground común como conector puede colapsar regímenes mediante fundamentos, leyes o abstracta compartidos; por eso $\Lambda_*$ exige dependencia token-specific e integradora;
-4. **no-separabilidad física:** la literatura cuántica muestra que el estado de un todo puede no supervenir en los estados de sus subsistemas, por lo que constituye un test importante contra una ontología puramente local; pero no es condición necesaria de co-realidad para sistemas separables;
-5. **ser partes del mismo todo máximo:** captura directamente la intuición buscada, pero presupone precisamente la unidad ontológica que REV-24b intenta justificar y por ello es circular como definición de $\operatorname{CoReal}$;
-6. **relación natural/integrativa actual:** es el candidato más cercano a la arquitectura de $\Lambda_*$, pero si «integrativa» se define simplemente como «la relación que hace co-reales a sus relata», vuelve a introducir la conclusión.
-
-La conclusión provisional no es que $\operatorname{CoReal}$ sea imposible de caracterizar, sino que REV-24b ha quedado localizado en una pregunta metafísica genuina y falsable. Véase el [mapa de literatura](autodescripcion-realidad-distincion-references.md#identidad-de-régimen-y-relaciones-de-worldmate).
-
-#### REV-24c — RA: adecuación representacional
-
-$\mathrm{RA}_i(S)$ exige que la representación no solo nombre miembros reales, sino que preserve y refleje las identidades y relaciones ontológicas relevantes para el uso que se haga de $S$:
+#### REV-24a — Ontological Anchoring (OA)
 
 $$
-\mathrm{RA}_i(S)
-$$
-
-incluye, como mínimo, fidelidad de denotación e invariancia bajo recodificaciones fieles; cualquier exigencia de completitud factual adicional debe declararse por separado y coordinarse con REV-25.
-
-#### REV-24d — SR: realización de alcance
-
-Incluso si OA y MC fijan exactamente qué contenido ontológico corresponde al carrier de $S_i$, queda una obligación de **tipo** distinta: justificar que ese perfil de pertenencia determina un alcance ontológico $R_i$ sin identificar $R_i$ con un conjunto, una suma mereológica o el propio objeto semántico.
-
-Introducimos una relación tipada:
-
-$$
-\operatorname{Within}_i(x,R),
-$$
-
-que significa que el token ontológico $x$ queda dentro del alcance $R$. No se presupone que $R$ sea un conjunto y $\operatorname{Within}$ no se identifica con pertenencia conjuntista.
-
-La obligación de realización de alcance relativa a $q$ es:
-
-$$
-\mathrm{SR}_i(q):
+\mathrm{OA}_i(S;q):
 \quad
-\exists R_i\;
-\forall x\,
-[
-\operatorname{Within}_i(x,R_i)
-\Longleftrightarrow
-(\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q))
+\forall a\in T_S\;
+\exists x[
+\operatorname{Actual}(x)
+\land
+\operatorname{CoReal}(x,q)
+\land
+\operatorname{Den}_i(a,x)
 ].
 $$
 
-SR **no está demostrada** por OA, MC, FID ni por teoría de conjuntos. Si la metateoría permite libremente un objeto-alcance para cualquier predicado, SR sería una forma de comprensión de alcances y ese compromiso debe declararse. Si no lo permite, hay que justificar por qué el perfil `CoReal(-,q)` admite realización como alcance.
-
-Esta obligación evita dos atajos:
-
-1. definir $R_i$ como el set $\{x\mid\operatorname{CoReal}(x,q)\}$ y declarar resuelto el problema de tipos;
-2. tratar el cuantificador $\exists R_i$ como mera notación para un predicado sin explicitar la lógica de segundo orden/plural o la ontología de scopes utilizada.
-
-REV-24d queda por tanto abierta y es lógicamente posterior a la adecuación de `CoReal`/REV-24b.
-
-##### Ruta plural — realización sin objeto colector
-
-Existe una ruta formal que respeta mejor la cautela anti-reificación. En una lógica plural, escribimos $rr_i$ para **unas cosas**, no para una entidad singular que las colecta, y $x\prec rr_i$ para «$x$ es una de ellas».
-
-Sea:
-
-$$
-\varphi_q(x)
-:=
-\operatorname{Actual}(x)
-\land
-\operatorname{CoReal}(x,q).
-$$
-
-El esquema estándar de comprensión plural tiene la forma:
-
-$$
-\exists x\,\varphi_q(x)
-\Rightarrow
-\exists rr_i\;
-\forall x\,
-[x\prec rr_i\Longleftrightarrow\varphi_q(x)].
-$$
-
-Si $q$ es actual y `CoReal` es reflexiva, la antecedente está satisfecha. Por tanto, bajo comprensión plural:
+En la Ruta A, con denotación canónica $\mathrm{CD}_i$:
 
 $$
 \boxed{
+\mathrm{RS}_{\Lambda}
++
+\mathrm{CRType}
++
+\mathrm{CD}_i
+\Rightarrow
+\mathrm{OA}_i(S_i^*;q).
+}
+$$
+
+#### REV-24b — Membership Completeness (MC)
+
+$$
+\mathrm{MC}_i(S;q):
+\quad
+\forall x[
+\operatorname{Actual}(x)
+\land
+\operatorname{CoReal}(x,q)
+\Rightarrow
+\exists a\in T_S\;
+\operatorname{Den}_i(a,x)
+].
+$$
+
+En la Ruta A:
+
+$$
+\boxed{
+\mathrm{RC}_{\Lambda}
++
+\mathrm{CD}_i
+\Rightarrow
+\mathrm{MC}_i(S_i^*;q).
+}
+$$
+
+FID + LA es una vía suficiente hacia $\mathrm{RC}_{\Lambda}$, pero **no** una verdad lógica ni un axioma doctrinal. Los contraejemplos y la Ruta B generalizada se desarrollan únicamente en el documento técnico.
+
+#### REV-24c — Representational Adequacy (RA)
+
+$\mathrm{RA}_i(S)$ debe fijar qué identidades y relaciones ontológicas relevantes preserva y refleja la presentación. No equivale a mera enumeración de miembros y permanece OPEN.
+
+#### REV-24d — Scope Realization (SR)
+
+SR pregunta por qué un perfil bien caracterizado de co-realidad determina un **alcance ontológico** sin convertirlo en set, suma mereológica u objeto colector.
+
+La ruta plural ofrece condicionalmente:
+
+$$
 \mathrm{PluralComp}
 +
 \operatorname{Actual}(q)
@@ -1588,414 +1088,99 @@ $$
 \forall x[
 x\prec rr_i
 \Longleftrightarrow
-(\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q))
+(
+\operatorname{Actual}(x)
+\land
+\operatorname{CoReal}(x,q)
+)
+].
+$$
+
+Por ello REV-24d es PARTIAL, no RESOLVED. La PR todavía debe justificar qué lógica de scopes/plurales adopta.
+
+#### Esquema OTB local
+
+El objetivo completo de REV-24 es:
+
+$$
+\boxed{
+\operatorname{SemTotal}_i(S_i)
++
+\mathrm{OA}_i(S_i;q)
++
+\mathrm{MC}_i(S_i;q)
++
+\mathrm{RA}_i(S_i)
++
+\mathrm{SR}_i(q)
+\Rightarrow
+\exists R_i[
+\operatorname{Presents}_i(S_i,R_i)
+\land
+\operatorname{OntTotal}_i(R_i)
 ].
 }
 $$
 
-Esta conclusión realiza el **alcance plural** del régimen sin postular un set universal ni una suma mereológica. En esta lectura, la notación doctrinal $R_i$ puede entenderse como abreviatura de ese alcance plural $rr_i$; el cuantificador `\exists R_i` usado en fórmulas anteriores es entonces notación esquemática de un cuantificador de tipo scope/plural, no un existencial singular de primer orden.
+$\mathrm{OTB}_i$ abrevia una justificación suficiente de este esquema; **no es una premisa disponible por estipulación**.
 
-Esto no es ontológicamente gratuito. La comprensión plural es un principio explícito y discutido; versiones críticas de la lógica plural restringen precisamente la comprensión cuando el dominio es extensionally indefinite. Por ello:
-
-- para un régimen local cuya extensión `CoReal(-,q)` sea independientemente determinada, la ruta plural es un candidato serio a cerrar SR;
-- para $R_{\mathrm{abs}}$, no se presupone una pluralidad universal de absolutamente todo. Esa generalización permanece dentro del debate de generalidad absoluta.
-
-**Estado de REV-24d: PARTIAL.** La derivación plural está disponible condicionalmente; falta decidir/adoptar la lógica de scopes de la propuesta y justificar que la instancia de comprensión requerida sea legítima para los regímenes considerados.
-
-#### Relación Presents
-
-$\operatorname{Presents}_i(S,R)$ es la relación tipada resultante entre una presentación semántica y un alcance ontológico. No es identidad, no implica por definición $\operatorname{OntTotal}_i(R)$ y no puede definirse usando «$R$ es todo lo real del régimen» como atajo.
-
-La descomposición hace visible una posibilidad importante: la **existencia de un alcance ontológico** puede requerir menos que una descripción semántica completa de todos sus hechos. Si REV-24b pudiera justificarse a partir de una individuación ontológica independiente del régimen, parte del trabajo sobre $R_i$ podría desacoplarse de la exhaustividad factual de $S_i$. Esto se registra como línea de investigación; no se toma todavía como demostración de $\operatorname{ExistsRegR}$ y mucho menos de $\operatorname{ExistsAbsR}$.
-
-Solo si REV-24a/b/c producen efectivamente el esquema puente, la ruta doctrinal toma la forma:
+Aun cerrado REV-24:
 
 $$
-\boxed{
-\mathrm{PON}
-+\mathrm{SigSmall}_i
-+\mathrm{ActualSep}_i
-+\operatorname{StructAdm}
-+\mathrm{OTB}_i
-\Rightarrow
 \operatorname{WitnessedRegR}
 \Rightarrow
-\operatorname{ExistsRegR}.
-}
+\operatorname{ExistsRegR},
 $$
 
-#### No circularidad formal
-
-La construcción de $S_i^*$ no presupone una totalidad ontológica. Parte de un token, construye su componente de conectividad finita y forma después el conjunto de hechos actuales sobre ese carrier. Precisamente por ello prueba exhaustividad **dentro del tipo semántico** y deja visible el paso adicional a ontología.
-
-#### Papel de la emergencia
-
-La emergencia no produce la existencia del máximo semántico. Las premisas de identidad y smallness permiten construirlo; la teoría de emergencia aporta $\operatorname{EClosed}_i(S_i^*)$. Tampoco resuelve $\mathrm{OTB}_i$. No debe afirmarse que «la emergencia demuestra que existe R».
-
-#### Relación con Zorn
-
-K1/K2/K3 y Zorn permanecen como una segunda ruta estructural. Bajo las premisas de smallness ya no son necesarios para construir $S_i^*$; tampoco resuelven por sí mismos REV-24.
-
----
-**Convención normativa:** durante toda esta sección se fija un régimen ontológico $i$. Para aligerar notación se escribe:
+pero no se sigue todavía:
 
 $$
-\mathfrak D:=\mathfrak D_i^{\mathrm{proc}},
-\qquad
-\mathfrak K:=\mathfrak K_i,
-\qquad
-\preceq:=\preceq_i.
+\operatorname{ExistsAbsR}.
 $$
 
-Toda cuantificación de K1–K3 y todo máximo obtenido en esta sección son **internos a $i$**. Formalmente el resultado es un máximo semántico $S_i$; REV-24 debe justificar si $S_i$ presenta algún alcance ontológico $R_i$. En ningún caso se infiere la existencia de $R_{\mathrm{abs}}$.
+Ese salto pertenece exclusivamente a REV-26.
 
-Las secciones anteriores producen dos niveles distintos que no deben confundirse:
+### 4.4. Ruta Zorn — resultado auxiliar
 
-1. **nivel system-relative:** para un sistema fijo que representa el régimen $i$, la emergencia independiente $\mathcal E_i$ induce un operador concreto $F_i$ sobre su espacio de configuraciones, y F1–F3 se derivan;
-2. **nivel semántico de régimen:** el teorema habla de dominios $(\mathfrak D_i^{\mathrm{proc}},\preceq_i)$ ya tipados por REV-18; REV-24 exige justificar aparte el paso desde su máximo semántico a totalidad ontológica.
+La ruta operator-free se conserva como resultado estructural auxiliar.
 
-La forma operator-free del argumento permite ver exactamente qué parte de la estructura de $F_i$ es necesaria.
+Sea $(\mathfrak D,\preceq)$ un poset set-sized no vacío y $\mathfrak K\subseteq\mathfrak D$. Si:
 
-### 4.1. Forma operator-free
+- K1: $\mathfrak K$ es cofinal en $\mathfrak D$;
+- K2: toda cadena de $\mathfrak K$ tiene una cota superior en $\mathfrak K$;
+- K3: $\mathfrak D$ es directed;
 
-Sea:
-
-$$
-(\mathfrak D,\preceq)
-$$
-
-un poset **set-sized** no vacío y sea:
-
-$$
-\mathfrak K\subseteq\mathfrak D
-$$
-
-una familia de dominios que llamaremos **cerrados**.
-
-Supongamos:
-
-**K1 — cofinalidad**
-
-$$
-\forall X\in\mathfrak D\;
-\exists Y\in\mathfrak K:
-X\preceq Y.
-$$
-
-**K2 — inductividad de los cerrados**
-
-Para toda cadena $\mathcal C\subseteq\mathfrak K$ existe $U\in\mathfrak K$ tal que:
-
-$$
-\forall X\in\mathcal C,\quad X\preceq U.
-$$
-
-**K3 — directedness/amalgamación**
-
-$$
-\forall X,Y\in\mathfrak D\;
-\exists Z\in\mathfrak D:
-X\preceq Z
-\land
-Y\preceq Z.
-$$
-
-**Alcance de K3.** En esta sección K3 significa siempre $K3_i$. Es una condición fuerte sobre la unidad interna del régimen $i$, pero **no** una premisa sobre todas las realidades.
-
-Dentro de $i$:
-
-$$
-X\parallel_i Y
-\Rightarrow
-\neg K3_i.
-$$
-
-Por eso REV-07 no desaparece: todavía hay que justificar independientemente qué determina la pertenencia a un mismo $i$ y por qué sus dominios son jointly embeddable.
-
-Lo que queda prohibido es usar K3_i para concluir One-R global:
+entonces existe $S\in\mathfrak K$ tal que:
 
 $$
 \boxed{
-K3_i
-\not\Rightarrow
-K3_{\mathrm{abs}}.
+\forall X\in\mathfrak D,\quad
+X\preceq S.
 }
 $$
 
-El teorema obtiene un máximo semántico interno $S_i$. Solo tras REV-24 podrá usarse como presentación justificada de algún alcance ontológico $R_i$; no se identifica con él. La cuestión de si distintos $R_i$ tienen una extensión común pertenece a la metaontología One-R/Many-R.
+El resultado es semántico. Zorn no proporciona $R_i$, no resuelve REV-24 y no es necesario para las dos construcciones directas anteriores cuando sus premisas de smallness están disponibles.
 
-### 4.2. Teorema de máximo cerrado cofinal
+Para un operador extensivo e idempotente, F1 + F3 bastan para elevar cotas a puntos fijos en esta ruta concreta; F2 es redundante para ese paso. La demostración completa permanece en work/.
 
-**Teorema.** Bajo K1–K3 existe:
+### 4.5. Estado normativo del núcleo formal
 
-$$
-S\in\mathfrak K
-$$
+**Demostrado condicionalmente:**
 
-tal que:
+1. Ruta A: PON + $\mathrm{SigSmall}_i$ + $\mathrm{ActualSep}_i$ + $\operatorname{StructAdm}_i$ producen $\operatorname{SemTotal}_i(S_i^*)$.
+2. Ruta B: CSet + CWF + CProcStable + $\mathrm{SigSmall}_{\mathcal C}$ + $\mathrm{ActualSep}_{\mathcal C}$ producen $\operatorname{SemTotal}_{\mathcal C}(S_q^{\mathcal C})$ sin suponer todavía que la clausura sea un régimen.
+3. K1–K3 producen un máximo semántico bajo las condiciones fundacionales declaradas.
+4. En Ruta A, RS + CRType + CD descargan condicionalmente OA del carrier; RC + CD descargan condicionalmente MC.
 
-$$
-\boxed{
-\forall X\in\mathfrak D,\quad X\preceq S.
-}
-$$
+**No demostrado:**
 
-**Demostración.**
+1. la adecuación ontológica de $\Lambda_*$ o de una $\mathcal C_*$ concreta;
+2. REV-24c/RA;
+3. el cierre definitivo de REV-24d/SR;
+4. $\operatorname{ExistsRegR}$ sin REV-24;
+5. $\operatorname{ExistsAbsR}$ sin REV-26.
 
-K1 y la no-vacuidad de $\mathfrak D$ implican $\mathfrak K\neq\varnothing$.
-
-Por K2, toda cadena en $\mathfrak K$ tiene una cota superior en $\mathfrak K$. Por Zorn existe un $S\in\mathfrak K$ maximal.
-
-Sea $X\in\mathfrak D$. Por K3 existe $Y\in\mathfrak D$ con:
-
-$$
-S\preceq Y
-\land
-X\preceq Y.
-$$
-
-Por K1 existe $Z\in\mathfrak K$ con:
-
-$$
-Y\preceq Z.
-$$
-
-Luego $S\preceq Z$. Como ambos pertenecen a $\mathfrak K$ y $S$ es maximal:
-
-$$
-Z=S.
-$$
-
-Por tanto:
-
-$$
-X\preceq Y\preceq S.
-$$
-
-Como $X$ era arbitrario, $S$ es un **máximo de todo $\mathfrak D_i^{\mathrm{proc}}$**. Este $S$ es precisamente el máximo semántico $S_i$ del régimen fijado. Obtener un $R_i$ ontológico presentado por $S_i$ requiere REV-24/$\mathrm{OTB}_i$. $\square$
-
-### 4.3. Cobertura representacional y límite del puente
-
-En el tipo semántico vigente, la cobertura que sí puede usarse sin cambiar de nivel es:
-
-$$
-\forall q\text{ representable y actual en }i,
-\quad
-\exists X\in\mathfrak D_i^{\mathrm{proc}}:
-q\trianglelefteq_i X.
-$$
-
-Combinada con la maximalidad de $S_i$, esta condición implica que todo contenido actual **representable por el formalismo** aparece en $S_i$.
-
-No debe escribirse sin más:
-
-$$
-\operatorname{Real}(x)\Rightarrow x\preceq S_i,
-$$
-
-porque $S_i$ es, por REV-18, un fragmento semántico y esa fórmula mezclaría otra vez el tipo ontológico con el semántico. Para obtener una afirmación sobre todo lo real hace falta una tesis independiente de adecuación representacional —que ningún contenido ontológico relevante queda fuera del carrier/firma y que la representación preserva el alcance que se quiere llamar totalidad—. Esa es precisamente parte del criterio de cierre de REV-24.
-
-### 4.4. Cómo se recupera esta forma desde un operador
-
-Sea ahora:
-
-$$
-F:\mathfrak D\to\mathfrak D
-$$
-
-con solo:
-
-$$
-\text{F1: }X\preceq F(X),
-$$
-
-y:
-
-$$
-\text{F3: }F(F(X))=F(X).
-$$
-
-Definamos:
-
-$$
-\mathfrak K:=\operatorname{Fix}(F).
-$$
-
-Entonces F1 + F3 implican automáticamente K1:
-
-para cualquier $X\in\mathfrak D$,
-
-$$
-X\preceq F(X)
-$$
-
-y:
-
-$$
-F(F(X))=F(X),
-$$
-
-por lo que:
-
-$$
-F(X)\in\mathfrak K.
-$$
-
-Además, si una cadena $\mathcal C\subseteq\operatorname{Fix}(F)$ tiene una cota $U\in\mathfrak D$, F1 da:
-
-$$
-U\preceq F(U).
-$$
-
-Así, para cada $X\in\mathcal C$:
-
-$$
-X\preceq U\preceq F(U).
-$$
-
-Y F3 da:
-
-$$
-F(U)\in\operatorname{Fix}(F).
-$$
-
-Por tanto la cota fija se obtiene con:
-
-$$
-\boxed{F1+F3,}
-$$
-
-sin usar F2.
-
-Esta es la corrección exacta al argumento archivado: **la monotonía F2 era redundante para la ruta de Zorn**.
-
-### 4.5. Papel de $F_M$
-
-El operador system-relative construido en REV-01:
-
-$$
-F_M:\mathcal P(\Sigma_M)\to\mathcal P(\Sigma_M)
-$$
-
-sigue siendo útil y no queda superseded.
-
-Para $F_M$:
-
-- F1 se deriva por reflexividad;
-- F2 interna se deriva por inclusión de conjuntos bajo un mismo sistema $M$;
-- F3 se deriva por transitividad del cierre emergente.
-
-El contraejemplo del inhibidor de REV-02 compara:
-
-$$
-F_M
-\quad\text{con}\quad
-F_N,
-$$
-
-no dos entradas del mismo operador. Por tanto no refuta la monotonía interna de $F_M$.
-
-La extensión conductualmente conservativa de REV-02 sigue siendo útil para saber cuándo un evento puede transportarse entre sistemas, pero:
-
-$$
-\boxed{
-\hookrightarrow_{\mathrm{cons}}
-\text{ no es el orden ontológico } \preceq_{\mathrm{ont}}.
-}
-$$
-
-Una incorporación real puede cambiar capacidades previas sin dejar de ser ontológicamente real.
-
-### 4.6. Qué queda demostrado y qué no
-
-**Demostrado matemáticamente:**
-
-1. F2 no es necesaria para el teorema abstracto de maximalidad/exhaustividad;
-2. F1 + F3 convierten cotas arbitrarias de cadenas de puntos fijos en cotas fijas;
-3. la forma operator-free K1–K3 basta para obtener un máximo de $\mathfrak D$;
-4. el $F_M$ concreto de REV-01 satisface F1–F3 dentro de su propio tipo.
-
-**No demostrado ontológicamente:**
-
-1. que la representación semántica sea exhaustiva respecto de todo contenido ontológico relevante del régimen;
-2. que un máximo semántico presente adecuadamente un alcance $R_i$ que satisfaga $\operatorname{OntTotal}_i(R_i)$ —REV-24—;
-3. que la noción de cierre inducida por $F_M$ produzca una familia $\mathfrak K$ con el contenido ontológico pretendido;
-4. que las cadenas ontológicas relevantes tengan las cotas requeridas en cualquier fortalecimiento del tipo de dominio;
-5. que K3/directedness y la clausura finita de `SameRegime` sean legítimas independientemente de la conclusión.
-
-Estas cargas quedan trazadas así:
-
-- **REV-18:** tipado semántico de $\operatorname{EClosed}$, ya resuelto en su alcance;
-- **REV-24:** puente tipado $S_i\to R_i$ mediante OA/MC/RA y $\operatorname{Presents}_i$;
-- **REV-19:** elección del tipo temporal del dominio;
-- **REV-20:** K1/cofinalidad de dominios E-closed;
-- **REV-09/REV-10:** K2/inductividad y sus supuestos de compactitud/presentabilidad;
-- **REV-07:** K3/directedness no circular.
-
-### 4.7. Relación con teoría estándar de puntos fijos
-
-El teorema clásico de Tarski afirma que los puntos fijos de una función monótona sobre un retículo completo forman un retículo completo. Los closure operators estándar son extensivos, monótonos e idempotentes.
-
-Nuestra observación es más modesta: **para esta ruta concreta de Zorn, una vez que existe un operador extensivo e idempotente y las cadenas de puntos fijos tienen cotas en el poset ambiente, la monotonía no es necesaria para levantar esas cotas a puntos fijos**.
-
-La versión operator-free de K1–K3 hace transparente esa dependencia.
-
-### 4.8.1. Aplicabilidad fundacional al régimen real
-
-La restricción set-sized de Zorn pertenece al teorema abstracto. Para aplicarlo a un régimen ontológico real hay tres rutas posibles.
-
-**Ruta A — smallness directa**
-
-$$
-\mathfrak D_i^{\mathrm{proc}}
-\text{ es set-sized}.
-$$
-
-**Ruta B — esqueleto cofinal set-sized**
-
-Existe:
-
-$$
-\mathfrak C_i
-\subseteq
-\mathfrak D_i^{\mathrm{proc}}
-$$
-
-set-sized y cofinal:
-
-$$
-\forall X\in\mathfrak D_i^{\mathrm{proc}}
-\;\exists Y\in\mathfrak C_i:
-X\preceq_i Y.
-$$
-
-Si dentro de $\mathfrak C_i$ se preservan cofinalidad cerrada, cotas de cadenas cerradas y directedness, Zorn produce un máximo de $\mathfrak C_i$ que, por cofinalidad, domina también todo $\mathfrak D_i^{\mathrm{proc}}$.
-
-Por tanto:
-
-$$
-\boxed{
-\text{esqueleto cofinal set-sized}
-\Rightarrow
-\text{Zorn puede producir un }S_i
-\text{ máximo del poset semántico del régimen}.
-}
-$$
-
-La demostración completa está en el documento técnico.
-
-**Ruta C — teoría de clases**
-
-Especificar explícitamente una teoría de clases y un principio de maximalidad suficientemente fuerte. Esta ruta no se presupone.
-
-La aplicabilidad fundacional se registra como REV-22 y depende también de REV-25. No puede cerrarse suponiendo smallness a partir de la existencia del propio máximo.
-
-### 4.8. Estado normativo
-
-- **REV-01:** RESOLVED en su ataque original. F1–F3 se derivan para $F_M$, y F2 resulta además redundante para el teorema abstracto.
-- **REV-02:** RESOLVED en el sentido tipado correcto: la inhibición muestra no-monotonía entre sistemas/operadores, no dentro de un único $F_M$.
-- **REV-04:** RESOLVED mediante el punto fijo propio explícito del toy.
-- **REV-18:** RESOLVED en su alcance de tipado semántico. **REV-24** es ahora el blocker específico del paso de exhaustividad semántica a totalidad ontológica.
+Esta separación es normativa. Cualquier detalle técnico nuevo debe incorporarse primero al documento work/; el normativo solo se amplía cuando cambie uno de estos enunciados, dependencias o estados.
 
 ---
 
