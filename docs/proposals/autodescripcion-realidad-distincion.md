@@ -1456,13 +1456,27 @@ $$
 \operatorname{Real}_i(r).
 $$
 
-Y por incompatibilidad de índice una cadena finita no puede cambiar de índice entre aristas. Por inducción sobre la longitud del camino:
+Fijado además un seed ya tipado:
+
+$$
+\operatorname{Real}_i(q),
+$$
+
+la incompatibilidad de índice impide que una cadena finita cambie de índice entre aristas. Por inducción sobre la longitud del camino —incluido el caso de longitud cero—:
 
 $$
 \boxed{
+\operatorname{Real}_i(q)
++
 \mathrm{EdgeTyped}
 +
 \mathrm{IndexIncompatibility}
+\Rightarrow
+\forall x[
+x\in[q]_{\sim}
+\Rightarrow
+\operatorname{Real}_i(x)
+]
 \Rightarrow
 \mathrm{RS}_{\Lambda}^{\mathrm{gen}}.
 }
