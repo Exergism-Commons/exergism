@@ -826,38 +826,389 @@ $$
 }
 $$
 
-Esto **no recupera todavía F2**.
-
-F2 hablaba de un operador de cierre sobre dominios:
+Pero el contraejemplo por inhibición **no refuta la monotonía interna de un único operador**. Compara dos sistemas diferentes, y por tanto dos relaciones de emergencia diferentes:
 
 $$
-X\preceq Y
+\mathcal E_M
+\quad\text{frente a}\quad
+\mathcal E_N.
+$$
+
+Esta distinción corrige la interpretación anterior de REV-02.
+
+---
+
+## 3.3. REV-01 — clausura emergente system-relative y eliminación de F2 del teorema
+
+### Relación binaria inducida por eventos emergentes
+
+Fijado un sistema $M$, definimos:
+
+$$
+s\leadsto_{\mathcal E_M}t
+\iff
+\exists P:\;
+(s,P,t)\in\mathcal E_M.
+$$
+
+Sea $\leadsto_{\mathcal E_M}^{*}$ la clausura reflexivo-transitiva de esa relación.
+
+Para cualquier conjunto de configuraciones:
+
+$$
+X\subseteq\Sigma_M,
+$$
+
+definimos el **cierre emergente system-relative**:
+
+$$
+\boxed{
+F_M(X)
+:=
+\{
+t\in\Sigma_M
+\mid
+\exists s\in X:\;
+s\leadsto_{\mathcal E_M}^{*}t
+\}.
+}
+$$
+
+Esta definición se construye directamente desde la $\mathcal E_M$ independiente de REV-03.
+
+### F1 se deriva — extensividad
+
+Por reflexividad:
+
+$$
+s\leadsto_{\mathcal E_M}^{*}s.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+X\subseteq F_M(X).
+}
+$$
+
+### F2 interna se deriva — monotonía con $M$ fijo
+
+Si:
+
+$$
+X\subseteq Y,
+$$
+
+todo punto alcanzable por una cadena emergente desde algún $x\in X$ también es alcanzable desde un elemento de $Y$. Luego:
+
+$$
+\boxed{
+X\subseteq Y
 \Rightarrow
-F(X)\preceq F(Y).
+F_M(X)\subseteq F_M(Y).
+}
 $$
 
-El lema anterior solo demuestra monotonía de **transporte de eventos** bajo una relación de extensión mucho más fuerte y explícitamente conductual.
+Esto no contradice REV-02. El inhibidor cambia $M$ y, con él, cambia el propio operador:
 
-Para usar $\hookrightarrow_{\mathrm{cons}}$ en el teorema habría que demostrar todavía que:
+$$
+F_M
+\neq
+F_{M^I}.
+$$
 
-1. los objetos del poset pueden representarse como sistemas de transición de este tipo;
-2. la relación relevante entre dominios es realmente $\hookrightarrow_{\mathrm{cons}}$ o induce una relación ordenada adecuada;
-3. el futuro operador $F$ construido a partir de $\mathcal E$ preserva esa relación;
-4. las cadenas relevantes siguen teniendo cotas superiores respecto de esa nueva relación.
+F2 es una afirmación sobre **un mismo** $F_M$; la inhibición es una comparación **entre operadores distintos**.
 
-Por tanto no se ha salvado Zorn: se ha identificado **qué tipo de monotonía sería defendible** y cuánto cuesta obtenerla.
+### F3 se deriva — idempotencia
 
-### Estado de REV-02
+Sea:
 
-REV-02 pasa de **OPEN** a **PARTIAL**.
+$$
+t\in F_M(F_M(X)).
+$$
 
-Ya existe:
+Entonces existe $u\in F_M(X)$ tal que:
 
-- un contraejemplo explícito $M/M^I$ que refuta monotonía bajo extensión estructural bruta;
-- una definición explícita de extensión conservativa;
-- un lema que demuestra preservación de eventos emergentes bajo esa relación fuerte.
+$$
+u\leadsto_{\mathcal E_M}^{*}t.
+$$
 
-No se marca RESOLVED hasta conectar —o demostrar que no puede conectarse— esta relación con el operador $F$ y el orden usados en la ruta de maximalidad.
+Y existe $s\in X$ con:
+
+$$
+s\leadsto_{\mathcal E_M}^{*}u.
+$$
+
+Por transitividad de la clausura:
+
+$$
+s\leadsto_{\mathcal E_M}^{*}t.
+$$
+
+por lo que:
+
+$$
+t\in F_M(X).
+$$
+
+Junto con F1 aplicada a $F_M(X)$:
+
+$$
+F_M(X)\subseteq F_M(F_M(X)),
+$$
+
+obtenemos:
+
+$$
+\boxed{
+F_M(F_M(X))=F_M(X).
+}
+$$
+
+Así F1–F3 **ya no son axiomas gratuitos** para este operador concreto: son consecuencias de la clausura reflexivo-transitiva de la relación de eventos emergentes.
+
+### Corrección del teorema: F2 nunca fue necesaria
+
+La prueba archivada usaba F2 para mostrar que, dada una cadena:
+
+$$
+\mathcal C\subseteq\operatorname{Fix}(F),
+$$
+
+y una cota:
+
+$$
+\forall X\in\mathcal C:\;X\preceq U,
+$$
+
+$F(U)$ era una cota superior fija.
+
+Pero basta F1.
+
+Para cada $X\in\mathcal C$:
+
+$$
+X\preceq U
+$$
+
+y por F1:
+
+$$
+U\preceq F(U).
+$$
+
+Por transitividad:
+
+$$
+\boxed{
+X\preceq F(U).
+}
+$$
+
+Por F3:
+
+$$
+F(F(U))=F(U),
+$$
+
+de modo que:
+
+$$
+F(U)\in\operatorname{Fix}(F).
+$$
+
+Por tanto, para levantar una cota arbitraria de una cadena de puntos fijos a una cota **fija**, solo hacen falta:
+
+$$
+\boxed{F1+F3.}
+$$
+
+F2 era una premisa redundante.
+
+### Exhaustividad tampoco usa F2
+
+Sea $M_*$ un punto fijo maximal y supóngase un hecho $x$ no cubierto por $M_*$.
+
+Por cobertura existe $X_x$ con:
+
+$$
+x\preceq X_x.
+$$
+
+Si la amalgamación proporciona $Y$ tal que:
+
+$$
+M_*\preceq Y
+\quad\text{y}\quad
+X_x\preceq Y,
+$$
+
+F1 da:
+
+$$
+Y\preceq F(Y),
+$$
+
+y F3:
+
+$$
+F(Y)\in\operatorname{Fix}(F).
+$$
+
+Entonces:
+
+$$
+M_*\preceq F(Y)
+$$
+
+y:
+
+$$
+x\preceq F(Y).
+$$
+
+Como $x\not\preceq M_*$, $F(Y)$ es una extensión fija estricta de $M_*$, contradiciendo maximalidad.
+
+De nuevo, F2 no aparece.
+
+### Teorema abstracto revisado
+
+Sea $(\mathfrak D,\preceq)$ un poset set-sized y:
+
+$$
+F:\mathfrak D\to\mathfrak D
+$$
+
+un operador que satisface únicamente:
+
+$$
+\text{F1: }X\preceq F(X),
+$$
+
+$$
+\text{F3: }F(F(X))=F(X).
+$$
+
+Supóngase además:
+
+1. cobertura local C0;
+2. toda cadena de $\operatorname{Fix}(F)$ tiene una cota superior en $\mathfrak D$;
+3. un principio de maximalidad tipo Zorn aplicable;
+4. amalgamación sustantiva entre el punto fijo maximal y cualquier dominio que cubra un hecho del mismo régimen.
+
+Entonces existe un punto fijo maximal y todo punto fijo maximal es exhaustivo respecto de los hechos cubiertos por ese régimen.
+
+Esquemáticamente:
+
+$$
+\boxed{
+C0+F1+F3+C1_{\operatorname{Fix}}+C2+\operatorname{Max}
+\Rightarrow
+\exists R_i[
+F(R_i)=R_i
+\land
+\operatorname{Exhaustive}_i(R_i)
+].
+}
+$$
+
+Esta corrección **reduce**, no aumenta, las premisas matemáticas del teorema.
+
+### REV-04 — punto fijo propio explícito
+
+El toy de cuatro componentes permite ya demostrar que punto fijo no implica totalidad del sistema.
+
+Sea:
+
+$$
+\Sigma_M=\{p,c,a,i\}
+$$
+
+y supóngase que el único evento emergente del juguete es:
+
+$$
+p\leadsto_{\mathcal E_M}c.
+$$
+
+La transición `activate` de $c$ a $a$ es una transición ordinaria del sistema, no un segundo evento emergente en este toy.
+
+Tomemos:
+
+$$
+S=\{p,c\}.
+$$
+
+Entonces:
+
+$$
+F_M(S)=\{p,c\}=S.
+$$
+
+Pero:
+
+$$
+S\neq\Sigma_M.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+S=F_M(S)
+\land
+S\neq\Sigma_M.
+}
+$$
+
+Existe así un **punto fijo propio explícito y calculable**. El operador no colapsa semánticamente en «la unión de todo».
+
+Esto satisface el criterio formal de REV-04.
+
+### Nuevo problema revelado: puente de tipos
+
+El avance anterior introduce una obligación que antes estaba oculta.
+
+$F_M$ está bien definido sobre:
+
+$$
+\mathcal P(\Sigma_M),
+$$
+
+mientras el teorema ontológico pretende operar sobre:
+
+$$
+(\mathfrak D_i,\preceq_{\mathrm{ont}}).
+$$
+
+No se ha demostrado que un dominio ontológico sea un conjunto de configuraciones, ni que:
+
+$$
+\subseteq
+$$
+
+represente:
+
+$$
+\preceq_{\mathrm{ont}}.
+$$
+
+Por tanto aparece un nuevo blocker independiente:
+
+$$
+\boxed{
+\text{puente entre clausura emergente system-relative y dominio ontológico}.
+}
+$$
+
+Esta obligación se registra como REV-18 y evita declarar una victoria ontológica a partir de un operador formal bien construido.
+
+### Estados después de la corrección
+
+- **REV-01:** RESOLVED en su ataque original: existe una definición independiente de $\mathcal E_M$ y F1–F3 se derivan para el operador concreto $F_M$; además F2 no es necesaria para el teorema abstracto.
+- **REV-02:** RESOLVED: la inhibición es no-monotonía **entre sistemas/operadores**, no contraejemplo a la monotonía interna de $F_M$; la extensión conservativa caracteriza cuándo sí puede transportarse un evento.
+- **REV-04:** RESOLVED: existe un punto fijo propio explícito en el toy.
+- **REV-18:** OPEN: falta el puente formal y ontológico entre $F_M$ sobre estados y $F$ sobre dominios.
 
 ---
 ## 4. Núcleo matemático actualmente separable
