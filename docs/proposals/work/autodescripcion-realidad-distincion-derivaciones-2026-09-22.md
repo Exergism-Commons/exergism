@@ -5578,7 +5578,7 @@ $$
 }
 $$
 
-**Demostración.** APC$_{Real}$ proporciona exactamente un testigo plural de `AbsTotal`. Recíprocamente, un testigo de `ExistsAbsR` satisface el consecuente de APC$_{Real}`. AG fija la lectura absolutamente general de los cuantificadores; no añade un paso deductivo interno. $\square$
+**Demostración.** APC$_{Real}$ proporciona exactamente un testigo plural de `AbsTotal`. Recíprocamente, un testigo de `ExistsAbsR` satisface el consecuente de APC$_{Real}$. AG fija la lectura absolutamente general de los cuantificadores; no añade un paso deductivo interno. $\square$
 
 Por tanto:
 
