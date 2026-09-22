@@ -450,7 +450,7 @@ K1_i+K2_i+K3_i
 }
 $$
 
-$\mathrm{OTB}_i$ es aquí una abreviatura del **problema a demostrar**, no una premisa que pueda darse por estipulación. Su contenido se descompone más abajo en REV-24a/b/c.
+$\mathrm{OTB}_i$ es aquí una abreviatura del **problema a demostrar**, no una premisa que pueda darse por estipulación. Su contenido se descompone más abajo en REV-24a/OA, REV-24b/MC, REV-24c/RA y REV-24d/SR; este último bloquea que la existencia de un alcance $R_i$ se introduzca tácitamente por comprensión o reificación.
 
 Que además exista un único régimen, múltiples regímenes, Cluster-$R$, Indexed-One-$R$ o alguna estructura metaontológica ulterior es una cuestión separada.
 
