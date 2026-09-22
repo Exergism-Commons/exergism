@@ -1082,6 +1082,68 @@ Si una relación infinitaria de aridad set-sized puede representarse mediante un
 
 Esta reducción **no cierra REV-24b**. Si $\operatorname{CoReal}$ no puede caracterizarse independientemente de $\Lambda_*$, RC sería una estipulación y no una prueba.
 
+##### FID significa profundidad finita, no generación local finita
+
+El stress test físico obliga a precisar FID. No se exige que todo contenido global sea generado por un número finito de observables locales, ni que toda relación integradora tenga aridad finita.
+
+La tesis relevante es únicamente que la **profundidad del testigo ontológico** sea finita. Una instancia relacional actual $g$ puede tener set-many relata y actuar como nodo de incidencia:
+
+$$
+\operatorname{Inc}(x,g)
+\land
+\operatorname{Inc}(y,g).
+$$
+
+Si $g$ satisface los criterios independientes de admisibilidad de $\Lambda_*$, entonces $x$ e $y$ quedan conectados por un camino de longitud dos aunque $g$ sea una relación global o infinitaria. Por tanto:
+
+$$
+\boxed{
+\text{aridad infinita set-sized}
+\not\Rightarrow
+\neg\mathrm{FID}.
+}
+$$
+
+Lo que sí falsaría FID sería **integración sin testigo finitamente alcanzable**:
+
+$$
+\operatorname{CoReal}(x,q)
+\land
+\neg\exists\text{ cadena finita de instancias relacionales actuales admisibles}
+\Rightarrow
+\neg\mathrm{FID}.
+$$
+
+Esto impide confundir «no local» con «no finitamente conectable».
+
+##### Stress test físico: gauge, superselección y completaciones
+
+Tres familias conocidas fuerzan esta cautela:
+
+1. **Gauge/gravedad.** Las restricciones de gauge obstaculizan la factorización ingenua de subsistemas; formulaciones con fronteras introducen edge/boundary data para describir el pegado. Esto desafía una ontología de subsistemas puramente local, pero por sí solo no refuta FID: esos grados de libertad pueden funcionar como testigos relacionales extendidos si se consideran ontológicamente reales.
+2. **Superselección y pérdida de aditividad.** Hay QFTs donde ciertos operadores de una región no son generados por las álgebras de regiones menores; en ejemplos discutidos por Casini–Huerta–Magán–Pontello aparecen operadores que no pertenecen a la unión de ningún número finito de regiones locales y emergen al completar/tomar doble conmutante. Esto refuta cualquier lectura de FID como «todo es finitariamente generado por partes locales», pero no una lectura por testigos relacionales.
+3. **AQFT/cuasilocalidad.** El álgebra cuasilocal es un $C^*$-inductive limit/completion de las álgebras locales; la unión local es densa, no tiene por qué coincidir con el álgebra completa. Por tanto existen candidatos matemáticos cuyo estatuto es esencialmente de límite. Si una ontología física trata uno de esos elementos como token actual co-real con tokens locales, pero no reconoce ninguna instancia relacional actual que testimonie la relación de límite, obtenemos exactamente un contraejemplo candidato a FID.
+
+La salida «introducir un token $g$ que representa el límite» solo es legítima si $g$ satisface un criterio independiente de admisibilidad. No puede crearse un nodo relacional ad hoc únicamente para forzar conectividad. Llamamos a esa condición:
+
+$$
+\mathrm{WA}(g)
+$$
+
+(**Witness Admissibility**), que exige al menos:
+
+- actualidad independiente del argumento de totalización;
+- carácter ontológico, no mera relación entre descripciones;
+- relata identificables sin usar $R_i$ o $\operatorname{CoReal}$;
+- rol integrador justificable;
+- invariancia bajo recodificación fiel;
+- incidencia set-sized o una revisión explícita de REV-23;
+- ausencia de definición circular del tipo «$g$ existe porque sus relata son co-reales».
+
+Así, un límite, constraint global, Wilson loop, edge mode o relación infinitaria puede salvar FID **solo si** su instancia cumple WA.
+
+Véase el [mapa de literatura](autodescripcion-realidad-distincion-references.md#identidad-de-régimen-y-relaciones-de-worldmate) para los precedentes usados en este stress test.
+
 ##### Requisito de independencia para $\operatorname{CoReal}$
 
 Para que $\mathrm{RC}_{\Lambda}$ cuente como apoyo ontológico y no como una tautología encubierta, cualquier caracterización candidata $C(x,q)$ de co-realidad debe satisfacer:
