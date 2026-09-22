@@ -5491,14 +5491,14 @@ Esta descomposición muestra que la pregunta «¿existe un alcance ontológico e
 
 Eso **no** se da por probado: abre una posible ruta futura en la que REV-25 seguiría siendo necesario para el teorema fuerte de $\operatorname{SemTotal}$, pero quizá no para una tesis ontológica más austera sobre existencia de alcance.
 
-Bajo la ruta actualmente construida, solo si OTB se justifica se obtiene:
+Bajo la **Ruta A finita ya indexada por régimen**, solo si OTB se justifica se obtiene:
 
 $$
 \boxed{
 \mathrm{PON}
 +\mathrm{SigSmall}_i
 +\mathrm{ActualSep}_i
-+\operatorname{StructAdm}
++\operatorname{StructAdm}_i
 +\mathrm{OTB}_i
 \Rightarrow
 \operatorname{WitnessedRegR}
@@ -5506,6 +5506,8 @@ $$
 \operatorname{ExistsRegR}.
 }
 $$
+
+Este bloque no es una formulación alternativa de la Ruta B generalizada. Para Ruta B rige exclusivamente el teorema closure-relative con CSet/CWF/CProcStable/$\mathrm{SigSmall}_{\mathcal C}$/$\mathrm{ActualSep}_{\mathcal C}$ hasta justificar CS/CC/CRType.
 
 ### 8.6. REV-26 — existencia del $R$ absoluto
 
@@ -5764,7 +5766,10 @@ por lo que es set-sized.
 
 ### 10. Precio exacto
 
-La construcción semántica requiere una **clausura de régimen** suficientemente small y process-stable: en la ruta finita esto se implementa con $\Lambda_*$ + PON; en la ruta generalizada con $\mathcal C_*$ + CSet/CProcStable. Ambas rutas requieren además $\mathrm{SigSmall}_i$ y $\mathrm{ActualSep}_i$.
+Las dos construcciones semánticas tienen premisas distintas y no deben mezclarse:
+
+- **Ruta finita ya indexada por régimen:** $\Lambda_*$ + PON + $\operatorname{StructAdm}_i$ + $\mathrm{SigSmall}_i$ + $\mathrm{ActualSep}_i$.
+- **Ruta generalizada pre-ontológica:** CGI/CMin para la generación no circular de $\mathcal C_*$ y, para el teorema semántico, CSet + CWF + CProcStable + $\mathrm{SigSmall}_{\mathcal C}$ + $\mathrm{ActualSep}_{\mathcal C}$. CS/CC/CRType se usan solo después para justificar la reindexación como régimen; $\operatorname{StructAdm}_i$ no es premisa de esta maximalidad.
 
 La conclusión ontológica **local** añade REV-24a/OA + REV-24b/MC + REV-24c/RA + REV-24d/SR para justificar un $R_i$ presentado por $S_i$.
 
