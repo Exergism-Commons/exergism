@@ -167,6 +167,8 @@ $$
 }
 $$
 
+El cuantificador $\exists R_i$ es **tipado sobre alcances**, no un existencial singular ordinario sobre objetos del mismo universo que los tokens. Mientras REV-24d permanezca abierto, esta notación es esquemática. En la ruta plural estricta se reemplaza por cuantificación plural $\exists rr_i$ y una relación «ser uno de» $x\prec rr_i$; no se postula una entidad colectora $R_i$.
+
 Para registrar el objetivo más fuerte que puede alcanzar la ruta constructiva introducimos:
 
 $$
