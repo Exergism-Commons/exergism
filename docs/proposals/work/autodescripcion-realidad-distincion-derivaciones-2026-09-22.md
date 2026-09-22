@@ -3445,23 +3445,29 @@ $$
 }
 $$
 
-Este teorema es exclusivamente semántico. No permite sustituir $S_i$ por un $R_i$ ni concluir $\operatorname{ExistsRegR}$ sin REV-24/$\mathrm{OTB}_i$; tampoco contiene ningún paso hacia $\operatorname{ExistsAbsR}$:
+Este teorema es exclusivamente semántico. No permite sustituir $S_i$ por un $R_i$ ni concluir $\operatorname{ExistsRegR}$. La existencia local pertenece a REV-07; REV-24 solo añade presentación:
 
 $$
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\Rightarrow
+\operatorname{ExistsRegR},
+$$
+
+y:
+
+$$
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
++
 \operatorname{SemTotal}_i(S_i)
 +
 \mathrm{OTB}_i
 \Rightarrow
-\exists R_i[
 \operatorname{Presents}_i(S_i,R_i)
-\land
-\operatorname{OntTotal}_i(R_i)
-]
 \Rightarrow
-\operatorname{WitnessedRegR}
-\Rightarrow
-\operatorname{ExistsRegR}.
+\operatorname{WitnessedRegR}.
 $$
+
+Ninguna de estas inferencias contiene por sí sola un paso hacia $\operatorname{ExistsR}$ absoluto.
 
 ### Consecuencia
 
