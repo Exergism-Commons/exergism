@@ -179,11 +179,9 @@ Esto **todavía no demuestra una metafísica emergentista de $R$**. El teorema v
 
 Los bloqueadores activos relevantes pasan a ser:
 
-- **REV-18:** puente entre eventos/configuraciones actualizadas y dominios ontológicos cerrados;
-- **REV-07:** identidad independiente de cada régimen $i$ y justificación de $K3_i$;
-- **REV-09:** admisibilidad ontológica de las cotas de cadenas;
-- **REV-20:** cofinalidad $K1_i$;
-- **REV-22:** aplicabilidad fundacional de Zorn al régimen real — smallness o esqueleto cofinal set-sized;
+- **REV-07:** justificación filosófica de la familia pre-régimen $\Lambda_*$ que individúa los regímenes;
+- **REV-20:** smallness local de la emergencia (LSE) como condición estructural de la construcción de K1;
+- **REV-22:** aplicabilidad fundacional de Zorn al régimen real — smallness global o esqueleto cofinal set-sized;
 - **REV-15:** consecuencias metaontológicas discriminantes;
 
 ## 3.1. Resumen formal vigente
@@ -196,11 +194,11 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-02 | RESOLVED tipado | La inhibición compara sistemas/operadores distintos, no entradas del mismo $F_M$. Una extensión conductualmente conservativa caracteriza cuándo un evento puede transportarse entre sistemas. |
 | REV-03 | PARTIAL | Existe una definición de emergencia event-local, independiente de $R$, basada en macro-invariancia, testigo organizacional y capacidad dinámica habilitada. Sigue pendiente validar su alcance doctrinal en casos ricos. |
 | REV-04 | RESOLVED mínimo | El toy de cuatro componentes produce un punto fijo propio explícito de $F_M$. Esto demuestra que el operador no es necesariamente «la unión de todo», pero no caracteriza todavía sistemas ricos. |
-| REV-18 | PARTIAL | Existe un puente mínimo por incidencia de estados/eventos en dominios y un predicado $\operatorname{EClosed}$. Falta justificar ontológicamente esa incidencia. |
+| REV-18 | RESOLVED tipado | Un dominio se toma como fragmento semántico positivo actual $X=(T_X,\Phi_X)$; incidencia es pertenencia al carrier semántico y `EClosed_i` es una propiedad del contenido, no de la serialización. No se reifica el dominio como entidad adicional. |
 | REV-19 | RESOLVED tipado | El objeto primario queda fijado como fragmento procesual semántico $X=(T_X,\Phi_X)$; $\preceq_i^{\mathrm{proc}}$ es inclusión de contenido positivo actual. Admisibilidad ontológica se separa como $\operatorname{Adm}_i$ y queda en REV-18/20/09/07. |
-| REV-20 | OPEN | La cofinalidad K1 de dominios E-closed no está demostrada ontológicamente. Por el Muro, no puede cerrarse por muestreo interno: necesita una justificación estructural/no enumerativa de que todo dominio admisible posee alguna extensión admisible E-closed. |
+| REV-20 | PARTIAL | Con admisibilidad estructural mínima, OEA y CUA se derivan. Si además la emergencia es localmente set-like (LSE), el cono emergente de todo dominio set-sized es set-sized y se construye una extensión E-closed por rondas finitas. K1 queda derivada bajo StructAdm + LSE. Falta justificar LSE como propiedad del régimen. |
 | REV-22 | OPEN fundacional | Para aplicar Zorn al régimen real hay que justificar que el poset relevante es set-sized, o exhibir un esqueleto set-sized cofinal que preserve las hipótesis K, o adoptar explícitamente un principio de maximalidad de clases. |
-| REV-09 | PARTIAL | `EClosed` se preserva formalmente bajo uniones de cadenas procesuales compatibles; falta demostrar que la cota formal sea ontológicamente admisible. |
+| REV-09 | RESOLVED set-indexed | Con `Adm_i := StructAdm_i`, la unión de una cadena set-indexed de fragmentos positivos actuales sigue siendo well-formed y admisible; junto con el lema previo de preservación de `EClosed`, K2 queda demostrada dentro del alcance set-sized del teorema. La aplicabilidad class-sized queda en REV-22. |
 | REV-10 | RESOLVED vigente | La ruta actual ya no usa la inferencia oculta de StageFactorization/presentabilidad criticada en H8. |
 | REV-21 | RESOLVED formal | Los puntos fijos de $F_i$ son exactamente los subconjuntos forward-closed del grafo emergente; la degeneración al único punto fijo no vacío $\Sigma_i$ ocurre exactamente cuando el grafo es fuertemente conexo. |
 
@@ -245,11 +243,9 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 
 El cuello de botella ya no está en F1–F3 ni en resolver One-R. Está en conectar el formalismo local con la ontología **de cada régimen $i$** sin introducir su unidad o exhaustividad en las premisas:
 
-1. **REV-18:** interpretar ontológicamente incidencia y `EClosed_i`;
-2. **REV-20:** demostrar cofinalidad $K1_i$ sin presuponer ya $R_i$;
-3. **REV-09:** justificar la admisibilidad ontológica de cotas de cadenas dentro de $i$;
-4. **REV-07:** justificar $\Lambda_*$, EEA/OAM y por tanto $K3_i$ sin circularidad;
-5. **REV-22:** justificar que Zorn estándar aplica al régimen mediante smallness o un esqueleto cofinal set-sized.
+1. **REV-07:** justificar filosóficamente $\Lambda_*$ como criterio de identidad de régimen;
+2. **REV-20:** justificar LSE —que un conjunto de sources genere solo un conjunto de eventos emergentes actuales—;
+3. **REV-22:** justificar que Zorn estándar aplica globalmente mediante smallness o un esqueleto cofinal set-sized.
 
 ---
 
@@ -508,6 +504,73 @@ Esto neutraliza la antigua solución verbal de llamar «Verdad Absoluta indexada
 REV-18, REV-19, REV-20 y REV-09 deben resolverse **por régimen $i$**. Ninguna de sus soluciones necesita primero resolver One-R/Many-R.
 
 REV-07 queda reducido a una obligación más precisa: justificar independientemente qué hace que dos dominios pertenezcan al mismo régimen $i$ y por qué ese régimen satisface K3_i, sin definir «mismo régimen» como «amalgamable».
+
+---
+
+## 3.3. Admisibilidad estructural mínima
+
+El predicado abstracto $\operatorname{Adm}_i$ se concreta normativamente como **well-formedness de contenido ontológico positivo actual**.
+
+Un dominio procesual:
+
+$$
+X=(T_X,\Phi_X)
+$$
+
+es admisible cuando:
+
+1. todos sus tokens pertenecen al mismo régimen $i$;
+2. todos los tokens y hechos incluidos son actuales;
+3. todo hecho incluye en $T_X$ sus relata;
+4. todo evento incluye source y target únicos;
+5. la precedencia/dependencia incluida es acíclica/coherente;
+6. el fragmento contiene solo contenido positivo: una extensión puede añadir hechos sin retractar los anteriores.
+
+Es decir:
+
+$$
+\boxed{
+\operatorname{Adm}_i(X)
+:=
+\operatorname{StructAdm}_i(X).
+}
+$$
+
+Esta elección tiene una lectura ontológica deliberadamente austera:
+
+> un dominio no es una entidad adicional dentro de la realidad; es un **fragmento semántico de alcance ontológico actual**.
+
+Por tanto, un máximo $R_i$ del poset de dominios no introduce una sustancia, conjunto universal o colector físico adicional: representa el alcance exhaustivo del contenido actual del régimen dentro del tipo formal elegido.
+
+### Consecuencias demostradas
+
+Con esta definición:
+
+- **incidencia:** $q\trianglelefteq_i X$ significa exactamente $q\in T_X$; esto cierra REV-18 en su problema de tipos;
+- **extensión por evento:** añadir el footprint de un evento emergente actual preserva StructAdm, por lo que OEA se deriva;
+- **extensión por enlace:** añadir el footprint de una relación actual de $\Lambda_*$ preserva StructAdm, por lo que la EEA relevante se deriva;
+- **unión binaria:** la unión de dos fragmentos del mismo régimen sigue siendo StructAdm; por tanto K3$_i$ se deriva directamente una vez fijada la identidad del régimen;
+- **uniones de cadenas set-indexed:** preservan StructAdm; combinadas con la preservación formal de EClosed, demuestran K2$_i$ en el alcance set-sized.
+
+La razón de coherencia es que solo se acumulan hechos positivos **actuales**. Un conflicto funcional o un ciclo finito de precedencia no puede aparecer por unir hechos que son conjuntamente verdaderos en el mismo régimen; si apareciese, la propia semántica de actualidad/proceso sería inconsistente.
+
+### Cobertura
+
+Para todo token o hecho actual de aridad finita del régimen existe un footprint well-formed set-sized que lo contiene. Por tanto:
+
+$$
+\mathrm{COV}_i:
+\quad
+\forall q\text{ actual en }i
+\;\exists X\in\mathfrak D_i^{\mathrm{proc}}:
+q\trianglelefteq_i X.
+$$
+
+Si $R_i$ domina todos los dominios admisibles, COV$_i$ implica que $R_i$ contiene todo contenido actual del régimen representable por la firma procesual.
+
+### Precio conceptual
+
+Este paso adopta como tesis metodológica que **todo fragmento positivo actual y well-formed cuenta como dominio legítimo** para el teorema. Si en el futuro se exige una noción más fuerte de dominio —por ejemplo cierre causal o nomológico previo— REV-18/REV-09 deberán reabrirse.
 
 ---
 ## 4. Núcleo matemático normalizado — qué necesita realmente Zorn
@@ -1262,54 +1325,29 @@ Por tanto:
 La compacidad lógica y la maquinaria categórica pueden seguir siendo herramientas futuras para justificar esa admisibilidad, pero no cuentan como resultados ontológicos por sí mismas.
 
 
-## 9. Proceso, branching, fractalidad y novedad modal
+## 9. Proceso, admisibilidad y extensiones diferidas
 
-REV-19 queda **RESOLVED en tipado y orden**.
+REV-19 permanece **RESOLVED en tipado y orden** y REV-18 queda **RESOLVED en el puente semántico mínimo**.
 
-El objeto primario del teorema emergentista es un fragmento procesual semántico:
+El objeto primario es:
 
 $$
 X=(T_X,\Phi_X),
 $$
 
-donde $T_X$ contiene tokens ontológicos actuales y $\Phi_X$ hechos relacionales actuales.
-
-El orden procesual es:
+con orden:
 
 $$
-\boxed{
-X\preceq_i^{\mathrm{proc}}Y
+X\preceq_iY
 \iff
 T_X\subseteq T_Y
 \land
 \Phi_X\subseteq\Phi_Y.
-}
 $$
 
-Es inclusión de **contenido positivo actual**. Una extensión puede añadir nuevos hechos o capacidades; no es la extensión conductualmente conservativa de REV-02.
+La admisibilidad vigente es StructAdm: fragmento positivo, actual, homogéneo de régimen y well-formed.
 
-La cuestión de si un fragmento es ontológicamente admisible se separa mediante:
-
-$$
-\operatorname{Adm}_i(X),
-$$
-
-y:
-
-$$
-\mathfrak D_i^{\mathrm{proc}}
-=
-\{X\mid X\text{ es well-formed y }\operatorname{Adm}_i(X)\}.
-$$
-
-Esto localiza las deudas restantes:
-
-- REV-18: semántica ontológica de actualidad/incidencia/admisibilidad;
-- REV-20: existencia de extensiones admisibles E-closed;
-- REV-09: admisibilidad de uniones/límites de cadenas;
-- REV-07: EEA/OAM como propiedades locales de preservación de admisibilidad.
-
-Una sección sincrónica $\operatorname{Slice}_t(X)$, si alguna vez se necesita, será una operación derivada dependiente de una teoría temporal adicional. No es premisa del teorema procesual.
+Con esta elección, REV-09 queda RESOLVED para cadenas set-indexed y K3$_i$ deja de requerir OAM como premisa: la unión de dos dominios del mismo régimen ya proporciona una cota común admisible.
 
 Siguen fuera del núcleo demostrado:
 
@@ -1318,11 +1356,6 @@ Siguen fuera del núcleo demostrado:
 - meta-capacidades;
 - AbsoluteBruteNovelty;
 - fractalidad.
-
-Dos límites permanecen firmes:
-
-1. una estructura temporal abstracta no debe identificarse con el tiempo de Planck;
-2. branching/no linealidad no implica fractalidad.
 
 «Fractal» no participa en ninguna inferencia vigente.
 
