@@ -4959,7 +4959,36 @@ $$
 
 El ejemplo no afirma que `CoReal` sea conectividad topológica. Su función es metateórica: demuestra que pasar de una noción global de unidad a una descomposición finita en enlaces es una premisa sustantiva.
 
-##### 8.2.5. Ruta alternativa si FID falla: clausura integrativa generalizada
+##### 8.2.5. Contraesquema de dependencia infinitaria
+
+Considérese una cadena actual:
+
+$$
+E_1
+\succ E_{1/2}
+\succ E_{1/4}
+\succ\cdots
+$$
+
+de dependencia ontológica inmediata WA-admisible. Supóngase además que una teoría metafísica independiente considera que toda la cadena está ultimadamente fundada en $F$, pero que no existe ningún $n<\omega$ tal que $E_1$ alcance $F$ mediante $n$ pasos de dependencia inmediata.
+
+Si:
+
+$$
+\operatorname{CoReal}(E_1,F),
+$$
+
+entonces:
+
+$$
+\boxed{
+\neg\mathrm{FID}.
+}
+$$
+
+aun cuando cada eslabón individual sea ontológicamente impecable. El punto no es adoptar metafysical infinitism, sino mostrar que FID incorpora una restricción de **longitud finita** que no se sigue de la mera existencia de grounding/dependence.
+
+##### 8.2.6. Ruta alternativa si FID falla: clausura integrativa generalizada
 
 Sea $\mathcal C_*$ un operador de clausura pre-régimen construido a partir de reglas integrativas independientes, potencialmente incluyendo reglas globales/de límite además de enlaces finitos:
 
@@ -5048,6 +5077,51 @@ $$
 y FID/LA justifican completeness.
 
 Por tanto FID es una **condición suficiente de la instanciación finita**, no una condición necesaria de la tesis `ExistsR`.
+
+##### 8.2.7. Implementación transfinita candidata
+
+Una realización concreta de $\mathcal C_*$ puede iterar una regla de expansión integrativa $G$ por ordinales:
+
+$$
+C_0:=\{q\},
+$$
+
+$$
+C_{\alpha+1}:=G(C_\alpha),
+$$
+
+y para límite $\lambda$:
+
+$$
+C_\lambda:=\bigcup_{\beta<\lambda}C_\beta.
+$$
+
+Si existe un **ordinal set-sized** $\kappa$ tal que:
+
+$$
+C_\kappa=C_{\kappa+1}
+$$
+
+y todos los $C_\alpha$ para $\alpha\leq\kappa$ son sets, entonces:
+
+$$
+T_i^{\mathcal C}:=C_\kappa
+$$
+
+es set-sized y puede alimentar la construcción semántica directa.
+
+Esta ruta sustituye PON+clausura finita por una obligación diferente:
+
+$$
+\mathrm{TransClSmall}_i:
+\quad
+\exists\kappa\in\mathrm{Ord}\text{ set-sized }
+[C_\kappa=C_{\kappa+1}\land C_\kappa\text{ set-sized}].
+$$
+
+No se presupone que tal $\kappa$ exista. Si la clausura requiere recorrido proper-class o no estabiliza en ningún ordinal set-sized, reaparece un blocker fundacional análogo a REV-23.
+
+Esta formulación muestra exactamente qué perderíamos al abandonar FID: no la posibilidad de construir $S_i$, sino la prueba sencilla de smallness mediante niveles finitos $n<\omega$.
 
 ##### 8.2.1. FID no es generación local finita
 
