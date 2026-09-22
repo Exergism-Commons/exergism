@@ -69,7 +69,7 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 ## Nuevos bloqueadores tras normalizar el teorema
 
 - **REV-18 PARTIAL:** el puente mínimo se reduce a incidencia de configuraciones/eventos actuales en dominios y al predicado `EClosed`; ya no se exige un embedding fuerte en un powerset.
-- **REV-19 PARTIAL:** la ruta emergentista adopta dominios procesuales y separa explícitamente $T_{\mathrm{proc}}$ de $T_{\mathrm{syn}}$; faltan orden procesual y resultados de cierre.
+- **REV-19 RESOLVED:** el tipo y el orden procesual quedan fijados; las deudas restantes pertenecen a admisibilidad, K1/K2 y puente ontológico.
 - **REV-20 OPEN:** K1/cofinalidad es una premisa sustantiva nueva de la forma operator-free; definir qué significa cerrado no demuestra que todo dominio tenga una extensión cerrada.
 - **REV-09 PARTIAL** concentra la admisibilidad ontológica de la cota K2; **REV-10 RESOLVED** porque la ruta vigente ya no usa la factorización oculta; **REV-07** concentra K3/directedness.
 ## Avance de REV-20
@@ -194,4 +194,4 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 
 Tras el commit 9cfb857, el documento normativo principal funciona como crónica + estado actual. La versión antigua se conserva como evidencia histórica, pero sus contradicciones no se consideran tesis simultáneamente vigentes.
 
-Estado sustantivo actual: REV-03, REV-07, REV-09, REV-18 y REV-19 permanecen PARTIAL; REV-15, REV-20 y REV-21 permanecen OPEN. REV-01, REV-02, REV-04, REV-08, REV-10 y REV-14 están RESOLVED en su alcance explícitamente acotado. La teoría emergentista es ahora local a cada régimen $i$ y no pretende demostrar One-R global.
+Estado sustantivo actual: REV-03, REV-07, REV-09 y REV-18 permanecen PARTIAL; REV-15 y REV-20 permanecen OPEN. REV-01, REV-02, REV-04, REV-08, REV-10, REV-14, REV-19 y REV-21 están RESOLVED en su alcance explícitamente acotado. La teoría emergentista es local a cada régimen $i$ y no pretende demostrar One-R global.
