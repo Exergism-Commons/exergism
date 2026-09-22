@@ -2198,3 +2198,211 @@ El criterio de cierre pasa a ser:
 4. justificar K3_i mediante una premisa adicional distinta de la propia identidad de régimen.
 
 ---
+
+---
+
+## REV-07 — criterios de admisibilidad para la familia de enlaces
+
+El criterio de régimen necesita una familia de tipos de relación definida **antes** de conocer los regímenes. La notamos:
+
+$$
+\Lambda_*.
+$$
+
+El subíndice `*` indica nivel pre-régimen: $\Lambda_*$ no puede depender de $i$, $R_i$, K3_i ni de `SameRegime`.
+
+### 1. Instancia relacional actual
+
+Para un tipo de relación $\lambda$, escribimos:
+
+$$
+\rho:\lambda(q,r)
+$$
+
+para una **instancia relacional actual** que tiene a $q$ y $r$ como relata.
+
+No es necesario comprometerse aquí con una reificación universal de relaciones. La notación solo expresa que el hecho relacional está efectivamente instanciado y puede actuar como testigo local.
+
+### 2. Condiciones necesarias de admisibilidad
+
+Un tipo $\lambda$ puede pertenecer a $\Lambda_*$ solo si sus instancias candidatas satisfacen las siguientes condiciones.
+
+**A1 — actualidad.**
+
+$$
+\rho:\lambda(q,r)
+\Rightarrow
+\operatorname{Actual}(\rho).
+$$
+
+No basta que $q$ y $r$ pudieran interactuar, relacionarse o coexistir.
+
+**A2 — carácter ontológico, no meramente representacional.**
+
+La relación debe obtener entre los relata mismos, no únicamente entre sus descripciones, nombres, modelos o representaciones.
+
+**A3 — sensibilidad a los relata.**
+
+La instancia relacional debe ser genuinamente token-specific: sustituir arbitrariamente uno de los relata por un duplicado cualitativo no tiene por qué preservar la misma instancia relacional.
+
+Esto excluye como criterios suficientes:
+
+- compartir un universal;
+- instanciar el mismo tipo o propiedad;
+- obedecer la misma ley;
+- satisfacer la misma ecuación;
+- ser estructuralmente isomorfos;
+- mera semejanza cualitativa.
+
+Esas relaciones pueden ser reales o verdaderas, pero no conectan por sí mismas dos tokens en una única realidad ontológica.
+
+**A4 — rol integrador.**
+
+La instancia debe pertenecer a al menos una familia cuyo contenido ontológico conecte concretamente los relata:
+
+$$
+\Lambda_*
+\subseteq
+\Lambda_{\mathrm{proc}}
+\cup
+\Lambda_{\mathrm{causal}}
+\cup
+\Lambda_{\mathrm{constit}}
+\cup
+\Lambda_{\mathrm{dep}}
+\cup
+\Lambda_{\mathrm{st}}.
+$$
+
+Lectura de las familias:
+
+- $\Lambda_{\mathrm{proc}}$: incidencia en un mismo evento/proceso actual, por ejemplo participante-evento, source-event-target o enabling efectivamente instanciado;
+- $\Lambda_{\mathrm{causal}}$: relación causal actual entre relata o acontecimientos;
+- $\Lambda_{\mathrm{constit}}$: parthood, constitución o composición actual cuando la ontología concreta reconoce esa relación como ontológicamente genuina;
+- $\Lambda_{\mathrm{dep}}$: dependencia ontológica token-specific, en particular dependencia existencial o de identidad;
+- $\Lambda_{\mathrm{st}}$: relaciones espaciotemporales actuales cuando los relata pertenecen a una ontología a la que esa categoría se aplica.
+
+Esta lista es una **taxonomía de roles integradores**, no una afirmación de que todos ellos sean primitivos ni de que toda ontología tenga que contenerlos.
+
+**A5 — localidad semántica.**
+
+Determinar si $\rho:\lambda(q,r)$ no puede requerir cuantificar sobre:
+
+$$
+R_i,
+\quad
+R_{\mathrm{abs}},
+\quad
+\operatorname{Reg}(q),
+\quad
+K3_i
+$$
+
+ni sobre una totalidad cuya existencia sea precisamente lo que se intenta derivar.
+
+**A6 — invariancia representacional.**
+
+Si dos representaciones son fieles al mismo hecho relacional, deben coincidir en si existe la instancia de enlace relevante. El régimen no puede cambiar por renombrar nodos, cambiar coordenadas o escoger otra codificación isomorfa.
+
+### 3. Definición refinada de enlace
+
+Definimos:
+
+$$
+q\bowtie_* r
+$$
+
+si existe $\lambda\in\Lambda_*$ y una instancia actual admisible:
+
+$$
+\rho:\lambda(q,r).
+$$
+
+Usamos la simetrización solo para conectividad:
+
+$$
+q\bowtie r
+\iff
+q\bowtie_* r
+\lor
+r\bowtie_* q.
+$$
+
+La dirección original de causalidad, dependencia o constitución no se borra de la ontología; solo se ignora al calcular componentes conexas.
+
+Después:
+
+$$
+\sim
+:=
+(\bowtie)^{*}
+$$
+
+es la clausura reflexivo-transitiva usada para formar los regímenes candidatos.
+
+### 4. Tests positivos
+
+**P1 — proceso actual.** Si un evento actual $e$ tiene a $s_0$ como source y a $s_1$ como target, la incidencia source/target proporciona enlaces del perfil $\Lambda_{\mathrm{proc}}$.
+
+**P2 — causalidad actual.** Si un acontecimiento $a$ causa actualmente $b$, la instancia causal puede enlazarlos aunque la relación sea dirigida.
+
+**P3 — constitución.** Si $p$ es parte actual de un todo $w$, la instancia mereológica/constitutiva puede enlazar $p$ y $w$ si esa ontología acepta la relación relevante.
+
+**P4 — dependencia ontológica.** Si la identidad o existencia de un token $x$ depende de un token concreto $y$, la instancia de dependencia puede enlazarlos.
+
+**P5 — espaciotiempo.** Dos entidades concretas con una relación espaciotemporal actual pueden quedar conectadas por $\Lambda_{\mathrm{st}}$, sin exigir interacción causal directa.
+
+### 5. Tests negativos anti-colapso
+
+**N1 — universal compartido.** Dos objetos rojos no quedan enlazados solo por instanciar `Rojo`.
+
+**N2 — ley compartida.** Dos sistemas que obedecen la misma ecuación dinámica no quedan enlazados por ello.
+
+**N3 — isomorfismo.** Dos procesos isomorfos pueden pertenecer a regímenes distintos.
+
+**N4 — posibilidad causal.** Que $q$ pudiera causar $r$ en otras condiciones no es una instancia causal actual.
+
+**N5 — co-representación.** Un modelo, teoría o documento que describa conjuntamente $q$ y $r$ no los hace worldmates.
+
+**N6 — dependencia de tipo.** Dos tokens que dependan ambos de la misma clase, ley, universal o definición no quedan enlazados salvo que exista además una dependencia token-specific admisible entre ellos.
+
+### 6. Caso delicado: correlación y entrelazamiento
+
+Una correlación estadística no pertenece automáticamente a $\Lambda_*$. Para contar como enlace debe existir una interpretación ontológica independiente según la cual esa correlación corresponde a una relación actual del tipo admitido.
+
+Lo mismo vale para relaciones físicas no clásicas como el entrelazamiento: la teoría no decide por decreto si pertenecen a $\Lambda_*$. Si una ontología física los trata como relación real entre tokens, deben evaluarse por A1–A6.
+
+### 7. No-colapso por hubs abstractos
+
+Las condiciones A3–A4 bloquean un problema importante.
+
+Si compartir una propiedad universal $U$ fuera suficiente, entonces:
+
+$$
+q\operatorname{Inst}U
+\land
+r\operatorname{Inst}U
+\Rightarrow
+q\sim r
+$$
+
+y universales muy generales podrían conectar casi todo el espacio ontológico.
+
+Esta inferencia queda rechazada.
+
+El mismo argumento bloquea leyes, tipos, categorías y descripciones universales como nodos-hub de régimen.
+
+### 8. Qué se ha conseguido
+
+$\Lambda_*$ deja de ser una lista intuitiva y pasa a estar sometida a seis constraints explícitos más tests positivos/negativos.
+
+Pero la teoría no ha demostrado que esta sea **la única** familia correcta de enlaces ontológicos.
+
+REV-07 permanece PARTIAL hasta:
+
+1. justificar filosóficamente los roles integradores admitidos;
+2. decidir qué variantes de constitución/dependencia cuentan en casos controvertidos;
+3. demostrar suficiente invariancia de $\sim$ bajo las representaciones usadas por REV-18;
+4. justificar K3_i mediante una premisa separada.
+
+---
