@@ -1122,154 +1122,130 @@ junto con CRType y la realización de scope. Si esas obligaciones se cierran, la
 
 FID es solamente una condición suficiente de la Ruta A; un fallo de FID no implica $\neg\operatorname{ExistsRegR}$ ni $\neg\operatorname{ExistsAbsR}$.
 
-### 4.3. REV-24 — puente local semántica → ontología
+### 4.3. REV-24 — presentación semántica de una realidad genealógica
 
-$S_i$ y $R_i$ son tipos distintos.
+$S_i$ y $R_i$ son tipos distintos, y la nueva definición genealógica separa además **existencia ontológica** de **presentación semántica**.
 
-La disciplina de actualidad es:
+REV-07 debe justificar primero alguna:
 
 $$
-\mathrm{CRType}:
-\quad
-\operatorname{CoReal}(x,q)
-\Rightarrow
-\operatorname{Actual}(x)
-\land
-\operatorname{Actual}(q).
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
 $$
 
-REV-24 se divide en cuatro obligaciones.
+REV-24 pregunta después si un máximo semántico $S_i$ presenta adecuadamente esa realidad.
 
 #### REV-24a — Ontological Anchoring (OA)
 
 $$
-\mathrm{OA}_i(S;q):
+\mathrm{OA}_i(S;\mathcal O_i):
 \quad
 \forall a\in T_S\;
 \exists x[
-\operatorname{Actual}(x)
-\land
-\operatorname{CoReal}(x,q)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
 \land
 \operatorname{Den}_i(a,x)
 ].
 $$
 
-En la Ruta A, con denotación canónica $\mathrm{CD}_i$:
+OA impide que el carrier semántico sobreincluya contenido ajeno a la genealogía.
 
-$$
-\boxed{
-\mathrm{RS}_{\Lambda}
-+
-\mathrm{CRType}
-+
-\mathrm{CD}_i
-\Rightarrow
-\mathrm{OA}_i(S_i^*;q).
-}
-$$
+En Ruta A, una vez justificado que $\Lambda_*$ reconstruye la clausura genealógica y usando denotación canónica, la antigua obligación RS se reinterpreta como soundness respecto de $\operatorname{Generated}^{*}_i$.
 
 #### REV-24b — Membership Completeness (MC)
 
 $$
-\mathrm{MC}_i(S;q):
+\mathrm{MC}_i(S;\mathcal O_i):
 \quad
 \forall x[
-\operatorname{Actual}(x)
-\land
-\operatorname{CoReal}(x,q)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
 \Rightarrow
 \exists a\in T_S\;
 \operatorname{Den}_i(a,x)
 ].
 $$
 
-En la Ruta A:
+MC impide que $S_i$ omita contenido de la clausura ontológica.
+
+En Ruta A, RC se reinterpreta como:
 
 $$
-\boxed{
-\mathrm{RC}_{\Lambda}
-+
-\mathrm{CD}_i
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
 \Rightarrow
-\mathrm{MC}_i(S_i^*;q).
-}
+x\in[q]_{\sim}.
 $$
 
-FID + LA es una vía suficiente hacia $\mathrm{RC}_{\Lambda}$, pero **no** una verdad lógica ni un axioma doctrinal. Los contraejemplos y la Ruta B generalizada se desarrollan únicamente en el documento técnico.
+En Ruta B, CC se reinterpreta como:
+
+$$
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\Rightarrow
+x\in T_q^{\mathcal C}.
+$$
+
+FID sigue siendo únicamente una vía suficiente para la implementación finita.
 
 #### REV-24c — Representational Adequacy (RA)
 
-$\mathrm{RA}_i(S)$ debe fijar qué identidades y relaciones ontológicas relevantes preserva y refleja la presentación. No equivale a mera enumeración de miembros y permanece OPEN.
+$\mathrm{RA}_i(S,R_i)$ debe garantizar que la presentación preserva y refleja no solo miembros, sino la estructura genealógica/procesual relevante:
 
-#### REV-24d — Scope Realization (SR)
+- identidades;
+- relaciones de generación;
+- dependencias constitutivas relevantes;
+- procesos que mantienen la clausura;
+- invariancia bajo recodificaciones fieles.
 
-SR pregunta por qué un perfil bien caracterizado de co-realidad determina un **alcance ontológico** sin convertirlo en set, suma mereológica u objeto colector.
+RA permanece OPEN y debe coordinarse con REV-25.
 
-La ruta plural ofrece condicionalmente:
+#### REV-24d — Scope Realization
+
+El finding histórico REV-24d queda **MOVED/SUPERSEDED como parte del puente semántico**. La realización de scope ya no es algo que $S_i$ deba producir: forma parte de establecer $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$ en REV-07.
+
+La ruta plural sigue siendo una posible formalización no reificante del alcance:
 
 $$
-\mathrm{PluralComp}
-+
-\operatorname{Actual}(q)
-+
-\operatorname{CoReal}(q,q)
-\Rightarrow
 \exists rr_i\;
 \forall x[
 x\prec rr_i
 \Longleftrightarrow
-(
-\operatorname{Actual}(x)
-\land
-\operatorname{CoReal}(x,q)
-)
-].
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+],
 $$
 
-Por ello REV-24d es PARTIAL, no RESOLVED. La PR todavía debe justificar qué lógica de scopes/plurales adopta.
+condicionada a la lógica plural adoptada.
 
-#### Esquema OTB local
+#### Esquema OTB local revisado
 
-El objetivo completo de REV-24 es:
+El objetivo de REV-24 pasa a ser:
 
 $$
 \boxed{
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
++
 \operatorname{SemTotal}_i(S_i)
 +
-\mathrm{OA}_i(S_i;q)
+\mathrm{OA}_i(S_i;\mathcal O_i)
 +
-\mathrm{MC}_i(S_i;q)
+\mathrm{MC}_i(S_i;\mathcal O_i)
 +
-\mathrm{RA}_i(S_i)
-+
-\mathrm{SR}_i(q)
+\mathrm{RA}_i(S_i,R_i)
 \Rightarrow
-\exists R_i[
-\operatorname{Presents}_i(S_i,R_i)
-\land
-\operatorname{OntTotal}_i(R_i)
-].
+\operatorname{Presents}_i(S_i,R_i).
 }
 $$
 
-$\mathrm{OTB}_i$ abrevia una justificación suficiente de este esquema; **no es una premisa disponible por estipulación**.
-
-Aun cerrado REV-24:
+Por tanto REV-24 **no demuestra la existencia de $R_i$**. Si REV-07 ya ha establecido $\operatorname{GeneTotal}_i$, entonces:
 
 $$
-\operatorname{WitnessedRegR}
-\Rightarrow
-\operatorname{ExistsRegR},
+\operatorname{ExistsRegR}
 $$
 
-pero no se sigue todavía:
+ya es una conclusión ontológica; REV-24 permite fortalecerla a:
 
 $$
-\operatorname{ExistsAbsR}.
+\operatorname{WitnessedRegR}.
 $$
 
-Ese salto pertenece exclusivamente a REV-26.
+Esta separación elimina definitivamente la lectura según la cual una estructura semántica «promueve» o crea ontológicamente $R_i$.
 
 ### 4.4. Ruta Zorn — resultado auxiliar
 
