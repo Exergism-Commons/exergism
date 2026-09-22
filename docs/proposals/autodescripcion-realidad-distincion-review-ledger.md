@@ -73,7 +73,7 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-17 | El lema de maximalidad vigente se restringe explícitamente a un poset set-sized. | Sección I.4 y Fase 5. | 9cfb857 |
 | 2026-09-22 | REV-15 | Estado corregido de PARTIAL a OPEN: nombrar la deuda no la resuelve. | Ledger + sección normativa. | f0d36c5, 777c3fd |
 | 2026-09-22 | REV-05/REV-06 | Se explicita que su cierre es editorial/clasificatorio, no avance sustantivo. | Sección “Alcance de algunos cierres”. | 777c3fd |
-| 2026-09-22 | LEDGER-FIX | Eliminada la copia duplicada introducida por c014d98 y corregida la celda de evidencia con `$` cerrado. | Recuento de IDs + estructura del fichero. | FIX_COMMIT |
+| 2026-09-22 | LEDGER-FIX | Eliminada la copia duplicada introducida por c014d98 y corregida la celda de evidencia con `$` cerrado. | Recuento de IDs + estructura del fichero. | 0c2266f |
 
 ## Evidencia de consolidación documental
 
