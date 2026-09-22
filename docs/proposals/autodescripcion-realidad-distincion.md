@@ -449,14 +449,14 @@ El programa dispone de dos construcciones semánticas condicionales. La ruta fin
 
 Los bloqueadores activos relevantes pasan a ser:
 
-- **REV-07:** adecuación de la individuación de régimen: $\Lambda_*$ para Ruta A o una clausura $\mathcal C_*$ independiente con CGI/CMin + CS/CC para Ruta B;
+- **REV-07:** origen y clausura ontológica del régimen: justificar $\operatorname{OntOrigin}_i$, $\operatorname{GenStep}_i$ y $\operatorname{Generated}^{*}_i$; $\Lambda_*$/$\mathcal C_*$ pasan a ser reconstrucciones candidatas de esa genealogía;
 - **REV-23:** PON — smallness por-token de la ruta finita; la ruta generalizada puede sustituirlo por `CSet/TransClSmall`;
-- **REV-24:** puente no circular entre exhaustividad semántica y una totalidad ontológica de régimen;
+- **REV-24:** puente de presentación: dado un $R_i$ genealógico justificado por REV-07, demostrar que $S_i$ lo presenta adecuadamente mediante OA/MC/RA;
 - **REV-25:** smallness de la firma y legitimidad del paso por Separation sobre «actualmente verdadero»;
 - **REV-20:** PSB/K1, ahora derivables de PON en la ruta estructural;
 - **REV-22:** aplicabilidad de Zorn, subordinada a las premisas de smallness aunque la ruta directa a $\operatorname{SemTotal}$ no lo necesita;
 - **REV-15:** consecuencias metaontológicas discriminantes;
-- **REV-26:** Globalization Bridge — relación entre `ExistsRegR` y el $R$ absoluto de la doctrina;
+- **REV-26:** origen ontológico común absoluto — AG para formular el target, CO$_{abs}$ para la genealogía común y scope realization como capa formal auxiliar;
 
 ## 3.1. Resumen formal vigente
 
@@ -476,9 +476,9 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-10 | RESOLVED vigente | La ruta actual ya no usa la inferencia oculta de StageFactorization/presentabilidad criticada en H8. |
 | REV-21 | RESOLVED formal | Los puntos fijos de $F_i$ son exactamente los subconjuntos forward-closed del grafo emergente; la degeneración al único punto fijo no vacío $\Sigma_i$ ocurre exactamente cuando el grafo es fuertemente conexo. |
 | REV-23 | OPEN para ruta finita | PON no está justificada. Hace set-sized el componente finitamente conectado, pero la ruta generalizada puede sustituirla por `CSet/TransClSmall`. Ninguna de estas smallness conditions implica por sí sola `ExistsRegR` ni `ExistsAbsR`. |
-| REV-24 | OPEN blocker doctrinal local | El máximo semántico no produce un $R_i$. El puente local se descompone en REV-24a/OA, REV-24b/MC, REV-24c/RA y REV-24d/SR. Su cierre puede producir `WitnessedRegR/ExistsRegR`, no `ExistsAbsR`. |
+| REV-24 | OPEN blocker doctrinal local | El máximo semántico no produce un $R_i$. REV-07 debe justificar primero una realidad genealógica $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$; REV-24 queda reducido a OA/MC/RA para demostrar $\operatorname{Presents}_i(S_i,R_i)$. Su cierre fortalece `ExistsRegR` a `WitnessedRegR`; no crea la existencia local ni implica `ExistsR`. |
 | REV-25 | OPEN blocker fundacional/semántico | El teorema usa smallness de la firma y un paso de Separation sobre los hechos «actualmente verdaderos». Deben justificarse la firma/aridades y la disponibilidad metateórica del predicado de actualidad. |
-| REV-26 | OPEN blocker doctrinal/metaontológico | **Target alignment / Globalization Bridge.** La existencia de una totalidad de régimen no implica Realidad Total. Justificar `ExistsAbsR` exige generalidad absoluta/comprensión adecuada o una estructura real que globalice todos los regímenes; alternativamente, adoptar explícitamente una semántica irreduciblemente indexada y revisar la doctrina de $R$. |
+| REV-26 | OPEN blocker doctrinal/metaontológico | **Origen común absoluto.** El target doctrinal ya está fijado: $R$ es la clausura de una base ontológica común, no el mero scope extensional. AG sigue abierto; APC realiza scope pero no origen; el blocker principal es CO$_{abs}$/globalización genealógica: demostrar que todo lo real pertenece a una única clausura ontológica última. REV-26e queda RESOLVED doctrinal. |
 
 ### Corrección histórica importante sobre F2
 
@@ -519,14 +519,15 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 
 ### Blockers ontológicos actuales
 
-Para la ruta directa, el cuello de botella ya no es K1/K2/K3. Hay cuatro obligaciones independientes:
+La existencia ontológica y su representación quedan ahora separadas:
 
-1. **REV-07:** justificar filosóficamente $\Lambda_*$ como criterio de identidad de régimen y, en particular, por qué la clausura relevante usa caminos finitos;
-2. **REV-23:** justificar PON —que cada token tenga set-many vecinos ontológicos inmediatos—;
-3. **REV-24:** justificar OA/MC/RA y la relación tipada $\operatorname{Presents}_i(S_i,R_i)$ sin presuponer totalidad;
-4. **REV-25:** justificar la smallness de la firma/aridades y el predicado de actualidad usado por Separation.
+1. **REV-07:** justificar una base/origen ontológico $\mathcal O_i$, reglas $\operatorname{GenStep}_i$ independientes y una clausura $\operatorname{Generated}^{*}_i$ que realice un $R_i$;
+2. **REV-23:** justificar PON solo si se conserva la reconstrucción finita por $\Lambda_*$;
+3. **REV-24:** dado un $R_i$ genealógico ya justificado, demostrar OA/MC/RA y $\operatorname{Presents}_i(S_i,R_i)$;
+4. **REV-25:** justificar la smallness de firma/aridades y el predicado de actualidad usado por Separation;
+5. **REV-26:** justificar, para el $R$ absoluto, una base ontológica común cuya clausura genere exactamente todo lo real.
 
-REV-20 y REV-22 quedan como consecuencias/alternativas de las premisas de smallness. Incluso si REV-07, REV-23 y REV-25 se cierran, el teorema directo solo entrega $\operatorname{SemTotal}$ hasta cerrar REV-24.
+REV-20 y REV-22 quedan como consecuencias/alternativas de las premisas de smallness. El teorema semántico directo entrega $\operatorname{SemTotal}$; la existencia local depende de REV-07 y la existencia absoluta de REV-26, no de la maximalidad semántica.
 
 ---
 
@@ -1281,11 +1282,11 @@ Para un operador extensivo e idempotente, F1 + F3 bastan para elevar cotas a pun
 
 **No demostrado:**
 
-1. la adecuación ontológica de $\Lambda_*$ o de una $\mathcal C_*$ concreta;
-2. REV-24c/RA;
-3. el cierre definitivo de REV-24d/SR;
-4. $\operatorname{ExistsRegR}$ sin REV-24;
-5. $\operatorname{ExistsAbsR}$ sin REV-26.
+1. la existencia/adecuación de una base $\mathcal O_i$ y de su clausura ontológica —REV-07—;
+2. la adecuación de $\Lambda_*$ o $\mathcal C_*$ como reconstrucción de esa genealogía;
+3. REV-24c/RA y, por tanto, la presentación completa por $S_i$;
+4. $\operatorname{ExistsRegR}$ sin cerrar la obligación genealógica de REV-07;
+5. $\operatorname{ExistsR}$ sin CO$_{abs}$ / REV-26.
 
 Esta separación es normativa. Cualquier detalle técnico nuevo debe incorporarse primero al documento work/; el normativo solo se amplía cuando cambie uno de estos enunciados, dependencias o estados.
 
