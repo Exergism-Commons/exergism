@@ -81,7 +81,47 @@ $$
 
 $R_i$ no se identifica necesariamente con un conjunto universal, una sustancia, una suma mereológica o una última capa física. La transición de $\operatorname{SemTotal}$ a $\operatorname{OntTotal}$ queda registrada explícitamente como una obligación independiente y no puede resolverse por mera notación.
 
-### 1.2. Totalidad absoluta hipotética
+### 1.2. Horizonte empírico $U_i$ y primer Muro
+
+Se distingue además:
+
+$
+U_i
+$
+
+como el **horizonte físico/empírico efectivamente accesible desde una posición interna**: el dominio cuya estructura puede ser observada, inferida o modelada desde dentro hasta los límites impuestos por acceso causal, evidencia y representación.
+
+$U_i$ no se identifica por definición ni con $S_i$ ni con $R_i$. Su contenido puede admitir una representación semántica dentro de $S_i$, pero esa relación es representacional, no identidad de tipos. Esquemáticamente:
+
+$
+\operatorname{Rep}_i(U_i)\preceq_i S_i.
+$
+
+El primer Muro se formula como la imposibilidad de promover mera clausura epistemológica a totalidad ontológica:
+
+$
+\boxed{
+\operatorname{NoAccessibleExtension}_i(U_i)
+\not\Rightarrow
+\operatorname{OntTotal}_i(U_i).
+}
+$
+
+Por tanto, incluso una teoría internamente completa del universo accesible sería compatible tanto con que ese horizonte agotase la realidad del régimen como con que estuviera embebido en una estructura ontológica mayor. Sandboxes, simulaciones y extensiones causalmente veladas son casos-modelo de esta subdeterminación; no se presuponen como hechos físicos.
+
+La arquitectura conceptual mínima pasa a ser:
+
+$
+U_i
+\xrightarrow{\operatorname{Rep}_i}
+S_i
+\dashrightarrow_{\mathrm{REV\text{-}24}/\mathrm{OTB}_i}
+R_i.
+$
+
+El Muro restringe la identificación empírica de $R_i$; no decide por sí mismo si $R_i$ existe.
+
+### 1.3. Totalidad absoluta hipotética
 
 Reservamos:
 
@@ -93,7 +133,7 @@ para una eventual totalidad global que dominase todos los regímenes.
 
 La existencia de $R_{\mathrm{abs}}$ **no** forma parte del objetivo mínimo del programa actual.
 
-### 1.3. Tesis objetivo
+### 1.4. Tesis objetivo
 
 Definimos:
 
@@ -134,7 +174,7 @@ $$
 \exists R_{\mathrm{abs}}.
 $$
 
-### 1.4. Alternativas compatibles con éxito
+### 1.5. Alternativas compatibles con éxito
 
 Las siguientes arquitecturas son compatibles con $\operatorname{ExistsR}$:
 
@@ -582,7 +622,7 @@ Esta elección tiene una lectura ontológica deliberadamente austera:
 
 > un dominio no es una entidad adicional dentro de la realidad; es un **fragmento semántico de alcance ontológico actual**.
 
-Por tanto, un máximo $R_i$ del poset de dominios no introduce una sustancia, conjunto universal o colector físico adicional: representa el alcance exhaustivo del contenido actual del régimen dentro del tipo formal elegido.
+Por tanto, un máximo $S_i$ del poset de dominios no introduce una sustancia, conjunto universal o colector físico adicional: representa el alcance semánticamente exhaustivo del contenido actual del régimen dentro del tipo formal elegido. Llamarlo $R_i$ exige además REV-24/$\mathrm{OTB}_i$.
 
 ### Consecuencias demostradas
 
