@@ -1025,19 +1025,21 @@ Supóngase además:
 
 Entonces existe un punto fijo maximal y todo punto fijo maximal es exhaustivo respecto de los hechos cubiertos por ese régimen.
 
-Esquemáticamente:
+Esquemáticamente, y manteniendo separado el nivel semántico del ontológico:
 
-$$
+$
 \boxed{
 C0+F1+F3+C1_{\operatorname{Fix}}+C2+\operatorname{Max}
 \Rightarrow
-\exists R_i[
-F(R_i)=R_i
+\exists S_i[
+F(S_i)=S_i
 \land
-\operatorname{Exhaustive}_i(R_i)
+\operatorname{SemExhaustive}_i(S_i)
 ].
 }
-$$
+$
+
+Aquí $\operatorname{SemExhaustive}_i$ expresa exhaustividad dentro del tipo formal cubierto por $\mathfrak D_i$; no implica por sí sola $\operatorname{OntTotal}_i$ ni $\operatorname{ExistsR}$. Esa promoción requiere REV-24/$\mathrm{OTB}_i$.
 
 Esta corrección **reduce**, no aumenta, las premisas matemáticas del teorema.
 
