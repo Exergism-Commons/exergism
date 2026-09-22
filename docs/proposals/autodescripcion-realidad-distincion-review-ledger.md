@@ -19,8 +19,8 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 
 | ID | Severidad | Estado | Finding | Dónde muerde | Criterio de cierre |
 |---|---|---|---|---|---|
-| REV-01 | BLOCKER | OPEN | **F1–F3 se exigen, no se derivan.** | Definición de F; teorema de clausura maximal. | Dar una definición independiente de E/transición y construir F de modo que extensividad, monotonía e idempotencia se demuestren, o declarar qué axiomas permanecen primitivos y rebajar el teorema en consecuencia. |
-| REV-02 | BLOCKER | OPEN | **F2 puede fallar por inhibición contextual.** Más estructura/restricciones puede eliminar emergencias. | Paso X ⪯ Y ⇒ F(X) ⪯ F(Y). | Construir contra/modelos; distinguir inclusión ontológica de extensión conservativa, o reemplazar F2 por una condición válida y rehacer las inferencias dependientes. |
+| REV-01 | BLOCKER | OPEN | **F1–F3 se exigen, no se derivan; F2 puede ser incompatible con la emergencia contextual y su pérdida rompe el paso de cota fija usado por Zorn.** | Definición de F; teorema de clausura maximal. | Derivar las propiedades que sobrevivan desde una definición independiente de E y, para F2, o bien encontrar una relación de extensión conservativa respecto de la que haya monotonía, o rehacer la prueba de cotas en Fix(F) sin F2. Si ninguna vía funciona, abandonar/reformular la ruta de maximalidad. |
+| REV-02 | BLOCKER | OPEN | **La emergencia está anclada al sistema de transición concreto; añadir contexto/inhibidores puede eliminar capacidades y emergencias. La monotonía bajo inclusión ontológica ordinaria carece de justificación.** | Paso X ⪯ Y ⇒ F(X) ⪯ F(Y). | Formalizar un par explícito M/M' con inhibición y una noción precisa de extensión; demostrar el fallo de monotonía bajo la relación relevante y decidir si existe una extensión conservativa apropiada o si F2 debe eliminarse. |
 | REV-03 | BLOCKER | PARTIAL | **E es provisional y no independiente.** | [D4], programa [O5]. | Definir emergencia sin usar R, totalidad, Adm, ni «realmente posible porque pertenece a R»; comparar la definición con literatura de emergencia. |
 | REV-04 | BLOCKER | OPEN | **F no discrimina todavía:** falta un modelo explícito S = F(S) ≠ R. | [I8]/puntos fijos propios. | Añadir al menos un modelo concreto calculable con un cierre propio y otro dominio mayor, mostrando que punto fijo ≠ totalidad. |
 | REV-05 | MAJOR | RESOLVED | **[I6] R = F(R) es analítico dado [D1] y un F que solo añade realidad.** | Retórica de «teorema/punto fijo». | Etiquetarlo como corolario analítico/condicional y separarlo del programa no circular de existencia. |
@@ -50,8 +50,16 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 
 ## Avance de REV-03
 
-- **REV-03 pasa a PARTIAL.** Se ha definido una candidata independiente $\mathcal E_M$ sobre un sistema de transiciones $M=(C,\Sigma,\Rightarrow_M)$, sin usar R, totalidad, admisibilidad ni «posibilidad real». La candidata exige macro-invariancia, dependencia organizacional y eficacia dinámica mínima. Se han añadido casos de discriminación positivos/negativos y comparación con Broad, Wimsatt, Bedau, Kim, Humphreys y Hoel.
-- **No está RESOLVED.** Falta comprobar si la candidata es demasiado estrecha o demasiado amplia para los casos doctrinales que el exergismo debe conservar. REV-02 es ahora la prueba inmediata: inhibición/contexto y monotonía.
+- **REV-03 permanece PARTIAL.** La candidata independiente se ha corregido para que la emergencia esté localizada al evento concreto: el estado resultante debe tener un comparador con el mismo perfil local y distinto valor macro, y debe habilitar al menos una traza de transición que el comparador no puede ejecutar.
+- La macrovariable ya no es booleana por obligación: $P:\Sigma\to V_P$.
+- La antigua separación `OrgDep` + `DynEff` se elimina por redundancia; con macro-invariancia y un testigo local con distinto valor de $P$, la organización distinta queda forzada.
+- Se añade un modelo juguete explícito de cuatro componentes (camino → ciclo) donde la organización cíclica habilita `activate`.
+- **REV-04 sigue OPEN:** el juguete es calculable, pero todavía no define un operador $F$ ni exhibe $S=F(S)\neq R$.
+
+## Impacto de REV-02 sobre REV-01
+
+- La revisión de emergencia hace más difícil REV-01: si F2 no es válida, la prueba archivada pierde el paso que convierte una cota $U$ de una cadena de puntos fijos en la cota fija $F(U)$. Sin monotonía no se obtiene $X\preceq F(U)$ a partir de $X=F(X)$ y $X\preceq U$.
+- Por tanto, REV-01 no puede cerrarse simplemente «derivando F2» salvo que se cambie la relación de orden. Debe encontrarse una extensión conservativa apropiada, una prueba alternativa de cotas en $\operatorname{Fix}(F)$, o abandonarse la ruta tipo Zorn.
 ## Alcance de algunos cierres
 
 - **REV-05 y REV-06 están RESOLVED únicamente como problemas de presentación y clasificación.** Se corrigió la retórica: los resultados analíticos se etiquetan como analíticos/definicionales y se separan del programa sustantivo. Esto **no constituye avance ontológico** ni responde al hecho de que gran parte de lo actualmente demostrado siga siendo analítico.
@@ -80,6 +88,8 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | LEDGER-FIX | Eliminada la copia duplicada introducida por c014d98 y corregida la celda de evidencia con `$` cerrado. | Recuento de IDs + estructura del fichero. | 0c2266f |
 
 | 2026-09-22 | REV-03 | Definida candidata independiente de emergencia organizacional dinámicamente efectiva; añadidos tests mínimos y literatura. Estado OPEN → PARTIAL. | Sección I.3.1 + mapa bibliográfico. | b3461d1, 2d62a69 |
+| 2026-09-22 | REV-03 | Definición localizada al evento, macrovariable generalizada, capacidad por trazas y modelo juguete de cuatro componentes. | Sección I.3.1. | bd1ee6a |
+| 2026-09-22 | REV-01/REV-02 | Se documenta que el fallo de F2 rompe el paso de cota fija de la ruta de Zorn; REV-01 debe rehacerse o cambiar de orden. | Sección I.3.1 + ledger. | bd1ee6a |
 
 ## Evidencia de consolidación documental
 
