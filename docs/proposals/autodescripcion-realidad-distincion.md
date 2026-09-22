@@ -1259,6 +1259,47 @@ $$
 
 generado por reglas integrativas admisibles que pueden incluir, si se justifican independientemente, reglas de límite/globales además de enlaces finitos. Debe definirse sin usar $R_i$, $S_i$, `Presents` ni `OntTotal`.
 
+Para impedir que esta generalización trivialice el problema definiendo simplemente:
+
+$$
+\mathcal C_*(\{q\})
+:=
+\{x\mid\operatorname{CoReal}(x,q)\},
+$$
+
+se exige una **independencia generativa** explícita. Sea $\mathfrak G_*$ una familia de reglas integrativas pre-régimen. Cada regla debe especificarse sin usar:
+
+$$
+\operatorname{CoReal},
+R_i,
+S_i,
+\operatorname{Presents},
+\operatorname{OntTotal}
+\text{ ni el resultado final de }\mathcal C_*.
+$$
+
+Y $\mathcal C_*$ debe ser la **menor clausura** generada por esas reglas. Esquemáticamente:
+
+$$
+\mathrm{CMin}:
+\quad
+A\subseteq\mathcal C_*(A)
+$$
+
+y para toda estructura $B$ que contiene $A$ y es cerrada bajo todas las reglas de $\mathfrak G_*$:
+
+$$
+\mathcal C_*(A)\subseteq B.
+$$
+
+Llamamos a la restricción de independencia:
+
+$$
+\mathrm{CGI}
+$$
+
+(**Closure-Generation Independence**). Bajo CGI+CMin, CS y CC vuelven a ser afirmaciones sustantivas que pueden fallar; no quedan satisfechas por definición.
+
 Para un seed $q$:
 
 $$
