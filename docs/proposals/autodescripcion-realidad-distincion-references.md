@@ -94,6 +94,15 @@ REV-02 usa una noción ad hoc de **extensión conservativa** suficientemente fue
 - **Jonathan Schaffer**, “On What Grounds What” — antecedente contemporáneo de estructuración metafísica por grounding; debe consultarse si GroundsPossibility, Ground o foundation vuelven al núcleo.
 - **Leibniz** y la tradición del **Principle of Sufficient Reason** son pertinentes si se intenta excluir AbsoluteBruteNovelty. La PR no debe introducir un PSR fuerte sin declararlo.
 
+### Identidad de régimen y relaciones de worldmate
+
+- **David Lewis (1986), _On the Plurality of Worlds_.** En su modal realism, los worldmates se identifican mediante conexión espaciotemporal y los mundos distintos quedan aislados entre sí. La propuesta no adopta su modal realism ni limita toda unidad ontológica a espaciotiempo; se usa solo como antecedente metodológico de definir pertenencia a un mundo mediante una relación independiente de la existencia previa de una cota común. Resumen y discusión: https://plato.stanford.edu/entries/possible-worlds/ y https://plato.stanford.edu/entries/david-lewis/
+- **Tuomas E. Tahko & E. Jonathan Lowe, “Ontological Dependence”, Stanford Encyclopedia of Philosophy, rev. 2025.** La dependencia ontológica comprende una familia de relaciones distintas de la mera causalidad y puede incluir dependencia existencial o de identidad. Es relevante para permitir que la familia $\Lambda$ de enlaces de REV-07 sea más amplia que causalidad física sin convertirla en mera semejanza: https://plato.stanford.edu/entries/dependence-ontological/
+
+### Uso en REV-07
+
+El criterio candidato define regímenes mediante componentes conexas de una relación de enlace ontológico actual $\bowtie$ y su clausura de equivalencia $\sim$. La bibliografía anterior no prueba que esa sea la ontología correcta; solo muestra que existe precedente filosófico para distinguir **relaciones que constituyen pertenencia a una realidad** de **amalgamabilidad de dominios**.
+
 ## 5. Operadores de cierre, puntos fijos y teoría de órdenes
 
 - **Bronisław Knaster & Alfred Tarski / Alfred Tarski** — tradición del teorema de punto fijo para funciones monótonas sobre retículos completos. Relevante para distinguir un resultado de teoría de órdenes de una tesis ontológica.
