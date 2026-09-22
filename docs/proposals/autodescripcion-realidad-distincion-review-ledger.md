@@ -33,7 +33,7 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 | REV-12 | MAJOR | RESOLVED | **H1 extrapola medio→emergencia sin criterio fuera de lo observado.** | Hipótesis de continuidad emergente. | Definir «medio» con contenido aplicable más allá del espacio-tiempo o degradar H1 a motivación heurística no usada por ningún teorema. |
 | REV-13 | MAJOR | RESOLVED | **«Fractal» carece de criterio de verdad.** | Motivación multiescalar. | Definir patrón, escala y métrica de autosimilitud, o retirar «fractal» del argumento y conservarlo solo como metáfora/hipótesis futura. |
 | REV-14 | BLOCKER doctrinal | OPEN | **«Verdad Absoluta indexada» puede relativizar lo absoluto.** | [I13], [I13a], [I14a]. | Distinguir «absoluto» de «máximo concerniente/indexado». Si Many-R exige revisión doctrinal, decirlo explícitamente en vez de declarar invariancia. |
-| REV-15 | MAJOR | PARTIAL | **Cero consecuencias metaontológicas discriminantes.** | §19.12, REC/Muro. | Separar función regulativa/metaontológica de afirmaciones empíricas; indicar qué podría discriminar teorías y qué queda por principio infra-determinado. |
+| REV-15 | MAJOR | OPEN | **Cero consecuencias metaontológicas discriminantes.** | §19.12, REC/Muro. | Separar función regulativa/metaontológica de afirmaciones empíricas; indicar qué podría discriminar teorías y qué queda por principio infra-determinado. |
 | REV-16 | MINOR doctrinal | RESOLVED | **«Dios» no añade inferencia.** | D1/teología. | Moverlo a nomenclatura doctrinal y evitar usar el término como premisa o evidencia; mantener Total(R) ≠ Ground(R) explícito. |
 | REV-17 | MAJOR fundacional | RESOLVED | **Zorn sobre clases propias requiere compromisos adicionales.** | [I6b]. | Limitar el teorema a posets set-sized o especificar teoría de clases/principio de elección global usado; documentar el compromiso. |
 | FORM-01 | MAJOR | RESOLVED | **820 pares de sintaxis matemática inline no soportada tal como está escrita.** | Documento completo. | Convertir matemática inline a sintaxis GitHub soportada y comprobar renderizado. |
@@ -47,6 +47,11 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 | DOC-03 | BLOCKER revisión | RESOLVED | **Contradicciones sin historia explícita.** | Documento completo. | Reescribir cronológicamente: hipótesis inicial → ataques → revisiones → resultados superados → estado actual; nada antiguo debe parecer simultáneamente vigente. |
 | DOC-04 | MAJOR | PARTIAL | **Referencias insuficientes.** | Todos los bloques conceptuales. | Toda tesis que reutilice/debata literatura existente debe citar autores y obra; añadir mapa bibliográfico temático con relevancia exacta. |
 | DOC-05 | MAJOR | RESOLVED | **88 puntos de investigación sin jerarquía.** | Programa de investigación. | Convertirlos en backlog vinculado a IDs del ledger; eliminar duplicados y priorizar bloqueadores/majors/minors. |
+
+## Alcance de algunos cierres
+
+- **REV-05 y REV-06 están RESOLVED únicamente como problemas de presentación y clasificación.** Se corrigió la retórica: los resultados analíticos se etiquetan como analíticos/definicionales y se separan del programa sustantivo. Esto **no constituye avance ontológico** ni responde al hecho de que gran parte de lo actualmente demostrado siga siendo analítico.
+- **REV-15 vuelve a OPEN.** Identificar la deuda —separar función regulativa de consecuencias empíricas— no satisface el criterio de cierre; falta producir consecuencias discriminantes o establecer explícitamente que la tesis carece de ellas y qué estatus filosófico tiene entonces.
 
 ## Regla de trazabilidad
 
@@ -72,3 +77,6 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 Tras el commit 9cfb857, el documento normativo principal tiene 672 líneas (frente a 5.798 en el archivo pre-consolidación) y funciona como crónica + estado actual. La versión antigua se conserva como evidencia histórica, pero sus contradicciones no se consideran tesis simultáneamente vigentes.
 
 Los bloqueadores sustantivos REV-01–REV-04, REV-07, REV-08/14, REV-09/10 y los aspectos no cerrados de REV-15 permanecen abiertos. La consolidación documental no se usa como sustituto de su resolución.
+
+| 2026-09-22 | REV-15 | Estado corregido de PARTIAL a OPEN: nombrar la deuda no la resuelve. | Ledger + sección normativa. | f0d36c5 |
+| 2026-09-22 | REV-05/REV-06 | Se explicita que su cierre es editorial/clasificatorio, no avance sustantivo. | Sección “Alcance de algunos cierres”. | pendiente del commit de ledger |
