@@ -530,11 +530,11 @@ $$
 
 Ni tampoco, incluso suponiendo cerrados los puentes REV-24 pertinentes:
 
-$
+$$
 \forall i\,\exists R_i
 \Rightarrow
 \exists R_{\mathrm{abs}}.
-$
+$$
 
 El problema One-R/Many-R queda como problema metaontológico independiente.
 
@@ -1633,9 +1633,106 @@ Siguen fuera del núcleo demostrado:
 
 ## 10. REC, Muro y el estatuto de la demostración
 
-REC($R$), el Muro de la singularidad y la indistinguibilidad entre una totalidad y una sandbox internamente cerrada son **restricciones epistemológicas**. En el estado actual no se usan como prueba ni como refutación de $\operatorname{OntTotal}$.
+REC y el Muro deben mantenerse separados porque tienen **estatus y dirección lógica distintos**.
 
-La distinción normativa correcta es primero:
+### 10.1. REC — consecuencia estructural de una totalidad real
+
+$\operatorname{REC}_i(R_i)$ (R Enigmatic Certification) no se adopta como una premisa independiente para demostrar que $R_i$ existe. Es una consecuencia estructural —en gran medida analítica una vez fijado el significado de totalidad ontológica— de un candidato que ya satisface:
+
+$$
+\operatorname{OntTotal}_i(R_i).
+$$
+
+Introducimos, de forma tipada, la abreviatura:
+
+$$
+\operatorname{REC}_i(R_i)
+:=
+\neg\exists x\,
+[
+\operatorname{Real}(x)
+\land
+\operatorname{OutsideOntScope}_i(x,R_i)
+\land
+\operatorname{CertifiesTotality}_i(x,R_i)
+].
+$$
+
+Por tanto, la dirección válida es:
+
+$$
+\boxed{
+\operatorname{OntTotal}_i(R_i)
+\Rightarrow
+\operatorname{REC}_i(R_i).
+}
+$$
+
+La razón es estructural: si existiera un certificador **real y ontológicamente exterior** al alcance exhaustivo atribuido a $R_i$, ese mismo testigo mostraría que el candidato no era ontológicamente total.
+
+Así, para cualquier candidato $C$:
+
+$$
+\boxed{
+\operatorname{ExternalRealCertification}_i(C)
+\Rightarrow
+\neg\operatorname{OntTotal}_i(C).
+}
+$$
+
+Una certificación externa exitosa no certifica que $C$ sea $R_i$: descarta esa identificación y amplía el alcance ontológico relevante.
+
+REC no significa que $R_i$ sea incognoscible, indescriptible o indemostrable por cualquier vía. Excluye específicamente un **punto de certificación real situado ontológicamente fuera de una totalidad genuina**.
+
+Por ello REC solo se atribuye propiamente a un candidato después de disponer de $\operatorname{OntTotal}_i$. No se atribuye por mera clausura a $U_i$ ni a un máximo semántico $S_i$.
+
+### 10.2. Muro — subdeterminación desde un horizonte o candidato
+
+El Muro es una restricción epistemológica distinta. Su forma mínima dice que la ausencia de una extensión accesible no certifica exhaustividad ontológica:
+
+$$
+\boxed{
+\operatorname{NoAccessibleExtension}_i(U_i)
+\not\Rightarrow
+\operatorname{ExhaustsOntScope}_i(U_i).
+}
+$$
+
+Y, en el nivel semántico:
+
+$$
+\boxed{
+\operatorname{SemTotal}_i(S_i)
+\not\Rightarrow
+\operatorname{OntTotal}_i(S_i).
+}
+$$
+
+Una sandbox o cuasisingularidad puede por tanto **imitar epistemológicamente** el comportamiento que un observador esperaría de REC —no aparece ningún certificador exterior accesible— sin poseer REC en sentido ontológico. Si realmente existe un exterior, el dominio era parcial aunque ese exterior fuese inaccesible desde dentro.
+
+La asimetría queda resumida así:
+
+$$
+\boxed{
+\begin{array}{rcl}
+\text{exterior real que certifica un candidato}
+&\Rightarrow&
+\text{el candidato no era ontológicamente total}
+\\
+\text{ningún exterior accesible}
+&\not\Rightarrow&
+\text{el candidato es ontológicamente total}.
+\end{array}
+}
+$$
+
+La primera línea es la consecuencia estructural asociada a REC. La segunda es el Muro.
+
+La versión fuerte del Muro —que ninguna evidencia puramente interna pueda **jamás** discriminar la metaontología última— no se da por demostrada y permanece dentro de REV-15.
+
+### 10.3. Estatuto del teorema semántico
+
+La distinción normativa correcta sigue siendo:
 
 $$
 \boxed{
@@ -1671,11 +1768,11 @@ El Muro tampoco debe identificar «causalmente accesible» con «representable/r
 
 Esto proporciona un precedente físico concreto para admitir, en modelos donde esas hipótesis aplican:
 
-$
+$$
 \operatorname{Reconstructible}_i(x)
 \land
 \neg\operatorname{DirectCausalAccess}_i(x).
-$
+$$
 
 La propuesta **no universaliza** este resultado a toda ontología ni lo usa para probar el Muro. Solo muestra que acceso causal directo y alcance representacional son nociones físicamente separables; por tanto, la ausencia de acceso causal adicional no certifica el alcance de $R_i$. Véase el [mapa de literatura, §13](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
 
@@ -1713,7 +1810,7 @@ El Muro deja abiertas simultáneamente estas posibilidades:
 
 Nada de ello resta valor lógico a una demostración condicional de $\exists S_i\;\operatorname{SemTotal}_i(S_i)$. Tampoco sustituye la justificación ontológica que exige REV-24.
 
-**Estado:** REV-15 permanece OPEN en cuanto a consecuencias discriminantes; el Muro se conserva como límite epistemológico compatible con la construcción semántica, no como puente a `ExistsR`.
+**Estado:** REC queda clasificado como consecuencia estructural condicionada a $\operatorname{OntTotal}$, en línea con REV-06. REV-15 permanece OPEN para las consecuencias discriminantes y para cualquier versión fuerte del Muro. El Muro se conserva como límite epistemológico, no como puente a `ExistsR`.
 
 ## 11. “Dios”
 
