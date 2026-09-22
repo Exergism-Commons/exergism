@@ -959,6 +959,20 @@ Esta caja es un **esquema objetivo, no un teorema ya demostrado**. Abreviamos po
 
 #### REV-24a — OA: anclaje ontológico
 
+Como disciplina de tipos:
+
+$$
+\mathrm{CRType}:
+\quad
+\operatorname{CoReal}(x,q)
+\Rightarrow
+\operatorname{Actual}(x)
+\land
+\operatorname{Actual}(q).
+$$
+
+CRType no define la co-realidad; solo establece que sus relata son actuales.
+
 Para mantener la misma base ontológica independiente que usa MC, OA se formula también respecto de un token semilla actual $q$ y $\operatorname{CoReal}$:
 
 $$
@@ -1005,7 +1019,7 @@ $$
 }
 $$
 
-En efecto, si $a\in T_i=[q]_{\sim}$, RS proporciona $\operatorname{CoReal}(a,q)$ y CD proporciona $\operatorname{Den}_i(a,a)$.
+En efecto, si $a\in T_i=[q]_{\sim}$, RS proporciona $\operatorname{CoReal}(a,q)$; CRType proporciona $\operatorname{Actual}(a)$ y CD proporciona $\operatorname{Den}_i(a,a)$.
 
 Esta derivación descarga condicionalmente el anclaje de **tokens**. El anclaje y fidelidad de los hechos $\Phi_i^{\mathrm{all}}$ no quedan resueltos por ello y permanecen en REV-24c/REV-25.
 
@@ -1385,28 +1399,55 @@ $$
 \mathrm{MC}_i.
 $$
 
-Para reutilizar el teorema semántico directo se exige además que la clausura sea estable bajo los eventos procesuales que generan `EClosed`. Con CSet, `SigSmall`, `ActualSep` y esa estabilidad, la construcción de $S_i^*$ puede repetirse sobre $T_i^{\mathcal C}$.
+La construcción semántica de la Ruta B se mantiene **pre-ontológica** mientras CS/CC estén abiertas. Por ello no usa $\operatorname{StructAdm}_i$ ni presupone que $\mathcal C_*(\{q\})$ sea ya un régimen.
 
-Formalmente, definiendo $S_i^{\mathcal C}$ sobre $T_i^{\mathcal C}$ y restringiendo los fragmentos admisibles al carrier de esa clausura:
+Sea:
+
+$$
+T_q^{\mathcal C}:=\mathcal C_*(\{q\}).
+$$
+
+$\operatorname{CFragAdm}_{\mathcal C}(X)$ exige únicamente well-formedness positiva relativa a ese carrier: inclusión de tokens, hechos bien formados con sus relata, source/target únicos, coherencia de dependencia y monotonicidad del contenido. **No exige actualidad de todos los tokens ni pertenencia previa a un mismo régimen.**
+
+Definimos sobre esa familia el orden $\preceq_{\mathcal C}$ por inclusión de carrier y hechos, y una propiedad closure-relative $\operatorname{CEClosed}_{\mathcal C}$.
+
+Con:
+
+- CSet: $T_q^{\mathcal C}$ es set-sized;
+- CWF: el candidato completo satisface $\operatorname{CFragAdm}_{\mathcal C}$;
+- CProcStable: los eventos actuales relevantes no fuerzan tokens fuera de $T_q^{\mathcal C}$;
+- $\mathrm{SigSmall}_{\mathcal C}$;
+- $\mathrm{ActualSep}_{\mathcal C}$;
+
+se construye:
+
+$$
+S_q^{\mathcal C}
+=
+(T_q^{\mathcal C},\Phi_q^{\mathrm{all},\mathcal C})
+$$
+
+y se demuestra:
 
 $$
 \boxed{
 \mathrm{CSet}
 +
+\mathrm{CWF}
++
 \mathrm{CProcStable}
 +
-\mathrm{SigSmall}_i
+\mathrm{SigSmall}_{\mathcal C}
 +
-\mathrm{ActualSep}_i
-+
-\operatorname{StructAdm}
+\mathrm{ActualSep}_{\mathcal C}
 \Rightarrow
-\operatorname{SemTotal}_{i,\mathcal C}(S_i^{\mathcal C}).
+\operatorname{SemTotal}_{\mathcal C}(S_q^{\mathcal C}).
 }
 $$
 
-La demostración es la misma construcción directa: todos los fragmentos relativos a la clausura se incluyen en $S_i^{\mathcal C}$ y `CProcStable` proporciona `EClosed`. CS/CC no hacen trabajo en la maximalidad semántica; hacen el trabajo ontológico de justificar que la clausura elegida coincide con el régimen pretendido.
+Este teorema **no contiene** CS, CC, $\operatorname{CoReal}$ ni $\operatorname{StructAdm}_i$. CS/CC hacen después el trabajo distinto de justificar que la clausura candidata coincide con un régimen ontológico. Solo tras ese puente se reindexa legítimamente $S_q^{\mathcal C}$ como un $S_i^{\mathcal C}$.
 
+CGI/CMin tampoco son premisas matemáticas de maximalidad; son condiciones de no circularidad sobre cómo se genera $\mathcal C_*.
 Así, un contraejemplo a FID no implica ni:
 
 $$
