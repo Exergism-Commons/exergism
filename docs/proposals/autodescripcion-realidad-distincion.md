@@ -48,29 +48,38 @@ Esta es la única sección que debe usarse para responder “¿qué sostiene aho
 
 La propuesta distingue ahora tres niveles que antes quedaban mezclados bajo el símbolo $R$.
 
-### 1.1. Totalidad de régimen
+### 1.1. Exhaustividad semántica y totalidad ontológica de régimen
 
-Para un régimen ontológico $i$, llamamos:
-
-$$
-R_i
-$$
-
-a un dominio máximamente exhaustivo de ese régimen cuando:
+Para un régimen ontológico $i$, distinguimos primero la propiedad formal:
 
 $$
-\operatorname{EClosed}_i(R_i)
-$$
-
-y:
-
-$$
+\operatorname{SemTotal}_i(S)
+:=
+\operatorname{EClosed}_i(S)
+\land
 \forall X\in\mathfrak D_i^{\mathrm{proc}},
-\quad
-X\preceq_i R_i.
+\;X\preceq_i S.
 $$
 
-$R_i$ no se identifica necesariamente con un conjunto universal, una sustancia, una suma mereológica o una última capa física. Es el **máximo ontológico interno** del régimen según el tipo procesual vigente.
+$\operatorname{SemTotal}_i(S)$ dice que $S$ es un **máximo semánticamente exhaustivo** dentro del tipo procesual vigente. Como los dominios se tipan más abajo como fragmentos semánticos positivos actuales, esta propiedad no autoriza por sí sola a identificar $S$ con una totalidad ontológica real.
+
+Reservamos:
+
+$$
+\operatorname{OntTotal}_i(S)
+$$
+
+para la tesis sustantiva de que esa exhaustividad semántica corresponde efectivamente al alcance ontológico exhaustivo del régimen, y no solo a una representación exhaustiva dentro del formalismo.
+
+Un $R_i$ de la tesis doctrinal exige ambas cosas:
+
+$$
+\operatorname{SemTotal}_i(R_i)
+\land
+\operatorname{OntTotal}_i(R_i).
+$$
+
+$R_i$ no se identifica necesariamente con un conjunto universal, una sustancia, una suma mereológica o una última capa física. La transición de $\operatorname{SemTotal}$ a $\operatorname{OntTotal}$ queda registrada explícitamente como una obligación independiente y no puede resolverse por mera notación.
 
 ### 1.2. Totalidad absoluta hipotética
 
@@ -94,10 +103,9 @@ $$
 :=
 \exists i\;\exists R_i
 \left[
-\operatorname{EClosed}_i(R_i)
+\operatorname{SemTotal}_i(R_i)
 \land
-\forall X\in\mathfrak D_i^{\mathrm{proc}},
-\;X\preceq_i R_i
+\operatorname{OntTotal}_i(R_i)
 \right].
 }
 $$
@@ -175,14 +183,16 @@ La propuesta ya dispone de una definición independiente y event-local de emerge
 
 Por tanto, REV-01, REV-02 y REV-04 están cerrados en sus criterios originales, mientras REV-03 permanece PARTIAL por alcance doctrinal.
 
-El programa dispone ahora de un **teorema directo condicional de Exists-$R$**: PON + una firma semántica set-sized/finitaria + StructAdm construyen un máximo E-closed $R_i^*$ de cualquier régimen no vacío. Lo que todavía no está justificado es PON ni, por completo, la taxonomía $\Lambda_*$ que determina qué cuenta como mismo régimen.
+El programa dispone ahora de un **teorema directo condicional de exhaustividad semántica de régimen**: PON + smallness controlada de la firma + Separation aplicable al predicado de actualidad + StructAdm construyen un máximo E-closed $S_i^*$ de cualquier régimen no vacío. Ese resultado demuestra $\operatorname{SemTotal}_i(S_i^*)$; no demuestra todavía $\operatorname{OntTotal}_i(S_i^*)$ ni, por tanto, $\operatorname{ExistsR}$.
 
 Los bloqueadores activos relevantes pasan a ser:
 
-- **REV-07:** justificación filosófica de la familia pre-régimen $\Lambda_*$ que individúa los regímenes;
-- **REV-23:** PON — smallness por-token de la conectividad ontológica inmediata — como premisa de la ruta directa a Exists-$R$;
-- **REV-20:** PSB/K1, ahora derivables de PON en la ruta directa;
-- **REV-22:** aplicabilidad de Zorn, también resuelta condicionalmente por PON aunque la ruta directa no la necesita;
+- **REV-07:** justificación filosófica de la familia pre-régimen $\Lambda_*$, incluida la elección de conectividad por caminos finitos;
+- **REV-23:** PON — smallness por-token de la conectividad ontológica inmediata;
+- **REV-24:** puente no circular entre exhaustividad semántica y totalidad ontológica;
+- **REV-25:** smallness de la firma y legitimidad del paso por Separation sobre «actualmente verdadero»;
+- **REV-20:** PSB/K1, ahora derivables de PON en la ruta estructural;
+- **REV-22:** aplicabilidad de Zorn, subordinada a las premisas de smallness aunque la ruta directa a $\operatorname{SemTotal}$ no lo necesita;
 - **REV-15:** consecuencias metaontológicas discriminantes;
 
 ## 3.1. Resumen formal vigente
@@ -195,14 +205,16 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-02 | RESOLVED tipado | La inhibición compara sistemas/operadores distintos, no entradas del mismo $F_M$. Una extensión conductualmente conservativa caracteriza cuándo un evento puede transportarse entre sistemas. |
 | REV-03 | PARTIAL | Existe una definición de emergencia event-local, independiente de $R$, basada en macro-invariancia, testigo organizacional y capacidad dinámica habilitada. Sigue pendiente validar su alcance doctrinal en casos ricos. |
 | REV-04 | RESOLVED mínimo | El toy de cuatro componentes produce un punto fijo propio explícito de $F_M$. Esto demuestra que el operador no es necesariamente «la unión de todo», pero no caracteriza todavía sistemas ricos. |
-| REV-18 | RESOLVED tipado | Un dominio se toma como fragmento semántico positivo actual $X=(T_X,\Phi_X)$; incidencia es pertenencia al carrier semántico y `EClosed_i` es una propiedad del contenido, no de la serialización. No se reifica el dominio como entidad adicional. |
+| REV-18 | RESOLVED tipado | Un dominio se toma como fragmento semántico positivo actual $X=(T_X,\Phi_X)$; incidencia es pertenencia al carrier semántico y `EClosed_i` es una propiedad del contenido, no de la serialización. No se reifica el dominio como entidad adicional. Este cierre no identifica exhaustividad semántica con totalidad ontológica; esa deuda queda en REV-24. |
 | REV-19 | RESOLVED tipado | El objeto primario queda fijado como fragmento procesual semántico $X=(T_X,\Phi_X)$; $\preceq_i^{\mathrm{proc}}$ es inclusión de contenido positivo actual. Admisibilidad ontológica se separa como $\operatorname{Adm}_i$ y queda en REV-18/20/09/07. |
 | REV-20 | PARTIAL subordinado | Bajo StructAdm + COV, $K1_i\iff\mathrm{PSB}_i$; PON implica PSB. K1 deja de ser blocker independiente de la ruta directa. |
-| REV-22 | PARTIAL subordinado | PON + firma set-sized/finitaria hace set-sized cada régimen y su poset de fragmentos, resolviendo condicionalmente la ruta A de Zorn. La ruta directa no necesita Zorn. |
+| REV-22 | PARTIAL subordinado | PON + las condiciones de smallness de REV-25 hacen set-sized cada régimen y su poset de fragmentos, resolviendo condicionalmente la ruta A de Zorn. La ruta directa a $\operatorname{SemTotal}$ no necesita Zorn. |
 | REV-09 | RESOLVED set-indexed | Con `Adm_i := StructAdm_i`, la unión de una cadena set-indexed de fragmentos positivos actuales sigue siendo well-formed y admisible; junto con el lema previo de preservación de `EClosed`, K2 queda demostrada dentro del alcance set-sized del teorema. La aplicabilidad class-sized queda en REV-22. |
 | REV-10 | RESOLVED vigente | La ruta actual ya no usa la inferencia oculta de StageFactorization/presentabilidad criticada en H8. |
 | REV-21 | RESOLVED formal | Los puntos fijos de $F_i$ son exactamente los subconjuntos forward-closed del grafo emergente; la degeneración al único punto fijo no vacío $\Sigma_i$ ocurre exactamente cuando el grafo es fuertemente conexo. |
-| REV-23 | OPEN blocker | PON no está justificada: falta demostrar que cada token actual tiene set-many vecinos ontológicos inmediatos bajo $\bowtie$. PON es la premisa de smallness que hace constructible el régimen completo y, con ella, Exists-R. |
+| REV-23 | OPEN blocker | PON no está justificada: falta demostrar que cada token actual tiene set-many vecinos ontológicos inmediatos bajo $\bowtie$. PON hace constructible como set el componente finitamente conectado, pero por sí sola no implica $\operatorname{ExistsR}$. |
+| REV-24 | OPEN blocker doctrinal | El máximo de fragmentos semánticos demuestra $\operatorname{SemTotal}$, no automáticamente $\operatorname{OntTotal}$. Falta un puente independiente entre representación exhaustiva y totalidad ontológica. |
+| REV-25 | OPEN blocker fundacional/semántico | El teorema usa smallness de la firma y un paso de Separation sobre los hechos «actualmente verdaderos». Deben justificarse la firma/aridades y la disponibilidad metateórica del predicado de actualidad. |
 
 ### Corrección histórica importante sobre F2
 
@@ -243,12 +255,14 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 
 ### Blockers ontológicos actuales
 
-Para la ruta directa, el cuello de botella ya no es K1/K2/K3: es justificar la identidad de régimen y su smallness local sin introducir una totalidad por definición:
+Para la ruta directa, el cuello de botella ya no es K1/K2/K3. Hay cuatro obligaciones independientes:
 
-1. **REV-07:** justificar filosóficamente $\Lambda_*$ como criterio de identidad de régimen;
-2. **REV-23:** justificar PON —que cada token tenga set-many vecinos ontológicos inmediatos—.
+1. **REV-07:** justificar filosóficamente $\Lambda_*$ como criterio de identidad de régimen y, en particular, por qué la clausura relevante usa caminos finitos;
+2. **REV-23:** justificar PON —que cada token tenga set-many vecinos ontológicos inmediatos—;
+3. **REV-24:** justificar el paso de un máximo semánticamente exhaustivo a una totalidad ontológica real;
+4. **REV-25:** justificar la smallness de la firma/aridades y el predicado de actualidad usado por Separation.
 
-REV-20 y REV-22 quedan como consecuencias/alternativas de esta smallness: PON implica PSB/K1 y además hace set-sized cada régimen y su poset de fragmentos.
+REV-20 y REV-22 quedan como consecuencias/alternativas de las premisas de smallness. Incluso si REV-07, REV-23 y REV-25 se cierran, el teorema directo solo entrega $\operatorname{SemTotal}$ hasta cerrar REV-24.
 
 ---
 
@@ -569,7 +583,7 @@ $$
 q\trianglelefteq_i X.
 $$
 
-Si $R_i$ domina todos los dominios admisibles, COV$_i$ implica que $R_i$ contiene todo contenido actual del régimen representable por la firma procesual.
+Si un máximo semántico domina todos los dominios admisibles, COV$_i$ implica que contiene todo contenido actual del régimen representable por la firma procesual. Esta conclusión es $\operatorname{SemTotal}$; identificarla con totalidad ontológica requiere además REV-24.
 
 ### Precio conceptual
 
@@ -676,100 +690,73 @@ PSB es independiente de REV-22: resuelve la smallness **local del cierre de cada
 
 ## 4. Núcleo matemático — ruta directa a Exists-$R$ y ruta Zorn
 
-### 4.0. Teorema directo de totalidad de régimen
+### 4.0. Teorema directo de exhaustividad semántica de régimen
 
-La ruta principal ya no necesita Zorn.
+La ruta directa al máximo semántico ya no necesita Zorn.
 
 Definimos el vecindario ontológico inmediato:
 
 $$
-N(q)
-:=
-\{r\mid q\bowtie r\}.
-$$
-
-y la condición:
-
-$$
-\mathrm{PON}:
-\quad
-\forall q,
-\;
-N(q)\text{ es set-sized}.
-$$
-
-PON afirma que ningún token actual tiene proper-class many vecinos ontológicos inmediatos bajo las relaciones que constituyen co-régimen.
-
-Como:
-
-$$
-q\sim r
-$$
-
-significa que existe un camino **finito** de $\bowtie$ entre ambos, PON implica que la clase de equivalencia:
-
-$$
-T_i
-:=
-[q]_{\sim}
-$$
-
-es set-sized. Se prueba construyendo los niveles finitos de vecindad y tomando su unión sobre $\omega$.
-
-Fijada además una firma semántica procesual $\mathcal L_i$ set-sized y de aridad finita, la colección de todos los átomos posibles sobre $T_i$ es un conjunto. Por Separation, también lo es la colección de todos los hechos **actualmente verdaderos** del régimen:
-
-$$
-\Phi_i^{\mathrm{all}}.
-$$
-
-Definimos entonces:
-
-$$
-\boxed{
-R_i^*
-:=
-(T_i,\Phi_i^{\mathrm{all}}).
-}
-$$
-
-Por StructAdm, $R_i^*$ es un dominio admisible.
-
-Para cualquier:
-
-$$
-X=(T_X,\Phi_X)
-\in
-\mathfrak D_i^{\mathrm{proc}},
-$$
-
-se tiene:
-
-$$
-T_X\subseteq T_i
+N(q):=\{r\mid q\bowtie r\}.
 $$
 
 y:
 
 $$
-\Phi_X\subseteq\Phi_i^{\mathrm{all}}.
+\mathrm{PON}:\quad \forall q,\;N(q)\text{ es set-sized}.
 $$
 
-Por tanto:
+Como $q\sim r$ significa que existe un camino **finito** de $\bowtie$ entre ambos, PON implica que:
 
 $$
-\boxed{
-\forall X\in\mathfrak D_i^{\mathrm{proc}},
+T_i:=[q]_{\sim}
+$$
+
+es set-sized, construyendo los niveles finitos de vecindad y tomando su unión sobre $\omega$.
+
+La elección de clausura por caminos finitos hace trabajo ontológico real: el teorema totaliza exactamente el componente finitamente conectado. REV-07 permanece abierto respecto de por qué esa es la noción correcta de co-régimen y qué ocurre ante dependencias esencialmente transfinitarias.
+
+Definimos además:
+
+$$
+\mathrm{SigSmall}_i:
 \quad
-X\preceq_i R_i^*.
-}
+\mathcal L_i\text{ es set-sized}
+\land
+\forall\sigma\in\mathcal L_i,\;
+\operatorname{ar}(\sigma)\text{ es set-sized}.
+$$
+
+La aridad finita es un caso suficiente de $\mathrm{SigSmall}_i$, pero no es matemáticamente necesaria. Bajo $\mathrm{SigSmall}_i$, la colección de todos los átomos posibles sobre el set $T_i$ es un conjunto.
+
+Para aplicar Separation a «actualmente verdadero» exigimos además $\mathrm{ActualSep}_i$: el predicado de actualidad relevante debe estar disponible en la metateoría como condición definible sobre ese conjunto de átomos. Entonces:
+
+$$
+\Phi_i^{\mathrm{all}}
+=
+\{\varphi\in\operatorname{Atoms}_{\mathcal L_i}(T_i)
+\mid \operatorname{Actual}_i(\varphi)\}
+$$
+
+es un conjunto.
+
+Definimos:
+
+$$
+\boxed{S_i^*:=(T_i,\Phi_i^{\mathrm{all}}).}
+$$
+
+Por StructAdm, $S_i^*$ es un dominio admisible. Para cualquier $X=(T_X,\Phi_X)\in\mathfrak D_i^{\mathrm{proc}}$ se tiene $T_X\subseteq T_i$ y $\Phi_X\subseteq\Phi_i^{\mathrm{all}}$. Por tanto:
+
+$$
+\forall X\in\mathfrak D_i^{\mathrm{proc}},
+\quad X\preceq_i S_i^*.
 $$
 
 Además, si un evento emergente actual tiene source en $T_i$, sus relaciones source/event/target son enlaces procesuales actuales; evento y target pertenecen a la misma clase $[q]_{\sim}$ y sus hechos están en $\Phi_i^{\mathrm{all}}$. Luego:
 
 $$
-\boxed{
-\operatorname{EClosed}_i(R_i^*).
-}
+\operatorname{EClosed}_i(S_i^*).
 $$
 
 Así:
@@ -777,40 +764,49 @@ Así:
 $$
 \boxed{
 \mathrm{PON}
-+
-\text{firma set-sized/finitaria}
-+
-\operatorname{StructAdm}
++\mathrm{SigSmall}_i
++\mathrm{ActualSep}_i
++\operatorname{StructAdm}
+\Rightarrow
+\operatorname{SemTotal}_i(S_i^*).
+}
+$$
+
+Este es el resultado matemático directo. No contiene todavía la inferencia:
+
+$$
+\operatorname{SemTotal}_i(S_i^*)
+\Rightarrow
+\operatorname{OntTotal}_i(S_i^*).
+$$
+
+Esa inferencia es el **puente ontológico** abierto como REV-24. Abreviamos por $\mathrm{OTB}_i$ una justificación independiente de cuándo un máximo semánticamente exhaustivo cuenta como alcance ontológico exhaustivo del régimen.
+
+Solo con ese puente la ruta doctrinal toma la forma:
+
+$$
+\boxed{
+\mathrm{PON}
++\mathrm{SigSmall}_i
++\mathrm{ActualSep}_i
++\operatorname{StructAdm}
++\mathrm{OTB}_i
 \Rightarrow
 \operatorname{ExistsR}.
 }
 $$
 
-y por tanto:
+#### No circularidad formal
 
-$$
-\boxed{
-\neg\operatorname{NoR}.
-}
-$$
-
-#### No circularidad
-
-El argumento no presupone un objeto $R_i$. Parte de un token $q$, demuestra que su componente de conectividad finita es un conjunto y, solo entonces, forma mediante Separation el conjunto de hechos actuales sobre ese carrier. El máximo se **construye** como contenido semántico; no se introduce por definición como entidad ontológica adicional.
+La construcción de $S_i^*$ no presupone una totalidad ontológica. Parte de un token, construye su componente de conectividad finita y forma después el conjunto de hechos actuales sobre ese carrier. Precisamente por ello prueba exhaustividad **dentro del tipo semántico** y deja visible el paso adicional a ontología.
 
 #### Papel de la emergencia
 
-En esta ruta, la emergencia **no produce la existencia** del máximo. La existencia se sigue de la conectividad ontológica localmente set-like. La emergencia aporta la propiedad adicional:
-
-$$
-\operatorname{EClosed}_i(R_i^*).
-$$
-
-Por tanto, debe evitarse la afirmación fuerte «la emergencia demuestra que existe R» salvo que se precise esta dependencia.
+La emergencia no produce la existencia del máximo semántico. Las premisas de identidad y smallness permiten construirlo; la teoría de emergencia aporta $\operatorname{EClosed}_i(S_i^*)$. Tampoco resuelve $\mathrm{OTB}_i$. No debe afirmarse que «la emergencia demuestra que existe R».
 
 #### Relación con Zorn
 
-K1/K2/K3 y Zorn permanecen como una segunda ruta estructural y como análisis de qué propiedades de los dominios bastan para maximalidad. Pero, bajo PON, ya no son necesarios para demostrar Exists-$R$.
+K1/K2/K3 y Zorn permanecen como una segunda ruta estructural. Bajo las premisas de smallness ya no son necesarios para construir $S_i^*$; tampoco resuelven por sí mismos REV-24.
 
 ---
 **Convención normativa:** durante toda esta sección se fija un régimen ontológico $i$. Para aligerar notación se escribe:
@@ -823,12 +819,12 @@ $$
 \preceq:=\preceq_i.
 $$
 
-Toda cuantificación de K1–K3 y todo máximo obtenido en esta sección son **internos a $i$**. El resultado se denota $R_i$; no se infiere la existencia de $R_{\mathrm{abs}}$.
+Toda cuantificación de K1–K3 y todo máximo obtenido en esta sección son **internos a $i$**. Formalmente el resultado es un máximo semántico $S_i$; identificarlo con un $R_i$ ontológico exige REV-24. En ningún caso se infiere la existencia de $R_{\mathrm{abs}}$.
 
 Las secciones anteriores producen dos niveles distintos que no deben confundirse:
 
 1. **nivel system-relative:** para un sistema fijo que representa el régimen $i$, la emergencia independiente $\mathcal E_i$ induce un operador concreto $F_i$ sobre su espacio de configuraciones, y F1–F3 se derivan;
-2. **nivel ontológico local:** el teorema habla de dominios $(\mathfrak D_i^{\mathrm{proc}},\preceq_i)$, para los que REV-18 todavía exige justificar el puente semántico.
+2. **nivel semántico de régimen:** el teorema habla de dominios $(\mathfrak D_i^{\mathrm{proc}},\preceq_i)$ ya tipados por REV-18; REV-24 exige justificar aparte el paso desde su máximo semántico a totalidad ontológica.
 
 La forma operator-free del argumento permite ver exactamente qué parte de la estructura de $F_i$ es necesaria.
 
@@ -898,7 +894,7 @@ K3_{\mathrm{abs}}.
 }
 $$
 
-El teorema obtiene un máximo interno $R_i$. La cuestión de si distintos $R_i$ tienen una extensión común pertenece exclusivamente a la metaontología One-R/Many-R.
+El teorema obtiene un máximo semántico interno $S_i$. Solo tras REV-24 podrá identificarse con un $R_i$ ontológico. La cuestión de si distintos $R_i$ tienen una extensión común pertenece a la metaontología One-R/Many-R.
 
 ### 4.2. Teorema de máximo cerrado cofinal
 
@@ -948,7 +944,7 @@ $$
 X\preceq Y\preceq R.
 $$
 
-Como $X$ era arbitrario, $R$ es un **máximo de todo $\mathfrak D_i^{\mathrm{proc}}$**. Normativamente se identifica este resultado como $R_i$; no como un máximo de otros regímenes. $\square$
+Como $X$ era arbitrario, $R$ es un **máximo de todo $\mathfrak D_i^{\mathrm{proc}}$**. Normativamente este resultado prueba un máximo semántico $S_i$; su identificación con un $R_i$ ontológico requiere REV-24. $\square$
 
 ### 4.3. Cobertura de lo real
 
@@ -1105,7 +1101,8 @@ Una incorporación real puede cambiar capacidades previas sin dejar de ser ontol
 
 Estas cargas quedan trazadas así:
 
-- **REV-18:** significado ontológico de $\operatorname{EClosed}$;
+- **REV-18:** tipado semántico de $\operatorname{EClosed}$, ya resuelto en su alcance;
+- **REV-24:** paso de máximo semántico a totalidad ontológica;
 - **REV-19:** elección del tipo temporal del dominio;
 - **REV-20:** K1/cofinalidad de dominios E-closed;
 - **REV-09/REV-10:** K2/inductividad y sus supuestos de compactitud/presentabilidad;
@@ -1156,8 +1153,8 @@ $$
 \boxed{
 \text{esqueleto cofinal set-sized}
 \Rightarrow
-\text{Zorn puede producir un }R_i
-\text{ máximo del régimen}.
+\text{Zorn puede producir un }S_i
+\text{ máximo del poset semántico del régimen}.
 }
 $$
 
@@ -1167,14 +1164,14 @@ La demostración completa está en el documento técnico.
 
 Especificar explícitamente una teoría de clases y un principio de maximalidad suficientemente fuerte. Esta ruta no se presupone.
 
-La aplicabilidad fundacional se registra como REV-22. No puede cerrarse suponiendo smallness a partir de la existencia del propio $R_i$.
+La aplicabilidad fundacional se registra como REV-22 y depende también de REV-25. No puede cerrarse suponiendo smallness a partir de la existencia del propio máximo.
 
 ### 4.8. Estado normativo
 
 - **REV-01:** RESOLVED en su ataque original. F1–F3 se derivan para $F_M$, y F2 resulta además redundante para el teorema abstracto.
 - **REV-02:** RESOLVED en el sentido tipado correcto: la inhibición muestra no-monotonía entre sistemas/operadores, no dentro de un único $F_M$.
 - **REV-04:** RESOLVED mediante el punto fijo propio explícito del toy.
-- **REV-18:** OPEN y ahora es el blocker principal del enlace entre la teoría de emergencia y la ontología global.
+- **REV-18:** RESOLVED en su alcance de tipado semántico. **REV-24** es ahora el blocker específico del paso de exhaustividad semántica a totalidad ontológica.
 
 ---
 
