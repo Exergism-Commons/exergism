@@ -1280,7 +1280,7 @@ Por tanto, $\operatorname{EClosed}(X)$ exige que un dominio capaz de representar
 Eso no está bien tipado si $X$ significa exclusivamente una instantánea:
 
 $$
-R_i^{A}(t),
+S_i^{A}(t),
 $$
 
 porque un estado que se actualiza en $t'>t$ no pertenece, en general, al contenido sincrónico de $t$.
@@ -1508,7 +1508,7 @@ No se marca RESOLVED porque todavía falta:
 1. fijar rigurosamente el orden $\preceq_{\mathrm{proc}}$;
 2. demostrar que la incidencia de REV-18 tiene interpretación ontológica independiente;
 3. demostrar K1/K2 para $\mathfrak K_i^{\mathrm{proc}}$;
-4. establecer, si se desea, cómo se recuperan dominios sincrónicos $R_i^{A}(t)$ desde un dominio procesual sin asumir una teoría temporal concreta.
+4. establecer, si se desea, cómo se recuperan dominios sincrónicos $S_i^{A}(t)$ desde un dominio procesual sin asumir una teoría temporal concreta.
 
 ---
 
