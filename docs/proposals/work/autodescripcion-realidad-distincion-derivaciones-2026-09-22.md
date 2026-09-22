@@ -3477,12 +3477,12 @@ $$
 }
 $$
 
-Este teorema es exclusivamente semántico. No permite sustituir $S_i$ por un $R_i$ ni concluir $\operatorname{ExistsRegR}$. La existencia local pertenece a REV-07; REV-24 solo añade presentación:
+Este teorema es exclusivamente semántico. No permite sustituir $S_i$ por un $R_i$ ni concluir $\operatorname{ExistsR}$. La existencia pertenece a REV-07; REV-24 solo añade presentación:
 
 $$
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 \Rightarrow
-\operatorname{ExistsRegR},
+\operatorname{ExistsR},
 $$
 
 y:
@@ -3496,10 +3496,10 @@ $$
 \Rightarrow
 \operatorname{Presents}_i(S_i,R_i)
 \Rightarrow
-\operatorname{WitnessedRegR}.
+\operatorname{WitnessedR}.
 $$
 
-Ninguna de estas inferencias contiene por sí sola un paso hacia $\operatorname{ExistsR}$ absoluto.
+Ninguna de estas inferencias decide One-$R$/Many-$R$; esa cuestión pertenece al metalenguaje de índices.
 
 ### Consecuencia
 
@@ -4349,7 +4349,7 @@ Si PSB falla, queda bloqueada esta **ruta local set-sized hacia K1/\operatorname
 
 > desde un único estado set-sized parten proper-class many actualizaciones emergentes actualmente instanciadas.
 
-Esa posibilidad es lógicamente distinta del potencialismo ordinario de «siempre hay una extensión más»; es una ramificación propia-clase ya en un solo paso. Pero no implica $\operatorname{NoR}$ absoluto ni refuta por sí sola $\operatorname{ExistsRegR}$ mediante otras rutas de clausura.
+Esa posibilidad es lógicamente distinta del potencialismo ordinario de «siempre hay una extensión más»; es una ramificación propia-clase ya en un solo paso. Pero no implica $\operatorname{NoR}$ ni refuta por sí sola $\operatorname{ExistsR}$ mediante otras rutas de clausura.
 
 ---
 
@@ -5217,7 +5217,7 @@ $$
 
 y FID/LA justifican completeness.
 
-Por tanto FID es una **condición suficiente de la instanciación finita**, no una condición necesaria de `ExistsRegR` y mucho menos de `ExistsAbsR`.
+Por tanto FID es una **condición suficiente de la instanciación finita**, no una condición necesaria de `ExistsR` ni una condición sobre One-$R$/Many-$R`.
 
 ##### Implementación transfinita candidata
 
@@ -5602,161 +5602,81 @@ Este esquema **no está demostrado**. $\mathrm{OTB}_i$ abrevia una justificació
 
 La relación $\operatorname{Presents}_i(S,R)$ no puede definirse como «$R$ es total y $S$ lo describe», porque eso haría trivial el esquema. Debe caracterizarse mediante denotación, pertenencia independiente y preservación estructural.
 
-#### 8.5. Consecuencia conceptual
+#### 8.5. Consecuencia conceptual vigente
 
-Esta descomposición muestra que la pregunta «¿existe un alcance ontológico exhaustivo?» puede no requerir una descripción completa de todos los hechos de ese alcance. Si MC pudiera justificarse desde una individuación ontológica independiente del régimen, parte del trabajo de existencia podría desacoplarse de $\mathrm{ActualSep}_i$ y de una firma factualmente completa.
+La existencia ontológica no se obtiene desde la semántica.
 
-Eso **no** se da por probado: abre una posible ruta futura en la que REV-25 seguiría siendo necesario para el teorema fuerte de $\operatorname{SemTotal}$, pero quizá no para una tesis ontológica más austera sobre existencia de alcance.
-
-Bajo la **Ruta A finita ya indexada por régimen**, solo si OTB se justifica se obtiene:
-
-$$
-\boxed{
-\mathrm{PON}
-+\mathrm{SigSmall}_i
-+\mathrm{ActualSep}_i
-+\operatorname{StructAdm}_i
-+\mathrm{OTB}_i
-\Rightarrow
-\operatorname{WitnessedRegR}
-\Rightarrow
-\operatorname{ExistsRegR}.
-}
-$$
-
-Este bloque no es una formulación alternativa de la Ruta B generalizada. Para Ruta B rige exclusivamente el teorema closure-relative con CSet/CWF/CProcStable/$\mathrm{SigSmall}_{\mathcal C}$/$\mathrm{ActualSep}_{\mathcal C}$ hasta justificar CS/CC/CRType.
-
-### 8.6. REV-26 — origen ontológico común absoluto
-
-La antigua lectura minimalista:
-
-$$
-R:=\operatorname{Scope}(\operatorname{Real})
-$$
-
-queda **SUPERSEDED como target doctrinal completo**. Se conserva como mero alcance extensional $\mathcal R_{\mathrm{ext}}$.
-
-El target vigente es:
+El target es:
 
 $$
 \operatorname{ExistsR}
 :=
-\exists\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}}\;
-\operatorname{AbsGeneTotal}
-(\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}}).
+\exists i\exists\mathcal O_i\exists R_i\;
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
 $$
 
-donde AbsGeneTotal requiere:
+REV-07 debe justificar esa GeneTotal. REV-24 solo puede añadir una presentación:
 
 $$
-\operatorname{OntOrigin}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}}),
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
++
+\operatorname{SemTotal}_i(S_i)
++
+\mathrm{OTB}_i
+\Rightarrow
+\operatorname{Presents}_i(S_i,R_i)
+\Rightarrow
+\operatorname{WitnessedR}.
 $$
 
-$$
-\forall x[
-\operatorname{Real}(x)
-\leftrightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}},x)
-],
-$$
+La antigua inferencia PON + SemTotal + OTB ⇒ ExistsRegR queda SUPERSEDED.
 
-y scope realization:
+### 8.6. REV-26 — metaontología de índices, no target de existencia
+
+REV-26 deja de ser una obligación para demostrar $\operatorname{ExistsR}$.
+
+La ontología primaria usa:
 
 $$
-\forall x[
-\operatorname{Within}_{\mathrm{abs}}(x,R_{\mathrm{abs}})
-\leftrightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}},x)
-].
+\operatorname{Real}_i(x)
+\Longleftrightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x).
 $$
 
-#### 8.6.1. AG
-
-AG fija que el cuantificador de Real(x) tenga alcance absolutamente general. Sigue OPEN.
-
-#### 8.6.2. APC$_{Real}$ es auxiliar
-
-En lógica plural clásica APC$_{Real}$ puede realizar el scope extensional de todo lo real. Pero:
+Los índices genuinos son ontológicamente incompatibles. En el metalenguaje:
 
 $$
-\boxed{
-\operatorname{ExistsExtScope}
-\not\Rightarrow
-\operatorname{ExistsR}.
-}
-$$
-
-APC no demuestra origen común.
-
-#### 8.6.3. Common-Origin Thesis
-
-La obligación ontológica principal es:
-
-$$
-\boxed{
-\mathrm{CO}_{\mathrm{abs}}:
-\exists\mathcal O_{\mathrm{abs}}[
-\operatorname{OntOrigin}_{\mathrm{abs}}(\mathcal O_{\mathrm{abs}})
+i\neq j
+\Rightarrow
+\neg\operatorname{CrossRealFact}(i,j)
 \land
-\forall x(
-\operatorname{Real}(x)
-\leftrightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}(\mathcal O_{\mathrm{abs}},x)
-)
-].
-}
+\neg\operatorname{CommonOntOrigin}(i,j).
 $$
 
-Debe demostrarse tanto soundness:
+#### 8.6.1. One-$R$
 
-$$
-\operatorname{Generated}^{*}_{\mathrm{abs}}(\mathcal O_{\mathrm{abs}},x)
-\Rightarrow
-\operatorname{Real}(x)
-$$
+One-$R$ significa que existe exactamente un índice ontológico genuino.
 
-como exhaustividad:
+#### 8.6.2. Many-$R$
 
-$$
-\operatorname{Real}(x)
-\Rightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}(\mathcal O_{\mathrm{abs}},x).
-$$
+Many-$R$ significa que existen al menos dos índices genuinos. No necesita una condición extra de aislamiento: el aislamiento ontológico está incorporado en el tipo de índice.
 
-Las reglas de generación no pueden definirse por ajuste extensional a Real.
+#### 8.6.3. Cluster-$R$
 
-#### 8.6.4. Globalización desde orígenes indexados
+Cluster-$R$ solo se aplica a candidatos pre-indexados. Si dos candidatos tienen un hecho transversal u origen común, deben recibir el mismo índice. Por tanto genuine Many-$R$ no puede colapsar posteriormente.
 
-De:
+#### 8.6.4. Metalenguaje
 
-$$
-\forall i\;\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
-$$
+El metalenguaje usa contenido tipado $\langle i,x\rangle$. Esta representación comparativa no constituye una realidad superior ni un $R_{\mathrm{abs}}$.
 
-no se sigue CO$_{\mathrm{abs}}$.
+AG/APC/NoAbsFinality quedan como extensiones opcionales sobre la expresividad del metalenguaje global, no como premisas de ExistsR.
 
-Una globalización genuina debe exhibir una base superior $\mathcal O_{\mathrm{abs}}$ cuya clausura preserve/integre las genealogías indexadas. La mera unión extensional de scopes no basta.
+#### 8.6.5. Consecuencia epistemológica
 
-#### 8.6.5. No-$R$
+Si Many-$R$ es verdadero, ningún $R_i$ puede contener un hecho real que certifique otro índice $j\neq i$, porque tal hecho sería transversal y violaría la incompatibilidad de índice.
 
-Bajo AG:
+Así, One-$R$/Many-$R$ pueden ser metateóricamente distintos y sin embargo no ser discriminables mediante evidencia real interna a un índice.
 
-$$
-\operatorname{NoR}_{AG}
-:=
-\neg\operatorname{ExistsR}.
-$$
-
-La negación puede deberse a ausencia de origen común, fallo de soundness/exhaustividad de la clausura o fallo de scope realization. Bajo generality relativism se conserva el metaschema NoAbsFinality.
-
-#### 8.6.6. REV-26e
-
-**RESOLVED doctrinal.** $R$ significa unidad genealógica ontológicamente cerrada. $\mathcal R_{\mathrm{ext}}$ conserva la noción analítica de mero alcance de todo lo real.
-
-La maquinaria semántica/emergentista puede describir estructura y procesos derivados, pero no sustituye la prueba de CO$_{\mathrm{abs}}$.
 
 ### 9. Zorn deja de ser necesario para SemTotal
 
@@ -5781,7 +5701,7 @@ Las dos construcciones semánticas tienen premisas distintas y no deben mezclars
 
 La existencia ontológica **local** pertenece a REV-07: $\operatorname{OntOrigin}_i$ + reglas generativas independientes + clausura + scope realization deben justificar $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$. REV-24a/b/c se añaden después para justificar que $S_i$ presenta ese $R_i$.
 
-La conclusión doctrinal **absoluta** añade REV-26: AG + CO$_{abs}$ + scope realization. APC$_{Real}$ es auxiliar para el scope, no sustituto del origen común.
+REV-26 queda como extensión metaontológica no bloqueante: One-$R$/Many-$R$, generalidad entre índices y expresividad del metalenguaje. No añade una premisa necesaria a $\operatorname{ExistsR}$.
 
 ### 11. Emergencia y existencia
 
