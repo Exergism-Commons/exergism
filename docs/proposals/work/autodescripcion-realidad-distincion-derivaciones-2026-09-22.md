@@ -2406,3 +2406,239 @@ REV-07 permanece PARTIAL hasta:
 4. justificar K3_i mediante una premisa separada.
 
 ---
+
+---
+
+## REV-07 — derivación local de K3_i
+
+Una vez que la identidad de régimen se define mediante caminos finitos de enlaces $\bowtie$, K3_i puede reducirse a dos principios de extensión estrictamente locales.
+
+### 1. EEA — Edge Extension Admissibility
+
+Para todo dominio no vacío $X\in\mathfrak D_i^{\mathrm{proc}}$, si:
+
+$$
+q\trianglelefteq_i X
+$$
+
+y existe un enlace actual:
+
+$$
+q\bowtie r,
+$$
+
+entonces existe un dominio admisible:
+
+$$
+X'\in\mathfrak D_i^{\mathrm{proc}}
+$$
+
+tal que:
+
+$$
+X\preceq_i X'
+$$
+
+y:
+
+$$
+r\trianglelefteq_i X'.
+$$
+
+Además, la instancia relacional que testimonia $q\bowtie r$ debe quedar representada en $X'$ cuando el tipo de dominio la modele explícitamente.
+
+Intuición: un dominio actual que contiene uno de los relata puede ampliarse localmente para representar también el otro extremo de una relación ontológica actual que los conecta.
+
+EEA no dice que cualquier par de dominios tenga una cota común.
+
+### 2. OAM — Overlap Amalgamation
+
+Para cualesquiera:
+
+$$
+X,Y\in\mathfrak D_i^{\mathrm{proc}},
+$$
+
+si existe un token actual $q$ con:
+
+$$
+q\trianglelefteq_i X
+\land
+q\trianglelefteq_i Y,
+$$
+
+entonces existe:
+
+$$
+Z\in\mathfrak D_i^{\mathrm{proc}}
+$$
+
+tal que:
+
+$$
+X\preceq_i Z
+\land
+Y\preceq_i Z.
+$$
+
+Intuición: dos dominios ontológicos actuales que literalmente solapan en contenido actual no pueden ser realidades completamente aisladas; si ambos son descripciones/subdominios admisibles del mismo contenido actual, debe existir una extensión conjunta admisible.
+
+OAM es mucho más débil que K3_i: solo habla de dominios con solapamiento actual explícito.
+
+### 3. Lema de directedness interna
+
+**Lema REV-07.1.** Supóngase:
+
+1. los dominios considerados son no vacíos;
+2. los regímenes se definen por las clases de equivalencia de $\sim=(\bowtie)^*$;
+3. EEA;
+4. OAM.
+
+Entonces cada:
+
+$$
+(\mathfrak D_i^{\mathrm{proc}},\preceq_i)
+$$
+
+es dirigido:
+
+$$
+\boxed{K3_i.}
+$$
+
+**Demostración.**
+
+Sean:
+
+$$
+X,Y\in\mathfrak D_i^{\mathrm{proc}}.
+$$
+
+Como son no vacíos, elijamos:
+
+$$
+q_0\trianglelefteq_i X
+$$
+
+y:
+
+$$
+q_n\trianglelefteq_i Y.
+$$
+
+Como ambos pertenecen al mismo régimen $i$:
+
+$$
+q_0\sim q_n.
+$$
+
+Por definición de $\sim$ existe un camino finito:
+
+$$
+q_0\bowtie q_1\bowtie\cdots\bowtie q_n.
+$$
+
+Aplicando EEA iterativamente obtenemos:
+
+$$
+X=X_0
+\preceq_i
+X_1
+\preceq_i
+\cdots
+\preceq_i
+X_n
+$$
+
+con:
+
+$$
+q_k\trianglelefteq_i X_k
+$$
+
+para cada $k$, y en particular:
+
+$$
+q_n\trianglelefteq_i X_n.
+$$
+
+Pero también:
+
+$$
+q_n\trianglelefteq_i Y.
+$$
+
+Así $X_n$ y $Y$ se solapan actualmente en $q_n$.
+
+Por OAM existe $Z\in\mathfrak D_i^{\mathrm{proc}}$ con:
+
+$$
+X_n\preceq_i Z
+\land
+Y\preceq_i Z.
+$$
+
+Y como:
+
+$$
+X\preceq_i X_n,
+$$
+
+por transitividad:
+
+$$
+X\preceq_i Z
+\land
+Y\preceq_i Z.
+$$
+
+Por tanto K3_i. $\square$
+
+### 4. Qué gana esta derivación
+
+K3_i ya no necesita ser una premisa global primitiva.
+
+Se reduce a dos compromisos locales:
+
+$$
+\boxed{
+\mathrm{EEA}+\mathrm{OAM}
+\Rightarrow
+K3_i.
+}
+$$
+
+Ni EEA ni OAM usan `SameRegime` como sinónimo de amalgamabilidad:
+
+- EEA habla de un único dominio y un único enlace actual;
+- OAM habla de dos dominios que ya comparten literalmente contenido actual.
+
+### 5. Límites y posibles contraejemplos
+
+**EEA puede fallar** si la noción de dominio admisible impone restricciones que impiden incorporar uno de los extremos de una relación ontológica actual. Eso sería conceptualmente extraño, pero no contradictorio.
+
+**OAM puede fallar** si dos dominios que comparten un token codifican aspectos ontológicos mutuamente incompatibles o si la clase de dominios no está cerrada bajo su combinación. En ese caso K3_i tampoco queda demostrado.
+
+Por tanto la derivación no es una prueba gratuita de directedness: desplaza la carga a principios locales más transparentes y falsables.
+
+### 6. Relación con REV-18 y REV-19
+
+EEA depende directamente de que la incidencia:
+
+$$
+q\trianglelefteq_i X
+$$
+
+tenga una interpretación ontológica estable. Por ello REV-18 sigue siendo relevante.
+
+OAM depende de la noción precisa de:
+
+$$
+\preceq_i
+$$
+
+y de qué cuenta como dominio procesual admisible, por lo que REV-19 también sigue abierto.
+
+Así, REV-07 ya no es un blocker autónomo completamente separado: su parte de directedness puede cerrarse si REV-18/19 justifican EEA y OAM.
+
+---
