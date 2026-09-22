@@ -4244,3 +4244,146 @@ Si PSB falla, No-R puede defenderse mediante una forma extremadamente fuerte de 
 Esa posibilidad es lógicamente distinta del potencialismo ordinario de «siempre hay una extensión más»; es una ramificación propia-clase ya en un solo paso.
 
 ---
+
+---
+
+## REV-20 — caracterización exacta de K1 mediante PSB
+
+Con la arquitectura normativa actual podemos demostrar que PSB no es solo suficiente para K1: es también necesaria.
+
+### 1. Premisas de contexto
+
+Trabajamos con:
+
+1. dominios procesuales set-sized;
+2. $\operatorname{Adm}_i:=\operatorname{StructAdm}_i$;
+3. cobertura mínima COV$_i$: todo token actual del régimen pertenece a algún fragmento admisible set-sized;
+4. `EClosed_i` exige que, si el source de un evento emergente actual pertenece al dominio, entonces el token de evento, su target y su footprint estructural también pertenecen al dominio.
+
+### 2. K1 implica PSB
+
+Supongamos K1$_i$.
+
+Sea $s$ un estado actual cualquiera del régimen.
+
+Por COV existe un dominio set-sized:
+
+$$
+X_s\in\mathfrak D_i^{\mathrm{proc}}
+$$
+
+tal que:
+
+$$
+s\in T_{X_s}.
+$$
+
+Por K1 existe:
+
+$$
+Y_s\in\mathfrak K_i
+$$
+
+con:
+
+$$
+X_s\preceq_i Y_s.
+$$
+
+Como $Y_s$ es E-closed, para todo evento emergente actual $e$ con:
+
+$$
+\operatorname{src}(e)=s,
+$$
+
+se cumple:
+
+$$
+e\in T_{Y_s}.
+$$
+
+Por tanto:
+
+$$
+\operatorname{Out}_i(s)
+\subseteq
+T_{Y_s}.
+$$
+
+Pero $T_{Y_s}$ es un conjunto. Luego:
+
+$$
+\operatorname{Out}_i(s)
+$$
+
+es set-sized.
+
+Como $s$ era arbitrario:
+
+$$
+\boxed{K1_i\Rightarrow \mathrm{PSB}_i.}
+$$
+
+### 3. PSB implica K1
+
+La dirección recíproca ya fue demostrada:
+
+$$
+\mathrm{PSB}_i
+\Rightarrow
+\mathrm{LSE}_i
+\Rightarrow
+\mathrm{SO}_i
+$$
+
+y, con StructAdm, OEA/CUA se derivan. La construcción por rondas produce para cada dominio $X$ una extensión E-closed set-sized.
+
+Por tanto:
+
+$$
+\boxed{\mathrm{PSB}_i\Rightarrow K1_i.}
+$$
+
+### 4. Equivalencia
+
+Bajo las premisas de contexto:
+
+$$
+\boxed{
+K1_i
+\iff
+\mathrm{PSB}_i.
+}
+$$
+
+Así REV-20 deja de ser una cuestión vaga sobre «si existen cierres». Tiene una condición estructural exacta:
+
+> K1 falla exactamente cuando existe al menos un estado actual que es source de proper-class many eventos emergentes actuales.
+
+### 5. Consecuencia para No-R
+
+Esta equivalencia identifica una vía precisa por la que el potencialismo/extensibilidad podría bloquear la prueba dentro de dominios set-sized:
+
+$$
+\neg K1_i
+\iff
+\neg\mathrm{PSB}_i
+$$
+
+es decir, una explosión de ramificación emergente propia-clase desde algún estado.
+
+El potencialismo ordinario de «siempre puede añadirse algo más» no basta por sí solo para refutar K1: mientras la ramificación sea set-like, el cierre por rondas existe como dominio set-sized.
+
+### 6. Estado lógico
+
+REV-20 ya no necesita más matemática de cierre.
+
+Su única deuda es filosófico-fundacional:
+
+$$
+\boxed{\mathrm{PSB}_i?}
+$$
+
+Si PSB se adopta o deriva independientemente, REV-20 puede marcarse RESOLVED.
+
+---
