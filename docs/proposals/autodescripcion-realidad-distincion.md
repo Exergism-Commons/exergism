@@ -933,6 +933,8 @@ $$
 
 La condición correspondiente sobre $\Phi_S$ exige que los hechos semánticos remitan a relaciones/hechos actuales entre los relata denotados. OA prohíbe convertir una estructura puramente formal en ontología por fiat, pero no afirma que el régimen esté exhaustivamente cubierto.
 
+Para el candidato directo $S_i^*$ hay un avance parcial: su carrier $T_i=[q]_{\sim}$ se construye precisamente a partir de tokens estipulados como **actuales** y enlaces $\Lambda_*$ estipulados como ontológicos. Por tanto el anclaje de tokens se obtiene condicionalmente a la corrección de REV-07. El anclaje/fidelidad de los hechos $\Phi_i^{\mathrm{all}}$ sigue dependiendo de la semántica de $\operatorname{Actual}_i$ y de REV-25/REV-24c.
+
 #### REV-24b — MC: completitud de pertenencia
 
 Sea $\operatorname{Reg}_i(x)$ un criterio de pertenencia al régimen fijado **independientemente de $S_i$, $R_i$, K3 y la conclusión de totalización**. El candidato vigente procede de REV-07 y la familia pre-régimen $\Lambda_*$.
@@ -953,6 +955,74 @@ $$
 $$
 
 Ésta es probablemente la carga ontológica principal. No puede justificarse definiendo $\operatorname{Reg}_i(x)$ como «ser representado por $S_i$» ni como «pertenecer a $R_i$». REV-24b queda acoplado a REV-07: hay que justificar que la noción independiente de co-régimen realmente captura todos los modos ontológicamente pertinentes de pertenencia. La misma obligación incluye explicar en qué sentido esa extensión determina un **alcance** legítimo sin reificarlo necesariamente como conjunto u objeto colector.
+
+##### Reducción de REV-24b a soundness/completeness de $\Lambda_*$
+
+Para no esconder la carga en el símbolo $\operatorname{Reg}_i$, distinguimos:
+
+$$
+\operatorname{Reg}^{\Lambda}(x;q)
+:\Longleftrightarrow
+x\in[q]_{\sim},
+$$
+
+que es el **criterio formal candidato** generado por $\Lambda_*$, de una relación ontológica objetivo:
+
+$$
+\operatorname{CoReal}(x,q),
+$$
+
+que significa que $x$ y $q$ co-pertenecen al mismo régimen ontológico en el sentido que la doctrina pretende capturar. $\operatorname{CoReal}$ no puede definirse mediante $[q]_{\sim}$ si se quiere evaluar no circularmente la adecuación de $\Lambda_*$.
+
+Hay dos direcciones distintas:
+
+$$
+\mathrm{RS}_{\Lambda}:
+\quad
+\operatorname{Reg}^{\Lambda}(x;q)
+\Rightarrow
+\operatorname{CoReal}(x,q),
+$$
+
+**soundness de régimen**: ningún enlace admitido por $\Lambda_*$ fusiona realidades que deberían permanecer distintas;
+
+y:
+
+$$
+\mathrm{RC}_{\Lambda}:
+\quad
+\operatorname{CoReal}(x,q)
+\Rightarrow
+\operatorname{Reg}^{\Lambda}(x;q),
+$$
+
+**completeness de régimen**: ningún modo ontológicamente genuino de co-pertenencia queda fuera de la clausura finita de $\Lambda_*$.
+
+Los seis criterios actuales de §5 están orientados principalmente a $\mathrm{RS}_{\Lambda}$. El verdadero cuello de botella de REV-24b es $\mathrm{RC}_{\Lambda}$.
+
+Si ambas direcciones se justifican:
+
+$$
+\operatorname{CoReal}(x,q)
+\Longleftrightarrow
+x\in[q]_{\sim}.
+$$
+
+Como la construcción directa usa exactamente:
+
+$$
+T_i=[q]_{\sim},
+$$
+
+la completitud de pertenencia del carrier se sigue entonces de la equivalencia anterior. Así REV-24b queda reducido a una pregunta mucho más precisa:
+
+> ¿existe algún modo actual de co-pertenencia ontológica que no pueda descomponerse en una cadena finita de relaciones integradoras token-specific pertenecientes a $\Lambda_*$?
+
+Dependencias transfinitarias, integración esencialmente global, relaciones infinitarias no reducibles a incidencias locales o una ontología holista fuerte serían contraejemplos candidatos. Si existen, $\mathrm{RC}_{\Lambda}$ falla y la construcción actual totaliza solo un subalcance.
+
+Si, por el contrario, toda relación integradora actual —incluso una relación infinitaria— puede representarse mediante un **token de relación actual** enlazado por incidencias a sus relata, una dependencia de aridad set-sized puede quedar conectada mediante caminos finitos en el grafo de incidencia. Esto ofrece una posible ruta para ampliar $\Lambda_*$ sin abandonar la clausura finita; una relación de aridad proper-class volvería a chocar con REV-23/smallness.
+
+Esta reducción **no cierra REV-24b**. Expone exactamente qué tesis metafísica falta demostrar. Si $\operatorname{CoReal}$ no puede recibir contenido independiente de $\Lambda_*$, entonces $\mathrm{RC}_{\Lambda}$ sería una estipulación y no una prueba.
 
 #### REV-24c — RA: adecuación representacional
 
@@ -1558,11 +1628,15 @@ REV-07 permanece **PARTIAL**.
 
 Ya no falta una definición de régimen; falta justificar que la familia candidata $\Lambda_*$ sea filosóficamente adecuada.
 
-El criterio de cierre restante es:
+El criterio de cierre restante se separa ahora en las dos direcciones exigidas por REV-24b:
 
 1. justificar qué roles integradores pertenecen legítimamente a $\Lambda_*$;
-2. demostrar que $\sim$ es suficientemente invariante bajo representaciones fieles;
-3. comprobar que la taxonomía de enlaces no colapsa regímenes por hubs abstractos ni fragmenta indebidamente una realidad.
+2. demostrar $\mathrm{RS}_{\Lambda}$: la conectividad bajo $\Lambda_*$ no fusiona entidades que no co-pertenecen ontológicamente;
+3. demostrar $\mathrm{RC}_{\Lambda}$: toda co-pertenencia ontológica relevante queda capturada por una cadena finita de enlaces admisibles —o justificar una generalización explícita si existen relaciones esencialmente globales/infinitarias—;
+4. demostrar que $\sim$ es suficientemente invariante bajo representaciones fieles;
+5. comprobar que la taxonomía de enlaces no colapsa regímenes por hubs abstractos ni fragmenta indebidamente una realidad.
+
+$\mathrm{RC}_{\Lambda}$ es compartido por REV-07 y REV-24b: mientras permanezca abierto, $[q]_{\sim}$ es un **candidato** a alcance de régimen, no una certificación de totalidad ontológica.
 
 Como antecedente metodológico, Lewis usa conexión espaciotemporal para determinar worldmates sin definir primero una cota común; aquí ese patrón se generaliza y no compromete a la propuesta con modal realism ni con una reducción de toda unidad ontológica a espaciotiempo.
 
