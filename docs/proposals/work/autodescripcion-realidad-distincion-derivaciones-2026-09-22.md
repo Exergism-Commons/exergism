@@ -2447,9 +2447,17 @@ REV-07 permanece PARTIAL hasta:
 
 ---
 
-## REV-07 — derivación local de K3_i
+## REV-07 — derivación local de directedness para una reconstrucción $\Lambda_*$
 
-Una vez que la identidad de régimen se define mediante caminos finitos de enlaces $\bowtie$, K3_i puede reducirse a dos principios de extensión estrictamente locales.
+**CURRENT TYPING.** Los caminos finitos de $\bowtie$ definen solo una **componente candidata de reconstrucción**. No se identifica con el régimen genealógico $i$ hasta demostrar:
+
+$$
+\mathrm{RS}_{\Lambda}^{\mathrm{gen}}
+\land
+\mathrm{RC}_{\Lambda}^{\mathrm{gen}}.
+$$
+
+EEA + OAM pueden demostrar directedness del poset asociado a esa componente candidata. Solo bajo RS+RC esa directedness puede reetiquetarse legítimamente como $K3_i$ del régimen genealógico.
 
 ### 1. EEA — Edge Extension Admissibility
 
@@ -2525,23 +2533,35 @@ OAM es mucho más débil que K3_i: solo habla de dominios con solapamiento actua
 
 ### 3. Lema de directedness interna
 
-**Lema REV-07.1.** Supóngase:
+**Lema REV-07.1 — candidate directedness.** Supóngase:
 
 1. los dominios considerados son no vacíos;
-2. los regímenes se definen por las clases de equivalencia de $\sim=(\bowtie)^*$;
+2. se fija una componente candidata $C=[q]_{\sim}$ de $\sim=(\bowtie)^*$;
 3. EEA;
 4. OAM.
 
-Entonces cada:
+Entonces el poset procesual restringido a $C$ es dirigido:
 
 $$
-(\mathfrak D_i^{\mathrm{proc}},\preceq_i)
+\boxed{K3_{\Lambda,C}.}
 $$
 
-es dirigido:
+Si además:
 
 $$
-\boxed{K3_i.}
+\mathrm{RS}_{\Lambda}^{\mathrm{gen}}
+\land
+\mathrm{RC}_{\Lambda}^{\mathrm{gen}},
+$$
+
+de modo que $C$ coincide con la clausura $\operatorname{Generated}^{*}_i(\mathcal O_i,-)$, entonces:
+
+$$
+\boxed{
+K3_{\Lambda,C}
+\Rightarrow
+K3_i.
+}
 $$
 
 **Demostración.**
@@ -2630,7 +2650,7 @@ X\preceq_i Z
 Y\preceq_i Z.
 $$
 
-Por tanto K3_i para dominios no vacíos. $\square$
+Por tanto $K3_{\Lambda,C}$ para dominios no vacíos. Bajo $\mathrm{RS}_{\Lambda}^{\mathrm{gen}}+\mathrm{RC}_{\Lambda}^{\mathrm{gen}}$, la componente $C$ es la genealogía del índice $i$ y el resultado se reetiqueta como $K3_i$. $\square$
 
 **Caso del dominio vacío.** Si $\mathfrak D_i^{\mathrm{proc}}$ contiene un dominio vacío $0_i$, para recuperar K3_i sobre todo el poset basta exigir:
 
@@ -2644,17 +2664,29 @@ Entonces cualquier par donde intervenga $0_i$ tiene como cota al otro dominio. S
 
 ### 4. Qué gana esta derivación
 
-K3_i ya no necesita ser una premisa global primitiva.
+Directedness de la componente candidata ya no necesita ser una premisa global primitiva. Se reduce a dos compromisos locales:
 
-Se reduce a dos compromisos locales:
-
-$$
+$
 \boxed{
 \mathrm{EEA}+\mathrm{OAM}
 \Rightarrow
+K3_{\Lambda,C}.
+}
+$
+
+y solo con reconstrucción genealógica completa:
+
+$
+\boxed{
+\mathrm{RS}_{\Lambda}^{\mathrm{gen}}
++
+\mathrm{RC}_{\Lambda}^{\mathrm{gen}}
++
+K3_{\Lambda,C}
+\Rightarrow
 K3_i.
 }
-$$
+$
 
 Ni EEA ni OAM usan `SameRegime` como sinónimo de amalgamabilidad:
 
