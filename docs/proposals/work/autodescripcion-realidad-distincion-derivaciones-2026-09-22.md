@@ -4901,6 +4901,64 @@ Este análisis reduce el siguiente frente a dos preguntas:
 
 El siguiente trabajo sustantivo es dar contenido independiente suficiente a $\operatorname{CoReal}$/$\operatorname{IntRel}$ y someter FID a contraejemplos.
 
+##### 8.2.1. FID no es generación local finita
+
+FID restringe la **longitud del camino de integración**, no el número de relata de cada relación. Si una relación global actual $g$ tiene set-many relata y la ontología admite su instancia como token relacional, puede mediar una conexión finita por incidencia.
+
+Por tanto:
+
+$$
+\text{no-localidad}
+\not\Rightarrow
+\neg\mathrm{FID}
+$$
+
+y:
+
+$$
+\text{aridad infinita set-sized}
+\not\Rightarrow
+\neg\mathrm{FID}.
+$$
+
+Para evitar que esto trivialice FID, se introduce un filtro independiente de **Witness Admissibility**:
+
+$$
+\mathrm{WA}(g).
+$$
+
+WA exige que $g$ sea una instancia actual y ontológica, con relata identificados sin totalización, rol integrador independiente, invariancia representacional e incidencia compatible con las obligaciones de smallness. No se admite un testigo cuyo único fundamento sea «hay que conectar estos relata para salvar FID».
+
+##### 8.2.2. Stress test AQFT / superselección
+
+En AQFT, el álgebra cuasilocal puede ser la completación $C^*$ de la unión dirigida de las álgebras locales. Por ello la unión local puede ser densa sin coincidir con el álgebra cuasilocal. Éste es un modelo matemático preciso de contenido que existe en una completación y no en ningún estadio local individual.
+
+Además, en teorías con sectores de superselección pueden fallar propiedades de aditividad: ciertos operadores no son generados por las álgebras de regiones menores y algunos aparecen solo tras una operación de completación/doble conmutante.
+
+Esto muestra que la siguiente tesis sería demasiado fuerte:
+
+$$
+\text{todo contenido co-real está generado en algún estadio local finito}.
+$$
+
+Pero FID no necesita esa tesis. El caso se convierte en contraejemplo a FID solo si concurren tres condiciones:
+
+$$
+\operatorname{Actual}(x)
+\land
+\operatorname{CoReal}(x,q)
+\land
+\neg\exists\text{ cadena finita de testigos }g\text{ con }\mathrm{WA}(g).
+$$
+
+Por tanto AQFT no refuta FID por sí sola; proporciona una clase concreta donde la existencia ontológica de **testigos de límite** debe justificarse y no puede darse por supuesta.
+
+##### 8.2.3. Gauge y topological order
+
+Las obstrucciones de factorización en gauge theory y los observables extendidos/topológicos son adversarios importantes de una ontología localista, pero tampoco producen automáticamente $\neg\mathrm{FID}$. Edge modes, constraints de borde, Wilson loops u otros observables extendidos pueden actuar como testigos finitos de incidencia si son ontológicamente admisibles bajo WA.
+
+Así, el contraejemplo decisivo debe ser más fuerte que «la estructura es no local»: debe mostrar **co-realidad sin ningún testigo ontológico admisible de profundidad finita**.
+
 #### 8.3. REV-24c — Representational Adequacy (RA)
 
 $\mathrm{RA}_i(S)$ exige fidelidad de la presentación: identidad, denotación y las relaciones relevantes usadas para individuar el régimen deben preservarse/reflejarse bajo representaciones fieles.
