@@ -526,6 +526,340 @@ No se marca RESOLVED hasta probarla contra una muestra más amplia de casos posi
 REV-04 sigue OPEN: el juguete proporciona un sustrato calculable, pero todavía no existe un operador $F$ bien definido con un punto fijo propio $S=F(S)\neq R$.
 
 ---
+## 3.2. REV-02 — inhibición, extensión estructural y extensión conservativa
+
+REV-02 pregunta si el crecimiento de un sistema preserva sus emergencias. La respuesta depende de qué signifique exactamente «extender» un sistema.
+
+### Extensión estructural bruta
+
+Sean:
+
+$$
+M=(C,\Sigma,A,\xrightarrow{}_M)
+$$
+
+y:
+
+$$
+N=(C',\Sigma',A',\xrightarrow{}_N).
+$$
+
+Escribimos provisionalmente:
+
+$$
+M\hookrightarrow_{\mathrm{str}}N
+$$
+
+si existen inyecciones de componentes, configuraciones y etiquetas que permiten identificar dentro de $N$ una copia estructural de las descripciones de $M$, pero **sin exigir preservación de la relación de transición**.
+
+Esta noción solo expresa algo parecido a «$N$ contiene los componentes/estructura de $M$ y además más contexto». No expresa conservación de comportamiento.
+
+### Contraejemplo explícito por inhibición
+
+Partimos del sistema juguete de REV-03. En $M$:
+
+$$
+p\xrightarrow{\texttt{close}}_M c
+$$
+
+y:
+
+$$
+c\xrightarrow{\texttt{activate}}_M a.
+$$
+
+El evento:
+
+$$
+(p,P,c)\in\mathcal E_M
+$$
+
+porque la organización cíclica de $c$ habilita `activate`, capacidad ausente en $p$.
+
+Construimos ahora un sistema con inhibidor:
+
+$$
+M^{I}=(C\cup\{h\},\Sigma^{I},A,\xrightarrow{}_{I}),
+$$
+
+donde $h$ está en estado local `on` y bloquea `close` y `activate` en las configuraciones embebidas.
+
+Sea:
+
+$$
+\iota(p)=p^{I},
+\qquad
+\iota(c)=c^{I},
+\qquad
+\iota(a)=a^{I}.
+$$
+
+Las transiciones relevantes son:
+
+| Estado | Acción disponible | Destino |
+|---|---|---|
+| $p^I$ | `idle` | $p^I$ |
+| $c^I$ | `idle` | $c^I$ |
+| $a^I$ | `idle` | $a^I$ |
+
+Aunque:
+
+$$
+M\hookrightarrow_{\mathrm{str}}M^I,
+$$
+
+ya no existe:
+
+$$
+p^I\xrightarrow{+}_{I}c^I.
+$$
+
+Por tanto el transporte del antiguo evento falla:
+
+$$
+(p,P,c)\in\mathcal E_M
+$$
+
+pero:
+
+$$
+(p^I,P^I,c^I)\notin\mathcal E_{M^I}.
+$$
+
+Así se obtiene un contraejemplo concreto:
+
+$$
+\boxed{
+M\hookrightarrow_{\mathrm{str}}N
+\not\Rightarrow
+\mathcal E_M\hookrightarrow\mathcal E_N.
+}
+$$
+
+Esto formaliza la intuición del revisor: **añadir ontológicamente/contextualmente algo puede retirar capacidades**.
+
+### Por qué preservar solo transiciones antiguas tampoco basta
+
+Una noción débil de extensión podría exigir simplemente que toda transición de $M$ siga existiendo entre las imágenes de sus estados.
+
+Eso todavía no preserva necesariamente un evento emergente. Si $w$ era el comparador que carecía de una capacidad $\alpha$, el sistema extendido podría añadir a $\iota(w)$ una ruta nueva etiquetada por $\alpha$. Entonces desaparecería la diferencia conductual que hacía de $w$ un testigo.
+
+Por tanto hace falta no solo **preservar** capacidades antiguas, sino también **reflejar** las capacidades antiguas respecto del alfabeto original.
+
+### Extensión conservativa de comportamiento
+
+Sean $M$ y $N$ como antes. Escribimos:
+
+$$
+M\hookrightarrow_{\mathrm{cons}}N
+$$
+
+si existen una inyección de configuraciones:
+
+$$
+\iota:\Sigma_M\to\Sigma_N
+$$
+
+y una inyección de etiquetas:
+
+$$
+j:A_M\to A_N
+$$
+
+que satisfacen las condiciones siguientes.
+
+**CE1 — fidelidad del perfil local.** Para cualesquiera $s,t\in\Sigma_M$:
+
+$$
+L_M(s)\cong L_M(t)
+\iff
+L_N(\iota(s))\cong L_N(\iota(t)).
+$$
+
+El contexto añadido no puede romper ni crear artificialmente equivalencias de perfil local entre estados embebidos.
+
+**CE2 — preservación de caminos con extremo.** Si:
+
+$$
+s\xrightarrow{\alpha,+}_M t,
+$$
+
+entonces:
+
+$$
+\iota(s)\xrightarrow{j(\alpha),+}_N\iota(t).
+$$
+
+Es decir, un proceso antiguo sigue pudiendo ejecutarse y termina en la imagen del mismo estado.
+
+**CE3 — preservación y reflexión de trazas antiguas.** Para todo $s\in\Sigma_M$:
+
+$$
+j(\operatorname{Traces}_M(s))
+=
+\operatorname{Traces}_N(\iota(s))
+\cap
+j(A_M^*).
+$$
+
+N puede introducir etiquetas y capacidades nuevas, pero sobre el alfabeto antiguo no puede borrar ni inventar trazas para los estados embebidos.
+
+Esta condición es deliberadamente fuerte. Es una forma de **conservatividad conductual** y no debe confundirse con mera inclusión de componentes.
+
+### Extensión compatible de una macrocaracterística
+
+Para transportar un evento también necesitamos una macrocaracterística $P_N$ que extienda a $P_M$:
+
+$$
+P_N(\iota(s))=P_M(s)
+$$
+
+para todo $s\in\Sigma_M$, y que siga satisfaciendo:
+
+$$
+\operatorname{Macro}_N(P_N).
+$$
+
+Llamaremos a esto una extensión $P$-compatible.
+
+### Lema REV-02.1 — preservación de eventos bajo extensión conservativa
+
+Si:
+
+$$
+M\hookrightarrow_{\mathrm{cons}}N,
+$$
+
+$P_N$ es una extensión $P$-compatible de $P_M$, y:
+
+$$
+(s_0,P_M,s_1)\in\mathcal E_M,
+$$
+
+entonces:
+
+$$
+\boxed{
+(\iota(s_0),P_N,\iota(s_1))\in\mathcal E_N.
+}
+$$
+
+**Demostración.**
+
+Del evento en $M$ existe un camino no vacío:
+
+$$
+s_0\xrightarrow{+}_M s_1.
+$$
+
+Por CE2:
+
+$$
+\iota(s_0)\xrightarrow{+}_N\iota(s_1).
+$$
+
+Como $P_N$ extiende a $P_M$:
+
+$$
+P_N(\iota(s_0))
+\neq
+P_N(\iota(s_1)).
+$$
+
+Sea $w$ un testigo de $\operatorname{OrgWitness}_M(P_M,s_1)$. Por CE1:
+
+$$
+L_N(\iota(w))
+\cong
+L_N(\iota(s_1)).
+$$
+
+Por compatibilidad de $P$:
+
+$$
+P_N(\iota(w))
+\neq
+P_N(\iota(s_1)).
+$$
+
+Además existe alguna traza antigua $\alpha$ con:
+
+$$
+\alpha\in\operatorname{Traces}_M(s_1)
+\setminus
+\operatorname{Traces}_M(w).
+$$
+
+Por CE3:
+
+$$
+j(\alpha)
+\in
+\operatorname{Traces}_N(\iota(s_1))
+\setminus
+\operatorname{Traces}_N(\iota(w)).
+$$
+
+Así $\iota(w)$ es un testigo organizacional para $\iota(s_1)$. Junto con $\operatorname{Macro}_N(P_N)$ se satisfacen todas las condiciones de $\mathcal E_N$. $\square$
+
+### Qué se ha demostrado y qué no
+
+Se han obtenido dos resultados distintos:
+
+$$
+\boxed{
+\text{extensión estructural bruta}
+\not\Rightarrow
+\text{preservación de emergencia}
+}
+$$
+
+y:
+
+$$
+\boxed{
+\text{extensión conductualmente conservativa}
++
+\text{compatibilidad de }P
+\Rightarrow
+\text{preservación de eventos emergentes}.
+}
+$$
+
+Esto **no recupera todavía F2**.
+
+F2 hablaba de un operador de cierre sobre dominios:
+
+$$
+X\preceq Y
+\Rightarrow
+F(X)\preceq F(Y).
+$$
+
+El lema anterior solo demuestra monotonía de **transporte de eventos** bajo una relación de extensión mucho más fuerte y explícitamente conductual.
+
+Para usar $\hookrightarrow_{\mathrm{cons}}$ en el teorema habría que demostrar todavía que:
+
+1. los objetos del poset pueden representarse como sistemas de transición de este tipo;
+2. la relación relevante entre dominios es realmente $\hookrightarrow_{\mathrm{cons}}$ o induce una relación ordenada adecuada;
+3. el futuro operador $F$ construido a partir de $\mathcal E$ preserva esa relación;
+4. las cadenas relevantes siguen teniendo cotas superiores respecto de esa nueva relación.
+
+Por tanto no se ha salvado Zorn: se ha identificado **qué tipo de monotonía sería defendible** y cuánto cuesta obtenerla.
+
+### Estado de REV-02
+
+REV-02 pasa de **OPEN** a **PARTIAL**.
+
+Ya existe:
+
+- un contraejemplo explícito $M/M^I$ que refuta monotonía bajo extensión estructural bruta;
+- una definición explícita de extensión conservativa;
+- un lema que demuestra preservación de eventos emergentes bajo esa relación fuerte.
+
+No se marca RESOLVED hasta conectar —o demostrar que no puede conectarse— esta relación con el operador $F$ y el orden usados en la ruta de maximalidad.
+
+---
 ## 4. Núcleo matemático actualmente separable
 
 Puede estudiarse un resultado puramente orden-teórico.
