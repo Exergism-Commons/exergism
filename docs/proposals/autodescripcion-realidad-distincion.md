@@ -1228,163 +1228,269 @@ Esta obligación se registra como REV-18 y evita declarar una victoria ontológi
 - **REV-18:** OPEN: falta el puente formal y ontológico entre $F_M$ sobre estados y $F$ sobre dominios.
 
 ---
-## 4. Núcleo matemático revisado
+## 4. Núcleo matemático revisado — Zorn sin operador de cierre
 
-Tras REV-01/REV-02, la plantilla matemática se simplifica.
+REV-01 muestra que intentar salvar la monotonía de \(F\) imponía al formalismo una propiedad que la emergencia contextual no garantiza.
 
-Sea un poset set-sized:
-
-$$
-(\mathfrak D,\preceq),
-$$
-
-y un operador:
+La relación conductualmente conservativa de REV-02 tampoco puede sustituir sin más a la inclusión ontológica. Un inhibidor puede ser perfectamente real y, sin embargo, producir una extensión no conservativa. Por tanto:
 
 $$
-F:\mathfrak D\to\mathfrak D
+\boxed{
+\text{máximo bajo extensión conservativa}
+\not\Rightarrow
+\text{totalidad ontológica}.
+}
 $$
 
-que satisfaga únicamente:
+Un máximo conservativo solo significa que no puede ampliarse el sistema preservando exactamente determinado comportamiento anterior.
 
-$$
-\text{F1: }X\preceq F(X),
-$$
-
-$$
-\text{F3: }F(F(X))=F(X).
-$$
+### 4.1. Eliminar \(F\) del teorema sustantivo
 
 Sea:
 
 $$
-\operatorname{Fix}(F)
-:=
-\{X\in\mathfrak D\mid F(X)=X\}.
+(\mathfrak D,\preceq)
 $$
 
-Supóngase:
+un poset **set-sized** de dominios candidatos.
 
-1. **C0 — cobertura:** todo hecho relevante del régimen está contenido en algún dominio de $\mathfrak D$;
-2. **C1-Fix — cota de cadenas:** toda cadena en $\operatorname{Fix}(F)$ tiene alguna cota superior $U\in\mathfrak D$;
-3. **Max — maximalidad:** es aplicable un principio tipo Zorn a $\operatorname{Fix}(F)$;
-4. **C2 — amalgamación sustantiva:** un punto fijo maximal y cualquier dominio que cubra un hecho del mismo régimen admiten una cota superior común en $\mathfrak D$.
-
-### Lema de elevación de cotas sin F2
-
-Si:
+Introducimos un subconjunto:
 
 $$
-\mathcal C\subseteq\operatorname{Fix}(F)
+\mathfrak K\subseteq\mathfrak D,
 $$
 
-es una cadena y $U$ es una cota superior en $\mathfrak D$, entonces para cada $X\in\mathcal C$:
+cuyos elementos llamaremos provisionalmente **dominios cerrados**.
+
+En esta etapa, “cerrado” es un predicado abstracto. No se identifica todavía con emergencia hasta resolver el puente entre la emergencia event-level \(\mathcal E_M\) y los dominios ontológicos.
+
+Las condiciones matemáticas mínimas son:
+
+**K1 — cofinalidad de dominios cerrados**
 
 $$
-X\preceq U.
+\forall X\in\mathfrak D\;
+\exists Y\in\mathfrak K:
+X\preceq Y.
 $$
 
-Por F1:
+Todo dominio candidato admite al menos una extensión cerrada. No se exige unicidad, minimalidad ni una función que la produzca.
+
+**K2 — inductividad por cadenas dentro de los cerrados**
+
+Para toda cadena \(\mathcal C\subseteq\mathfrak K\) existe:
 
 $$
-U\preceq F(U).
+U\in\mathfrak K
 $$
 
-y por transitividad:
+tal que:
 
 $$
-X\preceq F(U).
+\forall X\in\mathcal C,\quad X\preceq U.
 $$
 
-Por F3:
+La cota ya pertenece a \(\mathfrak K\). Por tanto, no hace falta tomar una cota \(U\) y aplicar después un operador \(F(U)\).
+
+**K3 — directedness/amalgamación del régimen**
 
 $$
-F(U)\in\operatorname{Fix}(F).
+\forall X,Y\in\mathfrak D\;
+\exists Z\in\mathfrak D:
+X\preceq Z
+\land
+Y\preceq Z.
 $$
 
-Así toda cadena de puntos fijos tiene una cota superior **dentro de los puntos fijos**, sin usar F2.
+Esta es la antigua carga C2/D5c y sigue siendo sustantiva.
 
-### Maximalidad
+### 4.2. Teorema de máximo cerrado cofinal
 
-Por Max/Zorn existe:
-
-$$
-M_*\in\operatorname{Fix}(F)
-$$
-
-maximal.
-
-### Exhaustividad
-
-Supóngase por contradicción que existe un hecho $x$ del régimen con:
+**Teorema.** Sea \((\mathfrak D,\preceq)\) un poset set-sized no vacío. Si \(\mathfrak K\subseteq\mathfrak D\) satisface K1, K2 y K3, entonces existe:
 
 $$
-x\not\preceq M_*.
+R\in\mathfrak K
 $$
 
-Por C0 existe $X_x$ con:
+que es un **máximo de todo \(\mathfrak D\)**:
 
 $$
-x\preceq X_x.
+\boxed{
+\forall X\in\mathfrak D,\quad X\preceq R.
+}
 $$
 
-Por C2 existe $Y$ tal que:
+**Demostración.**
+
+Por K1 y la no-vacuidad de \(\mathfrak D\), \(\mathfrak K\neq\varnothing\).
+
+Por K2, toda cadena en \((\mathfrak K,\preceq)\) tiene una cota superior perteneciente a \(\mathfrak K\). Por el lema de Zorn existe un elemento maximal:
 
 $$
-M_*\preceq Y
-\quad\text{y}\quad
-X_x\preceq Y.
+R\in\mathfrak K.
 $$
 
-F1 da:
+Sea \(X\in\mathfrak D\) arbitrario.
+
+Por K3 existe \(Y\in\mathfrak D\) tal que:
 
 $$
-Y\preceq F(Y),
+R\preceq Y
+\land
+X\preceq Y.
 $$
 
-y F3:
+Por K1 existe \(Z\in\mathfrak K\) con:
 
 $$
-F(Y)\in\operatorname{Fix}(F).
+Y\preceq Z.
+$$
+
+Luego:
+
+$$
+R\preceq Z.
+$$
+
+Como \(R\) es maximal en \(\mathfrak K\) y \(Z\in\mathfrak K\):
+
+$$
+Z=R.
 $$
 
 Por tanto:
 
 $$
-M_*\preceq F(Y)
+X\preceq Y\preceq Z=R.
 $$
 
-y:
-
-$$
-x\preceq F(Y).
-$$
-
-Como $x\not\preceq M_*$, $F(Y)$ es una extensión fija estricta de $M_*$, contradicción.
-
-Así:
+Como \(X\) era arbitrario:
 
 $$
 \boxed{
-C0+F1+F3+C1_{\operatorname{Fix}}+C2+\operatorname{Max}
-\Rightarrow
-\exists R_i[
-F(R_i)=R_i
-\land
-\operatorname{Exhaustive}_i(R_i)
-].
+\forall X\in\mathfrak D,\quad X\preceq R.
 }
 $$
 
-### Qué significa esta corrección
+\(\square\)
 
-- F2 queda **eliminada de las premisas del teorema abstracto**.
-- La no-monotonía contextual de REV-02 no amenaza ya esta prueba.
-- Para el operador concreto $F_M$ de REV-01, F2 interna se deriva igualmente, pero es un dato adicional, no una premisa necesaria.
-- La dificultad matemática vuelve a concentrarse en C1-Fix y C2.
-- La dificultad ontológica nueva es REV-18: demostrar que el operador system-relative sobre estados representa legítimamente un operador sobre dominios ontológicos.
+El punto importante es que directedness + cofinalidad convierten un mero **maximal** de \(\mathfrak K\) en un **máximo** de todo \(\mathfrak D\).
 
-**Estado:** el teorema abstracto está formalmente más limpio que la versión archivada, pero su lectura ontológica permanece abierta.
+### 4.3. Exhaustividad ontológica condicional
 
+Si además:
+
+$$
+\operatorname{Real}(x)
+\Rightarrow
+\exists X\in\mathfrak D:
+x\preceq X,
+$$
+
+entonces:
+
+$$
+\boxed{
+\operatorname{Real}(x)
+\Rightarrow
+x\preceq R.
+}
+$$
+
+porque:
+
+$$
+x\preceq X\preceq R.
+$$
+
+### 4.4. Qué se elimina
+
+El teorema ya no necesita:
+
+- F1: extensividad;
+- F2: monotonía;
+- F3: idempotencia;
+- convertir una cota \(U\) en \(F(U)\);
+- hablar de puntos fijos.
+
+La antigua ruta:
+
+$$
+X=F(X),\quad X\preceq U
+\Rightarrow
+X\preceq F(U)
+$$
+
+queda archivada como una formulación dependiente de monotonía que la emergencia contextual no justifica.
+
+REV-01 se resuelve, por tanto, **eliminando \(F\) de la ruta probatoria**, no intentando derivar F2 artificialmente.
+
+### 4.5. Qué cargas quedan abiertas
+
+La simplificación no demuestra todavía la tesis ontológica. Expone con más precisión lo que falta:
+
+1. **puente de emergencia:** definir un predicado no circular \(\operatorname{EClosed}(X)\) sobre dominios a partir de \(\mathcal E_M\);
+2. **cofinalidad:** demostrar que todo \(X\in\mathfrak D\) admite alguna extensión E-closed;
+3. **inductividad:** demostrar que toda cadena de dominios E-closed posee una cota E-closed;
+4. **amalgamación:** justificar K3 sin introducirla por definición de “mismo índice”;
+5. **cobertura:** justificar que todo hecho real queda cubierto por algún dominio de \(\mathfrak D\).
+
+Las cargas 2 y 3 sustituyen de manera transparente a la antigua maquinaria F1–F3/C1.
+
+### 4.6. Por qué no usar la extensión conservativa como orden ontológico
+
+REV-02 proporciona:
+
+$$
+M\hookrightarrow_{\mathrm{cons}}N
+$$
+
+como criterio de transporte fiable de eventos.
+
+Pero una incorporación real puede cambiar capacidades previas:
+
+$$
+M\preceq_{\mathrm{ont}}N
+$$
+
+sin que:
+
+$$
+M\hookrightarrow_{\mathrm{cons}}N.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\hookrightarrow_{\mathrm{cons}}
+\text{ sirve para invariancia conductual, no para definir “más realidad”.}
+}
+$$
+
+Reconstruir el teorema de totalidad sobre \(\hookrightarrow_{\mathrm{cons}}\) demostraría, como mucho, maximalidad conductualmente conservativa.
+
+### 4.7. Relación con la teoría estándar de cierre
+
+En la teoría estándar, un closure operator es precisamente un operador extensivo, monótono e idempotente; sus puntos fijos forman una familia cerrada con estructura de retículo bajo hipótesis apropiadas. El teorema de Tarski sobre funciones monótonas en retículos completos pertenece a esa arquitectura.
+
+La emergencia de esta propuesta no tiene por qué generar un closure operator estándar. Por eso la ruta revisada trabaja directamente con el subposet \(\mathfrak K\) y sus propiedades de cofinalidad e inductividad.
+
+### 4.8. Estado de REV-01 y REV-04
+
+**REV-01 queda RESOLVED como objeción al teorema vigente.** F1–F3 dejan de ser premisas del argumento sustantivo y la arquitectura por puntos fijos pasa a SUPERSEDED.
+
+Esto no significa que la existencia de \(R\) quede demostrada: las nuevas cargas K1–K3 y el puente \(\mathcal E_M\to\operatorname{EClosed}\) siguen abiertas y deben figurar en el ledger.
+
+**REV-04 deja de bloquear el núcleo.** El requisito de construir:
+
+$$
+S=F(S)\neq R
+$$
+
+pertenecía a la arquitectura centrada en \(F\). Se conserva como DEFERRED solo si más adelante interesa reconstruir un operador asociado a la familia de dominios cerrados.
+
+---
 
 ## 5. C2 / “mismo índice”
 
