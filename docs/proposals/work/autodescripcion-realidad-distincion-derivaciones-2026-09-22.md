@@ -2652,3 +2652,246 @@ y de qué cuenta como dominio procesual admisible, por lo que REV-19 también si
 Así, REV-07 ya no es un blocker autónomo completamente separado: su parte de directedness puede cerrarse si REV-18/19 justifican EEA y OAM.
 
 ---
+
+---
+
+## REV-21 — caracterización completa de los puntos fijos de $F_i$
+
+Sea el grafo dirigido de eventos emergentes del régimen/sistema:
+
+$$
+G_i=(\Sigma_i,E_i),
+$$
+
+donde:
+
+$$
+(s,t)\in E_i
+$$
+
+si existe al menos un evento emergente actual que lleva de $s$ a $t$.
+
+Sea:
+
+$$
+F_i(A)
+:=
+\{
+t\in\Sigma_i
+\mid
+\exists s\in A:
+s\to_{E_i}^{*}t
+\}.
+$$
+
+### 1. Puntos fijos = subconjuntos forward-closed
+
+**Proposición REV-21.1.**
+
+$$
+F_i(A)=A
+$$
+
+si y solo si $A$ es cerrado hacia adelante:
+
+$$
+\forall s\in A,
+\quad
+s\to_{E_i}^{*}t
+\Rightarrow
+t\in A.
+$$
+
+**Prueba.**
+
+Si $F_i(A)=A$, toda configuración alcanzable desde $A$ pertenece por definición a $F_i(A)$ y por tanto a $A$.
+
+Recíprocamente, si $A$ es forward-closed, toda configuración añadida por alcanzabilidad ya pertenece a $A$. Como la clausura es reflexiva, $A\subseteq F_i(A)$; luego $F_i(A)=A$. $\square$
+
+### 2. Punto fijo mínimo generado por un estado
+
+Para $s\in\Sigma_i$, definimos:
+
+$$
+\operatorname{Reach}_i(s)
+:=
+\{t\in\Sigma_i\mid s\to_{E_i}^{*}t\}.
+$$
+
+Entonces:
+
+$$
+\boxed{
+F_i(\{s\})
+=
+\operatorname{Reach}_i(s).
+}
+$$
+
+Además, $\operatorname{Reach}_i(s)$ es el menor punto fijo que contiene a $s$.
+
+### 3. Cuándo existe un punto fijo propio no vacío
+
+Supongamos $\Sigma_i\neq\varnothing$.
+
+Existe un punto fijo propio no vacío:
+
+$$
+\varnothing\neq A
+\subsetneq
+\Sigma_i
+$$
+
+si y solo si existe algún estado $s$ tal que:
+
+$$
+\operatorname{Reach}_i(s)
+\neq
+\Sigma_i.
+$$
+
+Una dirección es inmediata tomando:
+
+$$
+A=\operatorname{Reach}_i(s).
+$$
+
+Para la conversa, si $A$ es un punto fijo propio no vacío y $s\in A$, forward-closure implica:
+
+$$
+\operatorname{Reach}_i(s)\subseteq A
+\subsetneq
+\Sigma_i.
+$$
+
+### 4. Degeneración total y fuerte conectividad
+
+**Teorema REV-21.2.** Para $\Sigma_i\neq\varnothing$, las siguientes condiciones son equivalentes:
+
+1. el único punto fijo no vacío de $F_i$ es $\Sigma_i$;
+2. para todo $s\in\Sigma_i$:
+
+$$
+\operatorname{Reach}_i(s)=\Sigma_i;
+$$
+
+3. $G_i$ es fuertemente conexo.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{Fix}(F_i)\setminus\{\varnothing\}
+=
+\{\Sigma_i\}
+\iff
+G_i\text{ es fuertemente conexo}.
+}
+$$
+
+Así la degeneración temida en REV-21 no es genérica: tiene una condición gráfica exacta.
+
+### 5. Caracterización por SCCs
+
+Sea:
+
+$$
+\operatorname{SCC}(G_i)
+$$
+
+el conjunto de componentes fuertemente conexas, y sea:
+
+$$
+\operatorname{Cond}(G_i)
+$$
+
+el grafo de condensación, que es acíclico.
+
+Todo punto fijo de $F_i$ es una unión de SCCs que es forward-closed en el grafo de condensación.
+
+Recíprocamente, toda unión forward-closed de SCCs determina un punto fijo.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{Fix}(F_i)
+\cong
+\{
+U\subseteq\operatorname{SCC}(G_i)
+\mid
+U\text{ es forward-closed en }\operatorname{Cond}(G_i)
+\}.
+}
+$$
+
+Esto caracteriza por completo el poder discriminante de la clausura de alcanzabilidad.
+
+### 6. Funciones de progreso y ausencia de degeneración
+
+Sea:
+
+$$
+\mu:\Sigma_i\to(Q,<)
+$$
+
+una función hacia un orden estricto tal que todo evento emergente satisface:
+
+$$
+s\to_{E_i}t
+\Rightarrow
+\mu(s)<\mu(t).
+$$
+
+Entonces $G_i$ es acíclico: un ciclo implicaría:
+
+$$
+\mu(s_0)
+<
+\mu(s_1)
+<
+\cdots
+<
+\mu(s_n)=\mu(s_0),
+$$
+
+contradicción.
+
+En particular, si:
+
+$$
+|\Sigma_i|>1,
+$$
+
+un grafo acíclico no puede ser fuertemente conexo. Por REV-21.2:
+
+$$
+\boxed{
+\text{progreso estricto global}
+\Rightarrow
+\text{existe un punto fijo propio no vacío}.
+}
+$$
+
+Si $G_i$ es finito y acíclico, sus SCCs son singletons y el grafo de condensación coincide con el propio DAG; los cierres propios pueden leerse directamente como subconjuntos forward-closed.
+
+### 7. Interpretación de la ciclicidad
+
+Para que el único cierre no vacío sea todo $\Sigma_i$, el grafo debe permitir retorno dirigido entre cualesquiera dos estados. Cuando $|\Sigma_i|>1$, esto exige ciclos emergentes.
+
+Si una misma macrovariable ordenada aumenta estrictamente en todos los eventos emergentes relevantes, esos ciclos están prohibidos.
+
+Si diferentes eventos usan macrovariables distintas, o una macrovariable puede disminuir después, la ciclicidad vuelve a ser posible. Por eso la afirmación correcta es condicional a la existencia de una función de progreso global $\mu$, no a que cada evento aislado tenga alguna macrocaracterística cambiante.
+
+### 8. Estado de REV-21
+
+REV-21 puede marcarse **RESOLVED**.
+
+El criterio de cierre solicitado queda satisfecho:
+
+- los puntos fijos están caracterizados exactamente;
+- se sabe cuándo existen cierres propios;
+- se sabe exactamente cuándo la clausura degenera a $\Sigma_i$ para todo conjunto no vacío;
+- se identifica una condición suficiente simple que impide la degeneración.
+
+---
