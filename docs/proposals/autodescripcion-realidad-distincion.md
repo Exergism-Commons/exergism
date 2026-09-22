@@ -114,7 +114,7 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-04 | RESOLVED mínimo | El toy de cuatro componentes produce un punto fijo propio explícito de $F_M$. Esto demuestra que el operador no es necesariamente «la unión de todo», pero no caracteriza todavía sistemas ricos. |
 | REV-18 | PARTIAL | Existe un puente mínimo por incidencia de estados/eventos en dominios y un predicado $\operatorname{EClosed}$. Falta justificar ontológicamente esa incidencia. |
 | REV-19 | RESOLVED tipado | El objeto primario queda fijado como fragmento procesual semántico $X=(T_X,\Phi_X)$; $\preceq_i^{\mathrm{proc}}$ es inclusión de contenido positivo actual. Admisibilidad ontológica se separa como $\operatorname{Adm}_i$ y queda en REV-18/20/09/07. |
-| REV-20 | OPEN | La cofinalidad K1 de dominios E-closed no está demostrada ontológicamente. |
+| REV-20 | OPEN | La cofinalidad K1 de dominios E-closed no está demostrada ontológicamente. Por el Muro, no puede cerrarse por muestreo interno: necesita una justificación estructural/no enumerativa de que todo dominio admisible posee alguna extensión admisible E-closed. |
 | REV-09 | PARTIAL | `EClosed` se preserva formalmente bajo uniones de cadenas procesuales compatibles; falta demostrar que la cota formal sea ontológicamente admisible. |
 | REV-10 | RESOLVED vigente | La ruta actual ya no usa la inferencia oculta de StageFactorization/presentabilidad criticada en H8. |
 | REV-21 | RESOLVED formal | Los puntos fijos de $F_i$ son exactamente los subconjuntos forward-closed del grafo emergente; la degeneración al único punto fijo no vacío $\Sigma_i$ ocurre exactamente cuando el grafo es fuertemente conexo. |
@@ -199,6 +199,88 @@ K1_i+K2_i+K3_i
 \quad
 X\preceq_i R_i.
 $$
+
+### Objetivo fuerte real: refutar No-$R$
+
+Para esta propuesta no es necesario demostrar un único $R_{\mathrm{abs}}$.
+
+Definimos el rival fuerte:
+
+$$
+\operatorname{NoR}
+:=
+\neg\exists i\;\exists R_i\in\mathfrak D_i^{\mathrm{proc}}
+\left[
+\operatorname{EClosed}_i(R_i)
+\land
+\forall X\in\mathfrak D_i^{\mathrm{proc}},
+\;X\preceq_i R_i
+\right].
+$$
+
+Así, basta encontrar **un solo régimen no vacío** $i$ para el que se justifiquen las premisas del teorema:
+
+$$
+K1_i+K2_i+K3_i
+$$
+
+y sus condiciones fundacionales/tipadas, para obtener:
+
+$$
+\boxed{
+\exists R_i
+\Rightarrow
+\neg\operatorname{NoR}.
+}
+$$
+
+Que además exista un único régimen, múltiples regímenes, Cluster-$R$, Indexed-One-$R$ o alguna estructura metaontológica ulterior es una cuestión separada. Ninguna de esas alternativas restaura No-$R$ una vez que existe al menos un $R_i$ exhaustivo en su régimen.
+
+### Qué significa aquí «cerrado»
+
+La conclusión inmediata del teorema actual es:
+
+$$
+\boxed{
+\operatorname{EClosed}_i(R_i)
+}
+$$
+
+porque $R_i\in\mathfrak K_i$.
+
+No debe escribirse todavía, sin una precisión adicional de tipos:
+
+$$
+R_i=F_i(R_i).
+$$
+
+Esa igualdad solo estará justificada si se construye un operador sobre **el mismo tipo de dominios procesuales**:
+
+$$
+F_i^{\mathrm{proc}}:
+\mathfrak D_i^{\mathrm{proc}}
+\to
+\mathfrak D_i^{\mathrm{proc}}
+$$
+
+con:
+
+$$
+\operatorname{Fix}(F_i^{\mathrm{proc}})
+=
+\mathfrak K_i.
+$$
+
+En ese caso sí:
+
+$$
+R_i\in\mathfrak K_i
+\Rightarrow
+F_i^{\mathrm{proc}}(R_i)=R_i.
+$$
+
+Hasta entonces, la forma tipada y sustantiva de la tesis es «$R_i$ existe y es E-closed», no una igualdad entre objetos de tipos distintos.
+
 
 Por tanto:
 
@@ -1109,21 +1191,68 @@ Dos límites permanecen firmes:
 «Fractal» no participa en ninguna inferencia vigente.
 
 
-## 10. REC, Muro y función regulativa
+## 10. REC, Muro y el estatuto de la demostración
 
-Las ideas históricas de REC($R$), Muro de la singularidad e indistinguibilidad entre una totalidad y una sandbox internamente cerrada se conservan como **problemas epistemológicos/metaontológicos**, no como evidencia de la existencia de $R$.
+REC($R$), el Muro de la singularidad y la indistinguibilidad entre una totalidad y una sandbox internamente cerrada son **restricciones epistemológicas**, no refutaciones de la existencia de $R_i$.
 
-La revisión correcta es:
+La distinción normativa es:
 
 $$
-\text{clausura observable}
+\boxed{
+\text{existencia demostrada condicionalmente}
+\neq
+\text{identificación/certificación empírica del máximo}.
+}
+$$
+
+Si para algún régimen $i$ se justifican K1$_i$, K2$_i$ y K3$_i$, el teorema puede demostrar que existe un máximo E-closed $R_i$ aunque ningún observador interno pueda señalar qué dominio concreto es $R_i$ ni distinguir empíricamente una cuasisingularidad de la totalidad genuina.
+
+Por tanto, el Muro no bloquea el paso:
+
+$$
+K1_i+K2_i+K3_i
+\Rightarrow
+\exists R_i.
+$$
+
+Sí restringe **cómo pueden justificarse las premisas**, especialmente REV-20.
+
+### Restricción epistemológica sobre K1
+
+K1$_i$ cuantifica sobre todos los dominios admisibles del régimen:
+
+$$
+\forall X\in\mathfrak D_i^{\mathrm{proc}}
+\;\exists Y\in\mathfrak K_i:
+X\preceq_i Y.
+$$
+
+Un observador interno no puede establecer esta universalidad inspeccionando una muestra finita o creciente de dominios. Por ello:
+
+$$
+\boxed{
+\text{evidencia por muestreo}
 \not\Rightarrow
-\text{totalidad ontológica certificada}.
+K1_i.
+}
 $$
 
-Esto puede convertir parte del proyecto en una función regulativa más que en una teoría empíricamente discriminante. La propuesta debe decir con precisión qué parte es ontológica, qué parte epistemológica y qué parte no es contrastable.
+El criterio de cierre de REV-20 exige una justificación **estructural y no enumerativa**: una derivación desde la naturaleza de $\operatorname{Adm}_i$, de los fragmentos procesuales y del cierre emergente, o un principio ontológico independiente que implique K1$_i$.
 
-**Estado: DEFERRED/OPEN — REV-15.**
+La evidencia empírica puede motivar o apoyar las premisas estructurales, pero no sustituir la cuantificación universal requerida.
+
+### Alcance del Muro
+
+El Muro deja abiertas simultáneamente estas posibilidades:
+
+- $R_i$ existe pero no puede identificarse desde dentro;
+- una cuasisingularidad es indistinguible localmente de $R_i$;
+- existen otros regímenes $R_j$ inaccesibles;
+- existe o no existe un $R_{\mathrm{abs}}$.
+
+Nada de ello resta valor lógico a una demostración condicional de $\exists R_i$.
+
+**Estado:** REV-15 permanece OPEN en cuanto a consecuencias discriminantes; el Muro se conserva como límite epistemológico compatible con la prueba de existencia.
 
 ## 11. “Dios”
 
