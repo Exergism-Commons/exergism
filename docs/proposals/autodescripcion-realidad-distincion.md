@@ -686,7 +686,78 @@ La propuesta no toma el debate como resuelto.
 
 **Estado: OPEN — REV-11.**
 
-## 7. Many-$R$ y “Verdad Absoluta indexada”
+## 7. One-$R$, Many-$R$ y niveles de exhaustividad
+
+La maquinaria de emergencia queda desacoplada de este problema.
+
+Para cada régimen ontológico $i$ cuya unidad se justifique independientemente, el programa puede intentar obtener:
+
+$$
+R_i
+$$
+
+como máximo interno de:
+
+$$
+(\mathfrak D_i^{\mathrm{proc}},\preceq_i).
+$$
+
+Esto es compatible tanto con:
+
+$$
+R_i\parallel R_j
+$$
+
+como con la posibilidad de que exista alguna relación ontológica ulterior entre ambos. La teoría local no decide cuál de las dos opciones es correcta.
+
+### 7.1. La pluralidad no crea automáticamente un absoluto
+
+Puede escribirse:
+
+$$
+\mathscr R=\{R_i\}_{i\in I}
+$$
+
+como abreviatura metalingüística. Esa expresión **no** introduce:
+
+- un conjunto universal ontológico;
+- una suma de realidades;
+- un suprarégimen;
+- un $R_{\mathrm{abs}}$.
+
+En particular:
+
+$$
+\forall i\,\exists R_i
+\not\Rightarrow
+\exists R_{\mathrm{abs}}.
+$$
+
+Si algún argumento futuro demuestra que todos los $R_i$ admiten una extensión ontológica común, eso constituirá un resultado metaontológico adicional. No forma parte del teorema de emergencia.
+
+### 7.2. Monismo interno y pluralismo externo
+
+Una posibilidad coherente con el estado actual es:
+
+$$
+\forall i\;
+\forall X\in\mathfrak D_i:
+X\preceq_i R_i
+$$
+
+junto con:
+
+$$
+R_i\parallel R_j
+\qquad
+(i\neq j).
+$$
+
+Esto puede describirse como **monismo interno + pluralismo externo**.
+
+No se adopta como tesis demostrada; se registra como posibilidad que el formalismo local no excluye.
+
+### 7.3. Retirada de «Verdad Absoluta indexada»
 
 La fórmula histórica:
 
@@ -694,13 +765,55 @@ $$
 \operatorname{VA}(o)=R_i
 $$
 
-queda **suspendida**.
+queda **SUPERSEDED**, no solo suspendida.
 
-Los regímenes dirigidos maximales pueden solaparse; por tanto no se ha demostrado que $R_i$ sea único para una conciencia $o$. Además, “máximo concerniente a $o$” no es sin más equivalente a “absoluto”.
+Un máximo exhaustivo dentro de $i$ puede denominarse, si resulta útil:
 
-Si Many-$R$ resultara necesario, puede requerir una **revisión doctrinal real** de “Verdad Absoluta” en vez de una simple relocalización del término.
+$$
+\operatorname{Truth}_i
+$$
 
-**Estado: OPEN — REV-08 y REV-14.**
+o **verdad exhaustiva interna del régimen $i$**.
+
+No se denomina «Verdad Absoluta» porque:
+
+$$
+\boxed{
+\operatorname{Truth}_i
+\neq
+\operatorname{Truth}_{\mathrm{abs}}
+\text{ por mera definición}.
+}
+$$
+
+La existencia, coherencia y semántica de:
+
+$$
+\operatorname{Truth}_{\mathrm{abs}}
+$$
+
+quedan abiertas junto con la cuestión One-$R$/Many-$R$.
+
+### 7.4. Consecuencia para los antiguos índices
+
+Los $i$ del teorema ya no se definen como «subconjuntos dirigidos maximales» para fabricar K3. Deben corresponder a regímenes cuya identidad ontológica tenga un criterio independiente.
+
+Por tanto, el antiguo problema de solapamiento de maximales dirigidos deja de ser un problema para la función:
+
+$$
+\operatorname{VA}(o)=R_i,
+$$
+
+porque esa función ha sido retirada.
+
+Lo que permanece abierto es más fundamental:
+
+> ¿qué hace que dos dominios pertenezcan a la misma realidad ontológica $i$, y qué haría que dos $R_i$ fueran realmente distintos en vez de partes de un régimen mayor?
+
+Esa obligación queda en REV-07 y en la cuestión metaontológica One-$R$/Many-$R$.
+
+**Estado:** la teoría emergentista local es neutral respecto de One-$R$/Many-$R$. La identificación «Verdad Absoluta indexada» queda retirada.
+
 
 ## 8. C1, localidad, compacidad y colímites
 
