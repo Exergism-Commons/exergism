@@ -896,9 +896,9 @@ $$
 \boxed{
 \operatorname{SemTotal}_i(S_i)
 +
-\mathrm{OA}_i(S_i)
+\mathrm{OA}_i(S_i;q)
 +
-\mathrm{MC}_i(S_i)
+\mathrm{MC}_i(S_i;q)
 +
 \mathrm{RA}_i(S_i)
 \Rightarrow
