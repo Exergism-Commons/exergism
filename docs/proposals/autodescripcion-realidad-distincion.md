@@ -915,25 +915,55 @@ Esta caja es un **esquema objetivo, no un teorema ya demostrado**. Abreviamos po
 
 #### REV-24a — OA: anclaje ontológico
 
-$\mathrm{OA}_i(S)$ exige que los tokens y hechos que $S$ representa estén anclados en contenido actual del régimen mediante una relación de denotación/realización independiente:
+Para mantener la misma base ontológica independiente que usa MC, OA se formula también respecto de un token semilla actual $q$ y $\operatorname{CoReal}$:
 
 $$
-\mathrm{OA}_i(S):
+\mathrm{OA}_i(S;q):
 \quad
 \forall a\in T_S\;
 \exists x\,
 [
 \operatorname{Actual}(x)
 \land
-\operatorname{Reg}_i(x)
+\operatorname{CoReal}(x,q)
 \land
 \operatorname{Den}_i(a,x)
 ].
 $$
 
-La condición correspondiente sobre $\Phi_S$ exige que los hechos semánticos remitan a relaciones/hechos actuales entre los relata denotados. OA prohíbe convertir una estructura puramente formal en ontología por fiat, pero no afirma que el régimen esté exhaustivamente cubierto.
+OA expresa **soundness del carrier**: ningún elemento semántico de $S$ debe denotar contenido ajeno al alcance ontológico cuya presentación se pretende.
 
-Para el candidato directo $S_i^*$ hay un avance parcial: su carrier $T_i=[q]_{\sim}$ se construye precisamente a partir de tokens estipulados como **actuales** y enlaces $\Lambda_*$ estipulados como ontológicos. Por tanto el anclaje de tokens se obtiene condicionalmente a la corrección de REV-07. El anclaje/fidelidad de los hechos $\Phi_i^{\mathrm{all}}$ sigue dependiendo de la semántica de $\operatorname{Actual}_i$ y de REV-25/REV-24c.
+Para el candidato directo:
+
+$$
+T_i=[q]_{\sim}
+$$
+
+y se dispone de la denotación canónica:
+
+$$
+\mathrm{CD}_i:
+\quad
+x\in T_i
+\Rightarrow
+\operatorname{Den}_i(x,x).
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\mathrm{RS}_{\Lambda}
++
+\mathrm{CD}_i
+\Rightarrow
+\mathrm{OA}_i(S_i^*;q).
+}
+$$
+
+En efecto, si $a\in T_i=[q]_{\sim}$, RS proporciona $\operatorname{CoReal}(a,q)$ y CD proporciona $\operatorname{Den}_i(a,a)$.
+
+Esta derivación descarga condicionalmente el anclaje de **tokens**. El anclaje y fidelidad de los hechos $\Phi_i^{\mathrm{all}}$ no quedan resueltos por ello y permanecen en REV-24c/REV-25.
 
 #### REV-24b — MC: completitud de pertenencia
 
