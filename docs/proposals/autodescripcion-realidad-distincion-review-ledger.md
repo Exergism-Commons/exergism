@@ -204,4 +204,4 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 
 Tras el commit 9cfb857, el documento normativo principal funciona como crónica + estado actual. La versión antigua se conserva como evidencia histórica, pero sus contradicciones no se consideran tesis simultáneamente vigentes.
 
-Estado sustantivo actual: REV-03, REV-07, REV-09 y REV-18 permanecen PARTIAL; REV-15 y REV-20 permanecen OPEN. REV-01, REV-02, REV-04, REV-08, REV-10, REV-14, REV-19 y REV-21 están RESOLVED en su alcance explícitamente acotado. La teoría emergentista es local a cada régimen $i$ y no pretende demostrar One-R global.
+Estado sustantivo actual: REV-03, REV-07, REV-09 y REV-18 permanecen PARTIAL; REV-15, REV-20 y REV-22 permanecen OPEN. REV-01, REV-02, REV-04, REV-08, REV-10, REV-14, REV-19 y REV-21 están RESOLVED en su alcance explícitamente acotado. El objetivo mínimo es Exists-R: demostrar al menos un máximo E-closed $R_i$; One-R global y $R_{\mathrm{abs}}$ son opcionales respecto de ese objetivo.
