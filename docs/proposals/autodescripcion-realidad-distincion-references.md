@@ -194,13 +194,13 @@ La propuesta extrae solo tres cautelas metodológicas:
 
 Por tanto, esta literatura **motiva** la arquitectura:
 
-$
+$$
 U_i
 \xrightarrow{\operatorname{Rep}_i}
 S_i
 \dashrightarrow
 R_i,
-$
+$$
 
 pero deja completamente abierto el segundo paso, que sigue siendo REV-24/$\mathrm{OTB}_i$.
 
