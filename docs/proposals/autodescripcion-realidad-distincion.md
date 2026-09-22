@@ -1497,285 +1497,248 @@ REV-07 permanece **PARTIAL**. Para cerrarlo hay que justificar:
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
-## 6. Generalidad absoluta, No-$R$ y potencialismo — REV-26
+## 6. Genealogía absoluta, generalidad y No-$R$ — REV-26
 
-REV-26 es el blocker que separa una totalidad indexada de régimen de la Realidad Total original.
+REV-26 ya no pregunta si puede formarse la mera pluralidad de todo lo real. Esa pluralidad corresponde a $\mathcal R_{\mathrm{ext}}$.
 
-### 6.1. AG — generalidad absoluta
+La cuestión doctrinal es:
 
-Llamamos:
+> ¿existe una base/origen ontológico común cuya clausura genere exactamente todo lo real?
+
+### 6.1. REV-26e — decisión doctrinal
+
+**RESOLVED.**
+
+La lectura minimalista:
 
 $$
-\mathrm{AG}
+R=\operatorname{Scope}(\operatorname{Real})
 $$
 
-a la condición metalingüística de que el cuantificador usado en:
+queda SUPERSEDED como target completo.
+
+El concepto se conserva como:
 
 $$
-\operatorname{Real}(x)
+\mathcal R_{\mathrm{ext}}.
 $$
 
-pueda recorrer **absolutamente todo lo real**, sin una restricción contextual/indexada oculta.
+El $R$ doctrinal exige unidad genealógica:
 
-AG no afirma que exista un set o dominio-objeto de todas las cosas. Es una tesis sobre el alcance legítimo de la cuantificación.
+$$
+R
+=
+\operatorname{Scope}
+\bigl(
+\operatorname{Cl}^{\mathrm{ont}}
+(\mathcal O_{\mathrm{abs}})
+\bigr).
+$$
 
-### 6.2. APC$_{Real}$ — comprensión plural absoluta relevante
+Esta propiedad no se introduce para hacer no trivial la prueba: expresa el criterio doctrinal elegido de qué cuenta como una Realidad.
 
-La instancia de comprensión plural necesaria es:
+### 6.2. REV-26a — AG: generalidad absoluta
+
+AG sigue siendo necesaria para que:
+
+$$
+\forall x\;\operatorname{Real}(x)
+$$
+
+tenga la lectura de **absolutamente todo lo real**.
+
+AG no postula una colección universal. Es una tesis sobre alcance cuantificacional.
+
+Sin AG, la afirmación «la clausura de $\mathcal O_{\mathrm{abs}}$ contiene todo lo real» no tiene una única lectura absoluta y debe sustituirse por una semántica indexada/metalingüística.
+
+**Estado: OPEN.**
+
+### 6.3. Alcance extensional y APC$_{Real}$
+
+La comprensión plural absoluta:
 
 $$
 \mathrm{APC}_{Real}:
 \quad
 (\exists x\,\operatorname{Real}(x))
 \Rightarrow
+\exists rr_{\mathrm{ext}}\;
+\forall x[
+x\prec rr_{\mathrm{ext}}
+\Longleftrightarrow
+\operatorname{Real}(x)
+]
+$$
+
+realiza $\mathcal R_{\mathrm{ext}}$ en una semántica plural clásica.
+
+Por tanto, bajo AG:
+
+$$
+\mathrm{AG}
++
+\mathrm{APC}_{Real}
++
+\operatorname{NonEmptyReality}
+\Rightarrow
+\operatorname{ExistsExtScope}.
+$$
+
+Pero ahora queda explícito:
+
+$$
+\boxed{
+\operatorname{ExistsExtScope}
+\not\Rightarrow
+\operatorname{ExistsR}.
+}
+$$
+
+APC$_{Real}$ resuelve, como mucho, la **realización extensional** del alcance. No demuestra origen común ni clausura generativa.
+
+REV-26b permanece PARTIAL como cuestión lógica/fundacional de scope, pero deja de ser el núcleo ontológico de la existencia de $R$.
+
+### 6.4. REV-26c — Common-Origin / Genealogical Globalization Bridge
+
+Definimos la tesis de origen absoluto común:
+
+$$
+\mathrm{CO}_{\mathrm{abs}}:
+\quad
+\exists\mathcal O_{\mathrm{abs}}\;
+[
+\operatorname{OntOrigin}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}})
+\land
+\forall x(
+\operatorname{Real}(x)
+\Longleftrightarrow
+\operatorname{Generated}^{*}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}},x)
+)
+].
+$$
+
+Éste es el blocker ontológico principal de REV-26.
+
+La dirección:
+
+$$
+\operatorname{Generated}^{*}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}},x)
+\Rightarrow
+\operatorname{Real}(x)
+$$
+
+es **soundness genealógica**: la clausura no fabrica contenido ontológicamente espurio.
+
+La dirección:
+
+$$
+\operatorname{Real}(x)
+\Rightarrow
+\operatorname{Generated}^{*}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}},x)
+$$
+
+es **exhaustividad genealógica**: nada real queda fuera de la genealogía común.
+
+Además, las reglas de $\operatorname{Generated}^{*}_{\mathrm{abs}}$ deben satisfacer independencia generativa: no pueden definirse como «las reglas necesarias para alcanzar todo lo real».
+
+### 6.5. Globalización desde genealogías indexadas
+
+Si existen:
+
+$$
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+$$
+
+para varios índices, eso no produce automáticamente $\mathrm{CO}_{\mathrm{abs}}$.
+
+Una ruta válida de globalización debe justificar una base superior:
+
+$$
+\mathcal O_{\mathrm{abs}}
+$$
+
+tal que las genealogías indexadas sean subclausuras o derivados de su clausura:
+
+$$
+\forall i\;
+\operatorname{Cl}^{\mathrm{ont}}_i(\mathcal O_i)
+\preceq_{\mathrm{gen}}
+\operatorname{Cl}^{\mathrm{ont}}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}}).
+$$
+
+Esta relación de inclusión genealógica no puede definirse meramente como inclusión extensional de scopes. Debe conservar la dependencia/origen relevante.
+
+Si no existe ninguna base superior admisible, tenemos un candidato a Many-$R$ fuerte.
+
+### 6.6. Scope realization del $R$ genealógico
+
+Una vez justificada $\mathrm{CO}_{\mathrm{abs}}$, una instancia adecuada de comprensión plural puede realizar el alcance generado:
+
+$$
 \exists rr_{\mathrm{abs}}\;
 \forall x[
 x\prec rr_{\mathrm{abs}}
 \Longleftrightarrow
-\operatorname{Real}(x)
+\operatorname{Generated}^{*}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}},x)
 ].
 $$
 
-Esta fórmula no postula un conjunto de todas las cosas: $rr_{\mathrm{abs}}$ es una variable plural. Pero la legitimidad de aplicar comprensión a un dominio absolutamente general sigue siendo una cuestión filosófica real; critical plural logic y las objeciones por extensibilidad indefinida impiden tratarla como gratuita.
+Bajo $\mathrm{CO}_{\mathrm{abs}}$, este scope coincide extensionalmente con $\mathcal R_{\mathrm{ext}}$, pero la igualdad extensional **no borra la diferencia explicativa**:
 
-En lógica plural clásica, APC$_{Real}$ es una instancia del esquema general:
+- $\mathcal R_{\mathrm{ext}}$ se caracteriza por ser todo lo real;
+- $R$ se caracteriza por ser la clausura de una genealogía ontológica común.
 
-$$
-\mathrm{PluralComp}:
-\quad
-(\exists x\,\varphi(x))
-\Rightarrow
-\exists xx\,\forall y[
-y\prec xx
-\Longleftrightarrow
-\varphi(y)
-].
-$$
-
-Tomando $\varphi(y):=\operatorname{Real}(y)$ se obtiene APC$_{Real}$. Por tanto:
+Por tanto:
 
 $$
 \boxed{
 \mathrm{AG}
 +
-\mathrm{PluralComp}
+\mathrm{CO}_{\mathrm{abs}}
 +
-\operatorname{NonEmptyReality}
+\mathrm{ScopeRealization}_{\mathrm{abs}}
 \Rightarrow
-\operatorname{ExistsAbsR}
+\operatorname{ExistsR}.
 }
 $$
 
-bajo la lectura minimalista de scope.
+El contenido sustantivo está en $\mathrm{CO}_{\mathrm{abs}}$ y en la adecuación de la clausura, no en la mera formación plural del scope.
 
-Esto **no** convierte PluralComp en una verdad neutral del proyecto. El estatus de la comprensión plural como lógica pura/universalmente aplicable es controvertido, y critical plural logic restringe precisamente ese esquema. Por ello REV-26b pasa a PARTIAL, no a RESOLVED.
+### 6.7. REV-26d — No-$R$
 
-### 6.3. Lema de reducción: APC$_{Real}$ y `ExistsAbsR`
-
-Con la semántica plural de alcance adoptada provisionalmente, definimos:
-
-$$
-\operatorname{AbsTotal}(rr)
-:\Longleftrightarrow
-\forall x[
-x\prec rr
-\Longleftrightarrow
-\operatorname{Real}(x)
-].
-$$
-
-y:
-
-$$
-\operatorname{ExistsAbsR}
-:\Longleftrightarrow
-\exists rr\;\operatorname{AbsTotal}(rr).
-$$
-
-Entonces, bajo realidad no vacía:
-
-$$
-\boxed{
-\mathrm{AG}
-+
-\exists x\,\operatorname{Real}(x)
-\Rightarrow
-[
-\mathrm{APC}_{Real}
-\Longleftrightarrow
-\operatorname{ExistsAbsR}
-].
-}
-$$
-
-**Demostración.** De izquierda a derecha, APC$_{Real}$ produce unas cosas que son exactamente los $x$ reales; por definición satisfacen `AbsTotal`. De derecha a izquierda, si existe tal pluralidad, el consecuente de APC$_{Real}$ está satisfecho; bajo no-vacuidad su antecedente también lo está. AG no hace trabajo deductivo interno: fija que las ocurrencias de `Real` y de los cuantificadores tengan la lectura absolutamente general pretendida. $\square$
-
-Por tanto el resultado anterior:
-
-$$
-\mathrm{AG}
-+
-\mathrm{APC}_{Real}
-+
-\operatorname{NonEmptyReality}
-\Rightarrow
-\operatorname{ExistsAbsR}
-$$
-
-es un **lema de reducción/representación**, no una demostración ontológica independiente de $R$. Con la definición mínima $R:=Scope(Real)$, APC$_{Real}$ contiene exactamente el principio de formación de scope que se necesita para realizar $R$.
-
-### 6.4. Consecuencia de no-trivialidad — REV-26e
-
-Esto obliga a decidir qué significa realmente «demostrar $R$». Hay dos lecturas posibles.
-
-#### Lectura A — scope minimalista
-
-$R$ no es una entidad adicional ni una estructura integradora: es solamente el alcance exhaustivo de `Real`. En esta lectura:
-
-- AG fija el alcance absoluto de `Real`;
-- APC$_{Real}$ realiza ese alcance pluralmente;
-- `ExistsAbsR` es analítico/condicional respecto de esas decisiones lógicas.
-
-La maquinaria de emergencia, $S_i$, Zorn, FID y REV-24 **no son necesarias para la existencia desnuda de $R$**. Siguen siendo relevantes para estructura, presentación, clausura y epistemología de regímenes.
-
-#### Lectura B — $R$ absoluto estructurado
-
-Si se exige una tesis adicional $Q(rr)$ —por ejemplo unidad integrativa, conectividad, clausura dinámica, autosuficiencia u otra estructura ontológica— entonces el target debe nombrarse aparte:
-
-$$
-\operatorname{ExistsStructuredAbsR}_Q
-:=
-\exists rr[
-\operatorname{AbsTotal}(rr)
-\land
-Q(rr)
-].
-$$
-
-AG + APC$_{Real}$ ya no bastan para esta tesis: solo proporcionan `AbsTotal`. La propiedad $Q$ requeriría una justificación independiente y podría devolver relevancia a la maquinaria estructural.
-
-Pero **no se permite introducir $Q$ solo para hacer no trivial la prueba**. La doctrina actual insiste en que $R$ es alcance y no sustancia, megaobjeto, suma o capa física. Cualquier fortalecimiento debe justificarse doctrinalmente y declararse como target nuevo, no atribuirse retroactivamente al $R$ original.
-
-**REV-26e = OPEN doctrinal:** decidir si el target final es el scope minimalista original —en cuyo caso la existencia se reduce a AG/APC$_{Real}$— o si Exergism necesita además alguna propiedad estructural $Q$ explícita.
-
-### 6.4.1. Qué no demuestra el lema de reducción
-
-Ni AG ni APC$_{Real}$ demuestran que el scope sea:
-
-- estructuralmente conectado;
-- un único régimen de $\operatorname{CoReal}$;
-- emergente o E-closed;
-- cognoscible desde dentro;
-- representable por un único $S_i$;
-- causalmente integrado;
-- fundamental o grounding de sus contenidos.
-
-Esas propiedades son tesis adicionales. La mera existencia de scope plural no debe inflarse retóricamente.
-
-
-### 6.5. Ruta restrictionist/expansionist
-
-El rival fuerte no necesita sostener que «hay un objeto real fuera de $R$». Puede negar que exista una cuantificación/pluralidad absolutamente exhaustiva.
-
-Dos estrategias quedan abiertas:
-
-1. **restricción/contextualismo:** todo uso efectivo de `Real` está indexado a un dominio/contexto $c$;
-2. **expansionismo/extensibilidad indefinida:** para todo dominio legítimo $D_c$ existe una expansión legítima $D_{c'}$ que permite cuantificar sobre más.
-
-En esa semántica, la propia fórmula APC$_{Real}$ puede carecer de una instancia absolutamente general legítima. Entonces no obtenemos:
-
-$$
-\operatorname{ExistsAbsR}.
-$$
-
-Pero de ello tampoco se sigue automáticamente `NoR` como una proposición ordinaria formulada desde un supuesto metalenguaje absolutamente general: el restrictionist debe explicar cómo expresa su propia tesis sin reintroducir la generalidad que niega.
-
-### 6.6. Globalización desde regímenes indexados
-
-Existe una segunda ruta posible, independiente de AG directa. Supóngase que tenemos totalidades de régimen $R_i$. Para obtener $R_{\mathrm{abs}}$ hace falta una estructura real $G$ capaz de abarcar **todos** los índices relevantes sin que quede otro índice real fuera de su alcance.
-
-Esquemáticamente:
-
-$$
-\mathrm{GB}:
-\quad
-\{R_i\}_{i\in I}
-\leadsto
-R_{\mathrm{abs}}.
-$$
-
-Pero GB no puede definirse simplemente como «hay un scope que contiene todos los $R_i$», porque eso presupone la conclusión. Debe venir de una semántica global legítima o de una estructura ontológica común independientemente justificada.
-
-Si cada supuesto conjunto de índices admite siempre un índice adicional no cubierto, obtenemos una versión metaontológica del expansionismo y GB falla.
-
-### 6.7. REV-26d — estatuto semántico de No-$R$ bajo relativismo
-
-Si AG vale, la alternativa clásica es bien formada:
+Bajo AG, la negación doctrinal es ahora:
 
 $$
 \operatorname{NoR}_{\mathrm{AG}}
 :=
-\neg\operatorname{ExistsAbsR}.
+\neg
+\exists\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}}\;
+\operatorname{AbsGeneTotal}
+(\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}}).
 $$
 
-Pero un generality relativist coherente niega precisamente que exista una interpretación final desde la que ese cuantificador tenga alcance absoluto. Su posición no debe reconstruirse como una única cuantificación universal sobre «todos los contextos», porque eso puede reintroducir AG.
+Equivalentemente, puede fallar porque:
 
-Introducimos por ello un **esquema metalingüístico de expansión**. Para cada interpretación admisible $I$ que pretenda ser total:
+1. no existe origen/base absoluta admisible;
+2. existe una base candidata pero su clausura no es sound;
+3. existe una base candidata pero su clausura no es exhaustiva respecto de todo lo real;
+4. la realización de scope requerida por la formalización adoptada falla.
 
-$$
-\mathrm{ER}[I]:
-\quad
-\exists I^+\;
-[
-I\prec I^+
-\land
-\exists^{I^+}x\;
-\neg\operatorname{Covered}_I(x)
-].
-$$
-
-El relativista/expansionista fuerte sostiene todas las instancias admisibles de ER, no necesariamente una sola fórmula:
-
-$$
-\forall I\;\mathrm{ER}[I]
-$$
-
-porque ese último cuantificador sobre interpretaciones volvería a requerir una metalengua con pretensión global. La notación universal se usa aquí solo como **metaschema**, no como oración objeto.
-
-Llamamos:
-
-$$
-\operatorname{NoAbsFinality}
-$$
-
-a esta posición esquemática de ausencia de una interpretación final/inexpandible.
-
-Por tanto se distinguen:
-
-$$
-\boxed{
-\operatorname{NoR}_{\mathrm{AG}}
-\neq
-\operatorname{NoAbsFinality}
-}
-$$
-
-en estatus lógico, aunque ambas puedan desempeñar el papel informal de «No-$R$» en marcos rivales.
-
-Esto evita una falsa dicotomía. El debate absoluto tiene al menos tres resultados posibles:
-
-1. **AG + APC$_{Real}$:** existe scope absoluto plural;
-2. **AG + $\neg$APC$_{Real}$:** AG es coherente pero la realización plural absoluta falla;
-3. **generality relativism / NoAbsFinality:** la propia demanda de una cuantificación final absoluta es rechazada.
-
-REV-26d impide presentar (3) como si fuera simplemente la negación clásica de (1) dentro del mismo lenguaje.
+Si AG se rechaza, No-$R$ no debe formularse fingiendo un cuantificador absoluto. Se conserva la alternativa metalingüística NoAbsFinality: toda interpretación candidata de cierre genealógico admite una expansión ontológicamente legítima que no queda absorbida por su genealogía.
 
 ### 6.8. Estado de REV-26
 
 - **REV-26a / AG:** OPEN.
-- **REV-26b / APC$_{Real}$:** PARTIAL — derivable como instancia de PluralComp en PFO clásica; pendiente justificar esa lógica/comprensión para alcance absoluto.
-- **REV-26c / GB:** OPEN como ruta alternativa desde `ExistsRegR`.
-- **REV-26d / No-R semantics:** OPEN; falta decidir si el marco doctrinal adopta AG o permite una alternativa esquemática de generality relativism.
+- **REV-26b / scope realization / APC:** PARTIAL y auxiliar; ya no decide la existencia sustantiva.
+- **REV-26c / CO$_{\mathrm{abs}}$ + genealogical globalization:** OPEN y blocker ontológico principal.
+- **REV-26d / No-$R$ semantics:** OPEN.
+- **REV-26e / target doctrinal:** RESOLVED — $R$ es una unidad genealógica ontológicamente cerrada, no el mero alcance extensional.
 
 Por tanto:
 
@@ -1783,26 +1746,21 @@ $$
 \boxed{
 \operatorname{ExistsRegR}
 \not\Rightarrow
-\operatorname{ExistsAbsR}
+\operatorname{ExistsR}
 }
 $$
 
-pero también:
+y:
 
 $$
 \boxed{
-\mathrm{AG}
-+
-\mathrm{APC}_{Real}
-+
-\operatorname{NonEmptyReality}
-\Rightarrow
-\operatorname{ExistsAbsR}.
+\operatorname{ExistsExtScope}
+\not\Rightarrow
+\operatorname{ExistsR}.
 }
 $$
 
-**Estado del debate:** REV-11 permanece RESOLVED como corrección de carga argumentativa; REV-26 concentra ahora tanto el problema de existencia del $R$ doctrinal original como el estatuto lógico de su alternativa No-$R$.
-
+El objetivo fuerte queda concentrado en demostrar una genealogía ontológica común absoluta, no en demostrar que podemos formar la expresión «todo lo real».
 
 ## 7. One-$R$, Many-$R$ y niveles de exhaustividad
 
