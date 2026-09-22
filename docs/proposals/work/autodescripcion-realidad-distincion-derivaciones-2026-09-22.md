@@ -3762,3 +3762,257 @@ K1 ya no es una existencia global opaca: se deriva de tres obligaciones locales 
 No se marca RESOLVED porque OEA, CUA y SO todavía requieren justificación ontológica/fundacional independiente.
 
 ---
+
+---
+
+## REV-18/REV-20 — admisibilidad estructural mínima
+
+La arquitectura actual permite preguntar si el predicado abstracto $\operatorname{Adm}_i$ añade realmente contenido o si puede reducirse a las condiciones semánticas ya impuestas a un fragmento procesual.
+
+### 1. Definición candidata
+
+Definimos:
+
+$$
+\operatorname{StructAdm}_i(X)
+$$
+
+si y solo si $X=(T_X,\Phi_X)$ satisface PW1–PW6 del tipo procesual normalizado:
+
+1. todos sus tokens pertenecen al régimen $i$;
+2. todos los tokens y hechos incluidos son actuales;
+3. todo hecho incluido contiene sus relata en $T_X$;
+4. todo evento incluido contiene source y target únicos;
+5. la precedencia incluida es acíclica/coherente;
+6. el fragmento contiene solo contenido positivo, de modo que una extensión puede añadir hechos sin retractar los anteriores.
+
+La propuesta candidata es:
+
+$$
+\boxed{
+\operatorname{Adm}_i(X)
+:=
+\operatorname{StructAdm}_i(X).
+}
+$$
+
+Esta definición no dice que $X$ sea total, cerrado, maximal ni amalgamable. Solo dice que es un fragmento ontológico positivo coherente de contenido actual.
+
+### 2. OEA se deriva
+
+Sea $X$ estructuralmente admisible y sea $e$ un evento emergente actual con:
+
+$$
+\operatorname{src}(e)=s\in T_X,
+\qquad
+\operatorname{tgt}(e)=t.
+$$
+
+Como $e$ es un evento actual del mismo régimen, los tokens:
+
+$$
+e,t
+$$
+
+y los hechos:
+
+$$
+\operatorname{Event}(e),
+\quad
+\operatorname{src}(e,s),
+\quad
+\operatorname{tgt}(e,t)
+$$
+
+son contenido actual del régimen $i$.
+
+Sea $Y$ el fragmento obtenido añadiendo ese footprint mínimo a $X$.
+
+Entonces:
+
+- PW1 se preserva porque source, evento y target están en el mismo régimen procesual;
+- PW2 se preserva porque solo se añade contenido actual;
+- PW3/PW4 se preservan añadiendo todos los relata/endpoints obligatorios;
+- PW5 se preserva porque una relación de precedencia genuinamente actual no puede introducir un ciclo finito real; cualquier ciclo finito añadido sería ya una incoherencia del propio contenido actual;
+- PW6 se preserva porque solo añadimos contenido positivo.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{StructAdm}_i(X)
+\land
+o\in\operatorname{Pend}_i(X)
+\Rightarrow
+\exists Y\succeq_i X:
+\operatorname{StructAdm}_i(Y)
+\land
+o\text{ satisfecha}.
+}
+$$
+
+Es decir:
+
+$$
+\boxed{\mathrm{OEA}_i.}
+$$
+
+### 3. CUA se deriva para cadenas set-indexed
+
+Sea:
+
+$$
+\{X_\alpha\}_{\alpha<\lambda}
+$$
+
+una cadena set-indexed de fragmentos estructuralmente admisibles, y definamos:
+
+$$
+T_\infty
+=
+\bigcup_{\alpha<\lambda}T_{X_\alpha},
+\qquad
+\Phi_\infty
+=
+\bigcup_{\alpha<\lambda}\Phi_{X_\alpha}.
+$$
+
+Como la familia está indexada por un conjunto y cada carrier es set-sized, $T_\infty$ y $\Phi_\infty$ son conjuntos en ZFC.
+
+PW1/PW2 se preservan por unión.
+
+PW3/PW4 se preservan porque cualquier hecho/evento de la unión apareció ya en algún estadio que contenía sus relata/endpoints.
+
+PW5 también se preserva. Si la unión contuviese un ciclo finito de precedencia, las finitísimas aristas del ciclo aparecerían en finitísimos estadios. Como la familia es una cadena, existe un estadio que contiene todas ellas, contradiciendo su coherencia.
+
+PW6 se preserva porque la unión solo acumula contenido positivo.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{StructAdm}_i(X_\alpha)\;\forall\alpha<\lambda
+\Rightarrow
+\operatorname{StructAdm}_i\left(\bigcup_{\alpha<\lambda}X_\alpha\right).
+}
+$$
+
+Es decir:
+
+$$
+\boxed{\mathrm{CUA}_i}
+$$
+
+para cadenas set-indexed.
+
+### 4. OAM también se deriva
+
+Sean $X,Y$ dos fragmentos estructuralmente admisibles del mismo régimen.
+
+Consideremos:
+
+$$
+Z=(T_X\cup T_Y,\Phi_X\cup\Phi_Y).
+$$
+
+PW1–PW4 y PW6 se preservan como antes.
+
+Para PW5, cualquier ciclo finito en $Z$ estaría compuesto por hechos de precedencia actuales. Si la semántica de $\prec$ es una precedencia/dependencia estricta realmente instanciada, tal ciclo no puede existir en la realidad procesual subyacente.
+
+Así:
+
+$$
+\boxed{
+\operatorname{StructAdm}_i(X)
+\land
+\operatorname{StructAdm}_i(Y)
+\Rightarrow
+\operatorname{StructAdm}_i(X\cup Y).
+}
+$$
+
+y:
+
+$$
+X\preceq_i Z
+\land
+Y\preceq_i Z.
+$$
+
+Por tanto OAM se deriva, incluso sin exigir solapamiento explícito, **una vez que ambos dominios ya están independientemente tipados como pertenecientes al mismo régimen**.
+
+Esto no vuelve circular SameRegime: la pertenencia al régimen sigue viniendo de $\sim$, no de la existencia de $Z$.
+
+### 5. EEA se deriva para footprints de $\Lambda_*$
+
+El mismo argumento vale para una instancia actual:
+
+$$
+\rho:\lambda(q,r),
+\qquad
+\lambda\in\Lambda_*.
+$$
+
+Si $q\in T_X$, añadir $r$, la instancia $\rho$ y su footprint estructural positivo produce otro fragmento estructuralmente admisible.
+
+Por tanto la versión local de EEA necesaria para REV-07 se deriva de StructAdm.
+
+### 6. Consecuencia para los findings
+
+Si se acepta:
+
+$$
+\operatorname{Adm}_i
+:=
+\operatorname{StructAdm}_i,
+$$
+
+entonces:
+
+- la parte de incidencia/admisibilidad de REV-18 deja de ser una premisa abierta: incidencia es pertenencia al carrier semántico y admisibilidad es well-formedness actual positiva;
+- REV-09 queda resuelto para cadenas set-indexed;
+- OEA y OAM/EEA dejan de ser premisas independientes;
+- REV-20 se reduce a SO/smallness del cono emergente;
+- REV-07 se reduce a justificar $\Lambda_*$ y la identidad de régimen, no la directedness.
+
+### 7. Precio conceptual
+
+Esta reducción adopta una concepción concreta de «dominio ontológico»:
+
+> un dominio es un fragmento semántico positivo de contenido actual, no una entidad adicional de la ontología.
+
+Eso evita reificar el dominio como sustancia u objeto colector.
+
+Pero requiere aceptar que **todo fragmento positivo well-formed de hechos/tokens actuales es un dominio legítimo** para el propósito del teorema.
+
+Si la doctrina exige restricciones adicionales sobre qué fragmentos cuentan como dominio —por ejemplo completitud causal, cierre nomológico, criterios mereológicos especiales o restricciones globales— entonces StructAdm sería demasiado débil y los findings de admisibilidad tendrían que reabrirse.
+
+### 8. Cobertura ontológica
+
+Para que un máximo de estos fragmentos corresponda realmente a la totalidad del régimen, hay que exigir además cobertura atómica:
+
+$$
+\mathrm{COV}_i:
+$$
+
+para todo token/hecho actual $q$ del régimen existe algún fragmento estructuralmente admisible $X$ con:
+
+$$
+q\trianglelefteq_i X.
+$$
+
+Con StructAdm, COV es inmediata para tokens simples mediante fragmentos mínimos; para eventos/hechos relacionales se toma el footprint well-formed mínimo que contiene sus relata obligatorios.
+
+Si $R_i$ domina todos los dominios admisibles, entonces por COV contiene todo token/hecho actual del régimen.
+
+Así el máximo formal no es solo maximal respecto de una familia arbitraria: representa exhaustividad del contenido actual del régimen.
+
+### 9. Estado propuesto
+
+Esta sección permite cerrar REV-18 y REV-09 **si** se adopta normativamente StructAdm como la noción de dominio admisible.
+
+REV-20 quedaría PARTIAL exclusivamente por SO/smallness.
+
+REV-07 permanecería PARTIAL solo por la justificación de $\Lambda_*$ y la individuación del régimen.
+
+---
