@@ -656,7 +656,58 @@ Los commits posteriores de consolidación mantienen este registro como historia 
 
 ---
 
-# VII. Política de mantenimiento
+# VII. Arquitectura semántica objetivo
+
+La propuesta deberá evolucionar hacia una arquitectura híbrida en la que ninguna tecnología intente hacer el trabajo de todas las demás.
+
+La división objetivo queda registrada así:
+
+| Capa | Función |
+|---|---|
+| **RDF / Knowledge Graph** | Grafo de conocimiento: entidades, afirmaciones, dependencias, findings, versiones, autores, obras, commits y relaciones entre todos ellos. |
+| **OWL** | Semántica e inferencia: clases, propiedades, axiomas y relaciones cuya semántica formal permita inferencias controladas. |
+| **SHACL** | Integridad y reglas editoriales: validación de constraints, estados, evidencias obligatorias, criterios de cierre, cardinalidades y consistencia estructural del grafo. |
+| **PROV-O** | Historia y procedencia: quién afirmó qué, cuándo, a partir de qué versión, qué revisión produjo un cambio y qué entidad deriva o revisa a cuál. |
+| **CiTO / SPAR Ontologies** | Bibliografía y función de las citas: no solo que una obra es citada, sino si una afirmación la extiende, contradice, apoya, utiliza como antecedente o discute. |
+| **Nanopublications** | Afirmaciones versionables y citables: cada claim relevante puede empaquetar assertion, provenance y publication info como unidad auditable. |
+| **Lean** | Pruebas matemáticas reales: teoremas, lemas y demostraciones formales que no deben simularse mediante OWL/RDF. |
+| **Markdown** | Explicación humana: historia cronológica, motivación, interpretación filosófica y exposición legible del estado actual. |
+
+La arquitectura puede resumirse:
+
+$$
+\boxed{
+\begin{array}{ll}
+\text{RDF} & \text{grafo de conocimiento}\\
+\text{OWL} & \text{semántica e inferencia}\\
+\text{SHACL} & \text{integridad y reglas editoriales}\\
+\text{PROV-O} & \text{historia y procedencia}\\
+\text{CiTO/SPAR} & \text{bibliografía y función de cita}\\
+\text{Nanopubs} & \text{afirmaciones versionables y citables}\\
+\text{Lean} & \text{pruebas matemáticas reales}\\
+\text{Markdown} & \text{explicación humana}
+\end{array}
+}
+$$
+
+Esta arquitectura se considera **objetivo de diseño**, no implementación ya validada.
+
+Antes de crear la ontología deberán definirse competency questions que determinen qué preguntas debe responder el grafo. El modelo RDF/OWL/SHACL se diseñará a partir de esas preguntas y no mediante crecimiento ad hoc de clases y propiedades.
+
+Ejemplos de preguntas que la arquitectura deberá poder responder:
+
+- ¿qué findings permanecen abiertos?;
+- ¿qué claims dependen de una premisa abierta?;
+- ¿qué afirmaciones fueron superadas y por cuáles?;
+- ¿qué commit introdujo o resolvió una tesis?;
+- ¿qué bibliografía apoya, contradice o antecede un claim?;
+- ¿qué teoremas tienen prueba formal verificable?;
+- ¿qué claims carecen de evidencia, fuente o criterio de cierre?;
+- ¿cuál es el estado normativo actual de una afirmación?
+
+---
+
+# VIII. Política de mantenimiento
 
 A partir de esta consolidación:
 
