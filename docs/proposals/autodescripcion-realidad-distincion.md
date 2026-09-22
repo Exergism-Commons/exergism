@@ -864,6 +864,8 @@ Esta derivación es importante porque EEA y OAM son más locales y falsables que
 
 Ni una ni otra define «mismo régimen» como «tener cota común».
 
+**La deuda no desaparece; se localiza.** EEA y OAM siguen siendo principios de existencia de extensiones ontológicamente admisibles. En particular, EEA es una forma local —de un solo enlace— del mismo género que la cofinalidad K1 de REV-20. La ganancia es analítica: las obligaciones pueden evaluarse y refutarse por separado, no que su contenido existencial haya sido eliminado.
+
 El [documento técnico](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md) contiene la demostración completa.
 
 ### 5.6. Qué sigue abierto
