@@ -5517,7 +5517,7 @@ $$
 
 porque esa notación reintroduciría exactamente la reificación/setificación que la propuesta intenta evitar.
 
-SR tampoco basta por sí sola para `ExistsRegR`: todavía hay que justificar que el alcance realizado cumple $\operatorname{OntTotal}_i$; y ningún cierre de REV-24 local basta por sí solo para `ExistsAbsR`, que requiere REV-26.
+**SUPERSEDED:** esta formulación pertenecía al target pre-indexado. En la arquitectura vigente, scope realization forma parte de REV-07/GeneTotal; REV-24 no produce existencia y REV-26 no es requisito de `ExistsR`.
 
 ##### Ruta plural
 
