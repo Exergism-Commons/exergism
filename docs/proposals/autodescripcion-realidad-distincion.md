@@ -82,30 +82,21 @@ es un **corolario condicional de clausura**, no una prueba de existencia de $R$.
 
 **Estado: SURVIVES, con retórica rebajada.**
 
-## 3. El programa emergentista no está demostrado
+## 3. Estado actual del programa emergentista
 
-La propuesta quiso obtener contenido sustantivo conectando $R$ con emergencia:
+La propuesta ya dispone de una definición independiente y event-local de emergencia, un operador system-relative construido desde ella, pruebas de F1–F3 dentro de ese tipo y un punto fijo propio explícito.
 
-$$
-M \xrightarrow{\mathcal E} E
-$$
+Por tanto, REV-01, REV-02 y REV-04 están cerrados en sus criterios originales, mientras REV-03 permanece PARTIAL por alcance doctrinal.
 
-y posteriormente con un cierre $F$.
+Esto **todavía no demuestra una metafísica emergentista de $R$** porque falta conectar el formalismo event-level con el tipo correcto de dominio ontológico y decidir si el teorema debe ser sincrónico o procesual.
 
-Actualmente esto **no está cerrado** porque:
+Los bloqueadores activos relevantes pasan a ser:
 
-1. $\mathcal E$ sigue necesitando una definición independiente;
-2. las propiedades F1–F3 no se han derivado de esa definición;
-3. la monotonía puede fallar por inhibición contextual;
-4. falta un modelo explícito que muestre un punto fijo propio $S=F(S)$ con $S\neq R$.
-
-Por tanto:
-
-$$
-\boxed{\text{la PR todavía no demuestra una metafísica emergentista de }R.}
-$$
-
-**Estado: OPEN — bloqueadores REV-01 a REV-04.**
+- **REV-18:** puente entre eventos/configuraciones actualizadas y dominios ontológicos cerrados;
+- **REV-19:** desajuste temporal entre emergencia diacrónica y el antiguo objetivo sincrónico;
+- **REV-07:** amalgamación/directedness no circular;
+- **REV-09/REV-10:** inductividad/cotas de cadenas;
+- **REV-14/REV-15:** consecuencias doctrinales y discriminantes aún abiertas.
 
 ## 3.1. Candidata para REV-03 — emergencia organizacional localizada al evento
 
@@ -1228,213 +1219,174 @@ Esta obligación se registra como REV-18 y evita declarar una victoria ontológi
 - **REV-18:** OPEN: falta el puente formal y ontológico entre $F_M$ sobre estados y $F$ sobre dominios.
 
 ---
-## 3.4. REV-18 — puente de tipos entre emergencia formal y dominio ontológico
+## 3.4. REV-18 — puente mínimo desde eventos emergentes a dominios cerrados
 
-El operador concreto construido en REV-01 tiene tipo:
+El teorema operator-free de §4 ya no necesita transportar $F_M$ entero al nivel ontológico. El puente mínimo puede ser más austero.
 
-$$
-F_M:\mathcal P(H_M)\to\mathcal P(H_M),
-$$
-
-donde $H_M\subseteq\Sigma_M$ denota las configuraciones **efectivamente actualizadas** relevantes para el proceso considerado. Las trazas de capacidad pueden explorar $\Sigma_M$, pero el cierre ontológico candidato solo sigue eventos emergentes actualizados.
-
-El teorema ontológico, en cambio, pretende usar:
+Sea:
 
 $$
-F_i^{\mathrm{ont}}:\mathfrak D_i^{A}\to\mathfrak D_i^{A}
+(\mathfrak D_i^{A},\preceq_{\mathrm{ont}})
 $$
 
-sobre dominios actuales con orden:
+el poset candidato de dominios ontológicos actuales del régimen $i$.
+
+Introducimos una relación de incidencia:
 
 $$
-\preceq_{\mathrm{ont}}.
+s\trianglelefteq_i X,
 $$
 
-No hay identidad de tipos entre ambas construcciones.
+que se lee:
 
-### Representación fiel suficiente
+> la configuración/event-token actual $s$ forma parte del contenido ontológico representado por el dominio $X$.
 
-Definimos una **representación emergente fiel** de un régimen ontológico $i$ mediante un mapa:
+Esta relación no es pertenencia conjuntista y no identifica $X$ con un conjunto de estados.
 
-$$
-J_i:\mathfrak D_i^{A}\to\mathcal P(H_M)
-$$
+### I1 — monotonicidad de incidencia
 
-que satisface:
-
-**R1 — embedding de orden.**
+Si:
 
 $$
-X\preceq_{\mathrm{ont}}Y
+s\trianglelefteq_i X
+\quad\text{y}\quad
+X\preceq_{\mathrm{ont}}Y,
+$$
+
+debe cumplirse:
+
+$$
+\boxed{
+s\trianglelefteq_i Y.
+}
+$$
+
+Es la condición mínima para que «más contenido ontológico» no pierda un hecho ya representado.
+
+### Predicado de cierre emergente
+
+Sea $\mathcal E_i^{\mathrm{act}}$ la relación de eventos emergentes **efectivamente actualizados** del régimen, definida localmente mediante los criterios de REV-03.
+
+Definimos:
+
+$$
+\boxed{
+\operatorname{EClosed}_i(X)
 \iff
-J_i(X)\subseteq J_i(Y).
+\forall(s_0,P,s_1)\in\mathcal E_i^{\mathrm{act}},
+\;
+s_0\trianglelefteq_i X
+\Rightarrow
+s_1\trianglelefteq_i X.
+}
 $$
 
-Esto exige preservación y reflexión: no basta un mapa meramente monótono.
-
-**R2 — estabilidad de la imagen bajo cierre emergente.**
-
-Para todo $X\in\mathfrak D_i^{A}$ existe un único $Y\in\mathfrak D_i^{A}$ tal que:
-
-$$
-F_M(J_i(X))=J_i(Y).
-$$
-
-La unicidad se sigue de la inyectividad de un embedding de orden.
-
-Bajo R1–R2 podemos definir:
+Y:
 
 $$
 \boxed{
-F_i^{\mathrm{ont}}
+\mathfrak K_i
 :=
-J_i^{-1}\circ F_M\circ J_i.
+\{
+X\in\mathfrak D_i^{A}
+\mid
+\operatorname{EClosed}_i(X)
+\}.
 }
 $$
 
-### Transferencia de F1
-
-Como:
+Así, la familia $\mathfrak K$ del teorema de §4 recibe por fin una candidata de interpretación emergentista **sin** exigir un isomorfismo:
 
 $$
-J_i(X)\subseteq F_M(J_i(X)),
+\mathfrak D_i^{A}
+\cong
+\mathcal P(\Sigma_M).
 $$
 
-y:
+### Qué evita esta formulación
+
+- no identifica dominios ontológicos con conjuntos de configuraciones;
+- no identifica $\preceq_{\mathrm{ont}}$ con $\subseteq$;
+- no exige un único sistema global $M_i$ que enumere todos los estados posibles;
+- no necesita una función de cierre ontológica única;
+- no convierte capacidades posibles en hechos actuales: $\mathcal E_i^{\mathrm{act}}$ solo contiene eventos realizados.
+
+### Qué sigue sin demostrarse
+
+Esta definición solo da significado a «cerrado». No demuestra las hipótesis K del teorema.
+
+En particular queda abierto:
+
+**K1 / cofinalidad:**
 
 $$
-F_M(J_i(X))=J_i(F_i^{\mathrm{ont}}(X)),
-$$
-
-R1 permite reflejar:
-
-$$
-\boxed{
-X\preceq_{\mathrm{ont}}F_i^{\mathrm{ont}}(X).
-}
-$$
-
-### Transferencia de F3
-
-Por idempotencia de $F_M$:
-
-$$
-F_M(F_M(J_i(X)))=F_M(J_i(X)).
-$$
-
-Aplicando R2 e inyectividad de $J_i$:
-
-$$
-\boxed{
-F_i^{\mathrm{ont}}(F_i^{\mathrm{ont}}(X))
-=
-F_i^{\mathrm{ont}}(X).
-}
-$$
-
-Por tanto, si existe una representación fiel de este tipo, las dos propiedades que realmente necesita el teorema abstracto —F1 y F3— se transfieren al nivel ontológico.
-
-### F2 también se transferiría, pero ya no es necesaria
-
-Como $F_M$ es monótono internamente y $J_i$ es un embedding de orden:
-
-$$
-X\preceq_{\mathrm{ont}}Y
-\Rightarrow
-F_i^{\mathrm{ont}}(X)
-\preceq_{\mathrm{ont}}
-F_i^{\mathrm{ont}}(Y).
-$$
-
-Esto es un resultado adicional. El teorema revisado no depende de él.
-
-### Modelo de consistencia, no argumento ontológico
-
-En el toy podemos tomar:
-
-$$
-\mathfrak D_{\mathrm{toy}}
-=
-\mathcal P(H_M),
-$$
-
-$$
-J_{\mathrm{toy}}=\operatorname{id}.
-$$
-
-R1–R2 se satisfacen trivialmente y:
-
-$$
-F_{\mathrm{toy}}^{\mathrm{ont}}=F_M.
-$$
-
-Esto demuestra que el esquema de representación es **matemáticamente consistente**.
-
-No demuestra que los dominios ontológicos reales tengan esa forma.
-
-### Dos riesgos que impiden cerrar REV-18
-
-**Riesgo A — variancia semántica.**
-
-Si $J_i(X)$ se interpreta como «modelos/configuraciones compatibles con $X$» en vez de «contenido/estados representados por $X$», un dominio más rico puede tener **menos** modelos:
-
-$$
-X\preceq_{\mathrm{ont}}Y
-\Rightarrow
-J_i(Y)\subseteq J_i(X).
-$$
-
-Es decir, la representación natural sería contravariante. Por eso R1 no puede declararse correcta sin fijar qué representa $J_i$.
-
-**Riesgo B — totalización escondida.**
-
-Usar un único sistema ambientador:
-
-$$
-M_i
-$$
-
-con un espacio de estados:
-
-$$
-\Sigma_{M_i}
-$$
-
-capaz de representar todos los dominios del régimen puede introducir, a nivel formal, una estructura global que desempeñe parte del papel de la totalidad que el teorema pretende derivar.
-
-Esto no es automáticamente circular: un universo semántico o formal no es lo mismo que una totalidad ontológica actual. Pero el puente deberá demostrar esa diferencia, no asumirla.
-
-### Alternativa local aún abierta
-
-Una vía menos comprometida sería asignar a cada dominio su propio sistema:
-
-$$
-X\mapsto M_X,
-$$
-
-junto con embeddings coherentes cuando:
-
-$$
+\forall X\in\mathfrak D_i^{A}
+\;\exists Y\in\mathfrak K_i:
 X\preceq_{\mathrm{ont}}Y.
 $$
 
-Entonces el problema pasa a ser construir una familia compatible de cierres $F_{M_X}$ y demostrar que induce un operador ontológico bien definido sin presuponer un sistema global.
+Es decir: ¿todo fragmento actual admite alguna extensión ontológica que no omita ningún resultado emergente actual relevante?
 
-Esta ruta se deja abierta; no se introduce todavía maquinaria categórica adicional.
+**K2 / inductividad:** toda cadena de dominios E-closed debe admitir una cota E-closed. Esta carga conecta directamente con REV-09/REV-10.
+
+**K3 / amalgamación:** sigue siendo REV-07 y no se deriva de $\operatorname{EClosed}$.
+
+### Totalización semántica evitada, cuantificación no resuelta
+
+El predicado anterior no requiere que todos los eventos formen un **objeto ontológico colector**. Puede leerse metalingüísticamente como cuantificación sobre cualquier evento actual pertinente.
+
+Pero esto no resuelve por sí solo el debate de generalidad absoluta: si ni siquiera esa cuantificación global fuese legítima, la definición tendría que relativizarse a familias locales.
 
 ### Estado de REV-18
 
-REV-18 pasa de **OPEN** a **PARTIAL**.
+REV-18 permanece **PARTIAL**.
 
-Ya existe:
+Se ha reducido el puente a una relación de incidencia y un predicado $\operatorname{EClosed}$, eliminando la necesidad del embedding fuerte $J_i$.
 
-- un tipo formal explícito para ambos lados del puente;
-- una condición suficiente R1–R2;
-- una prueba de transferencia de F1 y F3;
-- un modelo toy que demuestra consistencia del esquema;
-- dos riesgos explícitos —variancia y totalización escondida— que impiden declarar el puente ontológicamente justificado.
+Para cerrarlo todavía hay que justificar ontológicamente la relación $\trianglelefteq_i$ y demostrar que $\operatorname{EClosed}$ es la noción de cierre adecuada para el tipo de dominio elegido.
 
-Para cerrar REV-18 hay que justificar independientemente una representación $J_i$ o construir la alternativa local $X\mapsto M_X$ sin introducir por definición la totalidad buscada.
+---
+
+## 3.5. REV-19 — desajuste sincrónico/diacrónico
+
+La emergencia de REV-03 es explícitamente diacrónica:
+
+$$
+s_0\xrightarrow{+}_{M,\mathrm{act}}s_1.
+$$
+
+Por tanto, $\operatorname{EClosed}(X)$ exige que un dominio que contiene el origen de un evento contenga también su resultado posterior.
+
+Eso es natural si $X$ es un **fragmento de proceso o historia**.
+
+Pero el teorema anterior se presentó históricamente sobre dominios sincrónicos:
+
+$$
+R_i^{A}(t).
+$$
+
+Una instantánea en $t$ no tiene por qué contener un estado que solo se actualiza en $t'>t$.
+
+Por tanto:
+
+$$
+\boxed{
+\text{cierre bajo eventos actualizados}
+\not\equiv
+\text{cierre sincrónico}.
+}
+$$
+
+Hay dos rutas legítimas y todavía no se elige entre ellas:
+
+1. **Ruta procesual:** reinterpretar $\mathfrak D_i$ como dominios/procesos diacrónicos y aplicar $\operatorname{EClosed}$ literalmente.
+2. **Ruta sincrónica:** conservar $\mathfrak D_i^{A}(t)$ y definir una noción diferente de cierre estructural/constitutivo que no obligue a incluir futuros resultados actualizados.
+
+Elegir una ruta no es una cuestión de notación: cambia el objeto del teorema.
+
+### Estado de REV-19
+
+**OPEN.** Debe fijarse el tipo temporal del dominio antes de afirmar que la emergencia independiente alimenta la prueba de totalidad.
 
 ---
 ## 4. Núcleo matemático normalizado — qué necesita realmente Zorn
