@@ -4965,6 +4965,42 @@ $\mathrm{RA}_i(S)$ exige fidelidad de la presentación: identidad, denotación y
 
 RA no se identifica con «todos los hechos verdaderos están escritos en $S$». La completitud factual fuerte puede depender de la firma y de REV-25; para la cuestión de existencia de un alcance $R_i$, puede ser suficiente una noción más débil de adecuación estructural. Determinar exactamente cuánta adecuación se necesita es parte abierta de REV-24c.
 
+#### 8.3.1. REV-24d — Scope Realization (SR)
+
+Aun suponiendo que OA/MC/RA hayan fijado correctamente el contenido ontológico presentado por $S_i$, falta justificar que ese perfil corresponda a un objeto del tipo **alcance ontológico**.
+
+Se introduce:
+
+$$
+\operatorname{Within}_i(x,R)
+$$
+
+sin interpretar $R$ como set. La condición de realización relativa a $q$ es:
+
+$$
+\mathrm{SR}_i(q)
+:=
+\exists R_i\;
+\forall x\,
+[
+\operatorname{Within}_i(x,R_i)
+\Longleftrightarrow
+(\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q))
+].
+$$
+
+SR no se deriva de Separation ni de la existencia del carrier semántico. Si la metateoría acepta libremente una comprensión de scopes para todo predicado, ese principio debe declararse como compromiso fundacional. Si no, SR requiere una justificación ontológica independiente.
+
+El propósito de REV-24d es bloquear el atajo:
+
+$$
+R_i := \{x\mid\operatorname{CoReal}(x,q)\}
+$$
+
+porque esa notación reintroduciría exactamente la reificación/setificación que la propuesta intenta evitar.
+
+SR tampoco basta por sí sola para `ExistsR`: todavía hay que justificar que el alcance realizado cumple la noción normativa de $\operatorname{OntTotal}_i$ y que $S_i$ lo presenta mediante una relación `Presents` no circular.
+
 #### 8.4. Esquema objetivo de OTB
 
 La obligación conjunta se registra como:
@@ -4978,6 +5014,8 @@ $$
 \mathrm{MC}_i(S_i;q)
 +
 \mathrm{RA}_i(S_i)
++
+\mathrm{SR}_i(q)
 \Rightarrow
 \exists R_i
 [
