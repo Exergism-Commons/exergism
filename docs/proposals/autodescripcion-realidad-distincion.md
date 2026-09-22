@@ -901,6 +901,8 @@ $$
 \mathrm{MC}_i(S_i;q)
 +
 \mathrm{RA}_i(S_i)
++
+\mathrm{SR}_i(q)
 \Rightarrow
 \exists R_i
 [
@@ -911,7 +913,7 @@ $$
 }
 $$
 
-Esta caja es un **esquema objetivo, no un teorema ya demostrado**. Abreviamos por $\mathrm{OTB}_i$ una justificación suficiente de ese esquema.
+Esta caja es un **esquema objetivo, no un teorema ya demostrado**. Abreviamos por $\mathrm{OTB}_i$ una justificación suficiente de ese esquema. REV-24a/b/c controlan adecuación de la presentación; REV-24d controla la existencia del objeto de tipo alcance.
 
 #### REV-24a — OA: anclaje ontológico
 
@@ -1206,6 +1208,41 @@ $$
 $$
 
 incluye, como mínimo, fidelidad de denotación e invariancia bajo recodificaciones fieles; cualquier exigencia de completitud factual adicional debe declararse por separado y coordinarse con REV-25.
+
+#### REV-24d — SR: realización de alcance
+
+Incluso si OA y MC fijan exactamente qué contenido ontológico corresponde al carrier de $S_i$, queda una obligación de **tipo** distinta: justificar que ese perfil de pertenencia determina un alcance ontológico $R_i$ sin identificar $R_i$ con un conjunto, una suma mereológica o el propio objeto semántico.
+
+Introducimos una relación tipada:
+
+$$
+\operatorname{Within}_i(x,R),
+$$
+
+que significa que el token ontológico $x$ queda dentro del alcance $R$. No se presupone que $R$ sea un conjunto y $\operatorname{Within}$ no se identifica con pertenencia conjuntista.
+
+La obligación de realización de alcance relativa a $q$ es:
+
+$$
+\mathrm{SR}_i(q):
+\quad
+\exists R_i\;
+\forall x\,
+[
+\operatorname{Within}_i(x,R_i)
+\Longleftrightarrow
+(\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q))
+].
+$$
+
+SR **no está demostrada** por OA, MC, FID ni por teoría de conjuntos. Si la metateoría permite libremente un objeto-alcance para cualquier predicado, SR sería una forma de comprensión de alcances y ese compromiso debe declararse. Si no lo permite, hay que justificar por qué el perfil `CoReal(-,q)` admite realización como alcance.
+
+Esta obligación evita dos atajos:
+
+1. definir $R_i$ como el set $\{x\mid\operatorname{CoReal}(x,q)\}$ y declarar resuelto el problema de tipos;
+2. tratar el cuantificador $\exists R_i$ como mera notación para un predicado sin explicitar la lógica de segundo orden/plural o la ontología de scopes utilizada.
+
+REV-24d queda por tanto abierta y es lógicamente posterior a la adecuación de `CoReal`/REV-24b.
 
 #### Relación Presents
 
