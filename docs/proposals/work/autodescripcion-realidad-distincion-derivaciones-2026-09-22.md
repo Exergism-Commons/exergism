@@ -1449,19 +1449,19 @@ Quedan dos preguntas distintas:
 
 **Teorema emergentista procesual**
 
-$$
-\text{¿existe un máximo }R_i^{\mathrm{proc}}
+$
+\text{¿existe un máximo semántico }S_i^{\mathrm{proc}}
 \text{ entre los dominios procesuales actuales?}
-$$
+$
 
-Aquí $\mathcal E_M$ y $\operatorname{EClosed}^{\mathrm{proc}}$ sí son pertinentes.
+Aquí $\mathcal E_M$ y $\operatorname{EClosed}^{\mathrm{proc}}$ sí son pertinentes. La promoción de un candidato $S_i^{\mathrm{proc}}$ a un $R_i$ ontológico requeriría REV-24/$\mathrm{OTB}_i$.
 
 **Teorema sincrónico**
 
-$$
-\text{¿existe un dominio exhaustivo }R_i^{A}(t)
+$
+\text{¿existe un dominio semánticamente exhaustivo }S_i^{A}(t)
 \text{ para una sección actual dada?}
-$$
+$
 
 Este segundo problema no se deriva automáticamente de la emergencia diacrónica. Necesitaría una noción sincrónica independiente de cobertura/cierre o una operación de sección sobre un proceso ya construido.
 
@@ -3260,12 +3260,18 @@ $$
 
 que satisface:
 
+**S0 — no-vacuidad**
+
+$
+\mathfrak C_i\neq\varnothing.
+$
+
 **S1 — smallness**
 
-$$
+$
 \mathfrak C_i
 \text{ es set-sized}.
-$$
+$
 
 **S2 — cofinalidad respecto del régimen**
 
@@ -3311,7 +3317,7 @@ $$
 
 ### Teorema del esqueleto cofinal
 
-Bajo S1–S5 existe:
+Bajo S0–S5 existe:
 
 $$
 S_i\in\mathfrak K_i^{C}
@@ -3329,7 +3335,7 @@ $$
 
 **Demostración.**
 
-Por S1, $\mathfrak C_i$ es un poset set-sized. Por S3, $\mathfrak K_i^{C}$ es no vacío; por S4, toda cadena de $\mathfrak K_i^{C}$ tiene cota en $\mathfrak K_i^{C}$. Zorn produce un elemento maximal:
+Por S0 elegimos $X_0\in\mathfrak C_i$. Por S3 existe $Y_0\in\mathfrak K_i^{C}$ con $X_0\preceq_i Y_0$; luego $\mathfrak K_i^{C}\neq\varnothing$. Por S1, $\mathfrak C_i$ es un poset set-sized y también lo es $\mathfrak K_i^{C}$. Por S4, toda cadena en $\mathfrak K_i^{C}$ tiene una cota superior en $\mathfrak K_i^{C}$. Zorn produce un elemento maximal:
 
 $$
 S_i\in\mathfrak K_i^{C}.
