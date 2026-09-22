@@ -975,7 +975,7 @@ El teorema obtiene un máximo semántico interno $S_i$. Solo tras REV-24 podrá 
 **Teorema.** Bajo K1–K3 existe:
 
 $$
-R\in\mathfrak K
+S\in\mathfrak K
 $$
 
 tal que:
@@ -990,12 +990,12 @@ $$
 
 K1 y la no-vacuidad de $\mathfrak D$ implican $\mathfrak K\neq\varnothing$.
 
-Por K2, toda cadena en $\mathfrak K$ tiene una cota superior en $\mathfrak K$. Por Zorn existe un $R\in\mathfrak K$ maximal.
+Por K2, toda cadena en $\mathfrak K$ tiene una cota superior en $\mathfrak K$. Por Zorn existe un $S\in\mathfrak K$ maximal.
 
 Sea $X\in\mathfrak D$. Por K3 existe $Y\in\mathfrak D$ con:
 
 $$
-R\preceq Y
+S\preceq Y
 \land
 X\preceq Y.
 $$
@@ -1006,19 +1006,19 @@ $$
 Y\preceq Z.
 $$
 
-Luego $R\preceq Z$. Como ambos pertenecen a $\mathfrak K$ y $R$ es maximal:
+Luego $S\preceq Z$. Como ambos pertenecen a $\mathfrak K$ y $S$ es maximal:
 
 $$
-Z=R.
+Z=S.
 $$
 
 Por tanto:
 
 $$
-X\preceq Y\preceq R.
+X\preceq Y\preceq S.
 $$
 
-Como $X$ era arbitrario, $R$ es un **máximo de todo $\mathfrak D_i^{\mathrm{proc}}$**. Normativamente este resultado prueba un máximo semántico $S_i$; su identificación con un $R_i$ ontológico requiere REV-24. $\square$
+Como $X$ era arbitrario, $S$ es un **máximo de todo $\mathfrak D_i^{\mathrm{proc}}$**. Este $S$ es precisamente el máximo semántico $S_i$ del régimen fijado. Su promoción a un $R_i$ ontológico requiere REV-24/$\mathrm{OTB}_i$. $\square$
 
 ### 4.3. Cobertura representacional y límite del puente
 
