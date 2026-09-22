@@ -1974,6 +1974,210 @@ que funde siquiera su posibilidad?}
 }
 $$
 
+### [D5f] Clausura sincrónica y persistencia diacrónica
+
+Debe separarse la existencia de una totalidad exhaustiva respecto de la realidad **co-actual** de la tesis adicional de que esa misma clausura permanece invariante a través de cualquier cambio ontológico futuro.
+
+Para un índice \(i\) y, cuando sea significativo, un parámetro temporal \(t\), definimos provisionalmente:
+
+$$
+\boxed{
+R_i^{A}(t)
+}
+$$
+
+como un dominio exhaustivo respecto de todo lo actual/co-real del índice en \(t\):
+
+$$
+\boxed{
+\operatorname{Exhaustive}_i^{A}(R_i^{A}(t),t)
+}
+$$
+
+si:
+
+$$
+\forall x[
+\operatorname{Real}_i(x,t)
+\Rightarrow
+x\preceq R_i^{A}(t)
+].
+$$
+
+La condición de cadenas relevante para el teorema de existencia se renombra conceptualmente:
+
+$$
+\boxed{
+[C1_{\mathrm{syn}}]
+}
+$$
+
+y afirma que toda cadena de dominios **co-actuales** y compatibles del índice admite una cota superior actual:
+
+$$
+\boxed{
+\forall\mathcal C^{A}\subseteq
+\operatorname{Fix}(F_i)
+\text{ cadena co-actual},
+\quad
+\exists U\in\mathfrak D_i^{A}:
+\forall X\in\mathcal C^{A},
+X\preceq U.
+}
+$$
+
+Esto es una tesis sincrónica.
+
+No afirma todavía:
+
+$$
+R_i^{A}(t)=R_i^{A}(t')
+$$
+
+ni:
+
+$$
+R_i^{A}(t)\preceq R_i^{A}(t')
+$$
+
+para tiempos distintos.
+
+### [D5g] Clausura diacrónica
+
+Se introduce separadamente una propiedad de persistencia:
+
+$$
+\boxed{
+[C_{\mathrm{dia}}]
+}
+$$
+
+que expresa, en una formulación fuerte, que ninguna actualización posterior produce realidad absolutamente exterior al alcance ontológico de la misma realidad:
+
+$$
+\boxed{
+\operatorname{Real}_i(Y,t')
+\Rightarrow
+Y\preceq R_i
+}
+$$
+
+para una representación trans-temporal \(R_i\).
+
+En una ontología presentista o de totalidad dinámica, puede adoptarse en cambio una familia:
+
+$$
+R_i^{A}(t),
+$$
+
+con una relación de continuidad de identidad o persistencia:
+
+$$
+\boxed{
+R_i^{A}(t)
+\equiv_{\mathrm{cont}}
+R_i^{A}(t')
+}
+$$
+
+aunque sus estados actuales no sean idénticos:
+
+$$
+R_i^{A}(t)
+\neq_{\mathrm{state}}
+R_i^{A}(t').
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\text{cambio del contenido actual}
+\neq
+\text{aparición de una realidad ontológicamente distinta}.
+}
+$$
+
+### [I6a.5] AbsoluteBruteNovelty no refuta por sí sola la totalidad sincrónica
+
+Si:
+
+$$
+\operatorname{AbsoluteBruteNovelty}(Y,t)
+$$
+
+ocurriera, ello mostraría como máximo que falla una versión fuerte de continuidad modal desde el estado previo.
+
+No se sigue automáticamente:
+
+$$
+\neg\exists R_i^{A}(t)
+\operatorname{Exhaustive}_i^{A}(R_i^{A}(t),t).
+$$
+
+Incluso pueden distinguirse dos casos:
+
+1. **ontología trans-temporal:** \(Y\) puede no estar fundado por \(\Lambda_t^{*}\) y, sin embargo, pertenecer a una estructura total \(R_i\) que incluye relaciones y acontecimientos de múltiples tiempos;
+2. **ontología dinámica/presentista:** puede existir un total exhaustivo \(R_i^{A}(t)\) en cada estadio aunque el contenido cambie.
+
+Así:
+
+$$
+\boxed{
+\operatorname{AbsoluteBruteNovelty}
+\not\Rightarrow
+No\text{-}R.
+}
+$$
+
+Lo que amenaza directamente es:
+
+$$
+\boxed{
+[C_{\mathrm{dia}}]
+}
+$$
+
+o alguna tesis de invariancia modal fuerte, no [C1_{\mathrm{syn}}] por sí sola.
+
+### [I6a.6] Separación de tres tesis
+
+Deben distinguirse:
+
+$$
+\boxed{
+T_R:
+\exists R_i^{A}(t)\,
+\operatorname{Exhaustive}_i^{A}(R_i^{A}(t),t)
+}
+$$
+
+$$
+\boxed{
+F_R:
+R_i^{A}(t)=F_i(R_i^{A}(t))
+}
+$$
+
+y:
+
+$$
+\boxed{
+D_R:
+\text{la clausura ontológica persiste adecuadamente a través del cambio}
+}
+$$
+
+No son equivalentes.
+
+Puede, en principio, cumplirse:
+
+$$
+T_R\land F_R\land\neg D_R.
+$$
+
+Por tanto, el Teorema provisional de Clausura Ontológica Maximal debe interpretarse primero como una prueba **sincrónica/indexada**. La transición desde esa totalidad actual a una \(R_i\) trans-temporal o absolutamente atemporal requiere una premisa adicional sobre identidad/persistencia o sobre la estructura del tiempo.
+
 ### [I6b] Existencia condicional de un punto fijo maximal
 
 Si \(\operatorname{Fix}(F_i)\) se trata como un poset al que es aplicable un principio de maximalidad del tipo del lema de Zorn, entonces [I6a] y [C1] permiten concluir:
@@ -2110,7 +2314,7 @@ $$
 \boxed{
 \operatorname{SameIndex}(X,Y)
 \Rightarrow
-\exists Z\in\mathfrak D_i[
+\exists Z\in\mathfrak D_i^{A}[
 X\preceq Z
 \land
 Y\preceq Z
@@ -2140,9 +2344,9 @@ A partir de [D5c]:
 
 $$
 \boxed{
-X,Y\in\mathfrak D_i
+X,Y\in\mathfrak D_i^{A}
 \Rightarrow
-\exists Z\in\mathfrak D_i:
+\exists Z\in\mathfrak D_i^{A}:
 X\preceq Z
 \land
 Y\preceq Z.
@@ -2271,7 +2475,7 @@ R_i=F(R_i).
 }
 $$
 
-### [I6d] Teorema provisional de Clausura Ontológica Maximal
+### [I6d] Teorema provisional de Clausura Ontológica Maximal Sincrónica
 
 Bajo:
 
@@ -2279,7 +2483,7 @@ Bajo:
 2. [F1] extensividad;
 3. [F2] monotonía;
 4. [F3] idempotencia;
-5. [C1] cota superior para toda cadena de puntos fijos, obtenida directamente o derivada mediante [H8], [H10] o [H11];
+5. [C1_syn] cota superior actual para toda cadena co-actual de puntos fijos, obtenida directamente o derivada mediante [H8], [H10] o [H11];
 6. un principio de maximalidad aplicable;
 7. [D5c]/[C2] pertenencia al mismo índice entendida como régimen dirigido de co-realización;
 
@@ -2287,10 +2491,10 @@ se deriva:
 
 $$
 \boxed{
-\exists R_i[
-\operatorname{Exhaustive}_i(R_i)
+\exists R_i^{A}(t)[
+\operatorname{Exhaustive}_i^{A}(R_i^{A}(t),t)
 \land
-R_i=F(R_i)
+R_i^{A}(t)=F_i(R_i^{A}(t))
 ].
 }
 $$
@@ -2299,17 +2503,17 @@ Es decir:
 
 $$
 \boxed{
-C0+F1+F2+F3+C1+[D5c]+\operatorname{Max}
+C0+F1+F2+F3+C1_{\mathrm{syn}}+[D5c]+\operatorname{Max}
 \Rightarrow
-\exists R_i[
-R_i=F(R_i)
+\exists R_i^{A}(t)[
+R_i^{A}(t)=F_i(R_i^{A}(t))
 \land
-\operatorname{Exhaustive}_i(R_i)
+\operatorname{Exhaustive}_i^{A}(R_i^{A}(t),t)
 ].
 }
 $$
 
-La existencia de \(R_i\) ya no aparece como premisa de la demostración.
+La existencia de una totalidad actual \(R_i^{A}(t)\) ya no aparece como premisa de la demostración. La obtención de una \(R_i\) trans-temporal o absolutamente no indexada temporalmente requiere además resolver [C_dia] o adoptar una ontología temporal que ya permita tratar los distintos estados como partes de una única estructura real.
 
 ### [I6e] Generalidad global y One-\(R\)
 
@@ -2403,11 +2607,11 @@ El programa deja de tener dos obligaciones simétricas.
 
 [C2] ya no aparece como una ley adicional que deba justificarse después de fijar el índice: queda incorporada por [D5c] a la propia noción de **mismo régimen ontológico**.
 
-La obligación de prueba principal pasa a ser:
+La obligación de prueba principal pasa a ser, para la existencia actual:
 
 $
 \boxed{
-[C1],
+[C1_{\mathrm{syn}}],
 }
 $
 
@@ -2430,7 +2634,7 @@ $
 }
 $
 
-Debe justificarse [C1*]: por qué una cadena compatible de cierres ontológicos:
+Debe justificarse [C1_syn]: por qué una cadena co-actual compatible de cierres ontológicos:
 
 $
 X_0\preceq X_1\preceq X_2\preceq\cdots
@@ -4810,6 +5014,8 @@ La propuesta puede auditarse paso a paso:
 | 13b.5c | [D/H] | Cuatripartición potencialista: [P1] exterior actual; [P2] actualización directa; [P3] metaemergencia modal \(\Lambda\to\Lambda'\); [P4] \(\operatorname{AbsoluteBruteNovelty}\). |
 | 13b.5d | [H/I] | Continuidad Modal Ontológica fuerte [H2a]: toda novedad actualizada pertenece a \(P_{\Lambda^{*}}\); excluye [P4] sin volver deterministas ni estáticas a \(\mathcal E\) o \(\Lambda\). |
 | 13b.5e | [D] | \(F=\operatorname{Cl}_{\mathcal E,\mathcal M}\): el cierre ontológico incluye tanto emergencia estructural como transformaciones reales del propio espacio de posibilidades. |
+| 13b.5f | [D/I] | Se separan [C1_syn] (cadenas co-actuales), [C_dia] (persistencia a través del cambio) y \(R_i^{A}(t)\) como totalidad actual. |
+| 13b.5g | [I] | \(\operatorname{AbsoluteBruteNovelty}\) no implica por sí sola No-R: amenaza la continuidad modal/diacrónica, no necesariamente la existencia de una totalidad sincrónica exhaustiva. |
 | 13b.6 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
@@ -5165,6 +5371,10 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 74. redefinir y probar las propiedades [F1-F3] para \(F=\operatorname{Cl}_{\mathcal E,\mathcal M}\);
 75. formalizar \(\operatorname{AbsoluteBruteNovelty}\) como actualización fuera de \(P_{\Lambda^{*}}\) y determinar si puede poseer contenido ontológico coherente independiente;
 76. distinguir formalmente azar, indeterminismo, metaemergencia y novedad ontológica absolutamente infundada.
+77. separar formalmente [C1_syn] de [C_dia] y especificar el alcance exacto del Teorema de Clausura Ontológica Maximal Sincrónica;
+78. formalizar \(R_i^{A}(t)\), exhaustividad actual y continuidad de identidad \(\equiv_{cont}\) entre estados temporales;
+79. determinar qué ontología temporal permite pasar de una familia \(\{R_i^{A}(t)\}\) a una única estructura trans-temporal \(R_i\) sin presuponerla;
+80. evaluar si \(\operatorname{AbsoluteBruteNovelty}\) amenaza solamente [C_dia] o puede, bajo alguna ontología temporal concreta, refutar también una totalidad sincrónica.
 
 ---
 
@@ -5205,6 +5415,8 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - \(F\) pasa a definirse como \(\operatorname{Cl}_{\mathcal E,\mathcal M}\): clausura conjunta bajo emergencia estructural y metaemergencia modal;
 - se distingue \(\operatorname{AbsoluteBruteNovelty}\) como actualización fuera incluso de \(P_{\Lambda^{*}}\), separándola de azar, indeterminismo y cambio de reglas;
 - el **Principio de Continuidad Modal Ontológica [H2a]** exige solo que toda actualización posea alguna base real, directa o de metaorden, que funde su posibilidad; no exige determinismo ni leyes estáticas;
+- se separan explícitamente la **totalidad sincrónica** \(R_i^{A}(t)\), la condición de cadenas co-actuales [C1_syn] y la **persistencia diacrónica** [C_dia];
+- \(\operatorname{AbsoluteBruteNovelty}\) deja de tratarse como refutación automática de R: puede romper continuidad modal desde un estado previo sin eliminar una totalidad exhaustiva actual o trans-temporal;
 - No-\(R\) fuerte debe ahora exhibir una restricción \(\lambda_{\infty}\in\Omega_{\infty}\) o rechazar algún otro puente formal, en vez de limitarse a negar la totalidad;
 - se mantiene además una ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
 - se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
