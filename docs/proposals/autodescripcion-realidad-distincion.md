@@ -180,7 +180,7 @@ Esto **todavía no demuestra una metafísica emergentista de $R$**. El teorema v
 Los bloqueadores activos relevantes pasan a ser:
 
 - **REV-07:** justificación filosófica de la familia pre-régimen $\Lambda_*$ que individúa los regímenes;
-- **REV-20:** smallness local de la emergencia (LSE) como condición estructural de la construcción de K1;
+- **REV-20:** PSB — smallness por-token de la ramificación emergente — como única deuda restante de K1;
 - **REV-22:** aplicabilidad fundacional de Zorn al régimen real — smallness global o esqueleto cofinal set-sized;
 - **REV-15:** consecuencias metaontológicas discriminantes;
 
@@ -196,7 +196,7 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-04 | RESOLVED mínimo | El toy de cuatro componentes produce un punto fijo propio explícito de $F_M$. Esto demuestra que el operador no es necesariamente «la unión de todo», pero no caracteriza todavía sistemas ricos. |
 | REV-18 | RESOLVED tipado | Un dominio se toma como fragmento semántico positivo actual $X=(T_X,\Phi_X)$; incidencia es pertenencia al carrier semántico y `EClosed_i` es una propiedad del contenido, no de la serialización. No se reifica el dominio como entidad adicional. |
 | REV-19 | RESOLVED tipado | El objeto primario queda fijado como fragmento procesual semántico $X=(T_X,\Phi_X)$; $\preceq_i^{\mathrm{proc}}$ es inclusión de contenido positivo actual. Admisibilidad ontológica se separa como $\operatorname{Adm}_i$ y queda en REV-18/20/09/07. |
-| REV-20 | PARTIAL | Con admisibilidad estructural mínima, OEA y CUA se derivan. Si además la emergencia es localmente set-like (LSE), el cono emergente de todo dominio set-sized es set-sized y se construye una extensión E-closed por rondas finitas. K1 queda derivada bajo StructAdm + LSE. Falta justificar LSE como propiedad del régimen. |
+| REV-20 | PARTIAL | Con StructAdm, K1 se deriva por rondas finitas si vale PSB: cada estado es source de set-many eventos emergentes actuales. PSB implica LSE por Replacement + Union. Falta justificar PSB como propiedad estructural del régimen. |
 | REV-22 | OPEN fundacional | Para aplicar Zorn al régimen real hay que justificar que el poset relevante es set-sized, o exhibir un esqueleto set-sized cofinal que preserve las hipótesis K, o adoptar explícitamente un principio de maximalidad de clases. |
 | REV-09 | RESOLVED set-indexed | Con `Adm_i := StructAdm_i`, la unión de una cadena set-indexed de fragmentos positivos actuales sigue siendo well-formed y admisible; junto con el lema previo de preservación de `EClosed`, K2 queda demostrada dentro del alcance set-sized del teorema. La aplicabilidad class-sized queda en REV-22. |
 | REV-10 | RESOLVED vigente | La ruta actual ya no usa la inferencia oculta de StageFactorization/presentabilidad criticada en H8. |
@@ -244,7 +244,7 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 El cuello de botella ya no está en F1–F3 ni en resolver One-R. Está en conectar el formalismo local con la ontología **de cada régimen $i$** sin introducir su unidad o exhaustividad en las premisas:
 
 1. **REV-07:** justificar filosóficamente $\Lambda_*$ como criterio de identidad de régimen;
-2. **REV-20:** justificar LSE —que un conjunto de sources genere solo un conjunto de eventos emergentes actuales—;
+2. **REV-20:** justificar PSB —que cada estado genere solo set-many eventos emergentes actuales—;
 3. **REV-22:** justificar que Zorn estándar aplica globalmente mediante smallness o un esqueleto cofinal set-sized.
 
 ---
@@ -573,6 +573,82 @@ Si $R_i$ domina todos los dominios admisibles, COV$_i$ implica que $R_i$ contien
 Este paso adopta como tesis metodológica que **todo fragmento positivo actual y well-formed cuenta como dominio legítimo** para el teorema. Si en el futuro se exige una noción más fuerte de dominio —por ejemplo cierre causal o nomológico previo— REV-18/REV-09 deberán reabrirse.
 
 ---
+
+## 3.4. Construcción de K1 y smallness local
+
+Con StructAdm, la cofinalidad K1 ya no necesita asumirse globalmente.
+
+Definimos:
+
+$$
+\operatorname{Pend}_i(X)
+$$
+
+como las obligaciones emergentes actuales cuyo source ya está en $X$ pero cuyo evento/target/footprint todavía no está completamente incorporado.
+
+Una ronda satisface todas las obligaciones pendientes de un dominio; las nuevas obligaciones activadas se procesan en la ronda siguiente.
+
+Como la emergencia se propaga por caminos finitos, la unión de las rondas:
+
+$$
+X_0
+\preceq_i
+X_1
+\preceq_i
+\cdots
+\preceq_i
+X_\omega
+$$
+
+es E-closed siempre que cada ronda maneje un conjunto de obligaciones.
+
+### PSB — Pointwise Set-like Branching
+
+La condición suficiente más local es:
+
+$$
+\mathrm{PSB}_i:
+\quad
+\forall s,
+\;
+\operatorname{Out}_i(s)
+=
+\{e\mid \operatorname{Emergent}_i(e)\land\operatorname{src}(e)=s\}
+\text{ es set-sized}.
+$$
+
+Para cualquier conjunto de sources $S$, Replacement + Union dan:
+
+$$
+\bigcup_{s\in S}\operatorname{Out}_i(s)
+$$
+
+como conjunto. Por tanto PSB implica que cada ronda y todo cono de alcanzabilidad emergente finita generado desde un dominio set-sized permanecen set-sized.
+
+Con StructAdm, las extensiones de un evento y las uniones set-indexed preservan admisibilidad. Así:
+
+$$
+\boxed{
+\operatorname{StructAdm}_i
++
+\mathrm{PSB}_i
+\Rightarrow
+K1_i.
+}
+$$
+
+El documento técnico contiene la construcción completa por rondas.
+
+### Estado de REV-20
+
+REV-20 permanece **PARTIAL** y queda reducido a una única cuestión estructural:
+
+> ¿puede un único estado actual ser source de proper-class many eventos emergentes actuales?
+
+Si PSB se justifica, K1 queda RESOLVED. Si PSB falla, aparece una forma muy fuerte de extensibilidad local capaz de bloquear el cierre dentro de dominios set-sized.
+
+PSB es independiente de REV-22: resuelve la smallness **local del cierre de cada dominio**, mientras REV-22 pregunta por la smallness/aplicabilidad global de Zorn sobre la colección de dominios.
+
 ## 4. Núcleo matemático normalizado — qué necesita realmente Zorn
 
 **Convención normativa:** durante toda esta sección se fija un régimen ontológico $i$. Para aligerar notación se escribe:
