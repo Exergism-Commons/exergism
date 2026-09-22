@@ -1211,58 +1211,163 @@ Esta obligación se registra como REV-18 y evita declarar una victoria ontológi
 - **REV-18:** OPEN: falta el puente formal y ontológico entre $F_M$ sobre estados y $F$ sobre dominios.
 
 ---
-## 4. Núcleo matemático actualmente separable
+## 4. Núcleo matemático revisado
 
-Puede estudiarse un resultado puramente orden-teórico.
+Tras REV-01/REV-02, la plantilla matemática se simplifica.
 
-Sea un **poset que sea un conjunto**:
-
-$$
-(\mathfrak D,\preceq).
-$$
-
-Supóngase un operador:
+Sea un poset set-sized:
 
 $$
-F:\mathfrak D\to\mathfrak D.
+(\mathfrak D,\preceq),
 $$
 
-**Advertencia posterior a REV-02:** la monotonía respecto de la inclusión ontológica ordinaria $\preceq$ ya no puede tratarse como una propiedad natural de un cierre emergentista. El contraejemplo por inhibición muestra que añadir contexto puede retirar capacidades. Por tanto, la siguiente plantilla se conserva solo como el **teorema abstracto histórico** que habría que reconstruir con otra relación o con otra prueba de cotas.
-
-La plantilla exigía:
+y un operador:
 
 $$
-X\preceq F(X),
+F:\mathfrak D\to\mathfrak D
+$$
+
+que satisfaga únicamente:
+
+$$
+\text{F1: }X\preceq F(X),
 $$
 
 $$
-X\preceq Y \Rightarrow F(X)\preceq F(Y),
+\text{F3: }F(F(X))=F(X).
 $$
 
+Sea:
+
 $$
-F(F(X))=F(X).
+\operatorname{Fix}(F)
+:=
+\{X\in\mathfrak D\mid F(X)=X\}.
 $$
 
-Supónganse además:
+Supóngase:
 
-- cobertura local de los hechos relevantes;
-- una condición sustantiva de amalgamación;
-- una condición de cota superior para las cadenas pertinentes;
-- un principio de maximalidad del tipo del lema de Zorn.
+1. **C0 — cobertura:** todo hecho relevante del régimen está contenido en algún dominio de $\mathfrak D$;
+2. **C1-Fix — cota de cadenas:** toda cadena en $\operatorname{Fix}(F)$ tiene alguna cota superior $U\in\mathfrak D$;
+3. **Max — maximalidad:** es aplicable un principio tipo Zorn a $\operatorname{Fix}(F)$;
+4. **C2 — amalgamación sustantiva:** un punto fijo maximal y cualquier dominio que cubra un hecho del mismo régimen admiten una cota superior común en $\mathfrak D$.
 
-Entonces puede obtenerse un punto fijo maximal y, bajo las condiciones adicionales apropiadas, convertir maximalidad en exhaustividad.
+### Lema de elevación de cotas sin F2
 
-Esto es actualmente un **lema condicional de teoría de órdenes**.
+Si:
 
-No establece por sí mismo:
+$$
+\mathcal C\subseteq\operatorname{Fix}(F)
+$$
 
-- que $\mathfrak D$ sea el espacio de dominios ontológicos reales;
-- que $F$ represente emergencia;
-- que la amalgamación corresponda a “misma realidad”;
-- que las cotas superiores sean ontológicamente actuales;
-- que exista cuantificación absolutamente general.
+es una cadena y $U$ es una cota superior en $\mathfrak D$, entonces para cada $X\in\mathcal C$:
 
-**Estado: SURVIVES como estructura matemática condicional; interpretación ontológica OPEN.**
+$$
+X\preceq U.
+$$
+
+Por F1:
+
+$$
+U\preceq F(U).
+$$
+
+y por transitividad:
+
+$$
+X\preceq F(U).
+$$
+
+Por F3:
+
+$$
+F(U)\in\operatorname{Fix}(F).
+$$
+
+Así toda cadena de puntos fijos tiene una cota superior **dentro de los puntos fijos**, sin usar F2.
+
+### Maximalidad
+
+Por Max/Zorn existe:
+
+$$
+M_*\in\operatorname{Fix}(F)
+$$
+
+maximal.
+
+### Exhaustividad
+
+Supóngase por contradicción que existe un hecho $x$ del régimen con:
+
+$$
+x\not\preceq M_*.
+$$
+
+Por C0 existe $X_x$ con:
+
+$$
+x\preceq X_x.
+$$
+
+Por C2 existe $Y$ tal que:
+
+$$
+M_*\preceq Y
+\quad\text{y}\quad
+X_x\preceq Y.
+$$
+
+F1 da:
+
+$$
+Y\preceq F(Y),
+$$
+
+y F3:
+
+$$
+F(Y)\in\operatorname{Fix}(F).
+$$
+
+Por tanto:
+
+$$
+M_*\preceq F(Y)
+$$
+
+y:
+
+$$
+x\preceq F(Y).
+$$
+
+Como $x\not\preceq M_*$, $F(Y)$ es una extensión fija estricta de $M_*$, contradicción.
+
+Así:
+
+$$
+\boxed{
+C0+F1+F3+C1_{\operatorname{Fix}}+C2+\operatorname{Max}
+\Rightarrow
+\exists R_i[
+F(R_i)=R_i
+\land
+\operatorname{Exhaustive}_i(R_i)
+].
+}
+$$
+
+### Qué significa esta corrección
+
+- F2 queda **eliminada de las premisas del teorema abstracto**.
+- La no-monotonía contextual de REV-02 no amenaza ya esta prueba.
+- Para el operador concreto $F_M$ de REV-01, F2 interna se deriva igualmente, pero es un dato adicional, no una premisa necesaria.
+- La dificultad matemática vuelve a concentrarse en C1-Fix y C2.
+- La dificultad ontológica nueva es REV-18: demostrar que el operador system-relative sobre estados representa legítimamente un operador sobre dominios ontológicos.
+
+**Estado:** el teorema abstracto está formalmente más limpio que la versión archivada, pero su lectura ontológica permanece abierta.
+
 
 ## 5. C2 / “mismo índice”
 
