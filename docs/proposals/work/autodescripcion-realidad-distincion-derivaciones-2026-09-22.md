@@ -1039,7 +1039,7 @@ F(S_i)=S_i
 }
 $$
 
-Aquí $\operatorname{SemExhaustive}_i$ expresa exhaustividad dentro del tipo formal cubierto por $\mathfrak D_i$; no implica por sí sola $\operatorname{OntTotal}_i$ ni $\operatorname{ExistsR}$. Esa promoción requiere REV-24/$\mathrm{OTB}_i$.
+Aquí $\operatorname{SemExhaustive}_i$ expresa exhaustividad dentro del tipo formal cubierto por $\mathfrak D_i$; no implica por sí sola la existencia de un $R_i$ ontológicamente total presentado por ese máximo. Esa promoción requiere REV-24/$\mathrm{OTB}_i$.
 
 Esta corrección **reduce**, no aumenta, las premisas matemáticas del teorema.
 
@@ -4033,7 +4033,7 @@ Con StructAdm, COV es inmediata para tokens simples representables mediante frag
 
 Si $S_i$ domina todos los dominios admisibles, entonces por COV contiene todo token/hecho actual cubierto por esa condición.
 
-Así el máximo formal $S_i$ no es solo maximal respecto de una familia arbitraria: demuestra exhaustividad semántica respecto del contenido cubierto por la firma y por COV. No se sigue todavía $\operatorname{OntTotal}_i(S_i)$ ni puede renombrarse el candidato como $R_i$ sin REV-24/$\mathrm{OTB}_i$.
+Así el máximo formal $S_i$ no es solo maximal respecto de una familia arbitraria: demuestra exhaustividad semántica respecto del contenido cubierto por la firma y por COV. No se sigue todavía $\exists R_i[\operatorname{Presents}_i(S_i,R_i)\land\operatorname{OntTotal}_i(R_i)]$ sin REV-24/$\mathrm{OTB}_i$.
 
 ### 9. Estado propuesto
 
@@ -4594,27 +4594,131 @@ $$
 \boxed{\operatorname{SemTotal}_i(S_i^*).}
 $$
 
-### 8. El puente ontológico no está incluido en el teorema
+### 8. REV-24: el puente ontológico no está incluido en el teorema
 
 El teorema anterior demuestra exhaustividad respecto del tipo formal elegido: todos los fragmentos semánticos admisibles quedan contenidos en $S_i^*$.
 
-No demuestra por teoría de conjuntos que:
+No demuestra que el objeto semántico sea él mismo un alcance ontológico. La formulación:
 
 $$
-\operatorname{OntTotal}_i(S_i^*).
-$$
-
-La inferencia:
-
-$$
-\operatorname{SemTotal}_i(S_i^*)
-\Rightarrow
 \operatorname{OntTotal}_i(S_i^*)
 $$
 
-es una premisa/teoría puente adicional, abreviada $\mathrm{OTB}_i$. Debe justificarse sin definir `OntTotal` como mera maximalidad dentro de $\mathfrak D_i^{\mathrm{proc}}$ y sin presuponer la conclusión $R$. Esta obligación es REV-24.
+queda **SUPERSEDED por error de tipos**.
 
-Solo entonces:
+La arquitectura vigente distingue:
+
+$$
+S_i
+\quad\text{(presentación semántica)}
+$$
+
+de:
+
+$$
+R_i
+\quad\text{(alcance ontológico)}.
+$$
+
+Y reserva:
+
+$$
+\operatorname{Presents}_i(S_i,R_i)
+$$
+
+para el puente entre ambos.
+
+#### 8.1. REV-24a — Ontological Anchoring (OA)
+
+Sea $\operatorname{Den}_i(a,x)$ la relación por la que un token semántico $a$ denota/realiza contenido ontológico $x$. El requisito mínimo de anclaje es:
+
+$$
+\mathrm{OA}_i(S)
+:=
+\forall a\in T_S\;
+\exists x\,
+[
+\operatorname{Actual}(x)
+\land
+\operatorname{Reg}_i(x)
+\land
+\operatorname{Den}_i(a,x)
+].
+$$
+
+Para hechos $\varphi\in\Phi_S$ se exige correspondientemente que sus relata denoten contenido actual y que la relación afirmada tenga un correlato ontológico actual. OA impide que una estructura formal sin anclaje cuente como evidencia ontológica.
+
+OA **no** implica completitud: puede haber miembros del régimen que $S$ no represente.
+
+#### 8.2. REV-24b — Membership Completeness (MC)
+
+La carga central se expresa mediante:
+
+$$
+\mathrm{MC}_i(S)
+:=
+\forall x\,
+[
+\operatorname{Actual}(x)
+\land
+\operatorname{Reg}_i(x)
+\Rightarrow
+\exists a\in T_S\;\operatorname{Den}_i(a,x)
+].
+$$
+
+Para que MC sea no circular, $\operatorname{Reg}_i(x)$ debe fijarse antes de $S_i$ y de cualquier $R_i$. El candidato actual procede de la conectividad bajo $\Lambda_*$ de REV-07:
+
+$$
+\operatorname{Reg}_i(x;q)
+\;	ext{ solo si existe una cadena finita de enlaces }\Lambda_*
+\text{ desde }q\text{ hasta }x.
+$$
+
+No se permite definir $\operatorname{Reg}_i(x)$ como «$x$ está representado por $S_i$», «$x$ pertenece a $R_i$» o «$x$ es embebible en un máximo», porque cualquiera de esas definiciones introduciría la conclusión en la premisa.
+
+MC concentra así la intersección REV-07/REV-24: hay que demostrar que la relación independiente de co-régimen no omite ninguna forma ontológicamente pertinente de pertenencia.
+
+#### 8.3. REV-24c — Representational Adequacy (RA)
+
+$\mathrm{RA}_i(S)$ exige fidelidad de la presentación: identidad, denotación y las relaciones relevantes usadas para individuar el régimen deben preservarse/reflejarse bajo representaciones fieles.
+
+RA no se identifica con «todos los hechos verdaderos están escritos en $S$». La completitud factual fuerte puede depender de la firma y de REV-25; para la cuestión de existencia de un alcance $R_i$, puede ser suficiente una noción más débil de adecuación estructural. Determinar exactamente cuánta adecuación se necesita es parte abierta de REV-24c.
+
+#### 8.4. Esquema objetivo de OTB
+
+La obligación conjunta se registra como:
+
+$$
+\boxed{
+\operatorname{SemTotal}_i(S_i)
++
+\mathrm{OA}_i(S_i)
++
+\mathrm{MC}_i(S_i)
++
+\mathrm{RA}_i(S_i)
+\Rightarrow
+\exists R_i
+[
+\operatorname{Presents}_i(S_i,R_i)
+\land
+\operatorname{OntTotal}_i(R_i)
+].
+}
+$$
+
+Este esquema **no está demostrado**. $\mathrm{OTB}_i$ abrevia una justificación independiente suficiente para obtenerlo.
+
+La relación $\operatorname{Presents}_i(S,R)$ no puede definirse como «$R$ es total y $S$ lo describe», porque eso haría trivial el esquema. Debe caracterizarse mediante denotación, pertenencia independiente y preservación estructural.
+
+#### 8.5. Consecuencia conceptual
+
+Esta descomposición muestra que la pregunta «¿existe un alcance ontológico exhaustivo?» puede no requerir una descripción completa de todos los hechos de ese alcance. Si MC pudiera justificarse desde una individuación ontológica independiente del régimen, parte del trabajo de existencia podría desacoplarse de $\mathrm{ActualSep}_i$ y de una firma factualmente completa.
+
+Eso **no** se da por probado: abre una posible ruta futura en la que REV-25 seguiría siendo necesario para el teorema fuerte de $\operatorname{SemTotal}$, pero quizá no para una tesis ontológica más austera sobre existencia de alcance.
+
+Bajo la ruta actualmente construida, solo si OTB se justifica se obtiene:
 
 $$
 \boxed{
@@ -4623,6 +4727,8 @@ $$
 +\mathrm{ActualSep}_i
 +\operatorname{StructAdm}
 +\mathrm{OTB}_i
+\Rightarrow
+\operatorname{WitnessedR}
 \Rightarrow
 \operatorname{ExistsR}.
 }
@@ -4650,9 +4756,9 @@ La construcción semántica depende de tres decisiones independientes:
 2. **smallness ontológica:** PON, REV-23;
 3. **smallness/definibilidad semántica:** $\mathrm{SigSmall}_i$ y $\mathrm{ActualSep}_i$, REV-25.
 
-Y la conclusión doctrinal añade una cuarta:
+Y la conclusión doctrinal añade un cuarto bloque, ahora descompuesto:
 
-4. **puente semántica→ontología:** $\mathrm{OTB}_i$, REV-24.
+4. **puente semántica→ontología:** REV-24a/OA + REV-24b/MC + REV-24c/RA, cuya combinación debe justificar $\operatorname{Presents}_i(S_i,R_i)$ y $\operatorname{OntTotal}_i(R_i)$ sin circularidad.
 
 ### 11. Emergencia y existencia
 
