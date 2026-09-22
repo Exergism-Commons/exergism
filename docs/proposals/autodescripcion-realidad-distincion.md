@@ -85,42 +85,51 @@ $R_i$ no se identifica necesariamente con un conjunto universal, una sustancia, 
 
 Se distingue además:
 
-$
+$$
 U_i
-$
+$$
 
 como el **horizonte físico/empírico efectivamente accesible desde una posición interna**: el dominio cuya estructura puede ser observada, inferida o modelada desde dentro hasta los límites impuestos por acceso causal, evidencia y representación.
 
 $U_i$ no se identifica por definición ni con $S_i$ ni con $R_i$. Su contenido puede admitir una representación semántica dentro de $S_i$, pero esa relación es representacional, no identidad de tipos. Esquemáticamente:
 
-$
+$$
 \operatorname{Rep}_i(U_i)\preceq_i S_i.
-$
+$$
 
-El primer Muro se formula como la imposibilidad de promover mera clausura epistemológica a totalidad ontológica:
+El primer Muro se formula como la imposibilidad de promover mera clausura epistemológica a exhaustividad ontológica del horizonte. Para este nivel introducimos:
 
-$
+$$
+\operatorname{ExhaustsOntScope}_i(U_i),
+$$
+
+que significa «el horizonte accesible $U_i$ agota efectivamente el alcance ontológico del régimen». Este predicado no es $\operatorname{OntTotal}_i(S)$: este último se aplica a un candidato semántico.
+
+Entonces:
+
+$$
 \boxed{
 \operatorname{NoAccessibleExtension}_i(U_i)
 \not\Rightarrow
-\operatorname{OntTotal}_i(U_i).
+\operatorname{ExhaustsOntScope}_i(U_i).
 }
-$
+$$
 
 Por tanto, incluso una teoría internamente completa del universo accesible sería compatible tanto con que ese horizonte agotase la realidad del régimen como con que estuviera embebido en una estructura ontológica mayor. Sandboxes, simulaciones y extensiones causalmente veladas son casos-modelo de esta subdeterminación; no se presuponen como hechos físicos.
 
 La arquitectura conceptual mínima pasa a ser:
 
-$
+$$
 U_i
 \xrightarrow{\operatorname{Rep}_i}
 S_i
 \dashrightarrow_{\mathrm{REV\text{-}24}/\mathrm{OTB}_i}
 R_i.
-$
+$$
+
+La primera flecha es epistemológico-representacional; la segunda es ontológica y permanece abierta. Expresiones informales como $U_i=S_i=R_i$ deben entenderse como coincidencia de alcances bajo representaciones fieles, no como identidad literal entre objetos de tipos distintos.
 
 El Muro restringe la identificación empírica de $R_i$; no decide por sí mismo si $R_i$ existe.
-
 ### 1.3. Totalidad absoluta hipotética
 
 Reservamos:
