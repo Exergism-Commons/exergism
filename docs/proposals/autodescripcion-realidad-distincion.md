@@ -982,7 +982,7 @@ tal que:
 
 $$
 \boxed{
-\forall X\in\mathfrak D,\quad X\preceq R.
+\forall X\in\mathfrak D,\quad X\preceq S.
 }
 $$
 
