@@ -206,11 +206,9 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-15 | Estado corregido de PARTIAL a OPEN: nombrar la deuda no la resuelve. | Ledger + sección normativa. | f0d36c5, 777c3fd |
 | 2026-09-22 | REV-05/REV-06 | Se explicita que su cierre es editorial/clasificatorio, no avance sustantivo. | Sección “Alcance de algunos cierres”. | 777c3fd |
 | 2026-09-22 | LEDGER-FIX | Eliminada la copia duplicada introducida por c014d98 y corregida la celda de evidencia con `$` cerrado. | Recuento de IDs + estructura del fichero. | 0c2266f |
-
 | 2026-09-22 | REV-03 | Definida candidata independiente de emergencia organizacional dinámicamente efectiva; añadidos tests mínimos y literatura. Estado OPEN → PARTIAL. | Sección I.3.1 + mapa bibliográfico. | b3461d1, 2d62a69 |
 | 2026-09-22 | REV-03 | Definición localizada al evento, macrovariable generalizada, capacidad por trazas y modelo juguete de cuatro componentes. | Sección I.3.1. | bd1ee6a |
 | 2026-09-22 | REV-01/REV-02 | **SUPERSEDED:** se documentó erróneamente que el fallo de F2 rompía el paso de cota fija de Zorn. La corrección posterior demuestra $X\preceq U\preceq F(U)$ usando F1 + transitividad, sin F2. Se conserva esta fila solo como historia del error. | Documento técnico, pasaje marcado SUPERSEDED; corrección en §3.3/§4. | bd1ee6a → b4dcf23/e0e58ae |
-
 | 2026-09-22 | REV-02 | Contraejemplo de inhibición + extensión conductualmente conservativa + lema de preservación de eventos. Estado OPEN → PARTIAL. | Sección I.3.2 + referencias de sistemas de transición. | 7bce3e0, 97b6967, b60b739 |
 | 2026-09-22 | REV-01 | Construido $F_M$ como clausura emergente reflexivo-transitiva; derivadas F1/F2 interna/F3; F2 eliminada del teorema abstracto por redundante. | Sección I.3.3 + §4 revisado. | b4dcf23, 08127fc |
 | 2026-09-22 | REV-02 | Distinguida monotonía interna de cambio cross-system; finding cerrado sin negar la inhibición contextual. | Secciones I.3.2–I.3.3. | b4dcf23 |
