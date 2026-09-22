@@ -4913,6 +4913,142 @@ Este análisis reduce el siguiente frente a dos preguntas:
 
 El siguiente trabajo sustantivo es dar contenido independiente suficiente a $\operatorname{CoReal}$/$\operatorname{IntRel}$ y someter FID a contraejemplos.
 
+##### 8.2.4. Contraejemplo abstracto a FID como principio lógico
+
+Sea $X$ un espacio conectado pero no path-connected; la curva seno del topólogo es el ejemplo estándar.
+
+Definimos, solo para este stress test:
+
+$$
+\operatorname{CoReal}_X(x,q)
+:\Longleftrightarrow
+x,q\text{ están en la misma componente conexa},
+$$
+
+y:
+
+$$
+\operatorname{AdmIntRel}_X(x,y)
+:\Longleftrightarrow
+x,y\text{ están conectados por un camino en }X.
+$$
+
+Elijamos $q$ y $x$ en componentes por caminos distintas del mismo $X$ conectado. Entonces:
+
+$$
+\operatorname{CoReal}_X(x,q)
+$$
+
+pero no existe una cadena finita de $\operatorname{AdmIntRel}_X$ entre ellos. Si existiese:
+
+$$
+q=z_0,\dots,z_n=x,
+$$
+
+la concatenación de los caminos que testifican cada paso produciría un camino de $q$ a $x$.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{CoReal}_X(x,q)
+\land
+\neg\mathrm{FID}_X.
+}
+$$
+
+El ejemplo no afirma que `CoReal` sea conectividad topológica. Su función es metateórica: demuestra que pasar de una noción global de unidad a una descomposición finita en enlaces es una premisa sustantiva.
+
+##### 8.2.5. Ruta alternativa si FID falla: clausura integrativa generalizada
+
+Sea $\mathcal C_*$ un operador de clausura pre-régimen construido a partir de reglas integrativas independientes, potencialmente incluyendo reglas globales/de límite además de enlaces finitos:
+
+$$
+T_i^{\mathcal C}
+:=
+\mathcal C_*(\{q\}).
+$$
+
+Se exigen:
+
+$$
+\mathrm{CS}:
+\quad
+x\in T_i^{\mathcal C}
+\Rightarrow
+\operatorname{CoReal}(x,q),
+$$
+
+$$
+\mathrm{CC}:
+\quad
+\operatorname{CoReal}(x,q)
+\Rightarrow
+x\in T_i^{\mathcal C},
+$$
+
+y:
+
+$$
+\mathrm{CSet}:
+\quad
+T_i^{\mathcal C}\text{ es set-sized}.
+$$
+
+Con la denotación canónica:
+
+$$
+\mathrm{CS}+\mathrm{CD}_i
+\Rightarrow
+\mathrm{OA}_i(S_i^{\mathcal C};q)
+$$
+
+y:
+
+$$
+\mathrm{CC}+\mathrm{CD}_i
+\Rightarrow
+\mathrm{MC}_i(S_i^{\mathcal C};q).
+$$
+
+Para reconstruir el máximo semántico se añade:
+
+$$
+\mathrm{CProcStable}:
+$$
+
+si un evento emergente actual tiene source en $T_i^{\mathcal C}$, sus tokens/eventos/targets requeridos permanecen en $T_i^{\mathcal C}$.
+
+Entonces, bajo:
+
+$$
+\mathrm{CSet}
++\mathrm{SigSmall}_i
++\mathrm{ActualSep}_i
++\operatorname{StructAdm}
++\mathrm{CProcStable},
+$$
+
+la misma construcción:
+
+$$
+S_i^{\mathcal C}
+:=
+(T_i^{\mathcal C},\Phi_i^{\mathrm{all},\mathcal C})
+$$
+
+produce condicionalmente un máximo semántico E-closed del régimen generalizado.
+
+La ruta finita actual se recupera como caso especial cuando:
+
+$$
+\mathcal C_*(\{q\})=[q]_{\sim}
+$$
+
+y FID/LA justifican completeness.
+
+Por tanto FID es una **condición suficiente de la instanciación finita**, no una condición necesaria de la tesis `ExistsR`.
+
 ##### 8.2.1. FID no es generación local finita
 
 FID restringe la **longitud del camino de integración**, no el número de relata de cada relación. Si una relación global actual $g$ tiene set-many relata y la ontología admite su instancia como token relacional, puede mediar una conexión finita por incidencia.
