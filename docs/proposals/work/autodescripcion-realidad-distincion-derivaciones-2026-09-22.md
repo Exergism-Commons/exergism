@@ -1983,9 +1983,45 @@ Esa es ahora la forma precisa de K2.
 
 ---
 
-## REV-07 — criterio independiente de identidad de régimen
+## REV-07 — identidad genealógica y reconstrucción de régimen
 
-El objetivo es definir cuándo dos contenidos pertenecen a la misma realidad ontológica sin usar K3, amalgamabilidad, máximos, `SameIndex`, `EClosed` ni la existencia de un dominio común.
+**CURRENT TARGET.** La identidad primaria del régimen se fija por una base/origen ontológico $\mathcal O_i$ y su clausura generativa:
+
+$$
+\operatorname{OntOrigin}_i(\mathcal O_i),
+\qquad
+\operatorname{GenStep}_i(a,b),
+\qquad
+\operatorname{Generated}^{*}_i(\mathcal O_i,x).
+$$
+
+Las reglas de origen/generación deben especificarse sin usar $R_i$, CoReal, SameRegime, K3, SemTotal, Presents ni la extensión final de la clausura.
+
+La realidad indexada satisface:
+
+$$
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+:\Longleftrightarrow
+\operatorname{OntOrigin}_i(\mathcal O_i)
+\land
+\forall x[
+\operatorname{Within}_i(x,R_i)
+\leftrightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+].
+$$
+
+Y la co-realidad queda derivada:
+
+$$
+\operatorname{CoReal}_i(x,y)
+\Longleftrightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\land
+\operatorname{Generated}^{*}_i(\mathcal O_i,y).
+$$
+
+**RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva porque sirve para probar si $\Lambda_*$ o una clausura $\mathcal C_*$ reconstruyen la genealogía. Queda SUPERSEDED cualquier lectura en la que la conectividad defina primariamente CoReal.
 
 ### 1. Tokens ontológicos actuales
 
@@ -4600,7 +4636,49 @@ $$
 \boxed{\operatorname{SemTotal}_i(S_i^*).}
 $$
 
-### 8. REV-24: el puente ontológico no está incluido en el teorema
+### 8. REV-24 — presentación semántica de una realidad genealógica
+
+**CURRENT TARGET.** REV-07 debe establecer primero $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$. REV-24 no produce existencia ontológica; intenta demostrar:
+
+$$
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
++
+\operatorname{SemTotal}_i(S_i)
++
+\mathrm{OA}_i(S_i;\mathcal O_i)
++
+\mathrm{MC}_i(S_i;\mathcal O_i)
++
+\mathrm{RA}_i(S_i,R_i)
+\Rightarrow
+\operatorname{Presents}_i(S_i,R_i).
+$$
+
+con:
+
+$$
+\mathrm{OA}_i(S;\mathcal O_i)
+:=
+\forall a\in T_S\exists x[
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\land
+\operatorname{Den}_i(a,x)
+],
+$$
+
+$$
+\mathrm{MC}_i(S;\mathcal O_i)
+:=
+\forall x[
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\Rightarrow
+\exists a\in T_S\operatorname{Den}_i(a,x)
+].
+$$
+
+RA debe preservar/reflejar estructura generativa y procesual, no solo membership.
+
+**SUPERSEDED DERIVATIONAL LAYER.** Las subsecciones 8.1–8.5 conservan el desarrollo seed/CoReal anterior y sus stress tests. Son historia técnica útil para evaluar $\Lambda_*$/$\mathcal C_*$, pero quedan superseded donde tratan CoReal como primitivo, hacen de SR una obligación de REV-24 o presentan OTB como productor de existencia.
 
 El teorema anterior demuestra exhaustividad respecto del tipo formal elegido: todos los fragmentos semánticos admisibles quedan contenidos en $S_i^*$.
 
@@ -4634,7 +4712,7 @@ $$
 
 para el puente entre ambos.
 
-#### 8.1. REV-24a — Ontological Anchoring (OA)
+#### 8.1. SUPERSEDED seed-based OA derivation / reconstruction test
 
 Como disciplina de tipos, $\operatorname{CoReal}$ se aplica solo a tokens actuales:
 
@@ -4696,7 +4774,7 @@ Así RS controla **sobreinclusión** y OA del carrier; RC controla **subinclusi�
 
 El anclaje/fidelidad de hechos $\Phi_i^{\mathrm{all}}$ sigue abierto y pertenece a RA/REV-25.
 
-#### 8.2. REV-24b — Membership Completeness (MC)
+#### 8.2. SUPERSEDED seed-based MC derivation / reconstruction tests
 
 MC se formula directamente respecto de la relación ontológica objetivo $\operatorname{CoReal}$ y de un token semilla actual $q$:
 
@@ -5361,13 +5439,13 @@ Las obstrucciones de factorización en gauge theory y los observables extendidos
 
 Así, el contraejemplo decisivo debe ser más fuerte que «la estructura es no local»: debe mostrar **co-realidad sin ningún testigo ontológico admisible de profundidad finita**.
 
-#### 8.3. REV-24c — Representational Adequacy (RA)
+#### 8.3. SUPERSEDED pre-genealogical RA sketch
 
 $\mathrm{RA}_i(S)$ exige fidelidad de la presentación: identidad, denotación y las relaciones relevantes usadas para individuar el régimen deben preservarse/reflejarse bajo representaciones fieles.
 
 RA no se identifica con «todos los hechos verdaderos están escritos en $S$». La completitud factual fuerte puede depender de la firma y de REV-25; para la cuestión de existencia de un alcance $R_i$, puede ser suficiente una noción más débil de adecuación estructural. Determinar exactamente cuánta adecuación se necesita es parte abierta de REV-24c.
 
-#### 8.3.1. REV-24d — Scope Realization (SR)
+#### 8.3.1. MOVED — Scope Realization now belongs to REV-07
 
 Aun suponiendo que OA/MC/RA hayan fijado correctamente el contenido ontológico presentado por $S_i$, falta justificar que ese perfil corresponda a un objeto del tipo **alcance ontológico**.
 
@@ -5510,246 +5588,137 @@ $$
 
 Este bloque no es una formulación alternativa de la Ruta B generalizada. Para Ruta B rige exclusivamente el teorema closure-relative con CSet/CWF/CProcStable/$\mathrm{SigSmall}_{\mathcal C}$/$\mathrm{ActualSep}_{\mathcal C}$ hasta justificar CS/CC/CRType.
 
-### 8.6. REV-26 — existencia del $R$ absoluto
+### 8.6. REV-26 — origen ontológico común absoluto
 
-REV-24 es local al régimen. Incluso una demostración completa de:
+La antigua lectura minimalista:
 
 $$
-\operatorname{WitnessedRegR}
+R:=\operatorname{Scope}(\operatorname{Real})
 $$
 
-no contiene por sí sola una totalidad de **todo** lo real.
+queda **SUPERSEDED como target doctrinal completo**. Se conserva como mero alcance extensional $\mathcal R_{\mathrm{ext}}$.
+
+El target vigente es:
+
+$$
+\operatorname{ExistsR}
+:=
+\exists\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}}\;
+\operatorname{AbsGeneTotal}
+(\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}}).
+$$
+
+donde AbsGeneTotal requiere:
+
+$$
+\operatorname{OntOrigin}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}}),
+$$
+
+$$
+\forall x[
+\operatorname{Real}(x)
+\leftrightarrow
+\operatorname{Generated}^{*}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}},x)
+],
+$$
+
+y scope realization:
+
+$$
+\forall x[
+\operatorname{Within}_{\mathrm{abs}}(x,R_{\mathrm{abs}})
+\leftrightarrow
+\operatorname{Generated}^{*}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}},x)
+].
+$$
 
 #### 8.6.1. AG
 
-`AG` es una condición metalingüística sobre el alcance del cuantificador de `Real(x)`: el cuantificador debe ser absolutamente general y no esconder un índice/contexto.
+AG fija que el cuantificador de Real(x) tenga alcance absolutamente general. Sigue OPEN.
 
-#### 8.6.2. APC$_{Real}$
+#### 8.6.2. APC$_{Real}$ es auxiliar
 
-La instancia relevante de comprensión plural es:
-
-$$
-\mathrm{APC}_{Real}:
-\quad
-(\exists x\,\operatorname{Real}(x))
-\Rightarrow
-\exists rr_{\mathrm{abs}}
-\forall x[
-x\prec rr_{\mathrm{abs}}
-\Longleftrightarrow
-\operatorname{Real}(x)
-].
-$$
-
-En PFO clásica se adopta el esquema:
-
-$$
-\mathrm{PluralComp}[\varphi]:
-\quad
-(\exists x\,\varphi(x))
-\Rightarrow
-\exists xx\,\forall y[
-y\prec xx
-\Longleftrightarrow
-\varphi(y)
-].
-$$
-
-Luego:
+En lógica plural clásica APC$_{Real}$ puede realizar el scope extensional de todo lo real. Pero:
 
 $$
 \boxed{
-\mathrm{PluralComp}[\operatorname{Real}]
-\Rightarrow
-\mathrm{APC}_{Real}.
-}
-$$
-
-La implicación es formal. Lo que permanece abierto es si PluralComp debe aceptarse con alcance absolutamente general; critical plural logic permite restringir precisamente esta regla de comprensión.
-
-#### 8.6.3. Lema de reducción
-
-Definimos en semántica plural:
-
-$$
-\operatorname{AbsTotal}(rr)
-:\Longleftrightarrow
-\forall x[
-x\prec rr
-\Longleftrightarrow
-\operatorname{Real}(x)
-].
-$$
-
-y:
-
-$$
-\operatorname{ExistsAbsR}
-:\Longleftrightarrow
-\exists rr\;\operatorname{AbsTotal}(rr).
-$$
-
-Bajo realidad no vacía:
-
-$$
-\boxed{
-\mathrm{AG}
-+
-\exists x\,\operatorname{Real}(x)
-\Rightarrow
-[
-\mathrm{APC}_{Real}
-\Longleftrightarrow
-\operatorname{ExistsAbsR}
-].
-}
-$$
-
-**Demostración.** APC$_{Real}$ proporciona exactamente un testigo plural de `AbsTotal`. Recíprocamente, un testigo de `ExistsAbsR` satisface el consecuente de APC$_{Real}$. AG fija la lectura absolutamente general de los cuantificadores; no añade un paso deductivo interno. $\square$
-
-Por tanto:
-
-$$
-\mathrm{AG}
-+
-\mathrm{APC}_{Real}
-+
-\operatorname{NonEmptyReality}
-\Rightarrow
-\operatorname{ExistsAbsR}
-$$
-
-es una consecuencia inmediata del principio de formación de scope adoptado. No constituye evidencia independiente a favor de APC$_{Real}$.
-
-#### 8.6.4. REV-26e — no-trivialidad del target
-
-Si el $R$ doctrinal original es literalmente:
-
-$$
-R:=\operatorname{Scope}(\operatorname{Real}),
-$$
-
-y `Scope` se interpreta pluralmente, la existencia desnuda de $R$ queda reducida a:
-
-1. AG;
-2. una instancia suficiente de plural comprehension;
-3. no-vacuidad de realidad.
-
-La maquinaria emergentista no interviene.
-
-Si se desea un target más fuerte, debe escribirse explícitamente:
-
-$$
-\operatorname{ExistsStructuredAbsR}_Q
-:=
-\exists rr[
-\operatorname{AbsTotal}(rr)
-\land
-Q(rr)
-].
-$$
-
-donde $Q$ podría expresar integración, conectividad, clausura u otra estructura. Pero $Q$ **no** puede introducirse únicamente para hacer no trivial el teorema: debe venir de la doctrina y su justificación es independiente.
-
-Así el programa tiene dos capas:
-
-- **bare absolute scope:** problema de AG/comprensión;
-- **estructura del scope:** problema ontológico adicional, potencialmente relacionado con regímenes, emergencia o globalización.
-
-#### 8.6.5. Independencia respecto de la maquinaria emergentista
-
-El lema de reducción no usa:
-
-$$
-\mathrm{PON},\;
-\mathrm{SigSmall},\;
-\operatorname{SemTotal},\;
-\operatorname{EClosed},\;
-\mathrm{OTB},\;
-F
-\text{ ni Zorn}.
-$$
-
-Hay tres puntos de ataque no equivalentes:
-
-1. negar AG;
-2. aceptar AG pero negar/restringir APC$_{Real}$;
-3. negar que una pluralidad exhaustiva sea suficiente para el sentido doctrinal de scope, en cuyo caso debe especificarse un fortalecimiento $Q$.
-
-
-#### 8.6.6. Ruta indexada
-
-Si `Real` solo existe como familia `Real_i`, comprensión plural puede producir scopes $rr_i$ sin producir $rr_{abs}$. Para pasar de:
-
-$$
-\operatorname{ExistsRegR}
-$$
-
-a:
-
-$$
-\operatorname{ExistsAbsR}
-$$
-
-se requiere entonces un Globalization Bridge independiente `GB`. Una jerarquía de contextos siempre ampliable puede bloquear GB sin negar cada totalidad indexada.
-
-Esto formaliza por qué:
-
-$$
-\boxed{
-\operatorname{ExistsRegR}
+\operatorname{ExistsExtScope}
 \not\Rightarrow
-\operatorname{ExistsAbsR}.
+\operatorname{ExistsR}.
 }
 $$
 
-#### 8.6.7. No-$R$ clásico frente a no-finalidad relativista
+APC no demuestra origen común.
 
-Si AG es admisible:
+#### 8.6.3. Common-Origin Thesis
 
-$$
-\operatorname{NoR}_{\mathrm{AG}}
-:=
-\neg\operatorname{ExistsAbsR}
-$$
-
-es una negación ordinaria en el mismo marco semántico.
-
-Si se adopta generality relativism, esa formulación no puede darse por neutral: la tesis rival rechaza que exista un alcance final de los cuantificadores. Se representa entonces mediante un **metaschema**:
-
-$$
-\mathrm{ER}[I]:
-\quad
-\exists I^+[
-I\prec I^+
-\land
-\exists^{I^+}x\,\neg\operatorname{Covered}_I(x)
-].
-$$
-
-para cada interpretación admisible $I$ que pretenda ser final.
-
-La colección de todas las instancias ER no se reifica como una cuantificación objeto sobre todas las interpretaciones. Es una disciplina metalingüística: ante cualquier candidato $I$, debe poder darse una expansión $I^+$.
-
-Denotamos esa posición por:
-
-$$
-\operatorname{NoAbsFinality}.
-$$
-
-Así:
+La obligación ontológica principal es:
 
 $$
 \boxed{
-\operatorname{NoR}_{\mathrm{AG}}
-\text{ y }
-\operatorname{NoAbsFinality}
-\text{ no son la misma fórmula ni presuponen la misma semántica}.
+\mathrm{CO}_{\mathrm{abs}}:
+\exists\mathcal O_{\mathrm{abs}}[
+\operatorname{OntOrigin}_{\mathrm{abs}}(\mathcal O_{\mathrm{abs}})
+\land
+\forall x(
+\operatorname{Real}(x)
+\leftrightarrow
+\operatorname{Generated}^{*}_{\mathrm{abs}}(\mathcal O_{\mathrm{abs}},x)
+)
+].
 }
 $$
 
-Esto importa para la carga probatoria: refutar $\operatorname{NoR}_{\mathrm{AG}}$ mediante AG+APC$_{Real}$ no refuta por sí solo generality relativism, porque este último cuestiona AG/APC antes de que la negación clásica quede disponible con lectura absoluta.
+Debe demostrarse tanto soundness:
 
+$$
+\operatorname{Generated}^{*}_{\mathrm{abs}}(\mathcal O_{\mathrm{abs}},x)
+\Rightarrow
+\operatorname{Real}(x)
+$$
+
+como exhaustividad:
+
+$$
+\operatorname{Real}(x)
+\Rightarrow
+\operatorname{Generated}^{*}_{\mathrm{abs}}(\mathcal O_{\mathrm{abs}},x).
+$$
+
+Las reglas de generación no pueden definirse por ajuste extensional a Real.
+
+#### 8.6.4. Globalización desde orígenes indexados
+
+De:
+
+$$
+\forall i\;\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+$$
+
+no se sigue CO$_{\mathrm{abs}}$.
+
+Una globalización genuina debe exhibir una base superior $\mathcal O_{\mathrm{abs}}$ cuya clausura preserve/integre las genealogías indexadas. La mera unión extensional de scopes no basta.
+
+#### 8.6.5. No-$R$
+
+Bajo AG:
+
+$$
+\operatorname{NoR}_{AG}
+:=
+\neg\operatorname{ExistsR}.
+$$
+
+La negación puede deberse a ausencia de origen común, fallo de soundness/exhaustividad de la clausura o fallo de scope realization. Bajo generality relativism se conserva el metaschema NoAbsFinality.
+
+#### 8.6.6. REV-26e
+
+**RESOLVED doctrinal.** $R$ significa unidad genealógica ontológicamente cerrada. $\mathcal R_{\mathrm{ext}}$ conserva la noción analítica de mero alcance de todo lo real.
+
+La maquinaria semántica/emergentista puede describir estructura y procesos derivados, pero no sustituye la prueba de CO$_{\mathrm{abs}}$.
 
 ### 9. Zorn deja de ser necesario para SemTotal
 
@@ -5772,9 +5741,9 @@ Las dos construcciones semánticas tienen premisas distintas y no deben mezclars
 - **Ruta finita ya indexada por régimen:** $\Lambda_*$ + PON + $\operatorname{StructAdm}_i$ + $\mathrm{SigSmall}_i$ + $\mathrm{ActualSep}_i$.
 - **Ruta generalizada pre-ontológica:** CGI/CMin para la generación no circular de $\mathcal C_*$ y, para el teorema semántico, CSet + CWF + CProcStable + $\mathrm{SigSmall}_{\mathcal C}$ + $\mathrm{ActualSep}_{\mathcal C}$. CS/CC/CRType se usan solo después para justificar la reindexación como régimen; $\operatorname{StructAdm}_i$ no es premisa de esta maximalidad.
 
-La conclusión ontológica **local** añade REV-24a/OA + REV-24b/MC + REV-24c/RA + REV-24d/SR para justificar un $R_i$ presentado por $S_i$.
+La existencia ontológica **local** pertenece a REV-07: $\operatorname{OntOrigin}_i$ + reglas generativas independientes + clausura + scope realization deben justificar $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$. REV-24a/b/c se añaden después para justificar que $S_i$ presenta ese $R_i$.
 
-La conclusión doctrinal **absoluta** añade todavía REV-26: AG + APC$_{Real}$ o un Globalization Bridge equivalente.
+La conclusión doctrinal **absoluta** añade REV-26: AG + CO$_{abs}$ + scope realization. APC$_{Real}$ es auxiliar para el scope, no sustituto del origen común.
 
 ### 11. Emergencia y existencia
 
