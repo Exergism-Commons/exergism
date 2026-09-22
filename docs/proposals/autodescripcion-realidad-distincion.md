@@ -180,8 +180,9 @@ Esto **todavía no demuestra una metafísica emergentista de $R$**. El teorema v
 Los bloqueadores activos relevantes pasan a ser:
 
 - **REV-07:** justificación filosófica de la familia pre-régimen $\Lambda_*$ que individúa los regímenes;
-- **REV-20:** PSB — smallness por-token de la ramificación emergente — como única deuda restante de K1;
-- **REV-22:** aplicabilidad fundacional de Zorn al régimen real — smallness global o esqueleto cofinal set-sized;
+- **REV-23:** PON — smallness por-token de la conectividad ontológica inmediata — como premisa de la ruta directa a Exists-$R$;
+- **REV-20:** PSB/K1, ahora derivables de PON en la ruta directa;
+- **REV-22:** aplicabilidad de Zorn, también resuelta condicionalmente por PON aunque la ruta directa no la necesita;
 - **REV-15:** consecuencias metaontológicas discriminantes;
 
 ## 3.1. Resumen formal vigente
@@ -241,11 +242,12 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 
 ### Blockers ontológicos actuales
 
-El cuello de botella ya no está en F1–F3 ni en resolver One-R. Está en conectar el formalismo local con la ontología **de cada régimen $i$** sin introducir su unidad o exhaustividad en las premisas:
+Para la ruta directa, el cuello de botella ya no es K1/K2/K3: es justificar la identidad de régimen y su smallness local sin introducir una totalidad por definición:
 
 1. **REV-07:** justificar filosóficamente $\Lambda_*$ como criterio de identidad de régimen;
-2. **REV-20:** justificar PSB —que cada estado genere solo set-many eventos emergentes actuales—;
-3. **REV-22:** justificar que Zorn estándar aplica globalmente mediante smallness o un esqueleto cofinal set-sized.
+2. **REV-23:** justificar PON —que cada token tenga set-many vecinos ontológicos inmediatos—.
+
+REV-20 y REV-22 quedan como consecuencias/alternativas de esta smallness: PON implica PSB/K1 y además hace set-sized cada régimen y su poset de fragmentos.
 
 ---
 
@@ -671,8 +673,145 @@ El potencialismo ordinario de «siempre hay una extensión más» no basta para 
 
 PSB es independiente de REV-22: resuelve la smallness **local del cierre de cada dominio**, mientras REV-22 pregunta por la smallness/aplicabilidad global de Zorn sobre la colección de dominios.
 
-## 4. Núcleo matemático normalizado — qué necesita realmente Zorn
+## 4. Núcleo matemático — ruta directa a Exists-$R$ y ruta Zorn
 
+### 4.0. Teorema directo de totalidad de régimen
+
+La ruta principal ya no necesita Zorn.
+
+Definimos el vecindario ontológico inmediato:
+
+$$
+N(q)
+:=
+\{r\mid q\bowtie r\}.
+$$
+
+y la condición:
+
+$$
+\mathrm{PON}:
+\quad
+\forall q,
+\;
+N(q)\text{ es set-sized}.
+$$
+
+PON afirma que ningún token actual tiene proper-class many vecinos ontológicos inmediatos bajo las relaciones que constituyen co-régimen.
+
+Como:
+
+$$
+q\sim r
+$$
+
+significa que existe un camino **finito** de $\bowtie$ entre ambos, PON implica que la clase de equivalencia:
+
+$$
+T_i
+:=
+[q]_{\sim}
+$$
+
+es set-sized. Se prueba construyendo los niveles finitos de vecindad y tomando su unión sobre $\omega$.
+
+Fijada además una firma semántica procesual $\mathcal L_i$ set-sized y de aridad finita, la colección de todos los átomos posibles sobre $T_i$ es un conjunto. Por Separation, también lo es la colección de todos los hechos **actualmente verdaderos** del régimen:
+
+$$
+\Phi_i^{\mathrm{all}}.
+$$
+
+Definimos entonces:
+
+$$
+\boxed{
+R_i^*
+:=
+(T_i,\Phi_i^{\mathrm{all}}).
+}
+$$
+
+Por StructAdm, $R_i^*$ es un dominio admisible.
+
+Para cualquier:
+
+$$
+X=(T_X,\Phi_X)
+\in
+\mathfrak D_i^{\mathrm{proc}},
+$$
+
+se tiene:
+
+$$
+T_X\subseteq T_i
+$$
+
+y:
+
+$$
+\Phi_X\subseteq\Phi_i^{\mathrm{all}}.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\forall X\in\mathfrak D_i^{\mathrm{proc}},
+\quad
+X\preceq_i R_i^*.
+}
+$$
+
+Además, si un evento emergente actual tiene source en $T_i$, sus relaciones source/event/target son enlaces procesuales actuales; evento y target pertenecen a la misma clase $[q]_{\sim}$ y sus hechos están en $\Phi_i^{\mathrm{all}}$. Luego:
+
+$$
+\boxed{
+\operatorname{EClosed}_i(R_i^*).
+}
+$$
+
+Así:
+
+$$
+\boxed{
+\mathrm{PON}
++
+\text{firma set-sized/finitaria}
++
+\operatorname{StructAdm}
+\Rightarrow
+\operatorname{ExistsR}.
+}
+$$
+
+y por tanto:
+
+$$
+\boxed{
+\neg\operatorname{NoR}.
+}
+$$
+
+#### No circularidad
+
+El argumento no presupone un objeto $R_i$. Parte de un token $q$, demuestra que su componente de conectividad finita es un conjunto y, solo entonces, forma mediante Separation el conjunto de hechos actuales sobre ese carrier. El máximo se **construye** como contenido semántico; no se introduce por definición como entidad ontológica adicional.
+
+#### Papel de la emergencia
+
+En esta ruta, la emergencia **no produce la existencia** del máximo. La existencia se sigue de la conectividad ontológica localmente set-like. La emergencia aporta la propiedad adicional:
+
+$$
+\operatorname{EClosed}_i(R_i^*).
+$$
+
+Por tanto, debe evitarse la afirmación fuerte «la emergencia demuestra que existe R» salvo que se precise esta dependencia.
+
+#### Relación con Zorn
+
+K1/K2/K3 y Zorn permanecen como una segunda ruta estructural y como análisis de qué propiedades de los dominios bastan para maximalidad. Pero, bajo PON, ya no son necesarios para demostrar Exists-$R$.
+
+---
 **Convención normativa:** durante toda esta sección se fija un régimen ontológico $i$. Para aligerar notación se escribe:
 
 $$
