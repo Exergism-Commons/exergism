@@ -937,44 +937,46 @@ Para el candidato directo $S_i^*$ hay un avance parcial: su carrier $T_i=[q]_{\s
 
 #### REV-24b — MC: completitud de pertenencia
 
-Sea $\operatorname{Reg}_i(x)$ un criterio de pertenencia al régimen fijado **independientemente de $S_i$, $R_i$, K3 y la conclusión de totalización**. El candidato vigente procede de REV-07 y la familia pre-régimen $\Lambda_*$.
-
-Se exige:
+Para evitar una variable intermedia de pertenencia no justificada, MC se formula directamente respecto de la relación ontológica objetivo $\operatorname{CoReal}$ y de un token semilla actual $q$:
 
 $$
-\mathrm{MC}_i(S):
+\mathrm{MC}_i(S;q):
 \quad
 \forall x,
 [
 \operatorname{Actual}(x)
 \land
-\operatorname{Reg}_i(x)
+\operatorname{CoReal}(x,q)
 \Rightarrow
 \exists a\in T_S\;\operatorname{Den}_i(a,x)
 ].
 $$
 
-Ésta es probablemente la carga ontológica principal. No puede justificarse definiendo $\operatorname{Reg}_i(x)$ como «ser representado por $S_i$» ni como «pertenecer a $R_i$». REV-24b queda acoplado a REV-07: hay que justificar que la noción independiente de co-régimen realmente captura todos los modos ontológicamente pertinentes de pertenencia. La misma obligación incluye explicar en qué sentido esa extensión determina un **alcance** legítimo sin reificarlo necesariamente como conjunto u objeto colector.
+$\operatorname{CoReal}(x,q)$ significa que $x$ y $q$ co-pertenecen al mismo régimen ontológico en el sentido que la doctrina pretende capturar. Debe recibir contenido independientemente de $S_i$, $R_i$, K3 y de la propia conectividad $[q]_{\sim}$.
 
-##### Reducción de REV-24b a soundness/completeness de $\Lambda_*$
+Si posteriormente resulta útil escribir una extensión del régimen relativa a $q$, puede introducirse solo como abreviatura derivada:
 
-Para no esconder la carga en el símbolo $\operatorname{Reg}_i$, distinguimos:
+$$
+\operatorname{Reg}^{\mathrm{ont}}_q(x)
+:\Longleftrightarrow
+\operatorname{Actual}(x)
+\land
+\operatorname{CoReal}(x,q),
+$$
+
+sin añadir contenido nuevo.
+
+##### Soundness y completeness de $\Lambda_*$
+
+El criterio formal candidato generado por $\Lambda_*$ es:
 
 $$
 \operatorname{Reg}^{\Lambda}(x;q)
 :\Longleftrightarrow
-x\in[q]_{\sim},
+x\in[q]_{\sim}.
 $$
 
-que es el **criterio formal candidato** generado por $\Lambda_*$, de una relación ontológica objetivo:
-
-$$
-\operatorname{CoReal}(x,q),
-$$
-
-que significa que $x$ y $q$ co-pertenecen al mismo régimen ontológico en el sentido que la doctrina pretende capturar. $\operatorname{CoReal}$ no puede definirse mediante $[q]_{\sim}$ si se quiere evaluar no circularmente la adecuación de $\Lambda_*$.
-
-Hay dos direcciones distintas:
+Se distinguen dos obligaciones:
 
 $$
 \mathrm{RS}_{\Lambda}:
@@ -984,7 +986,7 @@ $$
 \operatorname{CoReal}(x,q),
 $$
 
-**soundness de régimen**: ningún enlace admitido por $\Lambda_*$ fusiona realidades que deberían permanecer distintas;
+**soundness de régimen**: la clausura de $\Lambda_*$ no incorpora tokens que no co-pertenecen realmente;
 
 y:
 
@@ -996,33 +998,59 @@ $$
 \operatorname{Reg}^{\Lambda}(x;q),
 $$
 
-**completeness de régimen**: ningún modo ontológicamente genuino de co-pertenencia queda fuera de la clausura finita de $\Lambda_*$.
+**completeness de régimen**: ningún modo ontológicamente genuino de co-pertenencia queda fuera de la clausura finita.
 
-Los seis criterios actuales de §5 están orientados principalmente a $\mathrm{RS}_{\Lambda}$. El verdadero cuello de botella de REV-24b es $\mathrm{RC}_{\Lambda}$.
+Estas direcciones hacen trabajos distintos. Para la construcción directa:
 
-Si ambas direcciones se justifican:
+$$
+T_i=[q]_{\sim}.
+$$
+
+Además, el carrier usa los propios tokens actuales como elementos semánticos; por tanto dispone de la denotación canónica:
+
+$$
+\mathrm{CD}_i:
+\quad
+x\in T_i
+\Rightarrow
+\operatorname{Den}_i(x,x).
+$$
+
+Entonces $\mathrm{RC}_{\Lambda}$, sin necesitar $\mathrm{RS}_{\Lambda}$, basta para la cobertura:
+
+$$
+\boxed{
+\mathrm{RC}_{\Lambda}
++
+\mathrm{CD}_i
+\Rightarrow
+\mathrm{MC}_i(S_i^*;q).
+}
+$$
+
+En efecto, si $\operatorname{CoReal}(x,q)$, RC da $x\in[q]_{\sim}=T_i$ y CD proporciona un representante $a=x$ con $\operatorname{Den}_i(a,x)$.
+
+$\mathrm{RS}_{\Lambda}$ cumple la obligación complementaria: evita que el carrier contenga tokens ajenos al alcance ontológico pretendido. Así, bajo RS + RC:
 
 $$
 \operatorname{CoReal}(x,q)
 \Longleftrightarrow
-x\in[q]_{\sim}.
+x\in[q]_{\sim},
 $$
 
-Como la construcción directa usa exactamente:
+pero solo RC interviene en la demostración de MC.
 
-$$
-T_i=[q]_{\sim},
-$$
+Los seis criterios actuales de §5 están orientados principalmente a $\mathrm{RS}_{\Lambda}$. El verdadero cuello de botella de completitud es $\mathrm{RC}_{\Lambda}$.
 
-la completitud de pertenencia del carrier se sigue entonces de la equivalencia anterior. Así REV-24b queda reducido a una pregunta mucho más precisa:
+La pregunta queda reducida a:
 
 > ¿existe algún modo actual de co-pertenencia ontológica que no pueda descomponerse en una cadena finita de relaciones integradoras token-specific pertenecientes a $\Lambda_*$?
 
-Dependencias transfinitarias, integración esencialmente global, relaciones infinitarias no reducibles a incidencias locales o una ontología holista fuerte serían contraejemplos candidatos. Si existen, $\mathrm{RC}_{\Lambda}$ falla y la construcción actual totaliza solo un subalcance.
+Dependencias de límite, integración esencialmente global, relaciones infinitarias no reducibles a incidencias locales o una ontología holista fuerte son contraejemplos candidatos. Si alguno funciona, $\mathrm{RC}_{\Lambda}$ falla y la construcción actual totaliza solo un subalcance.
 
-Si, por el contrario, toda relación integradora actual —incluso una relación infinitaria— puede representarse mediante un **token de relación actual** enlazado por incidencias a sus relata, una dependencia de aridad set-sized puede quedar conectada mediante caminos finitos en el grafo de incidencia. Esto ofrece una posible ruta para ampliar $\Lambda_*$ sin abandonar la clausura finita; una relación de aridad proper-class volvería a chocar con REV-23/smallness.
+Si una relación infinitaria de aridad set-sized puede representarse mediante un **token de relación actual** enlazado por incidencias a sus relata, cada relatum queda a distancia finita del token relacional y no se requiere por ello una clausura transfinita. Una aridad o vecindad proper-class vuelve a chocar con REV-23.
 
-Esta reducción **no cierra REV-24b**. Expone exactamente qué tesis metafísica falta demostrar. Si $\operatorname{CoReal}$ no puede recibir contenido independiente de $\Lambda_*$, entonces $\mathrm{RC}_{\Lambda}$ sería una estipulación y no una prueba.
+Esta reducción **no cierra REV-24b**. Si $\operatorname{CoReal}$ no puede caracterizarse independientemente de $\Lambda_*$, RC sería una estipulación y no una prueba.
 
 #### REV-24c — RA: adecuación representacional
 
@@ -1998,7 +2026,7 @@ El Muro deja abiertas simultáneamente estas posibilidades:
 
 - existe un máximo semántico $S_i$ pero no puede identificarse desde dentro;
 - una cuasisingularidad es indistinguible localmente de $S_i$;
-- $S_i$ satisface o no satisface $\operatorname{OntTotal}_i$;
+- existe o no existe algún alcance $R_i$ tal que $\operatorname{Presents}_i(S_i,R_i)\land\operatorname{OntTotal}_i(R_i)$;
 - existen otros regímenes y, si REV-24 se cierra en ellos, otros $R_j$;
 - existe o no existe un $R_{\mathrm{abs}}$.
 
