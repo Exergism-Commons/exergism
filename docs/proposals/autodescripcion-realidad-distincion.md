@@ -114,38 +114,119 @@ $$
 
 **Motivación física limitada.** Static-patch observables, gravitational dressing y reconstrucción holográfica motivan distinguir acceso, representación y alcance, pero no demuestran ninguna identificación $U_i=S_i=R_i$ ni ninguna tesis de totalidad. Véase el [mapa de literatura, §13](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
 
-### 1.3. Target audit — $R_i$ local no es el $R$ absoluto
+### 1.3. Target doctrinal revisado — alcance extensional no es todavía $R$
 
-La formulación original de esta propuesta definía:
-
-$$
-R:=\operatorname{Scope}(\operatorname{Real}),
-$$
-
-es decir, la totalidad de **todo lo real**. Esa noción corresponde, bajo una semántica de generalidad absoluta, a lo que ahora escribimos:
+La lectura histórica:
 
 $$
-R_{\mathrm{abs}}.
+R:=\operatorname{Scope}(\operatorname{Real})
 $$
 
-La formulación intermedia:
+queda **SUPERSEDED como definición completa de $R$**.
+
+Conservamos ese concepto bajo otro nombre:
 
 $$
-\exists i\exists R_i\,\operatorname{OntTotal}_i(R_i)
+\boxed{
+\mathcal R_{\mathrm{ext}}
+:=
+\operatorname{Scope}(\operatorname{Real}),
+}
 $$
 
-es más débil: basta una totalidad indexada de un régimen. Por tanto queda **SUPERSEDED** el uso de esa fórmula como definición sin matices de `ExistsR`.
+el **alcance extensional absoluto** de todo aquello sobre lo que Real cuantifique legítimamente.
 
-### 1.4. Existencia de totalidad de régimen
+$\mathcal R_{\mathrm{ext}}$ responde únicamente a:
 
-Definimos:
+> ¿qué cosas son reales?
+
+El $R$ doctrinal fuerte responde además a:
+
+> ¿pertenecen todas esas cosas a una misma genealogía ontológica cerrada?
+
+Por decisión doctrinal, una Realidad no es una mera pluralidad exhaustiva. Es el alcance generado por una **base/origen ontológico común** y cerrado bajo las relaciones ontológicas generativas pertinentes.
+
+### 1.4. Primitivas genealógicas
+
+Una base de origen puede ser singular, plural o estructurada. Se escribe:
+
+$$
+\mathcal O_i
+$$
+
+sin presuponer que sea un set, un instante inicial o una «primera causa» temporal.
+
+Introducimos:
+
+$$
+\operatorname{OntOrigin}_i(\mathcal O_i),
+$$
+
+«$\mathcal O_i$ es una base ontológica originaria admisible para el índice $i$», y una relación generativa independiente:
+
+$$
+\operatorname{GenStep}_i(a,b),
+$$
+
+«$b$ deriva ontológicamente de $a$ mediante un paso generativo admisible».
+
+Su clausura se denota:
+
+$$
+\operatorname{Generated}^{*}_i(\mathcal O_i,x).
+$$
+
+La estrella no compromete todavía a clausura finita: puede realizarse mediante la Ruta A finita o mediante una clausura generalizada/transfinita si esta última se justifica.
+
+**Restricción de no circularidad:** OntOrigin, GenStep y las reglas que generan $\operatorname{Generated}^{*}$ deben especificarse sin usar $R_i$, CoReal, Presents, OntTotal, SemTotal ni la extensión final que se pretende obtener.
+
+### 1.5. $R_i$ — realidad indexada como clausura genealógica
+
+Definimos la condición genealógica:
+
+$$
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+$$
+
+cuando:
+
+$$
+\operatorname{OntOrigin}_i(\mathcal O_i)
+$$
+
+y:
+
+$$
+\forall x[
+\operatorname{Within}_i(x,R_i)
+\Longleftrightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+].
+$$
+
+Así:
+
+$$
+\boxed{
+R_i
+=
+\operatorname{Scope}
+\bigl(
+\operatorname{Cl}^{\mathrm{ont}}_i(\mathcal O_i)
+\bigr)
+}
+$$
+
+se entiende como abreviatura doctrinal, no como identidad conjuntista.
+
+La existencia local fuerte pasa a ser:
 
 $$
 \boxed{
 \operatorname{ExistsRegR}
 :=
-\exists i\;\exists R_i\;
-\operatorname{OntTotal}_i(R_i).
+\exists i\;\exists\mathcal O_i\;\exists R_i\;
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
 }
 $$
 
@@ -155,139 +236,150 @@ $$
 \boxed{
 \operatorname{WitnessedRegR}
 :=
-\exists i\;\exists S_i\;\exists R_i
-[
+\exists i,S_i,\mathcal O_i,R_i[
 \operatorname{SemTotal}_i(S_i)
 \land
 \operatorname{Presents}_i(S_i,R_i)
 \land
-\operatorname{OntTotal}_i(R_i)
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 ].
 }
 $$
 
-Entonces:
+Por tanto:
 
 $$
 \operatorname{WitnessedRegR}
 \Rightarrow
-\operatorname{ExistsRegR}.
+\operatorname{ExistsRegR},
 $$
 
-Esta es la conclusión que puede perseguir directamente la maquinaria $S_i$/REV-24.
+pero la existencia ontológica de $R_i$ ya no depende conceptualmente de que exista primero un $S_i$: $S_i$ **presenta** una genealogía ontológica cuya existencia debe justificarse por REV-07.
 
-Para aislar la realización plural de un régimen respecto de un seed actual $q$ definimos:
+### 1.6. CoReal pasa a derivarse de genealogía común
+
+Una vez justificada una base $\mathcal O_i$:
 
 $$
-\operatorname{RegScope}_q(rr)
+\boxed{
+\operatorname{CoReal}_i(x,y)
 :\Longleftrightarrow
-\forall x[
-x\prec rr
-\Longleftrightarrow
-(\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q))
-].
-$$
-
-Bajo comprensión plural, actualidad de $q$ y reflexividad de `CoReal`, REV-24d proporciona condicionalmente un $rr$ que satisface $\operatorname{RegScope}_q(rr)$. Esto es un resultado sobre **realización de alcance local**; no demuestra por sí mismo Realidad Total.
-
-Definimos también:
-
-$$
-\operatorname{NoRegR}
-:=
-\neg\operatorname{ExistsRegR}.
-$$
-
-### 1.5. Existencia de Realidad Total
-
-Para la tesis original reservamos:
-
-$$
-\boxed{
-\operatorname{ExistsAbsR}
-:=
-\exists R_{\mathrm{abs}}\;
-\operatorname{AbsTotal}(R_{\mathrm{abs}}).
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\land
+\operatorname{Generated}^{*}_i(\mathcal O_i,y).
 }
 $$
 
-donde $\operatorname{AbsTotal}$ significa que el alcance agota **todo lo real**, no solo un régimen previamente indexado.
+Así, la conectividad bajo $\Lambda_*$ o una clausura candidata $\mathcal C_*$ ya no **define primariamente** co-realidad. Debe reconstruir correctamente la clausura genealógica.
 
-En una formalización plural con generalidad absoluta, el objetivo tendría la forma:
-
-$$
-\exists rr_{\mathrm{abs}}\;
-\forall x[
-x\prec rr_{\mathrm{abs}}
-\Longleftrightarrow
-\operatorname{Real}(x)
-].
-$$
-
-Esta fórmula requiere precisamente aquello que está en disputa: una cuantificación suficientemente general sobre `Real` y una instancia legítima de comprensión plural absoluta. No se obtiene de la comprensión local aplicada a $\operatorname{CoReal}(-,q)$.
-
-Reservamos el nombre doctrinal desnudo:
+Esto invierte la carga de REV-07:
 
 $$
-\boxed{
-\operatorname{ExistsR}:=\operatorname{ExistsAbsR}
-}
+\text{origen + generación}
+\longrightarrow
+\text{co-realidad}
+\longrightarrow
+\text{tests sobre }\Lambda_*/\mathcal C_*.
 $$
 
-mientras se mantenga la definición original de $R$ como totalidad de todo lo real.
-
-Bajo una semántica que admite AG, definimos la negación clásica:
+No:
 
 $$
-\boxed{
-\operatorname{NoR}_{\mathrm{AG}}
-:=
-\neg\operatorname{ExistsAbsR}.
-}
+\Lambda_*
+\longrightarrow
+\text{co-realidad por definición}.
 $$
 
-Mientras no se haya resuelto REV-26a, el nombre doctrinal «No-$R$» no se identifica sin más con una única fórmula absolutamente cuantificada. Si AG se rechaza, la alternativa relativista debe formularse metalingüísticamente/esquemáticamente; véase REV-26d.
+Dos regiones causalmente desconectadas pueden pertenecer al mismo $R_i$ si derivan de la misma base ontológica.
 
-### 1.6. No hay puente automático local → absoluto
+### 1.7. $R$ absoluto — genealogía común de todo lo real
 
-En particular:
+Definimos el target absoluto mediante una base $\mathcal O_{\mathrm{abs}}$:
 
 $$
-\boxed{
-\operatorname{ExistsRegR}
-\not\Rightarrow
-\operatorname{ExistsAbsR}.
-}
+\operatorname{AbsGeneTotal}(\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}})
+$$
+
+si:
+
+$$
+\operatorname{OntOrigin}_{\mathrm{abs}}(\mathcal O_{\mathrm{abs}})
 $$
 
 y:
 
 $$
+\forall x[
+\operatorname{Real}(x)
+\Longleftrightarrow
+\operatorname{Generated}^{*}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}},x)
+],
+$$
+
+y $R_{\mathrm{abs}}$ realiza exactamente ese alcance:
+
+$$
+\forall x[
+\operatorname{Within}_{\mathrm{abs}}(x,R_{\mathrm{abs}})
+\Longleftrightarrow
+\operatorname{Generated}^{*}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}},x)
+].
+$$
+
+El objetivo doctrinal queda:
+
+$$
 \boxed{
-\operatorname{WitnessedRegR}
-\not\Rightarrow
-\operatorname{ExistsAbsR}.
+\operatorname{ExistsR}
+:=
+\operatorname{ExistsAbsR}
+:=
+\exists\mathcal O_{\mathrm{abs}}\exists R_{\mathrm{abs}}\;
+\operatorname{AbsGeneTotal}
+(\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}}).
 }
 $$
 
-Para llegar desde regímenes indexados a Realidad Total hace falta un **Globalization Bridge** independiente: por ejemplo, justificar generalidad ontológica absoluta, una clausura que abarque todos los regímenes o alguna estructura real común que los integre. Esta deuda se registra como REV-26.
+Ésta es una tesis sustantiva. Puede ser falsa aun cuando exista perfectamente el alcance extensional $\mathcal R_{\mathrm{ext}}$ de todo lo real.
 
-Si, por el contrario, la semántica correcta de `real` es irreduciblemente indexada y no existe cuantificación global legítima, entonces la doctrina debe decidir explícitamente si abandona $R$ absoluto en favor de Indexed-/Many-$R$. Esa decisión tampoco la toma la maquinaria semántica.
+En particular:
 
-### 1.7. One-$R$, Many-$R$ y Cluster-$R$
+$$
+\boxed{
+\operatorname{ExistsExtScope}
+\not\Rightarrow
+\operatorname{ExistsR}.
+}
+$$
 
-Solo después de separar los targets tiene sentido distinguir:
+AG y comprensión plural pueden ayudar a formular/realizar $\mathcal R_{\mathrm{ext}}$ o el scope de una clausura ya identificada, pero **no demuestran un origen ontológico común**.
 
-- **One-$R$ absoluto:** existe un único $R_{\mathrm{abs}}$;
-- **Indexed-$R$:** existen uno o más $R_i$ exhaustivos de sus índices sin tesis global adicional;
-- **Many-$R$ fuerte:** existen totalidades indexadas ontológicamente incomparables y ninguna totalidad global legítima;
-- **Cluster-$R$:** varios $R_i$ quedan relacionados por una estructura real común que puede abrir una ruta de globalización.
+### 1.8. No hay puente automático local → absoluto
 
-**Estado actual:** la ruta matemática/REV-24 trabaja sobre `ExistsRegR`/`WitnessedRegR`. El objetivo doctrinal original `ExistsR = ExistsAbsR` permanece OPEN y requiere además REV-26. No se considerará resuelto el debate No-$R$ absoluto demostrando solo un $R_i$ local; además, bajo rechazo de AG, la propia forma lógica de No-$R$ debe cambiar.
+Aunque existan genealogías indexadas:
 
-**Fork doctrinal decisivo — REV-26e.** Si el $R$ original se conserva como mero **alcance plural de todo lo real**, su existencia desnuda deja de ser un problema matemático: bajo AG + APC$_{Real}$ + no-vacuidad se obtiene condicionalmente/analíticamente el scope absoluto. Si se exige además una propiedad estructural $Q$, el target cambia a $\operatorname{ExistsStructuredAbsR}_Q$ y $Q$ debe justificarse por razones doctrinales independientes; no puede añadirse solo para volver no trivial la existencia. Por tanto, ningún teorema adicional sobre $S_i$, Zorn o FID decide por sí solo este fork.
+$$
+\operatorname{ExistsRegR}
+\not\Rightarrow
+\operatorname{ExistsR}.
+$$
 
+El salto absoluto exige justificar que todo lo real pertenece a una única genealogía ontológica última, o que las genealogías indexadas tienen una base superior común.
 
+Por tanto REV-26 deja de ser principalmente un problema de formar la pluralidad «todo lo real». Su núcleo pasa a ser la **Common-Origin Thesis** absoluta.
+
+### 1.9. One-$R$, Indexed-$R$ y Many-$R$
+
+- **One-$R$ fuerte:** existe una base ontológica absoluta $\mathcal O_{\mathrm{abs}}$ cuya clausura contiene exactamente todo lo real.
+- **Indexed-$R$:** existen una o más clausuras genealógicas $R_i$ justificadas localmente, sin tesis de origen absoluto común.
+- **Many-$R$ fuerte:** existen al menos dos genealogías ontológicas últimas y no existe ninguna base ontológica superior admisible cuya clausura las integre a ambas.
+- **Cluster-$R$:** varias genealogías aparentemente separadas resultan derivables de una base ontológica común de orden superior; pasan entonces a pertenecer a una realidad más amplia.
+
+Una pluralidad de representaciones, horizontes o regiones causalmente desconectadas no basta para Many-$R$.
+
+**Decisión REV-26e:** RESOLVED doctrinal. El target no es el mero $\mathcal R_{\mathrm{ext}}=Scope(Real)$, sino una Realidad entendida como **unidad genealógica ontológicamente cerrada**. Esta estructura no se añade para hacer no trivial la prueba: constituye el criterio doctrinal de qué cuenta como una realidad.
 
 ## 2. Consecuencias analíticas si $R$ existe
 
