@@ -576,7 +576,7 @@ $$
 \boxed{\operatorname{SemTotal}_i(S_i).}
 $$
 
-### Objetivo fuerte de esta maquinaria: `WitnessedRegR`
+### Objetivo real de esta maquinaria: presentación semántica
 
 K1–K3 producen exactamente:
 
@@ -584,49 +584,43 @@ $$
 \boxed{\operatorname{SemTotal}_i(S_i).}
 $$
 
-REV-24 intenta añadir un alcance ontológico de **ese régimen**:
+Eso no establece una genealogía ontológica.
+
+La existencia local fuerte pertenece a REV-07:
 
 $$
-\mathrm{OTB}_i(S_i):
-\quad
-\operatorname{SemTotal}_i(S_i)
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 \Rightarrow
-\exists R_i[
-\operatorname{Presents}_i(S_i,R_i)
-\land
-\operatorname{OntTotal}_i(R_i)
-].
+\operatorname{ExistsRegR}.
 $$
 
-Por tanto la ruta correcta de esta maquinaria es:
+Si REV-07 ha justificado esa genealogía, REV-24 intenta demostrar:
+
+$$
+\operatorname{SemTotal}_i(S_i)
++
+\mathrm{OTB}_i
+\Rightarrow
+\operatorname{Presents}_i(S_i,R_i),
+$$
+
+y por tanto:
 
 $$
 \boxed{
-K1_i+K2_i+K3_i
-+\mathrm{OTB}_i
+\operatorname{ExistsRegR}
++
+\operatorname{SemTotal}_i(S_i)
++
+\mathrm{OTB}_i
 \Rightarrow
-\operatorname{WitnessedRegR}
-\Rightarrow
-\operatorname{ExistsRegR}.
+\operatorname{WitnessedRegR}.
 }
 $$
 
-Esta cadena **no** contiene:
+La maquinaria semántica no crea el origen, la clausura ni el alcance ontológico.
 
-$$
-\operatorname{ExistsAbsR}
-$$
-
-ni:
-
-$$
-\neg\operatorname{NoR}.
-$$
-
-El paso adicional es REV-26. El antiguo bloque que identificaba `ExistsR` con $\exists i\exists R_i\,OntTotal_i(R_i)$ queda SUPERSEDED por el target audit de §1.3–1.6.
-
-$\mathrm{OTB}_i$ sigue siendo una abreviatura del problema local a demostrar, descompuesto en REV-24a/OA, REV-24b/MC, REV-24c/RA y REV-24d/SR.
-
+El paso adicional desde genealogías indexadas al $R$ absoluto pertenece a REV-26.
 
 ### Qué significa aquí «cerrado»
 
@@ -671,12 +665,16 @@ S_i\in\mathfrak K_i
 F_i^{\mathrm{proc}}(S_i)=S_i.
 $$
 
-Hasta cerrar REV-24, la forma tipada y sustantiva de la tesis es «existe un máximo semántico $S_i$ y es E-closed». REV-24 debe justificar la existencia de un alcance ontológico distinto $R_i$ tal que:
+La forma tipada del resultado semántico es «existe un máximo $S_i$ y es E-closed». La existencia ontológica de $R_i$ requiere REV-07 y su genealogía:
 
 $$
-\operatorname{Presents}_i(S_i,R_i)
-\land
-\operatorname{OntTotal}_i(R_i).
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
+$$
+
+REV-24 solo debe justificar después:
+
+$$
+\operatorname{Presents}_i(S_i,R_i).
 $$
 
 Por tanto no se identifica por mera maximalidad:
@@ -2091,12 +2089,17 @@ $$
 \boxed{
 \operatorname{SemTotal}_i(S_i)
 \not\Rightarrow
-\exists R_i[
-\operatorname{Presents}_i(S_i,R_i)
-\land
-\operatorname{OntTotal}_i(R_i)
-].
+\exists\mathcal O_i\exists R_i\;
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
 }
+$$
+
+Y, aun suponiendo una genealogía ontológica ya justificada:
+
+$$
+\operatorname{SemTotal}_i(S_i)
+\not\Rightarrow
+\operatorname{Presents}_i(S_i,R_i).
 $$
 
 Una sandbox o cuasisingularidad puede por tanto **imitar epistemológicamente** el comportamiento que un observador esperaría de REC —no aparece ningún certificador exterior accesible— sin poseer REC en sentido ontológico. Si realmente existe un exterior, el dominio era parcial aunque ese exterior fuese inaccesible desde dentro.
@@ -2143,7 +2146,7 @@ K1_i+K2_i+K3_i
 \exists S_i\;\operatorname{SemTotal}_i(S_i).
 $$
 
-Pero ese paso **no es todavía**:
+Pero ese paso **no es**:
 
 $$
 K1_i+K2_i+K3_i
@@ -2151,7 +2154,7 @@ K1_i+K2_i+K3_i
 \exists R_i.
 $$
 
-La segunda inferencia requiere además REV-24/$\mathrm{OTB}_i$.
+La existencia de $R_i$ requiere una genealogía de REV-07. REV-24/$\mathrm{OTB}_i$ entra solo después para justificar que $S_i$ presenta ese $R_i$.
 
 ### Acceso causal y reconstruibilidad
 
@@ -2195,11 +2198,11 @@ El Muro deja abiertas simultáneamente estas posibilidades:
 
 - existe un máximo semántico $S_i$ pero no puede identificarse desde dentro;
 - una cuasisingularidad es indistinguible localmente de $S_i$;
-- existe o no existe algún alcance $R_i$ tal que $\operatorname{Presents}_i(S_i,R_i)\land\operatorname{OntTotal}_i(R_i)$;
-- existen otros regímenes y, si REV-24 se cierra en ellos, otros $R_j$;
+- existe o no existe una genealogía $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$ y, si existe, $S_i$ la presenta o no adecuadamente;
+- existen otras genealogías $R_j$ si REV-07 las justifica, con independencia de que sus presentaciones semánticas cierren REV-24;
 - existe o no existe un $R_{\mathrm{abs}}$.
 
-Nada de ello resta valor lógico a una demostración condicional de $\exists S_i\;\operatorname{SemTotal}_i(S_i)$. Tampoco sustituye la justificación ontológica que exige REV-24.
+Nada de ello resta valor lógico a una demostración condicional de $\exists S_i\;\operatorname{SemTotal}_i(S_i)$. Tampoco sustituye la justificación genealógica de REV-07 ni la adecuación representacional de REV-24.
 
 **Estado:** REC queda clasificado como consecuencia estructural condicionada a $\operatorname{OntTotal}$, en línea con REV-06. REV-15 permanece OPEN para las consecuencias discriminantes y para cualquier versión fuerte del Muro. El Muro se conserva como límite epistemológico, no como puente ni a `ExistsRegR` ni a `ExistsAbsR`.
 
