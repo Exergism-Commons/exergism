@@ -1,5 +1,7 @@
 # Propuesta: derivación del supramedio absoluto y cierre emergente
 
+> **SUPERSEDED — archivo histórico, no normativo.** Esta instantánea conserva deliberadamente formulaciones anteriores a REV-24 en las que máximos formales/semánticos fueron denominados $R_i$ (incluidos $R_i^{\mathrm{proc}}$ y $R_i^A(t)$). Esas promociones están **retiradas**. La formulación vigente distingue $S_i$ como máximo semántico de $R_i$ como alcance ontológico y exige un puente independiente REV-24/$\mathrm{OTB}_i$. Véase `../autodescripcion-realidad-distincion.md`. No debe usarse este archivo para establecer el estado actual de la propuesta.
+
 **Estado:** propuesta doctrinal exploratoria; no canónica.  
 **Ámbito:** ontología / fundamento último.  
 **No modifica:** el sistema analítico exérgico de `formal/`, sus variables, fórmulas ni escalas.
