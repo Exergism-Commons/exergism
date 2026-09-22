@@ -671,7 +671,7 @@ Esta elección tiene una lectura ontológica deliberadamente austera:
 
 > un dominio no es una entidad adicional dentro de la realidad; es un **fragmento semántico de alcance ontológico actual**.
 
-Por tanto, un máximo $S_i$ del poset de dominios no introduce una sustancia, conjunto universal o colector físico adicional: representa el alcance semánticamente exhaustivo del contenido actual del régimen dentro del tipo formal elegido. Llamarlo $R_i$ exige además REV-24/$\mathrm{OTB}_i$.
+Por tanto, un máximo $S_i$ del poset de dominios no introduce una sustancia, conjunto universal o colector físico adicional: representa exhaustivamente el contenido semántico del régimen dentro del tipo formal elegido. REV-24 no autoriza a renombrarlo como $R_i$; debe justificar una relación $\operatorname{Presents}_i(S_i,R_i)$ con un alcance ontológico distinto.
 
 ### Consecuencias demostradas
 
@@ -1009,7 +1009,7 @@ $$
 \preceq:=\preceq_i.
 $$
 
-Toda cuantificación de K1–K3 y todo máximo obtenido en esta sección son **internos a $i$**. Formalmente el resultado es un máximo semántico $S_i$; identificarlo con un $R_i$ ontológico exige REV-24. En ningún caso se infiere la existencia de $R_{\mathrm{abs}}$.
+Toda cuantificación de K1–K3 y todo máximo obtenido en esta sección son **internos a $i$**. Formalmente el resultado es un máximo semántico $S_i$; REV-24 debe justificar si $S_i$ presenta algún alcance ontológico $R_i$. En ningún caso se infiere la existencia de $R_{\mathrm{abs}}$.
 
 Las secciones anteriores producen dos niveles distintos que no deben confundirse:
 
@@ -1084,7 +1084,7 @@ K3_{\mathrm{abs}}.
 }
 $$
 
-El teorema obtiene un máximo semántico interno $S_i$. Solo tras REV-24 podrá identificarse con un $R_i$ ontológico. La cuestión de si distintos $R_i$ tienen una extensión común pertenece a la metaontología One-R/Many-R.
+El teorema obtiene un máximo semántico interno $S_i$. Solo tras REV-24 podrá usarse como presentación justificada de algún alcance ontológico $R_i$; no se identifica con él. La cuestión de si distintos $R_i$ tienen una extensión común pertenece a la metaontología One-R/Many-R.
 
 ### 4.2. Teorema de máximo cerrado cofinal
 
@@ -1134,7 +1134,7 @@ $$
 X\preceq Y\preceq S.
 $$
 
-Como $X$ era arbitrario, $S$ es un **máximo de todo $\mathfrak D_i^{\mathrm{proc}}$**. Este $S$ es precisamente el máximo semántico $S_i$ del régimen fijado. Su promoción a un $R_i$ ontológico requiere REV-24/$\mathrm{OTB}_i$. $\square$
+Como $X$ era arbitrario, $S$ es un **máximo de todo $\mathfrak D_i^{\mathrm{proc}}$**. Este $S$ es precisamente el máximo semántico $S_i$ del régimen fijado. Obtener un $R_i$ ontológico presentado por $S_i$ requiere REV-24/$\mathrm{OTB}_i$. $\square$
 
 ### 4.3. Cobertura representacional y límite del puente
 
