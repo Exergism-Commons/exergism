@@ -2252,50 +2252,108 @@ $$
 
 Esta fórmula no postula un conjunto de todas las cosas: $rr_{\mathrm{abs}}$ es una variable plural. Pero la legitimidad de aplicar comprensión a un dominio absolutamente general sigue siendo una cuestión filosófica real; critical plural logic y las objeciones por extensibilidad indefinida impiden tratarla como gratuita.
 
-### 6.3. Teorema condicional de existencia absoluta
+### 6.3. Lema de reducción: APC$_{Real}$ y `ExistsAbsR`
 
-Si la doctrina adopta la semántica plural de alcance ya usada en REV-24d, entonces:
+Con la semántica plural de alcance adoptada provisionalmente, definimos:
+
+$$
+\operatorname{AbsTotal}(rr)
+:\Longleftrightarrow
+\forall x[
+x\prec rr
+\Longleftrightarrow
+\operatorname{Real}(x)
+].
+$$
+
+y:
+
+$$
+\operatorname{ExistsAbsR}
+:\Longleftrightarrow
+\exists rr\;\operatorname{AbsTotal}(rr).
+$$
+
+Entonces, bajo realidad no vacía:
 
 $$
 \boxed{
 \mathrm{AG}
 +
-\mathrm{APC}_{Real}
-+
 \exists x\,\operatorname{Real}(x)
 \Rightarrow
-\operatorname{ExistsAbsR}.
+[
+\mathrm{APC}_{Real}
+\Longleftrightarrow
+\operatorname{ExistsAbsR}
+].
 }
 $$
 
-**Demostración.** APC$_{Real}$ produce unas cosas $rr_{\mathrm{abs}}$ tales que, para todo $x$, $x$ es una de ellas si y solo si $x$ es real. Bajo la lectura de $R$ como **alcance ontológico** y no como megaobjeto/set, esa pluralidad realiza exactamente el scope de `Real`. Por tanto existe Realidad Total en el sentido plural-scope adoptado. $\square$
+**Demostración.** De izquierda a derecha, APC$_{Real}$ produce unas cosas que son exactamente los $x$ reales; por definición satisfacen `AbsTotal`. De derecha a izquierda, si existe tal pluralidad, el consecuente de APC$_{Real}$ está satisfecho; bajo no-vacuidad su antecedente también lo está. AG no hace trabajo deductivo interno: fija que las ocurrencias de `Real` y de los cuantificadores tengan la lectura absolutamente general pretendida. $\square$
 
-Este resultado es deliberadamente austero. No usa:
+Por tanto el resultado anterior:
 
-- emergencia;
-- $F$;
-- Zorn;
-- PON;
-- $S_i$;
-- REV-24;
-- causalidad;
-- ni una hipótesis física sobre nuestro universo.
+$$
+\mathrm{AG}
++
+\mathrm{APC}_{Real}
++
+\operatorname{NonEmptyReality}
+\Rightarrow
+\operatorname{ExistsAbsR}
+$$
 
-Por tanto, si el objetivo es **solo la existencia de $R$ como alcance de todo lo real**, la carga decisiva no está en la maquinaria emergentista: está en AG + APC$_{Real}$ + la semántica plural de scope.
+es un **lema de reducción/representación**, no una demostración ontológica independiente de $R$. Con la definición mínima $R:=Scope(Real)$, APC$_{Real}$ contiene exactamente el principio de formación de scope que se necesita para realizar $R$.
 
-### 6.4. Qué no demuestra este teorema
+### 6.4. Consecuencia de no-trivialidad — REV-26e
 
-No demuestra que $R$ sea:
+Esto obliga a decidir qué significa realmente «demostrar $R$». Hay dos lecturas posibles.
 
-- único como objeto —no se ha postulado objeto alguno—;
+#### Lectura A — scope minimalista
+
+$R$ no es una entidad adicional ni una estructura integradora: es solamente el alcance exhaustivo de `Real`. En esta lectura:
+
+- AG fija el alcance absoluto de `Real`;
+- APC$_{Real}$ realiza ese alcance pluralmente;
+- `ExistsAbsR` es analítico/condicional respecto de esas decisiones lógicas.
+
+La maquinaria de emergencia, $S_i$, Zorn, FID y REV-24 **no son necesarias para la existencia desnuda de $R$**. Siguen siendo relevantes para estructura, presentación, clausura y epistemología de regímenes.
+
+#### Lectura B — $R$ absoluto estructurado
+
+Si se exige una tesis adicional $Q(rr)$ —por ejemplo unidad integrativa, conectividad, clausura dinámica, autosuficiencia u otra estructura ontológica— entonces el target debe nombrarse aparte:
+
+$$
+\operatorname{ExistsStructuredAbsR}_Q
+:=
+\exists rr[
+\operatorname{AbsTotal}(rr)
+\land
+Q(rr)
+].
+$$
+
+AG + APC$_{Real}$ ya no bastan para esta tesis: solo proporcionan `AbsTotal`. La propiedad $Q$ requeriría una justificación independiente y podría devolver relevancia a la maquinaria estructural.
+
+Pero **no se permite introducir $Q$ solo para hacer no trivial la prueba**. La doctrina actual insiste en que $R$ es alcance y no sustancia, megaobjeto, suma o capa física. Cualquier fortalecimiento debe justificarse doctrinalmente y declararse como target nuevo, no atribuirse retroactivamente al $R$ original.
+
+**REV-26e = OPEN doctrinal:** decidir si el target final es el scope minimalista original —en cuyo caso la existencia se reduce a AG/APC$_{Real}$— o si Exergism necesita además alguna propiedad estructural $Q$ explícita.
+
+### 6.4.1. Qué no demuestra el lema de reducción
+
+Ni AG ni APC$_{Real}$ demuestran que el scope sea:
+
 - estructuralmente conectado;
-- un régimen de $\operatorname{CoReal}$;
+- un único régimen de $\operatorname{CoReal}$;
 - emergente o E-closed;
 - cognoscible desde dentro;
 - representable por un único $S_i$;
-- ni que One-$R$ sea la metaontología correcta en el sentido fuerte.
+- causalmente integrado;
+- fundamental o grounding de sus contenidos.
 
-Tampoco demuestra AG o APC$_{Real}$: **condiciona `ExistsAbsR` a ellas**.
+Esas propiedades son tesis adicionales. La mera existencia de scope plural no debe inflarse retóricamente.
+
 
 ### 6.5. Ruta restrictionist/expansionist
 
