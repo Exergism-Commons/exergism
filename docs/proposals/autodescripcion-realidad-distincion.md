@@ -1277,11 +1277,11 @@ Por tanto REV-24 **no demuestra la existencia de $R_i$**. Si REV-07 ya ha establ
 
 $$
 \operatorname{ExistsR}
-$
+$$
 
 ya es una conclusión ontológica; REV-24 permite fortalecerla a:
 
-$
+$$
 \operatorname{WitnessedR}.
 $$
 
