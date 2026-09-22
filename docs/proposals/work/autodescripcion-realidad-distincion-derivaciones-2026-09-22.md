@@ -2666,17 +2666,17 @@ Entonces cualquier par donde intervenga $0_i$ tiene como cota al otro dominio. S
 
 Directedness de la componente candidata ya no necesita ser una premisa global primitiva. Se reduce a dos compromisos locales:
 
-$
+$$
 \boxed{
 \mathrm{EEA}+\mathrm{OAM}
 \Rightarrow
 K3_{\Lambda,C}.
 }
-$
+$$
 
 y solo con reconstrucción genealógica completa:
 
-$
+$$
 \boxed{
 \mathrm{RS}_{\Lambda}^{\mathrm{gen}}
 +
@@ -2686,7 +2686,7 @@ K3_{\Lambda,C}
 \Rightarrow
 K3_i.
 }
-$
+$$
 
 Ni EEA ni OAM usan `SameRegime` como sinónimo de amalgamabilidad:
 
