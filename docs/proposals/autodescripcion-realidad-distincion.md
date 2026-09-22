@@ -166,14 +166,202 @@ El cuello de botella ya no está en F1–F3. Está en conectar el formalismo loc
 5. **REV-07:** justificar K3/directedness sin excluir Strong Many-R por definición.
 
 ---
+
+## 3.2. Localidad ontológica de la emergencia
+
+La propuesta adopta provisionalmente una separación fuerte entre **emergencia interna a una realidad ontológica concreta** y **metaontología de la pluralidad de realidades**.
+
+Fijado un régimen ontológico $i$, la maquinaria emergentista se indexa:
+
+$$
+\mathcal E_i,
+\qquad
+\mathfrak D_i^{\mathrm{proc}},
+\qquad
+\preceq_i,
+\qquad
+\mathfrak K_i,
+$$
+
+y, cuando exista una representación system-relative apropiada:
+
+$$
+F_i.
+$$
+
+El teorema emergentista pregunta únicamente por la estructura interna de ese régimen:
+
+$$
+K1_i+K2_i+K3_i
+\Rightarrow
+\exists R_i\in\mathfrak K_i:
+\forall X\in\mathfrak D_i^{\mathrm{proc}},
+\quad
+X\preceq_i R_i.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+R_i
+=
+\text{máximo ontológico interno del régimen }i
+}
+$$
+
+no:
+
+$$
+\boxed{
+R_i
+=
+\text{máximo de todas las realidades ontológicas}.
+}
+$$
+
+### Emergencia local no implica monismo global
+
+Si existen dos regímenes $i\neq j$, puede ocurrir:
+
+$$
+R_i\parallel R_j
+$$
+
+sin que falle ninguna de las teorías internas:
+
+$$
+\mathcal E_i
+\qquad\text{y}\qquad
+\mathcal E_j.
+$$
+
+Así:
+
+$$
+\boxed{
+\text{emergencia local}
+\not\Rightarrow
+\text{One-R global}.
+}
+$$
+
+La posibilidad de Strong Many-R queda, por tanto, **desacoplada** del teorema de emergencia.
+
+### K3 queda estrictamente indexada
+
+La condición de amalgamación se interpreta desde ahora como:
+
+$$
+K3_i:
+\forall X,Y\in\mathfrak D_i^{\mathrm{proc}}\;
+\exists Z\in\mathfrak D_i^{\mathrm{proc}}:
+X\preceq_i Z
+\land
+Y\preceq_i Z.
+$$
+
+K3_i excluye incomparabilidad fuerte **dentro de $i$**, pero no entre $i$ y $j$.
+
+No se permite inferir:
+
+$$
+K3_i\;\forall i
+\Rightarrow
+K3_{\mathrm{abs}}.
+$$
+
+Ni tampoco:
+
+$$
+\forall i\,\exists R_i
+\Rightarrow
+\exists R_{\mathrm{abs}}.
+$$
+
+El problema One-R/Many-R queda como problema metaontológico independiente.
+
+### Meta-notación sin colector ontológico
+
+Puede usarse informalmente:
+
+$$
+\mathscr R=\{R_i\}_{i\in I}
+$$
+
+solo como **metanotación** para hablar de varios regímenes. Esta escritura no afirma que exista un objeto ontológico $\mathscr R$, un conjunto universal de realidades ni una realidad superior que contenga a todas.
+
+En particular:
+
+$$
+\boxed{
+\text{hablar pluralmente de }R_i
+\not\Rightarrow
+\exists R_{\mathrm{abs}}.
+}
+$$
+
+### Exhaustividad interna y verdad absoluta
+
+Se abandona la identificación histórica:
+
+$$
+\operatorname{VA}(o)=R_i.
+$$
+
+Se distinguen:
+
+$$
+\operatorname{Truth}_i
+$$
+
+como verdad/exhaustividad relativa a todo lo que constituye el régimen $i$, de una hipotética:
+
+$$
+\operatorname{Truth}_{\mathrm{abs}},
+$$
+
+cuya existencia y coherencia permanecen abiertas.
+
+Por tanto:
+
+$$
+\boxed{
+\text{exhaustividad interna}
+\neq
+\text{absolutidad global}.
+}
+$$
+
+Esto neutraliza la antigua solución verbal de llamar «Verdad Absoluta indexada» a un máximo relativo.
+
+### Consecuencia metodológica
+
+REV-18, REV-19, REV-20 y REV-09 deben resolverse **por régimen $i$**. Ninguna de sus soluciones necesita primero resolver One-R/Many-R.
+
+REV-07 queda reducido a una obligación más precisa: justificar independientemente qué hace que dos dominios pertenezcan al mismo régimen $i$ y por qué ese régimen satisface K3_i, sin definir «mismo régimen» como «amalgamable».
+
+---
 ## 4. Núcleo matemático normalizado — qué necesita realmente Zorn
+
+**Convención normativa:** durante toda esta sección se fija un régimen ontológico $i$. Para aligerar notación se escribe:
+
+$
+\mathfrak D:=\mathfrak D_i^{\mathrm{proc}},
+\qquad
+\mathfrak K:=\mathfrak K_i,
+\qquad
+\preceq:=\preceq_i.
+$
+
+Toda cuantificación de K1–K3 y todo máximo obtenido en esta sección son **internos a $i$**. El resultado se denota $R_i$; no se infiere la existencia de $R_{\mathrm{abs}}$.
 
 Las secciones anteriores producen dos niveles distintos que no deben confundirse:
 
-1. **nivel system-relative:** para un sistema fijo $M$, la emergencia independiente $\mathcal E_M$ induce un operador concreto $F_M$ sobre $\mathcal P(\Sigma_M)$, y F1–F3 se derivan;
-2. **nivel ontológico:** el teorema pretende hablar de dominios $(\mathfrak D,\preceq_{\mathrm{ont}})$, tipo para el que todavía falta REV-18.
+1. **nivel system-relative:** para un sistema fijo que representa el régimen $i$, la emergencia independiente $\mathcal E_i$ induce un operador concreto $F_i$ sobre su espacio de configuraciones, y F1–F3 se derivan;
+2. **nivel ontológico local:** el teorema habla de dominios $(\mathfrak D_i^{\mathrm{proc}},\preceq_i)$, para los que REV-18 todavía exige justificar el puente semántico.
 
-La forma operator-free del argumento permite ver exactamente qué parte de la estructura de $F$ es necesaria.
+La forma operator-free del argumento permite ver exactamente qué parte de la estructura de $F_i$ es necesaria.
 
 ### 4.1. Forma operator-free
 
@@ -219,33 +407,29 @@ X\preceq Z
 Y\preceq Z.
 $$
 
-**Advertencia metaontológica sobre K3.** K3 no es una condición neutral respecto de One-R/Many-R. Dentro del dominio sobre el que se cuantifica, exige que cualquier par tenga una extensión común y por tanto excluye Strong Many-R en ese mismo régimen:
+**Alcance de K3.** En esta sección K3 significa siempre $K3_i$. Es una condición fuerte sobre la unidad interna del régimen $i$, pero **no** una premisa sobre todas las realidades.
+
+Dentro de $i$:
 
 $$
-X\parallel Y
+X\parallel_i Y
 \Rightarrow
-\neg K3.
+\neg K3_i.
 $$
 
-Si $\mathfrak D$ se interpreta como el dominio **global** de toda realidad candidata, asumir K3 ya introduce precisamente la joint-embeddability cuya consecuencia máxima se quiere obtener. En ese caso, el teorema no puede presentarse como una prueba no circular de One-R; es un resultado **condicional**:
+Por eso REV-07 no desaparece: todavía hay que justificar independientemente qué determina la pertenencia a un mismo $i$ y por qué sus dominios son jointly embeddable.
+
+Lo que queda prohibido es usar K3_i para concluir One-R global:
 
 $$
 \boxed{
-\text{K1 + K2 + K3 global}
-\Rightarrow
-\text{máximo global},
+K3_i
+\not\Rightarrow
+K3_{\mathrm{abs}}.
 }
 $$
 
-donde K3 contiene una parte sustantiva de la tesis monista.
-
-Para evitar petición de principio hay dos lecturas legítimas:
-
-1. **lectura local/indexada:** K3 vale solo dentro de un régimen cuya unidad se justifica independientemente; el teorema obtiene entonces un máximo de ese régimen, no One-R global;
-2. **lectura global:** K3 requiere una justificación metaontológica independiente que no presuponga ya que cualesquiera dominios pertenecen a una única realidad amalgamable.
-
-Esta obligación es REV-07.
-
+El teorema obtiene un máximo interno $R_i$. La cuestión de si distintos $R_i$ tienen una extensión común pertenece exclusivamente a la metaontología One-R/Many-R.
 
 ### 4.2. Teorema de máximo cerrado cofinal
 
@@ -295,7 +479,7 @@ $$
 X\preceq Y\preceq R.
 $$
 
-Como $X$ era arbitrario, $R$ es un **máximo de todo $\mathfrak D$**, no solo un maximal de $\mathfrak K$. $\square$
+Como $X$ era arbitrario, $R$ es un **máximo de todo $\mathfrak D_i^{\mathrm{proc}}$**. Normativamente se identifica este resultado como $R_i$; no como un máximo de otros regímenes. $\square$
 
 ### 4.3. Cobertura de lo real
 
