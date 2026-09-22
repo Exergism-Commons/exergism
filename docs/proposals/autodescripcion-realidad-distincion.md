@@ -1428,13 +1428,57 @@ Sus tipos de enlace deben seguir cumpliendo:
 5. independencia respecto de $R_i$/SameRegime;
 6. invariancia bajo recodificación fiel.
 
+La indexación fuerte permite derivar la **soundness** de la conectividad si cada arista está testimoniada por un hecho ontológico real.
+
+Sea:
+
+$$
+\mathrm{EdgeTyped}:
+\quad
+q\bowtie r
+\Rightarrow
+\exists i\exists f[
+\operatorname{RealFact}_i(f)
+\land
+\operatorname{Relatum}(q,f)
+\land
+\operatorname{Relatum}(r,f)
+].
+$$
+
+Por cierre de hechos reales:
+
+$$
+\operatorname{RealFact}_i(f)
+\Rightarrow
+\operatorname{Real}_i(q)
+\land
+\operatorname{Real}_i(r).
+$$
+
+Y por incompatibilidad de índice una cadena finita no puede cambiar de índice entre aristas. Por inducción sobre la longitud del camino:
+
+$$
+\boxed{
+\mathrm{EdgeTyped}
++
+\mathrm{IndexIncompatibility}
+\Rightarrow
+\mathrm{RS}_{\Lambda}^{\mathrm{gen}}.
+}
+$$
+
+Por tanto, para la Ruta A, **sobreinclusión entre índices deja de ser el problema principal** siempre que la definición de $\Lambda_*$ mantenga EdgeTyped.
+
+La deuda fuerte es completeness: compartir índice/origen no implica que exista un camino finito de enlaces locales entre cualesquiera dos contenidos reales.
+
 La clausura finita:
 
 $$
 [q]_{\sim}
 $$
 
-es adecuada solo si reconstruye la genealogía:
+es adecuada solo si además reconstruye exhaustivamente la genealogía:
 
 $$
 \mathrm{RS}_{\Lambda}^{\mathrm{gen}}:
