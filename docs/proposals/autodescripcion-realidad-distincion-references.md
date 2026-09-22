@@ -136,6 +136,14 @@ En la propuesta revisada estas referencias sirven para distinguir dos cosas: la 
 
 **Límite explícito:** Everett/branching no demuestra fractalidad ni obliga a Many-Worlds dentro de esta propuesta. Solo justifica que una formalización no debe asumir linealidad sin argumento.
 
+### Event structures y dominios procesuales
+
+- **Glynn Winskel (1987), “Event Structures”.** Introduce estructuras de eventos como modelos de procesos mediante ocurrencias, dependencia causal y consistencia/enabling. PDF: https://www.cl.cam.ac.uk/~gw104/Winskel1987_Chapter_EventStructures.pdf
+- **Glynn Winskel (1989), “An Introduction to Event Structures”, en _Linear Time, Branching Time and Partial Order in Logics and Models for Concurrency_.** DOI: https://doi.org/10.1007/BFb0013026
+- **Process Philosophy, Stanford Encyclopedia of Philosophy.** Survey sobre ontologías en las que dinámica, devenir y ocurrencia son categorías centrales: https://plato.stanford.edu/entries/process-philosophy/
+
+REV-19 toma de estas referencias solo una idea formal mínima: un dominio emergentista puede modelarse como fragmento de proceso con tokens de estados/eventos y dependencia no necesariamente lineal. No se adopta una metafísica procesual completa, Whitehead fuerte ni una ontología de todos los futuros.
+
 ## 9. Fractalidad
 
 - **Benoît Mandelbrot (1982), _The Fractal Geometry of Nature_.** Referencia canónica para fractales geométricos/matemáticos.
