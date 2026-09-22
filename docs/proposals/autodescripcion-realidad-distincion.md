@@ -608,12 +608,14 @@ y por tanto:
 
 $$
 \boxed{
-\operatorname{ExistsRegR}
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 +
 \operatorname{SemTotal}_i(S_i)
 +
 \mathrm{OTB}_i
 \Rightarrow
+\operatorname{Presents}_i(S_i,R_i)
+\land
 \operatorname{WitnessedRegR}.
 }
 $$
