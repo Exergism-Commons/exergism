@@ -1764,97 +1764,161 @@ El objetivo fuerte queda concentrado en demostrar una genealogía ontológica co
 
 ## 7. One-$R$, Many-$R$ y niveles de exhaustividad
 
-La maquinaria de emergencia queda desacoplada de este problema.
+La distinción relevante ya no es «un scope extensional o varios». Es **una genealogía ontológica última o varias genealogías irreducibles**.
 
-Para cada régimen ontológico $i$ cuya unidad se justifique independientemente, el programa puede intentar obtener primero:
+### 7.1. Relación entre $R_i$ y $S_i$
+
+REV-07 intenta justificar primero:
+
+$$
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
+$$
+
+Después el programa semántico puede construir:
 
 $$
 S_i
 $$
 
-como máximo semántico interno de:
+y REV-24 intenta establecer:
 
 $$
-(\mathfrak D_i^{\mathrm{proc}},\preceq_i).
-$$
-
-Solo si REV-24 proporciona $\mathrm{OTB}_i$ puede demostrarse la existencia de un alcance ontológico $R_i$ relacionado con el máximo semántico mediante:
-
-$$
-\operatorname{Presents}_i(S_i,R_i)
-\land
-\operatorname{OntTotal}_i(R_i).
-$$
-
-$S_i$ no «se convierte» en $R_i$: permanece como su presentación semántica.
-
-Esto deja dos niveles de pluralidad distintos:
-
-- pluralidad formal de máximos semánticos $S_i$;
-- pluralidad ontológica de $R_i$, condicionada al cierre de REV-24 para los regímenes correspondientes.
-
-### 7.1. Regímenes múltiples no equivalen a Many-$R$ fuerte
-
-Puede escribirse metalingüísticamente:
-
-$$
-\mathscr S=\{S_i\}_{i\in I}.
-$$
-
-Ni esa familia ni la existencia de varios $R_i$ produce por sí sola $R_{\mathrm{abs}}$:
-
-$$
-\forall i\,\exists R_i
-\not\Rightarrow
-\exists R_{\mathrm{abs}}.
-$$
-
-Pero la recíproca conceptual tampoco vale: **un $R_{\mathrm{abs}}$ plural no exige que todos sus contenidos formen un único régimen conectado**.
-
-Si AG + APC$_{Real}$ producen unas cosas $rr_{abs}$ que son exactamente todo lo real, pueden existir dentro de ese scope varias componentes/regímenes mutuamente no conectados:
-
-$$
-R_i\parallel R_j
-$$
-
-sin que por ello deje de existir el alcance plural absoluto:
-
-$$
-x\prec rr_{abs}
-\quad\text{para todo }x\text{ real de cualquiera de los regímenes}.
+\operatorname{Presents}_i(S_i,R_i).
 $$
 
 Por tanto:
 
 $$
+R_i
+\not\equiv
+S_i,
+$$
+
+y la existencia de $R_i$ no depende de que $S_i$ sea construido antes.
+
+La arquitectura vigente es:
+
+$$
 \boxed{
-\text{pluralidad de regímenes}
-\not\Rightarrow
-\text{Many-}R\text{ fuerte}.
+\mathcal O_i
+\xrightarrow{\operatorname{Cl}^{\mathrm{ont}}}
+R_i
+\xleftarrow{\operatorname{Presents}_i}
+S_i.
 }
 $$
 
-### 7.2. One-$R$ absoluto, Indexed-$R$ y Many-$R$ fuerte
+La flecha izquierda es ontológica/generativa; la derecha es semántica/representacional.
 
-Con REV-26 la taxonomía se precisa:
+### 7.2. One-$R$ fuerte
 
-- **One-$R$ absoluto:** existe `ExistsAbsR`; el scope de todo lo real es único extensionalmente en la semántica plural adoptada, aunque pueda contener varias componentes ontológicas desconectadas.
-- **Indexed-$R$:** existen $R_i$ exhaustivos de índices/regímenes; no se afirma ni se niega todavía `ExistsAbsR`.
-- **Many-$R$ fuerte:** existen totalidades indexadas pero AG/APC$_{Real}$/GB fallan de tal modo que no hay un scope absoluto legítimo que abarque todo lo real.
-- **Cluster-$R$:** una estructura real común integra varios regímenes antes separados y puede generar un régimen superior; esto es una posible ruta de GB, no la definición de $R_{abs}$.
-
-Así Many-$R$ fuerte ya no significa simplemente:
+One-$R$ fuerte exige:
 
 $$
-R_i\parallel R_j.
+\exists\mathcal O_{\mathrm{abs}}
 $$
 
-Esa incomparabilidad puede coexistir con un scope absoluto plural. Many-$R$ fuerte es ahora una tesis sobre **fracaso de globalización/generalidad**, no solo sobre desconexión interna.
+tal que:
 
-Tampoco se permite inferir pluralidad ontológica a partir de mera pluralidad de representaciones, observadores o reconstrucciones. La literatura holográfica sobre quantum error correction proporciona un precedente técnico para representaciones redundantes/no triviales del mismo contenido físico. Se usa aquí solo como cautela metodológica: la arquitectura global debe resolverse por su semántica ontológica, no contando descripciones. Véase [§13 del mapa de literatura](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
+$$
+\forall x[
+\operatorname{Real}(x)
+\Longleftrightarrow
+\operatorname{Generated}^{*}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}},x)
+].
+$$
 
+No exige que todos los contenidos estén causalmente conectados entre sí ni que exista un único camino local entre cualesquiera dos. Dos regiones causalmente aisladas pueden pertenecer al mismo $R$ si derivan de la misma base ontológica.
 
-### 7.3. Retirada de «Verdad Absoluta indexada»
+Tampoco exige unicidad literal de la representación del origen. Puede haber dos bases:
+
+$$
+\mathcal O,\mathcal O'
+$$
+
+que sean ontológicamente equivalentes para este propósito si generan exactamente la misma clausura. La unicidad relevante es la de la **genealogía/clausura última**, no necesariamente la de una descripción particular de su base.
+
+### 7.3. Indexed-$R$ y Many-$R$ fuerte
+
+Indexed-$R$ significa que existen una o más genealogías locales:
+
+$$
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+$$
+
+sin haber demostrado todavía un origen común absoluto.
+
+Many-$R$ fuerte requiere más:
+
+$$
+\exists i\neq j
+$$
+
+con genealogías últimas $R_i,R_j$ y:
+
+$$
+\neg\exists\mathcal O_k
+$$
+
+tal que una clausura genealógica admisible de $\mathcal O_k$ integre a ambas preservando su estructura de derivación.
+
+Así:
+
+$$
+\boxed{
+R_i\parallel_{\mathrm{causal}}R_j
+\not\Rightarrow
+\text{Many-}R.
+}
+$$
+
+y también:
+
+$$
+\boxed{
+\text{existencia de }\mathcal R_{\mathrm{ext}}
+\not\Rightarrow
+\text{One-}R.
+}
+$$
+
+El scope extensional de todo lo real puede existir incluso si las cosas reales pertenecen a genealogías ontológicas últimas distintas.
+
+### 7.4. Cluster-$R$
+
+Cluster-$R$ es una situación provisional: varias genealogías consideradas inicialmente independientes resultan tener una base ontológica superior común.
+
+Si:
+
+$$
+\operatorname{Cl}^{\mathrm{ont}}_i(\mathcal O_i)
+$$
+
+y:
+
+$$
+\operatorname{Cl}^{\mathrm{ont}}_j(\mathcal O_j)
+$$
+
+son ambas derivables de:
+
+$$
+\mathcal O_k,
+$$
+
+entonces el candidato correcto a realidad más amplia es:
+
+$$
+R_k
+=
+\operatorname{Scope}
+(
+\operatorname{Cl}^{\mathrm{ont}}_k(\mathcal O_k)
+).
+$$
+
+### 7.5. Retirada de «Verdad Absoluta indexada»
 
 La fórmula histórica:
 
@@ -1862,42 +1926,47 @@ $$
 \operatorname{VA}(o)=R_i
 $$
 
-queda **SUPERSEDED**, no solo suspendida.
+permanece **SUPERSEDED**.
 
-Un máximo semánticamente exhaustivo dentro de $i$ puede denominarse, si resulta útil:
+Un máximo semántico interno puede denominarse:
+
+$$
+\operatorname{Truth}_i,
+$$
+
+pero:
 
 $$
 \operatorname{Truth}_i
+\neq
+R_i
 $$
 
-o **verdad exhaustiva interna del formalismo de régimen $i$**. Esa nomenclatura no añade $\operatorname{OntTotal}_i$.
-
-No se denomina «Verdad Absoluta» porque:
+y:
 
 $$
-\boxed{
 \operatorname{Truth}_i
 \neq
 \operatorname{Truth}_{\mathrm{abs}}
-\text{ por mera definición}.
-}
 $$
 
-La existencia, coherencia y semántica de $\operatorname{Truth}_{\mathrm{abs}}$ quedan abiertas junto con la cuestión One-$R$/Many-$R$.
+por mera definición.
 
-**Concesión doctrinal explícita.** La arquitectura formal vigente ya no contiene una inferencia desde emergencia/clausura local hacia una realidad total. El máximo semántico $S_i$ permanece separado de la tesis ontológica $R_i$ por REV-24.
+La cuestión absoluta depende ahora de la genealogía de REV-26, no del número de máximos semánticos.
 
-### 7.4. Consecuencia para los antiguos índices
+### 7.6. Consecuencia para los índices
 
-Los $i$ del teorema ya no se definen como «subconjuntos dirigidos maximales» para fabricar K3. Deben corresponder a regímenes cuya identidad ontológica tenga un criterio independiente.
+Los índices $i$ no se fabrican a partir de K3 ni de máximos semánticos. Deben corresponder a genealogías ontológicas justificadas por REV-07.
 
-La función histórica $\operatorname{VA}(o)=R_i$ permanece retirada. La pregunta que sigue abierta es más fundamental:
+La pregunta primaria pasa a ser:
 
-> ¿qué hace que dos dominios pertenezcan al mismo régimen ontológico $i$, y qué justificaría que dos candidatos semánticos exhaustivos correspondan a totalidades ontológicas distintas en vez de a partes de un régimen mayor?
+> ¿qué base ontológica y qué reglas de generación hacen que ciertos contenidos pertenezcan a la misma clausura genealógica?
 
-Esa obligación queda repartida entre REV-07 —identidad de régimen— y REV-24 —puente semántica→ontología—.
+Y solo después:
 
-**Estado:** la teoría emergentista local es neutral respecto de One-$R$/Many-$R$.
+> ¿qué estructura semántica $S_i$ presenta adecuadamente esa realidad?
+
+**Estado:** la teoría emergentista/semántica local sigue siendo neutral respecto de One-$R$/Many-$R$ hasta que REV-07 y REV-26 resuelvan la estructura genealógica.
 
 ## 8. K2, localidad, compacidad y colímites
 
