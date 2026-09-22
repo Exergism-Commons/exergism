@@ -641,11 +641,33 @@ El documento técnico contiene la construcción completa por rondas.
 
 ### Estado de REV-20
 
-REV-20 permanece **PARTIAL** y queda reducido a una única cuestión estructural:
+REV-20 permanece **PARTIAL** y queda reducido a una única cuestión estructural.
+
+Con StructAdm, COV y dominios set-sized se demuestra además la conversa:
+
+$$
+K1_i
+\Rightarrow
+\mathrm{PSB}_i,
+$$
+
+porque una extensión E-closed de un fragmento que contiene $s$ debe contener todos los eventos emergentes actuales salientes de $s$, y su carrier es un conjunto.
+
+Por tanto:
+
+$$
+\boxed{
+K1_i
+\iff
+\mathrm{PSB}_i.
+}
+$$
+
+La pregunta restante es exactamente:
 
 > ¿puede un único estado actual ser source de proper-class many eventos emergentes actuales?
 
-Si PSB se justifica, K1 queda RESOLVED. Si PSB falla, aparece una forma muy fuerte de extensibilidad local capaz de bloquear el cierre dentro de dominios set-sized.
+El potencialismo ordinario de «siempre hay una extensión más» no basta para negar K1; dentro de esta arquitectura, debe aparecer una ramificación propia-clase local.
 
 PSB es independiente de REV-22: resuelve la smallness **local del cierre de cada dominio**, mientras REV-22 pregunta por la smallness/aplicabilidad global de Zorn sobre la colección de dominios.
 
