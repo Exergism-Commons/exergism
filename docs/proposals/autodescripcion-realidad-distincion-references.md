@@ -75,6 +75,13 @@ No identifica emergencia con irreducibilidad fuerte, downward causation, imprede
 
 En REV-03 se usa una noción extremadamente modesta inspirada en esta tradición: comparar configuraciones por las secuencias de etiquetas de transición que pueden ejecutar. No se asume que el mundo físico sea literalmente un proceso CCS ni que trace equivalence sea la ontología correcta; solo se utiliza como herramienta formal para distinguir una diferencia estructural inerte de una organización que habilita capacidades dinámicas.
 
+### Preservación conductual, simulación y trazas
+
+- **R. J. van Glabbeek (1990), “The Linear Time–Branching Time Spectrum”, CONCUR ’90.** Organiza nociones de equivalencia y preorder conductual sobre sistemas de transición; es relevante para no confundir preservación de trazas, simulación y equivalencia fuerte. DOI: https://doi.org/10.1007/BFb0039066
+- **Hennessy & Milner (1980), “On Observing Nondeterminism and Concurrency”.** Antecedente central de equivalencia observacional sobre sistemas de transición. DOI: https://doi.org/10.1007/3-540-10003-2_79
+
+REV-02 usa una noción ad hoc de **extensión conservativa** suficientemente fuerte para preservar los testigos de emergencia: preservación de caminos y preservación/reflexión de trazas del alfabeto antiguo. No se afirma que esa sea una noción estándar con ese nombre; se construye explícitamente y se compara con la literatura de simulación/equivalencia para evitar sobreafirmaciones.
+
 ### Wimsatt, referencia primaria
 
 - **William C. Wimsatt (1997), “Aggregativity: Reductive Heuristics for Finding Emergence”, _Philosophy of Science_ 64(S4), S372–S384.** La emergencia puede analizarse mediante fallos de agregatividad y dependencia del modo de organización de las partes; compatible con reducción. DOI: https://doi.org/10.1086/392615
