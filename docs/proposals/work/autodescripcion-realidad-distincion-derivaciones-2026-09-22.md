@@ -3232,3 +3232,180 @@ REV-19 puede marcarse **RESOLVED en su criterio de tipado y orden**:
 Esto no resuelve la ontología de $\operatorname{Adm}_i$; simplemente elimina la ambigüedad de tipo que era el finding REV-19.
 
 ---
+
+
+---
+
+## Aplicabilidad fundacional — esqueleto cofinal set-sized
+
+La restricción set-sized del Zorn ordinario no exige necesariamente que **todo** el régimen ontológico forme un conjunto.
+
+Sea:
+
+$$
+(\mathfrak D_i^{\mathrm{proc}},\preceq_i)
+$$
+
+una colección potencialmente class-sized.
+
+Supóngase que existe un subposet:
+
+$$
+\mathfrak C_i
+\subseteq
+\mathfrak D_i^{\mathrm{proc}}
+$$
+
+que satisface:
+
+**S1 — smallness**
+
+$$
+\mathfrak C_i
+\text{ es set-sized}.
+$$
+
+**S2 — cofinalidad respecto del régimen**
+
+$$
+\forall X\in\mathfrak D_i^{\mathrm{proc}}
+\;\exists Y\in\mathfrak C_i:
+X\preceq_i Y.
+$$
+
+Sea:
+
+$$
+\mathfrak K_i^{C}
+:=
+\mathfrak C_i
+\cap
+\mathfrak K_i.
+$$
+
+Supóngase además que dentro de $\mathfrak C_i$ valen:
+
+**S3 — cofinalidad cerrada**
+
+$$
+\forall X\in\mathfrak C_i
+\;\exists Y\in\mathfrak K_i^{C}:
+X\preceq_i Y.
+$$
+
+**S4 — inductividad por cadenas cerradas**
+
+Toda cadena en $\mathfrak K_i^{C}$ tiene una cota superior en $\mathfrak K_i^{C}$.
+
+**S5 — directedness interna de $\mathfrak C_i$**
+
+$$
+\forall X,Y\in\mathfrak C_i
+\;\exists Z\in\mathfrak C_i:
+X\preceq_i Z
+\land
+Y\preceq_i Z.
+$$
+
+### Teorema del esqueleto cofinal
+
+Bajo S1–S5 existe:
+
+$$
+R_i\in\mathfrak K_i^{C}
+$$
+
+tal que:
+
+$$
+\boxed{
+\forall X\in\mathfrak D_i^{\mathrm{proc}},
+\quad
+X\preceq_i R_i.
+}
+$$
+
+**Demostración.**
+
+Por S1, $\mathfrak C_i$ es un poset set-sized. Por S3, $\mathfrak K_i^{C}$ es no vacío; por S4, toda cadena de $\mathfrak K_i^{C}$ tiene cota en $\mathfrak K_i^{C}$. Zorn produce un elemento maximal:
+
+$$
+R_i\in\mathfrak K_i^{C}.
+$$
+
+Sea $Y\in\mathfrak C_i$. Por S5 existe $W\in\mathfrak C_i$ con:
+
+$$
+R_i\preceq_i W
+\land
+Y\preceq_i W.
+$$
+
+Por S3 existe $Z\in\mathfrak K_i^{C}$ con:
+
+$$
+W\preceq_i Z.
+$$
+
+Entonces:
+
+$$
+R_i\preceq_i Z.
+$$
+
+Por maximalidad de $R_i$ en $\mathfrak K_i^{C}$:
+
+$$
+Z=R_i.
+$$
+
+Por tanto:
+
+$$
+Y\preceq_i R_i.
+$$
+
+Así $R_i$ es máximo de $\mathfrak C_i$.
+
+Ahora sea:
+
+$$
+X\in\mathfrak D_i^{\mathrm{proc}}.
+$$
+
+Por S2 existe $Y\in\mathfrak C_i$ con:
+
+$$
+X\preceq_i Y.
+$$
+
+Y ya hemos probado:
+
+$$
+Y\preceq_i R_i.
+$$
+
+Luego:
+
+$$
+X\preceq_i R_i.
+$$
+
+$\square$
+
+### Consecuencia
+
+Para aplicar Zorn al régimen no es necesario asumir:
+
+$$
+\mathfrak D_i^{\mathrm{proc}}
+\text{ set-sized}.
+$$
+
+Basta demostrar la existencia de un **esqueleto cofinal set-sized** que preserve las obligaciones K relevantes.
+
+Esto no elimina la deuda fundacional: la traslada a justificar S1–S2 sin presuponer ya un máximo.
+
+La alternativa sería adoptar explícitamente una teoría de clases y un principio de maximalidad de clases suficientemente fuerte; esa ruta no se presupone aquí.
+
+---
