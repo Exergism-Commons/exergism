@@ -4271,11 +4271,11 @@ PSB no afirma que el régimen sea set-sized ni que exista un máximo. Solo exclu
 
 ### Interpretación
 
-Si PSB falla, No-R puede defenderse mediante una forma extremadamente fuerte de extensibilidad local:
+Si PSB falla, queda bloqueada esta **ruta local set-sized hacia K1/\operatorname{SemTotal}_i** mediante cierre de eventos:
 
 > desde un único estado set-sized parten proper-class many actualizaciones emergentes actualmente instanciadas.
 
-Esa posibilidad es lógicamente distinta del potencialismo ordinario de «siempre hay una extensión más»; es una ramificación propia-clase ya en un solo paso.
+Esa posibilidad es lógicamente distinta del potencialismo ordinario de «siempre hay una extensión más»; es una ramificación propia-clase ya en un solo paso. Pero no implica $\operatorname{NoR}$ absoluto ni refuta por sí sola $\operatorname{ExistsRegR}$ mediante otras rutas de clausura.
 
 ---
 
@@ -5166,11 +5166,12 @@ para $X=(T_X,\Phi_X)$ cuando:
 
 1. $T_X\subseteq T_q^{\mathcal C}$;
 2. $\Phi_X\subseteq\operatorname{Atoms}_{\mathcal L_{\mathcal C}}(T_X)$;
-3. todo hecho contiene sus relata en $T_X$;
-4. todo evento representado tiene source/target únicos y la dependencia representada es coherente;
-5. el contenido es positivo/monótono bajo inclusión.
+3. todo $\varphi\in\Phi_X$ satisface el mismo predicado $\operatorname{Actual}_{\mathcal C}(\varphi)$ usado para construir $\Phi_q^{\mathrm{all},\mathcal C}$;
+4. todo hecho contiene sus relata en $T_X$;
+5. todo evento representado tiene source/target únicos y la dependencia representada es coherente;
+6. el contenido es positivo/monótono bajo inclusión.
 
-Crucialmente, $\operatorname{CFragAdm}_{\mathcal C}$ **no exige** que todos los tokens sean actuales ni que pertenezcan ya al mismo régimen. Esas son obligaciones ontológicas de CS/CC/CRType, no premisas de la maximalidad semántica.
+Crucialmente, $\operatorname{CFragAdm}_{\mathcal C}$ **no exige** que todos los tokens sean ya ontológicamente actuales ni que pertenezcan a un régimen previamente identificado. Sí exige actualidad **semántica de los hechos representados** relativa al mismo predicado $\operatorname{Actual}_{\mathcal C}$ que usa el máximo; de otro modo no se seguiría $\Phi_X\subseteq\Phi_q^{\mathrm{all},\mathcal C}$. CS/CC/CRType siguen siendo obligaciones ontológicas posteriores sobre el carrier.
 
 Definimos:
 
