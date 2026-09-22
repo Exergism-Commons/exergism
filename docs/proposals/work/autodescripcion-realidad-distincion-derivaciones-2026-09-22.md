@@ -2895,3 +2895,340 @@ El criterio de cierre solicitado queda satisfecho:
 - se identifica una condición suficiente simple que impide la degeneración.
 
 ---
+
+---
+
+## REV-19 — tipo y orden procesual normalizados
+
+El problema de REV-19 era que la emergencia es diacrónica mientras el antiguo target era una instantánea. La solución no requiere una teoría temporal completa: basta fijar el tipo semántico de un **fragmento procesual actual** y distinguirlo de la cuestión adicional de si ese fragmento es ontológicamente admisible.
+
+### 1. Fragmentos procesuales semánticos
+
+Fijado un régimen $i$, un fragmento procesual semántico es una estructura:
+
+$$
+X=(T_X,\Phi_X),
+$$
+
+donde:
+
+- $T_X$ es un conjunto set-sized de **tokens ontológicos actuales** del régimen $i$;
+- $\Phi_X$ es un conjunto de **hechos relacionales actuales** cuyos relata pertenecen a $T_X$.
+
+El vocabulario procesual mínimo puede contener átomos como:
+
+$$
+\operatorname{State}(s),
+\quad
+\operatorname{Event}(e),
+\quad
+\operatorname{src}(e,s),
+\quad
+\operatorname{tgt}(e,t),
+\quad
+e\prec f,
+$$
+
+además de instancias admisibles de relaciones de $\Lambda_*$ cuando sean relevantes.
+
+$X$ es un **contenido semántico**, no una serialización, grafo RDF, tupla de IDs ni modelo sintáctico. Una representación concreta debe denotar este contenido; cambiar la codificación no cambia $X$.
+
+### 2. Well-formedness estructural
+
+Sea $\mathfrak P_i^{\mathrm{proc}}$ la colección de fragmentos que cumplen:
+
+**PW1 — homogeneidad de régimen.**
+
+$$
+q\in T_X
+\Rightarrow
+\operatorname{Reg}(q)=i.
+$$
+
+**PW2 — actualidad.** Todo token y todo hecho de $X$ está efectivamente instanciado.
+
+**PW3 — localidad de relata.** Si un hecho $\varphi\in\Phi_X$ menciona un token $q$, entonces:
+
+$$
+q\in T_X.
+$$
+
+**PW4 — integridad mínima de eventos.** Si:
+
+$$
+\operatorname{Event}(e)\in\Phi_X,
+$$
+
+entonces existen tokens únicos $s,t\in T_X$ tales que:
+
+$$
+\operatorname{src}(e,s)\in\Phi_X
+$$
+
+y:
+
+$$
+\operatorname{tgt}(e,t)\in\Phi_X.
+$$
+
+Así no se representa un evento actual sin sus extremos.
+
+**PW5 — coherencia procesual.** Los hechos de precedencia incluidos en $\Phi_X$ son compatibles con una relación estricta acíclica de precedencia/dependencia.
+
+**PW6 — positividad.** Un fragmento puede omitir contenido actual adicional, pero no contiene negaciones ontológicas que una extensión posterior tenga que retractar.
+
+PW6 es importante: $Y$ puede añadir nuevos hechos actuales entre tokens ya presentes en $X$ sin que eso signifique que $X$ fuese falso. El orden es de **crecimiento de contenido positivo**, no de teoría completa.
+
+### 3. Orden procesual
+
+Para:
+
+$$
+X,Y\in\mathfrak P_i^{\mathrm{proc}},
+$$
+
+definimos:
+
+$$
+\boxed{
+X\preceq_i^{\mathrm{proc}}Y
+\iff
+T_X\subseteq T_Y
+\land
+\Phi_X\subseteq\Phi_Y.
+}
+$$
+
+Este es un orden parcial:
+
+- reflexividad: inclusión reflexiva;
+- transitividad: inclusión transitiva;
+- antisimetría: si $T_X=T_Y$ y $\Phi_X=\Phi_Y$, los contenidos semánticos son el mismo fragmento.
+
+No es una equivalencia conductual ni una extensión conservativa de REV-02. $Y$ puede añadir eventos, relaciones y capacidades que cambien el comportamiento del contenido anterior.
+
+### 4. Representaciones concretas
+
+Si un artefacto/modelo $H$ representa un fragmento, escribimos:
+
+$$
+\llbracket H\rrbracket=X.
+$$
+
+Dos representaciones son ontológicamente equivalentes cuando:
+
+$$
+\llbracket H\rrbracket
+=
+\llbracket H'\rrbracket.
+$$
+
+El orden se aplica a los contenidos denotados, no a nombres de nodos ni a la sintaxis:
+
+$$
+H\preceq H'
+$$
+
+solo como abreviatura de:
+
+$$
+\llbracket H\rrbracket
+\preceq_i^{\mathrm{proc}}
+\llbracket H'\rrbracket.
+$$
+
+Esto hace explícita la invariancia representacional requerida por REV-07/REV-18.
+
+### 5. Incidencia deja de ser primitiva
+
+Sobre el tipo procesual normalizado:
+
+$$
+q\trianglelefteq_i X
+\iff
+q\in T_X.
+$$
+
+Para un hecho relacional actual $\rho$:
+
+$$
+\rho\trianglelefteq_i X
+\iff
+\rho\in\Phi_X.
+$$
+
+El dominio **no se identifica con un mero conjunto de tokens**: es la estructura $(T_X,\Phi_X)$. Pero la incidencia de un token ya tiene semántica precisa como pertenencia al carrier semántico del fragmento.
+
+Esto avanza REV-18 sin convertir `EClosed` en una definición circular.
+
+### 6. Dominios ontológicamente admisibles
+
+No todo fragmento formalmente well-formed tiene que ser un dominio ontológico admisible.
+
+Introducimos un predicado separado:
+
+$$
+\operatorname{Adm}_i(X),
+$$
+
+y definimos:
+
+$$
+\mathfrak D_i^{\mathrm{proc}}
+:=
+\{
+X\in\mathfrak P_i^{\mathrm{proc}}
+\mid
+\operatorname{Adm}_i(X)
+\}.
+$$
+
+El orden del teorema es la restricción de $\preceq_i^{\mathrm{proc}}$ a $\mathfrak D_i^{\mathrm{proc}}$.
+
+Esta separación evita resolver por decreto las cargas restantes:
+
+- REV-20 pregunta si todo dominio admisible tiene una extensión admisible E-closed;
+- REV-09 pregunta si uniones/límites formales de cadenas admisibles siguen siendo admisibles;
+- EEA pregunta si ampliar un dominio a lo largo de un enlace actual conserva admisibilidad;
+- OAM pregunta si la unión/amalgama de dominios solapados conserva admisibilidad.
+
+Todos ellos son ahora problemas sobre $\operatorname{Adm}_i$, no ambigüedades sobre qué significa el orden.
+
+### 7. Relectura de EEA y OAM
+
+Sea $\rho:\lambda(q,r)$ una instancia admisible de $\Lambda_*$.
+
+Definimos el **footprint mínimo** de $\rho$ como el contenido finito/local necesario para representar $r$, $\rho$ y cualquier endpoint estructural obligatorio.
+
+En la capa formal:
+
+$$
+X
+\preceq_i^{\mathrm{proc}}
+\operatorname{WF}(X\cup\operatorname{Foot}(\rho)),
+$$
+
+donde $\operatorname{WF}$ añade solo el contenido exigido por PW3–PW5.
+
+EEA se reduce entonces a:
+
+$$
+\operatorname{Adm}_i(X)
+\Rightarrow
+\operatorname{Adm}_i(
+\operatorname{WF}(X\cup\operatorname{Foot}(\rho))
+).
+$$
+
+Del mismo modo, si $X,Y$ solapan, su unión semántica formal es:
+
+$$
+X\sqcup Y
+:=
+(T_X\cup T_Y,\Phi_X\cup\Phi_Y)
+$$
+
+seguida de well-formedness si fuese necesario.
+
+OAM es exactamente la afirmación de que esa amalgama formal tiene alguna extensión admisible común.
+
+Así REV-07 queda conectado limpiamente con la noción de admisibilidad, no con la definición del orden.
+
+### 8. Relectura de EClosed
+
+Sea $e$ un evento emergente actual del régimen con:
+
+$$
+\operatorname{src}(e)=s
+$$
+
+y:
+
+$$
+\operatorname{tgt}(e)=t.
+$$
+
+Entonces:
+
+$$
+\operatorname{EClosed}_i(X)
+$$
+
+significa ahora:
+
+$$
+s\in T_X
+\Rightarrow
+e,t\in T_X
+$$
+
+junto con los hechos estructurales relevantes:
+
+$$
+\operatorname{Event}(e),
+\operatorname{src}(e,s),
+\operatorname{tgt}(e,t)
+\in
+\Phi_X.
+$$
+
+Esto es una propiedad semántica de un fragmento procesual; no depende de su serialización.
+
+### 9. Uniones de cadenas
+
+Para una cadena creciente:
+
+$$
+X_0\preceq_i^{\mathrm{proc}}X_1\preceq_i^{\mathrm{proc}}\cdots,
+$$
+
+la unión formal es:
+
+$$
+T_\infty
+=
+\bigcup_\alpha T_{X_\alpha},
+\qquad
+\Phi_\infty
+=
+\bigcup_\alpha\Phi_{X_\alpha}.
+$$
+
+El lema anterior de REV-09 demuestra que EClosed se preserva. Lo único que queda por probar es:
+
+$$
+\operatorname{Adm}_i(X_\alpha)\;\forall\alpha
+\Rightarrow
+\operatorname{Adm}_i(X_\infty).
+$$
+
+Así la deuda de K2 queda tipada exactamente.
+
+### 10. Secciones sincrónicas
+
+Una instantánea no es el tipo primario del teorema emergentista.
+
+Si en el futuro se dispone de una función/relación temporal suficientemente justificada, una sección sincrónica puede definirse como una operación derivada:
+
+$$
+\operatorname{Slice}_t(X)
+$$
+
+que selecciona contenido co-actual según esa teoría temporal.
+
+No se necesita definir $\operatorname{Slice}_t$ para el teorema procesual.
+
+### 11. Estado de REV-19
+
+REV-19 puede marcarse **RESOLVED en su criterio de tipado y orden**:
+
+- el objeto primario es un fragmento procesual semántico $(T_X,\Phi_X)$;
+- el orden es inclusión de contenido positivo actual;
+- representación y contenido se distinguen;
+- incidencia queda tipada;
+- admisibilidad queda explícitamente separada y permanece como deuda de REV-18/REV-20/REV-09/REV-07;
+- la recuperación de snapshots es una extensión opcional, no una premisa del teorema.
+
+Esto no resuelve la ontología de $\operatorname{Adm}_i$; simplemente elimina la ambigüedad de tipo que era el finding REV-19.
+
+---
