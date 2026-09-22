@@ -107,6 +107,201 @@ $$
 
 **Estado: OPEN — bloqueadores REV-01 a REV-04.**
 
+## 3.1. Candidata para REV-03 — emergencia organizacional mínima
+
+Para evitar circularidad, la emergencia se define **sin** usar R, totalidad, admisibilidad ontológica ni «posibilidad real».
+
+Sea un sistema/medio:
+
+$$
+M=(C,\Sigma,\Rightarrow_M),
+$$
+
+donde:
+
+- C es una colección finita o especificada de componentes tipados;
+- \(\Sigma\) es el espacio de configuraciones del sistema;
+- \(\Rightarrow_M\) es su relación de transición, que incorpora las reglas y condiciones de contorno del sistema considerado.
+
+Cada configuración \(s\in\Sigma\) se descompone conceptualmente en:
+
+$$
+s=(L(s),G(s)),
+$$
+
+donde:
+
+- \(L(s)\) es el **perfil local**: tipos y estados intrínsecos de los componentes;
+- \(G(s)\) es la **organización relacional**: relaciones, conectividad, disposición o estructura entre esos componentes.
+
+Sea \(P:\Sigma\to\{0,1\}\) una macrocaracterística.
+
+### Macrocaracterística estructural
+
+P debe ser invariante bajo un mero renombrado de componentes equivalentes:
+
+$$
+\operatorname{Macro}_M(P)
+\iff
+\forall \pi\in\operatorname{Perm}_{\mathrm{type}}(C),
+\quad
+P(s)=P(\pi s).
+$$
+
+Esto impide contar como «macropropiedad» una etiqueta arbitraria ligada a la identidad nominal de un componente.
+
+### Dependencia organizacional
+
+Definimos:
+
+$$
+\operatorname{OrgDep}_M(P)
+$$
+
+si existen configuraciones \(s,s'\in\Sigma\) tales que:
+
+$$
+L(s)\cong L(s'),
+$$
+
+pero:
+
+$$
+G(s)\not\cong G(s'),
+$$
+
+y:
+
+$$
+P(s)\neq P(s').
+$$
+
+Es decir: manteniendo el mismo perfil local de componentes, una diferencia en la **organización** puede cambiar la macrocaracterística.
+
+Esto excluye de esta noción mínima las propiedades puramente agregativas que dependen solo de sumar o listar propiedades locales.
+
+### Emergencia estructural y evento de emergencia
+
+Llamamos **estructuralmente emergente** a P respecto de M cuando:
+
+$$
+\boxed{
+\operatorname{StructEmergent}_M(P)
+\iff
+\operatorname{Macro}_M(P)
+\land
+\operatorname{OrgDep}_M(P).
+}
+$$
+
+Y definimos un **evento de emergencia organizacional**:
+
+$$
+\boxed{
+(s_0,P,s_1)\in\mathcal E_M
+}
+$$
+
+si y solo si:
+
+$$
+s_0\Rightarrow_M^{+} s_1,
+$$
+
+$$
+\neg P(s_0),
+$$
+
+$$
+P(s_1),
+$$
+
+y:
+
+$$
+\operatorname{StructEmergent}_M(P).
+$$
+
+Por tanto:
+
+$$
+\boxed{
+(s_0,P,s_1)\in\mathcal E_M
+\iff
+s_0\Rightarrow_M^{+}s_1
+\land
+\neg P(s_0)
+\land
+P(s_1)
+\land
+\operatorname{Macro}_M(P)
+\land
+\operatorname{OrgDep}_M(P).
+}
+$$
+
+### Qué afirma y qué no afirma
+
+Esta definición es deliberadamente mínima.
+
+**Afirma:**
+
+- generación diacrónica: la característica no estaba instanciada y pasa a estarlo;
+- dependencia constitutiva de una configuración;
+- dependencia positiva de organización relacional;
+- no-agregatividad en el sentido mínimo de que alterar organización puede alterar P manteniendo fijo el perfil local.
+
+**No afirma:**
+
+- irreducibilidad metafísica;
+- causalidad descendente;
+- impredecibilidad;
+- derivabilidad solo por simulación;
+- aparición de nuevas leyes fundamentales;
+- nuevos poderes causales irreductibles;
+- pertenencia a una totalidad R.
+
+Esto separa la noción básica de debates más fuertes.
+
+### Relación con la literatura
+
+La definición toma de **Broad** la idea de que la organización del todo importa y no basta conocer componentes aislados; de **Wimsatt**, el uso del fallo de agregatividad y la interdependencia organizacional como indicador positivo; y adopta la cautela metodológica que surge de **Kim**: superveniencia más irreducibilidad no suministran por sí solas una caracterización positiva rica de emergencia.
+
+No identifica esta noción con la **weak emergence** de **Bedau**, que añade un criterio computacional de derivabilidad solo mediante simulación, ni con la **transformational emergence** de **Humphreys**, que es una teoría diacrónica ontológica más fuerte. Esas pueden estudiarse como refinamientos adicionales, no como parte de la \(\mathcal E_M\) mínima.
+
+Véase el [mapa de literatura](autodescripcion-realidad-distincion-references.md).
+
+### Consecuencia inmediata para REV-02
+
+La relación de transición pertenece al sistema concreto M.
+
+Si se añade un inhibidor o se cambia el contexto, obtenemos en general otro sistema:
+
+$$
+M'=(C',\Sigma',\Rightarrow_{M'}),
+$$
+
+y no existe todavía ninguna razón para exigir:
+
+$$
+\mathcal E_M\subseteq\mathcal E_{M'}.
+$$
+
+Por tanto, esta definición **no presupone F2** y deja visible el problema de monotonía contextual en vez de ocultarlo.
+
+### Estado de REV-03
+
+Esta es una **definición candidata**, no todavía la definición canónica.
+
+REV-03 pasa justificadamente de OPEN a PARTIAL solo porque ya existe una caracterización positiva e independiente y ha sido situada frente a Broad, Wimsatt, Bedau, Kim y Humphreys.
+
+Para cerrarlo todavía deben hacerse al menos tres pruebas:
+
+1. construir ejemplos positivos y negativos que demuestren que no clasifica trivialmente cualquier cambio como emergencia;
+2. comprobar si la dependencia organizacional es demasiado estrecha para fenómenos que el exergismo quiere llamar emergentes;
+3. decidir explícitamente si el núcleo doctrinal adopta **emergencia organizacional** o necesita una noción más fuerte.
+
+---
 ## 4. Núcleo matemático actualmente separable
 
 Puede estudiarse un resultado puramente orden-teórico.
