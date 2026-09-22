@@ -1904,7 +1904,7 @@ La clausura interna no certifica totalidad absoluta.
 
 ### Estado actual
 
-- Muro/REC: **DEFERRED** como epistemología.
+- Muro: **DEFERRED** históricamente como epistemología. **Corrección normativa posterior (§10):** REC no es otra versión del Muro; queda reclasificado como consecuencia estructural condicionada a `OntTotal`.
 - Many-$R$: **OPEN**.
 - $\operatorname{VA}(o)=R_i$: **SUPERSEDED/SUSPENDIDO**.
 
