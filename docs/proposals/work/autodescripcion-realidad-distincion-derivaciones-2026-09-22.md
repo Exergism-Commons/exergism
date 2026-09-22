@@ -4990,7 +4990,32 @@ aun cuando cada eslabón individual sea ontológicamente impecable. El punto no 
 
 ##### Ruta alternativa si FID falla: clausura integrativa generalizada
 
-Sea $\mathcal C_*$ un operador de clausura pre-régimen construido a partir de reglas integrativas independientes, potencialmente incluyendo reglas globales/de límite además de enlaces finitos:
+Sea $\mathcal C_*$ un operador de clausura pre-régimen construido a partir de una familia $\mathfrak G_*$ de reglas integrativas independientes, potencialmente incluyendo reglas globales/de límite además de enlaces finitos.
+
+Se exige:
+
+$$
+\mathrm{CGI}:
+\quad
+\mathfrak G_*
+\text{ se especifica sin usar }
+\operatorname{CoReal},R_i,S_i,\operatorname{Presents}_i,\operatorname{OntTotal}_i
+\text{ ni la extensión final de }\mathcal C_*.
+$$
+
+Además $\mathcal C_*$ debe ser mínima respecto de esas reglas:
+
+$$
+\mathrm{CMin}:
+$$
+
+1. $A\subseteq\mathcal C_*(A)$;
+2. $\mathcal C_*(A)$ es cerrada bajo $\mathfrak G_*$;
+3. si $A\subseteq B$ y $B$ es cerrada bajo $\mathfrak G_*$, entonces $\mathcal C_*(A)\subseteq B$.
+
+Esto prohíbe definir la clausura por ajuste extensional a `CoReal` y después declarar CC demostrado.
+
+Para el seed $q$:
 
 $$
 T_i^{\mathcal C}
@@ -5189,6 +5214,10 @@ Por tanto:
 
 $$
 \boxed{
+\mathrm{CGI}
++
+\mathrm{CMin}
++
 \mathrm{CSet}
 +
 \mathrm{CProcStable}
