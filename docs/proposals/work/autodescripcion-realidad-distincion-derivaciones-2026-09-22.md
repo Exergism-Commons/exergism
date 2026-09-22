@@ -3409,7 +3409,7 @@ $$
 }
 $$
 
-Este teorema es exclusivamente semántico. No permite sustituir $S_i$ por un $R_i$ ni concluir $\operatorname{ExistsR}$ sin el puente independiente REV-24/$\mathrm{OTB}_i$:
+Este teorema es exclusivamente semántico. No permite sustituir $S_i$ por un $R_i$ ni concluir $\operatorname{ExistsRegR}$ sin REV-24/$\mathrm{OTB}_i$; tampoco contiene ningún paso hacia $\operatorname{ExistsAbsR}$:
 
 $$
 \operatorname{SemTotal}_i(S_i)
@@ -3422,9 +3422,9 @@ $$
 \operatorname{OntTotal}_i(R_i)
 ]
 \Rightarrow
-\operatorname{WitnessedR}
+\operatorname{WitnessedRegR}
 \Rightarrow
-\operatorname{ExistsR}.
+\operatorname{ExistsRegR}.
 $$
 
 ### Consecuencia
@@ -5101,7 +5101,7 @@ $$
 
 y FID/LA justifican completeness.
 
-Por tanto FID es una **condición suficiente de la instanciación finita**, no una condición necesaria de la tesis `ExistsR`.
+Por tanto FID es una **condición suficiente de la instanciación finita**, no una condición necesaria de `ExistsRegR` y mucho menos de `ExistsAbsR`.
 
 ##### Implementación transfinita candidata
 
@@ -5345,7 +5345,7 @@ $$
 
 porque esa notación reintroduciría exactamente la reificación/setificación que la propuesta intenta evitar.
 
-SR tampoco basta por sí sola para `ExistsR`: todavía hay que justificar que el alcance realizado cumple la noción normativa de $\operatorname{OntTotal}_i$ y que $S_i$ lo presenta mediante una relación `Presents` no circular.
+SR tampoco basta por sí sola para `ExistsRegR`: todavía hay que justificar que el alcance realizado cumple $\operatorname{OntTotal}_i$; y ningún cierre de REV-24 local basta por sí solo para `ExistsAbsR`, que requiere REV-26.
 
 ##### Ruta plural
 
@@ -5446,9 +5446,9 @@ $$
 +\operatorname{StructAdm}
 +\mathrm{OTB}_i
 \Rightarrow
-\operatorname{WitnessedR}
+\operatorname{WitnessedRegR}
 \Rightarrow
-\operatorname{ExistsR}.
+\operatorname{ExistsRegR}.
 }
 $$
 
