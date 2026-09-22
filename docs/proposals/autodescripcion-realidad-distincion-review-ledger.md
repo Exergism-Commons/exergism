@@ -204,6 +204,7 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 
 | Fecha | ID | Cambio | Evidencia | Commit |
 |---|---|---|---|---|
+| 2026-09-22 | DOC-02/FORM-02 hardening | §4 normativo reextraído: pruebas/stress tests permanecen en `work/`; añadido `scripts/validate_proposal_docs.py` y ejecución en CI para impedir regresiones de delimitadores, duplicación del ledger, tablas partidas, pérdida del banner SUPERSEDED y reacreción del normativo. | Normativo 2492 líneas; §4 = 338 líneas tras extracción; workflow `validate.yml`. | 019b7a7, 6375632, 993102b |
 | 2026-09-22 | — | Ledger creado a partir de la revisión consolidada. | Este archivo. | 2070f899 |
 | 2026-09-22 | DOC-02/DOC-03 | Documento acumulativo archivado y documento principal reescrito como crónica con un único estado normativo. | Documento principal + archivo histórico. | 70e561a, 9cfb857 |
 | 2026-09-22 | FORM-01/02/03 | Documento vigente: 672 líneas,  aisladas, 0 usos del comando `Tau` con barra inversa. | Verificación sobre blob 321779c. | 9cfb857 |
