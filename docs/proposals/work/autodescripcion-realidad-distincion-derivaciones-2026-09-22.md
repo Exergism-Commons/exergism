@@ -4804,20 +4804,32 @@ No se permite definir $\operatorname{CoReal}$ como $\operatorname{Reg}^{\Lambda}
 
 ##### Reducción a una tesis de descomposición integrativa finita
 
-Introducimos provisionalmente una relación ontológica independiente:
+Introducimos provisionalmente una relación de instancia:
 
 $$
-\operatorname{IntRel}(x,y),
+\operatorname{IntInst}(g;x,y),
 $$
 
-que significa: existe entre $x$ e $y$ una instancia actual, token-specific e integradora de causalidad, proceso, constitución, dependencia u otra relación ontológica admitida **sin usar** $\Lambda_*$, $\sim$, $S_i$, $R_i$ ni SameRegime.
+donde $g$ es un testigo relacional actual que integra $x$ e $y$ mediante causalidad, proceso, constitución, dependencia u otra relación ontológica admitida **sin usar** $\Lambda_*$, $\sim$, $S_i$, $R_i$ ni SameRegime.
+
+La relación binaria utilizada por FID queda definida solo sobre testigos admisibles:
+
+$$
+\operatorname{AdmIntRel}(x,y)
+:Longleftrightarrow
+\exists g[
+\mathrm{WA}(g)
+\land
+\operatorname{IntInst}(g;x,y)
+].
+$$
 
 Se separan entonces dos obligaciones:
 
 $$
 \mathrm{LA}:
 \quad
-\operatorname{IntRel}(x,y)
+\operatorname{AdmIntRel}(x,y)
 \Rightarrow
 x\bowtie y,
 $$
@@ -4838,7 +4850,7 @@ z_0=q
 \land
 z_n=x
 \land
-\forall k<n\;\operatorname{IntRel}(z_k,z_{k+1})
+\forall k<n\;\operatorname{AdmIntRel}(z_k,z_{k+1})
 ].
 $$
 
@@ -4856,7 +4868,7 @@ $$
 }
 $$
 
-**Demostración.** FID proporciona una cadena finita de $\operatorname{IntRel}$. LA convierte cada paso en $\bowtie$. Por definición de $\sim=(\bowtie)^*$, $x\in[q]_{\sim}$. $\square$
+**Demostración.** FID proporciona una cadena finita de $\operatorname{AdmIntRel}$. LA convierte cada paso WA-admisible en $\bowtie$. Por definición de $\sim=(\bowtie)^*$, $x\in[q]_{\sim}$. $\square$
 
 LA es principalmente una obligación de taxonomía de $\Lambda_*$. La carga metafísica profunda queda concentrada en FID.
 
@@ -4874,7 +4886,7 @@ $$
 \operatorname{IntRel}(q_n,q_{n+1})
 $$
 
-para todo $n$, y un token actual $\ell$ cuya dependencia ontológica sea esencialmente de la **totalidad/límite** de la secuencia, sin que exista ningún $n$ ni ningún testigo relacional actual $g$ para el que una cadena finita de $\operatorname{IntRel}$ conecte $q_n$ con $\ell$.
+para todo $n$, y un token actual $\ell$ cuya dependencia ontológica sea esencialmente de la **totalidad/límite** de la secuencia, sin que exista ningún $n$ ni ningún testigo relacional actual $g$ para el que una cadena finita de $\operatorname{AdmIntRel}$ conecte $q_n$ con $\ell$.
 
 Si una teoría ontológica independiente justifica:
 
