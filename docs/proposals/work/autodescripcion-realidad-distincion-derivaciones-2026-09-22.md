@@ -4780,7 +4780,104 @@ Una relación infinitaria de aridad set-sized no fuerza por sí sola clausura tr
 
 No se permite definir $\operatorname{CoReal}$ como $\operatorname{Reg}^{\Lambda}$ para declarar RC demostrado: eso convertiría la prueba en una estipulación.
 
-El siguiente trabajo sustantivo es dar contenido independiente suficiente a $\operatorname{CoReal}$ y someter $\Lambda_*$ a intentos de contraejemplo.
+##### Reducción a una tesis de descomposición integrativa finita
+
+Introducimos provisionalmente una relación ontológica independiente:
+
+$$
+\operatorname{IntRel}(x,y),
+$$
+
+que significa: existe entre $x$ e $y$ una instancia actual, token-specific e integradora de causalidad, proceso, constitución, dependencia u otra relación ontológica admitida **sin usar** $\Lambda_*$, $\sim$, $S_i$, $R_i$ ni SameRegime.
+
+Se separan entonces dos obligaciones:
+
+$$
+\mathrm{LA}:
+\quad
+\operatorname{IntRel}(x,y)
+\Rightarrow
+x\bowtie y,
+$$
+
+**Link Adequacy**: toda relación integradora independientemente admitida es reconocida por $\Lambda_*$;
+
+y:
+
+$$
+\mathrm{FID}:
+\quad
+\operatorname{CoReal}(x,q)
+\Rightarrow
+\exists n<\omega\;
+\exists z_0,\dots,z_n
+[
+z_0=q
+\land
+z_n=x
+\land
+\forall k<n\;\operatorname{IntRel}(z_k,z_{k+1})
+].
+$$
+
+**Finite Integrative Decomposition**: toda co-pertenencia ontológica puede resolverse en una cadena finita de relaciones integradoras independientemente caracterizadas.
+
+Entonces:
+
+$$
+\boxed{
+\mathrm{FID}
++
+\mathrm{LA}
+\Rightarrow
+\mathrm{RC}_{\Lambda}.
+}
+$$
+
+**Demostración.** FID proporciona una cadena finita de $\operatorname{IntRel}$. LA convierte cada paso en $\bowtie$. Por definición de $\sim=(\bowtie)^*$, $x\in[q]_{\sim}$. $\square$
+
+LA es principalmente una obligación de taxonomía de $\Lambda_*$. La carga metafísica profunda queda concentrada en FID.
+
+##### Contraesquema de límite
+
+Considérese una familia actual:
+
+$$
+q_0,q_1,q_2,\dots
+$$
+
+con:
+
+$$
+\operatorname{IntRel}(q_n,q_{n+1})
+$$
+
+para todo $n$, y un token actual $\ell$ cuya dependencia ontológica sea esencialmente de la **totalidad/límite** de la secuencia, sin que exista ningún $n$ ni ningún testigo relacional actual $g$ para el que una cadena finita de $\operatorname{IntRel}$ conecte $q_n$ con $\ell$.
+
+Si una teoría ontológica independiente justifica:
+
+$$
+\operatorname{CoReal}(\ell,q_0),
+$$
+
+entonces FID falla y, por tanto, la arquitectura actual no puede derivar RC para ese caso.
+
+El contraesquema desaparece si la dependencia global tiene una instancia relacional actual $g$ de aridad set-sized y la ontología admite incidencias:
+
+$$
+q_0\bowtie g
+\quad\text{y}\quad
+g\bowtie \ell.
+$$
+
+Por tanto, «infinitario» no equivale automáticamente a «no finitamente conectable». Lo decisivo es si la integración global dispone de un **testigo ontológico actual** que pueda entrar en la red sin reificar por fiat la totalidad $R_i$.
+
+Este análisis reduce el siguiente frente a dos preguntas:
+
+1. ¿es FID defendible para toda co-realidad relevante?;
+2. si no lo es, ¿puede ampliarse la ontología de tokens relacionales para capturar los aparentes contraejemplos sin trivializar $\Lambda_*$ ni violar PON?
+
+El siguiente trabajo sustantivo es dar contenido independiente suficiente a $\operatorname{CoReal}$/$\operatorname{IntRel}$ y someter FID a contraejemplos.
 
 #### 8.3. REV-24c — Representational Adequacy (RA)
 
