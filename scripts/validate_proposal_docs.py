@@ -31,16 +31,42 @@ def read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
+def markdown_lines_outside_fences(text: str) -> list[tuple[int, str]]:
+    result: list[tuple[int, str]] = []
+    fence_char: str | None = None
+    fence_len = 0
+
+    for index, line in enumerate(text.splitlines(), start=1):
+        stripped = line.lstrip()
+        match = re.match(r"^(`{3,}|~{3,})", stripped)
+
+        if match:
+            marker = match.group(1)
+            marker_char = marker[0]
+            if fence_char is None:
+                fence_char = marker_char
+                fence_len = len(marker)
+            elif marker_char == fence_char and len(marker) >= fence_len:
+                fence_char = None
+                fence_len = 0
+            continue
+
+        if fence_char is None:
+            result.append((index, line))
+
+    return result
+
+
 def validate_display_math(path: Path, text: str) -> None:
-    lines = text.splitlines()
-    lone_dollar = [index for index, line in enumerate(lines, start=1) if line.strip() == "$"]
+    lines = markdown_lines_outside_fences(text)
+    lone_dollar = [index for index, line in lines if line.strip() == "$"]
     if lone_dollar:
         fail(
             f"{path.relative_to(ROOT)} contains standalone '$' display delimiters at lines "
             + ", ".join(map(str, lone_dollar[:10]))
         )
 
-    display_delimiters = sum(1 for line in lines if line.strip() == "$$")
+    display_delimiters = sum(1 for _, line in lines if line.strip() == "$$")
     if display_delimiters % 2:
         fail(
             f"{path.relative_to(ROOT)} has an odd number of standalone '$$' display delimiters: "
