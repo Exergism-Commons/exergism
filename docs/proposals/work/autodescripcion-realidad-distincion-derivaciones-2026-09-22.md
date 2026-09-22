@@ -4016,3 +4016,157 @@ REV-20 quedaría PARTIAL exclusivamente por SO/smallness.
 REV-07 permanecería PARTIAL solo por la justificación de $\Lambda_*$ y la individuación del régimen.
 
 ---
+
+---
+
+## REV-20 — smallness local del cono emergente
+
+Tras adoptar admisibilidad estructural mínima, OEA y CUA dejan de ser premisas independientes. El único ingrediente restante de la construcción de K1 es SO: que el cono emergente generado por un dominio set-sized siga siendo set-sized.
+
+### 1. LSE — Local Set-like Emergence
+
+Definimos:
+
+$$
+\mathrm{LSE}_i:
+$$
+
+para todo conjunto de tokens $S$ del régimen, la colección de eventos emergentes actuales cuyo source pertenece a $S$ es un conjunto:
+
+$$
+\{
+e
+\mid
+\operatorname{Emergent}_i(e)
+\land
+\operatorname{src}(e)\in S
+\}
+\text{ es set-sized}.
+$$
+
+Como `src` y `tgt` son funcionales para cada token de evento, los targets de ese conjunto de eventos forman también un conjunto por Replacement.
+
+LSE no exige que el régimen completo sea set-sized. Permite una realidad class-sized con ramificación emergente localmente set-like.
+
+### 2. Construcción por niveles
+
+Sea $X=(T_X,\Phi_X)$ con $T_X$ set-sized.
+
+Definimos:
+
+$$
+S_0=T_X.
+$$
+
+Dado $S_n$, sea:
+
+$$
+E_n
+:=
+\{
+e
+\mid
+\operatorname{Emergent}_i(e)
+\land
+\operatorname{src}(e)\in S_n
+\}.
+$$
+
+Por LSE, $E_n$ es set-sized.
+
+Sea:
+
+$$
+U_n
+:=
+\{
+\operatorname{tgt}(e)
+\mid
+e\in E_n
+\}.
+$$
+
+Por Replacement, $U_n$ es set-sized.
+
+Definimos:
+
+$$
+S_{n+1}
+:=
+S_n
+\cup
+E_n
+\cup
+U_n.
+$$
+
+Cada $S_n$ es un conjunto.
+
+Finalmente:
+
+$$
+S_\omega
+:=
+\bigcup_{n<\omega}S_n.
+$$
+
+Por Union/Replacement sobre $\omega$, $S_\omega$ es set-sized.
+
+Todo token/evento alcanzable desde $T_X$ mediante una cadena finita de eventos emergentes aparece en algún $S_n$.
+
+Por tanto:
+
+$$
+\boxed{
+\mathrm{LSE}_i
+\Rightarrow
+\mathrm{SO}_i(X)
+}
+$$
+
+para todo dominio set-sized $X$.
+
+### 3. Consecuencia para K1
+
+Con StructAdm, ya se demostraron OEA y CUA.
+
+Así:
+
+$$
+\boxed{
+\mathrm{StructAdm}_i
++
+\mathrm{LSE}_i
+\Rightarrow
+K1_i.
+}
+$$
+
+más precisamente: todo dominio set-sized estructuralmente admisible posee una extensión set-sized E-closed.
+
+### 4. Qué significa el posible fallo
+
+Si LSE falla, existe algún conjunto set-sized de sources desde el que parten **proper-class many** eventos emergentes actuales.
+
+Entonces una clausura emergente de un fragmento set-sized puede verse forzada a abandonar el universo de dominios set-sized en un solo paso.
+
+Ésta es una forma precisa de potencialismo/indefinite extensibility capaz de bloquear K1 dentro de fundamentos ordinarios.
+
+### 5. Relación con REV-22
+
+LSE resuelve la smallness **local de cada cierre**.
+
+No demuestra que la colección:
+
+$$
+\mathfrak D_i^{\mathrm{proc}}
+$$
+
+de todos los dominios del régimen sea set-sized.
+
+Por tanto:
+
+- REV-20 puede resolverse bajo StructAdm + LSE;
+- REV-22 sigue abierto como condición de aplicabilidad global de Zorn, salvo que se exhiba un esqueleto cofinal set-sized o se adopten fundamentos de clases adecuados.
+
+---
