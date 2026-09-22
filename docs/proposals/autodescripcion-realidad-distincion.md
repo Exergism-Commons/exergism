@@ -661,21 +661,109 @@ La versión operator-free de K1–K3 hace transparente esa dependencia.
 
 ---
 
-## 5. C2 / “mismo índice”
+## 5. Identidad independiente de régimen — REV-07
 
-La etapa anterior convirtió “mismo índice” en “régimen dirigido” y obtuvo amalgamación por definición. La revisión detectó que eso desplaza la carga de prueba.
+La propuesta ya no define «mismo régimen» mediante directedness ni existencia de una cota común.
 
-La versión vigente ya **no** considera cerrado:
+Sea $\Omega$ el universo de trabajo de tokens ontológicos actuales y sea $\Lambda$ una familia de **relaciones ontológicas actuales admisibles**: por ejemplo, relaciones causales, procesuales, constitutivas, de dependencia o espaciotemporales cuando sean aplicables.
+
+Definimos el enlace inmediato:
 
 $$
-\operatorname{SameIndex}(X,Y)
-\Rightarrow
-\exists Z\,[X\preceq Z \land Y\preceq Z].
+q\bowtie r
 $$
 
-Debe encontrarse un criterio independiente de SameIndex o reconocerse la amalgamación como hipótesis sustantiva.
+si alguna relación $\lambda\in\Lambda$ está actualmente instanciada entre $q$ y $r$ en alguna dirección.
 
-**Estado: OPEN — REV-07.**
+Después definimos:
+
+$$
+q\sim r
+$$
+
+como la clausura reflexivo-transitiva de $\bowtie$.
+
+Como $\bowtie$ es simétrica por construcción, $\sim$ es una relación de equivalencia. Sus clases:
+
+$$
+[q]_{\sim}
+$$
+
+son candidatos a **regímenes ontológicos**.
+
+Para un dominio procesual no vacío:
+
+$$
+\operatorname{Tok}(X)
+:=
+\{q\mid q\trianglelefteq X\},
+$$
+
+se define:
+
+$$
+\operatorname{Reg}(X)=i
+$$
+
+cuando todos sus tokens pertenecen a la misma clase $i$.
+
+### Qué cuenta y qué no cuenta como enlace
+
+La relación $\bowtie$ debe definirse sin mencionar:
+
+- K3;
+- una cota común;
+- $R_i$;
+- `SameIndex`;
+- `EClosed`;
+- la posibilidad meramente contrafáctica de interacción.
+
+Tampoco bastan por sí solos semejanza, isomorfismo, compartir leyes descriptivas o poder ser representados en una misma teoría.
+
+### SameRegime no implica K3
+
+Ahora:
+
+$$
+\operatorname{SameRegime}(X,Y)
+\iff
+\operatorname{Reg}(X)=\operatorname{Reg}(Y),
+$$
+
+pero no se infiere:
+
+$$
+\exists Z\,[X\preceq_i Z\land Y\preceq_i Z].
+$$
+
+Hay un contraejemplo mínimo en el [documento técnico](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md): dos dominios pueden contener tokens enlazados y por tanto pertenecer al mismo régimen, mientras la familia de dominios admisibles carece de una cota común.
+
+Así:
+
+$$
+\boxed{
+\operatorname{SameRegime}(X,Y)
+\not\Rightarrow
+K3_i(X,Y).
+}
+$$
+
+Esto elimina la circularidad conceptual original de D5c: la identidad del régimen y la amalgamabilidad dejan de ser la misma definición.
+
+### Qué sigue abierto
+
+REV-07 permanece **PARTIAL**, porque la familia $\Lambda$ todavía necesita justificación ontológica independiente y K3_i sigue requiriendo una premisa adicional de admisibilidad de agregación/extensión.
+
+El criterio restante es:
+
+1. justificar qué tipos de enlace actual pertenecen a $\Lambda$;
+2. demostrar que la clasificación por $\sim$ es suficientemente invariante respecto de representaciones;
+3. justificar $K3_i$ sin reconstruirlo por definición de régimen.
+
+Como comparación metodológica, Lewis usa conexión espaciotemporal para determinar worldmates sin definir primero una cota común; aquí esa estrategia se generaliza y no compromete a la propuesta con modal realism ni con la tesis de que toda unidad ontológica sea espaciotemporal.
+
+**Estado: PARTIAL — REV-07.**
+
 
 ## 6. Generalidad absoluta, No-$R$ y potencialismo
 
