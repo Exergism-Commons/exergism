@@ -5214,10 +5214,6 @@ Por tanto:
 
 $$
 \boxed{
-\mathrm{CGI}
-+
-\mathrm{CMin}
-+
 \mathrm{CSet}
 +
 \mathrm{CProcStable}
@@ -5233,6 +5229,8 @@ $$
 $$
 
 Este teorema es exactamente tan semántico como la ruta finita. `CS/CC` no son necesarios para demostrar la maximalidad formal, sino para justificar que la clausura parametrizante corresponde al régimen ontológico pretendido.
+
+Del mismo modo, `CGI/CMin` no son premisas matemáticas de la maximalidad una vez fijado $T_i^{\mathcal C}$; son obligaciones de **no circularidad de la ruta ontológica** que justifican por qué esa clausura puede ser tomada en serio como candidata a régimen.
 
 La ruta original se obtiene escogiendo:
 
