@@ -312,17 +312,18 @@ La propuesta ya dispone de una definición independiente y event-local de emerge
 
 Por tanto, REV-01, REV-02 y REV-04 están cerrados en sus criterios originales, mientras REV-03 permanece PARTIAL por alcance doctrinal.
 
-El programa dispone ahora de un **teorema directo condicional de exhaustividad semántica de régimen**: PON + smallness controlada de la firma + Separation aplicable al predicado de actualidad + StructAdm construyen un máximo E-closed $S_i^*$ de cualquier régimen no vacío. Ese resultado demuestra $\operatorname{SemTotal}_i(S_i^*)$; no demuestra todavía que exista un alcance $R_i$ presentado por $S_i^*$ que satisfaga $\operatorname{OntTotal}_i(R_i)$ ni, por tanto, $\operatorname{ExistsR}$.
+El programa dispone de teoremas directos condicionales de exhaustividad semántica de régimen: la ruta finita usa PON y la ruta generalizada usa `CSet/CProcStable`; ambas requieren además smallness de firma, Separation aplicable a actualidad y StructAdm. Estos resultados demuestran $\operatorname{SemTotal}$; no demuestran por sí solos $\operatorname{ExistsRegR}$ y, con mayor razón, tampoco $\operatorname{ExistsAbsR}$.
 
 Los bloqueadores activos relevantes pasan a ser:
 
 - **REV-07:** justificación filosófica de la familia pre-régimen $\Lambda_*$, incluida la elección de conectividad por caminos finitos;
-- **REV-23:** PON — smallness por-token de la conectividad ontológica inmediata;
-- **REV-24:** puente no circular entre exhaustividad semántica y totalidad ontológica;
+- **REV-23:** PON — smallness por-token de la ruta finita; la ruta generalizada puede sustituirlo por `CSet/TransClSmall`;
+- **REV-24:** puente no circular entre exhaustividad semántica y una totalidad ontológica de régimen;
 - **REV-25:** smallness de la firma y legitimidad del paso por Separation sobre «actualmente verdadero»;
 - **REV-20:** PSB/K1, ahora derivables de PON en la ruta estructural;
 - **REV-22:** aplicabilidad de Zorn, subordinada a las premisas de smallness aunque la ruta directa a $\operatorname{SemTotal}$ no lo necesita;
 - **REV-15:** consecuencias metaontológicas discriminantes;
+- **REV-26:** Globalization Bridge — relación entre `ExistsRegR` y el $R$ absoluto de la doctrina;
 
 ## 3.1. Resumen formal vigente
 
@@ -341,9 +342,10 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-09 | RESOLVED set-indexed | Con `Adm_i := StructAdm_i`, la unión de una cadena set-indexed de fragmentos positivos actuales sigue siendo well-formed y admisible; junto con el lema previo de preservación de `EClosed`, K2 queda demostrada dentro del alcance set-sized del teorema. La aplicabilidad class-sized queda en REV-22. |
 | REV-10 | RESOLVED vigente | La ruta actual ya no usa la inferencia oculta de StageFactorization/presentabilidad criticada en H8. |
 | REV-21 | RESOLVED formal | Los puntos fijos de $F_i$ son exactamente los subconjuntos forward-closed del grafo emergente; la degeneración al único punto fijo no vacío $\Sigma_i$ ocurre exactamente cuando el grafo es fuertemente conexo. |
-| REV-23 | OPEN blocker | PON no está justificada: falta demostrar que cada token actual tiene set-many vecinos ontológicos inmediatos bajo $\bowtie$. PON hace constructible como set el componente finitamente conectado, pero por sí sola no implica $\operatorname{ExistsR}$. |
-| REV-24 | OPEN blocker doctrinal | El máximo de fragmentos semánticos demuestra $\operatorname{SemTotal}$, pero $S_i$ y $R_i$ tienen tipos distintos. El puente se descompone en REV-24a (anclaje ontológico), REV-24b (completitud de pertenencia, acoplada a REV-07) y REV-24c (adecuación representacional), cuya combinación debe justificar $\operatorname{Presents}_i(S_i,R_i)$ y $\operatorname{OntTotal}_i(R_i)$ sin presuponerlos. |
+| REV-23 | OPEN para ruta finita | PON no está justificada. Hace set-sized el componente finitamente conectado, pero la ruta generalizada puede sustituirla por `CSet/TransClSmall`. Ninguna de estas smallness conditions implica por sí sola `ExistsRegR` ni `ExistsAbsR`. |
+| REV-24 | OPEN blocker doctrinal local | El máximo semántico no produce un $R_i$. El puente local se descompone en REV-24a/OA, REV-24b/MC, REV-24c/RA y REV-24d/SR. Su cierre puede producir `WitnessedRegR/ExistsRegR`, no `ExistsAbsR`. |
 | REV-25 | OPEN blocker fundacional/semántico | El teorema usa smallness de la firma y un paso de Separation sobre los hechos «actualmente verdaderos». Deben justificarse la firma/aridades y la disponibilidad metateórica del predicado de actualidad. |
+| REV-26 | OPEN blocker doctrinal/metaontológico | **Target alignment / Globalization Bridge.** La existencia de una totalidad de régimen no implica Realidad Total. Justificar `ExistsAbsR` exige generalidad absoluta/comprensión adecuada o una estructura real que globalice todos los regímenes; alternativamente, adoptar explícitamente una semántica irreduciblemente indexada y revisar la doctrina de $R$. |
 
 ### Corrección histórica importante sobre F2
 
@@ -440,62 +442,57 @@ $$
 \boxed{\operatorname{SemTotal}_i(S_i).}
 $$
 
-### Objetivo fuerte real: refutar No-$R$
+### Objetivo fuerte de esta maquinaria: `WitnessedRegR`
 
-Para esta propuesta no es necesario demostrar un único $R_{\mathrm{abs}}$.
-
-Se conserva:
+K1–K3 producen exactamente:
 
 $$
-\boxed{
-\operatorname{NoR}:=\neg\operatorname{ExistsR}
-}
+\boxed{\operatorname{SemTotal}_i(S_i).}
 $$
 
-con:
-
-$$
-\operatorname{ExistsR}
-:=
-\exists i\;\exists R_i\;
-\operatorname{OntTotal}_i(R_i).
-$$
-
-K1–K3 y sus condiciones fundacionales/tipadas **no bastan por sí solos** para refutar No-$R$: producen un máximo semántico $S_i$.
-
-El puente REV-24 ya no se formula como el enunciado mal tipado $\operatorname{OntTotal}_i(S_i)$. Su objetivo es justificar:
+REV-24 intenta añadir un alcance ontológico de **ese régimen**:
 
 $$
 \mathrm{OTB}_i(S_i):
 \quad
 \operatorname{SemTotal}_i(S_i)
 \Rightarrow
-\exists R_i\,
-[
+\exists R_i[
 \operatorname{Presents}_i(S_i,R_i)
 \land
 \operatorname{OntTotal}_i(R_i)
 ].
 $$
 
-Así, la ruta correcta es:
+Por tanto la ruta correcta de esta maquinaria es:
 
 $$
 \boxed{
 K1_i+K2_i+K3_i
 +\mathrm{OTB}_i
 \Rightarrow
-\operatorname{WitnessedR}
+\operatorname{WitnessedRegR}
 \Rightarrow
-\operatorname{ExistsR}
-\Rightarrow
-\neg\operatorname{NoR}.
+\operatorname{ExistsRegR}.
 }
 $$
 
-$\mathrm{OTB}_i$ es aquí una abreviatura del **problema a demostrar**, no una premisa que pueda darse por estipulación. Su contenido se descompone más abajo en REV-24a/OA, REV-24b/MC, REV-24c/RA y REV-24d/SR; este último bloquea que la existencia de un alcance $R_i$ se introduzca tácitamente por comprensión o reificación.
+Esta cadena **no** contiene:
 
-Que además exista un único régimen, múltiples regímenes, Cluster-$R$, Indexed-One-$R$ o alguna estructura metaontológica ulterior es una cuestión separada.
+$$
+\operatorname{ExistsAbsR}
+$$
+
+ni:
+
+$$
+\neg\operatorname{NoR}.
+$$
+
+El paso adicional es REV-26. El antiguo bloque que identificaba `ExistsR` con $\exists i\exists R_i\,OntTotal_i(R_i)$ queda SUPERSEDED por el target audit de §1.3–1.6.
+
+$\mathrm{OTB}_i$ sigue siendo una abreviatura del problema local a demostrar, descompuesto en REV-24a/OA, REV-24b/MC, REV-24c/RA y REV-24d/SR.
+
 
 ### Qué significa aquí «cerrado»
 
@@ -1410,10 +1407,16 @@ $$
 
 La demostración es la misma construcción directa: todos los fragmentos relativos a la clausura se incluyen en $S_i^{\mathcal C}$ y `CProcStable` proporciona `EClosed`. CS/CC no hacen trabajo en la maximalidad semántica; hacen el trabajo ontológico de justificar que la clausura elegida coincide con el régimen pretendido.
 
-Así, un contraejemplo a FID no implica:
+Así, un contraejemplo a FID no implica ni:
 
 $$
-\neg\operatorname{ExistsR}.
+\neg\operatorname{ExistsRegR}
+$$
+
+ni, por sí solo:
+
+$$
+\neg\operatorname{ExistsAbsR}.
 $$
 
 Implica únicamente que la **ruta finita** $[q]_{\sim}$ no basta para caracterizar el régimen. La PR no adoptará FID como axioma doctrinal mientras la ruta de clausura generalizada permanezca abierta.
@@ -1572,7 +1575,7 @@ Esto no es ontológicamente gratuito. La comprensión plural es un principio exp
 
 $\operatorname{Presents}_i(S,R)$ es la relación tipada resultante entre una presentación semántica y un alcance ontológico. No es identidad, no implica por definición $\operatorname{OntTotal}_i(R)$ y no puede definirse usando «$R$ es todo lo real del régimen» como atajo.
 
-La descomposición hace visible una posibilidad importante: la **existencia de un alcance ontológico** puede requerir menos que una descripción semántica completa de todos sus hechos. Si REV-24b pudiera justificarse a partir de una individuación ontológica independiente del régimen, parte del trabajo sobre $R_i$ podría desacoplarse de la exhaustividad factual de $S_i$. Esto se registra como línea de investigación; no se toma todavía como demostración de $\operatorname{ExistsR}$.
+La descomposición hace visible una posibilidad importante: la **existencia de un alcance ontológico** puede requerir menos que una descripción semántica completa de todos sus hechos. Si REV-24b pudiera justificarse a partir de una individuación ontológica independiente del régimen, parte del trabajo sobre $R_i$ podría desacoplarse de la exhaustividad factual de $S_i$. Esto se registra como línea de investigación; no se toma todavía como demostración de $\operatorname{ExistsRegR}$ y mucho menos de $\operatorname{ExistsAbsR}$.
 
 Solo si REV-24a/b/c producen efectivamente el esquema puente, la ruta doctrinal toma la forma:
 
@@ -1584,9 +1587,9 @@ $$
 +\operatorname{StructAdm}
 +\mathrm{OTB}_i
 \Rightarrow
-\operatorname{WitnessedR}
+\operatorname{WitnessedRegR}
 \Rightarrow
-\operatorname{ExistsR}.
+\operatorname{ExistsRegR}.
 }
 $$
 
@@ -2177,16 +2180,16 @@ Como antecedente metodológico, Lewis usa conexión espaciotemporal para determi
 **Estado: PARTIAL — REV-07.**
 
 
-## 6. Generalidad absoluta, No-$R$ y potencialismo
+## 6. Generalidad absoluta, No-$R$ y potencialismo — REV-26
 
-No se asigna una carga privilegiada a ninguna de las dos posiciones.
+REV-26 es ahora el blocker que separa una totalidad indexada de la Realidad Total original. No se asigna una carga privilegiada a ninguna de las dos posiciones.
 
 - El **absolutista** debe justificar que puede hablar coherentemente de absolutamente todo.
 - El **restrictionist/expansionist/potentialist** debe justificar su semántica de dominios siempre restringibles o expandibles.
 
 La propuesta no toma el debate como resuelto.
 
-**Estado del debate: OPEN. Finding REV-11: RESOLVED como corrección de carga argumentativa.**
+**Estado del debate:** REV-11 permanece RESOLVED como corrección de carga argumentativa; **REV-26 = OPEN** para el Globalization Bridge/target alignment.
 
 ## 7. One-$R$, Many-$R$ y niveles de exhaustividad
 
@@ -2538,7 +2541,7 @@ El Muro deja abiertas simultáneamente estas posibilidades:
 
 Nada de ello resta valor lógico a una demostración condicional de $\exists S_i\;\operatorname{SemTotal}_i(S_i)$. Tampoco sustituye la justificación ontológica que exige REV-24.
 
-**Estado:** REC queda clasificado como consecuencia estructural condicionada a $\operatorname{OntTotal}$, en línea con REV-06. REV-15 permanece OPEN para las consecuencias discriminantes y para cualquier versión fuerte del Muro. El Muro se conserva como límite epistemológico, no como puente a `ExistsR`.
+**Estado:** REC queda clasificado como consecuencia estructural condicionada a $\operatorname{OntTotal}$, en línea con REV-06. REV-15 permanece OPEN para las consecuencias discriminantes y para cualquier versión fuerte del Muro. El Muro se conserva como límite epistemológico, no como puente ni a `ExistsRegR` ni a `ExistsAbsR`.
 
 ## 11. “Dios”
 
