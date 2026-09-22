@@ -130,6 +130,8 @@ $$
 La primera flecha es epistemológico-representacional; la segunda es ontológica y permanece abierta. Expresiones informales como $U_i=S_i=R_i$ deben entenderse como coincidencia de alcances bajo representaciones fieles, no como identidad literal entre objetos de tipos distintos.
 
 El Muro restringe la identificación empírica de $R_i$; no decide por sí mismo si $R_i$ existe.
+
+**Motivación física limitada.** Esta separación no se introduce como una tesis sobre una teoría física concreta, pero tiene precedentes técnicos relevantes. Chandrasekaran–Longo–Penington–Witten construyen un álgebra de observables para un static patch de de Sitter con operadores gravitacionalmente vestidos respecto de la worldline de un observador; Donnelly–Giddings muestran que, en gravedad, el dressing y la invariancia difeomórfica impiden identificar sin más localidad física con una subálgebra local ordinaria. Estos resultados motivan distinguir horizonte accesible y estructura representacional, pero no demuestran $U_i=S_i$, $S_i=R_i$ ni $\operatorname{ExistsR}$. Véase el [mapa de literatura, §13](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
 ### 1.3. Totalidad absoluta hipotética
 
 Reservamos:
@@ -1533,6 +1535,8 @@ $$
 
 Esto puede describirse como **monismo interno + pluralismo externo**, pero no se adopta como tesis demostrada.
 
+Tampoco se permite inferir pluralidad ontológica a partir de mera pluralidad de representaciones, observadores o reconstrucciones. La literatura holográfica sobre quantum error correction proporciona un precedente técnico para representaciones redundantes/no triviales del mismo contenido físico. Se usa aquí solo como cautela metodológica: One-$R$/Many-$R$ debe resolverse por estructura ontológica, no contando descripciones. Véase [§13 del mapa de literatura](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
+
 ### 7.3. Retirada de «Verdad Absoluta indexada»
 
 La fórmula histórica:
@@ -1660,6 +1664,20 @@ K1_i+K2_i+K3_i
 $$
 
 La segunda inferencia requiere además REV-24/$\mathrm{OTB}_i$.
+
+### Acceso causal y reconstruibilidad
+
+El Muro tampoco debe identificar «causalmente accesible» con «representable/reconstruible». En AdS/CFT, Dong–Harlow–Wall demuestran reconstrucción de operadores del bulk en el entanglement wedge, que puede extenderse más allá de la causal wedge. Almheiri–Dong–Harlow relacionan esta redundancia reconstructiva con quantum error correction.
+
+Esto proporciona un precedente físico concreto para admitir, en modelos donde esas hipótesis aplican:
+
+$
+\operatorname{Reconstructible}_i(x)
+\land
+\neg\operatorname{DirectCausalAccess}_i(x).
+$
+
+La propuesta **no universaliza** este resultado a toda ontología ni lo usa para probar el Muro. Solo muestra que acceso causal directo y alcance representacional son nociones físicamente separables; por tanto, la ausencia de acceso causal adicional no certifica el alcance de $R_i$. Véase el [mapa de literatura, §13](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
 
 ### Restricción epistemológica sobre K1
 
