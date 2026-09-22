@@ -1978,3 +1978,223 @@ $$
 Esa es ahora la forma precisa de K2.
 
 ---
+
+---
+
+## REV-07 — criterio independiente de identidad de régimen
+
+El objetivo es definir cuándo dos contenidos pertenecen a la misma realidad ontológica sin usar K3, amalgamabilidad, máximos, `SameIndex`, `EClosed` ni la existencia de un dominio común.
+
+### 1. Tokens ontológicos actuales
+
+Sea $\Omega$ una clase/set de trabajo de **tokens ontológicos actuales** relevantes para la teoría procesual: estados, eventos, entidades, estructuras o relaciones efectivamente instanciadas.
+
+No se exige que todos los tokens sean del mismo tipo.
+
+### 2. Familia de enlaces ontológicos admisibles
+
+Sea $\Lambda$ una familia de tipos de relación ontológica actual. Ejemplos posibles, según la ontología concreta, incluyen:
+
+- relación causal actual;
+- pertenencia a un mismo proceso actual;
+- relación constitutiva/parte-todo efectivamente instanciada;
+- dependencia ontológica efectivamente instanciada;
+- relación espaciotemporal cuando esa categoría sea aplicable;
+- incidencia estado-evento en una estructura procesual.
+
+No cuentan por sí solas:
+
+- mera semejanza;
+- compartir leyes descriptivas;
+- posibilidad de interacción;
+- isomorfismo estructural;
+- ser representables en una misma teoría;
+- existencia postulada de una cota común.
+
+Estas exclusiones son importantes: de otro modo la relación de régimen volvería a introducir por definición la conclusión metaontológica.
+
+### 3. Enlace ontológico inmediato
+
+Definimos una relación simétrica:
+
+$$
+q\bowtie r
+$$
+
+si y solo si existe $\lambda\in\Lambda$ tal que:
+
+$$
+\lambda(q,r)
+\lor
+\lambda(r,q).
+$$
+
+La relación $\bowtie$ debe satisfacer:
+
+**L1 — actualidad.** Solo cuentan relaciones efectivamente instanciadas.
+
+**L2 — independencia de amalgamación.** La definición de $\bowtie$ no puede mencionar $K3$, una cota común, $R_i$, `SameIndex` ni pertenencia previa a un régimen.
+
+**L3 — invariancia representacional.** Si dos representaciones preservan la misma estructura ontológica relevante, deben preservar también si $q\bowtie r$.
+
+**L4 — no trivialidad.** No toda pareja de tokens queda enlazada por defecto.
+
+### 4. Relación de co-régimen
+
+Definimos:
+
+$$
+q\sim r
+$$
+
+como la clausura reflexivo-transitiva de $\bowtie$.
+
+Como $\bowtie$ es simétrica, $\sim$ es reflexiva, simétrica y transitiva. Por tanto es una relación de equivalencia.
+
+Las clases:
+
+$$
+[q]_{\sim}
+$$
+
+son los **regímenes ontológicos candidatos**.
+
+Escribimos:
+
+$$
+\operatorname{Reg}(q)
+:=
+[q]_{\sim}.
+$$
+
+Así, dos tokens son worldmates/regimemates no porque admitan una cota común, sino porque están conectados por una cadena finita de relaciones ontológicas actuales.
+
+### 5. Regímenes de dominios procesuales
+
+Sea:
+
+$$
+\operatorname{Tok}(X)
+:=
+\{q\in\Omega\mid q\trianglelefteq X\}.
+$$
+
+Para un dominio no vacío $X$, definimos:
+
+$$
+\operatorname{Reg}(X)=i
+$$
+
+si:
+
+$$
+\forall q\in\operatorname{Tok}(X),
+\quad
+\operatorname{Reg}(q)=i.
+$$
+
+Como las clases de equivalencia de $\sim$ son disjuntas, si $\operatorname{Tok}(X)\neq\varnothing$ entonces $\operatorname{Reg}(X)$, cuando existe, es único.
+
+Un objeto que solo **describe conjuntamente** tokens de dos clases diferentes no pasa por ello a ser un dominio ontológico local: es un artefacto metalingüístico o representacional, salvo que exista una relación ontológica actual que conecte ambas clases y las fusione bajo $\sim$.
+
+### 6. SameRegime ya no implica K3
+
+Definimos:
+
+$$
+\operatorname{SameRegime}(X,Y)
+\iff
+\operatorname{Reg}(X)=\operatorname{Reg}(Y).
+$$
+
+Esto es independiente de la existencia de una cota común.
+
+Contraejemplo mínimo:
+
+$$
+\Omega=\{a,b\},
+\qquad
+a\bowtie b.
+$$
+
+Entonces:
+
+$$
+a\sim b.
+$$
+
+Sea:
+
+$$
+\mathfrak D_i=\{X,Y\}
+$$
+
+con:
+
+$$
+\operatorname{Tok}(X)=\{a\},
+\qquad
+\operatorname{Tok}(Y)=\{b\}.
+$$
+
+Ambos dominios pertenecen al mismo régimen $i$, pero si $\mathfrak D_i$ no contiene ningún tercer dominio $Z$ con:
+
+$$
+X\preceq_i Z
+\land
+Y\preceq_i Z,
+$$
+
+entonces K3_i falla.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{SameRegime}(X,Y)
+\not\Rightarrow
+\exists Z\,[X\preceq_i Z\land Y\preceq_i Z].
+}
+$$
+
+Esto demuestra que la identidad de régimen ya no contiene K3 por definición.
+
+### 7. Qué haría falta para derivar K3_i
+
+K3_i necesitaría una premisa adicional de **admisibilidad de agregación/extensión dentro del régimen**.
+
+Por ejemplo, una condición candidata sería:
+
+$$
+\operatorname{BridgeAdmissible}_i(X,Y)
+\Rightarrow
+\exists Z\in\mathfrak D_i:
+X\preceq_i Z
+\land
+Y\preceq_i Z.
+$$
+
+Pero `BridgeAdmissible` no puede definirse como «existe tal $Z$», porque volvería a ser circular.
+
+Una vía futura sería justificarla mediante cierre de los dominios admisibles bajo incorporación de cadenas finitas de enlaces actuales, y luego estudiar qué hipótesis adicionales hacen falta para dominios infinitos.
+
+### 8. Relación con Lewis y con la ontología de procesos
+
+La estrategia tiene un antecedente metodológico claro en Lewis: su relación de worldmate se apoya en conexión espaciotemporal, no en la existencia previa de un mundo común. Aquí no se adopta su modal realism ni se restringe la unidad ontológica a relaciones espaciotemporales; $\Lambda$ puede incluir vínculos causales, constitutivos, procesuales o de dependencia.
+
+Las event structures de Winskel ofrecen otro antecedente formal para pensar procesos como redes de ocurrencias enlazadas por causalidad/enabling, aunque aquí la noción de régimen es más amplia que una event structure.
+
+### 9. Límites de la propuesta
+
+La elección de $\Lambda$ es sustantiva. Si se introducen relaciones demasiado amplias —por ejemplo, mera semejanza o compartir leyes— el criterio puede colapsar regímenes que deberían permanecer separados. Si $\Lambda$ es demasiado estrecha, puede fragmentar una realidad que intuitivamente se quiere tratar como una.
+
+Por eso REV-07 no queda RESOLVED todavía.
+
+El criterio de cierre pasa a ser:
+
+1. justificar una familia $\Lambda$ de enlaces actuales con contenido ontológico independiente;
+2. demostrar invariancia representacional suficiente para $\sim$;
+3. mostrar que los dominios relevantes quedan tipados de forma estable por $\operatorname{Reg}$;
+4. justificar K3_i mediante una premisa adicional distinta de la propia identidad de régimen.
+
+---
