@@ -19,10 +19,10 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 
 | ID | Severidad | Estado | Finding | Dónde muerde | Criterio de cierre |
 |---|---|---|---|---|---|
-| REV-01 | BLOCKER | OPEN | **F1–F3 se exigen, no se derivan; F2 puede ser incompatible con la emergencia contextual y su pérdida rompe el paso de cota fija usado por Zorn.** | Definición de F; teorema de clausura maximal. | Derivar las propiedades que sobrevivan desde una definición independiente de E y, para F2, o bien encontrar una relación de extensión conservativa respecto de la que haya monotonía, o rehacer la prueba de cotas en Fix(F) sin F2. Si ninguna vía funciona, abandonar/reformular la ruta de maximalidad. |
-| REV-02 | BLOCKER | PARTIAL | **La emergencia está anclada al sistema de transición concreto; añadir contexto/inhibidores puede eliminar capacidades y emergencias. La monotonía bajo inclusión ontológica ordinaria carece de justificación.** | Paso X ⪯ Y ⇒ F(X) ⪯ F(Y). | Formalizar un par explícito M/M' con inhibición y una noción precisa de extensión; demostrar el fallo de monotonía bajo la relación relevante y decidir si existe una extensión conservativa apropiada o si F2 debe eliminarse. |
+| REV-01 | BLOCKER | RESOLVED | **F1–F3 se exigían sin derivarse.** | Definición de F; teorema de clausura maximal. | Cerrado: desde la definición independiente de $\mathcal E_M$ se define $F_M$ como clausura reflexivo-transitiva de eventos emergentes; F1, F2 interna y F3 se derivan. Además F2 se elimina por redundante del teorema abstracto. El puente ontológico restante se registra aparte como REV-18. |
+| REV-02 | BLOCKER | RESOLVED | **La inhibición contextual parecía refutar F2.** | Monotonía y cambio de contexto. | Cerrado por distinción de tipos: la inhibición compara operadores distintos $F_M$ y $F_N$, mientras F2 interna compara subconjuntos bajo un mismo $F_M$. Se construyó además un contraejemplo cross-system y una extensión conductualmente conservativa que preserva eventos. |
 | REV-03 | BLOCKER | PARTIAL | **E es provisional y no independiente.** | [D4], programa [O5]. | Definir emergencia sin usar R, totalidad, Adm, ni «realmente posible porque pertenece a R»; comparar la definición con literatura de emergencia. |
-| REV-04 | BLOCKER | OPEN | **F no discrimina todavía:** falta un modelo explícito S = F(S) ≠ R. | [I8]/puntos fijos propios. | Añadir al menos un modelo concreto calculable con un cierre propio y otro dominio mayor, mostrando que punto fijo ≠ totalidad. |
+| REV-04 | BLOCKER | RESOLVED | **F no discriminaba todavía:** faltaba un modelo explícito de punto fijo propio. | [I8]/puntos fijos propios. | Cerrado con el toy de cuatro componentes: para el operador $F_M$ inducido por el único evento emergente $p\leadsto c$, $S=\{p,c\}$ satisface $F_M(S)=S$ y $S\neq\Sigma_M$. |
 | REV-05 | MAJOR | RESOLVED | **[I6] R = F(R) es analítico dado [D1] y un F que solo añade realidad.** | Retórica de «teorema/punto fijo». | Etiquetarlo como corolario analítico/condicional y separarlo del programa no circular de existencia. |
 | REV-06 | MAJOR | RESOLVED | **Muchos [I] son consecuencias definicionales.** | [I1], [I2], [I2a], REC, [I10a], [I11a], etc. | Reclasificar cada resultado como definicional, lógico, matemático o sustantivo; eliminar retórica probatoria donde no corresponda. |
 | REV-07 | BLOCKER | OPEN | **[D5c] traslada C2 a la definición de «mismo índice».** | Exhaustividad indexada. | Dar criterio independiente de SameIndex; volver C2 una condición sustantiva o demostrar que su carácter constitutivo no trivializa la conclusión. |
@@ -36,6 +36,7 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 | REV-15 | MAJOR | OPEN | **Cero consecuencias metaontológicas discriminantes.** | §19.12, REC/Muro. | Separar función regulativa/metaontológica de afirmaciones empíricas; indicar qué podría discriminar teorías y qué queda por principio infra-determinado. |
 | REV-16 | MINOR doctrinal | RESOLVED | **«Dios» no añade inferencia.** | D1/teología. | Moverlo a nomenclatura doctrinal y evitar usar el término como premisa o evidencia; mantener Total(R) ≠ Ground(R) explícito. |
 | REV-17 | MAJOR fundacional | RESOLVED | **Zorn sobre clases propias requiere compromisos adicionales.** | [I6b]. | Limitar el teorema a posets set-sized o especificar teoría de clases/principio de elección global usado; documentar el compromiso. |
+| REV-18 | BLOCKER | OPEN | **Puente de tipos entre cierre emergente y dominio ontológico.** El operador concreto $F_M$ actúa sobre $\mathcal P(\Sigma_M)$ con orden $\subseteq$, mientras el teorema ontológico pretende operar sobre $(\mathfrak D_i,\preceq_{\mathrm{ont}})$. | Interpretación ontológica del teorema. | Construir una representación/función que lleve dominios ontológicos a estructuras system-relative preservando el orden y el cierre relevante, o reformular el teorema directamente en el tipo correcto. No se permite identificar $\subseteq$ con $\preceq_{\mathrm{ont}}$ por decreto. |
 | FORM-01 | MAJOR | RESOLVED | **820 pares de sintaxis matemática inline no soportada tal como está escrita.** | Documento completo. | Convertir matemática inline a sintaxis GitHub soportada y comprobar renderizado. |
 | FORM-02 | MAJOR | RESOLVED | **47 pares de bloques con delimitadores `$` aislados.** | Documento completo. | Convertir a `$$ ... $$` y comprobar renderizado. |
 | FORM-03 | MAJOR | RESOLVED | **`\\Tau` no es comando MathJax válido (9 usos).** | Sección procesual. | Sustituir por símbolo/comando válido y comprobar renderizado. |
@@ -56,16 +57,12 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - Se añade un modelo juguete explícito de cuatro componentes (camino → ciclo) donde la organización cíclica habilita `activate`.
 - **REV-04 sigue OPEN:** el juguete es calculable, pero todavía no define un operador $F$ ni exhibe $S=F(S)\neq R$.
 
-## Avance de REV-02
+## Cierre formal de REV-01, REV-02 y REV-04
 
-- **REV-02 pasa a PARTIAL.** Se construyó un contraejemplo explícito con inhibidor: una extensión estructural bruta puede contener más componentes/contexto y, sin embargo, eliminar el evento emergente original.
-- Se definió $\hookrightarrow_{\mathrm{cons}}$ como una extensión conductualmente conservativa que preserva perfiles locales, caminos y preserva/refleja las trazas del alfabeto antiguo.
-- Se demostró un lema de preservación de eventos: bajo $M\hookrightarrow_{\mathrm{cons}}N$ y una extensión macro $P$-compatible, todo evento emergente de $M$ se transporta a $N$.
-- **No está RESOLVED:** este resultado es sobre eventos y sistemas de transición, no sobre el operador $F$ ni sobre el orden ontológico del teorema. Falta demostrar si esta relación puede inducir el orden correcto para $F$ y si las cadenas tienen cotas en esa relación.
-## Impacto de REV-02 sobre REV-01
-
-- La revisión de emergencia hace más difícil REV-01: si F2 no es válida, la prueba archivada pierde el paso que convierte una cota $U$ de una cadena de puntos fijos en la cota fija $F(U)$. Sin monotonía no se obtiene $X\preceq F(U)$ a partir de $X=F(X)$ y $X\preceq U$.
-- Por tanto, REV-01 no puede cerrarse simplemente «derivando F2» salvo que se cambie la relación de orden. Debe encontrarse una extensión conservativa apropiada, una prueba alternativa de cotas en $\operatorname{Fix}(F)$, o abandonarse la ruta tipo Zorn.
+- **REV-01 RESOLVED:** fijado $M$, la relación de eventos induce un operador $F_M$ de alcanzabilidad emergente. Extensividad, monotonía interna e idempotencia se demuestran. La revisión del argumento de Zorn muestra además que F2 era redundante: F1 + F3 bastan para elevar cotas y para el paso de exhaustividad.
+- **REV-02 RESOLVED:** el inhibidor no es un contraejemplo a F2 interna porque cambia el sistema y por tanto cambia el operador. Se conserva el contraejemplo cross-system y el lema de extensión conservativa como caracterización de cuándo los eventos sí se transportan.
+- **REV-04 RESOLVED:** el toy produce el punto fijo propio $S=\{p,c\}$ con $F_M(S)=S\neq\Sigma_M$.
+- **REV-18 OPEN:** nada de lo anterior demuestra todavía que $\mathcal P(\Sigma_M)$ y $\subseteq$ sean el tipo y orden correctos para los dominios ontológicos del teorema.
 ## Alcance de algunos cierres
 
 - **REV-05 y REV-06 están RESOLVED únicamente como problemas de presentación y clasificación.** Se corrigió la retórica: los resultados analíticos se etiquetan como analíticos/definicionales y se separan del programa sustantivo. Esto **no constituye avance ontológico** ni responde al hecho de que gran parte de lo actualmente demostrado siga siendo analítico.
@@ -98,6 +95,10 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-01/REV-02 | Se documenta que el fallo de F2 rompe el paso de cota fija de la ruta de Zorn; REV-01 debe rehacerse o cambiar de orden. | Sección I.3.1 + ledger. | bd1ee6a |
 
 | 2026-09-22 | REV-02 | Contraejemplo de inhibición + extensión conductualmente conservativa + lema de preservación de eventos. Estado OPEN → PARTIAL. | Sección I.3.2 + referencias de sistemas de transición. | 7bce3e0, 97b6967, b60b739 |
+| 2026-09-22 | REV-01 | Construido $F_M$ como clausura emergente reflexivo-transitiva; derivadas F1/F2 interna/F3; F2 eliminada del teorema abstracto por redundante. | Sección I.3.3 + §4 revisado. | b4dcf23, 08127fc |
+| 2026-09-22 | REV-02 | Distinguida monotonía interna de cambio cross-system; finding cerrado sin negar la inhibición contextual. | Secciones I.3.2–I.3.3. | b4dcf23 |
+| 2026-09-22 | REV-04 | Toy explícito produce un punto fijo propio $S=F_M(S)\neq\Sigma_M$. | Sección I.3.3. | b4dcf23 |
+| 2026-09-22 | REV-18 | Nuevo blocker: puente de tipos entre $F_M:\mathcal P(\Sigma_M)\to\mathcal P(\Sigma_M)$ y $F:\mathfrak D_i\to\mathfrak D_i$. | Sección I.3.3 + §4. | b4dcf23 |
 
 ## Evidencia de consolidación documental
 
