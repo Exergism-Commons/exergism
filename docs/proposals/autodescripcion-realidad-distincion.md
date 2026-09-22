@@ -236,15 +236,17 @@ $$
 
 mientras se mantenga la definición original de $R$ como totalidad de todo lo real.
 
-Y:
+Bajo una semántica que admite AG, definimos la negación clásica:
 
 $$
 \boxed{
-\operatorname{NoR}
+\operatorname{NoR}_{\mathrm{AG}}
 :=
 \neg\operatorname{ExistsAbsR}.
 }
 $$
+
+Mientras no se haya resuelto REV-26a, el nombre doctrinal «No-$R$» no se identifica sin más con una única fórmula absolutamente cuantificada. Si AG se rechaza, la alternativa relativista debe formularse metalingüísticamente/esquemáticamente; véase REV-26d.
 
 ### 1.6. No hay puente automático local → absoluto
 
@@ -281,7 +283,7 @@ Solo después de separar los targets tiene sentido distinguir:
 - **Many-$R$ fuerte:** existen totalidades indexadas ontológicamente incomparables y ninguna totalidad global legítima;
 - **Cluster-$R$:** varios $R_i$ quedan relacionados por una estructura real común que puede abrir una ruta de globalización.
 
-**Estado actual:** la ruta matemática/REV-24 trabaja sobre `ExistsRegR`/`WitnessedRegR`. El objetivo doctrinal original `ExistsR = ExistsAbsR` permanece OPEN y requiere además REV-26. No se considerará refutado No-$R$ absoluto demostrando solo un $R_i$ local.
+**Estado actual:** la ruta matemática/REV-24 trabaja sobre `ExistsRegR`/`WitnessedRegR`. El objetivo doctrinal original `ExistsR = ExistsAbsR` permanece OPEN y requiere además REV-26. No se considerará resuelto el debate No-$R$ absoluto demostrando solo un $R_i$ local; además, bajo rechazo de AG, la propia forma lógica de No-$R$ debe cambiar.
 
 
 ## 2. Consecuencias analíticas si $R$ existe
@@ -2330,11 +2332,74 @@ Pero GB no puede definirse simplemente como «hay un scope que contiene todos lo
 
 Si cada supuesto conjunto de índices admite siempre un índice adicional no cubierto, obtenemos una versión metaontológica del expansionismo y GB falla.
 
-### 6.7. Estado de REV-26
+### 6.7. REV-26d — estatuto semántico de No-$R$ bajo relativismo
+
+Si AG vale, la alternativa clásica es bien formada:
+
+$$
+\operatorname{NoR}_{\mathrm{AG}}
+:=
+\neg\operatorname{ExistsAbsR}.
+$$
+
+Pero un generality relativist coherente niega precisamente que exista una interpretación final desde la que ese cuantificador tenga alcance absoluto. Su posición no debe reconstruirse como una única cuantificación universal sobre «todos los contextos», porque eso puede reintroducir AG.
+
+Introducimos por ello un **esquema metalingüístico de expansión**. Para cada interpretación admisible $I$ que pretenda ser total:
+
+$$
+\mathrm{ER}[I]:
+\quad
+\exists I^+\;
+[
+I\prec I^+
+\land
+\exists^{I^+}x\;
+\neg\operatorname{Covered}_I(x)
+].
+$$
+
+El relativista/expansionista fuerte sostiene todas las instancias admisibles de ER, no necesariamente una sola fórmula:
+
+$$
+\forall I\;\mathrm{ER}[I]
+$$
+
+porque ese último cuantificador sobre interpretaciones volvería a requerir una metalengua con pretensión global. La notación universal se usa aquí solo como **metaschema**, no como oración objeto.
+
+Llamamos:
+
+$$
+\operatorname{NoAbsFinality}
+$$
+
+a esta posición esquemática de ausencia de una interpretación final/inexpandible.
+
+Por tanto se distinguen:
+
+$$
+\boxed{
+\operatorname{NoR}_{\mathrm{AG}}
+\neq
+\operatorname{NoAbsFinality}
+}
+$$
+
+en estatus lógico, aunque ambas puedan desempeñar el papel informal de «No-$R$» en marcos rivales.
+
+Esto evita una falsa dicotomía. El debate absoluto tiene al menos tres resultados posibles:
+
+1. **AG + APC$_{Real}$:** existe scope absoluto plural;
+2. **AG + $\neg$APC$_{Real}$:** AG es coherente pero la realización plural absoluta falla;
+3. **generality relativism / NoAbsFinality:** la propia demanda de una cuantificación final absoluta es rechazada.
+
+REV-26d impide presentar (3) como si fuera simplemente la negación clásica de (1) dentro del mismo lenguaje.
+
+### 6.8. Estado de REV-26
 
 - **REV-26a / AG:** OPEN.
 - **REV-26b / APC$_{Real}$:** OPEN.
 - **REV-26c / GB:** OPEN como ruta alternativa desde `ExistsRegR`.
+- **REV-26d / No-R semantics:** OPEN; falta decidir si el marco doctrinal adopta AG o permite una alternativa esquemática de generality relativism.
 
 Por tanto:
 
@@ -2360,7 +2425,7 @@ $$
 }
 $$
 
-**Estado del debate:** REV-11 permanece RESOLVED como corrección de carga argumentativa; REV-26 concentra ahora el problema de existencia del $R$ doctrinal original.
+**Estado del debate:** REV-11 permanece RESOLVED como corrección de carga argumentativa; REV-26 concentra ahora tanto el problema de existencia del $R$ doctrinal original como el estatuto lógico de su alternativa No-$R$.
 
 
 ## 7. One-$R$, Many-$R$ y niveles de exhaustividad
