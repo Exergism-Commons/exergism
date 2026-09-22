@@ -2252,6 +2252,38 @@ $$
 
 Esta fórmula no postula un conjunto de todas las cosas: $rr_{\mathrm{abs}}$ es una variable plural. Pero la legitimidad de aplicar comprensión a un dominio absolutamente general sigue siendo una cuestión filosófica real; critical plural logic y las objeciones por extensibilidad indefinida impiden tratarla como gratuita.
 
+En lógica plural clásica, APC$_{Real}$ es una instancia del esquema general:
+
+$$
+\mathrm{PluralComp}:
+\quad
+(\exists x\,\varphi(x))
+\Rightarrow
+\exists xx\,\forall y[
+y\prec xx
+\Longleftrightarrow
+\varphi(y)
+].
+$$
+
+Tomando $\varphi(y):=\operatorname{Real}(y)$ se obtiene APC$_{Real}$. Por tanto:
+
+$$
+\boxed{
+\mathrm{AG}
++
+\mathrm{PluralComp}
++
+\operatorname{NonEmptyReality}
+\Rightarrow
+\operatorname{ExistsAbsR}
+}
+$$
+
+bajo la lectura minimalista de scope.
+
+Esto **no** convierte PluralComp en una verdad neutral del proyecto. El estatus de la comprensión plural como lógica pura/universalmente aplicable es controvertido, y critical plural logic restringe precisamente ese esquema. Por ello REV-26b pasa a PARTIAL, no a RESOLVED.
+
 ### 6.3. Lema de reducción: APC$_{Real}$ y `ExistsAbsR`
 
 Con la semántica plural de alcance adoptada provisionalmente, definimos:
@@ -2455,7 +2487,7 @@ REV-26d impide presentar (3) como si fuera simplemente la negación clásica de 
 ### 6.8. Estado de REV-26
 
 - **REV-26a / AG:** OPEN.
-- **REV-26b / APC$_{Real}$:** OPEN.
+- **REV-26b / APC$_{Real}$:** PARTIAL — derivable como instancia de PluralComp en PFO clásica; pendiente justificar esa lógica/comprensión para alcance absoluto.
 - **REV-26c / GB:** OPEN como ruta alternativa desde `ExistsRegR`.
 - **REV-26d / No-R semantics:** OPEN; falta decidir si el marco doctrinal adopta AG o permite una alternativa esquemática de generality relativism.
 
