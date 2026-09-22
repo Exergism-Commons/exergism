@@ -235,6 +235,7 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-20/REV-22 | PON implica PSB/K1 y, junto con las premisas de firma, hace set-sized el régimen/poset; ambas deudas dejan de ser blockers independientes de la construcción semántica directa. | §4.0 + ledger. | af794e7, ba9af92 |
 | 2026-09-22 | REV-24 | Reabierto explícitamente el problema histórico de §18.15: un máximo de fragmentos semánticos no equivale por sí solo a totalidad ontológica. La conclusión directa se rebaja a $\operatorname{SemTotal}$ y la cobertura se mantiene tipada semánticamente. | §§1.1, 3, 4.0 + ledger. | 836eeb9, c540e58 |
 | 2026-09-22 | REV-25 | Separadas las premisas de smallness de firma y Separation. La aridad finita se reconoce como suficiente pero no necesaria; se introduce $\mathrm{ActualSep}_i$. | §4.0 + documento técnico + ledger. | 7f56973 |
+| 2026-09-22 | REV-24 consistency / Codex P1 | Eliminada la segunda definición incompatible de `NoR` y toda inferencia normativa K1–K3 ⇒ `R_i`. K1–K3 producen `SemTotal_i(S_i)`; `ExistsR` requiere además `OTB_i`. La misma corrección se aplica al bloque REC/Muro, One-R/Many-R y al teorema abstracto del documento técnico. | §§3.2, 4, 7, 10 + documento técnico. | b25dd8a, cd34220 |
 
 ## Evidencia de consolidación documental
 
