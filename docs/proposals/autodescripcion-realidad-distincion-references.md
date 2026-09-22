@@ -175,7 +175,36 @@ Si «Dios» se conserva como nombre apofático de la Verdad Absoluta, debe queda
 
 Antecedentes amplios: **Pseudo-Dionysius** y **Maimonides**, entre otros autores de teología negativa. Estas referencias son histórico-comparativas; no prueban ninguna tesis de la propuesta.
 
-## 13. Política de citación futura
+## 13. Horizontes, observables gravitatorios y reconstrucción holográfica
+
+Estas referencias se usan únicamente como **precedentes físicos y motivación estructural** para distinguir acceso causal/empírico, representación de observables y alcance ontológico. No demuestran $\operatorname{ExistsR}$, no prueban REV-24 y no establecen que nuestro universo sea una simulación, una sandbox ni un espacio de de Sitter o AdS.
+
+- **Venkatesa Chandrasekaran, Roberto Longo, Geoff Penington & Edward Witten (2023), “An algebra of observables for de Sitter space”, _Journal of High Energy Physics_ 2023, 82.** Construye un álgebra de observables para un static patch de de Sitter con operadores gravitacionalmente vestidos respecto de la worldline de un observador. Sirve como precedente técnico para separar un horizonte/perspectiva físicamente accesible de la estructura algebraica mediante la que se representan sus observables. DOI: https://doi.org/10.1007/JHEP02(2023)082
+- **William Donnelly & Steven B. Giddings (2016), “Observables, gravitational dressing, and obstructions to locality and subsystems”, _Physical Review D_ 94, 104038.** Muestra que, al acoplarse a gravedad, operadores con cargas no nulas requieren gravitational dressing no local y discute obstáculos a la noción estándar de subsistema/localidad. Apoya la cautela contra modelar $U_i\to S_i$ como simple inclusión literal de objetos locales. DOI: https://doi.org/10.1103/PhysRevD.94.104038
+- **Ahmed Almheiri, Xi Dong & Daniel Harlow (2015), “Bulk locality and quantum error correction in AdS/CFT”, _Journal of High Energy Physics_ 2015, 163.** Interpreta aspectos de la reconstrucción del bulk en AdS/CFT mediante operator-algebra quantum error correction. Se usa como precedente de que una misma información física puede admitir reconstrucciones redundantes/no triviales, no como prueba de identidad ontológica entre descripciones. DOI: https://doi.org/10.1007/JHEP04(2015)163
+- **Xi Dong, Daniel Harlow & Aron C. Wall (2016), “Reconstruction of Bulk Operators within the Entanglement Wedge in Gauge-Gravity Duality”, _Physical Review Letters_ 117, 021601.** Demuestra, bajo las hipótesis de AdS/CFT empleadas en el trabajo, reconstrucción de operadores del bulk en el entanglement wedge, ampliando el alcance respecto de la causal wedge. Es el precedente técnico más claro aquí para no identificar accesibilidad causal con reconstruibilidad representacional. DOI: https://doi.org/10.1103/PhysRevLett.117.021601
+
+### Uso en $U_i/S_i/R_i$ y el Muro
+
+La propuesta extrae solo tres cautelas metodológicas:
+
+1. un horizonte causal/empírico $U_i$ no tiene por qué coincidir con el álgebra o estructura representacional que codifica lo inferible desde él;
+2. reconstruibilidad y acceso causal directo pueden divergir en teorías físicas bien definidas;
+3. pluralidad de descripciones o reconstrucciones no autoriza por sí sola pluralidad ontológica.
+
+Por tanto, esta literatura **motiva** la arquitectura:
+
+$
+U_i
+\xrightarrow{\operatorname{Rep}_i}
+S_i
+\dashrightarrow
+R_i,
+$
+
+pero deja completamente abierto el segundo paso, que sigue siendo REV-24/$\mathrm{OTB}_i$.
+
+## 14. Política de citación futura
 
 Antes de añadir un concepto nuevo al núcleo:
 
