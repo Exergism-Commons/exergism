@@ -5001,6 +5001,60 @@ porque esa notación reintroduciría exactamente la reificación/setificación q
 
 SR tampoco basta por sí sola para `ExistsR`: todavía hay que justificar que el alcance realizado cumple la noción normativa de $\operatorname{OntTotal}_i$ y que $S_i$ lo presenta mediante una relación `Presents` no circular.
 
+##### Ruta plural
+
+Sea:
+
+$$
+\varphi_q(x)
+:=
+\operatorname{Actual}(x)
+\land
+\operatorname{CoReal}(x,q).
+$$
+
+Adoptando el esquema de comprensión plural:
+
+$$
+\exists x\,\varphi_q(x)
+\Rightarrow
+\exists rr_i\;
+\forall x[
+x\prec rr_i
+\Longleftrightarrow
+\varphi_q(x)
+],
+$$
+
+y suponiendo:
+
+$$
+\operatorname{Actual}(q)
+\land
+\operatorname{CoReal}(q,q),
+$$
+
+obtenemos:
+
+$$
+\boxed{
+\exists rr_i\;
+\forall x[
+x\prec rr_i
+\Longleftrightarrow
+(\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q))
+].
+}
+$$
+
+$rr_i$ es una variable plural: la fórmula no postula una entidad singular cuyos miembros sean esos objetos. Por tanto proporciona una realización de scope compatible con la cláusula anti-setificación, al precio explícito de plural comprehension.
+
+Si se adopta esta fundamentación, $R_i$ puede permanecer como notación doctrinal legible mientras la capa formal estricta usa $rr_i$. En particular, `\exists R_i` debe leerse como abreviatura de cuantificación sobre scopes/plurales y no como existencia de un objeto colector first-order.
+
+Esta ruta no se extiende automáticamente a $R_{\mathrm{abs}}$: la comprensión plural irrestricta sobre un dominio absolutamente general es filosóficamente controvertida y algunas lógicas plurales críticas la restringen.
+
+Así REV-24d pasa a PARTIAL: existe una derivación condicional precisa, pero la PR aún no adopta definitivamente PFO/PFO+ ni una variante crítica como base formal.
+
 #### 8.4. Esquema objetivo de OTB
 
 La obligación conjunta se registra como:
