@@ -1027,7 +1027,7 @@ Entonces existe un punto fijo maximal y todo punto fijo maximal es exhaustivo re
 
 Esquemáticamente, y manteniendo separado el nivel semántico del ontológico:
 
-$
+$$
 \boxed{
 C0+F1+F3+C1_{\operatorname{Fix}}+C2+\operatorname{Max}
 \Rightarrow
@@ -1037,7 +1037,7 @@ F(S_i)=S_i
 \operatorname{SemExhaustive}_i(S_i)
 ].
 }
-$
+$$
 
 Aquí $\operatorname{SemExhaustive}_i$ expresa exhaustividad dentro del tipo formal cubierto por $\mathfrak D_i$; no implica por sí sola $\operatorname{OntTotal}_i$ ni $\operatorname{ExistsR}$. Esa promoción requiere REV-24/$\mathrm{OTB}_i$.
 
@@ -1449,19 +1449,19 @@ Quedan dos preguntas distintas:
 
 **Teorema emergentista procesual**
 
-$
+$$
 \text{¿existe un máximo semántico }S_i^{\mathrm{proc}}
 \text{ entre los dominios procesuales actuales?}
-$
+$$
 
 Aquí $\mathcal E_M$ y $\operatorname{EClosed}^{\mathrm{proc}}$ sí son pertinentes. La promoción de un candidato $S_i^{\mathrm{proc}}$ a un $R_i$ ontológico requeriría REV-24/$\mathrm{OTB}_i$.
 
 **Teorema sincrónico**
 
-$
+$$
 \text{¿existe un dominio semánticamente exhaustivo }S_i^{A}(t)
 \text{ para una sección actual dada?}
-$
+$$
 
 Este segundo problema no se deriva automáticamente de la emergencia diacrónica. Necesitaría una noción sincrónica independiente de cobertura/cierre o una operación de sección sobre un proceso ya construido.
 
@@ -3262,16 +3262,16 @@ que satisface:
 
 **S0 — no-vacuidad**
 
-$
+$$
 \mathfrak C_i\neq\varnothing.
-$
+$$
 
 **S1 — smallness**
 
-$
+$$
 \mathfrak C_i
 \text{ es set-sized}.
-$
+$$
 
 **S2 — cofinalidad respecto del régimen**
 
@@ -3403,15 +3403,15 @@ $\square$
 
 Como $S_i\in\mathfrak K_i^{C}\subseteq\mathfrak K_i$, el candidato es E-closed, y la propiedad demostrada de dominación global da:
 
-$
+$$
 \boxed{
 \operatorname{SemTotal}_i(S_i).
 }
-$
+$$
 
 Este teorema es exclusivamente semántico. No permite sustituir $S_i$ por un $R_i$ ni concluir $\operatorname{ExistsR}$ sin el puente independiente REV-24/$\mathrm{OTB}_i$:
 
-$
+$$
 \operatorname{SemTotal}_i(S_i)
 +
 \mathrm{OTB}_i
@@ -3419,7 +3419,7 @@ $
 \operatorname{OntTotal}_i(S_i)
 \Rightarrow
 \operatorname{ExistsR}.
-$
+$$
 
 ### Consecuencia
 
@@ -4015,25 +4015,25 @@ Pero requiere aceptar que **todo fragmento positivo well-formed de hechos/tokens
 
 Si la doctrina exige restricciones adicionales sobre qué fragmentos cuentan como dominio —por ejemplo completitud causal, cierre nomológico, criterios mereológicos especiales o restricciones globales— entonces StructAdm sería demasiado débil y los findings de admisibilidad tendrían que reabrirse.
 
-### 8. Cobertura ontológica
+### 8. Cobertura semántica del contenido actual
 
-Para que un máximo de estos fragmentos corresponda realmente a la totalidad del régimen, hay que exigir además cobertura atómica:
+Para que un máximo de estos fragmentos cubra todo el contenido actual **representable por el formalismo**, se exige además cobertura atómica:
 
-$$
+$
 \mathrm{COV}_i:
-$$
+$
 
-para todo token/hecho actual $q$ del régimen existe algún fragmento estructuralmente admisible $X$ con:
+para todo token/hecho actual $q$ del régimen representable por la firma vigente existe algún fragmento estructuralmente admisible $X$ con:
 
-$$
+$
 q\trianglelefteq_i X.
-$$
+$
 
-Con StructAdm, COV es inmediata para tokens simples mediante fragmentos mínimos; para eventos/hechos relacionales se toma el footprint well-formed mínimo que contiene sus relata obligatorios.
+Con StructAdm, COV es inmediata para tokens simples representables mediante fragmentos mínimos; para eventos/hechos relacionales representables se toma el footprint well-formed mínimo que contiene sus relata obligatorios.
 
-Si $R_i$ domina todos los dominios admisibles, entonces por COV contiene todo token/hecho actual del régimen.
+Si $S_i$ domina todos los dominios admisibles, entonces por COV contiene todo token/hecho actual cubierto por esa condición.
 
-Así el máximo formal no es solo maximal respecto de una familia arbitraria: representa exhaustividad del contenido actual del régimen.
+Así el máximo formal $S_i$ no es solo maximal respecto de una familia arbitraria: demuestra exhaustividad semántica respecto del contenido cubierto por la firma y por COV. No se sigue todavía $\operatorname{OntTotal}_i(S_i)$ ni puede renombrarse el candidato como $R_i$ sin REV-24/$\mathrm{OTB}_i$.
 
 ### 9. Estado propuesto
 
