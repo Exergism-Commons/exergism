@@ -800,7 +800,75 @@ Dos cautelas importantes:
 - una correlación estadística no basta por sí sola;
 - una relación física no clásica, como el entrelazamiento, cuenta solo si una ontología física independiente la trata como relación real token-specific y satisface los criterios anteriores.
 
-### 5.5. Qué sigue abierto
+### 5.5. K3_i se reduce a dos principios locales
+
+La identidad de régimen ya permite sustituir K3_i como premisa primitiva por dos obligaciones locales.
+
+**EEA — Edge Extension Admissibility.** Si un dominio no vacío $X$ contiene $q$ y existe un enlace actual:
+
+$$
+q\bowtie r,
+$$
+
+entonces existe una extensión admisible $X'$ con:
+
+$$
+X\preceq_i X'
+$$
+
+y:
+
+$$
+r\trianglelefteq_i X'.
+$$
+
+**OAM — Overlap Amalgamation.** Si dos dominios $X,Y$ comparten un token actual:
+
+$$
+\exists q:
+q\trianglelefteq_i X
+\land
+q\trianglelefteq_i Y,
+$$
+
+entonces existe $Z$ con:
+
+$$
+X\preceq_i Z
+\land
+Y\preceq_i Z.
+$$
+
+Como dos tokens del mismo régimen están unidos por un camino finito de $\bowtie$, EEA permite extender $X$ a lo largo del camino hasta alcanzar un token de $Y$; OAM amalgama entonces esa extensión con $Y$.
+
+Por tanto, para dominios no vacíos:
+
+$$
+\boxed{
+\mathrm{EEA}+\mathrm{OAM}
+\Rightarrow
+K3_i.
+}
+$$
+
+Si se admite un dominio vacío $0_i$, basta además que sea bottom:
+
+$$
+0_i\preceq_i X
+$$
+
+para todo $X$.
+
+Esta derivación es importante porque EEA y OAM son más locales y falsables que K3_i:
+
+- EEA habla de extender a través de un único enlace ontológico actual;
+- OAM habla solo de dominios que ya solapan literalmente en contenido actual.
+
+Ni una ni otra define «mismo régimen» como «tener cota común».
+
+El [documento técnico](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md) contiene la demostración completa.
+
+### 5.6. Qué sigue abierto
 
 REV-07 permanece **PARTIAL**.
 
