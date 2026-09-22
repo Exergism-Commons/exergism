@@ -36,7 +36,7 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 | REV-15 | MAJOR | OPEN | **Cero consecuencias metaontológicas discriminantes.** | §19.12, REC/Muro. | Separar función regulativa/metaontológica de afirmaciones empíricas; indicar qué podría discriminar teorías y qué queda por principio infra-determinado. |
 | REV-16 | MINOR doctrinal | RESOLVED | **«Dios» no añade inferencia.** | D1/teología. | Moverlo a nomenclatura doctrinal y evitar usar el término como premisa o evidencia; mantener Total(R) ≠ Ground(R) explícito. |
 | REV-17 | MAJOR fundacional | RESOLVED | **Zorn sobre clases propias requiere compromisos adicionales.** | [I6b]. | Limitar el teorema a posets set-sized o especificar teoría de clases/principio de elección global usado; documentar el compromiso. |
-| REV-18 | BLOCKER | OPEN | **Puente de tipos entre cierre emergente y dominio ontológico.** El operador concreto $F_M$ actúa sobre $\mathcal P(\Sigma_M)$ con orden $\subseteq$, mientras el teorema ontológico pretende operar sobre $(\mathfrak D_i,\preceq_{\mathrm{ont}})$. | Interpretación ontológica del teorema. | Construir una representación/función que lleve dominios ontológicos a estructuras system-relative preservando el orden y el cierre relevante, o reformular el teorema directamente en el tipo correcto. No se permite identificar $\subseteq$ con $\preceq_{\mathrm{ont}}$ por decreto. |
+| REV-18 | BLOCKER | OPEN | **Puente semántico/tipado entre la clausura emergente system-relative y los dominios ontológicos.** $F_M$ actúa sobre $\mathcal P(\Sigma_M)$ con $\subseteq$; la forma operator-free usa una familia cerrada $\mathfrak K\subseteq\mathfrak D$ bajo $\preceq_{\mathrm{ont}}$. | Interpretación ontológica del teorema. | Construir una representación que conecte $\mathcal E_M/F_M$ con un predicado no circular $\operatorname{EClosed}(X)$ sobre $\mathfrak D$, preservando el orden relevante y justificando cofinalidad/inductividad; o demostrar directamente esas propiedades en el tipo ontológico. Reformular el teorema en $\mathfrak D$ sin este puente no basta. |
 | FORM-01 | MAJOR | RESOLVED | **820 pares de sintaxis matemática inline no soportada tal como está escrita.** | Documento completo. | Convertir matemática inline a sintaxis GitHub soportada y comprobar renderizado. |
 | FORM-02 | MAJOR | RESOLVED | **47 pares de bloques con delimitadores `$` aislados.** | Documento completo. | Convertir a `$$ ... $$` y comprobar renderizado. |
 | FORM-03 | MAJOR | RESOLVED | **`\\Tau` no es comando MathJax válido (9 usos).** | Sección procesual. | Sustituir por símbolo/comando válido y comprobar renderizado. |
@@ -55,7 +55,7 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - La macrovariable ya no es booleana por obligación: $P:\Sigma\to V_P$.
 - La antigua separación `OrgDep` + `DynEff` se elimina por redundancia; con macro-invariancia y un testigo local con distinto valor de $P$, la organización distinta queda forzada.
 - Se añade un modelo juguete explícito de cuatro componentes (camino → ciclo) donde la organización cíclica habilita `activate`.
-- **REV-04 sigue OPEN:** el juguete es calculable, pero todavía no define un operador $F$ ni exhibe $S=F(S)\neq R$.
+- En este punto intermedio REV-04 seguía abierto; queda cerrado posteriormente al construirse $F_M$ y el punto fijo propio explícito $S=\{p,c\}$.
 
 ## Cierre formal de REV-01, REV-02 y REV-04
 
@@ -99,9 +99,11 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-02 | Distinguida monotonía interna de cambio cross-system; finding cerrado sin negar la inhibición contextual. | Secciones I.3.2–I.3.3. | b4dcf23 |
 | 2026-09-22 | REV-04 | Toy explícito produce un punto fijo propio $S=F_M(S)\neq\Sigma_M$. | Sección I.3.3. | b4dcf23 |
 | 2026-09-22 | REV-18 | Nuevo blocker: puente de tipos entre $F_M:\mathcal P(\Sigma_M)\to\mathcal P(\Sigma_M)$ y $F:\mathfrak D_i\to\mathfrak D_i$. | Sección I.3.3 + §4. | b4dcf23 |
+| 2026-09-22 | REV-01/REV-18 | Reconciliadas las formas operator y operator-free: K1–K3 muestran la dependencia real de Zorn; F1+F3 inducen cofinalidad de Fix(F); F2 no es necesaria para elevar cotas. | §4 normalizado. | e0e58ae, f59a380 |
+| 2026-09-22 | REFERENCES | Añadidas referencias explícitas a Tarski y familias de Moore para separar closure operators estándar del lema operator-free usado aquí. | Mapa bibliográfico. | 524cbca |
 
 ## Evidencia de consolidación documental
 
 Tras el commit 9cfb857, el documento normativo principal funciona como crónica + estado actual. La versión antigua se conserva como evidencia histórica, pero sus contradicciones no se consideran tesis simultáneamente vigentes.
 
-Los bloqueadores sustantivos REV-01–REV-04, REV-07, REV-08/14, REV-09/10 y REV-15 permanecen abiertos. La consolidación documental no se usa como sustituto de su resolución.
+Estado sustantivo actual: REV-03 permanece PARTIAL; REV-07, REV-08, REV-09, REV-10, REV-14, REV-15 y REV-18 permanecen OPEN. REV-01, REV-02 y REV-04 están RESOLVED en su alcance formal, sin que eso cierre REV-18 ni demuestre todavía la ontología global.
