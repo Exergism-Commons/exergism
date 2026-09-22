@@ -5632,6 +5632,53 @@ $$
 }
 $$
 
+#### 8.6.7. No-$R$ clásico frente a no-finalidad relativista
+
+Si AG es admisible:
+
+$$
+\operatorname{NoR}_{\mathrm{AG}}
+:=
+\neg\operatorname{ExistsAbsR}
+$$
+
+es una negación ordinaria en el mismo marco semántico.
+
+Si se adopta generality relativism, esa formulación no puede darse por neutral: la tesis rival rechaza que exista un alcance final de los cuantificadores. Se representa entonces mediante un **metaschema**:
+
+$$
+\mathrm{ER}[I]:
+\quad
+\exists I^+[
+I\prec I^+
+\land
+\exists^{I^+}x\,\neg\operatorname{Covered}_I(x)
+].
+$$
+
+para cada interpretación admisible $I$ que pretenda ser final.
+
+La colección de todas las instancias ER no se reifica como una cuantificación objeto sobre todas las interpretaciones. Es una disciplina metalingüística: ante cualquier candidato $I$, debe poder darse una expansión $I^+$.
+
+Denotamos esa posición por:
+
+$$
+\operatorname{NoAbsFinality}.
+$$
+
+Así:
+
+$$
+\boxed{
+\operatorname{NoR}_{\mathrm{AG}}
+\text{ y }
+\operatorname{NoAbsFinality}
+\text{ no son la misma fórmula ni presuponen la misma semántica}.
+}
+$$
+
+Esto importa para la carga probatoria: refutar $\operatorname{NoR}_{\mathrm{AG}}$ mediante AG+APC$_{Real}$ no refuta por sí solo generality relativism, porque este último cuestiona AG/APC antes de que la negación clásica quede disponible con lectura absoluta.
+
 
 ### 9. Zorn deja de ser necesario para SemTotal
 
