@@ -100,6 +100,7 @@ Los bloqueadores activos relevantes pasan a ser:
 - **REV-07:** identidad independiente de cada régimen $i$ y justificación de $K3_i$;
 - **REV-09:** admisibilidad ontológica de las cotas de cadenas;
 - **REV-20:** cofinalidad $K1_i$;
+- **REV-22:** aplicabilidad fundacional de Zorn al régimen real — smallness o esqueleto cofinal set-sized;
 - **REV-15:** consecuencias metaontológicas discriminantes;
 
 ## 3.1. Resumen formal vigente
@@ -163,7 +164,8 @@ El cuello de botella ya no está en F1–F3 ni en resolver One-R. Está en conec
 1. **REV-18:** interpretar ontológicamente incidencia y `EClosed_i`;
 2. **REV-20:** demostrar cofinalidad $K1_i$ sin presuponer ya $R_i$;
 3. **REV-09:** justificar la admisibilidad ontológica de cotas de cadenas dentro de $i$;
-4. **REV-07:** justificar $\Lambda_*$, EEA/OAM y por tanto $K3_i$ sin circularidad.
+4. **REV-07:** justificar $\Lambda_*$, EEA/OAM y por tanto $K3_i$ sin circularidad;
+5. **REV-22:** justificar que Zorn estándar aplica al régimen mediante smallness o un esqueleto cofinal set-sized.
 
 ---
 
@@ -731,6 +733,56 @@ El teorema clásico de Tarski afirma que los puntos fijos de una función monót
 Nuestra observación es más modesta: **para esta ruta concreta de Zorn, una vez que existe un operador extensivo e idempotente y las cadenas de puntos fijos tienen cotas en el poset ambiente, la monotonía no es necesaria para levantar esas cotas a puntos fijos**.
 
 La versión operator-free de K1–K3 hace transparente esa dependencia.
+
+### 4.8.1. Aplicabilidad fundacional al régimen real
+
+La restricción set-sized de Zorn pertenece al teorema abstracto. Para aplicarlo a un régimen ontológico real hay tres rutas posibles.
+
+**Ruta A — smallness directa**
+
+$$
+\mathfrak D_i^{\mathrm{proc}}
+\text{ es set-sized}.
+$$
+
+**Ruta B — esqueleto cofinal set-sized**
+
+Existe:
+
+$$
+\mathfrak C_i
+\subseteq
+\mathfrak D_i^{\mathrm{proc}}
+$$
+
+set-sized y cofinal:
+
+$$
+\forall X\in\mathfrak D_i^{\mathrm{proc}}
+\;\exists Y\in\mathfrak C_i:
+X\preceq_i Y.
+$$
+
+Si dentro de $\mathfrak C_i$ se preservan cofinalidad cerrada, cotas de cadenas cerradas y directedness, Zorn produce un máximo de $\mathfrak C_i$ que, por cofinalidad, domina también todo $\mathfrak D_i^{\mathrm{proc}}$.
+
+Por tanto:
+
+$$
+\boxed{
+\text{esqueleto cofinal set-sized}
+\Rightarrow
+\text{Zorn puede producir un }R_i
+\text{ máximo del régimen}.
+}
+$$
+
+La demostración completa está en el documento técnico.
+
+**Ruta C — teoría de clases**
+
+Especificar explícitamente una teoría de clases y un principio de maximalidad suficientemente fuerte. Esta ruta no se presupone.
+
+La aplicabilidad fundacional se registra como REV-22. No puede cerrarse suponiendo smallness a partir de la existencia del propio $R_i$.
 
 ### 4.8. Estado normativo
 
