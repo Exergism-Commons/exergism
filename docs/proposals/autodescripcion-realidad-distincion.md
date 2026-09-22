@@ -1,7 +1,7 @@
 # Autodescripción, realidad y distinción — crónica consolidada
 
 **Estado:** propuesta doctrinal exploratoria, no canónica.  
-**PR:** #12 — *Derive reality closure from supramedium and emergence*.  
+**PR:** #12 — *Formalize regime-local emergence and process-domain maximality*.  
 **Versión consolidada:** 2026-09-22.
 
 Este documento ya **no** intenta mantener simultáneamente todas las formulaciones producidas durante la exploración. Su función es doble:
@@ -92,7 +92,7 @@ La propuesta ya dispone de una definición independiente y event-local de emerge
 
 Por tanto, REV-01, REV-02 y REV-04 están cerrados en sus criterios originales, mientras REV-03 permanece PARTIAL por alcance doctrinal.
 
-Esto **todavía no demuestra una metafísica emergentista de $R$** porque falta conectar el formalismo event-level con el tipo correcto de dominio ontológico y decidir si el teorema debe ser sincrónico o procesual.
+Esto **todavía no demuestra una metafísica emergentista de $R$**. El teorema vigente ya es procesual y local a cada régimen $i$; lo que falta es justificar ontológicamente $\operatorname{Adm}_i$, la cofinalidad K1, la admisibilidad de cotas y el eventual puente metaontológico hacia una realidad total.
 
 Los bloqueadores activos relevantes pasan a ser:
 
