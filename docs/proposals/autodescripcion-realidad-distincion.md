@@ -107,23 +107,26 @@ $$
 
 **Estado: OPEN — bloqueadores REV-01 a REV-04.**
 
-## 3.1. Candidata para REV-03 — emergencia organizacional dinámicamente efectiva
+## 3.1. Candidata para REV-03 — emergencia organizacional localizada al evento
 
 Para evitar circularidad, la emergencia se define **sin** usar $R$, totalidad, admisibilidad ontológica ni «posibilidad real».
 
-Sea un sistema/medio:
+### Sistema de transición
+
+Sea un sistema/medio etiquetado:
 
 $$
-M=(C,\Sigma,\Rightarrow_M),
+M=(C,\Sigma,A,\xrightarrow{}_M),
 $$
 
 donde:
 
 - $C$ es una colección finita o especificada de componentes tipados;
-- $\Sigma$ es el espacio de configuraciones del sistema;
-- $\Rightarrow_M$ es su relación de transición, que incorpora reglas y condiciones de contorno del sistema considerado.
+- $\Sigma$ es el espacio de configuraciones;
+- $A$ es un conjunto de tipos de transición/acciones;
+- $s\xrightarrow{a}_M u$ indica que desde $s$ puede ejecutarse una transición de tipo $a$ hacia $u$.
 
-Cada configuración $s\in\Sigma$ se representa como:
+Cada configuración se representa como:
 
 $$
 s=(L(s),G(s)),
@@ -132,140 +135,130 @@ $$
 donde:
 
 - $L(s)$ es el **perfil local**: tipos y estados intrínsecos de los componentes;
-- $G(s)$ es la **organización relacional**: relaciones, conectividad, disposición o estructura entre esos componentes.
+- $G(s)$ es la **organización relacional** entre esos componentes.
 
-Sea $P:\Sigma\to\{0,1\}$ una macrocaracterística.
+Una macrocaracterística ya no tiene por qué ser booleana:
 
-### C1 — Macrocaracterística estructural
+$$
+P:\Sigma\to V_P,
+$$
 
-$P$ debe ser invariante bajo un mero renombrado de componentes equivalentes:
+donde $V_P$ puede ser binario, ordinal, cuantitativo o estructurado de otro modo.
+
+### C1 — Macro-invariancia
+
+$P$ debe ser invariante bajo renombrados type-preserving de componentes equivalentes:
 
 $$
 \operatorname{Macro}_M(P)
 \iff
+\forall s\in\Sigma\;
 \forall \pi\in\operatorname{Perm}_{\mathrm{type}}(C),
 \quad
 P(s)=P(\pi s).
 $$
 
-Esto evita contar como macropropiedad una etiqueta arbitraria ligada a la identidad nominal de un componente.
+Esto impide contar como macrocaracterística una etiqueta dependiente del nombre de un componente.
 
-### C2 — Dependencia organizacional
+### Capacidad dinámica observable
 
-Definimos:
+Para no identificar «dinámica distinta» con «sucesores distintos» —condición casi trivial en cualquier dinámica no degenerada— definimos la capacidad conductual de una configuración mediante las secuencias de tipos de transición que puede ejecutar.
 
-$$
-\operatorname{OrgDep}_M(P)
-$$
-
-si existen configuraciones $s,s'\in\Sigma$ tales que:
+Sea:
 
 $$
-L(s)\cong L(s'),
-$$
-
-$$
-G(s)\not\cong G(s'),
-$$
-
-y:
-
-$$
-P(s)\neq P(s').
-$$
-
-Es decir: manteniendo fijo el perfil local de componentes, una diferencia en la **organización** puede cambiar la macrocaracterística.
-
-Esto captura la intuición de Broad de que no basta conocer los componentes aislados y la estrategia de Wimsatt de localizar emergencia mediante fallos de agregatividad/interdependencia organizacional.
-
-### C3 — Eficacia dinámica organizacional
-
-La mera dependencia relacional es demasiado permisiva: una propiedad trivial como «existe al menos una arista» podría satisfacer C2.
-
-Para expresar la intuición **estructura emergente → nuevo medio**, definimos el conjunto de sucesores estructurales de una configuración:
-
-$$
-\operatorname{Next}_M(s)
+\operatorname{Traces}_M(s)
 :=
-\{[u]_{\cong}\mid s\Rightarrow_M u\},
+\{
+a_1\cdots a_n
+\mid
+\exists s_1,\ldots,s_n:
+s\xrightarrow{a_1}_M s_1
+\xrightarrow{a_2}_M\cdots
+\xrightarrow{a_n}_M s_n
+\}.
 $$
 
-donde $[u]_{\cong}$ identifica configuraciones estructuralmente isomorfas.
+Dos configuraciones pueden ser diferentes y, sin embargo, ofrecer exactamente las mismas capacidades de transición. Lo relevante aquí es que una organización **habilite una capacidad** que una organización alternativa, con el mismo perfil local, no posee.
 
 Definimos:
 
 $$
-\operatorname{DynEff}_M(P)
+\operatorname{Enables}_M(s,w)
+\iff
+\operatorname{Traces}_M(s)
+\setminus
+\operatorname{Traces}_M(w)
+\neq
+\varnothing.
 $$
 
-si existen $s,s'\in\Sigma$ con:
+Equivalente: existe al menos una transición o secuencia de transiciones ejecutable desde $s$ que no puede ejecutarse desde $w$.
+
+### Testigo organizacional local al evento
+
+La condición de emergencia debe ser satisfecha por el **estado resultante concreto**, no por algún par exótico situado en otra región de $\Sigma$.
+
+Definimos:
 
 $$
-L(s)\cong L(s'),
+\operatorname{OrgWitness}_M(P,s_1)
+$$
+
+si existe $w\in\Sigma$ tal que:
+
+$$
+L(w)\cong L(s_1),
 $$
 
 $$
-P(s)\neq P(s'),
+P(w)\neq P(s_1),
 $$
 
 y:
 
 $$
-\operatorname{Next}_M(s)
-\neq
-\operatorname{Next}_M(s').
+\operatorname{Enables}_M(s_1,w).
 $$
 
-Así, la diferencia organizacional distinguida por $P$ no es meramente descriptiva: modifica qué transformaciones posteriores puede realizar el sistema.
+No es necesario añadir separadamente $G(w)\not\cong G(s_1)$. Si los perfiles locales son isomorfos y la organización también lo fuese mediante una permutación type-preserving, C1 obligaría a $P(w)=P(s_1)$, contradiciendo la segunda condición. Por tanto, la antigua condición global de dependencia organizacional era redundante una vez localizada la eficacia dinámica en el testigo concreto.
 
-Esto **no** postula nuevos poderes causales irreducibles ni causalidad descendente. La diferencia de sucesores puede estar completamente implementada por la microdinámica de $M$.
+### Definición candidata de evento emergente
 
-### Definición candidata
+Un evento:
 
-Llamamos **macrocaracterística emergente organizacional** a $P$ respecto de $M$ cuando:
+$$
+e=(s_0,P,s_1)
+$$
+
+pertenece a $\mathcal E_M$ si y solo si:
 
 $$
 \boxed{
-\operatorname{OrgEmergent}_M(P)
-\iff
+s_0\xrightarrow{+}_M s_1
+\land
+P(s_0)\neq P(s_1)
+\land
 \operatorname{Macro}_M(P)
 \land
-\operatorname{OrgDep}_M(P)
-\land
-\operatorname{DynEff}_M(P).
+\operatorname{OrgWitness}_M(P,s_1).
 }
 $$
 
-Y definimos un **evento de emergencia**:
+Aquí $s_0\xrightarrow{+}_M s_1$ significa que existe una trayectoria no vacía de transiciones desde $s_0$ hasta $s_1$.
 
-$$
-\boxed{
-(s_0,P,s_1)\in\mathcal E_M
-}
-$$
+La emergencia queda así **localizada al evento**: el propio $s_1$ debe exhibir una macrocaracterística cuyo valor depende de su organización y cuya organización habilita capacidades dinámicas ausentes en un comparador estructural $w$ con el mismo perfil local.
 
-si y solo si:
-
-$$
-s_0\Rightarrow_M^{+}s_1
-\land
-\neg P(s_0)
-\land
-P(s_1)
-\land
-\operatorname{OrgEmergent}_M(P).
-$$
-
-Esta es una definición **positiva, relacional y diacrónica**. No contiene $R$, `Adm`, totalidad, clausura ontológica ni una cláusula del tipo «es posible porque la realidad lo permite».
+No basta ya con que $P$ sea «emergente en algún lugar» del espacio de estados.
 
 ### Qué afirma y qué no afirma
 
 **Afirma:**
 
-- aparición diacrónica de una macrocaracterística;
-- dependencia constitutiva de una configuración;
-- dependencia de organización relacional, no mera agregación;
-- eficacia dinámica mínima: la organización cambia el espacio de sucesores del sistema.
+- novedad macroestructural diacrónica;
+- no dependencia de nombres de componentes;
+- dependencia de organización con perfil local controlado;
+- aparición de al menos una capacidad de transición atribuible a esa diferencia organizacional.
 
 **No afirma:**
 
@@ -276,90 +269,261 @@ Esta es una definición **positiva, relacional y diacrónica**. No contiene $R$,
 - nuevas leyes fundamentales;
 - pertenencia a una totalidad $R$.
 
+La microdinámica de $M$ puede implementar completamente la capacidad habilitada.
+
 ### Relación con la literatura
 
-- **Broad:** la organización del todo puede ser indispensable para caracterizar propiedades que no se obtienen de componentes aislados.
-- **Wimsatt:** los fallos de agregatividad y la interdependencia organizacional ofrecen una vía positiva para localizar fenómenos emergentes.
-- **Bedau:** su weak emergence añade una condición computacional —derivabilidad solo mediante simulación— que aquí no se exige.
-- **Kim:** superveniencia + irreducibilidad no bastan como caracterización positiva; esta definición evita tomar esos dos rasgos como definición.
-- **Humphreys:** su transformational emergence refuerza la importancia de una lectura diacrónica y usa ejemplos como transformaciones físicas/químicas; nuestra definición es más débil y no pretende sustituirla.
-- **Hoel et al.:** causal emergence cuantifica casos donde una coarse-graining macro puede tener mayor efectividad causal/informativa que la microdescripción. Es un posible refinamiento cuantitativo futuro, no una premisa de esta definición.
+- **Broad:** la organización del todo puede ser indispensable para propiedades que no se determinan por componentes considerados aisladamente.
+- **Wimsatt:** los fallos de agregatividad y la interdependencia organizacional proporcionan un criterio positivo para buscar emergencia.
+- **Bedau:** weak emergence añade una exigencia computacional de derivación solo por simulación, aquí no adoptada.
+- **Kim:** superveniencia + irreducibilidad no constituyen por sí solas una caracterización positiva suficiente.
+- **Humphreys:** transformational emergence motiva tratar seriamente la generación diacrónica; nuestra definición es más débil.
+- **Hoel et al.:** causal emergence ofrece un posible refinamiento cuantitativo de eficacia causal macro, no una premisa de este criterio mínimo.
 
-Véase el [mapa de literatura](autodescripcion-realidad-distincion-references.md).
+La comparación de capacidades mediante trazas usa una herramienta estándar de semántica de sistemas de transición; no presupone que la realidad física sea literalmente una máquina de estados.
 
-### Pruebas mínimas de discriminación
+### Tests de discriminación
 
 **T1 — mera agregación, negativo.**
 
-Sea $P(s)$ = «hay al menos diez componentes». Si dos configuraciones tienen el mismo perfil local, reorganizarlas no cambia $P$. Entonces:
+Sea $P(s)$ = número de componentes. Reorganizar un sistema con el mismo perfil local no cambia $P$. No existe testigo $w$ con:
 
 $$
-\neg\operatorname{OrgDep}_M(P),
+L(w)\cong L(s_1)
+\quad\text{y}\quad
+P(w)\neq P(s_1).
 $$
 
-y no hay emergencia organizacional.
+Por tanto el evento no pertenece a $\mathcal E_M$.
 
-**T2 — etiqueta de componente, negativo.**
+**T2 — etiqueta nominal, negativo.**
 
-Sea $P(s)$ = «el componente llamado $c_1$ está activo». Un renombrado puede cambiar la descripción, por lo que falla:
+Sea $P(s)$ = «el componente llamado $c_1$ está activo». Falla C1 porque un renombrado type-preserving puede cambiar el valor descrito.
 
-$$
-\operatorname{Macro}_M(P).
-$$
+**T3 — estructura descriptiva pero dinámicamente inerte, negativo.**
 
-**T3 — relación estructural inerte, negativo.**
-
-Sea $P(s)$ = «existe una arista». Si añadir esa arista no modifica el conjunto de sucesores estructurales:
+Supónganse $s_1$ y $w$ con el mismo perfil local y distinto valor de una descripción estructural $P$, pero:
 
 $$
-\operatorname{Next}_M(s)
+\operatorname{Traces}_M(s_1)
 =
-\operatorname{Next}_M(s'),
+\operatorname{Traces}_M(w).
 $$
 
-falla $\operatorname{DynEff}_M(P)$.
-
-**T4 — organización que crea nuevas transiciones, positivo.**
-
-Supónganse dos configuraciones con los mismos componentes y estados locales. En $s_0$ están desconectados; en $s_1$ forman una estructura $P$ que habilita una transición posterior $q$ imposible desde $s_0$. Si:
+Entonces:
 
 $$
-s_0\Rightarrow_M^{+}s_1,
+\neg\operatorname{Enables}_M(s_1,w),
 $$
 
-y se satisfacen C1–C3, entonces:
+y la diferencia estructural no cuenta como emergencia en esta noción.
+
+**T4 — organización que habilita una capacidad, positivo.**
+
+Si:
 
 $$
-(s_0,P,s_1)\in\mathcal E_M.
+L(w)\cong L(s_1),
 $$
 
-Este patrón incluye, de forma abstracta, casos como ensamblajes, enlaces o estructuras cuya organización altera las transformaciones disponibles después de formarse.
-
-### Consecuencia inmediata para REV-02
-
-La relación de transición pertenece al sistema concreto $M$.
-
-Si se añade un inhibidor o cambia el contexto, obtenemos otro sistema:
-
 $$
-M'=(C',\Sigma',\Rightarrow_{M'}),
+P(w)\neq P(s_1),
 $$
 
-y no hay razón para exigir:
+y existe una traza $\alpha$ tal que:
+
+$$
+\alpha\in\operatorname{Traces}_M(s_1)
+\setminus
+\operatorname{Traces}_M(w),
+$$
+
+entonces $s_1$ posee una capacidad habilitada por su organización que el comparador $w$ no posee.
+
+### Modelo juguete explícito: cuatro componentes
+
+Sea:
+
+$$
+C=\{1,2,3,4\},
+$$
+
+con los cuatro componentes del mismo tipo y en el mismo estado local `ready`.
+
+Consideremos cuatro configuraciones:
+
+- $p$: grafo camino $1-2-3-4$;
+- $c$: grafo ciclo $1-2-3-4-1$;
+- $a$: misma organización cíclica tras una activación colectiva;
+- $i$: configuración inerte auxiliar.
+
+$p$ y $c$ tienen el mismo perfil local:
+
+$$
+L(p)\cong L(c).
+$$
+
+Sea la macrocaracterística:
+
+$$
+P(s)=\beta_1(G(s)),
+$$
+
+el número ciclomático del grafo de organización. Entonces:
+
+$$
+P(p)=0,
+\qquad
+P(c)=1.
+$$
+
+$P$ es invariante bajo renombrado de vértices.
+
+Definimos la tabla de transición mínima:
+
+| Estado | Acción | Destino |
+|---|---|---|
+| $p$ | `close` | $c$ |
+| $p$ | `idle` | $p$ |
+| $c$ | `activate` | $a$ |
+| $c$ | `idle` | $c$ |
+| $a$ | `idle` | $a$ |
+| $i$ | `idle` | $i$ |
+
+Por tanto:
+
+$$
+\texttt{activate}
+\in
+\operatorname{Traces}_M(c),
+$$
+
+pero:
+
+$$
+\texttt{activate}
+\notin
+\operatorname{Traces}_M(p).
+$$
+
+El evento:
+
+$$
+e=(p,P,c)
+$$
+
+satisface:
+
+$$
+p\xrightarrow{\texttt{close}}_M c,
+$$
+
+$$
+P(p)\neq P(c),
+$$
+
+y el propio $p$ sirve como testigo organizacional de $c$:
+
+$$
+L(p)\cong L(c),
+$$
+
+$$
+P(p)\neq P(c),
+$$
+
+$$
+\operatorname{Enables}_M(c,p).
+$$
+
+Luego:
+
+$$
+\boxed{
+(p,P,c)\in\mathcal E_M.
+}
+$$
+
+El ejemplo es deliberadamente pequeño y no pretende modelar vida, conciencia ni química real. Su función es demostrar que la definición es **calculable y discriminante**.
+
+### Consecuencia para REV-02 y REV-01
+
+Si al sistema anterior se añade un inhibidor que bloquea `close` o `activate`, se obtiene otro sistema de transición:
+
+$$
+M'=(C',\Sigma',A',\xrightarrow{}_{M'}),
+$$
+
+aunque intuitivamente contenga «más cosas».
+
+No hay razón para esperar:
 
 $$
 \mathcal E_M\subseteq\mathcal E_{M'}.
 $$
 
-Por tanto, esta definición **no presupone F2**. Al contrario: explica por qué la monotonía bajo mera inclusión ontológica puede fallar.
+Esto convierte REV-02 en un diagnóstico formal: **la inclusión ontológica ordinaria no es una relación respecto de la cual la emergencia tenga por qué ser monótona**.
+
+La consecuencia para REV-01 es más grave que una mera dificultad de derivación. En la ruta archivada hacia maximalidad, F2 era necesaria para convertir una cota superior $U$ de una cadena de puntos fijos en una cota superior **dentro de** $\operatorname{Fix}(F)$:
+
+$$
+X=F(X),
+\quad
+X\preceq U,
+$$
+
+y por F2:
+
+$$
+F(X)\preceq F(U),
+$$
+
+de donde:
+
+$$
+X\preceq F(U).
+$$
+
+Como además F3 daba:
+
+$$
+F(F(U))=F(U),
+$$
+
+$F(U)$ funcionaba como punto fijo que acotaba la cadena.
+
+Sin monotonía, el paso:
+
+$$
+X\preceq U
+\not\Rightarrow
+X\preceq F(U)
+$$
+
+queda sin justificar. Por tanto, la ruta actual de Zorn **no arranca** simplemente con C1.
+
+Así, REV-01 ya no debe formularse como «derivar F1–F3» sin más. Las opciones abiertas son:
+
+1. encontrar una relación de **extensión conservativa** $\hookrightarrow_{\mathrm{cons}}$ respecto de la cual el operador sea monótono y reconstruir el teorema con esa relación;
+2. demostrar directamente que las cadenas de $\operatorname{Fix}(F)$ poseen cotas superiores fijas por otro mecanismo, sin usar F2;
+3. abandonar esa ruta de maximalidad si ninguna de las dos opciones puede justificarse.
 
 ### Estado de REV-03
 
-REV-03 pasa de **OPEN** a **PARTIAL**.
+REV-03 permanece **PARTIAL**.
 
-Ya existe una definición independiente y positiva, con casos negativos/positivos mínimos y comparación explícita con la literatura. No se marca RESOLVED porque todavía hay que decidir si C1–C3 capturan exactamente la noción doctrinal de emergencia o si excluyen fenómenos que el exergismo debe conservar.
+La candidata ahora:
 
-El siguiente ataque es REV-02: formalizar el contraejemplo de inhibición y decidir qué relación de orden —si alguna— hace monotónico al operador que posteriormente construyamos a partir de $\mathcal E_M$.
+- es independiente de $R$;
+- está localizada al evento concreto;
+- admite macrovariables no booleanas;
+- elimina la redundancia entre dependencia organizacional y eficacia dinámica;
+- exige capacidad habilitada, no mera desigualdad entre sucesores;
+- posee un modelo juguete explícito calculable.
+
+No se marca RESOLVED hasta probarla contra una muestra más amplia de casos positivos y negativos y decidir si esta noción mínima es doctrinalmente suficiente.
+
+REV-04 sigue OPEN: el juguete proporciona un sustrato calculable, pero todavía no existe un operador $F$ bien definido con un punto fijo propio $S=F(S)\neq R$.
 
 ---
 ## 4. Núcleo matemático actualmente separable
