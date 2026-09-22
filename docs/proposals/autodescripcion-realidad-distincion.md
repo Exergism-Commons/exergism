@@ -2178,9 +2178,262 @@ $$
 
 Por tanto, el Teorema provisional de Clausura Ontológica Maximal debe interpretarse primero como una prueba **sincrónica/indexada**. La transición desde esa totalidad actual a una \(R_i\) trans-temporal o absolutamente atemporal requiere una premisa adicional sobre identidad/persistencia o sobre la estructura del tiempo.
 
+### [D5h] Tres relaciones distintas: inclusión, continuidad y orden temporal
+
+La transición desde totalidades sincrónicas a una realidad persistente no debe forzarse dentro de una única relación.
+
+Se distinguen:
+
+$$
+\boxed{
+\preceq_{\mathrm{ont}}
+\neq
+\sim_{\mathrm{cont}}
+\neq
+\prec_t.
+}
+$$
+
+donde:
+
+- \(X\preceq_{\mathrm{ont}}Y\) expresa inclusión ontológica;
+- \(X\sim_{\mathrm{cont}}Y\) expresa continuidad o identidad de un mismo continuante a través de estados distintos;
+- \(X\prec_tY\) expresa anterioridad temporal cuando dicha relación sea aplicable.
+
+En particular, no se exige:
+
+$$
+R_i^{A}(t)\preceq_{\mathrm{ont}}R_i^{A}(t')
+$$
+
+para que ambos estados pertenezcan a la misma realidad persistente.
+
+Un estado posterior puede perder, reorganizar o sustituir contenido sin dejar por ello de ser estado del mismo continuante.
+
+### [H13] Principio de Continuidad Ontológica Relacional
+
+Sean:
+
+$$
+X_t,
+\qquad
+X_{t'}
+$$
+
+dos estados ontológicos exhaustivos en momentos o estadios distintos.
+
+Si existe una relación real de transición/persistencia:
+
+$$
+\tau(X_t,X_{t'}),
+$$
+
+se propone:
+
+$$
+\boxed{
+\operatorname{Real}(\tau)
+\land
+\tau(X_t,X_{t'})
+\Rightarrow
+X_t\sim_{\mathrm{cont}}X_{t'}.
+}
+$$
+
+La relación \(\tau\) no tiene por qué ser determinista ni preservar identidad de estado.
+
+Puede expresar:
+
+- continuidad causal;
+- transformación estructural;
+- persistencia dinámica;
+- continuidad de proceso;
+- o cualquier relación real suficiente para justificar que ambos estados pertenecen al mismo continuante ontológico.
+
+### [D5i] Continuante ontológico como proceso, no como suma temporal
+
+No se define necesariamente:
+
+$$
+R_i
+=
+\bigcup_t R_i^{A}(t).
+$$
+
+Tal formulación podría reintroducir problemas de infinito actual o una ontología temporal no justificada.
+
+En su lugar, se propone una lectura procesual:
+
+$$
+\boxed{
+R_i
+:=
+\operatorname{ProcessContinuant}
+(
+R_i^{A}(t),
+\tau
+).
+}
+$$
+
+La notación no exige una colección ontológicamente existente de todos los estados temporales. Expresa que los distintos estados relacionados por continuidad real son estados de un mismo proceso/continuante.
+
+Así:
+
+$$
+\boxed{
+\operatorname{StateOf}(R_i^{A}(t),R_i)
+}
+$$
+
+y, cuando:
+
+$$
+\tau(R_i^{A}(t),R_i^{A}(t')),
+$$
+
+se sigue:
+
+$$
+\boxed{
+R_i^{A}(t)
+\sim_{\mathrm{cont}}
+R_i^{A}(t').
+}
+$$
+
+La hipótesis fuerte que debe investigarse es si el **propio proceso de transición** basta para constituir \(R_i\), sin postular una entidad adicional por encima de sus estados y relaciones.
+
+### [I6a.7] Novedad relacionada no produce una realidad absolutamente exterior
+
+Supóngase que aparece una nueva estructura \(Y\) en un estado posterior.
+
+Si existe alguna relación real entre el estado previo y el posterior:
+
+$$
+\tau(
+R_i^{A}(t),
+R_i^{A}(t')
+),
+$$
+
+entonces ambos estados no son ontológicamente absolutamente independientes.
+
+Por [H13]:
+
+$$
+R_i^{A}(t)
+\sim_{\mathrm{cont}}
+R_i^{A}(t').
+$$
+
+Por tanto, incluso si:
+
+$$
+\operatorname{AbsoluteBruteNovelty}(Y,t),
+$$
+
+la novedad puede modificar radicalmente el estado del continuante sin constituir una realidad absolutamente exterior.
+
+Así:
+
+$$
+\boxed{
+\operatorname{AbsoluteBruteNovelty}
++
+\operatorname{Real}(\tau)
+\not\Rightarrow
+\text{nuevo }R.
+}
+$$
+
+### [I6a.8] Aparición absolutamente no relacionada colapsa en Many-R, no en crecimiento diacrónico
+
+Si un supuesto dominio nuevo \(R_j\) fuese absolutamente exterior a \(R_i\), debería cumplirse:
+
+$$
+\nexists\rho[
+\operatorname{Real}(\rho)
+\land
+\rho(R_i,R_j)
+].
+$$
+
+Pero entonces tampoco podría afirmarse ontológicamente sin más:
+
+$$
+R_j\text{ apareció después de }R_i,
+$$
+
+si la relación «después de» es real y común a ambos.
+
+Por tanto:
+
+$$
+\boxed{
+\text{novedad relacionada}
+\Rightarrow
+\text{continuidad/Cluster-}R,
+}
+$$
+
+mientras:
+
+$$
+\boxed{
+\text{novedad absolutamente no relacionada}
+\Rightarrow
+\text{Many-}R
+}
+$$
+
+en vez de una ampliación diacrónica de un único \(R\).
+
+Esto reduce aún más el papel de [C_dia]: la cuestión central pasa a ser si las transiciones reales entre estados son suficientes para constituir identidad de proceso.
+
+### [O5f] ¿Es el proceso mismo el continuante?
+
+Queda abierta una alternativa ontológicamente austera:
+
+$$
+\boxed{
+R_i
+\equiv
+\text{el proceso real de transición entre sus estados exhaustivos}
+}
+$$
+
+en lugar de:
+
+$$
+\boxed{
+R_i
+=
+\text{una entidad adicional que posee esos estados}.
+}
+$$
+
+Si esta identificación es correcta, la transición:
+
+$$
+R_i^{A}(t)
+\xrightarrow{\tau}
+R_i^{A}(t')
+$$
+
+no conecta dos totalidades mediante un tercer objeto; **constituye** el propio continuante.
+
+La obligación de prueba se desplaza entonces a:
+
+1. definir las condiciones mínimas de \(\tau\);
+2. determinar cuándo la composición de transiciones preserva continuidad;
+3. evitar que cualquier relación trivial baste para identidad;
+4. distinguir continuidad de un proceso de mera conectividad entre realidades diferentes;
+5. determinar si la relación generada por \(\tau\) es reflexiva, simétrica/transitable en el sentido adecuado o requiere una estructura direccional más rica.
+
 ### [I6b] Existencia condicional de un punto fijo maximal
 
-Si \(\operatorname{Fix}(F_i)\) se trata como un poset al que es aplicable un principio de maximalidad del tipo del lema de Zorn, entonces [I6a] y [C1] permiten concluir:
+Si \(\operatorname{Fix}(F_i)\) se trata como un poset al que es aplicable un principio de maximalidad del tipo del lema de Zorn, entonces [I6a] y [C1_syn] permiten concluir, en el régimen co-actual considerado:
 
 $$
 \boxed{
@@ -5016,6 +5269,9 @@ La propuesta puede auditarse paso a paso:
 | 13b.5e | [D] | \(F=\operatorname{Cl}_{\mathcal E,\mathcal M}\): el cierre ontológico incluye tanto emergencia estructural como transformaciones reales del propio espacio de posibilidades. |
 | 13b.5f | [D/I] | Se separan [C1_syn] (cadenas co-actuales), [C_dia] (persistencia a través del cambio) y \(R_i^{A}(t)\) como totalidad actual. |
 | 13b.5g | [I] | \(\operatorname{AbsoluteBruteNovelty}\) no implica por sí sola No-R: amenaza la continuidad modal/diacrónica, no necesariamente la existencia de una totalidad sincrónica exhaustiva. |
+| 13b.5h | [D/H] | Se distinguen \(\preceq_{ont}\), \(\sim_{cont}\) y \(\prec_t\); [H13] propone que una transición real \(\tau\) entre estados exhaustivos funda continuidad del mismo proceso. |
+| 13b.5i | [D/O] | \(R_i\) puede entenderse como el proceso/continuante constituido por estados \(R_i^{A}(t)\) y transiciones reales \(\tau\), sin exigir una suma temporal ni un objeto adicional. |
+| 13b.5j | [I/O] | Novedad relacionada apunta a continuidad o Cluster-R; novedad absolutamente no relacionada apunta a Many-R y ni siquiera admite sin más una relación temporal común. |
 | 13b.6 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
@@ -5375,6 +5631,11 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 78. formalizar \(R_i^{A}(t)\), exhaustividad actual y continuidad de identidad \(\equiv_{cont}\) entre estados temporales;
 79. determinar qué ontología temporal permite pasar de una familia \(\{R_i^{A}(t)\}\) a una única estructura trans-temporal \(R_i\) sin presuponerla;
 80. evaluar si \(\operatorname{AbsoluteBruteNovelty}\) amenaza solamente [C_dia] o puede, bajo alguna ontología temporal concreta, refutar también una totalidad sincrónica.
+81. formalizar separadamente \(\preceq_{ont}\), \(\sim_{cont}\) y \(\prec_t\), evitando modelar identidad diacrónica mediante inclusión ontológica;
+82. definir una relación de transición/persistencia \(\tau\) y precisar qué propiedades debe satisfacer para fundar continuidad sin trivializarla;
+83. investigar si \(R_i\) puede identificarse con el proceso generado por \(\tau\) entre estados exhaustivos \(R_i^{A}(t)\), evitando postular un continuante adicional;
+84. demostrar o rechazar la dicotomía: novedad relacionada \(\Rightarrow\) continuidad/Cluster-R; novedad absolutamente no relacionada \(\Rightarrow\) Many-R;
+85. distinguir rigurosamente continuidad de proceso de mera conectividad transversal entre dos totalidades distintas.
 
 ---
 
@@ -5417,6 +5678,9 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - el **Principio de Continuidad Modal Ontológica [H2a]** exige solo que toda actualización posea alguna base real, directa o de metaorden, que funde su posibilidad; no exige determinismo ni leyes estáticas;
 - se separan explícitamente la **totalidad sincrónica** \(R_i^{A}(t)\), la condición de cadenas co-actuales [C1_syn] y la **persistencia diacrónica** [C_dia];
 - \(\operatorname{AbsoluteBruteNovelty}\) deja de tratarse como refutación automática de R: puede romper continuidad modal desde un estado previo sin eliminar una totalidad exhaustiva actual o trans-temporal;
+- se distinguen formalmente inclusión ontológica \(\preceq_{ont}\), continuidad de continuante \(\sim_{cont}\) y orden temporal \(\prec_t\);
+- se introduce [H13] Continuidad Ontológica Relacional: una transición real \(\tau\) entre estados exhaustivos puede fundar su pertenencia al mismo continuante;
+- se abre la hipótesis austera de que \(R_i\) sea el propio proceso real generado por estados exhaustivos y transiciones \(\tau\), no una entidad adicional situada por encima de ellos;
 - No-\(R\) fuerte debe ahora exhibir una restricción \(\lambda_{\infty}\in\Omega_{\infty}\) o rechazar algún otro puente formal, en vez de limitarse a negar la totalidad;
 - se mantiene además una ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
 - se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
