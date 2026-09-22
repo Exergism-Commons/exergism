@@ -2365,7 +2365,7 @@ Esto deja dos niveles de pluralidad distintos:
 - pluralidad formal de máximos semánticos $S_i$;
 - pluralidad ontológica de $R_i$, condicionada al cierre de REV-24 para los regímenes correspondientes.
 
-### 7.1. La pluralidad no crea automáticamente un absoluto
+### 7.1. Regímenes múltiples no equivalen a Many-$R$ fuerte
 
 Puede escribirse metalingüísticamente:
 
@@ -2373,39 +2373,58 @@ $$
 \mathscr S=\{S_i\}_{i\in I}.
 $$
 
-Esa expresión no introduce un conjunto universal ontológico, una suma de realidades, un suprarégimen ni un $R_{\mathrm{abs}}$.
-
-Incluso si para cada régimen se cerrase REV-24 y existieran correspondientes $R_i$, seguiría sin valer por mera lógica:
+Ni esa familia ni la existencia de varios $R_i$ produce por sí sola $R_{\mathrm{abs}}$:
 
 $$
 \forall i\,\exists R_i
-\Rightarrow
+\not\Rightarrow
 \exists R_{\mathrm{abs}}.
 $$
 
-El problema One-$R$/Many-$R$ continúa siendo metaontológico e independiente.
+Pero la recíproca conceptual tampoco vale: **un $R_{\mathrm{abs}}$ plural no exige que todos sus contenidos formen un único régimen conectado**.
 
-### 7.2. Monismo interno y pluralismo externo
-
-En el nivel puramente formal puede ocurrir:
+Si AG + APC$_{Real}$ producen unas cosas $rr_{abs}$ que son exactamente todo lo real, pueden existir dentro de ese scope varias componentes/regímenes mutuamente no conectados:
 
 $$
-\forall i\;
-\forall X\in\mathfrak D_i^{\mathrm{proc}}:
-X\preceq_i S_i
+R_i\parallel R_j
 $$
 
-junto con incomparabilidad entre máximos de regímenes distintos.
+sin que por ello deje de existir el alcance plural absoluto:
 
-Si además REV-24 se cerrase para dos regímenes $i\neq j$, podría plantearse la posibilidad ontológica:
+$$
+x\prec rr_{abs}
+\quad\text{para todo }x\text{ real de cualquiera de los regímenes}.
+$$
+
+Por tanto:
+
+$$
+\boxed{
+\text{pluralidad de regímenes}
+\not\Rightarrow
+\text{Many-}R\text{ fuerte}.
+}
+$$
+
+### 7.2. One-$R$ absoluto, Indexed-$R$ y Many-$R$ fuerte
+
+Con REV-26 la taxonomía se precisa:
+
+- **One-$R$ absoluto:** existe `ExistsAbsR`; el scope de todo lo real es único extensionalmente en la semántica plural adoptada, aunque pueda contener varias componentes ontológicas desconectadas.
+- **Indexed-$R$:** existen $R_i$ exhaustivos de índices/regímenes; no se afirma ni se niega todavía `ExistsAbsR`.
+- **Many-$R$ fuerte:** existen totalidades indexadas pero AG/APC$_{Real}$/GB fallan de tal modo que no hay un scope absoluto legítimo que abarque todo lo real.
+- **Cluster-$R$:** una estructura real común integra varios regímenes antes separados y puede generar un régimen superior; esto es una posible ruta de GB, no la definición de $R_{abs}$.
+
+Así Many-$R$ fuerte ya no significa simplemente:
 
 $$
 R_i\parallel R_j.
 $$
 
-Esto puede describirse como **monismo interno + pluralismo externo**, pero no se adopta como tesis demostrada.
+Esa incomparabilidad puede coexistir con un scope absoluto plural. Many-$R$ fuerte es ahora una tesis sobre **fracaso de globalización/generalidad**, no solo sobre desconexión interna.
 
-Tampoco se permite inferir pluralidad ontológica a partir de mera pluralidad de representaciones, observadores o reconstrucciones. La literatura holográfica sobre quantum error correction proporciona un precedente técnico para representaciones redundantes/no triviales del mismo contenido físico. Se usa aquí solo como cautela metodológica: One-$R$/Many-$R$ debe resolverse por estructura ontológica, no contando descripciones. Véase [§13 del mapa de literatura](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
+Tampoco se permite inferir pluralidad ontológica a partir de mera pluralidad de representaciones, observadores o reconstrucciones. La literatura holográfica sobre quantum error correction proporciona un precedente técnico para representaciones redundantes/no triviales del mismo contenido físico. Se usa aquí solo como cautela metodológica: la arquitectura global debe resolverse por su semántica ontológica, no contando descripciones. Véase [§13 del mapa de literatura](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
+
 
 ### 7.3. Retirada de «Verdad Absoluta indexada»
 
