@@ -1,6 +1,6 @@
 # Ledger de revisión — autodescripción, realidad y distinción
 
-**PR:** #12 — *Derive regime-local Exists-R under locally set-like connectivity*  
+**PR:** #12 — *Derive regime-local semantic exhaustivity and isolate the Exists-R bridge*  
 **Estado del ledger:** activo.
 
 **Regla:** un finding solo pasa a **RESOLVED** cuando el criterio de cierre está satisfecho y se enlaza evidencia verificable (sección, modelo, prueba, test o commit). Una reformulación que solo cambie el nombre del problema no lo cierra.
