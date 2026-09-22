@@ -1079,38 +1079,41 @@ Dos cautelas importantes:
 - una correlación estadística no basta por sí sola;
 - una relación física no clásica, como el entrelazamiento, cuenta solo si una ontología física independiente la trata como relación real token-specific y satisface los criterios anteriores.
 
-### 5.5. K3_i se reduce a dos principios locales
+### 5.5. K3_i se deriva de admisibilidad estructural
 
-La identidad de régimen ya permite sustituir K3_i como premisa primitiva por dos obligaciones locales.
-
-**EEA — Edge Extension Admissibility.** Si un dominio no vacío $X$ contiene $q$ y existe un enlace actual:
+Con la definición normativa:
 
 $$
-q\bowtie r,
+\operatorname{Adm}_i
+:=
+\operatorname{StructAdm}_i,
 $$
 
-entonces existe una extensión admisible $X'$ con:
+la directedness interna deja de requerir OAM como premisa separada.
+
+Sean:
 
 $$
-X\preceq_i X'
+X,Y\in\mathfrak D_i^{\mathrm{proc}}.
+$$
+
+Como ambos pertenecen al mismo régimen, definimos su unión semántica:
+
+$$
+Z
+:=
+(T_X\cup T_Y,\Phi_X\cup\Phi_Y).
+$$
+
+StructAdm se preserva bajo esta unión porque solo se acumula contenido positivo actual y coherente del mismo régimen.
+
+Por tanto:
+
+$$
+Z\in\mathfrak D_i^{\mathrm{proc}},
 $$
 
 y:
-
-$$
-r\trianglelefteq_i X'.
-$$
-
-**OAM — Overlap Amalgamation.** Si dos dominios $X,Y$ comparten un token actual:
-
-$$
-\exists q:
-q\trianglelefteq_i X
-\land
-q\trianglelefteq_i Y,
-$$
-
-entonces existe $Z$ con:
 
 $$
 X\preceq_i Z
@@ -1118,36 +1121,15 @@ X\preceq_i Z
 Y\preceq_i Z.
 $$
 
-Como dos tokens del mismo régimen están unidos por un camino finito de $\bowtie$, EEA permite extender $X$ a lo largo del camino hasta alcanzar un token de $Y$; OAM amalgama entonces esa extensión con $Y$.
-
-Por tanto, para dominios no vacíos:
+Luego:
 
 $$
-\boxed{
-\mathrm{EEA}+\mathrm{OAM}
-\Rightarrow
-K3_i.
-}
+\boxed{K3_i.}
 $$
 
-Si se admite un dominio vacío $0_i$, basta además que sea bottom:
+EEA también se deriva para footprints de enlaces de $\Lambda_*$: incorporar el otro extremo y el hecho relacional actual preserva StructAdm.
 
-$$
-0_i\preceq_i X
-$$
-
-para todo $X$.
-
-Esta derivación es importante porque EEA y OAM son más locales y falsables que K3_i:
-
-- EEA habla de extender a través de un único enlace ontológico actual;
-- OAM habla solo de dominios que ya solapan literalmente en contenido actual.
-
-Ni una ni otra define «mismo régimen» como «tener cota común».
-
-**La deuda no desaparece; se localiza.** EEA y OAM siguen siendo principios de existencia de extensiones ontológicamente admisibles. En particular, EEA es una forma local —de un solo enlace— del mismo género que la cofinalidad K1 de REV-20. La ganancia es analítica: las obligaciones pueden evaluarse y refutarse por separado, no que su contenido existencial haya sido eliminado.
-
-El [documento técnico](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md) contiene la demostración completa.
+Así, la parte de directedness de REV-07 queda resuelta **una vez fijada la identidad del régimen**. Lo que permanece abierto en REV-07 ya no es K3, sino la justificación filosófica de qué relaciones pertenecen legítimamente a $\Lambda_*$.
 
 ### 5.6. Qué sigue abierto
 
@@ -1158,8 +1140,8 @@ Ya no falta una definición de régimen; falta justificar que la familia candida
 El criterio de cierre restante es:
 
 1. justificar qué roles integradores pertenecen legítimamente a $\Lambda_*$;
-2. demostrar que $\sim$ es suficientemente invariante respecto de las representaciones usadas por REV-18;
-3. justificar K3_i mediante una premisa adicional de admisibilidad de agregación/extensión que no sea equivalente a K3_i por definición.
+2. demostrar que $\sim$ es suficientemente invariante bajo representaciones fieles;
+3. comprobar que la taxonomía de enlaces no colapsa regímenes por hubs abstractos ni fragmenta indebidamente una realidad.
 
 Como antecedente metodológico, Lewis usa conexión espaciotemporal para determinar worldmates sin definir primero una cota común; aquí ese patrón se generaliza y no compromete a la propuesta con modal realism ni con una reducción de toda unidad ontológica a espaciotiempo.
 
