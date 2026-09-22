@@ -4387,3 +4387,317 @@ $$
 Si PSB se adopta o deriva independientemente, REV-20 puede marcarse RESOLVED.
 
 ---
+
+---
+
+## Teorema directo Exists-R por conectividad localmente set-like
+
+La definición actual de régimen permite una ruta a Exists-R más directa que Zorn.
+
+### 1. PON — Pointwise Ontological Neighborhood Smallness
+
+Sea:
+
+$$
+N(q)
+:=
+\{r\mid q\bowtie r\}.
+$$
+
+Definimos:
+
+$$
+\mathrm{PON}:
+\quad
+\forall q,
+\;
+N(q)\text{ es set-sized}.
+$$
+
+PON afirma que ningún token actual está inmediatamente enlazado, mediante las relaciones admitidas de $\Lambda_*$, con proper-class many tokens.
+
+PSB es un caso particular: los eventos emergentes salientes de un estado están enlazados con él mediante incidencia procesual, por lo que:
+
+$$
+\mathrm{PON}
+\Rightarrow
+\mathrm{PSB}_i.
+$$
+
+### 2. Un régimen generado por un token es set-sized
+
+Fijemos un token actual $q_0$.
+
+Definimos niveles:
+
+$$
+S_0=\{q_0\},
+$$
+
+$$
+S_{n+1}
+=
+S_n
+\cup
+\bigcup_{q\in S_n}N(q).
+$$
+
+Por PON, Replacement y Union, cada $S_n$ es set-sized.
+
+Sea:
+
+$$
+S_\omega
+=
+\bigcup_{n<\omega}S_n.
+$$
+
+Entonces $S_\omega$ es set-sized.
+
+Pero, como $\sim$ es por definición la clausura reflexivo-transitiva **finita** de $\bowtie$:
+
+$$
+\boxed{
+S_\omega
+=
+[q_0]_{\sim}.
+}
+$$
+
+Por tanto cada régimen no vacío es set-sized en tokens:
+
+$$
+\boxed{
+\mathrm{PON}
+\Rightarrow
+|i|\text{ set-sized}.
+}
+$$
+
+### 3. Smallness de los hechos
+
+Fijemos una firma semántica procesual:
+
+$$
+\mathcal L_i
+$$
+
+que sea:
+
+1. set-sized;
+2. de aridad finita.
+
+Sea $T_i=[q_0]_{\sim}$.
+
+El conjunto de todas las instancias atómicas posibles de símbolos de $\mathcal L_i$ sobre $T_i$ es set-sized.
+
+Por Separation, la colección de aquellas instancias que son **actualmente verdaderas** es también un conjunto. La llamamos:
+
+$$
+\Phi_i^{\mathrm{all}}.
+$$
+
+### 4. Construcción directa del máximo
+
+Definimos:
+
+$$
+R_i^*
+:=
+(T_i,\Phi_i^{\mathrm{all}}).
+$$
+
+$R_i^*$ es StructAdm:
+
+- todos sus tokens están en el régimen $i$;
+- todos sus hechos son actuales;
+- contiene todos los relata/endpoints de los hechos incluidos;
+- la coherencia de source/target y precedencia procede de la propia semántica actual;
+- solo contiene contenido positivo.
+
+### 5. Máximo
+
+Sea:
+
+$$
+X=(T_X,\Phi_X)
+\in
+\mathfrak D_i^{\mathrm{proc}}.
+$$
+
+Como $\operatorname{Reg}(X)=i$:
+
+$$
+T_X\subseteq T_i.
+$$
+
+Como todos los hechos de $X$ son hechos actuales de la firma $\mathcal L_i$ con relata en $T_i$:
+
+$$
+\Phi_X
+\subseteq
+\Phi_i^{\mathrm{all}}.
+$$
+
+Por tanto:
+
+$$
+X\preceq_i R_i^*.
+$$
+
+Como $X$ era arbitrario:
+
+$$
+\boxed{
+\forall X\in\mathfrak D_i^{\mathrm{proc}},
+\quad
+X\preceq_i R_i^*.
+}
+$$
+
+$R_i^*$ es máximo, no solo maximal.
+
+### 6. EClosed
+
+Sea $e$ un evento emergente actual con:
+
+$$
+\operatorname{src}(e)=s
+$$
+
+y supongamos:
+
+$$
+s\in T_i.
+$$
+
+La incidencia source-event es un enlace procesual admitido en $\Lambda_{\mathrm{proc}}$, por lo que:
+
+$$
+s\bowtie e.
+$$
+
+Así:
+
+$$
+e\in T_i.
+$$
+
+Del mismo modo:
+
+$$
+e\bowtie t
+$$
+
+para:
+
+$$
+t=\operatorname{tgt}(e),
+$$
+
+de modo que:
+
+$$
+t\in T_i.
+$$
+
+Y los hechos Event/src/tgt pertenecen a $\Phi_i^{\mathrm{all}}$.
+
+Luego:
+
+$$
+\boxed{
+\operatorname{EClosed}_i(R_i^*).
+}
+$$
+
+### 7. Teorema Exists-R directo
+
+**Teorema.**
+
+Supóngase que existe al menos un token actual $q_0$ y que:
+
+1. la identidad de régimen se define por $\sim=(\bowtie)^*$;
+2. PON;
+3. la firma semántica relevante $\mathcal L_i$ es set-sized y finitaria;
+4. los dominios son fragmentos StructAdm del contenido actual del régimen.
+
+Entonces existe:
+
+$$
+R_i^*
+\in
+\mathfrak D_i^{\mathrm{proc}}
+$$
+
+tal que:
+
+$$
+\operatorname{EClosed}_i(R_i^*)
+$$
+
+y:
+
+$$
+\forall X\in\mathfrak D_i^{\mathrm{proc}},
+\quad
+X\preceq_i R_i^*.
+$$
+
+Por tanto:
+
+$$
+\boxed{\operatorname{ExistsR}.}
+$$
+
+y:
+
+$$
+\boxed{\neg\operatorname{NoR}.}
+$$
+
+### 8. Zorn deja de ser necesario para Exists-R
+
+El teorema directo construye el máximo explícitamente como todo el contenido actual set-sized del componente ontológico conectado.
+
+Por ello K1/K2/K3 y Zorn siguen siendo resultados estructurales útiles, pero **ya no son necesarios para demostrar Exists-R** bajo PON + firma set-sized.
+
+Esto también absorbe REV-22 en esta ruta: $T_i$ y el universo de hechos son sets, y la colección de todos los fragmentos StructAdm es un subconjunto de:
+
+$$
+\mathcal P(T_i)
+\times
+\mathcal P(\operatorname{Atoms}_{\mathcal L_i}(T_i)),
+$$
+
+que es set-sized.
+
+### 9. Precio exacto
+
+La existencia de $R_i^*$ ya no depende de cofinalidad abstracta, pero sí de una hipótesis de smallness local más general que PSB:
+
+$$
+\boxed{\mathrm{PON}.}
+$$
+
+Si PON falla, un único token puede tener proper-class many vecinos ontológicos inmediatos y su componente de conectividad puede ser proper-class sized.
+
+Por tanto la disputa fundamental se desplaza a:
+
+> ¿es la realidad ontológicamente **localmente set-like** respecto de las relaciones que constituyen worldmates/regimemates?
+
+### 10. Emergencia y existencia
+
+Es importante no sobreafirmar el papel de la emergencia.
+
+PON + la identidad de régimen producen la **existencia del máximo de régimen**.
+
+La teoría de emergencia determina una propiedad adicional de ese máximo:
+
+$$
+\operatorname{EClosed}_i(R_i^*).
+$$
+
+Así, la emergencia ya no es la fuente matemática de existencia de $R_i$ en esta ruta directa; es parte del contenido estructural que $R_i$ satisface.
+
+---
