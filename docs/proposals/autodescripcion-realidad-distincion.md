@@ -1291,109 +1291,73 @@ Esta separación es normativa. Cualquier detalle técnico nuevo debe incorporars
 
 ---
 
-## 5. Identidad independiente de régimen — REV-07
+## 5. Identidad genealógica de régimen — REV-07
 
-La identidad de una realidad ontológica ya no se define por K3 ni por existencia de una cota común.
+La identidad de una realidad indexada queda anclada primariamente en **origen + clausura ontológica**, no en K3, maximalidad semántica ni conectividad elegida ad hoc.
 
-### 5.1. Familia pre-régimen de enlaces ontológicos
+### 5.1. Criterio primario
 
-Antes de conocer cualquier régimen $i$, se fija una familia candidata de tipos de relación:
-
-$$
-\Lambda_*.
-$$
-
-El subíndice `*` indica que esta familia debe definirse sin usar $i$, $R_i$, `SameRegime`, K3, `EClosed` ni una totalidad global.
-
-Un tipo $\lambda$ solo puede pertenecer a $\Lambda_*$ si sus instancias relevantes cumplen:
-
-1. **actualidad:** la relación está efectivamente instanciada, no meramente posible;
-2. **carácter ontológico:** obtiene entre los relata, no solo entre descripciones o modelos;
-3. **sensibilidad a los relata:** la instancia es token-specific, no mero compartir universal, tipo, propiedad, ley o ecuación;
-4. **rol integrador:** pertenece a una familia causal/procesual, constitutiva, de dependencia ontológica o espaciotemporal cuando corresponda;
-5. **localidad semántica:** verificarla no requiere cuantificar sobre $R_i$, $R_{\mathrm{abs}}$, K3 o la pertenencia previa al régimen;
-6. **invariancia representacional:** una recodificación fiel no puede cambiar si el enlace existe.
-
-En particular, no bastan:
-
-- semejanza;
-- isomorfismo;
-- compartir leyes;
-- instanciar la misma propiedad universal;
-- posibilidad contrafáctica de interacción;
-- ser descritos conjuntamente por una teoría o modelo.
-
-Esto evita que universales, leyes o tipos actúen como hubs abstractos que fusionen regímenes por mera clasificación.
-
-### 5.2. Enlace y co-régimen
-
-Si existe una instancia actual admisible de algún $\lambda\in\Lambda_*$ entre $q$ y $r$, escribimos:
+Para un índice $i$, REV-07 debe justificar:
 
 $$
-q\bowtie_* r.
+\operatorname{OntOrigin}_i(\mathcal O_i)
 $$
 
-Para calcular conectividad usamos su simetrización:
+y una relación generativa independiente:
 
 $$
-q\bowtie r
-\iff
-q\bowtie_* r
-\lor
-r\bowtie_* q.
+\operatorname{GenStep}_i(a,b),
 $$
 
-Y definimos:
+cuyas reglas no usan $R_i$, CoReal, SameRegime, K3, SemTotal, Presents ni la extensión final de la clausura.
+
+La clausura genealógica es:
 
 $$
-q\sim r
+\operatorname{Generated}^{*}_i(\mathcal O_i,x).
 $$
 
-como la clausura reflexivo-transitiva de $\bowtie$.
-
-Las clases:
+Una realidad indexada existe cuando puede realizarse un alcance:
 
 $$
-[q]_{\sim}
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 $$
 
-son candidatos a regímenes ontológicos.
-
-Para un dominio procesual no vacío:
+tal que:
 
 $$
-\operatorname{Tok}(X)
-:=
-\{q\mid q\trianglelefteq X\},
+\forall x[
+\operatorname{Within}_i(x,R_i)
+\Longleftrightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+].
 $$
 
-se define:
+La base $\mathcal O_i$ no tiene por qué ser un único token ni un primer instante temporal. Bases distintas pueden ser representacionalmente equivalentes si generan exactamente la misma clausura.
+
+### 5.2. Co-realidad derivada
+
+Una vez fijada la genealogía:
 
 $$
-\operatorname{Reg}(X)=i
+\operatorname{CoReal}_i(x,y)
+:\Longleftrightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\land
+\operatorname{Generated}^{*}_i(\mathcal O_i,y).
 $$
 
-cuando todos sus tokens pertenecen a la misma clase $i$.
+Por tanto SameRegime deja de ser una noción obtenida por conectividad formal. La conectividad es ahora una **hipótesis de reconstrucción** de una unidad genealógica previamente caracterizada.
 
-### 5.3. SameRegime no implica K3
-
-Ahora:
+Para dominios procesuales:
 
 $$
 \operatorname{SameRegime}(X,Y)
-\iff
-\operatorname{Reg}(X)=\operatorname{Reg}(Y),
 $$
 
-pero no se infiere:
+significa que los tokens ontológicos representados por ambos pertenecen a la misma clausura genealógica.
 
-$$
-\exists Z\,[X\preceq_i Z\land Y\preceq_i Z].
-$$
-
-El [documento técnico](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md) contiene un contraejemplo mínimo donde dos dominios pertenecen al mismo régimen porque sus tokens están ontológicamente enlazados y, sin embargo, la familia de dominios admisibles no contiene una cota común.
-
-Por tanto:
+Esto sigue sin implicar K3:
 
 $$
 \boxed{
@@ -1403,105 +1367,135 @@ K3_i(X,Y).
 }
 $$
 
-Esto elimina la circularidad conceptual original entre identidad de régimen y amalgamabilidad.
+La identidad ontológica y la amalgamabilidad semántica continúan separadas.
 
-### 5.4. Alcance actual de $\Lambda_*$
+### 5.3. Ruta A — reconstrucción mediante $\Lambda_*$
 
-Los roles integradores admitidos provisionalmente son:
+La familia pre-régimen:
 
 $$
 \Lambda_*
-\subseteq
-\Lambda_{\mathrm{proc}}
-\cup
-\Lambda_{\mathrm{causal}}
-\cup
-\Lambda_{\mathrm{constit}}
-\cup
-\Lambda_{\mathrm{dep}}
-\cup
-\Lambda_{\mathrm{st}}.
 $$
 
-Esta expresión no afirma que todas esas relaciones sean primitivas ni que estén presentes en toda ontología. Solo delimita los tipos de enlace que pueden optar a conectar tokens en un régimen.
+se conserva como implementación candidata, pero ya no define CoReal por decreto.
 
-Dos cautelas importantes:
+Sus tipos de enlace deben seguir cumpliendo:
 
-- una correlación estadística no basta por sí sola;
-- una relación física no clásica, como el entrelazamiento, cuenta solo si una ontología física independiente la trata como relación real token-specific y satisface los criterios anteriores.
+1. actualidad;
+2. carácter ontológico;
+3. sensibilidad token-specific;
+4. rol generativo/integrador;
+5. independencia respecto de $R_i$/SameRegime;
+6. invariancia bajo recodificación fiel.
 
-### 5.5. K3_i se deriva de admisibilidad estructural
-
-Con la definición normativa:
-
-$$
-\operatorname{Adm}_i
-:=
-\operatorname{StructAdm}_i,
-$$
-
-la directedness interna deja de requerir OAM como premisa separada.
-
-Sean:
+La clausura finita:
 
 $$
-X,Y\in\mathfrak D_i^{\mathrm{proc}}.
+[q]_{\sim}
 $$
 
-Como ambos pertenecen al mismo régimen, definimos su unión semántica:
+es adecuada solo si reconstruye la genealogía:
 
 $$
-Z
-:=
-(T_X\cup T_Y,\Phi_X\cup\Phi_Y).
-$$
-
-StructAdm se preserva bajo esta unión porque solo se acumula contenido positivo actual y coherente del mismo régimen.
-
-Por tanto:
-
-$$
-Z\in\mathfrak D_i^{\mathrm{proc}},
+\mathrm{RS}_{\Lambda}^{\mathrm{gen}}:
+\quad
+x\in[q]_{\sim}
+\Rightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x),
 $$
 
 y:
 
 $$
-X\preceq_i Z
-\land
-Y\preceq_i Z.
+\mathrm{RC}_{\Lambda}^{\mathrm{gen}}:
+\quad
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\Rightarrow
+x\in[q]_{\sim}.
 $$
 
-Luego:
+FID + LA sigue siendo una vía suficiente hacia RC para esta ruta, no una verdad doctrinal general.
+
+### 5.4. Ruta B — clausura generativa generalizada
+
+Si la genealogía no admite reconstrucción por caminos finitos, la clausura candidata:
+
+$$
+\mathcal C_*
+$$
+
+debe generarse mediante reglas independientes CGI/CMin.
+
+La adecuación ontológica se reescribe:
+
+$$
+\mathrm{CS}^{\mathrm{gen}}:
+\quad
+x\in T_q^{\mathcal C}
+\Rightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x),
+$$
+
+$$
+\mathrm{CC}^{\mathrm{gen}}:
+\quad
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\Rightarrow
+x\in T_q^{\mathcal C}.
+$$
+
+La Ruta B puede incorporar reglas globales, de límite o transfinitas si se justifican sin usar la clausura final como premisa.
+
+### 5.5. Directedness sigue siendo posterior
+
+Con:
+
+$$
+\operatorname{Adm}_i:=\operatorname{StructAdm}_i,
+$$
+
+y una vez fijada legítimamente la genealogía del régimen, la unión semántica positiva de dos fragmentos del mismo régimen proporciona una cota común; por tanto se deriva:
 
 $$
 \boxed{K3_i.}
 $$
 
-EEA también se deriva para footprints de enlaces de $\Lambda_*$: incorporar el otro extremo y el hecho relacional actual preserva StructAdm.
+Así K3 no individua el régimen: es una propiedad del poset semántico **después** de que REV-07 haya justificado la genealogía.
 
-Así, la parte de directedness de REV-07 queda resuelta **una vez fijada la identidad del régimen**. Lo que permanece abierto en REV-07 ya no es K3, sino la justificación filosófica de qué relaciones pertenecen legítimamente a $\Lambda_*$.
+### 5.6. Scope realization
 
-### 5.6. Qué sigue abierto
+La realización no reificante de:
 
-REV-07 permanece **PARTIAL**.
+$$
+\operatorname{Generated}^{*}_i(\mathcal O_i,-)
+$$
 
-Ya no falta una definición de régimen; falta justificar que la familia candidata $\Lambda_*$ sea filosóficamente adecuada.
+puede expresarse pluralmente:
 
-El criterio de cierre restante se separa ahora en las dos direcciones exigidas por REV-24b:
+$$
+\exists rr_i\;
+\forall x[
+x\prec rr_i
+\Longleftrightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+].
+$$
 
-1. justificar qué roles integradores pertenecen legítimamente a $\Lambda_*$;
-2. demostrar $\mathrm{RS}_{\Lambda}$: la conectividad bajo $\Lambda_*$ no fusiona entidades que no co-pertenecen ontológicamente;
-3. demostrar $\mathrm{RC}_{\Lambda}$: toda co-pertenencia ontológica relevante queda capturada por una cadena finita de enlaces admisibles —o justificar una generalización explícita si existen relaciones esencialmente globales/infinitarias—;
-4. demostrar que $\sim$ es suficientemente invariante bajo representaciones fieles;
-5. comprobar que la taxonomía de enlaces no colapsa regímenes por hubs abstractos ni fragmenta indebidamente una realidad.
+Esta instancia sigue dependiendo de la lógica plural/scope adoptada. El finding histórico REV-24d se mueve aquí: la realización de alcance pertenece a la existencia ontológica de $R_i$, no a su presentación por $S_i$.
 
-$\mathrm{RC}_{\Lambda}$ es compartido por REV-07 y REV-24b: mientras permanezca abierto, $[q]_{\sim}$ es un **candidato** a alcance de régimen, no una certificación de totalidad ontológica.
+### 5.7. Qué sigue abierto
 
-Como antecedente metodológico, Lewis usa conexión espaciotemporal para determinar worldmates sin definir primero una cota común; aquí ese patrón se generaliza y no compromete a la propuesta con modal realism ni con una reducción de toda unidad ontológica a espaciotiempo.
+REV-07 permanece **PARTIAL**. Para cerrarlo hay que justificar:
 
-**Estado: PARTIAL — REV-07.**
+1. qué cuenta como $\operatorname{OntOrigin}_i$ sin definirlo como «lo que genera $R_i$»;
+2. qué relaciones cuentan como $\operatorname{GenStep}_i$;
+3. cómo se construye $\operatorname{Generated}^{*}_i$ sin circularidad;
+4. si la base/origen debe satisfacer minimalidad, irredundancia o alguna forma de prioridad;
+5. cómo tratar bases múltiples que generan la misma clausura;
+6. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente esa genealogía;
+7. qué principio de scope/pluralidad realiza la clausura sin setificarla.
 
+**Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
 ## 6. Generalidad absoluta, No-$R$ y potencialismo — REV-26
 
