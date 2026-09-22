@@ -630,7 +630,7 @@ La existencia local fuerte pertenece a REV-07:
 $$
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 \Rightarrow
-\operatorname{ExistsRegR}.
+\operatorname{ExistsR}.
 $$
 
 Si REV-07 ha justificado esa genealogía, REV-24 intenta demostrar:
@@ -655,13 +655,13 @@ $$
 \Rightarrow
 \operatorname{Presents}_i(S_i,R_i)
 \land
-\operatorname{WitnessedRegR}.
+\operatorname{WitnessedR}.
 }
 $$
 
 La maquinaria semántica no crea el origen, la clausura ni el alcance ontológico.
 
-El paso adicional desde genealogías indexadas al $R$ absoluto pertenece a REV-26.
+One-$R$/Many-$R$ quedan como extensiones metateóricas de REV-26 y no forman parte de esta inferencia.
 
 ### Qué significa aquí «cerrado»
 
@@ -1276,13 +1276,13 @@ $$
 Por tanto REV-24 **no demuestra la existencia de $R_i$**. Si REV-07 ya ha establecido $\operatorname{GeneTotal}_i$, entonces:
 
 $$
-\operatorname{ExistsRegR}
-$$
+\operatorname{ExistsR}
+$
 
 ya es una conclusión ontológica; REV-24 permite fortalecerla a:
 
-$$
-\operatorname{WitnessedRegR}.
+$
+\operatorname{WitnessedR}.
 $$
 
 Esta separación elimina definitivamente la lectura según la cual una estructura semántica «promueve» o crea ontológicamente $R_i$.
@@ -2036,7 +2036,7 @@ El Muro deja abiertas simultáneamente estas posibilidades:
 
 Nada de ello resta valor lógico a una demostración condicional de $\exists S_i\;\operatorname{SemTotal}_i(S_i)$. Tampoco sustituye la justificación genealógica de REV-07 ni la adecuación representacional de REV-24.
 
-**Estado:** REC queda clasificado como consecuencia estructural condicionada a $\operatorname{OntTotal}$, en línea con REV-06. REV-15 permanece OPEN para las consecuencias discriminantes y para cualquier versión fuerte del Muro. El Muro se conserva como límite epistemológico, no como puente ni a `ExistsRegR` ni a `ExistsAbsR`.
+**Estado:** REC queda clasificado como consecuencia estructural condicionada a una totalidad indexada ya establecida, en línea con REV-06. REV-15 permanece OPEN para las consecuencias discriminantes y para cualquier versión fuerte del Muro. El Muro se conserva como límite epistemológico, no como puente hacia `ExistsR` ni como evidencia de One-$R$/Many-$R`.
 
 ## 11. “Dios”
 
