@@ -48,7 +48,7 @@ Esta es la única sección que debe usarse para responder “¿qué sostiene aho
 
 La propuesta distingue ahora tres niveles que antes quedaban mezclados bajo el símbolo $R$.
 
-### 1.1. Exhaustividad semántica y totalidad ontológica de régimen
+### 1.1. Exhaustividad semántica, presentación y totalidad ontológica
 
 Para un régimen ontológico $i$, distinguimos primero la propiedad formal:
 
@@ -61,25 +61,35 @@ $$
 \;X\preceq_i S.
 $$
 
-$\operatorname{SemTotal}_i(S)$ dice que $S$ es un **máximo semánticamente exhaustivo** dentro del tipo procesual vigente. Como los dominios se tipan más abajo como fragmentos semánticos positivos actuales, esta propiedad no autoriza por sí sola a identificar $S$ con una totalidad ontológica real.
+$\operatorname{SemTotal}_i(S)$ dice que $S$ es un **máximo semánticamente exhaustivo** dentro del tipo procesual vigente. Como los dominios son fragmentos semánticos positivos actuales, esta propiedad habla de un objeto semántico $S$.
 
-Reservamos:
-
-$$
-\operatorname{OntTotal}_i(S)
-$$
-
-para la tesis sustantiva de que esa exhaustividad semántica corresponde efectivamente al alcance ontológico exhaustivo del régimen, y no solo a una representación exhaustiva dentro del formalismo.
-
-Un $R_i$ de la tesis doctrinal exige ambas cosas:
+Reservamos ahora:
 
 $$
-\operatorname{SemTotal}_i(R_i)
+\operatorname{OntTotal}_i(R)
+$$
+
+para una propiedad de **alcances ontológicos**, no de objetos semánticos: $R$ agota efectivamente el alcance ontológico del régimen $i$.
+
+La relación entre ambos tipos se expresa explícitamente mediante:
+
+$$
+\operatorname{Presents}_i(S,R),
+$$
+
+que significa que el objeto semántico $S$ presenta el alcance ontológico $R$ con la adecuación exigida por REV-24. $\operatorname{Presents}_i$ es una relación entre tipos; no significa $S=R$ y no contiene por definición $\operatorname{OntTotal}_i(R)$.
+
+Por tanto, un **testigo semánticamente presentado** de un $R_i$ tendría la forma:
+
+$$
+\operatorname{SemTotal}_i(S_i)
+\land
+\operatorname{Presents}_i(S_i,R_i)
 \land
 \operatorname{OntTotal}_i(R_i).
 $$
 
-$R_i$ no se identifica necesariamente con un conjunto universal, una sustancia, una suma mereológica o una última capa física. La transición de $\operatorname{SemTotal}$ a $\operatorname{OntTotal}$ queda registrada explícitamente como una obligación independiente y no puede resolverse por mera notación.
+Esta separación impide que un máximo semántico se convierta en $R_i$ por mera notación. $R_i$ tampoco se identifica necesariamente con un conjunto universal, una sustancia, una suma mereológica o una última capa física: sigue siendo alcance ontológico.
 
 ### 1.2. Horizonte empírico $U_i$ y primer Muro
 
@@ -103,7 +113,7 @@ $$
 \operatorname{ExhaustsOntScope}_i(U_i),
 $$
 
-que significa «el horizonte accesible $U_i$ agota efectivamente el alcance ontológico del régimen». Este predicado no es $\operatorname{OntTotal}_i(S)$: este último se aplica a un candidato semántico.
+que significa «el horizonte accesible $U_i$ agota efectivamente el alcance ontológico del régimen». Este predicado no es $\operatorname{OntTotal}_i(R)$: este último se aplica a un alcance ontológico, mientras $U_i$ es un horizonte empírico.
 
 Entonces:
 
@@ -146,22 +156,43 @@ La existencia de $R_{\mathrm{abs}}$ **no** forma parte del objetivo mínimo del 
 
 ### 1.4. Tesis objetivo
 
-Definimos:
+La existencia de $R$ se define ahora en el nivel ontológico, sin incorporar una representación semántica a la definición:
 
 $$
 \boxed{
 \operatorname{ExistsR}
 :=
-\exists i\;\exists R_i
+\exists i\;\exists R_i\;
+\operatorname{OntTotal}_i(R_i).
+}
+$$
+
+Para registrar el objetivo más fuerte que puede alcanzar la ruta constructiva introducimos:
+
+$$
+\boxed{
+\operatorname{WitnessedR}
+:=
+\exists i\;\exists S_i\;\exists R_i
 \left[
-\operatorname{SemTotal}_i(R_i)
+\operatorname{SemTotal}_i(S_i)
+\land
+\operatorname{Presents}_i(S_i,R_i)
 \land
 \operatorname{OntTotal}_i(R_i)
 \right].
 }
 $$
 
-Y su negación:
+De modo inmediato:
+
+$$
+\operatorname{WitnessedR}
+\Rightarrow
+\operatorname{ExistsR}.
+$$
+
+Y definimos:
 
 $$
 \boxed{
@@ -171,13 +202,15 @@ $$
 }
 $$
 
-Por tanto, el objetivo fuerte actual es:
+Por tanto, el objetivo doctrinal mínimo sigue siendo:
 
 $$
 \boxed{
 \neg\operatorname{NoR}.
 }
 $$
+
+La ruta de esta PR intenta algo más informativo: producir un $S_i$ y justificar no circularmente que presenta algún $R_i$ ontológicamente total, es decir, llegar a $\operatorname{WitnessedR}$.
 
 No es necesario demostrar:
 
@@ -234,7 +267,7 @@ La propuesta ya dispone de una definición independiente y event-local de emerge
 
 Por tanto, REV-01, REV-02 y REV-04 están cerrados en sus criterios originales, mientras REV-03 permanece PARTIAL por alcance doctrinal.
 
-El programa dispone ahora de un **teorema directo condicional de exhaustividad semántica de régimen**: PON + smallness controlada de la firma + Separation aplicable al predicado de actualidad + StructAdm construyen un máximo E-closed $S_i^*$ de cualquier régimen no vacío. Ese resultado demuestra $\operatorname{SemTotal}_i(S_i^*)$; no demuestra todavía $\operatorname{OntTotal}_i(S_i^*)$ ni, por tanto, $\operatorname{ExistsR}$.
+El programa dispone ahora de un **teorema directo condicional de exhaustividad semántica de régimen**: PON + smallness controlada de la firma + Separation aplicable al predicado de actualidad + StructAdm construyen un máximo E-closed $S_i^*$ de cualquier régimen no vacío. Ese resultado demuestra $\operatorname{SemTotal}_i(S_i^*)$; no demuestra todavía que exista un alcance $R_i$ presentado por $S_i^*$ que satisfaga $\operatorname{OntTotal}_i(R_i)$ ni, por tanto, $\operatorname{ExistsR}$.
 
 Los bloqueadores activos relevantes pasan a ser:
 
@@ -264,7 +297,7 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-10 | RESOLVED vigente | La ruta actual ya no usa la inferencia oculta de StageFactorization/presentabilidad criticada en H8. |
 | REV-21 | RESOLVED formal | Los puntos fijos de $F_i$ son exactamente los subconjuntos forward-closed del grafo emergente; la degeneración al único punto fijo no vacío $\Sigma_i$ ocurre exactamente cuando el grafo es fuertemente conexo. |
 | REV-23 | OPEN blocker | PON no está justificada: falta demostrar que cada token actual tiene set-many vecinos ontológicos inmediatos bajo $\bowtie$. PON hace constructible como set el componente finitamente conectado, pero por sí sola no implica $\operatorname{ExistsR}$. |
-| REV-24 | OPEN blocker doctrinal | El máximo de fragmentos semánticos demuestra $\operatorname{SemTotal}$, no automáticamente $\operatorname{OntTotal}$. Falta un puente independiente entre representación exhaustiva y totalidad ontológica. |
+| REV-24 | OPEN blocker doctrinal | El máximo de fragmentos semánticos demuestra $\operatorname{SemTotal}$, pero $S_i$ y $R_i$ tienen tipos distintos. El puente se descompone en REV-24a (anclaje ontológico), REV-24b (completitud de pertenencia, acoplada a REV-07) y REV-24c (adecuación representacional), cuya combinación debe justificar $\operatorname{Presents}_i(S_i,R_i)$ y $\operatorname{OntTotal}_i(R_i)$ sin presuponerlos. |
 | REV-25 | OPEN blocker fundacional/semántico | El teorema usa smallness de la firma y un paso de Separation sobre los hechos «actualmente verdaderos». Deben justificarse la firma/aridades y la disponibilidad metateórica del predicado de actualidad. |
 
 ### Corrección histórica importante sobre F2
@@ -310,7 +343,7 @@ Para la ruta directa, el cuello de botella ya no es K1/K2/K3. Hay cuatro obligac
 
 1. **REV-07:** justificar filosóficamente $\Lambda_*$ como criterio de identidad de régimen y, en particular, por qué la clausura relevante usa caminos finitos;
 2. **REV-23:** justificar PON —que cada token tenga set-many vecinos ontológicos inmediatos—;
-3. **REV-24:** justificar el paso de un máximo semánticamente exhaustivo a una totalidad ontológica real;
+3. **REV-24:** justificar OA/MC/RA y la relación tipada $\operatorname{Presents}_i(S_i,R_i)$ sin presuponer totalidad;
 4. **REV-25:** justificar la smallness de la firma/aridades y el predicado de actualidad usado por Separation.
 
 REV-20 y REV-22 quedan como consecuencias/alternativas de las premisas de smallness. Incluso si REV-07, REV-23 y REV-25 se cierran, el teorema directo solo entrega $\operatorname{SemTotal}$ hasta cerrar REV-24.
@@ -366,51 +399,56 @@ $$
 
 Para esta propuesta no es necesario demostrar un único $R_{\mathrm{abs}}$.
 
-Se conserva una única definición normativa, la de §1.3:
+Se conserva:
 
 $$
 \boxed{
-\operatorname{NoR}:=\neg\operatorname{ExistsR}.
+\operatorname{NoR}:=\neg\operatorname{ExistsR}
 }
 $$
 
-y:
+con:
 
 $$
 \operatorname{ExistsR}
 :=
-\exists i\;\exists R_i
-\left[
-\operatorname{SemTotal}_i(R_i)
-\land
-\operatorname{OntTotal}_i(R_i)
-\right].
+\exists i\;\exists R_i\;
+\operatorname{OntTotal}_i(R_i).
 $$
 
-En consecuencia, K1–K3 y sus condiciones fundacionales/tipadas **no bastan por sí solos** para refutar No-$R$. Solo producen un máximo semántico $S_i$.
+K1–K3 y sus condiciones fundacionales/tipadas **no bastan por sí solos** para refutar No-$R$: producen un máximo semántico $S_i$.
 
-Para llegar a la tesis doctrinal se necesita además el puente de REV-24:
+El puente REV-24 ya no se formula como el enunciado mal tipado $\operatorname{OntTotal}_i(S_i)$. Su objetivo es justificar:
 
 $$
-\mathrm{OTB}_i:
+\mathrm{OTB}_i(S_i):
 \quad
 \operatorname{SemTotal}_i(S_i)
 \Rightarrow
-\operatorname{OntTotal}_i(S_i).
+\exists R_i\,
+[
+\operatorname{Presents}_i(S_i,R_i)
+\land
+\operatorname{OntTotal}_i(R_i)
+].
 $$
 
-Así, la forma correcta de la ruta es:
+Así, la ruta correcta es:
 
 $$
 \boxed{
 K1_i+K2_i+K3_i
 +\mathrm{OTB}_i
 \Rightarrow
+\operatorname{WitnessedR}
+\Rightarrow
 \operatorname{ExistsR}
 \Rightarrow
 \neg\operatorname{NoR}.
 }
 $$
+
+$\mathrm{OTB}_i$ es aquí una abreviatura del **problema a demostrar**, no una premisa que pueda darse por estipulación. Su contenido se descompone más abajo en REV-24a/b/c.
 
 Que además exista un único régimen, múltiples regímenes, Cluster-$R$, Indexed-One-$R$ o alguna estructura metaontológica ulterior es una cuestión separada.
 
@@ -457,13 +495,13 @@ S_i\in\mathfrak K_i
 F_i^{\mathrm{proc}}(S_i)=S_i.
 $$
 
-Hasta cerrar REV-24, la forma tipada y sustantiva de la tesis es «existe un máximo semántico $S_i$ y es E-closed». Solo si $\mathrm{OTB}_i$ justifica además:
+Hasta cerrar REV-24, la forma tipada y sustantiva de la tesis es «existe un máximo semántico $S_i$ y es E-closed». REV-24 debe justificar la existencia de un alcance ontológico distinto $R_i$ tal que:
 
 $$
-\operatorname{OntTotal}_i(S_i),
+\operatorname{Presents}_i(S_i,R_i)
+\land
+\operatorname{OntTotal}_i(R_i).
 $$
-
-ese mismo candidato satisface la definición doctrinal de $R_i$.
 
 Por tanto no se identifica por mera maximalidad:
 
@@ -848,17 +886,91 @@ $$
 }
 $$
 
-Este es el resultado matemático directo. No contiene todavía la inferencia:
+Este es el resultado matemático directo. No contiene todavía ninguna inferencia a un objeto de tipo ontológico.
+
+### REV-24 — descomposición del puente semántica → ontología
+
+El puente no se expresa ya como $\operatorname{OntTotal}_i(S_i^*)$, porque $S_i^*$ es semántico y $R_i$ es ontológico. El objetivo de REV-24 es establecer, sin circularidad:
 
 $$
-\operatorname{SemTotal}_i(S_i^*)
+\boxed{
+\operatorname{SemTotal}_i(S_i)
++
+\mathrm{OA}_i(S_i)
++
+\mathrm{MC}_i(S_i)
++
+\mathrm{RA}_i(S_i)
 \Rightarrow
-\operatorname{OntTotal}_i(S_i^*).
+\exists R_i
+[
+\operatorname{Presents}_i(S_i,R_i)
+\land
+\operatorname{OntTotal}_i(R_i)
+].
+}
 $$
 
-Esa inferencia es el **puente ontológico** abierto como REV-24. Abreviamos por $\mathrm{OTB}_i$ una justificación independiente de cuándo un máximo semánticamente exhaustivo cuenta como alcance ontológico exhaustivo del régimen.
+Esta caja es un **esquema objetivo, no un teorema ya demostrado**. Abreviamos por $\mathrm{OTB}_i$ una justificación suficiente de ese esquema.
 
-Solo con ese puente la ruta doctrinal toma la forma:
+#### REV-24a — OA: anclaje ontológico
+
+$\mathrm{OA}_i(S)$ exige que los tokens y hechos que $S$ representa estén anclados en contenido actual del régimen mediante una relación de denotación/realización independiente:
+
+$$
+\mathrm{OA}_i(S):
+\quad
+\forall a\in T_S\;
+\exists x\,
+[
+\operatorname{Actual}(x)
+\land
+\operatorname{Reg}_i(x)
+\land
+\operatorname{Den}_i(a,x)
+].
+$$
+
+La condición correspondiente sobre $\Phi_S$ exige que los hechos semánticos remitan a relaciones/hechos actuales entre los relata denotados. OA prohíbe convertir una estructura puramente formal en ontología por fiat, pero no afirma que el régimen esté exhaustivamente cubierto.
+
+#### REV-24b — MC: completitud de pertenencia
+
+Sea $\operatorname{Reg}_i(x)$ un criterio de pertenencia al régimen fijado **independientemente de $S_i$, $R_i$, K3 y la conclusión de totalización**. El candidato vigente procede de REV-07 y la familia pre-régimen $\Lambda_*$.
+
+Se exige:
+
+$$
+\mathrm{MC}_i(S):
+\quad
+\forall x,
+[
+\operatorname{Actual}(x)
+\land
+\operatorname{Reg}_i(x)
+\Rightarrow
+\exists a\in T_S\;\operatorname{Den}_i(a,x)
+].
+$$
+
+Ésta es probablemente la carga ontológica principal. No puede justificarse definiendo $\operatorname{Reg}_i(x)$ como «ser representado por $S_i$» ni como «pertenecer a $R_i$». REV-24b queda acoplado a REV-07: hay que justificar que la noción independiente de co-régimen realmente captura todos los modos ontológicamente pertinentes de pertenencia. La misma obligación incluye explicar en qué sentido esa extensión determina un **alcance** legítimo sin reificarlo necesariamente como conjunto u objeto colector.
+
+#### REV-24c — RA: adecuación representacional
+
+$\mathrm{RA}_i(S)$ exige que la representación no solo nombre miembros reales, sino que preserve y refleje las identidades y relaciones ontológicas relevantes para el uso que se haga de $S$:
+
+$$
+\mathrm{RA}_i(S)
+$$
+
+incluye, como mínimo, fidelidad de denotación e invariancia bajo recodificaciones fieles; cualquier exigencia de completitud factual adicional debe declararse por separado y coordinarse con REV-25.
+
+#### Relación Presents
+
+$\operatorname{Presents}_i(S,R)$ es la relación tipada resultante entre una presentación semántica y un alcance ontológico. No es identidad, no implica por definición $\operatorname{OntTotal}_i(R)$ y no puede definirse usando «$R$ es todo lo real del régimen» como atajo.
+
+La descomposición hace visible una posibilidad importante: la **existencia de un alcance ontológico** puede requerir menos que una descripción semántica completa de todos sus hechos. Si REV-24b pudiera justificarse a partir de una individuación ontológica independiente del régimen, parte del trabajo sobre $R_i$ podría desacoplarse de la exhaustividad factual de $S_i$. Esto se registra como línea de investigación; no se toma todavía como demostración de $\operatorname{ExistsR}$.
+
+Solo si REV-24a/b/c producen efectivamente el esquema puente, la ruta doctrinal toma la forma:
 
 $$
 \boxed{
@@ -867,6 +979,8 @@ $$
 +\mathrm{ActualSep}_i
 +\operatorname{StructAdm}
 +\mathrm{OTB}_i
+\Rightarrow
+\operatorname{WitnessedR}
 \Rightarrow
 \operatorname{ExistsR}.
 }
@@ -1166,7 +1280,7 @@ Una incorporación real puede cambiar capacidades previas sin dejar de ser ontol
 **No demostrado ontológicamente:**
 
 1. que la representación semántica sea exhaustiva respecto de todo contenido ontológico relevante del régimen;
-2. que un máximo semántico satisfaga $\operatorname{OntTotal}_i$ —REV-24—;
+2. que un máximo semántico presente adecuadamente un alcance $R_i$ que satisfaga $\operatorname{OntTotal}_i(R_i)$ —REV-24—;
 3. que la noción de cierre inducida por $F_M$ produzca una familia $\mathfrak K$ con el contenido ontológico pretendido;
 4. que las cadenas ontológicas relevantes tengan las cotas requeridas en cualquier fortalecimiento del tipo de dominio;
 5. que K3/directedness y la clausura finita de `SameRegime` sean legítimas independientemente de la conclusión.
@@ -1174,7 +1288,7 @@ Una incorporación real puede cambiar capacidades previas sin dejar de ser ontol
 Estas cargas quedan trazadas así:
 
 - **REV-18:** tipado semántico de $\operatorname{EClosed}$, ya resuelto en su alcance;
-- **REV-24:** paso de máximo semántico a totalidad ontológica;
+- **REV-24:** puente tipado $S_i\to R_i$ mediante OA/MC/RA y $\operatorname{Presents}_i$;
 - **REV-19:** elección del tipo temporal del dominio;
 - **REV-20:** K1/cofinalidad de dominios E-closed;
 - **REV-09/REV-10:** K2/inductividad y sus supuestos de compactitud/presentabilidad;
@@ -1482,13 +1596,15 @@ $$
 (\mathfrak D_i^{\mathrm{proc}},\preceq_i).
 $$
 
-Solo si REV-24 proporciona $\mathrm{OTB}_i$ y se demuestra:
+Solo si REV-24 proporciona $\mathrm{OTB}_i$ puede demostrarse la existencia de un alcance ontológico $R_i$ relacionado con el máximo semántico mediante:
 
 $$
-\operatorname{OntTotal}_i(S_i),
+\operatorname{Presents}_i(S_i,R_i)
+\land
+\operatorname{OntTotal}_i(R_i).
 $$
 
-ese candidato satisface la tesis doctrinal y puede tratarse como un $R_i$.
+$S_i$ no «se convierte» en $R_i$: permanece como su presentación semántica.
 
 Esto deja dos niveles de pluralidad distintos:
 
@@ -1704,7 +1820,11 @@ $$
 \boxed{
 \operatorname{SemTotal}_i(S_i)
 \not\Rightarrow
-\operatorname{OntTotal}_i(S_i).
+\exists R_i[
+\operatorname{Presents}_i(S_i,R_i)
+\land
+\operatorname{OntTotal}_i(R_i)
+].
 }
 $$
 
