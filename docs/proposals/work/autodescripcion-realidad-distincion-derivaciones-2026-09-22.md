@@ -3314,7 +3314,7 @@ $$
 Bajo S1–S5 existe:
 
 $$
-R_i\in\mathfrak K_i^{C}
+S_i\in\mathfrak K_i^{C}
 $$
 
 tal que:
@@ -3323,7 +3323,7 @@ $$
 \boxed{
 \forall X\in\mathfrak D_i^{\mathrm{proc}},
 \quad
-X\preceq_i R_i.
+X\preceq_i S_i.
 }
 $$
 
@@ -3332,13 +3332,13 @@ $$
 Por S1, $\mathfrak C_i$ es un poset set-sized. Por S3, $\mathfrak K_i^{C}$ es no vacío; por S4, toda cadena de $\mathfrak K_i^{C}$ tiene cota en $\mathfrak K_i^{C}$. Zorn produce un elemento maximal:
 
 $$
-R_i\in\mathfrak K_i^{C}.
+S_i\in\mathfrak K_i^{C}.
 $$
 
 Sea $Y\in\mathfrak C_i$. Por S5 existe $W\in\mathfrak C_i$ con:
 
 $$
-R_i\preceq_i W
+S_i\preceq_i W
 \land
 Y\preceq_i W.
 $$
@@ -3352,22 +3352,22 @@ $$
 Entonces:
 
 $$
-R_i\preceq_i Z.
+S_i\preceq_i Z.
 $$
 
-Por maximalidad de $R_i$ en $\mathfrak K_i^{C}$:
+Por maximalidad de $S_i$ en $\mathfrak K_i^{C}$:
 
 $$
-Z=R_i.
+Z=S_i.
 $$
 
 Por tanto:
 
 $$
-Y\preceq_i R_i.
+Y\preceq_i S_i.
 $$
 
-Así $R_i$ es máximo de $\mathfrak C_i$.
+Así $S_i$ es máximo de $\mathfrak C_i$.
 
 Ahora sea:
 
@@ -3384,16 +3384,36 @@ $$
 Y ya hemos probado:
 
 $$
-Y\preceq_i R_i.
+Y\preceq_i S_i.
 $$
 
 Luego:
 
 $$
-X\preceq_i R_i.
+X\preceq_i S_i.
 $$
 
 $\square$
+
+Como $S_i\in\mathfrak K_i^{C}\subseteq\mathfrak K_i$, el candidato es E-closed, y la propiedad demostrada de dominación global da:
+
+$
+\boxed{
+\operatorname{SemTotal}_i(S_i).
+}
+$
+
+Este teorema es exclusivamente semántico. No permite sustituir $S_i$ por un $R_i$ ni concluir $\operatorname{ExistsR}$ sin el puente independiente REV-24/$\mathrm{OTB}_i$:
+
+$
+\operatorname{SemTotal}_i(S_i)
++
+\mathrm{OTB}_i
+\Rightarrow
+\operatorname{OntTotal}_i(S_i)
+\Rightarrow
+\operatorname{ExistsR}.
+$
 
 ### Consecuencia
 
