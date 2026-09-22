@@ -4816,7 +4816,7 @@ La relación binaria utilizada por FID queda definida solo sobre testigos admisi
 
 $$
 \operatorname{AdmIntRel}(x,y)
-:Longleftrightarrow
+:\Longleftrightarrow
 \exists g[
 \mathrm{WA}(g)
 \land
@@ -4883,7 +4883,7 @@ $$
 con:
 
 $$
-\operatorname{IntRel}(q_n,q_{n+1})
+\operatorname{AdmIntRel}(q_n,q_{n+1})
 $$
 
 para todo $n$, y un token actual $\ell$ cuya dependencia ontológica sea esencialmente de la **totalidad/límite** de la secuencia, sin que exista ningún $n$ ni ningún testigo relacional actual $g$ para el que una cadena finita de $\operatorname{AdmIntRel}$ conecte $q_n$ con $\ell$.
@@ -4911,9 +4911,9 @@ Este análisis reduce el siguiente frente a dos preguntas:
 1. ¿es FID defendible para toda co-realidad relevante?;
 2. si no lo es, ¿puede ampliarse la ontología de tokens relacionales para capturar los aparentes contraejemplos sin trivializar $\Lambda_*$ ni violar PON?
 
-El siguiente trabajo sustantivo es dar contenido independiente suficiente a $\operatorname{CoReal}$/$\operatorname{IntRel}$ y someter FID a contraejemplos.
+El siguiente trabajo sustantivo es dar contenido independiente suficiente a $\operatorname{CoReal}$/$\operatorname{AdmIntRel}$ y someter FID a contraejemplos.
 
-##### 8.2.4. Contraejemplo abstracto a FID como principio lógico
+##### Contraejemplo abstracto a FID como principio lógico
 
 Sea $X$ un espacio conectado pero no path-connected; la curva seno del topólogo es el ejemplo estándar.
 
@@ -4959,7 +4959,7 @@ $$
 
 El ejemplo no afirma que `CoReal` sea conectividad topológica. Su función es metateórica: demuestra que pasar de una noción global de unidad a una descomposición finita en enlaces es una premisa sustantiva.
 
-##### 8.2.5. Contraesquema de dependencia infinitaria
+##### Contraesquema de dependencia infinitaria
 
 Considérese una cadena actual:
 
@@ -4988,7 +4988,7 @@ $$
 
 aun cuando cada eslabón individual sea ontológicamente impecable. El punto no es adoptar metafysical infinitism, sino mostrar que FID incorpora una restricción de **longitud finita** que no se sigue de la mera existencia de grounding/dependence.
 
-##### 8.2.6. Ruta alternativa si FID falla: clausura integrativa generalizada
+##### Ruta alternativa si FID falla: clausura integrativa generalizada
 
 Sea $\mathcal C_*$ un operador de clausura pre-régimen construido a partir de reglas integrativas independientes, potencialmente incluyendo reglas globales/de límite además de enlaces finitos:
 
@@ -5078,7 +5078,7 @@ y FID/LA justifican completeness.
 
 Por tanto FID es una **condición suficiente de la instanciación finita**, no una condición necesaria de la tesis `ExistsR`.
 
-##### 8.2.7. Implementación transfinita candidata
+##### Implementación transfinita candidata
 
 Una realización concreta de $\mathcal C_*$ puede iterar una regla de expansión integrativa $G$ por ordinales:
 
@@ -5123,7 +5123,7 @@ No se presupone que tal $\kappa$ exista. Si la clausura requiere recorrido prope
 
 Esta formulación muestra exactamente qué perderíamos al abandonar FID: no la posibilidad de construir $S_i$, sino la prueba sencilla de smallness mediante niveles finitos $n<\omega$.
 
-##### 8.2.1. FID no es generación local finita
+##### FID no es generación local finita
 
 FID restringe la **longitud del camino de integración**, no el número de relata de cada relación. Si una relación global actual $g$ tiene set-many relata y la ontología admite su instancia como token relacional, puede mediar una conexión finita por incidencia.
 
@@ -5151,7 +5151,7 @@ $$
 
 WA exige que $g$ sea una instancia actual y ontológica, con relata identificados sin totalización, rol integrador independiente, invariancia representacional e incidencia compatible con las obligaciones de smallness. No se admite un testigo cuyo único fundamento sea «hay que conectar estos relata para salvar FID».
 
-##### 8.2.2. Stress test AQFT / superselección
+##### Stress test AQFT / superselección
 
 En AQFT, el álgebra cuasilocal puede ser la completación $C^*$ de la unión dirigida de las álgebras locales. Por ello la unión local puede ser densa sin coincidir con el álgebra cuasilocal. Éste es un modelo matemático preciso de contenido que existe en una completación y no en ningún estadio local individual.
 
@@ -5175,7 +5175,7 @@ $$
 
 Por tanto AQFT no refuta FID por sí sola; proporciona una clase concreta donde la existencia ontológica de **testigos de límite** debe justificarse y no puede darse por supuesta.
 
-##### 8.2.3. Gauge y topological order
+##### Gauge y topological order
 
 Las obstrucciones de factorización en gauge theory y los observables extendidos/topológicos son adversarios importantes de una ontología localista, pero tampoco producen automáticamente $\neg\mathrm{FID}$. Edge modes, constraints de borde, Wilson loops u otros observables extendidos pueden actuar como testigos finitos de incidencia si son ontológicamente admisibles bajo WA.
 
