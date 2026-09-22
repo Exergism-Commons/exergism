@@ -136,8 +136,9 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - Si existe una función de progreso estricta a lo largo de todas las aristas emergentes, el grafo es acíclico y no puede degenerar de ese modo cuando tiene más de un estado.
 ## Objetivo No-R y restricción del Muro
 
-- El objetivo fuerte queda formulado como refutar $\operatorname{NoR}$ mostrando la existencia de al menos un máximo E-closed $R_i$ en algún régimen no vacío.
+- El objetivo fuerte sigue siendo refutar $\operatorname{NoR}$, pero un máximo E-closed del poset solo produce $\operatorname{SemTotal}_i(S_i)$. La refutación de No-$R$ requiere además REV-24/$\mathrm{OTB}_i$ para justificar $\operatorname{OntTotal}_i(S_i)$ y, con ello, $\operatorname{ExistsR}$.
 - K1 no puede justificarse por muestreo interno: el Muro impide convertir observación parcial del régimen en certificación universal.
+- Se introduce $U_i$ como horizonte físico/empírico accesible y $\operatorname{Rep}_i(U_i)\preceq_i S_i$ como relación representacional mínima. La ausencia de extensiones accesibles de $U_i$ no implica $\operatorname{OntTotal}_i(U_i)$; sandboxes/simulaciones son casos-modelo de esa subdeterminación, no premisas físicas.
 - REV-20 exige por ello una derivación estructural/no enumerativa.
 - REV-17 sigue RESOLVED respecto del teorema abstracto set-sized, pero aparece REV-22 como obligación de **aplicabilidad** al régimen ontológico real.
 - Una ruta alternativa a hacer set-sized todo $\mathfrak D_i^{\mathrm{proc}}$ es exhibir un esqueleto cofinal set-sized $\mathfrak C_i$; Zorn sobre ese esqueleto basta para producir un máximo de todo el régimen si la cofinalidad y las propiedades K se preservan.
@@ -237,6 +238,7 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-24 | Reabierto explícitamente el problema histórico de §18.15: un máximo de fragmentos semánticos no equivale por sí solo a totalidad ontológica. La conclusión directa se rebaja a $\operatorname{SemTotal}$ y la cobertura se mantiene tipada semánticamente. | §§1.1, 3, 4.0 + ledger. | 836eeb9, c540e58 |
 | 2026-09-22 | REV-25 | Separadas las premisas de smallness de firma y Separation. La aridad finita se reconoce como suficiente pero no necesaria; se introduce $\mathrm{ActualSep}_i$. | §4.0 + documento técnico + ledger. | 7f56973 |
 | 2026-09-22 | REV-24 consistency / Codex P1 | Eliminada la segunda definición incompatible de `NoR` y toda inferencia normativa K1–K3 ⇒ `R_i`. K1–K3 producen `SemTotal_i(S_i)`; `ExistsR` requiere además `OTB_i`. La misma corrección se aplica al bloque REC/Muro, One-R/Many-R y al teorema abstracto del documento técnico. | §§3.2, 4, 7, 10 + documento técnico. | b25dd8a, cd34220 |
+| 2026-09-22 | REV-24 consistency / Codex P1 follow-up | Retipados el objetivo No-R residual y el teorema del esqueleto cofinal: sus máximos son `S_i`, no `R_i`. Añadido `U_i` como horizonte empírico separado de `S_i` y `R_i`, con el Muro formulado como bloqueo de certificación ontológica por clausura epistemológica. | §§1.2, 3.3 + ledger + documento técnico. | 4f5b4b5, add200a |
 
 ## Evidencia de consolidación documental
 
