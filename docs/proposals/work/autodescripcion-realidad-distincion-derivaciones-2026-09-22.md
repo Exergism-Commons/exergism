@@ -1039,7 +1039,7 @@ F(S_i)=S_i
 }
 $$
 
-Aquí $\operatorname{SemExhaustive}_i$ expresa exhaustividad dentro del tipo formal cubierto por $\mathfrak D_i$; no implica por sí sola la existencia de un $R_i$ ontológicamente total presentado por ese máximo. Esa promoción requiere REV-24/$\mathrm{OTB}_i$.
+Aquí $\operatorname{SemExhaustive}_i$ expresa exhaustividad dentro del tipo formal cubierto por $\mathfrak D_i$; no implica por sí sola la existencia de un $R_i$ ontológicamente total presentado por ese máximo. Justificar esa relación de presentación requiere REV-24/$\mathrm{OTB}_i$.
 
 Esta corrección **reduce**, no aumenta, las premisas matemáticas del teorema.
 
@@ -1454,7 +1454,7 @@ $$
 \text{ entre los dominios procesuales actuales?}
 $$
 
-Aquí $\mathcal E_M$ y $\operatorname{EClosed}^{\mathrm{proc}}$ sí son pertinentes. La promoción de un candidato $S_i^{\mathrm{proc}}$ a un $R_i$ ontológico requeriría REV-24/$\mathrm{OTB}_i$.
+Aquí $\mathcal E_M$ y $\operatorname{EClosed}^{\mathrm{proc}}$ sí son pertinentes. Obtener un alcance ontológico $R_i$ presentado por $S_i^{\mathrm{proc}}$ requeriría REV-24/$\mathrm{OTB}_i$; los dos objetos no se identifican.
 
 **Teorema sincrónico**
 
