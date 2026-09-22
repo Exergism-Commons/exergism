@@ -946,30 +946,26 @@ $$
 
 Como $X$ era arbitrario, $R$ es un **máximo de todo $\mathfrak D_i^{\mathrm{proc}}$**. Normativamente este resultado prueba un máximo semántico $S_i$; su identificación con un $R_i$ ontológico requiere REV-24. $\square$
 
-### 4.3. Cobertura de lo real
+### 4.3. Cobertura representacional y límite del puente
 
-Si además:
-
-$$
-\operatorname{Real}(x)
-\Rightarrow
-\exists X\in\mathfrak D:
-x\preceq X,
-$$
-
-entonces:
+En el tipo semántico vigente, la cobertura que sí puede usarse sin cambiar de nivel es:
 
 $$
-\operatorname{Real}(x)
-\Rightarrow
-x\preceq R.
+\forall q\text{ representable y actual en }i,
+\quad
+\exists X\in\mathfrak D_i^{\mathrm{proc}}:
+q\trianglelefteq_i X.
 $$
 
-La inferencia es simplemente:
+Combinada con la maximalidad de $S_i$, esta condición implica que todo contenido actual **representable por el formalismo** aparece en $S_i$.
+
+No debe escribirse sin más:
 
 $$
-x\preceq X\preceq R.
+\operatorname{Real}(x)\Rightarrow x\preceq S_i,
 $$
+
+porque $S_i$ es, por REV-18, un fragmento semántico y esa fórmula mezclaría otra vez el tipo ontológico con el semántico. Para obtener una afirmación sobre todo lo real hace falta una tesis independiente de adecuación representacional —que ningún contenido ontológico relevante queda fuera del carrier/firma y que la representación preserva el alcance que se quiere llamar totalidad—. Esa es precisamente parte del criterio de cierre de REV-24.
 
 ### 4.4. Cómo se recupera esta forma desde un operador
 
@@ -1093,11 +1089,11 @@ Una incorporación real puede cambiar capacidades previas sin dejar de ser ontol
 
 **No demostrado ontológicamente:**
 
-1. que un dominio ontológico $X\in\mathfrak D$ sea representable por un subconjunto de $\Sigma_M$;
-2. que $\subseteq$ represente $\preceq_{\mathrm{ont}}$;
-3. que la noción de cierre inducida por $F_M$ produzca una familia $\mathfrak K$ ontológicamente cofinal;
-4. que las cadenas ontológicas relevantes tengan las cotas requeridas;
-5. que K3/directedness sea legítima independientemente de “mismo índice”.
+1. que la representación semántica sea exhaustiva respecto de todo contenido ontológico relevante del régimen;
+2. que un máximo semántico satisfaga $\operatorname{OntTotal}_i$ —REV-24—;
+3. que la noción de cierre inducida por $F_M$ produzca una familia $\mathfrak K$ con el contenido ontológico pretendido;
+4. que las cadenas ontológicas relevantes tengan las cotas requeridas en cualquier fortalecimiento del tipo de dominio;
+5. que K3/directedness y la clausura finita de `SameRegime` sean legítimas independientemente de la conclusión.
 
 Estas cargas quedan trazadas así:
 
