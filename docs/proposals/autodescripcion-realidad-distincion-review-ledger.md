@@ -50,7 +50,7 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 
 ## Avance de REV-03
 
-- **REV-03 pasa a PARTIAL.** Se ha definido una candidata independiente \(\mathcal E_M\) sobre un sistema de transiciones \(M=(C,\Sigma,\Rightarrow_M)\), sin usar R, totalidad, admisibilidad ni «posibilidad real». La candidata exige macro-invariancia, dependencia organizacional y eficacia dinámica mínima. Se han añadido casos de discriminación positivos/negativos y comparación con Broad, Wimsatt, Bedau, Kim, Humphreys y Hoel.
+- **REV-03 pasa a PARTIAL.** Se ha definido una candidata independiente $\mathcal E_M$ sobre un sistema de transiciones $M=(C,\Sigma,\Rightarrow_M)$, sin usar R, totalidad, admisibilidad ni «posibilidad real». La candidata exige macro-invariancia, dependencia organizacional y eficacia dinámica mínima. Se han añadido casos de discriminación positivos/negativos y comparación con Broad, Wimsatt, Bedau, Kim, Humphreys y Hoel.
 - **No está RESOLVED.** Falta comprobar si la candidata es demasiado estrecha o demasiado amplia para los casos doctrinales que el exergismo debe conservar. REV-02 es ahora la prueba inmediata: inhibición/contexto y monotonía.
 ## Alcance de algunos cierres
 
