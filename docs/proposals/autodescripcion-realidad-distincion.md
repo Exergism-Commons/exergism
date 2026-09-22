@@ -44,13 +44,18 @@ Las etiquetas históricas [D], [A], [I], [H], [O], [C] se conservan solo cuando 
 
 Esta es la única sección que debe usarse para responder “¿qué sostiene ahora la propuesta?”.
 
-## 1. Objetivo conceptual — Exists-$R$ frente a No-$R$
+## 1. Objetivo conceptual — totalidad de régimen frente a Realidad Total
 
-La propuesta distingue ahora tres niveles que antes quedaban mezclados bajo el símbolo $R$.
+La auditoría de REV-24 obliga a separar dos preguntas que la versión anterior volvió a mezclar:
+
+1. ¿existe un alcance ontológico exhaustivo **de algún régimen**?;
+2. ¿existe el $R$ de la doctrina original, es decir, la **totalidad de todo lo real**?
+
+Estas tesis no son equivalentes.
 
 ### 1.1. Exhaustividad semántica, presentación y totalidad ontológica
 
-Para un régimen ontológico $i$, distinguimos primero la propiedad formal:
+Para un régimen ontológico $i$:
 
 $$
 \operatorname{SemTotal}_i(S)
@@ -61,61 +66,33 @@ $$
 \;X\preceq_i S.
 $$
 
-$\operatorname{SemTotal}_i(S)$ dice que $S$ es un **máximo semánticamente exhaustivo** dentro del tipo procesual vigente. Como los dominios son fragmentos semánticos positivos actuales, esta propiedad habla de un objeto semántico $S$.
+$\operatorname{SemTotal}_i(S)$ es una propiedad de un **objeto semántico** $S$.
 
-Reservamos ahora:
+Reservamos:
 
 $$
 \operatorname{OntTotal}_i(R)
 $$
 
-para una propiedad de **alcances ontológicos**, no de objetos semánticos: $R$ agota efectivamente el alcance ontológico del régimen $i$.
+para una propiedad de **alcances ontológicos**: $R$ agota efectivamente el alcance ontológico del régimen $i$.
 
-La relación entre ambos tipos se expresa explícitamente mediante:
-
-$$
-\operatorname{Presents}_i(S,R),
-$$
-
-que significa que el objeto semántico $S$ presenta el alcance ontológico $R$ con la adecuación exigida por REV-24. $\operatorname{Presents}_i$ es una relación entre tipos; no significa $S=R$ y no contiene por definición $\operatorname{OntTotal}_i(R)$.
-
-Por tanto, un **testigo semánticamente presentado** de un $R_i$ tendría la forma:
+Y:
 
 $$
-\operatorname{SemTotal}_i(S_i)
-\land
-\operatorname{Presents}_i(S_i,R_i)
-\land
-\operatorname{OntTotal}_i(R_i).
+\operatorname{Presents}_i(S,R)
 $$
 
-Esta separación impide que un máximo semántico se convierta en $R_i$ por mera notación. $R_i$ tampoco se identifica necesariamente con un conjunto universal, una sustancia, una suma mereológica o una última capa física: sigue siendo alcance ontológico.
+relaciona ambos tipos. No significa $S=R$ y no contiene por definición $\operatorname{OntTotal}_i(R)$.
 
-### 1.2. Horizonte empírico $U_i$ y primer Muro
+### 1.2. Horizonte empírico $U_i$ y Muro
 
-Se distingue además:
-
-$$
-U_i
-$$
-
-como el **horizonte físico/empírico efectivamente accesible desde una posición interna**: el dominio cuya estructura puede ser observada, inferida o modelada desde dentro hasta los límites impuestos por acceso causal, evidencia y representación.
-
-$U_i$ no se identifica por definición ni con $S_i$ ni con $R_i$. Su contenido puede admitir una representación semántica dentro de $S_i$, pero esa relación es representacional, no identidad de tipos. Esquemáticamente:
+$U_i$ designa el horizonte físico/empírico accesible desde una posición interna. No se identifica por definición con $S_i$ ni con $R_i$.
 
 $$
 \operatorname{Rep}_i(U_i)\preceq_i S_i.
 $$
 
-El primer Muro se formula como la imposibilidad de promover mera clausura epistemológica a exhaustividad ontológica del horizonte. Para este nivel introducimos:
-
-$$
-\operatorname{ExhaustsOntScope}_i(U_i),
-$$
-
-que significa «el horizonte accesible $U_i$ agota efectivamente el alcance ontológico del régimen». Este predicado no es $\operatorname{OntTotal}_i(R)$: este último se aplica a un alcance ontológico, mientras $U_i$ es un horizonte empírico.
-
-Entonces:
+El Muro mínimo exige:
 
 $$
 \boxed{
@@ -125,9 +102,7 @@ $$
 }
 $$
 
-Por tanto, incluso una teoría internamente completa del universo accesible sería compatible tanto con que ese horizonte agotase la realidad del régimen como con que estuviera embebido en una estructura ontológica mayor. Sandboxes, simulaciones y extensiones causalmente veladas son casos-modelo de esta subdeterminación; no se presuponen como hechos físicos.
-
-La arquitectura conceptual mínima pasa a ser:
+La arquitectura permanece:
 
 $$
 U_i
@@ -137,109 +112,177 @@ S_i
 R_i.
 $$
 
-La primera flecha es epistemológico-representacional; la segunda es ontológica y permanece abierta. Expresiones informales como $U_i=S_i=R_i$ deben entenderse como coincidencia de alcances bajo representaciones fieles, no como identidad literal entre objetos de tipos distintos.
+**Motivación física limitada.** Static-patch observables, gravitational dressing y reconstrucción holográfica motivan distinguir acceso, representación y alcance, pero no demuestran ninguna identificación $U_i=S_i=R_i$ ni ninguna tesis de totalidad. Véase el [mapa de literatura, §13](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
 
-El Muro restringe la identificación empírica de $R_i$; no decide por sí mismo si $R_i$ existe.
+### 1.3. Target audit — $R_i$ local no es el $R$ absoluto
 
-**Motivación física limitada.** Esta separación no se introduce como una tesis sobre una teoría física concreta, pero tiene precedentes técnicos relevantes. Chandrasekaran–Longo–Penington–Witten construyen un álgebra de observables para un static patch de de Sitter con operadores gravitacionalmente vestidos respecto de la worldline de un observador; Donnelly–Giddings muestran que, en gravedad, el dressing y la invariancia difeomórfica impiden identificar sin más localidad física con una subálgebra local ordinaria. Estos resultados motivan distinguir horizonte accesible y estructura representacional, pero no demuestran $U_i=S_i$, $S_i=R_i$ ni $\operatorname{ExistsR}$. Véase el [mapa de literatura, §13](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
-### 1.3. Totalidad absoluta hipotética
-
-Reservamos:
+La formulación original de esta propuesta definía:
 
 $$
-R_{\mathrm{abs}}
+R:=\operatorname{Scope}(\operatorname{Real}),
 $$
 
-para una eventual totalidad global que dominase todos los regímenes.
+es decir, la totalidad de **todo lo real**. Esa noción corresponde, bajo una semántica de generalidad absoluta, a lo que ahora escribimos:
 
-La existencia de $R_{\mathrm{abs}}$ **no** forma parte del objetivo mínimo del programa actual.
+$$
+R_{\mathrm{abs}}.
+$$
 
-### 1.4. Tesis objetivo
+La formulación intermedia:
 
-La existencia de $R$ se define ahora en el nivel ontológico, sin incorporar una representación semántica a la definición:
+$$
+\exists i\exists R_i\,\operatorname{OntTotal}_i(R_i)
+$$
+
+es más débil: basta una totalidad indexada de un régimen. Por tanto queda **SUPERSEDED** el uso de esa fórmula como definición sin matices de `ExistsR`.
+
+### 1.4. Existencia de totalidad de régimen
+
+Definimos:
 
 $$
 \boxed{
-\operatorname{ExistsR}
+\operatorname{ExistsRegR}
 :=
 \exists i\;\exists R_i\;
 \operatorname{OntTotal}_i(R_i).
 }
 $$
 
-El cuantificador $\exists R_i$ es **tipado sobre alcances**, no un existencial singular ordinario sobre objetos del mismo universo que los tokens. Mientras REV-24d permanezca abierto, esta notación es esquemática. En la ruta plural estricta se reemplaza por cuantificación plural $\exists rr_i$ y una relación «ser uno de» $x\prec rr_i$; no se postula una entidad colectora $R_i$.
-
-Para registrar el objetivo más fuerte que puede alcanzar la ruta constructiva introducimos:
+Y la versión semánticamente testimoniada:
 
 $$
 \boxed{
-\operatorname{WitnessedR}
+\operatorname{WitnessedRegR}
 :=
 \exists i\;\exists S_i\;\exists R_i
-\left[
+[
 \operatorname{SemTotal}_i(S_i)
 \land
 \operatorname{Presents}_i(S_i,R_i)
 \land
 \operatorname{OntTotal}_i(R_i)
-\right].
+].
 }
 $$
 
-De modo inmediato:
+Entonces:
 
 $$
-\operatorname{WitnessedR}
+\operatorname{WitnessedRegR}
 \Rightarrow
-\operatorname{ExistsR}.
+\operatorname{ExistsRegR}.
 $$
 
-Y definimos:
+Esta es la conclusión que puede perseguir directamente la maquinaria $S_i$/REV-24.
+
+Para aislar la realización plural de un régimen respecto de un seed actual $q$ definimos:
+
+$$
+\operatorname{RegScope}_q(rr)
+:\Longleftrightarrow
+\forall x[
+x\prec rr
+\Longleftrightarrow
+(\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q))
+].
+$$
+
+Bajo comprensión plural, actualidad de $q$ y reflexividad de `CoReal`, REV-24d proporciona condicionalmente un $rr$ que satisface $\operatorname{RegScope}_q(rr)$. Esto es un resultado sobre **realización de alcance local**; no demuestra por sí mismo Realidad Total.
+
+Definimos también:
+
+$$
+\operatorname{NoRegR}
+:=
+\neg\operatorname{ExistsRegR}.
+$$
+
+### 1.5. Existencia de Realidad Total
+
+Para la tesis original reservamos:
+
+$$
+\boxed{
+\operatorname{ExistsAbsR}
+:=
+\exists R_{\mathrm{abs}}\;
+\operatorname{AbsTotal}(R_{\mathrm{abs}}).
+}
+$$
+
+donde $\operatorname{AbsTotal}$ significa que el alcance agota **todo lo real**, no solo un régimen previamente indexado.
+
+En una formalización plural con generalidad absoluta, el objetivo tendría la forma:
+
+$$
+\exists rr_{\mathrm{abs}}\;
+\forall x[
+x\prec rr_{\mathrm{abs}}
+\Longleftrightarrow
+\operatorname{Real}(x)
+].
+$$
+
+Esta fórmula requiere precisamente aquello que está en disputa: una cuantificación suficientemente general sobre `Real` y una instancia legítima de comprensión plural absoluta. No se obtiene de la comprensión local aplicada a $\operatorname{CoReal}(-,q)$.
+
+Reservamos el nombre doctrinal desnudo:
+
+$$
+\boxed{
+\operatorname{ExistsR}:=\operatorname{ExistsAbsR}
+}
+$$
+
+mientras se mantenga la definición original de $R$ como totalidad de todo lo real.
+
+Y:
 
 $$
 \boxed{
 \operatorname{NoR}
 :=
-\neg\operatorname{ExistsR}.
+\neg\operatorname{ExistsAbsR}.
 }
 $$
 
-Por tanto, el objetivo doctrinal mínimo sigue siendo:
+### 1.6. No hay puente automático local → absoluto
+
+En particular:
 
 $$
 \boxed{
-\neg\operatorname{NoR}.
+\operatorname{ExistsRegR}
+\not\Rightarrow
+\operatorname{ExistsAbsR}.
 }
 $$
 
-La ruta de esta PR intenta algo más informativo: producir un $S_i$ y justificar no circularmente que presenta algún $R_i$ ontológicamente total, es decir, llegar a $\operatorname{WitnessedR}$.
-
-No es necesario demostrar:
+y:
 
 $$
-\exists R_{\mathrm{abs}}.
+\boxed{
+\operatorname{WitnessedRegR}
+\not\Rightarrow
+\operatorname{ExistsAbsR}.
+}
 $$
 
-### 1.5. Alternativas compatibles con éxito
+Para llegar desde regímenes indexados a Realidad Total hace falta un **Globalization Bridge** independiente: por ejemplo, justificar generalidad ontológica absoluta, una clausura que abarque todos los regímenes o alguna estructura real común que los integre. Esta deuda se registra como REV-26.
 
-Las siguientes arquitecturas son compatibles con $\operatorname{ExistsR}$:
+Si, por el contrario, la semántica correcta de `real` es irreduciblemente indexada y no existe cuantificación global legítima, entonces la doctrina debe decidir explícitamente si abandona $R$ absoluto en favor de Indexed-/Many-$R$. Esa decisión tampoco la toma la maquinaria semántica.
 
-- **One-$R$:** un único régimen y un único máximo;
-- **Indexed-$R$:** máximos exhaustivos indexados por régimen;
-- **Many-$R$:** varios $R_i$ ontológicamente incomparables;
-- **Cluster-$R$:** varios máximos o grupos de máximos relacionados bajo una estructura metaontológica adicional.
+### 1.7. One-$R$, Many-$R$ y Cluster-$R$
 
-El programa fracasa respecto de su objetivo mínimo solo si vale No-$R$:
+Solo después de separar los targets tiene sentido distinguir:
 
-> ningún régimen admite una totalidad exhaustiva cerrada.
+- **One-$R$ absoluto:** existe un único $R_{\mathrm{abs}}$;
+- **Indexed-$R$:** existen uno o más $R_i$ exhaustivos de sus índices sin tesis global adicional;
+- **Many-$R$ fuerte:** existen totalidades indexadas ontológicamente incomparables y ninguna totalidad global legítima;
+- **Cluster-$R$:** varios $R_i$ quedan relacionados por una estructura real común que puede abrir una ruta de globalización.
 
-### 1.5. Consecuencia metodológica
+**Estado actual:** la ruta matemática/REV-24 trabaja sobre `ExistsRegR`/`WitnessedRegR`. El objetivo doctrinal original `ExistsR = ExistsAbsR` permanece OPEN y requiere además REV-26. No se considerará refutado No-$R$ absoluto demostrando solo un $R_i$ local.
 
-La discusión sobre generalidad absoluta y $R_{\mathrm{abs}}$ sigue siendo filosóficamente relevante, pero ya no es condición previa para refutar No-$R$.
-
-Basta demostrar $\operatorname{ExistsR}$ para **un solo régimen no vacío**.
-
-**Estado:** Exists-$R$ = OPEN; $R_{\mathrm{abs}}$ = OPEN y opcional respecto del objetivo mínimo.
 
 ## 2. Consecuencias analíticas si $R$ existe
 
