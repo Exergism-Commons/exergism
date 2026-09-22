@@ -348,30 +348,48 @@ $$
 \operatorname{ExistsR}.
 $$
 
-### 1.9. Real sin índice
+### 1.9. Metalenguaje de índices
 
-Cuando sea útil hablar metateóricamente, puede escribirse:
+No se introduce un objeto desnudo $x$ común a dominios ontológicamente incompatibles.
+
+El metalenguaje representa contenido indexado mediante pares tipados:
 
 $$
-\operatorname{Real}^{\mathrm{meta}}(x)
+\langle i,x\rangle
+$$
+
+con:
+
+$$
+\operatorname{MetaReal}(i,x)
 :\Longleftrightarrow
-\exists i\;\operatorname{Real}_i(x).
+\operatorname{Real}_i(x).
 $$
 
-Esto **no** introduce un dominio ontológico común que contenga todos los índices. Es una abreviatura del metalenguaje.
+La colección/metaclase de pares tipados es un recurso de comparación del **metalenguaje**, no una realidad superior que integre los índices.
 
-En particular, desde el lenguaje interno de $R_i$, un supuesto $R_j$ con $j\neq i$ no es «algo real pero inaccesible». No pertenece al dominio de cuantificación ontológica de $i$.
+Por tanto no adoptamos como fórmula ontológica:
 
-En ese sentido preciso, desde $R_i$:
+$$
+\exists i\;\operatorname{Real}_i(x)
+$$
+
+con un mismo $x$ no tipado atravesando índices.
+
+Desde el lenguaje interno de $R_i$, un supuesto $R_j$ con $j\neq i$ no es «algo real pero inaccesible». No pertenece al dominio de cuantificación ontológica de $i$, no puede ser relatum de un hecho real de $i$ y no puede funcionar como causa, fundamento, información o exterior ontológico de $i$.
+
+En ese sentido preciso:
 
 $$
 \boxed{
 \text{fuera de }R_i
-\text{ no denota un exterior real oculto; denota nada en }i.
+\text{ no denota un exterior real oculto en }i;
+\text{ denota ausencia de contenido ontológico en }i.
 }
 $$
 
-La eventual afirmación metateórica de que existe además un $R_j$ pertenece a la teoría de índices, no a hechos internos de $R_i$.
+Una eventual afirmación metateórica de que existe además un índice $j$ pertenece al metalenguaje de índices. No constituye un hecho transversal entre $R_i$ y $R_j$.
+
 
 ### 1.10. One-$R$, Many-$R$ y Cluster-$R$
 
@@ -381,63 +399,84 @@ La eventual afirmación metateórica de que existe además un $R_j$ pertenece a 
 - **Indexed-$R$:** lenguaje neutral para hablar de una realidad concreta $R_i$ sin decidir metateóricamente One-$R$ o Many-$R$.
 
 Así, Many-$R$ una vez genuinamente establecido no puede «colapsar después» en Cluster-$R$. Un supuesto colapso revela que la indexación inicial era provisional o errónea.
-## 2. Consecuencias analíticas y tesis sustantiva
+## 2. Consecuencias estructurales de la indexación
 
-Para el mero alcance extensional:
-
-$$
-\mathcal R_{\mathrm{ext}}
-=
-\operatorname{Scope}(\operatorname{Real}),
-$$
-
-es analítico que:
+Dado:
 
 $$
-\operatorname{Real}(x)
-\Rightarrow
-x\prec \mathcal R_{\mathrm{ext}}
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i),
 $$
 
-bajo la semántica de scope adoptada.
-
-También es analítico que un supuesto «real fuera del alcance de todo lo real» contradiga esa definición.
-
-Pero **esas consecuencias pertenecen a $\mathcal R_{\mathrm{ext}}$, no demuestran $R$**.
-
-La tesis doctrinal fuerte añade:
-
-$$
-\exists\mathcal O_{\mathrm{abs}}\;
-\forall x[
-\operatorname{Real}(x)
-\Longleftrightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}},x)
-].
-$$
-
-Ésta no es analítica: puede haber una pluralidad exhaustiva de cosas reales sin que todas deriven de una base ontológica común.
-
-Por tanto quedan separados:
+se sigue por definición tipada:
 
 $$
 \boxed{
-\text{exhaustividad extensional}
-\neq
-\text{unidad genealógica ontológica}.
+\operatorname{Real}_i(x)
+\Longleftrightarrow
+\operatorname{Within}_i(x,R_i).
 }
 $$
 
-Un operador de cierre solo tiene fuerza ontológica para $R$ si sus reglas generativas se justifican independientemente de la totalidad que pretende producir. La mera identidad formal:
+Por tanto un supuesto «real de $i$ fuera de $R_i$» es contradictorio:
 
 $$
-R=F(R)
+\operatorname{Real}_i(x)
+\land
+\neg\operatorname{Within}_i(x,R_i)
+\Rightarrow
+\bot.
 $$
 
-sigue siendo, por sí sola, un corolario de clausura y no una prueba de origen común.
+Esta consecuencia es analítica **dentro del índice**. No demuestra que exista algún índice; esa existencia es la carga sustantiva de REV-07.
 
-**Estado: la parte extensional conserva su carácter analítico; la existencia genealógica de $R$ es una tesis sustantiva abierta.**
+### 2.1. Cierre de hechos reales
+
+Si:
+
+$$
+\operatorname{RealFact}_i(f),
+$$
+
+todos sus relata pertenecen a $i$:
+
+$$
+\forall x[
+\operatorname{Relatum}(x,f)
+\Rightarrow
+\operatorname{Real}_i(x)
+].
+$$
+
+En consecuencia, ningún hecho real de $i$ puede tener como relatum contenido de un índice genuinamente distinto.
+
+### 2.2. El índice es la incompatibilidad
+
+Para índices genuinos:
+
+$$
+i\neq j
+$$
+
+no describe una relación física u ontológica entre dos realidades. Es una afirmación del metalenguaje que significa que sus dominios de realidad son mutuamente incompatibles.
+
+Así, si aparece cualquier testigo ontológico común —token, hecho, relación, dependencia o base/origen—, la conclusión correcta es:
+
+$$
+\boxed{
+\text{los candidatos no tenían índices ontológicos distintos}.
+}
+$$
+
+No existe una fase posterior en la que dos $R_i$ genuinos puedan fusionarse.
+
+### 2.3. Consecuencia epistemológica
+
+Desde $R_i$ no puede existir evidencia real sobre un supuesto $R_j\neq R_i$, porque tal evidencia sería un hecho real de $i$ con contenido transversal y violaría la incompatibilidad de índice.
+
+Por ello One-$R$ y Many-$R$ pueden ser distintos en el metalenguaje sin producir necesariamente ninguna diferencia interna certificable en $R_i$.
+
+Esto no demuestra Many-$R$ ni One-$R$. Demuestra una limitación estructural: **si Many-$R$ es verdadero, ningún índice puede contener un hecho real que lo certifique relacionándolo con otro índice.**
+
 
 ## 3. Estado actual del programa emergentista
 
