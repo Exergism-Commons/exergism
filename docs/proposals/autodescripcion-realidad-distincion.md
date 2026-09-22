@@ -872,11 +872,13 @@ $$
 
 Supóngase un operador:
 
-$$
-F:\mathfrak D\to\mathfrak D
-$$
+$
+F:\mathfrak D\to\mathfrak D.
+$
 
-que satisface, por hipótesis o por una futura derivación independiente:
+**Advertencia posterior a REV-02:** la monotonía respecto de la inclusión ontológica ordinaria $\preceq$ ya no puede tratarse como una propiedad natural de un cierre emergentista. El contraejemplo por inhibición muestra que añadir contexto puede retirar capacidades. Por tanto, la siguiente plantilla se conserva solo como el **teorema abstracto histórico** que habría que reconstruir con otra relación o con otra prueba de cotas.
+
+La plantilla exigía:
 
 $$
 X\preceq F(X),
