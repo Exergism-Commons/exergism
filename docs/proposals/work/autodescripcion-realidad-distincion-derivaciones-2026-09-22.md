@@ -3413,7 +3413,7 @@ La alternativa sería adoptar explícitamente una teoría de clases y un princip
 
 ---
 
-## REV-20 — construcción transfinita de una extensión E-closed
+## REV-20 — construcción estructural de una extensión E-closed
 
 K1 exige:
 
@@ -3423,7 +3423,7 @@ $$
 X\preceq_i Y.
 $$
 
-En lugar de asumir esta existencia global, puede derivarse de obligaciones locales de preservación de admisibilidad.
+En vez de asumir esa existencia global, puede derivarse de principios locales de preservación de admisibilidad.
 
 ### 1. Obligaciones emergentes pendientes
 
@@ -3443,29 +3443,13 @@ $$
 \operatorname{tgt}(e)=t,
 $$
 
-definimos una obligación pendiente sobre $X$ cuando:
+hay una obligación pendiente sobre $X$ si:
 
 $$
 s\in T_X
 $$
 
-pero falta alguno de los contenidos exigidos por EClosed:
-
-$$
-e\notin T_X
-\quad\text{o}\quad
-t\notin T_X
-$$
-
-o falta alguno de los hechos estructurales:
-
-$$
-\operatorname{Event}(e),
-\operatorname{src}(e,s),
-\operatorname{tgt}(e,t)
-\notin
-\Phi_X.
-$$
+pero falta alguno de los contenidos exigidos por EClosed: el token de evento, su target o los hechos estructurales Event/src/tgt.
 
 Sea:
 
@@ -3473,9 +3457,7 @@ $$
 \operatorname{Pend}_i(X)
 $$
 
-el conjunto/clase de obligaciones pendientes.
-
-Entonces:
+la colección de obligaciones pendientes. Entonces:
 
 $$
 \boxed{
@@ -3486,12 +3468,6 @@ $$
 $$
 
 ### 2. OEA — One-Event Admissible Extension
-
-Introducimos un principio estrictamente local:
-
-$$
-\mathrm{OEA}_i.
-$$
 
 Si:
 
@@ -3505,7 +3481,7 @@ $$
 o\in\operatorname{Pend}_i(X),
 $$
 
-entonces existe un dominio admisible:
+OEA exige que exista un dominio admisible:
 
 $$
 Y\in\mathfrak D_i^{\mathrm{proc}}
@@ -3517,31 +3493,21 @@ $$
 X\preceq_i Y
 $$
 
-y la obligación $o$ queda satisfecha en $Y$.
+y la obligación concreta $o$ quede satisfecha en $Y$.
 
-OEA no afirma que $Y$ sea E-closed ni que satisfaga todas las obligaciones de $X$.
+OEA no dice que $Y$ sea E-closed. Solo afirma que **un evento emergente actual individual** puede incorporarse sin destruir admisibilidad.
 
-Solo afirma:
-
-> una única transición emergente actual cuyo origen ya pertenece a un dominio admisible puede completarse sin destruir la admisibilidad.
-
-OEA es, por tanto, más débil que K1.
+Por tanto OEA es estrictamente local y más débil que K1.
 
 ### 3. CUA — Chain Union Admissibility
 
-Introducimos:
+Para toda cadena set-indexed creciente de dominios admisibles:
 
 $$
-\mathrm{CUA}_i.
+\{X_\alpha\}_{\alpha<\lambda},
 $$
 
-Para toda cadena creciente de dominios admisibles:
-
-$$
-X_0\preceq_i X_1\preceq_i\cdots
-$$
-
-indexada por un ordinal set-sized $\lambda$, la unión semántica:
+CUA exige que la unión semántica:
 
 $$
 X_\lambda
@@ -3553,92 +3519,112 @@ X_\lambda
 \right)
 $$
 
-es well-formed y satisface:
+sea well-formed y admisible:
 
 $$
 \operatorname{Adm}_i(X_\lambda).
 $$
 
-CUA es exactamente la parte de admisibilidad que permanece abierta en REV-09, formulada ahora para la construcción de K1.
+CUA es exactamente la parte ontológica de K2 que REV-09 mantiene abierta.
 
-### 4. SO — Set-sized obligation universe
+### 4. SO — Set-sized closure cone
 
-Para poder iterar OEA mediante recursión transfinita ordinaria necesitamos que las obligaciones relevantes estén controladas por un conjunto.
+Para un dominio inicial $X$, sea $\operatorname{Cone}_i(X)$ el contenido que puede aparecer mediante una cadena **finita** de eventos emergentes actuales cuyo primer source ya está en $T_X$.
 
-Una forma suficiente es:
+SO$_i(X)$ exige que los tokens, eventos y hechos estructurales de ese cono estén contenidos en una colección set-sized.
 
-$$
-\mathrm{SO}_i(X):
-$$
-
-existe un conjunto $\Omega_X$ de tokens/eventos del régimen tal que:
-
-1. $T_X\subseteq\Omega_X$;
-2. si $s\in\Omega_X$ y existe un evento emergente actual $e$ con source $s$, entonces $e$ y $\operatorname{tgt}(e)$ pertenecen a $\Omega_X$;
-3. todo contenido estructural obligatorio para esos eventos pertenece a una colección set-sized asociada a $\Omega_X$.
-
-$\Omega_X$ no tiene que ser todo el régimen. Solo debe contener el **cono emergente actual** generado por $X$.
-
-Esta condición conecta con REV-22: puede obtenerse de una smallness directa del régimen o de un esqueleto/set de representantes suficientemente cofinal.
-
-### 5. Construcción
-
-Sea:
+No hace falta que todo el régimen sea set-sized:
 
 $$
-X_0=X.
+\boxed{
+\operatorname{Cone}_i(X)\text{ set-sized}
+}
 $$
 
-Mientras:
+es suficiente para construir la clausura de $X$.
+
+Esto es más débil que smallness global y conecta directamente con REV-22.
+
+### 5. Lema de una ronda
+
+Sea $X$ admisible y supóngase que:
 
 $$
-\operatorname{Pend}_i(X_\alpha)\neq\varnothing,
+\operatorname{Pend}_i(X)
 $$
 
-elegimos una obligación pendiente:
+es set-sized.
+
+Bien ordenamos las obligaciones pendientes:
 
 $$
-o_\alpha\in\operatorname{Pend}_i(X_\alpha)
+\{o_\alpha\}_{\alpha<\kappa}.
 $$
 
-y aplicamos OEA para obtener:
+Partimos de:
 
 $$
-X_\alpha\preceq_i X_{\alpha+1}
+Y_0=X.
 $$
 
-con $o_\alpha$ satisfecha.
+En cada sucesor, si $o_\alpha$ sigue pendiente, aplicamos OEA; si ya fue satisfecha por una extensión anterior, dejamos el dominio sin cambio.
 
-En un ordinal límite $\lambda$ definimos:
+En ordinales límite tomamos la unión; CUA preserva admisibilidad.
+
+Al terminar la enumeración obtenemos un dominio admisible:
 
 $$
-X_\lambda
+\operatorname{Round}_i(X)
+$$
+
+que satisface **todas las obligaciones que ya estaban pendientes en $X$**.
+
+Las extensiones realizadas durante la ronda pueden activar obligaciones nuevas; esas se dejan para la ronda siguiente.
+
+### 6. Iteración por profundidad finita
+
+Definimos:
+
+$$
+X_0=X,
+$$
+
+y:
+
+$$
+X_{n+1}
 =
-\bigcup_{\alpha<\lambda}X_\alpha.
+\operatorname{Round}_i(X_n).
+$$
+
+Cada $X_n$ es admisible por OEA + CUA.
+
+Tomamos:
+
+$$
+X_\omega
+=
+\bigcup_{n<\omega}X_n.
 $$
 
 Por CUA:
 
 $$
-\operatorname{Adm}_i(X_\lambda).
+\operatorname{Adm}_i(X_\omega).
 $$
 
-Para garantizar que ninguna obligación quede pospuesta indefinidamente usamos una enumeración justa de las obligaciones generadas dentro de $\Omega_X$, o equivalentemente un well-ordering de todas las obligaciones potenciales del cono emergente.
-
-Como ese universo es set-sized por SO, existe algún cardinal/ordinal $\kappa$ que enumera todas las obligaciones potenciales, con repetición si es necesario cuando nuevas obligaciones se vuelven activas.
-
-### 6. Teorema de clausura admisible
+### 7. Teorema de clausura admisible
 
 **Teorema REV-20.1.**
 
-Supóngase, para un régimen $i$ y un dominio admisible inicial $X$:
+Si para un dominio admisible $X$ valen:
 
 1. OEA$_i$;
-2. CUA$_i$ para cadenas set-sized;
+2. CUA$_i$ para cadenas set-indexed;
 3. SO$_i(X)$;
-4. elección suficiente para well-orderar las obligaciones set-sized y efectuar las selecciones de OEA.
+4. elección suficiente para bien ordenar cada conjunto de obligaciones pendientes;
 
-Entonces existe:
+entonces existe:
 
 $$
 Y\in\mathfrak D_i^{\mathrm{proc}}
@@ -3656,63 +3642,67 @@ $$
 \operatorname{EClosed}_i(Y).
 $$
 
-Por tanto K1$_i$ vale para $X$.
-
-**Prueba.**
-
-La recursión anterior produce una cadena admisible.
-
-En sucesores, admisibilidad se preserva por OEA.
-
-En límites, admisibilidad se preserva por CUA.
-
-Como todas las obligaciones que pueden surgir están contenidas en un universo set-sized bien ordenado y la agenda es justa, cada obligación que llega a estar habilitada se procesa en algún estadio posterior.
-
-Sea $Y$ la unión en un ordinal suficientemente grande tras haber recorrido justamente todas las obligaciones potenciales.
-
-Supongamos por contradicción que:
+Podemos tomar:
 
 $$
-\operatorname{Pend}_i(Y)\neq\varnothing.
+Y=X_\omega.
 $$
 
-Sea $o$ una obligación pendiente en $Y$, con source $s\in T_Y$.
+**Demostración.**
 
-Por definición de unión, existe algún estadio $\alpha$ tal que:
+Supongamos que existe una obligación pendiente $o$ en $X_\omega$ con source $s$.
+
+Como:
 
 $$
-s\in T_{X_\alpha}.
+s\in T_{X_\omega}
+=
+\bigcup_{n<\omega}T_{X_n},
 $$
 
-Desde ese estadio, $o$ pertenece al universo set-sized de obligaciones potenciales y queda habilitada. Por justicia de la agenda, $o$ debe haber sido satisfecha en algún estadio $\beta\ge\alpha$.
+existe un $n$ finito con:
 
-Como la cadena solo añade contenido positivo, una obligación satisfecha no vuelve a quedar insatisfecha.
+$$
+s\in T_{X_n}.
+$$
+
+Entonces $o$ ya está pendiente —o queda satisfecha— durante la construcción de:
+
+$$
+X_{n+1}
+=
+\operatorname{Round}_i(X_n).
+$$
+
+Por definición de Round, al finalizar esa ronda $o$ está satisfecha.
+
+Como el orden procesual solo añade contenido positivo, una obligación satisfecha no vuelve a quedar insatisfecha.
 
 Contradicción.
 
 Luego:
 
 $$
-\operatorname{Pend}_i(Y)=\varnothing,
+\operatorname{Pend}_i(X_\omega)=\varnothing,
 $$
 
-y por tanto:
+es decir:
 
 $$
-\operatorname{EClosed}_i(Y).
+\operatorname{EClosed}_i(X_\omega).
 $$
 
 Además:
 
 $$
-X=X_0\preceq_i Y.
+X=X_0\preceq_i X_\omega.
 $$
 
 $\square$
 
-### 7. Consecuencia global para K1
+### 8. Consecuencia para K1
 
-Si OEA$_i$, CUA$_i$ y SO$_i(X)$ valen para **todo**:
+Si OEA$_i$, CUA$_i$ y SO$_i(X)$ valen para todo:
 
 $$
 X\in\mathfrak D_i^{\mathrm{proc}},
@@ -3721,22 +3711,10 @@ $$
 entonces:
 
 $$
-\boxed{
-\forall X\in\mathfrak D_i^{\mathrm{proc}}
-\;\exists Y\in\mathfrak K_i:
-X\preceq_i Y.
-}
-$$
-
-Es decir:
-
-$$
 \boxed{K1_i.}
 $$
 
-### 8. Qué se ha ganado
-
-REV-20 deja de ser una existencia global opaca y se reduce a:
+En forma compacta:
 
 $$
 \boxed{
@@ -3750,67 +3728,36 @@ K1_i.
 }
 $$
 
-Las tres obligaciones tienen significados diferentes:
+### 9. Por qué no es K1 rebautizada
 
-- **OEA:** preservación local de admisibilidad al completar un único evento emergente;
-- **CUA:** preservación de admisibilidad bajo acumulación de una cadena;
-- **SO:** smallness del cono de obligaciones relevantes.
+Las tres premisas pueden fallar independientemente:
 
-No son reformulaciones idénticas de K1.
+- **OEA** falla si existe un evento emergente actual individual que no puede incorporarse a ninguna extensión admisible del dominio que contiene su source;
+- **CUA** falla si una acumulación creciente de fragmentos admisibles deja de ser admisible;
+- **SO** falla si el cono emergente actual generado por un dominio no puede controlarse mediante una colección set-sized.
 
-### 9. Relación con otros findings
+Ninguna de ellas afirma directamente que exista una extensión E-closed completa.
 
-**REV-07 / EEA.**
+### 10. Relación con otros findings
 
-OEA es el caso emergentista específico de la filosofía de EEA:
+- **REV-07 / EEA:** una EEA suficientemente fuerte para footprints de eventos implica OEA.
+- **REV-09:** CUA es exactamente la deuda de admisibilidad que queda en K2.
+- **REV-18:** OEA necesita una semántica independiente de Adm$_i$ y del footprint ontológico de un evento.
+- **REV-22:** SO puede derivarse de smallness local del cono, de un esqueleto cofinal adecuado o de compromisos fundacionales más fuertes.
 
-- EEA extiende a lo largo de un enlace ontológico cualquiera;
-- OEA extiende a lo largo de una obligación de evento emergente.
+### 11. Compatibilidad con el Muro
 
-Una justificación suficientemente fuerte de EEA sobre footprints de eventos podría implicar OEA.
+La prueba es estructural, no empírica.
 
-**REV-09.**
-
-CUA es exactamente el componente de admisibilidad que REV-09 mantiene abierto. Por tanto un cierre positivo de REV-09 satisface una de las tres premisas de REV-20.
-
-**REV-18.**
-
-OEA necesita que $\operatorname{Adm}_i$ y el footprint ontológico de un evento tengan semántica independiente. Por ello REV-18 sigue siendo el núcleo ontológico.
-
-**REV-22.**
-
-SO puede apoyarse en smallness directa o en un esqueleto cofinal set-sized. Así la deuda fundacional y K1 ya no son independientes por completo.
-
-### 10. Relación con el Muro
-
-La prueba es estructural y no enumerativa en el sentido epistemológico relevante.
-
-No exige que un observador:
-
-- conozca todos los dominios;
-- sepa cuál será $R_i$;
-- inspeccione empíricamente todas las obligaciones;
-- certifique desde fuera la totalidad del régimen.
-
-Exige demostrar propiedades generales OEA/CUA/SO de la ontología.
+No exige conocer todos los dominios, identificar $R_i$ ni inspeccionar todas las obligaciones desde dentro. Exige demostrar propiedades generales de la ontología: OEA, CUA y SO.
 
 Por tanto es compatible con el Muro.
 
-### 11. Qué impediría K1
-
-La construcción falla de manera informativa si falla cualquiera de:
-
-1. **OEA:** existe un dominio admisible y un evento emergente actual que no puede incorporarse en ninguna extensión admisible;
-2. **CUA:** acumulaciones crecientes de dominios admisibles pueden salir de la clase admisible;
-3. **SO:** el cono de obligaciones generado por un dominio no puede controlarse por un conjunto/well-order apropiado.
-
-Estas son formas precisas de potencialismo/indefinite extensibility capaces de sostener No-R.
-
 ### 12. Estado de REV-20
 
-REV-20 debe pasar de **OPEN** a **PARTIAL**.
+REV-20 pasa de **OPEN** a **PARTIAL**.
 
-Ya existe una derivación estructural de K1 desde tres principios más locales.
+K1 ya no es una existencia global opaca: se deriva de tres obligaciones locales y separables.
 
 No se marca RESOLVED porque OEA, CUA y SO todavía requieren justificación ontológica/fundacional independiente.
 
