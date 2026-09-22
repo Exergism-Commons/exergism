@@ -89,11 +89,12 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - **REV-10 queda RESOLVED para la ruta vigente.** La inferencia oculta de presentabilidad/factorización de H8 ha sido eliminada; no se usa para probar preservación de cierre.
 ## Localidad ontológica de la emergencia
 
-- La teoría de emergencia queda indexada por régimen: $\mathcal E_i$, $\mathfrak D_i^{\mathrm{proc}}$, $\mathfrak K_i$, $K1_i$–$K3_i$ y máximo interno $R_i$.
-- No se infiere $\exists R_{\mathrm{abs}}$ de $\forall i\,\exists R_i$.
-- La notación $\mathscr R=\{R_i\}_{i\in I}$ se usa solo metalingüísticamente; no introduce un colector ontológico.
-- One-R/Many-R queda desacoplado del teorema emergentista. Strong Many-R entre $R_i$ distintos es compatible con que cada régimen satisfaga internamente su propia teoría de emergencia.
-- REV-07 queda PARTIAL porque todavía falta justificar qué constituye un régimen $i$ y por qué satisface $K3_i$.
+- La teoría de emergencia queda indexada por régimen: $\mathcal E_i$, $\mathfrak D_i^{\mathrm{proc}}$, $\mathfrak K_i$, $K1_i$–$K3_i$ y máximo semántico interno $S_i$.
+- K1–K3 pueden establecer $\operatorname{SemTotal}_i(S_i)$; la promoción a un $R_i$ ontológico requiere REV-24/$\mathrm{OTB}_i$.
+- Incluso suponiendo cerrados esos puentes para varios regímenes, no se infiere $\exists R_{\mathrm{abs}}$ de $\forall i\,\exists R_i$.
+- La notación de una familia de $S_i$ es solo metalingüística; una familia de $R_i$ solo procede condicionalmente donde se haya satisfecho $\operatorname{OntTotal}_i$.
+- One-R/Many-R queda desacoplado del teorema emergentista.
+- REV-07 queda PARTIAL por la justificación de $\Lambda_*$ y de la clausura por caminos finitos; K3_i ya se deriva bajo StructAdm.
 - REV-08 y REV-14 quedan RESOLVED en sus ataques originales al retirarse los maximales dirigidos como definición de índice y la noción de «Verdad Absoluta indexada».
 ## Avance de REV-07 — identidad de régimen
 
