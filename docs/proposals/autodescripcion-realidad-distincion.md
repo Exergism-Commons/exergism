@@ -1,7 +1,7 @@
 # Autodescripción, realidad y distinción — crónica consolidada
 
 **Estado:** propuesta doctrinal exploratoria, no canónica.  
-**PR:** #12 — *Derive regime-local Exists-R under locally set-like connectivity*.  
+**PR:** #12 — *Derive regime-local semantic exhaustivity and isolate the Exists-R bridge*.  
 **Versión consolidada:** 2026-09-22.
 
 Este documento ya **no** intenta mantener simultáneamente todas las formulaciones producidas durante la exploración. Su función es doble:
