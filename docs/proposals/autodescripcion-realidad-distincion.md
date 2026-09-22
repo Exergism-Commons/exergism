@@ -1148,6 +1148,145 @@ Así, un límite, constraint global, Wilson loop, edge mode o relación infinita
 
 Véase el [mapa de literatura](autodescripcion-realidad-distincion-references.md#identidad-de-régimen-y-relaciones-de-worldmate) para los precedentes usados en este stress test.
 
+##### Contraejemplo matemático: conectividad sin caminos
+
+FID no es una consecuencia lógica de una noción genérica de unidad. La curva seno del topólogo proporciona un contraesquema matemático estándar: existe un espacio $X$ que es **conexo pero no conexo por caminos**.
+
+Tomemos una interpretación de prueba:
+
+$$
+\operatorname{CoReal}_X(x,q)
+:\Longleftrightarrow
+x\text{ y }q\text{ pertenecen a la misma componente conexa de }X,
+$$
+
+y:
+
+$$
+\operatorname{AdmIntRel}_X(x,y)
+:\Longleftrightarrow
+\text{existe un camino en }X\text{ de }x\text{ a }y.
+$$
+
+En la curva seno del topólogo existen $q,x\in X$ con:
+
+$$
+\operatorname{CoReal}_X(x,q)
+$$
+
+pero:
+
+$$
+\neg\operatorname{AdmIntRel}_X(q,x).
+$$
+
+Además, ninguna cadena finita de pares path-connected puede salvar la situación: los caminos se concatenan, por lo que una cadena finita:
+
+$$
+q=z_0,\dots,z_n=x
+$$
+
+con cada $\operatorname{AdmIntRel}_X(z_k,z_{k+1})$ produciría un camino de $q$ a $x$, contradicción.
+
+Por tanto existe un modelo matemático coherente con:
+
+$$
+\boxed{
+\operatorname{CoReal}_X(x,q)
+\land
+\neg\mathrm{FID}_X.
+}
+$$
+
+Esto **no** prueba que la co-realidad física o metafísica tenga estructura topológica de este tipo. Sí prueba algo metodológicamente importante: FID no puede presentarse como verdad lógica derivada de «unidad» o «conectividad» sin una premisa ontológica adicional.
+
+##### Dos rutas para REV-24b
+
+La construcción vigente por caminos finitos es por tanto una **instanciación**, no la única arquitectura posible.
+
+**Ruta A — finite-witness closure.**
+
+Se mantiene:
+
+$$
+T_i=[q]_{\sim}
+$$
+
+y se intenta justificar:
+
+$$
+\mathrm{FID}+\mathrm{LA}
+\Rightarrow
+\mathrm{RC}_{\Lambda}.
+$$
+
+Esta ruta es fuerte y simple cuando toda integración dispone de profundidad finita de testigos WA-admisibles.
+
+**Ruta B — generalized integrative closure.**
+
+Si FID falla, puede introducirse un operador pre-régimen independiente:
+
+$$
+\mathcal C_*:A\mapsto\mathcal C_*(A),
+$$
+
+generado por reglas integrativas admisibles que pueden incluir, si se justifican independientemente, reglas de límite/globales además de enlaces finitos. Debe definirse sin usar $R_i$, $S_i$, `Presents` ni `OntTotal`.
+
+Para un seed $q$:
+
+$$
+T_i^{\mathcal C}:=\mathcal C_*(\{q\}).
+$$
+
+La ruta requiere al menos:
+
+$$
+\mathrm{CS}:\quad
+x\in T_i^{\mathcal C}
+\Rightarrow
+\operatorname{CoReal}(x,q),
+$$
+
+$$
+\mathrm{CC}:\quad
+\operatorname{CoReal}(x,q)
+\Rightarrow
+x\in T_i^{\mathcal C},
+$$
+
+y:
+
+$$
+\mathrm{CSet}:\quad
+T_i^{\mathcal C}\text{ es set-sized}.
+$$
+
+CS hace para la clausura general el trabajo de RS; CC hace el trabajo de RC. Bajo denotación canónica:
+
+$$
+\mathrm{CS}+\mathrm{CD}_i
+\Rightarrow
+\mathrm{OA}_i,
+$$
+
+y:
+
+$$
+\mathrm{CC}+\mathrm{CD}_i
+\Rightarrow
+\mathrm{MC}_i.
+$$
+
+Para reutilizar el teorema semántico directo se exige además que la clausura sea estable bajo los eventos procesuales que generan `EClosed`. Con CSet, `SigSmall`, `ActualSep` y esa estabilidad, la construcción de $S_i^*$ puede repetirse sobre $T_i^{\mathcal C}$.
+
+Así, un contraejemplo a FID no implica:
+
+$$
+\neg\operatorname{ExistsR}.
+$$
+
+Implica únicamente que la **ruta finita** $[q]_{\sim}$ no basta para caracterizar el régimen. La PR no adoptará FID como axioma doctrinal mientras la ruta de clausura generalizada permanezca abierta.
+
 ##### Requisito de independencia para $\operatorname{CoReal}$
 
 Para que $\mathrm{RC}_{\Lambda}$ cuente como apoyo ontológico y no como una tautología encubierta, cualquier caracterización candidata $C(x,q)$ de co-realidad debe satisfacer:
