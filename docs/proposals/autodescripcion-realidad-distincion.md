@@ -312,11 +312,11 @@ La propuesta ya dispone de una definición independiente y event-local de emerge
 
 Por tanto, REV-01, REV-02 y REV-04 están cerrados en sus criterios originales, mientras REV-03 permanece PARTIAL por alcance doctrinal.
 
-El programa dispone de teoremas directos condicionales de exhaustividad semántica de régimen: la ruta finita usa PON y la ruta generalizada usa `CSet/CProcStable`; ambas requieren además smallness de firma, Separation aplicable a actualidad y StructAdm. Estos resultados demuestran $\operatorname{SemTotal}$; no demuestran por sí solos $\operatorname{ExistsRegR}$ y, con mayor razón, tampoco $\operatorname{ExistsAbsR}$.
+El programa dispone de dos construcciones semánticas condicionales. La ruta finita usa el régimen candidato $[q]_{\sim}$, PON y $\operatorname{StructAdm}_i$. La ruta generalizada es deliberadamente pre-ontológica: usa $T_q^{\mathcal C}$, `CFragAdm_C`, CSet/CWF/CProcStable y smallness/Separation relativas a la clausura; solo tras CS/CC/CRType puede reindexarse como un régimen. Ninguna ruta demuestra por sí sola $\operatorname{ExistsRegR}$ y, con mayor razón, tampoco $\operatorname{ExistsAbsR}$.
 
 Los bloqueadores activos relevantes pasan a ser:
 
-- **REV-07:** justificación filosófica de la familia pre-régimen $\Lambda_*$, incluida la elección de conectividad por caminos finitos;
+- **REV-07:** adecuación de la individuación de régimen: $\Lambda_*$ para Ruta A o una clausura $\mathcal C_*$ independiente con CGI/CMin + CS/CC para Ruta B;
 - **REV-23:** PON — smallness por-token de la ruta finita; la ruta generalizada puede sustituirlo por `CSet/TransClSmall`;
 - **REV-24:** puente no circular entre exhaustividad semántica y una totalidad ontológica de régimen;
 - **REV-25:** smallness de la firma y legitimidad del paso por Separation sobre «actualmente verdadero»;
