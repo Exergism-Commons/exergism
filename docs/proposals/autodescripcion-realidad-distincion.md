@@ -97,10 +97,12 @@ Esto **todavía no demuestra una metafísica emergentista de $R$** porque falta 
 Los bloqueadores activos relevantes pasan a ser:
 
 - **REV-18:** puente entre eventos/configuraciones actualizadas y dominios ontológicos cerrados;
-- **REV-19:** desajuste temporal entre emergencia diacrónica y el antiguo objetivo sincrónico;
-- **REV-07:** amalgamación/directedness no circular;
-- **REV-09/REV-10:** inductividad/cotas de cadenas;
-- **REV-14/REV-15:** consecuencias doctrinales y discriminantes aún abiertas.
+- **REV-19:** tipado procesual y relación entre proceso y sección sincrónica;
+- **REV-07:** identidad independiente de cada régimen $i$ y justificación de $K3_i$;
+- **REV-09:** admisibilidad ontológica de las cotas de cadenas;
+- **REV-20:** cofinalidad $K1_i$;
+- **REV-15:** consecuencias metaontológicas discriminantes;
+- **REV-21:** poder discriminante de $F_i$ en grafos ricos de emergencia.
 
 ## 3.1. Resumen formal vigente
 
@@ -157,13 +159,13 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 
 ### Blockers ontológicos actuales
 
-El cuello de botella ya no está en F1–F3. Está en conectar el formalismo local con la ontología global sin introducir la conclusión en las premisas:
+El cuello de botella ya no está en F1–F3 ni en resolver One-R. Está en conectar el formalismo local con la ontología **de cada régimen $i$** sin introducir su unidad o exhaustividad en las premisas:
 
-1. **REV-18:** interpretar ontológicamente incidencia y `EClosed`;
-2. **REV-19:** fijar rigurosamente el tipo y orden de los dominios procesuales;
-3. **REV-20:** demostrar cofinalidad K1 sin presuponer una totalidad;
-4. **REV-09:** justificar la admisibilidad ontológica de cotas de cadenas;
-5. **REV-07:** justificar K3/directedness sin excluir Strong Many-R por definición.
+1. **REV-18:** interpretar ontológicamente incidencia y `EClosed_i`;
+2. **REV-19:** fijar rigurosamente el tipo y orden de los dominios procesuales de $i$;
+3. **REV-20:** demostrar cofinalidad $K1_i$ sin presuponer ya $R_i$;
+4. **REV-09:** justificar la admisibilidad ontológica de cotas de cadenas dentro de $i$;
+5. **REV-07:** justificar la identidad de $i$ y $K3_i$ sin definir el régimen como «lo amalgamable».
 
 ---
 
@@ -684,7 +686,7 @@ No se asigna una carga privilegiada a ninguna de las dos posiciones.
 
 La propuesta no toma el debate como resuelto.
 
-**Estado: OPEN — REV-11.**
+**Estado del debate: OPEN. Finding REV-11: RESOLVED como corrección de carga argumentativa.**
 
 ## 7. One-$R$, Many-$R$ y niveles de exhaustividad
 
@@ -815,48 +817,41 @@ Esa obligación queda en REV-07 y en la cuestión metaontológica One-$R$/Many-$
 **Estado:** la teoría emergentista local es neutral respecto de One-$R$/Many-$R$. La identificación «Verdad Absoluta indexada» queda retirada.
 
 
-## 8. C1, localidad, compacidad y colímites
+## 8. K2, localidad, compacidad y colímites
 
-Las formulaciones históricas por:
+La ruta vigente ya no presenta localidad, compacidad lógica y colímites como «tres pruebas independientes».
 
-- localidad/testigos;
-- compacidad lógica;
-- colímites dirigidos;
+Para dominios procesuales de un régimen fijo $i$, se ha demostrado formalmente que `EClosed_i` se preserva bajo uniones de cadenas compatibles. Esto elimina la antigua necesidad de hacer factorizar un testigo finito por algún estadio.
 
-no se cuentan ya como “tres pruebas independientes”.
+Por tanto:
 
-La compacidad de primer orden da un **modelo**; falta el puente a actualidad ontológica.
+- **REV-10: RESOLVED** para la ruta vigente; la premisa oculta de StageFactorization ya no se usa.
+- **REV-09: PARTIAL**; falta demostrar que la unión/direct limit formal de una cadena de dominios procesuales admisibles sigue siendo un dominio ontológicamente admisible de $i$.
 
-La ruta categórica solo ayuda si la existencia y preservación de los colímites se justifican independientemente.
+La compacidad lógica y la maquinaria categórica pueden seguir siendo herramientas futuras para justificar esa admisibilidad, pero no cuentan como resultados ontológicos por sí mismas.
 
-La ruta de localidad necesita separar:
 
-1. existencia de un testigo local de inadmisibilidad;
-2. factorización de ese testigo por algún estadio de la cadena, una propiedad relacionada con presentabilidad/compactitud categórica.
+## 9. Proceso, branching, fractalidad y novedad modal
 
-**Estado: OPEN — REV-09 y REV-10.**
+El **proceso** ya no está diferido: REV-19 establece provisionalmente que la ruta emergentista opera sobre dominios procesuales de cada régimen $i$, porque la emergencia event-local es diacrónica.
 
-## 9. Tiempo, branching, proceso, fractalidad y novedad modal
+Siguen fuera del núcleo demostrado:
 
-Todo el desarrollo posterior sobre:
-
-- estados sincrónicos;
-- continuidad diacrónica;
-- redes de transiciones;
-- branching;
+- una teoría temporal concreta;
+- branching como tesis física universal;
 - meta-capacidades;
 - AbsoluteBruteNovelty;
+- fractalidad.
 
-queda **DEFERRED** hasta resolver el núcleo sobre $\mathcal E$, $F$, C1/C2 y generalidad.
-
-Dos límites sí sobreviven:
+Dos límites permanecen firmes:
 
 1. una estructura temporal abstracta no debe identificarse con el tiempo de Planck;
 2. branching/no linealidad no implica fractalidad.
 
-“Fractal” no participa en ninguna inferencia vigente.
+«Fractal» no participa en ninguna inferencia vigente.
 
-**Estado: DEFERRED — REV-13.**
+**Estado:** proceso = PARTIAL bajo REV-19; extensiones restantes = DEFERRED.
+
 
 ## 10. REC, Muro y función regulativa
 
