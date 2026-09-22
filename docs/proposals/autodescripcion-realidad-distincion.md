@@ -1200,6 +1200,33 @@ $$
 
 Esto **no** prueba que la co-realidad física o metafísica tenga estructura topológica de este tipo. Sí prueba algo metodológicamente importante: FID no puede presentarse como verdad lógica derivada de «unidad» o «conectividad» sin una premisa ontológica adicional.
 
+##### Contraejemplo metafísico candidato: dependencia a distancia transfinita
+
+La literatura sobre regressos de grounding distingue entre que exista un fundamento y que cada entidad llegue a él mediante una cadena **finita**. Puede haber una secuencia:
+
+$$
+E_1
+\succ E_{1/2}
+\succ E_{1/4}
+\succ\cdots
+$$
+
+tal que cada miembro dependa del siguiente y, sin embargo, la estructura completa esté ultimadamente anclada en un fundamento $F$ al que solo se llega atravesando infinitos intermediarios.
+
+Si las instancias de dependencia inmediata son los únicos testigos WA-admisibles y una caracterización independiente de co-realidad coloca $E_1$ y $F$ dentro del mismo entramado ontológico, entonces:
+
+$$
+\operatorname{CoReal}(E_1,F)
+$$
+
+pero no existe ninguna cadena **finita** de $\operatorname{AdmIntRel}$ desde $E_1$ hasta $F$. En ese modelo:
+
+$$
+\neg\mathrm{FID}.
+$$
+
+Esto tampoco prueba que nuestra realidad contenga dependencia de longitud transfinita. Sí muestra que FID excluye una familia metafísica reconocible y, por tanto, debe defenderse o sustituirse; no puede presentarse como neutral respecto de infinitismo/fundacionalismo.
+
 ##### Dos rutas para REV-24b
 
 La construcción vigente por caminos finitos es por tanto una **instanciación**, no la única arquitectura posible.
