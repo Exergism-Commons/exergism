@@ -381,27 +381,63 @@ Una pluralidad de representaciones, horizontes o regiones causalmente desconecta
 
 **Decisión REV-26e:** RESOLVED doctrinal. El target no es el mero $\mathcal R_{\mathrm{ext}}=Scope(Real)$, sino una Realidad entendida como **unidad genealógica ontológicamente cerrada**. Esta estructura no se añade para hacer no trivial la prueba: constituye el criterio doctrinal de qué cuenta como una realidad.
 
-## 2. Consecuencias analíticas si $R$ existe
+## 2. Consecuencias analíticas y tesis sustantiva
 
-Si $R$ significa “todo lo real”, entonces:
-
-$$
-\operatorname{Real}(x) \Rightarrow x \preceq_{\mathrm{ont}} R.
-$$
-
-Y un supuesto “exterior real de $R$” contradice esa definición.
-
-Estas afirmaciones son **analíticas/definicionales**, no resultados empíricos ni teoremas profundos.
-
-Del mismo modo, si se define un operador $F$ que solo añade estructuras o posibilidades ya comprendidas en el alcance real de $R$, entonces:
+Para el mero alcance extensional:
 
 $$
-R = F(R)
+\mathcal R_{\mathrm{ext}}
+=
+\operatorname{Scope}(\operatorname{Real}),
 $$
 
-es un **corolario condicional de clausura**, no una prueba de existencia de $R$.
+es analítico que:
 
-**Estado: SURVIVES, con retórica rebajada.**
+$$
+\operatorname{Real}(x)
+\Rightarrow
+x\prec \mathcal R_{\mathrm{ext}}
+$$
+
+bajo la semántica de scope adoptada.
+
+También es analítico que un supuesto «real fuera del alcance de todo lo real» contradiga esa definición.
+
+Pero **esas consecuencias pertenecen a $\mathcal R_{\mathrm{ext}}$, no demuestran $R$**.
+
+La tesis doctrinal fuerte añade:
+
+$$
+\exists\mathcal O_{\mathrm{abs}}\;
+\forall x[
+\operatorname{Real}(x)
+\Longleftrightarrow
+\operatorname{Generated}^{*}_{\mathrm{abs}}
+(\mathcal O_{\mathrm{abs}},x)
+].
+$$
+
+Ésta no es analítica: puede haber una pluralidad exhaustiva de cosas reales sin que todas deriven de una base ontológica común.
+
+Por tanto quedan separados:
+
+$$
+\boxed{
+\text{exhaustividad extensional}
+\neq
+\text{unidad genealógica ontológica}.
+}
+$$
+
+Un operador de cierre solo tiene fuerza ontológica para $R$ si sus reglas generativas se justifican independientemente de la totalidad que pretende producir. La mera identidad formal:
+
+$$
+R=F(R)
+$$
+
+sigue siendo, por sí sola, un corolario de clausura y no una prueba de origen común.
+
+**Estado: la parte extensional conserva su carácter analítico; la existencia genealógica de $R$ es una tesis sustantiva abierta.**
 
 ## 3. Estado actual del programa emergentista
 
