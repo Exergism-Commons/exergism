@@ -38,8 +38,13 @@ Cada referencia debe aparecer en el documento principal solo cuando haga trabajo
 
 - **George Boolos (1984), “To Be is to Be a Value of a Variable (or to Be Some Values of Some Variables)”, _Journal of Philosophy_ 81.** Punto de partida moderno de la cuantificación plural como recurso para hablar de muchos objetos sin reificarlos necesariamente como un conjunto.
 - **George Boolos (1985), “Nominalist Platonism”, _Philosophical Review_ 94.**
-- **Øystein Linnebo**, “Plural Quantification”, _Stanford Encyclopedia of Philosophy_: https://plato.stanford.edu/entries/plural-quant/
+- **Øystein Linnebo**, “Plural Quantification”, _Stanford Encyclopedia of Philosophy_, rev. 18 Aug 2026. Presenta la lógica plural estándar y el esquema de comprensión $\exists u\,\phi(u)\rightarrow\exists xx\forall u(u\prec xx\leftrightarrow\phi(u))$, y registra la controversia sobre su estatus lógico/ontológicamente inocente: https://plato.stanford.edu/entries/plural-quant/
+- **Salvatore Florio & Øystein Linnebo (2021), _The Many and the One: A Philosophical Study of Plural Logic_. Oxford University Press.** Desarrolla, entre otras cosas, una lógica plural crítica que restringe comprensión en dominios extensionally indefinite; es especialmente relevante para no extrapolar automáticamente la ruta plural local de REV-24d a una pluralidad universal de absolutamente todo.
 - **Agustín Rayo** y literatura posterior sobre plurales/superplurales deben considerarse cuando se use Scope(Real) sin objeto colector.
+
+### Uso en REV-24d
+
+La ruta plural de Scope Realization usa únicamente una instancia explícita de comprensión para $\varphi_q(x)=\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q)$. Esto puede realizar un alcance local como pluralidad $rr_i$ sin setificarlo, siempre que esa instancia de comprensión sea legítima. No se presupone comprensión irrestricta para $R_{\mathrm{abs}}$; el paso a «absolutamente todo» permanece dentro del debate de generalidad absoluta y critical plural logic.
 
 ## 3. Emergencia
 
