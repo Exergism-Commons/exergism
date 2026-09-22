@@ -5540,6 +5540,32 @@ x\prec rr_{\mathrm{abs}}
 ].
 $$
 
+En PFO clásica se adopta el esquema:
+
+$$
+\mathrm{PluralComp}[\varphi]:
+\quad
+(\exists x\,\varphi(x))
+\Rightarrow
+\exists xx\,\forall y[
+y\prec xx
+\Longleftrightarrow
+\varphi(y)
+].
+$$
+
+Luego:
+
+$$
+\boxed{
+\mathrm{PluralComp}[\operatorname{Real}]
+\Rightarrow
+\mathrm{APC}_{Real}.
+}
+$$
+
+La implicación es formal. Lo que permanece abierto es si PluralComp debe aceptarse con alcance absolutamente general; critical plural logic permite restringir precisamente esta regla de comprensión.
+
 #### 8.6.3. Lema de reducción
 
 Definimos en semántica plural:
