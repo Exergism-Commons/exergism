@@ -34,6 +34,16 @@ Cada referencia debe aparecer en el documento principal solo cuando haga trabajo
 
 - **Michael Dummett** — antecedente central de la noción de “indefinitely extensible concept”. La recepción contemporánea aparece explícitamente en Glanzberg (2006), Shapiro & Wright (2006) y Studd (2019).
 
+### Uso en REV-26a / AG
+
+REV-26a no toma la cuantificación absolutamente irrestricta como un hecho lógico neutral. Rayo–Uzquiano reúnen el debate entre defensas de generalidad absoluta y enfoques relativistas/contextualistas; Studd proporciona una defensa sistemática de generality relativism/expansionism. La propuesta usa esta literatura para fijar la carga correcta:
+
+- AG debe justificarse si se quiere que Real(x) tenga alcance absolutamente global;
+- negar AG no equivale a descubrir una entidad real «fuera» de un scope ya absoluto;
+- el restrictionist/expansionist debe dar una semántica coherente de contextos y expansiones sin usar tácitamente el mismo cuantificador absoluto que rechaza.
+
+Ninguna referencia de este bloque demuestra AG ni su negación.
+
 ## 2. Cuantificación plural y totalidades no conjuntistas
 
 - **George Boolos (1984), “To Be is to Be a Value of a Variable (or to Be Some Values of Some Variables)”, _Journal of Philosophy_ 81.** Punto de partida moderno de la cuantificación plural como recurso para hablar de muchos objetos sin reificarlos necesariamente como un conjunto.
@@ -45,6 +55,28 @@ Cada referencia debe aparecer en el documento principal solo cuando haga trabajo
 ### Uso en REV-24d
 
 La ruta plural de Scope Realization usa únicamente una instancia explícita de comprensión para $\varphi_q(x)=\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q)$. Esto puede realizar un alcance local como pluralidad $rr_i$ sin setificarlo, siempre que esa instancia de comprensión sea legítima. No se presupone comprensión irrestricta para $R_{\mathrm{abs}}$; el paso a «absolutamente todo» permanece dentro del debate de generalidad absoluta y critical plural logic.
+
+### Uso en REV-26b / APC$_{Real}$
+
+La existencia absoluta condicional usa una instancia más fuerte:
+
+$$
+(\exists x\,\operatorname{Real}(x))
+\Rightarrow
+\exists rr_{\mathrm{abs}}\,
+\forall x[
+x\prec rr_{\mathrm{abs}}
+\leftrightarrow
+\operatorname{Real}(x)
+].
+$$
+
+La lógica plural estándar proporciona el patrón formal de comprensión, pero su aplicación a un dominio pretendidamente absolutamente general no se trata como automática. Florio–Linnebo y la literatura sobre critical plural logic son relevantes precisamente porque permiten separar:
+
+1. la validez de recursos plurales locales;
+2. la legitimidad de una comprensión plural absolutamente exhaustiva.
+
+Por eso APC$_{Real}$ permanece como blocker independiente de AG.
 
 ## 3. Emergencia
 
