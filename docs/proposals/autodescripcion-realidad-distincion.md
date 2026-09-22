@@ -2200,6 +2200,16 @@ donde:
 - \(X\sim_{\mathrm{cont}}Y\) expresa continuidad o identidad de un mismo continuante a través de estados distintos;
 - \(X\prec_tY\) expresa anterioridad temporal cuando dicha relación sea aplicable.
 
+La notación temporal es **abstracta**. No presupone que el tiempo físico sea discreto, que exista un «tick» ontológico mínimo ni que dicho tick sea el tiempo de Planck. El tiempo de Planck es una escala física construida a partir de constantes fundamentales; esta propuesta no lo identifica con la granularidad mínima de la realidad ni con el paso entre estados ontológicos.
+
+Cuando se escriba:
+
+$
+t\to t'
+$
+
+debe leerse únicamente como una relación de orden/transición entre estadios cuando tal parametrización resulte apropiada.
+
 En particular, no se exige:
 
 $$
@@ -2250,7 +2260,7 @@ Puede expresar:
 - continuidad de proceso;
 - o cualquier relación real suficiente para justificar que ambos estados pertenecen al mismo continuante ontológico.
 
-### [D5i] Continuante ontológico como proceso, no como suma temporal
+### [D5i] Continuante ontológico como red/proceso, no como suma temporal
 
 No se define necesariamente:
 
@@ -2262,47 +2272,112 @@ $$
 
 Tal formulación podría reintroducir problemas de infinito actual o una ontología temporal no justificada.
 
-En su lugar, se propone una lectura procesual:
+En su lugar se introduce una estructura procesual abstracta:
+
+$$
+\boxed{
+\mathcal P_i
+=
+(\mathcal S_i,\Tau_i),
+}
+$$
+
+donde:
+
+- \(\mathcal S_i\) contiene estados exhaustivos actuales \(R_i^{A}(\alpha)\);
+- \(\Tau_i\) contiene transiciones reales constitutivas entre estados;
+- \(\alpha\) es un **índice de estadio**, no necesariamente un instante físico medido en segundos.
+
+La estructura no presupone linealidad:
+
+$$
+R_0
+\to
+R_1
+\to
+R_2
+$$
+
+es solo un caso particular.
+
+También puede admitir ramificación o una red parcial:
+
+$$
+R_0
+\rightrightarrows
+\{R_1,R_2\},
+$$
+
+o estructuras más generales, siempre que las transiciones relevantes estén formalmente especificadas.
+
+Se propone entonces la lectura austera:
 
 $$
 \boxed{
 R_i
 :=
-\operatorname{ProcessContinuant}
-(
-R_i^{A}(t),
-\tau
-).
+\operatorname{ProcessContinuant}(\mathcal P_i).
 }
 $$
 
-La notación no exige una colección ontológicamente existente de todos los estados temporales. Expresa que los distintos estados relacionados por continuidad real son estados de un mismo proceso/continuante.
+La notación no exige una colección ontológicamente existente de todos los estados futuros ni una discretización física del tiempo. Expresa que estados relacionados por transiciones constitutivas reales pertenecen a una misma estructura procesual.
 
 Así:
 
 $$
 \boxed{
-\operatorname{StateOf}(R_i^{A}(t),R_i)
+\operatorname{StateOf}(R_i^{A}(\alpha),R_i)
 }
 $$
 
 y, cuando:
 
 $$
-\tau(R_i^{A}(t),R_i^{A}(t')),
+\tau\in\Tau_i,
+\qquad
+\tau:
+R_i^{A}(\alpha)
+\to
+R_i^{A}(\beta),
 $$
 
-se sigue:
+se sigue provisionalmente:
 
 $$
 \boxed{
-R_i^{A}(t)
+R_i^{A}(\alpha)
 \sim_{\mathrm{cont}}
-R_i^{A}(t').
+R_i^{A}(\beta).
 }
 $$
 
-La hipótesis fuerte que debe investigarse es si el **propio proceso de transición** basta para constituir \(R_i\), sin postular una entidad adicional por encima de sus estados y relaciones.
+La hipótesis fuerte que debe investigarse es si el **propio proceso/red de transición** basta para constituir \(R_i\), sin postular una entidad adicional por encima de sus estados y relaciones.
+
+#### [O5f.1] Ramificación, no linealidad y fractalidad
+
+La posible existencia de branching físico o cuántico no se usa aquí para deducir una interpretación concreta de la mecánica cuántica.
+
+Su relevancia ontológica mínima sería únicamente:
+
+$$
+\boxed{
+\text{la estructura real puede no ser lineal.}
+}
+$$
+
+La ramificación puede motivar una representación mediante redes, DAGs, órdenes parciales o categorías de transiciones.
+
+Pero:
+
+$$
+\boxed{
+\operatorname{Branching}
+\not\Rightarrow
+\operatorname{Fractal}.
+}
+$$
+
+La **fractalidad** requiere una tesis adicional de recurrencia o autosimilitud estructural entre escalas. En esta propuesta permanece como hipótesis separada y aproximada, no como consecuencia del branching cuántico.
 
 ### [I6a.7] Novedad relacionada no produce una realidad absolutamente exterior
 
@@ -2391,7 +2466,7 @@ en vez de una ampliación diacrónica de un único \(R\).
 
 Esto reduce aún más el papel de [C_dia]: la cuestión central pasa a ser si las transiciones reales entre estados son suficientes para constituir identidad de proceso.
 
-### [O5f] ¿Es el proceso mismo el continuante?
+### [O5f] ¿Es la red de transiciones el propio continuante?
 
 Queda abierta una alternativa ontológicamente austera:
 
@@ -2399,7 +2474,9 @@ $$
 \boxed{
 R_i
 \equiv
-\text{el proceso real de transición entre sus estados exhaustivos}
+\mathcal P_i
+=
+(\mathcal S_i,\Tau_i)
 }
 $$
 
@@ -2413,23 +2490,26 @@ R_i
 }
 $$
 
-Si esta identificación es correcta, la transición:
+Si esta identificación es correcta, una transición:
 
 $$
-R_i^{A}(t)
+R_i^{A}(\alpha)
 \xrightarrow{\tau}
-R_i^{A}(t')
+R_i^{A}(\beta)
 $$
 
-no conecta dos totalidades mediante un tercer objeto; **constituye** el propio continuante.
+no conecta dos totalidades mediante un tercer objeto; forma parte constitutiva del propio proceso/red.
+
+Para no trivializar identidad por mera conectividad, \(\Tau_i\) no puede contener cualquier relación real. Debe contener **transiciones constitutivas de estado**.
 
 La obligación de prueba se desplaza entonces a:
 
-1. definir las condiciones mínimas de \(\tau\);
+1. definir las condiciones mínimas de una transición constitutiva \(\tau\);
 2. determinar cuándo la composición de transiciones preserva continuidad;
-3. evitar que cualquier relación trivial baste para identidad;
-4. distinguir continuidad de un proceso de mera conectividad entre realidades diferentes;
-5. determinar si la relación generada por \(\tau\) es reflexiva, simétrica/transitable en el sentido adecuado o requiere una estructura direccional más rica.
+3. evitar que una relación externa trivial baste para identidad;
+4. distinguir transición constitutiva de mera conectividad transversal;
+5. permitir ramificación sin asumir que toda rama constituye un nuevo \(R\);
+6. mantener separada la hipótesis de fractalidad de la mera no linealidad de la red.
 
 ### [I6b] Existencia condicional de un punto fijo maximal
 
@@ -5270,8 +5350,9 @@ La propuesta puede auditarse paso a paso:
 | 13b.5f | [D/I] | Se separan [C1_syn] (cadenas co-actuales), [C_dia] (persistencia a través del cambio) y \(R_i^{A}(t)\) como totalidad actual. |
 | 13b.5g | [I] | \(\operatorname{AbsoluteBruteNovelty}\) no implica por sí sola No-R: amenaza la continuidad modal/diacrónica, no necesariamente la existencia de una totalidad sincrónica exhaustiva. |
 | 13b.5h | [D/H] | Se distinguen \(\preceq_{ont}\), \(\sim_{cont}\) y \(\prec_t\); [H13] propone que una transición real \(\tau\) entre estados exhaustivos funda continuidad del mismo proceso. |
-| 13b.5i | [D/O] | \(R_i\) puede entenderse como el proceso/continuante constituido por estados \(R_i^{A}(t)\) y transiciones reales \(\tau\), sin exigir una suma temporal ni un objeto adicional. |
+| 13b.5i | [D/O] | \(R_i\) puede entenderse como la red/proceso \(\mathcal P_i=(\mathcal S_i,\Tau_i)\), sin exigir suma temporal, tiempo discreto ni objeto adicional. |
 | 13b.5j | [I/O] | Novedad relacionada apunta a continuidad o Cluster-R; novedad absolutamente no relacionada apunta a Many-R y ni siquiera admite sin más una relación temporal común. |
+| 13b.5k | [D/O] | La parametrización temporal es abstracta y no se identifica con el tiempo de Planck; branching solo motiva no linealidad/ramificación, no fractalidad. |
 | 13b.6 | [H/O] | Vía procesual: si el proceso real de extensión incluye ontológicamente todos sus estadios, ese proceso constituye directamente una cota superior; el rival es el potencialismo ontológico. |
 | 13c | [C/I] | Si toda cadena de puntos fijos tiene cota superior cerrable [C1], un principio de maximalidad produce un punto fijo maximal \(M_i\). |
 | 13d | [D/I] | [D5c] define cada índice como régimen dirigido; [C2] se deriva constitutivamente. Junto con [C0], esta direccionalidad convierte maximalidad en exhaustividad: cualquier realidad exterior a \(M_i\) permitiría construir un punto fijo estrictamente mayor. |
@@ -5636,6 +5717,9 @@ Antes de canonizar estas tesis en `content/ontologia.json`, deben investigarse a
 83. investigar si \(R_i\) puede identificarse con el proceso generado por \(\tau\) entre estados exhaustivos \(R_i^{A}(t)\), evitando postular un continuante adicional;
 84. demostrar o rechazar la dicotomía: novedad relacionada \(\Rightarrow\) continuidad/Cluster-R; novedad absolutamente no relacionada \(\Rightarrow\) Many-R;
 85. distinguir rigurosamente continuidad de proceso de mera conectividad transversal entre dos totalidades distintas.
+86. reemplazar cualquier lectura de \(\mathcal T_i\) como rejilla temporal por una red abstracta \(\mathcal P_i=(\mathcal S_i,\Tau_i)\), sin identificar sus pasos con el tiempo de Planck ni con una discretización física;
+87. formalizar branching únicamente como posibilidad de no linealidad/ramificación y mantener la fractalidad como hipótesis independiente de recurrencia estructural entre escalas;
+88. caracterizar \(\Tau_i\) como clase de transiciones constitutivas de estado y distinguirla de relaciones externas \(\rho\) que solo producen conectividad o Cluster-R.
 
 ---
 
@@ -5680,7 +5764,9 @@ El cambio conceptual respecto de la versión inicial del documento es sustancial
 - \(\operatorname{AbsoluteBruteNovelty}\) deja de tratarse como refutación automática de R: puede romper continuidad modal desde un estado previo sin eliminar una totalidad exhaustiva actual o trans-temporal;
 - se distinguen formalmente inclusión ontológica \(\preceq_{ont}\), continuidad de continuante \(\sim_{cont}\) y orden temporal \(\prec_t\);
 - se introduce [H13] Continuidad Ontológica Relacional: una transición real \(\tau\) entre estados exhaustivos puede fundar su pertenencia al mismo continuante;
-- se abre la hipótesis austera de que \(R_i\) sea el propio proceso real generado por estados exhaustivos y transiciones \(\tau\), no una entidad adicional situada por encima de ellos;
+- se abre la hipótesis austera de que \(R_i\) sea la propia red/proceso \(\mathcal P_i=(\mathcal S_i,\Tau_i)\) generada por estados exhaustivos y transiciones constitutivas, no una entidad adicional situada por encima de ellos;
+- la parametrización de estadios se declara abstracta: no presupone tiempo discreto ni identifica transición ontológica con tiempo de Planck;
+- el branching físico/cuántico se usa solo como motivación de no linealidad/ramificación; no demuestra fractalidad, que permanece como hipótesis separada de recurrencia estructural;
 - No-\(R\) fuerte debe ahora exhibir una restricción \(\lambda_{\infty}\in\Omega_{\infty}\) o rechazar algún otro puente formal, en vez de limitarse a negar la totalidad;
 - se mantiene además una ruta **procesual**: si el proceso real de extensión incluye ontológicamente sus estadios, el propio proceso constituye una cota superior;
 - se identifica el **potencialismo ontológico** como rival fuerte: extensión indefinidamente continuable sin totalidad o proceso completado que abarque todos los estadios;
