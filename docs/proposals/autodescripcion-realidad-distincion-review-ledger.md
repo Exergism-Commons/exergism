@@ -21,7 +21,7 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 |---|---|---|---|---|---|
 | REV-01 | BLOCKER | OPEN | **F1–F3 se exigen, no se derivan.** | Definición de F; teorema de clausura maximal. | Dar una definición independiente de E/transición y construir F de modo que extensividad, monotonía e idempotencia se demuestren, o declarar qué axiomas permanecen primitivos y rebajar el teorema en consecuencia. |
 | REV-02 | BLOCKER | OPEN | **F2 puede fallar por inhibición contextual.** Más estructura/restricciones puede eliminar emergencias. | Paso X ⪯ Y ⇒ F(X) ⪯ F(Y). | Construir contra/modelos; distinguir inclusión ontológica de extensión conservativa, o reemplazar F2 por una condición válida y rehacer las inferencias dependientes. |
-| REV-03 | BLOCKER | OPEN | **E es provisional y no independiente.** | [D4], programa [O5]. | Definir emergencia sin usar R, totalidad, Adm, ni «realmente posible porque pertenece a R»; comparar la definición con literatura de emergencia. |
+| REV-03 | BLOCKER | PARTIAL | **E es provisional y no independiente.** | [D4], programa [O5]. | Definir emergencia sin usar R, totalidad, Adm, ni «realmente posible porque pertenece a R»; comparar la definición con literatura de emergencia. |
 | REV-04 | BLOCKER | OPEN | **F no discrimina todavía:** falta un modelo explícito S = F(S) ≠ R. | [I8]/puntos fijos propios. | Añadir al menos un modelo concreto calculable con un cierre propio y otro dominio mayor, mostrando que punto fijo ≠ totalidad. |
 | REV-05 | MAJOR | RESOLVED | **[I6] R = F(R) es analítico dado [D1] y un F que solo añade realidad.** | Retórica de «teorema/punto fijo». | Etiquetarlo como corolario analítico/condicional y separarlo del programa no circular de existencia. |
 | REV-06 | MAJOR | RESOLVED | **Muchos [I] son consecuencias definicionales.** | [I1], [I2], [I2a], REC, [I10a], [I11a], etc. | Reclasificar cada resultado como definicional, lógico, matemático o sustantivo; eliminar retórica probatoria donde no corresponda. |
@@ -48,6 +48,10 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 | DOC-04 | MAJOR | PARTIAL | **Referencias insuficientes.** | Todos los bloques conceptuales. | Toda tesis que reutilice/debata literatura existente debe citar autores y obra; añadir mapa bibliográfico temático con relevancia exacta. |
 | DOC-05 | MAJOR | RESOLVED | **88 puntos de investigación sin jerarquía.** | Programa de investigación. | Convertirlos en backlog vinculado a IDs del ledger; eliminar duplicados y priorizar bloqueadores/majors/minors. |
 
+## Avance de REV-03
+
+- **REV-03 pasa a PARTIAL.** Se ha definido una candidata independiente \(\mathcal E_M\) sobre un sistema de transiciones \(M=(C,\Sigma,\Rightarrow_M)\), sin usar R, totalidad, admisibilidad ni «posibilidad real». La candidata exige macro-invariancia, dependencia organizacional y eficacia dinámica mínima. Se han añadido casos de discriminación positivos/negativos y comparación con Broad, Wimsatt, Bedau, Kim, Humphreys y Hoel.
+- **No está RESOLVED.** Falta comprobar si la candidata es demasiado estrecha o demasiado amplia para los casos doctrinales que el exergismo debe conservar. REV-02 es ahora la prueba inmediata: inhibición/contexto y monotonía.
 ## Alcance de algunos cierres
 
 - **REV-05 y REV-06 están RESOLVED únicamente como problemas de presentación y clasificación.** Se corrigió la retórica: los resultados analíticos se etiquetan como analíticos/definicionales y se separan del programa sustantivo. Esto **no constituye avance ontológico** ni responde al hecho de que gran parte de lo actualmente demostrado siga siendo analítico.
@@ -74,6 +78,8 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-15 | Estado corregido de PARTIAL a OPEN: nombrar la deuda no la resuelve. | Ledger + sección normativa. | f0d36c5, 777c3fd |
 | 2026-09-22 | REV-05/REV-06 | Se explicita que su cierre es editorial/clasificatorio, no avance sustantivo. | Sección “Alcance de algunos cierres”. | 777c3fd |
 | 2026-09-22 | LEDGER-FIX | Eliminada la copia duplicada introducida por c014d98 y corregida la celda de evidencia con `$` cerrado. | Recuento de IDs + estructura del fichero. | 0c2266f |
+
+| 2026-09-22 | REV-03 | Definida candidata independiente de emergencia organizacional dinámicamente efectiva; añadidos tests mínimos y literatura. Estado OPEN → PARTIAL. | Sección I.3.1 + mapa bibliográfico. | b3461d1, 2d62a69 |
 
 ## Evidencia de consolidación documental
 
