@@ -348,13 +348,13 @@ REV-07 queda reducido a una obligación más precisa: justificar independienteme
 
 **Convención normativa:** durante toda esta sección se fija un régimen ontológico $i$. Para aligerar notación se escribe:
 
-$
+$$
 \mathfrak D:=\mathfrak D_i^{\mathrm{proc}},
 \qquad
 \mathfrak K:=\mathfrak K_i,
 \qquad
 \preceq:=\preceq_i.
-$
+$$
 
 Toda cuantificación de K1–K3 y todo máximo obtenido en esta sección son **internos a $i$**. El resultado se denota $R_i$; no se infiere la existencia de $R_{\mathrm{abs}}$.
 
