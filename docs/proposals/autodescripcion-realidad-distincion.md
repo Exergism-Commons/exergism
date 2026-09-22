@@ -1052,6 +1052,59 @@ Si una relación infinitaria de aridad set-sized puede representarse mediante un
 
 Esta reducción **no cierra REV-24b**. Si $\operatorname{CoReal}$ no puede caracterizarse independientemente de $\Lambda_*$, RC sería una estipulación y no una prueba.
 
+##### Requisito de independencia para $\operatorname{CoReal}$
+
+Para que $\mathrm{RC}_{\Lambda}$ cuente como apoyo ontológico y no como una tautología encubierta, cualquier caracterización candidata $C(x,q)$ de co-realidad debe satisfacer:
+
+$$
+\mathrm{IR}_{\mathrm{CoReal}}:
+\quad
+C(x,q)
+\text{ no puede definirse usando }
+\Lambda_*,
+\sim,
+S_i,
+R_i,
+K3_i,
+\operatorname{Presents}_i
+\text{ ni }\operatorname{OntTotal}_i.
+$$
+
+Después debe poder argumentarse, y no estipularse:
+
+$$
+C(x,q)
+\Rightarrow
+x\in[q]_{\sim}.
+$$
+
+El criterio de falsación queda igualmente claro:
+
+$$
+\boxed{
+C(x,q)
+\land
+x\notin[q]_{\sim}
+\Rightarrow
+\neg\mathrm{RC}_{\Lambda}.
+}
+$$
+
+Por tanto REV-24b admite contraejemplos reales: basta un caso de co-pertenencia justificado independientemente que escape de la clausura de $\Lambda_*$.
+
+##### Candidatos examinados para $C(x,q)$
+
+Ninguno se adopta todavía como definición universal:
+
+1. **conexión espaciotemporal:** es un precedente metodológico fuerte —Lewis usa una noción de mundo como totalidad máxima espaciotemporalmente conectada—, pero resulta demasiado estrecha para una propuesta que admite relaciones ontológicas no espaciotemporales y posibles estructuras físicas no separables;
+2. **conexión causal:** es también demasiado estrecha; co-realidad no debería depender de que exista una cadena causal efectiva entre cualesquiera dos regiones del mismo alcance;
+3. **dependencia/grounding:** amplía correctamente el espacio de enlaces, pero usar cualquier ground común como conector puede colapsar regímenes mediante fundamentos, leyes o abstracta compartidos; por eso $\Lambda_*$ exige dependencia token-specific e integradora;
+4. **no-separabilidad física:** la literatura cuántica muestra que el estado de un todo puede no supervenir en los estados de sus subsistemas, por lo que constituye un test importante contra una ontología puramente local; pero no es condición necesaria de co-realidad para sistemas separables;
+5. **ser partes del mismo todo máximo:** captura directamente la intuición buscada, pero presupone precisamente la unidad ontológica que REV-24b intenta justificar y por ello es circular como definición de $\operatorname{CoReal}$;
+6. **relación natural/integrativa actual:** es el candidato más cercano a la arquitectura de $\Lambda_*$, pero si «integrativa» se define simplemente como «la relación que hace co-reales a sus relata», vuelve a introducir la conclusión.
+
+La conclusión provisional no es que $\operatorname{CoReal}$ sea imposible de caracterizar, sino que REV-24b ha quedado localizado en una pregunta metafísica genuina y falsable. Véase el [mapa de literatura](autodescripcion-realidad-distincion-references.md#identidad-de-régimen-y-relaciones-de-worldmate).
+
 #### REV-24c — RA: adecuación representacional
 
 $\mathrm{RA}_i(S)$ exige que la representación no solo nombre miembros reales, sino que preserve y refleje las identidades y relaciones ontológicas relevantes para el uso que se haga de $S$:
