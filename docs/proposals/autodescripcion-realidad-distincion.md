@@ -1347,7 +1347,7 @@ Para cerrarlo todavía hay que justificar ontológicamente la relación $\triang
 
 ---
 
-## 3.5. REV-19 — desajuste sincrónico/diacrónico
+## 3.5. REV-19 — tipado temporal: el teorema emergentista debe ser procesual
 
 La emergencia de REV-03 es explícitamente diacrónica:
 
@@ -1355,19 +1355,17 @@ $$
 s_0\xrightarrow{+}_{M,\mathrm{act}}s_1.
 $$
 
-Por tanto, $\operatorname{EClosed}(X)$ exige que un dominio que contiene el origen de un evento contenga también su resultado posterior.
+Por tanto, $\operatorname{EClosed}(X)$ exige que un dominio capaz de representar el origen de un evento pueda representar también su resultado.
 
-Eso es natural si $X$ es un **fragmento de proceso o historia**.
-
-Pero el teorema anterior se presentó históricamente sobre dominios sincrónicos:
+Eso no está bien tipado si $X$ significa exclusivamente una instantánea:
 
 $$
-R_i^{A}(t).
+R_i^{A}(t),
 $$
 
-Una instantánea en $t$ no tiene por qué contener un estado que solo se actualiza en $t'>t$.
+porque un estado que se actualiza en $t'>t$ no pertenece, en general, al contenido sincrónico de $t$.
 
-Por tanto:
+Así:
 
 $$
 \boxed{
@@ -1377,18 +1375,223 @@ $$
 }
 $$
 
-Hay dos rutas legítimas y todavía no se elige entre ellas:
+### 3.5.1. Decisión de arquitectura
 
-1. **Ruta procesual:** reinterpretar $\mathfrak D_i$ como dominios/procesos diacrónicos y aplicar $\operatorname{EClosed}$ literalmente.
-2. **Ruta sincrónica:** conservar $\mathfrak D_i^{A}(t)$ y definir una noción diferente de cierre estructural/constitutivo que no obligue a incluir futuros resultados actualizados.
+Si la emergencia ha de hacer trabajo formal en la prueba, el target primario se redefine provisionalmente como un **dominio procesual actual**:
 
-Elegir una ruta no es una cuestión de notación: cambia el objeto del teorema.
+$$
+X\in\mathfrak D_i^{\mathrm{proc}},
+$$
 
-### Estado de REV-19
+no como una instantánea aislada.
 
-**OPEN.** Debe fijarse el tipo temporal del dominio antes de afirmar que la emergencia independiente alimenta la prueba de totalidad.
+Esto no implica:
+
+- eternalismo;
+- existencia actual de todos los futuros;
+- un tiempo discreto;
+- linealidad temporal;
+- Many-Worlds;
+- un conjunto ontológico de “todos los tiempos”.
+
+Solo exige que un dominio pueda representar una porción de realidad extendida a través de ocurrencias relacionadas.
+
+La literatura de process philosophy trata precisamente la dinámica, el cambio y la ocurrencia como categorías ontológicas centrales; las event structures de Winskel proporcionan un antecedente formal útil para representar procesos mediante ocurrencias y dependencias causales sin imponer un orden temporal total.
+
+### 3.5.2. Fragmento procesual mínimo
+
+Como tipo formal candidato, un fragmento procesual puede representarse por:
+
+$$
+H=
+(S_H,E_H,\operatorname{src}_H,\operatorname{tgt}_H,\prec_H),
+$$
+
+donde:
+
+- $S_H$ contiene tokens de configuraciones/estados efectivamente actualizados;
+- $E_H$ contiene tokens de eventos efectivamente actualizados;
+- $\operatorname{src}_H,\operatorname{tgt}_H:E_H\to S_H$ asignan origen y resultado;
+- $\prec_H$ es una relación acíclica de precedencia/dependencia entre eventos.
+
+No se exige que $\prec_H$ sea total. Por tanto se permiten concurrencia y branching.
+
+Para todo $e\in E_H$:
+
+$$
+\operatorname{src}_H(e)\in S_H
+$$
+
+y:
+
+$$
+\operatorname{tgt}_H(e)\in S_H.
+$$
+
+Un evento emergente es un subtipo distinguido de evento actual, no el único tipo de transición que puede contener $H$.
+
+### 3.5.3. Incidencia ontológica procesual
+
+La relación de REV-18:
+
+$$
+s\trianglelefteq_i X
+$$
+
+se generaliza a estados y eventos:
+
+$$
+s\trianglelefteq_i X,
+\qquad
+e\trianglelefteq_i X.
+$$
+
+Su lectura sigue siendo ontológica, no conjuntista:
+
+> el token de estado/evento está representado en el contenido del dominio procesual $X$.
+
+Monotonicidad de incidencia:
+
+$$
+q\trianglelefteq_i X
+\land
+X\preceq_{\mathrm{proc}}Y
+\Rightarrow
+q\trianglelefteq_i Y,
+$$
+
+donde $q$ puede ser un estado o un evento.
+
+### 3.5.4. Cierre emergente procesual
+
+Sea $e$ un evento emergente actual con:
+
+$$
+\operatorname{src}(e)=s_0,
+\qquad
+\operatorname{tgt}(e)=s_1.
+$$
+
+Definimos:
+
+$$
+\boxed{
+\operatorname{EClosed}^{\mathrm{proc}}_i(X)
+}
+$$
+
+si, para todo evento emergente actual $e$ del régimen:
+
+$$
+s_0\trianglelefteq_i X
+\Rightarrow
+e\trianglelefteq_i X
+\land
+s_1\trianglelefteq_i X.
+$$
+
+Así el cierre ya no exige meter un futuro en una instantánea: exige completar un **fragmento de proceso** respecto de los eventos emergentes que parten de contenido ya representado.
+
+La familia candidata del teorema pasa a ser:
+
+$$
+\mathfrak K_i^{\mathrm{proc}}
+:=
+\{
+X\in\mathfrak D_i^{\mathrm{proc}}
+\mid
+\operatorname{EClosed}^{\mathrm{proc}}_i(X)
+\}.
+$$
+
+### 3.5.5. Orden procesual
+
+El orden:
+
+$$
+X\preceq_{\mathrm{proc}}Y
+$$
+
+debe significar que $Y$ conserva el contenido procesual actual representado por $X$ y añade contenido ontológico.
+
+Todavía no se fija si la implementación formal será:
+
+- inclusión literal de tokens identificados;
+- subestructura;
+- embedding preservador de fuentes, destinos y precedencia;
+- clases de isomorfismo de alguna de las anteriores.
+
+Elegirlo prematuramente podría volver a esconder el problema de REV-18. Lo único exigido ahora es que sea un orden ontológico, no una equivalencia conductual como $\hookrightarrow_{\mathrm{cons}}$.
+
+### 3.5.6. Separación del teorema sincrónico
+
+Quedan dos preguntas distintas:
+
+**Teorema emergentista procesual**
+
+$$
+\text{¿existe un máximo }R_i^{\mathrm{proc}}
+\text{ entre los dominios procesuales actuales?}
+$$
+
+Aquí $\mathcal E_M$ y $\operatorname{EClosed}^{\mathrm{proc}}$ sí son pertinentes.
+
+**Teorema sincrónico**
+
+$$
+\text{¿existe un dominio exhaustivo }R_i^{A}(t)
+\text{ para una sección actual dada?}
+$$
+
+Este segundo problema no se deriva automáticamente de la emergencia diacrónica. Necesitaría una noción sincrónica independiente de cobertura/cierre o una operación de sección sobre un proceso ya construido.
+
+Por tanto:
+
+$$
+\boxed{
+T_{\mathrm{proc}}
+\neq
+T_{\mathrm{syn}}.
+}
+$$
+
+La propuesta deja de intentar que una sola prueba haga ambos trabajos.
+
+### 3.5.7. Qué no se presupone
+
+La formulación procesual no presupone una totalidad histórica acabada.
+
+Un dominio puede ser un fragmento abierto:
+
+$$
+H_0\preceq_{\mathrm{proc}}H_1\preceq_{\mathrm{proc}}\cdots
+$$
+
+y la cuestión de si cadenas así poseen una cota sigue siendo exactamente la obligación de REV-09/REV-10.
+
+Tampoco se presupone una estructura global de todos los eventos. La cuantificación sobre “todo evento emergente actual pertinente” puede mantenerse metalingüística mientras REV-11/generalidad siga abierta.
+
+### 3.5.8. Estado de REV-19
+
+REV-19 pasa de **OPEN** a **PARTIAL**.
+
+Se ha resuelto el error de tipos más inmediato:
+
+$$
+\boxed{
+\text{la clausura emergentista se aplica a procesos, no a snapshots.}
+}
+$$
+
+No se marca RESOLVED porque todavía falta:
+
+1. fijar rigurosamente el orden $\preceq_{\mathrm{proc}}$;
+2. demostrar que la incidencia de REV-18 tiene interpretación ontológica independiente;
+3. demostrar K1/K2 para $\mathfrak K_i^{\mathrm{proc}}$;
+4. establecer, si se desea, cómo se recuperan dominios sincrónicos $R_i^{A}(t)$ desde un dominio procesual sin asumir una teoría temporal concreta.
 
 ---
+
 ## 4. Núcleo matemático normalizado — qué necesita realmente Zorn
 
 Las secciones anteriores producen dos niveles distintos que no deben confundirse:
