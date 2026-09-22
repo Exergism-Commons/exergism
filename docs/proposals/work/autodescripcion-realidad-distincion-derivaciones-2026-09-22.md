@@ -4636,6 +4636,20 @@ para el puente entre ambos.
 
 #### 8.1. REV-24a — Ontological Anchoring (OA)
 
+Como disciplina de tipos, $\operatorname{CoReal}$ se aplica solo a tokens actuales:
+
+$$
+\mathrm{CRType}:
+\quad
+\operatorname{CoReal}(x,q)
+\Rightarrow
+\operatorname{Actual}(x)
+\land
+\operatorname{Actual}(q).
+$$
+
+Esta cláusula no decide qué hace co-reales a dos tokens; solo fija el tipo ontológico de los relata.
+
 OA se formula sobre la misma relación ontológica independiente que MC:
 
 $$
@@ -4674,7 +4688,7 @@ $$
 }
 $$
 
-**Demostración.** Sea $a\in T_i=[q]_{\sim}$. Por RS, $\operatorname{CoReal}(a,q)$. Como $a$ es un token actual del carrier, CD da $\operatorname{Den}_i(a,a)$. Tomando $x=a$ se obtiene OA. $\square$
+**Demostración.** Sea $a\in T_i=[q]_{\sim}$. Por RS, $\operatorname{CoReal}(a,q)$; por CRType, $\operatorname{Actual}(a)$. CD da $\operatorname{Den}_i(a,a)$. Tomando $x=a$ se obtiene OA. $\square$
 
 Así RS controla **sobreinclusión** y OA del carrier; RC controla **subinclusión** y MC. Bajo RS + RC + CD, el carrier de $S_i^*$ coincide extensionalmente, vía denotación canónica, con la co-realidad relativa a $q$.
 
@@ -5148,69 +5162,113 @@ No se presupone que tal $\kappa$ exista. Si la clausura requiere recorrido prope
 
 Esta formulación muestra exactamente qué perderíamos al abandonar FID: no la posibilidad de construir $S_i$, sino la prueba sencilla de smallness mediante niveles finitos $n<\omega$.
 
-##### Teorema directo parametrizado por clausura de régimen
+##### Teorema semántico parametrizado por una clausura candidata
 
-Sea un seed actual $q$ y sea:
-
-$$
-T_i^{\mathcal C}:=\mathcal C_*(\{q\}).
-$$
-
-Definimos la familia semántica relativa a esa clausura:
+Mientras CS/CC no estén justificadas, $\mathcal C_*(\{q\})$ no se denomina todavía «régimen $i$». Sea:
 
 $$
-\mathfrak D_{i,\mathcal C}^{\mathrm{proc}}
+T_q^{\mathcal C}:=\mathcal C_*(\{q\}).
+$$
+
+Fijamos una firma candidata $\mathcal L_{\mathcal C}$ y definimos una admisibilidad **puramente closure-relative**:
+
+$$
+\operatorname{CFragAdm}_{\mathcal C}(X)
+$$
+
+para $X=(T_X,\Phi_X)$ cuando:
+
+1. $T_X\subseteq T_q^{\mathcal C}$;
+2. $\Phi_X\subseteq\operatorname{Atoms}_{\mathcal L_{\mathcal C}}(T_X)$;
+3. todo hecho contiene sus relata en $T_X$;
+4. todo evento representado tiene source/target únicos y la dependencia representada es coherente;
+5. el contenido es positivo/monótono bajo inclusión.
+
+Crucialmente, $\operatorname{CFragAdm}_{\mathcal C}$ **no exige** que todos los tokens sean actuales ni que pertenezcan ya al mismo régimen. Esas son obligaciones ontológicas de CS/CC/CRType, no premisas de la maximalidad semántica.
+
+Definimos:
+
+$$
+\mathfrak D_{\mathcal C}^{\mathrm{proc}}
+:=
+\{X\mid \operatorname{CFragAdm}_{\mathcal C}(X)\}.
+$$
+
+Y el orden puramente semántico:
+
+$$
+X\preceq_{\mathcal C}Y
+\iff
+T_X\subseteq T_Y
+\land
+\Phi_X\subseteq\Phi_Y.
+$$
+
+Sea:
+
+$$
+\mathrm{SigSmall}_{\mathcal C}:
+\quad
+\mathcal L_{\mathcal C}\text{ es set-sized}
+\land
+\forall\sigma\in\mathcal L_{\mathcal C},
+\operatorname{ar}(\sigma)\text{ es set-sized}.
+$$
+
+Bajo CSet + $\mathrm{SigSmall}_{\mathcal C}$, los átomos candidatos sobre $T_q^{\mathcal C}$ forman un set. Sea $\mathrm{ActualSep}_{\mathcal C}$ la disponibilidad metateórica del predicado de actualidad sobre ese set. Definimos:
+
+$$
+\Phi_q^{\mathrm{all},\mathcal C}
 :=
 \{
-X=(T_X,\Phi_X)
+\varphi\in\operatorname{Atoms}_{\mathcal L_{\mathcal C}}(T_q^{\mathcal C})
 \mid
-\operatorname{StructAdm}(X)
-\land
-T_X\subseteq T_i^{\mathcal C}
-\land
-\Phi_X\subseteq\operatorname{Atoms}_{\mathcal L_i}(T_i^{\mathcal C})
-\}.
-$$
-
-Bajo `CSet` y $\mathrm{SigSmall}_i$, el conjunto de átomos candidatos sobre $T_i^{\mathcal C}$ es set-sized. Bajo $\mathrm{ActualSep}_i$ definimos:
-
-$$
-\Phi_i^{\mathrm{all},\mathcal C}
-:=
-\{
-\varphi\in\operatorname{Atoms}_{\mathcal L_i}(T_i^{\mathcal C})
-\mid
-\operatorname{Actual}_i(\varphi)
+\operatorname{Actual}_{\mathcal C}(\varphi)
 \}.
 $$
 
 y:
 
 $$
-S_i^{\mathcal C}
+S_q^{\mathcal C}
 :=
-(T_i^{\mathcal C},\Phi_i^{\mathrm{all},\mathcal C}).
+(T_q^{\mathcal C},\Phi_q^{\mathrm{all},\mathcal C}).
 $$
 
-Para todo:
+Para que $S_q^{\mathcal C}$ sea closure-relative well-formed exigimos:
 
 $$
-X\in\mathfrak D_{i,\mathcal C}^{\mathrm{proc}},
+\mathrm{CWF}:
+\quad
+\operatorname{CFragAdm}_{\mathcal C}(S_q^{\mathcal C}).
 $$
 
-se tiene por construcción:
+Entonces, para todo $X\in\mathfrak D_{\mathcal C}^{\mathrm{proc}}$:
 
 $$
-X\preceq_i S_i^{\mathcal C}.
+X\preceq_{\mathcal C}S_q^{\mathcal C}.
 $$
 
-Si además `CProcStable` garantiza que todo evento emergente actual cuyo source cae en $T_i^{\mathcal C}$ mantiene dentro de la clausura los tokens/eventos/targets requeridos, entonces:
+Definimos $\operatorname{CEClosed}_{\mathcal C}(S)$ como la versión closure-relative de EClosed: todo evento actual representable cuyo source está en el carrier de $S$ tiene dentro de $S$ los tokens/hechos source-event-target requeridos.
+
+Sea CProcStable la condición de que, si un evento actual relevante tiene source en $T_q^{\mathcal C}$, sus tokens source/event/target requeridos permanecen en $T_q^{\mathcal C}$. Bajo CProcStable y la construcción de $\Phi_q^{\mathrm{all},\mathcal C}$:
 
 $$
-\operatorname{EClosed}_i(S_i^{\mathcal C}).
+\operatorname{CEClosed}_{\mathcal C}(S_q^{\mathcal C}).
 $$
 
-Por tanto:
+Por tanto, definiendo:
+
+$$
+\operatorname{SemTotal}_{\mathcal C}(S)
+:=
+\operatorname{CEClosed}_{\mathcal C}(S)
+\land
+\forall X\in\mathfrak D_{\mathcal C}^{\mathrm{proc}},
+\;X\preceq_{\mathcal C}S,
+$$
+
+obtenemos:
 
 $$
 \boxed{
@@ -5218,35 +5276,46 @@ $$
 +
 \mathrm{CProcStable}
 +
-\mathrm{SigSmall}_i
+\mathrm{CWF}
 +
-\mathrm{ActualSep}_i
+\mathrm{SigSmall}_{\mathcal C}
 +
-\operatorname{StructAdm}
+\mathrm{ActualSep}_{\mathcal C}
 \Rightarrow
-\operatorname{SemTotal}_{i,\mathcal C}(S_i^{\mathcal C}).
+\operatorname{SemTotal}_{\mathcal C}(S_q^{\mathcal C}).
 }
 $$
 
-Este teorema es exactamente tan semántico como la ruta finita. `CS/CC` no son necesarios para demostrar la maximalidad formal, sino para justificar que la clausura parametrizante corresponde al régimen ontológico pretendido.
+Este teorema es deliberadamente **pre-ontológico**: no contiene StructAdm_i, SameRegime, CS, CC ni CoReal.
 
-Del mismo modo, `CGI/CMin` no son premisas matemáticas de la maximalidad una vez fijado $T_i^{\mathcal C}$; son obligaciones de **no circularidad de la ruta ontológica** que justifican por qué esa clausura puede ser tomada en serio como candidata a régimen.
+Solo después, si se justifican CGI/CMin y además:
 
-La ruta original se obtiene escogiendo:
+$$
+\mathrm{CS}:\quad
+x\in T_q^{\mathcal C}\Rightarrow\operatorname{CoReal}(x,q),
+$$
+
+$$
+\mathrm{CC}:\quad
+\operatorname{CoReal}(x,q)\Rightarrow x\in T_q^{\mathcal C},
+$$
+
+CRType garantiza actualidad de los tokens cubiertos por CS, y puede establecerse el puente desde la clausura candidata a un régimen ontológico. En ese estadio —no antes— es legítimo reindexar la construcción como $T_i^{\mathcal C},S_i^{\mathcal C}$.
+
+La ruta original se recupera cuando:
 
 $$
 \mathcal C_*(\{q\})=[q]_{\sim},
 $$
 
-con PON como prueba de `CSet` y con la estabilidad procesual derivada de que source/event/target están unidos por enlaces de $\Lambda_*$.
+PON prueba CSet y la definición de $\Lambda_*$ proporciona la información ontológica necesaria para intentar RS/RC.
 
-Esto separa definitivamente dos problemas:
+Esto separa definitivamente:
 
-1. **semantic construction:** basta una clausura de régimen set-sized y process-stable;
-2. **ontological adequacy:** CS/CC o, en la ruta finita, RS/RC.
+1. **construcción semántica relativa a una clausura candidata:** CSet/CWF/CProcStable + smallness semántica;
+2. **adecuación ontológica de esa clausura:** CGI/CMin + CS/CC/CRType, o RS/RC en la ruta finita.
 
-En consecuencia, PON permanece como blocker de la instanciación finita vigente, no como condición necesaria de cualquier ruta a $\operatorname{SemTotal}$.
-
+En consecuencia PON permanece como blocker de la instanciación finita, no como condición necesaria de toda ruta a una exhaustividad semántica relativa.
 ##### FID no es generación local finita
 
 FID restringe la **longitud del camino de integración**, no el número de relata de cada relación. Si una relación global actual $g$ tiene set-many relata y la ontología admite su instancia como token relacional, puede mediar una conexión finita por incidencia.
