@@ -5452,6 +5452,130 @@ $$
 }
 $$
 
+### 8.6. REV-26 — existencia del $R$ absoluto
+
+REV-24 es local al régimen. Incluso una demostración completa de:
+
+$$
+\operatorname{WitnessedRegR}
+$$
+
+no contiene por sí sola una totalidad de **todo** lo real.
+
+#### 8.6.1. AG
+
+`AG` es una condición metalingüística sobre el alcance del cuantificador de `Real(x)`: el cuantificador debe ser absolutamente general y no esconder un índice/contexto.
+
+#### 8.6.2. APC$_{Real}$
+
+La instancia relevante de comprensión plural es:
+
+$$
+\mathrm{APC}_{Real}:
+\quad
+(\exists x\,\operatorname{Real}(x))
+\Rightarrow
+\exists rr_{\mathrm{abs}}
+\forall x[
+x\prec rr_{\mathrm{abs}}
+\Longleftrightarrow
+\operatorname{Real}(x)
+].
+$$
+
+#### 8.6.3. Teorema condicional
+
+Definimos en semántica plural:
+
+$$
+\operatorname{AbsTotal}(rr)
+:\Longleftrightarrow
+\forall x[
+x\prec rr
+\Longleftrightarrow
+\operatorname{Real}(x)
+].
+$$
+
+y:
+
+$$
+\operatorname{ExistsAbsR}
+:\Longleftrightarrow
+\exists rr\;\operatorname{AbsTotal}(rr).
+$$
+
+Entonces:
+
+$$
+\boxed{
+\mathrm{AG}
++
+\mathrm{APC}_{Real}
++
+\exists x\,\operatorname{Real}(x)
+\Rightarrow
+\operatorname{ExistsAbsR}.
+}
+$$
+
+**Demostración.** Por no-vacuidad y APC$_{Real}$ existen unas cosas $rr_{abs}$ que son exactamente los objetos que satisfacen `Real`. Por definición plural de `AbsTotal`, $rr_{abs}$ realiza el alcance exhaustivo de lo real. $\square$
+
+AG no entra como premisa inferencial interna de la demostración: garantiza que las ocurrencias de $\forall x$ y `Real(x)` tengan realmente el alcance absoluto pretendido. Sin AG, la misma derivación solo produce una pluralidad relativa al dominio contextual.
+
+#### 8.6.4. Independencia respecto de la maquinaria emergentista
+
+El teorema anterior no usa:
+
+$$
+\mathrm{PON},\;
+\mathrm{SigSmall},\;
+\operatorname{SemTotal},\;
+\operatorname{EClosed},\;
+\mathrm{OTB},\;
+F
+\text{ ni Zorn}.
+$$
+
+Por tanto la existencia de $R_{abs}$ como **scope plural** y la posibilidad de presentar/regimentar internamente un régimen mediante $S_i$ son problemas lógicamente distintos.
+
+#### 8.6.5. Cómo puede bloquearse
+
+Hay tres puntos de ataque no equivalentes:
+
+1. negar AG: no existe un cuantificador legítimamente irrestricto sobre todo lo real;
+2. aceptar AG pero negar/restringir APC$_{Real}$;
+3. rechazar que una pluralidad exhaustiva sea suficiente para la noción doctrinal de alcance ontológico, exigiendo estructura adicional.
+
+El tercero reabriría también la lectura plural de REV-24d. Los dos primeros son problemas de lógica/generalidad, no de emergencia.
+
+#### 8.6.6. Ruta indexada
+
+Si `Real` solo existe como familia `Real_i`, comprensión plural puede producir scopes $rr_i$ sin producir $rr_{abs}$. Para pasar de:
+
+$$
+\operatorname{ExistsRegR}
+$$
+
+a:
+
+$$
+\operatorname{ExistsAbsR}
+$$
+
+se requiere entonces un Globalization Bridge independiente `GB`. Una jerarquía de contextos siempre ampliable puede bloquear GB sin negar cada totalidad indexada.
+
+Esto formaliza por qué:
+
+$$
+\boxed{
+\operatorname{ExistsRegR}
+\not\Rightarrow
+\operatorname{ExistsAbsR}.
+}
+$$
+
+
 ### 9. Zorn deja de ser necesario para SemTotal
 
 La construcción produce $S_i^*$ explícitamente. Por ello K1/K2/K3 y Zorn siguen siendo resultados estructurales útiles, pero no son necesarios para demostrar $\operatorname{SemTotal}$ bajo PON + REV-25.
@@ -5468,15 +5592,11 @@ por lo que es set-sized.
 
 ### 10. Precio exacto
 
-La construcción semántica depende de tres decisiones independientes:
+La construcción semántica requiere una **clausura de régimen** suficientemente small y process-stable: en la ruta finita esto se implementa con $\Lambda_*$ + PON; en la ruta generalizada con $\mathcal C_*$ + CSet/CProcStable. Ambas rutas requieren además $\mathrm{SigSmall}_i$ y $\mathrm{ActualSep}_i$.
 
-1. **identidad:** la conectividad finita de REV-07;
-2. **smallness ontológica:** PON, REV-23;
-3. **smallness/definibilidad semántica:** $\mathrm{SigSmall}_i$ y $\mathrm{ActualSep}_i$, REV-25.
+La conclusión ontológica **local** añade REV-24a/OA + REV-24b/MC + REV-24c/RA + REV-24d/SR para justificar un $R_i$ presentado por $S_i$.
 
-Y la conclusión doctrinal añade un cuarto bloque, ahora descompuesto:
-
-4. **puente semántica→ontología:** REV-24a/OA + REV-24b/MC + REV-24c/RA, cuya combinación debe justificar $\operatorname{Presents}_i(S_i,R_i)$ y $\operatorname{OntTotal}_i(R_i)$ sin circularidad.
+La conclusión doctrinal **absoluta** añade todavía REV-26: AG + APC$_{Real}$ o un Globalization Bridge equivalente.
 
 ### 11. Emergencia y existencia
 
@@ -5486,6 +5606,6 @@ $$
 \operatorname{EClosed}_i(S_i^*).
 $$
 
-Tampoco la emergencia resuelve $\mathrm{OTB}_i$. Por ello no debe afirmarse que «la emergencia demuestra que existe $R$».
+Tampoco la emergencia resuelve $\mathrm{OTB}_i$ ni REV-26. Por ello no debe afirmarse que «la emergencia demuestra que existe $R$»; como máximo participa en la propiedad EClosed de una presentación local.
 
 ---
