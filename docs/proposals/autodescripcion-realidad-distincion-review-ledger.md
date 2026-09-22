@@ -71,6 +71,12 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - **REV-19 PARTIAL:** la ruta emergentista adopta dominios procesuales y separa explícitamente $T_{\mathrm{proc}}$ de $T_{\mathrm{syn}}$; faltan orden procesual y resultados de cierre.
 - **REV-20 OPEN:** K1/cofinalidad es una premisa sustantiva nueva de la forma operator-free; definir qué significa cerrado no demuestra que todo dominio tenga una extensión cerrada.
 - **REV-09/REV-10** concentran K2/inductividad; **REV-07** concentra K3/directedness.
+## Avance de REV-20
+
+- **REV-20 permanece OPEN.** K1 se caracteriza exactamente como cofinalidad de los dominios cerrados.
+- Bajo elección, K1 equivale a la existencia de un selector extensivo e idempotente $F$ con $\operatorname{Fix}(F)=\mathfrak K$; no implica monotonía.
+- Se demuestra independencia: en $\mathfrak D=\{0<1\}$ con $\mathfrak K=\{0\}$, K2 y K3 se cumplen pero K1 falla.
+- El toy system-relative sí satisface K1 mediante $Y=F_M(X)$; la deuda restante es específicamente ontológica/procesual.
 ## Alcance de algunos cierres
 
 - **REV-05 y REV-06 están RESOLVED únicamente como problemas de presentación y clasificación.** Se corrigió la retórica: los resultados analíticos se etiquetan como analíticos/definicionales y se separan del programa sustantivo. Esto **no constituye avance ontológico** ni responde al hecho de que gran parte de lo actualmente demostrado siga siendo analítico.
@@ -113,6 +119,7 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-19 | Registrado desajuste diacrónico/sincrónico como blocker independiente. | Sección I.3.5. | d0f7fb2 |
 | 2026-09-22 | REV-20 | Registrada cofinalidad K1 de dominios E-closed como obligación independiente. | §4 + ledger. | ab3c6be |
 | 2026-09-22 | REV-19 | Elegida provisionalmente la ruta procesual para el teorema emergentista; definidos fragmentos procesuales mínimos y separación $T_{\mathrm{proc}}\neq T_{\mathrm{syn}}$. Estado OPEN → PARTIAL. | Sección I.3.5. | 0330795 |
+| 2026-09-22 | REV-20 | K1 aislada como carga independiente; equivalencia con selector extensivo-idempotente bajo elección y contraejemplo K2+K3 sin K1. | Sección I.3.6. | 6e63ba3 |
 
 ## Evidencia de consolidación documental
 
