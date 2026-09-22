@@ -4019,15 +4019,15 @@ Si la doctrina exige restricciones adicionales sobre qué fragmentos cuentan com
 
 Para que un máximo de estos fragmentos cubra todo el contenido actual **representable por el formalismo**, se exige además cobertura atómica:
 
-$
+$$
 \mathrm{COV}_i:
-$
+$$
 
 para todo token/hecho actual $q$ del régimen representable por la firma vigente existe algún fragmento estructuralmente admisible $X$ con:
 
-$
+$$
 q\trianglelefteq_i X.
-$
+$$
 
 Con StructAdm, COV es inmediata para tokens simples representables mediante fragmentos mínimos; para eventos/hechos relacionales representables se toma el footprint well-formed mínimo que contiene sus relata obligatorios.
 
