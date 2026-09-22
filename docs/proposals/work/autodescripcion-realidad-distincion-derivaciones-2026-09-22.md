@@ -4682,6 +4682,8 @@ $$
 \boxed{
 \mathrm{RS}_{\Lambda}
 +
+\mathrm{CRType}
++
 \mathrm{CD}_i
 \Rightarrow
 \mathrm{OA}_i(S_i^*;q).
@@ -5075,25 +5077,21 @@ $$
 
 si un evento emergente actual tiene source en $T_q^{\mathcal C}$, sus tokens/eventos/targets requeridos permanecen en $T_q^{\mathcal C}$.
 
-Entonces, bajo:
+Entonces, en la capa **puramente closure-relative**, la construcción semántica usa exactamente las premisas del teorema que sigue:
 
 $$
 \mathrm{CSet}
-+\mathrm{SigSmall}_i
-+\mathrm{ActualSep}_i
-+\operatorname{StructAdm}
-+\mathrm{CProcStable},
++
+\mathrm{CWF}
++
+\mathrm{CProcStable}
++
+\mathrm{SigSmall}_{\mathcal C}
++
+\mathrm{ActualSep}_{\mathcal C}.
 $$
 
-la misma construcción:
-
-$$
-S_q^{\mathcal C}
-:=
-(T_q^{\mathcal C},\Phi_q^{\mathrm{all},\mathcal C})
-$$
-
-produce condicionalmente un máximo semántico E-closed de la clausura generalizada.
+No se usa $\operatorname{StructAdm}_i$, SameRegime, CS ni CC en esta maximalidad formal. Con esas premisas se construye $S_q^{\mathcal C}$ y se obtiene $\operatorname{SemTotal}_{\mathcal C}(S_q^{\mathcal C})$; el teorema detallado aparece inmediatamente debajo.
 
 La ruta finita actual se recupera como caso especial cuando:
 
