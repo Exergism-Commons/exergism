@@ -44,25 +44,108 @@ Las etiquetas históricas [D], [A], [I], [H], [O], [C] se conservan solo cuando 
 
 Esta es la única sección que debe usarse para responder “¿qué sostiene ahora la propuesta?”.
 
-## 1. Objetivo conceptual
+## 1. Objetivo conceptual — Exists-$R$ frente a No-$R$
 
-La idea inicial es investigar si puede hablarse coherentemente de una **realidad total** o **alcance ontológico exhaustivo**:
+La propuesta distingue ahora tres niveles que antes quedaban mezclados bajo el símbolo $R$.
+
+### 1.1. Totalidad de régimen
+
+Para un régimen ontológico $i$, llamamos:
 
 $$
-R := \operatorname{Scope}(\operatorname{Real})
+R_i
 $$
 
-sin identificar necesariamente $R$ con:
+a un dominio máximamente exhaustivo de ese régimen cuando:
 
-- un conjunto universal;
-- una sustancia;
-- un objeto colector;
-- una suma mereológica universal;
-- una última capa física.
+$$
+\operatorname{EClosed}_i(R_i)
+$$
 
-**Estado: OPEN.**
+y:
 
-La expresión anterior fija el **objetivo conceptual**. No demuestra que la cuantificación “todo lo real” sea absolutamente general ni que exista una totalización ontológica legítima. Esa cuestión pertenece al debate sobre generalidad absoluta y extensibilidad indefinida. Véanse Rayo & Uzquiano (2006), Fine, Glanzberg, Hellman, Linnebo, Shapiro & Wright, Williamson y Studd en el [mapa de referencias](autodescripcion-realidad-distincion-references.md).
+$$
+\forall X\in\mathfrak D_i^{\mathrm{proc}},
+\quad
+X\preceq_i R_i.
+$$
+
+$R_i$ no se identifica necesariamente con un conjunto universal, una sustancia, una suma mereológica o una última capa física. Es el **máximo ontológico interno** del régimen según el tipo procesual vigente.
+
+### 1.2. Totalidad absoluta hipotética
+
+Reservamos:
+
+$$
+R_{\mathrm{abs}}
+$$
+
+para una eventual totalidad global que dominase todos los regímenes.
+
+La existencia de $R_{\mathrm{abs}}$ **no** forma parte del objetivo mínimo del programa actual.
+
+### 1.3. Tesis objetivo
+
+Definimos:
+
+$$
+\boxed{
+\operatorname{ExistsR}
+:=
+\exists i\;\exists R_i
+\left[
+\operatorname{EClosed}_i(R_i)
+\land
+\forall X\in\mathfrak D_i^{\mathrm{proc}},
+\;X\preceq_i R_i
+\right].
+}
+$$
+
+Y su negación:
+
+$$
+\boxed{
+\operatorname{NoR}
+:=
+\neg\operatorname{ExistsR}.
+}
+$$
+
+Por tanto, el objetivo fuerte actual es:
+
+$$
+\boxed{
+\neg\operatorname{NoR}.
+}
+$$
+
+No es necesario demostrar:
+
+$$
+\exists R_{\mathrm{abs}}.
+$$
+
+### 1.4. Alternativas compatibles con éxito
+
+Las siguientes arquitecturas son compatibles con $\operatorname{ExistsR}$:
+
+- **One-$R$:** un único régimen y un único máximo;
+- **Indexed-$R$:** máximos exhaustivos indexados por régimen;
+- **Many-$R$:** varios $R_i$ ontológicamente incomparables;
+- **Cluster-$R$:** varios máximos o grupos de máximos relacionados bajo una estructura metaontológica adicional.
+
+El programa fracasa respecto de su objetivo mínimo solo si vale No-$R$:
+
+> ningún régimen admite una totalidad exhaustiva cerrada.
+
+### 1.5. Consecuencia metodológica
+
+La discusión sobre generalidad absoluta y $R_{\mathrm{abs}}$ sigue siendo filosóficamente relevante, pero ya no es condición previa para refutar No-$R$.
+
+Basta demostrar $\operatorname{ExistsR}$ para **un solo régimen no vacío**.
+
+**Estado:** Exists-$R$ = OPEN; $R_{\mathrm{abs}}$ = OPEN y opcional respecto del objetivo mínimo.
 
 ## 2. Consecuencias analíticas si $R$ existe
 
