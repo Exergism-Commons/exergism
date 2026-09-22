@@ -663,19 +663,57 @@ La versión operator-free de K1–K3 hace transparente esa dependencia.
 
 ## 5. Identidad independiente de régimen — REV-07
 
-La propuesta ya no define «mismo régimen» mediante directedness ni existencia de una cota común.
+La identidad de una realidad ontológica ya no se define por K3 ni por existencia de una cota común.
 
-Sea $\Omega$ el universo de trabajo de tokens ontológicos actuales y sea $\Lambda$ una familia de **relaciones ontológicas actuales admisibles**: por ejemplo, relaciones causales, procesuales, constitutivas, de dependencia o espaciotemporales cuando sean aplicables.
+### 5.1. Familia pre-régimen de enlaces ontológicos
 
-Definimos el enlace inmediato:
+Antes de conocer cualquier régimen $i$, se fija una familia candidata de tipos de relación:
+
+$$
+\Lambda_*.
+$$
+
+El subíndice `*` indica que esta familia debe definirse sin usar $i$, $R_i$, `SameRegime`, K3, `EClosed` ni una totalidad global.
+
+Un tipo $\lambda$ solo puede pertenecer a $\Lambda_*$ si sus instancias relevantes cumplen:
+
+1. **actualidad:** la relación está efectivamente instanciada, no meramente posible;
+2. **carácter ontológico:** obtiene entre los relata, no solo entre descripciones o modelos;
+3. **sensibilidad a los relata:** la instancia es token-specific, no mero compartir universal, tipo, propiedad, ley o ecuación;
+4. **rol integrador:** pertenece a una familia causal/procesual, constitutiva, de dependencia ontológica o espaciotemporal cuando corresponda;
+5. **localidad semántica:** verificarla no requiere cuantificar sobre $R_i$, $R_{\mathrm{abs}}$, K3 o la pertenencia previa al régimen;
+6. **invariancia representacional:** una recodificación fiel no puede cambiar si el enlace existe.
+
+En particular, no bastan:
+
+- semejanza;
+- isomorfismo;
+- compartir leyes;
+- instanciar la misma propiedad universal;
+- posibilidad contrafáctica de interacción;
+- ser descritos conjuntamente por una teoría o modelo.
+
+Esto evita que universales, leyes o tipos actúen como hubs abstractos que fusionen regímenes por mera clasificación.
+
+### 5.2. Enlace y co-régimen
+
+Si existe una instancia actual admisible de algún $\lambda\in\Lambda_*$ entre $q$ y $r$, escribimos:
+
+$$
+q\bowtie_* r.
+$$
+
+Para calcular conectividad usamos su simetrización:
 
 $$
 q\bowtie r
+\iff
+q\bowtie_* r
+\lor
+r\bowtie_* q.
 $$
 
-si alguna relación $\lambda\in\Lambda$ está actualmente instanciada entre $q$ y $r$ en alguna dirección.
-
-Después definimos:
+Y definimos:
 
 $$
 q\sim r
@@ -683,13 +721,13 @@ $$
 
 como la clausura reflexivo-transitiva de $\bowtie$.
 
-Como $\bowtie$ es simétrica por construcción, $\sim$ es una relación de equivalencia. Sus clases:
+Las clases:
 
 $$
 [q]_{\sim}
 $$
 
-son candidatos a **regímenes ontológicos**.
+son candidatos a regímenes ontológicos.
 
 Para un dominio procesual no vacío:
 
@@ -707,20 +745,7 @@ $$
 
 cuando todos sus tokens pertenecen a la misma clase $i$.
 
-### Qué cuenta y qué no cuenta como enlace
-
-La relación $\bowtie$ debe definirse sin mencionar:
-
-- K3;
-- una cota común;
-- $R_i$;
-- `SameIndex`;
-- `EClosed`;
-- la posibilidad meramente contrafáctica de interacción.
-
-Tampoco bastan por sí solos semejanza, isomorfismo, compartir leyes descriptivas o poder ser representados en una misma teoría.
-
-### SameRegime no implica K3
+### 5.3. SameRegime no implica K3
 
 Ahora:
 
@@ -736,9 +761,9 @@ $$
 \exists Z\,[X\preceq_i Z\land Y\preceq_i Z].
 $$
 
-Hay un contraejemplo mínimo en el [documento técnico](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md): dos dominios pueden contener tokens enlazados y por tanto pertenecer al mismo régimen, mientras la familia de dominios admisibles carece de una cota común.
+El [documento técnico](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md) contiene un contraejemplo mínimo donde dos dominios pertenecen al mismo régimen porque sus tokens están ontológicamente enlazados y, sin embargo, la familia de dominios admisibles no contiene una cota común.
 
-Así:
+Por tanto:
 
 $$
 \boxed{
@@ -748,19 +773,46 @@ K3_i(X,Y).
 }
 $$
 
-Esto elimina la circularidad conceptual original de D5c: la identidad del régimen y la amalgamabilidad dejan de ser la misma definición.
+Esto elimina la circularidad conceptual original entre identidad de régimen y amalgamabilidad.
 
-### Qué sigue abierto
+### 5.4. Alcance actual de $\Lambda_*$
 
-REV-07 permanece **PARTIAL**, porque la familia $\Lambda$ todavía necesita justificación ontológica independiente y K3_i sigue requiriendo una premisa adicional de admisibilidad de agregación/extensión.
+Los roles integradores admitidos provisionalmente son:
 
-El criterio restante es:
+$$
+\Lambda_*
+\subseteq
+\Lambda_{\mathrm{proc}}
+\cup
+\Lambda_{\mathrm{causal}}
+\cup
+\Lambda_{\mathrm{constit}}
+\cup
+\Lambda_{\mathrm{dep}}
+\cup
+\Lambda_{\mathrm{st}}.
+$$
 
-1. justificar qué tipos de enlace actual pertenecen a $\Lambda$;
-2. demostrar que la clasificación por $\sim$ es suficientemente invariante respecto de representaciones;
-3. justificar $K3_i$ sin reconstruirlo por definición de régimen.
+Esta expresión no afirma que todas esas relaciones sean primitivas ni que estén presentes en toda ontología. Solo delimita los tipos de enlace que pueden optar a conectar tokens en un régimen.
 
-Como comparación metodológica, Lewis usa conexión espaciotemporal para determinar worldmates sin definir primero una cota común; aquí esa estrategia se generaliza y no compromete a la propuesta con modal realism ni con la tesis de que toda unidad ontológica sea espaciotemporal.
+Dos cautelas importantes:
+
+- una correlación estadística no basta por sí sola;
+- una relación física no clásica, como el entrelazamiento, cuenta solo si una ontología física independiente la trata como relación real token-specific y satisface los criterios anteriores.
+
+### 5.5. Qué sigue abierto
+
+REV-07 permanece **PARTIAL**.
+
+Ya no falta una definición de régimen; falta justificar que la familia candidata $\Lambda_*$ sea filosóficamente adecuada.
+
+El criterio de cierre restante es:
+
+1. justificar qué roles integradores pertenecen legítimamente a $\Lambda_*$;
+2. demostrar que $\sim$ es suficientemente invariante respecto de las representaciones usadas por REV-18;
+3. justificar K3_i mediante una premisa adicional de admisibilidad de agregación/extensión que no sea equivalente a K3_i por definición.
+
+Como antecedente metodológico, Lewis usa conexión espaciotemporal para determinar worldmates sin definir primero una cota común; aquí ese patrón se generaliza y no compromete a la propuesta con modal realism ni con una reducción de toda unidad ontológica a espaciotiempo.
 
 **Estado: PARTIAL — REV-07.**
 
