@@ -37,7 +37,7 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 | REV-16 | MINOR doctrinal | RESOLVED | **«Dios» no añade inferencia.** | D1/teología. | Moverlo a nomenclatura doctrinal y evitar usar el término como premisa o evidencia; mantener Total(R) ≠ Ground(R) explícito. |
 | REV-17 | MAJOR fundacional | RESOLVED | **Zorn sobre clases propias requiere compromisos adicionales.** | [I6b]. | Limitar el teorema a posets set-sized o especificar teoría de clases/principio de elección global usado; documentar el compromiso. |
 | REV-18 | BLOCKER | PARTIAL | **Puente entre eventos emergentes actualizados y el predicado ontológico de dominio cerrado.** | Interpretación emergentista de $\mathfrak K$. | Se definieron incidencia $s\trianglelefteq_i X$ y $\operatorname{EClosed}_i(X)$ sin identificar dominios con conjuntos de estados. Falta justificar ontológicamente la incidencia y demostrar que ese cierre es adecuado para el tipo temporal de dominio elegido. |
-| REV-19 | BLOCKER | OPEN | **Desajuste temporal entre emergencia diacrónica y el antiguo objetivo sincrónico.** $\mathcal E_M$ exige transiciones actualizadas, mientras $R_i^A(t)$ es una instantánea. | Tipo temporal del dominio del teorema. | Elegir y justificar una ruta: dominios procesuales/diachrónicos cerrados bajo eventos, o dominios sincrónicos con una noción distinta de cierre estructural. No mezclar ambas. |
+| REV-19 | BLOCKER | PARTIAL | **Desajuste temporal entre emergencia diacrónica y el antiguo objetivo sincrónico.** $\mathcal E_M$ exige transiciones actualizadas, mientras $R_i^A(t)$ es una instantánea. | Tipo temporal del dominio del teorema. | Se elige provisionalmente la ruta procesual para el teorema emergentista y se separa del teorema sincrónico. Falta fijar rigurosamente $\preceq_{\mathrm{proc}}$, demostrar K1/K2 en ese tipo y, si se desea, definir cómo se recuperan secciones sincrónicas sin imponer una teoría temporal concreta. |
 | REV-20 | BLOCKER | OPEN | **Cofinalidad K1 de dominios E-closed no demostrada.** | Existencia de extensiones cerradas. | Demostrar independientemente que todo $X\in\mathfrak D$ admite algún $Y\in\mathfrak K$ con $X\preceq Y$, sin presuponer ya una totalidad, una unión global o un operador ontológico de cierre por definición. |
 | FORM-01 | MAJOR | RESOLVED | **820 pares de sintaxis matemática inline no soportada tal como está escrita.** | Documento completo. | Convertir matemática inline a sintaxis GitHub soportada y comprobar renderizado. |
 | FORM-02 | MAJOR | RESOLVED | **47 pares de bloques con delimitadores `$` aislados.** | Documento completo. | Convertir a `$$ ... $$` y comprobar renderizado. |
@@ -64,11 +64,11 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - **REV-01 RESOLVED:** fijado $M$, la relación de eventos induce un operador $F_M$ de alcanzabilidad emergente. Extensividad, monotonía interna e idempotencia se demuestran. La revisión del argumento de Zorn muestra además que F2 era redundante: F1 + F3 bastan para elevar cotas y para el paso de exhaustividad.
 - **REV-02 RESOLVED:** el inhibidor no es un contraejemplo a F2 interna porque cambia el sistema y por tanto cambia el operador. Se conserva el contraejemplo cross-system y el lema de extensión conservativa como caracterización de cuándo los eventos sí se transportan.
 - **REV-04 RESOLVED:** el toy produce el punto fijo propio $S=\{p,c\}$ con $F_M(S)=S\neq\Sigma_M$.
-- **REV-18 OPEN:** nada de lo anterior demuestra todavía que $\mathcal P(\Sigma_M)$ y $\subseteq$ sean el tipo y orden correctos para los dominios ontológicos del teorema.
+- **REV-18 PARTIAL:** ya existe un puente mínimo por incidencia y `EClosed`; sigue pendiente justificarlo ontológicamente y demostrar sus propiedades sobre dominios procesuales.
 ## Nuevos bloqueadores tras normalizar el teorema
 
 - **REV-18 PARTIAL:** el puente mínimo se reduce a incidencia de configuraciones/eventos actuales en dominios y al predicado `EClosed`; ya no se exige un embedding fuerte en un powerset.
-- **REV-19 OPEN:** el cierre por eventos es diacrónico y no puede aplicarse sin más a la antigua totalidad sincrónica $R_i^A(t)$.
+- **REV-19 PARTIAL:** la ruta emergentista adopta dominios procesuales y separa explícitamente $T_{\mathrm{proc}}$ de $T_{\mathrm{syn}}$; faltan orden procesual y resultados de cierre.
 - **REV-20 OPEN:** K1/cofinalidad es una premisa sustantiva nueva de la forma operator-free; definir qué significa cerrado no demuestra que todo dominio tenga una extensión cerrada.
 - **REV-09/REV-10** concentran K2/inductividad; **REV-07** concentra K3/directedness.
 ## Alcance de algunos cierres
@@ -112,9 +112,10 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-18 | Puente simplificado a incidencia + `EClosed`; estado OPEN → PARTIAL. | Sección I.3.4. | d0f7fb2 |
 | 2026-09-22 | REV-19 | Registrado desajuste diacrónico/sincrónico como blocker independiente. | Sección I.3.5. | d0f7fb2 |
 | 2026-09-22 | REV-20 | Registrada cofinalidad K1 de dominios E-closed como obligación independiente. | §4 + ledger. | ab3c6be |
+| 2026-09-22 | REV-19 | Elegida provisionalmente la ruta procesual para el teorema emergentista; definidos fragmentos procesuales mínimos y separación $T_{\mathrm{proc}}\neq T_{\mathrm{syn}}$. Estado OPEN → PARTIAL. | Sección I.3.5. | 0330795 |
 
 ## Evidencia de consolidación documental
 
 Tras el commit 9cfb857, el documento normativo principal funciona como crónica + estado actual. La versión antigua se conserva como evidencia histórica, pero sus contradicciones no se consideran tesis simultáneamente vigentes.
 
-Estado sustantivo actual: REV-03 permanece PARTIAL; REV-07, REV-08, REV-09, REV-10, REV-14, REV-15 y REV-18 permanecen OPEN. REV-01, REV-02 y REV-04 están RESOLVED en su alcance formal, sin que eso cierre REV-18 ni demuestre todavía la ontología global.
+Estado sustantivo actual: REV-03, REV-18 y REV-19 permanecen PARTIAL; REV-07, REV-08, REV-09, REV-10, REV-14, REV-15 y REV-20 permanecen OPEN. REV-01, REV-02 y REV-04 están RESOLVED en su alcance formal, sin que eso demuestre todavía la ontología global.
