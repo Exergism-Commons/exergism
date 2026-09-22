@@ -1357,14 +1357,14 @@ $$
 Para un seed $q$:
 
 $$
-T_i^{\mathcal C}:=\mathcal C_*(\{q\}).
+T_q^{\mathcal C}:=\mathcal C_*(\{q\}).
 $$
 
 La ruta requiere al menos:
 
 $$
 \mathrm{CS}:\quad
-x\in T_i^{\mathcal C}
+x\in T_q^{\mathcal C}
 \Rightarrow
 \operatorname{CoReal}(x,q),
 $$
@@ -1373,31 +1373,19 @@ $$
 \mathrm{CC}:\quad
 \operatorname{CoReal}(x,q)
 \Rightarrow
-x\in T_i^{\mathcal C},
+x\in T_q^{\mathcal C},
 $$
 
 y:
 
 $$
 \mathrm{CSet}:\quad
-T_i^{\mathcal C}\text{ es set-sized}.
+T_q^{\mathcal C}\text{ es set-sized}.
 $$
 
-CS hace para la clausura general el trabajo de RS; CC hace el trabajo de RC. Bajo denotación canónica:
+CS hace para la clausura candidata el trabajo extensional de no sobreinclusión y CC el de no subinclusión respecto de $\operatorname{CoReal}$. Mientras no se hayan justificado ambas, no se asigna todavía un índice ontológico $i$ ni se invocan OA/MC tipadas por régimen.
 
-$$
-\mathrm{CS}+\mathrm{CD}_i
-\Rightarrow
-\mathrm{OA}_i,
-$$
-
-y:
-
-$$
-\mathrm{CC}+\mathrm{CD}_i
-\Rightarrow
-\mathrm{MC}_i.
-$$
+Una vez justificadas CS+CC, CRType y la realización local de scope, la clausura puede reindexarse como $T_i^{\mathcal C}$ y los lemas de OA/MC se transfieren a esa presentación.
 
 La construcción semántica de la Ruta B se mantiene **pre-ontológica** mientras CS/CC estén abiertas. Por ello no usa $\operatorname{StructAdm}_i$ ni presupone que $\mathcal C_*(\{q\})$ sea ya un régimen.
 
