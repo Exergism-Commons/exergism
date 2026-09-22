@@ -4170,3 +4170,77 @@ Por tanto:
 - REV-22 sigue abierto como condición de aplicabilidad global de Zorn, salvo que se exhiba un esqueleto cofinal set-sized o se adopten fundamentos de clases adecuados.
 
 ---
+
+---
+
+## REV-20 — reducción de LSE a branching set-like por token
+
+Definimos la condición puntual:
+
+$$
+\mathrm{PSB}_i:
+$$
+
+para todo token de estado $s$ del régimen, la colección de eventos emergentes actuales con source $s$ es set-sized:
+
+$$
+\operatorname{Out}_i(s)
+:=
+\{e\mid \operatorname{Emergent}_i(e)\land \operatorname{src}(e)=s\}
+$$
+
+es un conjunto.
+
+### Proposición
+
+En ZFC/NBG con Replacement/Union ordinarios:
+
+$$
+\boxed{
+\mathrm{PSB}_i
+\Rightarrow
+\mathrm{LSE}_i.
+}
+$$
+
+**Demostración.** Sea $S$ un conjunto de sources. Por PSB, para cada $s\in S$ existe el conjunto $\operatorname{Out}_i(s)$. Por Replacement obtenemos una familia set-indexed:
+
+$$
+\{\operatorname{Out}_i(s)\mid s\in S\}.
+$$
+
+Por Union:
+
+$$
+\bigcup_{s\in S}\operatorname{Out}_i(s)
+$$
+
+es un conjunto.
+
+Pero esa unión es exactamente la colección de eventos emergentes actuales cuyo source pertenece a $S$. Luego LSE. $\square$
+
+### Consecuencia
+
+REV-20 puede formularse con una única condición local por token:
+
+$$
+\boxed{
+\operatorname{StructAdm}_i
++
+\mathrm{PSB}_i
+\Rightarrow
+K1_i.
+}
+$$
+
+PSB no afirma que el régimen sea set-sized ni que exista un máximo. Solo excluye una explosión local en la que un único estado actual sea source de proper-class many eventos emergentes actuales.
+
+### Interpretación
+
+Si PSB falla, No-R puede defenderse mediante una forma extremadamente fuerte de extensibilidad local:
+
+> desde un único estado set-sized parten proper-class many actualizaciones emergentes actualmente instanciadas.
+
+Esa posibilidad es lógicamente distinta del potencialismo ordinario de «siempre hay una extensión más»; es una ramificación propia-clase ya en un solo paso.
+
+---
