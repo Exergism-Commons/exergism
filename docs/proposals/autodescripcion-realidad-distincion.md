@@ -1,7 +1,7 @@
 # Autodescripción, realidad y distinción — crónica consolidada
 
 **Estado:** propuesta doctrinal exploratoria, no canónica.  
-**PR:** #12 — *Formalize regime-local emergence and process-domain maximality*.  
+**PR:** #12 — *Derive regime-local Exists-R under locally set-like connectivity*.  
 **Versión consolidada:** 2026-09-22.
 
 Este documento ya **no** intenta mantener simultáneamente todas las formulaciones producidas durante la exploración. Su función es doble:
@@ -175,7 +175,7 @@ La propuesta ya dispone de una definición independiente y event-local de emerge
 
 Por tanto, REV-01, REV-02 y REV-04 están cerrados en sus criterios originales, mientras REV-03 permanece PARTIAL por alcance doctrinal.
 
-Esto **todavía no demuestra una metafísica emergentista de $R$**. El teorema vigente ya es procesual y local a cada régimen $i$; lo que falta es justificar ontológicamente $\operatorname{Adm}_i$, la cofinalidad K1, la admisibilidad de cotas y el eventual puente metaontológico hacia una realidad total.
+El programa dispone ahora de un **teorema directo condicional de Exists-$R$**: PON + una firma semántica set-sized/finitaria + StructAdm construyen un máximo E-closed $R_i^*$ de cualquier régimen no vacío. Lo que todavía no está justificado es PON ni, por completo, la taxonomía $\Lambda_*$ que determina qué cuenta como mismo régimen.
 
 Los bloqueadores activos relevantes pasan a ser:
 
@@ -197,11 +197,12 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-04 | RESOLVED mínimo | El toy de cuatro componentes produce un punto fijo propio explícito de $F_M$. Esto demuestra que el operador no es necesariamente «la unión de todo», pero no caracteriza todavía sistemas ricos. |
 | REV-18 | RESOLVED tipado | Un dominio se toma como fragmento semántico positivo actual $X=(T_X,\Phi_X)$; incidencia es pertenencia al carrier semántico y `EClosed_i` es una propiedad del contenido, no de la serialización. No se reifica el dominio como entidad adicional. |
 | REV-19 | RESOLVED tipado | El objeto primario queda fijado como fragmento procesual semántico $X=(T_X,\Phi_X)$; $\preceq_i^{\mathrm{proc}}$ es inclusión de contenido positivo actual. Admisibilidad ontológica se separa como $\operatorname{Adm}_i$ y queda en REV-18/20/09/07. |
-| REV-20 | PARTIAL | Con StructAdm, K1 se deriva por rondas finitas si vale PSB: cada estado es source de set-many eventos emergentes actuales. PSB implica LSE por Replacement + Union. Falta justificar PSB como propiedad estructural del régimen. |
-| REV-22 | OPEN fundacional | Para aplicar Zorn al régimen real hay que justificar que el poset relevante es set-sized, o exhibir un esqueleto set-sized cofinal que preserve las hipótesis K, o adoptar explícitamente un principio de maximalidad de clases. |
+| REV-20 | PARTIAL subordinado | Bajo StructAdm + COV, $K1_i\iff\mathrm{PSB}_i$; PON implica PSB. K1 deja de ser blocker independiente de la ruta directa. |
+| REV-22 | PARTIAL subordinado | PON + firma set-sized/finitaria hace set-sized cada régimen y su poset de fragmentos, resolviendo condicionalmente la ruta A de Zorn. La ruta directa no necesita Zorn. |
 | REV-09 | RESOLVED set-indexed | Con `Adm_i := StructAdm_i`, la unión de una cadena set-indexed de fragmentos positivos actuales sigue siendo well-formed y admisible; junto con el lema previo de preservación de `EClosed`, K2 queda demostrada dentro del alcance set-sized del teorema. La aplicabilidad class-sized queda en REV-22. |
 | REV-10 | RESOLVED vigente | La ruta actual ya no usa la inferencia oculta de StageFactorization/presentabilidad criticada en H8. |
 | REV-21 | RESOLVED formal | Los puntos fijos de $F_i$ son exactamente los subconjuntos forward-closed del grafo emergente; la degeneración al único punto fijo no vacío $\Sigma_i$ ocurre exactamente cuando el grafo es fuertemente conexo. |
+| REV-23 | OPEN blocker | PON no está justificada: falta demostrar que cada token actual tiene set-many vecinos ontológicos inmediatos bajo $\bowtie$. PON es la premisa de smallness que hace constructible el régimen completo y, con ella, Exists-R. |
 
 ### Corrección histórica importante sobre F2
 
