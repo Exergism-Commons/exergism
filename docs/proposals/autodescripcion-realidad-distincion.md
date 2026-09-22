@@ -1228,6 +1228,215 @@ Esta obligación se registra como REV-18 y evita declarar una victoria ontológi
 - **REV-18:** OPEN: falta el puente formal y ontológico entre $F_M$ sobre estados y $F$ sobre dominios.
 
 ---
+## 3.4. REV-18 — puente de tipos entre emergencia formal y dominio ontológico
+
+El operador concreto construido en REV-01 tiene tipo:
+
+$$
+F_M:\mathcal P(H_M)\to\mathcal P(H_M),
+$$
+
+donde $H_M\subseteq\Sigma_M$ denota las configuraciones **efectivamente actualizadas** relevantes para el proceso considerado. Las trazas de capacidad pueden explorar $\Sigma_M$, pero el cierre ontológico candidato solo sigue eventos emergentes actualizados.
+
+El teorema ontológico, en cambio, pretende usar:
+
+$$
+F_i^{\mathrm{ont}}:\mathfrak D_i^{A}\to\mathfrak D_i^{A}
+$$
+
+sobre dominios actuales con orden:
+
+$$
+\preceq_{\mathrm{ont}}.
+$$
+
+No hay identidad de tipos entre ambas construcciones.
+
+### Representación fiel suficiente
+
+Definimos una **representación emergente fiel** de un régimen ontológico $i$ mediante un mapa:
+
+$$
+J_i:\mathfrak D_i^{A}\to\mathcal P(H_M)
+$$
+
+que satisface:
+
+**R1 — embedding de orden.**
+
+$$
+X\preceq_{\mathrm{ont}}Y
+\iff
+J_i(X)\subseteq J_i(Y).
+$$
+
+Esto exige preservación y reflexión: no basta un mapa meramente monótono.
+
+**R2 — estabilidad de la imagen bajo cierre emergente.**
+
+Para todo $X\in\mathfrak D_i^{A}$ existe un único $Y\in\mathfrak D_i^{A}$ tal que:
+
+$$
+F_M(J_i(X))=J_i(Y).
+$$
+
+La unicidad se sigue de la inyectividad de un embedding de orden.
+
+Bajo R1–R2 podemos definir:
+
+$$
+\boxed{
+F_i^{\mathrm{ont}}
+:=
+J_i^{-1}\circ F_M\circ J_i.
+}
+$$
+
+### Transferencia de F1
+
+Como:
+
+$$
+J_i(X)\subseteq F_M(J_i(X)),
+$$
+
+y:
+
+$$
+F_M(J_i(X))=J_i(F_i^{\mathrm{ont}}(X)),
+$$
+
+R1 permite reflejar:
+
+$$
+\boxed{
+X\preceq_{\mathrm{ont}}F_i^{\mathrm{ont}}(X).
+}
+$$
+
+### Transferencia de F3
+
+Por idempotencia de $F_M$:
+
+$$
+F_M(F_M(J_i(X)))=F_M(J_i(X)).
+$$
+
+Aplicando R2 e inyectividad de $J_i$:
+
+$$
+\boxed{
+F_i^{\mathrm{ont}}(F_i^{\mathrm{ont}}(X))
+=
+F_i^{\mathrm{ont}}(X).
+}
+$$
+
+Por tanto, si existe una representación fiel de este tipo, las dos propiedades que realmente necesita el teorema abstracto —F1 y F3— se transfieren al nivel ontológico.
+
+### F2 también se transferiría, pero ya no es necesaria
+
+Como $F_M$ es monótono internamente y $J_i$ es un embedding de orden:
+
+$$
+X\preceq_{\mathrm{ont}}Y
+\Rightarrow
+F_i^{\mathrm{ont}}(X)
+\preceq_{\mathrm{ont}}
+F_i^{\mathrm{ont}}(Y).
+$$
+
+Esto es un resultado adicional. El teorema revisado no depende de él.
+
+### Modelo de consistencia, no argumento ontológico
+
+En el toy podemos tomar:
+
+$$
+\mathfrak D_{\mathrm{toy}}
+=
+\mathcal P(H_M),
+$$
+
+$$
+J_{\mathrm{toy}}=\operatorname{id}.
+$$
+
+R1–R2 se satisfacen trivialmente y:
+
+$$
+F_{\mathrm{toy}}^{\mathrm{ont}}=F_M.
+$$
+
+Esto demuestra que el esquema de representación es **matemáticamente consistente**.
+
+No demuestra que los dominios ontológicos reales tengan esa forma.
+
+### Dos riesgos que impiden cerrar REV-18
+
+**Riesgo A — variancia semántica.**
+
+Si $J_i(X)$ se interpreta como «modelos/configuraciones compatibles con $X$» en vez de «contenido/estados representados por $X$», un dominio más rico puede tener **menos** modelos:
+
+$$
+X\preceq_{\mathrm{ont}}Y
+\Rightarrow
+J_i(Y)\subseteq J_i(X).
+$$
+
+Es decir, la representación natural sería contravariante. Por eso R1 no puede declararse correcta sin fijar qué representa $J_i$.
+
+**Riesgo B — totalización escondida.**
+
+Usar un único sistema ambientador:
+
+$$
+M_i
+$$
+
+con un espacio de estados:
+
+$$
+\Sigma_{M_i}
+$$
+
+capaz de representar todos los dominios del régimen puede introducir, a nivel formal, una estructura global que desempeñe parte del papel de la totalidad que el teorema pretende derivar.
+
+Esto no es automáticamente circular: un universo semántico o formal no es lo mismo que una totalidad ontológica actual. Pero el puente deberá demostrar esa diferencia, no asumirla.
+
+### Alternativa local aún abierta
+
+Una vía menos comprometida sería asignar a cada dominio su propio sistema:
+
+$$
+X\mapsto M_X,
+$$
+
+junto con embeddings coherentes cuando:
+
+$$
+X\preceq_{\mathrm{ont}}Y.
+$$
+
+Entonces el problema pasa a ser construir una familia compatible de cierres $F_{M_X}$ y demostrar que induce un operador ontológico bien definido sin presuponer un sistema global.
+
+Esta ruta se deja abierta; no se introduce todavía maquinaria categórica adicional.
+
+### Estado de REV-18
+
+REV-18 pasa de **OPEN** a **PARTIAL**.
+
+Ya existe:
+
+- un tipo formal explícito para ambos lados del puente;
+- una condición suficiente R1–R2;
+- una prueba de transferencia de F1 y F3;
+- un modelo toy que demuestra consistencia del esquema;
+- dos riesgos explícitos —variancia y totalización escondida— que impiden declarar el puente ontológicamente justificado.
+
+Para cerrar REV-18 hay que justificar independientemente una representación $J_i$ o construir la alternativa local $X\mapsto M_X$ sin introducir por definición la totalidad buscada.
+
+---
 ## 4. Núcleo matemático revisado — Zorn sin operador de cierre
 
 REV-01 muestra que intentar salvar la monotonía de \(F\) imponía al formalismo una propiedad que la emergencia contextual no garantiza.
