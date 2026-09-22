@@ -1645,7 +1645,13 @@ Una incorporación real puede cambiar capacidades previas sin dejar de ser ontol
 4. que las cadenas ontológicas relevantes tengan las cotas requeridas;
 5. que K3/directedness sea legítima independientemente de “mismo índice”.
 
-Estas cargas se concentran ahora en REV-18, REV-09/REV-10 y REV-07.
+Estas cargas quedan trazadas así:
+
+- **REV-18:** significado ontológico de $\operatorname{EClosed}$;
+- **REV-19:** elección del tipo temporal del dominio;
+- **REV-20:** K1/cofinalidad de dominios E-closed;
+- **REV-09/REV-10:** K2/inductividad y sus supuestos de compactitud/presentabilidad;
+- **REV-07:** K3/directedness no circular.
 
 ### 4.7. Relación con teoría estándar de puntos fijos
 
