@@ -43,17 +43,30 @@ Cada referencia debe aparecer en el documento principal solo cuando haga trabajo
 
 ## 3. Emergencia
 
-La propuesta no debe escoger una definición de emergencia sin confrontar la literatura donde se distinguen emergencia ontológica, epistemológica, sincrónica, diacrónica, débil y fuerte.
+La propuesta distingue ahora una candidata propia de **emergencia organizacional dinámicamente efectiva** de otras nociones existentes. La literatura no ofrece una definición unificada que pueda importarse sin decisión filosófica.
 
-- **C. D. Broad (1925), _The Mind and Its Place in Nature_.** Antecedente clásico del emergentismo británico.
-- **Mark A. Bedau (1997), “Weak Emergence”, _Noûs_ 31, 375–399.** Noción influyente de emergencia débil ligada a derivabilidad/simulación: https://doi.org/10.1111/0029-4624.31.s11.17
-- **Mark A. Bedau & Paul Humphreys (eds.) (2008), _Emergence: Contemporary Readings in Philosophy and Science_. MIT Press.** Reúne a Bedau, Kim, Wimsatt, Anderson, Chalmers y otros: https://doi.org/10.7551/mitpress/9780262026215.001.0001
-- **Jaegwon Kim**, “Making Sense of Emergence”, reimpreso en Bedau & Humphreys (2008) — crítico para cualquier pretensión de emergencia ontológica robusta.
-- **Paul Humphreys (2016), _Emergence: A Philosophical Account_. Oxford University Press.** Distingue formas sincrónicas y diacrónicas y desarrolla transformational emergence: https://doi.org/10.1093/acprof:oso/9780190620325.001.0001
-- **Paul Humphreys**, “Emergence”, _Oxford Handbook of Philosophy of Science_ — survey que subraya la pluralidad de teorías: https://doi.org/10.1093/oxfordhb/9780199368815.013.38
-- **James P. Crutchfield**, “Is Anything Ever New? Considering Emergence”, en Bedau & Humphreys (2008) — relevante para exigir qué significa exactamente que aparezca “algo nuevo”.
+- **C. D. Broad (1925), _The Mind and Its Place in Nature_.** Antecedente clásico del emergentismo británico. Su criterio enfatiza que las propiedades características de ciertos todos organizados no se obtienen a partir del conocimiento de los componentes aislados o en organizaciones diferentes. Contexto y discusión: https://plato.stanford.edu/entries/properties-emergent/
+- **Mark A. Bedau (1997), “Weak Emergence”, _Noûs_ 31, 375–399.** Define una macropropiedad débilmente emergente mediante derivabilidad desde microdinámica y condiciones externas solo por simulación. DOI: https://doi.org/10.1111/0029-4624.31.s11.17
+- **William C. Wimsatt, “Aggregativity: Reductive Heuristics for Finding Emergence”, reimpreso en Bedau & Humphreys (2008).** Analiza emergencia a través de fallos de agregatividad e interdependencia organizacional. DOI del capítulo: https://doi.org/10.7551/mitpress/9780262026215.003.0007
+- **Jaegwon Kim (2010), “Emergence: Core Ideas and Issues”, en _Essays in the Metaphysics of Mind_.** Señala que superveniencia e irreducibilidad, tomadas juntas, siguen dejando pendiente una caracterización positiva robusta de emergencia. DOI: https://doi.org/10.1093/acprof:oso/9780199585878.003.0004
+- **Mark A. Bedau & Paul Humphreys (eds.) (2008), _Emergence: Contemporary Readings in Philosophy and Science_. MIT Press.** Reúne a Bedau, Kim, Wimsatt, Anderson, Chalmers, Dennett y otros: https://doi.org/10.7551/mitpress/9780262026215.001.0001
+- **Paul Humphreys (2016), _Emergence: A Philosophical Account_. Oxford University Press.** Desarrolla transformational emergence como teoría ontológica diacrónica y argumenta que no hay una única cuenta unificadora de emergencia. DOI: https://doi.org/10.1093/acprof:oso/9780190620325.001.0001
+- **Paul Humphreys, “Ontological Emergence”, cap. 2 de la obra anterior.** Incluye transformational emergence, fusion/defusion y ejemplos como covalent bonding. DOI: https://doi.org/10.1093/acprof:oso/9780190620325.003.0002
+- **James P. Crutchfield**, “Is Anything Ever New? Considering Emergence”, en Bedau & Humphreys (2008) — relevante para exigir contenido preciso a la noción de novedad.
+- **Erik P. Hoel, Larissa Albantakis & Giulio Tononi (2013), “Quantifying causal emergence shows that macro can beat micro”, _PNAS_ 110(49).** Formaliza causal emergence comparando effective information entre escalas; se usa aquí solo como posible refinamiento cuantitativo más fuerte, no como definición base: https://pmc.ncbi.nlm.nih.gov/articles/PMC3856819/
 
-**Consecuencia para esta PR:** REV-03 no se cierra hasta fijar una noción de emergencia independiente y explicar por qué esa noción, y no otra, es la adecuada para el operador formal usado.
+### Uso en REV-03
+
+La candidata actual adopta tres rasgos mínimos:
+
+1. **macro-invariancia** frente a renombrados equivalentes;
+2. **dependencia organizacional** con perfil local fijo;
+3. **eficacia dinámica mínima**: la organización cambia qué sucesores estructurales son accesibles.
+
+No identifica emergencia con irreducibilidad fuerte, downward causation, impredecibilidad o causal emergence cuantitativa. Esas nociones quedan como posibles extensiones que requerirían justificación independiente.
+
+**Estado:** REV-03 queda PARTIAL hasta comprobar que esta definición no es demasiado estrecha ni demasiado amplia para la doctrina.
+
 
 ## 4. Grounding, fundamento y razón suficiente
 
