@@ -1864,6 +1864,203 @@ $$
 
 ---
 
+## 3.7. REV-09/REV-10 — preservación de EClosed bajo cadenas procesuales
+
+La carga K2 dice que una cadena de dominios cerrados debe tener una cota que siga siendo cerrada.
+
+La formulación procesual permite separar dos cuestiones:
+
+1. si el **predicado de cierre** se preserva al tomar el límite/unión de una cadena;
+2. si ese límite formal corresponde a un **dominio ontológico admisible**.
+
+### 3.7.1. Lema de preservación por unión
+
+Consideremos una cadena de fragmentos procesuales compatibles:
+
+$$
+H_0\preceq_{\mathrm{proc}}
+H_1\preceq_{\mathrm{proc}}
+H_2\preceq_{\mathrm{proc}}
+\cdots
+$$
+
+y, para el lema formal, elijamos representantes coherentes donde la extensión se realiza por subestructura/inclusión.
+
+Sea:
+
+$$
+H_\infty
+:=
+\bigcup_{\alpha}H_\alpha
+$$
+
+componente a componente:
+
+$$
+S_\infty
+=
+\bigcup_\alpha S_\alpha,
+$$
+
+$$
+E_\infty
+=
+\bigcup_\alpha E_\alpha,
+$$
+
+con fuentes, destinos y precedencia heredados de la cadena compatible.
+
+Supongamos:
+
+$$
+\forall\alpha,\quad
+\operatorname{EClosed}^{\mathrm{proc}}_i(H_\alpha).
+$$
+
+Entonces:
+
+$$
+\boxed{
+\operatorname{EClosed}^{\mathrm{proc}}_i(H_\infty).
+}
+$$
+
+**Demostración.**
+
+Sea $e$ un evento emergente actual con:
+
+$$
+\operatorname{src}(e)=s_0
+$$
+
+y supongamos:
+
+$$
+s_0\trianglelefteq_i H_\infty.
+$$
+
+Como $H_\infty$ es la unión de la cadena, existe algún $\alpha$ tal que:
+
+$$
+s_0\trianglelefteq_i H_\alpha.
+$$
+
+Como $H_\alpha$ es E-closed:
+
+$$
+e\trianglelefteq_i H_\alpha
+$$
+
+y:
+
+$$
+\operatorname{tgt}(e)\trianglelefteq_i H_\alpha.
+$$
+
+Por inclusión:
+
+$$
+e\trianglelefteq_i H_\infty
+$$
+
+y:
+
+$$
+\operatorname{tgt}(e)\trianglelefteq_i H_\infty.
+$$
+
+Luego $H_\infty$ es E-closed. $\square$
+
+### 3.7.2. Qué demuestra este lema
+
+La clausura emergente actual es **local respecto del origen del evento**.
+
+Por eso no necesitamos, para esta inferencia, el antiguo argumento:
+
+> si el límite falla, debe existir un testigo finito que factorice por algún estadio.
+
+El propio token de origen ya aparece en algún estadio de la cadena.
+
+Esto elimina el uso de la inferencia oculta criticada en REV-10 **para esta ruta concreta**.
+
+### 3.7.3. Qué no demuestra
+
+El lema no prueba que:
+
+$$
+H_\infty\in\mathfrak D_i^{\mathrm{proc}}.
+$$
+
+Es decir, una unión formal de estructuras compatibles no se convierte automáticamente en un dominio ontológico actual/admisible.
+
+La obligación ontológica restante es:
+
+$$
+\boxed{
+\operatorname{ChainAdmissible}_i:
+\quad
+\{H_\alpha\}_\alpha
+\subseteq
+\mathfrak D_i^{\mathrm{proc}}
+\Rightarrow
+\bigcup_\alpha H_\alpha
+\in
+\mathfrak D_i^{\mathrm{proc}}
+}
+$$
+
+para las cadenas pertinentes, o una condición más débil que garantice alguna cota procesual admisible equivalente.
+
+Así, K2 se descompone en:
+
+$$
+\boxed{
+\text{preservación formal de EClosed}
++
+\text{admisibilidad ontológica de la cota}.
+}
+$$
+
+La primera parte está demostrada; la segunda no.
+
+### 3.7.4. Embeddings en lugar de inclusión
+
+Si $\preceq_{\mathrm{proc}}$ se formaliza mediante embeddings en lugar de inclusiones literales, la unión anterior debe sustituirse por una construcción de límite/direct limit compatible.
+
+No se introduce todavía maquinaria categórica adicional. El contenido esencial que tendría que preservarse es el mismo:
+
+> todo token/evento presente en un estadio debe conservar una imagen coherente en la cota.
+
+La existencia ontológica de esa cota sigue siendo la cuestión sustantiva.
+
+### 3.7.5. Consecuencia para REV-10
+
+REV-10 criticaba que la antigua ruta H8 usaba sin declarar una hipótesis de presentabilidad/factorización para hacer bajar un testigo del límite a algún estadio.
+
+La ruta procesual actual ya no utiliza esa inferencia.
+
+Por tanto:
+
+**REV-10 queda RESOLVED respecto del teorema vigente** eliminando la derivación que requería StageFactorization.
+
+Esto no afirma que toda noción futura de emergencia sea finitaria. Si se introdujeran eventos con condiciones de habilitación esencialmente infinitarias que no pudieran empaquetarse en un estado/origen representado, habría que reabrir una obligación de compactitud apropiada.
+
+### 3.7.6. Estado de REV-09
+
+REV-09 pasa de **OPEN** a **PARTIAL**.
+
+Se ha demostrado que EClosed se preserva formalmente bajo uniones de cadenas compatibles.
+
+Falta demostrar la parte ontológica:
+
+$$
+\text{la cota formal es un dominio procesual admisible/actual}.
+$$
+
+Esa es ahora la forma precisa de K2.
+
+---
+
 ## 4. Núcleo matemático normalizado — qué necesita realmente Zorn
 
 Las secciones anteriores producen dos niveles distintos que no deben confundirse:
