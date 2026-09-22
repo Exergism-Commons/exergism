@@ -37,9 +37,9 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 | REV-16 | MINOR doctrinal | RESOLVED | **«Dios» no añade inferencia.** | D1/teología. | Moverlo a nomenclatura doctrinal y evitar usar el término como premisa o evidencia; mantener Total(R) ≠ Ground(R) explícito. |
 | REV-17 | MAJOR fundacional | RESOLVED | **Zorn sobre clases propias requiere compromisos adicionales.** | [I6b]. | Limitar el teorema a posets set-sized o especificar teoría de clases/principio de elección global usado; documentar el compromiso. |
 | REV-18 | BLOCKER | PARTIAL | **Puente entre eventos emergentes actualizados y el predicado ontológico de dominio cerrado.** | Interpretación emergentista de $\mathfrak K$. | Se definieron incidencia $s\trianglelefteq_i X$ y $\operatorname{EClosed}_i(X)$ sin identificar dominios con conjuntos de estados. Falta justificar ontológicamente la incidencia y demostrar que ese cierre es adecuado para el tipo temporal de dominio elegido. |
-| REV-19 | BLOCKER | PARTIAL | **Desajuste temporal entre emergencia diacrónica y el antiguo objetivo sincrónico.** $\mathcal E_M$ exige transiciones actualizadas, mientras $R_i^A(t)$ es una instantánea. | Tipo temporal del dominio del teorema. | Se elige provisionalmente la ruta procesual para el teorema emergentista y se separa del teorema sincrónico. Falta fijar rigurosamente $\preceq_{\mathrm{proc}}$, demostrar K1/K2 en ese tipo y, si se desea, definir cómo se recuperan secciones sincrónicas sin imponer una teoría temporal concreta. |
+| REV-19 | BLOCKER | RESOLVED | **El desajuste temporal y la ambigüedad del orden procesual quedan resueltos tipando el objeto como fragmento procesual semántico $X=(T_X,\Phi_X)$ y definiendo $\preceq_i^{\mathrm{proc}}$ por inclusión de contenido positivo actual.** | Tipo temporal y orden del dominio del teorema. | $\mathfrak P_i^{\mathrm{proc}}$ contiene fragmentos well-formed; $\mathfrak D_i^{\mathrm{proc}}$ se define aparte mediante $\operatorname{Adm}_i$. Incidencia se interpreta como pertenencia al carrier semántico; snapshots quedan como operación derivada opcional. K1/K2/admisibilidad no forman parte del cierre de este finding y permanecen en REV-20/09/18/07. |
 | REV-20 | BLOCKER | OPEN | **Cofinalidad K1 de dominios E-closed no demostrada.** | Existencia de extensiones cerradas. | Demostrar independientemente que todo $X\in\mathfrak D$ admite algún $Y\in\mathfrak K$ con $X\preceq Y$, sin presuponer ya una totalidad, una unión global o un operador ontológico de cierre por definición. |
-| REV-21 | MAJOR formal | OPEN | **No-degeneración de $F_M$ en sistemas ricos no caracterizada.** El toy de una sola arista prueba un punto fijo propio mínimo, pero no muestra cuándo una red densa de eventos emergentes colapsa cierres no vacíos a $\Sigma_M$. | Poder discriminante de $F_M$ más allá del toy. | Caracterizar los puntos fijos de $F_M$ en términos de subconjuntos forward-closed/SCCs del grafo de eventos emergentes y probar ejemplos no triviales con múltiples eventos; distinguir claramente cuándo $F_M$ tiene cierres propios y cuándo la conectividad emergente hace que el único punto fijo no vacío sea $\Sigma_M$. |
+| REV-21 | MAJOR formal | RESOLVED | **La no-degeneración de $F_i$ en sistemas ricos queda caracterizada exactamente por la estructura del grafo de eventos emergentes.** | Poder discriminante de $F_i$ más allá del toy. | Los puntos fijos son exactamente los subconjuntos forward-closed; el mínimo que contiene $s$ es $\operatorname{Reach}_i(s)$; existe punto fijo propio no vacío iff algún cono de alcanzabilidad es propio; el único punto fijo no vacío es $\Sigma_i$ iff el grafo es fuertemente conexo. Una función de progreso estricta sobre todos los eventos impide ciclos y, si $|\Sigma_i|>1$, garantiza un cierre propio. |
 | FORM-01 | MAJOR | RESOLVED | **820 pares de sintaxis matemática inline no soportada tal como está escrita.** | Documento completo. | Convertir matemática inline a sintaxis GitHub soportada y comprobar renderizado. |
 | FORM-02 | MAJOR | RESOLVED | **47 pares de bloques con delimitadores `$` aislados.** | Documento completo. | Convertir a `$$ ... $$` y comprobar renderizado. |
 | FORM-03 | MAJOR | RESOLVED | **El comando MathJax inválido `Tau` con barra inversa aparecía 9 veces.** | Sección procesual. | Sustituir por símbolo/comando válido y comprobar renderizado. |
@@ -115,6 +115,20 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - Por tanto, para dominios no vacíos, $\mathrm{EEA}+\mathrm{OAM}\Rightarrow K3_i$.
 - Si se permite un dominio vacío, basta además exigir que sea bottom.
 - Esto reduce K3_i a dos principios locales que no usan `SameRegime` como sinónimo de amalgamabilidad. REV-07 sigue PARTIAL hasta justificar EEA/OAM y $\Lambda_*$.
+## Cierre de REV-19 — orden procesual
+
+- El dominio procesual semántico queda tipado como $X=(T_X,\Phi_X)$ con tokens y hechos actuales well-formed.
+- $X\preceq_i^{\mathrm{proc}}Y$ significa $T_X\subseteq T_Y$ y $\Phi_X\subseteq\Phi_Y$: crecimiento de contenido positivo actual.
+- Representaciones concretas se comparan solo a través del contenido que denotan; esto hace el orden invariante a recodificación.
+- Incidencia se vuelve semánticamente precisa: $q\trianglelefteq_i X$ iff $q\in T_X$.
+- La admisibilidad se separa como $\operatorname{Adm}_i(X)$; por tanto cerrar REV-19 no cierra REV-18, REV-20 ni REV-09.
+
+## Cierre de REV-21 — estructura de puntos fijos
+
+- $\operatorname{Fix}(F_i)$ coincide con los subconjuntos forward-closed del grafo emergente.
+- Los puntos fijos corresponden a uniones forward-closed de SCCs en el grafo de condensación.
+- El único punto fijo no vacío es $\Sigma_i$ exactamente cuando el grafo emergente es fuertemente conexo.
+- Si existe una función de progreso estricta a lo largo de todas las aristas emergentes, el grafo es acíclico y no puede degenerar de ese modo cuando tiene más de un estado.
 ## Alcance de algunos cierres
 - **REV-01 está RESOLVED solo en alcance formal.** F1/F2-interna/F3 son propiedades de la clausura reflexivo-transitiva de cualquier relación binaria del tipo adecuado; no constituyen por sí mismas contenido emergentista. El contenido específico vive en $\mathcal E_M$ y por eso REV-03 sigue PARTIAL.
 - **REV-04 está RESOLVED solo respecto de su criterio mínimo original:** existe un punto fijo propio explícito. No prueba no-degeneración en sistemas ricos; esa deuda queda separada como REV-21.
@@ -172,6 +186,9 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-07 | Definido criterio candidato de régimen mediante enlace ontológico actual $\bowtie$ y componentes de $\sim$; demostrado con contraejemplo que `SameRegime` no implica K3. | §5 + documento técnico + mapa de referencias. | f282ed4, d7858f5, 3a43cf2 |
 | 2026-09-22 | REV-07 | Restringida $\Lambda_*$ mediante seis criterios de admisibilidad y tests anti-colapso; universales/leyes/isomorfismo dejan de poder actuar como hubs de régimen. | §5 + documento técnico + referencias. | 02a8a4f, 3608b23, f4f7159 |
 | 2026-09-22 | REV-07 | Derivado $K3_i$ desde Edge Extension Admissibility + Overlap Amalgamation para dominios no vacíos; caso vacío cubierto si existe bottom. | §5 + documento técnico. | 96a1461, 5db283e, 22d670e |
+| 2026-09-22 | REV-19 | Fijado el tipo $X=(T_X,\Phi_X)$, el orden por inclusión de contenido positivo y la separación entre well-formedness y $\operatorname{Adm}_i$. Estado PARTIAL → RESOLVED. | §9 + documento técnico. | 447aaba, be0c606 |
+| 2026-09-22 | REV-21 | Caracterizados exactamente los puntos fijos por forward-closure/SCCs; degeneración total iff fuerte conectividad. Estado OPEN → RESOLVED. | Documento técnico + resumen normativo. | f423b0a, be0c606 |
+| 2026-09-22 | REV-08/REV-14 | Se registra como concesión doctrinal explícita que retirar $\operatorname{VA}(o)=R_i$ elimina el puente formal hacia una realidad/verdad absoluta; recuperarlo exigiría argumento metaontológico nuevo. | §7.3. | be0c606 |
 
 ## Evidencia de consolidación documental
 
