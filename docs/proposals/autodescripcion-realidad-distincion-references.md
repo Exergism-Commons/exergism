@@ -102,6 +102,13 @@ REV-02 usa una noción ad hoc de **extensión conservativa** suficientemente fue
 
 **Consecuencia:** cualquier “teorema ontológico” que sea formalmente un resultado de orden debe declarar qué parte es matemática y qué puente ontológico sigue abierto.
 
+### Tarski, closure operators y puntos fijos
+
+- **Alfred Tarski (1955), “A Lattice-Theoretical Fixpoint Theorem and Its Applications”, _Pacific Journal of Mathematics_ 5, 285–309.** Demuestra que los puntos fijos de una función monótona sobre un retículo completo forman un retículo completo. Texto: https://projecteuclid.org/journals/pacific-journal-of-mathematics/volume-5/issue-2/A-lattice-theoretical-fixpoint-theorem-and-its-applications/pjm/1103044538.full
+- **Nathalie Caspard & Bernard Monjardet (1999), “The lattices of Moore families and closure operators on a finite set: a survey”.** Resume la equivalencia clásica entre familias de Moore y closure operators extensivos, monótonos e idempotentes. DOI: https://doi.org/10.1016/S1571-0653(04)00013-7
+
+En la propuesta revisada estas referencias sirven para distinguir dos cosas: la teoría estándar de closure operators, donde la monotonía forma parte de la definición, y el lema operator-free K1–K3 usado por la ruta de Zorn. El resultado propio no pretende generalizar Tarski; solo observa que F2 es redundante en el paso concreto de elevar una cota de puntos fijos cuando F1 y F3 ya están disponibles.
+
 ## 6. Compacidad, diagramas y teoría de modelos
 
 - **Teorema de compacidad de primer orden** — si toda parte finita de una teoría de primer orden tiene modelo, la teoría completa tiene modelo.
