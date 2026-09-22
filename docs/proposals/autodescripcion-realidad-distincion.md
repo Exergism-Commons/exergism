@@ -114,47 +114,29 @@ $$
 
 **Motivación física limitada.** Static-patch observables, gravitational dressing y reconstrucción holográfica motivan distinguir acceso, representación y alcance, pero no demuestran ninguna identificación $U_i=S_i=R_i$ ni ninguna tesis de totalidad. Véase el [mapa de literatura, §13](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
 
-### 1.3. Target doctrinal revisado — alcance extensional no es todavía $R$
+### 1.3. Target doctrinal vigente — realidad indexada
 
-La lectura histórica:
+La ontología primaria es **indexada**.
 
-$$
-R:=\operatorname{Scope}(\operatorname{Real})
-$$
-
-queda **SUPERSEDED como definición completa de $R$**.
-
-Conservamos ese concepto bajo otro nombre:
+No se toma como primitivo doctrinal un predicado absoluto $\operatorname{Real}(x)$. Se parte de:
 
 $$
-\boxed{
-\mathcal R_{\mathrm{ext}}
-:=
-\operatorname{Scope}(\operatorname{Real}),
-}
+\operatorname{Real}_i(x),
 $$
 
-el **alcance extensional absoluto** de todo aquello sobre lo que Real cuantifique legítimamente.
+«$x$ es real en el índice ontológico $i$».
 
-$\mathcal R_{\mathrm{ext}}$ responde únicamente a:
-
-> ¿qué cosas son reales?
-
-El $R$ doctrinal fuerte responde además a:
-
-> ¿pertenecen todas esas cosas a una misma genealogía ontológica cerrada?
-
-Por decisión doctrinal, una Realidad no es una mera pluralidad exhaustiva. Es el alcance generado por una **base/origen ontológico común** y cerrado bajo las relaciones ontológicas generativas pertinentes.
+El índice no es una etiqueta descriptiva posterior. Es la frontera de compatibilidad ontológica.
 
 ### 1.4. Primitivas genealógicas
 
-Una base de origen puede ser singular, plural o estructurada. Se escribe:
+Cada realidad indexada debe estar fundada en una base/origen ontológico:
 
 $$
-\mathcal O_i
+\mathcal O_i,
 $$
 
-sin presuponer que sea un set, un instante inicial o una «primera causa» temporal.
+que puede ser singular, plural o estructurada y no se identifica necesariamente con un primer instante temporal.
 
 Introducimos:
 
@@ -162,13 +144,11 @@ $$
 \operatorname{OntOrigin}_i(\mathcal O_i),
 $$
 
-«$\mathcal O_i$ es una base ontológica originaria admisible para el índice $i$», y una relación generativa independiente:
+y una relación generativa independiente:
 
 $$
-\operatorname{GenStep}_i(a,b),
+\operatorname{GenStep}_i(a,b).
 $$
-
-«$b$ deriva ontológicamente de $a$ mediante un paso generativo admisible».
 
 Su clausura se denota:
 
@@ -176,13 +156,23 @@ $$
 \operatorname{Generated}^{*}_i(\mathcal O_i,x).
 $$
 
-La estrella no compromete todavía a clausura finita: puede realizarse mediante la Ruta A finita o mediante una clausura generalizada/transfinita si esta última se justifica.
+La regla doctrinal de realidad indexada es:
 
-**Restricción de no circularidad:** OntOrigin, GenStep y las reglas que generan $\operatorname{Generated}^{*}$ deben especificarse sin usar $R_i$, CoReal, Presents, OntTotal, SemTotal ni la extensión final que se pretende obtener.
+$$
+\boxed{
+\operatorname{Real}_i(x)
+\Longleftrightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x).
+}
+$$
 
-### 1.5. $R_i$ — realidad indexada como clausura genealógica
+La estrella no obliga a clausura finita: puede realizarse mediante reglas finitas, globales, de límite o transfinitas si se justifican independientemente.
 
-Definimos la condición genealógica:
+**No circularidad:** OntOrigin, GenStep y las reglas de $\operatorname{Generated}^{*}$ no pueden definirse mediante $R_i$, CoReal, SameRegime, SemTotal, Presents ni la extensión final que quieren generar.
+
+### 1.5. $R_i$ — clausura genealógica indexada
+
+Definimos:
 
 $$
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i)
@@ -200,6 +190,8 @@ $$
 \forall x[
 \operatorname{Within}_i(x,R_i)
 \Longleftrightarrow
+\operatorname{Real}_i(x)
+\Longleftrightarrow
 \operatorname{Generated}^{*}_i(\mathcal O_i,x)
 ].
 $$
@@ -210,177 +202,185 @@ $$
 \boxed{
 R_i
 =
-\operatorname{Scope}
+\operatorname{Scope}_i
 \bigl(
 \operatorname{Cl}^{\mathrm{ont}}_i(\mathcal O_i)
 \bigr)
 }
 $$
 
-se entiende como abreviatura doctrinal, no como identidad conjuntista.
+es abreviatura doctrinal de una clausura ontológica indexada, no identidad con un set u objeto colector.
 
-La existencia local fuerte pasa a ser:
+### 1.6. Incompatibilidad de índice
+
+Para realidades **genuinamente** distintas:
+
+$$
+i\neq j
+$$
+
+significa incompatibilidad ontológica total.
+
+Primero, no hay solapamiento de contenido real:
 
 $$
 \boxed{
-\operatorname{ExistsRegR}
+i\neq j
+\Rightarrow
+\neg\exists x[
+\operatorname{Real}_i(x)
+\land
+\operatorname{Real}_j(x)
+].
+}
+$$
+
+Segundo, no hay hechos ontológicos transversales. Sea $\operatorname{RealFact}_i(f)$ un hecho real del índice $i$, y $\operatorname{Relatum}(x,f)$ la incidencia de un relatum en ese hecho. Entonces:
+
+$$
+\boxed{
+\operatorname{RealFact}_i(f)
+\Rightarrow
+\forall x[
+\operatorname{Relatum}(x,f)
+\Rightarrow
+\operatorname{Real}_i(x)
+].
+}
+$$
+
+Por tanto, si un mismo hecho real relacionase contenido supuesto de $i$ y $j$, esos contenidos no podrían pertenecer a dos índices genuinos distintos.
+
+Equivalentemente, a nivel metateórico:
+
+$$
+\boxed{
+\operatorname{CrossRealFact}(i,j)
+\Rightarrow
+i=j.
+}
+$$
+
+Lo mismo vale para una base ontológica común:
+
+$$
+\boxed{
+\operatorname{CommonOntOrigin}(i,j)
+\Rightarrow
+i=j.
+}
+$$
+
+No existe una relación adicional llamada «incompatibilidad» entre $R_i$ y $R_j$. **La incompatibilidad es precisamente la diferencia de índice.**
+
+### 1.7. CoReal derivada
+
+Dentro de un índice ya justificado:
+
+$$
+\boxed{
+\operatorname{CoReal}_i(x,y)
+:\Longleftrightarrow
+\operatorname{Real}_i(x)
+\land
+\operatorname{Real}_i(y).
+}
+$$
+
+Equivalentemente, usando genealogía:
+
+$$
+\operatorname{CoReal}_i(x,y)
+\Longleftrightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\land
+\operatorname{Generated}^{*}_i(\mathcal O_i,y).
+$$
+
+CoReal no necesita una conectividad local entre $x$ e $y$: compartir índice/origen basta. $\Lambda_*$ y $\mathcal C_*$ son métodos de reconstrucción de esa clausura, no definiciones de co-realidad.
+
+### 1.8. Target de existencia
+
+El target doctrinal de existencia queda:
+
+$$
+\boxed{
+\operatorname{ExistsR}
 :=
 \exists i\;\exists\mathcal O_i\;\exists R_i\;
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i).
 }
 $$
 
-Y la versión semánticamente testimoniada:
+Y:
 
 $$
 \boxed{
-\operatorname{WitnessedRegR}
+\operatorname{NoR}
+:=
+\neg\operatorname{ExistsR}.
+}
+$$
+
+Por tanto demostrar **un solo** $R_i$ genealógico basta para refutar No-$R$.
+
+La versión semánticamente testimoniada es:
+
+$$
+\boxed{
+\operatorname{WitnessedR}
 :=
 \exists i,S_i,\mathcal O_i,R_i[
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\land
 \operatorname{SemTotal}_i(S_i)
 \land
 \operatorname{Presents}_i(S_i,R_i)
-\land
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 ].
 }
-$$
-
-Por tanto:
-
-$$
-\operatorname{WitnessedRegR}
-\Rightarrow
-\operatorname{ExistsRegR},
-$$
-
-pero la existencia ontológica de $R_i$ ya no depende conceptualmente de que exista primero un $S_i$: $S_i$ **presenta** una genealogía ontológica cuya existencia debe justificarse por REV-07.
-
-### 1.6. CoReal pasa a derivarse de genealogía común
-
-Una vez justificada una base $\mathcal O_i$:
-
-$$
-\boxed{
-\operatorname{CoReal}_i(x,y)
-:\Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
-\land
-\operatorname{Generated}^{*}_i(\mathcal O_i,y).
-}
-$$
-
-Así, la conectividad bajo $\Lambda_*$ o una clausura candidata $\mathcal C_*$ ya no **define primariamente** co-realidad. Debe reconstruir correctamente la clausura genealógica.
-
-Esto invierte la carga de REV-07:
-
-$$
-\text{origen + generación}
-\longrightarrow
-\text{co-realidad}
-\longrightarrow
-\text{tests sobre }\Lambda_*/\mathcal C_*.
-$$
-
-No:
-
-$$
-\Lambda_*
-\longrightarrow
-\text{co-realidad por definición}.
-$$
-
-Dos regiones causalmente desconectadas pueden pertenecer al mismo $R_i$ si derivan de la misma base ontológica.
-
-### 1.7. $R$ absoluto — genealogía común de todo lo real
-
-Definimos el target absoluto mediante una base $\mathcal O_{\mathrm{abs}}$:
-
-$$
-\operatorname{AbsGeneTotal}(\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}})
-$$
-
-si:
-
-$$
-\operatorname{OntOrigin}_{\mathrm{abs}}(\mathcal O_{\mathrm{abs}})
 $$
 
 y:
 
 $$
-\forall x[
-\operatorname{Real}(x)
-\Longleftrightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}},x)
-],
-$$
-
-y $R_{\mathrm{abs}}$ realiza exactamente ese alcance:
-
-$$
-\forall x[
-\operatorname{Within}_{\mathrm{abs}}(x,R_{\mathrm{abs}})
-\Longleftrightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}},x)
-].
-$$
-
-El objetivo doctrinal queda:
-
-$$
-\boxed{
-\operatorname{ExistsR}
-:=
-\operatorname{ExistsAbsR}
-:=
-\exists\mathcal O_{\mathrm{abs}}\exists R_{\mathrm{abs}}\;
-\operatorname{AbsGeneTotal}
-(\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}}).
-}
-$$
-
-Ésta es una tesis sustantiva. Puede ser falsa aun cuando exista perfectamente el alcance extensional $\mathcal R_{\mathrm{ext}}$ de todo lo real.
-
-En particular:
-
-$$
-\boxed{
-\operatorname{ExistsExtScope}
-\not\Rightarrow
-\operatorname{ExistsR}.
-}
-$$
-
-AG y comprensión plural pueden ayudar a formular/realizar $\mathcal R_{\mathrm{ext}}$ o el scope de una clausura ya identificada, pero **no demuestran un origen ontológico común**.
-
-### 1.8. No hay puente automático local → absoluto
-
-Aunque existan genealogías indexadas:
-
-$$
-\operatorname{ExistsRegR}
-\not\Rightarrow
+\operatorname{WitnessedR}
+\Rightarrow
 \operatorname{ExistsR}.
 $$
 
-El salto absoluto exige justificar que todo lo real pertenece a una única genealogía ontológica última, o que las genealogías indexadas tienen una base superior común.
+### 1.9. Real sin índice
 
-Por tanto REV-26 deja de ser principalmente un problema de formar la pluralidad «todo lo real». Su núcleo pasa a ser la **Common-Origin Thesis** absoluta.
+Cuando sea útil hablar metateóricamente, puede escribirse:
 
-### 1.9. One-$R$, Indexed-$R$ y Many-$R$
+$$
+\operatorname{Real}^{\mathrm{meta}}(x)
+:\Longleftrightarrow
+\exists i\;\operatorname{Real}_i(x).
+$$
 
-- **One-$R$ fuerte:** existe una base ontológica absoluta $\mathcal O_{\mathrm{abs}}$ cuya clausura contiene exactamente todo lo real.
-- **Indexed-$R$:** existen una o más clausuras genealógicas $R_i$ justificadas localmente, sin tesis de origen absoluto común.
-- **Many-$R$ fuerte:** existen al menos dos genealogías ontológicas últimas y no existe ninguna base ontológica superior admisible cuya clausura las integre a ambas.
-- **Cluster-$R$:** varias genealogías aparentemente separadas resultan derivables de una base ontológica común de orden superior; pasan entonces a pertenecer a una realidad más amplia.
+Esto **no** introduce un dominio ontológico común que contenga todos los índices. Es una abreviatura del metalenguaje.
 
-Una pluralidad de representaciones, horizontes o regiones causalmente desconectadas no basta para Many-$R$.
+En particular, desde el lenguaje interno de $R_i$, un supuesto $R_j$ con $j\neq i$ no es «algo real pero inaccesible». No pertenece al dominio de cuantificación ontológica de $i$.
 
-**Decisión REV-26e:** RESOLVED doctrinal. El target no es el mero $\mathcal R_{\mathrm{ext}}=Scope(Real)$, sino una Realidad entendida como **unidad genealógica ontológicamente cerrada**. Esta estructura no se añade para hacer no trivial la prueba: constituye el criterio doctrinal de qué cuenta como una realidad.
+En ese sentido preciso, desde $R_i$:
 
+$$
+\boxed{
+\text{fuera de }R_i
+\text{ no denota un exterior real oculto; denota nada en }i.
+}
+$$
+
+La eventual afirmación metateórica de que existe además un $R_j$ pertenece a la teoría de índices, no a hechos internos de $R_i$.
+
+### 1.10. One-$R$, Many-$R$ y Cluster-$R$
+
+- **One-$R$:** existe exactamente un índice ontológico genuino.
+- **Many-$R$:** existen al menos dos índices ontológicos genuinos $i\neq j$. Por estructura son totalmente incompatibles: no comparten tokens reales, hechos, relaciones ni origen ontológico.
+- **Cluster-$R$:** solo puede aplicarse a **candidatos pre-indexados**. Si dos supuestas realidades admiten un hecho transversal, una relación ontológica o un origen superior común, entonces no eran dos $R_i$ genuinos: eran subclausuras/candidatos del mismo índice.
+- **Indexed-$R$:** lenguaje neutral para hablar de una realidad concreta $R_i$ sin decidir metateóricamente One-$R$ o Many-$R$.
+
+Así, Many-$R$ una vez genuinamente establecido no puede «colapsar después» en Cluster-$R$. Un supuesto colapso revela que la indexación inicial era provisional o errónea.
 ## 2. Consecuencias analíticas y tesis sustantiva
 
 Para el mero alcance extensional:
