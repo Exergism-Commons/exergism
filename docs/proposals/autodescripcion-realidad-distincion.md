@@ -1537,476 +1537,223 @@ REV-07 permanece **PARTIAL**. Para cerrarlo hay que justificar:
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
-## 6. Genealogía absoluta, generalidad y No-$R$ — REV-26
+## 6. Metaontología global opcional — REV-26
 
-REV-26 ya no pregunta si puede formarse la mera pluralidad de todo lo real. Esa pluralidad corresponde a $\mathcal R_{\mathrm{ext}}$.
+REV-26 deja de ser condición de cierre para $\operatorname{ExistsR}$.
 
-La cuestión doctrinal es:
-
-> ¿existe una base/origen ontológico común cuya clausura genere exactamente todo lo real?
-
-### 6.1. REV-26e — decisión doctrinal
-
-**RESOLVED.**
-
-La lectura minimalista:
+El target doctrinal ya es:
 
 $$
-R=\operatorname{Scope}(\operatorname{Real})
-$$
-
-queda SUPERSEDED como target completo.
-
-El concepto se conserva como:
-
-$$
-\mathcal R_{\mathrm{ext}}.
-$$
-
-El $R$ doctrinal exige unidad genealógica:
-
-$$
-R
-=
-\operatorname{Scope}
-\bigl(
-\operatorname{Cl}^{\mathrm{ont}}
-(\mathcal O_{\mathrm{abs}})
-\bigr).
-$$
-
-Esta propiedad no se introduce para hacer no trivial la prueba: expresa el criterio doctrinal elegido de qué cuenta como una Realidad.
-
-### 6.2. REV-26a — AG: generalidad absoluta
-
-AG sigue siendo necesaria para que:
-
-$$
-\forall x\;\operatorname{Real}(x)
-$$
-
-tenga la lectura de **absolutamente todo lo real**.
-
-AG no postula una colección universal. Es una tesis sobre alcance cuantificacional.
-
-Sin AG, la afirmación «la clausura de $\mathcal O_{\mathrm{abs}}$ contiene todo lo real» no tiene una única lectura absoluta y debe sustituirse por una semántica indexada/metalingüística.
-
-**Estado: OPEN.**
-
-### 6.3. Alcance extensional y APC$_{Real}$
-
-La comprensión plural absoluta:
-
-$$
-\mathrm{APC}_{Real}:
-\quad
-(\exists x\,\operatorname{Real}(x))
-\Rightarrow
-\exists rr_{\mathrm{ext}}\;
-\forall x[
-x\prec rr_{\mathrm{ext}}
-\Longleftrightarrow
-\operatorname{Real}(x)
-]
-$$
-
-realiza $\mathcal R_{\mathrm{ext}}$ en una semántica plural clásica.
-
-Por tanto, bajo AG:
-
-$$
-\mathrm{AG}
-+
-\mathrm{APC}_{Real}
-+
-\operatorname{NonEmptyReality}
-\Rightarrow
-\operatorname{ExistsExtScope}.
-$$
-
-Pero ahora queda explícito:
-
-$$
-\boxed{
-\operatorname{ExistsExtScope}
-\not\Rightarrow
-\operatorname{ExistsR}.
-}
-$$
-
-APC$_{Real}$ resuelve, como mucho, la **realización extensional** del alcance. No demuestra origen común ni clausura generativa.
-
-REV-26b permanece PARTIAL como cuestión lógica/fundacional de scope, pero deja de ser el núcleo ontológico de la existencia de $R$.
-
-### 6.4. REV-26c — Common-Origin / Genealogical Globalization Bridge
-
-Definimos la tesis de origen absoluto común:
-
-$$
-\mathrm{CO}_{\mathrm{abs}}:
-\quad
-\exists\mathcal O_{\mathrm{abs}}\;
-[
-\operatorname{OntOrigin}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}})
-\land
-\forall x(
-\operatorname{Real}(x)
-\Longleftrightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}},x)
-)
-].
-$$
-
-Éste es el blocker ontológico principal de REV-26.
-
-La dirección:
-
-$$
-\operatorname{Generated}^{*}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}},x)
-\Rightarrow
-\operatorname{Real}(x)
-$$
-
-es **soundness genealógica**: la clausura no fabrica contenido ontológicamente espurio.
-
-La dirección:
-
-$$
-\operatorname{Real}(x)
-\Rightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}},x)
-$$
-
-es **exhaustividad genealógica**: nada real queda fuera de la genealogía común.
-
-Además, las reglas de $\operatorname{Generated}^{*}_{\mathrm{abs}}$ deben satisfacer independencia generativa: no pueden definirse como «las reglas necesarias para alcanzar todo lo real».
-
-### 6.5. Globalización desde genealogías indexadas
-
-Si existen:
-
-$$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
-$$
-
-para varios índices, eso no produce automáticamente $\mathrm{CO}_{\mathrm{abs}}$.
-
-Una ruta válida de globalización debe justificar una base superior:
-
-$$
-\mathcal O_{\mathrm{abs}}
-$$
-
-tal que las genealogías indexadas sean subclausuras o derivados de su clausura:
-
-$$
-\forall i\;
-\operatorname{Cl}^{\mathrm{ont}}_i(\mathcal O_i)
-\preceq_{\mathrm{gen}}
-\operatorname{Cl}^{\mathrm{ont}}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}}).
-$$
-
-Esta relación de inclusión genealógica no puede definirse meramente como inclusión extensional de scopes. Debe conservar la dependencia/origen relevante.
-
-Si no existe ninguna base superior admisible, tenemos un candidato a Many-$R$ fuerte.
-
-### 6.6. Scope realization del $R$ genealógico
-
-Una vez justificada $\mathrm{CO}_{\mathrm{abs}}$, una instancia adecuada de comprensión plural puede realizar el alcance generado:
-
-$$
-\exists rr_{\mathrm{abs}}\;
-\forall x[
-x\prec rr_{\mathrm{abs}}
-\Longleftrightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}},x)
-].
-$$
-
-Bajo $\mathrm{CO}_{\mathrm{abs}}$, este scope coincide extensionalmente con $\mathcal R_{\mathrm{ext}}$, pero la igualdad extensional **no borra la diferencia explicativa**:
-
-- $\mathcal R_{\mathrm{ext}}$ se caracteriza por ser todo lo real;
-- $R$ se caracteriza por ser la clausura de una genealogía ontológica común.
-
-Por tanto:
-
-$$
-\boxed{
-\mathrm{AG}
-+
-\mathrm{CO}_{\mathrm{abs}}
-+
-\mathrm{ScopeRealization}_{\mathrm{abs}}
-\Rightarrow
-\operatorname{ExistsR}.
-}
-$$
-
-El contenido sustantivo está en $\mathrm{CO}_{\mathrm{abs}}$ y en la adecuación de la clausura, no en la mera formación plural del scope.
-
-### 6.7. REV-26d — No-$R$
-
-Bajo AG, la negación doctrinal es ahora:
-
-$$
-\operatorname{NoR}_{\mathrm{AG}}
-:=
-\neg
-\exists\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}}\;
-\operatorname{AbsGeneTotal}
-(\mathcal O_{\mathrm{abs}},R_{\mathrm{abs}}).
-$$
-
-Equivalentemente, puede fallar porque:
-
-1. no existe origen/base absoluta admisible;
-2. existe una base candidata pero su clausura no es sound;
-3. existe una base candidata pero su clausura no es exhaustiva respecto de todo lo real;
-4. la realización de scope requerida por la formalización adoptada falla.
-
-Si AG se rechaza, No-$R$ no debe formularse fingiendo un cuantificador absoluto. Se conserva la alternativa metalingüística NoAbsFinality: toda interpretación candidata de cierre genealógico admite una expansión ontológicamente legítima que no queda absorbida por su genealogía.
-
-### 6.8. Estado de REV-26
-
-- **REV-26a / AG:** OPEN.
-- **REV-26b / scope realization / APC:** PARTIAL y auxiliar; ya no decide la existencia sustantiva.
-- **REV-26c / CO$_{\mathrm{abs}}$ + genealogical globalization:** OPEN y blocker ontológico principal.
-- **REV-26d / No-$R$ semantics:** OPEN.
-- **REV-26e / target doctrinal:** RESOLVED — $R$ es una unidad genealógica ontológicamente cerrada, no el mero alcance extensional.
-
-Por tanto:
-
-$$
-\boxed{
-\operatorname{ExistsRegR}
-\not\Rightarrow
 \operatorname{ExistsR}
-}
-$$
-
-y:
-
-$$
-\boxed{
-\operatorname{ExistsExtScope}
-\not\Rightarrow
-\operatorname{ExistsR}.
-}
-$$
-
-El objetivo fuerte queda concentrado en demostrar una genealogía ontológica común absoluta, no en demostrar que podemos formar la expresión «todo lo real».
-
-## 7. One-$R$, Many-$R$ y niveles de exhaustividad
-
-La distinción relevante ya no es «un scope extensional o varios». Es **una genealogía ontológica última o varias genealogías irreducibles**.
-
-### 7.1. Relación entre $R_i$ y $S_i$
-
-REV-07 intenta justificar primero:
-
-$$
+:=
+\exists i\;\exists\mathcal O_i\;\exists R_i\;
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i).
 $$
 
-Después el programa semántico puede construir:
+REV-26 estudia únicamente qué puede decir el **metalenguaje de índices** sobre el número y organización de realidades genuinas.
+
+### 6.1. One-$R$
+
+One-$R$ afirma metateóricamente que existe un único índice ontológico genuino:
 
 $$
-S_i
+\boxed{
+\exists! i\;
+\exists\mathcal O_i\exists R_i\;
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
+}
 $$
 
-y REV-24 intenta establecer:
+No exige conectividad causal interna total. Todas las regiones de ese índice pueden compartir origen sin interactuar causalmente entre sí.
+
+### 6.2. Many-$R$
+
+Many-$R$ afirma metateóricamente:
 
 $$
-\operatorname{Presents}_i(S_i,R_i).
+\boxed{
+\exists i\neq j\;
+\operatorname{ExistsIndex}(i)
+\land
+\operatorname{ExistsIndex}(j).
+}
 $$
+
+donde cada índice está realizado por alguna $\operatorname{GeneTotal}$.
+
+No se añade una condición separada de incompatibilidad. La incompatibilidad es el hecho mismo de que los índices sean genuinamente distintos.
 
 Por tanto:
 
 $$
-R_i
-\not\equiv
-S_i,
+i\neq j
+\Rightarrow
+\neg\operatorname{CrossRealFact}(i,j)
+\land
+\neg\operatorname{CommonOntOrigin}(i,j).
 $$
 
-y la existencia de $R_i$ no depende de que $S_i$ sea construido antes.
+Si apareciera cualquiera de esos testigos, la conclusión sería que $i$ y $j$ no eran índices ontológicos distintos.
+
+### 6.3. Cluster-$R$ como diagnóstico pre-indexado
+
+Cluster-$R$ no describe una fusión posterior de realidades genuinas.
+
+Se aplica únicamente a candidatos provisionales $C_a,C_b$ antes de asignarles índices ontológicos definitivos.
+
+Si:
+
+$$
+\operatorname{CommonOntOrigin}(C_a,C_b)
+$$
+
+o existe un hecho ontológico que integra contenido de ambos candidatos, entonces deben reanalizarse como subclausuras de un mismo índice $k$.
+
+Por tanto:
+
+$$
+\boxed{
+\text{genuine Many-}R
+\Rightarrow
+\text{no future Cluster-}R\text{ collapse}.
+}
+$$
+
+Un aparente colapso solo corrige una indexación provisional equivocada.
+
+### 6.4. Generalidad absoluta
+
+AG, APC y la antigua noción de un scope absoluto de «todo lo real» dejan de ser requisitos para $\operatorname{ExistsR}$.
+
+Pueden conservarse como cuestiones metalingüísticas sobre si el metalenguaje puede cuantificar conjuntamente sobre todos los índices. Incluso si tal cuantificación es legítima, no crea una realidad superior que los integre.
+
+En particular, una metaclase de pares tipados:
+
+$$
+\langle i,x\rangle
+$$
+
+no constituye un $R_{\mathrm{abs}}$.
+
+### 6.5. Metaindecidibilidad interna de Many-$R$
+
+Supóngase que $R_i$ existe.
+
+Si existe además $R_j$ con $j\neq i$, ningún hecho real de $i$ puede tener a $R_j$, a un token de $j$ o a una relación $i$–$j$ como contenido.
+
+Por tanto, la verdad metateórica de One-$R$ o Many-$R$ no tiene por qué ser discriminable desde la evidencia interna de $R_i$.
+
+Formalmente, la teoría no afirma todavía identidad completa entre todas las teorías internas posibles de escenarios One-$R$ y Many-$R$; afirma la consecuencia más débil y segura:
+
+$$
+\boxed{
+i\neq j
+\Rightarrow
+\text{no existe certificación real transversal dentro de }R_i.
+}
+$$
+
+### 6.6. Estado de REV-26
+
+- **REV-26a / AG:** DEFERRED para el target principal; relevante solo para metalenguaje absoluto.
+- **REV-26b / APC:** DEFERRED para el target principal; una semántica plural global no crea compatibilidad ontológica.
+- **REV-26c / common absolute origin:** deja de ser obligación de existencia. Si se demuestra un origen común entre candidatos, estos pertenecen al mismo índice; sirve como test de One-$R$, no como puente hacia $\operatorname{ExistsR}$.
+- **REV-26d / NoAbsFinality:** DEFERRED como cuestión metaontológica.
+- **REV-26e / target doctrinal:** RESOLVED — basta demostrar al menos un $R_i$ genealógico para refutar No-$R$.
+
+## 7. Arquitectura final de $R_i$, $S_i$ e índices
+
+### 7.1. Ontología y semántica
 
 La arquitectura vigente es:
 
 $$
 \boxed{
 \mathcal O_i
-\xrightarrow{\operatorname{Cl}^{\mathrm{ont}}}
+\xrightarrow{\operatorname{Cl}^{\mathrm{ont}}_i}
 R_i
 \xleftarrow{\operatorname{Presents}_i}
 S_i.
 }
 $$
 
-La flecha izquierda es ontológica/generativa; la derecha es semántica/representacional.
+La flecha izquierda determina realidad indexada; la derecha intenta representarla.
 
-### 7.2. One-$R$ fuerte
+$S_i$ nunca genera, completa ni crea ontológicamente $R_i$.
 
-One-$R$ fuerte exige:
-
-$$
-\exists\mathcal O_{\mathrm{abs}}
-$$
-
-tal que:
+### 7.2. Existencia
 
 $$
-\forall x[
-\operatorname{Real}(x)
+\boxed{
+\operatorname{ExistsR}
 \Longleftrightarrow
-\operatorname{Generated}^{*}_{\mathrm{abs}}
-(\mathcal O_{\mathrm{abs}},x)
-].
-$$
-
-No exige que todos los contenidos estén causalmente conectados entre sí ni que exista un único camino local entre cualesquiera dos. Dos regiones causalmente aisladas pueden pertenecer al mismo $R$ si derivan de la misma base ontológica.
-
-Tampoco exige unicidad literal de la representación del origen. Puede haber dos bases:
-
-$$
-\mathcal O,\mathcal O'
-$$
-
-que sean ontológicamente equivalentes para este propósito si generan exactamente la misma clausura. La unicidad relevante es la de la **genealogía/clausura última**, no necesariamente la de una descripción particular de su base.
-
-### 7.3. Indexed-$R$ y Many-$R$ fuerte
-
-Indexed-$R$ significa que existen una o más genealogías locales:
-
-$$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
-$$
-
-sin haber demostrado todavía un origen común absoluto.
-
-Many-$R$ fuerte requiere más:
-
-$$
-\exists i\neq j
-$$
-
-con genealogías últimas $R_i,R_j$ y:
-
-$$
-\neg\exists\mathcal O_k
-$$
-
-tal que una clausura genealógica admisible de $\mathcal O_k$ integre a ambas preservando su estructura de derivación.
-
-Así:
-
-$$
-\boxed{
-R_i\parallel_{\mathrm{causal}}R_j
-\not\Rightarrow
-\text{Many-}R.
+\exists i,\mathcal O_i,R_i\;
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
 }
 $$
 
-y también:
+Esto es suficiente para negar No-$R$.
+
+### 7.3. Presentación testimoniada
+
+REV-24 intenta fortalecer un $R_i$ ya existente a:
+
+$$
+\operatorname{WitnessedR}
+$$
+
+mediante:
+
+$$
+\operatorname{SemTotal}_i(S_i)
++
+\mathrm{OA}_i
++
+\mathrm{MC}_i
++
+\mathrm{RA}_i
+\Rightarrow
+\operatorname{Presents}_i(S_i,R_i).
+$$
+
+### 7.4. Incompatibilidad ontológica
+
+Para índices genuinos distintos:
 
 $$
 \boxed{
-\text{existencia de }\mathcal R_{\mathrm{ext}}
-\not\Rightarrow
-\text{One-}R.
+i\neq j
+\Longrightarrow
+\text{ningún contenido ontológico común o transversal}.
 }
 $$
 
-El scope extensional de todo lo real puede existir incluso si las cosas reales pertenecen a genealogías ontológicas últimas distintas.
+Esta es una regla de tipado ontológico, no una interacción negativa entre realidades.
 
-### 7.4. Cluster-$R$
+### 7.5. Consecuencia para el aspecto de $R$
 
-Cluster-$R$ es una situación provisional: varias genealogías consideradas inicialmente independientes resultan tener una base ontológica superior común.
+La forma global metateórica —One-$R$, Many-$R$ o cualquier pluralidad de índices— no altera qué puede contar como realidad dentro de un $R_i$ concreto.
 
-Si:
+Desde un índice, todo contenido ontológicamente significativo está en su clausura. Lo demás no constituye un «afuera» real para ese índice.
 
-$$
-\operatorname{Cl}^{\mathrm{ont}}_i(\mathcal O_i)
-$$
-
-y:
+Por ello la investigación física/semántica efectiva siempre ocurre dentro de algún $R_i$:
 
 $$
-\operatorname{Cl}^{\mathrm{ont}}_j(\mathcal O_j)
+\boxed{
+\text{acceso, proceso, estructura y evidencia}
+\subseteq
+R_i.
+}
 $$
 
-son ambas derivables de:
+El metalenguaje puede comparar hipótesis sobre índices; ningún $R_i$ contiene por ello a los demás.
 
-$$
-\mathcal O_k,
-$$
+### 7.6. Retirada de «Verdad Absoluta indexada»
 
-entonces el candidato correcto a realidad más amplia es:
+La fórmula histórica $\operatorname{VA}(o)=R_i$ permanece SUPERSEDED.
 
-$$
-R_k
-=
-\operatorname{Scope}
-(
-\operatorname{Cl}^{\mathrm{ont}}_k(\mathcal O_k)
-).
-$$
+Puede existir una verdad/presentación interna $\operatorname{Truth}_i$, pero no se convierte por nombre en una verdad transversal a índices incompatibles.
 
-### 7.5. Retirada de «Verdad Absoluta indexada»
-
-La fórmula histórica:
-
-$$
-\operatorname{VA}(o)=R_i
-$$
-
-permanece **SUPERSEDED**.
-
-Un máximo semántico interno puede denominarse:
-
-$$
-\operatorname{Truth}_i,
-$$
-
-pero:
-
-$$
-\operatorname{Truth}_i
-\neq
-R_i
-$$
-
-y:
-
-$$
-\operatorname{Truth}_i
-\neq
-\operatorname{Truth}_{\mathrm{abs}}
-$$
-
-por mera definición.
-
-La cuestión absoluta depende ahora de la genealogía de REV-26, no del número de máximos semánticos.
-
-### 7.6. Consecuencia para los índices
-
-Los índices $i$ no se fabrican a partir de K3 ni de máximos semánticos. Deben corresponder a genealogías ontológicas justificadas por REV-07.
-
-La pregunta primaria pasa a ser:
-
-> ¿qué base ontológica y qué reglas de generación hacen que ciertos contenidos pertenezcan a la misma clausura genealógica?
-
-Y solo después:
-
-> ¿qué estructura semántica $S_i$ presenta adecuadamente esa realidad?
-
-**Estado:** la teoría emergentista/semántica local sigue siendo neutral respecto de One-$R$/Many-$R$ hasta que REV-07 y REV-26 resuelvan la estructura genealógica.
 
 ## 8. K2, localidad, compacidad y colímites
 
