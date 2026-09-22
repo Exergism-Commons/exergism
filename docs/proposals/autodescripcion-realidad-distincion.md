@@ -288,52 +288,80 @@ $$
 F_i.
 $$
 
-El teorema emergentista pregunta únicamente por la estructura interna de ese régimen:
+El teorema de máximo pregunta únicamente por la estructura interna del poset semántico del régimen:
 
 $$
 K1_i+K2_i+K3_i
 \Rightarrow
-\exists R_i\in\mathfrak K_i:
+\exists S_i\in\mathfrak K_i:
 \forall X\in\mathfrak D_i^{\mathrm{proc}},
 \quad
-X\preceq_i R_i.
+X\preceq_i S_i.
+$$
+
+Como $S_i\in\mathfrak K_i$, además:
+
+$$
+\operatorname{EClosed}_i(S_i).
+$$
+
+Por tanto K1–K3 producen exactamente:
+
+$$
+\boxed{\operatorname{SemTotal}_i(S_i).}
 $$
 
 ### Objetivo fuerte real: refutar No-$R$
 
 Para esta propuesta no es necesario demostrar un único $R_{\mathrm{abs}}$.
 
-Definimos el rival fuerte:
-
-$$
-\operatorname{NoR}
-:=
-\neg\exists i\;\exists R_i\in\mathfrak D_i^{\mathrm{proc}}
-\left[
-\operatorname{EClosed}_i(R_i)
-\land
-\forall X\in\mathfrak D_i^{\mathrm{proc}},
-\;X\preceq_i R_i
-\right].
-$$
-
-Así, basta encontrar **un solo régimen no vacío** $i$ para el que se justifiquen las premisas del teorema:
-
-$$
-K1_i+K2_i+K3_i
-$$
-
-y sus condiciones fundacionales/tipadas, para obtener:
+Se conserva una única definición normativa, la de §1.3:
 
 $$
 \boxed{
-\exists R_i
+\operatorname{NoR}:=\neg\operatorname{ExistsR}.
+}
+$$
+
+y:
+
+$$
+\operatorname{ExistsR}
+:=
+\exists i\;\exists R_i
+\left[
+\operatorname{SemTotal}_i(R_i)
+\land
+\operatorname{OntTotal}_i(R_i)
+\right].
+$$
+
+En consecuencia, K1–K3 y sus condiciones fundacionales/tipadas **no bastan por sí solos** para refutar No-$R$. Solo producen un máximo semántico $S_i$.
+
+Para llegar a la tesis doctrinal se necesita además el puente de REV-24:
+
+$$
+\mathrm{OTB}_i:
+\quad
+\operatorname{SemTotal}_i(S_i)
+\Rightarrow
+\operatorname{OntTotal}_i(S_i).
+$$
+
+Así, la forma correcta de la ruta es:
+
+$$
+\boxed{
+K1_i+K2_i+K3_i
++\mathrm{OTB}_i
+\Rightarrow
+\operatorname{ExistsR}
 \Rightarrow
 \neg\operatorname{NoR}.
 }
 $$
 
-Que además exista un único régimen, múltiples regímenes, Cluster-$R$, Indexed-One-$R$ o alguna estructura metaontológica ulterior es una cuestión separada. Ninguna de esas alternativas restaura No-$R$ una vez que existe al menos un $R_i$ exhaustivo en su régimen.
+Que además exista un único régimen, múltiples regímenes, Cluster-$R$, Indexed-One-$R$ o alguna estructura metaontológica ulterior es una cuestión separada.
 
 ### Qué significa aquí «cerrado»
 
@@ -341,16 +369,16 @@ La conclusión inmediata del teorema actual es:
 
 $$
 \boxed{
-\operatorname{EClosed}_i(R_i)
+\operatorname{EClosed}_i(S_i)
 }
 $$
 
-porque $R_i\in\mathfrak K_i$.
+porque $S_i\in\mathfrak K_i$.
 
 No debe escribirse todavía, sin una precisión adicional de tipos:
 
 $$
-R_i=F_i(R_i).
+S_i=F_i(S_i).
 $$
 
 Esa igualdad solo estará justificada si se construye un operador sobre **el mismo tipo de dominios procesuales**:
@@ -373,33 +401,30 @@ $$
 En ese caso sí:
 
 $$
-R_i\in\mathfrak K_i
+S_i\in\mathfrak K_i
 \Rightarrow
-F_i^{\mathrm{proc}}(R_i)=R_i.
+F_i^{\mathrm{proc}}(S_i)=S_i.
 $$
 
-Hasta entonces, la forma tipada y sustantiva de la tesis es «$R_i$ existe y es E-closed», no una igualdad entre objetos de tipos distintos.
-
-
-Por tanto:
+Hasta cerrar REV-24, la forma tipada y sustantiva de la tesis es «existe un máximo semántico $S_i$ y es E-closed». Solo si $\mathrm{OTB}_i$ justifica además:
 
 $$
-\boxed{
-R_i
-=
-\text{máximo ontológico interno del régimen }i
-}
+\operatorname{OntTotal}_i(S_i),
 $$
 
-no:
+ese mismo candidato satisface la definición doctrinal de $R_i$.
+
+Por tanto no se identifica por mera maximalidad:
 
 $$
 \boxed{
+S_i
+\neq_{\mathrm{justified}}
 R_i
-=
-\text{máximo de todas las realidades ontológicas}.
 }
 $$
+
+mientras REV-24 permanezca abierto.
 
 ### Emergencia local no implica monismo global
 
@@ -452,13 +477,13 @@ K3_i\;\forall i
 K3_{\mathrm{abs}}.
 $$
 
-Ni tampoco:
+Ni tampoco, incluso suponiendo cerrados los puentes REV-24 pertinentes:
 
-$$
+$
 \forall i\,\exists R_i
 \Rightarrow
 \exists R_{\mathrm{abs}}.
-$$
+$
 
 El problema One-R/Many-R queda como problema metaontológico independiente.
 
@@ -1394,72 +1419,70 @@ La propuesta no toma el debate como resuelto.
 
 La maquinaria de emergencia queda desacoplada de este problema.
 
-Para cada régimen ontológico $i$ cuya unidad se justifique independientemente, el programa puede intentar obtener:
+Para cada régimen ontológico $i$ cuya unidad se justifique independientemente, el programa puede intentar obtener primero:
 
 $$
-R_i
+S_i
 $$
 
-como máximo interno de:
+como máximo semántico interno de:
 
 $$
 (\mathfrak D_i^{\mathrm{proc}},\preceq_i).
 $$
 
-Esto es compatible tanto con:
+Solo si REV-24 proporciona $\mathrm{OTB}_i$ y se demuestra:
 
 $$
-R_i\parallel R_j
+\operatorname{OntTotal}_i(S_i),
 $$
 
-como con la posibilidad de que exista alguna relación ontológica ulterior entre ambos. La teoría local no decide cuál de las dos opciones es correcta.
+ese candidato satisface la tesis doctrinal y puede tratarse como un $R_i$.
+
+Esto deja dos niveles de pluralidad distintos:
+
+- pluralidad formal de máximos semánticos $S_i$;
+- pluralidad ontológica de $R_i$, condicionada al cierre de REV-24 para los regímenes correspondientes.
 
 ### 7.1. La pluralidad no crea automáticamente un absoluto
 
-Puede escribirse:
+Puede escribirse metalingüísticamente:
 
 $$
-\mathscr R=\{R_i\}_{i\in I}
+\mathscr S=\{S_i\}_{i\in I}.
 $$
 
-como abreviatura metalingüística. Esa expresión **no** introduce:
+Esa expresión no introduce un conjunto universal ontológico, una suma de realidades, un suprarégimen ni un $R_{\mathrm{abs}}$.
 
-- un conjunto universal ontológico;
-- una suma de realidades;
-- un suprarégimen;
-- un $R_{\mathrm{abs}}$.
-
-En particular:
+Incluso si para cada régimen se cerrase REV-24 y existieran correspondientes $R_i$, seguiría sin valer por mera lógica:
 
 $$
 \forall i\,\exists R_i
-\not\Rightarrow
+\Rightarrow
 \exists R_{\mathrm{abs}}.
 $$
 
-Si algún argumento futuro demuestra que todos los $R_i$ admiten una extensión ontológica común, eso constituirá un resultado metaontológico adicional. No forma parte del teorema de emergencia.
+El problema One-$R$/Many-$R$ continúa siendo metaontológico e independiente.
 
 ### 7.2. Monismo interno y pluralismo externo
 
-Una posibilidad coherente con el estado actual es:
+En el nivel puramente formal puede ocurrir:
 
 $$
 \forall i\;
-\forall X\in\mathfrak D_i:
-X\preceq_i R_i
+\forall X\in\mathfrak D_i^{\mathrm{proc}}:
+X\preceq_i S_i
 $$
 
-junto con:
+junto con incomparabilidad entre máximos de regímenes distintos.
+
+Si además REV-24 se cerrase para dos regímenes $i\neq j$, podría plantearse la posibilidad ontológica:
 
 $$
-R_i\parallel R_j
-\qquad
-(i\neq j).
+R_i\parallel R_j.
 $$
 
-Esto puede describirse como **monismo interno + pluralismo externo**.
-
-No se adopta como tesis demostrada; se registra como posibilidad que el formalismo local no excluye.
+Esto puede describirse como **monismo interno + pluralismo externo**, pero no se adopta como tesis demostrada.
 
 ### 7.3. Retirada de «Verdad Absoluta indexada»
 
@@ -1471,13 +1494,13 @@ $$
 
 queda **SUPERSEDED**, no solo suspendida.
 
-Un máximo exhaustivo dentro de $i$ puede denominarse, si resulta útil:
+Un máximo semánticamente exhaustivo dentro de $i$ puede denominarse, si resulta útil:
 
 $$
 \operatorname{Truth}_i
 $$
 
-o **verdad exhaustiva interna del régimen $i$**.
+o **verdad exhaustiva interna del formalismo de régimen $i$**. Esa nomenclatura no añade $\operatorname{OntTotal}_i$.
 
 No se denomina «Verdad Absoluta» porque:
 
@@ -1490,39 +1513,21 @@ $$
 }
 $$
 
-La existencia, coherencia y semántica de:
+La existencia, coherencia y semántica de $\operatorname{Truth}_{\mathrm{abs}}$ quedan abiertas junto con la cuestión One-$R$/Many-$R$.
 
-$$
-\operatorname{Truth}_{\mathrm{abs}}
-$$
-
-quedan abiertas junto con la cuestión One-$R$/Many-$R$.
-
-
-**Concesión doctrinal explícita.** Esta retirada es sustantiva, no terminológica. La arquitectura formal vigente ya no contiene una inferencia desde emergencia/clausura local hacia una única realidad total ni hacia una «Verdad Absoluta». La pieza histórica que pretendía conectar el formalismo con esa doctrina —$\operatorname{VA}(o)=R_i$— ha sido eliminada porque no estaba justificada.
-
-En consecuencia, el programa actual demuestra o intenta demostrar propiedades **internas a cada régimen $i$**. Recuperar una tesis sobre $R_{\mathrm{abs}}$ o $\operatorname{Truth}_{\mathrm{abs}}$ exigiría un argumento metaontológico nuevo e independiente.
+**Concesión doctrinal explícita.** La arquitectura formal vigente ya no contiene una inferencia desde emergencia/clausura local hacia una realidad total. El máximo semántico $S_i$ permanece separado de la tesis ontológica $R_i$ por REV-24.
 
 ### 7.4. Consecuencia para los antiguos índices
 
 Los $i$ del teorema ya no se definen como «subconjuntos dirigidos maximales» para fabricar K3. Deben corresponder a regímenes cuya identidad ontológica tenga un criterio independiente.
 
-Por tanto, el antiguo problema de solapamiento de maximales dirigidos deja de ser un problema para la función:
+La función histórica $\operatorname{VA}(o)=R_i$ permanece retirada. La pregunta que sigue abierta es más fundamental:
 
-$$
-\operatorname{VA}(o)=R_i,
-$$
+> ¿qué hace que dos dominios pertenezcan al mismo régimen ontológico $i$, y qué justificaría que dos candidatos semánticos exhaustivos correspondan a totalidades ontológicas distintas en vez de a partes de un régimen mayor?
 
-porque esa función ha sido retirada.
+Esa obligación queda repartida entre REV-07 —identidad de régimen— y REV-24 —puente semántica→ontología—.
 
-Lo que permanece abierto es más fundamental:
-
-> ¿qué hace que dos dominios pertenezcan a la misma realidad ontológica $i$, y qué haría que dos $R_i$ fueran realmente distintos en vez de partes de un régimen mayor?
-
-Esa obligación queda en REV-07 y en la cuestión metaontológica One-$R$/Many-$R$.
-
-**Estado:** la teoría emergentista local es neutral respecto de One-$R$/Many-$R$. La identificación «Verdad Absoluta indexada» queda retirada.
-
+**Estado:** la teoría emergentista local es neutral respecto de One-$R$/Many-$R$.
 
 ## 8. K2, localidad, compacidad y colímites
 
@@ -1575,21 +1580,29 @@ Siguen fuera del núcleo demostrado:
 
 ## 10. REC, Muro y el estatuto de la demostración
 
-REC($R$), el Muro de la singularidad y la indistinguibilidad entre una totalidad y una sandbox internamente cerrada son **restricciones epistemológicas**, no refutaciones de la existencia de $R_i$.
+REC($R$), el Muro de la singularidad y la indistinguibilidad entre una totalidad y una sandbox internamente cerrada son **restricciones epistemológicas**. En el estado actual no se usan como prueba ni como refutación de $\operatorname{OntTotal}$.
 
-La distinción normativa es:
+La distinción normativa correcta es primero:
 
 $$
 \boxed{
-\text{existencia demostrada condicionalmente}
+\text{existencia condicional de un máximo semántico }S_i
 \neq
-\text{identificación/certificación empírica del máximo}.
+\text{certificación ontológica de }R_i.
 }
 $$
 
-Si para algún régimen $i$ se justifican K1$_i$, K2$_i$ y K3$_i$, el teorema puede demostrar que existe un máximo E-closed $R_i$ aunque ningún observador interno pueda señalar qué dominio concreto es $R_i$ ni distinguir empíricamente una cuasisingularidad de la totalidad genuina.
+Si para algún régimen $i$ se justifican K1$_i$, K2$_i$ y K3$_i$, el teorema puede demostrar que existe un máximo E-closed $S_i$ aunque ningún observador interno pueda identificarlo empíricamente.
 
-Por tanto, el Muro no bloquea el paso:
+Por tanto, el Muro no bloquea el paso formal:
+
+$$
+K1_i+K2_i+K3_i
+\Rightarrow
+\exists S_i\;\operatorname{SemTotal}_i(S_i).
+$$
+
+Pero ese paso **no es todavía**:
 
 $$
 K1_i+K2_i+K3_i
@@ -1597,7 +1610,7 @@ K1_i+K2_i+K3_i
 \exists R_i.
 $$
 
-Sí restringe **cómo pueden justificarse las premisas**, especialmente REV-20.
+La segunda inferencia requiere además REV-24/$\mathrm{OTB}_i$.
 
 ### Restricción epistemológica sobre K1
 
@@ -1619,22 +1632,21 @@ K1_i.
 }
 $$
 
-El criterio de cierre de REV-20 exige una justificación **estructural y no enumerativa**: una derivación desde la naturaleza de $\operatorname{Adm}_i$, de los fragmentos procesuales y del cierre emergente, o un principio ontológico independiente que implique K1$_i$.
-
-La evidencia empírica puede motivar o apoyar las premisas estructurales, pero no sustituir la cuantificación universal requerida.
+El criterio de cierre de REV-20 exige una justificación **estructural y no enumerativa**. La evidencia empírica puede motivar o apoyar sus premisas, pero no sustituir la cuantificación universal requerida.
 
 ### Alcance del Muro
 
 El Muro deja abiertas simultáneamente estas posibilidades:
 
-- $R_i$ existe pero no puede identificarse desde dentro;
-- una cuasisingularidad es indistinguible localmente de $R_i$;
-- existen otros regímenes $R_j$ inaccesibles;
+- existe un máximo semántico $S_i$ pero no puede identificarse desde dentro;
+- una cuasisingularidad es indistinguible localmente de $S_i$;
+- $S_i$ satisface o no satisface $\operatorname{OntTotal}_i$;
+- existen otros regímenes y, si REV-24 se cierra en ellos, otros $R_j$;
 - existe o no existe un $R_{\mathrm{abs}}$.
 
-Nada de ello resta valor lógico a una demostración condicional de $\exists R_i$.
+Nada de ello resta valor lógico a una demostración condicional de $\exists S_i\;\operatorname{SemTotal}_i(S_i)$. Tampoco sustituye la justificación ontológica que exige REV-24.
 
-**Estado:** REV-15 permanece OPEN en cuanto a consecuencias discriminantes; el Muro se conserva como límite epistemológico compatible con la prueba de existencia.
+**Estado:** REV-15 permanece OPEN en cuanto a consecuencias discriminantes; el Muro se conserva como límite epistemológico compatible con la construcción semántica, no como puente a `ExistsR`.
 
 ## 11. “Dios”
 
