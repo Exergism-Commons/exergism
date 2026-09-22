@@ -5540,7 +5540,7 @@ x\prec rr_{\mathrm{abs}}
 ].
 $$
 
-#### 8.6.3. Teorema condicional
+#### 8.6.3. Lema de reducción
 
 Definimos en semántica plural:
 
@@ -5562,27 +5562,76 @@ $$
 \exists rr\;\operatorname{AbsTotal}(rr).
 $$
 
-Entonces:
+Bajo realidad no vacía:
 
 $$
 \boxed{
 \mathrm{AG}
 +
-\mathrm{APC}_{Real}
-+
 \exists x\,\operatorname{Real}(x)
 \Rightarrow
-\operatorname{ExistsAbsR}.
+[
+\mathrm{APC}_{Real}
+\Longleftrightarrow
+\operatorname{ExistsAbsR}
+].
 }
 $$
 
-**Demostración.** Por no-vacuidad y APC$_{Real}$ existen unas cosas $rr_{abs}$ que son exactamente los objetos que satisfacen `Real`. Por definición plural de `AbsTotal`, $rr_{abs}$ realiza el alcance exhaustivo de lo real. $\square$
+**Demostración.** APC$_{Real}$ proporciona exactamente un testigo plural de `AbsTotal`. Recíprocamente, un testigo de `ExistsAbsR` satisface el consecuente de APC$_{Real}`. AG fija la lectura absolutamente general de los cuantificadores; no añade un paso deductivo interno. $\square$
 
-AG no entra como premisa inferencial interna de la demostración: garantiza que las ocurrencias de $\forall x$ y `Real(x)` tengan realmente el alcance absoluto pretendido. Sin AG, la misma derivación solo produce una pluralidad relativa al dominio contextual.
+Por tanto:
 
-#### 8.6.4. Independencia respecto de la maquinaria emergentista
+$$
+\mathrm{AG}
++
+\mathrm{APC}_{Real}
++
+\operatorname{NonEmptyReality}
+\Rightarrow
+\operatorname{ExistsAbsR}
+$$
 
-El teorema anterior no usa:
+es una consecuencia inmediata del principio de formación de scope adoptado. No constituye evidencia independiente a favor de APC$_{Real}$.
+
+#### 8.6.4. REV-26e — no-trivialidad del target
+
+Si el $R$ doctrinal original es literalmente:
+
+$$
+R:=\operatorname{Scope}(\operatorname{Real}),
+$$
+
+y `Scope` se interpreta pluralmente, la existencia desnuda de $R$ queda reducida a:
+
+1. AG;
+2. una instancia suficiente de plural comprehension;
+3. no-vacuidad de realidad.
+
+La maquinaria emergentista no interviene.
+
+Si se desea un target más fuerte, debe escribirse explícitamente:
+
+$$
+\operatorname{ExistsStructuredAbsR}_Q
+:=
+\exists rr[
+\operatorname{AbsTotal}(rr)
+\land
+Q(rr)
+].
+$$
+
+donde $Q$ podría expresar integración, conectividad, clausura u otra estructura. Pero $Q$ **no** puede introducirse únicamente para hacer no trivial el teorema: debe venir de la doctrina y su justificación es independiente.
+
+Así el programa tiene dos capas:
+
+- **bare absolute scope:** problema de AG/comprensión;
+- **estructura del scope:** problema ontológico adicional, potencialmente relacionado con regímenes, emergencia o globalización.
+
+#### 8.6.5. Independencia respecto de la maquinaria emergentista
+
+El lema de reducción no usa:
 
 $$
 \mathrm{PON},\;
@@ -5594,17 +5643,12 @@ F
 \text{ ni Zorn}.
 $$
 
-Por tanto la existencia de $R_{abs}$ como **scope plural** y la posibilidad de presentar/regimentar internamente un régimen mediante $S_i$ son problemas lógicamente distintos.
-
-#### 8.6.5. Cómo puede bloquearse
-
 Hay tres puntos de ataque no equivalentes:
 
-1. negar AG: no existe un cuantificador legítimamente irrestricto sobre todo lo real;
+1. negar AG;
 2. aceptar AG pero negar/restringir APC$_{Real}$;
-3. rechazar que una pluralidad exhaustiva sea suficiente para la noción doctrinal de alcance ontológico, exigiendo estructura adicional.
+3. negar que una pluralidad exhaustiva sea suficiente para el sentido doctrinal de scope, en cuyo caso debe especificarse un fortalecimiento $Q$.
 
-El tercero reabriría también la lectura plural de REV-24d. Los dos primeros son problemas de lógica/generalidad, no de emergencia.
 
 #### 8.6.6. Ruta indexada
 
