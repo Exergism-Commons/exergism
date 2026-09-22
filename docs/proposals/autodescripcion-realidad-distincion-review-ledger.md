@@ -27,8 +27,8 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 | REV-06 | MAJOR | RESOLVED | **Muchos [I] son consecuencias definicionales.** | [I1], [I2], [I2a], REC, [I10a], [I11a], etc. | Reclasificar cada resultado como definicional, lógico, matemático o sustantivo; eliminar retórica probatoria donde no corresponda. |
 | REV-07 | BLOCKER | OPEN | **[D5c] traslada C2/K3 a la definición de «mismo índice».** | Directedness/amalgamación del régimen. | Dar criterio independiente de SameIndex y justificar K3 como condición sustantiva del régimen; no definir «mismo índice» como «amalgamable» para obtener K3 por construcción. |
 | REV-08 | BLOCKER | OPEN | **Índices dirigidos maximales pueden solaparse; VA(o) puede no ser única.** | [I13]–[I14a], Many-R. | Probar partición/unicidad o retirar VA(o)=R_i como función bien definida. Explicitar consecuencias doctrinales si Many-R relativiza la Verdad Absoluta. |
-| REV-09 | MAJOR | OPEN | **La inductividad K2 de los dominios cerrados no está justificada; compacidad y colímites no son todavía rutas ontológicas independientes.** | K2 / cotas de cadenas E-closed. | Separar resultado matemático, puente modelo→actualidad y supuesto ontológico; demostrar una cota E-closed para cadenas relevantes sin contar como independencia reformulaciones del mismo supuesto. |
-| REV-10 | MAJOR | OPEN | **La ruta local hacia K2 usa una hipótesis oculta de factorización/presentabilidad.** | Testigo acotado → algún estadio de una cadena. | Introducir y justificar StageFactorization/presentabilidad compacta como premisa separada, o eliminar esa derivación de K2. |
+| REV-09 | MAJOR | PARTIAL | **La inductividad K2 de los dominios cerrados no está completamente justificada.** | K2 / cotas de cadenas E-closed. | Se demostró que `EClosed` se preserva bajo uniones de cadenas procesuales compatibles. Falta demostrar que esa unión/límite formal corresponde a un dominio procesual ontológicamente admisible/actual, o proporcionar otra cota admisible equivalente. |
+| REV-10 | MAJOR | RESOLVED | **La ruta local hacia K2 usaba una hipótesis oculta de factorización/presentabilidad.** | Testigo acotado → algún estadio de una cadena. | Resuelto para el teorema vigente eliminando esa derivación: en la formulación procesual `EClosed`, el token de origen presente en la unión pertenece ya a algún estadio y el cierre de ese estadio arrastra evento y resultado. Reabrir solo si una futura noción de emergencia exige habilitación esencialmente infinitaria. |
 | REV-11 | MAJOR | RESOLVED | **Carga asimétrica contra potencialismo/generalidad relativa.** | H12/O5c/generalidad absoluta. | Presentar absolutismo y expansionismo con cargas simétricas; integrar Rayo–Uzquiano, Fine, Glanzberg, Hellman, Parsons, Shapiro–Wright, Linnebo, Williamson, Studd y literatura relacionada. |
 | REV-12 | MAJOR | RESOLVED | **H1 extrapola medio→emergencia sin criterio fuera de lo observado.** | Hipótesis de continuidad emergente. | Definir «medio» con contenido aplicable más allá del espacio-tiempo o degradar H1 a motivación heurística no usada por ningún teorema. |
 | REV-13 | MAJOR | RESOLVED | **«Fractal» carece de criterio de verdad.** | Motivación multiescalar. | Definir patrón, escala y métrica de autosimilitud, o retirar «fractal» del argumento y conservarlo solo como metáfora/hipótesis futura. |
@@ -70,13 +70,18 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - **REV-18 PARTIAL:** el puente mínimo se reduce a incidencia de configuraciones/eventos actuales en dominios y al predicado `EClosed`; ya no se exige un embedding fuerte en un powerset.
 - **REV-19 PARTIAL:** la ruta emergentista adopta dominios procesuales y separa explícitamente $T_{\mathrm{proc}}$ de $T_{\mathrm{syn}}$; faltan orden procesual y resultados de cierre.
 - **REV-20 OPEN:** K1/cofinalidad es una premisa sustantiva nueva de la forma operator-free; definir qué significa cerrado no demuestra que todo dominio tenga una extensión cerrada.
-- **REV-09/REV-10** concentran K2/inductividad; **REV-07** concentra K3/directedness.
+- **REV-09 PARTIAL** concentra la admisibilidad ontológica de la cota K2; **REV-10 RESOLVED** porque la ruta vigente ya no usa la factorización oculta; **REV-07** concentra K3/directedness.
 ## Avance de REV-20
 
 - **REV-20 permanece OPEN.** K1 se caracteriza exactamente como cofinalidad de los dominios cerrados.
 - Bajo elección, K1 equivale a la existencia de un selector extensivo e idempotente $F$ con $\operatorname{Fix}(F)=\mathfrak K$; no implica monotonía.
 - Se demuestra independencia: en $\mathfrak D=\{0<1\}$ con $\mathfrak K=\{0\}$, K2 y K3 se cumplen pero K1 falla.
 - El toy system-relative sí satisface K1 mediante $Y=F_M(X)$; la deuda restante es específicamente ontológica/procesual.
+## Avance de K2 / REV-09–10
+
+- **REV-09 pasa a PARTIAL.** Para cadenas de fragmentos procesuales compatibles, la unión formal de dominios E-closed sigue siendo E-closed: cualquier origen presente en la unión ya aparece en algún estadio, cuyo cierre contiene también evento y resultado.
+- La deuda restante es ontológica: demostrar que la unión/direct limit formal pertenece realmente a $\mathfrak D_i^{\mathrm{proc}}$ o que existe otra cota procesual admisible.
+- **REV-10 queda RESOLVED para la ruta vigente.** La inferencia oculta de presentabilidad/factorización de H8 ha sido eliminada; no se usa para probar preservación de cierre.
 ## Alcance de algunos cierres
 
 - **REV-05 y REV-06 están RESOLVED únicamente como problemas de presentación y clasificación.** Se corrigió la retórica: los resultados analíticos se etiquetan como analíticos/definicionales y se separan del programa sustantivo. Esto **no constituye avance ontológico** ni responde al hecho de que gran parte de lo actualmente demostrado siga siendo analítico.
@@ -120,9 +125,11 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-20 | Registrada cofinalidad K1 de dominios E-closed como obligación independiente. | §4 + ledger. | ab3c6be |
 | 2026-09-22 | REV-19 | Elegida provisionalmente la ruta procesual para el teorema emergentista; definidos fragmentos procesuales mínimos y separación $T_{\mathrm{proc}}\neq T_{\mathrm{syn}}$. Estado OPEN → PARTIAL. | Sección I.3.5. | 0330795 |
 | 2026-09-22 | REV-20 | K1 aislada como carga independiente; equivalencia con selector extensivo-idempotente bajo elección y contraejemplo K2+K3 sin K1. | Sección I.3.6. | 6e63ba3 |
+| 2026-09-22 | REV-09 | Demostrada preservación formal de `EClosed` bajo uniones de cadenas procesuales compatibles; queda abierta la admisibilidad ontológica de la cota. Estado OPEN → PARTIAL. | Sección I.3.7. | 3eb89a4 |
+| 2026-09-22 | REV-10 | Eliminada del teorema vigente la derivación que requería StageFactorization/presentabilidad; finding cerrado en su alcance original. | Sección I.3.7. | 3eb89a4 |
 
 ## Evidencia de consolidación documental
 
 Tras el commit 9cfb857, el documento normativo principal funciona como crónica + estado actual. La versión antigua se conserva como evidencia histórica, pero sus contradicciones no se consideran tesis simultáneamente vigentes.
 
-Estado sustantivo actual: REV-03, REV-18 y REV-19 permanecen PARTIAL; REV-07, REV-08, REV-09, REV-10, REV-14, REV-15 y REV-20 permanecen OPEN. REV-01, REV-02 y REV-04 están RESOLVED en su alcance formal, sin que eso demuestre todavía la ontología global.
+Estado sustantivo actual: REV-03, REV-09, REV-18 y REV-19 permanecen PARTIAL; REV-07, REV-08, REV-14, REV-15 y REV-20 permanecen OPEN. REV-01, REV-02, REV-04 y REV-10 están RESOLVED en su alcance vigente, sin que eso demuestre todavía la ontología global.
