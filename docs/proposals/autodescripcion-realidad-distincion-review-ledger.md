@@ -154,15 +154,16 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - Con StructAdm, PSB implica SO y, mediante la construcción por rondas finitas, K1_i.
 - La negación de PSB exige una ramificación local extrema: proper-class many eventos emergentes actuales desde un único estado.
 - REV-20 permanece PARTIAL porque esa smallness puntual todavía debe justificarse; no se deriva de lógica pura.
-## Ruta directa Exists-R y nuevo blocker REV-23
+## Ruta directa a SemTotal y blockers restantes
 
 - Si PON vale, cada componente de conectividad finita $[q]_{\sim}$ es set-sized.
-- Bajo $\mathrm{SigSmall}_i$ + $\mathrm{ActualSep}_i$ + StructAdm se construye directamente $S_i^*=([q]_{\sim},\Phi_i^{\mathrm{all}})$ y se demuestra $\operatorname{SemTotal}_i(S_i^*)$; la inferencia a $\operatorname{ExistsR}$ queda bloqueada por REV-24.
-- $R_i^*$ es máximo de todos los dominios del régimen y E-closed; por tanto Exists-R y no No-R.
-- Esta prueba no necesita K1/K2/K3 ni Zorn.
-- PON implica PSB, así que REV-20 deja de ser blocker independiente.
-- PON + firma set-sized/finitaria hace set-sized el poset de fragmentos, por lo que REV-22 queda resuelta condicionalmente en su ruta A.
+- Bajo $\mathrm{SigSmall}_i$ + $\mathrm{ActualSep}_i$ + StructAdm se construye directamente $S_i^*=([q]_{\sim},\Phi_i^{\mathrm{all}})$ y se demuestra $\operatorname{SemTotal}_i(S_i^*)$.
+- La construcción no necesita K1/K2/K3 ni Zorn.
+- PON implica PSB, así que REV-20 deja de ser blocker independiente de la construcción semántica.
+- PON + REV-25 hace set-sized el poset de fragmentos, por lo que REV-22 queda resuelta condicionalmente en su ruta A una vez justificadas esas premisas.
 - **REV-23 OPEN:** falta justificar PON sin construir smallness por definición.
+- **REV-25 OPEN:** falta justificar la smallness/definibilidad necesaria para formar el universo de hechos actuales.
+- **REV-24 OPEN:** incluso obteniendo $\operatorname{SemTotal}$, falta justificar el puente independiente a $\operatorname{OntTotal}$ y por tanto a $\operatorname{ExistsR}$.
 ## Alcance de algunos cierres
 - **REV-01 está RESOLVED solo en alcance formal.** F1/F2-interna/F3 son propiedades de la clausura reflexivo-transitiva de cualquier relación binaria del tipo adecuado; no constituyen por sí mismas contenido emergentista. El contenido específico vive en $\mathcal E_M$ y por eso REV-03 sigue PARTIAL.
 - **REV-04 está RESOLVED solo respecto de su criterio mínimo original:** existe un punto fijo propio explícito. No prueba no-degeneración en sistemas ricos; esa deuda queda separada como REV-21.
@@ -230,10 +231,10 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REV-20 | K1 derivada desde StructAdm + LSE mediante construcción por rondas finitas; estado OPEN → PARTIAL hasta justificar LSE. | Documento técnico. | de880f1b, 833d60b |
 | 2026-09-22 | REV-20 | LSE reducida a PSB por-token; StructAdm + PSB implica K1 mediante cierre por rondas finitas. REV-20 queda PARTIAL únicamente por la justificación de PSB. | §§3.4 + documento técnico. | 1a400fc, f360d50 |
 | 2026-09-22 | REV-20 | Demostrada la equivalencia $K1_i\iff\mathrm{PSB}_i$ bajo StructAdm + COV + dominios set-sized; la deuda queda reducida exactamente a ramificación emergente local set-like. | §3.4 + documento técnico. | c0a5b6e, 23fd959 |
-| 2026-09-22 | REV-23 | Introducida PON como la premisa explícita de smallness local de la ruta directa a Exists-R; no se oculta dentro de K1/Zorn. | §4.0 + documento técnico. | af794e7, ba9af92 |
+| 2026-09-22 | REV-23 | Introducida PON como la premisa explícita de smallness local de la construcción directa; tras REV-24 se precisa que PON conduce a $\operatorname{SemTotal}$, no por sí sola a Exists-R. | §4.0 + documento técnico. | af794e7, ba9af92, 836eeb9 |
 | 2026-09-22 | REV-20/REV-22 | PON implica PSB/K1 y, junto con las premisas de firma, hace set-sized el régimen/poset; ambas deudas dejan de ser blockers independientes de la construcción semántica directa. | §4.0 + ledger. | af794e7, ba9af92 |
-| 2026-09-22 | REV-24 | Reabierto explícitamente el problema histórico de §18.15: un máximo de fragmentos semánticos no equivale por sí solo a totalidad ontológica. La conclusión directa se rebaja a $\operatorname{SemTotal}$. | §§1.1, 3, 4.0 + ledger. | 836eeb9 |
-| 2026-09-22 | REV-25 | Separadas las premisas de smallness de firma y Separation. La aridad finita se reconoce como suficiente pero no necesaria; se introduce $\mathrm{ActualSep}_i$. | §4.0 + documento técnico + ledger. | pending |
+| 2026-09-22 | REV-24 | Reabierto explícitamente el problema histórico de §18.15: un máximo de fragmentos semánticos no equivale por sí solo a totalidad ontológica. La conclusión directa se rebaja a $\operatorname{SemTotal}$ y la cobertura se mantiene tipada semánticamente. | §§1.1, 3, 4.0 + ledger. | 836eeb9, c540e58 |
+| 2026-09-22 | REV-25 | Separadas las premisas de smallness de firma y Separation. La aridad finita se reconoce como suficiente pero no necesaria; se introduce $\mathrm{ActualSep}_i$. | §4.0 + documento técnico + ledger. | 7f56973 |
 
 ## Evidencia de consolidación documental
 
