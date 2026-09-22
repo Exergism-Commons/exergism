@@ -211,31 +211,31 @@ $$
 
 **K3 — directedness/amalgamación**
 
-$
+$$
 \forall X,Y\in\mathfrak D\;
 \exists Z\in\mathfrak D:
 X\preceq Z
 \land
 Y\preceq Z.
-$
+$$
 
 **Advertencia metaontológica sobre K3.** K3 no es una condición neutral respecto de One-R/Many-R. Dentro del dominio sobre el que se cuantifica, exige que cualquier par tenga una extensión común y por tanto excluye Strong Many-R en ese mismo régimen:
 
-$
+$$
 X\parallel Y
 \Rightarrow
 \neg K3.
-$
+$$
 
 Si $\mathfrak D$ se interpreta como el dominio **global** de toda realidad candidata, asumir K3 ya introduce precisamente la joint-embeddability cuya consecuencia máxima se quiere obtener. En ese caso, el teorema no puede presentarse como una prueba no circular de One-R; es un resultado **condicional**:
 
-$
+$$
 \boxed{
 \text{K1 + K2 + K3 global}
 \Rightarrow
 \text{máximo global},
 }
-$
+$$
 
 donde K3 contiene una parte sustantiva de la tesis monista.
 
