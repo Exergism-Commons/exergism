@@ -68,6 +68,18 @@ No identifica emergencia con irreducibilidad fuerte, downward causation, imprede
 **Estado:** REV-03 queda PARTIAL hasta comprobar que esta definición no es demasiado estrecha ni demasiado amplia para la doctrina.
 
 
+### Sistemas de transición y trazas
+
+- **Robin Milner (1980), _A Calculus of Communicating Systems_. Springer, LNCS 92.** Referencia clásica para semánticas de procesos mediante sistemas de transición etiquetados y acciones observables. DOI: https://doi.org/10.1007/3-540-10235-3
+- **Robin Milner (1989), _Communication and Concurrency_. Prentice Hall.** Desarrollo posterior de semántica operacional, equivalencias y comportamiento de procesos.
+
+En REV-03 se usa una noción extremadamente modesta inspirada en esta tradición: comparar configuraciones por las secuencias de etiquetas de transición que pueden ejecutar. No se asume que el mundo físico sea literalmente un proceso CCS ni que trace equivalence sea la ontología correcta; solo se utiliza como herramienta formal para distinguir una diferencia estructural inerte de una organización que habilita capacidades dinámicas.
+
+### Wimsatt, referencia primaria
+
+- **William C. Wimsatt (1997), “Aggregativity: Reductive Heuristics for Finding Emergence”, _Philosophy of Science_ 64(S4), S372–S384.** La emergencia puede analizarse mediante fallos de agregatividad y dependencia del modo de organización de las partes; compatible con reducción. DOI: https://doi.org/10.1086/392615
+
+
 ## 4. Grounding, fundamento y razón suficiente
 
 - **Kit Fine (2012), “Guide to Ground”, en Correia & Schnieder (eds.), _Metaphysical Grounding_. Cambridge University Press.** https://doi.org/10.1017/CBO9781139149136.002
