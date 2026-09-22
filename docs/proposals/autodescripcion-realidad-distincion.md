@@ -127,11 +127,11 @@ donde:
 - $s\xrightarrow{a}_M u$ indica que la transición de tipo $a$ está **dinámicamente disponible** desde $s$;
 - $s\xrightarrow{a}_{M,\mathrm{act}}u$ indica que esa transición fue **efectivamente realizada**;
 - se exige:
-$
+$$
 \xrightarrow{}_{M,\mathrm{act}}
 \;\subseteq\;
 \xrightarrow{}_M.
-$
+$$
 
 Así se separa capacidad dinámica de actualización: una posibilidad de transición puede ser relevante para caracterizar qué habilita una organización sin convertirse por ello en un hecho actual.
 
@@ -401,9 +401,9 @@ Definimos las capacidades dinámicas mínimas:
 
 Para el episodio actual considerado fijamos además:
 
-$
+$$
 p\xrightarrow{\texttt{close}}_{M,\mathrm{act}}c.
-$
+$$
 
 No exigimos que `activate` se haya realizado: basta que esté disponible desde $c$ y no desde $p$ para funcionar como testigo de capacidad organizacional.
 
@@ -540,7 +540,7 @@ La candidata ahora:
 
 No se marca RESOLVED hasta probarla contra una muestra más amplia de casos positivos y negativos y decidir si esta noción mínima es doctrinalmente suficiente.
 
-REV-04 sigue OPEN: el juguete proporciona un sustrato calculable, pero todavía no existe un operador $F$ bien definido con un punto fijo propio $S=F(S)\neq R$.
+En este punto de la derivación REV-04 seguía abierto; queda resuelto posteriormente en §3.3 al construirse el operador system-relative $F_M$ y el punto fijo propio explícito $S=\{p,c\}$.
 
 ---
 ## 3.2. REV-02 — inhibición, extensión estructural y extensión conservativa
@@ -697,15 +697,15 @@ El contexto añadido no puede romper ni crear artificialmente equivalencias de p
 
 **CE2 — preservación de actualizaciones con extremo.** Si:
 
-$
+$$
 s\xrightarrow{\alpha,+}_{M,\mathrm{act}} t,
-$
+$$
 
 entonces:
 
-$
+$$
 \iota(s)\xrightarrow{j(\alpha),+}_{N,\mathrm{act}}\iota(t).
-$
+$$
 
 Es decir, un episodio efectivamente realizado se conserva como episodio realizado y termina en la imagen del mismo estado.
 
@@ -1441,10 +1441,10 @@ Para cerrar REV-18 hay que justificar independientemente una representación $J_
 
 Las secciones anteriores producen dos niveles distintos que no deben confundirse:
 
-1. **nivel system-relative:** para un sistema fijo \(M\), la emergencia independiente \(\mathcal E_M\) induce un operador concreto \(F_M\) sobre \(\mathcal P(\Sigma_M)\), y F1–F3 se derivan;
-2. **nivel ontológico:** el teorema pretende hablar de dominios \((\mathfrak D,\preceq_{\mathrm{ont}})\), tipo para el que todavía falta REV-18.
+1. **nivel system-relative:** para un sistema fijo $M$, la emergencia independiente $\mathcal E_M$ induce un operador concreto $F_M$ sobre $\mathcal P(\Sigma_M)$, y F1–F3 se derivan;
+2. **nivel ontológico:** el teorema pretende hablar de dominios $(\mathfrak D,\preceq_{\mathrm{ont}})$, tipo para el que todavía falta REV-18.
 
-La forma operator-free del argumento permite ver exactamente qué parte de la estructura de \(F\) es necesaria.
+La forma operator-free del argumento permite ver exactamente qué parte de la estructura de $F$ es necesaria.
 
 ### 4.1. Forma operator-free
 
@@ -1474,7 +1474,7 @@ $$
 
 **K2 — inductividad de los cerrados**
 
-Para toda cadena \(\mathcal C\subseteq\mathfrak K\) existe \(U\in\mathfrak K\) tal que:
+Para toda cadena $\mathcal C\subseteq\mathfrak K$ existe $U\in\mathfrak K$ tal que:
 
 $$
 \forall X\in\mathcal C,\quad X\preceq U.
@@ -1508,11 +1508,11 @@ $$
 
 **Demostración.**
 
-K1 y la no-vacuidad de \(\mathfrak D\) implican \(\mathfrak K\neq\varnothing\).
+K1 y la no-vacuidad de $\mathfrak D$ implican $\mathfrak K\neq\varnothing$.
 
-Por K2, toda cadena en \(\mathfrak K\) tiene una cota superior en \(\mathfrak K\). Por Zorn existe un \(R\in\mathfrak K\) maximal.
+Por K2, toda cadena en $\mathfrak K$ tiene una cota superior en $\mathfrak K$. Por Zorn existe un $R\in\mathfrak K$ maximal.
 
-Sea \(X\in\mathfrak D\). Por K3 existe \(Y\in\mathfrak D\) con:
+Sea $X\in\mathfrak D$. Por K3 existe $Y\in\mathfrak D$ con:
 
 $$
 R\preceq Y
@@ -1520,13 +1520,13 @@ R\preceq Y
 X\preceq Y.
 $$
 
-Por K1 existe \(Z\in\mathfrak K\) con:
+Por K1 existe $Z\in\mathfrak K$ con:
 
 $$
 Y\preceq Z.
 $$
 
-Luego \(R\preceq Z\). Como ambos pertenecen a \(\mathfrak K\) y \(R\) es maximal:
+Luego $R\preceq Z$. Como ambos pertenecen a $\mathfrak K$ y $R$ es maximal:
 
 $$
 Z=R.
@@ -1538,7 +1538,7 @@ $$
 X\preceq Y\preceq R.
 $$
 
-Como \(X\) era arbitrario, \(R\) es un **máximo de todo \(\mathfrak D\)**, no solo un maximal de \(\mathfrak K\). \(\square\)
+Como $X$ era arbitrario, $R$ es un **máximo de todo $\mathfrak D$**, no solo un maximal de $\mathfrak K$. $\square$
 
 ### 4.3. Cobertura de lo real
 
@@ -1593,7 +1593,7 @@ $$
 
 Entonces F1 + F3 implican automáticamente K1:
 
-para cualquier \(X\in\mathfrak D\),
+para cualquier $X\in\mathfrak D$,
 
 $$
 X\preceq F(X)
@@ -1611,13 +1611,13 @@ $$
 F(X)\in\mathfrak K.
 $$
 
-Además, si una cadena \(\mathcal C\subseteq\operatorname{Fix}(F)\) tiene una cota \(U\in\mathfrak D\), F1 da:
+Además, si una cadena $\mathcal C\subseteq\operatorname{Fix}(F)$ tiene una cota $U\in\mathfrak D$, F1 da:
 
 $$
 U\preceq F(U).
 $$
 
-Así, para cada \(X\in\mathcal C\):
+Así, para cada $X\in\mathcal C$:
 
 $$
 X\preceq U\preceq F(U).
@@ -1639,7 +1639,7 @@ sin usar F2.
 
 Esta es la corrección exacta al argumento archivado: **la monotonía F2 era redundante para la ruta de Zorn**.
 
-### 4.5. Papel de \(F_M\)
+### 4.5. Papel de $F_M$
 
 El operador system-relative construido en REV-01:
 
@@ -1649,10 +1649,10 @@ $$
 
 sigue siendo útil y no queda superseded.
 
-Para \(F_M\):
+Para $F_M$:
 
 - F1 se deriva por reflexividad;
-- F2 interna se deriva por inclusión de conjuntos bajo un mismo sistema \(M\);
+- F2 interna se deriva por inclusión de conjuntos bajo un mismo sistema $M$;
 - F3 se deriva por transitividad del cierre emergente.
 
 El contraejemplo del inhibidor de REV-02 compara:
@@ -1663,7 +1663,7 @@ F_M
 F_N,
 $$
 
-no dos entradas del mismo operador. Por tanto no refuta la monotonía interna de \(F_M\).
+no dos entradas del mismo operador. Por tanto no refuta la monotonía interna de $F_M$.
 
 La extensión conductualmente conservativa de REV-02 sigue siendo útil para saber cuándo un evento puede transportarse entre sistemas, pero:
 
@@ -1682,14 +1682,14 @@ Una incorporación real puede cambiar capacidades previas sin dejar de ser ontol
 
 1. F2 no es necesaria para el teorema abstracto de maximalidad/exhaustividad;
 2. F1 + F3 convierten cotas arbitrarias de cadenas de puntos fijos en cotas fijas;
-3. la forma operator-free K1–K3 basta para obtener un máximo de \(\mathfrak D\);
-4. el \(F_M\) concreto de REV-01 satisface F1–F3 dentro de su propio tipo.
+3. la forma operator-free K1–K3 basta para obtener un máximo de $\mathfrak D$;
+4. el $F_M$ concreto de REV-01 satisface F1–F3 dentro de su propio tipo.
 
 **No demostrado ontológicamente:**
 
-1. que un dominio ontológico \(X\in\mathfrak D\) sea representable por un subconjunto de \(\Sigma_M\);
-2. que \(\subseteq\) represente \(\preceq_{\mathrm{ont}}\);
-3. que la noción de cierre inducida por \(F_M\) produzca una familia \(\mathfrak K\) ontológicamente cofinal;
+1. que un dominio ontológico $X\in\mathfrak D$ sea representable por un subconjunto de $\Sigma_M$;
+2. que $\subseteq$ represente $\preceq_{\mathrm{ont}}$;
+3. que la noción de cierre inducida por $F_M$ produzca una familia $\mathfrak K$ ontológicamente cofinal;
 4. que las cadenas ontológicas relevantes tengan las cotas requeridas;
 5. que K3/directedness sea legítima independientemente de “mismo índice”.
 
@@ -1705,8 +1705,8 @@ La versión operator-free de K1–K3 hace transparente esa dependencia.
 
 ### 4.8. Estado normativo
 
-- **REV-01:** RESOLVED en su ataque original. F1–F3 se derivan para \(F_M\), y F2 resulta además redundante para el teorema abstracto.
-- **REV-02:** RESOLVED en el sentido tipado correcto: la inhibición muestra no-monotonía entre sistemas/operadores, no dentro de un único \(F_M\).
+- **REV-01:** RESOLVED en su ataque original. F1–F3 se derivan para $F_M$, y F2 resulta además redundante para el teorema abstracto.
+- **REV-02:** RESOLVED en el sentido tipado correcto: la inhibición muestra no-monotonía entre sistemas/operadores, no dentro de un único $F_M$.
 - **REV-04:** RESOLVED mediante el punto fijo propio explícito del toy.
 - **REV-18:** OPEN y ahora es el blocker principal del enlace entre la teoría de emergencia y la ontología global.
 
