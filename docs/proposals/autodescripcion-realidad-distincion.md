@@ -1244,6 +1244,58 @@ Esta obligación evita dos atajos:
 
 REV-24d queda por tanto abierta y es lógicamente posterior a la adecuación de `CoReal`/REV-24b.
 
+##### Ruta plural — realización sin objeto colector
+
+Existe una ruta formal que respeta mejor la cautela anti-reificación. En una lógica plural, escribimos $rr_i$ para **unas cosas**, no para una entidad singular que las colecta, y $x\prec rr_i$ para «$x$ es una de ellas».
+
+Sea:
+
+$$
+\varphi_q(x)
+:=
+\operatorname{Actual}(x)
+\land
+\operatorname{CoReal}(x,q).
+$$
+
+El esquema estándar de comprensión plural tiene la forma:
+
+$$
+\exists x\,\varphi_q(x)
+\Rightarrow
+\exists rr_i\;
+\forall x\,
+[x\prec rr_i\Longleftrightarrow\varphi_q(x)].
+$$
+
+Si $q$ es actual y `CoReal` es reflexiva, la antecedente está satisfecha. Por tanto, bajo comprensión plural:
+
+$$
+\boxed{
+\mathrm{PluralComp}
++
+\operatorname{Actual}(q)
++
+\operatorname{CoReal}(q,q)
+\Rightarrow
+\exists rr_i\;
+\forall x[
+x\prec rr_i
+\Longleftrightarrow
+(\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q))
+].
+}
+$$
+
+Esta conclusión realiza el **alcance plural** del régimen sin postular un set universal ni una suma mereológica. En esta lectura, la notación doctrinal $R_i$ puede entenderse como abreviatura de ese alcance plural $rr_i$; el cuantificador `\exists R_i` usado en fórmulas anteriores es entonces notación esquemática de un cuantificador de tipo scope/plural, no un existencial singular de primer orden.
+
+Esto no es ontológicamente gratuito. La comprensión plural es un principio explícito y discutido; versiones críticas de la lógica plural restringen precisamente la comprensión cuando el dominio es extensionally indefinite. Por ello:
+
+- para un régimen local cuya extensión `CoReal(-,q)` sea independientemente determinada, la ruta plural es un candidato serio a cerrar SR;
+- para $R_{\mathrm{abs}}$, no se presupone una pluralidad universal de absolutamente todo. Esa generalización permanece dentro del debate de generalidad absoluta.
+
+**Estado de REV-24d: PARTIAL.** La derivación plural está disponible condicionalmente; falta decidir/adoptar la lógica de scopes de la propuesta y justificar que la instancia de comprensión requerida sea legítima para los regímenes considerados.
+
 #### Relación Presents
 
 $\operatorname{Presents}_i(S,R)$ es la relación tipada resultante entre una presentación semántica y un alcance ontológico. No es identidad, no implica por definición $\operatorname{OntTotal}_i(R)$ y no puede definirse usando «$R$ es todo lo real del régimen» como atajo.
