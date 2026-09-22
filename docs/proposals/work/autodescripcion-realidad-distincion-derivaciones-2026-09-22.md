@@ -4656,6 +4656,8 @@ Para hechos $\varphi\in\Phi_S$ se exige correspondientemente que sus relata deno
 
 OA **no** implica completitud: puede haber miembros del régimen que $S$ no represente.
 
+Para $S_i^*$, el anclaje de **tokens** está parcialmente descargado por construcción: $T_i=[q]_{\sim}$ se forma con tokens actuales y $\bowtie$ se define usando instancias actuales de enlaces declarados ontológicos. Esto sigue siendo condicional a la corrección filosófica de REV-07. El anclaje de **hechos** no queda resuelto por esa observación y depende de la interpretación de $\operatorname{Actual}_i$, REV-25 y RA.
+
 #### 8.2. REV-24b — Membership Completeness (MC)
 
 La carga central se expresa mediante:
@@ -4673,17 +4675,92 @@ $$
 ].
 $$
 
-Para que MC sea no circular, $\operatorname{Reg}_i(x)$ debe fijarse antes de $S_i$ y de cualquier $R_i$. El candidato actual procede de la conectividad bajo $\Lambda_*$ de REV-07:
+Para que MC sea no circular, el criterio ontológico de pertenencia debe fijarse antes de $S_i$ y de cualquier $R_i$.
+
+Distinguimos el criterio formal candidato:
 
 $$
-\operatorname{Reg}_i(x;q)
-\;	ext{ solo si existe una cadena finita de enlaces }\Lambda_*
-\text{ desde }q\text{ hasta }x.
+\operatorname{Reg}^{\Lambda}(x;q)
+:\Longleftrightarrow
+x\in[q]_{\sim}
 $$
 
-No se permite definir $\operatorname{Reg}_i(x)$ como «$x$ está representado por $S_i$», «$x$ pertenece a $R_i$» o «$x$ es embebible en un máximo», porque cualquiera de esas definiciones introduciría la conclusión en la premisa.
+de una relación ontológica objetivo:
 
-MC concentra así la intersección REV-07/REV-24: hay que demostrar que la relación independiente de co-régimen no omite ninguna forma ontológicamente pertinente de pertenencia.
+$$
+\operatorname{CoReal}(x,q),
+$$
+
+cuyo contenido no puede definirse mediante $[q]_{\sim}$ si se quiere evaluar no circularmente la adecuación de $\Lambda_*$.
+
+Se requieren dos direcciones:
+
+$$
+\mathrm{RS}_{\Lambda}:
+\quad
+\operatorname{Reg}^{\Lambda}(x;q)
+\Rightarrow
+\operatorname{CoReal}(x,q),
+$$
+
+y:
+
+$$
+\mathrm{RC}_{\Lambda}:
+\quad
+\operatorname{CoReal}(x,q)
+\Rightarrow
+\operatorname{Reg}^{\Lambda}(x;q).
+$$
+
+RS es **soundness**: $\Lambda_*$ no fusiona realidades distintas. RC es **completeness**: no existe co-pertenencia ontológica que escape de la clausura finita.
+
+Si RS + RC:
+
+$$
+\boxed{
+\operatorname{CoReal}(x,q)
+\Longleftrightarrow
+x\in[q]_{\sim}.
+}
+$$
+
+Como la construcción directa usa exactamente:
+
+$$
+T_i=[q]_{\sim},
+$$
+
+se obtiene condicionalmente:
+
+$$
+\boxed{
+\mathrm{RS}_{\Lambda}
++
+\mathrm{RC}_{\Lambda}
+\Rightarrow
+\mathrm{MC}_i(S_i^*)
+}
+$$
+
+si los elementos del carrier se interpretan canónicamente como los tokens actuales con los que se construyó la componente.
+
+La implicación es un avance formal condicional, no un cierre de REV-24b: $\mathrm{RC}_{\Lambda}$ es precisamente la tesis ontológica difícil.
+
+##### Posibles contraejemplos a $\mathrm{RC}_{\Lambda}$
+
+RC falla si existe $x$ que co-pertenece ontológicamente con $q$ pero cuya integración solo puede establecerse mediante:
+
+- una condición global que no se descompone en enlaces token-specific;
+- una dependencia esencialmente de límite sin cadena finita de incidencias;
+- una relación infinitaria que no admite representación mediante un token de relación actual y sus incidencias;
+- un modo de unidad ontológica no cubierto por causalidad, proceso, constitución, dependencia o estructura espaciotemporal.
+
+Una relación infinitaria de aridad set-sized no fuerza por sí sola clausura transfinita si su instancia puede tratarse como token actual de relación conectado por incidencias a cada relatum: cada relatum queda a distancia finita del token relacional. Si la aridad o vecindad resultante fuera proper-class, reaparece REV-23.
+
+No se permite definir $\operatorname{CoReal}$ como $\operatorname{Reg}^{\Lambda}$ para declarar RC demostrado: eso convertiría la prueba en una estipulación.
+
+MC concentra así la intersección REV-07/REV-24. El siguiente trabajo sustantivo es dar contenido independiente suficiente a $\operatorname{CoReal}$ y someter $\Lambda_*$ a intentos de contraejemplo.
 
 #### 8.3. REV-24c — Representational Adequacy (RA)
 
