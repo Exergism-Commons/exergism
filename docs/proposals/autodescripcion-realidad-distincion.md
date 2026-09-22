@@ -116,7 +116,7 @@ Para evitar circularidad, la emergencia se define **sin** usar $R$, totalidad, a
 Sea un sistema/medio etiquetado:
 
 $$
-M=(C,\Sigma,A,\xrightarrow{}_M),
+M=(C,\Sigma,A,\xrightarrow{}_M,\xrightarrow{}_{M,\mathrm{act}}),
 $$
 
 donde:
@@ -124,7 +124,16 @@ donde:
 - $C$ es una colección finita o especificada de componentes tipados;
 - $\Sigma$ es el espacio de configuraciones;
 - $A$ es un conjunto de tipos de transición/acciones;
-- $s\xrightarrow{a}_M u$ indica que desde $s$ puede ejecutarse una transición de tipo $a$ hacia $u$.
+- $s\xrightarrow{a}_M u$ indica que la transición de tipo $a$ está **dinámicamente disponible** desde $s$;
+- $s\xrightarrow{a}_{M,\mathrm{act}}u$ indica que esa transición fue **efectivamente realizada**;
+- se exige:
+$
+\xrightarrow{}_{M,\mathrm{act}}
+\;\subseteq\;
+\xrightarrow{}_M.
+$
+
+Así se separa capacidad dinámica de actualización: una posibilidad de transición puede ser relevante para caracterizar qué habilita una organización sin convertirse por ello en un hecho actual.
 
 Cada configuración se representa como:
 
@@ -235,7 +244,7 @@ pertenece a $\mathcal E_M$ si y solo si:
 
 $$
 \boxed{
-s_0\xrightarrow{+}_M s_1
+s_0\xrightarrow{+}_{M,\mathrm{act}} s_1
 \land
 P(s_0)\neq P(s_1)
 \land
@@ -245,7 +254,7 @@ P(s_0)\neq P(s_1)
 }
 $$
 
-Aquí $s_0\xrightarrow{+}_M s_1$ significa que existe una trayectoria no vacía de transiciones desde $s_0$ hasta $s_1$.
+Aquí $s_0\xrightarrow{+}_{M,\mathrm{act}} s_1$ significa que existe una trayectoria no vacía de **transiciones efectivamente realizadas** desde $s_0$ hasta $s_1$. Las trazas usadas por $\operatorname{OrgWitness}$ siguen calculándose sobre $\xrightarrow{}_M$, es decir, sobre capacidades disponibles.
 
 La emergencia queda así **localizada al evento**: el propio $s_1$ debe exhibir una macrocaracterística cuyo valor depende de su organización y cuya organización habilita capacidades dinámicas ausentes en un comparador estructural $w$ con el mismo perfil local.
 
@@ -379,9 +388,9 @@ $$
 
 $P$ es invariante bajo renombrado de vértices.
 
-Definimos la tabla de transición mínima:
+Definimos las capacidades dinámicas mínimas:
 
-| Estado | Acción | Destino |
+| Estado | Acción disponible | Destino |
 |---|---|---|
 | $p$ | `close` | $c$ |
 | $p$ | `idle` | $p$ |
@@ -389,6 +398,14 @@ Definimos la tabla de transición mínima:
 | $c$ | `idle` | $c$ |
 | $a$ | `idle` | $a$ |
 | $i$ | `idle` | $i$ |
+
+Para el episodio actual considerado fijamos además:
+
+$
+p\xrightarrow{\texttt{close}}_{M,\mathrm{act}}c.
+$
+
+No exigimos que `activate` se haya realizado: basta que esté disponible desde $c$ y no desde $p$ para funcionar como testigo de capacidad organizacional.
 
 Por tanto:
 
@@ -415,7 +432,7 @@ $$
 satisface:
 
 $$
-p\xrightarrow{\texttt{close}}_M c,
+p\xrightarrow{\texttt{close}}_{M,\mathrm{act}} c,
 $$
 
 $$
@@ -579,7 +596,7 @@ porque la organización cíclica de $c$ habilita `activate`, capacidad ausente e
 Construimos ahora un sistema con inhibidor:
 
 $$
-M^{I}=(C\cup\{h\},\Sigma^{I},A,\xrightarrow{}_{I}),
+M^{I}=(C\cup\{h\},\Sigma^{I},A,\xrightarrow{}_{I},\xrightarrow{}_{I,\mathrm{act}}),
 $$
 
 donde $h$ está en estado local `on` y bloquea `close` y `activate` en las configuraciones embebidas.
@@ -611,7 +628,7 @@ $$
 ya no existe:
 
 $$
-p^I\xrightarrow{+}_{I}c^I.
+p^I\xrightarrow{+}_{I,\mathrm{act}}c^I.
 $$
 
 Por tanto el transporte del antiguo evento falla:
@@ -678,19 +695,19 @@ $$
 
 El contexto añadido no puede romper ni crear artificialmente equivalencias de perfil local entre estados embebidos.
 
-**CE2 — preservación de caminos con extremo.** Si:
+**CE2 — preservación de actualizaciones con extremo.** Si:
 
-$$
-s\xrightarrow{\alpha,+}_M t,
-$$
+$
+s\xrightarrow{\alpha,+}_{M,\mathrm{act}} t,
+$
 
 entonces:
 
-$$
-\iota(s)\xrightarrow{j(\alpha),+}_N\iota(t).
-$$
+$
+\iota(s)\xrightarrow{j(\alpha),+}_{N,\mathrm{act}}\iota(t).
+$
 
-Es decir, un proceso antiguo sigue pudiendo ejecutarse y termina en la imagen del mismo estado.
+Es decir, un episodio efectivamente realizado se conserva como episodio realizado y termina en la imagen del mismo estado.
 
 **CE3 — preservación y reflexión de trazas antiguas.** Para todo $s\in\Sigma_M$:
 
@@ -749,13 +766,13 @@ $$
 Del evento en $M$ existe un camino no vacío:
 
 $$
-s_0\xrightarrow{+}_M s_1.
+s_0\xrightarrow{+}_{M,\mathrm{act}} s_1.
 $$
 
 Por CE2:
 
 $$
-\iota(s_0)\xrightarrow{+}_N\iota(s_1).
+\iota(s_0)\xrightarrow{+}_{N,\mathrm{act}}\iota(s_1).
 $$
 
 Como $P_N$ extiende a $P_M$:
@@ -842,7 +859,7 @@ Esta distinción corrige la interpretación anterior de REV-02.
 
 ### Relación binaria inducida por eventos emergentes
 
-Fijado un sistema $M$, definimos:
+Fijado un sistema $M$, donde $\mathcal E_M$ contiene solo **eventos emergentes efectivamente realizados**, definimos:
 
 $$
 s\leadsto_{\mathcal E_M}t
