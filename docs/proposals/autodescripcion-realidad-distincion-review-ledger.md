@@ -111,7 +111,7 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 | 2026-09-22 | REFERENCES | Añadidas referencias explícitas a Tarski y familias de Moore para separar closure operators estándar del lema operator-free usado aquí. | Mapa bibliográfico. | 524cbca |
 | 2026-09-22 | REV-18 | Puente simplificado a incidencia + `EClosed`; estado OPEN → PARTIAL. | Sección I.3.4. | d0f7fb2 |
 | 2026-09-22 | REV-19 | Registrado desajuste diacrónico/sincrónico como blocker independiente. | Sección I.3.5. | d0f7fb2 |
-| 2026-09-22 | REV-20 | Registrada cofinalidad K1 de dominios E-closed como obligación independiente. | §4 + ledger. | ledger commit |
+| 2026-09-22 | REV-20 | Registrada cofinalidad K1 de dominios E-closed como obligación independiente. | §4 + ledger. | ab3c6be |
 
 ## Evidencia de consolidación documental
 
