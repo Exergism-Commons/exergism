@@ -285,6 +285,9 @@ Solo después de separar los targets tiene sentido distinguir:
 
 **Estado actual:** la ruta matemática/REV-24 trabaja sobre `ExistsRegR`/`WitnessedRegR`. El objetivo doctrinal original `ExistsR = ExistsAbsR` permanece OPEN y requiere además REV-26. No se considerará resuelto el debate No-$R$ absoluto demostrando solo un $R_i$ local; además, bajo rechazo de AG, la propia forma lógica de No-$R$ debe cambiar.
 
+**Fork doctrinal decisivo — REV-26e.** Si el $R$ original se conserva como mero **alcance plural de todo lo real**, su existencia desnuda deja de ser un problema matemático: bajo AG + APC$_{Real}$ + no-vacuidad se obtiene condicionalmente/analíticamente el scope absoluto. Si se exige además una propiedad estructural $Q$, el target cambia a $\operatorname{ExistsStructuredAbsR}_Q$ y $Q$ debe justificarse por razones doctrinales independientes; no puede añadirse solo para volver no trivial la existencia. Por tanto, ningún teorema adicional sobre $S_i$, Zorn o FID decide por sí solo este fork.
+
+
 
 ## 2. Consecuencias analíticas si $R$ existe
 
