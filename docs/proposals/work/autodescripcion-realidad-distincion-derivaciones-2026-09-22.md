@@ -2592,7 +2592,17 @@ X\preceq_i Z
 Y\preceq_i Z.
 $$
 
-Por tanto K3_i. $\square$
+Por tanto K3_i para dominios no vacíos. $\square$
+
+**Caso del dominio vacío.** Si $\mathfrak D_i^{\mathrm{proc}}$ contiene un dominio vacío $0_i$, para recuperar K3_i sobre todo el poset basta exigir:
+
+$$
+0_i\preceq_i X
+$$
+
+para todo $X\in\mathfrak D_i^{\mathrm{proc}}$.
+
+Entonces cualquier par donde intervenga $0_i$ tiene como cota al otro dominio. Si no se desea asumir un bottom vacío, el lema debe leerse sobre el subposet no vacío.
 
 ### 4. Qué gana esta derivación
 
