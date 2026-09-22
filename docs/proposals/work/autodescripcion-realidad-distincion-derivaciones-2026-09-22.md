@@ -5032,7 +5032,7 @@ Esto prohíbe definir la clausura por ajuste extensional a `CoReal` y después d
 Para el seed $q$:
 
 $$
-T_i^{\mathcal C}
+T_q^{\mathcal C}
 :=
 \mathcal C_*(\{q\}).
 $$
@@ -5042,7 +5042,7 @@ Se exigen:
 $$
 \mathrm{CS}:
 \quad
-x\in T_i^{\mathcal C}
+x\in T_q^{\mathcal C}
 \Rightarrow
 \operatorname{CoReal}(x,q),
 $$
@@ -5052,7 +5052,7 @@ $$
 \quad
 \operatorname{CoReal}(x,q)
 \Rightarrow
-x\in T_i^{\mathcal C},
+x\in T_q^{\mathcal C},
 $$
 
 y:
@@ -5060,24 +5060,12 @@ y:
 $$
 \mathrm{CSet}:
 \quad
-T_i^{\mathcal C}\text{ es set-sized}.
+T_q^{\mathcal C}\text{ es set-sized}.
 $$
 
-Con la denotación canónica:
+CS y CC son todavía criterios de adecuación de una **clausura candidata**. Antes de justificarlos no se asigna un índice ontológico $i$ ni se invocan OA/MC de régimen.
 
-$$
-\mathrm{CS}+\mathrm{CD}_i
-\Rightarrow
-\mathrm{OA}_i(S_i^{\mathcal C};q)
-$$
-
-y:
-
-$$
-\mathrm{CC}+\mathrm{CD}_i
-\Rightarrow
-\mathrm{MC}_i(S_i^{\mathcal C};q).
-$$
+Si CS+CC se justifican, CRType garantiza que los elementos co-reales son actuales; tras realizar el scope local correspondiente, la construcción puede reindexarse como $T_i^{\mathcal C},S_i^{\mathcal C}$ y entonces se recuperan los lemas tipados de OA/MC.
 
 Para reconstruir el máximo semántico se añade:
 
@@ -5085,7 +5073,7 @@ $$
 \mathrm{CProcStable}:
 $$
 
-si un evento emergente actual tiene source en $T_i^{\mathcal C}$, sus tokens/eventos/targets requeridos permanecen en $T_i^{\mathcal C}$.
+si un evento emergente actual tiene source en $T_q^{\mathcal C}$, sus tokens/eventos/targets requeridos permanecen en $T_q^{\mathcal C}$.
 
 Entonces, bajo:
 
@@ -5100,12 +5088,12 @@ $$
 la misma construcción:
 
 $$
-S_i^{\mathcal C}
+S_q^{\mathcal C}
 :=
-(T_i^{\mathcal C},\Phi_i^{\mathrm{all},\mathcal C})
+(T_q^{\mathcal C},\Phi_q^{\mathrm{all},\mathcal C})
 $$
 
-produce condicionalmente un máximo semántico E-closed del régimen generalizado.
+produce condicionalmente un máximo semántico E-closed de la clausura generalizada.
 
 La ruta finita actual se recupera como caso especial cuando:
 
@@ -5144,7 +5132,7 @@ $$
 y todos los $C_\alpha$ para $\alpha\leq\kappa$ son sets, entonces:
 
 $$
-T_i^{\mathcal C}:=C_\kappa
+T_q^{\mathcal C}:=C_\kappa
 $$
 
 es set-sized y puede alimentar la construcción semántica directa.
