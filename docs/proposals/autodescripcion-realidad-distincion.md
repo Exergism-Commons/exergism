@@ -1592,6 +1592,278 @@ No se marca RESOLVED porque todavía falta:
 
 ---
 
+## 3.6. REV-20 — qué significa realmente la cofinalidad K1
+
+La forma operator-free del teorema exige:
+
+$$
+\text{K1:}\qquad
+\forall X\in\mathfrak D\;
+\exists Y\in\mathfrak K:
+X\preceq Y.
+$$
+
+K1 no es una consecuencia lógica de llamar “cerrados” a los elementos de $\mathfrak K$.
+
+### 3.6.1. K1 y operadores extensivos-idempotentes
+
+Sea $(\mathfrak D,\preceq)$ un poset set-sized y $\mathfrak K\subseteq\mathfrak D$.
+
+**Proposición.**
+
+Si existe:
+
+$$
+F:\mathfrak D\to\mathfrak D
+$$
+
+tal que:
+
+$$
+X\preceq F(X),
+$$
+
+$$
+F(F(X))=F(X),
+$$
+
+y:
+
+$$
+\operatorname{Fix}(F)=\mathfrak K,
+$$
+
+entonces K1 se cumple.
+
+**Prueba.** Para todo $X$:
+
+$$
+X\preceq F(X),
+$$
+
+y por idempotencia:
+
+$$
+F(X)\in\operatorname{Fix}(F)=\mathfrak K.
+$$
+
+Luego $F(X)$ es una extensión cerrada de $X$. $\square$
+
+La conversa también vale bajo una elección de extensiones cerradas.
+
+Si K1 se cumple, para cada $X\in\mathfrak D$ sea:
+
+$$
+U_X=
+\{
+Y\in\mathfrak K
+\mid
+X\preceq Y
+\}.
+$$
+
+K1 asegura:
+
+$$
+U_X\neq\varnothing.
+$$
+
+Elegimos:
+
+$$
+F(X)\in U_X,
+$$
+
+imponiendo además:
+
+$$
+X\in\mathfrak K
+\Rightarrow
+F(X)=X.
+$$
+
+Entonces:
+
+$$
+X\preceq F(X),
+$$
+
+y como $F(X)\in\mathfrak K$:
+
+$$
+F(F(X))=F(X).
+$$
+
+Además:
+
+$$
+\operatorname{Fix}(F)=\mathfrak K.
+$$
+
+Por tanto, bajo la elección requerida:
+
+$$
+\boxed{
+\text{K1}
+\Longleftrightarrow
+\text{existencia de un selector extensivo e idempotente sobre }\mathfrak K.
+}
+$$
+
+No se obtiene monotonía:
+
+$$
+X\preceq Y
+\not\Rightarrow
+F(X)\preceq F(Y).
+$$
+
+Así, K1 representa exactamente la **existencia de alguna extensión cerrada**, no un closure operator estándar.
+
+### 3.6.2. K1 es independiente de K2 y K3
+
+Consideremos:
+
+$$
+\mathfrak D=\{0,1\},
+\qquad
+0\prec 1,
+$$
+
+y:
+
+$$
+\mathfrak K=\{0\}.
+$$
+
+K3 se cumple porque $\mathfrak D$ es dirigido: $1$ es cota común de cualquier par.
+
+K2 también se cumple: toda cadena contenida en $\mathfrak K$ tiene como cota cerrada a $0$.
+
+Pero K1 falla para $1$:
+
+$$
+\nexists Y\in\mathfrak K:
+1\preceq Y.
+$$
+
+Luego:
+
+$$
+\boxed{
+K2+K3
+\not\Rightarrow
+K1.
+}
+$$
+
+La cofinalidad es una carga independiente.
+
+### 3.6.3. Dónde sí se satisface formalmente
+
+En el toy system-relative:
+
+$$
+\mathfrak D_{\mathrm{toy}}
+=
+\mathcal P(\Sigma_M),
+$$
+
+y:
+
+$$
+\mathfrak K_{\mathrm{toy}}
+=
+\operatorname{Fix}(F_M).
+$$
+
+Como $F_M$ satisface F1 y F3:
+
+$$
+X\subseteq F_M(X)
+$$
+
+y:
+
+$$
+F_M(F_M(X))=F_M(X),
+$$
+
+K1 sí se satisface formalmente:
+
+$$
+\forall X\subseteq\Sigma_M,\;
+\exists Y\in\mathfrak K_{\mathrm{toy}}:
+X\subseteq Y.
+$$
+
+Podemos tomar simplemente:
+
+$$
+Y=F_M(X).
+$$
+
+Esto demuestra que REV-20 **no es un problema del formalismo system-relative**.
+
+Es un problema del salto ontológico:
+
+> ¿por qué todo dominio procesual ontológico actual debería admitir una extensión ontológica E-closed?
+
+### 3.6.4. Relación con REV-18
+
+Si REV-18 consiguiera construir sobre $\mathfrak D_i^{\mathrm{proc}}$ un operador:
+
+$$
+F_i^{\mathrm{proc}}
+$$
+
+que preservase las dos propiedades mínimas:
+
+$$
+X\preceq_{\mathrm{proc}}F_i^{\mathrm{proc}}(X)
+$$
+
+y:
+
+$$
+F_i^{\mathrm{proc}}(F_i^{\mathrm{proc}}(X))
+=
+F_i^{\mathrm{proc}}(X),
+$$
+
+entonces K1 quedaría derivada inmediatamente.
+
+Pero la formulación austera por incidencia de REV-18 todavía solo define:
+
+$$
+\operatorname{EClosed}^{\mathrm{proc}}_i(X).
+$$
+
+De un predicado de cierre no se sigue que exista un dominio cerrado por encima de cada $X$.
+
+Por tanto REV-20 permanece independiente mientras no se construya esa extensión o se demuestre su existencia por otra vía.
+
+### 3.6.5. Estado de REV-20
+
+**OPEN.**
+
+Se ha demostrado:
+
+- qué contenido matemático exacto tiene K1;
+- que es independiente de K2/K3;
+- que equivale, bajo elección, a disponer de un selector extensivo-idempotente hacia los dominios cerrados;
+- que el toy formal sí satisface K1.
+
+No se ha demostrado la afirmación ontológica requerida:
+
+$$
+\forall X\in\mathfrak D_i^{\mathrm{proc}}\;
+\exists Y\in\mathfrak K_i^{\mathrm{proc}}:
+X\preceq_{\mathrm{proc}}Y.
+$$
+
+---
+
 ## 4. Núcleo matemático normalizado — qué necesita realmente Zorn
 
 Las secciones anteriores producen dos niveles distintos que no deben confundirse:
