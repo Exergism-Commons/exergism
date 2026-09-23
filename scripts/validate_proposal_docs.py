@@ -156,6 +156,28 @@ def validate_archive(text: str) -> None:
         fail("Historical pre-consolidation archive must carry a visible SUPERSEDED/non-normative banner")
 
 
+def markdown_section(text: str, heading: str) -> str:
+    lines = text.splitlines()
+    try:
+        start = lines.index(heading)
+    except ValueError:
+        fail(f"Missing required section heading: {heading}")
+
+    match = re.match(r"^(#{1,6})\s+", heading)
+    if not match:
+        fail(f"Invalid Markdown heading passed to markdown_section: {heading}")
+    level = len(match.group(1))
+
+    end = len(lines)
+    for index in range(start + 1, len(lines)):
+        next_heading = re.match(r"^(#{1,6})\s+", lines[index])
+        if next_heading and len(next_heading.group(1)) <= level:
+            end = index
+            break
+
+    return "\n".join(lines[start:end])
+
+
 def validate_index_typing(text: str) -> None:
     checks = {
         r"\\exists!?\s*i\b": "object-level existential quantification over index metavariable i",
@@ -222,36 +244,67 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
             "between distinct family members"
         )
 
+    xp_section = markdown_section(
+        technical,
+        "#### RT-07-XP — Transversal Production Test",
+    )
     xp_contracts = (
         "\\mathrm{RGCExists}_k(\\mathfrak G_k)",
         "\\operatorname{RegimeClosure}_k(\\mathfrak G_k,C_k)",
         "\\bigcup_\\alpha C_{\\alpha,k}" + "\n" + "\\subsetneq" + "\n" + "C_k",
     )
     for snippet in xp_contracts:
-        if snippet not in technical:
+        if snippet not in xp_section:
             fail(
                 "REV-07f regression: RT-07-XP must bind an explicit RegimeClosure "
-                f"witness; missing {snippet!r}"
+                f"witness inside its own test section; missing {snippet!r}"
             )
 
     old_xp_term = "\\operatorname{RegimeClosure}_k(\\mathfrak G_k)."
-    if old_xp_term in technical:
+    if old_xp_term in xp_section:
         fail(
             "REV-07f regression: RT-07-XP again treats RegimeClosure as a unary "
             "carrier-valued term"
         )
 
-    old_presentation_bridge = (
-        "\\operatorname{GeneTotal}_i(\\mathcal O_i,R_i)" + "\n"
-        + "+" + "\n"
-        + "\\operatorname{SemTotal}_i(S_i)" + "\n"
-        + "+" + "\n"
-        + "\\mathrm{OTB}_i"
+    presentation_section = markdown_section(
+        technical,
+        "#### 8.5. `ExistsR` como metasentencia",
     )
-    if old_presentation_bridge in technical:
+    presentation_marker = "y una presentación semántica produce únicamente:"
+    if presentation_marker not in presentation_section:
+        fail("REV-07f regression: §8.5 is missing the active presentation bridge")
+    presentation_bridge = presentation_section.split(presentation_marker, 1)[1]
+    for snippet in (
+        "\\operatorname{RegimeTotal}_i(\\mathfrak G_i,R_i)",
+        "\\operatorname{SemTotal}_i(S_i)",
+        "\\mathrm{OTB}_i",
+        "\\operatorname{Presents}_i(S_i,R_i)",
+    ):
+        if snippet not in presentation_bridge:
+            fail(
+                "REV-07f regression: active §8.5 presentation bridge is missing "
+                f"required regime-level term {snippet!r}"
+            )
+    if "\\operatorname{GeneTotal}_i" in presentation_bridge:
         fail(
-            "REV-07f regression: active technical presentation bridge again "
-            "requires GeneTotal instead of RegimeTotal"
+            "REV-07f regression: active §8.5 presentation bridge again requires "
+            "GeneTotal instead of RegimeTotal"
+        )
+
+    historical_dilemma = markdown_section(
+        technical,
+        "#### 0.11.3. HISTORICAL — dilema monogeneal pre-REV-07f",
+    )
+    if "\\operatorname{RegimeTotal}_i(\\mathfrak G_i,R_i)" not in historical_dilemma:
+        fail(
+            "REV-07f regression: historical single-origin dilemma no longer records "
+            "RegimeTotal as the current general architecture"
+        )
+    if "la arquitectura vigente de:" in historical_dilemma:
+        fail(
+            "REV-07f regression: historical §0.11.3 again labels the single-origin "
+            "GeneTotal architecture as current"
         )
 
 
