@@ -3549,34 +3549,35 @@ Ese testigo establece que $a$ y $b$ están dentro de un **mismo marco realizado*
 
 La posible influencia causal requiere un testigo CAU/PRC adicional; no se deriva de la mera cadena relacional.
 
-#### 0.11.3. Dilema para GeneTotal
+#### 0.11.3. HISTORICAL — dilema monogeneal pre-REV-07f
 
-Este stress test produce una disyunción doctrinal real.
+Este stress test fue el punto donde la arquitectura anterior mostró una falsa disyunción: trataba implícitamente la exhaustividad de $R_i$ como si exigiera una sola $\operatorname{Generated}^{*}_k(\mathcal O_k,-)$.
 
-Si una cadena mixta coherente está enteramente contenida en una misma $\operatorname{Generated}^{*}_k(\mathcal O_k,-)$, no hay problema: las relaciones son contenido real generado/fundamental y $\Lambda_k$ puede reconstruir después esa conectividad.
+Si una cadena mixta coherente está enteramente contenida en una misma GeneUnit, el caso sigue siendo monogeneal y no hay dificultad adicional. Pero si existen dos GeneUnit independientemente adecuadas $G_a,G_b$ y una PureOntRel actual entre contenido de ambas, sin ningún OntOrigin independiente cuya GenClosure contenga ambas, puede darse:
 
-Si, en cambio, existen dos genealogías independientemente adecuadas $G_a,G_b$ y una PureOntRel actual entre contenido de ambas, pero **ningún** OntOrigin independiente cuya GenClosure contenga ambas, entonces tenemos:
-
-$$
+$
 \operatorname{JointRealizable}^{\mathsf M}(G_a,G_b)
 \land
 \neg\operatorname{CommonGround}^{\mathsf M}(G_a,G_b).
-$$
+$
 
-En ese caso la arquitectura vigente de:
+**REV-07f retira la inferencia de que esto obliga a buscar un único origen común.** En la arquitectura vigente, si ambas genealogías ya están justificadamente tipadas en el mismo SharedOntSpace, pueden formar una GeneFamily y la totalidad se expresa mediante:
 
-$$
+$
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i),
+$
+
+con $\operatorname{RegimeClosure}_i$ re-cerrando $\Gamma_i$ sobre la base conjunta. El caso:
+
+$
 R_i=\operatorname{Cl}^{G}_i(\mathcal O_i)
-$$
+$
 
-no puede identificar sin más «marco realizado» con «una sola genealogía». Habría que elegir explícitamente entre:
+queda exclusivamente como la especialización singleton/monogeneal, no como arquitectura general.
 
-1. justificar CGP y mostrar que el contraescenario no puede ocurrir;
-2. admitir una operación de ensamblaje/context formation sobre varias genealogías;
-3. admitir una ontogénesis nueva por la relación/evento integrador;
-4. aceptar que JointRealizable es más débil que pertenecer a un mismo $R_i$.
+Por tanto, las alternativas actuales ya no son «encontrar un origen común o renunciar a un mismo $R_i$». El problema restante de REV-07e es **clasificatorio y genético**: decidir con fundamento independiente si la integración observada pertenece a un SharedOntSpace ya justificado, exige ContextGenesis, o permanece solo en JointRealizable sin licencia para identificar contextos. CGP sigue OPEN allí donde se invoque CommonGround; REV-07f no lo demuestra ni lo necesita para el caso multigeneal SharedOntSpace.
 
-REV-07e permanece OPEN precisamente porque todavía no hemos elegido ni demostrado cuál de estas salidas es correcta. La existencia de PureOntRel hace visible que el problema no depende de causalidad ni de convergencia productiva.
+La existencia de PureOntRel sigue mostrando que el problema no depende de causalidad ni de convergencia productiva, pero ya no reinstala monogeneidad en RegimeTotal.
 
 #### 0.11.4. Contramodelo finito de CGP bajo la doctrina actual
 
