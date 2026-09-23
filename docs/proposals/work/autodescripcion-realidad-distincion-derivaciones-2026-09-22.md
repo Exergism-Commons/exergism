@@ -2490,24 +2490,41 @@ $$
 
 requiere que $b_i$ sea un estadio, estado o resultado cuya identidad/existencia procesual deriva de la instancia actual $e_i$ y del soporte $A_i$. Sucesión temporal, participación contingente o compartir proceso sin dependencia productiva no bastan.
 
-La relación objetivo queda definida **sin GenEvent**:
+$\operatorname{OntProd}_i(e_i,A_i,b_i)$ permanece como **relación objetivo independiente** sometida a OP1–OP8. Los cuatro modos son clasificadores suficientes, no su definición:
 
 $$
 \boxed{
 \begin{aligned}
-\operatorname{OntProd}_i(e_i,A_i,b_i)
-:\Longleftrightarrow\;&
-\operatorname{CausalProd}_i(e_i,A_i,b_i)\\
-&\lor\operatorname{ConstitutiveProd}_i(e_i,A_i,b_i)\\
-&\lor\operatorname{GroundProd}_i(e_i,A_i,b_i)\\
-&\lor\operatorname{ProcessProd}_i(e_i,A_i,b_i).
+&\operatorname{CausalProd}_i(e_i,A_i,b_i)
+\lor\operatorname{ConstitutiveProd}_i(e_i,A_i,b_i)\\
+&\lor\operatorname{GroundProd}_i(e_i,A_i,b_i)
+\lor\operatorname{ProcessProd}_i(e_i,A_i,b_i)
+\Rightarrow
+\operatorname{OntProd}_i(e_i,A_i,b_i).
 \end{aligned}
 }
 $$
 
-Cada disyunto debe satisfacer OP1–OP8 por su semántica independiente. No existe un catch-all «generativo».
+No existe un catch-all «generativo». La pregunta de si estos modos agotan OntProd se registra separadamente:
 
-La implementación formal se define después:
+$$
+\boxed{
+\mathrm{ProdCoverage}_i:
+\quad
+\operatorname{OntProd}_i(e_i,A_i,b_i)
+\Rightarrow
+\begin{aligned}[t]
+&\operatorname{CausalProd}_i(e_i,A_i,b_i)
+\lor\operatorname{ConstitutiveProd}_i(e_i,A_i,b_i)\\
+&\lor\operatorname{GroundProd}_i(e_i,A_i,b_i)
+\lor\operatorname{ProcessProd}_i(e_i,A_i,b_i).
+\end{aligned}
+}
+$$
+
+ProdCoverage es una obligación metafísica real, no una definición. Una futura quinta familia puede ampliar la taxonomía si satisface OP1–OP8; en ese caso debe añadirse tanto al teorema de cobertura como a la implementación.
+
+La implementación formal es:
 
 $$
 \boxed{
@@ -2523,17 +2540,17 @@ $$
 }
 $$
 
-Como OntProd y GenEvent usan la misma taxonomía **objetiva** pero OntProd no depende de GenEvent, se obtiene inmediatamente:
+De la soundness individual de los cuatro modos se deriva GenSound. Además:
 
 $$
 \boxed{
-\mathrm{GenSound}_i
-\land
+\mathrm{ProdCoverage}_i
+\Rightarrow
 \mathrm{GenComplete}_i.
 }
 $$
 
-Esto convierte GenSound/GenComplete en un teorema de fidelidad de representación, no en una premisa metafísica escondida. La carga metafísica queda exactamente en justificar las instancias CAU/CON/GRD/PRC conforme OP1–OP8.
+Por tanto REV-07b ya no puede cerrarse por estipulación: su carga pendiente principal es justificar ProdCoverage para la ontología/contexto al que se aplique ExistsR.
 
 $A_i$ es soporte completo y relevante para la instancia, no una lista arbitraria de antecedentes. Puede haber más de un soporte admisible para un mismo target cuando la ontología concreta admita sobredeterminación o realizaciones alternativas; cada instancia se registra separadamente con su propio GenFoot.
 
