@@ -3341,27 +3341,27 @@ $$
 
 puede ocurrir, porque ningún cierre local dispone de ambos antecedentes. Supongamos ahora explícitamente:
 
-$
+$$
 \mathrm{RGCExists}_k(\mathfrak G_k),
-$
+$$
 
 y fijemos un testigo $C_k$ tal que:
 
-$
+$$
 \operatorname{RegimeClosure}_k(\mathfrak G_k,C_k).
-$
+$$
 
 FamilyBase contiene conjuntamente $a_k$ y $b_k$; como $C_k$ es fijo de $\Gamma_k$ y contiene esa base:
 
-$
+$$
 \operatorname{GenFoot}_k(e_k,\{a_k,b_k\},c_k)
 \preceq
 C_k.
-$
+$$
 
 Además:
 
-$
+$$
 \bigcup_\alpha C_{\alpha,k}
 \preceq
 C_k,
@@ -3369,17 +3369,17 @@ C_k,
 c_k\in C_k,
 \qquad
 c_k\notin\bigcup_\alpha C_{\alpha,k}.
-$
+$$
 
 Por tanto:
 
-$
+$$
 \boxed{
 \bigcup_\alpha C_{\alpha,k}
 \subsetneq
 C_k
 }
-$
+$$
 
 es posible **condicionalmente a RGCExists**. El test no denota RegimeClosure como una función total ni presupone que el least fixed point exista en toda fundación. Una definición de RegimeTotal por mera unión falla este test.
 
@@ -5089,11 +5089,11 @@ REC y el Muro conservan su distinción normativa.
 
 REC sigue siendo consecuencia estructural de una totalidad de régimen ya establecida:
 
-$
+$$
 \operatorname{RegimeTotal}_k(\mathfrak G_k,R_k)
 \Rightarrow
 \operatorname{REC}_k(R_k).
-$
+$$
 
 GeneTotal hereda esta consecuencia como caso singleton.
 
