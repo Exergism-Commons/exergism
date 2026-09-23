@@ -2191,25 +2191,35 @@ Por tanto REV-07a no se cerrará enumerando etiquetas metafísicas: cada modo ad
 
 Fijamos cuatro **esquemas de modo** actualmente admitidos: $\mathsf{MOD}_i$, $\mathsf{RLC}_i$, $\mathsf{HC}_i$ y $\mathsf{PC}_i$, sin convertirlos en objetos de un dominio ni afirmar que toda ontología concreta deba instanciarlos todos. Un juicio $\operatorname{EssConDep}_i$ solo puede derivarse de una instancia explícita de uno de estos esquemas —o de una futura extensión que satisfaga ECD1–ECD7 y M1–M6.
 
+Los nombres de modo **no certifican** dependencia. Primero debe demostrarse IdDep o ConstExistDep; el esquema solo clasifica la forma del testigo.
+
 **MOD — mutual ontological dependence / co-dependencia fundamental.**
+
+Para un lado del puente:
 
 $$
 \mathsf{MOD}_i(f_i;x_i,Y_i)
 \Rightarrow
-\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
+\bigl(
+\operatorname{IdDep}_i(x_i;f_i\mid Y_i)
+\lor
+\operatorname{ConstExistDep}_i(x_i;f_i\mid Y_i)
+\bigr).
 $$
 
-solo cuando la teoría ontológica concreta justifique que la actualidad o identidad constitutiva de $x_i$ depende esencialmente de soporte en $Y_i$ mediante la misma instancia $f_i$. Para un ConstitutiveBridge bilateral debe existir además el juicio recíproco desde el otro lado. Esto permite grounding no bien fundado o soporte mutuo si se admite independientemente; no lo presupone como tesis universal.
+Para un ConstitutiveBridge debe existir además un juicio MOD recíproco desde el otro lado respecto de la misma instancia integrativa. MOD permite soporte mutuo o dependencia ontológica cíclica si una teoría independiente los admite; no afirma que la relación estándar de grounding sea necesariamente cíclica.
 
 **RLC — constitución relacional esencial.**
 
 $$
+\boxed{
 \mathsf{RLC}_i(f_i;x_i,Y_i)
 \Rightarrow
-\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
+\operatorname{IdDep}_i(x_i;f_i\mid Y_i).
+}
 $$
 
-cuando $x_i$ no sería ese mismo token/tipo ontológico relevante sin la relación actual $f_i$ con soporte en $Y_i$. No basta que $f_i$ modifique, influya o cause propiedades accidentales de $x_i$.
+RLC se reserva al caso en que $x_i$ no sería el mismo token o no instanciaría el mismo tipo ontológicamente relevante sin la relación actual $f_i$ con soporte en $Y_i$. Influencia causal o propiedades accidentales no bastan.
 
 **HC — constitución holística/estructural.**
 
@@ -2218,24 +2228,30 @@ Sea $f_i$ una estructura actual con footprint $H_i$. Para $x_i\preceq H_i$:
 $$
 \mathsf{HC}_i(f_i;x_i,H_i\setminus\{x_i\})
 \Rightarrow
-\operatorname{EssConDep}_i(
-x_i;f_i,U_i\mid H_i\setminus\{x_i\}
-)
+\left[
+\operatorname{IdDep}_i(x_i;f_i\mid H_i\setminus\{x_i\})
+\lor
+\operatorname{ConstExistDep}_i(x_i;f_i\mid H_i\setminus\{x_i\})
+\right].
 $$
 
-solo si la identidad/actualidad constitutiva de $x_i$ depende del patrón estructural instanciado y no meramente de estar localizado dentro de una colección. Un agregado mereológico arbitrario no satisface HC.
+HC exige que el patrón estructural sea constitutivo; pertenecer a una colección, estar correlacionado con el resto o formar parte de un agregado mereológico no lo demuestra.
 
 **PC — co-constitución procesual.**
 
 $$
 \mathsf{PC}_i(f_i;x_i,Y_i)
 \Rightarrow
-\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
+\left[
+\operatorname{IdDep}_i(x_i;f_i\mid Y_i)
+\lor
+\operatorname{ConstExistDep}_i(x_i;f_i\mid Y_i)
+\right].
 $$
 
-cuando $x_i$ es constitutivamente un estadio, rol, fase o participante cuya identidad ontológica depende del proceso actual $f_i$ y de soporte cruzado en $Y_i$. Ser simplemente causa, input, output o participante contingente de un proceso no satisface PC.
+PC se limita a estadios, roles, fases o participantes cuya identidad/existencia constitutiva depende del proceso actual $f_i$ y del soporte cruzado. Ser simplemente causa, input, output o participante contingente no satisface PC.
 
-Estas cuatro familias comparten una regla de seguridad: todo juicio $\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)$ debe venir acompañado por una derivación explícita de una de las reglas MOD/RLC/HC/PC, indicando la instancia concreta, el dependiente y el soporte cruzado. La auditabilidad ECD7 exige que esa derivación pueda exponerse sin referencia a Seed, OriginUnity o al resultado final.
+Por definición de EssConDep, cualquiera de estas derivaciones produce EssConDep **solo además de** un UnitFact actual con el mismo $f_i,U_i$. La auditabilidad ECD7 exige exponer: modo, instancia, dependiente, soporte cruzado y si la ruta concreta fue IdDep o ConstExistDep.
 
 #### 0.2.4. Exclusiones y frontera con OntProd
 
