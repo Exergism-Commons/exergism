@@ -244,7 +244,7 @@ $$
 }
 $$
 
-El origen no tiene que ser un primer instante temporal ni un átomo simple. Puede contener estructura interna, ciclos fundamentales o relaciones de soporte mutuo. Lo que no puede ser es una agregación arbitraria diseñada para hacer exhaustiva la clausura.
+$\operatorname{OntOrigin}_i$ es **ontológico, no cronológico ni espacial**: no exige un primer instante, una localización inicial ni un átomo simple. Puede ser atemporal, estructural, cíclico o contener soporte mutuo. Una regresión temporal infinita no refuta por sí sola OntOrigin; REV-07d pregunta, más fuertemente, si puede existir una genealogía sin ninguna base ontológica mínima admisible. Lo que no vale como origen es una agregación arbitraria diseñada para hacer exhaustiva la clausura.
 
 **No circularidad:** OntOrigin, GenEvent y las reglas de clausura no pueden definirse mediante $R_i$, CoReal, SameRegime, SemTotal, Presents ni la extensión final que quieren producir.
 
@@ -1834,23 +1834,25 @@ REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitrar
 1. qué relaciones concretas satisfacen $\operatorname{OriginUnity}_i$ / Bind sin presuponer la realidad total;
 2. caracterizar $\operatorname{OntProd}_i$ independientemente y demostrar GenSound + GenComplete para el inventario de modos causales/constitutivos/dependencia/continuidad;
 3. existencia de la least closure $\operatorname{Cl}^{G}_i$ en el marco fundacional elegido —set, plural, clase o clausura transfinita—;
-4. si OU3/root-closure debe admitir además genealogías sin fuente, regresos infinitos o fixed points fundamentales;
+4. si existen genealogías sin ninguna base ontológica mínima admisible —distinto de carecer meramente de primer instante temporal— y qué implicaría eso para OntOrigin;
 5. equivalencia entre configuraciones-originarias distintas que generan la misma clausura sin volver a mera extensionalidad;
 6. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente la clausura generativa;
 7. qué principio de scope/pluralidad realiza esa clausura como $R_i$ sin setificarla;
-8. **problema de convergencia:** si dos linajes pre-indexados aparentemente independientes llegan a participar en un hecho ontológico común, justificar un fundamento/origen común más profundo en vez de tratarlos como dos $R$ que se fusionan posteriormente.
+8. **problema de convergencia:** distinguir una integración que revela que la indexación provisional era errónea de una hipotética ontogénesis en la que la convergencia crease una realidad compartida nueva.
 
-La obligación de convergencia puede abreviarse metateóricamente como:
+Una convergencia bien tipada prueba como máximo realizabilidad conjunta, no co-origen:
 
 $$
-\mathrm{CGP}:
-\quad
 \operatorname{Integrable}^{\mathsf M}(C_a,C_b)
 \Rightarrow
-\operatorname{CommonGround}^{\mathsf M}(C_a,C_b),
+\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b),
+\qquad
+\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b)
+\not\Rightarrow
+\operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
 $$
 
-donde CommonGround exige alguna realización admisible de contexto cuyo OntOrigin/closure contenga imágenes fieles de ambos candidatos. **CGP está OPEN**: no se obtiene de EXT-01 por definición.
+La tesis fuerte $\mathrm{CGP}:\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b)\Rightarrow\operatorname{CommonGround}^{\mathsf M}(C_a,C_b)$ permanece **OPEN**. Si se demuestra, la convergencia es retroactiva solo en sentido epistémico: revela que la separación previa era provisional y que el common ground existe independientemente del evento convergente. Si falla, una ontogénesis por convergencia requeriría una extensión explícita de la teoría; EXT-01/EXT-02 no la autorizan por sí solas.
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
