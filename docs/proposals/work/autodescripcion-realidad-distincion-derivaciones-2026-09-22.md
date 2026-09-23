@@ -4869,7 +4869,7 @@ T^{\Lambda}_{i,q}\text{ es set-sized}.
 }
 $$
 
-Este resultado **no** dice $|i|$ ni identifica $T^{\Lambda}_{i,q}$ con toda la realidad del contexto.
+Este resultado no atribuye cardinalidad al parámetro de contexto $i$ ni identifica $T^{\Lambda}_{i,q}$ con toda la realidad tipada.
 
 ### 3. Smallness de los hechos
 
@@ -5105,176 +5105,102 @@ $$
 
 para el puente entre ambos.
 
-#### 8.1. SUPERSEDED seed-based OA derivation / reconstruction test
+#### 8.1. Carrier anchoring vigente
 
-Como disciplina de tipos, $\operatorname{CoReal}$ se aplica solo a tokens actuales:
-
-$$
-\mathrm{CRType}:
-\quad
-\operatorname{CoReal}(x,q)
-\Rightarrow
-\operatorname{Actual}(x)
-\land
-\operatorname{Actual}(q).
-$$
-
-Esta cláusula no decide qué hace co-reales a dos tokens; solo fija el tipo ontológico de los relata.
-
-OA se formula sobre la misma relación ontológica independiente que MC:
+Para la componente finita tipada:
 
 $$
-\mathrm{OA}_i(S;q)
+T^{\Lambda}_{i,q}
+=
+[q_i]_{\sim_i},
+$$
+
+OA se formula respecto de la genealogía objetivo:
+
+$$
+\mathrm{OA}_i(S;\mathcal O_i)
 :=
-\forall a\in T_S\;
-\exists x\,
-[
-\operatorname{Actual}(x)
+\forall a_i\in T_S\;
+\exists x_i[
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 \land
-\operatorname{CoReal}(x,q)
-\land
-\operatorname{Den}_i(a,x)
+\operatorname{Den}_i(a_i,x_i)
 ].
 $$
 
-Para el carrier directo $T_i=[q]_{\sim}$ y la denotación canónica:
+Con denotación canónica:
 
 $$
-\mathrm{CD}_i:
+\mathrm{CD}_{i,q}^{\Lambda}:
 \quad
-x\in T_i
+x_i\in T^{\Lambda}_{i,q}
 \Rightarrow
-\operatorname{Den}_i(x,x).
+\operatorname{Den}_i(x_i,x_i),
 $$
 
-Entonces:
+y soundness genealógica:
+
+$$
+\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}:
+\quad
+x_i\in T^{\Lambda}_{i,q}
+\Rightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i),
+$$
+
+se obtiene:
 
 $$
 \boxed{
-\mathrm{RS}_{\Lambda}
+\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}
 +
-\mathrm{CRType}
-+
-\mathrm{CD}_i
+\mathrm{CD}_{i,q}^{\Lambda}
 \Rightarrow
-\mathrm{OA}_i(S_i^*;q).
+\mathrm{OA}_i(S^{\Lambda,*}_{i,q};\mathcal O_i).
 }
 $$
 
-**Demostración.** Sea $a\in T_i=[q]_{\sim}$. Por RS, $\operatorname{CoReal}(a,q)$; por CRType, $\operatorname{Actual}(a)$. CD da $\operatorname{Den}_i(a,a)$. Tomando $x=a$ se obtiene OA. $\square$
+En Ruta A, EXT-01 + EdgeTyped$_i$ + seed tipado proporcionan una vía hacia RS; el anclaje factual fuerte sigue dependiendo de RA/REV-25.
 
-Así RS controla **sobreinclusión** y OA del carrier; RC controla **subinclusión** y MC. Bajo RS + RC + CD, el carrier de $S_i^*$ coincide extensionalmente, vía denotación canónica, con la co-realidad relativa a $q$.
+#### 8.2. Membership Completeness vigente
 
-El anclaje/fidelidad de hechos $\Phi_i^{\mathrm{all}}$ sigue abierto y pertenece a RA/REV-25.
-
-#### 8.2. SUPERSEDED seed-based MC derivation / reconstruction tests
-
-MC se formula directamente respecto de la relación ontológica objetivo $\operatorname{CoReal}$ y de un token semilla actual $q$:
+MC se formula:
 
 $$
-\mathrm{MC}_i(S;q)
+\mathrm{MC}_i(S;\mathcal O_i)
 :=
-\forall x\,
-[
-\operatorname{Actual}(x)
-\land
-\operatorname{CoReal}(x,q)
+\forall x_i[
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 \Rightarrow
-\exists a\in T_S\;\operatorname{Den}_i(a,x)
+\exists a_i\in T_S\;
+\operatorname{Den}_i(a_i,x_i)
 ].
 $$
 
-Así se evita introducir un predicado $\operatorname{Reg}_i(x)$ cuya relación con $\operatorname{CoReal}$ tendría que justificarse por separado.
-
-Si se desea una abreviatura extensional del régimen relativo a $q$, se define solo después:
+La obligación de reconstruction completeness es:
 
 $$
-\operatorname{Reg}^{\mathrm{ont}}_q(x)
-:\Longleftrightarrow
-\operatorname{Actual}(x)
-\land
-\operatorname{CoReal}(x,q).
-$$
-
-El criterio formal generado por $\Lambda_*$ sigue siendo:
-
-$$
-\operatorname{Reg}^{\Lambda}(x;q)
-:\Longleftrightarrow
-x\in[q]_{\sim}.
-$$
-
-Las dos obligaciones de adecuación son:
-
-$$
-\mathrm{RS}_{\Lambda}:
+\mathrm{RC}^{\mathrm{gen}}_{\Lambda,i}:
 \quad
-\operatorname{Reg}^{\Lambda}(x;q)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 \Rightarrow
-\operatorname{CoReal}(x,q),
+x_i\in T^{\Lambda}_{i,q}.
 $$
 
-y:
-
-$$
-\mathrm{RC}_{\Lambda}:
-\quad
-\operatorname{CoReal}(x,q)
-\Rightarrow
-\operatorname{Reg}^{\Lambda}(x;q).
-$$
-
-RS es soundness; RC es completeness.
-
-Para el carrier directo:
-
-$$
-T_i=[q]_{\sim}.
-$$
-
-Como sus elementos son los propios tokens actuales usados en la construcción, se dispone de la denotación canónica:
-
-$$
-\mathrm{CD}_i:
-\quad
-x\in T_i
-\Rightarrow
-\operatorname{Den}_i(x,x).
-$$
-
-Entonces:
+Por tanto:
 
 $$
 \boxed{
-\mathrm{RC}_{\Lambda}
+\mathrm{RC}^{\mathrm{gen}}_{\Lambda,i}
 +
-\mathrm{CD}_i
+\mathrm{CD}_{i,q}^{\Lambda}
 \Rightarrow
-\mathrm{MC}_i(S_i^*;q).
+\mathrm{MC}_i(S^{\Lambda,*}_{i,q};\mathcal O_i).
 }
 $$
 
-**Demostración.** Sea $x$ actual con $\operatorname{CoReal}(x,q)$. Por RC:
+Así RS controla sobreinclusión; RC controla subinclusión. Ninguna define el índice ni la genealogía: ambas comparan una reconstrucción $\Lambda_i$ con $\operatorname{Cl}^{G}_i(\mathcal O_i)$ ya caracterizada independientemente.
 
-$$
-x\in[q]_{\sim}=T_i.
-$$
-
-Por CD:
-
-$$
-\operatorname{Den}_i(x,x).
-$$
-
-Tomando $a=x\in T_i$ se obtiene el testigo exigido por MC. $\square$
-
-Obsérvese que RS no interviene en este lema. RS cumple la función complementaria de impedir **sobreinclusión** del carrier; RC impide **subinclusión**. Bajo ambas:
-
-$$
-\operatorname{CoReal}(x,q)
-\Longleftrightarrow
-x\in[q]_{\sim}.
-$$
 
 ##### Posibles contraejemplos a $\mathrm{RC}_{\Lambda}$
 
