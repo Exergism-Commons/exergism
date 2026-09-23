@@ -1560,15 +1560,23 @@ $$
 ].
 $$
 
-**Adecuación generativa.** $\operatorname{GenEvent}_i$ implementa $\operatorname{OntProd}_i$ con antecedentes conjuntos y debe satisfacer:
+**Adecuación generativa.** $\operatorname{OntProd}_i$ permanece como relación objetivo independiente. El work/ fija OP1–OP8 y cuatro modos núcleo —CAU/CON/GRD/PRC— que implican OntProd; $\operatorname{GenEvent}_i$ implementa exactamente esos modos. Por ello GenSound se deriva, mientras GenComplete exige la obligación sustantiva:
 
 $$
-\mathrm{GenSound}_i
-\land
-\mathrm{GenComplete}_i.
+\mathrm{ProdCoverage}_i:
+\quad
+\operatorname{OntProd}_i(e_i,A_i,b_i)
+\Rightarrow
+\operatorname{CausalProd}_i
+\lor
+\operatorname{ConstitutiveProd}_i
+\lor
+\operatorname{GroundProd}_i
+\lor
+\operatorname{ProcessProd}_i.
 $$
 
-Las definiciones exactas, el contraejemplo a GenStep binario y los criterios por modo causal/constitutivo/grounding/continuidad quedan en `work/`.
+GF1–GF6 impiden omitir o inflar GenFoot y P1–P8 fijan los contraejemplos. REV-07b sigue PARTIAL exactamente por ProdCoverage; GenStep continúa siendo solo una proyección auxiliar.
 
 El operador generativo añade el footprint completo de cada hiperevento cuyos antecedentes están disponibles:
 
