@@ -37,22 +37,24 @@ def markdown_lines_outside_fences(text: str) -> list[tuple[int, str]]:
     fence_len = 0
 
     for index, line in enumerate(text.splitlines(), start=1):
-        stripped = line.lstrip()
-        match = re.match(r"^(`{3,}|~{3,})", stripped)
-
-        if match:
-            marker = match.group(1)
-            marker_char = marker[0]
-            if fence_char is None:
-                fence_char = marker_char
+        if fence_char is None:
+            opening = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
+            if opening:
+                marker = opening.group(1)
+                fence_char = marker[0]
                 fence_len = len(marker)
-            elif marker_char == fence_char and len(marker) >= fence_len:
-                fence_char = None
-                fence_len = 0
+                continue
+
+            result.append((index, line))
             continue
 
-        if fence_char is None:
-            result.append((index, line))
+        closing = re.fullmatch(
+            rf"^ {{0,3}}{re.escape(fence_char)}{{{fence_len},}}[ \t]*$",
+            line,
+        )
+        if closing:
+            fence_char = None
+            fence_len = 0
 
     return result
 
