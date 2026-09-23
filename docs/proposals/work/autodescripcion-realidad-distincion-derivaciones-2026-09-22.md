@@ -2007,85 +2007,70 @@ $$
 
 su contenido inicial.
 
-La unidad se modela mediante:
+La unidad no se define a partir del candidato $\mathcal O_i$. Introducimos hechos de integración independientes:
 
 $$
-\operatorname{Bind}_i(u_i,v_i;\mathcal O_i),
+\operatorname{UnitFact}_i(f_i,U_i),
 $$
 
-independiente de $R_i$, CoReal, SemTotal y de la clausura final.
+donde $U_i$ es la familia de relata del hecho/proceso/constraint integrativo.
 
-Una condición suficiente de unidad conectiva es:
+UnitFact debe satisfacer:
+
+- **UF1 / token-specific:** la instancia está efectivamente dada, no es mera posibilidad;
+- **UF2 / integrative:** su semántica propia aporta integración constitutiva/procesual/de dependencia;
+- **UF3 / container-independent:** no menciona $\mathcal O_i$, Seed, OriginConfig, OriginUnity ni pertenencia al candidato;
+- **UF4 / target-independent:** no menciona $R_i$, CoReal, Generated$^*$, SameRegime ni «mismo índice»;
+- **UF5 / invariant:** recodificaciones fieles preservan la instancia.
+
+No bastan semejanza, proximidad, compartir leyes, representación conjunta ni fusión mereológica sin dependencia integrativa.
+
+Definimos OriginUnity **por** la condición de partición:
 
 $$
-\mathrm{OU2}_i(\mathcal O_i):
-\quad
+\boxed{
+\operatorname{OriginUnity}_i(\mathcal O_i)
+:\Longleftrightarrow
 \forall A_i,B_i[
 \operatorname{Partition}_i(
 \operatorname{Seed}_i(\mathcal O_i);A_i,B_i
 )
 \Rightarrow
-\exists u_i\in A_i\exists v_i\in B_i\;
-\operatorname{Bind}_i(u_i,v_i;\mathcal O_i)
+\exists f_i\exists U_i[
+\operatorname{UnitFact}_i(f_i,U_i)
+\land
+U_i\cap A_i\neq\varnothing
+\land
+U_i\cap B_i\neq\varnothing
+]
 ].
+}
 $$
 
-Esta condición no pretende todavía fijar qué relaciones concretas cuentan como Bind; fija la forma lógica que debe excluir agregados disjuntos.
-
-#### 0.1.1. Admisibilidad de Bind
-
-Bind no puede ser cualquier relación entre constituyentes. Para una instancia:
-
-$$
-\operatorname{Bind}_i(u_i,v_i;\mathcal O_i),
-$$
-
-exigimos como mínimo:
-
-- **B1 / token-specific:** la relación está efectivamente instanciada en la configuración, no es mera posibilidad o ley;
-- **B2 / origin-constitutive:** participa en las condiciones de identidad, persistencia o capacidad generativa conjunta de $\mathcal O_i$;
-- **B3 / intra-origin:** el testigo relevante pertenece a la estructura de la configuración-originaria, no a una interacción posterior entre linajes ya constituidos;
-- **B4 / target-independent:** no usa $R_i$, CoReal, Generated$^*$, SameRegime ni «mismo índice» en su definición;
-- **B5 / representation-invariant:** una recodificación fiel preserva la instancia.
-
-No bastan por sí solas semejanza, proximidad, compartir leyes, representación conjunta ni una fusión mereológica que no añada dependencia integrativa.
-
-Así OU2 no dice «todo está relacionado de algún modo»: exige conectividad mediante relaciones que sean constitutivas del origen como configuración.
+Como el test usa los relata de UnitFact y no una orientación binaria, funciona igual con integración causal/constitutiva/dependiente asimétrica.
 
 ### 0.2. Lema anti-agregación
 
-Sean dos contenidos no vacíos $A_i,B_i$ tales que no existe ningún Bind real cruzando la partición:
+Sean dos contenidos no vacíos $A_i,B_i$ tales que ningún UnitFact independiente tiene relata en ambos lados:
 
 $$
-\forall u_i\in A_i\forall v_i\in B_i\;
-\neg\operatorname{Bind}_i(u_i,v_i;\mathcal O_i).
+\mathrm{NoUnitFactBridge}(A_i,B_i).
 $$
 
-Entonces cualquier candidato cuyo seed sea:
-
-$$
-A_i\cup B_i
-$$
-
-viola OU2 para la partición $A_i\mid B_i$.
-
-Por tanto:
+Si un candidato tuviera seed $A_i\cup B_i$, la partición $A_i\mid B_i$ violaría directamente la definición de OriginUnity. Por tanto:
 
 $$
 \boxed{
-\mathrm{NoBind}(A_i,B_i)
+\mathrm{NoUnitFactBridge}(A_i,B_i)
 \Rightarrow
 \neg\operatorname{OriginUnity}_i(A_i\cup B_i).
 }
 $$
 
-**Consecuencia.** La operación metalingüística de escribir:
+Esto ya no depende de una mera condición suficiente: OU2 **es** la definición vigente de OriginUnity.
 
-$$
-\mathcal O:=\mathcal O_a\cup\mathcal O_b
-$$
+**Consecuencia.** Escribir en el metalenguaje $\mathcal O_a\cup\mathcal O_b$ no crea ningún UnitFact y, por tanto, no puede fabricar un origen común.
 
-no convierte dos raíces independientes en un origen común. Para obtener una única realidad debe existir una configuración integrativa real previa a la conclusión.
 
 ### 0.3. Root-closure sin primera causa temporal
 
@@ -2102,8 +2087,20 @@ b_i\in\operatorname{Seed}_i(\mathcal O_i)
 \land
 \operatorname{OntProd}_i(e_i,A_i,b_i)
 \Rightarrow
-A_i\preceq\operatorname{Seed}_i(\mathcal O_i).
+\operatorname{GenFoot}_i(e_i,A_i,b_i)
+\preceq
+\operatorname{Seed}_i(\mathcal O_i).
 $$
+
+Definimos el footprint mínimo de una producción de modo que:
+
+$$
+A_i\cup\{e_i,b_i\}
+\preceq
+\operatorname{GenFoot}_i(e_i,A_i,b_i).
+$$
+
+Así RootClosed exige que no solo los antecedentes, sino también el propio evento productor y cualquier token ontológico estructural obligatorio, pertenezcan al seed.
 
 Esto no exige que los constituyentes del origen sean incausados individualmente. Permite ciclos fundamentales, soporte mutuo o una configuración estacionaria siempre que no exista antecedente generativo externo al seed.
 
@@ -2234,13 +2231,13 @@ $$
 :=
 X_i
 \cup
+\bigcup
 \{
-b_i\mid
-\exists e_i\exists A_i[
+\operatorname{GenFoot}_i(e_i,A_i,b_i)
+\mid
 \operatorname{GenEvent}_i(e_i,A_i,b_i)
 \land
 A_i\preceq X_i
-]
 \}.
 $$
 
@@ -2356,13 +2353,25 @@ Así la existencia de la least closure queda como obligación explícita de REV-
 
 ### 0.8. Irredundancia del origen
 
-Para bloquear seed-stuffing:
+Para bloquear seed-stuffing sin destruir orígenes cíclicos:
 
 $$
+\boxed{
 \mathrm{Irredundant}_i(\mathcal O_i)
+:\Longleftrightarrow
+\neg\exists\mathcal O'_i\prec\mathcal O_i[
+\operatorname{OriginCandidate}_i(\mathcal O'_i)
+\land
+\mathrm{GCExists}_i(\mathcal O'_i)
+\land
+\operatorname{Cl}^{G}_i(\mathcal O'_i)
+=
+\operatorname{Cl}^{G}_i(\mathcal O_i)
+].
+}
 $$
 
-exige que ninguna subconfiguración propia que siga siendo una OriginConfig unificada produzca exactamente la misma least closure.
+Por tanto una subconfiguración solo compite si también es OriginConfig + OriginUnity + RootClosed. En el ciclo $a\leadsto b\leadsto a$, el singleton $\{a\}$ no derrota al origen completo cuando $b$ es una entrada productiva externa a ese singleton.
 
 Esto permite representaciones equivalentes solo mediante una relación explícita de equivalencia de origen; no por igualdad extensional accidental.
 
@@ -2394,7 +2403,7 @@ $$
 
 Esto hace explícito que la existencia de la least closure no se obtiene por definir OntOrigin: es una premisa/resultado separado que debe establecer REV-07c.
 
-El criterio sigue siendo no circular respecto de $R_i$ siempre que OriginConfig, Bind/OriginUnity y GenEvent sean caracterizados independientemente.
+El criterio sigue siendo no circular respecto de $R_i$ siempre que OriginConfig, UnitFact/OriginUnity, OntProd y GenEvent sean caracterizados independientemente.
 
 
 ### 0.10. Generated y GeneTotal
