@@ -445,11 +445,13 @@ $$
 
 ambas expresiones intentan aplicar predicados de $j$ a un término de tipo $i$.
 
-Una comparación externa requiere una traducción metalingüística:
+Una comparación externa requiere, **si existe**, una traducción metalingüística parcial o total:
 
 $$
 \tau_{ij}:\mathcal L_i\rightsquigarrow\mathcal L_j.
 $$
+
+La teoría no postula que tal traducción exista para todo par de contextos. Si no existe ninguna traducción fiel relevante, no hay siquiera una comparación verdad/falsedad entre esos contenidos: hay incommensurabilidad semántica desde el metalenguaje.
 
 Puede ocurrir, por ejemplo:
 
