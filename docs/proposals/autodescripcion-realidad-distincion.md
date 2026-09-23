@@ -1851,7 +1851,7 @@ $$
 \operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
 $$
 
-La tesis fuerte $\mathrm{CGP}:\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b)\Rightarrow\operatorname{CommonGround}^{\mathsf M}(C_a,C_b)$ permanece **OPEN**. Si se demuestra, la convergencia es retroactiva solo en sentido epistémico: revela que la separación previa era provisional y que el common ground existe independientemente del evento convergente. Si falla, una ontogénesis por convergencia requeriría una extensión explícita de la teoría; EXT-01/EXT-02 no la autorizan por sí solas.
+La tesis fuerte $\mathrm{CGP}:\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b)\Rightarrow\operatorname{CommonGround}^{\mathsf M}(C_a,C_b)$ **no es derivable de la doctrina vigente**. El work/ exhibe un contramodelo finito: dos raíces sin ConstitutiveBridge generan conjuntamente una relación-token pura, son JointRealizable en una única realización coherente y, sin embargo, ninguna configuración común satisface OriginUnity/CommonGround. CGP solo puede recuperarse añadiendo una premisa metafísica que excluya ese modelo. REV-07e queda abierto por la elección entre CGP-as-axiom, context assembly, ontogenic formation o strict separation.
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
@@ -1914,7 +1914,7 @@ $$
 \operatorname{Integrable}^{\mathsf M}(C_a,C_b)\lor\operatorname{RelIntegrable}^{\mathsf M}(C_a,C_b)\Rightarrow\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b).
 $$
 
-La segunda implicación **no** autoriza $i\simeq_{\mathrm{idx}}j$, CommonGround ni influencia causal. Una cadena mixta relación–OntProd–relación solo prueba un marco realizado si existe un único testigo coherente que contenga toda la cadena; la realizabilidad pairwise no se toma como transitiva. Ese salto sigue siendo REV-07e/CGP.
+La segunda implicación **no** autoriza $i\simeq_{\mathrm{idx}}j$, CommonGround ni influencia causal. Una cadena mixta relación–OntProd–relación solo prueba ContextUnity/JointRealizable si existe un único testigo coherente que contenga toda la cadena; la realizabilidad pairwise no se toma como transitiva. El work/ demuestra que ContextUnity no implica GeneUnity/CommonGround bajo las reglas actuales.
 
 Una vez justificado:
 
