@@ -1472,23 +1472,34 @@ Definimos normativamente:
 
 $$
 \boxed{
-\operatorname{OntOrigin}_i(\mathcal O_i)
+\operatorname{OriginCandidate}_i(\mathcal O_i)
 :\Longleftrightarrow
 \mathrm{OriginConfig}_i(\mathcal O_i)
 \land
 \mathrm{OriginUnity}_i(\mathcal O_i)
 \land
-\mathrm{RootClosed}_i(\mathcal O_i)
+\mathrm{RootClosed}_i(\mathcal O_i),
+$$
+
+y:
+
+$$
+\operatorname{OntOrigin}_i(\mathcal O_i)
+:\Longleftrightarrow
+\operatorname{OriginCandidate}_i(\mathcal O_i)
+\land
+\mathrm{GCExists}_i(\mathcal O_i)
 \land
 \mathrm{Irredundant}_i(\mathcal O_i).
 }
 $$
 
-Los cuatro criterios son:
+Los criterios de origen se separan en tres criterios pre-clausura y dos controles posteriores:
 
 - **OU1 / OriginConfig:** $\mathcal O_i$ es una configuración-token ontológicamente instanciada, no una lista o suma representacional.
 - **OU2 / OriginUnity:** toda partición no trivial de $\operatorname{Seed}_i(\mathcal O_i)$ está cruzada por estructura integrativa real $\operatorname{Bind}_i$ caracterizada sin usar $R_i$.
 - **OU3 / RootClosed:** si un constituyente del seed es generado, todos sus antecedentes pertenecen al propio seed; se permiten ciclos internos, no entradas generativas externas.
+- **GCExists:** existe una least generative closure en el marco fundacional adoptado.
 - **OU4 / Irredundant:** ninguna subconfiguración propia que siga siendo una OriginConfig unificada genera la misma clausura, salvo equivalencia de origen justificada.
 
 El lema anti-agregación demostrado en `work/` da:
@@ -1526,21 +1537,46 @@ A_i\preceq X_i
 ]\}.
 $$
 
-La genealogía usa su menor clausura sobre el seed:
+La existencia de una menor clausura **no se presupone por notación**. Introducimos:
 
 $$
-\boxed{
-\operatorname{Cl}^{G}_i(\mathcal O_i)
-:=
-\mu X_i[
+\operatorname{GenClosure}_i(\mathcal O_i,C_i)
+$$
+
+cuando:
+
+$$
+\operatorname{Seed}_i(\mathcal O_i)\preceq C_i,
+\qquad
+\Gamma_i(C_i)=C_i,
+$$
+
+y para todo carrier admisible $X_i$:
+
+$$
 \operatorname{Seed}_i(\mathcal O_i)\preceq X_i
 \land
 \Gamma_i(X_i)=X_i
-].
-}
+\Rightarrow
+C_i\preceq X_i.
 $$
 
-y:
+Definimos:
+
+$$
+\mathrm{GCExists}_i(\mathcal O_i)
+:\Longleftrightarrow
+\exists C_i\;
+\operatorname{GenClosure}_i(\mathcal O_i,C_i).
+$$
+
+Solo bajo GCExists se usa:
+
+$$
+\operatorname{Cl}^{G}_i(\mathcal O_i)
+$$
+
+como abreviatura del único $C_i$ mínimo, y entonces:
 
 $$
 \operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
@@ -1548,7 +1584,7 @@ $$
 x_i\in\operatorname{Cl}^{G}_i(\mathcal O_i).
 $$
 
-El documento técnico demuestra condicionalmente extensividad, monotonía, cierre y minimalidad de esta construcción. REV-07 permanece PARTIAL porque OriginUnity/Bind, los modos concretos de GenEvent y la existencia fundacional de la least closure aún requieren justificación independiente.
+Así REV-07c queda explícita: debe demostrarse GCExists en el marco set/plural/class/transfinito elegido; no queda escondida dentro de un operador $\mu$.
 
 
 ### 5.2. Co-realidad derivada
