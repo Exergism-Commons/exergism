@@ -215,11 +215,11 @@ En la propuesta revisada estas referencias sirven para distinguir dos cosas: la 
 
 Para cualquier carrier T de la propuesta:
 
-$
+$$
 \operatorname{Diag}^{+}_{\mathcal L}(T)
 :=
 \{\varphi\in\operatorname{Atoms}_{\mathcal L}(T)\mid\operatorname{Actual}(\varphi)\}.
-$
+$$
 
 Por tanto $\Phi^{\mathrm{all}}$ no es una colección ad hoc: es el **diagrama atómico positivo actual** del carrier, bajo la firma elegida y la interpretación de Actual. Esto no convierte S en una realidad ni demuestra RA/Presents: el Diagram Lemma es una herramienta representacional, no un puente ontológico.
 
