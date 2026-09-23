@@ -3613,6 +3613,245 @@ $$
 
 Context Assembly/$\Xi$ queda subordinado a esa respuesta y deja de ser una tercera ontología.
 
+#### 0.11.16. Hipótesis fuerte: no hay ontogénesis débil
+
+Probamos la hipótesis doctrinal:
+
+$
+\boxed{
+\operatorname{ContextGenesis}^{\mathsf M}
+\Rightarrow
+\operatorname{GenesisConstitutiveUnity}_k.
+}
+$
+
+GenesisConstitutiveUnity no significa que los tokens parentales pasados dependan retroactivamente de la génesis. Exige que **las continuaciones en el hijo, como contenido de $k$, y la estructura de formación child-side pertenezcan a una configuración que satisfaga OriginUnity$_k$**.
+
+La separación de niveles es obligatoria:
+
+- $\gamma$ es parte del **juicio metateórico** de transición entre tipados; no es una entidad, evento ni portador de Real;
+- $g_k$ es el **witness ontológico actual child-side** de la novedad constitutiva;
+- las continuaciones $\kappa_{i\to k}(x_i)=x_k$ y $\kappa_{j\to k}(y_j)=y_k$ sí son términos objeto de $k$;
+- ninguna fórmula cross-index transforma a $\gamma$ en una superentidad que exista “entre” realidades.
+
+Por tanto evitamos escribir:
+
+$
+\operatorname{Real}(\gamma)
+$
+
+o cualquier variante indexada de esa expresión. La metarelación registra una formación; la realidad de la novedad debe poder auditarse enteramente desde $k$ mediante $g_k$ y su estructura.
+
+Definimos esquemáticamente:
+
+$
+\operatorname{GenesisConstitutiveUnity}_k(\mathcal O_k;g_k)
+$
+
+cuando:
+
+1. $\mathcal O_k$ es una OriginConfig child-side que contiene las continuaciones relevantes y el footprint completo de $g_k$;
+2. $g_k$ es actual, independiente del candidato y recoding-invariant;
+3. toda partición no trivial de $\operatorname{Seed}_k(\mathcal O_k)$ posee un ConstitutiveBridge conforme ECD1–ECD7;
+4. las particiones que separan imágenes de distintos precursores requieren dependencia constitutiva cruzada real, no mera causalidad, interacción o co-presencia;
+5. las particiones que separan el witness/estructura de génesis de las continuaciones también deben quedar bridged: no basta con bilateralidad entre las dos ramas parentales;
+6. quitar la estructura constitutiva de génesis puede dejar intactos los parentales $x_i,y_j$, pero no puede dejar intacta la identidad/existencia de sus continuaciones **como contenido de $k$**.
+
+La condición (5) evita una falsa prueba donde $g_k$ es solo un evento externo que “pega” dos linajes. Una génesis fuerte exige una configuración child-side ontológicamente unificada.
+
+#### 0.11.17. Test G1 — co-constitución bilateral/holística
+
+Sean continuaciones:
+
+$
+x_i\rightsquigarrow x_k,
+\qquad
+y_j\rightsquigarrow y_k,
+$
+
+y una estructura actual $g_k$ tal que la semántica independiente justifica, al menos:
+
+$
+\operatorname{IdDep}_k(x_k;g_k\mid Y_k)
+\lor
+\operatorname{ConstExistDep}_k(x_k;g_k\mid Y_k),
+$
+
+con soporte cruzado que incluye contenido heredado de $j$, y simétricamente para $y_k$ respecto del sector heredado de $i$.
+
+Esto supera la partición parental:
+
+$
+X_k^{(i)}\mid Y_k^{(j)}.
+$
+
+Pero eso **no basta todavía**. GenesisConstitutiveUnity exige que cualquier partición que aísle parte del footprint de $g_k$ también tenga un bridge. Por tanto el caso genuinamente positivo no es simplemente:
+
+$
+x_k\leftarrow g_k\rightarrow y_k,
+$
+
+sino una estructura holística/co-constitutiva en la que el witness de génesis y los sectores continuados forman una unidad bajo OriginUnity.
+
+Si esta condición se satisface y además valen RootClosed, GenAdequate, GCExists e Irredundant:
+
+$
+\boxed{
+\operatorname{ContextGenesis}^{\mathsf M}
++
+\operatorname{GenesisConstitutiveUnity}_k
+\Rightarrow
+\exists\mathcal O_k\,
+\operatorname{OntOrigin}_k(\mathcal O_k).
+}
+$
+
+En este caso **no hace falta GenesisOrigin**: OntOrigin ya es suficientemente general.
+
+#### 0.11.18. Test G2 — dependencia unilateral
+
+Supóngase que la identidad/existencia de $y_k$ como continuación en $k$ depende de $g_k$ y del sector $X_k^{(i)}$, pero $x_k$ permanece constitutivamente independiente:
+
+$
+\operatorname{EssConDep}_k(y_k;g_k\mid X_k^{(i)})
+$
+
+mientras no existe dependencia constitutiva admisible desde ningún contenido del sector $X_k^{(i)}$ hacia el otro lado.
+
+Entonces la partición que aísla el sector independiente carece de bilateralidad:
+
+$
+\mathrm{NoConstitutiveBridge}_k
+(X_k^{(i)},\,\operatorname{Seed}_k(\mathcal O_k)\setminus X_k^{(i)}),
+$
+
+y por REV-07a:
+
+$
+\boxed{
+\neg\operatorname{OriginUnity}_k(\mathcal O_k).
+}
+$
+
+Interpretación: incorporación, asimilación, extensión o producción unilateral pueden ser ontológicamente novedosas **dentro de un contexto**, pero no justifican por sí solas el nacimiento de una nueva $R_k$ común. Si todo lo demás ya estaba tipado en un espacio previo, el caso pertenece a SharedOntSpace/ordinary OntProd; si no existe ese espacio, todavía falta una génesis constitutiva fuerte.
+
+#### 0.11.19. Test G3 — relación pura entre continuaciones
+
+Supóngase únicamente:
+
+$
+\operatorname{PureOntRel}_k(\rho_k;\{x_k,y_k\}).
+$
+
+POR4 impide usar la incidencia pura como orientación productiva hacia sus relata, y la regla ya fijada prohíbe usar PureOntRel por sí sola como ConstitutiveBridge de OriginUnity.
+
+Luego:
+
+$
+\boxed{
+\operatorname{PureOntRel}_k(\rho_k;\{x_k,y_k\})
+\not\Rightarrow
+\operatorname{GenesisConstitutiveUnity}_k.
+}
+$
+
+Si se demuestra que $x_k$ y $y_k$, **como continuaciones en $k$**, dependen constitutivamente de esa estructura relacional, la instancia deja de ser pura en el sentido POR4 y debe clasificarse bajo CON/GRD/HC/RLC u otra familia productiva justificada.
+
+Por tanto no existe aquí una “ontogénesis débil por relación”: o la relación descubre/ocurre dentro de SharedOntSpace, o adquiere fuerza constitutiva y el caso migra al test G1.
+
+#### 0.11.20. Test G4 — mera coexistencia
+
+Supóngase que hay realizaciones child-side de ambos precursores:
+
+$
+x_i\rightsquigarrow x_k,
+\qquad
+y_j\rightsquigarrow y_k,
+$
+
+pero ninguna estructura actual produce dependencia constitutiva cruzada suficiente.
+
+Entonces la coexistencia por sí sola no crea OriginUnity:
+
+$
+\boxed{
+\operatorname{JointRealizable}^{\mathsf M}
+\not\Rightarrow
+\operatorname{ContextGenesis}^{\mathsf M}.
+}
+$
+
+Si $k$ preexistía, es SharedOntSpace. Si no puede exhibirse ni espacio previo ni witness constitutivo child-side, la teoría no autoriza introducir $k$ como nueva realidad por mera estipulación.
+
+#### 0.11.21. Resultado de los cuatro tests
+
+| Caso | Unidad parental | OriginUnity completa | Clasificación |
+|---|---|---|---|
+| G1 co-constitución holística | sí | sí, si toda partición tiene bridge | ontogénesis fuerte |
+| G2 unilateral | no | no | extensión/asimilación, no nueva R común |
+| G3 PureOntRel | no | no | SharedOntSpace o relación interna; si se vuelve constitutiva pasa a G1 |
+| G4 coexistencia | no | no | SharedOntSpace/JointRealizable, no génesis |
+
+Esto apoya la **No-Weak-Genesis Thesis**:
+
+$
+\boxed{
+\operatorname{GenuineContextGenesis}^{\mathsf M}
+\Rightarrow
+\operatorname{GenesisConstitutiveUnity}_k.
+}
+$
+
+No es todavía un teorema de lógica pura: es una decisión doctrinal fuertemente motivada por REV-07a. Su ventaja es que no necesita inventar GenesisOrigin y evita que cualquier novedad contextual nominal cuente como nueva realidad.
+
+#### 0.11.22. Necesidad del indexamiento para la ontogénesis genuina
+
+La ontogénesis también aclara por qué el indexamiento no es decoración.
+
+Si todos los precursores, el supuesto mecanismo integrador y sus efectos ya son expresables en un único lenguaje objeto $L_i$, entonces la transformación puede representarse mediante OntProd/GenEvent **dentro de $i$**. No hay motivo suficiente para introducir un nuevo contexto:
+
+$
+\operatorname{InternalFormation}_i
+\not\Rightarrow
+\operatorname{ContextGenesis}^{\mathsf M}.
+$
+
+Para una génesis genuina exigimos **index novelty**:
+
+$
+\boxed{
+\operatorname{GenuineContextGenesis}^{\mathsf M}(C_i,C_j\Rightarrow k;\gamma)
+\Rightarrow
+k\not\simeq_{\mathrm{idx}} i
+\land
+k\not\simeq_{\mathrm{idx}} j
+}
+$
+
+para los precursores que realmente participan como contextos parentales distintos.
+
+Cuando además $i\#j$, ningún evento objeto pre-child puede tener simultáneamente términos de ambos tipos. Por eso la relación de precursoridad debe permanecer metaontológica, mientras toda novedad ontológica efectiva aparece ya tipada en $k$.
+
+La arquitectura queda:
+
+$
+\boxed{
+\begin{array}{c}
+i\#j\\
+\Downarrow\;\text{solo juicio meta de precursoridad}\\
+\operatorname{ContextGenesis}^{\mathsf M}(i,j\Rightarrow k;\gamma)\\
+\Downarrow\;\text{continuaciones tipadas + witness actual}\\
+x_k,\;y_k,\;g_k\\
+\Downarrow\;\operatorname{GenesisConstitutiveUnity}_k\\
+\operatorname{OntOrigin}_k.
+\end{array}
+}
+$
+
+Así $\gamma$ no es una entidad “entre realidades”. El índice hace exactamente el trabajo de impedir esa reificación: separa las ontologías parentales y obliga a que la convergencia novedosa se manifieste como una nueva estructura interna del hijo.
+
+
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 **Advertencia PureOntRel.** Una relación pura puede servir como enlace ontológico de marco sin preservar una única genealogía. Por ello no se incorpora automáticamente a $\Lambda_*$ cuando esta pretende reconstruir $\operatorname{Generated}^{*}$: si conecta dos genealogías sin common ground, produciría sobreinclusión y haría fallar $\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}$. Su admisión como enlace reconstructivo requiere una justificación adicional de soundness; RelIntegrable por sí sola no basta.
