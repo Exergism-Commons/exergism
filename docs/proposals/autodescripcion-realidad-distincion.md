@@ -228,7 +228,7 @@ $$
 
 Solo bajo GCExists la minimalidad permite abreviar el testigo como $\operatorname{Cl}^{G}_i(\mathcal O_i)$. Para una unidad local la obligación correcta es **soundness**, no exhaustividad del contexto:
 
-$
+$$
 \boxed{
 \operatorname{OntOrigin}_i(\mathcal O_i)
 \land
@@ -236,7 +236,7 @@ $
 \Rightarrow
 \operatorname{Real}_i(x_i).
 }
-$
+$$
 
 La conversa $\operatorname{Real}_i(x_i)\Rightarrow\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)$ solo se obtiene en el caso monogeneal GeneTotal; en general la completitud se formula respecto de RegimeClosure.
 
@@ -532,9 +532,9 @@ El metalenguaje puede formular la hipótesis Many-$R$, pero esa formulación no 
 
 Fijado un parámetro de contexto $i$ y una realización:
 
-$
+$$
 \operatorname{RegimeTotal}_i(\mathfrak G_i,R_i),
-$
+$$
 
 se sigue dentro de ese contexto:
 
@@ -779,11 +779,11 @@ Eso no establece una genealogía ontológica.
 
 La existencia local fuerte pertenece a REV-07:
 
-$
+$$
 \operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \Rightarrow
 \operatorname{ExistsR}.
-$
+$$
 
 GeneTotal conserva esta implicación como corolario singleton.
 
@@ -862,9 +862,9 @@ $$
 
 La forma tipada del resultado semántico es «existe un máximo $S_i$ y es E-closed». La existencia ontológica de $R_i$ requiere REV-07 y una base genealógica total:
 
-$
+$$
 \operatorname{RegimeTotal}_i(\mathfrak G_i,R_i).
-$
+$$
 
 REV-24 solo debe justificar después:
 
@@ -1601,7 +1601,7 @@ Generated$^*$ permanece siempre definido relacionalmente mediante un testigo Gen
 
 La base extensional de la familia queda fijada por:
 
-$
+$$
 \operatorname{FamilyBase}_i(\mathfrak G_i,B_i)
 :\Longleftrightarrow
 \forall x_i[
@@ -1614,11 +1614,11 @@ G_{\alpha,i}=\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle
 x_i\in C_{\alpha,i}
 ]
 ].
-$
+$$
 
 La closure del régimen no es esa unión. Debe volver a cerrar el mismo operador generativo para recoger producción transversal:
 
-$
+$$
 \boxed{
 \begin{aligned}
 \operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)
@@ -1638,21 +1638,21 @@ C_i\preceq Y_i
 ].
 \end{aligned}
 }
-$
+$$
 
 Definimos:
 
-$
+$$
 \mathrm{RGCExists}_i(\mathfrak G_i)
 :\Longleftrightarrow
 \exists C_i\;\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i),
-$
+$$
 
 y RegimeGenerated$^*$ como en §1.6.
 
 Para bloquear family stuffing:
 
-$
+$$
 \boxed{
 \begin{aligned}
 \mathrm{FamilyIrredundant}_i(\mathfrak G_i)
@@ -1670,11 +1670,11 @@ $
 ].
 \end{aligned}
 }
-$
+$$
 
 Finalmente:
 
-$
+$$
 \boxed{
 \operatorname{GeneBasis}_i(\mathfrak G_i)
 :\Longleftrightarrow
@@ -1684,7 +1684,7 @@ $
 \land
 \mathrm{FamilyIrredundant}_i(\mathfrak G_i).
 }
-$
+$$
 
 Cada miembro sigue teniendo que ser una GeneUnit independientemente justificada por OntOrigin + GenClosure. Si un token derivado se intenta reetiquetar como origen singleton, RootClosed/OntProd debe rechazarlo cuando su producción esté correctamente representada; si OntProd omite esa producción, el fallo pertenece a REV-07b, no a REV-07f. Una pluralidad de raíces realmente primitivas e independientes, en cambio, es precisamente un caso multigeneal legítimo.
 
@@ -2182,9 +2182,9 @@ REC y el Muro deben mantenerse separados porque tienen **estatus y dirección l�
 
 $\operatorname{REC}_i(R_i)$ (R Enigmatic Certification) no se adopta como premisa para demostrar que $R_i$ existe. Se atribuye solo después de justificar una realización total de régimen:
 
-$
+$$
 \operatorname{RegimeTotal}_i(\mathfrak G_i,R_i).
-$
+$$
 
 La abreviatura estrictamente tipada es:
 
