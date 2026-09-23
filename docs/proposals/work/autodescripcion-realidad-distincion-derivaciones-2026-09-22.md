@@ -4251,6 +4251,248 @@ $$
 $$
 
 La ontogénesis se individua por **nuevo tipado + novedad constitutiva child-side**; convergence por reunión/integración de líneas; merger por cardinalidad many-to-one de continuaciones.
+#### 0.11.32. Ship of Theseus ataca FC3, no el número de piezas
+
+El principal adversario de FaithfulContinuation no es branching ni merger, sino el criterio de selección del ContinuationProfile.
+
+FC3 exige un perfil no trivial fijado **antes** de evaluar al descendiente. Pero si se responde simplemente que algunas propiedades de $x_i$ son “las importantes”, reaparece la circularidad:
+
+$
+\text{¿qué fija qué propiedades cuentan para la continuidad?}
+$
+
+No es admisible seleccionar retrospectivamente justo los rasgos que un candidato $x_k$ conserva. Tampoco sirve un umbral extensional —porcentaje de partes, semejanza global, identidad material— porque una realidad/contexto puede ser internamente iterativa y admitir sustitución extensa de contenido sin perder por ello su identidad de contexto.
+
+Por tanto Ship of Theseus deja una deuda nueva y precisa:
+
+$
+\boxed{
+\text{ContinuationProfile no puede seguir siendo primitivo.}
+}
+$
+
+Debe derivarse de una estructura independiente que determine qué transformaciones son internas a un contexto y qué roles ontológicos de sus contenidos deben preservarse a través de ellas.
+
+#### 0.11.33. Realidad iterativa y ancla de identidad de contexto
+
+Una realidad indexada no se identifica con una fotografía extensional de su contenido en un estadio:
+
+$
+R_i\neq X_i^{(t)}.
+$
+
+Debe poder admitir, en principio, iteraciones internas:
+
+$
+X_i^{(0)}
+\to
+X_i^{(1)}
+\to
+X_i^{(2)}
+\to\cdots
+$
+
+mediante OntProd/GenEvent y otras transformaciones bien tipadas sin crear automáticamente un nuevo índice.
+
+Esto exige distinguir:
+
+1. **cambio de estado/contenido dentro de $i$**;
+2. **continuidad de identidad del propio contexto $i$**;
+3. **ruptura ontogénica que exige un nuevo índice $k$**.
+
+El mero reemplazo acumulativo de constituyentes no decide esta frontera. Debe existir alguna estructura anterior al test de continuidad que determine qué transformaciones cuentan como iteraciones admisibles del mismo contexto.
+
+#### 0.11.34. Candidato abierto: firma ontogénica $\Omega_i$
+
+Introducimos **solo como candidato de trabajo**, todavía no como definición doctrinal cerrada:
+
+$
+\boxed{
+\Omega_i
+:=
+\operatorname{OntogenicSignature}_i.
+}
+$
+
+La intuición es que $\Omega_i$ no sea una lista libre de propiedades ni un snapshot del contenido, sino la estructura derivada de la ontología de $i$ que fija, al menos:
+
+- qué formas de generación/transformación pertenecen a la iteración interna del contexto;
+- qué invariantes o equivalencias estructurales preservan identidad contextual;
+- qué roles ontológicos de los tokens son relevantes para su continuidad;
+- qué cambios son meramente internos y cuáles rompen el tipado previo.
+
+No se adopta todavía ninguna tupla concreta para $\Omega_i$. En particular, queda **abierto** si debe derivarse únicamente de OntOrigin, de OntOrigin + estructura generativa, de la clase de iteraciones admisibles o de otra construcción independiente.
+
+La obligación central que motiva $\Omega_i$ es:
+
+$
+\boxed{
+\operatorname{ContinuationProfile}_i(x_i)
+\stackrel{?}{=}
+\operatorname{Proj}_{x_i}(\Omega_i).
+}
+$
+
+La igualdad es por ahora esquemática. Si prospera, resolvería la circularidad de FC3: el perfil de $x_i$ no se elegiría mirando al descendiente, sino que vendría impuesto por el papel que $x_i$ ocupa en la estructura ontogénica del contexto.
+
+La dependencia conceptual candidata sería:
+
+$
+\operatorname{OntOrigin}_i
+\Longrightarrow
+\Omega_i
+\Longrightarrow
+\operatorname{ContinuationProfile}_i(x_i)
+\Longrightarrow
+\operatorname{FaithfulContinuation}^{\mathsf M}.
+$
+
+Cada flecha sigue siendo una obligación, no un teorema ya demostrado.
+
+#### 0.11.35. Seed/origin y firma no deben colapsarse prematuramente
+
+No se identifica:
+
+$
+\operatorname{Seed}_i(\mathcal O_i)=\Omega_i.
+$
+
+Las funciones conceptuales son distintas.
+
+OntOrigin/Seed responde a la unidad fundacional de la genealogía:
+
+$
+\text{¿por qué esta genealogía existe como una unidad?}
+$
+
+La firma candidata respondería a su persistencia iterativa:
+
+$
+\text{¿qué hace que transformaciones sucesivas sigan siendo del mismo contexto?}
+$
+
+La hipótesis de trabajo más económica es que $\Omega_i$ esté **derivada** de la estructura originaria/generativa, no que sea un segundo primitivo independiente. Pero eso es precisamente lo que debe demostrarse al atacar $\Omega_i$.
+
+#### 0.11.36. Evolución interna frente a ontogénesis
+
+Si existe una noción adecuada de continuidad de firma:
+
+$
+\operatorname{SigContinuation}^{\mathsf M}
+(\Omega_i^{(a)},\Omega_i^{(b)}),
+$
+
+entonces cambios extensos de contenido pueden permanecer dentro del mismo contexto mientras preserven la estructura que esa relación declare relevante.
+
+Una ContextGenesis unaria tendría, en cambio, provenance desde $i$ hacia $k$ pero no continuidad suficiente de firma para conservar identidad contextual:
+
+$
+\operatorname{Provenance}^{\mathsf M}(\Omega_i\leadsto\Omega_k)
+\land
+\neg\operatorname{SigContinuation}^{\mathsf M}(\Omega_i,\Omega_k)
+\land
+\operatorname{GenesisConstitutiveUnity}_k.
+$
+
+Entonces:
+
+$
+i\prec_{\mathrm{ctx}}k
+\land
+i\not\simeq_{\mathrm{idx}}k.
+$
+
+Para genesis multiparental:
+
+$
+\Omega_{i_1},\ldots,\Omega_{i_n}
+\leadsto
+\Omega_k,
+$
+
+la nueva firma debe depender constitutivamente de aportes no triviales de varias ramas si el caso ha de ser ContextMerger.
+
+Esta sección no define todavía SigContinuation: muestra qué problema debe resolver $\Omega_i$ para que la frontera evolution/genesis deje de ser estipulativa.
+
+#### 0.11.37. Stress test observable: constantes y “magic numbers”
+
+Las constantes observables proporcionan un adversario útil para no trivializar $\Omega_i$.
+
+No se admite:
+
+$
+\Omega_i
+=
+\{\text{lista de constantes observadas}\}
+$
+
+por estipulación.
+
+Un valor observable puede ser variable de estado, parámetro de una fase, parámetro efectivo, output derivado de una estructura más profunda o auténtico componente/invariante de la firma.
+
+La pregunta relevante no es simplemente si cambia un número, sino:
+
+$
+\boxed{
+\text{¿su variación está permitida por la firma,
+o modifica la estructura que determina el propio tipado?}
+}
+$
+
+Así la firma observable podría ser solo una **realización/compilación** de una estructura ontogénica más profunda:
+
+$
+\Omega_i
+\Longrightarrow
+\text{estructura física efectiva}
+\Longrightarrow
+\text{parámetros/constantes observables}.
+$
+
+Este ejemplo es solo un stress test metodológico. No se afirma que ninguna constante física concreta sea parte de $\Omega_i$ ni que las constantes conocidas individúen nuestra realidad.
+
+#### 0.11.38. Estado de la deuda después de Ship of Theseus
+
+La arquitectura provisional queda:
+
+$
+\boxed{
+\operatorname{OntOrigin}_i
+\Longrightarrow
+\Omega_i
+\Longrightarrow
+\operatorname{ContinuationProfile}_i(x_i)
+\Longrightarrow
+\operatorname{FaithfulContinuation}^{\mathsf M}
+}
+$
+
+y, para una ruptura ontogénica:
+
+$
+\boxed{
+\text{provenance}
++
+\text{nuevo tipado}
++
+\operatorname{GenesisConstitutiveUnity}
+\Rightarrow
+\operatorname{ContextGenesis}.
+}
+$
+
+Lo no resuelto es exactamente $\Omega_i$:
+
+1. qué estructura es;
+2. cómo se deriva sin circularidad;
+3. qué equivalencia define continuidad de firma;
+4. cómo evita una regresión “qué preserva lo que preserva la identidad”;
+5. cómo se relaciona con OntOrigin, GenEvent y la clausura;
+6. qué ocurre en branching/merger de firmas;
+7. cómo se audita sin convertir el índice en objeto.
+
+Hasta resolver estas obligaciones, FC3 permanece **PARTIAL** y $\Omega_i$ es una hipótesis estructural explícita, no una nueva pieza doctrinal asumida.
+
 
 
 
