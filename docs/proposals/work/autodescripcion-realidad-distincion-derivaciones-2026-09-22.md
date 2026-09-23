@@ -2081,33 +2081,67 @@ Así la prueba de unidad no pregunta si el hecho «pertenece al origen»: pregun
 
 ### 0.2. Lema anti-agregación
 
-Sean dos contenidos no vacíos $A_i,B_i$ tales que no existe un UnitFact origin-constitutive cuyo footprint esté contenido en $A_i\cup B_i$ y cuyos relata crucen ambos lados:
+Definimos la ausencia objetiva de puente constitutivo entre dos contenidos no vacíos:
 
 $$
-\mathrm{NoUnitFactBridge}(A_i,B_i).
+\mathrm{NoConstitutiveBridge}_i(A_i,B_i)
+:\Longleftrightarrow
+\neg\exists f_i,U_i[
+\operatorname{ConstitutiveBridge}_i(f_i,U_i;A_i,B_i)
+\land
+\operatorname{UnitFoot}_i(f_i,U_i)\preceq A_i\cup B_i
+].
 $$
 
-Sea $\mathcal O_i$ una configuración candidata con:
-
-$$
-\operatorname{Seed}_i(\mathcal O_i)=A_i\cup B_i.
-$$
-
-La partición $A_i\mid B_i$ viola directamente OriginUnity. Por tanto:
+Para toda configuración candidata $\mathcal O_i$:
 
 $$
 \boxed{
 \operatorname{Seed}_i(\mathcal O_i)=A_i\cup B_i
 \land
-\mathrm{NoUnitFactBridge}(A_i,B_i)
+\mathrm{NoConstitutiveBridge}_i(A_i,B_i)
 \Rightarrow
 \neg\operatorname{OriginUnity}_i(\mathcal O_i).
 }
 $$
 
-Esto ya no depende de una mera condición suficiente: OU2 **es** la definición vigente de OriginUnity.
+La prueba es inmediata por la partición $A_i\mid B_i$. La unión metalingüística de dos raíces no crea EssConDep y una interacción posterior no la hace retroactiva.
 
-**Consecuencia.** Escribir en el metalenguaje $\mathcal O_a\cup\mathcal O_b$ no crea ningún UnitFact y, por tanto, no puede fabricar un origen común.
+#### 0.2.1. Modelos de control para REV-07a
+
+**M1 — átomo fundamental.** Si $\operatorname{Seed}_i(\mathcal O_i)=\{a_i\}$, no existe partición no trivial. OriginUnity vale vacuamente; la carga restante recae en OriginConfig, RootClosed e Irredundant.
+
+**M2 — soporte mutuo/ciclo fundamental.** Para $a_i,b_i$ y un hecho estructural $f_i$:
+
+$$
+\operatorname{EssConDep}_i(a_i;f_i,U_i\mid\{b_i\})
+\land
+\operatorname{EssConDep}_i(b_i;f_i,U_i\mid\{a_i\})
+$$
+
+produce un ConstitutiveBridge para la partición $\{a_i\}\mid\{b_i\}$. La bilateralidad admite cofundamentación sin exigir prioridad temporal.
+
+**M3 — constitución holística.** Si la identidad/actualidad constitutiva de relata situados a ambos lados depende esencialmente de una misma estructura $f_i$, el puente puede satisfacer OriginUnity aunque ninguna dirección sea causal-temporal.
+
+**M4 — suma independiente.** Si $A_i$ y $B_i$ son internamente completos pero no existe EssConDep cruzada, entonces NoConstitutiveBridge y la unión falla OriginUnity.
+
+**M5 — convergencia tardía.** Supóngase:
+
+$$
+\operatorname{OntProd}_i(e_i,\{a_i,b_i\},c_i).
+$$
+
+Aunque $c_i$ dependa de $e_i$, de $a_i$ y de $b_i$, no se sigue:
+
+$$
+\operatorname{EssConDep}_i(a_i;e_i,\{a_i,b_i\}\mid\{b_i,c_i,e_i\})
+$$
+
+ni su análogo para $b_i$. Por tanto incluir retrospectivamente $e_i,c_i$ en el seed no proporciona un ConstitutiveBridge para una partición que aísle una de las ramas ancestrales. La convergencia sigue siendo JointRealizable, no co-origen.
+
+**M6 — grounding unilateral.** Si $a_i$ fundamenta unilateralmente $b_i$, pero $a_i$ no depende constitutivamente de la estructura que fundamenta $b_i$, entonces $\{a_i,b_i\}$ no es una base cofundamental unificada. El comportamiento esperado es que $a_i$ pueda pertenecer al origen y $b_i$ aparezca en la clausura generada.
+
+Estos modelos convierten REV-07a en un criterio refutable. Lo que permanece abierto no es ya la forma lógica de OriginUnity, sino **la taxonomía independiente de modos ontológicos que justifican EssConDep** y la demostración de que esa taxonomía cubre los casos constitutivos relevantes sin convertir causalidad ordinaria o convergencia en dependencia originaria.
 
 
 ### 0.3. Root-closure sin primera causa temporal
