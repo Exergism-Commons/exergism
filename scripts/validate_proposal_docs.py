@@ -154,6 +154,23 @@ def validate_archive(text: str) -> None:
         fail("Historical pre-consolidation archive must carry a visible SUPERSEDED/non-normative banner")
 
 
+def validate_index_typing(text: str) -> None:
+    checks = {
+        r"\\exists!?\\s*i\\b": "object-level quantification over index metavariable i",
+        r"i\\s*\\\\neq\\s*j|j\\s*\\\\neq\\s*i": "ordinary i\\neq j index relation",
+        r"\\\\operatorname\\{Real\\}\\(x\\)": "unindexed Real(x) predicate",
+    }
+
+    for pattern, description in checks.items():
+        match = re.search(pattern, text)
+        if match:
+            line = text.count("\n", 0, match.start()) + 1
+            fail(
+                f"{NORMATIVE.relative_to(ROOT)} reintroduces {description} at line {line}; "
+                "indices are meta-level type parameters (EXT-02)"
+            )
+
+
 def validate_normative_size(text: str) -> None:
     lines = text.splitlines()
     if len(lines) > MAX_NORMATIVE_LINES:
@@ -198,6 +215,7 @@ def main() -> None:
     validate_markdown_table_blocks(LEDGER, contents[LEDGER])
     validate_ledger(contents[LEDGER])
     validate_archive(archive)
+    validate_index_typing(contents[NORMATIVE])
     validate_normative_size(contents[NORMATIVE])
 
     print("Proposal document validation passed")
