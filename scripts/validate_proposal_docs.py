@@ -248,20 +248,21 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         technical,
         "#### RT-07-XP — Transversal Production Test",
     )
+    xp_compact = re.sub(r"\\s+", "", xp_section)
     xp_contracts = (
-        "\\mathrm{RGCExists}_k(\\mathfrak G_k)",
-        "\\operatorname{RegimeClosure}_k(\\mathfrak G_k,C_k)",
-        "\\bigcup_\\alpha C_{\\alpha,k}" + "\n" + "\\subsetneq" + "\n" + "C_k",
+        "\\mathrm{RGCExists}_k(\\mathfrakG_k)",
+        "\\operatorname{RegimeClosure}_k(\\mathfrakG_k,C_k)",
+        "\\bigcup_\\alphaC_{\\alpha,k}\\subsetneqC_k",
     )
     for snippet in xp_contracts:
-        if snippet not in xp_section:
+        if snippet not in xp_compact:
             fail(
                 "REV-07f regression: RT-07-XP must bind an explicit RegimeClosure "
                 f"witness inside its own test section; missing {snippet!r}"
             )
 
-    old_xp_term = "\\operatorname{RegimeClosure}_k(\\mathfrak G_k)."
-    if old_xp_term in xp_section:
+    old_xp_term = "\\operatorname{RegimeClosure}_k(\\mathfrakG_k)."
+    if old_xp_term in xp_compact:
         fail(
             "REV-07f regression: RT-07-XP again treats RegimeClosure as a unary "
             "carrier-valued term"
@@ -275,18 +276,19 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
     if presentation_marker not in presentation_section:
         fail("REV-07f regression: §8.5 is missing the active presentation bridge")
     presentation_bridge = presentation_section.split(presentation_marker, 1)[1]
+    presentation_compact = re.sub(r"\\s+", "", presentation_bridge)
     for snippet in (
-        "\\operatorname{RegimeTotal}_i(\\mathfrak G_i,R_i)",
+        "\\operatorname{RegimeTotal}_i(\\mathfrakG_i,R_i)",
         "\\operatorname{SemTotal}_i(S_i)",
         "\\mathrm{OTB}_i",
         "\\operatorname{Presents}_i(S_i,R_i)",
     ):
-        if snippet not in presentation_bridge:
+        if snippet not in presentation_compact:
             fail(
                 "REV-07f regression: active §8.5 presentation bridge is missing "
                 f"required regime-level term {snippet!r}"
             )
-    if "\\operatorname{GeneTotal}_i" in presentation_bridge:
+    if "\\operatorname{GeneTotal}_i" in presentation_compact:
         fail(
             "REV-07f regression: active §8.5 presentation bridge again requires "
             "GeneTotal instead of RegimeTotal"
