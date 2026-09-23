@@ -2554,6 +2554,57 @@ Por tanto REV-07b ya no puede cerrarse por estipulación: su carga pendiente pri
 
 $A_i$ es soporte completo y relevante para la instancia, no una lista arbitraria de antecedentes. Puede haber más de un soporte admisible para un mismo target cuando la ontología concreta admita sobredeterminación o realizaciones alternativas; cada instancia se registra separadamente con su propio GenFoot.
 
+#### 0.4.1. Contrato de GenFoot
+
+Para toda instancia $\operatorname{OntProd}_i(e_i,A_i,b_i)$, el footprint debe satisfacer:
+
+- **GF1 / core inclusion:** $A_i\cup\{e_i,b_i\}\preceq\operatorname{GenFoot}_i(e_i,A_i,b_i)$;
+- **GF2 / required-support completeness:** todo token que la semántica independiente del modo declare constitutiva o productivamente necesario para esa instancia pertenece a GenFoot;
+- **GF3 / relevance:** GenFoot no puede inflarse con tokens sin papel productivo/constitutivo en la instancia;
+- **GF4 / candidate independence:** GenFoot no se define desde Seed, RootClosed, OntOrigin ni desde el carrier que se quiere cerrar;
+- **GF5 / target independence:** no usa $R_i$, Generated$^*$, CoReal, SameRegime, CommonGround ni CGP;
+- **GF6 / recoding invariance:** una recodificación fiel preserva el footprint hasta isomorfismo/imagen fiel.
+
+GF2 y GF3 son importantes en direcciones opuestas: omitir soporte puede fabricar un falso RootClosed; añadir soporte irrelevante puede fabricar un falso antecedente externo y romper un origen legítimo.
+
+#### 0.4.2. Modelos de control para REV-07b
+
+**P1 — correlación sin producción.** Si $a_i$ y $b_i$ covarían pero no existe una instancia productiva/constitutiva/grounding/procesual dirigida, ninguno de CAU/CON/GRD/PRC vale; por tanto no hay GenEvent.
+
+**P2 — enabling no productivo.** Si $z_i$ solo hace posible el evento pero no forma parte del soporte productivo declarado, no entra en $A_i$. Si la semántica concreta exige conservarlo como soporte estructural obligatorio, puede entrar en GenFoot por GF2 sin convertirse por ello en antecedente generativo.
+
+**P3 — antecedente espectador.** Si:
+
+$$
+\operatorname{CausalProd}_i(e_i,\{a_i\},b_i)
+$$
+
+pero $z_i$ es irrelevante, entonces no es admisible reemplazar el soporte por $\{a_i,z_i\}$. OP3 prohíbe fabricar dependencias añadiendo espectadores.
+
+**P4 — soporte omitido.** Si el modo exige conjuntamente $a_i$ y $z_i$ para la instancia, registrar solo $A_i=\{a_i\}$ viola OP4. Si $z_i$ es soporte estructural necesario pero no antecedente, omitirlo de GenFoot viola GF2.
+
+**P5 — constitución atemporal.** Una instancia CON o GRD puede satisfacer OntProd sin prioridad temporal. Esto evita reducir genealogía a causalidad histórica.
+
+**P6 — sucesión sin continuidad ontológica.** Que $a_i$ ocurra antes que $b_i$ dentro de un proceso no establece PRC. Debe demostrarse dependencia de identidad/existencia procesual o producción dirigida del estado/resultante.
+
+**P7 — sobredeterminación/realizaciones alternativas.** Si dos soportes distintos $A_i$ y $A'_i$ producen legítimamente $b_i$, se registran como instancias productivas distintas o alternativas del mismo tipo; no se fuerza una unión artificial $A_i\cup A'_i$.
+
+**P8 — hiperevento irreducible.** Si $\{a_i,b_i\}$ es conjuntamente requerido para $c_i$, la taxonomía conserva la hiperaridad. La proyección binaria GenStep no puede sustituir el soporte conjunto.
+
+#### 0.4.3. Estado exacto de REV-07b
+
+La arquitectura ya fija:
+
+1. una relación objetivo OntProd independiente de GenEvent;
+2. OP1–OP8 para sus modos admisibles;
+3. CAU/CON/GRD/PRC como taxonomía núcleo;
+4. GenSound derivado de soundness por modo;
+5. GenComplete condicionado exactamente por ProdCoverage;
+6. GF1–GF6 para evitar manipulación de RootClosed;
+7. P1–P8 como modelos adversariales.
+
+Por tanto REV-07b permanece **PARTIAL** por una sola deuda sustantiva principal: demostrar o asumir explícitamente ProdCoverage en el contexto usado por ExistsR. No debe marcarse RESOLVED mientras pueda existir una instancia de OntProd legítima fuera de CAU/CON/GRD/PRC.
+
 La proyección binaria:
 
 $$
