@@ -157,25 +157,30 @@ def validate_archive(text: str) -> None:
 
 
 def markdown_section(text: str, heading: str) -> str:
-    lines = text.splitlines()
-    try:
-        start = lines.index(heading)
-    except ValueError:
-        fail(f"Missing required section heading: {heading}")
+    outside = markdown_lines_outside_fences(text)
+    matches = [
+        position
+        for position, (_, line) in enumerate(outside)
+        if line == heading
+    ]
+    if not matches:
+        fail(f"Missing required section heading outside Markdown fences: {heading}")
+    if len(matches) != 1:
+        fail(f"Section heading must occur exactly once outside Markdown fences: {heading}")
 
     match = re.match(r"^(#{1,6})\s+", heading)
     if not match:
         fail(f"Invalid Markdown heading passed to markdown_section: {heading}")
     level = len(match.group(1))
 
-    end = len(lines)
-    for index in range(start + 1, len(lines)):
-        next_heading = re.match(r"^(#{1,6})\s+", lines[index])
-        if next_heading and len(next_heading.group(1)) <= level:
-            end = index
+    section: list[str] = []
+    for _, line in outside[matches[0] :]:
+        next_heading = re.match(r"^(#{1,6})\s+", line)
+        if section and next_heading and len(next_heading.group(1)) <= level:
             break
+        section.append(line)
 
-    return "\n".join(lines[start:end])
+    return "\n".join(section)
 
 
 def validate_index_typing(text: str) -> None:
@@ -230,8 +235,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         "#### RT-07-XP — Transversal Production Test",
         "#### RT-07-MG-TRIV — Singleton-per-token attack",
     ):
-        if heading not in technical:
-            fail(f"REV-07f regression: missing technical regression test: {heading}")
+        markdown_section(technical, heading)
 
     distinct_overlap_guard = (
         "\\alpha\\neq_{\\mathsf M}\\beta" + "\n"
@@ -248,21 +252,35 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         technical,
         "#### RT-07-XP — Transversal Production Test",
     )
-    xp_compact = re.sub(r"\s+", "", xp_section)
     xp_contracts = (
-        "\\mathrm{RGCExists}_k(\\mathfrakG_k)",
-        "\\operatorname{RegimeClosure}_k(\\mathfrakG_k,C_k)",
-        "\\bigcup_\\alphaC_{\\alpha,k}\\subsetneqC_k",
+        (
+            r"\\mathrm\{RGCExists\}_k\s*\(\s*\\mathfrak\s+G_k\s*\)",
+            "RGCExists premise",
+        ),
+        (
+            r"\\operatorname\{RegimeClosure\}_k\s*\(\s*"
+            r"\\mathfrak\s+G_k\s*,\s*C_k\s*\)",
+            "explicit RegimeClosure witness",
+        ),
+        (
+            r"\\bigcup_\s*\\alpha\s+C_\{\\alpha,k\}\s*"
+            r"\\subsetneq\s*C_k",
+            "strict local-union inclusion",
+        ),
     )
-    for snippet in xp_contracts:
-        if snippet not in xp_compact:
+    for pattern, description in xp_contracts:
+        if not re.search(pattern, xp_section, flags=re.MULTILINE):
             fail(
-                "REV-07f regression: RT-07-XP must bind an explicit RegimeClosure "
-                f"witness inside its own test section; missing {snippet!r}"
+                "REV-07f regression: RT-07-XP must bind its contracts inside "
+                f"its own test section; missing {description}"
             )
 
-    old_xp_term = "\\operatorname{RegimeClosure}_k(\\mathfrakG_k)."
-    if old_xp_term in xp_compact:
+    if re.search(
+        r"\\operatorname\{RegimeClosure\}_k\s*\(\s*"
+        r"\\mathfrak\s+G_k\s*\)\s*\.",
+        xp_section,
+        flags=re.MULTILINE,
+    ):
         fail(
             "REV-07f regression: RT-07-XP again treats RegimeClosure as a unary "
             "carrier-valued term"
@@ -276,19 +294,29 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
     if presentation_marker not in presentation_section:
         fail("REV-07f regression: §8.5 is missing the active presentation bridge")
     presentation_bridge = presentation_section.split(presentation_marker, 1)[1]
-    presentation_compact = re.sub(r"\s+", "", presentation_bridge)
-    for snippet in (
-        "\\operatorname{RegimeTotal}_i(\\mathfrakG_i,R_i)",
-        "\\operatorname{SemTotal}_i(S_i)",
-        "\\mathrm{OTB}_i",
-        "\\operatorname{Presents}_i(S_i,R_i)",
-    ):
-        if snippet not in presentation_compact:
+    presentation_contracts = (
+        (
+            r"\\operatorname\{RegimeTotal\}_i\s*\(\s*"
+            r"\\mathfrak\s+G_i\s*,\s*R_i\s*\)",
+            "RegimeTotal premise",
+        ),
+        (
+            r"\\operatorname\{SemTotal\}_i\s*\(\s*S_i\s*\)",
+            "SemTotal premise",
+        ),
+        (r"\\mathrm\{OTB\}_i", "OTB bridge premise"),
+        (
+            r"\\operatorname\{Presents\}_i\s*\(\s*S_i\s*,\s*R_i\s*\)",
+            "Presents conclusion",
+        ),
+    )
+    for pattern, description in presentation_contracts:
+        if not re.search(pattern, presentation_bridge, flags=re.MULTILINE):
             fail(
                 "REV-07f regression: active §8.5 presentation bridge is missing "
-                f"required regime-level term {snippet!r}"
+                f"{description}"
             )
-    if "\\operatorname{GeneTotal}_i" in presentation_compact:
+    if re.search(r"\\operatorname\{GeneTotal\}_i", presentation_bridge):
         fail(
             "REV-07f regression: active §8.5 presentation bridge again requires "
             "GeneTotal instead of RegimeTotal"
