@@ -3289,289 +3289,293 @@ $$
 
 Esto no obliga todavía a redefinir $R_i$. Sí obliga a dejar de usar «mismo marco/contexto» y «misma realidad genealógica» como sinónimos antes de resolver REV-07e.
 
-#### 0.11.6. Qué queda de REV-07e
+#### 0.11.6. Bifurcación fundamental: espacio compartido u ontogénesis
 
-Tras el contramodelo, REV-07e ya no pregunta si CGP se sigue de las definiciones: **no se sigue**. La decisión pendiente es doctrinal:
-
-- **CGP-Axiom:** añadir una premisa metafísica que excluya toda ContextUnity sin GeneUnity;
-- **Context Assembly:** permitir que un contexto realizado contenga varias GeneTotal locales enlazadas sin colapsarlas en un único origen;
-- **Ontogenic Formation:** permitir que una integración cree un nuevo contexto/realidad con reglas explícitas de formación;
-- **Strict Separation:** mantener JointRealizable como compatibilidad contextual más débil que pertenencia al mismo $R_i$.
-
-Hasta escoger y justificar una de estas rutas, $R_i=\operatorname{Cl}^{G}_i(\mathcal O_i)$ sigue siendo una tesis de **unidad genealógica**, no una definición general de toda unidad contextual.
-
-#### 0.11.7. Comparación de las cuatro salidas
-
-Usamos cinco restricciones ya asumidas por la doctrina:
-
-- **D1 / anti-aggregation:** no puede fabricarse una realidad por mera unión metalingüística;
-- **D2 / strong incompatibility:** si $i\#j$ es final, no existe hecho ontológico objeto bien tipado que conecte contenido $i$ y $j$;
-- **D3 / no retro-origin:** integración actual no implica por sí sola origen común previo;
-- **D4 / non-temporality:** unidad ontológica no puede depender necesariamente de prioridad temporal;
-- **D5 / witness locality:** todo vínculo ensamblador debe estar respaldado por una instancia ontológica actual auditable.
-
-**CGP-Axiom** satisface D1/D2 pero viola el espíritu de D3: excluye por premisa toda ContextUnity sin GeneUnity y convierte el contramodelo en metafísicamente imposible sin una razón independiente.
-
-**Strict Separation** conserva la genealogía única de cada $R$, pero solo puede tratar JointRealizable como compatibilidad pre-final. Si una PureOntRel actual permanece entre dos candidatos, D2 impide tiparlos finalmente como $i\#j$; por tanto esta ruta necesita negar que el marco compartido sea una realidad final o eliminar/reinterpretar el vínculo.
-
-**Ontogenic Formation** puede respetar D1–D5 si introduce una regla explícita de formación $C_a,C_b\Rightarrow R_k^{new}$. Sin embargo requiere mapas de continuidad desde los candidatos hacia $k$ y no debe presuponer temporalidad: una relación estructural atemporal también puede ser el testigo de formación.
-
-**Context Assembly** trata cada genealogía como unidad local y la realidad final como una componente ensamblada por vínculos ontológicos actuales admisibles. No exige origen común y respeta D2: dos componentes enlazados nunca debieron recibir índices finales incompatibles.
-
-La ruta de trabajo preferente pasa a ser **Context Assembly**, pero todavía no se promueve al target de ExistsR.
-
-#### 0.11.8. Unidades genealógicas locales
-
-Definimos una unidad local certificada:
-
-$$
-\operatorname{GeneUnit}_i(\mathcal O_i,C_i)
-:\Longleftrightarrow
-\operatorname{OntOrigin}_i(\mathcal O_i)
-\land
-\operatorname{GenClosure}_i(\mathcal O_i,C_i).
-$$
-
-GeneUnit no afirma que $C_i$ sea todo $R_i$. Afirma solamente que $C_i$ es una genealogía local sound/complete respecto de su OntOrigin bajo GenAdequate.
-
-Dos GeneUnit distintas pueden solaparse solo si una futura equivalencia de orígenes/reconstruction justifica que representan la misma unidad; la mera igualdad parcial no las fusiona.
-
-#### 0.11.9. Enlaces de ensamblaje
-
-Para dos unidades:
-
-$$
-G_{\alpha,i}=(\mathcal O_{\alpha,i},C_{\alpha,i}),
-\qquad
-G_{\beta,i}=(\mathcal O_{\beta,i},C_{\beta,i}),
-$$
-
-un enlace de ensamblaje:
-
-$$
-\operatorname{AssemblyLink}_i(\ell_i;G_{\alpha,i},G_{\beta,i})
-$$
-
-requiere:
-
-1. $\ell_i$ es una instancia ontológica actual independiente del resultado del ensamblaje;
-2. su footprint toca contenido de ambas unidades;
-3. el vínculo satisface los criterios de PureOntRel o de una integración OntProd admisible;
-4. existe una única realización coherente en la que ambas unidades y $\ell_i$ están simultáneamente bien tipadas;
-5. el enlace no afirma CommonGround ni reescribe los OntOrigin locales;
-6. el enlace y su footprint son invariantes bajo recodificación fiel.
-
-No valen semejanza, misma ley, mera posibilidad de interacción, co-descripción ni una arista introducida solo para conectar el grafo.
-
-#### 0.11.10. Ensamblaje + generación transversal
-
-Una candidata de realidad ensamblada es una familia de GeneUnit locales junto con AssemblyLink actuales:
-
-$$
-\mathfrak A_i=(\mathcal G_i,\mathcal L_i).
-$$
-
-No se identifica $\mathcal G_i$ con un set ontológico de “realidades”; es una estructura de trabajo dentro de la instanciación formal $i$.
-
-Exigimos **AssemblyConnected**: para cualesquiera dos unidades de $\mathcal G_i$ existe una cadena de AssemblyLink admitida por la ruta de ensamblaje elegida. La versión finita es solo la primera implementación; una ruta generalizada puede ser necesaria por los mismos motivos que hicieron de FID una condición no universal.
-
-La mera unión de las GeneUnit **no** es todavía el carrier final. Si:
-
-$$
-a_i\in C_{\alpha,i},
-\qquad
-b_i\in C_{\beta,i},
-\qquad
-\operatorname{OntProd}_i(e_i,\{a_i,b_i\},c_i),
-$$
-
-entonces al ensamblar ambas unidades debe aparecer también $c_i$ y todo lo que se genere después de él.
-
-Definimos el soporte inicial del ensamblaje:
-
-$$
-\operatorname{AsmSupport}_i(\mathfrak A_i)
-:=
-\bigcup_{G_{\alpha,i}\in\mathcal G_i} C_{\alpha,i}
-\;\cup\;
-\bigcup_{\ell_i\in\mathcal L_i}\operatorname{LinkFoot}_i(\ell_i).
-$$
-
-AsmSupport no es un origen y sus LinkFoot no se reinterpretan como generadores. Solo registra las genealogías locales certificadas y los testigos ontológicos que justifican ensamblarlas.
-
-Un carrier $K_i$ es una clausura generativa del ensamblaje cuando:
-
-$$
-\operatorname{AsmGenClosure}_i(\mathfrak A_i,K_i)
-$$
-
-si y solo si:
-
-1. $\operatorname{AsmSupport}_i(\mathfrak A_i)\preceq K_i$;
-2. $\Gamma_i(K_i)=K_i$;
-3. todo carrier que contenga AsmSupport y sea fijo de $\Gamma_i$ contiene $K_i$.
-
-Así CAU/CON/GRD/PRC que requieran antecedentes procedentes de GeneUnit distintas pueden dispararse después del ensamblaje sin fingir que esas GeneUnit compartían origen.
-
-#### 0.11.11. Saturación del ensamblaje y operador conjunto
-
-Una realidad candidata no puede omitir una GeneUnit realmente enlazada al carrier ya ensamblado. Para permitir links que aparezcan solo después de generación transversal introducimos:
-
-$$
-\operatorname{CarrierAssemblyLink}_i(\ell_i;K_i,G_{\beta,i}),
-$$
-
-cuando $\ell_i$ satisface los mismos criterios objetivos de AssemblyLink y su footprint toca tanto $K_i$ como el carrier de $G_{\beta,i}$.
-
-Definimos la expansión de unidades:
-
-$$
-\operatorname{LinkExpand}_i(\mathcal G_i,K_i)
-:=
-\mathcal G_i
-\cup
-\{
-G_{\beta,i}
-\mid
-\operatorname{GeneUnit}_i(G_{\beta,i})
-\land
-\exists \ell_i\,
-\operatorname{CarrierAssemblyLink}_i(\ell_i;K_i,G_{\beta,i})
-\}.
-$$
-
-y sea $\operatorname{ExpandFoot}_i(\mathcal G_i,K_i)$ la unión de los carriers de las nuevas GeneUnit y de los LinkFoot de los testigos que justifican su incorporación.
-
-El operador conjunto sobre estados de ensamblaje es:
+El contramodelo de CGP no deja cuatro interpretaciones ontológicas equiparables. Una integración estable entre genealogías tiene dos lecturas fundamentales:
 
 $$
 \boxed{
-\Xi_i(\mathcal G_i,K_i)
+\text{integración estable}
+\Rightarrow
+\begin{cases}
+\operatorname{SharedOntSpace}^{\mathsf M},\\
+\operatorname{ContextGenesis}^{\mathsf M}.
+\end{cases}
+}
+$$
+
+La pregunta discriminante es si el contexto común **preexiste ontológicamente** a la integración o si la integración/estructura de formación **constituye un contexto nuevo**. La prioridad relevante es ontológica, no necesariamente temporal.
+
+Context Assembly, $\Xi_i$ y las clausuras asociadas pasan a ser maquinaria formal neutral: pueden reconstruir un espacio ya compartido o implementar la formación de uno nuevo. No son una tercera tesis metafísica.
+
+#### 0.11.7. Shared Ontological Space
+
+Definimos metateóricamente:
+
+$$
+\operatorname{SharedOntSpace}^{\mathsf M}(C_a,C_b;k)
+$$
+
+cuando existe una instanciación admisible $k$ en la que hay realizaciones fieles de ambos candidatos y su coexistencia ontológica no depende constitutivamente del hecho integrador usado para descubrirla.
+
+Entonces:
+
+$$
+\operatorname{SharedOntSpace}^{\mathsf M}(C_a,C_b;k)
+\Rightarrow
+\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b).
+$$
+
+CommonGround es suficiente pero no necesario:
+
+$$
+\operatorname{CommonGround}^{\mathsf M}(C_a,C_b)
+\Rightarrow
+\exists k\,
+\operatorname{SharedOntSpace}^{\mathsf M}(C_a,C_b;k),
+$$
+
+mientras:
+
+$$
+\operatorname{SharedOntSpace}^{\mathsf M}
+\not\Rightarrow
+\operatorname{CommonGround}^{\mathsf M}.
+$$
+
+Por tanto un único espacio ontológico puede contener varias genealogías locales con orígenes distintos. Una PureOntRel entre ellas puede **revelar** esa unidad de espacio sin crearla y sin convertirla en unidad de origen.
+
+#### 0.11.8. Ontogénesis de contexto
+
+La segunda posibilidad no presupone un contexto común previo. Introducimos exclusivamente en el metalenguaje:
+
+$$
+\operatorname{ContextGenesis}^{\mathsf M}
+(C_i,C_j\Rightarrow k;\gamma).
+$$
+
+Su lectura es: las realizaciones precursoras $i,j$ participan en una operación/estructura metaontológica $\gamma$ cuya consecuencia constitutiva es una nueva instanciación de contexto $k$.
+
+No se escribe ningún evento objeto mal tipado:
+
+$$
+e(x_i,y_j).
+$$
+
+En su lugar, la génesis suministra mapas metateóricos de continuación/realización:
+
+$$
+\kappa_{i\to k}:x_i\rightsquigarrow x_k,
+\qquad
+\kappa_{j\to k}:y_j\rightsquigarrow y_k.
+$$
+
+$x_k$ y $y_k$ son contenido de $k$ que continúa fielmente contenido parental; no son literalmente los tokens cross-index $x_i,y_j$.
+
+Las condiciones mínimas de ContextGenesis son:
+
+1. **CGX1 / typed precursors:** cada precursor está bien tipado en su propio contexto;
+2. **CGX2 / no cross-index event:** $\gamma$ no se expresa como relación objeto entre tokens incompatibles;
+3. **CGX3 / faithful continuation:** las $\kappa$ preservan la estructura declarada de los precursores;
+4. **CGX4 / constitutive novelty:** la existencia del contexto $k$ depende constitutivamente de la formación $\gamma$; no es solo un contexto preexistente descubierto;
+5. **CGX5 / no retroactivity:** ninguna verdad, existencia o genealogía del token parental $x_i$ pasa a depender de $\gamma$;
+6. **CGX6 / child-side auditability:** el contexto hijo contiene testigos tipados de la formación y de las continuaciones que permiten auditar qué estructura heredó;
+7. **CGX7 / recoding invariance:** una recodificación fiel preserva el juicio de génesis y los mapas de continuación hasta equivalencia apropiada.
+
+#### 0.11.9. Descendencia de contexto como relación metaontológica adicional
+
+Definimos:
+
+$$
+\boxed{
+i\prec_{\mathrm{ctx}}k
+}
+$$
+
+cuando existe alguna ContextGenesis en la que $i$ es precursor de $k$.
+
+Esto añade una relación conceptual adicional entre instanciaciones:
+
+$$
+i\simeq_{\mathrm{idx}}k,
+\qquad
+i\#k,
+\qquad
+i\prec_{\mathrm{ctx}}k.
+$$
+
+No forman una partición lógica automática. En particular:
+
+$$
+i\prec_{\mathrm{ctx}}k
+\not\Rightarrow
+i\simeq_{\mathrm{idx}}k
+$$
+
+y la mera descendencia tampoco implica por sí sola $i\#k$.
+
+Para el caso de persistencia parental introducimos:
+
+$$
+\operatorname{PersistentParent}^{\mathsf M}(i,k),
+$$
+
+cuando la génesis proporciona una realización conjunta en la que una continuación fiel del contenido parental persiste como subestructura ontológica actual del espacio hijo. Entonces:
+
+$$
+\boxed{
+i\prec_{\mathrm{ctx}}k
+\land
+\operatorname{PersistentParent}^{\mathsf M}(i,k)
+\Rightarrow
+\neg(i\#k).
+}
+$$
+
+Así una realidad nueva puede ser genuinamente nueva sin ser incompatible con su progenitora:
+
+$$
+i\not\simeq_{\mathrm{idx}}k,
+\qquad
+\neg(i\#k),
+\qquad
+i\prec_{\mathrm{ctx}}k.
+$$
+
+La novedad ontológica no equivale a incompatibilidad.
+
+En una ontogénesis de reemplazo puede existir descendencia sin PersistentParent: los precursores solo tienen continuaciones en $k$. En ese caso no se decide $i\#k$ a partir de la descendencia sola.
+
+#### 0.11.10. El origen del hijo no reescribe el origen del padre
+
+Supóngase:
+
+$$
+\operatorname{ContextGenesis}^{\mathsf M}
+(C_i,C_j\Rightarrow k;\gamma).
+$$
+
+El hijo puede poseer un testigo objeto $g_k$ de su formación y continuaciones:
+
+$$
+x_i\rightsquigarrow x_k,
+\qquad
+y_j\rightsquigarrow y_k.
+$$
+
+La dependencia constitutiva relevante es child-side:
+
+$$
+\operatorname{IdDep}_k(x_k;g_k\mid Y_k)
+\lor
+\operatorname{ConstExistDep}_k(x_k;g_k\mid Y_k),
+$$
+
+cuando la identidad/existencia de $x_k$ **como continuación dentro de $k$** requiere la estructura de génesis.
+
+No se infiere:
+
+$$
+\operatorname{IdDep}_i(x_i;g_k\mid -)
+$$
+
+ni ninguna otra fórmula cross-index.
+
+Por tanto la estructura de génesis puede contribuir a OriginUnity/OntOrigin de $k$ sin volverse retrospectivamente origen de $i$ o $j$. Si las continuaciones no satisfacen dependencia constitutiva suficiente respecto de $g_k$, entonces el OntOrigin vigente no basta para la ontogénesis y REV-07e deberá introducir un criterio GenesisOrigin separado en vez de fingir OriginUnity.
+
+#### 0.11.11. Las dos lecturas de una misma maquinaria de ensamblaje
+
+Sea una familia de GeneUnit locales y links actuales:
+
+$$
+\mathfrak A_k=(\mathcal G_k,\mathcal L_k).
+$$
+
+La maquinaria de ensamblaje puede tener dos semánticas:
+
+**Shared-space reconstruction.** $\mathfrak A_k$ reconstruye una estructura común que ya era real en $k$. AssemblyLink actúa como evidencia/cobertura y no como origen del contexto.
+
+**Genesis construction.** $\mathfrak A_k$ está constituida por imágenes de continuación de precursores y por el witness $g_k$; el ensamblaje es parte de lo que hace existir el nuevo contexto $k$.
+
+En ambos casos la mera unión de GeneUnit no basta. Si:
+
+$$
+a_k\in C_{\alpha,k},
+\qquad
+b_k\in C_{\beta,k},
+\qquad
+\operatorname{OntProd}_k(e_k,\{a_k,b_k\},c_k),
+$$
+
+el carrier debe cerrarse también bajo esa generación transversal.
+
+#### 0.11.12. Operador conjunto de ensamblaje y generación
+
+Conservamos el operador conjunto:
+
+$$
+\Xi_k(\mathcal G_k,K_k)
 :=
 \left(
-\operatorname{LinkExpand}_i(\mathcal G_i,K_i),
-\;
-\Gamma_i(
-K_i
-\cup
-\operatorname{ExpandFoot}_i(\mathcal G_i,K_i)
+\operatorname{LinkExpand}_k(\mathcal G_k,K_k),
+\Gamma_k(
+K_k\cup\operatorname{ExpandFoot}_k(\mathcal G_k,K_k)
 )
 \right).
-}
 $$
 
-Así:
+Su interpretación depende de la bifurcación anterior:
 
-$$
-\text{añadir GeneUnit}
-\Rightarrow
-\text{nuevos GenEvent}
-\Rightarrow
-\text{nuevo contenido}
-\Rightarrow
-\text{nuevos links}
-$$
+- en SharedOntSpace, el least fixed point pretende **reconstruir exhaustivamente** un espacio común preexistente;
+- en ContextGenesis, el least fixed point pretende **construir/cerrar** el contenido del nuevo contexto a partir del witness de génesis y sus continuaciones.
 
-queda representado por iteración de un único operador.
+Si LinkExpand es persistente bajo extensión y $\Gamma_k$ es monótono, $\Xi_k$ es monótono. ACExists continúa siendo la obligación de existencia de un least fixed point admisible; Knaster–Tarski solo la descarga condicionalmente en una implementación set-sized apropiada.
 
-Si CarrierAssemblyLink es persistente bajo extensión del carrier —un testigo actual no desaparece al añadir contenido—, LinkExpand es monótono. Como $\Gamma_i$ ya es monótono, $\Xi_i$ es monótono en el orden componente-a-componente:
+#### 0.11.13. Anti-agregación y anti-fusión
 
-$$
-(\mathcal G_i,K_i)\preceq(\mathcal G'_i,K'_i)
-\Longrightarrow
-\Xi_i(\mathcal G_i,K_i)
-\preceq
-\Xi_i(\mathcal G'_i,K'_i).
-$$
+Ni SharedOntSpace ni ContextGenesis permiten bolsas arbitrarias.
 
-Definimos AssemblySaturated cuando $(\mathcal G_i,K_i)$ es punto fijo de $\Xi_i$ y contiene el soporte inicial requerido.
+Para SharedOntSpace hace falta un testigo independiente de coexistencia en $k$; que dos GeneUnit sean compatibles en abstracto no basta.
 
-La obligación fundacional:
+Para ContextGenesis hacen falta $\gamma$, continuaciones $\kappa$ y constitutive novelty. No vale introducir una génesis solo porque deseamos tratar dos contextos como padres de $k$.
 
-$$
-\operatorname{ACExists}_i(\mathfrak A_i)
-$$
+Asimismo, un objeto/enlace actual dentro de $i$ nunca puede contener directamente términos de $j$ cuando $i\#j$. La formación de $k$ se expresa en el metalenguaje y solo sus imágenes child-side aparecen juntas en el lenguaje objeto de $k$.
 
-afirma que existe un **least fixed point admissible** de $\Xi_i$ por encima del estado inicial determinado por $\mathfrak A_i$.
+#### 0.11.14. Stress tests revisados
 
-En una implementación set-sized, si el universo de GeneUnit/tokens candidatos forma un producto de retículos completos y $\Xi_i$ es monótono, Knaster–Tarski proporciona condicionalmente ese least fixed point. Esto **no** resuelve el caso plural/proper-class ni la smallness del resultado; esos casos siguen abiertos y deben coordinarse con REV-07c/scope realization.
+**X1 — common ground.** Dos genealogías con OntOrigin común caen en SharedOntSpace; no hay ontogénesis.
 
-#### 0.11.12. Anti-agregación para ensamblajes
+**X2 — multi-origin shared space.** Dos GeneUnit sin CommonGround pero con coexistencia independiente en $k$ caen en SharedOntSpace. Una PureOntRel puede revelar la conexión sin crear $k$.
 
-Context Assembly no puede convertirse en “Many-R por bolsa”. Una candidata admisible debe satisfacer conjuntamente:
+**X3 — ontogénesis genuina.** No existe espacio común previo; $\gamma$ constituye $k$ y las continuaciones parentales aparecen como $x_k,y_k$. No hay retroactividad.
+
+**X4 — padre persistente.** Si contenido parental persiste mediante realización fiel dentro del espacio hijo, $i\prec_{\mathrm{ctx}}k$ y PersistentParent implican $\neg(i\#k)$ aunque $i\not\simeq_{\mathrm{idx}}k$.
+
+**X5 — reemplazo.** Si solo existen continuaciones y no coexistencia padre-hijo, $i\prec_{\mathrm{ctx}}k$ no decide por sí mismo $i\#k$.
+
+**X6 — producción transversal.** Una vez formadas/reconstruidas varias GeneUnit en $k$, GenEvent puede usar antecedentes de distintas unidades; $\Xi_k$ debe cerrar sus consecuencias.
+
+**X7 — falsa génesis.** Una integración que ocurre dentro de un contexto común ya existente no satisface CGX4; clasificarla como ontogénesis sería reificar un evento interno como creador de su propio contexto.
+
+**X8 — falso shared space.** Una operación de génesis no puede reinterpretarse retrospectivamente como prueba de que $k$ preexistía; hacerlo violaría CGX4/no-retroactivity.
+
+#### 0.11.15. Consecuencia para R
+
+REV-07e queda ahora reducido a dos arquitecturas sustantivas.
+
+En el caso SharedOntSpace, $R_k$ puede ser **multigeneal**: varias GeneUnit locales comparten el mismo espacio sin CommonGround global. Aquí la antigua GeneTotal es solo el caso monogeneal.
+
+En el caso ContextGenesis, aparece una nueva $R_k$. Sus precursores no se insertan literalmente en $k$; entran mediante continuaciones tipadas. El origen ontológico del hijo puede ser la configuración de génesis **solo si** las continuaciones child-side satisfacen OriginUnity conforme REV-07a. Si no, hará falta GenesisOrigin como noción distinta y explícita.
+
+Por tanto la pregunta doctrinal ya no es CGP. Es:
 
 $$
 \boxed{
-\operatorname{AssemblyConnected}_i(\mathfrak A_i)
-\land
-\operatorname{LinkSound}_i(\mathfrak A_i)
-\land
-\operatorname{AssemblySaturated}_i(\mathfrak A_i,K_i)
-\land
-\operatorname{AsmGenClosure}_i(\mathfrak A_i,K_i).
+\text{¿el contexto común preexistía o fue constituido?}
 }
 $$
 
-LinkSound exige que cada arista tenga un testigo ontológico actual conforme 0.11.9. Además:
-
-$$
-\neg\operatorname{AssemblyLink}_i(G_\alpha,G_\beta)
-$$
-
-cuando la única razón para enlazarlos sea que queremos que pertenezcan al mismo $R$.
-
-Una familia desconectada no forma una realidad ensamblada:
-
-$$
-G_\alpha\sqcup G_\beta
-\not\Rightarrow
-\operatorname{ContextAssembly}(G_\alpha,G_\beta).
-$$
-
-Y una relación actual tampoco autoriza a introducir un endpoint gratis: POR4/no-free-endpoints continúa vigente dentro de AsmGenClosure.
-
-#### 0.11.13. Stress tests de Context Assembly
-
-**A1 — dos raíces sin link.** Dos GeneUnit independientes y sin AssemblyLink siguen separadas. La unión metalingüística falla AssemblyConnected.
-
-**A2 — PureOntRel fundamental.** Dos GeneUnit enlazadas por una PureOntRel actual pueden entrar en la misma candidata sin convertir la relación en OntProd ni crear CommonGround.
-
-**A3 — relación generada conjuntamente.** Si $\rho$ es producida desde $a\in C_\alpha$ y $b\in C_\beta$, la relación puede justificar el link una vez existe la realización coherente; su incidencia no produce retroactivamente $a,b$.
-
-**A4 — producción transversal.** Si $a\in C_\alpha$ y $b\in C_\beta$ producen $c$, AsmGenClosure incluye $c$ y sus descendientes aunque ninguna GeneUnit local los contuviera aisladamente.
-
-**A5 — link espectador.** Semejanza, misma ley, co-descripción o posibilidad de interacción no satisfacen LinkSound y no conectan componentes.
-
-**A6 — cadena coherente.** $G_a-\rho-G_d\to G_c-\sigma-G_b$ puede quedar en un único assembly solo si todos los links y eventos admiten una realización coherente común; enlaces pairwise en realizaciones incompatibles no bastan.
-
-**A7 — expansión tardía.** Si la generación transversal produce $c$ y aparece entonces un link actual desde $c$ a una GeneUnit externa $G_h$, AssemblySaturated obliga a incorporar $G_h$ y volver a cerrar.
-
-**A8 — infinitud.** Una cadena infinita de GeneUnit/links puede impedir una clausura finita aunque cada link sea local. El caso se desplaza a ACExists/smallness y no se resuelve declarando el assembly como una unión.
-
-#### 0.11.14. Consecuencia provisional
-
-Si Context Assembly sobrevive ACExists, LinkCoverage y los problemas de scope, la arquitectura final debería distinguir:
-
-$$
-\operatorname{GeneUnit}
-\neq
-\operatorname{RealityTotal}.
-$$
-
-La antigua GeneTotal sería entonces el **caso monogeneal** de RealityTotal, no su definición general.
-
-Antes de modificar ExistsR quedan al menos estas obligaciones:
-
-1. equivalencia/solapamiento entre GeneUnit locales;
-2. definición sound/complete de AssemblyLink y una obligación de LinkCoverage;
-3. existencia de la clausura combinada ACExists;
-4. smallness/pluralidad del assembly y sus LinkFoot;
-5. irredundancia del assembly;
-6. interacción con REV-07d cuando ninguna GeneUnit mínima exista;
-7. scope realization de $K_i^{*}$ como $R_i$;
-8. reconstrucción de $\Lambda_*$: distinguir links de marco de links sound para una genealogía única.
-
-Hasta entonces Context Assembly es la **ruta candidata preferente**, no una nueva definición normativa de $R_i$.
+Context Assembly/$\Xi$ queda subordinado a esa respuesta y deja de ser una tercera ontología.
 
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
