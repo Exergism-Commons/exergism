@@ -41,9 +41,11 @@ def markdown_lines_outside_fences(text: str) -> list[tuple[int, str]]:
             opening = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
             if opening:
                 marker = opening.group(1)
-                fence_char = marker[0]
-                fence_len = len(marker)
-                continue
+                info_string = opening.group(2)
+                if marker[0] != "`" or "`" not in info_string:
+                    fence_char = marker[0]
+                    fence_len = len(marker)
+                    continue
 
             result.append((index, line))
             continue
@@ -250,10 +252,23 @@ def split_top_level_tex_conjuncts(text: str) -> list[str]:
             if char in "+,":
                 parts.append(text[start:index].strip())
                 start = index + 1
-            elif text.startswith(r"\land", index):
-                parts.append(text[start:index].strip())
-                index += len(r"\land") - 1
-                start = index + 1
+            else:
+                connective = next(
+                    (
+                        token
+                        for token in (r"\land", r"\wedge")
+                        if text.startswith(token, index)
+                        and (
+                            index + len(token) == len(text)
+                            or not text[index + len(token)].isalpha()
+                        )
+                    ),
+                    None,
+                )
+                if connective is not None:
+                    parts.append(text[start:index].strip())
+                    index += len(connective) - 1
+                    start = index + 1
         index += 1
 
     parts.append(text[start:].strip())
@@ -332,7 +347,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
 
     rgc_pattern = (
         r"\\mathrm\s*\{RGCExists\}_k\s*\(\s*"
-        r"\\mathfrak\s*(?:\{G\}|G)_k\s*\)\s*,?"
+        r"\\mathfrak(?:\s*\{G\}|\s+G)_k\s*\)\s*,?"
     )
     rgc_formula = first_display_math_after(
         xp_section,
@@ -346,7 +361,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
 
     closure_pattern = (
         r"\\operatorname\s*\{RegimeClosure\}_k\s*\(\s*"
-        r"\\mathfrak\s*(?:\{G\}|G)_k\s*,\s*C_k\s*\)\s*\.?"
+        r"\\mathfrak(?:\s*\{G\}|\s+G)_k\s*,\s*C_k\s*\)\s*\.?"
     )
     closure_formula = first_display_math_after(
         xp_section,
@@ -362,20 +377,22 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         xp_section,
         "Por tanto:",
     )
-    if not re.search(
-        r"\\bigcup_\s*\\alpha\s+C_\{\\alpha,k\}\s*"
-        r"\\subsetneq\s*C_k",
-        strict_formula,
-        flags=re.MULTILINE,
-    ):
+    strict_pattern = (
+        r"\s*\\boxed\s*\{\s*"
+        r"\\bigcup_\s*(?:\{\\alpha\}|\\alpha)\s+"
+        r"C_\{\\alpha,k\}\s*"
+        r"\\subsetneq\s*C_k\s*"
+        r"\}\s*\.?"
+    )
+    if not re.fullmatch(strict_pattern, strict_formula, flags=re.MULTILINE):
         fail(
-            "REV-07f regression: RT-07-XP must conclude strict inclusion of the "
-            "local-closure union in the explicit regime-closure witness"
+            "REV-07f regression: RT-07-XP must affirm, at top level, the boxed "
+            "strict inclusion of the local-closure union in C_k"
         )
 
     if re.search(
         r"\\operatorname\s*\{RegimeClosure\}_k\s*\(\s*"
-        r"\\mathfrak\s*(?:\{G\}|G)_k\s*\)\s*\.",
+        r"\\mathfrak(?:\s*\{G\}|\s+G)_k\s*\)\s*\.",
         xp_section,
         flags=re.MULTILINE,
     ):
@@ -411,7 +428,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
     premise_patterns = (
         (
             r"\\operatorname\s*\{RegimeTotal\}_i\s*\(\s*"
-            r"\\mathfrak\s*(?:\{G\}|G)_i\s*,\s*R_i\s*\)",
+            r"\\mathfrak(?:\s*\{G\}|\s+G)_i\s*,\s*R_i\s*\)",
             "RegimeTotal premise",
         ),
         (
