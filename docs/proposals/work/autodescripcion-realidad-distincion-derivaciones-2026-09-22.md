@@ -2095,13 +2095,21 @@ $$
 \mathrm{NoUnitFactBridge}(A_i,B_i).
 $$
 
-Si un candidato tuviera seed $A_i\cup B_i$, la partición $A_i\mid B_i$ violaría directamente la definición de OriginUnity. Por tanto:
+Sea $\mathcal O_i$ una configuración candidata con:
+
+$$
+\operatorname{Seed}_i(\mathcal O_i)=A_i\cup B_i.
+$$
+
+La partición $A_i\mid B_i$ viola directamente OriginUnity. Por tanto:
 
 $$
 \boxed{
+\operatorname{Seed}_i(\mathcal O_i)=A_i\cup B_i
+\land
 \mathrm{NoUnitFactBridge}(A_i,B_i)
 \Rightarrow
-\neg\operatorname{OriginUnity}_i(A_i\cup B_i).
+\neg\operatorname{OriginUnity}_i(\mathcal O_i).
 }
 $$
 
