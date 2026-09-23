@@ -1904,25 +1904,15 @@ Por ello no se escriben, para índices ya genuinos, predicados objeto como `Cros
 
 Cluster-$R$ es un diagnóstico anterior a la tipificación definitiva.
 
-Dados candidatos $C_a,C_b$, hay que distinguir dos casos.
-
-Si existe un fundamento ontológico común independientemente justificado —esto es, un testigo de $\operatorname{CommonGround}^{\mathsf M}(C_a,C_b)$—, entonces las dos realizaciones provisionales deben recibir contextos equivalentes:
+Dados candidatos $C_a,C_b$, un common ground independientemente justificado fuerza equivalencia provisional de contexto, mientras una mera integración solo prueba realizabilidad conjunta:
 
 $$
-\operatorname{CommonGround}^{\mathsf M}(C_a,C_b)
-\Rightarrow
-i\simeq_{\mathrm{idx}}j.
+\operatorname{CommonGround}^{\mathsf M}(C_a,C_b)\Rightarrow i\simeq_{\mathrm{idx}}j,
+\qquad
+\operatorname{Integrable}^{\mathsf M}(C_a,C_b)\Rightarrow\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b).
 $$
 
-Si solo existe un hecho ontológico integrador común, se obtiene únicamente:
-
-$$
-\operatorname{Integrable}^{\mathsf M}(C_a,C_b)
-\Rightarrow
-\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b),
-$$
-
-sin derivar todavía equivalencia de índices ni common ground. Ese paso adicional es precisamente la obligación OPEN CGP.
+La segunda implicación **no** autoriza $i\simeq_{\mathrm{idx}}j$ ni CommonGround; ese paso adicional es precisamente la obligación OPEN CGP.
 
 Una vez justificado:
 
