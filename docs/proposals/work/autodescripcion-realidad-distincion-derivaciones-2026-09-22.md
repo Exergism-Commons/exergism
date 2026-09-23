@@ -2100,7 +2100,7 @@ mediante:
 $$
 b_i\in\operatorname{Seed}_i(\mathcal O_i)
 \land
-\operatorname{GenEvent}_i(e_i,A_i,b_i)
+\operatorname{OntProd}_i(e_i,A_i,b_i)
 \Rightarrow
 A_i\preceq\operatorname{Seed}_i(\mathcal O_i).
 $$
@@ -2125,13 +2125,43 @@ c_i\notin\operatorname{Seed}_i(\mathcal O_i)
 c_i\leadsto a_i.
 $$
 
-### 0.4. Generación como hiperevento
+### 0.4. Producción ontológica objetivo y GenEvent como implementación
 
-La primitiva generativa vigente es:
+Para no definir la genealogía por el propio inventario formal, introducimos una relación objetivo independiente:
 
 $$
+\operatorname{OntProd}_i(e_i,A_i,b_i),
+$$
+
+que debe caracterizar una instancia real de producción/dependencia ontológica sin usar $R_i$, Generated$^*$, CoReal ni el resultado final de la clausura.
+
+$\operatorname{GenEvent}_i$ es la implementación formal mediante modos admitidos. Debe satisfacer:
+
+$$
+\boxed{
+\mathrm{GenSound}_i:
+\quad
+\operatorname{GenEvent}_i(e_i,A_i,b_i)
+\Rightarrow
+\operatorname{OntProd}_i(e_i,A_i,b_i)
+}
+$$
+
+y:
+
+$$
+\boxed{
+\mathrm{GenComplete}_i:
+\quad
+\operatorname{OntProd}_i(e_i,A_i,b_i)
+\Rightarrow
 \operatorname{GenEvent}_i(e_i,A_i,b_i).
+}
 $$
+
+Si GenSound falla, $\Gamma_i$ puede sobre-generar. Si GenComplete falla, puede sub-generar y RootClosed podría aparentar ausencia de entradas externas simplemente porque falta un modo productivo en el inventario.
+
+Los modos candidatos —causalidad productiva, constitución/realización, grounding/dependencia y continuidad procesual— deben tener semántica propia. Compartir una etiqueta de «generativo» no basta.
 
 $A_i$ contiene todos los antecedentes conjuntamente necesarios para esa instancia generativa.
 
