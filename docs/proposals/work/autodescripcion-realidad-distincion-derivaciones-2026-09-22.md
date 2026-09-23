@@ -3324,13 +3324,13 @@ La ruta de trabajo preferente pasa a ser **Context Assembly**, pero todavía no 
 
 Definimos una unidad local certificada:
 
-$
+$$
 \operatorname{GeneUnit}_i(\mathcal O_i,C_i)
 :\Longleftrightarrow
 \operatorname{OntOrigin}_i(\mathcal O_i)
 \land
 \operatorname{GenClosure}_i(\mathcal O_i,C_i).
-$
+$$
 
 GeneUnit no afirma que $C_i$ sea todo $R_i$. Afirma solamente que $C_i$ es una genealogía local sound/complete respecto de su OntOrigin bajo GenAdequate.
 
@@ -3340,17 +3340,17 @@ Dos GeneUnit distintas pueden solaparse solo si una futura equivalencia de oríg
 
 Para dos unidades:
 
-$
+$$
 G_{\alpha,i}=(\mathcal O_{\alpha,i},C_{\alpha,i}),
 \qquad
 G_{\beta,i}=(\mathcal O_{\beta,i},C_{\beta,i}),
-$
+$$
 
 un enlace de ensamblaje:
 
-$
+$$
 \operatorname{AssemblyLink}_i(\ell_i;G_{\alpha,i},G_{\beta,i})
-$
+$$
 
 requiere:
 
