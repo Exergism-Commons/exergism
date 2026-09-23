@@ -114,23 +114,79 @@ $$
 
 **Motivación física limitada.** Static-patch observables, gravitational dressing y reconstrucción holográfica motivan distinguir acceso, representación y alcance, pero no demuestran ninguna identificación $U_i=S_i=R_i$ ni ninguna tesis de totalidad. Véase el [mapa de literatura, §13](autodescripcion-realidad-distincion-references.md#13-horizontes-observables-gravitatorios-y-reconstrucción-holográfica).
 
-### 1.3. Target doctrinal vigente — realidad indexada
+### 1.3. El índice es un parámetro de tipo, no una entidad
 
-La ontología primaria es **indexada**.
+La ontología primaria es **indexada**, pero el índice no forma parte de la ontología.
 
-No se toma como primitivo doctrinal un predicado absoluto $\operatorname{Real}(x)$. Se parte de:
+Los símbolos:
 
 $$
-\operatorname{Real}_i(x),
+i,j,k,\dots
 $$
 
-«$x$ es real en el índice ontológico $i$».
+son **metavariables/parámetros de contexto**. No designan instancias reales, lugares, mundos-objeto ni elementos de una colección $I$.
 
-El índice no es una etiqueta descriptiva posterior. Es la frontera de compatibilidad ontológica.
+En particular, la teoría no postula:
 
-### 1.4. Primitivas genealógicas
+$$
+I=\{i,j,k,\dots\},
+$$
 
-Cada realidad indexada debe estar fundada en una base/origen ontológico:
+ni presupone que los índices sean enumerables, accesibles entre sí o comparables desde una realidad superior.
+
+Cada contexto $i$ determina su propio tipado ontológico. Una variable escrita $x_i$ pertenece al sort/contexto de objetos de $i$; una fórmula:
+
+$$
+\operatorname{Real}_i(x_i)
+$$
+
+solo está bien formada en ese contexto.
+
+### 1.4. Juicios de identidad e incompatibilidad de índice
+
+Introducimos dos **juicios metateóricos**, no predicados ontológicos:
+
+$$
+i\simeq_{\mathrm{idx}}j
+$$
+
+«dos presentaciones/candidatos corresponden al mismo contexto ontológico», y:
+
+$$
+\boxed{
+i\mathrel{\#}j
+}
+$$
+
+«los contextos son genuinamente incompatibles».
+
+$i\mathrel{\#}j$ no describe una relación real entre $R_i$ y $R_j$. Es una restricción de tipado del metalenguaje.
+
+Por ello, si:
+
+$$
+i\mathrel{\#}j
+$$
+
+entonces expresiones como:
+
+$$
+\operatorname{Real}_j(x_i)
+$$
+
+o:
+
+$$
+\operatorname{Relatum}_j(x_i,f_j)
+$$
+
+son **mal tipadas**, no proposiciones falsas.
+
+Ésta es la lectura formal de «la incompatibilidad es el índice».
+
+### 1.5. Primitivas genealógicas
+
+Cada realización indexada debe estar fundada en una base/origen ontológico:
 
 $$
 \mathcal O_i,
@@ -138,31 +194,31 @@ $$
 
 que puede ser singular, plural o estructurada y no se identifica necesariamente con un primer instante temporal.
 
-Introducimos:
+Introducimos, dentro del contexto $i$:
 
 $$
 \operatorname{OntOrigin}_i(\mathcal O_i),
 $$
 
-y una relación generativa independiente:
+y:
 
 $$
-\operatorname{GenStep}_i(a,b).
+\operatorname{GenStep}_i(a_i,b_i).
 $$
 
 Su clausura se denota:
 
 $$
-\operatorname{Generated}^{*}_i(\mathcal O_i,x).
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i).
 $$
 
 La regla doctrinal de realidad indexada es:
 
 $$
 \boxed{
-\operatorname{Real}_i(x)
+\operatorname{Real}_i(x_i)
 \Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x).
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i).
 }
 $$
 
@@ -170,7 +226,7 @@ La estrella no obliga a clausura finita: puede realizarse mediante reglas finita
 
 **No circularidad:** OntOrigin, GenStep y las reglas de $\operatorname{Generated}^{*}$ no pueden definirse mediante $R_i$, CoReal, SameRegime, SemTotal, Presents ni la extensión final que quieren generar.
 
-### 1.5. $R_i$ — clausura genealógica indexada
+### 1.6. $R_i$ — clausura genealógica tipada
 
 Definimos:
 
@@ -187,128 +243,117 @@ $$
 y:
 
 $$
-\forall x[
-\operatorname{Within}_i(x,R_i)
+\forall x_i[
+\operatorname{Within}_i(x_i,R_i)
 \Longleftrightarrow
-\operatorname{Real}_i(x)
+\operatorname{Real}_i(x_i)
 \Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 ].
 $$
 
 Así:
 
 $$
-\boxed{
 R_i
 =
 \operatorname{Scope}_i
-\bigl(
-\operatorname{Cl}^{\mathrm{ont}}_i(\mathcal O_i)
-\bigr)
-}
+\bigl(\operatorname{Cl}^{\mathrm{ont}}_i(\mathcal O_i)\bigr)
 $$
 
-es abreviatura doctrinal de una clausura ontológica indexada, no identidad con un set u objeto colector.
+es abreviatura doctrinal de una clausura ontológica dentro del tipo $i$, no identidad con un set u objeto colector.
 
-### 1.6. Incompatibilidad de índice
+### 1.7. Cierre de hechos e imposibilidad de cruce
 
-Para realidades **genuinamente** distintas:
+Sea:
 
 $$
-i\neq j
+\operatorname{RealFact}_i(f_i)
 $$
 
-significa incompatibilidad ontológica total.
-
-Primero, no hay solapamiento de contenido real:
+un hecho real bien tipado en $i$. Su incidencia satisface:
 
 $$
 \boxed{
-i\neq j
+\operatorname{RealFact}_i(f_i)
 \Rightarrow
-\neg\exists x[
-\operatorname{Real}_i(x)
-\land
-\operatorname{Real}_j(x)
+\forall x_i[
+\operatorname{Relatum}_i(x_i,f_i)
+\Rightarrow
+\operatorname{Real}_i(x_i)
 ].
 }
 $$
 
-Segundo, no hay hechos ontológicos transversales. Sea $\operatorname{RealFact}_i(f)$ un hecho real del índice $i$, y $\operatorname{Relatum}(x,f)$ la incidencia de un relatum en ese hecho. Entonces:
+Si un supuesto hecho conecta dos candidatos que iban a recibir índices diferentes, ese hecho es evidencia **previa a la indexación** de que ambos candidatos pertenecen al mismo contexto.
+
+No se formula después:
 
 $$
-\boxed{
-\operatorname{RealFact}_i(f)
-\Rightarrow
-\forall x[
-\operatorname{Relatum}(x,f)
-\Rightarrow
-\operatorname{Real}_i(x)
-].
-}
-$$
-
-Por tanto, si un mismo hecho real relacionase contenido supuesto de $i$ y $j$, esos contenidos no podrían pertenecer a dos índices genuinos distintos.
-
-Equivalentemente, a nivel metateórico:
-
-$$
-\boxed{
 \operatorname{CrossRealFact}(i,j)
-\Rightarrow
-i=j.
-}
 $$
 
-Lo mismo vale para una base ontológica común:
+como una relación ontológica entre índices genuinos. Para $i\mathrel{\#}j$, tal expresión queda fuera del lenguaje objeto.
+
+Lo mismo vale para un supuesto origen común: si aparece una base ontológica que genera ambos candidatos, la conclusión es:
 
 $$
-\boxed{
-\operatorname{CommonOntOrigin}(i,j)
-\Rightarrow
-i=j.
-}
+i\simeq_{\mathrm{idx}}j,
 $$
 
-No existe una relación adicional llamada «incompatibilidad» entre $R_i$ y $R_j$. **La incompatibilidad es precisamente la diferencia de índice.**
+no que dos realidades incompatibles estén conectadas por una tercera cosa.
 
-### 1.7. CoReal derivada
+### 1.8. CoReal derivada
 
-Dentro de un índice ya justificado:
+Dentro de un contexto ya justificado:
 
 $$
 \boxed{
-\operatorname{CoReal}_i(x,y)
+\operatorname{CoReal}_i(x_i,y_i)
 :\Longleftrightarrow
-\operatorname{Real}_i(x)
+\operatorname{Real}_i(x_i)
 \land
-\operatorname{Real}_i(y).
+\operatorname{Real}_i(y_i).
 }
 $$
 
-Equivalentemente, usando genealogía:
+Equivalentemente:
 
 $$
-\operatorname{CoReal}_i(x,y)
+\operatorname{CoReal}_i(x_i,y_i)
 \Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 \land
-\operatorname{Generated}^{*}_i(\mathcal O_i,y).
+\operatorname{Generated}^{*}_i(\mathcal O_i,y_i).
 $$
 
-CoReal no necesita una conectividad local entre $x$ e $y$: compartir índice/origen basta. $\Lambda_*$ y $\mathcal C_*$ son métodos de reconstrucción de esa clausura, no definiciones de co-realidad.
+CoReal no exige conectividad causal o por caminos entre ambos tokens. Compartir la misma clausura tipada basta.
 
-### 1.8. Target de existencia
+### 1.9. `ExistsR` es una metasentencia, no un cuantificador sobre índices
 
-El target doctrinal de existencia queda:
+Para abreviar el metalenguaje escribimos:
+
+$$
+\exists^{\mathsf M} i\;\Phi_i
+$$
+
+con el significado:
+
+> existe una instanciación admisible del parámetro de contexto $i$ para la cual la sentencia indexada $\Phi_i$ está satisfecha.
+
+$\exists^{\mathsf M}$ **no** es un cuantificador del lenguaje ontológico y no presupone un dominio $I$ de índices.
+
+El target doctrinal se escribe entonces:
 
 $$
 \boxed{
 \operatorname{ExistsR}
-:=
-\exists i\;\exists\mathcal O_i\;\exists R_i\;
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
+:\Longleftrightarrow
+\exists^{\mathsf M} i\;
+\bigl(
+\exists\mathcal O_i\exists R_i\;
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\bigr).
 }
 $$
 
@@ -317,20 +362,21 @@ Y:
 $$
 \boxed{
 \operatorname{NoR}
-:=
+:\Longleftrightarrow
 \neg\operatorname{ExistsR}.
 }
 $$
 
-Por tanto demostrar **un solo** $R_i$ genealógico basta para refutar No-$R$.
+Demostrar una sola instanciación admisible $i$ con GeneTotal basta para refutar No-$R$.
 
-La versión semánticamente testimoniada es:
+La versión testimoniada es igualmente metateórica:
 
 $$
 \boxed{
 \operatorname{WitnessedR}
-:=
-\exists i,S_i,\mathcal O_i,R_i[
+:\Longleftrightarrow
+\exists^{\mathsf M} i\;
+\exists S_i\exists\mathcal O_i\exists R_i[
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 \land
 \operatorname{SemTotal}_i(S_i)
@@ -340,65 +386,89 @@ $$
 }
 $$
 
-y:
+### 1.10. One-$R$, Many-$R$ y Cluster-$R$ como metatesis
+
+**One-$R$** significa: ExistsR es verdadero y cualesquiera dos realizaciones admisibles de GeneTotal que el metalenguaje compare resultan del mismo tipo:
 
 $$
-\operatorname{WitnessedR}
-\Rightarrow
-\operatorname{ExistsR}.
+i\simeq_{\mathrm{idx}}j.
 $$
 
-### 1.9. Metalenguaje de índices
-
-No se introduce un objeto desnudo $x$ común a dominios ontológicamente incompatibles.
-
-El metalenguaje representa contenido indexado mediante pares tipados:
+**Many-$R$** significa: hay metateóricamente dos realizaciones admisibles:
 
 $$
-\langle i,x\rangle
+i\mathrel{\#}j.
 $$
 
-con:
+Esto no postula una bolsa que contenga a $i$ y $j$. Es un juicio sobre dos instanciaciones del esquema de realidad.
+
+**Cluster-$R$** solo se aplica a candidatos todavía no tipados definitivamente. Si aparece un hecho ontológico integrador o un origen común, los candidatos deben recibir el mismo índice. Una vez establecido $i\mathrel{\#}j$, un «colapso posterior» es incoherente: mostraría que el juicio de incompatibilidad inicial era erróneo.
+
+### 1.11. Verdad, falsedad e incompatibilidad inter-index
+
+Las proposiciones/facts también están tipadas. Sea:
 
 $$
-\operatorname{MetaReal}(i,x)
-:\Longleftrightarrow
-\operatorname{Real}_i(x).
+p_i\in\mathcal L_i.
 $$
 
-La colección/metaclase de pares tipados es un recurso de comparación del **metalenguaje**, no una realidad superior que integre los índices.
-
-Por tanto no adoptamos como fórmula ontológica:
+Si:
 
 $$
-\exists i\;\operatorname{Real}_i(x)
+i\mathrel{\#}j,
 $$
 
-con un mismo $x$ no tipado atravesando índices.
+entonces $p_i$ no es una proposición de $\mathcal L_j$. Por tanto no se afirma:
 
-Desde el lenguaje interno de $R_i$, un supuesto $R_j$ con $j\neq i$ no es «algo real pero inaccesible». No pertenece al dominio de cuantificación ontológica de $i$, no puede ser relatum de un hecho real de $i$ y no puede funcionar como causa, fundamento, información o exterior ontológico de $i$.
+$$
+\operatorname{False}_j(p_i)
+$$
 
-En ese sentido preciso:
+ni:
+
+$$
+\neg\operatorname{RealFact}_j(p_i);
+$$
+
+ambas expresiones intentan aplicar predicados de $j$ a un término de tipo $i$.
+
+Una comparación externa requiere una traducción metalingüística:
+
+$$
+\tau_{ij}:\mathcal L_i\rightsquigarrow\mathcal L_j.
+$$
+
+Puede ocurrir, por ejemplo:
+
+$$
+\operatorname{True}_i(p_i)
+\qquad\text{y}\qquad
+\operatorname{False}_j(\tau_{ij}(p_i)).
+$$
+
+Eso no es una contradicción ontológica transversal: son juicios sobre proposiciones tipadas distintas relacionados solo por una traducción del metalenguaje.
+
+En este sentido:
 
 $$
 \boxed{
-\text{fuera de }R_i
-\text{ no denota un exterior real oculto en }i;
-\text{ denota ausencia de contenido ontológico en }i.
+\text{incompatibilidad inter-index}
+\;>\;
+\text{contradicción interna}.
 }
 $$
 
-Una eventual afirmación metateórica de que existe además un índice $j$ pertenece al metalenguaje de índices. No constituye un hecho transversal entre $R_i$ y $R_j$.
+Para contradecirse literalmente, dos afirmaciones deben compartir un contexto en el que ambas estén bien formadas.
+
+### 1.12. Nada fuera de $R_i$ desde el contexto $i$
+
+Desde el lenguaje interno de $R_i$, un hipotético $R_j$ incompatible no es «algo real pero inaccesible». No pertenece al dominio de tipado de $i$.
+
+Por tanto, dentro de $i$, «fuera de $R_i$» no denota un exterior ontológico oculto. Denota ausencia de contenido bien tipado como real en $i$.
+
+El metalenguaje puede formular la hipótesis Many-$R$, pero esa formulación no constituye un hecho real transversal ni proporciona acceso de $R_i$ a $R_j$.
 
 
-### 1.10. One-$R$, Many-$R$ y Cluster-$R$
-
-- **One-$R$:** existe exactamente un índice ontológico genuino.
-- **Many-$R$:** existen al menos dos índices ontológicos genuinos $i\neq j$. Por estructura son totalmente incompatibles: no comparten tokens reales, hechos, relaciones ni origen ontológico.
-- **Cluster-$R$:** solo puede aplicarse a **candidatos pre-indexados**. Si dos supuestas realidades admiten un hecho transversal, una relación ontológica o un origen superior común, entonces no eran dos $R_i$ genuinos: eran subclausuras/candidatos del mismo índice.
-- **Indexed-$R$:** lenguaje neutral para hablar de una realidad concreta $R_i$ sin decidir metateóricamente One-$R$ o Many-$R$.
-
-Así, Many-$R$ una vez genuinamente establecido no puede «colapsar después» en Cluster-$R$. Un supuesto colapso revela que la indexación inicial era provisional o errónea.
 ## 2. Consecuencias estructurales de la indexación
 
 Dado:
