@@ -186,13 +186,9 @@ son **mal tipadas**, no proposiciones falsas.
 
 ### 1.5. Primitivas genealógicas
 
-Cada realización indexada debe estar fundada en una **configuración-originaria ontológicamente unificada**:
+Cada **unidad genealógica local** debe estar fundada en una configuración-originaria ontológicamente unificada $\mathcal O_i$. Un régimen exhaustivo puede contener una o varias unidades genealógicas independientemente justificadas; por tanto, OntOrigin ya no implica por sí solo exhaustividad del contexto.
 
-$$
-\mathcal O_i.
-$$
-
-$\mathcal O_i$ puede ser internamente compleja, pero no puede ser una mera suma, lista o unión metalingüística de raíces independientes. La unidad del origen debe estar testimoniada por estructura ontológica interna independientemente caracterizada.
+$\mathcal O_i$ puede ser internamente compleja, pero no puede ser una mera suma, lista o unión metalingüística de raíces independientes. La unidad de cada origen local debe estar testimoniada por estructura ontológica interna independientemente caracterizada.
 
 Introducimos:
 
@@ -230,61 +226,107 @@ $$
 ].
 $$
 
-Solo bajo GCExists la minimalidad permite abreviar el testigo como $\operatorname{Cl}^{G}_i(\mathcal O_i)$. La equivalencia doctrinal con realidad exige además adecuación generativa:
+Solo bajo GCExists la minimalidad permite abreviar el testigo como $\operatorname{Cl}^{G}_i(\mathcal O_i)$. Para una unidad local la obligación correcta es **soundness**, no exhaustividad del contexto:
 
-$$
+$
 \boxed{
-\mathrm{GCExists}_i(\mathcal O_i)\land\mathrm{GenAdequate}_i
-\Rightarrow
-\forall x_i[
-\operatorname{Real}_i(x_i)
-\Longleftrightarrow
+\operatorname{OntOrigin}_i(\mathcal O_i)
+\land
 \operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
-].
+\Rightarrow
+\operatorname{Real}_i(x_i).
 }
-$$
+$
+
+La conversa $\operatorname{Real}_i(x_i)\Rightarrow\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)$ solo se obtiene en el caso monogeneal GeneTotal; en general la completitud se formula respecto de RegimeClosure.
 
 $\operatorname{OntOrigin}_i$ es **ontológico, no cronológico ni espacial**: no exige un primer instante, una localización inicial ni un átomo simple. Puede ser atemporal, estructural, cíclico o contener soporte mutuo. Una regresión temporal infinita no refuta por sí sola OntOrigin; REV-07d pregunta, más fuertemente, si puede existir una genealogía sin ninguna base ontológica mínima admisible. Lo que no vale como origen es una agregación arbitraria diseñada para hacer exhaustiva la clausura.
 
 **No circularidad:** OntOrigin, GenEvent y las reglas de clausura no pueden definirse mediante $R_i$, CoReal, SameRegime, SemTotal, Presents ni la extensión final que quieren producir.
 
 
-### 1.6. $R_i$ — clausura genealógica tipada
+### 1.6. $R_i$ — totalización genealógica mono- y multigeneal
 
-Definimos:
+Una unidad genealógica local es:
+
+$$
+\operatorname{GeneUnit}_i(\mathcal O_{\alpha,i},C_{\alpha,i})
+:\Longleftrightarrow
+\operatorname{OntOrigin}_i(\mathcal O_{\alpha,i})
+\land
+\operatorname{GenClosure}_i(\mathcal O_{\alpha,i},C_{\alpha,i}).
+$$
+
+GeneTotal se conserva como el caso **monogeneal**:
 
 $$
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i)
-$$
-
-cuando:
-
-$$
-\operatorname{OntOrigin}_i(\mathcal O_i)
-$$
-
-y:
-
-$$
+:\Longleftrightarrow
+\exists C_i[
+\operatorname{GeneUnit}_i(\mathcal O_i,C_i)
+\land
 \forall x_i[
 \operatorname{Within}_i(x_i,R_i)
 \Longleftrightarrow
 \operatorname{Real}_i(x_i)
 \Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+x_i\in C_i
+]
 ].
 $$
 
-Así:
+Para una familia metateóricamente parametrizada $\mathfrak G_i$ de GeneUnit ya tipadas en el mismo contexto, §5.1 define GeneBasis, FamilyBase, RegimeClosure y:
 
 $$
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
+:\Longleftrightarrow
+\exists C_i[
+\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)
+\land
+x_i\in C_i
+].
+$$
+
+La totalización general es:
+
+$$
+\boxed{
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+:\Longleftrightarrow
+\operatorname{GeneBasis}_i(\mathfrak G_i)
+\land
+\forall x_i[
+\operatorname{Within}_i(x_i,R_i)
+\Longleftrightarrow
+\operatorname{Real}_i(x_i)
+\Longleftrightarrow
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
+].
+}
+$$
+
+RegimeClosure vuelve a cerrar $\Gamma_i$ sobre la base conjunta y por ello incluye producción transversal entre unidades; la mera unión $\bigcup_\alpha C_{\alpha,i}$ no basta. La familia es no vacía, overlap-coherent e irredundante respecto de su propia closure, y su tipado común debe estar justificado **antes** de formar la familia: GeneBasis no puede fabricar SharedOntSpace.
+
+Para $C_i$ la GenClosure de $\mathcal O_i$:
+
+$$
+\boxed{
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\Longleftrightarrow
+\operatorname{RegimeTotal}_i(
+\{\langle\mathcal O_i,C_i\rangle\},
 R_i
-=
-\operatorname{Scope}_i
-\bigl(\operatorname{Cl}^{\mathrm{ont}}_i(\mathcal O_i)\bigr)
+).
+}
 $$
 
-es abreviatura doctrinal de una clausura ontológica dentro del tipo $i$, no identidad con un set u objeto colector.
+La equivalencia vale solo para familias singleton. En general:
+
+$$
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+\not\Rightarrow
+\exists\mathcal O_i\;\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
+$$
 
 ### 1.7. Cierre de hechos e imposibilidad de cruce
 
@@ -340,19 +382,11 @@ $$
 }
 $$
 
-Equivalentemente:
+Bajo RegimeTotal esto equivale a que ambos tokens pertenezcan a la misma RegimeClosure testigo. Solo en el caso singleton GeneTotal puede reescribirse además mediante una única $\operatorname{Generated}^{*}_i(\mathcal O_i,-)$.
 
-$$
-\operatorname{CoReal}_i(x_i,y_i)
-\Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
-\land
-\operatorname{Generated}^{*}_i(\mathcal O_i,y_i).
-$$
+CoReal no exige conectividad causal o por caminos entre ambos tokens ni CommonGround entre sus genealogías locales.
 
-CoReal no exige conectividad causal o por caminos entre ambos tokens. Compartir la misma clausura tipada basta.
-
-### 1.9. `ExistsR` es una metasentencia, no un cuantificador sobre índices
+### 1.9. ExistsR es una metasentencia, no un cuantificador sobre índices
 
 Para abreviar el metalenguaje escribimos:
 
@@ -366,7 +400,7 @@ con el significado:
 
 $\exists^{\mathsf M}$ **no** es un cuantificador del lenguaje ontológico y no presupone un dominio $I$ de índices.
 
-El target doctrinal se escribe entonces:
+El target doctrinal se escribe ahora:
 
 $$
 \boxed{
@@ -374,8 +408,8 @@ $$
 :\Longleftrightarrow
 \exists^{\mathsf M} i\;
 \bigl(
-\exists\mathcal O_i\exists R_i\;
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\exists\mathfrak G_i\exists R_i\;
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \bigr).
 }
 $$
@@ -390,7 +424,7 @@ $$
 }
 $$
 
-Demostrar una sola instanciación admisible $i$ con GeneTotal basta para refutar No-$R$.
+Una GeneTotal sigue bastando para refutar No-$R$ por la equivalencia singleton, pero deja de ser el único witness posible.
 
 La versión testimoniada es igualmente metateórica:
 
@@ -399,8 +433,8 @@ $$
 \operatorname{WitnessedR}
 :\Longleftrightarrow
 \exists^{\mathsf M} i\;
-\exists S_i\exists\mathcal O_i\exists R_i[
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\exists S_i\exists\mathfrak G_i\exists R_i[
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \land
 \operatorname{SemTotal}_i(S_i)
 \land
@@ -411,13 +445,13 @@ $$
 
 ### 1.10. One-$R$, Many-$R$ y Cluster-$R$ como metatesis
 
-**One-$R$** significa: ExistsR es verdadero y cualesquiera dos realizaciones admisibles de GeneTotal que el metalenguaje compare resultan del mismo tipo:
+**One-$R$** significa: ExistsR es verdadero y cualesquiera dos realizaciones admisibles de RegimeTotal que el metalenguaje compare resultan del mismo tipo:
 
 $$
 i\simeq_{\mathrm{idx}}j.
 $$
 
-**Many-$R$** significa: hay metateóricamente dos realizaciones admisibles:
+**Many-$R$** significa: hay metateóricamente dos realizaciones admisibles de RegimeTotal:
 
 $$
 i\mathrel{\#}j.
@@ -498,9 +532,9 @@ El metalenguaje puede formular la hipótesis Many-$R$, pero esa formulación no 
 
 Fijado un parámetro de contexto $i$ y una realización:
 
-$$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i),
-$$
+$
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i),
+$
 
 se sigue dentro de ese contexto:
 
@@ -634,7 +668,7 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-10 | RESOLVED vigente | La ruta actual ya no usa la inferencia oculta de StageFactorization/presentabilidad criticada en H8. |
 | REV-21 | RESOLVED formal | Los puntos fijos de $F_i$ son exactamente los subconjuntos forward-closed del grafo emergente; la degeneración al único punto fijo no vacío $\Sigma_i$ ocurre exactamente cuando el grafo es fuertemente conexo. |
 | REV-23 | OPEN para ruta finita | PON no está justificada. Hace set-sized el componente finitamente conectado, pero la ruta generalizada puede sustituirla por `CSet/TransClSmall`. Ninguna condición de smallness implica por sí sola `ExistsR`. |
-| REV-24 | OPEN blocker doctrinal local | El máximo semántico no produce un $R_i$. REV-07 debe justificar primero $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$; REV-24 queda reducido a OA/MC/RA para demostrar $\operatorname{Presents}_i(S_i,R_i)$. Su cierre fortalece `ExistsR` a `WitnessedR`; no crea existencia ontológica. |
+| REV-24 | OPEN blocker doctrinal local | El máximo semántico no produce un $R_i$. REV-07 debe justificar primero $\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)$; REV-24 queda reducido a OA/MC/RA sobre la closure de régimen para demostrar $\operatorname{Presents}_i(S_i,R_i)$. Su cierre fortalece `ExistsR` a `WitnessedR`; no crea existencia ontológica. |
 | REV-25 | OPEN blocker fundacional/semántico | El teorema usa smallness de la firma y un paso de Separation sobre los hechos «actualmente verdaderos». Deben justificarse la firma/aridades y la disponibilidad metateórica del predicado de actualidad. |
 | REV-26 | OPEN extensión metaontológica | **One-$R$/Many-$R$ y generalidad entre índices.** No bloquea $\operatorname{ExistsR}$. Un origen común entre dos candidatos implica que pertenecen al mismo índice; Many-$R$ genuino exige índices incompatibles por tipado, no una condición adicional de aislamiento. |
 
@@ -679,7 +713,7 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 
 La existencia ontológica y su representación quedan ahora separadas:
 
-1. **REV-07:** justificar una base/origen ontológico $\mathcal O_i$, la relación objetivo independiente $\operatorname{OntProd}_i$, una implementación $\operatorname{GenEvent}_i$ sound-and-complete respecto de ella, y $\mathrm{GCExists}_i(\mathcal O_i)$; solo entonces $\operatorname{Generated}^{*}_i$ puede realizar un $R_i$, mientras $\operatorname{GenStep}_i$ permanece una proyección auxiliar;
+1. **REV-07:** justificar GeneUnit locales, una GeneBasis no redundante, la relación objetivo independiente $\operatorname{OntProd}_i$, una implementación $\operatorname{GenEvent}_i$ sound-and-complete y existencia de RegimeClosure; solo entonces $\operatorname{RegimeGenerated}^{*}_i$ puede realizar un $R_i$, mientras $\operatorname{GenStep}_i$ permanece una proyección auxiliar;
 2. **REV-23:** justificar PON solo si se conserva la reconstrucción finita por $\Lambda_*$;
 3. **REV-24:** dado un $R_i$ genealógico ya justificado, demostrar OA/MC/RA y $\operatorname{Presents}_i(S_i,R_i)$;
 4. **REV-25:** justificar la smallness de firma/aridades y el predicado de actualidad usado por Separation.
@@ -745,11 +779,13 @@ Eso no establece una genealogía ontológica.
 
 La existencia local fuerte pertenece a REV-07:
 
-$$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+$
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \Rightarrow
 \operatorname{ExistsR}.
-$$
+$
+
+GeneTotal conserva esta implicación como corolario singleton.
 
 Si REV-07 ha justificado esa genealogía, REV-24 intenta demostrar:
 
@@ -765,7 +801,7 @@ y por tanto:
 
 $$
 \boxed{
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 +
 \operatorname{SemTotal}_i(S_i)
 +
@@ -824,11 +860,11 @@ S_i\in\mathfrak K_i
 F_i^{\mathrm{proc}}(S_i)=S_i.
 $$
 
-La forma tipada del resultado semántico es «existe un máximo $S_i$ y es E-closed». La existencia ontológica de $R_i$ requiere REV-07 y su genealogía:
+La forma tipada del resultado semántico es «existe un máximo $S_i$ y es E-closed». La existencia ontológica de $R_i$ requiere REV-07 y una base genealógica total:
 
-$$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
-$$
+$
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i).
+$
 
 REV-24 solo debe justificar después:
 
@@ -1216,7 +1252,7 @@ $$
 T^{\Lambda}_{i,q}
 =
 \{x_i\mid
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
 \},
 $$
 
@@ -1286,10 +1322,10 @@ Solo después, dada una realización tipada $\eta_i^{\mathcal C}$, se investigan
 $$
 \mathrm{CS}^{\mathrm{gen}}_{\mathcal C,i}:\;
 a\in T_q^{\mathcal C}\land\eta_i^{\mathcal C}(a)=x_i
-\Rightarrow\operatorname{Generated}^{*}_i(\mathcal O_i,x_i),
+\Rightarrow\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i),
 \qquad
 \mathrm{CC}^{\mathrm{gen}}_{\mathcal C,i}:\;
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
 \Rightarrow\exists a\in T_q^{\mathcal C}\;\eta_i^{\mathcal C}(a)=x_i.
 $$
 
@@ -1299,91 +1335,66 @@ FID es solamente una condición suficiente de la Ruta A; un fallo de FID no impl
 
 ### 4.3. REV-24 — presentación semántica de una realidad genealógica
 
-$S_i$ y $R_i$ son tipos distintos, y la nueva definición genealógica separa además **existencia ontológica** de **presentación semántica**.
-
-REV-07 debe justificar primero alguna:
+$S_i$ y $R_i$ son tipos distintos. REV-07 debe justificar primero:
 
 $$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i).
 $$
 
-REV-24 pregunta después si un máximo semántico $S_i$ presenta adecuadamente esa realidad.
+REV-24 pregunta después si un máximo semántico $S_i$ presenta adecuadamente esa realidad. GeneTotal queda cubierto automáticamente como caso singleton.
 
 #### REV-24a — Ontological Anchoring (OA)
 
 $$
-\mathrm{OA}_i(S;\mathcal O_i):
+\mathrm{OA}_i(S;\mathfrak G_i):
 \quad
 \forall a\in T_S\;
 \exists x[
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x)
 \land
 \operatorname{Den}_i(a,x)
 ].
 $$
 
-OA impide que el carrier semántico sobreincluya contenido ajeno a la genealogía.
-
-En Ruta A, una vez justificado que $\Lambda_*$ reconstruye la clausura genealógica y usando denotación canónica, la antigua obligación RS se reinterpreta como soundness respecto de $\operatorname{Generated}^{*}_i$.
+OA impide que el carrier semántico sobreincluya contenido ajeno a la closure total del régimen. En Ruta A, RS se interpreta como soundness respecto de RegimeGenerated$^*$.
 
 #### REV-24b — Membership Completeness (MC)
 
 $$
-\mathrm{MC}_i(S;\mathcal O_i):
+\mathrm{MC}_i(S;\mathfrak G_i):
 \quad
 \forall x[
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x)
 \Rightarrow
 \exists a\in T_S\;
 \operatorname{Den}_i(a,x)
 ].
 $$
 
-MC impide que $S_i$ omita contenido de la clausura ontológica.
-
-En Ruta A, RC se reinterpreta como:
-
-$$
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
-\Rightarrow
-x_i\in[q_i]_{\sim_i}.
-$$
-
-En Ruta B, MC se descarga solo mediante la realización tipada:
-
-$$
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
-\Rightarrow
-\exists a\in T_q^{\mathcal C}\;
-\eta_i^{\mathcal C}(a)=x_i.
-$$
-
-FID sigue siendo únicamente una vía suficiente para la implementación finita.
+MC impide que $S_i$ omita contenido de la closure del régimen. En Ruta A, RC debe cubrir RegimeGenerated$^*$; en Ruta B, la realización tipada $\eta_i^{\mathcal C}$ debe ser completa respecto de la misma extensión. FID sigue siendo solo una vía suficiente para casos monogeneales/finitamente reconstruibles y no una condición de RegimeTotal.
 
 #### REV-24c — Representational Adequacy (RA)
 
 $\mathrm{RA}_i(S,R_i)$ debe garantizar que la presentación preserva y refleja no solo miembros, sino la estructura genealógica/procesual relevante:
 
 - identidades;
-- relaciones de generación;
+- relaciones de generación locales y transversales;
 - dependencias constitutivas relevantes;
-- procesos que mantienen la clausura;
+- procesos que mantienen la closure;
 - invariancia bajo recodificaciones fieles.
 
 RA permanece OPEN y debe coordinarse con REV-25.
 
 #### REV-24d — Scope Realization
 
-El finding histórico REV-24d queda **MOVED/SUPERSEDED como parte del puente semántico**. La realización de scope ya no es algo que $S_i$ deba producir: forma parte de establecer $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$ en REV-07.
-
-La ruta plural sigue siendo una posible formalización no reificante del alcance:
+La realización de scope no es algo que $S_i$ produzca: forma parte de establecer RegimeTotal en REV-07. Una ruta plural no reificante puede escribirse como:
 
 $$
 \exists rr_i\;
 \forall x[
 x\prec rr_i
 \Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x)
 ],
 $$
 
@@ -1391,17 +1402,15 @@ condicionada a la lógica plural adoptada.
 
 #### Esquema OTB local revisado
 
-El objetivo de REV-24 pasa a ser:
-
 $$
 \boxed{
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 +
 \operatorname{SemTotal}_i(S_i)
 +
-\mathrm{OA}_i(S_i;\mathcal O_i)
+\mathrm{OA}_i(S_i;\mathfrak G_i)
 +
-\mathrm{MC}_i(S_i;\mathcal O_i)
+\mathrm{MC}_i(S_i;\mathfrak G_i)
 +
 \mathrm{RA}_i(S_i,R_i)
 \Rightarrow
@@ -1409,19 +1418,7 @@ $$
 }
 $$
 
-Por tanto REV-24 **no demuestra la existencia de $R_i$**. Si REV-07 ya ha establecido $\operatorname{GeneTotal}_i$, entonces:
-
-$$
-\operatorname{ExistsR}
-$$
-
-ya es una conclusión ontológica; REV-24 permite fortalecerla a:
-
-$$
-\operatorname{WitnessedR}.
-$$
-
-Esta separación elimina definitivamente la lectura según la cual una estructura semántica «promueve» o crea ontológicamente $R_i$.
+REV-24 **no demuestra la existencia de $R_i$**. Si REV-07 ya ha establecido RegimeTotal, ExistsR ya es una conclusión ontológica; REV-24 permite fortalecerla a WitnessedR.
 
 ### 4.4. Ruta Zorn — resultado auxiliar
 
@@ -1600,30 +1597,119 @@ $$
 
 Generated$^*$ permanece siempre definido relacionalmente mediante un testigo GenClosure; **solo** la abreviatura $\operatorname{Cl}^{G}_i(\mathcal O_i)$ requiere GCExists. Las demostraciones de extensividad, monotonía, minimalidad y el detalle fundacional están en `work/`.
 
+**REV-07f — cierre de una base genealógica plural.** Una GeneFamily $\mathfrak G_i$ es una familia metateórica **no vacía** de pares $G_{\alpha,i}=\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle$ que satisfacen GeneUnit en el mismo contexto ya justificado. Los solapamientos deben satisfacer OverlapCoherence. La pertenencia a $\mathfrak G_i$ es notación del metalenguaje: no introduce una colección ontológica dentro de $R_i$ y no puede usarse para demostrar retrospectivamente SharedOntSpace.
+
+La base extensional de la familia queda fijada por:
+
+$
+\operatorname{FamilyBase}_i(\mathfrak G_i,B_i)
+:\Longleftrightarrow
+\forall x_i[
+x_i\in B_i
+\Longleftrightarrow
+\exists^{\mathsf M}G_{\alpha,i}\in\mathfrak G_i\;
+\exists\mathcal O_{\alpha,i}\exists C_{\alpha,i}[
+G_{\alpha,i}=\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle
+\land
+x_i\in C_{\alpha,i}
+]
+].
+$
+
+La closure del régimen no es esa unión. Debe volver a cerrar el mismo operador generativo para recoger producción transversal:
+
+$
+\boxed{
+\begin{aligned}
+\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)
+:\Longleftrightarrow
+\exists B_i[
+&\operatorname{FamilyBase}_i(\mathfrak G_i,B_i)
+\land B_i\preceq C_i
+\land \Gamma_i(C_i)=C_i\\
+&\land
+\forall Y_i[
+B_i\preceq Y_i
+\land
+\Gamma_i(Y_i)=Y_i
+\Rightarrow
+C_i\preceq Y_i
+]
+].
+\end{aligned}
+}
+$
+
+Definimos:
+
+$
+\mathrm{RGCExists}_i(\mathfrak G_i)
+:\Longleftrightarrow
+\exists C_i\;\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i),
+$
+
+y RegimeGenerated$^*$ como en §1.6.
+
+Para bloquear family stuffing:
+
+$
+\boxed{
+\begin{aligned}
+\mathrm{FamilyIrredundant}_i(\mathfrak G_i)
+:\Longleftrightarrow
+\neg\exists^{\mathsf M}\mathfrak G'_i\prec\mathfrak G_i[
+&\operatorname{GeneFamily}_i(\mathfrak G'_i)
+\land
+\mathrm{RGCExists}_i(\mathfrak G'_i)\\
+&\land
+\forall x_i[
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G'_i,x_i)
+\Longleftrightarrow
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
+]
+].
+\end{aligned}
+}
+$
+
+Finalmente:
+
+$
+\boxed{
+\operatorname{GeneBasis}_i(\mathfrak G_i)
+:\Longleftrightarrow
+\operatorname{GeneFamily}_i(\mathfrak G_i)
+\land
+\mathrm{RGCExists}_i(\mathfrak G_i)
+\land
+\mathrm{FamilyIrredundant}_i(\mathfrak G_i).
+}
+$
+
+Cada miembro sigue teniendo que ser una GeneUnit independientemente justificada por OntOrigin + GenClosure. Si un token derivado se intenta reetiquetar como origen singleton, RootClosed/OntProd debe rechazarlo cuando su producción esté correctamente representada; si OntProd omite esa producción, el fallo pertenece a REV-07b, no a REV-07f. Una pluralidad de raíces realmente primitivas e independientes, en cambio, es precisamente un caso multigeneal legítimo.
+
+La existencia fundacional de RegimeClosure hereda REV-07c: la definición no presupone que toda familia admisible posea automáticamente un least fixed point.
+
 
 ### 5.2. Co-realidad derivada
 
-Una vez fijada la genealogía:
+Una vez fijado un régimen total:
 
 $$
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+\Rightarrow
+\Bigl(
 \operatorname{CoReal}_i(x_i,y_i)
-:\Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\Longleftrightarrow
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
 \land
-\operatorname{Generated}^{*}_i(\mathcal O_i,y_i).
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,y_i)
+\Bigr).
 $$
 
-Por tanto SameRegime deja de ser una noción obtenida por conectividad formal. La conectividad es ahora una **hipótesis de reconstrucción** de una unidad genealógica previamente caracterizada.
+Por tanto SameRegime deja de ser una noción obtenida por conectividad formal. La conectividad es una **hipótesis de reconstrucción** de una unidad de régimen previamente caracterizada; no exige que todos sus contenidos desciendan de un único origen.
 
-Para dominios procesuales:
-
-$$
-\operatorname{SameRegime}(X,Y)
-$$
-
-significa que los tokens ontológicos representados por ambos pertenecen a la misma clausura genealógica.
-
-Esto sigue sin implicar K3:
+Para dominios procesuales, $\operatorname{SameRegime}(X,Y)$ significa que los tokens ontológicos representados por ambos pertenecen a la misma RegimeClosure. Esto sigue sin implicar K3:
 
 $$
 \boxed{
@@ -1727,7 +1813,7 @@ $$
 \quad
 x_i\in T^{\Lambda}_{i,q}
 \Rightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i),
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i),
 $$
 
 y:
@@ -1735,7 +1821,7 @@ y:
 $$
 \mathrm{RC}^{\mathrm{gen}}_{\Lambda,i}:
 \quad
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
 \Rightarrow
 x_i\in T^{\Lambda}_{i,q}.
 $$
@@ -1772,7 +1858,7 @@ a\in T_q^{\mathcal C}
 \land
 \eta_i^{\mathcal C}(a)=x_i
 \Rightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i).
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i).
 $$
 
 La completeness exige cobertura del contenido generado:
@@ -1806,10 +1892,10 @@ Así K3 no individua el régimen: es una propiedad del poset semántico **despu�
 
 ### 5.6. Scope realization
 
-La realización no reificante de:
+La realización no reificante de la closure total:
 
 $$
-\operatorname{Generated}^{*}_i(\mathcal O_i,-)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,-)
 $$
 
 puede expresarse pluralmente:
@@ -1819,22 +1905,22 @@ $$
 \forall x[
 x\prec rr_i
 \Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x)
 ].
 $$
 
-Esta instancia sigue dependiendo de la lógica plural/scope adoptada. El finding histórico REV-24d se mueve aquí: la realización de alcance pertenece a la existencia ontológica de $R_i$, no a su presentación por $S_i$.
+Esta instancia sigue dependiendo de la lógica plural/scope adoptada. El finding histórico REV-24d permanece aquí: la realización de alcance pertenece a la existencia ontológica de $R_i$, no a su presentación por $S_i$.
 
 ### 5.7. Qué sigue abierto
 
 REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitraria y la reducción binaria de la generación. Para cerrarlo hay que justificar:
 
 1. caracterizar $\operatorname{OntProd}_i$ independientemente y demostrar GenSound + GenComplete para el inventario de modos causales/constitutivos/dependencia/continuidad;
-2. existencia de la least closure $\operatorname{Cl}^{G}_i$ en el marco fundacional elegido —set, plural, clase o clausura transfinita—;
+2. existencia de las least closures locales y de $\operatorname{RegimeClosure}_i$ en el marco fundacional elegido —set, plural, clase o clausura transfinita—;
 3. si existen genealogías sin ninguna base ontológica mínima admisible —distinto de carecer meramente de primer instante temporal— y qué implicaría eso para OntOrigin;
 4. equivalencia entre configuraciones-originarias distintas que generan la misma clausura sin volver a mera extensionalidad;
-5. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente la clausura generativa;
-6. qué principio de scope/pluralidad realiza esa clausura como $R_i$ sin setificarla;
+5. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente RegimeClosure, incluida la producción transversal;
+6. qué principio de scope/pluralidad realiza esa closure como $R_i$ sin setificarla;
 7. **espacio compartido vs ontogénesis:** descargar existencia/totalización bajo la bifurcación ya fijada: SharedOntSpace preexistente o ContextGenesis fuerte; no se admite ontogénesis débil.
 
 Una convergencia bien tipada prueba como máximo realizabilidad conjunta, no co-origen:
@@ -1851,7 +1937,7 @@ $$
 
 CGP **no es derivable**. SharedOntSpace cubre unidad común preexistente. ContextGenesis genuina exige $\operatorname{GenesisConstitutiveUnity}_k$; FaithfulContinuation es relacional y Convergence se separa de TokenMerger/ContextMerger. Ship-of-Theseus deja FC3 PARTIAL: ContinuationProfile no puede elegirse post hoc. La ruta provisional $\operatorname{OntOrigin}_i\Rightarrow\Omega_i\Rightarrow ContinuationProfile$ queda SUPERSEDED como orden de derivación. REV-07e abre GenesisTrivialization como hipótesis: una rama parental puede quedar representada child-side por una contribución suficiente que hace irrelevantes para ese rol ciertas diferencias internas sin retroactividad. El baking puede ser conservativo o quotient/no-inyectivo; este último ofrece un mecanismo candidato para SignatureConvergence y para pérdida de reconstruibilidad genealógica. $\Omega_i$ queda reubicada provisionalmente como posible representación canónica de estructura generativa módulo trivializaciones admisibles, no como primitivo ya definido.
 
-**Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
+**Estado: PARTIAL — REV-07. REV-07f queda resuelto arquitectónicamente por GeneBasis + RegimeClosure + RegimeTotal; la existencia concreta sigue dependiendo de REV-07b/c y scope realization. REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
 ## 6. Metaontología de contextos — REV-26
 
@@ -1878,7 +1964,7 @@ se trata de abreviaturas metateóricas sobre sustituciones/realizaciones admisib
 One-$R$ afirma:
 
 1. $\operatorname{ExistsR}$;
-2. si el metalenguaje compara dos realizaciones admisibles de GeneTotal, sus parámetros resultan equivalentes:
+2. si el metalenguaje compara dos realizaciones admisibles de RegimeTotal, sus parámetros resultan equivalentes:
 
 $$
 i\simeq_{\mathrm{idx}}j.
@@ -1888,7 +1974,7 @@ No exige conectividad causal interna total.
 
 ### 6.3. Many-$R$
 
-Many-$R$ afirma que existen metateóricamente dos realizaciones admisibles de GeneTotal cuyos parámetros satisfacen:
+Many-$R$ afirma que existen metateóricamente dos realizaciones admisibles de RegimeTotal cuyos parámetros satisfacen:
 
 $$
 \boxed{
@@ -1964,15 +2050,15 @@ Para un parámetro de contexto fijo $i$:
 
 $$
 \boxed{
-\mathcal O_i
-\xrightarrow{\operatorname{Cl}^{\mathrm{ont}}_i}
+\mathfrak G_i
+\xrightarrow{\operatorname{RegimeClosure}_i}
 R_i
 \xleftarrow{\operatorname{Presents}_i}
 S_i.
 }
 $$
 
-$i$ no es un nodo de este diagrama: es el **tipo/contexto en el que el diagrama está escrito**.
+$\mathfrak G_i$ es un parámetro metateórico de base genealógica, no una entidad adicional de $R_i$; para una familia singleton se recupera $\mathcal O_i\xrightarrow{\operatorname{Cl}^{\mathrm{ont}}_i}R_i$. $i$ tampoco es un nodo: es el tipo/contexto en el que el diagrama está escrito.
 
 ### 7.2. Existencia como metasentencia
 
@@ -1982,8 +2068,8 @@ $$
 \Longleftrightarrow
 \exists^{\mathsf M} i\;
 \bigl(
-\exists\mathcal O_i\exists R_i\;
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\exists\mathfrak G_i\exists R_i\;
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \bigr).
 }
 $$
@@ -1995,7 +2081,7 @@ Esto basta para negar No-$R$ y no requiere One-$R$.
 Fijada una realización $i$, REV-24 intenta demostrar:
 
 $$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 +
 \operatorname{SemTotal}_i(S_i)
 +
@@ -2094,11 +2180,11 @@ REC y el Muro deben mantenerse separados porque tienen **estatus y dirección l�
 
 ### 10.1. REC — consecuencia estructural de una totalidad real
 
-$\operatorname{REC}_i(R_i)$ (R Enigmatic Certification) no se adopta como premisa para demostrar que $R_i$ existe. Se atribuye solo después de justificar una realización genealógica:
+$\operatorname{REC}_i(R_i)$ (R Enigmatic Certification) no se adopta como premisa para demostrar que $R_i$ existe. Se atribuye solo después de justificar una realización total de régimen:
 
-$$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
-$$
+$
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i).
+$
 
 La abreviatura estrictamente tipada es:
 
@@ -2118,7 +2204,7 @@ Por tanto:
 
 $$
 \boxed{
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \Rightarrow
 \operatorname{REC}_i(R_i).
 }
@@ -2140,7 +2226,7 @@ Una certificación externa exitosa no certifica que $C$ sea $R_i$: descarta esa 
 
 REC no significa que $R_i$ sea incognoscible, indescriptible o indemostrable por cualquier vía. Excluye específicamente un **punto de certificación real situado ontológicamente fuera de una totalidad genuina**.
 
-Por ello REC solo se atribuye propiamente después de disponer de $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$. No se atribuye por mera clausura a $U_i$ ni a un máximo semántico $S_i$.
+Por ello REC solo se atribuye propiamente después de disponer de $\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)$. GeneTotal hereda REC como caso singleton. No se atribuye por mera clausura a $U_i$ ni a un máximo semántico $S_i$.
 
 ### 10.2. Muro — subdeterminación desde un horizonte o candidato
 
@@ -2160,8 +2246,8 @@ $$
 \boxed{
 \operatorname{SemTotal}_i(S_i)
 \not\Rightarrow
-\exists\mathcal O_i\exists R_i\;
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
+\exists\mathfrak G_i\exists R_i\;
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i).
 }
 $$
 
@@ -2269,7 +2355,7 @@ El Muro deja abiertas simultáneamente estas posibilidades:
 
 - existe un máximo semántico $S_i$ pero no puede identificarse desde dentro;
 - una cuasisingularidad es indistinguible localmente de $S_i$;
-- existe o no existe una genealogía $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$ y, si existe, $S_i$ la presenta o no adecuadamente;
+- existe o no existe una base genealógica total $\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)$ y, si existe, $S_i$ la presenta o no adecuadamente;
 - existen otras genealogías $R_j$ si REV-07 las justifica, con independencia de que sus presentaciones semánticas cierren REV-24;
 - existe o no existe un $R_{\mathrm{abs}}$.
 
