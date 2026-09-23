@@ -3035,21 +3035,51 @@ $$
 
 ### 0.10a. REV-07f — RegimeTotal multigeneal
 
-Sea una familia metateórica no vacía:
+Representamos la familia mediante una indexación puramente metateórica:
 
 $$
 \mathfrak G_i
 =
-\{G_{\alpha,i}\}_{\alpha},
+\langle G_{\alpha,i}\rangle_{\alpha\in A},
 \qquad
 G_{\alpha,i}
 =
-\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle,
+\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle.
 $$
 
-tal que cada miembro satisface GeneUnit y todos los solapamientos satisfacen OverlapCoherence. Esta notación **presupone** que las unidades ya han sido tipadas en el mismo contexto $i$; no es un criterio para demostrar SharedOntSpace ni para fusionar candidatos incompatibles.
+$A$ no es un sort ontológico ni una colección de contextos: solo parametriza los miembros de la familia en la metateoría. La formación de $\mathfrak G_i$ presupone que todos esos miembros ya están tipados en el mismo contexto $i$; por tanto GeneFamily no demuestra SharedOntSpace.
 
-Definimos la base familiar:
+Definimos:
+
+$$
+\boxed{
+\begin{aligned}
+\operatorname{GeneFamily}_i(\mathfrak G_i)
+:\Longleftrightarrow\;&
+A\neq_{\mathsf M}\varnothing\\
+&\land
+\forall^{\mathsf M}\alpha\in A\;
+\operatorname{GeneUnit}_i(
+\mathcal O_{\alpha,i},
+C_{\alpha,i}
+)\\
+&\land
+\forall^{\mathsf M}\alpha,\beta\in A[
+\operatorname{GeneOverlap}_i(
+G_{\alpha,i},
+G_{\beta,i}
+)
+\Rightarrow
+\operatorname{OverlapCoherence}_i(
+G_{\alpha,i},
+G_{\beta,i}
+)
+].
+\end{aligned}
+}
+$$
+
+La base familiar queda entonces determinada, no elegida:
 
 $$
 \boxed{
@@ -3058,17 +3088,13 @@ $$
 \forall x_i[
 x_i\in B_i
 \leftrightarrow
-\exists^{\mathsf M}G_{\alpha,i}\in\mathfrak G_i\;
-\exists\mathcal O_{\alpha,i}\exists C_{\alpha,i}[
-G_{\alpha,i}
-=
-\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle
-\land
+\exists^{\mathsf M}\alpha\in A\;
 x_i\in C_{\alpha,i}
-]
 ].
 }
 $$
+
+Los cuantificadores sobre $\alpha,\beta$ son metateóricos. Si la fundación elegida no permite la clase de indexación requerida por una familia concreta, falla RGCExists/REV-07c; no se obtiene existencia por notación.
 
 La unión de closures locales no es todavía total porque puede habilitar producción transversal. Por eso:
 
@@ -3119,18 +3145,21 @@ x_i\in C_i
 }
 $$
 
-La minimalidad de la base se formula sobre la **closure obtenida**, no sobre $R_i$:
+La minimalidad de la base se formula sobre la **closure obtenida**, no sobre $R_i$. Para no sobrecargar $\prec$, que ya se usa para subconfiguraciones-originarias, introducimos el juicio metateórico $\operatorname{ProperSubfamily}^{\mathsf M}$:
 
 $$
 \boxed{
 \begin{aligned}
 \mathrm{FamilyIrredundant}_i(\mathfrak G_i)
 :\Longleftrightarrow
-\neg\exists^{\mathsf M}\mathfrak G'_i\prec\mathfrak G_i[
-&\operatorname{GeneFamily}_i(\mathfrak G'_i)
+\neg\exists^{\mathsf M}\mathfrak G'_i[
+&\operatorname{ProperSubfamily}^{\mathsf M}
+(\mathfrak G'_i,\mathfrak G_i)
 \land
-\mathrm{RGCExists}_i(\mathfrak G'_i)\\
+\operatorname{GeneFamily}_i(\mathfrak G'_i)\\
 &\land
+\mathrm{RGCExists}_i(\mathfrak G'_i)
+\land
 \forall x_i[
 \operatorname{RegimeGenerated}^{*}_i(\mathfrak G'_i,x_i)
 \leftrightarrow
