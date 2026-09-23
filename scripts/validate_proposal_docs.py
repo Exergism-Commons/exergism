@@ -380,7 +380,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
     )
     strict_pattern = (
         r"\s*\\boxed\s*\{\s*"
-        r"\\bigcup\s*_\s*(?:\{\\alpha\}|\\alpha)\s+"
+        r"\\bigcup\s*_\s*(?:\{\s*\\alpha\s*\}\s*|\\alpha\s+)"
         r"C_\{\\alpha,k\}\s*"
         r"\\subsetneq\s*C_k\s*"
         r"\}\s*\.?"
