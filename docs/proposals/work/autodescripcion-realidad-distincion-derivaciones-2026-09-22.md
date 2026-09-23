@@ -2445,43 +2445,97 @@ $$
 
 ### 0.4. Producción ontológica objetivo y GenEvent como implementación
 
-Para no definir la genealogía por el propio inventario formal, introducimos una relación objetivo independiente:
+Para no definir la genealogía por el propio inventario formal, OntProd se construye desde **modos objetivo independientes**. Todo modo admitido debe satisfacer:
+
+- **OP1 / actuality:** existe una instancia token actual $e_i$;
+- **OP2 / directed target:** la semántica propia del modo establece a $b_i$ como resultado, constituido, grounded o continuación ontológica respecto de $e_i,A_i$;
+- **OP3 / support relevance:** ningún miembro de $A_i$ entra por mera co-presencia; cada antecedente forma parte del soporte productivo/constitutivo declarado por el modo;
+- **OP4 / support completeness:** $A_i$ contiene todo antecedente conjuntamente requerido por esa instancia según la semántica del modo; soporte estructural adicional se registra en GenFoot;
+- **OP5 / candidate independence:** el modo no menciona OriginCandidate, OntOrigin, Seed ni RootClosed;
+- **OP6 / target independence:** no menciona $R_i$, Generated$^*$, CoReal, SameRegime, CommonGround, CGP ni equivalencia de índices;
+- **OP7 / footprint auditability:** el evento, antecedentes, target y soporte ontológico obligatorio pueden auditarse en GenFoot;
+- **OP8 / recoding invariance:** recodificaciones fieles preservan el juicio productivo.
+
+Fijamos cuatro esquemas núcleo.
+
+**CAU — producción causal.**
 
 $$
-\operatorname{OntProd}_i(e_i,A_i,b_i),
+\operatorname{CausalProd}_i(e_i,A_i,b_i)
 $$
 
-que debe caracterizar una instancia real de producción/dependencia ontológica sin usar $R_i$, Generated$^*$, CoReal ni el resultado final de la clausura.
+requiere una conexión causal productiva token-specific cuyo resultado es $b_i$ y cuyo soporte productivo relevante es $A_i$. Correlación, mera precedencia, background law o enabling no productivo no bastan.
 
-$\operatorname{GenEvent}_i$ es la implementación formal mediante modos admitidos. Debe satisfacer:
+**CON — constitución/realización.**
+
+$$
+\operatorname{ConstitutiveProd}_i(e_i,A_i,b_i)
+$$
+
+requiere que $b_i$ exista o sea el token/tipo ontológico relevante en virtud de una instancia constitutiva/realizadora $e_i$ soportada por $A_i$. Puede ser atemporal. Parthood no esencial o simple pertenencia a un agregado no bastan.
+
+**GRD — grounding/dependencia ontológica dirigida.**
+
+$$
+\operatorname{GroundProd}_i(e_i,A_i,b_i)
+$$
+
+requiere una instancia independiente según la cual $b_i$ obtiene o depende ontológicamente de $A_i$ mediante $e_i$. No se presupone que grounding sea causal, temporal, bien fundado ni universalmente acíclico; esas propiedades pertenecen a la teoría concreta que suministre el testigo.
+
+**PRC — continuidad/constitución procesual.**
+
+$$
+\operatorname{ProcessProd}_i(e_i,A_i,b_i)
+$$
+
+requiere que $b_i$ sea un estadio, estado o resultado cuya identidad/existencia procesual deriva de la instancia actual $e_i$ y del soporte $A_i$. Sucesión temporal, participación contingente o compartir proceso sin dependencia productiva no bastan.
+
+La relación objetivo queda definida **sin GenEvent**:
 
 $$
 \boxed{
-\mathrm{GenSound}_i:
-\quad
+\begin{aligned}
+\operatorname{OntProd}_i(e_i,A_i,b_i)
+:\Longleftrightarrow\;&
+\operatorname{CausalProd}_i(e_i,A_i,b_i)\\
+&\lor\operatorname{ConstitutiveProd}_i(e_i,A_i,b_i)\\
+&\lor\operatorname{GroundProd}_i(e_i,A_i,b_i)\\
+&\lor\operatorname{ProcessProd}_i(e_i,A_i,b_i).
+\end{aligned}
+}
+$$
+
+Cada disyunto debe satisfacer OP1–OP8 por su semántica independiente. No existe un catch-all «generativo».
+
+La implementación formal se define después:
+
+$$
+\boxed{
 \operatorname{GenEvent}_i(e_i,A_i,b_i)
-\Rightarrow
-\operatorname{OntProd}_i(e_i,A_i,b_i)
+:\Longleftrightarrow
+\operatorname{CausalProd}_i(e_i,A_i,b_i)
+\lor
+\operatorname{ConstitutiveProd}_i(e_i,A_i,b_i)
+\lor
+\operatorname{GroundProd}_i(e_i,A_i,b_i)
+\lor
+\operatorname{ProcessProd}_i(e_i,A_i,b_i).
 }
 $$
 
-y:
+Como OntProd y GenEvent usan la misma taxonomía **objetiva** pero OntProd no depende de GenEvent, se obtiene inmediatamente:
 
 $$
 \boxed{
-\mathrm{GenComplete}_i:
-\quad
-\operatorname{OntProd}_i(e_i,A_i,b_i)
-\Rightarrow
-\operatorname{GenEvent}_i(e_i,A_i,b_i).
+\mathrm{GenSound}_i
+\land
+\mathrm{GenComplete}_i.
 }
 $$
 
-Si GenSound falla, $\Gamma_i$ puede sobre-generar. Si GenComplete falla, puede sub-generar y RootClosed podría aparentar ausencia de entradas externas simplemente porque falta un modo productivo en el inventario.
+Esto convierte GenSound/GenComplete en un teorema de fidelidad de representación, no en una premisa metafísica escondida. La carga metafísica queda exactamente en justificar las instancias CAU/CON/GRD/PRC conforme OP1–OP8.
 
-Los modos candidatos —causalidad productiva, constitución/realización, grounding/dependencia y continuidad procesual— deben tener semántica propia. Compartir una etiqueta de «generativo» no basta.
-
-$A_i$ contiene todos los antecedentes conjuntamente necesarios para esa instancia generativa.
+$A_i$ es soporte completo y relevante para la instancia, no una lista arbitraria de antecedentes. Puede haber más de un soporte admisible para un mismo target cuando la ontología concreta admita sobredeterminación o realizaciones alternativas; cada instancia se registra separadamente con su propio GenFoot.
 
 La proyección binaria:
 
