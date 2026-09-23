@@ -891,13 +891,13 @@ $$
 K3_{\mathrm{abs}}.
 $$
 
-Tampoco se introduce una fórmula objeto del tipo $\forall i\exists R_i$ ni un dominio $I$ de índices.
+Tampoco se introduce cuantificación objeto universal/existencial sobre el parámetro de contexto ni un dominio ontológico de índices.
 
 El problema One-R/Many-R queda como problema metaontológico independiente.
 
 ### Meta-notación sin colector ontológico
 
-La formulación vigente evita expresiones como $\{R_i\}_{i\in I}$. Para comparar varias realizaciones se usan directamente metavariables de contexto y juicios como:
+La formulación vigente evita toda notación que presente los $R_i$ como una familia indexada por un dominio de índices. Para comparar varias realizaciones se usan directamente metavariables de contexto y juicios como:
 
 $$
 i\simeq_{\mathrm{idx}}j
