@@ -3069,7 +3069,7 @@ C_a,C_b
 R_k^{\mathrm{new}},
 $$
 
-donde el evento no revela una realidad común previa sino que constituye una nueva. Esa operación **no forma parte de la doctrina actual**. Formalizarla exigiría una relación explícita de formación/transición entre contextos sin permitir términos cross-index mal tipados; no puede introducirse como excepción informal a EXT-01/EXT-02.
+donde la integración no revela una realidad común previa sino que constituye una nueva. La notación histórica con un evento cross-index queda SUPERSEDED: la doctrina vigente usa ContextGenesis en el metalenguaje, continuaciones tipadas y un witness child-side $g_k$; la génesis genuina exige GenesisConstitutiveUnity y novedad de índice.
 
 Por tanto el caso de prueba obligatorio para REV-07e es:
 
@@ -3081,7 +3081,7 @@ B\rightsquigarrow\cdots\rightsquigarrow b,
 \operatorname{OntProd}(e,\{a,b\},c).
 $$
 
-La teoría debe distinguir sin circularidad entre: (i) common ground independiente descubierto gracias a $e$; y (ii) una genuina ontogénesis nueva, si alguna futura extensión decide admitirla. El hecho $e$ por sí solo solo establece joint realizability.
+La teoría distingue ahora sin circularidad entre: (i) espacio común preexistente revelado por una integración; y (ii) ontogénesis fuerte, donde un nuevo $k$ aparece con GenesisConstitutiveUnity child-side. Un hecho integrador por sí solo sigue estableciendo como máximo joint realizability/convergence, no génesis.
 
 #### 0.11.1. Integración puramente relacional
 
@@ -3517,7 +3517,7 @@ $$
 
 ni ninguna otra fórmula cross-index.
 
-Por tanto la estructura de génesis puede contribuir a OriginUnity/OntOrigin de $k$ sin volverse retrospectivamente origen de $i$ o $j$. Si las continuaciones no satisfacen dependencia constitutiva suficiente respecto de $g_k$, entonces el OntOrigin vigente no basta para la ontogénesis y REV-07e deberá introducir un criterio GenesisOrigin separado en vez de fingir OriginUnity.
+Por tanto la estructura de génesis puede contribuir a OriginUnity/OntOrigin de $k$ sin volverse retrospectivamente origen de $i$ o $j$. Tras G1–G4 se adopta No-Weak-Genesis: si las continuaciones no satisfacen dependencia constitutiva suficiente respecto de $g_k$, el caso no cuenta como ContextGenesis genuina y no se introduce un GenesisOrigin ad hoc.
 
 #### 0.11.11. Las dos lecturas de una misma maquinaria de ensamblaje
 
@@ -3601,7 +3601,7 @@ REV-07e queda ahora reducido a dos arquitecturas sustantivas.
 
 En el caso SharedOntSpace, $R_k$ puede ser **multigeneal**: varias GeneUnit locales comparten el mismo espacio sin CommonGround global. Aquí la antigua GeneTotal es solo el caso monogeneal.
 
-En el caso ContextGenesis, aparece una nueva $R_k$. Sus precursores no se insertan literalmente en $k$; entran mediante continuaciones tipadas. El origen ontológico del hijo puede ser la configuración de génesis **solo si** las continuaciones child-side satisfacen OriginUnity conforme REV-07a. Si no, hará falta GenesisOrigin como noción distinta y explícita.
+En el caso ContextGenesis, aparece una nueva $R_k$. Sus precursores no se insertan literalmente en $k$; entran mediante continuaciones tipadas. No-Weak-Genesis exige que la configuración child-side satisfaga OriginUnity; si falla, el caso se reclasifica como SharedOntSpace, transformación interna o génesis no justificada, no como una segunda especie de origen.
 
 Por tanto la pregunta doctrinal ya no es CGP. Es:
 
@@ -3863,16 +3863,16 @@ Así $\gamma$ no es una entidad “entre realidades”. El índice hace exactame
 
 La notación funcional previa:
 
-$
+$$
 \kappa_{i\to k}:x_i\rightsquigarrow x_k
-$
+$$
 
 se conserva solo como abreviatura cuando hay unicidad local. La noción general es relacional:
 
-$
+$$
 \operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}
 (x_i,x_k;\gamma,\tau).
-$
+$$
 
 No es un predicado objeto cross-index. Afirma metateóricamente que, bajo una transición/génesis concreta $\gamma$, el token $x_k$ es una continuación de $x_i$ y que $\tau$ traduce la parte preservada de su perfil ontológico.
 
@@ -3891,19 +3891,19 @@ El contrato mínimo es:
 
 Así:
 
-$
+$$
 \operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}(x_i,x_k)
 \not\Rightarrow
 x_i=x_k
-$
+$$
 
 —la igualdad ni siquiera pertenece al lenguaje objeto común— y tampoco:
 
-$
+$$
 \operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}(x_i,x_k)
 \not\Rightarrow
 i\simeq_{\mathrm{idx}}k.
-$
+$$
 
 La continuidad es **descendencia estructuralmente preservadora**, no identidad.
 
@@ -3911,34 +3911,34 @@ La continuidad es **descendencia estructuralmente preservadora**, no identidad.
 
 Sean $x_k$ y $z_k$ dos tokens child-side isomorfos respecto del perfil traducido de $x_i$. Supóngase que solo $x_k$ está dentro de la trayectoria de formación procedente de $x_i$:
 
-$
+$$
 \operatorname{Provenance}^{\mathsf M}(x_i\leadsto_\gamma x_k),
 \qquad
 \neg\operatorname{Provenance}^{\mathsf M}(x_i\leadsto_\gamma z_k).
-$
+$$
 
 Entonces:
 
-$
+$$
 \operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}(x_i,x_k;\gamma,\tau)
-$
+$$
 
 puede valer mientras:
 
-$
+$$
 \neg
 \operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}(x_i,z_k;\gamma,\tau).
-$
+$$
 
 Por tanto:
 
-$
+$$
 \boxed{
 \text{isomorfismo}
 \not\Rightarrow
 \text{continuación}.
 }
-$
+$$
 
 FC2 impide que una réplica perfecta espontánea herede genealogía solo por parecerse al padre.
 
@@ -3946,17 +3946,17 @@ FC2 impide que una réplica perfecta espontánea herede genealogía solo por par
 
 La continuidad no es funcional. Es admisible:
 
-$
+$$
 \operatorname{FC}^{\mathsf M}_{i\to k}(x_i,x_k^{(1)};\gamma,\tau_1)
 \land
 \operatorname{FC}^{\mathsf M}_{i\to k}(x_i,x_k^{(2)};\gamma,\tau_2),
-$
+$$
 
 con:
 
-$
+$$
 x_k^{(1)}\neq x_k^{(2)}
-$
+$$
 
 dentro del lenguaje de $k$.
 
@@ -3968,18 +3968,18 @@ El branching puede ocurrir internamente, dentro de un mismo contexto, o a travé
 
 También se admite continuidad many-to-one. Para precursores distintos:
 
-$
+$$
 \operatorname{FC}^{\mathsf M}_{i\to k}(x_i,z_k;\gamma,\tau_i)
 \land
 \operatorname{FC}^{\mathsf M}_{j\to k}(y_j,z_k;\gamma,\tau_j)
-$
+$$
 
 definimos esquemáticamente:
 
-$
+$$
 \operatorname{TokenMerger}^{\mathsf M}
 (x_i,y_j\Rightarrow z_k;\gamma).
-$
+$$
 
 Para ser merger genuino y no mera coincidencia deben cumplirse al menos:
 
@@ -3992,27 +3992,27 @@ TokenMerger es una propiedad de la **geometría de la continuidad**. No implica 
 
 Puede haber un merger interno:
 
-$
+$$
 a_i,b_i\Rightarrow z_i
-$
+$$
 
 producido por OntProd dentro de un mismo $R_i$. Eso es fusión ontológica de contenido, no nacimiento de contexto.
 
 A la inversa, una ContextGenesis fuerte puede conservar:
 
-$
+$$
 x_i\rightsquigarrow x_k,
 \qquad
 y_j\rightsquigarrow y_k,
 \qquad
 x_k\neq y_k,
-$
+$$
 
 y constituirlos conjuntamente mediante $g_k$ sin ningún TokenMerger.
 
 Por tanto:
 
-$
+$$
 \boxed{
 \operatorname{TokenMerger}
 \not\Rightarrow
@@ -4022,60 +4022,60 @@ $
 \not\Rightarrow
 \operatorname{TokenMerger}.
 }
-$
+$$
 
 #### 0.11.27. Convergence como noción más amplia que genesis
 
-Definimos ContextConvergence como el metaschema en el que **dos o más líneas precursoras distintas** poseen continuaciones dentro de un mismo contexto target y existe allí un witness ontológico integrador actual que toca las imágenes de más de una rama:
+Definimos Convergence como el metaschema en el que **dos o más líneas precursoras distintas** adquieren una integración común y existe un witness ontológico actual en el contexto donde esa integración queda tipada. Las líneas precursoras no tienen por qué ser dos índices finales incompatibles:
 
-$
-\operatorname{ContextConvergence}^{\mathsf M}
-(i,j\leadsto k;w_k).
-$
+$$
+\operatorname{Convergence}^{\mathsf M}
+(B_a,B_b\leadsto k;w_k).
+$$
 
 El witness $w_k$ puede ser productivo, constitutivo o puramente relacional según el caso. Convergence por sí sola no afirma que $k$ haya nacido de ella.
 
 Hay dos especies principales:
 
-$
+$$
 \boxed{
-\operatorname{ContextConvergence}
+\operatorname{Convergence}
 =
 \operatorname{SharedSpaceConvergence}
 \lor
 \operatorname{GenesisConvergence}.
 }
-$
+$$
 
-**SharedSpaceConvergence.** $k$ preexiste ontológicamente al hecho integrador. Dos genealogías convergen dentro de un mismo espacio:
+**SharedSpaceConvergence.** $k$ preexiste ontológicamente al hecho integrador. Dos genealogías/candidatos ya co-tipables en $k$ convergen dentro de ese mismo espacio. No se interpretan como dos contextos finales $i\#j$ que luego entran mágicamente en $k$:
 
-$
+$$
 \operatorname{SharedSpaceConvergence}^{\mathsf M}
 \Rightarrow
 \operatorname{SharedOntSpace}^{\mathsf M}
 \land
 \neg\operatorname{ContextGenesis}^{\mathsf M}
-$
+$$
 
 respecto de esa convergencia.
 
 **GenesisConvergence.** La novedad conjunta de dos o más ramas es constitutiva de un nuevo $k$ y satisface GenesisConstitutiveUnity:
 
-$
+$$
 \operatorname{GenesisConvergence}^{\mathsf M}
 \Rightarrow
 \operatorname{GenuineContextGenesis}^{\mathsf M}.
-$
+$$
 
 Luego:
 
-$
+$$
 \boxed{
-\operatorname{ContextConvergence}
+\operatorname{Convergence}
 \not\Rightarrow
 \operatorname{ContextGenesis}.
 }
-$
+$$
 
 Esto conserva todo el trabajo previo sobre Integrable/JointRealizable: una convergencia observada puede revelar un SharedOntSpace sin crear realidad nueva.
 
@@ -4083,20 +4083,20 @@ Esto conserva todo el trabajo previo sobre Integrable/JointRealizable: una conve
 
 La notación:
 
-$
+$$
 \operatorname{ContextGenesis}^{\mathsf M}(C_i,C_j\Rightarrow k;\gamma)
-$
+$$
 
 era el caso de prueba mínimo, no una restricción de aridad.
 
 El esquema general permite uno o más contextos precursores:
 
-$
+$$
 \operatorname{ContextGenesis}^{\mathsf M}
 (i_1,\ldots,i_n\Rightarrow k;\gamma),
 \qquad
 n\ge 1,
-$
+$$
 
 entendido metalingüísticamente como lista/esquema de instanciaciones y **no** como un conjunto ontológico de índices.
 
@@ -4104,39 +4104,39 @@ Esto distingue:
 
 **Unary genesis**
 
-$
+$$
 i\Rightarrow k.
-$
+$$
 
 Un único contexto precursor sufre una reorganización ontológicamente constitutiva que exige un nuevo índice. No hay convergencia de contextos distintos.
 
 **Multi-parent genesis**
 
-$
+$$
 i_1,\ldots,i_n\Rightarrow k,
 \qquad
 n\ge 2.
-$
+$$
 
 Si al menos dos ramas precursoras contribuyen constitutivamente a GenesisConstitutiveUnity, entonces:
 
-$
+$$
 \boxed{
 \operatorname{MultiParentContextGenesis}^{\mathsf M}
 \Rightarrow
 \operatorname{GenesisConvergence}^{\mathsf M}.
 }
-$
+$$
 
 Por tanto **no toda génesis es convergencia**:
 
-$
+$$
 \boxed{
 \operatorname{ContextGenesis}^{\mathsf M}
 \not\Rightarrow
-\operatorname{ContextConvergence}^{\mathsf M},
+\operatorname{Convergence}^{\mathsf M},
 }
-$
+$$
 
 porque existe conceptualmente la génesis unaria.
 
@@ -4146,22 +4146,22 @@ Pero toda génesis multiparental genuina sí es una convergencia constitutiva.
 
 Reservamos:
 
-$
+$$
 \operatorname{ContextMerger}^{\mathsf M}
 (i_1,\ldots,i_n\Rightarrow k;\gamma)
-$
+$$
 
-para una MultiParentContextGenesis en la que el nuevo contexto tiene al menos dos contextos parentales constitutivamente necesarios:
+como nombre de la especie multiparental de ContextGenesis: el nuevo contexto tiene al menos dos contextos parentales constitutivamente necesarios.
 
-$
+$$
 \boxed{
 \operatorname{ContextMerger}
-\Rightarrow
+\Longleftrightarrow
 \operatorname{MultiParentContextGenesis}
 \Rightarrow
 \operatorname{GenesisConvergence}.
 }
-$
+$$
 
 ContextMerger no exige TokenMerger. Las imágenes de los padres pueden permanecer diferenciadas en $k$ y, aun así, participar conjuntamente en la OriginUnity del hijo.
 
@@ -4169,13 +4169,13 @@ TokenMerger, en cambio, pregunta si varias líneas de **contenido** acaban en un
 
 Así:
 
-$
+$$
 \boxed{
 \text{context merger}
 \neq
 \text{token merger}.
 }
-$
+$$
 
 Pueden coincidir, pero ninguno define al otro.
 
@@ -4185,33 +4185,33 @@ La sustitución gradual no obliga por sí sola a introducir ContextGenesis.
 
 Sea una secuencia dentro del mismo contexto:
 
-$
+$$
 x_i^{(0)}
 \rightsquigarrow
 x_i^{(1)}
 \rightsquigarrow
 \cdots
-$
+$$
 
 en la que cada estadio preserva un ContinuationProfile suficiente aunque cambie material o estructura accidental.
 
 Mientras toda la evolución siga expresable en $L_i$ y no aparezca GenesisConstitutiveUnity que exija un nuevo tipado, tenemos persistencia/transformación interna:
 
-$
+$$
 \operatorname{GradualContinuation}_i
 \not\Rightarrow
 \operatorname{ContextGenesis}^{\mathsf M}.
-$
+$$
 
 La continuidad compuesta entre estadios no es automática: requiere que sobreviva un subperfil no trivial y que las transformaciones declaradas compongan sin contradicción. Por tanto FC no se postula transitiva sin condiciones.
 
 Si en algún estadio una reorganización constitutiva produce un nuevo contexto $k$, la frontera de génesis se localiza allí:
 
-$
+$$
 x_i^{(m)}
 \rightsquigarrow
 x_k^{(m+1)},
-$
+$$
 
 y debe satisfacer las condiciones ordinarias de ContextGenesis/GenesisConstitutiveUnity. La pérdida de piezas o sustitución material acumulada, por sí sola, no crea un índice nuevo.
 
@@ -4228,27 +4228,27 @@ y debe satisfacer las condiciones ordinarias de ContextGenesis/GenesisConstituti
 
 Las inclusiones doctrinales relevantes son:
 
-$
+$$
 \boxed{
 \operatorname{ContextMerger}
-\subset
+=
 \operatorname{MultiParentContextGenesis}
 \subset
 \operatorname{GenesisConvergence}
 \subset
-\operatorname{ContextConvergence}.
+\operatorname{Convergence}.
 }
-$
+$$
 
 En cambio:
 
-$
+$$
 \boxed{
 \operatorname{TokenMerger}
 \;\text{es ortogonal a}\;
 \operatorname{ContextGenesis}.
 }
-$
+$$
 
 La ontogénesis se individua por **nuevo tipado + novedad constitutiva child-side**; convergence por reunión/integración de líneas; merger por cardinalidad many-to-one de continuaciones.
 
