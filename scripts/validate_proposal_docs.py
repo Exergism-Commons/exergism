@@ -156,9 +156,9 @@ def validate_archive(text: str) -> None:
 
 def validate_index_typing(text: str) -> None:
     checks = {
-        r"\\exists!?\\s*i\\b": "object-level quantification over index metavariable i",
-        r"i\\s*\\\\neq\\s*j|j\\s*\\\\neq\\s*i": "ordinary i\\neq j index relation",
-        r"\\\\operatorname\\{Real\\}\\(x\\)": "unindexed Real(x) predicate",
+        r"\\exists!?\s*i\b": "object-level quantification over index metavariable i",
+        r"i\s*\\neq\s*j|j\s*\\neq\s*i": "ordinary i\\neq j index relation",
+        r"\\operatorname\{Real\}\(x\)": "unindexed Real(x) predicate",
     }
 
     for pattern, description in checks.items():
