@@ -827,15 +827,15 @@ $$
 
 mientras REV-24 permanezca abierto.
 
-### Emergencia local no implica monismo global
+### Emergencia local no implica One-$R$
 
-Si existen dos regímenes $i\neq j$, puede ocurrir:
+Si el metalenguaje considera dos realizaciones con:
 
-$$
-R_i\parallel R_j
-$$
+$
+i\mathrel{\#}j,
+$
 
-sin que falle ninguna de las teorías internas:
+sus teorías internas pueden estar ambas bien formadas sin relación ontológica transversal:
 
 $$
 \mathcal E_i
@@ -1530,16 +1530,16 @@ La indexación fuerte permite derivar la **soundness** de la conectividad si cad
 Sea:
 
 $$
-\mathrm{EdgeTyped}:
+\mathrm{EdgeTyped}_i:
 \quad
-q\bowtie r
+q_i\bowtie_i r_i
 \Rightarrow
-\exists i\exists f[
-\operatorname{RealFact}_i(f)
+\exists f_i[
+\operatorname{RealFact}_i(f_i)
 \land
-\operatorname{Relatum}(q,f)
+\operatorname{Relatum}_i(q_i,f_i)
 \land
-\operatorname{Relatum}(r,f)
+\operatorname{Relatum}_i(r_i,f_i)
 ].
 $$
 
@@ -1565,7 +1565,7 @@ $$
 \boxed{
 \operatorname{Real}_i(q)
 +
-\mathrm{EdgeTyped}
+\mathrm{EdgeTyped}_i
 +
 \mathrm{IndexIncompatibility}
 \Rightarrow
