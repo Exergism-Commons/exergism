@@ -2112,6 +2112,16 @@ Esto ya no depende de una mera condición suficiente: OU2 **es** la definición 
 
 ### 0.3. Root-closure sin primera causa temporal
 
+**Aclaración de tipo.** OntOrigin no significa comienzo temporal, espacial ni primera causa cronológica. OntProd es una relación objetivo de producción/dependencia ontológica cuyos modos concretos pueden ser causales, constitutivos, de grounding o de continuidad procesual. Por tanto:
+
+$$
+\text{no first temporal event}
+\not\Rightarrow
+\neg\operatorname{OntOrigin}_i.
+$$
+
+REV-07d solo muerde si la estructura carece de **toda base ontológica mínima admisible** bajo la dependencia relevante, no simplemente si presenta un regreso temporal infinito. Un fundamento puede ser atemporal, estructural, cíclico o de soporte mutuo sin ser un miembro cronológicamente anterior de la genealogía.
+
 Definimos:
 
 $$
@@ -2480,31 +2490,69 @@ $$
 ].
 $$
 
-### 0.11. Problema de convergencia / Common-Ground Principle
+### 0.11. Convergencia, reindexación y Common-Ground Principle
 
-Considérense dos candidatos pre-indexados $C_a,C_b$ que parecen tener genealogías independientes pero para los que aparece un hecho ontológico integrador.
+Considérense dos candidatos pre-indexados $C_a,C_b$ que parecen genealógicamente independientes y un hecho ontológico conjunto $e$ en el que ambos participan.
 
-EXT-01 impide tratarlos como dos realidades genuinamente incompatibles una vez existe integración. Sin embargo, la definición genealógica de $R$ exige además que ambos queden bajo un origen común; una interacción tardía no es por sí sola un ancestro generativo de sus historias previas.
+Hay que separar tres afirmaciones:
 
-La obligación se registra como metaschema:
+1. **integración observada:** existe un hecho ontológico bien tipado que involucra imágenes de ambos candidatos;
+2. **unidad de contexto:** ambos son realizables conjuntamente bajo una misma instanciación admisible;
+3. **common ground:** existe un OntOrigin independiente cuya clausura fundamenta fielmente ambos candidatos.
+
+Introducimos el metaschema débil:
+
+$$
+\operatorname{Integrable}^{\mathsf M}(C_a,C_b)
+\Rightarrow
+\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b).
+$$
+
+JointRealizable significa que existe alguna instanciación admisible de contexto en la que embeddings fieles de ambos candidatos y el hecho común están simultáneamente bien tipados. Esto invalida una hipótesis **provisional** de incompatibilidad final, pero no demuestra por sí solo genealogía común:
+
+$$
+\boxed{
+\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b)
+\not\Rightarrow
+\operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
+}
+$$
+
+CommonGround exige independientemente alguna configuración $\mathcal O_i$ cuyo OntOrigin/closure fundamente imágenes fieles de ambos candidatos. En particular, el propio evento convergente no puede servir de common ground solo por ser posterior/integrativo; OriginConstitutive + UnitFoot bloquean precisamente ese reciclaje.
+
+La tesis fuerte queda entonces:
 
 $$
 \mathrm{CGP}:
 \quad
-\operatorname{Integrable}^{\mathsf M}(C_a,C_b)
+\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b)
 \Rightarrow
 \operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
 $$
 
-CommonGround significa que existe alguna instanciación admisible de contexto $i$ y una configuración $\mathcal O_i$ tal que ambos candidatos admiten embeddings fieles dentro de $\operatorname{Cl}^{G}_i(\mathcal O_i)$.
+CGP **permanece OPEN** y no se deriva de EXT-01. Bajo la arquitectura vigente, si CGP llegara a justificarse, la convergencia sería «retroactiva» solo epistemológicamente: $e$ revelaría que la individuación previa como contextos incompatibles era errónea, mientras el fundamento común sería ontológicamente independiente de $e$ y no tendría por qué ser temporalmente anterior.
 
-CGP **no está demostrado**. Hay tres salidas lógicas si falla:
+La alternativa conceptualmente distinta es una **ontogénesis por convergencia**:
 
-1. aceptar que linajes sin origen común pueden converger y abandonar «mismo índice implica origen común»;
-2. ampliar «origen» a una noción atemporal/de grounding capaz de fundamentar ambos linajes sin ser un ancestro causal temporal;
-3. prohibir metafísicamente la convergencia sin common ground y justificar ese principio independientemente.
+$$
+C_a,C_b
+\xRightarrow{e}
+R_k^{\mathrm{new}},
+$$
 
-La doctrina actual pretende la tercera/segunda combinación: una interacción real revela que había un fundamento ontológico común más profundo, pero esa tesis requiere defensa propia.
+donde el evento no revela una realidad común previa sino que constituye una nueva. Esa operación **no forma parte de la doctrina actual**. Formalizarla exigiría una relación explícita de formación/transición entre contextos sin permitir términos cross-index mal tipados; no puede introducirse como excepción informal a EXT-01/EXT-02.
+
+Por tanto el caso de prueba obligatorio para REV-07e es:
+
+$$
+A\rightsquigarrow\cdots\rightsquigarrow a,
+\qquad
+B\rightsquigarrow\cdots\rightsquigarrow b,
+\qquad
+\operatorname{OntProd}(e,\{a,b\},c).
+$$
+
+La teoría debe distinguir sin circularidad entre: (i) common ground independiente descubierto gracias a $e$; y (ii) una genuina ontogénesis nueva, si alguna futura extensión decide admitirla. El hecho $e$ por sí solo solo establece joint realizability.
 
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
