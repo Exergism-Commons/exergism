@@ -1283,23 +1283,19 @@ $$
 
 Este teorema es deliberadamente **pre-ontológico**. No contiene $\operatorname{StructAdm}_i$, SameRegime, CS, CC ni $\operatorname{CoReal}$ entre sus premisas.
 
-Solo después se investigan:
+Solo después, dada una realización tipada $\eta_i^{\mathcal C}$, se investigan las obligaciones vigentes:
 
 $$
-\mathrm{CS}:\quad
-x\in T_q^{\mathcal C}
-\Rightarrow
-\operatorname{CoReal}(x,q),
+\mathrm{CS}^{\mathrm{gen}}_{\mathcal C,i}:\;
+a\in T_q^{\mathcal C}\land\eta_i^{\mathcal C}(a)=x_i
+\Rightarrow\operatorname{Generated}^{*}_i(\mathcal O_i,x_i),
+\qquad
+\mathrm{CC}^{\mathrm{gen}}_{\mathcal C,i}:\;
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\Rightarrow\exists a\in T_q^{\mathcal C}\;\eta_i^{\mathcal C}(a)=x_i.
 $$
 
-$$
-\mathrm{CC}:\quad
-\operatorname{CoReal}(x,q)
-\Rightarrow
-x\in T_q^{\mathcal C},
-$$
-
-junto con CRType y la realización de scope. Si esas obligaciones se cierran, la construcción puede reindexarse como $S_i^{\mathcal C}$.
+Junto con CRType, RA y scope realization, estas obligaciones permiten reindexar la construcción como $S_i^{\mathcal C}$.
 
 FID es solamente una condición suficiente de la Ruta A; un fallo de FID no implica $\neg\operatorname{ExistsR}$.
 
@@ -1355,12 +1351,13 @@ $$
 x_i\in[q_i]_{\sim_i}.
 $$
 
-En Ruta B, CC se reinterpreta como:
+En Ruta B, MC se descarga solo mediante la realización tipada:
 
 $$
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 \Rightarrow
-x\in T_q^{\mathcal C}.
+\exists a\in T_q^{\mathcal C}\;
+\eta_i^{\mathcal C}(a)=x_i.
 $$
 
 FID sigue siendo únicamente una vía suficiente para la implementación finita.
@@ -1600,7 +1597,7 @@ $$
 }
 $$
 
-Solo bajo GCExists se usa $\operatorname{Cl}^{G}_i(\mathcal O_i)$ y se define Generated$^*$. Las demostraciones de extensividad, monotonía, minimalidad y el detalle fundacional están en `work/`.
+Generated$^*$ permanece siempre definido relacionalmente mediante un testigo GenClosure; **solo** la abreviatura $\operatorname{Cl}^{G}_i(\mathcal O_i)$ requiere GCExists. Las demostraciones de extensividad, monotonía, minimalidad y el detalle fundacional están en `work/`.
 
 
 ### 5.2. Co-realidad derivada
@@ -1831,7 +1828,7 @@ Esta instancia sigue dependiendo de la lógica plural/scope adoptada. El finding
 
 REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitraria y la reducción binaria de la generación. Para cerrarlo hay que justificar:
 
-1. qué relaciones concretas satisfacen $\operatorname{OriginUnity}_i$ / Bind sin presuponer la realidad total;
+1. justificar independientemente UnitFact, OriginConstitutive y UnitFoot —y con ellos $\operatorname{OriginUnity}_i$— sin presuponer la realidad total, el candidato ni la convergencia posterior;
 2. caracterizar $\operatorname{OntProd}_i$ independientemente y demostrar GenSound + GenComplete para el inventario de modos causales/constitutivos/dependencia/continuidad;
 3. existencia de la least closure $\operatorname{Cl}^{G}_i$ en el marco fundacional elegido —set, plural, clase o clausura transfinita—;
 4. si existen genealogías sin ninguna base ontológica mínima admisible —distinto de carecer meramente de primer instante temporal— y qué implicaría eso para OntOrigin;
