@@ -1700,30 +1700,32 @@ Por tanto, para la Ruta A, **sobreinclusión entre índices deja de ser el probl
 
 La deuda fuerte es completeness: compartir índice/origen no implica que exista un camino finito de enlaces locales entre cualesquiera dos contenidos reales.
 
-La clausura finita:
+La componente finita tipada:
 
 $$
-[q]_{\sim}
+T^{\Lambda}_{i,q}
+=
+[q_i]_{\sim_i}
 $$
 
-es adecuada solo si además reconstruye exhaustivamente la genealogía:
+es adecuada solo si reconstruye exhaustivamente la genealogía:
 
 $$
-\mathrm{RS}_{\Lambda}^{\mathrm{gen}}:
+\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}:
 \quad
-x\in[q]_{\sim}
+x_i\in T^{\Lambda}_{i,q}
 \Rightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x),
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i),
 $$
 
 y:
 
 $$
-\mathrm{RC}_{\Lambda}^{\mathrm{gen}}:
+\mathrm{RC}^{\mathrm{gen}}_{\Lambda,i}:
 \quad
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 \Rightarrow
-x\in[q]_{\sim}.
+x_i\in T^{\Lambda}_{i,q}.
 $$
 
 FID + LA sigue siendo una vía suficiente hacia RC para esta ruta, no una verdad doctrinal general.
@@ -1738,25 +1740,41 @@ $$
 
 debe generarse mediante reglas independientes CGI/CMin.
 
-La adecuación ontológica se reescribe:
+Como $T_q^{\mathcal C}$ es pre-indexado, no se identifica directamente con tokens de $i$. La comparación exige un mapa de realización/denotación:
 
 $$
-\mathrm{CS}^{\mathrm{gen}}:
+\eta_i^{\mathcal C}:
+T_q^{\mathcal C}
+\rightsquigarrow
+\{x_i\},
+$$
+
+cuya existencia tampoco se presupone.
+
+La soundness exige que todo elemento realizado del carrier corresponda a contenido generado:
+
+$$
+\mathrm{CS}^{\mathrm{gen}}_{\mathcal C,i}:
 \quad
-x\in T_q^{\mathcal C}
+a\in T_q^{\mathcal C}
+\land
+\eta_i^{\mathcal C}(a)=x_i
 \Rightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x),
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i).
 $$
 
+La completeness exige cobertura del contenido generado:
+
 $$
-\mathrm{CC}^{\mathrm{gen}}:
+\mathrm{CC}^{\mathrm{gen}}_{\mathcal C,i}:
 \quad
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 \Rightarrow
-x\in T_q^{\mathcal C}.
+\exists a\in T_q^{\mathcal C}\;
+\eta_i^{\mathcal C}(a)=x_i.
 $$
 
-La Ruta B puede incorporar reglas globales, de límite o transfinitas si se justifican sin usar la clausura final como premisa.
+La fidelidad/injectividad necesaria para preservar identidad y estructura pertenece a RA. La Ruta B puede incorporar reglas globales, de límite o transfinitas si se justifican sin usar la clausura final como premisa.
 
 ### 5.5. Directedness sigue siendo posterior
 
