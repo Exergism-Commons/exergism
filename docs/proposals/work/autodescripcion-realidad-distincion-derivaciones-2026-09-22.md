@@ -3555,23 +3555,23 @@ Este stress test fue el punto donde la arquitectura anterior mostró una falsa d
 
 Si una cadena mixta coherente está enteramente contenida en una misma GeneUnit, el caso sigue siendo monogeneal y no hay dificultad adicional. Pero si existen dos GeneUnit independientemente adecuadas $G_a,G_b$ y una PureOntRel actual entre contenido de ambas, sin ningún OntOrigin independiente cuya GenClosure contenga ambas, puede darse:
 
-$
+$$
 \operatorname{JointRealizable}^{\mathsf M}(G_a,G_b)
 \land
 \neg\operatorname{CommonGround}^{\mathsf M}(G_a,G_b).
-$
+$$
 
 **REV-07f retira la inferencia de que esto obliga a buscar un único origen común.** En la arquitectura vigente, si ambas genealogías ya están justificadamente tipadas en el mismo SharedOntSpace, pueden formar una GeneFamily y la totalidad se expresa mediante:
 
-$
+$$
 \operatorname{RegimeTotal}_i(\mathfrak G_i,R_i),
-$
+$$
 
 con $\operatorname{RegimeClosure}_i$ re-cerrando $\Gamma_i$ sobre la base conjunta. El caso:
 
-$
+$$
 R_i=\operatorname{Cl}^{G}_i(\mathcal O_i)
-$
+$$
 
 queda exclusivamente como la especialización singleton/monogeneal, no como arquitectura general.
 
