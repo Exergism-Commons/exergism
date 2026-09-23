@@ -2013,39 +2013,19 @@ $$
 \operatorname{UnitFact}_i(f_i,U_i),
 $$
 
-donde $U_i$ es la familia de relata del hecho/proceso/constraint integrativo.
+donde $U_i$ es la familia de relata del hecho/proceso/constraint integrativo. UnitFact conserva UF1–UF5: instancia actual, contenido integrativo, independencia del contenedor y del target, e invariancia bajo recodificación fiel.
 
-UnitFact debe satisfacer:
+El predicado binario previo $\operatorname{OriginConstitutive}_i(f_i,U_i)$ queda **SUPERSEDED**: ser constitutivo no es una propiedad suficientemente informativa del hecho aislado, sino de cómo su dependencia cruza una separación concreta.
 
-- **UF1 / token-specific:** la instancia está efectivamente dada, no es mera posibilidad;
-- **UF2 / integrative:** su semántica propia aporta integración constitutiva/procesual/de dependencia;
-- **UF3 / container-independent:** no menciona $\mathcal O_i$, Seed, OriginConfig, OriginUnity ni pertenencia al candidato;
-- **UF4 / target-independent:** no menciona $R_i$, CoReal, Generated$^*$, SameRegime ni «mismo índice»;
-- **UF5 / invariant:** recodificaciones fieles preservan la instancia.
-
-Eso todavía no distingue una integración originaria de una convergencia tardía. Introducimos por separado:
+Introducimos una relación objetiva de dependencia constitutiva esencial:
 
 $$
-\operatorname{OriginConstitutive}_i(f_i,U_i)
+\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i),
 $$
 
-como predicado objetivo que debe caracterizar, mediante la semántica propia del modo constitutivo, que $f_i$ pertenece a la organización originaria misma y no es solo una interacción posterior entre linajes ya independientemente establecidos. Debe cumplir:
+que significa: según la semántica independiente del modo ontológico instanciado por $f_i$, la actualidad/identidad constitutiva de $x_i$ requiere la instancia $f_i$ con al menos soporte relevante en $Y_i$. EssConDep no puede mencionar $\mathcal O_i$, Seed, OriginUnity, $R_i$, CoReal, Generated$^*$, SameRegime, equivalencia de índice ni el resultado de CGP. Tampoco se obtiene de mera causalidad hacia un descendiente: que $a_i,b_i$ sean inputs de un evento que produce $c_i$ puede hacer depender $c_i$ del evento, pero no hace depender retroactivamente $a_i$ o $b_i$ de él.
 
-- **OC1 / independently grounded:** su criterio se fija sin usar el candidato que se intenta certificar;
-- **OC2 / container-independent:** no menciona $\mathcal O_i$, Seed, OriginConfig, OriginUnity ni pertenencia al candidato;
-- **OC3 / target-independent:** no menciona $R_i$, CoReal, Generated$^*$, SameRegime ni «mismo índice»;
-- **OC4 / no retrospective convergence:** una interacción que presupone dos linajes ya establecidos no se vuelve origin-constitutive por incluirla retrospectivamente en un seed;
-- **OC5 / invariant:** recodificaciones fieles preservan su condición constitutiva.
-
-Su caracterización concreta permanece como obligación REV-07a; no se define OriginConstitutive como «tener origen común».
-
-Definimos además un footprint del testigo:
-
-$$
-\operatorname{UnitFoot}_i(f_i,U_i),
-$$
-
-con:
+Definimos además el footprint semántico:
 
 $$
 U_i\cup\{f_i\}
@@ -2053,39 +2033,51 @@ U_i\cup\{f_i\}
 \operatorname{UnitFoot}_i(f_i,U_i),
 $$
 
-que contiene el token integrativo, sus relata y cualquier soporte ontológico constitutivamente necesario. UnitFoot se determina por la semántica del hecho, no por el contenedor candidato.
+determinado por el hecho y su soporte ontológico necesario, no por el candidato.
 
-No bastan semejanza, proximidad, compartir leyes, representación conjunta, interacción posterior ni fusión mereológica sin dependencia constitutiva originaria.
+Para pluralidades disjuntas no vacías $A_i,B_i$ definimos:
 
-Definimos OriginUnity **por** la condición de partición:
+$$
+\boxed{
+\begin{aligned}
+\operatorname{ConstitutiveBridge}_i(f_i,U_i;A_i,B_i)
+:\Longleftrightarrow\;&
+\operatorname{UnitFact}_i(f_i,U_i)\\
+&\land\exists a_i[
+a_i\preceq A_i\cap\operatorname{UnitFoot}_i(f_i,U_i)
+\land
+\operatorname{EssConDep}_i(a_i;f_i,U_i\mid B_i)
+]\\
+&\land\exists b_i[
+b_i\preceq B_i\cap\operatorname{UnitFoot}_i(f_i,U_i)
+\land
+\operatorname{EssConDep}_i(b_i;f_i,U_i\mid A_i)
+].
+\end{aligned}
+}
+$$
+
+La exigencia es deliberadamente bilateral. Si una base contiene $a_i$ y algo derivado unilateralmente de $a_i$, el contenido derivado debe pertenecer normalmente a la clausura generada, no inflar artificialmente el origen. En cambio, mutual grounding, constitución holística o soporte mutuo pueden satisfacer el puente cuando la ontología concreta justifique EssConDep en ambas direcciones.
+
+OriginUnity queda entonces:
 
 $$
 \boxed{
 \operatorname{OriginUnity}_i(\mathcal O_i)
 :\Longleftrightarrow
 \forall A_i,B_i[
-\operatorname{Partition}_i(
-\operatorname{Seed}_i(\mathcal O_i);A_i,B_i
-)
+\operatorname{Partition}_i(\operatorname{Seed}_i(\mathcal O_i);A_i,B_i)
 \Rightarrow
-\exists f_i\exists U_i[
-\operatorname{UnitFact}_i(f_i,U_i)
+\exists f_i,U_i[
+\operatorname{ConstitutiveBridge}_i(f_i,U_i;A_i,B_i)
 \land
-\operatorname{OriginConstitutive}_i(f_i,U_i)
-\land
-\operatorname{UnitFoot}_i(f_i,U_i)
-\preceq
-\operatorname{Seed}_i(\mathcal O_i)
-\land
-U_i\cap A_i\neq\varnothing
-\land
-U_i\cap B_i\neq\varnothing
+\operatorname{UnitFoot}_i(f_i,U_i)\preceq\operatorname{Seed}_i(\mathcal O_i)
 ]
 ].
 }
 $$
 
-Como el test usa los relata de UnitFact y no una orientación binaria, funciona igual con integración causal/constitutiva/dependiente asimétrica. La inclusión de UnitFoot exige además que el testigo completo sea interno al seed; el predicado independiente OriginConstitutive impide que una integración tardía sea reciclada como unidad originaria.
+Así la prueba de unidad no pregunta si el hecho «pertenece al origen»: pregunta, de forma local y anterior al candidato, si hay dependencia constitutiva esencial cruzada hacia ambos lados. La inclusión de UnitFoot solo verifica después que el testigo completo esté contenido en la configuración candidata.
 
 ### 0.2. Lema anti-agregación
 
