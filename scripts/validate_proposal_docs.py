@@ -201,7 +201,7 @@ def display_math_blocks(text: str) -> list[str]:
     current: list[str] | None = None
 
     for line in text.splitlines():
-        if line.strip() == "$":
+        if line.strip() == "$$":
             if current is None:
                 current = []
             else:
@@ -332,7 +332,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
 
     rgc_pattern = (
         r"\\mathrm\s*\{RGCExists\}_k\s*\(\s*"
-        r"\\mathfrak\s+G_k\s*\)\s*,?"
+        r"\\mathfrak\s*(?:\{G\}|G)_k\s*\)\s*,?"
     )
     rgc_formula = first_display_math_after(
         xp_section,
@@ -346,7 +346,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
 
     closure_pattern = (
         r"\\operatorname\s*\{RegimeClosure\}_k\s*\(\s*"
-        r"\\mathfrak\s+G_k\s*,\s*C_k\s*\)\s*\.?"
+        r"\\mathfrak\s*(?:\{G\}|G)_k\s*,\s*C_k\s*\)\s*\.?"
     )
     closure_formula = first_display_math_after(
         xp_section,
@@ -375,7 +375,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
 
     if re.search(
         r"\\operatorname\s*\{RegimeClosure\}_k\s*\(\s*"
-        r"\\mathfrak\s+G_k\s*\)\s*\.",
+        r"\\mathfrak\s*(?:\{G\}|G)_k\s*\)\s*\.",
         xp_section,
         flags=re.MULTILINE,
     ):
@@ -411,7 +411,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
     premise_patterns = (
         (
             r"\\operatorname\s*\{RegimeTotal\}_i\s*\(\s*"
-            r"\\mathfrak\s+G_i\s*,\s*R_i\s*\)",
+            r"\\mathfrak\s*(?:\{G\}|G)_i\s*,\s*R_i\s*\)",
             "RegimeTotal premise",
         ),
         (
