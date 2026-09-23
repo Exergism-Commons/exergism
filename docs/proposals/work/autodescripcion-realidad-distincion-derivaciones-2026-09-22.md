@@ -3300,6 +3300,147 @@ Tras el contramodelo, REV-07e ya no pregunta si CGP se sigue de las definiciones
 
 Hasta escoger y justificar una de estas rutas, $R_i=\operatorname{Cl}^{G}_i(\mathcal O_i)$ sigue siendo una tesis de **unidad genealógica**, no una definición general de toda unidad contextual.
 
+#### 0.11.7. Comparación de las cuatro salidas
+
+Usamos cinco restricciones ya asumidas por la doctrina:
+
+- **D1 / anti-aggregation:** no puede fabricarse una realidad por mera unión metalingüística;
+- **D2 / strong incompatibility:** si $i\#j$ es final, no existe hecho ontológico objeto bien tipado que conecte contenido $i$ y $j$;
+- **D3 / no retro-origin:** integración actual no implica por sí sola origen común previo;
+- **D4 / non-temporality:** unidad ontológica no puede depender necesariamente de prioridad temporal;
+- **D5 / witness locality:** todo vínculo ensamblador debe estar respaldado por una instancia ontológica actual auditable.
+
+**CGP-Axiom** satisface D1/D2 pero viola el espíritu de D3: excluye por premisa toda ContextUnity sin GeneUnity y convierte el contramodelo en metafísicamente imposible sin una razón independiente.
+
+**Strict Separation** conserva la genealogía única de cada $R$, pero solo puede tratar JointRealizable como compatibilidad pre-final. Si una PureOntRel actual permanece entre dos candidatos, D2 impide tiparlos finalmente como $i\#j$; por tanto esta ruta necesita negar que el marco compartido sea una realidad final o eliminar/reinterpretar el vínculo.
+
+**Ontogenic Formation** puede respetar D1–D5 si introduce una regla explícita de formación $C_a,C_b\Rightarrow R_k^{new}$. Sin embargo requiere mapas de continuidad desde los candidatos hacia $k$ y no debe presuponer temporalidad: una relación estructural atemporal también puede ser el testigo de formación.
+
+**Context Assembly** trata cada genealogía como unidad local y la realidad final como una componente ensamblada por vínculos ontológicos actuales admisibles. No exige origen común y respeta D2: dos componentes enlazados nunca debieron recibir índices finales incompatibles.
+
+La ruta de trabajo preferente pasa a ser **Context Assembly**, pero todavía no se promueve al target de ExistsR.
+
+#### 0.11.8. Unidades genealógicas locales
+
+Definimos una unidad local certificada:
+
+$
+\operatorname{GeneUnit}_i(\mathcal O_i,C_i)
+:\Longleftrightarrow
+\operatorname{OntOrigin}_i(\mathcal O_i)
+\land
+\operatorname{GenClosure}_i(\mathcal O_i,C_i).
+$
+
+GeneUnit no afirma que $C_i$ sea todo $R_i$. Afirma solamente que $C_i$ es una genealogía local sound/complete respecto de su OntOrigin bajo GenAdequate.
+
+Dos GeneUnit distintas pueden solaparse solo si una futura equivalencia de orígenes/reconstruction justifica que representan la misma unidad; la mera igualdad parcial no las fusiona.
+
+#### 0.11.9. Enlaces de ensamblaje
+
+Para dos unidades:
+
+$
+G_{\alpha,i}=(\mathcal O_{\alpha,i},C_{\alpha,i}),
+\qquad
+G_{\beta,i}=(\mathcal O_{\beta,i},C_{\beta,i}),
+$
+
+un enlace de ensamblaje:
+
+$
+\operatorname{AssemblyLink}_i(\ell_i;G_{\alpha,i},G_{\beta,i})
+$
+
+requiere:
+
+1. $\ell_i$ es una instancia ontológica actual independiente del resultado del ensamblaje;
+2. su footprint toca contenido de ambas unidades;
+3. el vínculo satisface los criterios de PureOntRel o de una integración OntProd admisible;
+4. existe una única realización coherente en la que ambas unidades y $\ell_i$ están simultáneamente bien tipadas;
+5. el enlace no afirma CommonGround ni reescribe los OntOrigin locales;
+6. el enlace y su footprint son invariantes bajo recodificación fiel.
+
+No valen semejanza, misma ley, mera posibilidad de interacción, co-descripción ni una arista introducida solo para conectar el grafo.
+
+#### 0.11.10. Grafo/hipergrafo de ensamblaje
+
+Una candidata de realidad ensamblada es una familia de GeneUnit locales junto con AssemblyLink actuales:
+
+$
+\mathfrak A_i=(\mathcal G_i,\mathcal L_i).
+$
+
+No se identifica $\mathcal G_i$ con un set ontológico de “realidades”; es una estructura de trabajo dentro de la instanciación formal $i$.
+
+Exigimos **AssemblyConnected**: para cualesquiera dos unidades de $\mathcal G_i$ existe una cadena finita de AssemblyLink o, en la futura ruta generalizada, un testigo de conectividad admitido sin presuponer el resultado final.
+
+El carrier ensamblado candidato es:
+
+$
+\operatorname{AsmCarrier}_i(\mathfrak A_i)
+=
+\bigcup_{G_{\alpha,i}\in\mathcal G_i} C_{\alpha,i}
+\;\cup\;
+\bigcup_{\ell_i\in\mathcal L_i}\operatorname{LinkFoot}_i(\ell_i).
+$
+
+Esto es solo notación de trabajo: si la familia no es set-sized, la implementación deberá usar pluralidad/clase o una noción relacional de carrier.
+
+#### 0.11.11. Anti-agregación para ensamblajes
+
+Context Assembly no puede convertirse en “Many-R por bolsa”. Exigimos:
+
+$
+\boxed{
+\operatorname{AssemblyConnected}_i(\mathfrak A_i)
+\land
+\operatorname{LinkSound}_i(\mathfrak A_i).
+}
+$
+
+LinkSound exige que cada arista tenga un testigo ontológico actual conforme 0.11.9.
+
+Además:
+
+$
+\neg\operatorname{AssemblyLink}_i(G_\alpha,G_\beta)
+$
+
+cuando la única razón para enlazarlos sea que queremos que pertenezcan al mismo $R$.
+
+Por tanto una familia de genealogías desconectadas no forma una realidad ensamblada:
+
+$
+G_\alpha\sqcup G_\beta
+\not\Rightarrow
+\operatorname{ContextAssembly}(G_\alpha,G_\beta).
+$
+
+#### 0.11.12. Consecuencia provisional
+
+Si Context Assembly sobrevive los siguientes stress tests, la arquitectura final debería distinguir:
+
+$
+\operatorname{GeneUnit}
+\neq
+\operatorname{RealityTotal}.
+$
+
+La antigua GeneTotal sería entonces el **caso monogeneal** de RealityTotal, no su definición general.
+
+Antes de modificar ExistsR hay que resolver al menos:
+
+1. equivalencia/solapamiento entre GeneUnit locales;
+2. conectividad finita vs ensamblaje generalizado;
+3. smallness/pluralidad de $\mathcal G_i$ y LinkFoot;
+4. cierre bajo links sin introducir endpoints gratis;
+5. maximalidad/exhaustividad del assembly sin recurrir a una unión arbitraria;
+6. interacción con REV-07d cuando ninguna GeneUnit mínima exista;
+7. reconstrucción de $\Lambda_*$: distinguir links de marco de links sound para una genealogía única.
+
+Hasta entonces Context Assembly es la **ruta candidata preferente**, no una nueva definición normativa de $R_i$.
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 **Advertencia PureOntRel.** Una relación pura puede servir como enlace ontológico de marco sin preservar una única genealogía. Por ello no se incorpora automáticamente a $\Lambda_*$ cuando esta pretende reconstruir $\operatorname{Generated}^{*}$: si conecta dos genealogías sin common ground, produciría sobreinclusión y haría fallar $\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}$. Su admisión como enlace reconstructivo requiere una justificación adicional de soundness; RelIntegrable por sí sola no basta.
