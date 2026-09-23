@@ -3308,6 +3308,42 @@ La pregunta discriminante es si el contexto común **preexiste ontológicamente*
 
 Context Assembly, $\Xi_i$ y las clausuras asociadas pasan a ser maquinaria formal neutral: pueden reconstruir un espacio ya compartido o implementar la formación de uno nuevo. No son una tercera tesis metafísica.
 
+#### 0.11.6a. GeneUnit y solapamiento genealógico
+
+Restauramos explícitamente la unidad genealógica local:
+
+$$
+\operatorname{GeneUnit}_i(\mathcal O_i,C_i)
+:\Longleftrightarrow
+\operatorname{OntOrigin}_i(\mathcal O_i)
+\land
+\operatorname{GenClosure}_i(\mathcal O_i,C_i).
+$$
+
+Para dos GeneUnit ya tipadas en el mismo contexto:
+
+$$
+\operatorname{GeneOverlap}_i(G_{\alpha,i},G_{\beta,i})
+:\Longleftrightarrow
+\exists x_i[
+x_i\preceq C_{\alpha,i}
+\land
+x_i\preceq C_{\beta,i}
+].
+$$
+
+El solapamiento no implica identidad de origen, CommonGround ni equivalencia de configuraciones:
+
+$$
+\operatorname{GeneOverlap}_i
+\not\Rightarrow
+\mathcal O_{\alpha,i}\simeq\mathcal O_{\beta,i}.
+$$
+
+Puede haber un mismo token con múltiples historias productivas suficientes. Lo exigible es **OverlapCoherence**: el token compartido conserva identidad tipada, hechos actuales y dependencias relevantes de manera compatible en ambas reconstrucciones; no se duplica ad hoc para salvar una genealogía ni se usa el solapamiento para fabricar retrospectivamente OriginUnity.
+
+GeneOverlap es por tanto más fuerte que mera compatibilidad descriptiva y más débil que GeneUnity/CommonGround. En SharedOntSpace puede haber GeneUnit disjuntas o solapadas.
+
 #### 0.11.7. Shared Ontological Space
 
 Definimos metateóricamente:
@@ -6061,6 +6097,28 @@ Si PSB se adopta o deriva independientemente, REV-20 puede marcarse RESOLVED.
 
 Este teorema no define el contexto $i$ ni toma cardinalidad de $i$. Fijado un parámetro de contexto ya disponible en el metalenguaje y un seed $q_i$, construye un máximo semántico **relativo a la componente finita** generada por $\Lambda_i$.
 
+### 0. Smallness doctrinal de la capa semántica
+
+La condición común no es PON ni CSet. Para cualquier carrier semántico candidato $T$ definimos:
+
+$$
+\operatorname{SemCarrierSmall}(T)
+:\Longleftrightarrow
+T\text{ es set-sized}.
+$$
+
+Esta es la premisa doctrinal de **la implementación semántica set-based actual**, no una tesis ontológica de que $R$ sea un conjunto. Las rutas la descargan de maneras distintas:
+
+$$
+\mathrm{PON}_i
+\Rightarrow
+\operatorname{SemCarrierSmall}(T^{\Lambda}_{i,q}),
+$$
+
+mientras CSet es exactamente $\operatorname{SemCarrierSmall}(T_q^{\mathcal C})$ para la ruta generalizada, y TransClSmall la obtiene en un estadio transfinito estabilizado.
+
+Por tanto PON, CSet y TransClSmall son condiciones de implementación/ruta; ninguna es por sí sola condición de existencia de $R$. SigSmall y ActualSep siguen siendo obligaciones adicionales sobre la firma y la selección del diagrama positivo.
+
 ### 1. PON$_i$ — Pointwise Ontological Neighborhood Smallness
 
 Sea:
@@ -6175,6 +6233,16 @@ $$
 \operatorname{Actual}_i(\varphi_i)
 \}.
 $$
+
+Esta colección es precisamente el **diagrama atómico positivo actual** del carrier bajo $\mathcal L_i$:
+
+$$
+\Phi^{\Lambda,\mathrm{all}}_{i,q}
+=
+\operatorname{Diag}^{+}_{\mathcal L_i}(T^{\Lambda}_{i,q}).
+$$
+
+Se usa la noción Robinson/Hodges de positive diagram: átomos verdaderos con los elementos nombrados; no el diagrama atómico completo con literales negativos.
 
 ### 4. Construcción directa
 
@@ -6884,6 +6952,14 @@ $$
 \mid
 \operatorname{Actual}_{\mathcal C}(\varphi)
 \}.
+$$
+
+Análogamente:
+
+$$
+\Phi_q^{\mathrm{all},\mathcal C}
+=
+\operatorname{Diag}^{+}_{\mathcal L_{\mathcal C}}(T_q^{\mathcal C}).
 $$
 
 y:
