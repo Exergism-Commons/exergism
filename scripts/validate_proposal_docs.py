@@ -203,7 +203,8 @@ def display_math_blocks(text: str) -> list[str]:
     current: list[str] | None = None
 
     for line in text.splitlines():
-        if line.strip() == "$$":
+        delimiter = re.fullmatch(r"^ {0,3}\$\$[ \t]*$", line)
+        if delimiter:
             if current is None:
                 current = []
             else:
@@ -379,7 +380,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
     )
     strict_pattern = (
         r"\s*\\boxed\s*\{\s*"
-        r"\\bigcup_\s*(?:\{\\alpha\}|\\alpha)\s+"
+        r"\\bigcup\s*_\s*(?:\{\\alpha\}|\\alpha)\s+"
         r"C_\{\\alpha,k\}\s*"
         r"\\subsetneq\s*C_k\s*"
         r"\}\s*\.?"
@@ -475,6 +476,22 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
             "REV-07f regression: active §8.5 presentation bridge again requires "
             "GeneTotal instead of RegimeTotal"
         )
+
+    pure_relation_section = markdown_section(
+        technical,
+        "#### 0.4.6. Stress test mixto: relación–genealogía–relación",
+    )
+    if "ensamblaje de GeneTotal" in pure_relation_section:
+        fail(
+            "REV-07f regression: active pure-relation assembly discussion again "
+            "targets GeneTotal instead of the RegimeTotal architecture"
+        )
+    for term in ("SharedOntSpace", "GeneFamily/GeneBasis", "RegimeClosure", "RegimeTotal"):
+        if term not in pure_relation_section:
+            fail(
+                "REV-07f regression: active pure-relation assembly discussion is "
+                f"missing current regime-level term {term}"
+            )
 
     historical_dilemma = markdown_section(
         technical,
