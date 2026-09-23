@@ -2167,7 +2167,7 @@ ni su análogo para $b_i$. Por tanto incluir retrospectivamente $e_i,c_i$ en el 
 
 **M6 — grounding unilateral.** Si $a_i$ fundamenta unilateralmente $b_i$, pero $a_i$ no depende constitutivamente de la estructura que fundamenta $b_i$, entonces $\{a_i,b_i\}$ no es una base cofundamental unificada. El comportamiento esperado es que $a_i$ pueda pertenecer al origen y $b_i$ aparezca en la clausura generada.
 
-Estos modelos convierten REV-07a en un criterio refutable. Lo que permanece abierto no es ya la forma lógica de OriginUnity, sino **la taxonomía independiente de modos ontológicos que justifican EssConDep** y la demostración de que esa taxonomía cubre los casos constitutivos relevantes sin convertir causalidad ordinaria o convergencia en dependencia originaria.
+Estos modelos convierten REV-07a en un criterio refutable. La taxonomía MOD/RLC/HC/PC y el contrato ECD1–ECD7 fijan después qué formas de testigo son admisibles; la existencia de una instancia concreta no se presupone y pertenece a la obligación de testigo de OntOrigin/ExistsR.
 
 #### 0.2.2. Contrato de admisibilidad de EssConDep
 
