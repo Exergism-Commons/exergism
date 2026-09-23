@@ -8701,9 +8701,9 @@ El esquema pre-genealógico que hacía que REV-24 produjese un $R_i$ queda **SUP
 
 Fijado un parámetro de contexto $i$ y una realidad ya justificada:
 
-$
+$$
 \operatorname{RegimeTotal}_i(\mathfrak G_i,R_i),
-$
+$$
 
 REV-24 tiene únicamente el target:
 
