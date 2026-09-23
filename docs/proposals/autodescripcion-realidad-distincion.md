@@ -1828,7 +1828,7 @@ Esta instancia sigue dependiendo de la lógica plural/scope adoptada. El finding
 
 REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitraria y la reducción binaria de la generación. Para cerrarlo hay que justificar:
 
-1. justificar independientemente UnitFact, OriginConstitutive y UnitFoot —y con ellos $\operatorname{OriginUnity}_i$— sin presuponer la realidad total, el candidato ni la convergencia posterior;
+1. justificar la taxonomía independiente de EssConDep/ConstitutiveBridge —y con ella $\operatorname{OriginUnity}_i$— sin presuponer la realidad total, el candidato ni la convergencia posterior;
 2. caracterizar $\operatorname{OntProd}_i$ independientemente y demostrar GenSound + GenComplete para el inventario de modos causales/constitutivos/dependencia/continuidad;
 3. existencia de la least closure $\operatorname{Cl}^{G}_i$ en el marco fundacional elegido —set, plural, clase o clausura transfinita—;
 4. si existen genealogías sin ninguna base ontológica mínima admisible —distinto de carecer meramente de primer instante temporal— y qué implicaría eso para OntOrigin;
