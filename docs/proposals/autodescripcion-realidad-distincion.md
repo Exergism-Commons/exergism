@@ -1182,6 +1182,8 @@ S^{\Lambda,*}_{i,q}
 (T^{\Lambda}_{i,q},\Phi^{\Lambda,\mathrm{all}}_{i,q}).
 $$
 
+Aquí $\Phi^{\Lambda,\mathrm{all}}_{i,q}=\operatorname{Diag}^{+}_{\mathcal L_i}(T^{\Lambda}_{i,q})$: el diagrama atómico positivo actual en el sentido Robinson/Hodges, no el diagrama completo con literales negativos.
+
 El resultado matemático correcto es **closure-relative**:
 
 $$
@@ -1224,7 +1226,7 @@ $$
 \operatorname{SemTotal}_i(S_i^*).
 $$
 
-PON pertenece solo a esta reconstrucción finita. No es una condición doctrinal de existencia ni una propiedad/cardinalidad del índice.
+La condición común de la implementación semántica set-based es $\operatorname{SemCarrierSmall}(T):\Leftrightarrow T$ set-sized. PON la deriva para $T^{\Lambda}_{i,q}$; CSet es su instancia en Ruta B y TransClSmall puede descargarla en un estadio estabilizado. Ninguna es condición ontológica de existencia de $R$.
 
 
 ### 4.2. Ruta B — clausura integrativa generalizada pre-ontológica
@@ -1259,7 +1261,7 @@ $$
 \mathrm{ActualSep}_{\mathcal C}.
 $$
 
-Con esas premisas se construye $S_q^{\mathcal C}$ y:
+Con esas premisas se construye $S_q^{\mathcal C}$ usando igualmente $\Phi_q^{\mathrm{all},\mathcal C}=\operatorname{Diag}^{+}_{\mathcal L_{\mathcal C}}(T_q^{\mathcal C})$, y:
 
 $$
 \boxed{
@@ -1847,7 +1849,7 @@ $$
 \operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
 $$
 
-CGP **no es derivable**. REV-07e adopta la bifurcación más débil: $\operatorname{SharedOntSpace}^{\mathsf M}$ si el contexto común preexiste; $\operatorname{ContextGenesis}^{\mathsf M}$ si la formación constituye uno nuevo. En ontogénesis los precursores entran en $k$ mediante continuaciones $\kappa_{i\to k}:x_i\rightsquigarrow x_k$, sin dependencia retroactiva del token parental. Se introduce $i\prec_{\mathrm{ctx}}k$; si además PersistentParent$(i,k)$, entonces $\neg(i\#k)$ aunque $i\not\simeq_{idx}k$.
+CGP **no es derivable**. REV-07e adopta la bifurcación más débil: SharedOntSpace si el contexto común preexiste y ContextGenesis si la formación constituye uno nuevo. Se restaura $\operatorname{GeneUnit}$ y se explicita $\operatorname{GeneOverlap}$: compartir tokens no implica CommonGround ni identidad de origen y exige OverlapCoherence. En ontogénesis los precursores entran en $k$ mediante $\kappa_{i\to k}:x_i\rightsquigarrow x_k$, sin retroactividad; $i\prec_{ctx}k+$ PersistentParent implica $\neg(i\#k)$ aunque $i\not\simeq_{idx}k$.
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
