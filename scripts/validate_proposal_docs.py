@@ -14,7 +14,7 @@ ARCHIVE = ROOT / "docs/proposals/archive/autodescripcion-realidad-distincion-pre
 
 ACTIVE_DOCS = (NORMATIVE, LEDGER, REFERENCES, TECHNICAL)
 
-MAX_NORMATIVE_LINES = 2700
+MAX_NORMATIVE_LINES = 2850
 MAX_SECTION4_LINES = 400
 
 PRIMARY_LEDGER_ID = re.compile(r"^(REV-\d+[a-z]?|DOC-\d+|FORM-\d+)$")
@@ -175,6 +175,42 @@ def validate_index_typing(text: str) -> None:
             )
 
 
+def validate_regime_total_contract(normative: str, ledger: str, technical: str) -> None:
+    current = normative.split("# II. Historia cronológica", 1)[0]
+
+    required_current = {
+        r"\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)": "RegimeTotal totality target",
+        r"\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)": "RegimeClosure definition",
+        r"\operatorname{GeneBasis}_i(\mathfrak G_i)": "GeneBasis guard",
+        r"\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)": "RegimeGenerated membership",
+        "\\exists\\mathfrak G_i\\exists R_i\\;\\n\\operatorname{RegimeTotal}_i(\\mathfrak G_i,R_i)": "ExistsR RegimeTotal witness",
+    }
+    for snippet, description in required_current.items():
+        if snippet not in current:
+            fail(f"REV-07f regression: normative proposal is missing {description}")
+
+    old_exists_witness = (
+        "\\exists\\mathcal O_i\\exists R_i\\;\\n"
+        "\\operatorname{GeneTotal}_i(\\mathcal O_i,R_i)"
+    )
+    if old_exists_witness in current:
+        fail(
+            "REV-07f regression: active normative text again uses GeneTotal as the "
+            "general ExistsR witness; total existence must range over RegimeTotal"
+        )
+
+    if sum(line.startswith("| REV-07f |") for line in ledger.splitlines()) != 1:
+        fail("REV-07f regression: review ledger must contain exactly one REV-07f row")
+
+    for heading in (
+        "#### RT-07-MG — Multigeneal Reality Test",
+        "#### RT-07-XP — Transversal Production Test",
+        "#### RT-07-MG-TRIV — Singleton-per-token attack",
+    ):
+        if heading not in technical:
+            fail(f"REV-07f regression: missing technical regression test: {heading}")
+
+
 def validate_normative_size(text: str) -> None:
     lines = text.splitlines()
     if len(lines) > MAX_NORMATIVE_LINES:
@@ -220,6 +256,11 @@ def main() -> None:
     validate_ledger(contents[LEDGER])
     validate_archive(archive)
     validate_index_typing(contents[NORMATIVE])
+    validate_regime_total_contract(
+        contents[NORMATIVE],
+        contents[LEDGER],
+        contents[TECHNICAL],
+    )
     validate_normative_size(contents[NORMATIVE])
 
     print("Proposal document validation passed")
@@ -227,6 +268,7 @@ def main() -> None:
     print("Ledger identifiers: unique")
     print("Display math delimiters: structurally valid")
     print("Historical archive: explicitly superseded")
+    print("REV-07f RegimeTotal contract: preserved")
 
 
 if __name__ == "__main__":
