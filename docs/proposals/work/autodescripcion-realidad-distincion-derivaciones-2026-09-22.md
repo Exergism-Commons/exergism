@@ -2735,7 +2735,7 @@ ni una capacidad causal mutua. **Conectividad ontológica no equivale a influenc
 
 Si todos los tokens de la cadena están ya bien tipados bajo la misma instanciación $i$, la cadena es evidencia estructural de que $a_i$ y $b_i$ pertenecen a un mismo marco realizado. En cambio, a nivel pre-indexado, tres testigos pairwise separados no bastan: hace falta una única realización coherente que contenga simultáneamente $\rho,e,\sigma$ y sus relata.
 
-Este caso no refuta ProdCoverage, porque PureOntRel no es OntProd. Sí crea un adversario directo para la tesis más fuerte de que una única genealogía productiva basta automáticamente para toda unidad de contexto. Esa cuestión pertenece a REV-07e/CGP y al ensamblaje de GeneTotal.
+Este caso no refuta ProdCoverage, porque PureOntRel no es OntProd. Sí crea un adversario directo para la tesis más fuerte de que una única genealogía productiva basta automáticamente para toda unidad de contexto. La cuestión se bifurca: REV-07e/CGP decide si existe un CommonGround cuando esa hipótesis se invoca; si las genealogías independientes ya están justificadamente tipadas en un mismo SharedOntSpace, su ensamblaje pertenece a GeneFamily/GeneBasis + RegimeClosure + RegimeTotal. GeneTotal queda únicamente como especialización singleton/monogeneal y no puede resolver por sí solo este caso multigeneal.
 
 La proyección binaria:
 
