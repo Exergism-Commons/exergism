@@ -1835,7 +1835,7 @@ REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitrar
 4. equivalencia entre configuraciones-originarias distintas que generan la misma clausura sin volver a mera extensionalidad;
 5. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente la clausura generativa;
 6. qué principio de scope/pluralidad realiza esa clausura como $R_i$ sin setificarla;
-7. **espacio compartido vs ontogénesis:** decidir si una integración estable revela un SharedOntSpace preexistente o constituye un contexto nuevo mediante ContextGenesis; Context Assembly/$\Xi$ es maquinaria subordinada a esa bifurcación.
+7. **espacio compartido vs ontogénesis:** descargar existencia/totalización bajo la bifurcación ya fijada: SharedOntSpace preexistente o ContextGenesis fuerte; no se admite ontogénesis débil.
 
 Una convergencia bien tipada prueba como máximo realizabilidad conjunta, no co-origen:
 
@@ -1849,7 +1849,7 @@ $$
 \operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
 $$
 
-CGP **no es derivable**. REV-07e adopta la bifurcación más débil: SharedOntSpace si el contexto común preexiste y ContextGenesis si la formación constituye uno nuevo. Se restaura $\operatorname{GeneUnit}$ y se explicita $\operatorname{GeneOverlap}$: compartir tokens no implica CommonGround ni identidad de origen y exige OverlapCoherence. En ontogénesis los precursores entran en $k$ mediante $\kappa_{i\to k}:x_i\rightsquigarrow x_k$, sin retroactividad; $i\prec_{ctx}k+$ PersistentParent implica $\neg(i\#k)$ aunque $i\not\simeq_{idx}k$.
+CGP **no es derivable**. SharedOntSpace cubre unidad común preexistente. La ontogénesis genuina exige $\operatorname{GenesisConstitutiveUnity}_k$: las continuaciones child-side y el witness actual $g_k$ deben satisfacer OriginUnity completa; dependencia unilateral, PureOntRel o mera coexistencia no crean una nueva $R$. $\gamma$ permanece metateórico y no es portador de Real. Si toda formación ya cabe en un único $L_i$, es OntProd interno, no ContextGenesis; la génesis genuina exige novedad de índice $k\not\simeq_{idx}i,j$. GeneOverlap no implica identidad de origen y exige OverlapCoherence.
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
