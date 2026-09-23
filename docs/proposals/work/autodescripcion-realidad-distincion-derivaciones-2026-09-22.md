@@ -4257,19 +4257,19 @@ El principal adversario de FaithfulContinuation no es branching ni merger, sino 
 
 FC3 exige un perfil no trivial fijado **antes** de evaluar al descendiente. Pero si se responde simplemente que algunas propiedades de $x_i$ son “las importantes”, reaparece la circularidad:
 
-$
+$$
 \text{¿qué fija qué propiedades cuentan para la continuidad?}
-$
+$$
 
 No es admisible seleccionar retrospectivamente justo los rasgos que un candidato $x_k$ conserva. Tampoco sirve un umbral extensional —porcentaje de partes, semejanza global, identidad material— porque una realidad/contexto puede ser internamente iterativa y admitir sustitución extensa de contenido sin perder por ello su identidad de contexto.
 
 Por tanto Ship of Theseus deja una deuda nueva y precisa:
 
-$
+$$
 \boxed{
 \text{ContinuationProfile no puede seguir siendo primitivo.}
 }
-$
+$$
 
 Debe derivarse de una estructura independiente que determine qué transformaciones son internas a un contexto y qué roles ontológicos de sus contenidos deben preservarse a través de ellas.
 
@@ -4277,20 +4277,20 @@ Debe derivarse de una estructura independiente que determine qué transformacion
 
 Una realidad indexada no se identifica con una fotografía extensional de su contenido en un estadio:
 
-$
+$$
 R_i\neq X_i^{(t)}.
-$
+$$
 
 Debe poder admitir, en principio, iteraciones internas:
 
-$
+$$
 X_i^{(0)}
 \to
 X_i^{(1)}
 \to
 X_i^{(2)}
 \to\cdots
-$
+$$
 
 mediante OntProd/GenEvent y otras transformaciones bien tipadas sin crear automáticamente un nuevo índice.
 
@@ -4306,13 +4306,13 @@ El mero reemplazo acumulativo de constituyentes no decide esta frontera. Debe ex
 
 Introducimos **solo como candidato de trabajo**, todavía no como definición doctrinal cerrada:
 
-$
+$$
 \boxed{
 \Omega_i
 :=
 \operatorname{OntogenicSignature}_i.
 }
-$
+$$
 
 La intuición es que $\Omega_i$ no sea una lista libre de propiedades ni un snapshot del contenido, sino la estructura derivada de la ontología de $i$ que fija, al menos:
 
@@ -4325,19 +4325,19 @@ No se adopta todavía ninguna tupla concreta para $\Omega_i$. En particular, que
 
 La obligación central que motiva $\Omega_i$ es:
 
-$
+$$
 \boxed{
 \operatorname{ContinuationProfile}_i(x_i)
 \stackrel{?}{=}
 \operatorname{Proj}_{x_i}(\Omega_i).
 }
-$
+$$
 
 La igualdad es por ahora esquemática. Si prospera, resolvería la circularidad de FC3: el perfil de $x_i$ no se elegiría mirando al descendiente, sino que vendría impuesto por el papel que $x_i$ ocupa en la estructura ontogénica del contexto.
 
 La dependencia conceptual candidata sería:
 
-$
+$$
 \operatorname{OntOrigin}_i
 \Longrightarrow
 \Omega_i
@@ -4345,7 +4345,7 @@ $
 \operatorname{ContinuationProfile}_i(x_i)
 \Longrightarrow
 \operatorname{FaithfulContinuation}^{\mathsf M}.
-$
+$$
 
 Cada flecha sigue siendo una obligación, no un teorema ya demostrado.
 
@@ -4353,23 +4353,23 @@ Cada flecha sigue siendo una obligación, no un teorema ya demostrado.
 
 No se identifica:
 
-$
+$$
 \operatorname{Seed}_i(\mathcal O_i)=\Omega_i.
-$
+$$
 
 Las funciones conceptuales son distintas.
 
 OntOrigin/Seed responde a la unidad fundacional de la genealogía:
 
-$
+$$
 \text{¿por qué esta genealogía existe como una unidad?}
-$
+$$
 
 La firma candidata respondería a su persistencia iterativa:
 
-$
+$$
 \text{¿qué hace que transformaciones sucesivas sigan siendo del mismo contexto?}
-$
+$$
 
 La hipótesis de trabajo más económica es que $\Omega_i$ esté **derivada** de la estructura originaria/generativa, no que sea un segundo primitivo independiente. Pero eso es precisamente lo que debe demostrarse al atacar $\Omega_i$.
 
@@ -4377,38 +4377,38 @@ La hipótesis de trabajo más económica es que $\Omega_i$ esté **derivada** de
 
 Si existe una noción adecuada de continuidad de firma:
 
-$
+$$
 \operatorname{SigContinuation}^{\mathsf M}
 (\Omega_i^{(a)},\Omega_i^{(b)}),
-$
+$$
 
 entonces cambios extensos de contenido pueden permanecer dentro del mismo contexto mientras preserven la estructura que esa relación declare relevante.
 
 Una ContextGenesis unaria tendría, en cambio, provenance desde $i$ hacia $k$ pero no continuidad suficiente de firma para conservar identidad contextual:
 
-$
+$$
 \operatorname{Provenance}^{\mathsf M}(\Omega_i\leadsto\Omega_k)
 \land
 \neg\operatorname{SigContinuation}^{\mathsf M}(\Omega_i,\Omega_k)
 \land
 \operatorname{GenesisConstitutiveUnity}_k.
-$
+$$
 
 Entonces:
 
-$
+$$
 i\prec_{\mathrm{ctx}}k
 \land
 i\not\simeq_{\mathrm{idx}}k.
-$
+$$
 
 Para genesis multiparental:
 
-$
+$$
 \Omega_{i_1},\ldots,\Omega_{i_n}
 \leadsto
 \Omega_k,
-$
+$$
 
 la nueva firma debe depender constitutivamente de aportes no triviales de varias ramas si el caso ha de ser ContextMerger.
 
@@ -4420,11 +4420,11 @@ Las constantes observables proporcionan un adversario útil para no trivializar 
 
 No se admite:
 
-$
+$$
 \Omega_i
 =
 \{\text{lista de constantes observadas}\}
-$
+$$
 
 por estipulación.
 
@@ -4432,22 +4432,22 @@ Un valor observable puede ser variable de estado, parámetro de una fase, parám
 
 La pregunta relevante no es simplemente si cambia un número, sino:
 
-$
+$$
 \boxed{
 \text{¿su variación está permitida por la firma,
 o modifica la estructura que determina el propio tipado?}
 }
-$
+$$
 
 Así la firma observable podría ser solo una **realización/compilación** de una estructura ontogénica más profunda:
 
-$
+$$
 \Omega_i
 \Longrightarrow
 \text{estructura física efectiva}
 \Longrightarrow
 \text{parámetros/constantes observables}.
-$
+$$
 
 Este ejemplo es solo un stress test metodológico. No se afirma que ninguna constante física concreta sea parte de $\Omega_i$ ni que las constantes conocidas individúen nuestra realidad.
 
@@ -4455,7 +4455,7 @@ Este ejemplo es solo un stress test metodológico. No se afirma que ninguna cons
 
 La arquitectura provisional queda:
 
-$
+$$
 \boxed{
 \operatorname{OntOrigin}_i
 \Longrightarrow
@@ -4465,11 +4465,11 @@ $
 \Longrightarrow
 \operatorname{FaithfulContinuation}^{\mathsf M}
 }
-$
+$$
 
 y, para una ruptura ontogénica:
 
-$
+$$
 \boxed{
 \text{provenance}
 +
@@ -4479,7 +4479,7 @@ $
 \Rightarrow
 \operatorname{ContextGenesis}.
 }
-$
+$$
 
 Lo no resuelto es exactamente $\Omega_i$:
 
