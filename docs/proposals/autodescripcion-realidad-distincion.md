@@ -1466,131 +1466,67 @@ La identidad de una realidad indexada queda anclada primariamente en **origen + 
 
 ### 5.1. Criterio primario: origen unificado + generación independiente
 
-REV-07 no puede cerrarse escogiendo una colección de raíces y llamándola $\mathcal O_i$. Eso trivializaría la noción de origen común.
+REV-07 exige una configuración-originaria $\mathcal O_i$ que no pueda obtenerse por mera unión metalingüística de raíces independientes.
 
-#### 5.1.1. Configuración de origen
-
-$\mathcal O_i$ debe ser una **configuración-token real y unificada** del contexto $i$.
-
-Sea:
+Definimos normativamente:
 
 $$
-\operatorname{Seed}_i(\mathcal O_i)
-$$
-
-su contenido ontológico inicial y:
-
-$$
-\operatorname{Bind}_i(u_i,v_i;\mathcal O_i)
-$$
-
-una relación interna de integración constitutiva/procesual caracterizada sin usar $R_i$.
-
-Exigimos al menos:
-
-**OU1 — no agregación representacional.** $\mathcal O_i$ debe estar ontológicamente instanciada como una configuración, no creada por enumerar tokens en el metalenguaje.
-
-**OU2 — unidad interna.** Para toda partición no trivial del seed en $A_i$ y $B_i$, debe existir estructura integrativa real que cruce la partición:
-
-$$
-\operatorname{Partition}_i(
-\operatorname{Seed}_i(\mathcal O_i);A_i,B_i
-)
-\Rightarrow
-\exists u_i\in A_i\;\exists v_i\in B_i\;
-\operatorname{Bind}_i(u_i,v_i;\mathcal O_i).
-$$
-
-Bind puede realizarse mediante dependencia constitutiva, pertenencia a un mismo proceso fundamental, constraint global efectivamente instanciado u otra relación de unidad ontológica defendida independientemente. No cuentan mera semejanza, descripción conjunta, pertenencia a una misma teoría ni unión mereológica puramente estipulada.
-
-**OU3 — root-closure.** Ningún constituyente del seed depende generativamente de antecedentes externos al propio origen:
-
-$$
-b_i\in\operatorname{Seed}_i(\mathcal O_i)
-\land
-\operatorname{GenEvent}_i(e_i,A_i,b_i)
-\Rightarrow
-A_i\preceq\operatorname{Seed}_i(\mathcal O_i).
-$$
-
-Esto permite ciclos o soporte mutuo internos; prohíbe únicamente una entrada generativa desde fuera.
-
-**OU4 — irredundancia.** No debe existir una subconfiguración propia unificada $\mathcal O'_i$ cuya clausura generativa sea la misma:
-
-$$
-\mathcal O'_i\prec\mathcal O_i
-\Rightarrow
-\operatorname{Cl}^{G}_i(\mathcal O'_i)
-\neq
-\operatorname{Cl}^{G}_i(\mathcal O_i),
-$$
-
-salvo equivalencias de representación explícitamente justificadas.
-
-Estas condiciones bloquean la maniobra:
-
-$$
-\mathcal O_i:=\mathcal O_a\cup\mathcal O_b
-$$
-
-cuando $\mathcal O_a$ y $\mathcal O_b$ son raíces ontológicamente independientes. La unión escrita en el metalenguaje no crea una configuración-originaria.
-
-#### 5.1.2. Evento generativo
-
-La primitiva direccional relevante es:
-
-$$
-\operatorname{GenEvent}_i(e_i,A_i,b_i).
-$$
-
-Debe satisfacer:
-
-**GE1 — token-specific.** Describe una producción/dependencia efectivamente instanciada, no una ley general ni mera posibilidad.
-
-**GE2 — productividad ontológica.** $b_i$ obtiene existencia, identidad, estado constitutivo o continuidad ontológica mediante el evento y sus antecedentes; correlación, semejanza o co-descripción no bastan.
-
-**GE3 — integridad conjunta.** Si $A_i$ contiene varios antecedentes esenciales, la clausura solo puede añadir $b_i$ cuando estén disponibles conjuntamente; no se reemplaza el hiperevento por aristas binarias suficientes ficticias.
-
-**GE4 — independencia del target.** GenEvent no puede definirse como «una relación necesaria para llegar a todo $R_i$» ni por pertenencia previa a Generated$^*$.
-
-**GE5 — invariancia representacional.** Recodificaciones fieles deben preservar qué eventos generativos están instanciados.
-
-**GE6 — pluralidad de modos permitida.** Causalidad productiva, constitución, realización, dependencia ontológica y continuidad procesual pueden ser instancias, pero cada modo debe justificar por separado su carácter generativo.
-
-La proyección binaria queda:
-
-$$
-\operatorname{GenStep}_i(a_i,b_i)
+\boxed{
+\operatorname{OntOrigin}_i(\mathcal O_i)
 :\Longleftrightarrow
-\exists e_i\exists A_i[
-\operatorname{GenEvent}_i(e_i,A_i,b_i)
+\mathrm{OriginConfig}_i(\mathcal O_i)
 \land
-a_i\prec A_i
-].
+\mathrm{OriginUnity}_i(\mathcal O_i)
+\land
+\mathrm{RootClosed}_i(\mathcal O_i)
+\land
+\mathrm{Irredundant}_i(\mathcal O_i).
+}
 $$
 
-GenStep sirve para análisis de dependencia, no para ignorar la aridad real de la generación.
+Los cuatro criterios son:
 
-#### 5.1.3. Operador generativo
+- **OU1 / OriginConfig:** $\mathcal O_i$ es una configuración-token ontológicamente instanciada, no una lista o suma representacional.
+- **OU2 / OriginUnity:** toda partición no trivial de $\operatorname{Seed}_i(\mathcal O_i)$ está cruzada por estructura integrativa real $\operatorname{Bind}_i$ caracterizada sin usar $R_i$.
+- **OU3 / RootClosed:** si un constituyente del seed es generado, todos sus antecedentes pertenecen al propio seed; se permiten ciclos internos, no entradas generativas externas.
+- **OU4 / Irredundant:** ninguna subconfiguración propia que siga siendo una OriginConfig unificada genera la misma clausura, salvo equivalencia de origen justificada.
 
-Para contenido $X_i$ del contexto $i$, definimos:
+El lema anti-agregación demostrado en `work/` da:
+
+$$
+\mathrm{NoBind}(A_i,B_i)
+\Rightarrow
+\neg\operatorname{OriginUnity}_i(A_i\cup B_i).
+$$
+
+Por tanto escribir dos raíces independientes juntas no crea un origen común.
+
+La generación primaria usa hipereventos:
+
+$$
+\operatorname{GenEvent}_i(e_i,A_i,b_i),
+$$
+
+con antecedentes conjuntos $A_i$. GE1–GE6 exigen token-specificity, productividad ontológica, integridad conjunta, independencia del target, invariancia representacional y justificación separada de cada modo generativo.
+
+$\operatorname{GenStep}_i(a_i,b_i)$ queda solo como proyección auxiliar; el contraejemplo $\{a_i,b_i\}\to c_i$ demuestra que no puede usarse como regla general de clausura.
+
+El operador generativo es:
 
 $$
 \Gamma_i(X_i)
 :=
 X_i
 \cup
-\{
-b_i\mid
+\{b_i\mid
 \exists e_i\exists A_i[
 \operatorname{GenEvent}_i(e_i,A_i,b_i)
 \land
 A_i\preceq X_i
-]
-\}.
+]\}.
 $$
 
-La clausura genealógica es la menor clausura de $\Gamma_i$ que contiene el seed:
+La genealogía usa su menor clausura sobre el seed:
 
 $$
 \boxed{
@@ -1607,56 +1543,12 @@ $$
 y:
 
 $$
-\boxed{
 \operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 :\Longleftrightarrow
 x_i\in\operatorname{Cl}^{G}_i(\mathcal O_i).
-}
 $$
 
-El símbolo $\mu$ expresa **least closure**; no presupone finitud ni iteración omega. Si la clausura requiere etapas transfinitas, límites o una semántica plural/class-sized, esa construcción debe justificarse separadamente.
-
-#### 5.1.4. Definición provisional de OntOrigin
-
-Con las primitivas anteriores:
-
-$$
-\boxed{
-\operatorname{OntOrigin}_i(\mathcal O_i)
-:\Longleftrightarrow
-\mathrm{OriginConfig}_i(\mathcal O_i)
-\land
-\mathrm{OriginUnity}_i(\mathcal O_i)
-\land
-\mathrm{RootClosed}_i(\mathcal O_i)
-\land
-\mathrm{Irredundant}_i(\mathcal O_i).
-}
-$$
-
-donde cada conjuncto está sujeto a OU1–OU4 y no puede mencionar el $R_i$ final.
-
-Esta definición es todavía **PARTIAL**, porque queda por justificar qué relaciones concretas realizan OriginUnity y qué modos concretos satisfacen GE2/GE6. Pero ya impide que OntOrigin sea una etiqueta circular para «lo que genera todo».
-
-#### 5.1.5. GeneTotal
-
-Fijado un OntOrigin admisible:
-
-$$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
-$$
-
-exige:
-
-$$
-\forall x_i[
-\operatorname{Within}_i(x_i,R_i)
-\Longleftrightarrow
-x_i\in\operatorname{Cl}^{G}_i(\mathcal O_i)
-].
-$$
-
-La existencia de esa clausura/scope sigue siendo una obligación real de REV-07; no se obtiene de definir el operador.
+El documento técnico demuestra condicionalmente extensividad, monotonía, cierre y minimalidad de esta construcción. REV-07 permanece PARTIAL porque OriginUnity/Bind, los modos concretos de GenEvent y la existencia fundacional de la least closure aún requieren justificación independiente.
 
 
 ### 5.2. Co-realidad derivada
