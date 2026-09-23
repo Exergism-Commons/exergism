@@ -142,9 +142,9 @@ $$
 
 solo está bien formada en ese contexto.
 
-### 1.4. Juicios de identidad e incompatibilidad de índice
+### 1.4. Juicios metaontológicos de contexto
 
-Introducimos dos **juicios metateóricos**, no predicados ontológicos:
+Introducimos como juicios metateóricos —no predicados ontológicos— identidad e incompatibilidad:
 
 $$
 i\simeq_{\mathrm{idx}}j
@@ -160,7 +160,7 @@ $$
 
 «los contextos son genuinamente incompatibles».
 
-$i\mathrel{\#}j$ no describe una relación real entre $R_i$ y $R_j$. Es una restricción de tipado del metalenguaje.
+$i\mathrel{\#}j$ no describe una relación real entre $R_i$ y $R_j$: es una restricción de tipado. REV-07e añade además la descendencia metaontológica $i\prec_{\mathrm{ctx}}k$ cuando una ContextGenesis tiene a $i$ como precursor de $k$. Descendencia, equivalencia e incompatibilidad no forman una dicotomía/partición automática.
 
 Por ello, si:
 
@@ -308,7 +308,7 @@ $$
 }
 $$
 
-Si un supuesto hecho conecta dos candidatos que iban a recibir índices diferentes, ese hecho es evidencia **previa a la indexación** de que son conjuntamente realizables. No basta por sí solo para fijar equivalencia de índices: esa conclusión requiere CommonGround independiente o una futura teoría explícita de ontogénesis por convergencia.
+Si un supuesto hecho conecta dos candidatos que iban a recibir índices diferentes, es evidencia **previa a la indexación** de realizabilidad conjunta. REV-07e distingue ahora dos lecturas: SharedOntSpace si el contexto común preexiste ontológicamente; ContextGenesis si la estructura integradora constituye un contexto nuevo. Ninguna se reduce a CommonGround.
 
 No se formula después:
 
@@ -554,13 +554,9 @@ $$
 
 no afirma una relación negativa entre dos objetos-realidad. Afirma metateóricamente que no existe un único contexto bien tipado en el que ambos candidatos puedan coexistir como contenido real.
 
-Si antes de cerrar la indexación aparece un token común, un hecho integrador, una dependencia o una base/origen común, el diagnóstico es:
+Si antes de cerrar la indexación aparece coexistencia dentro de un **mismo contexto preexistente**, el diagnóstico es SharedOntSpace y las etiquetas provisionales no pueden mantenerse como incompatibles. Una base/origen común añade además CommonGround.
 
-$$
-i\simeq_{\mathrm{idx}}j.
-$$
-
-No existe una fase posterior en la que dos contextos ya establecidos como $i\#j$ se fusionen.
+Dos contextos ya establecidos como $i\#j$ no pueden fusionarse mediante un hecho objeto cross-index. Sí pueden figurar como precursores de una relación metateórica $\operatorname{ContextGenesis}^{\mathsf M}(C_i,C_j\Rightarrow k;\gamma)$, cuyas continuaciones se tipan ya en el nuevo contexto $k$.
 
 ### 2.3. Consecuencia epistemológica
 
@@ -1837,7 +1833,7 @@ REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitrar
 4. equivalencia entre configuraciones-originarias distintas que generan la misma clausura sin volver a mera extensionalidad;
 5. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente la clausura generativa;
 6. qué principio de scope/pluralidad realiza esa clausura como $R_i$ sin setificarla;
-7. **unidad contextual vs genealógica:** escoger y justificar si ContextUnity exige GeneUnity como axioma adicional, admite ensamblaje de genealogías, permite ontogénesis explícita o permanece estrictamente más débil que pertenecer al mismo $R_i$.
+7. **espacio compartido vs ontogénesis:** decidir si una integración estable revela un SharedOntSpace preexistente o constituye un contexto nuevo mediante ContextGenesis; Context Assembly/$\Xi$ es maquinaria subordinada a esa bifurcación.
 
 Una convergencia bien tipada prueba como máximo realizabilidad conjunta, no co-origen:
 
@@ -1851,7 +1847,7 @@ $$
 \operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
 $$
 
-La tesis fuerte $\mathrm{CGP}:\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b)\Rightarrow\operatorname{CommonGround}^{\mathsf M}(C_a,C_b)$ **no es derivable de la doctrina vigente**. El work/ exhibe un contramodelo finito: dos raíces sin ConstitutiveBridge generan conjuntamente una relación-token pura, son JointRealizable en una única realización coherente y, sin embargo, ninguna configuración común satisface OriginUnity/CommonGround. CGP solo puede recuperarse añadiendo una premisa metafísica que excluya ese modelo. REV-07e queda abierto por la elección entre CGP-as-axiom, context assembly, ontogenic formation o strict separation.
+CGP **no es derivable**. REV-07e adopta la bifurcación más débil: $\operatorname{SharedOntSpace}^{\mathsf M}$ si el contexto común preexiste; $\operatorname{ContextGenesis}^{\mathsf M}$ si la formación constituye uno nuevo. En ontogénesis los precursores entran en $k$ mediante continuaciones $\kappa_{i\to k}:x_i\rightsquigarrow x_k$, sin dependencia retroactiva del token parental. Se introduce $i\prec_{\mathrm{ctx}}k$; si además PersistentParent$(i,k)$, entonces $\neg(i\#k)$ aunque $i\not\simeq_{idx}k$.
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
@@ -1900,7 +1896,7 @@ $$
 
 No se añade una segunda condición de aislamiento. $i\#j$ **es** la incompatibilidad de tipos.
 
-Por ello no se escriben, para índices ya genuinos, predicados objeto como `CrossRealFact(i,j)` o `CommonOntOrigin(i,j)`. Sobre candidatos pre-indexados, un testigo integrador solo establece JointRealizable; únicamente un CommonGround independiente fuerza equivalencia de contexto bajo la doctrina vigente.
+Por ello no se escriben, para índices ya genuinos, predicados objeto cross-index. $i\#j$ prohíbe hechos objeto transversales, pero no la relación metateórica ContextGenesis: dos contextos incompatibles pueden ser precursores de $k$ sin que ningún token de $i$ aparezca directamente en fórmulas de $j$ o $k$.
 
 ### 6.4. Cluster-$R$
 
@@ -1914,7 +1910,7 @@ $$
 \operatorname{Integrable}^{\mathsf M}(C_a,C_b)\lor\operatorname{RelIntegrable}^{\mathsf M}(C_a,C_b)\Rightarrow\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b).
 $$
 
-La segunda implicación **no** autoriza $i\simeq_{\mathrm{idx}}j$, CommonGround ni influencia causal. Una cadena mixta relación–OntProd–relación solo prueba ContextUnity/JointRealizable si existe un único testigo coherente que contenga toda la cadena; la realizabilidad pairwise no se toma como transitiva. El work/ demuestra que ContextUnity no implica GeneUnity/CommonGround bajo las reglas actuales.
+La segunda implicación no decide por sí sola entre **SharedOntSpace** y **ContextGenesis**. En el primer caso la integración revela un espacio común previo; en el segundo constituye $k$ y solo las continuaciones child-side coexisten en su lenguaje objeto. CommonGround es una subposibilidad del primer caso, no el criterio general de unidad.
 
 Una vez justificado:
 
@@ -1922,7 +1918,7 @@ $$
 i\mathrel{\#}j,
 $$
 
-un supuesto colapso posterior en Cluster-$R$ refuta la indexación anterior; no fusiona dos realidades genuinas.
+un supuesto hecho objeto común refuta la indexación anterior; una ContextGenesis posterior no las «fusiona» cross-index, sino que produce una nueva instanciación $k$ relacionada por $\prec_{\mathrm{ctx}}$.
 
 ### 6.5. Metalenguaje no es superrealidad
 
