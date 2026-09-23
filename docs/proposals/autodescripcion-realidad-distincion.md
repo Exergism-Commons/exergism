@@ -1475,7 +1475,7 @@ La identidad de una realidad indexada queda anclada primariamente en **origen + 
 
 ### 5.1. Criterio primario: origen unificado + generación independiente
 
-REV-07 exige una configuración-originaria que no pueda fabricarse agregando raíces independientes.
+REV-07 exige una configuración-originaria que no pueda fabricarse agregando raíces independientes. OriginConfig es además relacionalmente well-formed: ninguna relación-token actual puede quedar en el seed sin su footprint ontológico obligatorio.
 
 $$
 \boxed{
@@ -1571,7 +1571,7 @@ $$
 \operatorname{CausalProd}_i\lor\operatorname{ConstitutiveProd}_i\lor\operatorname{GroundProd}_i\lor\operatorname{ProcessProd}_i.
 $$
 
-GF1–GF6 impiden omitir o inflar GenFoot y P1–P8 fijan los contraejemplos. REV-07b sigue PARTIAL exactamente por ProdCoverage; GenStep continúa siendo solo una proyección auxiliar.
+GF1–GF6 impiden omitir o inflar GenFoot y P1–P8 fijan los contraejemplos. PureOntRel es ontológica pero no productiva: POR1–POR7 + RelSupportClosed impiden relaciones colgantes o endpoints introducidos gratis, y no cuenta como quinta familia de ProdCoverage. REV-07b sigue PARTIAL exactamente por ProdCoverage; GenStep continúa siendo solo una proyección auxiliar.
 
 El operador generativo añade el footprint completo de cada hiperevento cuyos antecedentes están disponibles:
 
@@ -1911,10 +1911,10 @@ Dados candidatos $C_a,C_b$, un common ground independientemente justificado fuer
 $$
 \operatorname{CommonGround}^{\mathsf M}(C_a,C_b)\Rightarrow i\simeq_{\mathrm{idx}}j,
 \qquad
-\operatorname{Integrable}^{\mathsf M}(C_a,C_b)\Rightarrow\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b).
+\operatorname{Integrable}^{\mathsf M}(C_a,C_b)\lor\operatorname{RelIntegrable}^{\mathsf M}(C_a,C_b)\Rightarrow\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b).
 $$
 
-La segunda implicación **no** autoriza $i\simeq_{\mathrm{idx}}j$ ni CommonGround; ese paso adicional es precisamente la obligación OPEN CGP.
+La segunda implicación **no** autoriza $i\simeq_{\mathrm{idx}}j$, CommonGround ni influencia causal. Una cadena mixta relación–OntProd–relación solo prueba un marco realizado si existe un único testigo coherente que contenga toda la cadena; la realizabilidad pairwise no se toma como transitiva. Ese salto sigue siendo REV-07e/CGP.
 
 Una vez justificado:
 
