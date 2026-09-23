@@ -883,33 +883,29 @@ $$
 
 K3_i excluye incomparabilidad fuerte **dentro de $i$**, pero no entre $i$ y $j$.
 
-No se permite inferir:
+No se permite inferir, ni siquiera metateóricamente:
 
 $$
-K3_i\;\forall i
+\bigl(\forall^{\mathsf M} i\;K3_i\bigr)
 \Rightarrow
 K3_{\mathrm{abs}}.
 $$
 
-Ni tampoco, incluso suponiendo cerrados los puentes REV-24 pertinentes:
-
-$$
-\forall i\,\exists R_i
-\Rightarrow
-\exists R_{\mathrm{abs}}.
-$$
+Tampoco se introduce una fórmula objeto del tipo $\forall i\exists R_i$ ni un dominio $I$ de índices.
 
 El problema One-R/Many-R queda como problema metaontológico independiente.
 
 ### Meta-notación sin colector ontológico
 
-Puede usarse informalmente:
+La formulación vigente evita expresiones como $\{R_i\}_{i\in I}$. Para comparar varias realizaciones se usan directamente metavariables de contexto y juicios como:
 
 $$
-\mathscr R=\{R_i\}_{i\in I}
+i\simeq_{\mathrm{idx}}j
+\qquad\text{o}\qquad
+i\mathrel{\#}j.
 $$
 
-solo como **metanotación** para hablar de varios regímenes. Esta escritura no afirma que exista un objeto ontológico $\mathscr R$, un conjunto universal de realidades ni una realidad superior que contenga a todas.
+Esta metanotación no afirma un conjunto universal de realidades ni una realidad superior que contenga a todas.
 
 En particular:
 
@@ -1133,72 +1129,95 @@ Esta sección contiene solo los **enunciados normativos** necesarios para audita
 
 La separación es deliberada: el documento normativo no debe volver a crecer por acreción técnica.
 
-### 4.1. Ruta A — exhaustividad semántica sobre régimen finitamente conectado
+### 4.1. Ruta A — exhaustividad semántica sobre una componente $\Lambda$ tipada
 
-Para un token actual $q$, la ruta finita usa:
-
-$$
-T_i:=[q]_{\sim},
-$$
-
-donde $\sim$ es la clausura por caminos finitos de la relación ontológica candidata $\bowtie$.
-
-La hipótesis local de smallness es:
+Fijado un parámetro de contexto $i$ y un seed bien tipado $q_i$, definimos la componente candidata:
 
 $$
-\mathrm{PON}:\quad
-\forall q,\;
-N(q)=\{r\mid q\bowtie r\}
+T^{\Lambda}_{i,q}
+:=
+[q_i]_{\sim_i},
+$$
+
+donde $\sim_i$ es la clausura por caminos finitos de $\bowtie_i$ **dentro del contexto $i$**.
+
+La hipótesis local de smallness es también tipada:
+
+$$
+\mathrm{PON}_i:
+\quad
+\forall q_i\;
+N_i(q_i)
+=
+\{r_i\mid q_i\bowtie_i r_i\}
 \text{ es set-sized}.
 $$
 
-Con:
+Esto prueba smallness de $T^{\Lambda}_{i,q}$, no cardinalidad del parámetro $i$.
+
+Con $\mathrm{SigSmall}_i$ y $\mathrm{ActualSep}_i$, definimos:
 
 $$
-\mathrm{SigSmall}_i:
-\quad
-\mathcal L_i\text{ es set-sized}
-\land
-\forall\sigma\in\mathcal L_i,\;
-\operatorname{ar}(\sigma)\text{ es set-sized},
-$$
-
-y $\mathrm{ActualSep}_i$, definimos:
-
-$$
-\Phi_i^{\mathrm{all}}
+\Phi^{\Lambda,\mathrm{all}}_{i,q}
 =
 \{
 \varphi\in
-\operatorname{Atoms}_{\mathcal L_i}(T_i)
+\operatorname{Atoms}_{\mathcal L_i}(T^{\Lambda}_{i,q})
 \mid
 \operatorname{Actual}_i(\varphi)
 \},
 $$
 
 $$
-S_i^*:=(T_i,\Phi_i^{\mathrm{all}}).
+S^{\Lambda,*}_{i,q}
+:=
+(T^{\Lambda}_{i,q},\Phi^{\Lambda,\mathrm{all}}_{i,q}).
 $$
 
-El resultado matemático vigente es:
+El resultado matemático correcto es **closure-relative**:
 
 $$
 \boxed{
-\mathrm{PON}
+\mathrm{PON}_i
 +
 \mathrm{SigSmall}_i
 +
 \mathrm{ActualSep}_i
 +
-\operatorname{StructAdm}_i
+\operatorname{StructAdm}^{\Lambda}_{i,q}
 \Rightarrow
-\operatorname{SemTotal}_i(S_i^*).
+\operatorname{SemTotal}^{\Lambda}_{i,q}(S^{\Lambda,*}_{i,q}).
 }
 $$
 
-Esto demuestra **exhaustividad semántica local al régimen candidato**. No demuestra $\operatorname{ExistsR}$ ni decide One-$R$/Many-$R$.
+No se escribe todavía $\operatorname{SemTotal}_i$: la componente finitamente conectada puede subincluir la genealogía real.
 
-PON pertenece solo a esta instanciación finita. No es una condición doctrinal general de existencia.
+El upgrade de carrier exige reconstrucción genealógica:
+
+$$
+\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}
+\land
+\mathrm{RC}^{\mathrm{gen}}_{\Lambda,i}.
+$$
+
+Bajo esas dos obligaciones:
+
+$$
+T^{\Lambda}_{i,q}
+=
+\{x_i\mid
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\},
+$$
+
+y entonces, junto con la adecuación semántica/factual restante, puede reetiquetarse el resultado como:
+
+$$
+\operatorname{SemTotal}_i(S_i^*).
+$$
+
+PON pertenece solo a esta reconstrucción finita. No es una condición doctrinal de existencia ni una propiedad/cardinalidad del índice.
+
 
 ### 4.2. Ruta B — clausura integrativa generalizada pre-ontológica
 
