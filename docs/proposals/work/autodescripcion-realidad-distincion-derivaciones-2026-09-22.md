@@ -3065,6 +3065,8 @@ C_{\alpha,i}
 )\\
 &\land
 \forall^{\mathsf M}\alpha,\beta\in A[
+\alpha\neq_{\mathsf M}\beta
+\land
 \operatorname{GeneOverlap}_i(
 G_{\alpha,i},
 G_{\beta,i}
@@ -3094,7 +3096,7 @@ x_i\in C_{\alpha,i}
 }
 $$
 
-Los cuantificadores sobre $\alpha,\beta$ son metateóricos. Si la fundación elegida no permite la clase de indexación requerida por una familia concreta, falla RGCExists/REV-07c; no se obtiene existencia por notación.
+Los cuantificadores sobre $\alpha,\beta$ son metateóricos. OverlapCoherence se exige solo entre miembros distintos; una familia singleton no adquiere una obligación extra de self-coherence. Si la fundación elegida no permite la clase de indexación requerida por una familia concreta, falla RGCExists/REV-07c; no se obtiene existencia por notación.
 
 La unión de closures locales no es todavía total porque puede habilitar producción transversal. Por eso:
 
@@ -3212,7 +3214,7 @@ $$
 \}.
 $$
 
-Como $C_i$ ya es fijo de $\Gamma_i$, es también el menor fixed point que contiene FamilyBase. La irredundancia familiar es vacua porque no existe subfamilia propia no vacía. Por tanto:
+Como $C_i$ ya es fijo de $\Gamma_i$, es también el menor fixed point que contiene FamilyBase. En una familia singleton no existen pares distintos $\alpha\neq_{\mathsf M}\beta$, así que la cláusula de OverlapCoherence es vacua; la irredundancia familiar también es vacua porque no existe subfamilia propia no vacía. Por tanto:
 
 $$
 \boxed{
@@ -3337,25 +3339,49 @@ $$
 c_k\notin C_{1,k}\cup C_{2,k}
 $$
 
-puede ocurrir, porque ningún cierre local dispone de ambos antecedentes. Pero FamilyBase sí los contiene conjuntamente, por lo que:
+puede ocurrir, porque ningún cierre local dispone de ambos antecedentes. Supongamos ahora explícitamente:
 
-$$
+$
+\mathrm{RGCExists}_k(\mathfrak G_k),
+$
+
+y fijemos un testigo $C_k$ tal que:
+
+$
+\operatorname{RegimeClosure}_k(\mathfrak G_k,C_k).
+$
+
+FamilyBase contiene conjuntamente $a_k$ y $b_k$; como $C_k$ es fijo de $\Gamma_k$ y contiene esa base:
+
+$
 \operatorname{GenFoot}_k(e_k,\{a_k,b_k\},c_k)
 \preceq
-\operatorname{RegimeClosure}_k(\mathfrak G_k).
-$$
+C_k.
+$
 
-Así:
+Además:
 
-$$
+$
+\bigcup_\alpha C_{\alpha,k}
+\preceq
+C_k,
+\qquad
+c_k\in C_k,
+\qquad
+c_k\notin\bigcup_\alpha C_{\alpha,k}.
+$
+
+Por tanto:
+
+$
 \boxed{
 \bigcup_\alpha C_{\alpha,k}
 \subsetneq
-\operatorname{RegimeClosure}_k(\mathfrak G_k)
+C_k
 }
-$$
+$
 
-es posible. Una definición de RegimeTotal por mera unión falla este test.
+es posible **condicionalmente a RGCExists**. El test no denota RegimeClosure como una función total ni presupone que el least fixed point exista en toda fundación. Una definición de RegimeTotal por mera unión falla este test.
 
 #### RT-07-MG-TRIV — Singleton-per-token attack
 
@@ -5061,13 +5087,15 @@ Esto evita que una ontogénesis genuinamente no-inyectiva quede declarada imposi
 
 REC y el Muro conservan su distinción normativa.
 
-REC sigue siendo consecuencia estructural de una totalidad genealógica ya establecida:
+REC sigue siendo consecuencia estructural de una totalidad de régimen ya establecida:
 
-$$
-\operatorname{GeneTotal}_k(\mathcal O_k,R_k)
+$
+\operatorname{RegimeTotal}_k(\mathfrak G_k,R_k)
 \Rightarrow
 \operatorname{REC}_k(R_k).
-$$
+$
+
+GeneTotal hereda esta consecuencia como caso singleton.
 
 Un certificador **real y ontológicamente exterior** a una totalidad genuina la refutaría como totalidad; por tanto no puede usarse como solución gratuita a una provenance perdida.
 
@@ -8560,13 +8588,13 @@ $$
 \mathrm{CC}^{\mathrm{gen}}_{\mathcal C,i},
 $$
 
-puede compararse el carrier candidato con $\operatorname{Cl}^{G}_i(\mathcal O_i)$. Si además RA establece fidelidad de identidad/estructura, la presentación semántica puede reetiquetarse dentro del contexto $i$.
+puede compararse el carrier candidato con $\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,-)$ para alguna GeneBasis ya justificada. Si además RA establece fidelidad de identidad/estructura, la presentación semántica puede reetiquetarse dentro del contexto $i$.
 
 La Ruta A finita y la Ruta B generalizada comparten el patrón lógico, pero no identifican sus carriers por notación:
 
 1. **construcción semántica relativa a un carrier candidato:** smallness + well-formedness + estabilidad;
 2. **realización tipada del carrier:** identidad/denotación hacia un contexto $i$;
-3. **adecuación ontológica:** soundness/completeness frente a $\operatorname{Cl}^{G}_i(\mathcal O_i)$;
+3. **adecuación ontológica:** soundness/completeness frente a $\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,-)$;
 4. **adecuación estructural:** RA.
 
 En consecuencia PON permanece como blocker de la instanciación finita, no como condición necesaria de toda ruta a una exhaustividad semántica relativa.
@@ -8668,7 +8696,7 @@ $$
 
 porque esa notación reintroduciría exactamente la reificación/setificación que la propuesta intenta evitar.
 
-**SUPERSEDED:** esta formulación pertenecía al target pre-indexado. En la arquitectura vigente, scope realization forma parte de REV-07/GeneTotal; REV-24 no produce existencia y REV-26 no es requisito de `ExistsR`.
+**SUPERSEDED:** esta formulación pertenecía al target pre-indexado. En la arquitectura vigente, scope realization forma parte de REV-07/RegimeTotal; GeneTotal es solo el caso singleton. REV-24 no produce existencia y REV-26 no es requisito de `ExistsR`.
 
 ##### Ruta plural
 
@@ -8783,7 +8811,7 @@ $$
 y una presentación semántica produce únicamente:
 
 $$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 +
 \operatorname{SemTotal}_i(S_i)
 +
@@ -8874,7 +8902,7 @@ Las dos construcciones semánticas tienen premisas distintas y no deben mezclars
 - **Ruta finita ya indexada por régimen:** $\Lambda_*$ + PON + $\operatorname{StructAdm}_i$ + $\mathrm{SigSmall}_i$ + $\mathrm{ActualSep}_i$.
 - **Ruta generalizada pre-ontológica:** CGI/CMin para la generación no circular de $\mathcal C_*$ y, para el teorema semántico, CSet + CWF + CProcStable + $\mathrm{SigSmall}_{\mathcal C}$ + $\mathrm{ActualSep}_{\mathcal C}$. La realización posterior usa $\eta_i^{\mathcal C}$ + CS$^{gen}_{\mathcal C,i}$/CC$^{gen}_{\mathcal C,i}$ + RA; $\operatorname{StructAdm}_i$ no es premisa de esta maximalidad.
 
-La existencia ontológica **local** pertenece a REV-07: $\operatorname{OntOrigin}_i$ + reglas generativas independientes + clausura + scope realization deben justificar $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$. REV-24a/b/c se añaden después para justificar que $S_i$ presenta ese $R_i$.
+La existencia ontológica **local** pertenece a REV-07: GeneUnit locales independientemente justificadas + GeneBasis + RegimeClosure + scope realization deben justificar $\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)$. GeneTotal queda como corolario singleton. REV-24a/b/c se añaden después para justificar que $S_i$ presenta ese $R_i$.
 
 REV-26 queda como extensión metateórica no bloqueante: One-$R$/Many-$R$ y expresividad del metalenguaje. Los índices son parámetros de contexto, no entidades cuantificadas por el lenguaje objeto.
 
