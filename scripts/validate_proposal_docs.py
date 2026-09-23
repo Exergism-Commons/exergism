@@ -183,15 +183,15 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         r"\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)": "RegimeClosure definition",
         r"\operatorname{GeneBasis}_i(\mathfrak G_i)": "GeneBasis guard",
         r"\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)": "RegimeGenerated membership",
-        "\\exists\\mathfrak G_i\\exists R_i\\;\\n\\operatorname{RegimeTotal}_i(\\mathfrak G_i,R_i)": "ExistsR RegimeTotal witness",
+        "\\exists\\mathfrak G_i\\exists R_i\\;" + "\n" + "\\operatorname{RegimeTotal}_i(\\mathfrak G_i,R_i)": "ExistsR RegimeTotal witness",
     }
     for snippet, description in required_current.items():
         if snippet not in current:
             fail(f"REV-07f regression: normative proposal is missing {description}")
 
     old_exists_witness = (
-        "\\exists\\mathcal O_i\\exists R_i\\;\\n"
-        "\\operatorname{GeneTotal}_i(\\mathcal O_i,R_i)"
+        "\\exists\\mathcal O_i\\exists R_i\\;" + "\n"
+        + "\\operatorname{GeneTotal}_i(\\mathcal O_i,R_i)"
     )
     if old_exists_witness in current:
         fail(
