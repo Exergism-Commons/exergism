@@ -5574,25 +5574,7 @@ T_q^{\mathcal C}
 \mathcal C_*(\{q\}).
 $$
 
-Se exigen:
-
-$$
-\mathrm{CS}:
-\quad
-x\in T_q^{\mathcal C}
-\Rightarrow
-\operatorname{CoReal}(x,q),
-$$
-
-$$
-\mathrm{CC}:
-\quad
-\operatorname{CoReal}(x,q)
-\Rightarrow
-x\in T_q^{\mathcal C},
-$$
-
-y:
+La construcción semántica pre-indexada solo exige aquí:
 
 $$
 \mathrm{CSet}:
@@ -5600,9 +5582,39 @@ $$
 T_q^{\mathcal C}\text{ es set-sized}.
 $$
 
-CS y CC son todavía criterios de adecuación de una **clausura candidata**. Antes de justificarlos no se asigna un índice ontológico $i$ ni se invocan OA/MC de régimen.
+No se formula todavía CS/CC contra CoReal ni se reutiliza el mismo token a ambos lados de un cambio de contexto.
 
-Si CS+CC se justifican, CRType garantiza que los elementos co-reales son actuales; tras realizar el scope local correspondiente, la construcción puede reindexarse como $T_i^{\mathcal C},S_i^{\mathcal C}$ y entonces se recuperan los lemas tipados de OA/MC.
+La adecuación ontológica se introduce **después** mediante un mapa de realización:
+
+$$
+\eta_i^{\mathcal C}:
+T_q^{\mathcal C}
+\rightsquigarrow
+\{x_i\},
+$$
+
+cuya existencia no se presupone. Soundness y completeness son entonces:
+
+$$
+\mathrm{CS}^{\mathrm{gen}}_{\mathcal C,i}:
+\quad
+a\in T_q^{\mathcal C}
+\land
+\eta_i^{\mathcal C}(a)=x_i
+\Rightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i),
+$$
+
+$$
+\mathrm{CC}^{\mathrm{gen}}_{\mathcal C,i}:
+\quad
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\Rightarrow
+\exists a\in T_q^{\mathcal C}\;
+\eta_i^{\mathcal C}(a)=x_i.
+$$
+
+La fidelidad/injectividad estructural del mapa pertenece a RA. Solo después de esta realización es legítimo hablar de la clausura candidata como representación de una genealogía indexada.
 
 Para reconstruir el máximo semántico se añade:
 
@@ -5673,7 +5685,7 @@ es set-sized y puede alimentar la construcción semántica directa.
 Esta ruta sustituye PON+clausura finita por una obligación diferente:
 
 $$
-\mathrm{TransClSmall}_i:
+\mathrm{TransClSmall}_{\mathcal C}:
 \quad
 \exists\kappa\in\mathrm{Ord}\text{ set-sized }
 [C_\kappa=C_{\kappa+1}\land C_\kappa\text{ set-sized}].
@@ -5810,32 +5822,22 @@ $$
 
 Este teorema es deliberadamente **pre-ontológico**: no contiene StructAdm_i, SameRegime, CS, CC ni CoReal.
 
-Solo después, si se justifican CGI/CMin y además:
+Solo después de CGI/CMin y de una realización $\eta_i^{\mathcal C}$ que satisfaga:
 
 $$
-\mathrm{CS}:\quad
-x\in T_q^{\mathcal C}\Rightarrow\operatorname{CoReal}(x,q),
+\mathrm{CS}^{\mathrm{gen}}_{\mathcal C,i}
+\land
+\mathrm{CC}^{\mathrm{gen}}_{\mathcal C,i},
 $$
 
-$$
-\mathrm{CC}:\quad
-\operatorname{CoReal}(x,q)\Rightarrow x\in T_q^{\mathcal C},
-$$
+puede compararse el carrier candidato con $\operatorname{Cl}^{G}_i(\mathcal O_i)$. Si además RA establece fidelidad de identidad/estructura, la presentación semántica puede reetiquetarse dentro del contexto $i$.
 
-CRType garantiza actualidad de los tokens cubiertos por CS, y puede establecerse el puente desde la clausura candidata a un régimen ontológico. En ese estadio —no antes— es legítimo reindexar la construcción como $T_i^{\mathcal C},S_i^{\mathcal C}$.
+La Ruta A finita y la Ruta B generalizada comparten el patrón lógico, pero no identifican sus carriers por notación:
 
-La ruta original se recupera cuando:
-
-$$
-\mathcal C_*(\{q\})=[q]_{\sim},
-$$
-
-PON prueba CSet y la definición de $\Lambda_*$ proporciona la información ontológica necesaria para intentar RS/RC.
-
-Esto separa definitivamente:
-
-1. **construcción semántica relativa a una clausura candidata:** CSet/CWF/CProcStable + smallness semántica;
-2. **adecuación ontológica de esa clausura:** CGI/CMin + CS/CC/CRType, o RS/RC en la ruta finita.
+1. **construcción semántica relativa a un carrier candidato:** smallness + well-formedness + estabilidad;
+2. **realización tipada del carrier:** identidad/denotación hacia un contexto $i$;
+3. **adecuación ontológica:** soundness/completeness frente a $\operatorname{Cl}^{G}_i(\mathcal O_i)$;
+4. **adecuación estructural:** RA.
 
 En consecuencia PON permanece como blocker de la instanciación finita, no como condición necesaria de toda ruta a una exhaustividad semántica relativa.
 ##### FID no es generación local finita
@@ -6140,7 +6142,7 @@ por lo que es set-sized.
 Las dos construcciones semánticas tienen premisas distintas y no deben mezclarse:
 
 - **Ruta finita ya indexada por régimen:** $\Lambda_*$ + PON + $\operatorname{StructAdm}_i$ + $\mathrm{SigSmall}_i$ + $\mathrm{ActualSep}_i$.
-- **Ruta generalizada pre-ontológica:** CGI/CMin para la generación no circular de $\mathcal C_*$ y, para el teorema semántico, CSet + CWF + CProcStable + $\mathrm{SigSmall}_{\mathcal C}$ + $\mathrm{ActualSep}_{\mathcal C}$. CS/CC/CRType se usan solo después para justificar la reindexación como régimen; $\operatorname{StructAdm}_i$ no es premisa de esta maximalidad.
+- **Ruta generalizada pre-ontológica:** CGI/CMin para la generación no circular de $\mathcal C_*$ y, para el teorema semántico, CSet + CWF + CProcStable + $\mathrm{SigSmall}_{\mathcal C}$ + $\mathrm{ActualSep}_{\mathcal C}$. La realización posterior usa $\eta_i^{\mathcal C}$ + CS$^{gen}_{\mathcal C,i}$/CC$^{gen}_{\mathcal C,i}$ + RA; $\operatorname{StructAdm}_i$ no es premisa de esta maximalidad.
 
 La existencia ontológica **local** pertenece a REV-07: $\operatorname{OntOrigin}_i$ + reglas generativas independientes + clausura + scope realization deben justificar $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$. REV-24a/b/c se añaden después para justificar que $S_i$ presenta ese $R_i$.
 
