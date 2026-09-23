@@ -1837,7 +1837,7 @@ REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitrar
 4. equivalencia entre configuraciones-originarias distintas que generan la misma clausura sin volver a mera extensionalidad;
 5. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente la clausura generativa;
 6. qué principio de scope/pluralidad realiza esa clausura como $R_i$ sin setificarla;
-7. **problema de convergencia:** distinguir una integración que revela que la indexación provisional era errónea de una hipotética ontogénesis en la que la convergencia crease una realidad compartida nueva.
+7. **unidad contextual vs genealógica:** escoger y justificar si ContextUnity exige GeneUnity como axioma adicional, admite ensamblaje de genealogías, permite ontogénesis explícita o permanece estrictamente más débil que pertenecer al mismo $R_i$.
 
 Una convergencia bien tipada prueba como máximo realizabilidad conjunta, no co-origen:
 
