@@ -1520,7 +1520,7 @@ $$
 }
 $$
 
-La bilateralidad admite mutual grounding/constitución holística pero rechaza una mera convergencia $a_i,b_i\to c_i$: que $c_i$ dependa del evento no vuelve dependientes retroactivamente a $a_i$ y $b_i$. El work/ fija seis modelos de control. En particular:
+La bilateralidad admite co-dependencia fundamental, constitución relacional/holística y co-constitución procesual cuando satisfacen ECD1–ECD7, pero rechaza una mera convergencia $a_i,b_i\to c_i$: que $c_i$ dependa del evento no vuelve dependientes retroactivamente a $a_i$ y $b_i$. El work/ fija los esquemas MG/RC/HC/PC y seis modelos de control. En particular:
 
 $$
 \operatorname{Seed}_i(\mathcal O_i)=A_i\cup B_i
