@@ -1849,7 +1849,7 @@ $$
 \operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
 $$
 
-CGP **no es derivable**. SharedOntSpace cubre unidad común preexistente. La ontogénesis genuina exige $\operatorname{GenesisConstitutiveUnity}_k$: las continuaciones child-side y el witness actual $g_k$ deben satisfacer OriginUnity completa; dependencia unilateral, PureOntRel o mera coexistencia no crean una nueva $R$. $\gamma$ permanece metateórico y no es portador de Real. Si toda formación ya cabe en un único $L_i$, es OntProd interno, no ContextGenesis; la génesis genuina exige novedad de índice $k\not\simeq_{idx}i,j$. GeneOverlap no implica identidad de origen y exige OverlapCoherence.
+CGP **no es derivable**. SharedOntSpace cubre unidad común preexistente. La ontogénesis genuina exige $\operatorname{GenesisConstitutiveUnity}_k$: las continuaciones child-side y $g_k$ satisfacen OriginUnity; unilateralidad, PureOntRel o coexistencia no crean nueva $R$. $\gamma$ permanece metateórico. FaithfulContinuation es una relación meta de provenance + preservación traducida, no identidad ni función: admite branching y TokenMerger. TokenMerger es ortogonal a ContextGenesis. Convergence es más amplia: SharedSpaceConvergence no crea contexto; GenesisConvergence sí. ContextGenesis admite aridad $n\ge1$: la génesis unaria no es convergence, mientras ContextMerger $\equiv$ MultiParentContextGenesis implica GenesisConvergence. Gradualidad tipo Ship-of-Theseus sigue siendo transformación interna mientras no haya novedad de índice + GenesisConstitutiveUnity.
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
