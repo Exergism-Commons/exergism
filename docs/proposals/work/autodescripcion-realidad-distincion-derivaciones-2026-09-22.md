@@ -3363,81 +3363,164 @@ requiere:
 
 No valen semejanza, misma ley, mera posibilidad de interacción, co-descripción ni una arista introducida solo para conectar el grafo.
 
-#### 0.11.10. Grafo/hipergrafo de ensamblaje
+#### 0.11.10. Ensamblaje + generación transversal
 
 Una candidata de realidad ensamblada es una familia de GeneUnit locales junto con AssemblyLink actuales:
 
-$
+$$
 \mathfrak A_i=(\mathcal G_i,\mathcal L_i).
-$
+$$
 
 No se identifica $\mathcal G_i$ con un set ontológico de “realidades”; es una estructura de trabajo dentro de la instanciación formal $i$.
 
-Exigimos **AssemblyConnected**: para cualesquiera dos unidades de $\mathcal G_i$ existe una cadena finita de AssemblyLink o, en la futura ruta generalizada, un testigo de conectividad admitido sin presuponer el resultado final.
+Exigimos **AssemblyConnected**: para cualesquiera dos unidades de $\mathcal G_i$ existe una cadena de AssemblyLink admitida por la ruta de ensamblaje elegida. La versión finita es solo la primera implementación; una ruta generalizada puede ser necesaria por los mismos motivos que hicieron de FID una condición no universal.
 
-El carrier ensamblado candidato es:
+La mera unión de las GeneUnit **no** es todavía el carrier final. Si:
 
-$
-\operatorname{AsmCarrier}_i(\mathfrak A_i)
-=
+$$
+a_i\in C_{\alpha,i},
+\qquad
+b_i\in C_{\beta,i},
+\qquad
+\operatorname{OntProd}_i(e_i,\{a_i,b_i\},c_i),
+$$
+
+entonces al ensamblar ambas unidades debe aparecer también $c_i$ y todo lo que se genere después de él.
+
+Definimos el soporte inicial del ensamblaje:
+
+$$
+\operatorname{AsmSupport}_i(\mathfrak A_i)
+:=
 \bigcup_{G_{\alpha,i}\in\mathcal G_i} C_{\alpha,i}
 \;\cup\;
 \bigcup_{\ell_i\in\mathcal L_i}\operatorname{LinkFoot}_i(\ell_i).
-$
+$$
 
-Esto es solo notación de trabajo: si la familia no es set-sized, la implementación deberá usar pluralidad/clase o una noción relacional de carrier.
+AsmSupport no es un origen y sus LinkFoot no se reinterpretan como generadores. Solo registra las genealogías locales certificadas y los testigos ontológicos que justifican ensamblarlas.
 
-#### 0.11.11. Anti-agregación para ensamblajes
+Un carrier $K_i$ es una clausura generativa del ensamblaje cuando:
 
-Context Assembly no puede convertirse en “Many-R por bolsa”. Exigimos:
+$$
+\operatorname{AsmGenClosure}_i(\mathfrak A_i,K_i)
+$$
 
-$
+si y solo si:
+
+1. $\operatorname{AsmSupport}_i(\mathfrak A_i)\preceq K_i$;
+2. $\Gamma_i(K_i)=K_i$;
+3. todo carrier que contenga AsmSupport y sea fijo de $\Gamma_i$ contiene $K_i$.
+
+Así CAU/CON/GRD/PRC que requieran antecedentes procedentes de GeneUnit distintas pueden dispararse después del ensamblaje sin fingir que esas GeneUnit compartían origen.
+
+#### 0.11.11. Saturación del ensamblaje
+
+Una realidad candidata no puede omitir una GeneUnit que esté realmente enlazada al carrier ya ensamblado.
+
+Introducimos esquemáticamente:
+
+$$
+\operatorname{AssemblySaturated}_i(\mathfrak A_i,K_i)
+$$
+
+para exigir que, si existe una GeneUnit local $G_{\beta,i}$ fuera de $\mathcal G_i$ y un testigo AssemblyLink actual entre contenido de $K_i$ y contenido de $G_{\beta,i}$, entonces la candidata no es todavía total: debe incorporar esa unidad, el link y recalcular AsmGenClosure.
+
+Esto hace que ensamblaje y generación sean mutuamente iterativos:
+
+$$
+\text{añadir GeneUnit}
+\;\Rightarrow\;
+\text{nuevos GenEvent posibles}
+\;\Rightarrow\;
+\text{nuevo contenido}
+\;\Rightarrow\;
+\text{nuevos AssemblyLink posibles}.
+$$
+
+Por tanto no se asume que una sola pasada de conectividad + $\Gamma_i$ sea suficiente.
+
+La obligación fundacional correspondiente se registra como:
+
+$$
+\operatorname{ACExists}_i(\mathfrak A_i)
+$$
+
+cuando existe un par saturado/minimal $(\mathfrak A_i^{*},K_i^{*})$ estable bajo ambas operaciones. ACExists **no se presupone**; requerirá una construcción de punto fijo sobre pares o una implementación plural/clase adecuada.
+
+#### 0.11.12. Anti-agregación para ensamblajes
+
+Context Assembly no puede convertirse en “Many-R por bolsa”. Una candidata admisible debe satisfacer conjuntamente:
+
+$$
 \boxed{
 \operatorname{AssemblyConnected}_i(\mathfrak A_i)
 \land
-\operatorname{LinkSound}_i(\mathfrak A_i).
+\operatorname{LinkSound}_i(\mathfrak A_i)
+\land
+\operatorname{AssemblySaturated}_i(\mathfrak A_i,K_i)
+\land
+\operatorname{AsmGenClosure}_i(\mathfrak A_i,K_i).
 }
-$
+$$
 
-LinkSound exige que cada arista tenga un testigo ontológico actual conforme 0.11.9.
+LinkSound exige que cada arista tenga un testigo ontológico actual conforme 0.11.9. Además:
 
-Además:
-
-$
+$$
 \neg\operatorname{AssemblyLink}_i(G_\alpha,G_\beta)
-$
+$$
 
 cuando la única razón para enlazarlos sea que queremos que pertenezcan al mismo $R$.
 
-Por tanto una familia de genealogías desconectadas no forma una realidad ensamblada:
+Una familia desconectada no forma una realidad ensamblada:
 
-$
+$$
 G_\alpha\sqcup G_\beta
 \not\Rightarrow
 \operatorname{ContextAssembly}(G_\alpha,G_\beta).
-$
+$$
 
-#### 0.11.12. Consecuencia provisional
+Y una relación actual tampoco autoriza a introducir un endpoint gratis: POR4/no-free-endpoints continúa vigente dentro de AsmGenClosure.
 
-Si Context Assembly sobrevive los siguientes stress tests, la arquitectura final debería distinguir:
+#### 0.11.13. Stress tests de Context Assembly
 
-$
+**A1 — dos raíces sin link.** Dos GeneUnit independientes y sin AssemblyLink siguen separadas. La unión metalingüística falla AssemblyConnected.
+
+**A2 — PureOntRel fundamental.** Dos GeneUnit enlazadas por una PureOntRel actual pueden entrar en la misma candidata sin convertir la relación en OntProd ni crear CommonGround.
+
+**A3 — relación generada conjuntamente.** Si $\rho$ es producida desde $a\in C_\alpha$ y $b\in C_\beta$, la relación puede justificar el link una vez existe la realización coherente; su incidencia no produce retroactivamente $a,b$.
+
+**A4 — producción transversal.** Si $a\in C_\alpha$ y $b\in C_\beta$ producen $c$, AsmGenClosure incluye $c$ y sus descendientes aunque ninguna GeneUnit local los contuviera aisladamente.
+
+**A5 — link espectador.** Semejanza, misma ley, co-descripción o posibilidad de interacción no satisfacen LinkSound y no conectan componentes.
+
+**A6 — cadena coherente.** $G_a-\rho-G_d\to G_c-\sigma-G_b$ puede quedar en un único assembly solo si todos los links y eventos admiten una realización coherente común; enlaces pairwise en realizaciones incompatibles no bastan.
+
+**A7 — expansión tardía.** Si la generación transversal produce $c$ y aparece entonces un link actual desde $c$ a una GeneUnit externa $G_h$, AssemblySaturated obliga a incorporar $G_h$ y volver a cerrar.
+
+**A8 — infinitud.** Una cadena infinita de GeneUnit/links puede impedir una clausura finita aunque cada link sea local. El caso se desplaza a ACExists/smallness y no se resuelve declarando el assembly como una unión.
+
+#### 0.11.14. Consecuencia provisional
+
+Si Context Assembly sobrevive ACExists, LinkCoverage y los problemas de scope, la arquitectura final debería distinguir:
+
+$$
 \operatorname{GeneUnit}
 \neq
 \operatorname{RealityTotal}.
-$
+$$
 
 La antigua GeneTotal sería entonces el **caso monogeneal** de RealityTotal, no su definición general.
 
-Antes de modificar ExistsR hay que resolver al menos:
+Antes de modificar ExistsR quedan al menos estas obligaciones:
 
 1. equivalencia/solapamiento entre GeneUnit locales;
-2. conectividad finita vs ensamblaje generalizado;
-3. smallness/pluralidad de $\mathcal G_i$ y LinkFoot;
-4. cierre bajo links sin introducir endpoints gratis;
-5. maximalidad/exhaustividad del assembly sin recurrir a una unión arbitraria;
+2. definición sound/complete de AssemblyLink y una obligación de LinkCoverage;
+3. existencia de la clausura combinada ACExists;
+4. smallness/pluralidad del assembly y sus LinkFoot;
+5. irredundancia del assembly;
 6. interacción con REV-07d cuando ninguna GeneUnit mínima exista;
-7. reconstrucción de $\Lambda_*$: distinguir links de marco de links sound para una genealogía única.
+7. scope realization de $K_i^{*}$ como $R_i$;
+8. reconstrucción de $\Lambda_*$: distinguir links de marco de links sound para una genealogía única.
 
 Hasta entonces Context Assembly es la **ruta candidata preferente**, no una nueva definición normativa de $R_i$.
 
