@@ -1627,6 +1627,8 @@ C_{\alpha,i}
 )\\
 &\land
 \forall^{\mathsf M}\alpha,\beta\in A[
+\alpha\neq_{\mathsf M}\beta
+\land
 \operatorname{GeneOverlap}_i(
 G_{\alpha,i},
 G_{\beta,i}
@@ -1641,7 +1643,7 @@ G_{\beta,i}
 }
 $$
 
-Los cuantificadores sobre $\alpha,\beta$ pertenecen al metalenguaje y no introducen objetos en $R_i$. La fundación concreta de $A$ —set, clase, pluralidad u otra presentación— queda subordinada a REV-07c cuando afecte a existencia de closure.
+Los cuantificadores sobre $\alpha,\beta$ pertenecen al metalenguaje y no introducen objetos en $R_i$. OverlapCoherence se exige solo entre **miembros distintos**; la coherencia de una GeneUnit consigo misma no es una premisa adicional de GeneFamily. La fundación concreta de $A$ —set, clase, pluralidad u otra presentación— queda subordinada a REV-07c cuando afecte a existencia de closure.
 
 La base extensional de la familia queda fijada, sin elegirla post hoc, por:
 
