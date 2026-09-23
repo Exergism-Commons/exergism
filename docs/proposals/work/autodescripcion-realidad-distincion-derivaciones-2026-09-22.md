@@ -3354,7 +3354,7 @@ $$
 (C_i,C_j\Rightarrow k;\gamma).
 $$
 
-Su lectura es: las realizaciones precursoras $i,j$ participan en una operación/estructura metaontológica $\gamma$ cuya consecuencia constitutiva es una nueva instanciación de contexto $k$.
+Su lectura es: $\gamma$ es un **juicio metateórico sobre una formación ontológica**, no una operación causal del metalenguaje. Registra que las realizaciones precursoras $i,j$ tienen continuaciones en una nueva instanciación $k$ cuya novedad está objetivamente testimoniada child-side por una estructura actual $g_k$.
 
 No se escribe ningún evento objeto mal tipado:
 
