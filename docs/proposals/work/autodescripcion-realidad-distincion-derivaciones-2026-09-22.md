@@ -6206,7 +6206,7 @@ Eso no crea un hecho real que relacione ambos contextos.
 
 ##### Cluster-$R$
 
-Cluster-$R$ solo se usa antes de fijar el tipado definitivo. Un origen/hecho integrador entre dos candidatos implica que deben recibir el mismo contexto.
+Cluster-$R$ solo se usa antes de fijar el tipado definitivo. Un CommonGround independientemente justificado implica equivalencia de contexto; un hecho integrador solo establece JointRealizable mientras CGP permanezca OPEN.
 
 ##### Verdad entre contextos
 
