@@ -4794,181 +4794,240 @@ Si PSB se adopta o deriva independientemente, REV-20 puede marcarse RESOLVED.
 
 ---
 
-## Teorema directo de exhaustividad semántica por conectividad localmente set-like
+## Teorema directo de exhaustividad semántica sobre una componente $\Lambda$ tipada
 
-La definición actual de régimen permite construir directamente un máximo semánticamente exhaustivo. El paso adicional desde ese máximo a una **totalidad ontológica** se mantiene separado.
+Este teorema no define el contexto $i$ ni toma cardinalidad de $i$. Fijado un parámetro de contexto ya disponible en el metalenguaje y un seed $q_i$, construye un máximo semántico **relativo a la componente finita** generada por $\Lambda_i$.
 
-### 1. PON — Pointwise Ontological Neighborhood Smallness
+### 1. PON$_i$ — Pointwise Ontological Neighborhood Smallness
 
 Sea:
 
 $$
-N(q):=\{r\mid q\bowtie r\}.
+N_i(q_i)
+:=
+\{r_i\mid q_i\bowtie_i r_i\}.
 $$
 
 Definimos:
 
 $$
-\mathrm{PON}:\quad \forall q,\;N(q)\text{ es set-sized}.
+\mathrm{PON}_i:
+\quad
+\forall q_i\;
+N_i(q_i)\text{ es set-sized}.
 $$
 
-PON afirma que ningún token actual está inmediatamente enlazado, mediante las relaciones admitidas de $\Lambda_*$, con proper-class many tokens.
+PON$_i$ afirma smallness de vecinos dentro del tipo $i$. No cuantifica sobre contextos ni convierte $i$ en una colección.
 
-PSB es un caso particular: los eventos emergentes salientes de un estado están enlazados con él mediante incidencia procesual, por lo que:
+Cuando la incidencia de eventos emergentes está incluida en $\Lambda_i$, PON$_i$ implica la versión local correspondiente de PSB$_i$.
 
-$$
-\mathrm{PON}\Rightarrow\mathrm{PSB}_i.
-$$
+### 2. La componente finita del seed es set-sized
 
-### 2. Un régimen generado por un token es set-sized
-
-Fijemos un token actual $q_0$ y definamos:
+Fijemos $q_i$ y definamos:
 
 $$
-S_0=\{q_0\},
+S_0=\{q_i\},
 $$
 
 $$
-S_{n+1}=S_n\cup\bigcup_{q\in S_n}N(q).
+S_{n+1}
+=
+S_n
+\cup
+\bigcup_{x_i\in S_n}N_i(x_i).
 $$
 
-Por PON, Replacement y Union, cada $S_n$ es set-sized. Entonces:
+Por PON$_i$, Replacement y Union, cada $S_n$ es set-sized. Entonces:
 
 $$
-S_\omega=\bigcup_{n<\omega}S_n
+S_\omega
+=
+\bigcup_{n<\omega}S_n
 $$
 
-también es set-sized.
+es set-sized.
 
-Como $\sim$ es por definición la clausura reflexivo-transitiva **finita** de $\bowtie$:
+Como $\sim_i$ es la clausura reflexivo-transitiva finita de $\bowtie_i$:
 
 $$
-\boxed{S_\omega=[q_0]_{\sim}.}
+\boxed{
+S_\omega
+=
+[q_i]_{\sim_i}
+=:
+T^{\Lambda}_{i,q}.
+}
 $$
 
 Por tanto:
 
 $$
-\boxed{\mathrm{PON}\Rightarrow |i|\text{ set-sized}}
+\boxed{
+\mathrm{PON}_i
+\Rightarrow
+T^{\Lambda}_{i,q}\text{ es set-sized}.
+}
 $$
 
-para el régimen definido por conectividad finita.
-
-Este resultado depende de esa elección de identidad. Si existen relaciones que solo conectan mediante cadenas esencialmente transfinitarias o condiciones de límite, quedan fuera de $[q_0]_{\sim}$ por definición. La suficiencia ontológica de la clausura finita pertenece a REV-07, no al argumento de smallness.
+Este resultado **no** dice $|i|$ ni identifica $T^{\Lambda}_{i,q}$ con toda la realidad del contexto.
 
 ### 3. Smallness de los hechos
 
-Sea $T_i=[q_0]_{\sim}$.
+Sea:
 
-Definimos:
+$$
+T^{\Lambda}_{i,q}
+=
+[q_i]_{\sim_i}.
+$$
+
+Bajo:
 
 $$
 \mathrm{SigSmall}_i:
 \quad
-\mathcal L_i\text{ es set-sized}
+\mathcal L_i\text{ set-sized}
 \land
-\forall \sigma\in\mathcal L_i,\;
-\operatorname{ar}(\sigma)\text{ es set-sized}.
+\forall\sigma_i\in\mathcal L_i\;
+\operatorname{ar}(\sigma_i)\text{ set-sized},
 $$
 
-La anterior exigencia de aridad finita era una condición suficiente, pero más fuerte de lo necesario. Si cada aridad es un set, entonces para cada símbolo $\sigma$ el espacio $T_i^{\operatorname{ar}(\sigma)}$ es un set y, por Replacement + Union sobre la firma set-sized, también lo es:
+el espacio:
 
 $$
-\operatorname{Atoms}_{\mathcal L_i}(T_i).
+\operatorname{Atoms}_{\mathcal L_i}(T^{\Lambda}_{i,q})
 $$
 
-Para seleccionar de ese set los hechos actualmente verdaderos necesitamos además que la condición de actualidad esté disponible como predicado definible en la metateoría:
+es set-sized.
+
+Con $\mathrm{ActualSep}_i$:
 
 $$
-\mathrm{ActualSep}_i.
-$$
-
-Bajo esa condición, Separation permite formar:
-
-$$
-\Phi_i^{\mathrm{all}}
+\Phi^{\Lambda,\mathrm{all}}_{i,q}
 =
-\{\varphi\in\operatorname{Atoms}_{\mathcal L_i}(T_i)
-\mid \operatorname{Actual}_i(\varphi)\}.
+\{
+\varphi_i\in
+\operatorname{Atoms}_{\mathcal L_i}(T^{\Lambda}_{i,q})
+\mid
+\operatorname{Actual}_i(\varphi_i)
+\}.
 $$
 
-REV-25 registra independientemente tanto $\mathrm{SigSmall}_i$ como $\mathrm{ActualSep}_i$.
-
-### 4. Construcción directa del máximo semántico
+### 4. Construcción directa
 
 Definimos:
 
 $$
-S_i^*:=(T_i,\Phi_i^{\mathrm{all}}).
+S^{\Lambda,*}_{i,q}
+:=
+(T^{\Lambda}_{i,q},\Phi^{\Lambda,\mathrm{all}}_{i,q}).
 $$
 
-$S_i^*$ es StructAdm bajo las premisas vigentes de contenido positivo actual.
+Sea $\mathfrak D^{\Lambda}_{i,q}$ el poset de fragmentos StructAdm cuyo carrier y hechos están soportados en esa componente.
 
-### 5. Máximo
-
-Para cualquier $X=(T_X,\Phi_X)\in\mathfrak D_i^{\mathrm{proc}}$ se tiene:
+Para cualquier:
 
 $$
-T_X\subseteq T_i
+X_i=(T_X,\Phi_X)
+\in
+\mathfrak D^{\Lambda}_{i,q},
 $$
 
-y:
+se tiene:
 
 $$
-\Phi_X\subseteq\Phi_i^{\mathrm{all}}.
-$$
-
-Luego:
-
-$$
-\boxed{
-\forall X\in\mathfrak D_i^{\mathrm{proc}},
-\quad X\preceq_i S_i^*.
-}
-$$
-
-$S_i^*$ es máximo en el poset semántico, no solo maximal.
-
-### 6. EClosed
-
-Si $e$ es un evento emergente actual con source $s\in T_i$, las relaciones source/event/target son enlaces procesuales admitidos. Por tanto evento y target pertenecen a la misma clase finitamente conectada, y sus hechos pertenecen a $\Phi_i^{\mathrm{all}}$.
-
-Luego:
-
-$$
-\boxed{\operatorname{EClosed}_i(S_i^*).}
-$$
-
-### 7. Teorema directo de SemTotal
-
-**Teorema.**
-
-Supóngase que existe al menos un token actual $q_0$ y que:
-
-1. la identidad de régimen se define por la clausura finita $\sim=(\bowtie)^*$;
-2. PON;
-3. $\mathrm{SigSmall}_i$;
-4. $\mathrm{ActualSep}_i$;
-5. los dominios son fragmentos StructAdm del contenido actual del régimen.
-
-Entonces existe $S_i^*\in\mathfrak D_i^{\mathrm{proc}}$ tal que:
-
-$$
-\operatorname{EClosed}_i(S_i^*)
+T_X\subseteq T^{\Lambda}_{i,q}
 $$
 
 y:
 
 $$
-\forall X\in\mathfrak D_i^{\mathrm{proc}},
-\quad X\preceq_i S_i^*.
+\Phi_X\subseteq\Phi^{\Lambda,\mathrm{all}}_{i,q}.
 $$
 
 Por tanto:
 
 $$
-\boxed{\operatorname{SemTotal}_i(S_i^*).}
+\boxed{
+\forall X_i\in\mathfrak D^{\Lambda}_{i,q},
+\quad
+X_i\preceq_i S^{\Lambda,*}_{i,q}.
+}
 $$
+
+### 5. EClosed relativo a la componente
+
+Si los footprints de los eventos emergentes relevantes están incluidos en $\Lambda_i$, source, evento y target permanecen dentro de la componente finita. Entonces:
+
+$$
+\operatorname{EClosed}^{\Lambda}_{i,q}(S^{\Lambda,*}_{i,q}).
+$$
+
+Esta afirmación es closure-relative; no demuestra que la componente contenga todo $Real_i$.
+
+### 6. Teorema directo closure-relative
+
+Supóngase, para un contexto fijo $i$ y seed $q_i$:
+
+1. PON$_i$;
+2. $\mathrm{SigSmall}_i$;
+3. $\mathrm{ActualSep}_i$;
+4. StructAdm relativo a $T^{\Lambda}_{i,q}$;
+5. estabilidad de los footprints emergentes bajo $\Lambda_i$.
+
+Entonces:
+
+$$
+\boxed{
+\operatorname{SemTotal}^{\Lambda}_{i,q}
+(S^{\Lambda,*}_{i,q}).
+}
+$$
+
+donde SemTotal$^{\Lambda}_{i,q}$ significa máximo semántico de $\mathfrak D^{\Lambda}_{i,q}$.
+
+### 7. Upgrade genealógico
+
+El resultado anterior puede llamarse $\operatorname{SemTotal}_i$ **solo** después de establecer que la componente reconstruye la clausura genealógica:
+
+$$
+\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}:
+\quad
+x_i\in T^{\Lambda}_{i,q}
+\Rightarrow
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i),
+$$
+
+$$
+\mathrm{RC}^{\mathrm{gen}}_{\Lambda,i}:
+\quad
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\Rightarrow
+x_i\in T^{\Lambda}_{i,q}.
+$$
+
+Con ambas:
+
+$$
+\boxed{
+T^{\Lambda}_{i,q}
+=
+\{x_i\mid
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\}.
+}
+$$
+
+y, junto con la adecuación factual/representacional necesaria:
+
+$$
+\operatorname{SemTotal}^{\Lambda}_{i,q}
+\Longrightarrow
+\operatorname{SemTotal}_i.
+$$
+
+Por tanto la conectividad nunca vuelve a definir el índice: primero produce una componente semántica; RS/RC deciden si esa componente reconstruye la genealogía.
+
 
 ### 8. REV-24 — presentación semántica de una realidad genealógica
 
