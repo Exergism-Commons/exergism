@@ -248,7 +248,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         technical,
         "#### RT-07-XP — Transversal Production Test",
     )
-    xp_compact = re.sub(r"\\s+", "", xp_section)
+    xp_compact = re.sub(r"\s+", "", xp_section)
     xp_contracts = (
         "\\mathrm{RGCExists}_k(\\mathfrakG_k)",
         "\\operatorname{RegimeClosure}_k(\\mathfrakG_k,C_k)",
@@ -276,7 +276,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
     if presentation_marker not in presentation_section:
         fail("REV-07f regression: §8.5 is missing the active presentation bridge")
     presentation_bridge = presentation_section.split(presentation_marker, 1)[1]
-    presentation_compact = re.sub(r"\\s+", "", presentation_bridge)
+    presentation_compact = re.sub(r"\s+", "", presentation_bridge)
     for snippet in (
         "\\operatorname{RegimeTotal}_i(\\mathfrakG_i,R_i)",
         "\\operatorname{SemTotal}_i(S_i)",
