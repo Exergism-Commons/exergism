@@ -1510,7 +1510,7 @@ Bind queda sometido a una disciplina independiente:
 - **B5:** debe ser invariante bajo recodificación fiel.
 
 Mera proximidad, semejanza, compartir leyes o una fusión mereológica sin dependencia integrativa no cuentan como Bind.
-- **OU3 / RootClosed:** si un constituyente del seed es generado, todos sus antecedentes pertenecen al propio seed; se permiten ciclos internos, no entradas generativas externas.
+- **OU3 / RootClosed:** si un constituyente del seed tiene una producción ontológica independiente $\operatorname{OntProd}_i(e_i,A_i,b_i)$, todos sus antecedentes pertenecen al propio seed; se permiten ciclos internos, no entradas productivas externas.
 - **GCExists:** existe una least generative closure en el marco fundacional adoptado.
 - **OU4 / Irredundant:** ninguna subconfiguración propia que siga siendo una OriginConfig unificada genera la misma clausura, salvo equivalencia de origen justificada.
 
@@ -1531,6 +1531,32 @@ $$
 $$
 
 con antecedentes conjuntos $A_i$. GE1–GE6 exigen token-specificity, productividad ontológica, integridad conjunta, independencia del target, invariancia representacional y justificación separada de cada modo generativo.
+
+Para no hacer autorreferente ese inventario se distingue una relación objetivo independiente:
+
+$$
+\operatorname{OntProd}_i(e_i,A_i,b_i),
+$$
+
+caracterizada sin usar $R_i$ ni Generated$^*$. La implementación generativa debe satisfacer:
+
+$$
+\mathrm{GenSound}_i:
+\quad
+\operatorname{GenEvent}_i(e_i,A_i,b_i)
+\Rightarrow
+\operatorname{OntProd}_i(e_i,A_i,b_i),
+$$
+
+$$
+\mathrm{GenComplete}_i:
+\quad
+\operatorname{OntProd}_i(e_i,A_i,b_i)
+\Rightarrow
+\operatorname{GenEvent}_i(e_i,A_i,b_i).
+$$
+
+Así RootClosed se evalúa contra OntProd; $\Gamma_i$ puede usar GenEvent solo bajo esta obligación de adecuación.
 
 $\operatorname{GenStep}_i(a_i,b_i)$ queda solo como proyección auxiliar; el contraejemplo $\{a_i,b_i\}\to c_i$ demuestra que no puede usarse como regla general de clausura.
 
@@ -1810,7 +1836,7 @@ Esta instancia sigue dependiendo de la lógica plural/scope adoptada. El finding
 REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitraria y la reducción binaria de la generación. Para cerrarlo hay que justificar:
 
 1. qué relaciones concretas satisfacen $\operatorname{OriginUnity}_i$ / Bind sin presuponer la realidad total;
-2. qué modos concretos de producción satisfacen GE2/GE6 y por qué son genuinamente generativos;
+2. caracterizar $\operatorname{OntProd}_i$ independientemente y demostrar GenSound + GenComplete para el inventario de modos causales/constitutivos/dependencia/continuidad;
 3. existencia de la least closure $\operatorname{Cl}^{G}_i$ en el marco fundacional elegido —set, plural, clase o clausura transfinita—;
 4. si OU3/root-closure debe admitir además genealogías sin fuente, regresos infinitos o fixed points fundamentales;
 5. equivalencia entre configuraciones-originarias distintas que generan la misma clausura sin volver a mera extensionalidad;
