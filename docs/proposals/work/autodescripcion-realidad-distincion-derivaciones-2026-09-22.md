@@ -3188,33 +3188,33 @@ REV-07e permanece OPEN precisamente porque todavía no hemos elegido ni demostra
 
 Podemos hacer el adversario más fuerte evitando postular una relación actual sin genealogía propia. Considérese un carrier pre-indexado finito con tokens:
 
-$
+$$
 \{a,b,\rho,e\},
-$
+$$
 
 dos candidatos raíz singulares:
 
-$
+$$
 C_a=\{a\},
 \qquad
 C_b=\{b\},
-$
+$$
 
 y una instancia constitutiva que genera **la relación-token**, no sus relata:
 
-$
+$$
 \operatorname{ConstitutiveProd}(e,\{a,b\},\rho),
 \qquad
 \operatorname{PureOntRel}(\rho;\{a,b\}).
-$
+$$
 
 El no-free-endpoints guard se satisface porque ambos relata de $\rho$ están ya en el soporte $\{a,b\}$. PureOntRel sigue siendo estrictamente no productiva hacia $a$ o $b$:
 
-$
+$$
 \neg\operatorname{OntProd}(\rho,A,a),
 \qquad
 \neg\operatorname{OntProd}(\rho,A,b)
-$
+$$
 
 para todo soporte admisible $A$ formado por el otro relatum.
 
@@ -3227,25 +3227,25 @@ Supóngase además:
 
 Entonces:
 
-$
+$$
 \operatorname{RelIntegrable}^{\mathsf M}(C_a,C_b)
-$
+$$
 
 y por tanto:
 
-$
+$$
 \operatorname{JointRealizable}^{\mathsf M}(C_a,C_b).
-$
+$$
 
 Sin embargo, cualquier seed que pretenda contener conjuntamente $a$ y $b$ admite la partición que separa ambas raíces. Por (2), esa partición carece de ConstitutiveBridge; por tanto falla OriginUnity. Como (3) excluye una tercera base que genere ambas, no existe $\mathcal O_k$ tal que su GenClosure contenga fielmente los dos candidatos y satisfaga OntOrigin. Luego:
 
-$
+$$
 \boxed{
 \operatorname{JointRealizable}^{\mathsf M}(C_a,C_b)
 \land
 \neg\operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
 }
-$
+$$
 
 Por tanto **CGP no es derivable de la doctrina vigente**. Para recuperarlo habría que añadir una premisa nueva que descarte este modelo; no puede obtenerse de JointRealizable, PureOntRel, OntProd, RelSupportClosed ni OriginUnity tal como están definidos.
 
@@ -3255,37 +3255,37 @@ Este resultado es model-theoretic/arquitectónico, no una afirmación de que el 
 
 El contramodelo muestra que actualmente tenemos dos nociones distintas:
 
-$
+$$
 \operatorname{ContextUnity}^{\mathsf M}(C_a,C_b)
 := 
 \operatorname{JointRealizable}^{\mathsf M}(C_a,C_b),
-$
+$$
 
 y:
 
-$
+$$
 \operatorname{GeneUnity}^{\mathsf M}(C_a,C_b)
 :=
 \operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
-$
+$$
 
 La doctrina vigente solo demuestra:
 
-$
+$$
 \operatorname{GeneUnity}^{\mathsf M}
 \Rightarrow
 \operatorname{ContextUnity}^{\mathsf M},
-$
+$$
 
 mientras la conversa es precisamente CGP y queda refutada como **teorema derivable** por el contramodelo anterior:
 
-$
+$$
 \boxed{
 \operatorname{ContextUnity}^{\mathsf M}
 \not\Rightarrow_{\text{doctrina actual}}
 \operatorname{GeneUnity}^{\mathsf M}.
 }
-$
+$$
 
 Esto no obliga todavía a redefinir $R_i$. Sí obliga a dejar de usar «mismo marco/contexto» y «misma realidad genealógica» como sinónimos antes de resolver REV-07e.
 
