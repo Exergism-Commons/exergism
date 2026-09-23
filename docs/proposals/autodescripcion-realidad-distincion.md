@@ -1443,10 +1443,10 @@ Para un operador extensivo e idempotente, F1 + F3 bastan para elevar cotas a pun
 
 **Demostrado condicionalmente:**
 
-1. Ruta A: PON + $\mathrm{SigSmall}_i$ + $\mathrm{ActualSep}_i$ + $\operatorname{StructAdm}_i$ producen $\operatorname{SemTotal}_i(S_i^*)$.
+1. Ruta A: PON$_i$ + $\mathrm{SigSmall}_i$ + $\mathrm{ActualSep}_i$ + $\operatorname{StructAdm}^{\Lambda}_{i,q}$ producen $\operatorname{SemTotal}^{\Lambda}_{i,q}(S^{\Lambda,*}_{i,q})$; solo RS/RC permiten elevarlo a $\operatorname{SemTotal}_i$.
 2. Ruta B: CSet + CWF + CProcStable + $\mathrm{SigSmall}_{\mathcal C}$ + $\mathrm{ActualSep}_{\mathcal C}$ producen $\operatorname{SemTotal}_{\mathcal C}(S_q^{\mathcal C})$ sin suponer todavía que la clausura sea un régimen.
 3. K1–K3 producen un máximo semántico bajo las condiciones fundacionales declaradas.
-4. En Ruta A, RS + CRType + CD descargan condicionalmente OA del carrier; RC + CD descargan condicionalmente MC.
+4. En Ruta A, RS$^{gen}_{\Lambda,i}$ + CD descargan condicionalmente OA del carrier; RC$^{gen}_{\Lambda,i}$ + CD descargan condicionalmente MC.
 
 **No demostrado:**
 
@@ -1470,7 +1470,7 @@ REV-07 exige una configuración-originaria $\mathcal O_i$ que no pueda obtenerse
 
 Definimos normativamente:
 
-$$
+$
 \boxed{
 \operatorname{OriginCandidate}_i(\mathcal O_i)
 :\Longleftrightarrow
@@ -1478,21 +1478,23 @@ $$
 \land
 \mathrm{OriginUnity}_i(\mathcal O_i)
 \land
-\mathrm{RootClosed}_i(\mathcal O_i),
-$$
+\mathrm{RootClosed}_i(\mathcal O_i)
+}
+$
 
 y:
 
-$$
+$
+\boxed{
 \operatorname{OntOrigin}_i(\mathcal O_i)
 :\Longleftrightarrow
 \operatorname{OriginCandidate}_i(\mathcal O_i)
 \land
 \mathrm{GCExists}_i(\mathcal O_i)
 \land
-\mathrm{Irredundant}_i(\mathcal O_i).
+\mathrm{Irredundant}_i(\mathcal O_i)
 }
-$$
+$
 
 Los criterios de origen se separan en tres criterios pre-clausura y dos controles posteriores:
 
@@ -1592,11 +1594,11 @@ Así REV-07c queda explícita: debe demostrarse GCExists en el marco set/plural/
 Una vez fijada la genealogía:
 
 $$
-\operatorname{CoReal}_i(x,y)
+\operatorname{CoReal}_i(x_i,y_i)
 :\Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 \land
-\operatorname{Generated}^{*}_i(\mathcal O_i,y).
+\operatorname{Generated}^{*}_i(\mathcal O_i,y_i).
 $$
 
 Por tanto SameRegime deja de ser una noción obtenida por conectividad formal. La conectividad es ahora una **hipótesis de reconstrucción** de una unidad genealógica previamente caracterizada.
