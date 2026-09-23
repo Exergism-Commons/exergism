@@ -1545,41 +1545,41 @@ $$
 
 Por cierre de hechos reales:
 
-$$
-\operatorname{RealFact}_i(f)
+$
+\operatorname{RealFact}_i(f_i)
 \Rightarrow
-\operatorname{Real}_i(q)
+\operatorname{Real}_i(q_i)
 \land
-\operatorname{Real}_i(r).
-$$
+\operatorname{Real}_i(r_i).
+$
 
 Fijado además un seed ya tipado:
 
-$$
-\operatorname{Real}_i(q),
-$$
+$
+\operatorname{Real}_i(q_i),
+$
 
 la incompatibilidad de índice impide que una cadena finita cambie de índice entre aristas. Por inducción sobre la longitud del camino —incluido el caso de longitud cero—:
 
 $$
 \boxed{
-\operatorname{Real}_i(q)
+\operatorname{Real}_i(q_i)
 +
 \mathrm{EdgeTyped}_i
 +
-\mathrm{IndexIncompatibility}
+\mathrm{EXT\text{-}01}
 \Rightarrow
-\forall x[
-x\in[q]_{\sim}
+\forall x_i[
+x_i\in[q_i]_{\sim_i}
 \Rightarrow
-\operatorname{Real}_i(x)
+\operatorname{Real}_i(x_i)
 ]
 \Rightarrow
 \mathrm{RS}_{\Lambda}^{\mathrm{gen}}.
 }
 $$
 
-Por tanto, para la Ruta A, **sobreinclusión entre índices deja de ser el problema principal** siempre que la definición de $\Lambda_*$ mantenga EdgeTyped.
+Por tanto, para la Ruta A, **sobreinclusión entre índices deja de ser el problema principal** siempre que la definición de $\Lambda_*$ mantenga $\mathrm{EdgeTyped}_i$.
 
 La deuda fuerte es completeness: compartir índice/origen no implica que exista un camino finito de enlaces locales entre cualesquiera dos contenidos reales.
 
