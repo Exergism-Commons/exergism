@@ -1597,26 +1597,68 @@ $$
 
 Generated$^*$ permanece siempre definido relacionalmente mediante un testigo GenClosure; **solo** la abreviatura $\operatorname{Cl}^{G}_i(\mathcal O_i)$ requiere GCExists. Las demostraciones de extensividad, monotonía, minimalidad y el detalle fundacional están en `work/`.
 
-**REV-07f — cierre de una base genealógica plural.** Una GeneFamily $\mathfrak G_i$ es una familia metateórica **no vacía** de pares $G_{\alpha,i}=\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle$ que satisfacen GeneUnit en el mismo contexto ya justificado. Los solapamientos deben satisfacer OverlapCoherence. La pertenencia a $\mathfrak G_i$ es notación del metalenguaje: no introduce una colección ontológica dentro de $R_i$ y no puede usarse para demostrar retrospectivamente SharedOntSpace.
-
-La base extensional de la familia queda fijada por:
+**REV-07f — cierre de una base genealógica plural.** La familia es maquinaria **metateórica**, no un colector ontológico. La representamos como:
 
 $$
+\mathfrak G_i
+=
+\langle G_{\alpha,i}\rangle_{\alpha\in A},
+\qquad
+G_{\alpha,i}
+=
+\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle,
+$$
+
+donde $A$ es solo un parámetro de indexación del metalenguaje, ajeno al sort ontológico de $i$. La familia se forma únicamente después de que sus miembros hayan sido tipados en el mismo contexto; no puede usarse para demostrar retrospectivamente SharedOntSpace ni para colapsar índices incompatibles.
+
+Formalmente:
+
+$$
+\boxed{
+\begin{aligned}
+\operatorname{GeneFamily}_i(\mathfrak G_i)
+:\Longleftrightarrow\;&
+A\neq_{\mathsf M}\varnothing\\
+&\land
+\forall^{\mathsf M}\alpha\in A\;
+\operatorname{GeneUnit}_i(
+\mathcal O_{\alpha,i},
+C_{\alpha,i}
+)\\
+&\land
+\forall^{\mathsf M}\alpha,\beta\in A[
+\operatorname{GeneOverlap}_i(
+G_{\alpha,i},
+G_{\beta,i}
+)
+\Rightarrow
+\operatorname{OverlapCoherence}_i(
+G_{\alpha,i},
+G_{\beta,i}
+)
+].
+\end{aligned}
+}
+$$
+
+Los cuantificadores sobre $\alpha,\beta$ pertenecen al metalenguaje y no introducen objetos en $R_i$. La fundación concreta de $A$ —set, clase, pluralidad u otra presentación— queda subordinada a REV-07c cuando afecte a existencia de closure.
+
+La base extensional de la familia queda fijada, sin elegirla post hoc, por:
+
+$$
+\boxed{
 \operatorname{FamilyBase}_i(\mathfrak G_i,B_i)
 :\Longleftrightarrow
 \forall x_i[
 x_i\in B_i
 \Longleftrightarrow
-\exists^{\mathsf M}G_{\alpha,i}\in\mathfrak G_i\;
-\exists\mathcal O_{\alpha,i}\exists C_{\alpha,i}[
-G_{\alpha,i}=\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle
-\land
+\exists^{\mathsf M}\alpha\in A\;
 x_i\in C_{\alpha,i}
-]
 ].
+}
 $$
 
-La closure del régimen no es esa unión. Debe volver a cerrar el mismo operador generativo para recoger producción transversal:
+La closure del régimen **no** es esa unión. Debe volver a cerrar el mismo operador generativo para recoger producción transversal:
 
 $$
 \boxed{
@@ -1625,8 +1667,10 @@ $$
 :\Longleftrightarrow
 \exists B_i[
 &\operatorname{FamilyBase}_i(\mathfrak G_i,B_i)
-\land B_i\preceq C_i
-\land \Gamma_i(C_i)=C_i\\
+\land
+B_i\preceq C_i
+\land
+\Gamma_i(C_i)=C_i\\
 &\land
 \forall Y_i[
 B_i\preceq Y_i
@@ -1645,23 +1689,27 @@ Definimos:
 $$
 \mathrm{RGCExists}_i(\mathfrak G_i)
 :\Longleftrightarrow
-\exists C_i\;\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i),
+\exists C_i\;
+\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i),
 $$
 
 y RegimeGenerated$^*$ como en §1.6.
 
-Para bloquear family stuffing:
+Para bloquear family stuffing usamos la relación metateórica $\operatorname{ProperSubfamily}^{\mathsf M}$, no el orden interno de configuraciones-originarias:
 
 $$
 \boxed{
 \begin{aligned}
 \mathrm{FamilyIrredundant}_i(\mathfrak G_i)
 :\Longleftrightarrow
-\neg\exists^{\mathsf M}\mathfrak G'_i\prec\mathfrak G_i[
-&\operatorname{GeneFamily}_i(\mathfrak G'_i)
+\neg\exists^{\mathsf M}\mathfrak G'_i[
+&\operatorname{ProperSubfamily}^{\mathsf M}
+(\mathfrak G'_i,\mathfrak G_i)
 \land
-\mathrm{RGCExists}_i(\mathfrak G'_i)\\
+\operatorname{GeneFamily}_i(\mathfrak G'_i)\\
 &\land
+\mathrm{RGCExists}_i(\mathfrak G'_i)
+\land
 \forall x_i[
 \operatorname{RegimeGenerated}^{*}_i(\mathfrak G'_i,x_i)
 \Longleftrightarrow
@@ -1688,8 +1736,7 @@ $$
 
 Cada miembro sigue teniendo que ser una GeneUnit independientemente justificada por OntOrigin + GenClosure. Si un token derivado se intenta reetiquetar como origen singleton, RootClosed/OntProd debe rechazarlo cuando su producción esté correctamente representada; si OntProd omite esa producción, el fallo pertenece a REV-07b, no a REV-07f. Una pluralidad de raíces realmente primitivas e independientes, en cambio, es precisamente un caso multigeneal legítimo.
 
-La existencia fundacional de RegimeClosure hereda REV-07c: la definición no presupone que toda familia admisible posea automáticamente un least fixed point.
-
+La existencia fundacional de RegimeClosure hereda REV-07c: la definición no presupone que toda GeneFamily admisible posea automáticamente un least fixed point.
 
 ### 5.2. Co-realidad derivada
 
