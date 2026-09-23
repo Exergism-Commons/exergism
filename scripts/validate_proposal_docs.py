@@ -156,31 +156,108 @@ def validate_archive(text: str) -> None:
         fail("Historical pre-consolidation archive must carry a visible SUPERSEDED/non-normative banner")
 
 
+def markdown_heading(line: str) -> tuple[int, str] | None:
+    match = re.match(r"^ {0,3}(#{1,6})(?:[ \t]+|$)(.*)$", line)
+    if not match:
+        return None
+
+    title = match.group(2).strip()
+    closing = re.match(r"^(.*?)[ \t]+#+[ \t]*$", title)
+    if closing:
+        title = closing.group(1).rstrip()
+
+    return len(match.group(1)), title
+
+
 def markdown_section(text: str, heading: str) -> str:
+    target = markdown_heading(heading)
+    if target is None:
+        fail(f"Invalid Markdown heading passed to markdown_section: {heading}")
+    target_level, target_title = target
+
     outside = markdown_lines_outside_fences(text)
     matches = [
         position
         for position, (_, line) in enumerate(outside)
-        if line == heading
+        if markdown_heading(line) == (target_level, target_title)
     ]
     if not matches:
         fail(f"Missing required section heading outside Markdown fences: {heading}")
     if len(matches) != 1:
         fail(f"Section heading must occur exactly once outside Markdown fences: {heading}")
 
-    match = re.match(r"^(#{1,6})\s+", heading)
-    if not match:
-        fail(f"Invalid Markdown heading passed to markdown_section: {heading}")
-    level = len(match.group(1))
-
     section: list[str] = []
     for _, line in outside[matches[0] :]:
-        next_heading = re.match(r"^(#{1,6})\s+", line)
-        if section and next_heading and len(next_heading.group(1)) <= level:
+        next_heading = markdown_heading(line)
+        if section and next_heading and next_heading[0] <= target_level:
             break
         section.append(line)
 
     return "\n".join(section)
+
+
+def display_math_blocks(text: str) -> list[str]:
+    blocks: list[str] = []
+    current: list[str] | None = None
+
+    for line in text.splitlines():
+        if line.strip() == "$":
+            if current is None:
+                current = []
+            else:
+                blocks.append("\n".join(current))
+                current = None
+            continue
+
+        if current is not None:
+            current.append(line)
+
+    if current is not None:
+        fail("Unclosed display-math block inside validated Markdown section")
+
+    return blocks
+
+
+def first_display_math_after(text: str, marker: str) -> str:
+    if marker not in text:
+        fail(f"Missing required marker before display-math contract: {marker}")
+    tail = text.split(marker, 1)[1]
+    blocks = display_math_blocks(tail)
+    if not blocks:
+        fail(f"Missing display-math block after marker: {marker}")
+    return blocks[0]
+
+
+def split_top_level_tex_conjuncts(text: str) -> list[str]:
+    parts: list[str] = []
+    start = 0
+    brace_depth = 0
+    paren_depth = 0
+    index = 0
+
+    while index < len(text):
+        char = text[index]
+        if char == "{":
+            brace_depth += 1
+        elif char == "}":
+            brace_depth = max(0, brace_depth - 1)
+        elif char == "(":
+            paren_depth += 1
+        elif char == ")":
+            paren_depth = max(0, paren_depth - 1)
+
+        if brace_depth == 0 and paren_depth == 0:
+            if char in "+,":
+                parts.append(text[start:index].strip())
+                start = index + 1
+            elif text.startswith(r"\land", index):
+                parts.append(text[start:index].strip())
+                index += len(r"\land") - 1
+                start = index + 1
+        index += 1
+
+    parts.append(text[start:].strip())
+    return [part for part in parts if part]
 
 
 def validate_index_typing(text: str) -> None:
@@ -252,31 +329,52 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         technical,
         "#### RT-07-XP — Transversal Production Test",
     )
-    xp_contracts = (
-        (
-            r"\\mathrm\{RGCExists\}_k\s*\(\s*\\mathfrak\s+G_k\s*\)",
-            "RGCExists premise",
-        ),
-        (
-            r"\\operatorname\{RegimeClosure\}_k\s*\(\s*"
-            r"\\mathfrak\s+G_k\s*,\s*C_k\s*\)",
-            "explicit RegimeClosure witness",
-        ),
-        (
-            r"\\bigcup_\s*\\alpha\s+C_\{\\alpha,k\}\s*"
-            r"\\subsetneq\s*C_k",
-            "strict local-union inclusion",
-        ),
+
+    rgc_pattern = (
+        r"\\mathrm\s*\{RGCExists\}_k\s*\(\s*"
+        r"\\mathfrak\s+G_k\s*\)\s*,?"
     )
-    for pattern, description in xp_contracts:
-        if not re.search(pattern, xp_section, flags=re.MULTILINE):
-            fail(
-                "REV-07f regression: RT-07-XP must bind its contracts inside "
-                f"its own test section; missing {description}"
-            )
+    rgc_formula = first_display_math_after(
+        xp_section,
+        "Supongamos ahora explícitamente:",
+    )
+    if not re.fullmatch(rgc_pattern, rgc_formula, flags=re.MULTILINE):
+        fail(
+            "REV-07f regression: RT-07-XP must assert an affirmative RGCExists "
+            "premise in the first display block after its assumption marker"
+        )
+
+    closure_pattern = (
+        r"\\operatorname\s*\{RegimeClosure\}_k\s*\(\s*"
+        r"\\mathfrak\s+G_k\s*,\s*C_k\s*\)\s*\.?"
+    )
+    closure_formula = first_display_math_after(
+        xp_section,
+        "y fijemos un testigo $C_k$ tal que:",
+    )
+    if not re.fullmatch(closure_pattern, closure_formula, flags=re.MULTILINE):
+        fail(
+            "REV-07f regression: RT-07-XP must bind an affirmative explicit "
+            "RegimeClosure witness in its witness display block"
+        )
+
+    strict_formula = first_display_math_after(
+        xp_section,
+        "Por tanto:",
+    )
+    if not re.search(
+        r"\\bigcup_\s*\\alpha\s+C_\{\\alpha,k\}\s*"
+        r"\\subsetneq\s*C_k",
+        strict_formula,
+        flags=re.MULTILINE,
+    ):
+        fail(
+            "REV-07f regression: RT-07-XP must conclude strict inclusion of the "
+            "local-closure union in the explicit regime-closure witness"
+        )
 
     if re.search(
-        r"\\operatorname\{RegimeClosure\}_k\s*\(\s*"
+        r"\\operatorname\s*\{RegimeClosure\}_k\s*\(\s*"
         r"\\mathfrak\s+G_k\s*\)\s*\.",
         xp_section,
         flags=re.MULTILINE,
@@ -291,32 +389,71 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         "#### 8.5. `ExistsR` como metasentencia",
     )
     presentation_marker = "y una presentación semántica produce únicamente:"
-    if presentation_marker not in presentation_section:
-        fail("REV-07f regression: §8.5 is missing the active presentation bridge")
-    presentation_bridge = presentation_section.split(presentation_marker, 1)[1]
-    presentation_contracts = (
+    presentation_formula = first_display_math_after(
+        presentation_section,
+        presentation_marker,
+    )
+
+    if presentation_formula.count(r"\Rightarrow") != 1:
+        fail(
+            "REV-07f regression: active §8.5 presentation contract must contain "
+            "exactly one forward \\Rightarrow implication"
+        )
+    if r"\Leftarrow" in presentation_formula or r"\Leftrightarrow" in presentation_formula:
+        fail(
+            "REV-07f regression: active §8.5 presentation contract has the wrong "
+            "implication direction"
+        )
+
+    antecedent, consequent = presentation_formula.split(r"\Rightarrow", 1)
+    antecedent_parts = split_top_level_tex_conjuncts(antecedent)
+
+    premise_patterns = (
         (
-            r"\\operatorname\{RegimeTotal\}_i\s*\(\s*"
+            r"\\operatorname\s*\{RegimeTotal\}_i\s*\(\s*"
             r"\\mathfrak\s+G_i\s*,\s*R_i\s*\)",
             "RegimeTotal premise",
         ),
         (
-            r"\\operatorname\{SemTotal\}_i\s*\(\s*S_i\s*\)",
+            r"\\operatorname\s*\{SemTotal\}_i\s*\(\s*S_i\s*\)",
             "SemTotal premise",
         ),
-        (r"\\mathrm\{OTB\}_i", "OTB bridge premise"),
-        (
-            r"\\operatorname\{Presents\}_i\s*\(\s*S_i\s*,\s*R_i\s*\)",
-            "Presents conclusion",
-        ),
+        (r"\\mathrm\s*\{OTB\}_i", "OTB bridge premise"),
     )
-    for pattern, description in presentation_contracts:
-        if not re.search(pattern, presentation_bridge, flags=re.MULTILINE):
+    if len(antecedent_parts) != len(premise_patterns):
+        fail(
+            "REV-07f regression: §8.5 presentation antecedent must contain exactly "
+            "RegimeTotal, SemTotal, and OTB as top-level premises"
+        )
+
+    unmatched = antecedent_parts.copy()
+    for pattern, description in premise_patterns:
+        match_index = next(
+            (
+                index
+                for index, part in enumerate(unmatched)
+                if re.fullmatch(pattern, part, flags=re.MULTILINE)
+            ),
+            None,
+        )
+        if match_index is None:
             fail(
-                "REV-07f regression: active §8.5 presentation bridge is missing "
-                f"{description}"
+                "REV-07f regression: active §8.5 presentation antecedent is missing "
+                f"an affirmative {description}"
             )
-    if re.search(r"\\operatorname\{GeneTotal\}_i", presentation_bridge):
+        unmatched.pop(match_index)
+
+    if not re.fullmatch(
+        r"\\operatorname\s*\{Presents\}_i\s*\(\s*S_i\s*,\s*R_i\s*\)\s*\.?",
+        consequent.strip(),
+        flags=re.MULTILINE,
+    ):
+        fail(
+            "REV-07f regression: active §8.5 presentation implication must conclude "
+            "exactly Presents_i(S_i,R_i)"
+        )
+
+    if re.search(r"\\operatorname\s*\{GeneTotal\}_i", presentation_formula):
         fail(
             "REV-07f regression: active §8.5 presentation bridge again requires "
             "GeneTotal instead of RegimeTotal"
