@@ -205,11 +205,25 @@ En la propuesta revisada estas referencias sirven para distinguir dos cosas: la 
 
 ## 6. Compacidad, diagramas y teoría de modelos
 
+- **Abraham Robinson (1963), _Introduction to Model Theory and to the Metamathematics of Algebra_. North-Holland.** Antecedente clásico del uso sistemático de diagramas en teoría de modelos. La construcción vigente de S usa solo el **diagrama positivo**: las sentencias atómicas verdaderas una vez nombrados los elementos del carrier; no añade automáticamente los literales negativos del diagrama atómico completo.
+- **Wilfrid Hodges (1993), _Model Theory_. Cambridge University Press, §1.4.** Presenta diag(A) como los literales cerrados verdaderos y diag⁺(A) como las sentencias atómicas verdaderas; su Diagram Lemma relaciona preservación del diagrama positivo con homomorfismos y del diagrama completo con embeddings.
 - **Teorema de compacidad de primer orden** — si toda parte finita de una teoría de primer orden tiene modelo, la teoría completa tiene modelo.
 - **Lema del diagrama** — un modelo del diagrama de una estructura da un embedding de la estructura en el modelo.
 - Referencia panorámica: **“First-order Model Theory”, Stanford Encyclopedia of Philosophy**: https://plato.stanford.edu/entries/modeltheory-fo/
 
-**Consecuencia:** compacidad produce un modelo. No produce por sí sola un dominio ontológicamente actual. El puente de modelo formal a actualidad debe aparecer como hipótesis independiente.
+### Uso en las rutas semánticas
+
+Para cualquier carrier T de la propuesta:
+
+$
+\operatorname{Diag}^{+}_{\mathcal L}(T)
+:=
+\{\varphi\in\operatorname{Atoms}_{\mathcal L}(T)\mid\operatorname{Actual}(\varphi)\}.
+$
+
+Por tanto $\Phi^{\mathrm{all}}$ no es una colección ad hoc: es el **diagrama atómico positivo actual** del carrier, bajo la firma elegida y la interpretación de Actual. Esto no convierte S en una realidad ni demuestra RA/Presents: el Diagram Lemma es una herramienta representacional, no un puente ontológico.
+
+**Consecuencia:** compacidad o teoría de diagramas produce/controla modelos y morfismos. No produce por sí sola un dominio ontológicamente actual. El puente de modelo formal a actualidad debe aparecer como hipótesis independiente.
 
 ## 7. Colímites dirigidos, presentabilidad y accesibilidad
 
