@@ -1496,49 +1496,109 @@ $$
 }
 $$
 
-Los criterios de origen se separan en tres criterios pre-clausura y dos controles posteriores:
+Los criterios vigentes son:
 
 - **OU1 / OriginConfig:** $\mathcal O_i$ es una configuración-token ontológicamente instanciada, no una lista o suma representacional.
-- **OU2 / OriginUnity:** toda partición no trivial de $\operatorname{Seed}_i(\mathcal O_i)$ está cruzada por estructura integrativa real $\operatorname{Bind}_i$ caracterizada sin usar $R_i$.
 
-Bind queda sometido a una disciplina independiente:
-
-- **B1:** es token-specific e interno a la configuración-originaria;
-- **B2:** participa constitutivamente en la identidad, persistencia o capacidad generativa conjunta de $\mathcal O_i$;
-- **B3:** no basta una interacción causal posterior entre linajes ya formados;
-- **B4:** no puede definirse mediante $R_i$, CoReal, Generated$^*$ ni «pertenecer al mismo índice»;
-- **B5:** debe ser invariante bajo recodificación fiel.
-
-Mera proximidad, semejanza, compartir leyes o una fusión mereológica sin dependencia integrativa no cuentan como Bind.
-- **OU3 / RootClosed:** si un constituyente del seed tiene una producción ontológica independiente $\operatorname{OntProd}_i(e_i,A_i,b_i)$, todos sus antecedentes pertenecen al propio seed; se permiten ciclos internos, no entradas productivas externas.
-- **GCExists:** existe una least generative closure en el marco fundacional adoptado.
-- **OU4 / Irredundant:** ninguna subconfiguración propia que siga siendo una OriginConfig unificada genera la misma clausura, salvo equivalencia de origen justificada.
-
-El lema anti-agregación demostrado en `work/` da:
+**OU2 / OriginUnity se define, no solo se usa como condición suficiente.** Introducimos hechos de integración independientes del candidato:
 
 $$
-\mathrm{NoBind}(A_i,B_i)
+\operatorname{UnitFact}_i(f_i,U_i),
+$$
+
+donde $U_i$ son sus relata. UnitFact debe ser token-specific, ontológicamente integrativo, invariante bajo recodificación y definido sin mencionar $\mathcal O_i$, Seed, OriginConfig, OriginUnity, $R_i$, CoReal, Generated$^*$ ni «mismo índice». Mera proximidad, semejanza, compartir leyes o fusión mereológica sin dependencia integrativa no cuentan.
+
+Entonces:
+
+$$
+\boxed{
+\operatorname{OriginUnity}_i(\mathcal O_i)
+:\Longleftrightarrow
+\forall A_i,B_i[
+\operatorname{Partition}_i(
+\operatorname{Seed}_i(\mathcal O_i);A_i,B_i
+)
+\Rightarrow
+\exists f_i\exists U_i[
+\operatorname{UnitFact}_i(f_i,U_i)
+\land
+U_i\cap A_i\neq\varnothing
+\land
+U_i\cap B_i\neq\varnothing
+]
+].
+}
+$$
+
+La orientación interna de UnitFact es irrelevante para este test de conectividad: basta que sus relata crucen la partición. Así se admiten relaciones constitutivas/de dependencia asimétricas sin exigir dos direcciones.
+
+El lema anti-agregación queda ahora inmediato:
+
+$$
+\boxed{
+\mathrm{NoUnitFactBridge}(A_i,B_i)
 \Rightarrow
 \neg\operatorname{OriginUnity}_i(A_i\cup B_i).
+}
 $$
 
-Por tanto escribir dos raíces independientes juntas no crea un origen común.
+- **OU3 / RootClosed:** usa la relación objetivo independiente $\operatorname{OntProd}_i$. Para no omitir el propio evento productor, definimos un footprint ontológico:
 
-La generación primaria usa hipereventos:
+$$
+\operatorname{GenFoot}_i(e_i,A_i,b_i)
+\succeq
+A_i\cup\{e_i,b_i\}.
+$$
+
+y exigimos:
+
+$$
+b_i\in\operatorname{Seed}_i(\mathcal O_i)
+\land
+\operatorname{OntProd}_i(e_i,A_i,b_i)
+\Rightarrow
+\operatorname{GenFoot}_i(e_i,A_i,b_i)
+\preceq
+\operatorname{Seed}_i(\mathcal O_i).
+$$
+
+Esto permite ciclos internos pero impide que un evento o antecedente externo genere un constituyente del origen.
+
+- **GCExists:** existe una least generative closure en el marco fundacional adoptado.
+
+- **OU4 / Irredundant:** solo compiten subconfiguraciones que también satisfacen los prerrequisitos de origen:
+
+$$
+\boxed{
+\mathrm{Irredundant}_i(\mathcal O_i)
+:\Longleftrightarrow
+\neg\exists\mathcal O'_i\prec\mathcal O_i[
+\operatorname{OriginCandidate}_i(\mathcal O'_i)
+\land
+\mathrm{GCExists}_i(\mathcal O'_i)
+\land
+\operatorname{Cl}^{G}_i(\mathcal O'_i)
+=
+\operatorname{Cl}^{G}_i(\mathcal O_i)
+].
+}
+$$
+
+Así un singleton extraído de un ciclo no derrota irredundancia si deja de ser RootClosed.
+
+La generación implementada usa hipereventos:
 
 $$
 \operatorname{GenEvent}_i(e_i,A_i,b_i),
 $$
 
-con antecedentes conjuntos $A_i$. GE1–GE6 exigen token-specificity, productividad ontológica, integridad conjunta, independencia del target, invariancia representacional y justificación separada de cada modo generativo.
-
-Para no hacer autorreferente ese inventario se distingue una relación objetivo independiente:
+con antecedentes conjuntos $A_i$. La relación objetivo independiente es:
 
 $$
-\operatorname{OntProd}_i(e_i,A_i,b_i),
+\operatorname{OntProd}_i(e_i,A_i,b_i).
 $$
 
-caracterizada sin usar $R_i$ ni Generated$^*$. La implementación generativa debe satisfacer:
+Se exigen:
 
 $$
 \mathrm{GenSound}_i:
@@ -1556,24 +1616,26 @@ $$
 \operatorname{GenEvent}_i(e_i,A_i,b_i).
 $$
 
-Así RootClosed se evalúa contra OntProd; $\Gamma_i$ puede usar GenEvent solo bajo esta obligación de adecuación.
+$\operatorname{GenStep}_i$ queda solo como proyección auxiliar; no es regla suficiente de clausura.
 
-$\operatorname{GenStep}_i(a_i,b_i)$ queda solo como proyección auxiliar; el contraejemplo $\{a_i,b_i\}\to c_i$ demuestra que no puede usarse como regla general de clausura.
-
-El operador generativo es:
+El operador añade el footprint completo del evento:
 
 $$
+\boxed{
 \Gamma_i(X_i)
 :=
 X_i
 \cup
-\{b_i\mid
-\exists e_i\exists A_i[
+\bigcup\{
+\operatorname{GenFoot}_i(e_i,A_i,b_i)
+\mid
 \operatorname{GenEvent}_i(e_i,A_i,b_i)
 \land
 A_i\preceq X_i
-]\}.
+\}.
+}
 $$
+
 
 La existencia de una menor clausura **no se presupone por notación**. Introducimos:
 
