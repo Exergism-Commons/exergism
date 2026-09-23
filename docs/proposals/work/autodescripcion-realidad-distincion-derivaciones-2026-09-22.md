@@ -7223,7 +7223,7 @@ Eso no crea un hecho real que relacione ambos contextos.
 
 ##### Cluster-$R$
 
-Cluster-$R$ solo se usa antes de fijar el tipado definitivo. Un CommonGround independientemente justificado implica equivalencia de contexto; un hecho integrador solo establece JointRealizable. CGP no es derivable y la ruta candidata actual para explicar ContextUnity sin GeneUnity es Context Assembly.
+Cluster-$R$ solo se usa antes de fijar el tipado definitivo. CommonGround implica SharedOntSpace pero no lo agota. Una integración estable debe clasificarse como SharedOntSpace preexistente o ContextGenesis constitutiva; Context Assembly/$\Xi$ es maquinaria formal subordinada a esa bifurcación.
 
 ##### Verdad entre contextos
 
