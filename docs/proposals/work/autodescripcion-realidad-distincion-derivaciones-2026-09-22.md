@@ -5573,49 +5573,63 @@ Esta ruta no se extiende automáticamente a $R_{\mathrm{abs}}$: la comprensión 
 
 Así REV-24d pasa a PARTIAL: existe una derivación condicional precisa, pero la PR aún no adopta definitivamente PFO/PFO+ ni una variante crítica como base formal.
 
-#### 8.4. Esquema objetivo de OTB
+#### 8.4. Esquema vigente de presentación
 
-La obligación conjunta se registra como:
+El esquema pre-genealógico que hacía que REV-24 produjese un $R_i$ queda **SUPERSEDED**.
+
+Fijado un parámetro de contexto $i$ y una realidad ya justificada:
+
+$$
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i),
+$$
+
+REV-24 tiene únicamente el target:
 
 $$
 \boxed{
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
++
 \operatorname{SemTotal}_i(S_i)
 +
-\mathrm{OA}_i(S_i;q)
+\mathrm{OA}_i(S_i;\mathcal O_i)
 +
-\mathrm{MC}_i(S_i;q)
+\mathrm{MC}_i(S_i;\mathcal O_i)
 +
-\mathrm{RA}_i(S_i)
-+
-\mathrm{SR}_i(q)
+\mathrm{RA}_i(S_i,R_i)
 \Rightarrow
-\exists R_i
-[
-\operatorname{Presents}_i(S_i,R_i)
-\land
-\operatorname{OntTotal}_i(R_i)
-].
+\operatorname{Presents}_i(S_i,R_i).
 }
 $$
 
-Este esquema **no está demostrado**. $\mathrm{OTB}_i$ abrevia una justificación independiente suficiente para obtenerlo.
+$\mathrm{OTB}_i$ abrevia una justificación suficiente de OA/MC/RA dentro de ese contexto. Nunca cuantifica sobre índices ni produce existencia ontológica.
 
-La relación $\operatorname{Presents}_i(S,R)$ no puede definirse como «$R$ es total y $S$ lo describe», porque eso haría trivial el esquema. Debe caracterizarse mediante denotación, pertenencia independiente y preservación estructural.
+#### 8.5. `ExistsR` como metasentencia
 
-#### 8.5. Consecuencia conceptual vigente
+El símbolo $i$ es metavariable de contexto, no término del lenguaje objeto.
 
-La existencia ontológica no se obtiene desde la semántica.
-
-El target es:
+Se introduce la abreviatura:
 
 $$
+\exists^{\mathsf M} i\;\Phi_i
+$$
+
+para «hay una instanciación admisible del contexto $i$ que satisface $\Phi_i$». No se postula un dominio $I$ de índices.
+
+Entonces:
+
+$$
+\boxed{
 \operatorname{ExistsR}
-:=
-\exists i\exists\mathcal O_i\exists R_i\;
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
+:\Longleftrightarrow
+\exists^{\mathsf M} i\;
+\bigl(
+\exists\mathcal O_i\exists R_i\;
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\bigr).
+}
 $$
 
-REV-07 debe justificar esa GeneTotal. REV-24 solo puede añadir una presentación:
+y una presentación semántica produce únicamente:
 
 $$
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i)
@@ -5624,58 +5638,68 @@ $$
 +
 \mathrm{OTB}_i
 \Rightarrow
-\operatorname{Presents}_i(S_i,R_i)
-\Rightarrow
-\operatorname{WitnessedR}.
+\operatorname{Presents}_i(S_i,R_i).
 $$
 
-La antigua inferencia PON + SemTotal + OTB ⇒ ExistsRegR queda SUPERSEDED.
+#### 8.6. Metaontología de contextos
 
-### 8.6. REV-26 — metaontología de índices, no target de existencia
-
-REV-26 deja de ser una obligación para demostrar $\operatorname{ExistsR}$.
-
-La ontología primaria usa:
+Los parámetros $i,j$ no son elementos de una colección ontológica. La incompatibilidad se expresa mediante el juicio metateórico:
 
 $$
-\operatorname{Real}_i(x)
-\Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x).
+i\mathrel{\#}j.
 $$
 
-Los índices genuinos son ontológicamente incompatibles. En el metalenguaje:
+Para $i\#j$, aplicar un predicado de $j$ a un término de tipo $i$ es mal tipado. No se expresa como una falsedad:
 
 $$
-i\neq j
-\Rightarrow
-\neg\operatorname{CrossRealFact}(i,j)
-\land
-\neg\operatorname{CommonOntOrigin}(i,j).
+\operatorname{Real}_j(x_i)
 $$
 
-#### 8.6.1. One-$R$
+no es una fórmula válida.
 
-One-$R$ significa que existe exactamente un índice ontológico genuino.
+##### One-$R$
 
-#### 8.6.2. Many-$R$
+One-$R$ significa que toda pareja de realizaciones admisibles de GeneTotal que el metalenguaje compare resulta equivalente bajo:
 
-Many-$R$ significa que existen al menos dos índices genuinos. No necesita una condición extra de aislamiento: el aislamiento ontológico está incorporado en el tipo de índice.
+$$
+i\simeq_{\mathrm{idx}}j.
+$$
 
-#### 8.6.3. Cluster-$R$
+##### Many-$R$
 
-Cluster-$R$ solo se aplica a candidatos pre-indexados. Si dos candidatos tienen un hecho transversal u origen común, deben recibir el mismo índice. Por tanto genuine Many-$R$ no puede colapsar posteriormente.
+Many-$R$ significa que el metalenguaje dispone de dos realizaciones admisibles con:
 
-#### 8.6.4. Metalenguaje
+$$
+i\mathrel{\#}j.
+$$
 
-El metalenguaje usa contenido tipado $\langle i,x\rangle$. Esta representación comparativa no constituye una realidad superior ni un $R_{\mathrm{abs}}$.
+Eso no crea un hecho real que relacione ambos contextos.
 
-AG/APC/NoAbsFinality quedan como extensiones opcionales sobre la expresividad del metalenguaje global, no como premisas de ExistsR.
+##### Cluster-$R$
 
-#### 8.6.5. Consecuencia epistemológica
+Cluster-$R$ solo se usa antes de fijar el tipado definitivo. Un origen/hecho integrador entre dos candidatos implica que deben recibir el mismo contexto.
 
-Si Many-$R$ es verdadero, ningún $R_i$ puede contener un hecho real que certifique otro índice $j\neq i$, porque tal hecho sería transversal y violaría la incompatibilidad de índice.
+##### Verdad entre contextos
 
-Así, One-$R$/Many-$R$ pueden ser metateóricamente distintos y sin embargo no ser discriminables mediante evidencia real interna a un índice.
+Para $p_i\in\mathcal L_i$, una comparación con $j$ exige una traducción metalingüística:
+
+$$
+\tau_{ij}:\mathcal L_i\rightsquigarrow\mathcal L_j.
+$$
+
+Puede darse:
+
+$$
+\operatorname{True}_i(p_i)
+\qquad\text{y}\qquad
+\operatorname{False}_j(\tau_{ij}(p_i)),
+$$
+
+sin contradicción transversal, porque no existe un mismo $p$ bien tipado en ambos contextos.
+
+##### Consecuencia epistemológica
+
+Si $i\#j$, ninguna evidencia real de $i$ puede tener contenido de tipo $j$. Por tanto Many-$R$ no puede certificarse internamente mediante un hecho transversal.
 
 
 ### 9. Zorn deja de ser necesario para SemTotal
@@ -5701,7 +5725,7 @@ Las dos construcciones semánticas tienen premisas distintas y no deben mezclars
 
 La existencia ontológica **local** pertenece a REV-07: $\operatorname{OntOrigin}_i$ + reglas generativas independientes + clausura + scope realization deben justificar $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$. REV-24a/b/c se añaden después para justificar que $S_i$ presenta ese $R_i$.
 
-REV-26 queda como extensión metaontológica no bloqueante: One-$R$/Many-$R$, generalidad entre índices y expresividad del metalenguaje. No añade una premisa necesaria a $\operatorname{ExistsR}$.
+REV-26 queda como extensión metateórica no bloqueante: One-$R$/Many-$R$ y expresividad del metalenguaje. Los índices son parámetros de contexto, no entidades cuantificadas por el lenguaje objeto.
 
 ### 11. Emergencia y existencia
 
@@ -5711,6 +5735,6 @@ $$
 \operatorname{EClosed}_i(S_i^*).
 $$
 
-Tampoco la emergencia resuelve $\mathrm{OTB}_i$ ni REV-26. Por ello no debe afirmarse que «la emergencia demuestra que existe $R$»; como máximo participa en la propiedad EClosed de una presentación local.
+Tampoco la emergencia resuelve la existencia genealógica de REV-07 ni la presentación de REV-24. Por ello no debe afirmarse que «la emergencia demuestra que existe $R$»; como máximo participa en la propiedad EClosed de una presentación tipada.
 
 ---
