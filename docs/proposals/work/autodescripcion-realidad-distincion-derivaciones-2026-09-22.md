@@ -2632,7 +2632,7 @@ Debe satisfacer:
 - **POR1 / actuality:** $\rho_i$ es una instancia actual, no mera posibilidad de relación;
 - **POR2 / token-specific:** la instancia obtiene entre esos relata concretos;
 - **POR3 / non-representational:** no es solo una relación entre descripciones/modelos;
-- **POR4 / non-productive orientation:** de $\operatorname{PureOntRel}_i(\rho_i;U_i)$ no se sigue $\operatorname{OntProd}_i(\rho_i,A_i,x_i)$ para ningún $x_i\preceq U_i$ por el mero hecho de ser relatum;
+- **POR4 / non-productive orientation:** para todo $x_i\preceq U_i$ y soporte $A_i\preceq U_i\setminus\{x_i\}$, $\neg\operatorname{OntProd}_i(\rho_i,A_i,x_i)$. Si aparece una orientación CAU/CON/GRD/PRC —o futura familia productiva— la instancia deja de contar como PureOntRel;
 - **POR5 / support footprint:** existe $\operatorname{RelFoot}_i(\rho_i;U_i)$ con $U_i\cup\{\rho_i\}\preceq\operatorname{RelFoot}_i(\rho_i;U_i)$;
 - **POR6 / candidate independence:** PureOntRel/RelFoot no mencionan Seed, OntOrigin, $R_i$, CoReal, SameRegime, CommonGround ni CGP;
 - **POR7 / recoding invariance:** recodificaciones fieles preservan la instancia y su footprint.
@@ -2694,6 +2694,8 @@ U_i\setminus\{b_i\}\preceq A_i.
 $$
 
 Así, si el target es la propia relación $\rho_i$, todos sus relata deben estar ya disponibles; si el target $b_i$ es uno de los relata, los demás deben estar entre los antecedentes. La mera incidencia nunca introduce otro endpoint. Si relación y relata son genuinamente co-constitutivos por una estructura más fuerte, el caso deja de ser puro y debe justificarse mediante CON/GRD y, para OriginUnity, mediante EssConDep/ConstitutiveBridge.
+
+En particular, PureOntRel **no puede ser por sí sola** el ConstitutiveBridge que convierta una suma de raíces en un origen único. RelSupportClosed garantiza well-formedness del hecho relacional; OriginUnity sigue exigiendo dependencia constitutiva esencial bilateral independiente.
 
 Consecuencia: no hace falta introducir por ahora una segunda clausura $Cl^{Rel}$. Las relaciones actuales son contenido ontológico y sus footprints deben estar bien formados, pero la incidencia pura no añade nuevos relata a la genealogía.
 
