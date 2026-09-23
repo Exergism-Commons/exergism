@@ -2023,7 +2023,39 @@ UnitFact debe satisfacer:
 - **UF4 / target-independent:** no menciona $R_i$, CoReal, Generated$^*$, SameRegime ni «mismo índice»;
 - **UF5 / invariant:** recodificaciones fieles preservan la instancia.
 
-No bastan semejanza, proximidad, compartir leyes, representación conjunta ni fusión mereológica sin dependencia integrativa.
+Eso todavía no distingue una integración originaria de una convergencia tardía. Introducimos por separado:
+
+$$
+\operatorname{OriginConstitutive}_i(f_i,U_i)
+$$
+
+como predicado objetivo que debe caracterizar, mediante la semántica propia del modo constitutivo, que $f_i$ pertenece a la organización originaria misma y no es solo una interacción posterior entre linajes ya independientemente establecidos. Debe cumplir:
+
+- **OC1 / independently grounded:** su criterio se fija sin usar el candidato que se intenta certificar;
+- **OC2 / container-independent:** no menciona $\mathcal O_i$, Seed, OriginConfig, OriginUnity ni pertenencia al candidato;
+- **OC3 / target-independent:** no menciona $R_i$, CoReal, Generated$^*$, SameRegime ni «mismo índice»;
+- **OC4 / no retrospective convergence:** una interacción que presupone dos linajes ya establecidos no se vuelve origin-constitutive por incluirla retrospectivamente en un seed;
+- **OC5 / invariant:** recodificaciones fieles preservan su condición constitutiva.
+
+Su caracterización concreta permanece como obligación REV-07a; no se define OriginConstitutive como «tener origen común».
+
+Definimos además un footprint del testigo:
+
+$$
+\operatorname{UnitFoot}_i(f_i,U_i),
+$$
+
+con:
+
+$$
+U_i\cup\{f_i\}
+\preceq
+\operatorname{UnitFoot}_i(f_i,U_i),
+$$
+
+que contiene el token integrativo, sus relata y cualquier soporte ontológico constitutivamente necesario. UnitFoot se determina por la semántica del hecho, no por el contenedor candidato.
+
+No bastan semejanza, proximidad, compartir leyes, representación conjunta, interacción posterior ni fusión mereológica sin dependencia constitutiva originaria.
 
 Definimos OriginUnity **por** la condición de partición:
 
@@ -2039,6 +2071,12 @@ $$
 \exists f_i\exists U_i[
 \operatorname{UnitFact}_i(f_i,U_i)
 \land
+\operatorname{OriginConstitutive}_i(f_i,U_i)
+\land
+\operatorname{UnitFoot}_i(f_i,U_i)
+\preceq
+\operatorname{Seed}_i(\mathcal O_i)
+\land
 U_i\cap A_i\neq\varnothing
 \land
 U_i\cap B_i\neq\varnothing
@@ -2047,11 +2085,11 @@ U_i\cap B_i\neq\varnothing
 }
 $$
 
-Como el test usa los relata de UnitFact y no una orientación binaria, funciona igual con integración causal/constitutiva/dependiente asimétrica.
+Como el test usa los relata de UnitFact y no una orientación binaria, funciona igual con integración causal/constitutiva/dependiente asimétrica. La inclusión de UnitFoot exige además que el testigo completo sea interno al seed; el predicado independiente OriginConstitutive impide que una integración tardía sea reciclada como unidad originaria.
 
 ### 0.2. Lema anti-agregación
 
-Sean dos contenidos no vacíos $A_i,B_i$ tales que ningún UnitFact independiente tiene relata en ambos lados:
+Sean dos contenidos no vacíos $A_i,B_i$ tales que no existe un UnitFact origin-constitutive cuyo footprint esté contenido en $A_i\cup B_i$ y cuyos relata crucen ambos lados:
 
 $$
 \mathrm{NoUnitFactBridge}(A_i,B_i).
@@ -2409,8 +2447,22 @@ El criterio sigue siendo no circular respecto de $R_i$ siempre que OriginConfig,
 ### 0.10. Generated y GeneTotal
 
 $$
+\boxed{
 \operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 :\Longleftrightarrow
+\exists C_i[
+\operatorname{GenClosure}_i(\mathcal O_i,C_i)
+\land
+x_i\in C_i
+].
+}
+$$
+
+Esta definición relacional no presupone que exista un least carrier. Si $\mathrm{GCExists}_i(\mathcal O_i)$ vale, la unicidad por minimalidad permite la abreviatura equivalente:
+
+$$
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\Longleftrightarrow
 x_i\in\operatorname{Cl}^{G}_i(\mathcal O_i).
 $$
 
