@@ -2518,7 +2518,7 @@ $$
 }
 $$
 
-CommonGround exige independientemente alguna configuración $\mathcal O_i$ cuyo OntOrigin/closure fundamente imágenes fieles de ambos candidatos. En particular, el propio evento convergente no puede servir de common ground solo por ser posterior/integrativo; OriginConstitutive + UnitFoot bloquean precisamente ese reciclaje.
+CommonGround exige independientemente una instanciación admisible $i$ y testigos $\mathcal O_i,C_i$ tales que $\operatorname{OntOrigin}_i(\mathcal O_i)$, $\operatorname{GenClosure}_i(\mathcal O_i,C_i)$ y embeddings fieles de ambos candidatos en $C_i$. Así no se usa $\operatorname{Cl}^{G}_i$ fuera de GCExists. En particular, el propio evento convergente no puede servir de common ground solo por ser posterior/integrativo; OriginConstitutive + UnitFoot bloquean precisamente ese reciclaje.
 
 La tesis fuerte queda entonces:
 
@@ -5440,9 +5440,9 @@ $$
 Así RS controla sobreinclusión; RC controla subinclusión. Ninguna define el índice ni la genealogía: ambas comparan una reconstrucción $\Lambda_i$ con $\operatorname{Cl}^{G}_i(\mathcal O_i)$ ya caracterizada independientemente.
 
 
-##### Posibles contraejemplos a $\mathrm{RC}_{\Lambda}$
+##### Posibles contraejemplos a $\mathrm{RC}^{\mathrm{gen}}_{\Lambda,i}$
 
-RC falla si existe $x$ que co-pertenece ontológicamente con $q$ pero cuya integración solo puede establecerse mediante:
+RC falla si existe $x_i$ generado junto con $q_i$ en el contexto fijo $i$ pero cuya integración solo puede establecerse mediante:
 
 - una condición global que no se descompone en enlaces token-specific;
 - una dependencia esencialmente de límite sin cadena finita de incidencias;
@@ -5455,104 +5455,104 @@ No se permite definir $\operatorname{CoReal}$ como $\operatorname{Reg}^{\Lambda}
 
 ##### Reducción a una tesis de descomposición integrativa finita
 
-Introducimos provisionalmente una relación de instancia:
+Introducimos, para un contexto fijo $i$, una relación de instancia tipada:
 
 $$
-\operatorname{IntInst}(g;x,y),
+\operatorname{IntInst}_i(g_i;x_i,y_i),
 $$
 
-donde $g$ es un testigo relacional actual que integra $x$ e $y$ mediante causalidad, proceso, constitución, dependencia u otra relación ontológica admitida **sin usar** $\Lambda_*$, $\sim$, $S_i$, $R_i$ ni SameRegime.
+donde $g_i$ es un testigo relacional actual que integra $x_i$ e $y_i$ mediante causalidad, proceso, constitución, dependencia u otra relación ontológica admitida **sin usar** $\Lambda_i$, $\sim_i$, $S_i$, $R_i$ ni SameRegime.
 
-La relación binaria utilizada por FID queda definida solo sobre testigos admisibles:
+La relación binaria utilizada por FID queda definida solo sobre testigos admisibles del mismo contexto:
 
 $$
-\operatorname{AdmIntRel}(x,y)
+\operatorname{AdmIntRel}_i(x_i,y_i)
 :\Longleftrightarrow
-\exists g[
-\mathrm{WA}(g)
+\exists g_i[
+\mathrm{WA}_i(g_i)
 \land
-\operatorname{IntInst}(g;x,y)
+\operatorname{IntInst}_i(g_i;x_i,y_i)
 ].
 $$
 
 Se separan entonces dos obligaciones:
 
 $$
-\mathrm{LA}:
+\mathrm{LA}_i:
 \quad
-\operatorname{AdmIntRel}(x,y)
+\operatorname{AdmIntRel}_i(x_i,y_i)
 \Rightarrow
-x\bowtie y,
+x_i\bowtie_i y_i,
 $$
 
-**Link Adequacy**: toda relación integradora independientemente admitida es reconocida por $\Lambda_*$;
+**Link Adequacy**: toda relación integradora independientemente admitida dentro de $i$ es reconocida por $\Lambda_i$;
 
 y:
 
 $$
-\mathrm{FID}:
+\mathrm{FID}_i:
 \quad
-\operatorname{CoReal}(x,q)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 \Rightarrow
 \exists n<\omega\;
-\exists z_0,\dots,z_n
+\exists z_{0,i},\dots,z_{n,i}
 [
-z_0=q
+z_{0,i}=q_i
 \land
-z_n=x
+z_{n,i}=x_i
 \land
-\forall k<n\;\operatorname{AdmIntRel}(z_k,z_{k+1})
+\forall k<n\;\operatorname{AdmIntRel}_i(z_{k,i},z_{k+1,i})
 ].
 $$
 
-**Finite Integrative Decomposition**: toda co-pertenencia ontológica puede resolverse en una cadena finita de relaciones integradoras independientemente caracterizadas.
+**Finite Integrative Decomposition**: todo contenido generado del contexto $i$ puede resolverse, respecto del seed tipado $q_i$, en una cadena finita de relaciones integradoras independientemente caracterizadas.
 
 Entonces:
 
 $$
 \boxed{
-\mathrm{FID}
+\mathrm{FID}_i
 +
-\mathrm{LA}
+\mathrm{LA}_i
 \Rightarrow
-\mathrm{RC}_{\Lambda}.
+\mathrm{RC}^{\mathrm{gen}}_{\Lambda,i}.
 }
 $$
 
-**Demostración.** FID proporciona una cadena finita de $\operatorname{AdmIntRel}$. LA convierte cada paso WA-admisible en $\bowtie$. Por definición de $\sim=(\bowtie)^*$, $x\in[q]_{\sim}$. $\square$
+**Demostración.** FID$_i$ proporciona una cadena finita de $\operatorname{AdmIntRel}_i$. LA$_i$ convierte cada paso WA-admisible en $\bowtie_i$. Por definición de $\sim_i=(\bowtie_i)^*$, $x_i\in[q_i]_{\sim_i}=T^{\Lambda}_{i,q}$. $\square$
 
-LA es principalmente una obligación de taxonomía de $\Lambda_*$. La carga metafísica profunda queda concentrada en FID.
+LA$_i$ es principalmente una obligación de taxonomía de $\Lambda_i$. La carga metafísica profunda queda concentrada en FID$_i$.
 
 ##### Contraesquema de límite
 
-Considérese una familia actual:
+Considérese, dentro de un contexto fijo $i$, una familia actual:
 
 $$
-q_0,q_1,q_2,\dots
+q_{0,i},q_{1,i},q_{2,i},\dots
 $$
 
 con:
 
 $$
-\operatorname{AdmIntRel}(q_n,q_{n+1})
+\operatorname{AdmIntRel}_i(q_{n,i},q_{n+1,i})
 $$
 
-para todo $n$, y un token actual $\ell$ cuya dependencia ontológica sea esencialmente de la **totalidad/límite** de la secuencia, sin que exista ningún $n$ ni ningún testigo relacional actual $g$ para el que una cadena finita de $\operatorname{AdmIntRel}$ conecte $q_n$ con $\ell$.
+para todo $n$, y un token actual $\ell_i$ cuya dependencia ontológica sea esencialmente de la **totalidad/límite** de la secuencia, sin que exista ningún $n$ ni ningún testigo relacional actual $g_i$ para el que una cadena finita de $\operatorname{AdmIntRel}_i$ conecte $q_{n,i}$ con $\ell_i$.
 
 Si una teoría ontológica independiente justifica:
 
 $$
-\operatorname{CoReal}(\ell,q_0),
+\operatorname{Generated}^{*}_i(\mathcal O_i,\ell_i),
 $$
 
-entonces FID falla y, por tanto, la arquitectura actual no puede derivar RC para ese caso.
+pero no existe tal cadena desde $q_i:=q_{0,i}$, entonces FID$_i$ falla y la arquitectura finita no puede derivar $\mathrm{RC}^{\mathrm{gen}}_{\Lambda,i}$ para ese caso.
 
 El contraesquema desaparece si la dependencia global tiene una instancia relacional actual $g$ de aridad set-sized y la ontología admite incidencias:
 
 $$
-q_0\bowtie g
+q_{0,i}\bowtie_i g_i
 \quad\text{y}\quad
-g\bowtie \ell.
+g_i\bowtie_i \ell_i.
 $$
 
 Por tanto, «infinitario» no equivale automáticamente a «no finitamente conectable». Lo decisivo es si la integración global dispone de un **testigo ontológico actual** que pueda entrar en la red sin reificar por fiat la totalidad $R_i$.
