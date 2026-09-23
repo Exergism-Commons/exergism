@@ -151,6 +151,17 @@ $$
 
 Cada instancia usada por OriginUnity debe proporcionar un testigo local conforme a ECD1–ECD7 y una ruta explícita por IdDep o ConstExistDep.
 
+### Uso en REV-07b — producción ontológica
+
+La taxonomía CAU/CON/GRD/PRC usa la literatura solo para separar familias de dependencia:
+
+- la literatura de **causación** impide reducir CAU a correlación, precedencia o background;
+- **mereología/constitución** obliga a distinguir CON de parthood o agregación arbitraria;
+- **grounding y dependencia ontológica** motivan GRD como modo no necesariamente temporal ni causal;
+- **event structures/process philosophy** permiten formalizar PRC sin identificar mera sucesión o participación con producción ontológica.
+
+Ninguna referencia demuestra que esas cuatro familias sean exhaustivas. Esa afirmación es exactamente ProdCoverage y permanece como obligación propia de REV-07b.
+
 ### Identidad de régimen y relaciones de worldmate
 
 - **David Lewis (1986), _On the Plurality of Worlds_.** En su modal realism, los worldmates se identifican mediante conexión espaciotemporal y los mundos distintos quedan aislados entre sí. La propuesta no adopta su modal realism ni limita toda unidad ontológica a espaciotiempo; se usa solo como antecedente metodológico de definir pertenencia a un mundo mediante una relación independiente de la existencia previa de una cota común. Resumen y discusión: https://plato.stanford.edu/entries/possible-worlds/ y https://plato.stanford.edu/entries/david-lewis/
