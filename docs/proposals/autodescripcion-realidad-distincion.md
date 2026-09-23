@@ -1470,7 +1470,7 @@ REV-07 exige una configuración-originaria $\mathcal O_i$ que no pueda obtenerse
 
 Definimos normativamente:
 
-$
+$$
 \boxed{
 \operatorname{OriginCandidate}_i(\mathcal O_i)
 :\Longleftrightarrow
@@ -1480,11 +1480,11 @@ $
 \land
 \mathrm{RootClosed}_i(\mathcal O_i)
 }
-$
+$$
 
 y:
 
-$
+$$
 \boxed{
 \operatorname{OntOrigin}_i(\mathcal O_i)
 :\Longleftrightarrow
@@ -1494,7 +1494,7 @@ $
 \land
 \mathrm{Irredundant}_i(\mathcal O_i)
 }
-$
+$$
 
 Los criterios de origen se separan en tres criterios pre-clausura y dos controles posteriores:
 
