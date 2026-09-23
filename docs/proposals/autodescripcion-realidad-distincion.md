@@ -216,21 +216,46 @@ $$
 
 es solo una proyección auxiliar de GenEvent; no basta por sí sola para generar $b_i$ cuando la producción requiere antecedentes conjuntos.
 
-La clausura:
+La clausura no se introduce mediante un operador mínimo total. Primero se usa el predicado de testigo:
 
 $$
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\operatorname{GenClosure}_i(\mathcal O_i,C_i),
 $$
 
-se define como la **menor clausura** que contiene el contenido inicial de $\mathcal O_i$ y está cerrada bajo todos los GenEvent admisibles cuyos antecedentes completos ya estén presentes.
+que afirma que $C_i$ contiene el contenido inicial de $\mathcal O_i$, es cerrado bajo los GenEvent admisibles y es mínimo entre los carriers con esas propiedades. Su existencia es una obligación separada:
 
-La regla doctrinal sigue siendo:
+$$
+\mathrm{GCExists}_i(\mathcal O_i)
+:\Longleftrightarrow
+\exists C_i\;
+\operatorname{GenClosure}_i(\mathcal O_i,C_i).
+$$
+
+Definimos la relación de generación sin presuponer ese testigo:
 
 $$
 \boxed{
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+:\Longleftrightarrow
+\exists C_i[
+\operatorname{GenClosure}_i(\mathcal O_i,C_i)
+\land
+x_i\in C_i
+].
+}
+$$
+
+Por minimalidad, si GCExists vale el carrier testigo es único respecto de $\preceq$ y puede abreviarse como $\operatorname{Cl}^{G}_i(\mathcal O_i)$. La regla doctrinal queda **guardada por existencia de clausura** —y, en GeneTotal, por OntOrigin—:
+
+$$
+\boxed{
+\mathrm{GCExists}_i(\mathcal O_i)
+\Rightarrow
+\forall x_i[
 \operatorname{Real}_i(x_i)
 \Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i).
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+].
 }
 $$
 
@@ -597,11 +622,11 @@ La propuesta ya dispone de una definición independiente y event-local de emerge
 
 Por tanto, REV-01, REV-02 y REV-04 están cerrados en sus criterios originales, mientras REV-03 permanece PARTIAL por alcance doctrinal.
 
-El programa dispone de dos construcciones semánticas condicionales. La ruta finita usa el régimen candidato $[q]_{\sim}$, PON y $\operatorname{StructAdm}_i$. La ruta generalizada es deliberadamente pre-ontológica: usa $T_q^{\mathcal C}$, `CFragAdm_C`, CSet/CWF/CProcStable y smallness/Separation relativas a la clausura; solo tras adecuación genealógica puede reindexarse como un régimen. Ninguna ruta semántica demuestra por sí sola $\operatorname{ExistsR}$; tampoco decide metateóricamente One-$R$ frente a Many-$R$.
+El programa dispone de dos construcciones semánticas condicionales. La ruta finita usa el carrier tipado $T^{\Lambda}_{i,q}=[q_i]_{\sim_i}$, PON y $\operatorname{StructAdm}_i$. La ruta generalizada es deliberadamente pre-ontológica: usa $T_q^{\mathcal C}$, `CFragAdm_C`, CSet/CWF/CProcStable y smallness/Separation relativas a la clausura; solo tras adecuación genealógica puede reindexarse como un régimen. Ninguna ruta semántica demuestra por sí sola $\operatorname{ExistsR}$; tampoco decide metateóricamente One-$R$ frente a Many-$R$.
 
 Los bloqueadores activos relevantes pasan a ser:
 
-- **REV-07:** origen y clausura ontológica del régimen: justificar $\operatorname{OntOrigin}_i$, $\operatorname{GenStep}_i$ y $\operatorname{Generated}^{*}_i$; $\Lambda_*$/$\mathcal C_*$ pasan a ser reconstrucciones candidatas de esa genealogía;
+- **REV-07:** origen y clausura ontológica del régimen: justificar $\operatorname{OntOrigin}_i$, una relación objetivo independiente $\operatorname{OntProd}_i$, una implementación $\operatorname{GenEvent}_i$ con GenSound + GenComplete, y $\mathrm{GCExists}_i$ antes de usar la clausura abreviada; $\operatorname{GenStep}_i$ queda solo como proyección auxiliar y $\Lambda_*$/$\mathcal C_*$ como reconstrucciones candidatas de esa genealogía;
 - **REV-23:** PON — smallness por-token de la ruta finita; la ruta generalizada puede sustituirlo por `CSet/TransClSmall`;
 - **REV-24:** puente de presentación: dado un $R_i$ genealógico justificado por REV-07, demostrar que $S_i$ lo presenta adecuadamente mediante OA/MC/RA;
 - **REV-25:** smallness de la firma y legitimidad del paso por Separation sobre «actualmente verdadero»;
@@ -673,7 +698,7 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 
 La existencia ontológica y su representación quedan ahora separadas:
 
-1. **REV-07:** justificar una base/origen ontológico $\mathcal O_i$, reglas $\operatorname{GenStep}_i$ independientes y una clausura $\operatorname{Generated}^{*}_i$ que realice un $R_i$;
+1. **REV-07:** justificar una base/origen ontológico $\mathcal O_i$, la relación objetivo independiente $\operatorname{OntProd}_i$, una implementación $\operatorname{GenEvent}_i$ sound-and-complete respecto de ella, y $\mathrm{GCExists}_i(\mathcal O_i)$; solo entonces $\operatorname{Generated}^{*}_i$ puede realizar un $R_i$, mientras $\operatorname{GenStep}_i$ permanece una proyección auxiliar;
 2. **REV-23:** justificar PON solo si se conserva la reconstrucción finita por $\Lambda_*$;
 3. **REV-24:** dado un $R_i$ genealógico ya justificado, demostrar OA/MC/RA y $\operatorname{Presents}_i(S_i,R_i)$;
 4. **REV-25:** justificar la smallness de firma/aridades y el predicado de actualidad usado por Separation.
@@ -1340,9 +1365,9 @@ MC impide que $S_i$ omita contenido de la clausura ontológica.
 En Ruta A, RC se reinterpreta como:
 
 $$
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 \Rightarrow
-x\in[q]_{\sim}.
+x_i\in[q_i]_{\sim_i}.
 $$
 
 En Ruta B, CC se reinterpreta como:
@@ -1496,9 +1521,32 @@ $$
 }
 $$
 
-**OriginUnity.** Se define mediante hechos de integración independientes del candidato:
+**OriginUnity.** Separa el hecho integrativo de su papel originario. Además de:
 
 $$
+\operatorname{UnitFact}_i(f_i,U_i),
+$$
+
+introducimos dos nociones independientemente caracterizadas:
+
+$$
+\operatorname{OriginConstitutive}_i(f_i,U_i)
+\qquad\text{y}\qquad
+\operatorname{UnitFoot}_i(f_i,U_i).
+$$
+
+$\operatorname{OriginConstitutive}_i$ afirma que el hecho/proceso es constitutivo de la organización originaria misma, no una integración posterior entre linajes ya independientemente establecidos. No puede definirse por pertenencia al candidato, Seed, OriginUnity, $R_i$, CoReal, Generated$^*$, SameRegime ni «mismo índice». $\operatorname{UnitFoot}_i$ recoge el token, sus relata y todo soporte ontológico constitutivamente requerido, con:
+
+$$
+U_i\cup\{f_i\}
+\preceq
+\operatorname{UnitFoot}_i(f_i,U_i).
+$$
+
+La unidad del origen exige ahora que cada partición sea cruzada por un testigo **origin-constitutive cuyo footprint completo sea interno al seed**:
+
+$$
+\boxed{
 \operatorname{OriginUnity}_i(\mathcal O_i)
 \Longleftrightarrow
 \forall A_i,B_i[
@@ -1506,12 +1554,19 @@ $$
 \Rightarrow
 \exists f_i,U_i[
 \operatorname{UnitFact}_i(f_i,U_i)
+\land
+\operatorname{OriginConstitutive}_i(f_i,U_i)
+\land
+\operatorname{UnitFoot}_i(f_i,U_i)
+\preceq
+\operatorname{Seed}_i(\mathcal O_i)
 \land U_i\cap A_i\neq\varnothing
 \land U_i\cap B_i\neq\varnothing
 ]].
+}
 $$
 
-UnitFact debe ser token-specific, integrativo, invariante y definido sin mencionar el candidato, Seed/OriginUnity, $R_i$, CoReal, Generated$^*$ ni el índice como criterio de pertenencia. El lema técnico demuestra:
+UnitFact sigue siendo token-specific, integrativo e invariante; OriginConstitutive debe justificarse por la semántica propia del modo constitutivo y **no** puede obtenerse retrospectivamente del mero hecho de que dos linajes converjan o interactúen después. El lema técnico demuestra:
 
 $$
 \mathrm{NoUnitFactBridge}(A_i,B_i)
