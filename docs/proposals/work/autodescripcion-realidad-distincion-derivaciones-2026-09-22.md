@@ -4451,12 +4451,11 @@ $$
 
 Este ejemplo es solo un stress test metodológico. No se afirma que ninguna constante física concreta sea parte de $\Omega_i$ ni que las constantes conocidas individúen nuestra realidad.
 
-#### 0.11.38. Estado de la deuda después de Ship of Theseus
+#### 0.11.38. Revisión del orden provisional: $\Omega_i$ no puede presuponerse
 
-La arquitectura provisional queda:
+La cadena propuesta inicialmente:
 
 $$
-\boxed{
 \operatorname{OntOrigin}_i
 \Longrightarrow
 \Omega_i
@@ -4464,39 +4463,316 @@ $$
 \operatorname{ContinuationProfile}_i(x_i)
 \Longrightarrow
 \operatorname{FaithfulContinuation}^{\mathsf M}
-}
 $$
 
-y, para una ruptura ontogénica:
+queda **SUPERSEDED como orden de derivación provisional**. Ship of Theseus sigue mostrando que ContinuationProfile no puede ser primitivo, pero la analogía con constantes/magic numbers sugiere que $\Omega_i$ puede ser un **resultado baked/canónico** de estructura generativa ya constituida, no necesariamente la estructura previa que decide desde fuera qué debe preservarse.
+
+Por tanto no se descarta $\Omega_i$; se pospone su definición hasta caracterizar qué información de un proceso parental puede ser trivializada al constituirse un nuevo contexto.
+
+#### 0.11.39. Baking: un resultado puede sustituir a un proceso respecto de un rol
+
+Considérese, solo esquemáticamente, un proceso/configuración parental $P_i$ cuya estructura determina una contribución estable. Una operación de baking no afirma identidad ontológica entre proceso y resultado:
+
+$$
+P_i\neq \sigma_k.
+$$
+
+Afirma metateóricamente que, respecto de cierto rol child-side, una realización $\sigma_k$ contiene lo suficiente para que la estructura interna completa de $P_i$ deje de ser necesaria en las dependencias posteriores relevantes de $k$.
+
+Introducimos el candidato:
+
+$$
+\operatorname{GenesisTrivialization}^{\mathsf M}_{i\to k}
+(P_i\Rightarrow\sigma_k;\gamma).
+$$
+
+Sus obligaciones mínimas son:
+
+1. **GT1 / provenance:** $\sigma_k$ procede realmente de la rama parental $P_i$ bajo la formación $\gamma$; coincidencia o isomorfismo no bastan.
+2. **GT2 / child actuality:** $\sigma_k$ y la estructura que porta son contenido actual bien tipado de $k$; el baking no crea una entidad cross-index.
+3. **GT3 / child sufficiency:** toda dependencia child-side atribuida a esa rama parental factoriza, para el rol considerado, a través de $\sigma_k$; la estructura interna de $P_i$ deja de ser necesaria para ese uso.
+4. **GT4 / screening-off:** diferencias internas entre realizaciones parentales que no alteran la firma child-side no alteran tampoco las consecuencias de $k$ que solo dependen de ese rol.
+5. **GT5 / no retroactivity:** trivializar $P_i$ para $k$ no elimina, simplifica ni reescribe los hechos que eran reales en $i$.
+6. **GT6 / recoding invariance:** la clasificación no depende de una codificación accidental del padre o del hijo.
+7. **GT7 / no meta-reification:** Bake/Trivialization son juicios metateóricos sobre una formación real; no se postula una máquina ontológica entre índices.
+
+La condición GT3 es la intuición central:
 
 $$
 \boxed{
-\text{provenance}
-+
-\text{nuevo tipado}
-+
-\operatorname{GenesisConstitutiveUnity}
-\Rightarrow
-\operatorname{ContextGenesis}.
+\text{para el rol child-side considerado, }
+P_i\text{ importa en }k\text{ solo mediante }\sigma_k.
 }
 $$
 
-Lo no resuelto es exactamente $\Omega_i$:
+Esto formaliza la analogía con una constante precalculada: el valor puede sustituir operacionalmente al proceso exactamente en los contextos donde es suficiente su resultado, sin que proceso y valor sean ontológicamente idénticos.
 
-1. qué estructura es;
-2. cómo se deriva sin circularidad;
-3. qué equivalencia define continuidad de firma;
-4. cómo evita una regresión “qué preserva lo que preserva la identidad”;
-5. cómo se relaciona con OntOrigin, GenEvent y la clausura;
-6. qué ocurre en branching/merger de firmas;
-7. cómo se audita sin convertir el índice en objeto.
+#### 0.11.40. Trivialización conservativa y trivialización quotient
 
-Hasta resolver estas obligaciones, FC3 permanece **PARTIAL** y $\Omega_i$ es una hipótesis estructural explícita, no una nueva pieza doctrinal asumida.
+GenesisTrivialization no presupone que el baking sea invertible.
 
+**Conservative trivialization.** La firma child-side conserva información suficiente para reconstruir, bajo una teoría de decodificación adecuada, la estructura parental relevante:
 
+$$
+P_i\mapsto\sigma_k
+\qquad
+\operatorname{Recoverable}^{\mathsf M}(P_i\mid\sigma_k).
+$$
 
+**Quotient trivialization.** Varias estructuras parentales distintas pueden realizar la misma contribución child-side:
 
+$$
+P_i\mapsto\sigma_k,
+\qquad
+Q_j\mapsto\sigma_k,
+\qquad
+P_i\not\simeq Q_j.
+$$
 
+Entonces la firma ya no determina unívocamente qué representante parental produjo esa contribución. La no-inyectividad no es por sí sola un defecto: puede ser precisamente la estructura de una convergencia.
+
+#### 0.11.41. Equivalencia inducida por el hijo y SignatureConvergence
+
+Para evitar una relación objeto cross-index, definimos solo el juicio meta:
+
+$$
+P_i\sim_k^{\mathsf M}Q_j
+$$
+
+cuando existe algún $\sigma_k$ tal que:
+
+$$
+\operatorname{GenesisTrivialization}^{\mathsf M}_{i\to k}
+(P_i\Rightarrow\sigma_k;\gamma)
+\land
+\operatorname{GenesisTrivialization}^{\mathsf M}_{j\to k}
+(Q_j\Rightarrow\sigma_k;\gamma).
+$$
+
+$P_i\sim_k^{\mathsf M}Q_j$ no dice que los padres fueran idénticos, compatibles ni co-tipables. Dice que el nuevo contexto **trivializa esa diferencia parental respecto del rol representado por $\sigma_k$**.
+
+Definimos provisionalmente:
+
+$$
+\operatorname{SignatureConvergence}^{\mathsf M}
+(P_i,Q_j\Rightarrow\sigma_k;\gamma)
+$$
+
+cuando dos o más ramas distintas convergen mediante quotient trivialization en una misma contribución child-side.
+
+Así, el antiguo “problema de colisiones” se invierte:
+
+$$
+\boxed{
+\operatorname{Bake}_{i\to k}(P_i)
+=
+\operatorname{Bake}_{j\to k}(Q_j)
+\text{ puede ser el fenómeno de convergencia que debe explicar la teoría.}
+}
+$$
+
+#### 0.11.42. Dos geometrías de GenesisConvergence
+
+La trivialización permite distinguir al menos dos geometrías multiparentales.
+
+**Collapse/signature convergence:**
+
+$$
+P_i,Q_j\Longrightarrow\sigma_k.
+$$
+
+Las diferencias parentales relevantes quedan identificadas para un rol del hijo. Esto puede manifestarse objeto-level como TokenMerger si varias continuaciones terminan en un mismo token $z_k$.
+
+**Compositional convergence:**
+
+$$
+P_i\Longrightarrow\sigma_i^k,
+\qquad
+Q_j\Longrightarrow\sigma_j^k,
+\qquad
+\sigma_i^k\neq\sigma_j^k,
+$$
+
+y las dos contribuciones permanecen diferenciadas pero son constitutivamente necesarias para la GenesisConstitutiveUnity del hijo.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{ContextMerger}
+\not\Rightarrow
+\operatorname{TokenMerger}.
+}
+$$
+
+SignatureConvergence ofrece un posible mecanismo para TokenMerger, mientras la convergencia composicional conserva las ramas diferenciadas.
+
+#### 0.11.43. Ontogénesis como cambio de resolución ontológica
+
+La hipótesis fuerte que emerge no es que la génesis borre los padres, sino que **cambia qué diferencias siguen siendo operativas en el nuevo contexto**.
+
+Una estructura parental puede requerir internamente:
+
+$$
+P_i=\{a_i,b_i,e_i,\rho_i,\ldots\}
+$$
+
+mientras la contribución child-side relevante queda representada por:
+
+$$
+P_i\Longrightarrow\sigma_{i\to k}^k.
+$$
+
+Las distinciones internas de $P_i$ siguen siendo verdaderas en $i$. Pero si GT3–GT4 valen, $k$ ya no necesita tratarlas separadamente para el rol trivializado.
+
+Esto motiva interpretar parte de ContextGenesis como un **cambio de resolución ontológica**: el hijo hereda provenance, pero puede quotientar distinciones parentales.
+
+Una tesis de trabajo más fuerte queda abierta:
+
+$$
+\boxed{
+\textbf{Ontogenesis as Trivialization:}
+\quad
+\text{provenance}
++
+\text{trivialización parental}
++
+\text{GenesisConstitutiveUnity}
++
+\text{nuevo tipado}.
+}
+$$
+
+No se adopta todavía como bicondicional ni como condición necesaria de toda ContextGenesis; se registra como candidato explicativo que unifica continuidad, convergence, merger e index novelty.
+
+#### 0.11.44. No-invertibilidad e horizonte genealógico
+
+Si la trivialización es no inyectiva:
+
+$$
+P_i\sim_k^{\mathsf M}Q_j
+$$
+
+la firma child-side no contiene por sí sola información suficiente para decidir cuál fue el representante parental concreto.
+
+Es posible entonces:
+
+$$
+\operatorname{Provenance}^{\mathsf M}(P_i\leadsto\sigma_k)
+\land
+\neg\operatorname{Reconstructible}^{\mathsf M}_k(P_i\mid\sigma_k).
+$$
+
+Esto separa dos nociones que FC no debe confundir:
+
+$$
+\boxed{
+\text{provenance objetiva}
+\neq
+\text{reconstruibilidad interna de provenance}.
+}
+$$
+
+Cuando las diferencias parentales necesarias para discriminar historias han sido quotientadas y ningún certificado de provenance sobrevive en $k$, aparece un candidato a **horizonte genealógico**: hechos verdaderos sobre la historia ontogénica pueden no ser recuperables desde la estructura child-side disponible.
+
+#### 0.11.45. Consecuencia para FaithfulContinuation y FC10
+
+FaithfulContinuation puede ser metateóricamente verdadera aunque el hijo no pueda certificar internamente toda la historia parental:
+
+$$
+\operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}(x_i,x_k)
+\not\Rightarrow
+\operatorname{InternallyReconstructible}_k(x_i\leadsto x_k).
+$$
+
+Por tanto FC10/auditability no debe exigir siempre reconstrucción child-side completa. Debe exigir una **justificación metateórica no circular y recoding-invariant** de la provenance y del perfil/trivialización afirmados. Si además existe evidencia child-side, esta puede reforzar la certificación, pero no forma parte necesaria de toda continuidad real.
+
+Esto evita que una ontogénesis genuinamente no-inyectiva quede declarada imposible solo porque trivializó precisamente la información necesaria para invertirla.
+
+#### 0.11.46. Trivialización, Muro y REC: conexión sin identificación
+
+REC y el Muro conservan su distinción normativa.
+
+REC sigue siendo consecuencia estructural de una totalidad genealógica ya establecida:
+
+$$
+\operatorname{GeneTotal}_k(\mathcal O_k,R_k)
+\Rightarrow
+\operatorname{REC}_k(R_k).
+$$
+
+Un certificador **real y ontológicamente exterior** a una totalidad genuina la refutaría como totalidad; por tanto no puede usarse como solución gratuita a una provenance perdida.
+
+El Muro, en cambio, trata la subdeterminación desde evidencia interna/accesible. GenesisTrivialization aporta un candidato concreto a mecanismo de esa subdeterminación:
+
+$$
+\boxed{
+\operatorname{GenesisTrivialization}
+\land
+\text{non-injectivity}
+\Rightarrow
+\text{possible internal genealogical underdetermination}.
+}
+$$
+
+No se deriva con ello la versión fuerte de REV-15. La trivialización puede ser conservativa, o puede sobrevivir un certificado child-side $c_k$ que desambigüe provenance. Pero cuando el quotient elimina la distinción y no queda tal certificado, la imposibilidad reconstructiva deja de ser mero desconocimiento contingente y pasa a estar motivada por la propia estructura de la génesis.
+
+Así pueden coexistir:
+
+$$
+\boxed{
+\text{provenance objetiva}
++
+\text{no reconstruibilidad interna}
++
+\text{ausencia de certificador real exterior admisible}.
+}
+$$
+
+#### 0.11.47. Reubicación de $\Omega_i$
+
+Después de la hipótesis de trivialización, $\Omega_i$ ya no debe suponerse anterior al baking. Un candidato más informativo es que la firma ontogénica sea una representación canónica de la estructura generativa **módulo las diferencias que el propio contexto trivializa**:
+
+$$
+\boxed{
+\Omega_i
+\stackrel{?}{=}
+\operatorname{Bake}^{\mathsf M}
+\left(
+\mathcal G_i/\!\sim_i
+\right).
+}
+$$
+
+Esta expresión sigue siendo esquemática: ni $\mathcal G_i/\!\sim_i$ se asume como quotient set-theoretic ni los índices se convierten en objetos. Su función es fijar el nuevo orden de investigación:
+
+$$
+\boxed{
+\operatorname{OntOrigin}_i
+\Longrightarrow
+\text{estructura generativa/iterativa}
+\Longrightarrow
+\text{trivializaciones admisibles }\sim_i
+\Longrightarrow
+\Omega_i
+\Longrightarrow
+\operatorname{ContinuationProfile}_i
+\Longrightarrow
+\operatorname{FaithfulContinuation}^{\mathsf M}.
+}
+$$
+
+Por tanto el próximo ataque a $\Omega_i$ debe responder primero:
+
+1. qué hace admisible una trivialización sin presuponer identidad de contexto;
+2. si toda ontogénesis exige trivialización o solo algunas;
+3. cuándo el baking es conservativo y cuándo quotient/no-inyectivo;
+4. qué información mínima debe sobrevivir para provenance;
+5. cómo se induce $\sim_i$ sin circularidad;
+6. si la firma resultante puede ser canónica sin reificar $R_i$;
+7. cómo se relacionan estas nociones con GenEvent, OntOrigin y GenesisConstitutiveUnity.
+
+FC3 y $\Omega_i$ permanecen **PARTIAL**. La novedad es que la deuda ya no es “escoger invariantes”, sino caracterizar formalmente la **trivialización que decide qué diferencias dejan de importar al cambiar de nivel/contexto**.
 
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
@@ -4505,7 +4781,7 @@ Hasta resolver estas obligaciones, FC3 permanece **PARTIAL** y $\Omega_i$ es una
 
 ### 1. Tokens ontológicos actuales
 
-Sea $\Omega$ una clase/set de trabajo de **tokens ontológicos actuales** relevantes para la teoría procesual: estados, eventos, entidades, estructuras o relaciones efectivamente instanciadas.
+Sea $\mathbb T$ una clase/set de trabajo de **tokens ontológicos actuales** relevantes para la teoría procesual: estados, eventos, entidades, estructuras o relaciones efectivamente instanciadas.
 
 No se exige que todos los tokens sean del mismo tipo.
 
@@ -4594,7 +4870,7 @@ Sea:
 $$
 \operatorname{Tok}(X)
 :=
-\{q\in\Omega\mid q\trianglelefteq X\}.
+\{q\in\mathbb T\mid q\trianglelefteq X\}.
 $$
 
 Para un dominio no vacío $X$, definimos:
@@ -4630,7 +4906,7 @@ Esto es independiente de la existencia de una cota común.
 Contraejemplo mínimo:
 
 $$
-\Omega=\{a,b\},
+\mathbb T=\{a,b\},
 \qquad
 a\bowtie b.
 $$
