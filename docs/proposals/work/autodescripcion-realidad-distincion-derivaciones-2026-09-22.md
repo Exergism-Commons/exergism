@@ -2163,20 +2163,7 @@ Por tanto REV-07a no se cerrará enumerando etiquetas metafísicas: cada modo ad
 
 #### 0.2.3. Taxonomía núcleo de modos EssConDep
 
-Definimos una familia de modos admisibles:
-
-$$
-\mathfrak E_i
-=
-\{
-\mathsf{MG}_i,
-\mathsf{RC}_i,
-\mathsf{HC}_i,
-\mathsf{PC}_i
-\},
-$$
-
-sin afirmar que toda ontología concreta deba instanciarlos todos. Un juicio $\operatorname{EssConDep}_i$ solo puede derivarse de una instancia explícita de alguno de estos esquemas —o de una futura extensión que satisfaga ECD1–ECD7 y M1–M6.
+Fijamos cuatro **esquemas de modo** actualmente admitidos: $\mathsf{MG}_i$, $\mathsf{RC}_i$, $\mathsf{HC}_i$ y $\mathsf{PC}_i$, sin convertirlos en objetos de un dominio ni afirmar que toda ontología concreta deba instanciarlos todos. Un juicio $\operatorname{EssConDep}_i$ solo puede derivarse de una instancia explícita de uno de estos esquemas —o de una futura extensión que satisfaga ECD1–ECD7 y M1–M6.
 
 **MG — mutual grounding / co-dependencia fundamental.**
 
@@ -2222,29 +2209,11 @@ $$
 
 cuando $x_i$ es constitutivamente un estadio, rol, fase o participante cuya identidad ontológica depende del proceso actual $f_i$ y de soporte cruzado en $Y_i$. Ser simplemente causa, input, output o participante contingente de un proceso no satisface PC.
 
-Estas cuatro familias comparten una regla de seguridad:
-
-$$
-\boxed{
-\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
-\Rightarrow
-\operatorname{ModeWitness}_i(m_i,f_i,x_i,Y_i)
-}
-$$
-
-para algún $m_i\in\mathfrak E_i$, donde ModeWitness registra el modo, la instancia concreta, el dependiente y el soporte cruzado. La auditabilidad ECD7 exige que ese testigo pueda exponerse sin referencia a Seed, OriginUnity o al resultado final.
+Estas cuatro familias comparten una regla de seguridad: todo juicio $\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)$ debe venir acompañado por una derivación explícita de una de las reglas MG/RC/HC/PC, indicando la instancia concreta, el dependiente y el soporte cruzado. La auditabilidad ECD7 exige que esa derivación pueda exponerse sin referencia a Seed, OriginUnity o al resultado final.
 
 #### 0.2.4. Exclusiones y frontera con OntProd
 
-La taxonomía de EssConDep es **más estrecha** que la futura taxonomía de OntProd. En particular:
-
-$$
-\operatorname{EssConDep}_i
-\subsetneq
-\operatorname{OntDepCandidate}_i
-$$
-
-como intención doctrinal: toda EssConDep es una dependencia ontológica candidata relevante para generación, pero no toda producción/dependencia ontológica es constitutiva de una base cofundamental.
+La taxonomía de EssConDep es **más estrecha** que la futura taxonomía de OntProd: toda EssConDep debe ser relevante para la futura clasificación generativa, pero no toda producción/dependencia que entre en OntProd será constitutiva de una base cofundamental. No se introduce aquí un predicado intermedio nuevo.
 
 Quedan excluidos de EssConDep salvo que una teoría adicional demuestre uno de los modos anteriores:
 
@@ -2280,7 +2249,7 @@ La tabla no prueba que una instancia concreta satisfaga un modo; fija qué **tip
 
 #### 0.2.6. Regla de extensión
 
-Una nueva familia $\mathsf X_i$ puede añadirse a $\mathfrak E_i$ únicamente si:
+Un nuevo esquema de modo $\mathsf X_i$ puede añadirse a la taxonomía únicamente si:
 
 $$
 \mathrm{ECD1{-}7}(\mathsf X_i)
@@ -2298,7 +2267,7 @@ $$
 
 que no use OntOrigin, Seed, OriginUnity, GeneTotal, $R_i$, CoReal, Generated$^*$, SameRegime, CommonGround, CGP ni equivalencia de índices.
 
-Con esto REV-07a deja de tener una variable semántica completamente libre. Permanece pendiente decidir qué subconjunto de $\mathfrak E_i$ acepta finalmente la ontología y justificar cada familia en términos independientes; pero cualquier ampliación futura queda sujeta al mismo filtro anti-circular.
+Con esto REV-07a deja de tener una variable semántica completamente libre. Permanece pendiente decidir qué esquemas acepta finalmente la ontología y justificar cada uno en términos independientes; cualquier ampliación futura queda sujeta al mismo filtro anti-circular.
 
 
 ### 0.3. Root-closure sin primera causa temporal
