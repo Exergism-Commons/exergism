@@ -2550,6 +2550,18 @@ $$
 }
 $$
 
+Definimos:
+
+$$
+\boxed{
+\mathrm{GenAdequate}_i
+:\Longleftrightarrow
+\mathrm{GenSound}_i\land\mathrm{GenComplete}_i.
+}
+$$
+
+Bajo la taxonomía actual, ProdCoverage implica GenAdequate porque GenSound ya está derivado.
+
 Por tanto REV-07b ya no puede cerrarse por estipulación: su carga pendiente principal es justificar ProdCoverage para la ontología/contexto al que se aplique ExistsR.
 
 $A_i$ es soporte completo y relevante para la instancia, no una lista arbitraria de antecedentes. Puede haber más de un soporte admisible para un mismo target cuando la ontología concreta admita sobredeterminación o realizaciones alternativas; cada instancia se registra separadamente con su propio GenFoot.
@@ -2839,12 +2851,14 @@ $$
 :\Longleftrightarrow
 \operatorname{OriginCandidate}_i(\mathcal O_i)
 \land
+\mathrm{GenAdequate}_i
+\land
 \mathrm{GCExists}_i(\mathcal O_i)
 \land
 \mathrm{Irredundant}_i(\mathcal O_i).
 $$
 
-Esto hace explícito que la existencia de la least closure no se obtiene por definir OntOrigin: es una premisa/resultado separado que debe establecer REV-07c.
+Esto hace explícito que OntOrigin exige dos obligaciones separadas: adecuación generativa (REV-07b) y existencia de la least closure (REV-07c). Ninguna se obtiene por definición del origen.
 
 El criterio sigue siendo no circular respecto de $R_i$ siempre que OriginConfig, UnitFact/OriginUnity, OntProd y GenEvent sean caracterizados independientemente.
 
