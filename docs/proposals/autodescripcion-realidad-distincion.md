@@ -1503,7 +1503,7 @@ $$
 }
 $$
 
-**OriginUnity.** Separa el hecho integrativo de su papel originario mediante $\operatorname{UnitFact}_i(f_i,U_i)$, el predicado independiente $\operatorname{OriginConstitutive}_i(f_i,U_i)$ y su footprint $\operatorname{UnitFoot}_i(f_i,U_i)$, con $U_i\cup\{f_i\}\preceq\operatorname{UnitFoot}_i(f_i,U_i)$. OriginConstitutive no puede obtenerse de pertenencia al candidato ni de una convergencia tardía.
+**OriginUnity.** El antiguo $\operatorname{OriginConstitutive}_i(f_i,U_i)$ queda SUPERSEDED por un criterio relativo a la partición. $\operatorname{ConstitutiveBridge}_i(f_i,U_i;A_i,B_i)$ exige un UnitFact actual cuyo UnitFoot contenga dependencia constitutiva esencial cruzada hacia **ambos** lados; esa dependencia, $\operatorname{EssConDep}_i$, se caracteriza sin Seed, OriginUnity, $R_i$, CoReal, Generated$^*$, SameRegime, equivalencia de índice ni CGP.
 
 $$
 \boxed{
@@ -1513,21 +1513,21 @@ $$
 \operatorname{Partition}_i(\operatorname{Seed}_i(\mathcal O_i);A_i,B_i)
 \Rightarrow
 \exists f_i,U_i[
-\operatorname{UnitFact}_i(f_i,U_i)
-\land\operatorname{OriginConstitutive}_i(f_i,U_i)
-\land\operatorname{UnitFoot}_i(f_i,U_i)\preceq\operatorname{Seed}_i(\mathcal O_i)
-\land U_i\cap A_i\neq\varnothing
-\land U_i\cap B_i\neq\varnothing
+\operatorname{ConstitutiveBridge}_i(f_i,U_i;A_i,B_i)
+\land
+\operatorname{UnitFoot}_i(f_i,U_i)\preceq\operatorname{Seed}_i(\mathcal O_i)
 ]].
 }
 $$
 
-Los tres componentes deben caracterizarse independientemente de Seed/OriginUnity, $R_i$, CoReal, Generated$^*$, SameRegime y «mismo índice»; los criterios UF/OC completos quedan en work/. El lema técnico demuestra:
+La bilateralidad admite mutual grounding/constitución holística pero rechaza una mera convergencia $a_i,b_i\to c_i$: que $c_i$ dependa del evento no vuelve dependientes retroactivamente a $a_i$ y $b_i$. El work/ fija seis modelos de control. En particular:
 
 $$
-\mathrm{NoUnitFactBridge}(A_i,B_i)
+\operatorname{Seed}_i(\mathcal O_i)=A_i\cup B_i
+\land
+\mathrm{NoConstitutiveBridge}_i(A_i,B_i)
 \Rightarrow
-\neg\operatorname{OriginUnity}_i(A_i\cup B_i).
+\neg\operatorname{OriginUnity}_i(\mathcal O_i).
 $$
 
 **RootClosed.** La producción objetivo independiente es $\operatorname{OntProd}_i(e_i,A_i,b_i)$ y su footprint incluye al menos $A_i\cup\{e_i,b_i\}$. Se exige:
