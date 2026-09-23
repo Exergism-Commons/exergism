@@ -425,7 +425,7 @@ $$
 
 Esto no postula una bolsa que contenga a $i$ y $j$. Es un juicio sobre dos instanciaciones del esquema de realidad.
 
-**Cluster-$R$** solo se aplica a candidatos todavía no tipados definitivamente. Un origen común independientemente justificado fuerza equivalencia de índice; un hecho integrador solo establece JointRealizable mientras CGP siga OPEN. Una vez establecido legítimamente $i\mathrel{\#}j$, un «colapso posterior» exige mostrar que aquel juicio era erróneo o introducir explícitamente una teoría de ontogénesis entre contextos.
+**Cluster-$R$** solo se aplica a candidatos todavía no tipados definitivamente. Un origen común independientemente justificado fuerza equivalencia de índice; un hecho integrador solo establece JointRealizable. CGP no es derivable de la doctrina vigente y solo podría añadirse como premisa metafísica adicional. Una vez establecido legítimamente $i\mathrel{\#}j$, un «colapso posterior» exige mostrar que aquel juicio era erróneo o introducir explícitamente una teoría de formación/ensamblaje entre contextos.
 
 ### 1.11. Verdad, falsedad e incompatibilidad inter-index
 
