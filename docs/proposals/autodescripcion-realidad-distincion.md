@@ -1500,6 +1500,16 @@ Los criterios de origen se separan en tres criterios pre-clausura y dos controle
 
 - **OU1 / OriginConfig:** $\mathcal O_i$ es una configuración-token ontológicamente instanciada, no una lista o suma representacional.
 - **OU2 / OriginUnity:** toda partición no trivial de $\operatorname{Seed}_i(\mathcal O_i)$ está cruzada por estructura integrativa real $\operatorname{Bind}_i$ caracterizada sin usar $R_i$.
+
+Bind queda sometido a una disciplina independiente:
+
+- **B1:** es token-specific e interno a la configuración-originaria;
+- **B2:** participa constitutivamente en la identidad, persistencia o capacidad generativa conjunta de $\mathcal O_i$;
+- **B3:** no basta una interacción causal posterior entre linajes ya formados;
+- **B4:** no puede definirse mediante $R_i$, CoReal, Generated$^*$ ni «pertenecer al mismo índice»;
+- **B5:** debe ser invariante bajo recodificación fiel.
+
+Mera proximidad, semejanza, compartir leyes o una fusión mereológica sin dependencia integrativa no cuentan como Bind.
 - **OU3 / RootClosed:** si un constituyente del seed es generado, todos sus antecedentes pertenecen al propio seed; se permiten ciclos internos, no entradas generativas externas.
 - **GCExists:** existe una least generative closure en el marco fundacional adoptado.
 - **OU4 / Irredundant:** ninguna subconfiguración propia que siga siendo una OriginConfig unificada genera la misma clausura, salvo equivalencia de origen justificada.
@@ -1805,7 +1815,20 @@ REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitrar
 4. si OU3/root-closure debe admitir además genealogías sin fuente, regresos infinitos o fixed points fundamentales;
 5. equivalencia entre configuraciones-originarias distintas que generan la misma clausura sin volver a mera extensionalidad;
 6. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente la clausura generativa;
-7. qué principio de scope/pluralidad realiza esa clausura como $R_i$ sin setificarla.
+7. qué principio de scope/pluralidad realiza esa clausura como $R_i$ sin setificarla;
+8. **problema de convergencia:** si dos linajes pre-indexados aparentemente independientes llegan a participar en un hecho ontológico común, justificar un fundamento/origen común más profundo en vez de tratarlos como dos $R$ que se fusionan posteriormente.
+
+La obligación de convergencia puede abreviarse metateóricamente como:
+
+$$
+\mathrm{CGP}:
+\quad
+\operatorname{Integrable}^{\mathsf M}(C_a,C_b)
+\Rightarrow
+\operatorname{CommonGround}^{\mathsf M}(C_a,C_b),
+$$
+
+donde CommonGround exige alguna realización admisible de contexto cuyo OntOrigin/closure contenga imágenes fieles de ambos candidatos. **CGP está OPEN**: no se obtiene de EXT-01 por definición.
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
