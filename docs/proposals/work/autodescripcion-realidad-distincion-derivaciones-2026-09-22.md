@@ -1983,45 +1983,341 @@ Esa es ahora la forma precisa de K2.
 
 ---
 
-## REV-07 — identidad genealógica y reconstrucción de régimen
+## REV-07 — origen unificado, generación hiperaridad y reconstrucción
 
-**CURRENT TARGET.** La identidad primaria del régimen se fija por una base/origen ontológico $\mathcal O_i$ y su clausura generativa:
+**CURRENT TARGET.** Para un parámetro de contexto fijo $i$, la realidad no se individua por conectividad semántica sino por una configuración-originaria unificada y su least generative closure.
+
+### 0.1. Configuración-originaria
+
+El símbolo:
 
 $$
-\operatorname{OntOrigin}_i(\mathcal O_i),
-\qquad
-\operatorname{GenStep}_i(a,b),
-\qquad
-\operatorname{Generated}^{*}_i(\mathcal O_i,x).
+\mathcal O_i
 $$
 
-Las reglas de origen/generación deben especificarse sin usar $R_i$, CoReal, SameRegime, K3, SemTotal, Presents ni la extensión final de la clausura.
+denota una configuración-token ontológicamente instanciada dentro del contexto $i$, no una colección que el metalenguaje pueda formar libremente.
 
-La realidad indexada satisface:
+Sea:
+
+$$
+B_i(\mathcal O_i)
+:=
+\operatorname{Seed}_i(\mathcal O_i)
+$$
+
+su contenido inicial.
+
+La unidad se modela mediante:
+
+$$
+\operatorname{Bind}_i(u_i,v_i;\mathcal O_i),
+$$
+
+independiente de $R_i$, CoReal, SemTotal y de la clausura final.
+
+Una condición suficiente de unidad conectiva es:
+
+$$
+\mathrm{OU2}_i(\mathcal O_i):
+\quad
+\forall A_i,B_i[
+\operatorname{Partition}_i(
+\operatorname{Seed}_i(\mathcal O_i);A_i,B_i
+)
+\Rightarrow
+\exists u_i\in A_i\exists v_i\in B_i\;
+\operatorname{Bind}_i(u_i,v_i;\mathcal O_i)
+].
+$$
+
+Esta condición no pretende todavía fijar qué relaciones concretas cuentan como Bind; fija la forma lógica que debe excluir agregados disjuntos.
+
+### 0.2. Lema anti-agregación
+
+Sean dos contenidos no vacíos $A_i,B_i$ tales que no existe ningún Bind real cruzando la partición:
+
+$$
+\forall u_i\in A_i\forall v_i\in B_i\;
+\neg\operatorname{Bind}_i(u_i,v_i;\mathcal O_i).
+$$
+
+Entonces cualquier candidato cuyo seed sea:
+
+$$
+A_i\cup B_i
+$$
+
+viola OU2 para la partición $A_i\mid B_i$.
+
+Por tanto:
+
+$$
+\boxed{
+\mathrm{NoBind}(A_i,B_i)
+\Rightarrow
+\neg\operatorname{OriginUnity}_i(A_i\cup B_i).
+}
+$$
+
+**Consecuencia.** La operación metalingüística de escribir:
+
+$$
+\mathcal O:=\mathcal O_a\cup\mathcal O_b
+$$
+
+no convierte dos raíces independientes en un origen común. Para obtener una única realidad debe existir una configuración integrativa real previa a la conclusión.
+
+### 0.3. Root-closure sin primera causa temporal
+
+Definimos:
+
+$$
+\mathrm{RootClosed}_i(\mathcal O_i)
+$$
+
+mediante:
+
+$$
+b_i\in\operatorname{Seed}_i(\mathcal O_i)
+\land
+\operatorname{GenEvent}_i(e_i,A_i,b_i)
+\Rightarrow
+A_i\preceq\operatorname{Seed}_i(\mathcal O_i).
+$$
+
+Esto no exige que los constituyentes del origen sean incausados individualmente. Permite ciclos fundamentales, soporte mutuo o una configuración estacionaria siempre que no exista antecedente generativo externo al seed.
+
+Ejemplo permitido:
+
+$$
+a_i\leadsto b_i,
+\qquad
+b_i\leadsto a_i,
+\qquad
+a_i,b_i\in\operatorname{Seed}_i(\mathcal O_i).
+$$
+
+Lo prohibido es:
+
+$$
+c_i\notin\operatorname{Seed}_i(\mathcal O_i)
+\quad\text{y}\quad
+c_i\leadsto a_i.
+$$
+
+### 0.4. Generación como hiperevento
+
+La primitiva generativa vigente es:
+
+$$
+\operatorname{GenEvent}_i(e_i,A_i,b_i).
+$$
+
+$A_i$ contiene todos los antecedentes conjuntamente necesarios para esa instancia generativa.
+
+La proyección binaria:
+
+$$
+\operatorname{GenStep}_i(a_i,b_i)
+:\Longleftrightarrow
+\exists e_i\exists A_i[
+\operatorname{GenEvent}_i(e_i,A_i,b_i)
+\land
+a_i\prec A_i
+]
+$$
+
+solo registra dependencia/incidencia.
+
+### 0.5. Contraejemplo a usar GenStep como closure rule
+
+Supóngase un único hiperevento:
+
+$$
+\operatorname{GenEvent}_i(e_i,\{a_i,b_i\},c_i)
+$$
+
+y ningún evento con antecedente unitario que produzca $c_i$.
+
+Por proyección:
+
+$$
+\operatorname{GenStep}_i(a_i,c_i)
+\land
+\operatorname{GenStep}_i(b_i,c_i).
+$$
+
+Si la clausura usase GenStep como regla binaria, entonces desde:
+
+$$
+\{a_i\}
+$$
+
+añadiría indebidamente:
+
+$$
+c_i.
+$$
+
+Pero la semántica correcta del hiperevento exige:
+
+$$
+\{a_i,b_i\}\preceq X_i
+$$
+
+antes de generar $c_i$.
+
+Por tanto:
+
+$$
+\boxed{
+\text{binary projection does not preserve generative closure in general}.
+}
+$$
+
+### 0.6. Operador generativo
+
+Definimos:
+
+$$
+\Gamma_i(X_i)
+:=
+X_i
+\cup
+\{
+b_i\mid
+\exists e_i\exists A_i[
+\operatorname{GenEvent}_i(e_i,A_i,b_i)
+\land
+A_i\preceq X_i
+]
+\}.
+$$
+
+Con una familia fija de GenEvent, $\Gamma_i$ es extensivo:
+
+$$
+X_i\preceq\Gamma_i(X_i),
+$$
+
+y monótono:
+
+$$
+X_i\preceq Y_i
+\Rightarrow
+\Gamma_i(X_i)\preceq\Gamma_i(Y_i).
+$$
+
+La monotonicidad se sigue porque cualquier familia de antecedentes contenida en $X_i$ también está contenida en $Y_i$.
+
+### 0.7. Least generative closure
+
+Sea $B_i:=\operatorname{Seed}_i(\mathcal O_i)$. Definimos:
+
+$$
+\operatorname{Cl}^{G}_i(\mathcal O_i)
+:=
+\mu X_i[
+B_i\preceq X_i
+\land
+\Gamma_i(X_i)=X_i
+].
+$$
+
+Siempre que esa least closure exista en el marco fundacional adoptado, satisface:
+
+**GC1 — extensividad del seed**
+
+$$
+B_i\preceq\operatorname{Cl}^{G}_i(\mathcal O_i).
+$$
+
+**GC2 — cierre**
+
+$$
+\Gamma_i(\operatorname{Cl}^{G}_i(\mathcal O_i))
+=
+\operatorname{Cl}^{G}_i(\mathcal O_i).
+$$
+
+**GC3 — minimalidad**
+
+$$
+B_i\preceq X_i
+\land
+\Gamma_i(X_i)=X_i
+\Rightarrow
+\operatorname{Cl}^{G}_i(\mathcal O_i)\preceq X_i.
+$$
+
+**GC4 — monotonía respecto del seed**
+
+si $B_i\preceq B'_i$, entonces:
+
+$$
+\operatorname{Cl}^{G}_i(B_i)
+\preceq
+\operatorname{Cl}^{G}_i(B'_i).
+$$
+
+GC4 es una propiedad formal del operador y **no** autoriza a reemplazar un origen por una unión arbitraria: OriginUnity y RootClosed se verifican antes de aplicar la clausura.
+
+### 0.8. Irredundancia del origen
+
+Para bloquear seed-stuffing:
+
+$$
+\mathrm{Irredundant}_i(\mathcal O_i)
+$$
+
+exige que ninguna subconfiguración propia que siga siendo una OriginConfig unificada produzca exactamente la misma least closure.
+
+Esto permite representaciones equivalentes solo mediante una relación explícita de equivalencia de origen; no por igualdad extensional accidental.
+
+### 0.9. OntOrigin provisional
+
+El criterio actual es:
+
+$$
+\operatorname{OntOrigin}_i(\mathcal O_i)
+:\Longleftrightarrow
+\mathrm{OriginConfig}_i(\mathcal O_i)
+\land
+\mathrm{OriginUnity}_i(\mathcal O_i)
+\land
+\mathrm{RootClosed}_i(\mathcal O_i)
+\land
+\mathrm{Irredundant}_i(\mathcal O_i).
+$$
+
+Es **no circular respecto de R** siempre que OriginConfig, Bind/OriginUnity y GenEvent sean caracterizados independientemente.
+
+El blocker residual de REV-07 ya no es la forma lógica del origen, sino justificar ontológicamente esas primitivas y demostrar que una realización concreta las satisface.
+
+### 0.10. Generated y GeneTotal
+
+$$
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+:\Longleftrightarrow
+x_i\in\operatorname{Cl}^{G}_i(\mathcal O_i).
+$$
+
+y:
 
 $$
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 :\Longleftrightarrow
 \operatorname{OntOrigin}_i(\mathcal O_i)
 \land
-\forall x[
-\operatorname{Within}_i(x,R_i)
+\forall x_i[
+\operatorname{Within}_i(x_i,R_i)
 \leftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 ].
 $$
 
-Y la co-realidad queda derivada:
+**RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
-$$
-\operatorname{CoReal}_i(x,y)
-\Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
-\land
-\operatorname{Generated}^{*}_i(\mathcal O_i,y).
-$$
-
-**RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva porque sirve para probar si $\Lambda_*$ o una clausura $\mathcal C_*$ reconstruyen la genealogía. Queda SUPERSEDED cualquier lectura en la que la conectividad defina primariamente CoReal.
 
 ### 1. Tokens ontológicos actuales
 
