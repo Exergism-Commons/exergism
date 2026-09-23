@@ -2017,13 +2017,39 @@ donde $U_i$ es la familia de relata del hecho/proceso/constraint integrativo. Un
 
 El predicado binario previo $\operatorname{OriginConstitutive}_i(f_i,U_i)$ queda **SUPERSEDED**: ser constitutivo no es una propiedad suficientemente informativa del hecho aislado, sino de cómo su dependencia cruza una separación concreta.
 
-Introducimos una relación objetiva de dependencia constitutiva esencial:
+La dependencia constitutiva no queda como un primitivo opaco. Separamos dos relaciones independientes de la genealogía:
 
 $$
-\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i),
+\operatorname{IdDep}_i(x_i;f_i\mid Y_i)
 $$
 
-que significa: según la semántica independiente del modo ontológico instanciado por $f_i$, la actualidad/identidad constitutiva de $x_i$ requiere la instancia $f_i$ con al menos soporte relevante en $Y_i$. EssConDep no puede mencionar $\mathcal O_i$, Seed, OriginUnity, $R_i$, CoReal, Generated$^*$, SameRegime, equivalencia de índice ni el resultado de CGP. Tampoco se obtiene de mera causalidad hacia un descendiente: que $a_i,b_i$ sean inputs de un evento que produce $c_i$ puede hacer depender $c_i$ del evento, pero no hace depender retroactivamente $a_i$ o $b_i$ de él.
+significa que la identidad ontológica relevante de $x_i$ incluye esencialmente la instancia $f_i$ con soporte en $Y_i$; y
+
+$$
+\operatorname{ConstExistDep}_i(x_i;f_i\mid Y_i)
+$$
+
+significa que la existencia actual de $x_i$, en sentido constitutivo y no meramente causal, requiere la instancia $f_i$ con soporte en $Y_i$.
+
+Ambas relaciones deben justificarse mediante la semántica propia del modo ontológico concreto. No pueden mencionar $\mathcal O_i$, Seed, OriginUnity, $R_i$, CoReal, Generated$^*$, SameRegime, equivalencia de índice, CommonGround ni CGP. En particular, necesidad causal, dependencia contrafáctica dinámica o ser efecto de $f_i$ no bastan para ConstExistDep.
+
+Definimos entonces:
+
+$$
+\boxed{
+\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
+:\Longleftrightarrow
+\operatorname{UnitFact}_i(f_i,U_i)
+\land
+\bigl(
+\operatorname{IdDep}_i(x_i;f_i\mid Y_i)
+\lor
+\operatorname{ConstExistDep}_i(x_i;f_i\mid Y_i)
+\bigr).
+}
+$$
+
+Así EssConDep no certifica nada por etiqueta: exige una dependencia de identidad o de existencia constitutiva independientemente justificada. Que $a_i,b_i$ sean inputs de un evento que produce $c_i$ puede hacer depender causalmente $c_i$ del evento, pero no produce IdDep/ConstExistDep hacia $a_i$ o $b_i$ y no los vuelve retroactivamente constituidos por la convergencia.
 
 Definimos además el footprint semántico:
 
