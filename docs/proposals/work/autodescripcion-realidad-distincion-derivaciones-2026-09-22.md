@@ -2181,7 +2181,7 @@ Una familia ontológica concreta solo puede instanciar $\operatorname{EssConDep}
 - **ECD6 / recoding invariance:** una recodificación fiel que preserve la estructura ontológica relevante preserva el juicio de dependencia;
 - **ECD7 / auditability:** debe poder indicarse qué token de un lado depende constitutivamente de qué soporte cruzado y mediante qué modo ontológico.
 
-Familias candidatas que **pueden** satisfacer el contrato si se justifican independientemente: mutual grounding token-specific, identidad constitutiva relacional, estructuras holísticas en las que los relata dependen esencialmente del patrón total y co-constitución procesual genuina.
+Familias candidatas que **pueden** satisfacer el contrato si se justifican independientemente: mutual ontological dependence token-specific, identidad constitutiva relacional, estructuras holísticas en las que los relata dependen esencialmente del patrón total y co-constitución procesual genuina.
 
 No satisfacen el contrato por sí solas: causalidad ordinaria, colisión/interacción, proximidad espacio-temporal, semejanza, obediencia a una misma ley, representación conjunta, compartir un descendiente ni pertenecer a la misma clausura candidata.
 
@@ -2189,12 +2189,12 @@ Por tanto REV-07a no se cerrará enumerando etiquetas metafísicas: cada modo ad
 
 #### 0.2.3. Taxonomía núcleo de modos EssConDep
 
-Fijamos cuatro **esquemas de modo** actualmente admitidos: $\mathsf{MG}_i$, $\mathsf{RLC}_i$, $\mathsf{HC}_i$ y $\mathsf{PC}_i$, sin convertirlos en objetos de un dominio ni afirmar que toda ontología concreta deba instanciarlos todos. Un juicio $\operatorname{EssConDep}_i$ solo puede derivarse de una instancia explícita de uno de estos esquemas —o de una futura extensión que satisfaga ECD1–ECD7 y M1–M6.
+Fijamos cuatro **esquemas de modo** actualmente admitidos: $\mathsf{MOD}_i$, $\mathsf{RLC}_i$, $\mathsf{HC}_i$ y $\mathsf{PC}_i$, sin convertirlos en objetos de un dominio ni afirmar que toda ontología concreta deba instanciarlos todos. Un juicio $\operatorname{EssConDep}_i$ solo puede derivarse de una instancia explícita de uno de estos esquemas —o de una futura extensión que satisfaga ECD1–ECD7 y M1–M6.
 
-**MG — mutual grounding / co-dependencia fundamental.**
+**MOD — mutual ontological dependence / co-dependencia fundamental.**
 
 $$
-\mathsf{MG}_i(f_i;x_i,Y_i)
+\mathsf{MOD}_i(f_i;x_i,Y_i)
 \Rightarrow
 \operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
 $$
@@ -2235,7 +2235,7 @@ $$
 
 cuando $x_i$ es constitutivamente un estadio, rol, fase o participante cuya identidad ontológica depende del proceso actual $f_i$ y de soporte cruzado en $Y_i$. Ser simplemente causa, input, output o participante contingente de un proceso no satisface PC.
 
-Estas cuatro familias comparten una regla de seguridad: todo juicio $\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)$ debe venir acompañado por una derivación explícita de una de las reglas MG/RLC/HC/PC, indicando la instancia concreta, el dependiente y el soporte cruzado. La auditabilidad ECD7 exige que esa derivación pueda exponerse sin referencia a Seed, OriginUnity o al resultado final.
+Estas cuatro familias comparten una regla de seguridad: todo juicio $\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)$ debe venir acompañado por una derivación explícita de una de las reglas MOD/RLC/HC/PC, indicando la instancia concreta, el dependiente y el soporte cruzado. La auditabilidad ECD7 exige que esa derivación pueda exponerse sin referencia a Seed, OriginUnity o al resultado final.
 
 #### 0.2.4. Exclusiones y frontera con OntProd
 
@@ -2262,7 +2262,7 @@ Esto impide que REV-07b trivialice REV-07a: que una relación entre en OntProd n
 
 #### 0.2.5. Matriz de pruebas de la taxonomía
 
-| Modelo | MG | RLC | HC | PC | Resultado esperado |
+| Modelo | MOD | RLC | HC | PC | Resultado esperado |
 |---|---:|---:|---:|---:|---|
 | M1 átomo fundamental | n/a | n/a | n/a | n/a | OriginUnity vacua |
 | M2 soporte mutuo/ciclo | posible | posible | posible | posible | puede pasar |
