@@ -1520,7 +1520,7 @@ $$
 }
 $$
 
-La bilateralidad admite co-dependencia fundamental, constitución relacional/holística y co-constitución procesual cuando satisfacen ECD1–ECD7, pero rechaza una mera convergencia $a_i,b_i\to c_i$: que $c_i$ dependa del evento no vuelve dependientes retroactivamente a $a_i$ y $b_i$. El work/ fija los esquemas MOD/RLC/HC/PC y seis modelos de control. En particular:
+La bilateralidad admite co-dependencia fundamental, constitución relacional/holística y co-constitución procesual cuando satisfacen ECD1–ECD7, pero rechaza una mera convergencia $a_i,b_i\to c_i$: que $c_i$ dependa del evento no vuelve dependientes retroactivamente a $a_i$ y $b_i$. El work/ fija los esquemas MOD/RLC/HC/PC, seis modelos de control y demuestra candidate-independence + no-retroactivity. REV-07a queda RESOLVED como criterio; la existencia de testigos concretos pertenece a OntOrigin/ExistsR. En particular:
 
 $$
 \operatorname{Seed}_i(\mathcal O_i)=A_i\cup B_i
@@ -1828,14 +1828,13 @@ Esta instancia sigue dependiendo de la lógica plural/scope adoptada. El finding
 
 REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitraria y la reducción binaria de la generación. Para cerrarlo hay que justificar:
 
-1. justificar la taxonomía independiente de EssConDep/ConstitutiveBridge —y con ella $\operatorname{OriginUnity}_i$— sin presuponer la realidad total, el candidato ni la convergencia posterior;
-2. caracterizar $\operatorname{OntProd}_i$ independientemente y demostrar GenSound + GenComplete para el inventario de modos causales/constitutivos/dependencia/continuidad;
-3. existencia de la least closure $\operatorname{Cl}^{G}_i$ en el marco fundacional elegido —set, plural, clase o clausura transfinita—;
-4. si existen genealogías sin ninguna base ontológica mínima admisible —distinto de carecer meramente de primer instante temporal— y qué implicaría eso para OntOrigin;
-5. equivalencia entre configuraciones-originarias distintas que generan la misma clausura sin volver a mera extensionalidad;
-6. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente la clausura generativa;
-7. qué principio de scope/pluralidad realiza esa clausura como $R_i$ sin setificarla;
-8. **problema de convergencia:** distinguir una integración que revela que la indexación provisional era errónea de una hipotética ontogénesis en la que la convergencia crease una realidad compartida nueva.
+1. caracterizar $\operatorname{OntProd}_i$ independientemente y demostrar GenSound + GenComplete para el inventario de modos causales/constitutivos/dependencia/continuidad;
+2. existencia de la least closure $\operatorname{Cl}^{G}_i$ en el marco fundacional elegido —set, plural, clase o clausura transfinita—;
+3. si existen genealogías sin ninguna base ontológica mínima admisible —distinto de carecer meramente de primer instante temporal— y qué implicaría eso para OntOrigin;
+4. equivalencia entre configuraciones-originarias distintas que generan la misma clausura sin volver a mera extensionalidad;
+5. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente la clausura generativa;
+6. qué principio de scope/pluralidad realiza esa clausura como $R_i$ sin setificarla;
+7. **problema de convergencia:** distinguir una integración que revela que la indexación provisional era errónea de una hipotética ontogénesis en la que la convergencia crease una realidad compartida nueva.
 
 Una convergencia bien tipada prueba como máximo realizabilidad conjunta, no co-origen:
 
