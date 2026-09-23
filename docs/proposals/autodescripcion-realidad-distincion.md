@@ -1849,7 +1849,7 @@ $$
 \operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
 $$
 
-CGP **no es derivable**. SharedOntSpace cubre unidad común preexistente. La ontogénesis genuina exige $\operatorname{GenesisConstitutiveUnity}_k$: unilateralidad, PureOntRel o coexistencia no crean nueva $R$ y $\gamma$ permanece metateórico. FaithfulContinuation es relacional, admite branching/TokenMerger y exige provenance + preservación traducida; Convergence se divide en SharedSpaceConvergence y GenesisConvergence, y ContextMerger $\equiv$ MultiParentContextGenesis. Ship-of-Theseus deja FC3 explícitamente PARTIAL: ContinuationProfile no puede elegirse post hoc. Se abre como candidato no doctrinal $\Omega_i:=\operatorname{OntogenicSignature}_i$, con la obligación esquemática $\operatorname{OntOrigin}_i\Rightarrow\Omega_i\Rightarrow\operatorname{ContinuationProfile}_i(x_i)$; queda por derivar qué estructura es, qué preserva identidad iterativa y cuándo su ruptura exige nuevo índice.
+CGP **no es derivable**. SharedOntSpace cubre unidad común preexistente. ContextGenesis genuina exige $\operatorname{GenesisConstitutiveUnity}_k$; FaithfulContinuation es relacional y Convergence se separa de TokenMerger/ContextMerger. Ship-of-Theseus deja FC3 PARTIAL: ContinuationProfile no puede elegirse post hoc. La ruta provisional $\operatorname{OntOrigin}_i\Rightarrow\Omega_i\Rightarrow ContinuationProfile$ queda SUPERSEDED como orden de derivación. REV-07e abre GenesisTrivialization como hipótesis: una rama parental puede quedar representada child-side por una contribución suficiente que hace irrelevantes para ese rol ciertas diferencias internas sin retroactividad. El baking puede ser conservativo o quotient/no-inyectivo; este último ofrece un mecanismo candidato para SignatureConvergence y para pérdida de reconstruibilidad genealógica. $\Omega_i$ queda reubicada provisionalmente como posible representación canónica de estructura generativa módulo trivializaciones admisibles, no como primitivo ya definido.
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
@@ -2193,7 +2193,7 @@ $$
 
 La primera línea es la consecuencia estructural asociada a REC. La segunda es el Muro.
 
-La versión fuerte del Muro —que ninguna evidencia puramente interna pueda **jamás** discriminar la metaontología última— no se da por demostrada y permanece dentro de REV-15.
+La versión fuerte del Muro —que ninguna evidencia puramente interna pueda **jamás** discriminar la metaontología última— no se da por demostrada y permanece dentro de REV-15. La trivialización ontogénica no-inyectiva aporta ahora un **mecanismo candidato** de subdeterminación genealógica: provenance objetiva puede no ser reconstruible desde el hijo si el quotient eliminó la distinción y no sobrevive un certificado child-side; esto no identifica Muro con REC ni demuestra todavía la versión fuerte.
 
 ### 10.3. Estatuto del teorema semántico
 
