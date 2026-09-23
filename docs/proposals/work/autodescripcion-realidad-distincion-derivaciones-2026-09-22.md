@@ -3079,6 +3079,107 @@ $$
 
 La teoría debe distinguir sin circularidad entre: (i) common ground independiente descubierto gracias a $e$; y (ii) una genuina ontogénesis nueva, si alguna futura extensión decide admitirla. El hecho $e$ por sí solo solo establece joint realizability.
 
+#### 0.11.1. Integración puramente relacional
+
+El mismo problema aparece sin convergencia productiva. Para candidatos pre-indexados $C_a,C_b$, definimos el metaschema:
+
+$$
+\operatorname{RelIntegrable}^{\mathsf M}(C_a,C_b)
+$$
+
+cuando existe **una única instanciación admisible** $k$, embeddings fieles de ambos candidatos y una instancia $\rho_k$ de PureOntRel cuyos relata incluyen imágenes de contenido de ambos candidatos.
+
+Entonces:
+
+$$
+\boxed{
+\operatorname{RelIntegrable}^{\mathsf M}(C_a,C_b)
+\Rightarrow
+\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b).
+}
+$$
+
+Pero, igual que para integración productiva:
+
+$$
+\boxed{
+\operatorname{RelIntegrable}^{\mathsf M}(C_a,C_b)
+\not\Rightarrow
+\operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
+}
+$$
+
+La exigencia de una **única** realización es esencial. De:
+
+$$
+\operatorname{RelIntegrable}^{\mathsf M}(C_a,C_d),
+\qquad
+\operatorname{RelIntegrable}^{\mathsf M}(C_c,C_b),
+$$
+
+y una realización separada de $d\to c$ no se sigue automáticamente que exista una realización común de $a,d,c,b$. La realizabilidad pairwise no es aquí una regla de transitividad.
+
+#### 0.11.2. Cadena mixta coherente
+
+La intuición:
+
+$$
+a-\rho-d\to c-\sigma-b
+$$
+
+se formaliza pre-indexadamente solo cuando existe un único contexto testigo $k$ en el que están simultáneamente bien tipados:
+
+$$
+\operatorname{PureOntRel}_k(\rho_k;\{a_k,d_k\}),
+$$
+
+$$
+\operatorname{OntProd}_k(e_k,\{d_k\},c_k),
+$$
+
+$$
+\operatorname{PureOntRel}_k(\sigma_k;\{c_k,b_k\}).
+$$
+
+Ese testigo establece que $a$ y $b$ están dentro de un **mismo marco realizado** en el sentido débil de JointRealizable. No establece por sí mismo:
+
+- que $a$ produzca $b$;
+- que $b$ produzca $a$;
+- que exista un canal causal entre ellos;
+- que compartan OntOrigin;
+- que CGP sea verdadero.
+
+La posible influencia causal requiere un testigo CAU/PRC adicional; no se deriva de la mera cadena relacional.
+
+#### 0.11.3. Dilema para GeneTotal
+
+Este stress test produce una disyunción doctrinal real.
+
+Si una cadena mixta coherente está enteramente contenida en una misma $\operatorname{Generated}^{*}_k(\mathcal O_k,-)$, no hay problema: las relaciones son contenido real generado/fundamental y $\Lambda_k$ puede reconstruir después esa conectividad.
+
+Si, en cambio, existen dos genealogías independientemente adecuadas $G_a,G_b$ y una PureOntRel actual entre contenido de ambas, pero **ningún** OntOrigin independiente cuya GenClosure contenga ambas, entonces tenemos:
+
+$$
+\operatorname{JointRealizable}^{\mathsf M}(G_a,G_b)
+\land
+\neg\operatorname{CommonGround}^{\mathsf M}(G_a,G_b).
+$$
+
+En ese caso la arquitectura vigente de:
+
+$$
+R_i=\operatorname{Cl}^{G}_i(\mathcal O_i)
+$$
+
+no puede identificar sin más «marco realizado» con «una sola genealogía». Habría que elegir explícitamente entre:
+
+1. justificar CGP y mostrar que el contraescenario no puede ocurrir;
+2. admitir una operación de ensamblaje/context formation sobre varias genealogías;
+3. admitir una ontogénesis nueva por la relación/evento integrador;
+4. aceptar que JointRealizable es más débil que pertenecer a un mismo $R_i$.
+
+REV-07e permanece OPEN precisamente porque todavía no hemos elegido ni demostrado cuál de estas salidas es correcta. La existencia de PureOntRel hace visible que el problema no depende de causalidad ni de convergencia productiva.
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 
