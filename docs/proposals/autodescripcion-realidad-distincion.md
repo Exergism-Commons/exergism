@@ -308,7 +308,7 @@ $$
 }
 $$
 
-Si un supuesto hecho conecta dos candidatos que iban a recibir índices diferentes, ese hecho es evidencia **previa a la indexación** de que ambos candidatos pertenecen al mismo contexto.
+Si un supuesto hecho conecta dos candidatos que iban a recibir índices diferentes, ese hecho es evidencia **previa a la indexación** de que son conjuntamente realizables. No basta por sí solo para fijar equivalencia de índices: esa conclusión requiere CommonGround independiente o una futura teoría explícita de ontogénesis por convergencia.
 
 No se formula después:
 
@@ -425,7 +425,7 @@ $$
 
 Esto no postula una bolsa que contenga a $i$ y $j$. Es un juicio sobre dos instanciaciones del esquema de realidad.
 
-**Cluster-$R$** solo se aplica a candidatos todavía no tipados definitivamente. Si aparece un hecho ontológico integrador o un origen común, los candidatos deben recibir el mismo índice. Una vez establecido $i\mathrel{\#}j$, un «colapso posterior» es incoherente: mostraría que el juicio de incompatibilidad inicial era erróneo.
+**Cluster-$R$** solo se aplica a candidatos todavía no tipados definitivamente. Un origen común independientemente justificado fuerza equivalencia de índice; un hecho integrador solo establece JointRealizable mientras CGP siga OPEN. Una vez establecido legítimamente $i\mathrel{\#}j$, un «colapso posterior» exige mostrar que aquel juicio era erróneo o introducir explícitamente una teoría de ontogénesis entre contextos.
 
 ### 1.11. Verdad, falsedad e incompatibilidad inter-index
 
@@ -1898,7 +1898,7 @@ $$
 
 No se añade una segunda condición de aislamiento. $i\#j$ **es** la incompatibilidad de tipos.
 
-Por ello no se escriben, para índices ya genuinos, predicados objeto como `CrossRealFact(i,j)` o `CommonOntOrigin(i,j)`. Tales nociones solo se aplican a candidatos pre-indexados; si tienen testigo, el resultado es que ambos candidatos deben recibir contextos equivalentes.
+Por ello no se escriben, para índices ya genuinos, predicados objeto como `CrossRealFact(i,j)` o `CommonOntOrigin(i,j)`. Sobre candidatos pre-indexados, un testigo integrador solo establece JointRealizable; únicamente un CommonGround independiente fuerza equivalencia de contexto bajo la doctrina vigente.
 
 ### 6.4. Cluster-$R$
 
