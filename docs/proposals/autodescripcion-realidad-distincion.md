@@ -230,11 +230,11 @@ $$
 ].
 $$
 
-Solo bajo GCExists la minimalidad permite abreviar el testigo como $\operatorname{Cl}^{G}_i(\mathcal O_i)$, y la regla doctrinal queda guardada:
+Solo bajo GCExists la minimalidad permite abreviar el testigo como $\operatorname{Cl}^{G}_i(\mathcal O_i)$. La equivalencia doctrinal con realidad exige además adecuación generativa:
 
 $$
 \boxed{
-\mathrm{GCExists}_i(\mathcal O_i)
+\mathrm{GCExists}_i(\mathcal O_i)\land\mathrm{GenAdequate}_i
 \Rightarrow
 \forall x_i[
 \operatorname{Real}_i(x_i)
@@ -1496,6 +1496,8 @@ $$
 \operatorname{OntOrigin}_i(\mathcal O_i)
 :\Longleftrightarrow
 \operatorname{OriginCandidate}_i(\mathcal O_i)
+\land
+\mathrm{GenAdequate}_i
 \land
 \mathrm{GCExists}_i(\mathcal O_i)
 \land
