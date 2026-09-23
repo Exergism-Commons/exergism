@@ -2311,6 +2311,77 @@ que no use OntOrigin, Seed, OriginUnity, GeneTotal, $R_i$, CoReal, Generated$^*$
 
 Con esto REV-07a deja de tener una variable semántica completamente libre. Permanece pendiente decidir qué esquemas acepta finalmente la ontología y justificar cada uno en términos independientes; cualquier ampliación futura queda sujeta al mismo filtro anti-circular.
 
+#### 0.2.7. Lema de independencia del candidato
+
+Supóngase que UnitFact, IdDep, ConstExistDep y UnitFoot satisfacen las prohibiciones de ECD4–ECD7. Entonces, para pluralidades fijas $A_i,B_i$ y tokens fijos $f_i,U_i$, el valor de:
+
+$$
+\operatorname{ConstitutiveBridge}_i(f_i,U_i;A_i,B_i)
+$$
+
+no cambia al insertar esos mismos tokens en una configuración candidata distinta, porque su definición no contiene $\mathcal O_i$, Seed, OriginUnity, OntOrigin, GeneTotal, $R_i$, CoReal, Generated$^*$, CommonGround, CGP ni equivalencia de índices.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{ConstitutiveBridge}_i
+\text{ es candidate-independent.}
+}
+$$
+
+OriginUnity sí consulta $\operatorname{Seed}_i(\mathcal O_i)$ para enumerar particiones y verificar que el footprint completo del testigo es interno, pero **no obtiene** la verdad del bridge de esa pertenencia.
+
+#### 0.2.8. Lema de no-retroactividad de convergencia
+
+Sea un evento integrador:
+
+$$
+\operatorname{OntProd}_i(e_i,A_i\cup B_i,c_i)
+$$
+
+y sea $D_i$ cualquier contenido añadido retrospectivamente junto con $e_i,c_i$. Si para algún lado, por ejemplo $A_i$, no existe token $a_i\preceq A_i$ tal que:
+
+$$
+\operatorname{IdDep}_i(a_i;e_i\mid B_i\cup D_i)
+\lor
+\operatorname{ConstExistDep}_i(a_i;e_i\mid B_i\cup D_i),
+$$
+
+entonces, para cualquier $U_i$:
+
+$$
+\boxed{
+\neg\operatorname{ConstitutiveBridge}_i(
+e_i,U_i;
+A_i,
+B_i\cup D_i
+).
+}
+$$
+
+**Demostración.** ConstitutiveBridge exige EssConDep hacia ambos lados. Por definición de EssConDep, el lado $A_i$ requeriría precisamente IdDep o ConstExistDep respecto de la instancia $e_i$ y del soporte cruzado. La negación anterior bloquea ese conjuncto. Añadir $e_i,c_i,D_i$ al seed no altera IdDep ni ConstExistDep por candidate-independence. $\square$
+
+El lema es deliberadamente modesto: no prueba que nunca pueda existir un bridge distinto entre los linajes. Prueba exactamente lo necesario contra seed-stuffing: **el hecho de converger no se convierte a sí mismo en fundamento común**. Si existe otro bridge, debe venir acompañado por un testigo independiente.
+
+#### 0.2.9. Cierre de REV-07a
+
+REV-07a pedía evitar tres trivializaciones:
+
+1. definir la unidad por pertenencia al candidato;
+2. definirla por la realidad/clausura que se intenta obtener;
+3. reciclar una convergencia posterior como unidad originaria.
+
+La arquitectura actual bloquea las tres:
+
+- Candidate Independence Lemma bloquea (1);
+- ECD4–ECD7 + la definición de IdDep/ConstExistDep bloquean (2);
+- No-Retroactivity Lemma bloquea (3).
+
+Por ello REV-07a queda **RESOLVED como criterio de OriginUnity**. Esto **no demuestra** que exista una configuración concreta con suficientes ConstitutiveBridge. Tal existencia es una obligación de instancia de OriginCandidate/OntOrigin y, en última instancia, de ExistsR; no debe mantenerse artificialmente REV-07a abierto por no haber demostrado todavía ExistsR.
+
+Los esquemas MOD/RLC/HC/PC son rutas admitidas para clasificar testigos, no axiomas de que tales testigos existan. Una ontología concreta puede usar un subconjunto, ninguno, o futuras extensiones que pasen ECD1–ECD7 y M1–M6.
+
 
 ### 0.3. Root-closure sin primera causa temporal
 
