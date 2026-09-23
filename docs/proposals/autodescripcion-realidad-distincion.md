@@ -469,83 +469,111 @@ Por tanto, dentro de $i$, «fuera de $R_i$» no denota un exterior ontológico o
 El metalenguaje puede formular la hipótesis Many-$R$, pero esa formulación no constituye un hecho real transversal ni proporciona acceso de $R_i$ a $R_j$.
 
 
-## 2. Consecuencias estructurales de la indexación
+## 2. Consecuencias estructurales del tipado indexado
 
-Dado:
+Fijado un parámetro de contexto $i$ y una realización:
 
 $$
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i),
 $$
 
-se sigue por definición tipada:
+se sigue dentro de ese contexto:
 
 $$
 \boxed{
-\operatorname{Real}_i(x)
+\operatorname{Real}_i(x_i)
 \Longleftrightarrow
-\operatorname{Within}_i(x,R_i).
+\operatorname{Within}_i(x_i,R_i).
 }
 $$
 
 Por tanto un supuesto «real de $i$ fuera de $R_i$» es contradictorio:
 
 $$
-\operatorname{Real}_i(x)
+\operatorname{Real}_i(x_i)
 \land
-\neg\operatorname{Within}_i(x,R_i)
+\neg\operatorname{Within}_i(x_i,R_i)
 \Rightarrow
 \bot.
 $$
 
-Esta consecuencia es analítica **dentro del índice**. No demuestra que exista algún índice; esa existencia es la carga sustantiva de REV-07.
+Esto no demuestra que exista una realización del esquema: esa carga pertenece a REV-07.
 
 ### 2.1. Cierre de hechos reales
 
 Si:
 
 $$
-\operatorname{RealFact}_i(f),
+\operatorname{RealFact}_i(f_i),
 $$
 
-todos sus relata pertenecen a $i$:
+entonces:
 
 $$
-\forall x[
-\operatorname{Relatum}(x,f)
+\forall x_i[
+\operatorname{Relatum}_i(x_i,f_i)
 \Rightarrow
-\operatorname{Real}_i(x)
+\operatorname{Real}_i(x_i)
 ].
 $$
 
-En consecuencia, ningún hecho real de $i$ puede tener como relatum contenido de un índice genuinamente distinto.
+Un término $x_j$ de un contexto incompatible $j$ no puede ocupar esa posición: no es un relatum falso de $f_i$, sino un término de sort incorrecto.
 
-### 2.2. El índice es la incompatibilidad
+### 2.2. Incompatibilidad como juicio de tipado
 
-Para índices genuinos:
-
-$$
-i\neq j
-$$
-
-no describe una relación física u ontológica entre dos realidades. Es una afirmación del metalenguaje que significa que sus dominios de realidad son mutuamente incompatibles.
-
-Así, si aparece cualquier testigo ontológico común —token, hecho, relación, dependencia o base/origen—, la conclusión correcta es:
+El juicio:
 
 $$
-\boxed{
-\text{los candidatos no tenían índices ontológicos distintos}.
-}
+i\mathrel{\#}j
 $$
 
-No existe una fase posterior en la que dos $R_i$ genuinos puedan fusionarse.
+no afirma una relación negativa entre dos objetos-realidad. Afirma metateóricamente que no existe un único contexto bien tipado en el que ambos candidatos puedan coexistir como contenido real.
+
+Si antes de cerrar la indexación aparece un token común, un hecho integrador, una dependencia o una base/origen común, el diagnóstico es:
+
+$$
+i\simeq_{\mathrm{idx}}j.
+$$
+
+No existe una fase posterior en la que dos contextos ya establecidos como $i\#j$ se fusionen.
 
 ### 2.3. Consecuencia epistemológica
 
-Desde $R_i$ no puede existir evidencia real sobre un supuesto $R_j\neq R_i$, porque tal evidencia sería un hecho real de $i$ con contenido transversal y violaría la incompatibilidad de índice.
+Si Many-$R$ es metateóricamente verdadero y $i\#j$, ningún hecho real de $R_i$ puede certificar $R_j$, porque una certificación real tendría que ser una fórmula/hecho bien tipado en $i$ con contenido de tipo $j$.
 
-Por ello One-$R$ y Many-$R$ pueden ser distintos en el metalenguaje sin producir necesariamente ninguna diferencia interna certificable en $R_i$.
+Eso no sería falso: sería imposible de formar dentro de $\mathcal L_i$.
 
-Esto no demuestra Many-$R$ ni One-$R$. Demuestra una limitación estructural: **si Many-$R$ es verdadero, ningún índice puede contener un hecho real que lo certifique relacionándolo con otro índice.**
+Por ello One-$R$ y Many-$R$ pueden diferir en el metalenguaje sin producir una diferencia internamente certificable en una realización concreta $R_i$.
+
+### 2.4. Verdad invertida entre realizaciones
+
+Sea $p_i\in\mathcal L_i$ y sea una traducción metalingüística:
+
+$$
+\tau_{ij}:\mathcal L_i\rightsquigarrow\mathcal L_j.
+$$
+
+Es coherente que:
+
+$$
+\operatorname{True}_i(p_i)
+$$
+
+y:
+
+$$
+\operatorname{False}_j(\tau_{ij}(p_i)).
+$$
+
+Esto no produce:
+
+$$
+p\land\neg p
+$$
+
+en ningún contexto común. $p_i$ y $\tau_{ij}(p_i)$ son expresiones tipadas distintas; la correspondencia entre ellas pertenece al metalenguaje.
+
+Por tanto todos los hechos reales de $i$ pueden carecer de cualquier realización homóloga verdadera en $j$ —incluso admitir traducciones invertidas— sin que $i$ y $j$ entren en contradicción ontológica.
 
 
 ## 3. Estado actual del programa emergentista
@@ -633,10 +661,9 @@ La existencia ontológica y su representación quedan ahora separadas:
 1. **REV-07:** justificar una base/origen ontológico $\mathcal O_i$, reglas $\operatorname{GenStep}_i$ independientes y una clausura $\operatorname{Generated}^{*}_i$ que realice un $R_i$;
 2. **REV-23:** justificar PON solo si se conserva la reconstrucción finita por $\Lambda_*$;
 3. **REV-24:** dado un $R_i$ genealógico ya justificado, demostrar OA/MC/RA y $\operatorname{Presents}_i(S_i,R_i)$;
-4. **REV-25:** justificar la smallness de firma/aridades y el predicado de actualidad usado por Separation;
-5. **REV-26:** justificar, para el $R$ absoluto, una base ontológica común cuya clausura genere exactamente todo lo real.
+4. **REV-25:** justificar la smallness de firma/aridades y el predicado de actualidad usado por Separation.
 
-REV-20 y REV-22 quedan como consecuencias/alternativas de las premisas de smallness. El teorema semántico directo entrega $\operatorname{SemTotal}$; la existencia local depende de REV-07 y la existencia absoluta de REV-26, no de la maximalidad semántica.
+REV-26 queda fuera de esta lista: es una extensión metaontológica no bloqueante sobre One-$R$/Many-$R$ y expresividad global. REV-20 y REV-22 quedan como consecuencias/alternativas de las premisas de smallness. El teorema semántico directo entrega $\operatorname{SemTotal}$; la existencia de una realidad depende de REV-07, no de la maximalidad semántica.
 
 ---
 
@@ -1665,135 +1692,110 @@ REV-07 permanece **PARTIAL**. Para cerrarlo hay que justificar:
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
-## 6. Metaontología global opcional — REV-26
+## 6. Metaontología de contextos — REV-26
 
-REV-26 deja de ser condición de cierre para $\operatorname{ExistsR}$.
+REV-26 no forma parte de la demostración de $\operatorname{ExistsR}$. Estudia qué afirmaciones puede hacer el metalenguaje acerca de distintas **instanciaciones del esquema indexado**.
 
-El target doctrinal ya es:
+### 6.1. Meta-cuantificación
 
-$$
-\operatorname{ExistsR}
-:=
-\exists i\;\exists\mathcal O_i\;\exists R_i\;
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
-$$
-
-REV-26 estudia únicamente qué puede decir el **metalenguaje de índices** sobre el número y organización de realidades genuinas.
-
-### 6.1. One-$R$
-
-One-$R$ afirma metateóricamente que existe un único índice ontológico genuino:
+Cuando se escriba:
 
 $$
-\boxed{
-\exists! i\;
-\exists\mathcal O_i\exists R_i\;
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
-}
+\exists^{\mathsf M} i\;\Phi_i
 $$
 
-No exige conectividad causal interna total. Todas las regiones de ese índice pueden compartir origen sin interactuar causalmente entre sí.
-
-### 6.2. Many-$R$
-
-Many-$R$ afirma metateóricamente:
+o:
 
 $$
-\boxed{
-\exists i\neq j\;
-\operatorname{ExistsIndex}(i)
-\land
-\operatorname{ExistsIndex}(j).
-}
+\forall^{\mathsf M} i\;\Phi_i,
 $$
 
-donde cada índice está realizado por alguna $\operatorname{GeneTotal}$.
+se trata de abreviaturas metateóricas sobre sustituciones/realizaciones admisibles del parámetro $i$. No existe por ello un sort ontológico de índices ni una entidad que los reúna.
 
-No se añade una condición separada de incompatibilidad. La incompatibilidad es el hecho mismo de que los índices sean genuinamente distintos.
+### 6.2. One-$R$
 
-Por tanto:
+One-$R$ afirma:
 
-$$
-i\neq j
-\Rightarrow
-\neg\operatorname{CrossRealFact}(i,j)
-\land
-\neg\operatorname{CommonOntOrigin}(i,j).
-$$
-
-Si apareciera cualquiera de esos testigos, la conclusión sería que $i$ y $j$ no eran índices ontológicos distintos.
-
-### 6.3. Cluster-$R$ como diagnóstico pre-indexado
-
-Cluster-$R$ no describe una fusión posterior de realidades genuinas.
-
-Se aplica únicamente a candidatos provisionales $C_a,C_b$ antes de asignarles índices ontológicos definitivos.
-
-Si:
+1. $\operatorname{ExistsR}$;
+2. si el metalenguaje compara dos realizaciones admisibles de GeneTotal, sus parámetros resultan equivalentes:
 
 $$
-\operatorname{CommonOntOrigin}(C_a,C_b)
+i\simeq_{\mathrm{idx}}j.
 $$
 
-o existe un hecho ontológico que integra contenido de ambos candidatos, entonces deben reanalizarse como subclausuras de un mismo índice $k$.
+No exige conectividad causal interna total.
 
-Por tanto:
+### 6.3. Many-$R$
+
+Many-$R$ afirma que existen metateóricamente dos realizaciones admisibles de GeneTotal cuyos parámetros satisfacen:
 
 $$
 \boxed{
-\text{genuine Many-}R
-\Rightarrow
-\text{no future Cluster-}R\text{ collapse}.
+i\mathrel{\#}j.
 }
 $$
 
-Un aparente colapso solo corrige una indexación provisional equivocada.
+No se añade una segunda condición de aislamiento. $i\#j$ **es** la incompatibilidad de tipos.
 
-### 6.4. Generalidad absoluta
+Por ello no se escriben, para índices ya genuinos, predicados objeto como `CrossRealFact(i,j)` o `CommonOntOrigin(i,j)`. Tales nociones solo se aplican a candidatos pre-indexados; si tienen testigo, el resultado es que ambos candidatos deben recibir contextos equivalentes.
 
-AG, APC y la antigua noción de un scope absoluto de «todo lo real» dejan de ser requisitos para $\operatorname{ExistsR}$.
+### 6.4. Cluster-$R$
 
-Pueden conservarse como cuestiones metalingüísticas sobre si el metalenguaje puede cuantificar conjuntamente sobre todos los índices. Incluso si tal cuantificación es legítima, no crea una realidad superior que los integre.
+Cluster-$R$ es un diagnóstico anterior a la tipificación definitiva.
 
-En particular, una metaclase de pares tipados:
-
-$$
-\langle i,x\rangle
-$$
-
-no constituye un $R_{\mathrm{abs}}$.
-
-### 6.5. Metaindecidibilidad interna de Many-$R$
-
-Supóngase que $R_i$ existe.
-
-Si existe además $R_j$ con $j\neq i$, ningún hecho real de $i$ puede tener a $R_j$, a un token de $j$ o a una relación $i$–$j$ como contenido.
-
-Por tanto, la verdad metateórica de One-$R$ o Many-$R$ no tiene por qué ser discriminable desde la evidencia interna de $R_i$.
-
-Formalmente, la teoría no afirma todavía identidad completa entre todas las teorías internas posibles de escenarios One-$R$ y Many-$R$; afirma la consecuencia más débil y segura:
+Dados candidatos $C_a,C_b$, si una ontología común los genera o existe un hecho ontológico bien formado que integra contenido de ambos, entonces deben asignarse al mismo contexto:
 
 $$
-\boxed{
-i\neq j
-\Rightarrow
-\text{no existe certificación real transversal dentro de }R_i.
-}
+i\simeq_{\mathrm{idx}}j.
 $$
 
-### 6.6. Estado de REV-26
+Una vez justificado:
 
-- **REV-26a / AG:** DEFERRED para el target principal; relevante solo para metalenguaje absoluto.
-- **REV-26b / APC:** DEFERRED para el target principal; una semántica plural global no crea compatibilidad ontológica.
-- **REV-26c / common absolute origin:** deja de ser obligación de existencia. Si se demuestra un origen común entre candidatos, estos pertenecen al mismo índice; sirve como test de One-$R$, no como puente hacia $\operatorname{ExistsR}$.
-- **REV-26d / NoAbsFinality:** DEFERRED como cuestión metaontológica.
-- **REV-26e / target doctrinal:** RESOLVED — basta demostrar al menos un $R_i$ genealógico para refutar No-$R$.
+$$
+i\mathrel{\#}j,
+$$
 
-## 7. Arquitectura final de $R_i$, $S_i$ e índices
+un supuesto colapso posterior en Cluster-$R$ refuta la indexación anterior; no fusiona dos realidades genuinas.
 
-### 7.1. Ontología y semántica
+### 6.5. Metalenguaje no es superrealidad
 
-La arquitectura vigente es:
+El metalenguaje puede escribir pares sintácticos:
+
+$$
+\langle i,x_i\rangle,
+$$
+
+comparar teorías $\mathcal L_i,\mathcal L_j$ o definir traducciones $\tau_{ij}$.
+
+Nada de ello es contenido ontológico de un $R_k$ superior. Es infraestructura formal externa a los lenguajes objeto.
+
+AG, comprensión plural global y NoAbsFinality quedan DEFERRED como cuestiones sobre la fuerza del metalenguaje, no como premisas de $\operatorname{ExistsR}$.
+
+### 6.6. Metaindecidibilidad interna
+
+Para:
+
+$$
+i\mathrel{\#}j,
+$$
+
+ninguna fórmula bien tipada en $\mathcal L_i$ puede tener como relatum un objeto, hecho o scope de tipo $j$.
+
+Así, si Many-$R$ es verdadero, ningún $R_i$ puede certificar internamente la existencia de un $R_j$ incompatible.
+
+### 6.7. Estado de REV-26
+
+- **REV-26a / AG:** DEFERRED; solo metalenguaje global.
+- **REV-26b / comprensión plural global:** DEFERRED.
+- **REV-26c / origen común:** test pre-indexado de equivalencia de contextos; no blocker de ExistsR.
+- **REV-26d / NoAbsFinality:** DEFERRED y distinto de No-$R$.
+- **REV-26e:** RESOLVED — el target es una realización genealógica indexada.
+
+## 7. Arquitectura final de realidad, presentación e índice
+
+### 7.1. Arquitectura ontológica/semántica
+
+Para un parámetro de contexto fijo $i$:
 
 $$
 \boxed{
@@ -1805,34 +1807,31 @@ S_i.
 }
 $$
 
-La flecha izquierda determina realidad indexada; la derecha intenta representarla.
+$i$ no es un nodo de este diagrama: es el **tipo/contexto en el que el diagrama está escrito**.
 
-$S_i$ nunca genera, completa ni crea ontológicamente $R_i$.
-
-### 7.2. Existencia
+### 7.2. Existencia como metasentencia
 
 $$
 \boxed{
 \operatorname{ExistsR}
 \Longleftrightarrow
-\exists i,\mathcal O_i,R_i\;
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
+\exists^{\mathsf M} i\;
+\bigl(
+\exists\mathcal O_i\exists R_i\;
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\bigr).
 }
 $$
 
-Esto es suficiente para negar No-$R$.
+Esto basta para negar No-$R$ y no requiere One-$R$.
 
 ### 7.3. Presentación testimoniada
 
-REV-24 intenta fortalecer un $R_i$ ya existente a:
+Fijada una realización $i$, REV-24 intenta demostrar:
 
 $$
-\operatorname{WitnessedR}
-$$
-
-mediante:
-
-$$
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
++
 \operatorname{SemTotal}_i(S_i)
 +
 \mathrm{OA}_i
@@ -1846,41 +1845,33 @@ $$
 
 ### 7.4. Incompatibilidad ontológica
 
-Para índices genuinos distintos:
+El juicio:
 
 $$
-\boxed{
-i\neq j
-\Longrightarrow
-\text{ningún contenido ontológico común o transversal}.
-}
+\boxed{i\mathrel{\#}j}
 $$
 
-Esta es una regla de tipado ontológico, no una interacción negativa entre realidades.
+significa que los dos contextos no admiten un único tipado ontológico común. No significa que exista una relación `#` dentro de alguna realidad.
 
-### 7.5. Consecuencia para el aspecto de $R$
+### 7.5. Consecuencia para nuestro acceso
 
-La forma global metateórica —One-$R$, Many-$R$ o cualquier pluralidad de índices— no altera qué puede contar como realidad dentro de un $R_i$ concreto.
+Toda evidencia, proceso o estructura real accesible está necesariamente tipada dentro de algún contexto $i$.
 
-Desde un índice, todo contenido ontológicamente significativo está en su clausura. Lo demás no constituye un «afuera» real para ese índice.
+Desde $R_i$, cualquier supuesto contenido de un contexto incompatible carece de referencia ontológica en $\mathcal L_i$.
 
-Por ello la investigación física/semántica efectiva siempre ocurre dentro de algún $R_i$:
+Por eso la apariencia metateórica de One-$R$ o Many-$R$ no cambia el hecho operativo fundamental:
 
 $$
 \boxed{
 \text{acceso, proceso, estructura y evidencia}
-\subseteq
+\subseteq_i
 R_i.
 }
 $$
 
-El metalenguaje puede comparar hipótesis sobre índices; ningún $R_i$ contiene por ello a los demás.
+### 7.6. Verdad interna
 
-### 7.6. Retirada de «Verdad Absoluta indexada»
-
-La fórmula histórica $\operatorname{VA}(o)=R_i$ permanece SUPERSEDED.
-
-Puede existir una verdad/presentación interna $\operatorname{Truth}_i$, pero no se convierte por nombre en una verdad transversal a índices incompatibles.
+Puede existir una presentación/verdad interna $\operatorname{Truth}_i$. No se proyecta automáticamente a otro contexto ni existe una `Truth_abs` por mera comparación metalingüística.
 
 
 ## 8. K2, localidad, compacidad y colímites
@@ -1938,32 +1929,31 @@ REC y el Muro deben mantenerse separados porque tienen **estatus y dirección l�
 
 ### 10.1. REC — consecuencia estructural de una totalidad real
 
-$\operatorname{REC}_i(R_i)$ (R Enigmatic Certification) no se adopta como una premisa independiente para demostrar que $R_i$ existe. Es una consecuencia estructural —en gran medida analítica una vez fijado el significado de totalidad ontológica— de un candidato que ya satisface:
+$\operatorname{REC}_i(R_i)$ (R Enigmatic Certification) no se adopta como premisa para demostrar que $R_i$ existe. Se atribuye solo después de justificar una realización genealógica:
 
 $$
-\operatorname{OntTotal}_i(R_i).
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i).
 $$
 
-Introducimos, de forma tipada, la abreviatura:
+La abreviatura estrictamente tipada es:
 
 $$
 \operatorname{REC}_i(R_i)
 :=
-\neg\exists x\,
-[
-\operatorname{Real}(x)
+\neg\exists x_i[
+\operatorname{Real}_i(x_i)
 \land
-\operatorname{OutsideOntScope}_i(x,R_i)
+\operatorname{OutsideOntScope}_i(x_i,R_i)
 \land
-\operatorname{CertifiesTotality}_i(x,R_i)
+\operatorname{CertifiesTotality}_i(x_i,R_i)
 ].
 $$
 
-Por tanto, la dirección válida es:
+Por tanto:
 
 $$
 \boxed{
-\operatorname{OntTotal}_i(R_i)
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 \Rightarrow
 \operatorname{REC}_i(R_i).
 }
@@ -1985,7 +1975,7 @@ Una certificación externa exitosa no certifica que $C$ sea $R_i$: descarta esa 
 
 REC no significa que $R_i$ sea incognoscible, indescriptible o indemostrable por cualquier vía. Excluye específicamente un **punto de certificación real situado ontológicamente fuera de una totalidad genuina**.
 
-Por ello REC solo se atribuye propiamente a un candidato después de disponer de $\operatorname{OntTotal}_i$. No se atribuye por mera clausura a $U_i$ ni a un máximo semántico $S_i$.
+Por ello REC solo se atribuye propiamente después de disponer de $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$. No se atribuye por mera clausura a $U_i$ ni a un máximo semántico $S_i$.
 
 ### 10.2. Muro — subdeterminación desde un horizonte o candidato
 
