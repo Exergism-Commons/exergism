@@ -1466,9 +1466,7 @@ La identidad de una realidad indexada queda anclada primariamente en **origen + 
 
 ### 5.1. Criterio primario: origen unificado + generación independiente
 
-REV-07 exige una configuración-originaria $\mathcal O_i$ que no pueda obtenerse por mera unión metalingüística de raíces independientes.
-
-Definimos normativamente:
+REV-07 exige una configuración-originaria que no pueda fabricarse agregando raíces independientes.
 
 $$
 \boxed{
@@ -1496,61 +1494,30 @@ $$
 }
 $$
 
-Los criterios vigentes son:
-
-- **OU1 / OriginConfig:** $\mathcal O_i$ es una configuración-token ontológicamente instanciada, no una lista o suma representacional.
-
-**OU2 / OriginUnity se define, no solo se usa como condición suficiente.** Introducimos hechos de integración independientes del candidato:
+**OriginUnity.** Se define mediante hechos de integración independientes del candidato:
 
 $$
-\operatorname{UnitFact}_i(f_i,U_i),
-$$
-
-donde $U_i$ son sus relata. UnitFact debe ser token-specific, ontológicamente integrativo, invariante bajo recodificación y definido sin mencionar $\mathcal O_i$, Seed, OriginConfig, OriginUnity, $R_i$, CoReal, Generated$^*$ ni «mismo índice». Mera proximidad, semejanza, compartir leyes o fusión mereológica sin dependencia integrativa no cuentan.
-
-Entonces:
-
-$$
-\boxed{
 \operatorname{OriginUnity}_i(\mathcal O_i)
-:\Longleftrightarrow
+\Longleftrightarrow
 \forall A_i,B_i[
-\operatorname{Partition}_i(
-\operatorname{Seed}_i(\mathcal O_i);A_i,B_i
-)
+\operatorname{Partition}_i(\operatorname{Seed}_i(\mathcal O_i);A_i,B_i)
 \Rightarrow
-\exists f_i\exists U_i[
+\exists f_i,U_i[
 \operatorname{UnitFact}_i(f_i,U_i)
-\land
-U_i\cap A_i\neq\varnothing
-\land
-U_i\cap B_i\neq\varnothing
-]
-].
-}
+\land U_i\cap A_i\neq\varnothing
+\land U_i\cap B_i\neq\varnothing
+]].
 $$
 
-La orientación interna de UnitFact es irrelevante para este test de conectividad: basta que sus relata crucen la partición. Así se admiten relaciones constitutivas/de dependencia asimétricas sin exigir dos direcciones.
-
-El lema anti-agregación queda ahora inmediato:
+UnitFact debe ser token-specific, integrativo, invariante y definido sin mencionar el candidato, Seed/OriginUnity, $R_i$, CoReal, Generated$^*$ ni el índice como criterio de pertenencia. El lema técnico demuestra:
 
 $$
-\boxed{
 \mathrm{NoUnitFactBridge}(A_i,B_i)
 \Rightarrow
 \neg\operatorname{OriginUnity}_i(A_i\cup B_i).
-}
 $$
 
-- **OU3 / RootClosed:** usa la relación objetivo independiente $\operatorname{OntProd}_i$. Para no omitir el propio evento productor, definimos un footprint ontológico:
-
-$$
-\operatorname{GenFoot}_i(e_i,A_i,b_i)
-\succeq
-A_i\cup\{e_i,b_i\}.
-$$
-
-y exigimos:
+**RootClosed.** La producción objetivo independiente es $\operatorname{OntProd}_i(e_i,A_i,b_i)$ y su footprint incluye al menos $A_i\cup\{e_i,b_i\}$. Se exige:
 
 $$
 b_i\in\operatorname{Seed}_i(\mathcal O_i)
@@ -1562,16 +1529,13 @@ b_i\in\operatorname{Seed}_i(\mathcal O_i)
 \operatorname{Seed}_i(\mathcal O_i).
 $$
 
-Esto permite ciclos internos pero impide que un evento o antecedente externo genere un constituyente del origen.
+Esto permite ciclos internos pero excluye antecedentes o eventos productores externos.
 
-- **GCExists:** existe una least generative closure en el marco fundacional adoptado.
-
-- **OU4 / Irredundant:** solo compiten subconfiguraciones que también satisfacen los prerrequisitos de origen:
+**Irredundant.** Solo compiten subconfiguraciones que siguen siendo OriginCandidate y tienen closure:
 
 $$
-\boxed{
 \mathrm{Irredundant}_i(\mathcal O_i)
-:\Longleftrightarrow
+\Longleftrightarrow
 \neg\exists\mathcal O'_i\prec\mathcal O_i[
 \operatorname{OriginCandidate}_i(\mathcal O'_i)
 \land
@@ -1581,47 +1545,21 @@ $$
 =
 \operatorname{Cl}^{G}_i(\mathcal O_i)
 ].
-}
 $$
 
-Así un singleton extraído de un ciclo no derrota irredundancia si deja de ser RootClosed.
-
-La generación implementada usa hipereventos:
+**Adecuación generativa.** $\operatorname{GenEvent}_i$ implementa $\operatorname{OntProd}_i$ con antecedentes conjuntos y debe satisfacer:
 
 $$
-\operatorname{GenEvent}_i(e_i,A_i,b_i),
+\mathrm{GenSound}_i
+\land
+\mathrm{GenComplete}_i.
 $$
 
-con antecedentes conjuntos $A_i$. La relación objetivo independiente es:
+Las definiciones exactas, el contraejemplo a GenStep binario y los criterios por modo causal/constitutivo/grounding/continuidad quedan en `work/`.
+
+El operador generativo añade el footprint completo de cada hiperevento cuyos antecedentes están disponibles:
 
 $$
-\operatorname{OntProd}_i(e_i,A_i,b_i).
-$$
-
-Se exigen:
-
-$$
-\mathrm{GenSound}_i:
-\quad
-\operatorname{GenEvent}_i(e_i,A_i,b_i)
-\Rightarrow
-\operatorname{OntProd}_i(e_i,A_i,b_i),
-$$
-
-$$
-\mathrm{GenComplete}_i:
-\quad
-\operatorname{OntProd}_i(e_i,A_i,b_i)
-\Rightarrow
-\operatorname{GenEvent}_i(e_i,A_i,b_i).
-$$
-
-$\operatorname{GenStep}_i$ queda solo como proyección auxiliar; no es regla suficiente de clausura.
-
-El operador añade el footprint completo del evento:
-
-$$
-\boxed{
 \Gamma_i(X_i)
 :=
 X_i
@@ -1633,58 +1571,20 @@ X_i
 \land
 A_i\preceq X_i
 \}.
-}
 $$
 
-
-La existencia de una menor clausura **no se presupone por notación**. Introducimos:
-
-$$
-\operatorname{GenClosure}_i(\mathcal O_i,C_i)
-$$
-
-cuando:
+**Existencia de closure.** No se presupone un operador $\mu$ total. `GenClosure_i(O_i,C_i)` significa que $C_i$ contiene el seed, es fijo de $\Gamma_i$ y es mínimo entre esos carriers; entonces:
 
 $$
-\operatorname{Seed}_i(\mathcal O_i)\preceq C_i,
-\qquad
-\Gamma_i(C_i)=C_i,
-$$
-
-y para todo carrier admisible $X_i$:
-
-$$
-\operatorname{Seed}_i(\mathcal O_i)\preceq X_i
-\land
-\Gamma_i(X_i)=X_i
-\Rightarrow
-C_i\preceq X_i.
-$$
-
-Definimos:
-
-$$
+\boxed{
 \mathrm{GCExists}_i(\mathcal O_i)
 :\Longleftrightarrow
 \exists C_i\;
 \operatorname{GenClosure}_i(\mathcal O_i,C_i).
+}
 $$
 
-Solo bajo GCExists se usa:
-
-$$
-\operatorname{Cl}^{G}_i(\mathcal O_i)
-$$
-
-como abreviatura del único $C_i$ mínimo, y entonces:
-
-$$
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
-:\Longleftrightarrow
-x_i\in\operatorname{Cl}^{G}_i(\mathcal O_i).
-$$
-
-Así REV-07c queda explícita: debe demostrarse GCExists en el marco set/plural/class/transfinito elegido; no queda escondida dentro de un operador $\mu$.
+Solo bajo GCExists se usa $\operatorname{Cl}^{G}_i(\mathcal O_i)$ y se define Generated$^*$. Las demostraciones de extensividad, monotonía, minimalidad y el detalle fundacional están en `work/`.
 
 
 ### 5.2. Co-realidad derivada
