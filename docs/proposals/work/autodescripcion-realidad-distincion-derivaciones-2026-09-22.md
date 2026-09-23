@@ -2617,6 +2617,122 @@ La arquitectura ya fija:
 
 Por tanto REV-07b permanece **PARTIAL** por una sola deuda sustantiva principal: demostrar o asumir explícitamente ProdCoverage en el contexto usado por ExistsR. No debe marcarse RESOLVED mientras pueda existir una instancia de OntProd legítima fuera de CAU/CON/GRD/PRC.
 
+#### 0.4.4. Relaciones ontológicas puras no son una quinta familia de OntProd
+
+REV-07b no pretende que toda relación ontológica sea productiva. Introducimos:
+
+$$
+\operatorname{PureOntRel}_i(\rho_i;U_i),
+$$
+
+para una instancia relacional actual $\rho_i$ con pluralidad de relata $U_i$ cuya semántica propia conecta esos relata pero **no establece por sí sola una orientación productiva** hacia ninguno de ellos.
+
+Debe satisfacer:
+
+- **POR1 / actuality:** $\rho_i$ es una instancia actual, no mera posibilidad de relación;
+- **POR2 / token-specific:** la instancia obtiene entre esos relata concretos;
+- **POR3 / non-representational:** no es solo una relación entre descripciones/modelos;
+- **POR4 / non-productive orientation:** de $\operatorname{PureOntRel}_i(\rho_i;U_i)$ no se sigue $\operatorname{OntProd}_i(\rho_i,A_i,x_i)$ para ningún $x_i\preceq U_i$ por el mero hecho de ser relatum;
+- **POR5 / support footprint:** existe $\operatorname{RelFoot}_i(\rho_i;U_i)$ con $U_i\cup\{\rho_i\}\preceq\operatorname{RelFoot}_i(\rho_i;U_i)$;
+- **POR6 / candidate independence:** PureOntRel/RelFoot no mencionan Seed, OntOrigin, $R_i$, CoReal, SameRegime, CommonGround ni CGP;
+- **POR7 / recoding invariance:** recodificaciones fieles preservan la instancia y su footprint.
+
+Por tanto:
+
+$$
+\boxed{
+\operatorname{PureOntRel}_i(\rho_i;U_i)
+\not\Rightarrow
+\operatorname{OntProd}_i(\rho_i,A_i,x_i).
+}
+$$
+
+Esto no significa que $\rho_i$ carezca de genealogía. La **relación-token** puede ser fundamental, estar en el origen o ser target de CAU/CON/GRD/PRC. Lo que POR4 prohíbe es convertir su incidencia en producción de sus propios relata.
+
+#### 0.4.5. No hay relaciones colgantes ni expansión gratuita por incidencia
+
+Definimos cierre de soporte relacional para un carrier $X_i$:
+
+$$
+\operatorname{RelSupportClosed}_i(X_i)
+:\Longleftrightarrow
+\forall \rho_i,U_i[
+\rho_i\preceq X_i
+\land
+\operatorname{PureOntRel}_i(\rho_i;U_i)
+\Rightarrow
+\operatorname{RelFoot}_i(\rho_i;U_i)\preceq X_i
+].
+$$
+
+Una OriginConfig bien formada debe satisfacer:
+
+$$
+\boxed{
+\operatorname{OriginConfig}_i(\mathcal O_i)
+\Rightarrow
+\operatorname{RelSupportClosed}_i(
+\operatorname{Seed}_i(\mathcal O_i)
+).
+}
+$$
+
+Además GF2 se refuerza: si un GenFoot contiene una relación-token actual, contiene también su RelFoot obligatorio.
+
+Pero para una relación **pura** que aparece como target generado se exige la dirección contraria para evitar fabricar relata:
+
+$$
+\boxed{
+\operatorname{GenEvent}_i(e_i,A_i,\rho_i)
+\land
+\operatorname{PureOntRel}_i(\rho_i;U_i)
+\Rightarrow
+U_i\preceq A_i.
+}
+$$
+
+Lectura: una relación pura puede ser generada/constituida una vez disponibles sus relata; su aparición no genera retroactivamente los relata. Si relación y relata son genuinamente co-constitutivos, el caso deja de ser puro y debe justificarse mediante CON/GRD y, para OriginUnity, mediante EssConDep/ConstitutiveBridge.
+
+Consecuencia: no hace falta introducir por ahora una segunda clausura $Cl^{Rel}$. Las relaciones actuales son contenido ontológico y sus footprints deben estar bien formados, pero la incidencia pura no añade nuevos relata a la genealogía.
+
+#### 0.4.6. Stress test mixto: relación–genealogía–relación
+
+Considérese:
+
+$$
+\operatorname{PureOntRel}_i(\rho_i;\{a_i,d_i\}),
+\qquad
+\operatorname{OntProd}_i(e_i,\{d_i\},c_i),
+\qquad
+\operatorname{PureOntRel}_i(\sigma_i;\{c_i,b_i\}).
+$$
+
+Existe entonces el camino ontológico mixto:
+
+$$
+a_i
+\mathrel{-_{\rho_i}}
+d_i
+\xrightarrow{e_i}
+c_i
+\mathrel{-_{\sigma_i}}
+b_i.
+$$
+
+Pero no se deriva:
+
+$$
+\operatorname{OntProd}_i(-,\{a_i\},b_i),
+\qquad
+\operatorname{OntProd}_i(-,\{b_i\},a_i),
+$$
+
+ni una capacidad causal mutua. **Conectividad ontológica no equivale a influencia causal.**
+
+Si todos los tokens de la cadena están ya bien tipados bajo la misma instanciación $i$, la cadena es evidencia estructural de que $a_i$ y $b_i$ pertenecen a un mismo marco realizado. En cambio, a nivel pre-indexado, tres testigos pairwise separados no bastan: hace falta una única realización coherente que contenga simultáneamente $\rho,e,\sigma$ y sus relata.
+
+Este caso no refuta ProdCoverage, porque PureOntRel no es OntProd. Sí crea un adversario directo para la tesis más fuerte de que una única genealogía productiva basta automáticamente para toda unidad de contexto. Esa cuestión pertenece a REV-07e/CGP y al ensamblaje de GeneTotal.
+
 La proyección binaria:
 
 $$
