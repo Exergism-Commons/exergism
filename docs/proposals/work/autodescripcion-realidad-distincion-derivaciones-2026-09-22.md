@@ -3859,6 +3859,401 @@ $$
 
 Así $\gamma$ no es una entidad “entre realidades”. El índice hace exactamente el trabajo de impedir esa reificación: separa las ontologías parentales y obliga a que la convergencia novedosa se manifieste como una nueva estructura interna del hijo.
 
+#### 0.11.23. FaithfulContinuation como relación meta, no función
+
+La notación funcional previa:
+
+$
+\kappa_{i\to k}:x_i\rightsquigarrow x_k
+$
+
+se conserva solo como abreviatura cuando hay unicidad local. La noción general es relacional:
+
+$
+\operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}
+(x_i,x_k;\gamma,\tau).
+$
+
+No es un predicado objeto cross-index. Afirma metateóricamente que, bajo una transición/génesis concreta $\gamma$, el token $x_k$ es una continuación de $x_i$ y que $\tau$ traduce la parte preservada de su perfil ontológico.
+
+El contrato mínimo es:
+
+1. **FC1 / typed endpoints:** $x_i$ está bien tipado en $i$ y $x_k$ en $k$; nunca aparecen juntos en una fórmula objeto.
+2. **FC2 / provenance:** la relación depende de una historia de formación concreta; semejanza, isomorfismo o duplicación accidental no bastan.
+3. **FC3 / prior profile:** existe un ContinuationProfile no trivial fijado independientemente del candidato child-side; no se seleccionan post hoc justo las propiedades que $x_k$ conserva.
+4. **FC4 / translated preservation:** para cada rasgo declarado preservado $\varphi_i$ del perfil, $\tau_{ik}(\varphi_i)$ vale de $x_k$.
+5. **FC5 / genealogical commuting where preserved:** si una dependencia, relación o paso generativo del perfil tiene continuaciones declaradas para todos sus relata, la estructura correspondiente se preserva o se marca explícitamente como transformada.
+6. **FC6 / permitted novelty:** $x_k$ puede adquirir hechos y dependencias nuevos, especialmente respecto de $g_k$; continuidad no significa copia total.
+7. **FC7 / no retroactivity:** ningún hecho nuevo de $k$ cambia la verdad ontológica previa sobre $x_i$.
+8. **FC8 / no index collapse:** FaithfulContinuation no implica $i\simeq_{\mathrm{idx}}k$ ni identidad cross-index.
+9. **FC9 / recoding invariance:** recodificaciones fieles de padre e hijo preservan el juicio de continuación.
+10. **FC10 / auditability:** debe poder indicarse qué perfil se preserva, qué se transforma y qué trayectoria de formación distingue continuidad de mera réplica.
+
+Así:
+
+$
+\operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}(x_i,x_k)
+\not\Rightarrow
+x_i=x_k
+$
+
+—la igualdad ni siquiera pertenece al lenguaje objeto común— y tampoco:
+
+$
+\operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}(x_i,x_k)
+\not\Rightarrow
+i\simeq_{\mathrm{idx}}k.
+$
+
+La continuidad es **descendencia estructuralmente preservadora**, no identidad.
+
+#### 0.11.24. Test F1 — copia perfecta
+
+Sean $x_k$ y $z_k$ dos tokens child-side isomorfos respecto del perfil traducido de $x_i$. Supóngase que solo $x_k$ está dentro de la trayectoria de formación procedente de $x_i$:
+
+$
+\operatorname{Provenance}^{\mathsf M}(x_i\leadsto_\gamma x_k),
+\qquad
+\neg\operatorname{Provenance}^{\mathsf M}(x_i\leadsto_\gamma z_k).
+$
+
+Entonces:
+
+$
+\operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}(x_i,x_k;\gamma,\tau)
+$
+
+puede valer mientras:
+
+$
+\neg
+\operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}(x_i,z_k;\gamma,\tau).
+$
+
+Por tanto:
+
+$
+\boxed{
+\text{isomorfismo}
+\not\Rightarrow
+\text{continuación}.
+}
+$
+
+FC2 impide que una réplica perfecta espontánea herede genealogía solo por parecerse al padre.
+
+#### 0.11.25. Test F2 — branching
+
+La continuidad no es funcional. Es admisible:
+
+$
+\operatorname{FC}^{\mathsf M}_{i\to k}(x_i,x_k^{(1)};\gamma,\tau_1)
+\land
+\operatorname{FC}^{\mathsf M}_{i\to k}(x_i,x_k^{(2)};\gamma,\tau_2),
+$
+
+con:
+
+$
+x_k^{(1)}\neq x_k^{(2)}
+$
+
+dentro del lenguaje de $k$.
+
+No se concluye que los dos descendientes sean idénticos entre sí ni al parental. Ambos pueden preservar suficiente perfil y provenance para ser continuaciones genuinas.
+
+El branching puede ocurrir internamente, dentro de un mismo contexto, o a través de génesis. No introduce ninguna necesidad de escoger una “continuación verdadera” única.
+
+#### 0.11.26. Test F3 — merger token-level
+
+También se admite continuidad many-to-one. Para precursores distintos:
+
+$
+\operatorname{FC}^{\mathsf M}_{i\to k}(x_i,z_k;\gamma,\tau_i)
+\land
+\operatorname{FC}^{\mathsf M}_{j\to k}(y_j,z_k;\gamma,\tau_j)
+$
+
+definimos esquemáticamente:
+
+$
+\operatorname{TokenMerger}^{\mathsf M}
+(x_i,y_j\Rightarrow z_k;\gamma).
+$
+
+Para ser merger genuino y no mera coincidencia deben cumplirse al menos:
+
+1. ambos precursores aportan perfiles no triviales preservados en $z_k$;
+2. ambas provenances son necesarias para la historia de formación declarada;
+3. la identidad child-side de $z_k$ no se explica íntegramente como continuación de una sola rama dejando a la otra como input contingente;
+4. cualquier pérdida o transformación de perfil queda auditada.
+
+TokenMerger es una propiedad de la **geometría de la continuidad**. No implica por sí sola ContextGenesis.
+
+Puede haber un merger interno:
+
+$
+a_i,b_i\Rightarrow z_i
+$
+
+producido por OntProd dentro de un mismo $R_i$. Eso es fusión ontológica de contenido, no nacimiento de contexto.
+
+A la inversa, una ContextGenesis fuerte puede conservar:
+
+$
+x_i\rightsquigarrow x_k,
+\qquad
+y_j\rightsquigarrow y_k,
+\qquad
+x_k\neq y_k,
+$
+
+y constituirlos conjuntamente mediante $g_k$ sin ningún TokenMerger.
+
+Por tanto:
+
+$
+\boxed{
+\operatorname{TokenMerger}
+\not\Rightarrow
+\operatorname{ContextGenesis},
+\qquad
+\operatorname{ContextGenesis}
+\not\Rightarrow
+\operatorname{TokenMerger}.
+}
+$
+
+#### 0.11.27. Convergence como noción más amplia que genesis
+
+Definimos ContextConvergence como el metaschema en el que **dos o más líneas precursoras distintas** poseen continuaciones dentro de un mismo contexto target y existe allí un witness ontológico integrador actual que toca las imágenes de más de una rama:
+
+$
+\operatorname{ContextConvergence}^{\mathsf M}
+(i,j\leadsto k;w_k).
+$
+
+El witness $w_k$ puede ser productivo, constitutivo o puramente relacional según el caso. Convergence por sí sola no afirma que $k$ haya nacido de ella.
+
+Hay dos especies principales:
+
+$
+\boxed{
+\operatorname{ContextConvergence}
+=
+\operatorname{SharedSpaceConvergence}
+\lor
+\operatorname{GenesisConvergence}.
+}
+$
+
+**SharedSpaceConvergence.** $k$ preexiste ontológicamente al hecho integrador. Dos genealogías convergen dentro de un mismo espacio:
+
+$
+\operatorname{SharedSpaceConvergence}^{\mathsf M}
+\Rightarrow
+\operatorname{SharedOntSpace}^{\mathsf M}
+\land
+\neg\operatorname{ContextGenesis}^{\mathsf M}
+$
+
+respecto de esa convergencia.
+
+**GenesisConvergence.** La novedad conjunta de dos o más ramas es constitutiva de un nuevo $k$ y satisface GenesisConstitutiveUnity:
+
+$
+\operatorname{GenesisConvergence}^{\mathsf M}
+\Rightarrow
+\operatorname{GenuineContextGenesis}^{\mathsf M}.
+$
+
+Luego:
+
+$
+\boxed{
+\operatorname{ContextConvergence}
+\not\Rightarrow
+\operatorname{ContextGenesis}.
+}
+$
+
+Esto conserva todo el trabajo previo sobre Integrable/JointRealizable: una convergencia observada puede revelar un SharedOntSpace sin crear realidad nueva.
+
+#### 0.11.28. ContextGenesis no debe ser forzosamente binaria
+
+La notación:
+
+$
+\operatorname{ContextGenesis}^{\mathsf M}(C_i,C_j\Rightarrow k;\gamma)
+$
+
+era el caso de prueba mínimo, no una restricción de aridad.
+
+El esquema general permite uno o más contextos precursores:
+
+$
+\operatorname{ContextGenesis}^{\mathsf M}
+(i_1,\ldots,i_n\Rightarrow k;\gamma),
+\qquad
+n\ge 1,
+$
+
+entendido metalingüísticamente como lista/esquema de instanciaciones y **no** como un conjunto ontológico de índices.
+
+Esto distingue:
+
+**Unary genesis**
+
+$
+i\Rightarrow k.
+$
+
+Un único contexto precursor sufre una reorganización ontológicamente constitutiva que exige un nuevo índice. No hay convergencia de contextos distintos.
+
+**Multi-parent genesis**
+
+$
+i_1,\ldots,i_n\Rightarrow k,
+\qquad
+n\ge 2.
+$
+
+Si al menos dos ramas precursoras contribuyen constitutivamente a GenesisConstitutiveUnity, entonces:
+
+$
+\boxed{
+\operatorname{MultiParentContextGenesis}^{\mathsf M}
+\Rightarrow
+\operatorname{GenesisConvergence}^{\mathsf M}.
+}
+$
+
+Por tanto **no toda génesis es convergencia**:
+
+$
+\boxed{
+\operatorname{ContextGenesis}^{\mathsf M}
+\not\Rightarrow
+\operatorname{ContextConvergence}^{\mathsf M},
+}
+$
+
+porque existe conceptualmente la génesis unaria.
+
+Pero toda génesis multiparental genuina sí es una convergencia constitutiva.
+
+#### 0.11.29. Context merger frente a token merger
+
+Reservamos:
+
+$
+\operatorname{ContextMerger}^{\mathsf M}
+(i_1,\ldots,i_n\Rightarrow k;\gamma)
+$
+
+para una MultiParentContextGenesis en la que el nuevo contexto tiene al menos dos contextos parentales constitutivamente necesarios:
+
+$
+\boxed{
+\operatorname{ContextMerger}
+\Rightarrow
+\operatorname{MultiParentContextGenesis}
+\Rightarrow
+\operatorname{GenesisConvergence}.
+}
+$
+
+ContextMerger no exige TokenMerger. Las imágenes de los padres pueden permanecer diferenciadas en $k$ y, aun así, participar conjuntamente en la OriginUnity del hijo.
+
+TokenMerger, en cambio, pregunta si varias líneas de **contenido** acaban en un mismo token child-side.
+
+Así:
+
+$
+\boxed{
+\text{context merger}
+\neq
+\text{token merger}.
+}
+$
+
+Pueden coincidir, pero ninguno define al otro.
+
+#### 0.11.30. Test F4 — gradualidad / Ship of Theseus
+
+La sustitución gradual no obliga por sí sola a introducir ContextGenesis.
+
+Sea una secuencia dentro del mismo contexto:
+
+$
+x_i^{(0)}
+\rightsquigarrow
+x_i^{(1)}
+\rightsquigarrow
+\cdots
+$
+
+en la que cada estadio preserva un ContinuationProfile suficiente aunque cambie material o estructura accidental.
+
+Mientras toda la evolución siga expresable en $L_i$ y no aparezca GenesisConstitutiveUnity que exija un nuevo tipado, tenemos persistencia/transformación interna:
+
+$
+\operatorname{GradualContinuation}_i
+\not\Rightarrow
+\operatorname{ContextGenesis}^{\mathsf M}.
+$
+
+La continuidad compuesta entre estadios no es automática: requiere que sobreviva un subperfil no trivial y que las transformaciones declaradas compongan sin contradicción. Por tanto FC no se postula transitiva sin condiciones.
+
+Si en algún estadio una reorganización constitutiva produce un nuevo contexto $k$, la frontera de génesis se localiza allí:
+
+$
+x_i^{(m)}
+\rightsquigarrow
+x_k^{(m+1)},
+$
+
+y debe satisfacer las condiciones ordinarias de ContextGenesis/GenesisConstitutiveUnity. La pérdida de piezas o sustitución material acumulada, por sí sola, no crea un índice nuevo.
+
+#### 0.11.31. Matriz final: continuidad, convergencia, merger y genesis
+
+| Fenómeno | many-to-one token | ≥2 contextos precursores | nuevo índice | GenesisConstitutiveUnity |
+|---|---:|---:|---:|---:|
+| branching | no | no necesariamente | no necesariamente | no |
+| TokenMerger interno | sí | no | no | no |
+| SharedSpaceConvergence | no necesariamente | no necesariamente como índices finales | no | no |
+| unary ContextGenesis | no necesariamente | no | sí | sí |
+| ContextMerger | no necesariamente | sí | sí | sí |
+| ContextMerger + TokenMerger | sí | sí | sí | sí |
+
+Las inclusiones doctrinales relevantes son:
+
+$
+\boxed{
+\operatorname{ContextMerger}
+\subset
+\operatorname{MultiParentContextGenesis}
+\subset
+\operatorname{GenesisConvergence}
+\subset
+\operatorname{ContextConvergence}.
+}
+$
+
+En cambio:
+
+$
+\boxed{
+\operatorname{TokenMerger}
+\;\text{es ortogonal a}\;
+\operatorname{ContextGenesis}.
+}
+$
+
+La ontogénesis se individua por **nuevo tipado + novedad constitutiva child-side**; convergence por reunión/integración de líneas; merger por cardinalidad many-to-one de continuaciones.
+
+
+
 
 
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
