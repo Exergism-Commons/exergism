@@ -2161,6 +2161,145 @@ No satisfacen el contrato por sí solas: causalidad ordinaria, colisión/interac
 
 Por tanto REV-07a no se cerrará enumerando etiquetas metafísicas: cada modo admitido debe proporcionar una regla ECD1–ECD7 y pasar M1–M6.
 
+#### 0.2.3. Taxonomía núcleo de modos EssConDep
+
+Definimos una familia de modos admisibles:
+
+$$
+\mathfrak E_i
+=
+\{
+\mathsf{MG}_i,
+\mathsf{RC}_i,
+\mathsf{HC}_i,
+\mathsf{PC}_i
+\},
+$$
+
+sin afirmar que toda ontología concreta deba instanciarlos todos. Un juicio $\operatorname{EssConDep}_i$ solo puede derivarse de una instancia explícita de alguno de estos esquemas —o de una futura extensión que satisfaga ECD1–ECD7 y M1–M6.
+
+**MG — mutual grounding / co-dependencia fundamental.**
+
+$$
+\mathsf{MG}_i(f_i;x_i,Y_i)
+\Rightarrow
+\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
+$$
+
+solo cuando la teoría ontológica concreta justifique que la actualidad o identidad constitutiva de $x_i$ depende esencialmente de soporte en $Y_i$ mediante la misma instancia $f_i$. Para un ConstitutiveBridge bilateral debe existir además el juicio recíproco desde el otro lado. Esto permite grounding no bien fundado o soporte mutuo si se admite independientemente; no lo presupone como tesis universal.
+
+**RC — constitución relacional esencial.**
+
+$$
+\mathsf{RC}_i(f_i;x_i,Y_i)
+\Rightarrow
+\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
+$$
+
+cuando $x_i$ no sería ese mismo token/tipo ontológico relevante sin la relación actual $f_i$ con soporte en $Y_i$. No basta que $f_i$ modifique, influya o cause propiedades accidentales de $x_i$.
+
+**HC — constitución holística/estructural.**
+
+Sea $f_i$ una estructura actual con footprint $H_i$. Para $x_i\preceq H_i$:
+
+$$
+\mathsf{HC}_i(f_i;x_i,H_i\setminus\{x_i\})
+\Rightarrow
+\operatorname{EssConDep}_i(
+x_i;f_i,U_i\mid H_i\setminus\{x_i\}
+)
+$$
+
+solo si la identidad/actualidad constitutiva de $x_i$ depende del patrón estructural instanciado y no meramente de estar localizado dentro de una colección. Un agregado mereológico arbitrario no satisface HC.
+
+**PC — co-constitución procesual.**
+
+$$
+\mathsf{PC}_i(f_i;x_i,Y_i)
+\Rightarrow
+\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
+$$
+
+cuando $x_i$ es constitutivamente un estadio, rol, fase o participante cuya identidad ontológica depende del proceso actual $f_i$ y de soporte cruzado en $Y_i$. Ser simplemente causa, input, output o participante contingente de un proceso no satisface PC.
+
+Estas cuatro familias comparten una regla de seguridad:
+
+$$
+\boxed{
+\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
+\Rightarrow
+\operatorname{ModeWitness}_i(m_i,f_i,x_i,Y_i)
+}
+$$
+
+para algún $m_i\in\mathfrak E_i$, donde ModeWitness registra el modo, la instancia concreta, el dependiente y el soporte cruzado. La auditabilidad ECD7 exige que ese testigo pueda exponerse sin referencia a Seed, OriginUnity o al resultado final.
+
+#### 0.2.4. Exclusiones y frontera con OntProd
+
+La taxonomía de EssConDep es **más estrecha** que la futura taxonomía de OntProd. En particular:
+
+$$
+\operatorname{EssConDep}_i
+\subsetneq
+\operatorname{OntDepCandidate}_i
+$$
+
+como intención doctrinal: toda EssConDep es una dependencia ontológica candidata relevante para generación, pero no toda producción/dependencia ontológica es constitutiva de una base cofundamental.
+
+Quedan excluidos de EssConDep salvo que una teoría adicional demuestre uno de los modos anteriores:
+
+- causalidad eficiente ordinaria;
+- producción temporal;
+- enabling;
+- input/output;
+- interacción o colisión;
+- dependencia contrafáctica meramente causal;
+- parthood no esencial;
+- co-localización;
+- misma ley;
+- misma clase/tipo;
+- mismo descendiente;
+- mismo proceso si la participación es contingente;
+- misma clausura generativa;
+- compatibilidad o JointRealizable.
+
+Esto impide que REV-07b trivialice REV-07a: que una relación entre en OntProd no la convierte automáticamente en EssConDep.
+
+#### 0.2.5. Matriz de pruebas de la taxonomía
+
+| Modelo | MG | RC | HC | PC | Resultado esperado |
+|---|---:|---:|---:|---:|---|
+| M1 átomo fundamental | n/a | n/a | n/a | n/a | OriginUnity vacua |
+| M2 soporte mutuo/ciclo | posible | posible | posible | posible | puede pasar |
+| M3 constitución holística | no requerido | posible | sí | posible | puede pasar |
+| M4 suma independiente | no | no | no | no | falla |
+| M5 convergencia tardía | no por el mero evento | no | no | no por mera participación | falla |
+| M6 grounding unilateral | unilateral solamente | posible unilateral | no bilateral | no | falla como base cofundamental |
+
+La tabla no prueba que una instancia concreta satisfaga un modo; fija qué **tipo de justificación** tendría que aportar. En particular, M5 sigue fallando aunque $e_i$ y $c_i$ se añadan retrospectivamente al seed.
+
+#### 0.2.6. Regla de extensión
+
+Una nueva familia $\mathsf X_i$ puede añadirse a $\mathfrak E_i$ únicamente si:
+
+$$
+\mathrm{ECD1{-}7}(\mathsf X_i)
+\land
+\mathrm{PassesM1{-}M6}(\mathsf X_i)
+$$
+
+y existe una regla local explícita:
+
+$$
+\mathsf X_i(f_i;x_i,Y_i)
+\Rightarrow
+\operatorname{EssConDep}_i(x_i;f_i,U_i\mid Y_i)
+$$
+
+que no use OntOrigin, Seed, OriginUnity, GeneTotal, $R_i$, CoReal, Generated$^*$, SameRegime, CommonGround, CGP ni equivalencia de índices.
+
+Con esto REV-07a deja de tener una variable semántica completamente libre. Permanece pendiente decidir qué subconjunto de $\mathfrak E_i$ acepta finalmente la ontología y justificar cada familia en términos independientes; pero cualquier ampliación futura queda sujeta al mismo filtro anti-circular.
+
 
 ### 0.3. Root-closure sin primera causa temporal
 
