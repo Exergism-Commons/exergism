@@ -3420,7 +3420,7 @@ $$
 \operatorname{PersistentParent}^{\mathsf M}(i,k),
 $$
 
-cuando la génesis proporciona una realización conjunta en la que una continuación fiel del contenido parental persiste como subestructura ontológica actual del espacio hijo. Entonces:
+cuando existe una **co-realización efectiva padre–hijo**: una realización admisible en la que el contenido parental relevante y su continuación fiel en $k$ están simultáneamente representados como estructura ontológica actual, no solo enlazados por un mapa abstracto. Entonces:
 
 $$
 \boxed{
