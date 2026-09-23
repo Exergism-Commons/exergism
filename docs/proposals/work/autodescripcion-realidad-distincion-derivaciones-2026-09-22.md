@@ -2677,21 +2677,23 @@ $$
 }
 $$
 
-Además GF2 se refuerza: si un GenFoot contiene una relación-token actual, contiene también su RelFoot obligatorio.
-
-Pero para una relación **pura** que aparece como target generado se exige la dirección contraria para evitar fabricar relata:
+Además GF2 se refuerza: si un GenFoot contiene una relación-token actual, contiene también su RelFoot obligatorio. Eso no autoriza a introducir endpoints gratis. Para toda relación pura presente en un footprint generativo:
 
 $$
 \boxed{
-\operatorname{GenEvent}_i(e_i,A_i,\rho_i)
+\begin{aligned}
+&\operatorname{GenEvent}_i(e_i,A_i,b_i)
 \land
+\rho_i\preceq\operatorname{GenFoot}_i(e_i,A_i,b_i)\\
+&\land
 \operatorname{PureOntRel}_i(\rho_i;U_i)
 \Rightarrow
-U_i\preceq A_i.
+U_i\setminus\{b_i\}\preceq A_i.
+\end{aligned}
 }
 $$
 
-Lectura: una relación pura puede ser generada/constituida una vez disponibles sus relata; su aparición no genera retroactivamente los relata. Si relación y relata son genuinamente co-constitutivos, el caso deja de ser puro y debe justificarse mediante CON/GRD y, para OriginUnity, mediante EssConDep/ConstitutiveBridge.
+Así, si el target es la propia relación $\rho_i$, todos sus relata deben estar ya disponibles; si el target $b_i$ es uno de los relata, los demás deben estar entre los antecedentes. La mera incidencia nunca introduce otro endpoint. Si relación y relata son genuinamente co-constitutivos por una estructura más fuerte, el caso deja de ser puro y debe justificarse mediante CON/GRD y, para OriginUnity, mediante EssConDep/ConstitutiveBridge.
 
 Consecuencia: no hace falta introducir por ahora una segunda clausura $Cl^{Rel}$. Las relaciones actuales son contenido ontológico y sus footprints deben estar bien formados, pero la incidencia pura no añade nuevos relata a la genealogía.
 
