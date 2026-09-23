@@ -186,33 +186,45 @@ son **mal tipadas**, no proposiciones falsas.
 
 ### 1.5. Primitivas genealógicas
 
-Cada realización indexada debe estar fundada en una base/origen ontológico:
+Cada realización indexada debe estar fundada en una **configuración-originaria ontológicamente unificada**:
 
 $$
-\mathcal O_i,
+\mathcal O_i.
 $$
 
-que puede ser singular, plural o estructurada y no se identifica necesariamente con un primer instante temporal.
+$\mathcal O_i$ puede ser internamente compleja, pero no puede ser una mera suma, lista o unión metalingüística de raíces independientes. La unidad del origen debe estar testimoniada por estructura ontológica interna independientemente caracterizada.
 
-Introducimos, dentro del contexto $i$:
+Introducimos:
 
 $$
 \operatorname{OntOrigin}_i(\mathcal O_i),
 $$
 
-y:
+y eventos generativos de hiperaridad:
 
 $$
-\operatorname{GenStep}_i(a_i,b_i).
+\operatorname{GenEvent}_i(e_i,A_i,b_i),
 $$
 
-Su clausura se denota:
+«el evento/proceso ontológico $e_i$, con antecedentes conjuntos $A_i$, genera $b_i$».
+
+La relación binaria:
 
 $$
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i).
+\operatorname{GenStep}_i(a_i,b_i)
 $$
 
-La regla doctrinal de realidad indexada es:
+es solo una proyección auxiliar de GenEvent; no basta por sí sola para generar $b_i$ cuando la producción requiere antecedentes conjuntos.
+
+La clausura:
+
+$$
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+$$
+
+se define como la **menor clausura** que contiene el contenido inicial de $\mathcal O_i$ y está cerrada bajo todos los GenEvent admisibles cuyos antecedentes completos ya estén presentes.
+
+La regla doctrinal sigue siendo:
 
 $$
 \boxed{
@@ -222,9 +234,10 @@ $$
 }
 $$
 
-La estrella no obliga a clausura finita: puede realizarse mediante reglas finitas, globales, de límite o transfinitas si se justifican independientemente.
+El origen no tiene que ser un primer instante temporal ni un átomo simple. Puede contener estructura interna, ciclos fundamentales o relaciones de soporte mutuo. Lo que no puede ser es una agregación arbitraria diseñada para hacer exhaustiva la clausura.
 
-**No circularidad:** OntOrigin, GenStep y las reglas de $\operatorname{Generated}^{*}$ no pueden definirse mediante $R_i$, CoReal, SameRegime, SemTotal, Presents ni la extensión final que quieren generar.
+**No circularidad:** OntOrigin, GenEvent y las reglas de clausura no pueden definirse mediante $R_i$, CoReal, SameRegime, SemTotal, Presents ni la extensión final que quieren producir.
+
 
 ### 1.6. $R_i$ — clausura genealógica tipada
 
@@ -1432,45 +1445,200 @@ Esta separación es normativa. Cualquier detalle técnico nuevo debe incorporars
 
 La identidad de una realidad indexada queda anclada primariamente en **origen + clausura ontológica**, no en K3, maximalidad semántica ni conectividad elegida ad hoc.
 
-### 5.1. Criterio primario
+### 5.1. Criterio primario: origen unificado + generación independiente
 
-Para un índice $i$, REV-07 debe justificar:
+REV-07 no puede cerrarse escogiendo una colección de raíces y llamándola $\mathcal O_i$. Eso trivializaría la noción de origen común.
+
+#### 5.1.1. Configuración de origen
+
+$\mathcal O_i$ debe ser una **configuración-token real y unificada** del contexto $i$.
+
+Sea:
 
 $$
+\operatorname{Seed}_i(\mathcal O_i)
+$$
+
+su contenido ontológico inicial y:
+
+$$
+\operatorname{Bind}_i(u_i,v_i;\mathcal O_i)
+$$
+
+una relación interna de integración constitutiva/procesual caracterizada sin usar $R_i$.
+
+Exigimos al menos:
+
+**OU1 — no agregación representacional.** $\mathcal O_i$ debe estar ontológicamente instanciada como una configuración, no creada por enumerar tokens en el metalenguaje.
+
+**OU2 — unidad interna.** Para toda partición no trivial del seed en $A_i$ y $B_i$, debe existir estructura integrativa real que cruce la partición:
+
+$$
+\operatorname{Partition}_i(
+\operatorname{Seed}_i(\mathcal O_i);A_i,B_i
+)
+\Rightarrow
+\exists u_i\in A_i\;\exists v_i\in B_i\;
+\operatorname{Bind}_i(u_i,v_i;\mathcal O_i).
+$$
+
+Bind puede realizarse mediante dependencia constitutiva, pertenencia a un mismo proceso fundamental, constraint global efectivamente instanciado u otra relación de unidad ontológica defendida independientemente. No cuentan mera semejanza, descripción conjunta, pertenencia a una misma teoría ni unión mereológica puramente estipulada.
+
+**OU3 — root-closure.** Ningún constituyente del seed depende generativamente de antecedentes externos al propio origen:
+
+$$
+b_i\in\operatorname{Seed}_i(\mathcal O_i)
+\land
+\operatorname{GenEvent}_i(e_i,A_i,b_i)
+\Rightarrow
+A_i\preceq\operatorname{Seed}_i(\mathcal O_i).
+$$
+
+Esto permite ciclos o soporte mutuo internos; prohíbe únicamente una entrada generativa desde fuera.
+
+**OU4 — irredundancia.** No debe existir una subconfiguración propia unificada $\mathcal O'_i$ cuya clausura generativa sea la misma:
+
+$$
+\mathcal O'_i\prec\mathcal O_i
+\Rightarrow
+\operatorname{Cl}^{G}_i(\mathcal O'_i)
+\neq
+\operatorname{Cl}^{G}_i(\mathcal O_i),
+$$
+
+salvo equivalencias de representación explícitamente justificadas.
+
+Estas condiciones bloquean la maniobra:
+
+$$
+\mathcal O_i:=\mathcal O_a\cup\mathcal O_b
+$$
+
+cuando $\mathcal O_a$ y $\mathcal O_b$ son raíces ontológicamente independientes. La unión escrita en el metalenguaje no crea una configuración-originaria.
+
+#### 5.1.2. Evento generativo
+
+La primitiva direccional relevante es:
+
+$$
+\operatorname{GenEvent}_i(e_i,A_i,b_i).
+$$
+
+Debe satisfacer:
+
+**GE1 — token-specific.** Describe una producción/dependencia efectivamente instanciada, no una ley general ni mera posibilidad.
+
+**GE2 — productividad ontológica.** $b_i$ obtiene existencia, identidad, estado constitutivo o continuidad ontológica mediante el evento y sus antecedentes; correlación, semejanza o co-descripción no bastan.
+
+**GE3 — integridad conjunta.** Si $A_i$ contiene varios antecedentes esenciales, la clausura solo puede añadir $b_i$ cuando estén disponibles conjuntamente; no se reemplaza el hiperevento por aristas binarias suficientes ficticias.
+
+**GE4 — independencia del target.** GenEvent no puede definirse como «una relación necesaria para llegar a todo $R_i$» ni por pertenencia previa a Generated$^*$.
+
+**GE5 — invariancia representacional.** Recodificaciones fieles deben preservar qué eventos generativos están instanciados.
+
+**GE6 — pluralidad de modos permitida.** Causalidad productiva, constitución, realización, dependencia ontológica y continuidad procesual pueden ser instancias, pero cada modo debe justificar por separado su carácter generativo.
+
+La proyección binaria queda:
+
+$$
+\operatorname{GenStep}_i(a_i,b_i)
+:\Longleftrightarrow
+\exists e_i\exists A_i[
+\operatorname{GenEvent}_i(e_i,A_i,b_i)
+\land
+a_i\prec A_i
+].
+$$
+
+GenStep sirve para análisis de dependencia, no para ignorar la aridad real de la generación.
+
+#### 5.1.3. Operador generativo
+
+Para contenido $X_i$ del contexto $i$, definimos:
+
+$$
+\Gamma_i(X_i)
+:=
+X_i
+\cup
+\{
+b_i\mid
+\exists e_i\exists A_i[
+\operatorname{GenEvent}_i(e_i,A_i,b_i)
+\land
+A_i\preceq X_i
+]
+\}.
+$$
+
+La clausura genealógica es la menor clausura de $\Gamma_i$ que contiene el seed:
+
+$$
+\boxed{
+\operatorname{Cl}^{G}_i(\mathcal O_i)
+:=
+\mu X_i[
+\operatorname{Seed}_i(\mathcal O_i)\preceq X_i
+\land
+\Gamma_i(X_i)=X_i
+].
+}
+$$
+
+y:
+
+$$
+\boxed{
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+:\Longleftrightarrow
+x_i\in\operatorname{Cl}^{G}_i(\mathcal O_i).
+}
+$$
+
+El símbolo $\mu$ expresa **least closure**; no presupone finitud ni iteración omega. Si la clausura requiere etapas transfinitas, límites o una semántica plural/class-sized, esa construcción debe justificarse separadamente.
+
+#### 5.1.4. Definición provisional de OntOrigin
+
+Con las primitivas anteriores:
+
+$$
+\boxed{
 \operatorname{OntOrigin}_i(\mathcal O_i)
+:\Longleftrightarrow
+\mathrm{OriginConfig}_i(\mathcal O_i)
+\land
+\mathrm{OriginUnity}_i(\mathcal O_i)
+\land
+\mathrm{RootClosed}_i(\mathcal O_i)
+\land
+\mathrm{Irredundant}_i(\mathcal O_i).
+}
 $$
 
-y una relación generativa independiente:
+donde cada conjuncto está sujeto a OU1–OU4 y no puede mencionar el $R_i$ final.
 
-$$
-\operatorname{GenStep}_i(a,b),
-$$
+Esta definición es todavía **PARTIAL**, porque queda por justificar qué relaciones concretas realizan OriginUnity y qué modos concretos satisfacen GE2/GE6. Pero ya impide que OntOrigin sea una etiqueta circular para «lo que genera todo».
 
-cuyas reglas no usan $R_i$, CoReal, SameRegime, K3, SemTotal, Presents ni la extensión final de la clausura.
+#### 5.1.5. GeneTotal
 
-La clausura genealógica es:
-
-$$
-\operatorname{Generated}^{*}_i(\mathcal O_i,x).
-$$
-
-Una realidad indexada existe cuando puede realizarse un alcance:
+Fijado un OntOrigin admisible:
 
 $$
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 $$
 
-tal que:
+exige:
 
 $$
-\forall x[
-\operatorname{Within}_i(x,R_i)
+\forall x_i[
+\operatorname{Within}_i(x_i,R_i)
 \Longleftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+x_i\in\operatorname{Cl}^{G}_i(\mathcal O_i)
 ].
 $$
 
-La base $\mathcal O_i$ no tiene por qué ser un único token ni un primer instante temporal. Bases distintas pueden ser representacionalmente equivalentes si generan exactamente la misma clausura.
+La existencia de esa clausura/scope sigue siendo una obligación real de REV-07; no se obtiene de definir el operador.
+
 
 ### 5.2. Co-realidad derivada
 
@@ -1680,15 +1848,15 @@ Esta instancia sigue dependiendo de la lógica plural/scope adoptada. El finding
 
 ### 5.7. Qué sigue abierto
 
-REV-07 permanece **PARTIAL**. Para cerrarlo hay que justificar:
+REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitraria y la reducción binaria de la generación. Para cerrarlo hay que justificar:
 
-1. qué cuenta como $\operatorname{OntOrigin}_i$ sin definirlo como «lo que genera $R_i$»;
-2. qué relaciones cuentan como $\operatorname{GenStep}_i$;
-3. cómo se construye $\operatorname{Generated}^{*}_i$ sin circularidad;
-4. si la base/origen debe satisfacer minimalidad, irredundancia o alguna forma de prioridad;
-5. cómo tratar bases múltiples que generan la misma clausura;
-6. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente esa genealogía;
-7. qué principio de scope/pluralidad realiza la clausura sin setificarla.
+1. qué relaciones concretas satisfacen $\operatorname{OriginUnity}_i$ / Bind sin presuponer la realidad total;
+2. qué modos concretos de producción satisfacen GE2/GE6 y por qué son genuinamente generativos;
+3. existencia de la least closure $\operatorname{Cl}^{G}_i$ en el marco fundacional elegido —set, plural, clase o clausura transfinita—;
+4. si OU3/root-closure debe admitir además genealogías sin fuente, regresos infinitos o fixed points fundamentales;
+5. equivalencia entre configuraciones-originarias distintas que generan la misma clausura sin volver a mera extensionalidad;
+6. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente la clausura generativa;
+7. qué principio de scope/pluralidad realiza esa clausura como $R_i$ sin setificarla.
 
 **Estado: PARTIAL — REV-07. La existencia de $R_i$ se concentra aquí; REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
 
