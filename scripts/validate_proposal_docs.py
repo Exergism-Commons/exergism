@@ -181,6 +181,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
     required_current = {
         r"\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)": "RegimeTotal totality target",
         r"\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)": "RegimeClosure definition",
+        r"\operatorname{GeneFamily}_i(\mathfrak G_i)": "explicit GeneFamily contract",
         r"\operatorname{GeneBasis}_i(\mathfrak G_i)": "GeneBasis guard",
         r"\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)": "RegimeGenerated membership",
         "\\exists\\mathfrak G_i\\exists R_i\\;" + "\n" + "\\operatorname{RegimeTotal}_i(\\mathfrak G_i,R_i)": "ExistsR RegimeTotal witness",
