@@ -132,6 +132,25 @@ REV-02 usa una noción ad hoc de **extensión conservativa** suficientemente fue
 - **Ross P. Cameron / literatura sobre infinite regress y grounding.** La discusión contemporánea distingue foundationalism de well-foundedness estricta y admite modelos donde una entidad está ultimadamente anclada en un fundamento solo a través de infinitos intermediarios. Se usa como stress test contra FID, no como adopción de metaphysical infinitism: https://plato.stanford.edu/entries/infinite-regress/ y su suplemento sobre metaphysical foundationalism/well-foundedness.
 - **Leibniz** y la tradición del **Principle of Sufficient Reason** son pertinentes si se intenta excluir AbsoluteBruteNovelty. La PR no debe introducir un PSR fuerte sin declararlo.
 
+### Uso en REV-07a — dependencia constitutiva
+
+REV-07a no identifica sus esquemas con doctrinas de la literatura:
+
+- **Fine / Correia–Schnieder** justifican tratar grounding como una relación metafísica distinta de causalidad, pero **no** autorizan inferir que todo grounding sea recíproco o cíclico. Por eso el modo núcleo se denomina MOD (mutual ontological dependence), no “mutual grounding”; una teoría concreta de grounding puede implementarlo solo si admite independientemente ese caso.
+- **Tahko–Lowe** respaldan la distinción general entre dependencia existencial y dependencia de identidad. Esa distinción motiva los dos predicados base de REV-07a: ConstExistDep e IdDep. La propuesta no toma ninguna definición concreta de esa literatura como teorema propio.
+- **Schaffer** y la literatura de holismo/no-separabilidad se usan adversarialmente para HC: muestran por qué una estructura global puede ser ontológicamente relevante, pero no prueban que cualquier no-factorización, correlación o totalidad constituya esencialmente sus relata.
+- **Winskel** y process philosophy solo justifican que procesos, roles y dependencias puedan tratarse formalmente como estructura. No demuestran PC: una participación procesual cuenta como constitutiva únicamente cuando se demuestra IdDep o ConstExistDep, no por ser source/target/input de un evento.
+
+La regla metodológica es por tanto estricta:
+
+$$
+\text{literature precedent}
+\not\Rightarrow
+\operatorname{EssConDep}.
+$$
+
+Cada instancia usada por OriginUnity debe proporcionar un testigo local conforme a ECD1–ECD7 y una ruta explícita por IdDep o ConstExistDep.
+
 ### Identidad de régimen y relaciones de worldmate
 
 - **David Lewis (1986), _On the Plurality of Worlds_.** En su modal realism, los worldmates se identifican mediante conexión espaciotemporal y los mundos distintos quedan aislados entre sí. La propuesta no adopta su modal realism ni limita toda unidad ontológica a espaciotiempo; se usa solo como antecedente metodológico de definir pertenencia a un mundo mediante una relación independiente de la existencia previa de una cota común. Resumen y discusión: https://plato.stanford.edu/entries/possible-worlds/ y https://plato.stanford.edu/entries/david-lewis/
