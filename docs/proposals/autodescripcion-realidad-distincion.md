@@ -831,9 +831,9 @@ mientras REV-24 permanezca abierto.
 
 Si el metalenguaje considera dos realizaciones con:
 
-$
+$$
 i\mathrel{\#}j,
-$
+$$
 
 sus teorías internas pueden estar ambas bien formadas sin relación ontológica transversal:
 
@@ -1545,19 +1545,19 @@ $$
 
 Por cierre de hechos reales:
 
-$
+$$
 \operatorname{RealFact}_i(f_i)
 \Rightarrow
 \operatorname{Real}_i(q_i)
 \land
 \operatorname{Real}_i(r_i).
-$
+$$
 
 Fijado además un seed ya tipado:
 
-$
+$$
 \operatorname{Real}_i(q_i),
-$
+$$
 
 la incompatibilidad de índice impide que una cadena finita cambie de índice entre aristas. Por inducción sobre la longitud del camino —incluido el caso de longitud cero—:
 
