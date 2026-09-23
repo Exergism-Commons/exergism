@@ -2143,6 +2143,24 @@ ni su análogo para $b_i$. Por tanto incluir retrospectivamente $e_i,c_i$ en el 
 
 Estos modelos convierten REV-07a en un criterio refutable. Lo que permanece abierto no es ya la forma lógica de OriginUnity, sino **la taxonomía independiente de modos ontológicos que justifican EssConDep** y la demostración de que esa taxonomía cubre los casos constitutivos relevantes sin convertir causalidad ordinaria o convergencia en dependencia originaria.
 
+#### 0.2.2. Contrato de admisibilidad de EssConDep
+
+Una familia ontológica concreta solo puede instanciar $\operatorname{EssConDep}$ si satisface conjuntamente:
+
+- **ECD1 / actuality:** existe una instancia actual del modo, no mera posibilidad, ley general o semejanza;
+- **ECD2 / directed essentiality:** la semántica del modo implica dependencia de la actualidad/identidad constitutiva de $x_i$ respecto de la instancia $f_i$ y del soporte cruzado indicado por $Y_i$;
+- **ECD3 / no input inversion:** ser input, causa, enabling condition o mero antecedente de $f_i$ no basta para concluir que el input depende de $f_i$;
+- **ECD4 / locality:** la justificación usa solo la semántica del modo y sus tokens/relata/soporte, no una totalidad final ni el candidato;
+- **ECD5 / target independence:** no menciona $R_i$, Generated$^*$, CoReal, SameRegime, equivalencia de índices, CommonGround ni CGP;
+- **ECD6 / recoding invariance:** una recodificación fiel que preserve la estructura ontológica relevante preserva el juicio de dependencia;
+- **ECD7 / auditability:** debe poder indicarse qué token de un lado depende constitutivamente de qué soporte cruzado y mediante qué modo ontológico.
+
+Familias candidatas que **pueden** satisfacer el contrato si se justifican independientemente: mutual grounding token-specific, identidad constitutiva relacional, estructuras holísticas en las que los relata dependen esencialmente del patrón total y co-constitución procesual genuina.
+
+No satisfacen el contrato por sí solas: causalidad ordinaria, colisión/interacción, proximidad espacio-temporal, semejanza, obediencia a una misma ley, representación conjunta, compartir un descendiente ni pertenecer a la misma clausura candidata.
+
+Por tanto REV-07a no se cerrará enumerando etiquetas metafísicas: cada modo admitido debe proporcionar una regla ECD1–ECD7 y pasar M1–M6.
+
 
 ### 0.3. Root-closure sin primera causa temporal
 
