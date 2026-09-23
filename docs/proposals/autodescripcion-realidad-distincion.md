@@ -216,36 +216,21 @@ $$
 
 es solo una proyección auxiliar de GenEvent; no basta por sí sola para generar $b_i$ cuando la producción requiere antecedentes conjuntos.
 
-La clausura no se introduce mediante un operador mínimo total. Primero se usa el predicado de testigo:
-
-$$
-\operatorname{GenClosure}_i(\mathcal O_i,C_i),
-$$
-
-que afirma que $C_i$ contiene el contenido inicial de $\mathcal O_i$, es cerrado bajo los GenEvent admisibles y es mínimo entre los carriers con esas propiedades. Su existencia es una obligación separada:
+No se presupone un operador mínimo total. Con el predicado de testigo $\operatorname{GenClosure}_i(\mathcal O_i,C_i)$, definido técnicamente en §5.1:
 
 $$
 \mathrm{GCExists}_i(\mathcal O_i)
 :\Longleftrightarrow
-\exists C_i\;
-\operatorname{GenClosure}_i(\mathcal O_i,C_i).
-$$
-
-Definimos la relación de generación sin presuponer ese testigo:
-
-$$
-\boxed{
+\exists C_i\,\operatorname{GenClosure}_i(\mathcal O_i,C_i),
+\qquad
 \operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 :\Longleftrightarrow
 \exists C_i[
-\operatorname{GenClosure}_i(\mathcal O_i,C_i)
-\land
-x_i\in C_i
+\operatorname{GenClosure}_i(\mathcal O_i,C_i)\land x_i\in C_i
 ].
-}
 $$
 
-Por minimalidad, si GCExists vale el carrier testigo es único respecto de $\preceq$ y puede abreviarse como $\operatorname{Cl}^{G}_i(\mathcal O_i)$. La regla doctrinal queda **guardada por existencia de clausura** —y, en GeneTotal, por OntOrigin—:
+Solo bajo GCExists la minimalidad permite abreviar el testigo como $\operatorname{Cl}^{G}_i(\mathcal O_i)$, y la regla doctrinal queda guardada:
 
 $$
 \boxed{
@@ -1521,29 +1506,7 @@ $$
 }
 $$
 
-**OriginUnity.** Separa el hecho integrativo de su papel originario. Además de:
-
-$$
-\operatorname{UnitFact}_i(f_i,U_i),
-$$
-
-introducimos dos nociones independientemente caracterizadas:
-
-$$
-\operatorname{OriginConstitutive}_i(f_i,U_i)
-\qquad\text{y}\qquad
-\operatorname{UnitFoot}_i(f_i,U_i).
-$$
-
-$\operatorname{OriginConstitutive}_i$ afirma que el hecho/proceso es constitutivo de la organización originaria misma, no una integración posterior entre linajes ya independientemente establecidos. No puede definirse por pertenencia al candidato, Seed, OriginUnity, $R_i$, CoReal, Generated$^*$, SameRegime ni «mismo índice». $\operatorname{UnitFoot}_i$ recoge el token, sus relata y todo soporte ontológico constitutivamente requerido, con:
-
-$$
-U_i\cup\{f_i\}
-\preceq
-\operatorname{UnitFoot}_i(f_i,U_i).
-$$
-
-La unidad del origen exige ahora que cada partición sea cruzada por un testigo **origin-constitutive cuyo footprint completo sea interno al seed**:
+**OriginUnity.** Separa el hecho integrativo de su papel originario mediante $\operatorname{UnitFact}_i(f_i,U_i)$, el predicado independiente $\operatorname{OriginConstitutive}_i(f_i,U_i)$ y su footprint $\operatorname{UnitFoot}_i(f_i,U_i)$, con $U_i\cup\{f_i\}\preceq\operatorname{UnitFoot}_i(f_i,U_i)$. OriginConstitutive no puede obtenerse de pertenencia al candidato ni de una convergencia tardía.
 
 $$
 \boxed{
@@ -1554,19 +1517,15 @@ $$
 \Rightarrow
 \exists f_i,U_i[
 \operatorname{UnitFact}_i(f_i,U_i)
-\land
-\operatorname{OriginConstitutive}_i(f_i,U_i)
-\land
-\operatorname{UnitFoot}_i(f_i,U_i)
-\preceq
-\operatorname{Seed}_i(\mathcal O_i)
+\land\operatorname{OriginConstitutive}_i(f_i,U_i)
+\land\operatorname{UnitFoot}_i(f_i,U_i)\preceq\operatorname{Seed}_i(\mathcal O_i)
 \land U_i\cap A_i\neq\varnothing
 \land U_i\cap B_i\neq\varnothing
 ]].
 }
 $$
 
-UnitFact sigue siendo token-specific, integrativo e invariante; OriginConstitutive debe justificarse por la semántica propia del modo constitutivo y **no** puede obtenerse retrospectivamente del mero hecho de que dos linajes converjan o interactúen después. El lema técnico demuestra:
+Los tres componentes deben caracterizarse independientemente de Seed/OriginUnity, $R_i$, CoReal, Generated$^*$, SameRegime y «mismo índice»; los criterios UF/OC completos quedan en work/. El lema técnico demuestra:
 
 $$
 \mathrm{NoUnitFactBridge}(A_i,B_i)
