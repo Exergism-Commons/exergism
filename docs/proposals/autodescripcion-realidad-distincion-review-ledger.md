@@ -107,10 +107,10 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 
 - La teoría de emergencia queda indexada por régimen: $\mathcal E_i$, $\mathfrak D_i^{\mathrm{proc}}$, $\mathfrak K_i$, $K1_i$–$K3_i$ y máximo semántico interno $S_i$.
 - K1–K3 pueden establecer $\operatorname{SemTotal}_i(S_i)$; obtener un $R_i$ ontológico distinto presentado por $S_i$ requiere REV-24a/b/c y $\mathrm{OTB}_i$.
-- Incluso suponiendo cerrados esos puentes para varios regímenes, no se infiere $\exists R_{\mathrm{abs}}$ de $\forall i\,\exists R_i$.
-- La notación de una familia de $S_i$ es solo metalingüística; una familia de $R_i$ solo procede condicionalmente donde se haya satisfecho $\operatorname{OntTotal}_i$.
+- Incluso si el metalenguaje dispone de múltiples realizaciones GeneTotal, no se infiere por ello una realidad absoluta que las contenga; no se usa cuantificación objeto sobre índices.
+- Las comparaciones de varios $S_i/R_i$ son exclusivamente metalingüísticas mediante metavariables de contexto; no se postula una familia ontológica indexada por un conjunto $I$.
 - One-R/Many-R queda desacoplado del teorema emergentista.
-- REV-07 queda PARTIAL por la justificación de $\Lambda_*$ y de la clausura por caminos finitos; K3_i ya se deriva bajo StructAdm.
+- REV-07 queda PARTIAL por OriginUnity, GenEvent/least closure y reconstruction completeness; $\Lambda_i$ es solo una ruta de reconstrucción y K3_i solo se reetiqueta tras adecuación genealógica.
 - REV-08 y REV-14 quedan RESOLVED en sus ataques originales al retirarse los maximales dirigidos como definición de índice y la noción de «Verdad Absoluta indexada».
 ## Avance de REV-07 — identidad de régimen
 
