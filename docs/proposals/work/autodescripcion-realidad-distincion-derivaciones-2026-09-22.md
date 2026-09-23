@@ -2964,7 +2964,7 @@ $$
 \mathrm{RootClosed}_i(\mathcal O_i),
 $$
 
-del origen apto para GeneTotal:
+del origen apto para una GeneUnit local:
 
 $$
 \operatorname{OntOrigin}_i(\mathcal O_i)
@@ -2983,7 +2983,7 @@ Esto hace explícito que OntOrigin exige dos obligaciones separadas: adecuación
 El criterio sigue siendo no circular respecto de $R_i$ siempre que OriginConfig, UnitFact/OriginUnity, OntProd y GenEvent sean caracterizados independientemente.
 
 
-### 0.10. Generated y GeneTotal
+### 0.10. Generated local y GeneTotal monogeneal
 
 $$
 \boxed{
@@ -2997,7 +2997,7 @@ x_i\in C_i
 }
 $$
 
-Esta definición relacional no presupone que exista un least carrier. Si $\mathrm{GCExists}_i(\mathcal O_i)$ vale, la unicidad por minimalidad permite la abreviatura equivalente:
+Esta definición relacional es **local a una GeneUnit**. Si $\mathrm{GCExists}_i(\mathcal O_i)$ vale, la unicidad por minimalidad permite:
 
 $$
 \operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
@@ -3005,19 +3005,358 @@ $$
 x_i\in\operatorname{Cl}^{G}_i(\mathcal O_i).
 $$
 
-y:
+Bajo OntOrigin + GenAdequate la dirección correcta es soundness:
+
+$$
+\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\Rightarrow
+\operatorname{Real}_i(x_i).
+$$
+
+No vale en general la conversa: una GeneUnit local no tiene por qué generar todo el contenido real de $i$.
+
+El caso monogeneal se conserva como:
 
 $$
 \operatorname{GeneTotal}_i(\mathcal O_i,R_i)
 :\Longleftrightarrow
-\operatorname{OntOrigin}_i(\mathcal O_i)
+\exists C_i[
+\operatorname{GeneUnit}_i(\mathcal O_i,C_i)
 \land
 \forall x_i[
 \operatorname{Within}_i(x_i,R_i)
 \leftrightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\operatorname{Real}_i(x_i)
+\leftrightarrow
+x_i\in C_i
+]
 ].
 $$
+
+### 0.10a. REV-07f — RegimeTotal multigeneal
+
+Sea una familia metateórica no vacía:
+
+$$
+\mathfrak G_i
+=
+\{G_{\alpha,i}\}_{\alpha},
+\qquad
+G_{\alpha,i}
+=
+\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle,
+$$
+
+tal que cada miembro satisface GeneUnit y todos los solapamientos satisfacen OverlapCoherence. Esta notación **presupone** que las unidades ya han sido tipadas en el mismo contexto $i$; no es un criterio para demostrar SharedOntSpace ni para fusionar candidatos incompatibles.
+
+Definimos la base familiar:
+
+$$
+\boxed{
+\operatorname{FamilyBase}_i(\mathfrak G_i,B_i)
+:\Longleftrightarrow
+\forall x_i[
+x_i\in B_i
+\leftrightarrow
+\exists^{\mathsf M}G_{\alpha,i}\in\mathfrak G_i\;
+\exists\mathcal O_{\alpha,i}\exists C_{\alpha,i}[
+G_{\alpha,i}
+=
+\langle\mathcal O_{\alpha,i},C_{\alpha,i}\rangle
+\land
+x_i\in C_{\alpha,i}
+]
+].
+}
+$$
+
+La unión de closures locales no es todavía total porque puede habilitar producción transversal. Por eso:
+
+$$
+\boxed{
+\begin{aligned}
+\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)
+:\Longleftrightarrow
+\exists B_i[
+&\operatorname{FamilyBase}_i(\mathfrak G_i,B_i)
+\land
+B_i\preceq C_i
+\land
+\Gamma_i(C_i)=C_i\\
+&\land
+\forall Y_i[
+B_i\preceq Y_i
+\land
+\Gamma_i(Y_i)=Y_i
+\Rightarrow
+C_i\preceq Y_i
+]
+].
+\end{aligned}
+}
+$$
+
+Así:
+
+$$
+\mathrm{RGCExists}_i(\mathfrak G_i)
+:\Longleftrightarrow
+\exists C_i\;
+\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i),
+$$
+
+y:
+
+$$
+\boxed{
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
+:\Longleftrightarrow
+\exists C_i[
+\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)
+\land
+x_i\in C_i
+].
+}
+$$
+
+La minimalidad de la base se formula sobre la **closure obtenida**, no sobre $R_i$:
+
+$$
+\boxed{
+\begin{aligned}
+\mathrm{FamilyIrredundant}_i(\mathfrak G_i)
+:\Longleftrightarrow
+\neg\exists^{\mathsf M}\mathfrak G'_i\prec\mathfrak G_i[
+&\operatorname{GeneFamily}_i(\mathfrak G'_i)
+\land
+\mathrm{RGCExists}_i(\mathfrak G'_i)\\
+&\land
+\forall x_i[
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G'_i,x_i)
+\leftrightarrow
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
+]
+].
+\end{aligned}
+}
+$$
+
+Por tanto:
+
+$$
+\operatorname{GeneBasis}_i(\mathfrak G_i)
+:\Longleftrightarrow
+\operatorname{GeneFamily}_i(\mathfrak G_i)
+\land
+\mathrm{RGCExists}_i(\mathfrak G_i)
+\land
+\mathrm{FamilyIrredundant}_i(\mathfrak G_i),
+$$
+
+y:
+
+$$
+\boxed{
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+:\Longleftrightarrow
+\operatorname{GeneBasis}_i(\mathfrak G_i)
+\land
+\forall x_i[
+\operatorname{Within}_i(x_i,R_i)
+\leftrightarrow
+\operatorname{Real}_i(x_i)
+\leftrightarrow
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
+].
+}
+$$
+
+#### Singleton compatibility theorem
+
+Sea $C_i$ la GenClosure de $\mathcal O_i$ y:
+
+$$
+\mathfrak G_i
+=
+\{
+\langle\mathcal O_i,C_i\rangle
+\}.
+$$
+
+Como $C_i$ ya es fijo de $\Gamma_i$, es también el menor fixed point que contiene FamilyBase. La irredundancia familiar es vacua porque no existe subfamilia propia no vacía. Por tanto:
+
+$$
+\boxed{
+\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\Longleftrightarrow
+\operatorname{RegimeTotal}_i(
+\{\langle\mathcal O_i,C_i\rangle\},
+R_i
+).
+}
+$$
+
+Esto conserva toda consecuencia válida del caso monogeneal y, a la vez, impide que GeneTotal sea el único witness de existencia.
+
+#### RT-07-MG — Multigeneal Reality Test
+
+Sea un único contexto admisible $k$ con:
+
+$$
+D_k=\{a,b\},
+\qquad
+\operatorname{Real}_k=\{a,b\},
+$$
+
+dos configuraciones:
+
+$$
+\operatorname{Seed}(\mathcal O_1)=\{a\},
+\qquad
+\operatorname{Seed}(\mathcal O_2)=\{b\},
+$$
+
+y ninguna producción:
+
+$$
+\operatorname{OntProd}_k=\varnothing,
+\qquad
+\operatorname{GenEvent}_k=\varnothing.
+$$
+
+Entonces:
+
+$$
+C_1=\{a\},
+\qquad
+C_2=\{b\}
+$$
+
+son GenClosure. Los singleton satisfacen OriginUnity vacuamente bajo M1; RootClosed, ProdCoverage y GenAdequate son vacuos. Suponemos además la irredundancia local correspondiente. Por tanto:
+
+$$
+\operatorname{GeneUnit}_k(\mathcal O_1,C_1),
+\qquad
+\operatorname{GeneUnit}_k(\mathcal O_2,C_2).
+$$
+
+Fijamos:
+
+$$
+\mathrm{NoConstitutiveBridge}_k(\{a\},\{b\}),
+$$
+
+de modo que ninguna configuración con seed $\{a,b\}$ puede satisfacer OriginUnity. Como no hay GenEvent, ninguna otra base singleton puede generar ambos tokens.
+
+Para:
+
+$$
+\mathfrak G_k
+=
+\{
+\langle\mathcal O_1,C_1\rangle,
+\langle\mathcal O_2,C_2\rangle
+\},
+$$
+
+se obtiene:
+
+$$
+\operatorname{FamilyBase}_k(\mathfrak G_k,\{a,b\}),
+\qquad
+\Gamma_k(\{a,b\})=\{a,b\},
+$$
+
+y cada subfamilia propia no vacía cierra solo sobre uno de los dos tokens. Luego:
+
+$$
+\mathrm{FamilyIrredundant}_k(\mathfrak G_k),
+$$
+
+y para el scope exhaustivo $R_k$:
+
+$$
+\boxed{
+\operatorname{RegimeTotal}_k(\mathfrak G_k,R_k)
+\land
+\neg\exists\mathcal O_k\;
+\operatorname{GeneTotal}_k(\mathcal O_k,R_k).
+}
+$$
+
+Éste es el contraejemplo exigido a la conversa del singleton theorem. El antiguo ExistsR basado solo en GeneTotal fallaba en este modelo; el nuevo ExistsR basado en RegimeTotal no.
+
+#### RT-07-XP — Transversal Production Test
+
+Sean:
+
+$$
+a_k\in C_{1,k},
+\qquad
+b_k\in C_{2,k},
+$$
+
+y un hiperevento:
+
+$$
+\operatorname{GenEvent}_k(e_k,\{a_k,b_k\},c_k).
+$$
+
+Aunque cada $C_{\alpha,k}$ sea localmente cerrado:
+
+$$
+c_k\notin C_{1,k}\cup C_{2,k}
+$$
+
+puede ocurrir, porque ningún cierre local dispone de ambos antecedentes. Pero FamilyBase sí los contiene conjuntamente, por lo que:
+
+$$
+\operatorname{GenFoot}_k(e_k,\{a_k,b_k\},c_k)
+\preceq
+\operatorname{RegimeClosure}_k(\mathfrak G_k).
+$$
+
+Así:
+
+$$
+\boxed{
+\bigcup_\alpha C_{\alpha,k}
+\subsetneq
+\operatorname{RegimeClosure}_k(\mathfrak G_k)
+}
+$$
+
+es posible. Una definición de RegimeTotal por mera unión falla este test.
+
+#### RT-07-MG-TRIV — Singleton-per-token attack
+
+FamilyIrredundant elimina unidades que no cambian RegimeClosure, pero no pretende declarar ilegítimas todas las raíces singleton. El guard sustantivo está antes: cada miembro debe satisfacer OntOrigin de forma independiente.
+
+Si un token $b_i$ es realmente producido por:
+
+$$
+\operatorname{OntProd}_i(e_i,A_i,b_i),
+$$
+
+declarar $\{b_i\}$ como seed originario falla RootClosed salvo que todo GenFoot productor pertenezca al seed. Ocultar esa producción para salvar el singleton sería un fallo de la semántica de OntProd/ProdCoverage —REV-07b—, no una libertad introducida por RegimeTotal.
+
+Si, en cambio, varios tokens son realmente primitivos, no producidos e independientes, una base compuesta por sus singleton GeneUnit es justamente lo que debe representar una realidad multigeneal.
+
+#### Estado de REV-07f
+
+El defecto de monogeneidad queda cerrado **arquitectónicamente**:
+
+$$
+\boxed{
+\operatorname{GeneTotal}
+\subsetneq
+\operatorname{RegimeTotal}
+}
+$$
+
+en el sentido de clase de realizaciones posibles, con equivalencia exacta en familias singleton y un contramodelo finito para la conversa general.
+
+Esto no cierra REV-07b ni REV-07c: RegimeTotal sigue condicionado a la adecuación de OntProd/GenEvent y a la existencia fundacional de RegimeClosure.
 
 ### 0.11. Convergencia, reindexación y Common-Ground Principle
 
@@ -3599,7 +3938,7 @@ Asimismo, un objeto/enlace actual dentro de $i$ nunca puede contener directament
 
 REV-07e queda ahora reducido a dos arquitecturas sustantivas.
 
-En el caso SharedOntSpace, $R_k$ puede ser **multigeneal**: varias GeneUnit locales comparten el mismo espacio sin CommonGround global. Aquí la antigua GeneTotal es solo el caso monogeneal.
+En el caso SharedOntSpace, $R_k$ puede ser **multigeneal**: varias GeneUnit locales comparten el mismo espacio sin CommonGround global. REV-07f formaliza este caso mediante GeneBasis + RegimeClosure + RegimeTotal; GeneTotal queda exactamente como la especialización singleton/monogeneal.
 
 En el caso ContextGenesis, aparece una nueva $R_k$. Sus precursores no se insertan literalmente en $k$; entran mediante continuaciones tipadas. No-Weak-Genesis exige que la configuración child-side satisfaga OriginUnity; si falla, el caso se reclasifica como SharedOntSpace, transformación interna o génesis no justificada, no como una segunda especie de origen.
 
@@ -6236,7 +6575,7 @@ $$
 Este teorema es exclusivamente semántico. No permite sustituir $S_i$ por un $R_i$ ni concluir $\operatorname{ExistsR}$. La existencia pertenece a REV-07; REV-24 solo añade presentación:
 
 $$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \Rightarrow
 \operatorname{ExistsR},
 $$
@@ -6244,7 +6583,7 @@ $$
 y:
 
 $$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 +
 \operatorname{SemTotal}_i(S_i)
 +
@@ -7487,13 +7826,13 @@ $$
 \quad
 x_i\in T^{\Lambda}_{i,q}
 \Rightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i),
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i),
 $$
 
 $$
 \mathrm{RC}^{\mathrm{gen}}_{\Lambda,i}:
 \quad
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
 \Rightarrow
 x_i\in T^{\Lambda}_{i,q}.
 $$
@@ -7505,7 +7844,7 @@ $$
 T^{\Lambda}_{i,q}
 =
 \{x_i\mid
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
 \}.
 }
 $$
@@ -7523,16 +7862,16 @@ Por tanto la conectividad nunca vuelve a definir el índice: primero produce una
 
 ### 8. REV-24 — presentación semántica de una realidad genealógica
 
-**CURRENT TARGET.** REV-07 debe establecer primero $\operatorname{GeneTotal}_i(\mathcal O_i,R_i)$. REV-24 no produce existencia ontológica; intenta demostrar:
+**CURRENT TARGET.** REV-07 debe establecer primero $\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)$. REV-24 no produce existencia ontológica; intenta demostrar:
 
 $$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 +
 \operatorname{SemTotal}_i(S_i)
 +
-\mathrm{OA}_i(S_i;\mathcal O_i)
+\mathrm{OA}_i(S_i;\mathfrak G_i)
 +
-\mathrm{MC}_i(S_i;\mathcal O_i)
+\mathrm{MC}_i(S_i;\mathfrak G_i)
 +
 \mathrm{RA}_i(S_i,R_i)
 \Rightarrow
@@ -7542,20 +7881,20 @@ $$
 con:
 
 $$
-\mathrm{OA}_i(S;\mathcal O_i)
+\mathrm{OA}_i(S;\mathfrak G_i)
 :=
 \forall a\in T_S\exists x[
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x)
 \land
 \operatorname{Den}_i(a,x)
 ],
 $$
 
 $$
-\mathrm{MC}_i(S;\mathcal O_i)
+\mathrm{MC}_i(S;\mathfrak G_i)
 :=
 \forall x[
-\operatorname{Generated}^{*}_i(\mathcal O_i,x)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x)
 \Rightarrow
 \exists a\in T_S\operatorname{Den}_i(a,x)
 ].
@@ -8362,21 +8701,21 @@ El esquema pre-genealógico que hacía que REV-24 produjese un $R_i$ queda **SUP
 
 Fijado un parámetro de contexto $i$ y una realidad ya justificada:
 
-$$
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i),
-$$
+$
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i),
+$
 
 REV-24 tiene únicamente el target:
 
 $$
 \boxed{
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 +
 \operatorname{SemTotal}_i(S_i)
 +
-\mathrm{OA}_i(S_i;\mathcal O_i)
+\mathrm{OA}_i(S_i;\mathfrak G_i)
 +
-\mathrm{MC}_i(S_i;\mathcal O_i)
+\mathrm{MC}_i(S_i;\mathfrak G_i)
 +
 \mathrm{RA}_i(S_i,R_i)
 \Rightarrow
@@ -8406,8 +8745,8 @@ $$
 :\Longleftrightarrow
 \exists^{\mathsf M} i\;
 \bigl(
-\exists\mathcal O_i\exists R_i\;
-\operatorname{GeneTotal}_i(\mathcal O_i,R_i)
+\exists\mathfrak G_i\exists R_i\;
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \bigr).
 }
 $$
@@ -8442,7 +8781,7 @@ no es una fórmula válida.
 
 ##### One-$R$
 
-One-$R$ significa que toda pareja de realizaciones admisibles de GeneTotal que el metalenguaje compare resulta equivalente bajo:
+One-$R$ significa que toda pareja de realizaciones admisibles de RegimeTotal que el metalenguaje compare resulta equivalente bajo:
 
 $$
 i\simeq_{\mathrm{idx}}j.
