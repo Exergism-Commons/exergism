@@ -2032,6 +2032,26 @@ $$
 
 Esta condición no pretende todavía fijar qué relaciones concretas cuentan como Bind; fija la forma lógica que debe excluir agregados disjuntos.
 
+#### 0.1.1. Admisibilidad de Bind
+
+Bind no puede ser cualquier relación entre constituyentes. Para una instancia:
+
+$$
+\operatorname{Bind}_i(u_i,v_i;\mathcal O_i),
+$$
+
+exigimos como mínimo:
+
+- **B1 / token-specific:** la relación está efectivamente instanciada en la configuración, no es mera posibilidad o ley;
+- **B2 / origin-constitutive:** participa en las condiciones de identidad, persistencia o capacidad generativa conjunta de $\mathcal O_i$;
+- **B3 / intra-origin:** el testigo relevante pertenece a la estructura de la configuración-originaria, no a una interacción posterior entre linajes ya constituidos;
+- **B4 / target-independent:** no usa $R_i$, CoReal, Generated$^*$, SameRegime ni «mismo índice» en su definición;
+- **B5 / representation-invariant:** una recodificación fiel preserva la instancia.
+
+No bastan por sí solas semejanza, proximidad, compartir leyes, representación conjunta ni una fusión mereológica que no añada dependencia integrativa.
+
+Así OU2 no dice «todo está relacionado de algún modo»: exige conectividad mediante relaciones que sean constitutivas del origen como configuración.
+
 ### 0.2. Lema anti-agregación
 
 Sean dos contenidos no vacíos $A_i,B_i$ tales que no existe ningún Bind real cruzando la partición:
@@ -2368,6 +2388,32 @@ $$
 \operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
 ].
 $$
+
+### 0.11. Problema de convergencia / Common-Ground Principle
+
+Considérense dos candidatos pre-indexados $C_a,C_b$ que parecen tener genealogías independientes pero para los que aparece un hecho ontológico integrador.
+
+EXT-01 impide tratarlos como dos realidades genuinamente incompatibles una vez existe integración. Sin embargo, la definición genealógica de $R$ exige además que ambos queden bajo un origen común; una interacción tardía no es por sí sola un ancestro generativo de sus historias previas.
+
+La obligación se registra como metaschema:
+
+$$
+\mathrm{CGP}:
+\quad
+\operatorname{Integrable}^{\mathsf M}(C_a,C_b)
+\Rightarrow
+\operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
+$$
+
+CommonGround significa que existe alguna instanciación admisible de contexto $i$ y una configuración $\mathcal O_i$ tal que ambos candidatos admiten embeddings fieles dentro de $\operatorname{Cl}^{G}_i(\mathcal O_i)$.
+
+CGP **no está demostrado**. Hay tres salidas lógicas si falla:
+
+1. aceptar que linajes sin origen común pueden converger y abandonar «mismo índice implica origen común»;
+2. ampliar «origen» a una noción atemporal/de grounding capaz de fundamentar ambos linajes sin ser un ancestro causal temporal;
+3. prohibir metafísicamente la convergencia sin common ground y justificar ese principio independientemente.
+
+La doctrina actual pretende la tercera/segunda combinación: una interacción real revela que había un fundamento ontológico común más profundo, pero esa tesis requiere defensa propia.
 
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
