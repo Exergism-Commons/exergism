@@ -211,6 +211,49 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         if heading not in technical:
             fail(f"REV-07f regression: missing technical regression test: {heading}")
 
+    distinct_overlap_guard = (
+        "\\alpha\\neq_{\\mathsf M}\\beta" + "\n"
+        + "\\land" + "\n"
+        + "\\operatorname{GeneOverlap}_i"
+    )
+    if distinct_overlap_guard not in current or distinct_overlap_guard not in technical:
+        fail(
+            "REV-07f regression: GeneFamily must require OverlapCoherence only "
+            "between distinct family members"
+        )
+
+    xp_contracts = (
+        "\\mathrm{RGCExists}_k(\\mathfrak G_k)",
+        "\\operatorname{RegimeClosure}_k(\\mathfrak G_k,C_k)",
+        "\\bigcup_\\alpha C_{\\alpha,k}" + "\n" + "\\subsetneq" + "\n" + "C_k",
+    )
+    for snippet in xp_contracts:
+        if snippet not in technical:
+            fail(
+                "REV-07f regression: RT-07-XP must bind an explicit RegimeClosure "
+                f"witness; missing {snippet!r}"
+            )
+
+    old_xp_term = "\\operatorname{RegimeClosure}_k(\\mathfrak G_k)."
+    if old_xp_term in technical:
+        fail(
+            "REV-07f regression: RT-07-XP again treats RegimeClosure as a unary "
+            "carrier-valued term"
+        )
+
+    old_presentation_bridge = (
+        "\\operatorname{GeneTotal}_i(\\mathcal O_i,R_i)" + "\n"
+        + "+" + "\n"
+        + "\\operatorname{SemTotal}_i(S_i)" + "\n"
+        + "+" + "\n"
+        + "\\mathrm{OTB}_i"
+    )
+    if old_presentation_bridge in technical:
+        fail(
+            "REV-07f regression: active technical presentation bridge again "
+            "requires GeneTotal instead of RegimeTotal"
+        )
+
 
 def validate_normative_size(text: str) -> None:
     lines = text.splitlines()
