@@ -3413,39 +3413,88 @@ si y solo si:
 
 Así CAU/CON/GRD/PRC que requieran antecedentes procedentes de GeneUnit distintas pueden dispararse después del ensamblaje sin fingir que esas GeneUnit compartían origen.
 
-#### 0.11.11. Saturación del ensamblaje
+#### 0.11.11. Saturación del ensamblaje y operador conjunto
 
-Una realidad candidata no puede omitir una GeneUnit que esté realmente enlazada al carrier ya ensamblado.
+Una realidad candidata no puede omitir una GeneUnit realmente enlazada al carrier ya ensamblado. Para permitir links que aparezcan solo después de generación transversal introducimos:
 
-Introducimos esquemáticamente:
+$
+\operatorname{CarrierAssemblyLink}_i(\ell_i;K_i,G_{\beta,i}),
+$
 
-$$
-\operatorname{AssemblySaturated}_i(\mathfrak A_i,K_i)
-$$
+cuando $\ell_i$ satisface los mismos criterios objetivos de AssemblyLink y su footprint toca tanto $K_i$ como el carrier de $G_{\beta,i}$.
 
-para exigir que, si existe una GeneUnit local $G_{\beta,i}$ fuera de $\mathcal G_i$ y un testigo AssemblyLink actual entre contenido de $K_i$ y contenido de $G_{\beta,i}$, entonces la candidata no es todavía total: debe incorporar esa unidad, el link y recalcular AsmGenClosure.
+Definimos la expansión de unidades:
 
-Esto hace que ensamblaje y generación sean mutuamente iterativos:
+$
+\operatorname{LinkExpand}_i(\mathcal G_i,K_i)
+:=
+\mathcal G_i
+\cup
+\{
+G_{\beta,i}
+\mid
+\operatorname{GeneUnit}_i(G_{\beta,i})
+\land
+\exists \ell_i\,
+\operatorname{CarrierAssemblyLink}_i(\ell_i;K_i,G_{\beta,i})
+\}.
+$
 
-$$
+y sea $\operatorname{ExpandFoot}_i(\mathcal G_i,K_i)$ la unión de los carriers de las nuevas GeneUnit y de los LinkFoot de los testigos que justifican su incorporación.
+
+El operador conjunto sobre estados de ensamblaje es:
+
+$
+\boxed{
+\Xi_i(\mathcal G_i,K_i)
+:=
+\left(
+\operatorname{LinkExpand}_i(\mathcal G_i,K_i),
+\;
+\Gamma_i(
+K_i
+\cup
+\operatorname{ExpandFoot}_i(\mathcal G_i,K_i)
+)
+\right).
+}
+$
+
+Así:
+
+$
 \text{añadir GeneUnit}
-\;\Rightarrow\;
-\text{nuevos GenEvent posibles}
-\;\Rightarrow\;
+\Rightarrow
+\text{nuevos GenEvent}
+\Rightarrow
 \text{nuevo contenido}
-\;\Rightarrow\;
-\text{nuevos AssemblyLink posibles}.
-$$
+\Rightarrow
+\text{nuevos links}
+$
 
-Por tanto no se asume que una sola pasada de conectividad + $\Gamma_i$ sea suficiente.
+queda representado por iteración de un único operador.
 
-La obligación fundacional correspondiente se registra como:
+Si CarrierAssemblyLink es persistente bajo extensión del carrier —un testigo actual no desaparece al añadir contenido—, LinkExpand es monótono. Como $\Gamma_i$ ya es monótono, $\Xi_i$ es monótono en el orden componente-a-componente:
 
-$$
+$
+(\mathcal G_i,K_i)\preceq(\mathcal G'_i,K'_i)
+\Longrightarrow
+\Xi_i(\mathcal G_i,K_i)
+\preceq
+\Xi_i(\mathcal G'_i,K'_i).
+$
+
+Definimos AssemblySaturated cuando $(\mathcal G_i,K_i)$ es punto fijo de $\Xi_i$ y contiene el soporte inicial requerido.
+
+La obligación fundacional:
+
+$
 \operatorname{ACExists}_i(\mathfrak A_i)
-$$
+$
 
-cuando existe un par saturado/minimal $(\mathfrak A_i^{*},K_i^{*})$ estable bajo ambas operaciones. ACExists **no se presupone**; requerirá una construcción de punto fijo sobre pares o una implementación plural/clase adecuada.
+afirma que existe un **least fixed point admissible** de $\Xi_i$ por encima del estado inicial determinado por $\mathfrak A_i$.
+
+En una implementación set-sized, si el universo de GeneUnit/tokens candidatos forma un producto de retículos completos y $\Xi_i$ es monótono, Knaster–Tarski proporciona condicionalmente ese least fixed point. Esto **no** resuelve el caso plural/proper-class ni la smallness del resultado; esos casos siguen abiertos y deben coordinarse con REV-07c/scope realization.
 
 #### 0.11.12. Anti-agregación para ensamblajes
 
