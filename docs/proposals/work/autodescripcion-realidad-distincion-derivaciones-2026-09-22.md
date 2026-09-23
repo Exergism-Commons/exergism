@@ -2210,21 +2210,62 @@ $$
 
 La monotonicidad se sigue porque cualquier familia de antecedentes contenida en $X_i$ también está contenida en $Y_i$.
 
-### 0.7. Least generative closure
+### 0.7. Least generative closure sin presuponer existencia
 
-Sea $B_i:=\operatorname{Seed}_i(\mathcal O_i)$. Definimos:
+Sea:
 
 $$
-\operatorname{Cl}^{G}_i(\mathcal O_i)
-:=
-\mu X_i[
+B_i:=\operatorname{Seed}_i(\mathcal O_i).
+$$
+
+No usamos $\mu$ como operador total. Definimos primero el predicado:
+
+$$
+\operatorname{GenClosure}_i(\mathcal O_i,C_i)
+$$
+
+si y solo si:
+
+$$
+B_i\preceq C_i,
+$$
+
+$$
+\Gamma_i(C_i)=C_i,
+$$
+
+y:
+
+$$
+\forall X_i[
 B_i\preceq X_i
 \land
 \Gamma_i(X_i)=X_i
+\Rightarrow
+C_i\preceq X_i
 ].
 $$
 
-Siempre que esa least closure exista en el marco fundacional adoptado, satisface:
+Definimos:
+
+$$
+\boxed{
+\mathrm{GCExists}_i(\mathcal O_i)
+:\Longleftrightarrow
+\exists C_i\;
+\operatorname{GenClosure}_i(\mathcal O_i,C_i).
+}
+$$
+
+Si GCExists vale, la minimalidad hace único a $C_i$ respecto del orden $\preceq$ y podemos escribir:
+
+$$
+\operatorname{Cl}^{G}_i(\mathcal O_i)
+$$
+
+como abreviatura de ese carrier.
+
+Condicionado a GCExists se obtienen:
 
 **GC1 — extensividad del seed**
 
@@ -2250,17 +2291,18 @@ B_i\preceq X_i
 \operatorname{Cl}^{G}_i(\mathcal O_i)\preceq X_i.
 $$
 
-**GC4 — monotonía respecto del seed**
-
-si $B_i\preceq B'_i$, entonces:
+**GC4 — monotonía respecto del seed**, siempre que ambos closures existan:
 
 $$
+B_i\preceq B'_i
+\Rightarrow
 \operatorname{Cl}^{G}_i(B_i)
 \preceq
 \operatorname{Cl}^{G}_i(B'_i).
 $$
 
-GC4 es una propiedad formal del operador y **no** autoriza a reemplazar un origen por una unión arbitraria: OriginUnity y RootClosed se verifican antes de aplicar la clausura.
+Así la existencia de la least closure queda como obligación explícita de REV-07c y puede fallar si el marco fundacional no admite el carrier requerido.
+
 
 ### 0.8. Irredundancia del origen
 
@@ -2274,25 +2316,36 @@ exige que ninguna subconfiguración propia que siga siendo una OriginConfig unif
 
 Esto permite representaciones equivalentes solo mediante una relación explícita de equivalencia de origen; no por igualdad extensional accidental.
 
-### 0.9. OntOrigin provisional
+### 0.9. OriginCandidate y OntOrigin provisional
 
-El criterio actual es:
+Separamos el criterio pre-clausura:
 
 $$
-\operatorname{OntOrigin}_i(\mathcal O_i)
+\operatorname{OriginCandidate}_i(\mathcal O_i)
 :\Longleftrightarrow
 \mathrm{OriginConfig}_i(\mathcal O_i)
 \land
 \mathrm{OriginUnity}_i(\mathcal O_i)
 \land
-\mathrm{RootClosed}_i(\mathcal O_i)
+\mathrm{RootClosed}_i(\mathcal O_i),
+$$
+
+del origen apto para GeneTotal:
+
+$$
+\operatorname{OntOrigin}_i(\mathcal O_i)
+:\Longleftrightarrow
+\operatorname{OriginCandidate}_i(\mathcal O_i)
+\land
+\mathrm{GCExists}_i(\mathcal O_i)
 \land
 \mathrm{Irredundant}_i(\mathcal O_i).
 $$
 
-Es **no circular respecto de R** siempre que OriginConfig, Bind/OriginUnity y GenEvent sean caracterizados independientemente.
+Esto hace explícito que la existencia de la least closure no se obtiene por definir OntOrigin: es una premisa/resultado separado que debe establecer REV-07c.
 
-El blocker residual de REV-07 ya no es la forma lógica del origen, sino justificar ontológicamente esas primitivas y demostrar que una realización concreta las satisface.
+El criterio sigue siendo no circular respecto de $R_i$ siempre que OriginConfig, Bind/OriginUnity y GenEvent sean caracterizados independientemente.
+
 
 ### 0.10. Generated y GeneTotal
 
