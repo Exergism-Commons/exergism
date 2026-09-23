@@ -3059,7 +3059,7 @@ $$
 \operatorname{CommonGround}^{\mathsf M}(C_a,C_b).
 $$
 
-CGP **permanece OPEN** y no se deriva de EXT-01. Bajo la arquitectura vigente, si CGP llegara a justificarse, la convergencia sería «retroactiva» solo epistemológicamente: $e$ revelaría que la individuación previa como contextos incompatibles era errónea, mientras el fundamento común sería ontológicamente independiente de $e$ y no tendría por qué ser temporalmente anterior.
+CGP **no es derivable de la doctrina vigente** y no se deriva de EXT-01. Solo puede recuperarse como premisa metafísica adicional que excluya el contramodelo finito de §0.11.4; si se adoptara, la convergencia sería «retroactiva» solo epistemológicamente y el common ground seguiría siendo independiente del evento integrador.
 
 La alternativa conceptualmente distinta es una **ontogénesis por convergencia**:
 
@@ -3417,15 +3417,15 @@ Así CAU/CON/GRD/PRC que requieran antecedentes procedentes de GeneUnit distinta
 
 Una realidad candidata no puede omitir una GeneUnit realmente enlazada al carrier ya ensamblado. Para permitir links que aparezcan solo después de generación transversal introducimos:
 
-$
+$$
 \operatorname{CarrierAssemblyLink}_i(\ell_i;K_i,G_{\beta,i}),
-$
+$$
 
 cuando $\ell_i$ satisface los mismos criterios objetivos de AssemblyLink y su footprint toca tanto $K_i$ como el carrier de $G_{\beta,i}$.
 
 Definimos la expansión de unidades:
 
-$
+$$
 \operatorname{LinkExpand}_i(\mathcal G_i,K_i)
 :=
 \mathcal G_i
@@ -3438,13 +3438,13 @@ G_{\beta,i}
 \exists \ell_i\,
 \operatorname{CarrierAssemblyLink}_i(\ell_i;K_i,G_{\beta,i})
 \}.
-$
+$$
 
 y sea $\operatorname{ExpandFoot}_i(\mathcal G_i,K_i)$ la unión de los carriers de las nuevas GeneUnit y de los LinkFoot de los testigos que justifican su incorporación.
 
 El operador conjunto sobre estados de ensamblaje es:
 
-$
+$$
 \boxed{
 \Xi_i(\mathcal G_i,K_i)
 :=
@@ -3458,11 +3458,11 @@ K_i
 )
 \right).
 }
-$
+$$
 
 Así:
 
-$
+$$
 \text{añadir GeneUnit}
 \Rightarrow
 \text{nuevos GenEvent}
@@ -3470,27 +3470,27 @@ $
 \text{nuevo contenido}
 \Rightarrow
 \text{nuevos links}
-$
+$$
 
 queda representado por iteración de un único operador.
 
 Si CarrierAssemblyLink es persistente bajo extensión del carrier —un testigo actual no desaparece al añadir contenido—, LinkExpand es monótono. Como $\Gamma_i$ ya es monótono, $\Xi_i$ es monótono en el orden componente-a-componente:
 
-$
+$$
 (\mathcal G_i,K_i)\preceq(\mathcal G'_i,K'_i)
 \Longrightarrow
 \Xi_i(\mathcal G_i,K_i)
 \preceq
 \Xi_i(\mathcal G'_i,K'_i).
-$
+$$
 
 Definimos AssemblySaturated cuando $(\mathcal G_i,K_i)$ es punto fijo de $\Xi_i$ y contiene el soporte inicial requerido.
 
 La obligación fundacional:
 
-$
+$$
 \operatorname{ACExists}_i(\mathfrak A_i)
-$
+$$
 
 afirma que existe un **least fixed point admissible** de $\Xi_i$ por encima del estado inicial determinado por $\mathfrak A_i$.
 
@@ -7219,7 +7219,7 @@ Eso no crea un hecho real que relacione ambos contextos.
 
 ##### Cluster-$R$
 
-Cluster-$R$ solo se usa antes de fijar el tipado definitivo. Un CommonGround independientemente justificado implica equivalencia de contexto; un hecho integrador solo establece JointRealizable mientras CGP permanezca OPEN.
+Cluster-$R$ solo se usa antes de fijar el tipado definitivo. Un CommonGround independientemente justificado implica equivalencia de contexto; un hecho integrador solo establece JointRealizable. CGP no es derivable y la ruta candidata actual para explicar ContextUnity sin GeneUnity es Context Assembly.
 
 ##### Verdad entre contextos
 
