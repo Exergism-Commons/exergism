@@ -5201,14 +5201,16 @@ $$
 \operatorname{IndividuationWitness}^{\mathsf M}(C;\chi).
 $$
 
-$C$ es aquí un candidato todavía no tratado como $R_i$, y $\chi$ no es una pieza adicional de realidad. Para que el testigo no sea una renominación del índice debe satisfacer al menos:
+$C$ es aquí una **presentación/candidatura metateórica pre-indexada**: no se presupone todavía que corresponda a una única unidad ontológica. $\chi$ no es una pieza adicional de realidad. Para que el testigo no sea una renominación del índice debe satisfacer al menos:
 
 1. **CI1 / pre-indexación:** su definición no usa $\operatorname{Real}_i$, SameRegime$_i$, $R_i$ ni la mera existencia del índice que pretende justificar;
 2. **CI2 / no extensionalidad instantánea:** no identifica el contexto con un snapshot o con la lista actual de sus componentes;
 3. **CI3 / poder de tipado:** explica por qué cierto contenido puede entrar en una misma semántica objeto y por qué otro contenido exigiría reindexación;
 4. **CI4 / anclaje generativo:** es compatible con OntOrigin, OntProd/GenEvent, RegimeClosure y la distinción SharedOntSpace/ContextGenesis;
 5. **CI5 / persistencia no post hoc:** no se selecciona retrospectivamente para hacer verdadera una FaithfulContinuation concreta;
-6. **CI6 / invariancia de recodificación:** representaciones isomorfas del mismo soporte ontológico no producen individuaciones distintas por accidente notacional.
+6. **CI6 / invariancia de recodificación:** representaciones isomorfas del mismo soporte ontológico no producen individuaciones distintas por accidente notacional;
+7. **CI7 / granularidad no arbitraria:** si dos testigos admisibles inducen cortes incompatibles sobre la misma presentación, la teoría debe justificar que corresponden a niveles distintos o demostrar su equivalencia; no puede elegir el corte que convenga al argumento;
+8. **CI8 / anti-agregación:** una suma descriptiva de unidades ya individuadas no obtiene una nueva individuación solo porque pueda encerrarse en una presentación común.
 
 La relación entre $\chi$ y $\Omega_i$ queda deliberadamente asimétrica. $\chi$ pretende descargar la deuda **pre-indexada** de por qué hay una unidad contextual; $\Omega_i$ sigue siendo un candidato **post-individuación** a representación canónica de la estructura generativa/iterativa módulo trivializaciones admisibles. Por tanto no se identifica:
 
@@ -5276,7 +5278,7 @@ $$
 \mathrm{Muro}\neq\mathrm{IF}.
 $$
 
-La analogía celular mejora así: una membrana no es simplemente «lo que aísla», sino la estructura que mantiene una individuación mientras regula qué tipos de continuidad, intercambio o génesis son admisibles. En esta propuesta ese «intercambio» nunca autoriza por sí mismo un predicado objeto cross-index.
+La analogía celular mejora así: una membrana no es simplemente «lo que aísla», sino la estructura que mantiene una individuación mientras regula qué tipos de continuidad, intercambio o génesis son admisibles. La analogía con semipermeabilidad física termina aquí: para $i\#j$ **no hay import/export objeto de tokens entre contextos**. Una continuación child-side es contenido nuevamente tipado en el hijo, no el mismo token cruzando una pared. Además, RegimeClosure es clausura generativa de la propuesta y no debe identificarse sin argumento con la «closure of constraints» de la biología teórica.
 
 #### 0.11.50. Qué haría no trivial a Cellular Reality
 
@@ -5410,6 +5412,8 @@ Así «realidad celular» es conceptualmente anterior y más débil que «realid
 
 **C6 — reemplazo total de componentes.** Sustituir todos los tokens de una realización a lo largo de una historia no decide por sí solo si el índice persiste. Este test sigue abierto hasta que $\chi$, $\Omega_i$ y ContinuationProfile queden coordinados sin circularidad.
 
+**C7 — coarse-graining rival.** Una misma presentación puede admitir dos particiones descriptivas igualmente cómodas. Si $\chi_1$ individúa «células» finas y $\chi_2$ unidades gruesas, la teoría no puede convertir ambas en índices ontológicos por conveniencia. Debe mostrar que una de las particiones carece de CI1–CI8, que ambas representan niveles ontológicos genuinamente distintos mediante una futura relación de embedding, o que son metateóricamente equivalentes. Este es el ataque principal contra una celularidad meramente perspectival.
+
 #### 0.11.54. Estado de REV-07g
 
 REV-07g queda **PARTIAL / hipótesis arquitectónica**.
@@ -5431,10 +5435,10 @@ junto con una capa epistémica separada —Muro— y una capa de interfaces onto
 Lo que todavía falta para convertir Cellular Reality en extensión formal fuerte es:
 
 1. definir $\operatorname{IndividuationWitness}^{\mathsf M}$ sin reutilizar el índice ni RegimeTotal de forma circular;
-2. demostrar que ese fundamento induce una frontera de tipado suficientemente determinada;
+2. demostrar que ese fundamento induce una frontera de tipado suficientemente determinada y no depende de un coarse-graining arbitrario;
 3. cerrar la identidad diacrónica coordinando $\chi$, trivialización, $\Omega_i$ y ContinuationProfile;
 4. dar un criterio positivo de ContextCessation;
-5. decidir si existe una relación legítima de embedding/nesting entre contextos;
+5. decidir si existe una relación legítima de embedding/nesting entre contextos y cómo se distingue de una partición puramente descriptiva;
 6. solo entonces reevaluar si alguna subclase de arquitecturas celulares satisface un criterio real de fractalidad.
 
 La tesis central queda, por ahora:
