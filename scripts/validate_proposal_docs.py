@@ -7,6 +7,7 @@ from typing import Any
 
 from markdown_it import MarkdownIt
 from mdit_py_plugins.dollarmath import dollarmath_plugin
+from pylatexenc.latex2text import LatexNodes2Text
 from pylatexenc.latexwalker import (
     LatexCharsNode,
     LatexCommentNode,
@@ -277,8 +278,17 @@ class MarkdownDocument:
             result.append((level, title, token.map[0]))
         return result
 
-    def reject_inline_html(self, path: Path) -> None:
+    def reject_raw_html(self, path: Path) -> None:
         for token in self.tokens:
+            if token.type == "html_block":
+                location = ""
+                if token.map is not None:
+                    location = f" near line {token.map[0] + 1}"
+                fail(
+                    f"{path.relative_to(ROOT)} contains active raw HTML block{location}; "
+                    "proposal contracts use CommonMark prose/blocks only"
+                )
+
             if token.type != "inline" or not token.children:
                 continue
             if any(child.type == "html_inline" for child in token.children):
@@ -550,73 +560,25 @@ def validate_archive(document: MarkdownDocument) -> None:
         )
 
 
-TEX_SPACING_MACROS = {
-    " ",
-    ",",
-    ";",
-    ":",
-    "!",
-    ">",
-    "quad",
-    "qquad",
-    "enspace",
-    "enskip",
-    "thinspace",
-    "medspace",
-    "thickspace",
-    "negthinspace",
-    "negmedspace",
-    "negthickspace",
-    "hspace",
-    "hskip",
-    "kern",
-    "mkern",
-    "mskip",
-}
+LATEX_TO_TEXT = LatexNodes2Text()
 
 
-def tex_node_is_spacing(node: Any) -> bool:
-    if isinstance(node, LatexCommentNode):
-        return True
-    if isinstance(node, LatexCharsNode):
-        return node.chars.strip() == ""
-    if isinstance(node, LatexMacroNode):
-        return node.macroname in TEX_SPACING_MACROS
-    if isinstance(node, LatexGroupNode):
-        return all(tex_node_is_spacing(child) for child in node.nodelist)
-    return False
+def tex_nodes_text(nodes: list[Any]) -> str:
+    return LATEX_TO_TEXT.nodelist_to_text(nodes)
 
 
-def tex_node_starts_with_bare_name(node: Any, name: str) -> bool:
-    if isinstance(node, LatexCharsNode):
-        return re.match(
-            rf"\s*{re.escape(name)}(?![A-Za-z0-9_])",
-            node.chars,
-        ) is not None
-
-    if isinstance(node, LatexGroupNode):
-        for child in node.nodelist:
-            if tex_node_is_spacing(child):
-                continue
-            return tex_node_starts_with_bare_name(child, name)
-
-    return False
+def tex_text_starts_with_bare_name(nodes: list[Any], name: str) -> bool:
+    return re.match(
+        rf"\s*{re.escape(name)}(?![A-Za-z0-9_])",
+        tex_nodes_text(nodes),
+    ) is not None
 
 
-def tex_node_ends_with_bare_name(node: Any, name: str) -> bool:
-    if isinstance(node, LatexCharsNode):
-        return re.search(
-            rf"(?<![A-Za-z0-9_]){re.escape(name)}\s*$",
-            node.chars,
-        ) is not None
-
-    if isinstance(node, LatexGroupNode):
-        for child in reversed(node.nodelist):
-            if tex_node_is_spacing(child):
-                continue
-            return tex_node_ends_with_bare_name(child, name)
-
-    return False
+def tex_text_ends_with_bare_name(nodes: list[Any], name: str) -> bool:
+    return re.search(
+        rf"(?<![A-Za-z0-9_]){re.escape(name)}\s*$",
+        tex_nodes_text(nodes),
+    ) is not None
 
 
 def tex_child_nodelists(node: Any) -> list[list[Any]]:
@@ -637,37 +599,6 @@ def tex_child_nodelists(node: Any) -> list[list[Any]]:
     return children
 
 
-def next_significant_tex_node(nodes: list[Any], index: int) -> tuple[int, Any] | None:
-    while index < len(nodes):
-        if not tex_node_is_spacing(nodes[index]):
-            return index, nodes[index]
-        index += 1
-    return None
-
-
-def previous_significant_tex_node(nodes: list[Any], index: int) -> tuple[int, Any] | None:
-    while index >= 0:
-        if not tex_node_is_spacing(nodes[index]):
-            return index, nodes[index]
-        index -= 1
-    return None
-
-
-def tex_group_plain_text(node: Any) -> str | None:
-    if not isinstance(node, LatexGroupNode):
-        return None
-
-    parts: list[str] = []
-    for child in node.nodelist:
-        if isinstance(child, LatexCharsNode):
-            parts.append(child.chars)
-        elif tex_node_is_spacing(child):
-            continue
-        else:
-            return None
-    return "".join(parts).strip()
-
-
 def operatorname_text(node: LatexMacroNode) -> str | None:
     if node.macroname != "operatorname":
         return None
@@ -681,61 +612,53 @@ def operatorname_text(node: LatexMacroNode) -> str | None:
     if not arguments:
         return None
 
-    return tex_group_plain_text(arguments[0])
+    return tex_nodes_text([arguments[0]]).strip()
 
 
 def find_index_typing_violation(nodes: list[Any]) -> str | None:
     for index, node in enumerate(nodes):
         if isinstance(node, LatexMacroNode) and node.macroname in {"exists", "forall"}:
-            following = next_significant_tex_node(nodes, index + 1)
-            if following is not None and tex_node_starts_with_bare_name(following[1], "i"):
+            if tex_text_starts_with_bare_name(nodes[index + 1 :], "i"):
                 return (
                     "object-level existential quantification over index metavariable i"
                     if node.macroname == "exists"
                     else "object-level universal quantification over index metavariable i"
                 )
 
-        if isinstance(node, LatexMacroNode) and node.macroname in {"neq", "in"}:
-            previous = previous_significant_tex_node(nodes, index - 1)
-            following = next_significant_tex_node(nodes, index + 1)
-            if previous is not None and following is not None:
-                if (
-                    node.macroname == "neq"
-                    and tex_node_ends_with_bare_name(previous[1], "i")
-                    and tex_node_starts_with_bare_name(following[1], "j")
-                ) or (
-                    node.macroname == "neq"
-                    and tex_node_ends_with_bare_name(previous[1], "j")
-                    and tex_node_starts_with_bare_name(following[1], "i")
-                ):
-                    return "ordinary i\\neq j index relation"
-                if (
-                    node.macroname == "in"
-                    and tex_node_ends_with_bare_name(previous[1], "i")
-                    and tex_node_starts_with_bare_name(following[1], "I")
-                ):
-                    return "membership of index metavariable i in an index domain I"
+        if isinstance(node, LatexMacroNode) and node.macroname == "neq":
+            if (
+                tex_text_ends_with_bare_name(nodes[:index], "i")
+                and tex_text_starts_with_bare_name(nodes[index + 1 :], "j")
+            ) or (
+                tex_text_ends_with_bare_name(nodes[:index], "j")
+                and tex_text_starts_with_bare_name(nodes[index + 1 :], "i")
+            ):
+                return "ordinary i\\neq j index relation"
+
+        if isinstance(node, LatexMacroNode) and node.macroname == "in":
+            if (
+                tex_text_ends_with_bare_name(nodes[:index], "i")
+                and tex_text_starts_with_bare_name(nodes[index + 1 :], "I")
+            ):
+                return "membership of index metavariable i in an index domain I"
 
         if isinstance(node, LatexMacroNode) and node.macroname == "operatorname":
             name = operatorname_text(node)
             name_end = index
 
-            # pylatexenc's default context may leave an unknown macro argument as a
-            # following group instead of attaching it to nodeargd. Both are AST forms.
-            if name is None:
-                argument = next_significant_tex_node(nodes, index + 1)
-                if argument is not None:
-                    candidate = tex_group_plain_text(argument[1])
-                    if candidate is not None:
-                        name = candidate
-                        name_end = argument[0]
+            # pylatexenc may leave an unknown macro argument as a following group.
+            # The group is still parser output; LatexNodes2Text supplies its semantics.
+            if (
+                name is None
+                and index + 1 < len(nodes)
+                and isinstance(nodes[index + 1], LatexGroupNode)
+            ):
+                name = tex_nodes_text([nodes[index + 1]]).strip()
+                name_end = index + 1
 
             if name == "Real":
-                following = next_significant_tex_node(nodes, name_end + 1)
-                if following is None or not (
-                    isinstance(following[1], LatexCharsNode)
-                    and following[1].chars.lstrip().startswith("_")
-                ):
+                rendered_suffix = tex_nodes_text(nodes[name_end + 1 :]).lstrip()
+                if not rendered_suffix.startswith("_"):
                     return "unindexed Real predicate"
 
         for child_nodes in tex_child_nodelists(node):
@@ -954,9 +877,9 @@ def main() -> None:
     archive_document = MarkdownDocument(archive_text)
 
     for path, document in documents.items():
-        document.reject_inline_html(path)
+        document.reject_raw_html(path)
 
-    archive_document.reject_inline_html(ARCHIVE)
+    archive_document.reject_raw_html(ARCHIVE)
 
     validate_ledger(documents[LEDGER])
     validate_archive(archive_document)
