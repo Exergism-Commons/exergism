@@ -11383,7 +11383,34 @@ El witness \(\psi\) debe descargar **PB1–PB8**.
 
 para todo candidato posterior \(x_k\). Ningún componente de \(\Pi_i^x\) puede seleccionarse porque precisamente ese candidato lo conserve.
 
-**PB3 — role grounding.** Todo \(\rho\in\mathcal R_x\) debe contar con una razón source-side independiente para formar parte de la persistencia examinada. Un rol decorativo o inventado ad hoc no entra en el perfil.
+**PB3 — role grounding + coverage.** Introducimos un clasificador source-side:
+
+\[
+\operatorname{MaintRole}^{\mathsf M}_i
+(
+x_i,\rho;\eta
+),
+\]
+
+cuyo witness \(\eta\) solo puede usar estructura actual ya justificada —SourceUnit, constitución, causalidad, organización, InterfaceContract o dinámica productiva— y no ContinuationProfile, FaithfulContinuation ni ningún child candidato.
+
+Todo \(\rho\in\mathcal R_x\) debe satisfacer MaintRole. Para una FaithfulContinuation **no cualificada** se exige además coverage:
+
+\[
+\boxed{
+\operatorname{MaintRole}^{\mathsf M}_i(x_i,\rho)
+\Longrightarrow
+\rho\in\mathcal R_x.
+}
+\]
+
+Puede estudiarse una continuidad deliberadamente scoped respecto de un subconjunto \(\mathcal S\subset\mathcal R_x\), pero el juicio debe quedar explícitamente cualificado:
+
+\[
+\operatorname{FaithfulContinuation}^{\mathsf M,\mathcal S}.
+\]
+
+Una continuación scoped no puede promoverse por omisión a FaithfulContinuation no cualificada.
 
 **PB4 — interaction closure.** Si dos roles de \(\mathcal R_x\) presentan SynRel o una dependencia cross-role independently grounded, \(\Theta_x\) debe incluir el interaction role/contract correspondiente. No se permite construir persistencia a partir de marginals ignorando una interacción conocida.
 
@@ -11602,15 +11629,9 @@ pero:
 }
 \]
 
-#### 0.11.91f. ProfileMorphism: preservación dinámica entre source y descendant
+#### 0.11.91f. TargetRealizationProfile y ProfileMorphism
 
-Sean:
-
-\[
-\mathsf{CP}_i^x
-\qquad\text{y}\qquad
-\mathsf{CP}_k^y.
-\]
+Para comprobar que \(y_k\) continúa a \(x_i\) no exigimos que el child posea ya una PersistenceBasis propia idéntica a la parental. Eso sería demasiado fuerte y podría confundir “realiza el legado source” con “se individúa autónomamente por el mismo criterio”.
 
 Una traducción de continuidad:
 
@@ -11623,12 +11644,35 @@ Una traducción de continuidad:
 \rangle
 \]
 
-puede enviar un generador source a una continuación target:
+transporta la parte preservable de \(\Pi_i^x\) a un contrato target:
+
+\[
+\tau\Pi_i^x.
+\]
+
+Si \(y_k\) realiza ese contrato target y sus continuaciones traducidas están bien definidas, construimos el **TargetRealizationProfile**:
+
+\[
+\boxed{
+\operatorname{TargetRealizationProfile}^{\mathsf M}_k
+(
+y_k;\tau\Pi_i^x
+)
+=
+\mathsf{TRP}_{k}^{y\mid\tau\Pi}.
+}
+\]
+
+Su construcción repite el quotient dinámico de §§0.11.91b–0.11.91d, pero restringida al contrato heredado/traducido que debe realizarse en \(k\). No afirma todavía que ese contrato agote la identidad propia del child.
+
+Si \(y_k\) dispone además de una PersistenceBasis propia \(\Pi_k^y\), debe existir una compatibilidad explícita entre \(\mathsf{TRP}_{k}^{y\mid\tau\Pi}\) y la proyección correspondiente de \(\mathsf{CP}_k^y\) para poder usar \(y_k\) como stage intermedio de futuras continuaciones.
+
+La traducción puede enviar un generador source a una continuación target:
 
 \[
 \tau_G(g)
 \in
-\operatorname{Cont}_{k,\Theta_y},
+\operatorname{Cont}_{k,\tau\Theta_x},
 \]
 
 no necesariamente a un único step atómico.
@@ -11640,7 +11684,7 @@ Definimos:
 \operatorname{ProfileMorphism}^{\mathsf M}_{i\to k}
 (
 \mathsf{CP}_i^x,
-\mathsf{CP}_k^y;
+\mathsf{TRP}_{k}^{y\mid\tau\Pi};
 \Phi,\tau
 )
 }
@@ -11719,7 +11763,7 @@ x_i;\Pi_i^x,\psi
 \]
 
 3. el ContinuationProfile derivado \(\mathsf{CP}_i^x\);
-4. una PersistenceBasis/profile target compatible cuando el target vaya a soportar continuidad ulterior;
+4. un TargetRealizationProfile \(\mathsf{TRP}_{k}^{y\mid\tau\Pi}\) para la PersistenceBasis traducida;
 5. provenance independently grounded de la trayectoria \(\gamma\), mediante ProvLink o witness específico de formación;
 6. un ProfileMorphism:
 
@@ -11727,12 +11771,14 @@ x_i;\Pi_i^x,\psi
 \operatorname{ProfileMorphism}^{\mathsf M}_{i\to k}
 (
 \mathsf{CP}_i^x,
-\mathsf{CP}_k^y;
+\mathsf{TRP}_{k}^{y\mid\tau\Pi};
 \Phi,\tau
 );
 \]
 
 7. no retroactivity y no index collapse.
+
+Si el juicio pretende ser FaithfulContinuation no cualificada, PB3 exige role coverage completo respecto de MaintRole. Si solo se ha demostrado un subconjunto de roles, el resultado permanece explícitamente scoped.
 
 Con ello, la antigua FC3:
 
@@ -11801,10 +11847,10 @@ Se conserva el resultado F1 sin recurrir a semejanza superficial.
 
 \[
 \Phi_1:
-\mathsf{CP}_i^x\to\mathsf{CP}_k^{y_1},
+\mathsf{CP}_i^x\to\mathsf{TRP}_k^{y_1\mid\tau_1\Pi},
 \qquad
 \Phi_2:
-\mathsf{CP}_i^x\to\mathsf{CP}_k^{y_2}
+\mathsf{CP}_i^x\to\mathsf{TRP}_k^{y_2\mid\tau_2\Pi}
 \]
 
 con provenance válida para ambas trayectorias. FaithfulContinuation sigue siendo relacional, no funcional.
@@ -11821,7 +11867,7 @@ z_\ell.
 
 Si:
 
-1. los ProfileMorphisms son composables;
+1. el stage intermedio \(y_k\) posee una PersistenceBasis propia cuya proyección es compatible con el TargetRealizationProfile heredado, y los ProfileMorphisms resultantes son composables;
 2. las traducciones satisfacen coherencia:
 
 \[
@@ -11890,6 +11936,26 @@ La maquinaria no pretende resolver por decreto todos los casos ordinarios de “
 Se deriva source-side de roles, interfaces, interactions, memo-equivalence y dinámica de update previamente justificados.
 
 Por tanto la deuda específica de **derivar ContinuationProfile y coordinarlo con FaithfulContinuation sin invariantes post hoc** queda **RESOLVED a nivel de criterio**.
+
+#### 0.11.91j. Stress tests de ContinuationProfile
+
+**CP-S1 — child-tailored profile.** Se observa primero \(y_k\) y se eligen solo los roles/transformaciones de \(x_i\) que \(y_k\) conserva. Falla PB2.
+
+**CP-S2 — role omission.** Dos MaintRole están independently grounded pero se omite uno porque rompe la continuidad candidata. El resultado puede ser una FaithfulContinuation scoped, nunca la no cualificada; falla PB3 coverage.
+
+**CP-S3 — marginal-only persistence.** Se incluyen dos roles individualmente pero se omite su interaction role pese a SynRel. Falla PB4 y puede fabricar un quotient demasiado grueso.
+
+**CP-S4 — non-congruent memo.** Un memo parece suficiente en el estado actual pero dos histories colapsados evolucionan a clases distintas bajo un generador de \(\mathcal G_x\). La transición quotient no está bien definida; CP-T1 no aplica.
+
+**CP-S5 — perfect replica.** El child realiza un TargetRealizationProfile isomorfo pero no existe provenance. ProfileMorphism puede valer; FaithfulContinuation falla por FC2.
+
+**CP-S6 — material conservatism.** Se preservan todos los componentes pero una dependencia de mantenimiento o interaction role deja de satisfacerse. La mera identidad material no preserva el perfil.
+
+**CP-S7 — total replacement.** Ningún constituyente inicial sobrevive, pero los updates/profile morphisms satisfacen el quotient dinámico y provenance. El reemplazo extensional total no refuta por sí mismo la continuidad.
+
+**CP-S8 — inherited-contract fallacy.** El child realiza perfectamente el contrato parental y se infiere que esa estructura agota su propia identidad futura. Falla la distinción entre TargetRealizationProfile y PersistenceBasis propia del child.
+
+Estos tests muestran que la construcción evita simultáneamente dos trivializaciones opuestas: no permite declarar continuidad escogiendo lo que sobrevivió, ni exige identidad material/estructural total para conservarla.
 
 #### 0.11.92. Relación con \(\Omega_i\): ContinuationProfile ya no depende de \(\Omega_i\)
 
