@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -564,7 +565,8 @@ LATEX_TO_TEXT = LatexNodes2Text()
 
 
 def tex_nodes_text(nodes: list[Any]) -> str:
-    return LATEX_TO_TEXT.nodelist_to_text(nodes)
+    rendered = LATEX_TO_TEXT.nodelist_to_text(nodes)
+    return unicodedata.normalize("NFKC", rendered)
 
 
 def tex_text_starts_with_bare_name(nodes: list[Any], name: str) -> bool:
