@@ -187,23 +187,22 @@ class MarkdownDocument:
         self.env: dict[str, Any] = {}
         self.tokens = MARKDOWN.parse(self.text, self.env)
         self.hidden_lines: set[int] = set()
-        covered_lines: set[int] = set()
 
-        # Source coverage is parser-owned. Top-level token maps tell us which physical lines
-        # participate in emitted CommonMark blocks; nonblank uncovered lines are parser-consumed
-        # syntax such as link-reference definitions and must not satisfy source contracts.
+        # Hidden block ranges come directly from CommonMark tokens.
         for token in self.tokens:
-            if token.level == 0 and token.map is not None:
-                start, end = token.map
-                covered_lines.update(range(start, end))
-
             if token.type in {"fence", "code_block", "html_block"} and token.map is not None:
                 start, end = token.map
                 self.hidden_lines.update(range(start, end))
 
-        for line_no, line in enumerate(self.lines):
-            if line_no not in covered_lines and line.strip(" \t") != "":
-                self.hidden_lines.add(line_no)
+        # CommonMark reference definitions are parser-consumed source and do not render. markdown-it
+        # records their exact source ranges in env["references"]; hide those ranges directly rather
+        # than inferring non-rendered lines from gaps between token maps.
+        for reference in self.env.get("references", {}).values():
+            mapping = reference.get("map")
+            if mapping is None:
+                continue
+            start, end = mapping
+            self.hidden_lines.update(range(start, end))
 
     def active_text(self, start: int = 0, end: int | None = None) -> str:
         if end is None:
