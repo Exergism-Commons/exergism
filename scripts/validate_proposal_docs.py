@@ -149,12 +149,6 @@ CANONICAL_GENE_BASIS = r"""\boxed{
 \mathrm{FamilyIrredundant}_i(\mathfrak G_i).
 }"""
 
-DISTINCT_OVERLAP_FRAGMENT = (
-    "\\alpha\\neq_{\\mathsf M}\\beta\n"
-    "\\land\n"
-    "\\operatorname{GeneOverlap}_i"
-)
-
 PLURAL_STATUS_TEXT = (
     "Status contract: REV-24d = UNCHANGED; "
     "scope realization owner = REV-07/RegimeTotal; "
@@ -215,48 +209,7 @@ class MarkdownDocument:
     def __init__(self, text: str) -> None:
         self.text = normalize_source(text)
         self.lines = self.text.split("\n")
-        self.env: dict[str, Any] = {}
-        self.tokens = MARKDOWN.parse(self.text, self.env)
-        self.hidden_lines: set[int] = set()
-
-        # Non-prose source ranges come directly from parser tokens. Math remains available
-        # semantically through math_block tokens, but its raw source must never satisfy prose,
-        # table, ledger, or other source-structural guards.
-        for token in self.tokens:
-            if token.type in {
-                "fence",
-                "code_block",
-                "html_block",
-                "math_block",
-                "math_block_label",
-            } and token.map is not None:
-                start, end = token.map
-                self.hidden_lines.update(range(start, end))
-
-        # CommonMark reference definitions are parser-consumed source and do not render. markdown-it
-        # records their exact source ranges in env["references"]; hide those ranges directly rather
-        # than inferring non-rendered lines from gaps between token maps.
-        for reference in self.env.get("references", {}).values():
-            mapping = reference.get("map")
-            if mapping is None:
-                continue
-            start, end = mapping
-            self.hidden_lines.update(range(start, end))
-
-        for duplicate in self.env.get("duplicate_refs", []):
-            mapping = duplicate.get("map")
-            if mapping is None:
-                continue
-            start, end = mapping
-            self.hidden_lines.update(range(start, end))
-
-    def active_text(self, start: int = 0, end: int | None = None) -> str:
-        if end is None:
-            end = len(self.lines)
-        return "\n".join(
-            HIDDEN_BLOCK_BOUNDARY if line_no in self.hidden_lines else self.lines[line_no]
-            for line_no in range(start, end)
-        )
+        self.tokens = MARKDOWN.parse(self.text)
 
     def semantic_text(self, start: int = 0, end: int | None = None) -> str:
         if end is None:
@@ -275,15 +228,6 @@ class MarkdownDocument:
                 parts.append(token.content.strip())
 
         return "\n".join(part for part in parts if part)
-
-    def parsed_math_lines(self) -> set[int]:
-        result: set[int] = set()
-        for token in self.tokens:
-            if token.type not in {"math_block", "math_block_label"} or token.map is None:
-                continue
-            start, end = token.map
-            result.update(range(start, end))
-        return result
 
     def headings(self) -> list[tuple[int, str, int]]:
         result: list[tuple[int, str, int]] = []
@@ -329,10 +273,6 @@ class MarkdownDocument:
                 end = next_line
                 break
         return start, end
-
-    def section(self, level: int, title: str) -> str:
-        start, end = self.section_bounds(level, title)
-        return self.active_text(start, end)
 
     def heading_start(self, level: int, title: str) -> int:
         start, _ = self.section_bounds(level, title)
@@ -388,6 +328,7 @@ class MarkdownDocument:
             index
             for index, token in enumerate(self.tokens)
             if token.type == "table_open"
+            and token.level == 0
             and token.map is not None
             and start <= token.map[0]
             and token.map[1] <= end
@@ -437,37 +378,31 @@ class MarkdownDocument:
 
         return rows
 
-    def parsed_blockquote_texts(self, start: int, end: int) -> list[str]:
+    def root_blockquote_paragraph_texts(self, start: int, end: int) -> list[str]:
         results: list[str] = []
-        index = 0
-        while index < len(self.tokens):
-            token = self.tokens[index]
-            if (
-                token.type != "blockquote_open"
-                or token.level != 0
-                or token.map is None
-                or not (start <= token.map[0] and token.map[1] <= end)
-            ):
-                index += 1
+        for index in range(len(self.tokens) - 4):
+            window = self.tokens[index : index + 5]
+            if [token.type for token in window] != [
+                "blockquote_open",
+                "paragraph_open",
+                "inline",
+                "paragraph_close",
+                "blockquote_close",
+            ]:
                 continue
 
-            depth = 1
-            inline_parts: list[str] = []
-            cursor = index + 1
-            while cursor < len(self.tokens) and depth:
-                child = self.tokens[cursor]
-                if child.type == "blockquote_open":
-                    depth += 1
-                elif child.type == "blockquote_close":
-                    depth -= 1
-                    if depth == 0:
-                        break
-                elif depth == 1 and child.type == "inline":
-                    inline_parts.append(visible_inline_text(child))
-                cursor += 1
+            quote_open, paragraph_open, inline, _, quote_close = window
+            if (
+                quote_open.level != 0
+                or quote_open.map is None
+                or paragraph_open.level != 1
+                or not (start <= quote_open.map[0] and quote_open.map[1] <= end)
+            ):
+                continue
+            if quote_close.level != 0:
+                continue
 
-            results.append("\n".join(inline_parts).strip())
-            index = cursor + 1
+            results.append(visible_inline_text(inline))
         return results
 
 
@@ -520,50 +455,6 @@ def require_canonical_display_after(
         )
 
 
-def validate_markdown_table_blocks(path: Path, document: MarkdownDocument) -> None:
-    lines = document.active_text().split("\n")
-
-    for index in range(1, len(lines) - 1):
-        if (
-            lines[index].strip() == ""
-            and lines[index - 1].lstrip().startswith("|")
-            and lines[index + 1].lstrip().startswith("|")
-        ):
-            fail(
-                f"{path.relative_to(ROOT)} has a blank line splitting adjacent Markdown table rows "
-                f"at line {index + 1}"
-            )
-
-    index = 0
-    while index < len(lines):
-        if not lines[index].lstrip().startswith("|"):
-            index += 1
-            continue
-
-        start = index
-        block: list[str] = []
-        while index < len(lines) and lines[index].lstrip().startswith("|"):
-            block.append(lines[index])
-            index += 1
-
-        if len(block) < 2:
-            continue
-
-        pipe_counts = [len(UNESCAPED_PIPE.findall(line)) for line in block]
-        expected = pipe_counts[0]
-        mismatches = [
-            start + offset + 1
-            for offset, count in enumerate(pipe_counts)
-            if count != expected
-        ]
-        if mismatches:
-            fail(
-                f"{path.relative_to(ROOT)} has inconsistent Markdown table column structure "
-                f"near lines {start + 1}-{start + len(block)}; mismatches at "
-                + ", ".join(map(str, mismatches[:10]))
-            )
-
-
 def validate_ledger(document: MarkdownDocument) -> None:
     headings = document.headings()
     if sum(
@@ -612,9 +503,15 @@ def validate_ledger(document: MarkdownDocument) -> None:
 
 
 def validate_archive(document: MarkdownDocument) -> None:
-    first_visible = document.semantic_text(0, min(8, len(document.lines)))
-    if "SUPERSEDED" not in first_visible or "no normativo" not in first_visible:
-        fail("Historical pre-consolidation archive must carry a visible SUPERSEDED/non-normative banner")
+    banners = document.root_blockquote_paragraph_texts(
+        0,
+        min(8, len(document.lines)),
+    )
+    if len(banners) != 1 or "SUPERSEDED" not in banners[0] or "no normativo" not in banners[0]:
+        fail(
+            "Historical pre-consolidation archive must carry exactly one parsed "
+            "top-level SUPERSEDED/non-normative banner blockquote near the top"
+        )
 
 
 def normalize_tex_spacing_for_index_guard(text: str) -> str:
@@ -649,7 +546,6 @@ def validate_index_typing(current: str) -> None:
 
 def validate_regime_total_contract(
     normative: MarkdownDocument,
-    ledger: MarkdownDocument,
     technical: MarkdownDocument,
 ) -> None:
     totalization_bounds = normative.section_bounds(
@@ -720,7 +616,7 @@ def validate_regime_total_contract(
         (4, "RT-07-XP — Transversal Production Test"),
         (4, "RT-07-MG-TRIV — Singleton-per-token attack"),
     ):
-        technical.section(level, heading)
+        technical.section_bounds(level, heading)
 
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
@@ -775,7 +671,7 @@ def validate_regime_total_contract(
     plural_route_section = technical.semantic_text(*plural_route_bounds)
     status_quotes = [
         text
-        for text in technical.parsed_blockquote_texts(*plural_route_bounds)
+        for text in technical.root_blockquote_paragraph_texts(*plural_route_bounds)
         if text == PLURAL_STATUS_TEXT
     ]
     if len(status_quotes) != 1:
@@ -848,7 +744,6 @@ def main() -> None:
 
     validate_regime_total_contract(
         documents[NORMATIVE],
-        documents[LEDGER],
         documents[TECHNICAL],
     )
     validate_normative_size(documents[NORMATIVE])
