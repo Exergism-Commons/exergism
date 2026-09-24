@@ -281,6 +281,19 @@ def display_math_blocks(text: str) -> list[str]:
     return blocks
 
 
+def require_canonical_display(
+    section: str,
+    expected: str,
+    description: str,
+) -> None:
+    matches = [block for block in display_math_blocks(section) if block == expected]
+    if len(matches) != 1:
+        fail(
+            f"{description} must occur exactly once as its canonical display "
+            "inside the designated definition section"
+        )
+
+
 def require_canonical_display_after(
     section: str,
     marker: str,
@@ -455,15 +468,13 @@ def validate_regime_total_contract(
         3,
         "1.6. $R_i$ — totalización genealógica mono- y multigeneal",
     )
-    require_canonical_display_after(
+    require_canonical_display(
         totalization_section,
-        "§5.1 define GeneBasis, FamilyBase, RegimeClosure y:",
         CANONICAL_REGIME_GENERATED,
         "REV-07f RegimeGenerated* definition",
     )
-    require_canonical_display_after(
+    require_canonical_display(
         totalization_section,
-        "La totalización general es:",
         CANONICAL_REGIME_TOTAL,
         "REV-07f RegimeTotal definition",
     )
@@ -472,21 +483,18 @@ def validate_regime_total_contract(
         3,
         "5.1. Criterio primario: origen unificado + generación independiente",
     )
-    require_canonical_display_after(
+    require_canonical_display(
         genealogy_section,
-        "Formalmente:",
         CANONICAL_GENE_FAMILY,
         "REV-07f GeneFamily definition",
     )
-    require_canonical_display_after(
+    require_canonical_display(
         genealogy_section,
-        "La closure del régimen **no** es esa unión. Debe volver a cerrar el mismo operador generativo para recoger producción transversal:",
         CANONICAL_REGIME_CLOSURE,
         "REV-07f RegimeClosure definition",
     )
-    require_canonical_display_after(
+    require_canonical_display(
         genealogy_section,
-        "Finalmente:",
         CANONICAL_GENE_BASIS,
         "REV-07f GeneBasis definition",
     )
@@ -495,9 +503,8 @@ def validate_regime_total_contract(
         3,
         "0.10a. REV-07f — RegimeTotal multigeneal",
     )
-    require_canonical_display_after(
+    require_canonical_display(
         technical_genealogy_section,
-        "Definimos:",
         CANONICAL_GENE_FAMILY,
         "REV-07f technical GeneFamily definition",
     )
