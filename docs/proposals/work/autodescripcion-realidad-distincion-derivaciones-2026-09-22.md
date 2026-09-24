@@ -9574,7 +9574,7 @@ Las obligaciones mínimas son:
 
 1. **M1 / actuality:** \(m_i\) es actual en \(i\); una canonicalización semántica externa no crea un memo-state ontológico.
 2. **M2 / role independence:** \(\rho\) y su familia de continuaciones se justifican independientemente del deseo de identificar precisamente \(h_i\) con otra historia.
-3. **M3 / interface sufficiency:** respecto de \(\rho\), \(m_i\) conserva exactamente la información histórica necesaria para seguir determinando una realización correcta de \(I_i^\rho\) sin reabrir toda la historia interna de \(h_i\).
+3. **M3 / interface sufficiency:** respecto de \(\rho\), \(m_i\) conserva al menos la información histórica necesaria para seguir determinando una realización correcta de \(I_i^\rho\) sin reabrir toda la historia interna de \(h_i\). Puede conservar información extra; minimalidad es una propiedad adicional, no requisito de soundness.
 4. **M4 / reentrancy:** \(m_i\) puede actuar como estado de entrada para continuaciones futuras del rol; no es solo un resumen retrospectivo.
 5. **M5 / equivalence soundness:** historias asignadas al mismo memo-state satisfacen la equivalencia por continuaciones declarada.
 6. **M6 / discrimination completeness:** si una diferencia altera alguna continuación relevante de \(\rho\), la teoría no puede conservar silenciosamente el mismo memo-state sin una actualización explícita.
@@ -9619,47 +9619,627 @@ I^\rho.
 
 Así memoization conserva una interfaz a través del cambio; no inventa la interfaz que pretende conservar.
 
-#### 0.11.84. Invalidation: la condición que impide identidad por conveniencia
+#### 0.11.83a. SemanticMemo frente a OnticMemo
 
-La analogía informática produce aquí una obligación ontológica útil: una memoization seria necesita una semántica de invalidación.
-
-Sean dos etapas de una historia:
+La existencia del quotient:
 
 \[
-h_i^{(t)}
-\leadsto
-h_i^{(t+1)}.
+q^\rho_{\mathrm{memo}}:
+\mathcal H_i
+\to
+\mathcal H_i/
+{\equiv^{\mathrm{memo}}_{i,\rho}}
 \]
 
-Si el cambio no altera ninguna continuación relevante para \(\rho\), puede ser legítimo conservar el mismo estado suficiente o actualizarlo mediante una transición equivalente:
+no implica que exista dentro de \(i\) un token que sea literalmente esa clase.
+
+Sea una representación de estado:
 
 \[
-\mu^\rho(h_i^{(t)})
-\simeq_\rho
-\mu^\rho(h_i^{(t+1)}).
+\mu:
+\mathcal H_i
+\rightharpoonup
+M.
 \]
 
-Pero si existe una continuación discriminante que cambia la interfaz o sus trazas relevantes:
+Definimos su kernel metateórico:
 
 \[
-\exists c_i\in\mathcal K_{i,\rho}:
-\operatorname{Tr}_{I^\rho}(h_i^{(t)}\odot c_i)
-\not\simeq_\rho
-\operatorname{Tr}_{I^\rho}(h_i^{(t+1)}\odot c_i),
+\ker(\mu)
+:=
+\{
+(h,h')
+\mid
+\mu(h)=\mu(h')
+\}.
 \]
 
-entonces la teoría debe registrar:
+Para un contract state \(\Theta\) —que fija rol, InterfaceContract, continuation semantics y, cuando proceda, interaction roles— sea:
+
+\[
+E_\Theta
+\]
+
+la memo-equivalence inducida por esa especificación completa.
+
+La condición mínima de suficiencia es:
 
 \[
 \boxed{
-\operatorname{Invalidate}^{\mathsf M}_{i,\rho}
-(m_i^{(t)}\rightsquigarrow m_i^{(t+1)})
+\operatorname{MemoSound}(\mu;\Theta)
+:\Longleftrightarrow
+\ker(\mu)
+\subseteq
+E_\Theta.
 }
 \]
 
-o abandonar la afirmación de que ambos estados implementan el mismo memo para ese rol.
+Es decir: el memo puede distinguir **más** de lo necesario, pero no menos.
 
-No se adopta todavía:
+Definimos además:
+
+\[
+\operatorname{MemoExact}(\mu;\Theta)
+:\Longleftrightarrow
+\ker(\mu)=E_\Theta,
+\]
+
+y:
+
+\[
+\operatorname{MemoOvercomplete}(\mu;\Theta)
+:\Longleftrightarrow
+\ker(\mu)\subsetneq E_\Theta.
+\]
+
+Por tanto la minimalidad no forma parte de M3. Un UUID perfectamente estable puede conservar provenance adicional y seguir siendo un memo sound, siempre que no fabrique por sí mismo la unitización ni el contrato.
+
+Una **SemanticMemo** es cualquier representación \(\mu^{sem}\) que satisface MemoSound en el metalenguaje. Puede ser una clase cociente, una canonicalización matemática o una estructura calculada externamente:
+
+\[
+\operatorname{SemanticMemo}^{\mathsf M}
+(
+\mu^{sem};\Theta
+).
+\]
+
+Esto no autoriza:
+
+\[
+\exists m_i\;
+\operatorname{Real}_i(m_i).
+\]
+
+Para una implementación ontológica fuerte introducimos:
+
+\[
+\operatorname{OnticMemoImpl}^{\mathsf M}_i
+(
+\mu_i;M_i,\Theta,\omega
+),
+\]
+
+con las obligaciones OMI1–OMI7.
+
+**OMI1 — actuality.** Todo valor realizado:
+
+\[
+\mu_i(h)=m_i
+\]
+
+es un estado/estructura actual de \(i\):
+
+\[
+\operatorname{Real}_i(m_i).
+\]
+
+**OMI2 — terminal grounding.** \(m_i\) está grounded en el estado actual al término de \(h\); no se obtiene consultando un futuro todavía no realizado.
+
+**OMI3 — source accessibility.** La capacidad futura de mantener la interfaz puede depender realmente de \(m_i\) mediante estructura causal, constitutiva, disposicional u operacional del source. Una etiqueta externa sin papel en la continuación no basta.
+
+**OMI4 — memo soundness.**
+
+\[
+\ker(\mu_i)\subseteq E_\Theta.
+\]
+
+**OMI5 — prefix locality.** Si dos descripciones codifican fielmente el mismo prefijo actual, el estado ontic memo no cambia por información exclusivamente posterior.
+
+**OMI6 — reentrancy debt.** La implementación debe admitir update/factorization para las continuaciones que pretenda soportar; esta deuda se formaliza en §0.11.83b.
+
+**OMI7 — no ontological promotion.** OnticMemoImpl no implica ContextIndividuation, RegimeTotal ni que el memo-state sea una sustancia separada.
+
+Así:
+
+\[
+\boxed{
+\operatorname{OnticMemoImpl}
+\Rightarrow
+\operatorname{SemanticMemo}
+}
+\]
+
+respecto del perfil que implementa, pero no a la inversa.
+
+#### 0.11.83b. Update como factorización del futuro por el memo-state
+
+Para una continuación atómica o step \(g\), una actualización puramente state-based exige una función:
+
+\[
+U_g:
+M
+\to
+M
+\]
+
+tal que:
+
+\[
+\boxed{
+\mu(h\odot g)
+=
+U_g(\mu(h))
+}
+\]
+
+para todo history donde \(g\) sea aplicable y la transición esté dentro del rol.
+
+Esta ecuación no puede asumirse. Existe un \(U_g\) bien definido sobre \(\operatorname{Im}(\mu)\) **si y solo si**:
+
+\[
+\boxed{
+\mu(h)=\mu(h')
+\Longrightarrow
+\mu(h\odot g)
+=
+\mu(h'\odot g).
+}
+\]
+
+Es decir:
+
+\[
+\boxed{
+\ker(\mu)
+\text{ debe ser right-congruence bajo }g.
+}
+\]
+
+**MU-T1 — update factorization theorem.** Para semántica determinista de estado, la condición anterior es necesaria y suficiente para que exista \(U_g\) con:
+
+\[
+\mu\circ(-\odot g)
+=
+U_g\circ\mu.
+\]
+
+**Demostración.** Si \(U_g\) existe, histories con el mismo \(\mu\) reciben el mismo argumento y por tanto el mismo estado actualizado. Para la conversa, defínase:
+
+\[
+U_g(m)
+:=
+\mu(h\odot g)
+\]
+
+para cualquier \(h\) con \(\mu(h)=m\). La right-congruence de \(\ker(\mu)\) garantiza independencia del representante. \(\square\)
+
+Para sistemas nondeterministic/probabilistic se reemplaza \(U_g\) por el kernel/relación de transición correspondiente y se exige la misma independencia respecto del representante.
+
+**Corolario.** Si:
+
+\[
+\operatorname{MemoExact}(\mu;\Theta)
+\]
+
+y \(E_\Theta\) es right-congruence bajo \(g\), entonces el update state-based está bien definido.
+
+Para un MemoOvercomplete el resultado no es automático: preservar más información puede exigir conservar también cómo evoluciona esa información extra.
+
+#### 0.11.83c. Reentrancy fuerte y realización de interfaz
+
+Un update correcto no solo debe producir otro código. Para una implementación ontic fuerte debe mantener el diagrama:
+
+\[
+\boxed{
+\begin{array}{ccc}
+h & \xrightarrow{\;g\;} & h\odot g\\
+\downarrow\mu_i && \downarrow\mu_i\\
+m_i & \xrightarrow{\;U_g\;} & m'_i
+\end{array}
+}
+\]
+
+y el nuevo \(m'_i\) debe seguir siendo MemoSound respecto del contract state vigente.
+
+La interfaz futura debe factorizar por el estado actualizado:
+
+\[
+\operatorname{Prof}_{\mathbb I^\rho}
+(h\odot g)
+=
+F_\rho(m'_i)
+\]
+
+para la parte de conducta que la implementación declara determinada por el memo.
+
+Esto separa tres nociones que antes estaban mezcladas:
+
+\[
+\boxed{
+\text{summary}
+\neq
+\text{sufficient memo}
+\neq
+\text{reentrant ontic state}.
+}
+\]
+
+Un resumen retrospectivo puede ser SemanticMemo. Solo un estado actual, grounded y actualizable que mantiene la suficiencia puede descargar OnticMemoImpl.
+
+#### 0.11.84. Invalidation: pérdida exacta de soundness
+
+Sea:
+
+\[
+\Theta
+\]
+
+un contract state completo y:
+
+\[
+E_\Theta
+\]
+
+su memo-equivalence.
+
+Un memo \(\mu\) es válido exactamente cuando:
+
+\[
+\operatorname{ValidMemo}(\mu;\Theta)
+:\Longleftrightarrow
+\ker(\mu)\subseteq E_\Theta.
+\]
+
+Definimos invalidación contractual por:
+
+\[
+\boxed{
+\operatorname{Invalidate}^{\mathsf M}
+(
+\mu;
+\Theta\rightsquigarrow\Theta'
+)
+}
+\]
+
+si y solo si:
+
+\[
+\operatorname{ValidMemo}(\mu;\Theta)
+\land
+\neg
+\operatorname{ValidMemo}(\mu;\Theta').
+\]
+
+Equivalentemente:
+
+\[
+\boxed{
+\exists h,h':
+\mu(h)=\mu(h')
+\land
+h\not E_{\Theta'}h'.
+}
+\]
+
+Así invalidation deja de significar simplemente “el estado cambió”. Significa que el estado anterior **colapsa ahora una diferencia que el contrato vigente necesita preservar**.
+
+#### 0.11.84a. Refinement y coarsening del contrato
+
+Definimos que \(\Theta'\) es un refinement discriminante de \(\Theta\) cuando:
+
+\[
+E_{\Theta'}
+\subseteq
+E_\Theta.
+\]
+
+El nuevo contrato distingue al menos todo lo anterior y quizá más.
+
+Un refinement puede invalidar un memo existente:
+
+\[
+\ker(\mu)\subseteq E_\Theta
+\not\Rightarrow
+\ker(\mu)\subseteq E_{\Theta'}.
+\]
+
+En cambio, si \(\Theta'\) es un coarsening:
+
+\[
+E_\Theta
+\subseteq
+E_{\Theta'},
+\]
+
+entonces:
+
+\[
+\boxed{
+\operatorname{ValidMemo}(\mu;\Theta)
+\Longrightarrow
+\operatorname{ValidMemo}(\mu;\Theta').
+}
+\]
+
+**MI-T1 — coarsening monotonicity.** Quitar poder discriminante al contrato no puede volver insuficiente un memo que ya preservaba una partición más fina.
+
+Añadir un interaction role suele actuar precisamente como refinement:
+
+\[
+E_\otimes
+\subseteq
+E_\wedge.
+\]
+
+Por eso la composición cross-role puede invalidar memo-states previamente correctos para todos los roles aislados.
+
+#### 0.11.84b. No-recovery theorem: lo olvidado no reaparece por update local
+
+Supóngase:
+
+\[
+\operatorname{Invalidate}
+(
+\mu;
+\Theta\rightsquigarrow\Theta'
+).
+\]
+
+Entonces existen \(h,h'\) tales que:
+
+\[
+\mu(h)=\mu(h')
+\]
+
+pero:
+
+\[
+h\not E_{\Theta'}h'.
+\]
+
+Considérese cualquier transformación que solo vea el memo antiguo:
+
+\[
+F:M\to M'.
+\]
+
+Defina:
+
+\[
+\mu'
+=
+F\circ\mu.
+\]
+
+Como:
+
+\[
+\mu(h)=\mu(h'),
+\]
+
+se sigue:
+
+\[
+\mu'(h)=\mu'(h').
+\]
+
+Luego:
+
+\[
+\ker(\mu')
+\not\subseteq
+E_{\Theta'}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{Invalidate}
+(
+\mu;
+\Theta\rightsquigarrow\Theta'
+)
+\Longrightarrow
+\forall F\;
+\neg
+\operatorname{MemoSound}
+(
+F\circ\mu;
+\Theta'
+).
+}
+\]
+
+Éste es **MI-T2 — no recovery from forgotten state**.
+
+Una invalidación producida por información ya quotientada no puede repararse aplicando una función al memo viejo. Hace falta una fuente adicional:
+
+\[
+z
+\]
+
+proveniente del source actual, history persistido, provenance certificate, external witness u otra estructura independently justified:
+
+\[
+\mu'
+=
+F(\mu,z).
+\]
+
+El side information \(z\) debe distinguir al menos los pares que el nuevo contrato separa y el memo viejo colapsaba.
+
+Esto da una semántica fuerte a rehydration: no es recalcular el mismo cache; es **readquirir información perdida**.
+
+#### 0.11.84c. Invalidation por transición del source
+
+Aunque el contrato \(\Theta\) no cambie, una arquitectura de memo puede fallar reentrancy si no existe update factorization.
+
+Definimos:
+
+\[
+\operatorname{TransitionInvalid}_{g}(\mu)
+\]
+
+cuando existen histories:
+
+\[
+\mu(h)=\mu(h')
+\]
+
+pero:
+
+\[
+\mu(h\odot g)
+\neq
+\mu(h'\odot g).
+\]
+
+Entonces ningún update \(U_g\) que dependa solo del estado memo previo puede ser well-defined.
+
+Esto no significa necesariamente que el rol haya cambiado; significa que el supuesto memo-state no era suficiente como **estado reentrante** para esa dinámica.
+
+Si el contrato exige soportar \(g\), OMI6/M4 fallan hasta ampliar el estado o aportar side information.
+
+#### 0.11.84d. Ejemplo MI-A — snapshot KV y nueva operación History
+
+Sea el rol inicial KV:
+
+\[
+\Theta_{\mathrm{KV}}
+=
+\{Put,Get,Delete\}.
+\]
+
+Un snapshot del mapa actual:
+
+\[
+\mu_{\mathrm{snap}}(h)
+=
+m_h
+\]
+
+es MemoExact para ese rol operacional bajo las hipótesis del modelo anterior.
+
+Extiéndase el contrato:
+
+\[
+\Theta_{\mathrm{KV+H}}
+=
+\{Put,Get,Delete,History\}.
+\]
+
+Dos histories pueden producir el mismo mapa actual:
+
+\[
+\mu_{\mathrm{snap}}(h)
+=
+\mu_{\mathrm{snap}}(h')
+\]
+
+pero logs distintos:
+
+\[
+History_h(k)
+\neq
+History_{h'}(k).
+\]
+
+Luego:
+
+\[
+h\not E_{\Theta_{\mathrm{KV+H}}}h',
+\]
+
+y:
+
+\[
+\boxed{
+\operatorname{Invalidate}
+(
+\mu_{\mathrm{snap}};
+\Theta_{\mathrm{KV}}
+\rightsquigarrow
+\Theta_{\mathrm{KV+H}}
+).
+}
+\]
+
+Por MI-T2, ninguna función solo del snapshot puede reconstruir un memo sound para History. Hace falta el log, un certificado externo equivalente o información adicional que nunca fue quotientada.
+
+#### 0.11.84e. Ejemplo MI-B — interacción cross-role invalida el producto de memos
+
+Sean memos exactos por rol:
+
+\[
+\ker(\mu_A)=E_A,
+\qquad
+\ker(\mu_B)=E_B.
+\]
+
+El memo producto:
+
+\[
+\mu_\Pi
+=
+\langle
+\mu_A,\mu_B
+\rangle
+\]
+
+satisface:
+
+\[
+\ker(\mu_\Pi)
+=
+E_A\cap E_B
+=
+E_\wedge.
+\]
+
+Si existe SynRel:
+
+\[
+E_\otimes
+\subsetneq
+E_\wedge,
+\]
+
+entonces:
+
+\[
+\boxed{
+\neg
+\operatorname{MemoSound}
+(
+\mu_\Pi;
+\Theta_\otimes
+).
+}
+\]
+
+El mismo par \(H_L,H_U\) de CR-X constituye un witness.
+
+Y por MI-T2 tampoco puede arreglarse la composición únicamente mediante una función de \((\mu_A,\mu_B)\).
+
+Hay que conservar o readquirir la relación de interacción —por ejemplo el wiring/linkage que conecta writer y reader—.
+
+Esto unifica la deuda de cross-role composition con invalidation: **la nueva interacción refina el quotient y puede convertir en insuficiente un conjunto de memos individualmente perfectos**.
+
+#### 0.11.84f. Invalidation no es ContextCessation
+
+No se adopta:
 
 \[
 \operatorname{Invalidate}
@@ -9667,9 +10247,47 @@ No se adopta todavía:
 \operatorname{ContextCessation}.
 \]
 
-La invalidación de un rol puede ser una transformación interna perfectamente compatible con persistencia del contexto. Su valor para Ship of Theseus es más preciso: proporciona un criterio no extensional para preguntar **qué cambios obligan a revisar la identidad operacional de una unidad**.
+Puede cambiar un contrato, aparecer un interaction role, perderse un cache o requerirse rehydration mientras el mismo contexto persiste.
 
-Así, reemplazar todos los componentes puede ser compatible con persistencia de una SourceUnit si la cadena de actualizaciones de memo-state permanece válida; conservar todos los componentes puede ser insuficiente si cambia una dependencia que obliga a invalidar el memo relevante.
+La invalidación es relativa a:
+
+\[
+\Theta,
+\]
+
+no una sentencia absoluta sobre existencia.
+
+Su uso para Ship of Theseus queda ahora más preciso: reemplazar todos los componentes puede ser compatible con persistencia de una SourceUnit si los MemoStates relevantes permanecen sound y reentrantes; conservar todos los componentes puede ser insuficiente si el contract state se refina o una interacción nueva revela diferencias previamente quotientadas.
+
+#### 0.11.84g. Estado de MemoState/update/invalidation
+
+La arquitectura distingue finalmente:
+
+\[
+\boxed{
+\begin{array}{rcl}
+\operatorname{SemanticMemo}
+&:&
+\text{representación metateórica sound},\\
+\operatorname{OnticMemoImpl}
+&:&
+\text{estado actual grounded que realiza esa suficiencia},\\
+\operatorname{Update}
+&:&
+\text{factorización del cambio por el estado memo},\\
+\operatorname{Invalidate}
+&:&
+\text{fallo de }\ker(\mu)\subseteq E_\Theta,\\
+\operatorname{Rehydrate}
+&:&
+\text{adquisición de información adicional tras pérdida irreversible}.
+\end{array}
+}
+\]
+
+MU-T1 caracteriza exactamente cuándo existe update state-based en el caso determinista. MI-T1 prueba monotonicidad bajo coarsening. MI-T2 demuestra que una diferencia ya olvidada no puede recuperarse mediante una transformación del memo antiguo.
+
+La deuda formal de **distinguir SemanticMemo/OnticMemo y dar semántica a update/invalidation** queda por tanto **RESOLVED a nivel de criterio**. La existencia de un OnticMemoImpl concreto sigue siendo una obligación de cada teoría/source, igual que la existencia de testigos concretos de InterfaceContract no se obtiene de la definición.
 
 #### 0.11.85. Memoization es role-relative sin convertirse en relativismo ontológico
 
@@ -10203,15 +10821,13 @@ Y aparecen tres resultados arquitectónicos fuertes:
 }
 \]
 
-Las deudas de InterfaceContract/trace semantics + IC1–IC10 y de RoleAdequate quedan **RESOLVED formal** en §§0.11.81f–0.11.82i. La composicionalidad cross-role queda **RESOLVED condicionalmente** en §§0.11.82j–0.11.82s: en general la intersección de kernels individuales no basta; bajo RoleCompositionAdequate/CR1–CR8 se demuestra \(E_\otimes=\bigcap_aE_a\), y las interacciones no separables deben declararse como interaction roles. Para cerrar REV-07h completo falta:
+Las deudas de InterfaceContract/trace semantics + IC1–IC10 y de RoleAdequate quedan **RESOLVED formal**; la composicionalidad cross-role queda **RESOLVED condicionalmente**. §§0.11.83a–0.11.84g distinguen ahora SemanticMemo de OnticMemoImpl y resuelven update/invalidation a nivel de criterio: MemoSound exige \(\ker(\mu)\subseteq E_\Theta\), update existe exactamente cuando el kernel del memo es congruente bajo la transición, y MI-T2 prueba que información ya quotientada no puede recuperarse desde el memo antiguo tras un refinement. Para cerrar REV-07h completo falta:
 
-1. distinguir cuándo Interface/MemoState son estructuras ontológicas actuales y cuándo solo representaciones semánticas;
-2. dar una semántica de update/invalidation coordinada con cambios de contrato, conjunto de roles e interaction roles;
-3. coordinar B1–B10 con el criterio \(q_{\mathbb I^\rho}=d_\beta\circ\operatorname{Bake}\), incluyendo composite Bake soundness;
-4. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
-5. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
-6. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
-7. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
+1. coordinar B1–B10 con \(q_{\mathbb I^\rho}=d_\beta\circ\operatorname{Bake}\), incluyendo composite Bake soundness y rehydration/provenance;
+2. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
+3. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
+4. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
+5. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
 
 La ganancia inmediata no es demostrar identidad contextual, sino aislar la estructura que faltaba entre individuación y recontextualización:
 
