@@ -3,13 +3,35 @@ from __future__ import annotations
 
 import unittest
 
+from pylatexenc.latexwalker import LatexWalker
+
 from scripts.validate_proposal_docs import (
     CONTEXT_INDEX_NAMES,
     MarkdownDocument,
     NORMATIVE,
+    tex_nodes_text,
     validate_archive,
     validate_index_typing,
 )
+
+
+class PylatexencShapeDiagnostics(unittest.TestCase):
+    def test_shapes(self) -> None:
+        payload = []
+        for tex in (
+            r"\exists^{X} i\;P_i",
+            r"\forall_{q} i\;P_i",
+            r"i\ne j",
+        ):
+            nodes, _, _ = LatexWalker(tex).get_latex_nodes()
+            payload.append(
+                {
+                    "tex": tex,
+                    "nodes": repr(nodes),
+                    "rendered": tex_nodes_text(list(nodes)),
+                }
+            )
+        self.fail(repr(payload))
 
 
 class IndexTypingGuardTests(unittest.TestCase):
