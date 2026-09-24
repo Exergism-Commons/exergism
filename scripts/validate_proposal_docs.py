@@ -157,6 +157,8 @@ CANONICAL_GENE_BASIS = r"""\boxed{
 \mathrm{FamilyIrredundant}_i(\mathfrak G_i).
 }"""
 
+CANONICAL_HISTORICAL_REGIME_TOTAL = r"""\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i),"""
+
 PLURAL_STATUS_TEXT = (
     "Status contract: REV-24d = UNCHANGED; "
     "scope realization owner = REV-07/RegimeTotal; "
@@ -178,6 +180,35 @@ def normalize_source(text: str) -> str:
     # markdown-it/CommonMark treats CRLF, CR and LF as source line endings. Normalize them once and
     # use split("\n") everywhere so Python never invents extra lines for Unicode separators.
     return text.replace("\r\n", "\n").replace("\r", "\n")
+
+
+def visible_prose_text(token: Any) -> str:
+    if not token.children:
+        return token.content.strip()
+
+    parts: list[str] = []
+    transparent = {
+        "em_open",
+        "em_close",
+        "strong_open",
+        "strong_close",
+        "link_open",
+        "link_close",
+    }
+
+    for child in token.children:
+        if child.type in {"text", "code_inline"}:
+            parts.append(child.content)
+        elif child.type in {"softbreak", "hardbreak"}:
+            parts.append(" ")
+        elif child.type in transparent:
+            continue
+        else:
+            # Math, images, HTML, and unknown inline nodes cannot satisfy prose-only
+            # semantic guards. Preserve a nonzero boundary so adjacent prose never joins.
+            parts.append(HIDDEN_BLOCK_BOUNDARY)
+
+    return "".join(parts).strip()
 
 
 def visible_inline_text(token: Any) -> str:
@@ -219,22 +250,18 @@ class MarkdownDocument:
         self.lines = self.text.split("\n")
         self.tokens = MARKDOWN.parse(self.text)
 
-    def semantic_text(self, start: int = 0, end: int | None = None) -> str:
+    def prose_text(self, start: int = 0, end: int | None = None) -> str:
         if end is None:
             end = len(self.lines)
 
-        parts: list[str] = []
-        for token in self.tokens:
-            if token.map is None:
-                continue
-            if not (start <= token.map[0] and token.map[1] <= end):
-                continue
-
-            if token.type == "inline":
-                parts.append(visible_inline_text(token))
-            elif token.type in {"math_block", "math_block_label"}:
-                parts.append(token.content.strip())
-
+        parts = [
+            visible_prose_text(token)
+            for token in self.tokens
+            if token.type == "inline"
+            and token.map is not None
+            and start <= token.map[0]
+            and token.map[1] <= end
+        ]
         return "\n".join(part for part in parts if part)
 
     def math_fragments(self, start: int, end: int) -> list[tuple[int, str]]:
@@ -580,6 +607,16 @@ def tex_text_ends_with_bare_name(nodes: list[Any], name: str) -> bool:
     ) is not None
 
 
+def flatten_transparent_tex_groups(nodes: list[Any]) -> list[Any]:
+    flattened: list[Any] = []
+    for node in nodes:
+        if isinstance(node, LatexGroupNode):
+            flattened.extend(flatten_transparent_tex_groups(list(node.nodelist)))
+        else:
+            flattened.append(node)
+    return flattened
+
+
 def tex_child_nodelists(node: Any) -> list[list[Any]]:
     children: list[list[Any]] = []
 
@@ -614,7 +651,23 @@ def operatorname_text(node: LatexMacroNode) -> str | None:
     return tex_nodes_text([arguments[0]]).strip()
 
 
+def rendered_suffix_has_nonempty_subscript(nodes: list[Any]) -> bool:
+    rendered = tex_nodes_text(nodes).lstrip()
+    if not rendered.startswith("_"):
+        return False
+
+    operand = rendered[1:].lstrip()
+    if not operand:
+        return False
+
+    # An empty TeX group disappears in the semantic projection, leaving the
+    # predicate's following argument delimiter as the first visible character.
+    return operand[0] not in "([{"
+
+
 def find_index_typing_violation(nodes: list[Any]) -> str | None:
+    nodes = flatten_transparent_tex_groups(nodes)
+
     for index, node in enumerate(nodes):
         if isinstance(node, LatexMacroNode) and node.macroname in {"exists", "forall"}:
             if tex_text_starts_with_bare_name(nodes[index + 1 :], "i"):
@@ -656,8 +709,7 @@ def find_index_typing_violation(nodes: list[Any]) -> str | None:
                 name_end = index + 1
 
             if name == "Real":
-                rendered_suffix = tex_nodes_text(nodes[name_end + 1 :]).lstrip()
-                if not rendered_suffix.startswith("_"):
+                if not rendered_suffix_has_nonempty_subscript(nodes[name_end + 1 :]):
                     return "unindexed Real predicate"
 
         for child_nodes in tex_child_nodelists(node):
@@ -799,7 +851,7 @@ def validate_regime_total_contract(
         4,
         "0.4.6. Stress test mixto: relación–genealogía–relación",
     )
-    pure_relation_section = technical.semantic_text(*pure_relation_bounds)
+    pure_relation_section = technical.prose_text(*pure_relation_bounds)
     if "ensamblaje de GeneTotal" in pure_relation_section:
         fail(
             "REV-07f regression: active pure-relation assembly discussion again "
@@ -813,7 +865,6 @@ def validate_regime_total_contract(
             )
 
     plural_route_bounds = technical.section_bounds(5, "Ruta plural")
-    plural_route_section = technical.semantic_text(*plural_route_bounds)
     status_quotes = [
         text
         for text in technical.root_blockquote_paragraph_texts(*plural_route_bounds)
@@ -836,12 +887,13 @@ def validate_regime_total_contract(
         4,
         "0.11.3. HISTORICAL — dilema monogeneal pre-REV-07f",
     )
-    historical_dilemma = technical.semantic_text(*historical_bounds)
-    if r"\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)" not in historical_dilemma:
-        fail(
-            "REV-07f regression: historical single-origin dilemma no longer records "
-            "RegimeTotal as the current general architecture"
-        )
+    require_canonical_display(
+        technical,
+        historical_bounds,
+        CANONICAL_HISTORICAL_REGIME_TOTAL,
+        "REV-07f historical current RegimeTotal architecture",
+    )
+    historical_dilemma = technical.prose_text(*historical_bounds)
     if "la arquitectura vigente de:" in historical_dilemma:
         fail(
             "REV-07f regression: historical §0.11.3 again labels the single-origin "
