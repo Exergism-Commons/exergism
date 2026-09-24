@@ -7,6 +7,15 @@ from typing import Any
 
 from markdown_it import MarkdownIt
 from mdit_py_plugins.dollarmath import dollarmath_plugin
+from pylatexenc.latexwalker import (
+    LatexCharsNode,
+    LatexCommentNode,
+    LatexEnvironmentNode,
+    LatexGroupNode,
+    LatexMacroNode,
+    LatexMathNode,
+    LatexWalker,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -228,6 +237,33 @@ class MarkdownDocument:
                 parts.append(token.content.strip())
 
         return "\n".join(part for part in parts if part)
+
+    def math_fragments(self, start: int, end: int) -> list[tuple[int, str]]:
+        fragments: list[tuple[int, str]] = []
+        for token in self.tokens:
+            if token.map is None or not (start <= token.map[0] and token.map[1] <= end):
+                continue
+
+            if token.type in {"math_block", "math_block_label"}:
+                fragments.append((token.map[0] + 1, token.content))
+                continue
+
+            if token.type == "inline":
+                for child in token.children or []:
+                    if child.type in {"math_inline", "math_inline_double"}:
+                        fragments.append((token.map[0] + 1, child.content))
+
+        return fragments
+
+    def inline_texts(self, start: int, end: int) -> list[str]:
+        return [
+            visible_inline_text(token)
+            for token in self.tokens
+            if token.type == "inline"
+            and token.map is not None
+            and start <= token.map[0]
+            and token.map[1] <= end
+        ]
 
     def headings(self) -> list[tuple[int, str, int]]:
         result: list[tuple[int, str, int]] = []
@@ -514,35 +550,206 @@ def validate_archive(document: MarkdownDocument) -> None:
         )
 
 
-def normalize_tex_spacing_for_index_guard(text: str) -> str:
-    # This is deliberately only a lexical normalization for EXT-02, not a TeX parser.
-    # Standard spacing commands are semantically irrelevant between a quantifier and its
-    # variable; trivial braces around bare i are likewise normalized. Superscripts such as
-    # \\exists^{\\mathsf M} i remain structurally present and therefore do not match.
-    normalized = re.sub(r"\\\\(?: |[,;:!]|quad\\b|qquad\\b)", " ", text)
-    normalized = re.sub(r"\\{\\s*\\}", " ", normalized)
-    normalized = re.sub(r"\\{\\s*i\\s*\\}", " i ", normalized)
-    return normalized
+TEX_SPACING_MACROS = {
+    " ",
+    ",",
+    ";",
+    ":",
+    "!",
+    ">",
+    "quad",
+    "qquad",
+    "enspace",
+    "enskip",
+    "thinspace",
+    "medspace",
+    "thickspace",
+    "negthinspace",
+    "negmedspace",
+    "negthickspace",
+    "hspace",
+    "hskip",
+    "kern",
+    "mkern",
+    "mskip",
+}
 
 
-def validate_index_typing(current: str) -> None:
-    checks = {
-        r"\\\\exists!?\\s+i\\b": "object-level existential quantification over index metavariable i",
-        r"\\\\forall\\s+i\\b": "object-level universal quantification over index metavariable i",
-        r"i\\s*\\\\neq\\s*j|j\\s*\\\\neq\\s*i": "ordinary i\\neq j index relation",
-        r"i\\s*\\\\in\\s*I\\b": "membership of index metavariable i in an index domain I",
-        r"\\\\operatorname\\{Real\\}\\(x\\)": "unindexed Real(x) predicate",
-    }
+def tex_node_is_spacing(node: Any) -> bool:
+    if isinstance(node, LatexCommentNode):
+        return True
+    if isinstance(node, LatexCharsNode):
+        return node.chars.strip() == ""
+    if isinstance(node, LatexMacroNode):
+        return node.macroname in TEX_SPACING_MACROS
+    if isinstance(node, LatexGroupNode):
+        return all(tex_node_is_spacing(child) for child in node.nodelist)
+    return False
 
-    for line_number, source_line in enumerate(current.split("\\n"), start=1):
-        normalized_line = normalize_tex_spacing_for_index_guard(source_line)
-        for pattern, description in checks.items():
-            if re.search(pattern, normalized_line):
-                fail(
-                    f"{NORMATIVE.relative_to(ROOT)} reintroduces {description} "
-                    f"at active line {line_number}; indices are meta-level type parameters (EXT-02)"
+
+def tex_node_starts_with_bare_name(node: Any, name: str) -> bool:
+    if isinstance(node, LatexCharsNode):
+        return re.match(
+            rf"\\s*{re.escape(name)}(?![A-Za-z0-9_])",
+            node.chars,
+        ) is not None
+
+    if isinstance(node, LatexGroupNode):
+        for child in node.nodelist:
+            if tex_node_is_spacing(child):
+                continue
+            return tex_node_starts_with_bare_name(child, name)
+
+    return False
+
+
+def tex_node_ends_with_bare_name(node: Any, name: str) -> bool:
+    if isinstance(node, LatexCharsNode):
+        return re.search(
+            rf"(?<![A-Za-z0-9_]){re.escape(name)}\\s*$",
+            node.chars,
+        ) is not None
+
+    if isinstance(node, LatexGroupNode):
+        for child in reversed(node.nodelist):
+            if tex_node_is_spacing(child):
+                continue
+            return tex_node_ends_with_bare_name(child, name)
+
+    return False
+
+
+def tex_child_nodelists(node: Any) -> list[list[Any]]:
+    children: list[list[Any]] = []
+
+    if isinstance(node, (LatexGroupNode, LatexEnvironmentNode, LatexMathNode)):
+        children.append(list(node.nodelist))
+
+    if isinstance(node, LatexMacroNode):
+        nodeargd = getattr(node, "nodeargd", None)
+        for argument in getattr(nodeargd, "argnlist", []) or []:
+            if argument is None:
+                continue
+            nodelist = getattr(argument, "nodelist", None)
+            if nodelist is not None:
+                children.append(list(nodelist))
+
+    return children
+
+
+def next_significant_tex_node(nodes: list[Any], index: int) -> tuple[int, Any] | None:
+    while index < len(nodes):
+        if not tex_node_is_spacing(nodes[index]):
+            return index, nodes[index]
+        index += 1
+    return None
+
+
+def previous_significant_tex_node(nodes: list[Any], index: int) -> tuple[int, Any] | None:
+    while index >= 0:
+        if not tex_node_is_spacing(nodes[index]):
+            return index, nodes[index]
+        index -= 1
+    return None
+
+
+def operatorname_text(node: LatexMacroNode) -> str | None:
+    if node.macroname != "operatorname":
+        return None
+
+    nodeargd = getattr(node, "nodeargd", None)
+    arguments = [
+        argument
+        for argument in (getattr(nodeargd, "argnlist", []) or [])
+        if argument is not None
+    ]
+    if not arguments:
+        return None
+
+    argument = arguments[0]
+    nodelist = getattr(argument, "nodelist", None)
+    if nodelist is None:
+        return None
+
+    parts: list[str] = []
+    for child in nodelist:
+        if isinstance(child, LatexCharsNode):
+            parts.append(child.chars)
+        elif tex_node_is_spacing(child):
+            continue
+        else:
+            return None
+    return "".join(parts).strip()
+
+
+def find_index_typing_violation(nodes: list[Any]) -> str | None:
+    for index, node in enumerate(nodes):
+        if isinstance(node, LatexMacroNode) and node.macroname in {"exists", "forall"}:
+            following = next_significant_tex_node(nodes, index + 1)
+            if following is not None and tex_node_starts_with_bare_name(following[1], "i"):
+                return (
+                    "object-level existential quantification over index metavariable i"
+                    if node.macroname == "exists"
+                    else "object-level universal quantification over index metavariable i"
                 )
 
+        if isinstance(node, LatexMacroNode) and node.macroname in {"neq", "in"}:
+            previous = previous_significant_tex_node(nodes, index - 1)
+            following = next_significant_tex_node(nodes, index + 1)
+            if previous is not None and following is not None:
+                if (
+                    node.macroname == "neq"
+                    and tex_node_ends_with_bare_name(previous[1], "i")
+                    and tex_node_starts_with_bare_name(following[1], "j")
+                ) or (
+                    node.macroname == "neq"
+                    and tex_node_ends_with_bare_name(previous[1], "j")
+                    and tex_node_starts_with_bare_name(following[1], "i")
+                ):
+                    return "ordinary i\\neq j index relation"
+                if (
+                    node.macroname == "in"
+                    and tex_node_ends_with_bare_name(previous[1], "i")
+                    and tex_node_starts_with_bare_name(following[1], "I")
+                ):
+                    return "membership of index metavariable i in an index domain I"
+
+        if isinstance(node, LatexMacroNode) and operatorname_text(node) == "Real":
+            following = next_significant_tex_node(nodes, index + 1)
+            if following is None or not (
+                isinstance(following[1], LatexCharsNode)
+                and following[1].chars.lstrip().startswith("_")
+            ):
+                return "unindexed Real predicate"
+
+        for child_nodes in tex_child_nodelists(node):
+            violation = find_index_typing_violation(child_nodes)
+            if violation is not None:
+                return violation
+
+    return None
+
+
+def validate_index_typing(
+    document: MarkdownDocument,
+    start: int,
+    end: int,
+) -> None:
+    for line_number, fragment in document.math_fragments(start, end):
+        try:
+            nodes, _, _ = LatexWalker(fragment).get_latex_nodes()
+        except Exception as exc:
+            fail(
+                f"{NORMATIVE.relative_to(ROOT)} contains TeX that pylatexenc cannot parse "
+                f"near active line {line_number}: {exc}"
+            )
+
+        violation = find_index_typing_violation(list(nodes))
+        if violation is not None:
+            fail(
+                f"{NORMATIVE.relative_to(ROOT)} reintroduces {violation} "
+                f"near active line {line_number}; indices are meta-level type parameters (EXT-02)"
+            )
 
 def validate_regime_total_contract(
     normative: MarkdownDocument,
@@ -679,7 +886,10 @@ def validate_regime_total_contract(
             "REV-07f regression: plural-route status must appear exactly once as "
             "a parsed top-level blockquote with the canonical contract"
         )
-    if re.search(r"REV-24d[^\n]{0,120}\bPARTIAL\b", plural_route_section):
+    if any(
+        "REV-24d" in paragraph and "PARTIAL" in paragraph
+        for paragraph in technical.inline_texts(*plural_route_bounds)
+    ):
         fail(
             "REV-07f regression: plural route again assigns PARTIAL status to REV-24d"
         )
@@ -739,8 +949,11 @@ def main() -> None:
         1,
         "II. Historia cronológica de la propuesta",
     )
-    current_normative = documents[NORMATIVE].semantic_text(0, history_start)
-    validate_index_typing(current_normative)
+    validate_index_typing(
+        documents[NORMATIVE],
+        0,
+        history_start,
+    )
 
     validate_regime_total_contract(
         documents[NORMATIVE],
