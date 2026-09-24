@@ -31,6 +31,16 @@ jobs:
       - name: Test proposal validator
         run: python -m unittest scripts/test_validate_proposal_docs.py
 
+      - name: Execute XR-1 witness candidate
+        run: python scripts/xr1_witness.py --certificate xr1-witness.json
+
+      - name: Upload XR-1 witness certificate
+        uses: actions/upload-artifact@v4
+        with:
+          name: xr1-witness-${{ github.sha }}
+          path: xr1-witness.json
+          if-no-files-found: error
+
       - name: Regenerate ontology and require clean output
         run: |
           python scripts/generate_ontology.py
