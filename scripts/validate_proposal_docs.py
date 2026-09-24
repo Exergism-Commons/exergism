@@ -66,9 +66,9 @@ DISTINCT_OVERLAP_FRAGMENT = (
 )
 
 PLURAL_STATUS_LINE = (
-    "> **Status contract:** \`REV-24d = UNCHANGED\`; "
-    "\`scope realization owner = REV-07/RegimeTotal\`; "
-    "\`Actual/CoReal plural route = NON-DISCHARGING for RegimeGenerated*\`."
+    "> **Status contract:** `REV-24d = UNCHANGED`; "
+    "`scope realization owner = REV-07/RegimeTotal`; "
+    "`Actual/CoReal plural route = NON-DISCHARGING for RegimeGenerated*`."
 )
 
 
