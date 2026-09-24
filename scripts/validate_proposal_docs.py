@@ -8,13 +8,12 @@ from typing import Any
 
 from markdown_it import MarkdownIt
 from mdit_py_plugins.dollarmath import dollarmath_plugin
-from pylatexenc.latex2text import LatexNodes2Text
+from pylatexenc.latex2text import LatexNodes2Text, MacroTextSpec, get_default_latex_context_db
 from pylatexenc.latexwalker import (
     LatexEnvironmentNode,
     LatexGroupNode,
     LatexMacroNode,
     LatexMathNode,
-    LatexSpecialsNode,
     LatexWalker,
 )
 
@@ -599,7 +598,15 @@ def validate_archive(document: MarkdownDocument) -> None:
         )
 
 
-LATEX_TO_TEXT = LatexNodes2Text()
+LATEX2TEXT_CONTEXT = get_default_latex_context_db()
+LATEX2TEXT_CONTEXT.add_context_category(
+    "proposal-semantic-aliases",
+    prepend=True,
+    macros=[
+        MacroTextSpec("ne", simplify_repl="≠"),
+    ],
+)
+LATEX_TO_TEXT = LatexNodes2Text(latex_context=LATEX2TEXT_CONTEXT)
 
 
 def tex_nodes_text(nodes: list[Any]) -> str:
@@ -607,28 +614,55 @@ def tex_nodes_text(nodes: list[Any]) -> str:
     return unicodedata.normalize("NFKC", rendered)
 
 
-def tex_text_starts_with_bare_name(nodes: list[Any], name: str) -> bool:
-    return re.match(
-        rf"\s*{re.escape(name)}(?![A-Za-z0-9_])",
-        tex_nodes_text(nodes),
-    ) is not None
+def bare_context_pattern(name: str) -> str:
+    return rf"(?<![A-Za-z0-9_]){re.escape(name)}(?![A-Za-z0-9_])"
 
 
-def tex_text_ends_with_bare_name(nodes: list[Any], name: str) -> bool:
-    return re.search(
-        rf"(?<![A-Za-z0-9_]){re.escape(name)}\s*$",
-        tex_nodes_text(nodes),
-    ) is not None
+def rendered_quantifier_violation(rendered: str) -> str | None:
+    indices = "|".join(
+        re.escape(name)
+        for name in sorted(CONTEXT_INDEX_NAMES, key=len, reverse=True)
+    )
+    pattern = re.compile(
+        rf"(?P<quantifier>[∃∀∄])"
+        rf"(?P<decoration>\s*(?:(?:!\s*)|(?:[\^_]\s*[^\s]+\s*))*)"
+        rf"(?P<index>{indices})(?![A-Za-z0-9_])"
+    )
+
+    for match in pattern.finditer(rendered):
+        quantifier = match.group("quantifier")
+        decoration = re.sub(r"\s+", "", match.group("decoration"))
+
+        if quantifier in {"∃", "∀"} and decoration == "^M":
+            continue
+
+        if quantifier == "∀":
+            return "object-level universal quantification over context metavariable"
+        return "object-level existential quantification over context metavariable"
+
+    return None
 
 
-def flatten_transparent_tex_groups(nodes: list[Any]) -> list[Any]:
-    flattened: list[Any] = []
-    for node in nodes:
-        if isinstance(node, LatexGroupNode):
-            flattened.extend(flatten_transparent_tex_groups(list(node.nodelist)))
-        else:
-            flattened.append(node)
-    return flattened
+def rendered_relation_violation(rendered: str) -> str | None:
+    for left in sorted(CONTEXT_INDEX_NAMES):
+        left_pattern = bare_context_pattern(left)
+
+        if re.search(
+            rf"{left_pattern}\s*∈\s*(?<![A-Za-z0-9_])I(?![A-Za-z0-9_])",
+            rendered,
+        ):
+            return "membership of context metavariable in an index domain I"
+
+        for right in sorted(CONTEXT_INDEX_NAMES):
+            if left == right:
+                continue
+            if re.search(
+                rf"{left_pattern}\s*≠\s*{bare_context_pattern(right)}",
+                rendered,
+            ):
+                return "ordinary inequality relation between context metavariables"
+
+    return None
 
 
 def tex_child_nodelists(node: Any) -> list[list[Any]]:
@@ -662,64 +696,6 @@ def find_forbidden_tex_macro(nodes: list[Any]) -> str | None:
     return None
 
 
-def specials_argument_text(node: Any) -> str:
-    nodeargd = getattr(node, "nodeargd", None)
-    arguments = [
-        argument
-        for argument in (getattr(nodeargd, "argnlist", []) or [])
-        if argument is not None
-    ]
-    if not arguments:
-        return ""
-    return tex_nodes_text(arguments).strip()
-
-
-def quantifier_binder(
-    nodes: list[Any],
-    index: int,
-) -> tuple[bool, str]:
-    meta_level = False
-    cursor = index + 1
-
-    while cursor < len(nodes):
-        node = nodes[cursor]
-
-        if isinstance(node, LatexSpecialsNode) and node.specials_chars in {"^", "_"}:
-            if (
-                node.specials_chars == "^"
-                and specials_argument_text(node) == "M"
-            ):
-                meta_level = True
-            cursor += 1
-            continue
-
-        rendered_node = tex_nodes_text([node])
-        if rendered_node.strip() == "":
-            cursor += 1
-            continue
-
-        break
-
-    binder = tex_nodes_text(nodes[cursor:]).lstrip()
-    if binder.startswith("!"):
-        binder = binder[1:].lstrip()
-
-    return meta_level, binder
-
-
-def rendered_relation_violation(rendered: str) -> str | None:
-    bare_i = r"(?<![A-Za-z0-9_])i(?![A-Za-z0-9_])"
-    bare_j = r"(?<![A-Za-z0-9_])j(?![A-Za-z0-9_])"
-    bare_I = r"(?<![A-Za-z0-9_])I(?![A-Za-z0-9_])"
-
-    if re.search(rf"{bare_i}\s*≠\s*{bare_j}|{bare_j}\s*≠\s*{bare_i}", rendered):
-        return "ordinary i\\neq j index relation"
-
-    if re.search(rf"{bare_i}\s*∈\s*{bare_I}", rendered):
-        return "membership of index metavariable i in an index domain I"
-
-    return None
-
 def rendered_text_has_invalid_real_index(rendered: str) -> bool:
     allowed = "".join(sorted(CONTEXT_INDEX_NAMES))
     pattern = re.compile(
@@ -746,34 +722,6 @@ def trailing_context_index(nodes: list[Any]) -> str | None:
             return name
     return None
 
-
-def find_index_typing_violation(nodes: list[Any]) -> str | None:
-    nodes = flatten_transparent_tex_groups(nodes)
-
-    for index, node in enumerate(nodes):
-        if isinstance(node, LatexMacroNode) and node.macroname in {
-            "exists",
-            "forall",
-            "nexists",
-        }:
-            meta_level, binder = quantifier_binder(nodes, index)
-            if (
-                re.match(r"i(?![A-Za-z0-9_])", binder)
-                and not (
-                    meta_level
-                    and node.macroname in {"exists", "forall"}
-                )
-            ):
-                if node.macroname == "forall":
-                    return "object-level universal quantification over index metavariable i"
-                return "object-level existential quantification over index metavariable i"
-
-        for child_nodes in tex_child_nodelists(node):
-            violation = find_index_typing_violation(child_nodes)
-            if violation is not None:
-                return violation
-
-    return None
 
 def validate_index_typing(
     path: Path,
@@ -807,17 +755,17 @@ def validate_index_typing(
                 f"{', '.join(sorted(CONTEXT_INDEX_NAMES))} (EXT-02)"
             )
 
+        quantifier_violation = rendered_quantifier_violation(rendered)
+        if quantifier_violation is not None:
+            fail(
+                f"{path.relative_to(ROOT)} reintroduces {quantifier_violation} "
+                f"near active line {line_number}; indices are meta-level type parameters (EXT-02)"
+            )
+
         relation_violation = rendered_relation_violation(rendered)
         if relation_violation is not None:
             fail(
                 f"{path.relative_to(ROOT)} reintroduces {relation_violation} "
-                f"near active line {line_number}; indices are meta-level type parameters (EXT-02)"
-            )
-
-        violation = find_index_typing_violation(parsed_nodes)
-        if violation is not None:
-            fail(
-                f"{path.relative_to(ROOT)} reintroduces {violation} "
                 f"near active line {line_number}; indices are meta-level type parameters (EXT-02)"
             )
 
