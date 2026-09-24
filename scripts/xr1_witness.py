@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""XR-1: executable finite witness candidate for ExistsR.
+"""XR-1: executable finite evidence generator for an ExistsR candidate.
 
 This program does not assert metaphysical actuality by syntax. It executes the
 finite transition episode whose operational structure is used by the XR-1
@@ -125,7 +125,7 @@ def verify() -> dict:
         raise AssertionError(f"XR-1 witness failed: {failed}")
 
     return {
-        "witness": "XR-1",
+        "evidence_target": "XR-1",
         "theory": "T_XR1",
         "seed": sorted(SEED),
         "ont_prod": [
@@ -141,11 +141,11 @@ def verify() -> dict:
         "actual_trace": list(trace),
         "declared_local_real_tokens": sorted(REAL_TOKENS),
         "checks": checks,
-        "status": "formal-operational-witness-passed",
+        "status": "formal-operational-evidence-passed",
         "caveat": (
             "This certificate verifies the finite operational/generative core. "
-            "TR-M structural fidelity and the actuality-to-ontology bridge remain "
-            "philosophical obligations, not facts produced by this script."
+            "The certificate is evidence, not a truthmaker. OnticRealization/OR1-OR7 and "
+            "IndAdequate remain philosophical obligations, not facts produced by this script."
         ),
     }
 
