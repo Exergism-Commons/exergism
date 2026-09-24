@@ -590,7 +590,7 @@ def tex_node_is_spacing(node: Any) -> bool:
 def tex_node_starts_with_bare_name(node: Any, name: str) -> bool:
     if isinstance(node, LatexCharsNode):
         return re.match(
-            rf"\\s*{re.escape(name)}(?![A-Za-z0-9_])",
+            rf"\s*{re.escape(name)}(?![A-Za-z0-9_])",
             node.chars,
         ) is not None
 
@@ -606,7 +606,7 @@ def tex_node_starts_with_bare_name(node: Any, name: str) -> bool:
 def tex_node_ends_with_bare_name(node: Any, name: str) -> bool:
     if isinstance(node, LatexCharsNode):
         return re.search(
-            rf"(?<![A-Za-z0-9_]){re.escape(name)}\\s*$",
+            rf"(?<![A-Za-z0-9_]){re.escape(name)}\s*$",
             node.chars,
         ) is not None
 
