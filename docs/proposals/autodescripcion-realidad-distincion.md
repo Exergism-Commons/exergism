@@ -136,31 +136,33 @@ ni presupone que los índices sean enumerables, accesibles entre sí o comparabl
 
 Cada contexto $i$ determina su propio tipado ontológico. Una variable escrita $x_i$ pertenece al sort/contexto de objetos de $i$; una fórmula:
 
-$
+$$
 \operatorname{Real}_i(x_i)
-$
+$$
 
 solo está bien formada en ese contexto.
 
 **Admisión del índice.** El subíndice no produce por notación la unidad que etiqueta. El uso ontológico de un parámetro $i$ presupone una **individuación contextual** metateóricamente admisible. La propuesta general no fija una world-making relation universal: permite que una teoría independiente $\mathcal T$ descargue el criterio mediante:
 
-$
+$$
 \operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi)
 \land
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi)
 \Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\Rightarrow
 \operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi,\mathcal T).
-$
+$$
 
-IndAdequate exige, como mínimo, independencia respecto del target, fundamento positivo, invariancia bajo recodificación, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina frente a cortes rivales y ausencia de totalización por estipulación. Los tests completos están en REV-07g.
+La relatividad a $\mathcal T$ pertenece a la **descarga del criterio**, no a la realidad individuada: una teoría no crea por descripción el contexto que pretende justificar. IndAdequate exige, como mínimo, fidelidad de la estructura usada, independencia respecto del target, fundamento positivo, invariancia bajo recodificación, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina frente a cortes rivales y ausencia de totalización por estipulación. Los tests completos están en REV-07g.
 
 La admisión de $i$ **no implica**:
 
-$
+$$
 \operatorname{RegimeTotal}_i,
 \qquad
 \operatorname{REC}_i,
-$
+$$
 
 que permanecen obligaciones posteriores. Durante una derivación puede usarse un parámetro provisional $\widehat{i}$ para comprobar una candidatura; eso no equivale a haber admitido un nuevo contexto.
 
