@@ -646,7 +646,7 @@ def tex_child_nodelists(node: Any) -> list[list[Any]]:
 def rendered_text_has_invalid_real_index(rendered: str) -> bool:
     allowed = "".join(sorted(CONTEXT_INDEX_NAMES))
     pattern = re.compile(
-        rf"^_\s*([{re.escape(allowed)}])\s*(?=\()"
+        rf"^_\s*([{re.escape(allowed)}])(?![A-Za-z0-9_])"
     )
 
     for match in re.finditer(r"(?<![A-Za-z0-9])Real(?![A-Za-z0-9])", rendered):
