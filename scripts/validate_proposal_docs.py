@@ -160,7 +160,7 @@ def validate_archive(text: str) -> None:
 
 def strip_html_comments(text: str) -> str:
     return re.sub(
-        r"<!--.*?-->",
+        r"<!--.*?(?:-->|$)",
         lambda match: "\n" * match.group(0).count("\n"),
         text,
         flags=re.DOTALL,
@@ -180,6 +180,10 @@ def markdown_lines_visible(text: str) -> list[tuple[int, str]]:
         fail("HTML-comment filtering changed Markdown line cardinality")
 
     return list(zip(line_numbers, visible_lines))
+
+
+def markdown_visible_text(text: str) -> str:
+    return "\n".join(line for _, line in markdown_lines_visible(text))
 
 
 def markdown_heading(line: str) -> tuple[int, str] | None:
@@ -321,7 +325,9 @@ def validate_index_typing(text: str) -> None:
 
 
 def validate_regime_total_contract(normative: str, ledger: str, technical: str) -> None:
-    current = normative.split("# II. Historia cronológica", 1)[0]
+    current = markdown_visible_text(normative).split("# II. Historia cronológica", 1)[0]
+    visible_ledger = markdown_visible_text(ledger)
+    visible_technical = markdown_visible_text(technical)
 
     required_current = {
         r"\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)": "RegimeTotal totality target",
@@ -345,7 +351,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
             "general ExistsR witness; total existence must range over RegimeTotal"
         )
 
-    if sum(line.startswith("| REV-07f |") for line in ledger.splitlines()) != 1:
+    if sum(line.startswith("| REV-07f |") for line in visible_ledger.splitlines()) != 1:
         fail("REV-07f regression: review ledger must contain exactly one REV-07f row")
 
     for heading in (
@@ -360,7 +366,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         + "\\land" + "\n"
         + "\\operatorname{GeneOverlap}_i"
     )
-    if distinct_overlap_guard not in current or distinct_overlap_guard not in technical:
+    if distinct_overlap_guard not in current or distinct_overlap_guard not in visible_technical:
         fail(
             "REV-07f regression: GeneFamily must require OverlapCoherence only "
             "between distinct family members"
@@ -516,6 +522,22 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
             fail(
                 "REV-07f regression: active pure-relation assembly discussion is "
                 f"missing current regime-level term {term}"
+            )
+
+    plural_route_section = markdown_section(
+        technical,
+        "##### Ruta plural",
+    )
+    if "REV-24d pasa a PARTIAL" in plural_route_section:
+        fail(
+            "REV-07f regression: plural-route scope realization again changes "
+            "REV-24d status instead of remaining under REV-07/RegimeTotal"
+        )
+    for term in ("MOVED", "REV-07/RegimeTotal", "RegimeGenerated*", "REV-24"):
+        if term not in plural_route_section:
+            fail(
+                "REV-07f regression: plural-route status explanation is missing "
+                f"current responsibility marker {term}"
             )
 
     historical_dilemma = markdown_section(
