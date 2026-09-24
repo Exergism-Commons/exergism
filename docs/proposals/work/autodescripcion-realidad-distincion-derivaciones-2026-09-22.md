@@ -6111,11 +6111,15 @@ Sea \(\mathcal T\) una teoría ontológica/física independientemente motivada. 
 
 leído: “\(\mathcal T\), mediante la estructura representada por \(\chi\), ofrece un criterio para justificar que \(C\) constituye una unidad contextual”.
 
-El target permanece objetivo:
+El target permanece objetivo y **no contiene el witness epistemológico**:
 
 \[
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi).
+\boxed{
+\operatorname{ContextIndividuation}^{\mathsf M}(C).
+}
 \]
+
+Cuando aparezca históricamente la anotación \(\operatorname{ContextIndividuation}(C;\chi)\), debe leerse solo como «esta conclusión fue certificada mediante \(\chi\)», no como una relación ontológica cuyo segundo argumento constituya al contexto.
 
 Por tanto \(\operatorname{Ind}_{\mathcal T}\) no significa “\(C\) es una unidad porque \(\mathcal T\) lo dice”. Una teoría falsa, meramente instrumental o estructuralmente infiel no puede fabricar un contexto ontológico.
 
@@ -6149,10 +6153,12 @@ Entonces la descarga correcta tiene dos pasos:
 \land
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi)
 \Rightarrow
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
 \Rightarrow
 \operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi,\mathcal T).
 }
+
+El primer paso **elimina** \(\chi\) de la conclusión ontológica. El segundo puede conservarlo únicamente como provenance/audit metadata de la admisión metateórica.
 \]
 
 La primera implicación es la obligación de soundness de la descarga; la segunda es la regla formal de admisión. La teoría \(\mathcal T\) no se convierte en una realidad superior ni en creadora de la unidad que certifica.
@@ -6231,6 +6237,209 @@ Entonces:
 La inversa tampoco vale: dos testigos no equivalentes no implican automáticamente dos contextos. Pueden revelar niveles distintos o una disputa aún no resuelta sobre el corte.
 
 Esto evita una nueva versión del problema de “colisiones”: aquí **múltiples certificados de la misma individuación son convergencia evidencial**, no multiplicación ontológica.
+
+#### 0.11.69a. Witness no es truthmaker: separación evidencial/ontológica
+
+El término “witness” había quedado haciendo dos trabajos distintos. Los separamos.
+
+Un **ontic realizer** es estructura cuya obtención hace verdadera la afirmación de que la candidatura está realizada:
+
+\[
+\boxed{
+\operatorname{OnticRealization}^{\mathsf M}
+(
+H,C;\varrho
+)
+}
+\]
+
+donde \(H\) representa soporte efectivo pre-indexado o host-side y \(\varrho\) una relación/mapa de realización estructural.
+
+Un **evidence witness**:
+
+\[
+\boxed{
+\operatorname{Evidences}^{\mathsf M}
+(
+\chi;
+\operatorname{OnticRealization}(H,C;\varrho)
+)
+}
+\]
+
+es una vía epistémica para justificar esa relación.
+
+Por tanto:
+
+\[
+\boxed{
+\chi
+\neq
+\varrho
+\neq
+C.
+}
+\]
+
+Y, crucialmente:
+
+\[
+\operatorname{Evidences}(\chi;P)
+\]
+
+no entra como constituyente de \(P\).
+
+Esto bloquea dos errores opuestos.
+
+**WE1 — observer creation fallacy.**
+
+\[
+\operatorname{Evidences}(\chi;P)
+\not\Rightarrow
+\text{\(\chi\) crea ontológicamente \(P\)}.
+\]
+
+**WE2 — no-evidence nonexistence fallacy.**
+
+\[
+\neg\exists\chi\;
+\operatorname{Evidences}(\chi;P)
+\not\Rightarrow
+\neg P.
+\]
+
+Puede haber un contexto real cuya individuación no sea actualmente accesible a ningún observador/certificador.
+
+#### 0.11.69b. OR1–OR7 — realización ontológica estructural
+
+Para que \(\operatorname{OnticRealization}^{\mathsf M}(H,C;\varrho)\) pueda alimentar IA0, exigimos:
+
+1. **OR1 / host actuality:** \(H\) no es una mera descripción posible; hay soporte/actividad efectiva.
+2. **OR2 / typed realization:** \(\varrho\) relaciona estructura host-side con estados/eventos/relaciones de \(C\) respetando sus tipos locales.
+3. **OR3 / dynamical commutation:** cuando la dinámica host realiza un paso relevante, su proyección local conmuta con la dinámica de \(C\), módulo la equivalencia admitida:
+
+\[
+\boxed{
+\varrho\circ T_H
+\simeq
+T_C\circ\varrho.
+}
+\]
+
+4. **OR4 / counterfactual support:** las dependencias locales declaradas no son mera correlación descriptiva; cambios host-side que realizan diferencias locales pertinentes sostienen las diferencias dinámicas correspondientes.
+5. **OR5 / no certificate dependence:** la relación \(\varrho\) se caracteriza sin mencionar qué observador, log, certificado o teoría concreta la detecta.
+6. **OR6 / realization covariance:** representaciones fieles \(\alpha_H,\alpha_C\) transportan \(\varrho\) a una realización equivalente:
+
+\[
+\varrho'
+=
+\alpha_C\circ\varrho\circ\alpha_H^{-1}
+\]
+
+cuando esas inversas/transportes estén definidos al nivel apropiado.
+7. **OR7 / level non-collapse:** que \(H\) realice \(C\) no identifica ambos niveles ni convierte automáticamente todos los tokens host-side en tokens locales.
+
+Definimos:
+
+\[
+\operatorname{RealizationAdequate}^{\mathsf M}
+(
+H,C,\varrho
+)
+\]
+
+por OR1–OR7.
+
+IA0/structural fidelity puede descargarse por una OnticRealization adecuada. La teoría sigue haciendo trabajo epistémico/descriptivo; la realización hace el trabajo ontológico.
+
+#### 0.11.69c. WC-T1 — witness covariance / eliminación del observador privilegiado
+
+Sean \(\chi_1,\chi_2\) dos evidencias adecuadas de la misma realización objetiva:
+
+\[
+\operatorname{Evidences}(\chi_1;\varrho),
+\qquad
+\operatorname{Evidences}(\chi_2;\varrho).
+\]
+
+O, más generalmente, sean \(\varrho_1,\varrho_2\) realizaciones equivalentemente transportadas por OR6.
+
+Si ambas descargas satisfacen IndAdequate, entonces:
+
+\[
+\boxed{
+\operatorname{Ind}_{\mathcal T_1}(C;\chi_1)
++
+\operatorname{Ind}_{\mathcal T_2}(C;\chi_2)
+\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
+}
+\]
+
+sin indexar la conclusión por \(\chi_1\), \(\chi_2\), \(\mathcal T_1\) ni \(\mathcal T_2\).
+
+Definimos este principio como:
+
+\[
+\boxed{
+\operatorname{WitnessCovariance}^{\mathsf M}(C).
+}
+\]
+
+Su contenido es:
+
+> cambiar de evidence witness, representación o frame descriptivo fiel puede cambiar la ruta de certificación, pero no el hecho ontológico certificado.
+
+La analogía con covariancia en teorías relativistas es deliberadamente limitada: no importamos la geometría de relatividad general. Importamos solo la disciplina metodológica de que **la estructura física/ontológica no dependa de una descripción privilegiada**.
+
+#### 0.11.69d. WC-T2 — el witness ontológico trivializaría ExistsR
+
+Si intentásemos exigir que el witness \(\chi\) fuese él mismo un objeto real del mismo target ontológico para demostrar ExistsR, aparecería:
+
+\[
+\operatorname{Real}(\chi)
+\]
+
+como premisa.
+
+Pero entonces ya habríamos introducido realidad para probar que existe realidad.
+
+Por tanto:
+
+\[
+\boxed{
+\text{el evidence witness de ExistsR no puede ser su truthmaker ontológico.}
+}
+\]
+
+El truthmaker debe estar en la estructura realizada \(H\overset{\varrho}{\Vdash}C\); \(\chi\) solo hace accesible/justificable esa estructura al metalenguaje.
+
+Esto no elimina la necesidad de una premisa de actualidad para un teorema contingente. Sí elimina la dependencia respecto de **qué** observador/certificado la suministra.
+
+#### 0.11.69e. Trilema de existencia: formalidad, actualidad y NoR
+
+Una teoría puramente formal puede demostrar:
+
+\[
+\operatorname{Model}(XR1)
+\]
+
+o incluso la consecuencia condicional:
+
+\[
+\operatorname{OnticRealization}(H,XR1;\varrho)
+\Rightarrow
+\operatorname{ExistsR}.
+\]
+
+No puede obtener una afirmación contingente de actualidad solo de la satisfacibilidad del modelo.
+
+Para cerrar ExistsR quedan conceptualmente dos rutas no circulares:
+
+1. **ruta realizacional/empírica:** exhibir alguna OnticRealization actual y adecuada; el witness que la evidencia se elimina de la conclusión por WC-T1;
+2. **ruta NQ/a priori:** demostrar independientemente que NoR no es una realización admisible, de modo que alguna realización no nula sea necesaria.
+
+La primera necesita actualidad pero no observador privilegiado. La segunda evitaría la premisa empírica, pero continúa abierta.
 
 #### 0.11.70. Auditoría posterior con \(\Omega_i\) sin circularidad
 
@@ -13121,43 +13330,73 @@ La candidatura dispone pre-indexadamente de typing local State/Event, transició
 Esto satisface el perfil estructural de MemoContextCriterion. Queda, sin embargo, una obligación separada:
 
 \[
-\boxed{\mathrm{XR1\text{-}ACT}.}
+\boxed{\mathrm{XR1\text{-}REAL}.}
 \]
 
-#### 0.11.91ah. XR1-ACT — puente de actualidad
+#### 0.11.91ah. XR1-REAL — realización actual sin witness privilegiado
 
-Que CI ejecute `scripts/xr1_witness.py` prueba operacionalmente que existe un run \(a\). No se adopta:
+El run de CI es **evidence**, no truthmaker constitutivo del contexto. Introducimos:
 
 \[
-\operatorname{ActualExecution}(a)
-\Rightarrow
-\operatorname{ContextIndividuation}.
+\operatorname{OnticRealization}^{\mathsf M}
+(
+H_a,C_{XR1};\varrho_a
+)
 \]
 
-XR1-ACT exige:
+donde \(H_a\) es el proceso host efectivamente ejecutado y \(\varrho_a\) relaciona sus estados/transiciones relevantes con:
 
-1. XA1: el run es efectivamente realizado;
-2. XA2: \(s_0,e_0,s_1\) denotan states/events efectivos del nivel software, no solo strings del certificado;
-3. XA3: la teoría local no omite otros tokens de sus propios sorts en el episodio;
-4. XA4: el nivel software posee legitimidad ontológica/structural fidelity y no es mera abreviatura sin truthmakers;
-5. XA5: interpreter, OS, runner y hardware pertenecen al host salvo realización/interfaz explícita;
-6. XA6: recodificaciones/implementaciones fieles preservan la descarga.
+\[
+s_0,\;e_0,\;s_1.
+\]
 
-Entonces:
+La descarga XR1-REAL exige OR1–OR7. En particular:
+
+- el proceso host obtiene efectivamente;
+- la proyección preserva State/Event typing;
+- la transición host/local conmuta;
+- la dinámica local está contrafácticamente soportada por el realizador y no meramente correlacionada;
+- la realización no menciona CI, logs o certificado;
+- otra implementación fiel puede realizar el mismo contexto mediante una \(\varrho'\) equivalente;
+- host y contexto local no colapsan.
+
+El archivo `xr1-witness.json` producido por CI satisface únicamente:
+
+\[
+\operatorname{Evidences}^{\mathsf M}
+(
+\chi_{CI};
+\operatorname{OnticRealization}(H_a,C_{XR1};\varrho_a)
+).
+\]
+
+Por WC-T1, la conclusión ontológica no contiene \(\chi_{CI}\).
+
+La antigua XA4 queda absorbida por:
 
 \[
 \boxed{
-\mathrm{XR1\text{-}ACT}
+\operatorname{RealizationAdequate}(H_a,C_{XR1},\varrho_a)
+\Rightarrow
+IA0_{\mathrm{XR1}}.
+}
+\]
+
+No añadimos por tanto un axioma especial “software is real”. Lo que debe demostrarse es que la ejecución concreta **realiza** de manera estructural y contrafácticamente robusta la máquina local. Si no existe tal \(\varrho_a\), XR-1 falla; si existe, que la implementación sea software, hardware, biológica o híbrida es secundario para el criterio.
+
+Así:
+
+\[
+\boxed{
+\mathrm{XR1\text{-}REAL}
 +
 \mathrm{MCAdequate}
 +
 \mathrm{IndAdequate}
 \Rightarrow
-\operatorname{ContextIndividuation}^{\mathsf M}(C_{XR1};\chi_{XR1}).
+\operatorname{ContextIndividuation}^{\mathsf M}(C_{XR1}).
 }
 \]
-
-El artifact CI aporta evidencia directa para XA1 y para la estructura operacional. No prueba por sí solo XA4.
 
 #### 0.11.91ai. XR1-T — teorema existencial condicional
 
@@ -13183,7 +13422,7 @@ Por tanto:
 
 \[
 \boxed{
-\mathrm{XR1\text{-}ACT}
+\mathrm{XR1\text{-}REAL}
 +
 \mathrm{IndAdequate}_{XR1}
 \Rightarrow
@@ -13203,9 +13442,9 @@ REV-07b/c permanecen abiertos universalmente, pero no bloquean este existential 
 
 **XR-A4 — tokens físicos ocultos.** Pertenecen al host salvo que la teoría los tipifique como locales. Si son constitutivamente necesarios al nivel declarado, XA3/XA5 obliga a incorporarlos y XR-1 debe rehacerse.
 
-**XR-A5 — software no es realidad.** Éste es el ataque decisivo a XA4. Si la doctrina niega realidad a todo nivel software, XR-1 no prueba ExistsR y habrá que buscar witness físico/organizacional.
+**XR-A5 — software no es realidad.** La objeción solo derrota XR-1 si muestra que no existe una realización OR1–OR7 del nivel local en el proceso host. Una prohibición nominal contra «software» no basta; tampoco basta afirmar realizabilidad sin exhibir structural/dynamical support.
 
-**XR-A6 — CI no prueba metafísica.** Correcto. CI prueba run + núcleo finito; no sustituye IndAdequate/XA4.
+**XR-A6 — CI no prueba metafísica.** Correcto. CI proporciona un evidence witness reproducible; no es el truthmaker. La carga ontológica está en XR1-REAL/OR1–OR7 + IndAdequate.
 
 **XR-A7 — scope setificado.** No: \(rr_{XR1}\) es plural finito explícito.
 
@@ -13219,15 +13458,15 @@ XR-1 demuestra:
 +
 \text{actual execution}
 +
-\text{ontological level legitimacy}
+\text{adequate ontic realization}
 \Rightarrow
 \operatorname{ExistsR}.
 }
 \]
 
-La máquina/CI descargan el núcleo formal y actual execution. El único punto que el código no puede decidir es XA4/structural fidelity del nivel software.
+La máquina/CI descargan el núcleo formal y aportan evidencia reproducible de un run. El punto que el código no decide por sí solo es XR1-REAL: que exista una relación de realización OR1–OR7 entre el proceso host actual y la máquina local.
 
-Por tanto ExistsR **todavía no se marca como demostrado incondicionalmente**. La deuda existencial queda reducida a una pregunta explícita: si una ejecución software actual, localmente individuada y estructuralmente fiel cuenta como realización ontológica de su nivel. Si esa premisa se acepta y se descarga IndAdequate, XR1-T entrega inmediatamente \(\operatorname{ExistsR}\).
+Por tanto ExistsR **todavía no se marca como demostrado incondicionalmente**. La deuda existencial queda reducida a demostrar XR1-REAL/OR1–OR7 para alguna ejecución actual; el evidence witness concreto es eliminable por WitnessCovariance. Si XR1-REAL e IndAdequate se descargan, XR1-T entrega inmediatamente \(\operatorname{ExistsR}\).
 
 #### 0.11.92. Relación con \(\Omega_i\): ContinuationProfile ya no depende de \(\Omega_i\)
 
