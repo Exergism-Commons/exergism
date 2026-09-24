@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import unittest
 
-from scripts.validate_proposal_docs import MarkdownDocument, validate_index_typing
+from scripts.validate_proposal_docs import MarkdownDocument, NORMATIVE, validate_index_typing
 
 
 class IndexTypingGuardTests(unittest.TestCase):
@@ -23,6 +23,8 @@ class IndexTypingGuardTests(unittest.TestCase):
             r"\exists\ i\;P_i",
             r"\exists{\,i}\;P_i",
             r"\forall\quad i\;P_i",
+            r"\exists\mathrm{i}\;P_i",
+            r"\forall\mathbf{i}\;P_i",
         ):
             with self.subTest(tex=tex):
                 self.assert_rejected(tex)
@@ -41,6 +43,8 @@ class IndexTypingGuardTests(unittest.TestCase):
             r"i\,\neq\,j",
             r"j\neq i",
             r"i\in I",
+            r"\mathrm{i}\neq\mathrm{j}",
+            r"\mathit{i}\in\mathrm{I}",
             r"\operatorname{Real}(x)",
         ):
             with self.subTest(tex=tex):
@@ -48,6 +52,22 @@ class IndexTypingGuardTests(unittest.TestCase):
 
     def test_allows_indexed_real(self) -> None:
         self.assert_allowed(r"\operatorname{Real}_i(x_i)")
+
+
+class RawHtmlGuardTests(unittest.TestCase):
+    def test_rejects_html_block(self) -> None:
+        document = MarkdownDocument("<p>REV-24d = PARTIAL</p>\n")
+        with self.assertRaises(AssertionError):
+            document.reject_raw_html(NORMATIVE)
+
+    def test_rejects_inline_html(self) -> None:
+        document = MarkdownDocument("visible <!-- hidden doctrine --> text")
+        with self.assertRaises(AssertionError):
+            document.reject_raw_html(NORMATIVE)
+
+    def test_allows_plain_markdown(self) -> None:
+        document = MarkdownDocument("plain **CommonMark** text")
+        document.reject_raw_html(NORMATIVE)
 
 
 if __name__ == "__main__":
