@@ -7365,6 +7365,748 @@ El toy muestra exactamente la distinción buscada:
 \]
 
 
+#### 0.11.81f. Trace semantics: la interfaz como frontera observacional interactiva
+
+La notación \(\operatorname{Tr}_{I^\rho}(u)\) anterior era deliberadamente esquemática. Para que IC4 e IC5 no puedan satisfacerse por elección del analista, fijamos ahora una semántica de trazas explícita.
+
+Un contrato de interfaz para el rol \(\rho\) contiene los datos:
+
+\[
+\mathbb I^\rho
+=
+\left\langle
+\Sigma^\rho,
+\Gamma^\rho,
+\pi^\rho,
+\mathcal Q^\rho,
+\mathfrak B^\rho
+\right\rangle .
+\]
+
+Su lectura es:
+
+- \(\Sigma^\rho\): firma de frontera tipada, con polaridad source/consumer cuando proceda, dominios de valores y estructura temporal/ordenada exigida por el rol;
+- \(\Gamma^\rho\): familia independientemente fijada de interacciones, cargas, probes o estrategias de consumidor admisibles;
+- \(\pi^\rho\): proyección de una ejecución source-side actual sobre la traza que cruza la frontera declarada;
+- \(\mathcal Q^\rho\): familia de tests observacionales role-relevant, fijada antes de comparar sources concretos;
+- \(\mathfrak B^\rho\): semántica de branching exigida por el rol. Puede conservar conjuntos de posibilidades, medidas de probabilidad, tiempo, fairness u otra estructura; no puede degradarlas silenciosamente a mera existencia.
+
+Para una SourceUnit \(u_i\) y una interacción \(\gamma\in\Gamma^\rho\), sea:
+
+\[
+\operatorname{Exec}_i(u_i;\gamma)
+\]
+
+la familia de ejecuciones admisibles de \(u_i\) bajo \(\gamma\). Para \(e\in\operatorname{Exec}_i(u_i;\gamma)\):
+
+\[
+\tau
+=
+\pi^\rho(e)
+\in
+\operatorname{Trace}(\Sigma^\rho).
+\]
+
+La observación role-relative de una traza es:
+
+\[
+\operatorname{Obs}_{\mathbb I^\rho}(\tau)
+:=
+\left\langle
+q(\tau)
+\right\rangle_{q\in\mathcal Q^\rho}.
+\]
+
+Si algún \(q\) es parcial, la definedness forma parte del resultado; dos trazas no son equivalentes porque un test quede silenciosamente indefinido en una de ellas.
+
+Definimos equivalencia de trazas por:
+
+\[
+\boxed{
+\tau
+\approx_{\mathbb I^\rho}
+\tau'
+\Longleftrightarrow
+\forall q\in\mathcal Q^\rho\;
+q(\tau)=q(\tau').
+}
+\]
+
+El perfil completo de interfaz de \(u_i\) es:
+
+\[
+\boxed{
+\operatorname{Prof}_{\mathbb I^\rho}(u_i)(\gamma)
+:=
+\mathfrak B^\rho
+\left(
+\left\{
+\operatorname{Obs}_{\mathbb I^\rho}(\pi^\rho(e))
+\mid
+e\in\operatorname{Exec}_i(u_i;\gamma)
+\right\}
+\right).
+}
+\]
+
+Por tanto la equivalencia source-side inducida por la interfaz queda finalmente definida como:
+
+\[
+\boxed{
+u_i
+\equiv^{\mathsf M}_{\mathbb I^\rho}
+v_j
+\Longleftrightarrow
+\forall\gamma\in\Gamma^\rho\;
+\operatorname{Prof}_{\mathbb I^\rho}(u_i)(\gamma)
+=
+\operatorname{Prof}_{\mathbb I^\rho}(v_j)(\gamma).
+}
+\]
+
+La igualdad anterior es metateórica. No exige que \(i=j\), no introduce un objeto que contenga ambos contexts y no identifica sus tokens. Solo compara las conductas expuestas por un contrato comúnmente interpretable.
+
+Esta definición corrige tres ambigüedades de la versión esquemática:
+
+1. una interfaz puede ser **interactiva**: no se compara un único output, sino la respuesta bajo toda interacción admisible;
+2. una interfaz puede ser **no determinista, probabilística o temporal**: \(\mathfrak B^\rho\) debe conservar precisamente la estructura que el rol considere relevante;
+3. el quotient no se elige sobre sources directamente: se induce desde tests \(\mathcal Q^\rho\) y estrategias \(\Gamma^\rho\) justificadas independientemente.
+
+Si todos los tests usan igualdad ordinaria sobre sus codominios, \(\approx_{\mathbb I^\rho}\) es automáticamente reflexiva, simétrica y transitiva. Igualdad punto a punto de perfiles hereda esas propiedades, de modo que:
+
+\[
+\boxed{
+\equiv^{\mathsf M}_{\mathbb I^\rho}
+\text{ es una relación de equivalencia}
+}
+\]
+
+sobre toda clase de SourceUnits para la que el contrato esté bien tipado. Esto descarga la parte de la deuda de REV-07h relativa a que la equivalencia de interfaz no sea una semejanza informal.
+
+#### 0.11.81g. IC1–IC10 como obligaciones formales
+
+La interfaz admisible no se define solo por poseer el tuple anterior. El witness \(\iota\) debe descargar las diez obligaciones siguientes.
+
+**IC1 — source grounding.** Toda observación no aportada por el entorno debe anclarse en una ejecución actual de la SourceUnit:
+
+\[
+\forall e\in\operatorname{Exec}_i(u_i;\gamma)\;
+\operatorname{GroundedTrace}_i
+\bigl(
+u_i,e,\pi^\rho(e)
+\bigr).
+\]
+
+GroundedTrace exige que cada símbolo, magnitud o evento source-polar de la traza tenga un anchor causal, constitutivo o realizativo en \(e\). Una columna inventada por el analista no satisface IC1.
+
+**IC2 — consumer relevance.** Cada test del contrato debe corresponder a una dependencia downstream independently specified:
+
+\[
+\forall q\in\mathcal Q^\rho\;
+\exists d\in\operatorname{Dep}_\rho\;
+\operatorname{Sensitive}(d,q).
+\]
+
+Sensitive no significa que toda variación de \(q\) cambie de hecho todo consumidor, sino que \(q\) distingue una dimensión cuya variación está autorizada por la teoría del rol para cambiar alguna consecuencia downstream. Tests puramente decorativos no descargan IC2.
+
+**IC3 — contract independence.** La especificación del contrato se fija sin nombrar los pares que se desean colapsar ni su resultado baked:
+
+\[
+\operatorname{IndependentSpec}^{\mathsf M}
+\bigl(
+\mathbb I^\rho,\rho
+\bigr).
+\]
+
+En particular, \(\Gamma^\rho\), \(\mathcal Q^\rho\) y \(\mathfrak B^\rho\) no pueden elegirse después de observar qué diferencias separan justo a \(u\) de \(v\). El witness \(\iota\) debe aportar el fundamento externo del contrato: estándar físico, protocolo, semántica operacional, estructura receptor-ligando, contrato de API, teoría causal u otra fuente independiente.
+
+**IC4 — trace adequacy.** Sea \(\operatorname{RelDist}_\rho(u,v)\) una diferencia role-relevant definida sin usar \(\mathbb I^\rho\). La interfaz debe ser completa respecto de esas diferencias:
+
+\[
+\boxed{
+\operatorname{RelDist}_\rho(u,v)
+\Longrightarrow
+\operatorname{Prof}_{\mathbb I^\rho}(u)
+\neq
+\operatorname{Prof}_{\mathbb I^\rho}(v).
+}
+\]
+
+Equivalentemente:
+
+\[
+u\equiv^{\mathsf M}_{\mathbb I^\rho}v
+\Longrightarrow
+\neg\operatorname{RelDist}_\rho(u,v).
+\]
+
+Así el perfil puede olvidar diferencias upstream solo cuando la teoría del rol ya las ha declarado irrelevantes por razones independientes.
+
+**IC5 — no hidden bypass.** Toda consecuencia atribuida exclusivamente al rol debe factorizar por el perfil de interfaz. Para cada consumidor admisible \(C\) existe una aplicación role-side \(\widehat D_{C,\rho}\) tal que:
+
+\[
+\boxed{
+D_{C,\rho}(u;\gamma)
+=
+\widehat D_{C,\rho}
+\left(
+\operatorname{Prof}_{\mathbb I^\rho}(u)(\gamma)
+\right).
+}
+\]
+
+Cuando la teoría dispone de un grafo o hipergrafo de dependencia, se exige además la forma estructural:
+
+\[
+\forall p\in
+\operatorname{Path}_\rho(u\leadsto C):
+\qquad
+p\cap
+\operatorname{Boundary}_{\mathbb I^\rho}(u)
+\neq
+\varnothing .
+\]
+
+La segunda fórmula convierte la interfaz en un cut de dependencia para el rol. Si existe un camino relevante que llega al consumidor sin atravesar la frontera representada, hay hidden bypass y el contrato falla.
+
+**IC6 — recoding invariance.** Para toda recodificación fiel \(\alpha:u\cong u'\) que preserve la estructura source-side relevante existe la recodificación inducida \(\bar\alpha\) de trazas/perfiles y:
+
+\[
+\operatorname{Prof}_{\alpha\mathbb I^\rho}(\alpha u)
+=
+\bar\alpha
+\left(
+\operatorname{Prof}_{\mathbb I^\rho}(u)
+\right).
+\]
+
+En particular:
+
+\[
+u\equiv_{\mathbb I^\rho}v
+\Longleftrightarrow
+\alpha u
+\equiv_{\alpha\mathbb I^\rho}
+\alpha v.
+\]
+
+**IC7 — non-vacuity.** Si el rol es no trivial:
+
+\[
+\operatorname{NonTrivialRole}(\rho),
+\]
+
+entonces el perfil no puede ser universalmente constante:
+
+\[
+\boxed{
+\left|
+\operatorname{Im}
+\left(
+\operatorname{Prof}_{\mathbb I^\rho}
+\right)
+\right|
+\ge 2.
+}
+\]
+
+Si la imagen tiene una sola clase, la carga de prueba se invierte: debe demostrarse \(\operatorname{TrivialRole}(\rho)\), no declararse irrelevante toda diferencia por conveniencia.
+
+**IC8 — compositional discipline.** Cuando dos contratos admiten una operación de composición \(\otimes\), debe existir un witness de congruencia:
+
+\[
+u\equiv_{\mathbb I^\rho}u'
+\land
+v\equiv_{\mathbb J^\sigma}v'
+\Longrightarrow
+u\otimes v
+\equiv_{\mathbb I^\rho\otimes\mathbb J^\sigma}
+u'\otimes v'.
+\]
+
+Pero no se admite ninguna regla inversa desde composición o equivalencia hacia identidad de SourceUnit, common ground o identidad de contexto.
+
+**IC9 — provenance retention.** El quotient observacional no es un quotient ontológico de historias:
+
+\[
+u\equiv_{\mathbb I^\rho}v
+\not\Rightarrow
+\operatorname{Prov}(u)=\operatorname{Prov}(v).
+\]
+
+La provenance continúa definida sobre los sources/historias pre-quotient. Si un artefacto downstream no la codifica, puede dejar de ser reconstruible desde ese canal, pero no deja retroactivamente de haber sido distinta.
+
+**IC10 — no context inference.** Ninguna de las siguientes inferencias está licenciada:
+
+\[
+u_i\equiv^{\mathsf M}_{\mathbb I^\rho}v_j
+\not\Rightarrow
+i\equiv j,
+\]
+
+\[
+u_i\equiv^{\mathsf M}_{\mathbb I^\rho}v_j
+\not\Rightarrow
+\operatorname{SharedOntSpace}^{\mathsf M}(i,j),
+\]
+
+\[
+u_i\equiv^{\mathsf M}_{\mathbb I^\rho}v_j
+\not\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M},
+\operatorname{IndexAdmission}^{\mathsf M},
+\operatorname{RegimeTotal}.
+\]
+
+IC10 es una restricción de regla de inferencia, no una afirmación de que contexts incompatibles deban compartir interfaces. Solo permite que el metalenguaje compare contratos cuando exista traducción suficiente para ello.
+
+Con estas cláusulas:
+
+\[
+\boxed{
+\operatorname{InterfaceContract}^{\mathsf M}_i
+(u_i;\mathbb I^\rho,\rho,\iota)
+}
+\]
+
+significa que \(u_i\) es SourceUnit para \(\rho\), que \(\mathbb I^\rho\) está bien tipada y que \(\iota\) descarga IC1–IC10.
+
+#### 0.11.81h. Teoremas de sustitución y del kernel de Bake
+
+**IT-1 — downstream substitutability.** Si IC4 e IC5 están descargadas y:
+
+\[
+u\equiv^{\mathsf M}_{\mathbb I^\rho}v,
+\]
+
+entonces para todo consumidor \(C\), interacción \(\gamma\) y consecuencia atribuida exclusivamente al rol:
+
+\[
+\boxed{
+D_{C,\rho}(u;\gamma)
+=
+D_{C,\rho}(v;\gamma).
+}
+\]
+
+**Demostración.** Por equivalencia de interfaz:
+
+\[
+\operatorname{Prof}_{\mathbb I^\rho}(u)(\gamma)
+=
+\operatorname{Prof}_{\mathbb I^\rho}(v)(\gamma).
+\]
+
+Por IC5 ambos lados pasan por la misma \(\widehat D_{C,\rho}\). Sustituyendo se obtiene igualdad de la consecuencia downstream. IC4 garantiza que la equivalencia no ha omitido previamente una diferencia que la teoría de \(\rho\) declarase relevante. \(\square\)
+
+Este es el screening-off que antes solo se expresaba intuitivamente.
+
+Sea ahora:
+
+\[
+q_{\mathbb I^\rho}(u)
+:=
+[u]_{\equiv_{\mathbb I^\rho}}
+\]
+
+el quotient metateórico inducido por la interfaz.
+
+Una realización baked:
+
+\[
+B
+=
+\operatorname{Bake}^{\rho,\beta}
+\]
+
+es **interface-sound** si existe un decoder/realization map target-side \(d_\beta\) tal que:
+
+\[
+\boxed{
+d_\beta(B(u))
+=
+q_{\mathbb I^\rho}(u).
+}
+\]
+
+La dirección de esta factorización es importante: el output baked debe conservar información suficiente para recuperar la clase de interfaz. No se exige que el Bake sea él mismo el quotient mínimo.
+
+**IT-2 — Bake kernel theorem.** Si existe \(d_\beta\) como arriba, entonces:
+
+\[
+\boxed{
+\ker(B)
+\subseteq
+\ker(\mathbb I^\rho).
+}
+\]
+
+**Demostración.** Si \(B(u)=B(v)\), aplicar \(d_\beta\) da:
+
+\[
+q_{\mathbb I^\rho}(u)
+=
+d_\beta(B(u))
+=
+d_\beta(B(v))
+=
+q_{\mathbb I^\rho}(v).
+\]
+
+Por definición del quotient:
+
+\[
+u\equiv_{\mathbb I^\rho}v.
+\]
+
+Luego todo par colapsado por Bake ya estaba autorizado por la equivalencia de interfaz. \(\square\)
+
+Esto también aclara una sutileza categorial de la arquitectura: la condición correcta para permitir que Bake preserve **más** información que la interfaz es:
+
+\[
+q_{\mathbb I^\rho}
+=
+d_\beta\circ B,
+\]
+
+no \(B=\bar B\circ q_{\mathbb I^\rho}\). Esta última igualdad impondría la inclusión opuesta de kernels y correspondería a un Bake que depende solo del quotient.
+
+Si además se exige minimalidad:
+
+\[
+u\equiv_{\mathbb I^\rho}v
+\Longrightarrow
+B(u)=B(v),
+\]
+
+entonces:
+
+\[
+\boxed{
+\ker(B)
+=
+\ker(\mathbb I^\rho),
+}
+\]
+
+y el Bake es un quotient exacto del contrato.
+
+#### 0.11.81i. Modelo no trivial A — transductor stateful y quotient baking exacto
+
+Sea una SourceUnit computacional implementada como máquina de Mealy determinista:
+
+\[
+M=(Q,q_0,A,B,\delta,\lambda),
+\]
+
+con estado interno \(Q\), alfabeto de inputs \(A\), outputs \(B\), transición \(\delta\) y output \(\lambda\).
+
+El rol \(\rho_{\mathrm{IO}}\) es suministrar la transducción interactiva declarada por \(A/B\). El contrato fija:
+
+\[
+\Gamma^{\rho_{\mathrm{IO}}}
+=
+A^*,
+\]
+
+y para cada palabra de input \(w\in A^*\), la ejecución única de \(M\) produce una traza input/output:
+
+\[
+\tau_M(w).
+\]
+
+Tomamos como tests todos los observables de output tipados del protocolo; equivalentemente, el perfil es la función de transducción:
+
+\[
+F_M:A^*\to B^*.
+\]
+
+Entonces:
+
+\[
+\boxed{
+M\equiv_{\mathbb I^{\rho_{\mathrm{IO}}}}N
+\Longleftrightarrow
+\forall w\in A^*:
+F_M(w)=F_N(w).
+}
+\]
+
+No se compara solo el output actual: se compara toda continuación input finita, por lo que estados internamente distintos se identifican únicamente cuando son observacionalmente indistinguibles para el rol.
+
+Las obligaciones IC1–IC10 quedan descargadas así:
+
+- **IC1:** cada símbolo de traza proviene de una transición efectiva de \(M\) o del input aportado por el entorno;
+- **IC2:** \(A/B\) son precisamente los actos que el consumidor del protocolo puede emitir/recibir;
+- **IC3:** el protocolo \(A/B\) y la familia \(A^*\) se fijan antes de elegir \(M,N\);
+- **IC4:** cualquier diferencia role-relevant es, por definición operacional independiente del protocolo, una palabra \(w\) para la que difiere el output; \(A^*\) contiene ese discriminador;
+- **IC5:** el modelo cerrado solo permite interacción source/consumer mediante las transiciones etiquetadas \(A/B\), de modo que todo path de dependencia atraviesa la frontera;
+- **IC6:** renombrar estados internos por una biyección preserva \(F_M\);
+- **IC7:** existen transductores con distinta respuesta para alguna palabra de \(A^*\), luego el perfil no es constante;
+- **IC8:** la composición serial de transductores compatibles respeta equivalencia observacional; sustituir un componente por otro con la misma transducción conserva la transducción compuesta;
+- **IC9:** dos grafos internos o histories de construcción distintos pueden implementar el mismo \(F_M\); la igualdad de perfil no iguala su provenance;
+- **IC10:** dos realizaciones situadas en contexts distintos pueden implementar la misma transducción; de ello no se deriva identidad ni espacio ontológico compartido.
+
+Definimos ahora:
+
+\[
+\operatorname{Bake}_{\min}(M)
+:=
+\operatorname{Canon}
+\left(
+\operatorname{MinMealy}(M)
+\right),
+\]
+
+donde MinMealy identifica exactamente estados con la misma conducta futura y Canon elimina el accidente del nombre de estados.
+
+Por unicidad de la realización determinista mínima hasta isomorfismo y por canonicalización:
+
+\[
+\boxed{
+\operatorname{Bake}_{\min}(M)
+=
+\operatorname{Bake}_{\min}(N)
+\Longleftrightarrow
+M\equiv_{\mathbb I^{\rho_{\mathrm{IO}}}}N.
+}
+\]
+
+Luego, en este modelo no trivial:
+
+\[
+\boxed{
+\ker(\operatorname{Bake}_{\min})
+=
+\ker(\mathbb I^{\rho_{\mathrm{IO}}}).
+}
+\]
+
+El ejemplo demuestra que quotient baking puede ser exacto sin convertir equivalencia de interfaz en identidad ontológica.
+
+#### 0.11.81j. Modelo no trivial B — servicio key/value event-sourced frente a snapshot
+
+Considérese un servicio stateful con operaciones:
+
+\[
+\operatorname{Put}(k,v),\qquad
+\operatorname{Get}(k),\qquad
+\operatorname{Delete}(k),
+\]
+
+y respuestas:
+
+\[
+\operatorname{Ack},
+\qquad
+\operatorname{Value}(v),
+\qquad
+\operatorname{NotFound}.
+\]
+
+El rol \(\rho_{\mathrm{KV}}\) se fija por la semántica operacional del servicio. \(\Gamma^{\rho_{\mathrm{KV}}}\) contiene todas las secuencias finitas well-typed de requests autorizadas. La traza conserva orden de request/response y, si el contrato lo exige, versión, errores y límites temporales; nada de ello puede omitirse después para hacer coincidir dos implementaciones.
+
+Sean:
+
+- \(E\): implementación event-sourced que conserva el log completo;
+- \(S\): implementación snapshot que conserva solo el mapa actual más metadatos suficientes.
+
+Supóngase mismo estado inicial y las reglas operacionales usuales:
+
+\[
+\begin{aligned}
+\operatorname{Put}(k,v)&: m[k]\leftarrow v,\\
+\operatorname{Delete}(k)&: m\leftarrow m\setminus\{k\},\\
+\operatorname{Get}(k)&:
+\begin{cases}
+\operatorname{Value}(m[k]) & k\in\operatorname{dom}(m),\\
+\operatorname{NotFound} & \text{en otro caso}.
+\end{cases}
+\end{aligned}
+\]
+
+Por inducción sobre la longitud de toda secuencia \(w\in\Gamma^{\rho_{\mathrm{KV}}}\), \(E\) y \(S\) alcanzan el mismo mapa abstracto tras cada prefijo y emiten la misma respuesta observable. Por tanto:
+
+\[
+\boxed{
+E
+\equiv_{\mathbb I^{\rho_{\mathrm{KV}}}}
+S.
+}
+\]
+
+Sin embargo:
+
+\[
+\operatorname{Prov}(E)
+\neq
+\operatorname{Prov}(S),
+\]
+
+y la información histórica recuperable puede diferir drásticamente.
+
+IC1–IC10 se descargan porque la semántica del protocolo y sus operaciones fija independientemente el rol; la inducción sobre todas las request sequences prueba IC4; el modelo de servicio encapsulado impone IC5; cambios de serialización que preservan requests/responses descargan IC6; Put/Get proporcionan no-vacuidad; la composición con un cliente que solo usa el contrato conserva sustitución; provenance permanece separada; y ninguna equivalencia de servicio induce contexto.
+
+Este modelo conecta directamente con Memoization. El snapshot puede convertirse después en candidato a MemoState, pero su suficiencia no se obtiene por llamarlo snapshot: se obtiene porque el estado actual es suficiente para reproducir todas las continuaciones del contrato KV. Si el protocolo añadiese una operación:
+
+\[
+\operatorname{History}(k),
+\]
+
+la prueba anterior dejaría de valer. La historia pasaría a ser role-relevant, IC4 detectaría la diferencia y \(E\not\equiv_{\mathbb I^{\rho_{\mathrm{KV}}}}S\). La interfaz, no el deseo de comprimir, decide qué puede olvidarse.
+
+#### 0.11.81k. Modelo no trivial C — interfaz eléctrica bajo cargas variables
+
+Para comprobar que la semántica no depende de ejemplos puramente computacionales, considérese el rol:
+
+\[
+\rho_{\mathrm{AC}}
+=
+\text{entrega eléctrica a un consumidor a través de un puerto declarado}.
+\]
+
+La firma de frontera puede incluir, según el contrato físico:
+
+\[
+\Sigma^{\rho_{\mathrm{AC}}}
+=
+\left\langle
+V(t),
+I(t),
+f(t),
+\operatorname{THD}(t),
+I_{\mathrm{PE}}(t),
+\operatorname{Protection}(t)
+\right\rangle .
+\]
+
+\(\Gamma^{\rho_{\mathrm{AC}}}\) no contiene una sola carga nominal, sino una familia independiente de perfiles de carga admisibles:
+
+\[
+\gamma:t\mapsto Z_\gamma(t)
+\]
+
+dentro del envelope de operación. Los tests \(\mathcal Q^{\rho_{\mathrm{AC}}}\) miden únicamente magnitudes que el estándar/teoría de power delivery haya justificado como relevantes: tensión RMS, frecuencia, transitorios, armónicos, leakage, respuesta de protección y las demás que el rol requiera.
+
+Sean dos assemblies upstream físicamente distintos:
+
+\[
+P_{\mathrm{grid}},
+\qquad
+P_{\mathrm{inv}},
+\]
+
+por ejemplo red+transformación frente a batería+inversor+regulación. Si para toda carga admisible producen el mismo perfil role-relative:
+
+\[
+\forall\gamma\in\Gamma^{\rho_{\mathrm{AC}}}:
+\operatorname{Prof}_{\mathbb I^{\rho_{\mathrm{AC}}}}
+(P_{\mathrm{grid}})(\gamma)
+=
+\operatorname{Prof}_{\mathbb I^{\rho_{\mathrm{AC}}}}
+(P_{\mathrm{inv}})(\gamma),
+\]
+
+entonces:
+
+\[
+P_{\mathrm{grid}}
+\equiv_{\mathbb I^{\rho_{\mathrm{AC}}}}
+P_{\mathrm{inv}}.
+\]
+
+La descarga de IC1–IC10 exige aquí una condición física adicional que hace al criterio falsable: el puerto declarado debe ser un cut efectivo para el rol. En un test rig con acoplos relevantes confinados al puerto eléctrico, IC5 se satisface. Si el consumidor también cambia por calor radiado, campo electromagnético, vibración, ground coupling u otra vía no representada, entonces:
+
+\[
+\operatorname{HiddenBypass}_{\rho_{\mathrm{AC}}}
+\]
+
+y el InterfaceContract falla hasta ampliar la frontera o restringir correctamente el rol.
+
+Así el ejemplo no obtiene equivalencia simplemente ignorando diferencias incómodas. La posibilidad de un bypass físico es precisamente un falsador del contrato.
+
+IC1 se descarga anclando las magnitudes en interacciones físicas del puerto; IC2 por la dependencia del receptor respecto de esas magnitudes; IC3 por el estándar/envelope fijado independientemente de la fuente; IC4 por barrer todas las cargas/tests declarados; IC5 por la condición de cut; IC6 por invariancia bajo cambio fiel de instrumentación/unidades; IC7 porque perfiles fuera de tolerancia son distinguibles; IC8 porque conectar un receptor no identifica fuente y receptor; IC9 porque grid e inverter conservan provenance distinta; IC10 porque una interfaz físicamente equivalente no decide por sí sola ninguna tesis sobre identidad de contexto.
+
+#### 0.11.81l. Resultado de la descarga IC
+
+Los tres modelos cubren estructuras distintas:
+
+\[
+\begin{array}{c|c|c|c}
+\text{modelo}
+&
+\text{interacción}
+&
+\text{estado}
+&
+\text{riesgo principal}
+\\
+\hline
+\text{Mealy}
+&
+\text{discreta/adversarial}
+&
+\text{interno}
+&
+\text{quotient arbitrario}
+\\
+\text{KV}
+&
+\text{secuencial}
+&
+\text{histórico}
+&
+\text{pérdida de historia relevante}
+\\
+\text{AC}
+&
+\text{continua/física}
+&
+\text{dinámico}
+&
+\text{hidden bypass}
+\end{array}
+\]
+
+REV-07h obtiene por tanto una descarga formal no meramente verbal de InterfaceContract/trace semantics:
+
+\[
+\boxed{
+\operatorname{InterfaceContract}
+=
+\text{trace profile interactivo}
++
+\text{IC1--IC10}
++
+\text{witness independiente}.
+}
+\]
+
+Y dos resultados ya pueden elevarse a lemas de la arquitectura:
+
+\[
+\boxed{
+u\equiv_{\mathbb I^\rho}v
++
+\mathrm{IC5}
+\Longrightarrow
+\text{downstream substitutability para }\rho,
+}
+\]
+
+\[
+\boxed{
+q_{\mathbb I^\rho}=d_\beta\circ\operatorname{Bake}
+\Longrightarrow
+\ker(\operatorname{Bake})
+\subseteq
+\ker(\mathbb I^\rho).
+}
+\]
+
+Esto cierra la deuda específica de **formalizar InterfaceContract/trace semantics y demostrar IC1–IC10 en ejemplos no triviales**. No cierra REV-07h completo: RoleAdequate, memo-equivalence composicional, update/invalidation, la coordinación con ContinuationProfile/TR-M, InterfaceWall fuerte y la posible inducción de \(\Omega_i\) permanecen abiertos.
+
+
 #### 0.11.82. Memoization no es hashing: equivalencia por continuaciones
 
 Sea \(\mathcal H_i\) una familia de historias/configuraciones source-side admisibles y sea \(I_i^\rho\) una interfaz previamente justificada por IC1–IC10. Sea además \(\mathcal K_{i,\rho}\) una familia independientemente especificada de continuaciones relevantes para comprobar que la historia sigue satisfaciendo esa interfaz.
@@ -8062,18 +8804,17 @@ Y aparecen tres resultados arquitectónicos fuertes:
 }
 \]
 
-Para cerrar REV-07h falta:
+La deuda específica de InterfaceContract/trace semantics + IC1–IC10 queda **RESOLVED formal** en §§0.11.81f–0.11.81l: perfil interactivo, semántica de branching, obligations IC formalizadas, downstream substitutability, Bake-kernel theorem y tres modelos no triviales (Mealy, KV stateful y AC físico). Para cerrar REV-07h completo falta:
 
-1. formalizar InterfaceContract/trace semantics y demostrar IC1–IC10 en ejemplos no triviales;
-2. formalizar RoleAdequate y la clase admisible de continuaciones sin circularidad;
-3. demostrar condiciones bajo las cuales \(\equiv^{\mathrm{memo}}_{i,\rho}\) y \(\equiv^{\mathsf M}_{I^\rho}\) son equivalencias bien definidas y composicionales;
-4. distinguir cuándo Interface/MemoState son estructuras ontológicas actuales y cuándo solo representaciones semánticas;
-5. dar una semántica de update/invalidation coordinada con cambios de contrato de interfaz;
-6. demostrar IC5/B6 y \(\ker(\operatorname{Bake})\subseteq\ker(I^\rho)\) en ejemplos no triviales;
-7. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
-8. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
-9. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
-10. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
+1. formalizar RoleAdequate y la clase admisible de continuaciones sin circularidad;
+2. demostrar condiciones bajo las cuales \(\equiv^{\mathrm{memo}}_{i,\rho}\) es una equivalencia bien definida y composicional, coordinada con la equivalencia de interfaz ya descargada;
+3. distinguir cuándo Interface/MemoState son estructuras ontológicas actuales y cuándo solo representaciones semánticas;
+4. dar una semántica de update/invalidation coordinada con cambios de contrato de interfaz;
+5. coordinar B1–B10 con el nuevo criterio \(q_{\mathbb I^\rho}=d_\beta\circ\operatorname{Bake}\) y extender el Bake-kernel theorem más allá de los modelos actuales;
+6. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
+7. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
+8. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
+9. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
 
 La ganancia inmediata no es demostrar identidad contextual, sino aislar la estructura que faltaba entre individuación y recontextualización:
 
