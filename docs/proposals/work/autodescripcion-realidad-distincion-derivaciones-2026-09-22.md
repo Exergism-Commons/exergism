@@ -8141,48 +8141,675 @@ Esto cierra la deuda específica de **formalizar InterfaceContract/trace semanti
 
 #### 0.11.82. Memoization no es hashing: equivalencia por continuaciones
 
-Sea \(\mathcal H_i\) una familia de historias/configuraciones source-side admisibles y sea \(I_i^\rho\) una interfaz previamente justificada por IC1–IC10. Sea además \(\mathcal K_{i,\rho}\) una familia independientemente especificada de continuaciones relevantes para comprobar que la historia sigue satisfaciendo esa interfaz.
+Sea \(\mathcal H_i\) una familia de historias/configuraciones source-side admisibles y sea \(\mathbb I_i^\rho\) una interfaz previamente justificada por IC1–IC10.
 
-Introducimos una observación/evaluación relativa al rol:
+La formulación provisional hacía depender directamente la equivalencia de memoization de una familia elegida \(\mathcal K_{i,\rho}\). Eso deja todavía una libertad peligrosa: un analista podría escoger una test suite demasiado pobre y fabricar equivalencias por omisión.
 
-\[
-\operatorname{Obs}_{i,\rho}(h_i\odot c_i),
-\]
-
-donde \(h_i\odot c_i\) significa prolongar la historia \(h_i\) mediante la continuación \(c_i\) cuando la composición está bien formada.
-
-Definimos provisionalmente la equivalencia de memoization:
+REV-07h elimina ahora esa libertad separando:
 
 \[
 \boxed{
-h_i\equiv^{\mathrm{memo}}_{i,\rho}h'_i
-\Longleftrightarrow
-\forall c_i\in\mathcal K_{i,\rho}\;
-\operatorname{Obs}_{i,\rho}(h_i\odot c_i)
-\simeq_{\rho}
-\operatorname{Obs}_{i,\rho}(h'_i\odot c_i).
+\text{semántica completa de continuación del rol}
+\quad\neq\quad
+\text{base característica usada para demostrarla}.
 }
 \]
 
-Dos historias son memo-equivalentes cuando ninguna continuación admisible relevante para \(\rho\) necesita distinguirlas.
+La equivalencia viene de la primera. \(\mathcal K_{i,\rho}\) solo puede servir como base de prueba cuando se demuestra RoleAdequate.
 
-Esto no es un hash. Una igualdad accidental de código, nombre, vector o firma no basta:
+#### 0.11.82a. Semántica completa de continuación del rol
+
+Una teoría independiente del rol \(\mathcal T_\rho\), coordinada con \(\mathbb I_i^\rho\), induce:
 
 \[
-\operatorname{Code}(h_i)=\operatorname{Code}(h'_i)
+\operatorname{Cont}_{i,\rho},
+\]
+
+la familia de **todas las continuaciones role-admisibles** que pueden ser relevantes para el comportamiento futuro expuesto por la interfaz.
+
+No se permite definir \(\operatorname{Cont}_{i,\rho}\) a partir de:
+
+- un par concreto \(h,h'\) que se quiera identificar;
+- el MemoState que se desea obtener;
+- el quotient final;
+- un Bake posterior;
+- \(\Omega_i\);
+- ContextIndividuation o RegimeTotal.
+
+Cada \(c\in\operatorname{Cont}_{i,\rho}\) es un esquema de continuación tipado por la teoría del rol. Su aplicación a una historia puede estar habilitada, rechazada o ser semánticamente inaplicable. Esa diferencia no se borra silenciosamente.
+
+Definimos por ello el resultado role-relative totalizado:
+
+\[
+\operatorname{ROut}_{i,\rho}(h,c)
+:=
+\begin{cases}
+\langle
+\mathsf{app},
+\operatorname{Obs}_{i,\rho}(h\odot c)
+\rangle,
+&
+\operatorname{App}_{i,\rho}(h,c),
+\\[2mm]
+\langle
+\mathsf{inapp},
+\operatorname{Reason}_{i,\rho}(h,c)
+\rangle,
+&
+\neg\operatorname{App}_{i,\rho}(h,c).
+\end{cases}
+\]
+
+Reason solo conserva las distinciones de inaplicabilidad que \(\mathcal T_\rho\) declare role-relevant; no abre una vía para inspeccionar estructura interna arbitraria.
+
+La equivalencia contextual completa del rol es:
+
+\[
+\boxed{
+h
+\equiv^{\mathrm{ctx}}_{i,\rho}
+h'
+\Longleftrightarrow
+\forall c\in\operatorname{Cont}_{i,\rho}\;
+\operatorname{ROut}_{i,\rho}(h,c)
+\simeq_\rho
+\operatorname{ROut}_{i,\rho}(h',c).
+}
+\]
+
+Y fijamos ahora:
+
+\[
+\boxed{
+\equiv^{\mathrm{memo}}_{i,\rho}
+:=
+\equiv^{\mathrm{ctx}}_{i,\rho}.
+}
+\]
+
+La memo-equivalence deja así de depender constitutivamente de una test suite escogida por el investigador.
+
+Si \(\simeq_\rho\) es una equivalencia sobre resultados role-relative, entonces:
+
+\[
+\boxed{
+\equiv^{\mathrm{memo}}_{i,\rho}
+\text{ es reflexiva, simétrica y transitiva}.
+}
+\]
+
+Esto se sigue porque es la intersección, sobre todas las continuaciones role-admisibles, de los kernels observacionales inducidos por cada \(c\).
+
+#### 0.11.82b. RoleAdequate: \(\mathcal K\) como base característica, no como selector
+
+Una familia:
+
+\[
+\mathcal K_{i,\rho}
+\subseteq
+\operatorname{Cont}_{i,\rho}
+\]
+
+es admisible solo si satisface:
+
+\[
+\operatorname{RoleAdequate}^{\mathsf M}_i
+(\rho,\mathcal K_{i,\rho};\kappa),
+\]
+
+donde \(\kappa\) es el witness que demuestra que \(\mathcal K_{i,\rho}\) caracteriza la semántica completa del rol.
+
+Para evitar confusión con RA de REV-24, denominamos **RKA1–RKA10** a sus obligaciones.
+
+**RKA1 — independent role grounding.** La teoría \(\mathcal T_\rho\), la interfaz \(\mathbb I_i^\rho\) y la familia completa \(\operatorname{Cont}_{i,\rho}\) se fijan independientemente de los histories concretos a comparar:
+
+\[
+\operatorname{IndependentRoleSpec}^{\mathsf M}
+(
+\mathcal T_\rho,
+\mathbb I_i^\rho,
+\operatorname{Cont}_{i,\rho}
+).
+\]
+
+**RKA2 — admissible-test soundness.**
+
+\[
+\boxed{
+\mathcal K_{i,\rho}
+\subseteq
+\operatorname{Cont}_{i,\rho}.
+}
+\]
+
+Una prueba que observa variables internas, provenance o estados que el rol no puede consultar no es una continuación válida aunque discrimine muy bien.
+
+**RKA3 — pair independence.** La construcción de \(\mathcal K_{i,\rho}\) no puede mencionar el par \(h,h'\), su código, el MemoState candidato ni el resultado que se pretende demostrar:
+
+\[
+\operatorname{PairIndependent}^{\mathsf M}
+(\mathcal K_{i,\rho},\rho).
+\]
+
+Se permiten parámetros fijados por la **clase del rol** —por ejemplo un bound \(N\) de estados declarado antes de observar las máquinas—, no parámetros obtenidos inspeccionando el par bajo comparación.
+
+**RKA4 — characteristic completeness.** Esta es la obligación central:
+
+\[
+\boxed{
+\begin{aligned}
+&
+\forall c\in\mathcal K_{i,\rho}\;
+\operatorname{ROut}_{i,\rho}(h,c)
+\simeq_\rho
+\operatorname{ROut}_{i,\rho}(h',c)
+\\
+&\qquad\Longrightarrow
+h\equiv^{\mathrm{memo}}_{i,\rho}h'.
+\end{aligned}
+}
+\]
+
+Equivalentemente, en forma discriminante:
+
+\[
+\boxed{
+h\not\equiv^{\mathrm{memo}}_{i,\rho}h'
+\Longrightarrow
+\exists k\in\mathcal K_{i,\rho}:
+\operatorname{ROut}_{i,\rho}(h,k)
+\not\simeq_\rho
+\operatorname{ROut}_{i,\rho}(h',k).
+}
+\]
+
+Por RKA2, la implicación inversa es inmediata. Por tanto:
+
+\[
+\boxed{
+h\equiv^{\mathrm{memo}}_{i,\rho}h'
+\Longleftrightarrow
+\forall k\in\mathcal K_{i,\rho}\;
+\operatorname{ROut}_{i,\rho}(h,k)
+\simeq_\rho
+\operatorname{ROut}_{i,\rho}(h',k).
+}
+\]
+
+solo **después** de demostrar RoleAdequate.
+
+**RKA5 — horizon discipline.** No se permite sustituir una semántica de continuaciones potencialmente no acotada por un horizonte finito arbitrario:
+
+\[
+\operatorname{UnboundedRole}(\rho)
+\land
+|\mathcal K_{i,\rho}|<\infty
+\]
+
+requiere un teorema independiente de finite characterization:
+
+\[
+\operatorname{FiniteCharacterization}^{\mathsf M}
+(\rho,\mathcal K_{i,\rho}).
+\]
+
+Sin él, una suite finita es evidencia empírica o testing, no una descarga ontológica de RoleAdequate.
+
+**RKA6 — applicability sensitivity.** Si dos histories difieren en si una continuación role-admisible puede aplicarse, y esa diferencia es role-relevant, la base debe poder detectarla:
+
+\[
+\operatorname{RelevantAppDiff}_{i,\rho}(h,h')
+\Longrightarrow
+\exists k\in\mathcal K_{i,\rho}:
+\operatorname{ROut}(h,k)
+\not\simeq_\rho
+\operatorname{ROut}(h',k).
+\]
+
+Así una equivalencia no puede aparecer por cuantificar solo sobre la intersección de las continuaciones que casualmente funcionan en ambos histories.
+
+**RKA7 — non-vacuity.** Si el rol admite al menos dos histories contextualmente distinguibles:
+
+\[
+\exists h,h':
+h\not\equiv^{\mathrm{memo}}_{i,\rho}h',
+\]
+
+entonces:
+
+\[
+\boxed{
+\mathcal K_{i,\rho}\neq\varnothing
+}
+\]
+
+y su mapa observacional no puede ser constante. Una \(\mathcal K=\varnothing\) solo es RoleAdequate cuando la propia semántica completa demuestra que el rol tiene una única clase contextual.
+
+**RKA8 — recoding invariance.** Para una recodificación fiel \(\alpha\) de histories, continuations e interfaz debe existir una base transportada \(\alpha_*\mathcal K\) tal que:
+
+\[
+\operatorname{RoleAdequate}
+(\rho,\mathcal K)
+\Longleftrightarrow
+\operatorname{RoleAdequate}
+(\alpha\rho,\alpha_*\mathcal K),
+\]
+
+y:
+
+\[
+h\equiv^{\mathrm{memo}}_{i,\rho}h'
+\Longleftrightarrow
+\alpha h
+\equiv^{\mathrm{memo}}_{i,\alpha\rho}
+\alpha h'.
+\]
+
+Cambiar nombres de estados, serialización, unidades o identificadores no cambia qué continuaciones son discriminantes.
+
+**RKA9 — residual adequacy.** RoleAdequate debe sobrevivir a estados alcanzables del mismo rol. Si \(p\in\operatorname{Cont}_{i,\rho}\) lleva \(h\) a un residual \(h\odot p\), la teoría debe justificar una base residual \(\mathcal K^{/p}_{i,\rho}\) obtenida por una regla fijada por el rol, no rediseñada para ese history:
+
+\[
+\operatorname{ResidualBasis}^{\mathsf M}
+(
+\mathcal K_{i,\rho},p
+\Downarrow
+\mathcal K^{/p}_{i,\rho}
+)
+\]
+
+y:
+
+\[
+\operatorname{RoleAdequate}
+(
+\rho,
+\mathcal K^{/p}_{i,\rho}
+).
+\]
+
+Una base que caracteriza solo el estado inicial pero deja de ser completa después de una transición no basta para memoization reentrante.
+
+**RKA10 — no ontological promotion.**
+
+\[
+\operatorname{RoleAdequate}^{\mathsf M}_i
+(\rho,\mathcal K)
+\]
+
+no implica:
+
+\[
+\operatorname{SourceIdentity},
+\quad
+\operatorname{ContextIndividuation},
+\quad
+\operatorname{IndexAdmission},
+\quad
+\operatorname{RegimeTotal},
+\quad
+\operatorname{CommonGround}.
+\]
+
+RoleAdequate caracteriza únicamente el poder discriminante de una familia de continuaciones respecto de un rol ya fijado.
+
+#### 0.11.82c. Teorema de invariancia de base
+
+Sean dos familias diferentes:
+
+\[
+\mathcal K_{i,\rho},
+\qquad
+\mathcal L_{i,\rho},
+\]
+
+tales que:
+
+\[
+\operatorname{RoleAdequate}(\rho,\mathcal K_{i,\rho})
+\land
+\operatorname{RoleAdequate}(\rho,\mathcal L_{i,\rho}).
+\]
+
+Definamos las equivalencias inducidas operacionalmente por cada base:
+
+\[
+h\equiv_{\mathcal K}h'
+\Longleftrightarrow
+\forall k\in\mathcal K_{i,\rho}\;
+\operatorname{ROut}(h,k)
+\simeq_\rho
+\operatorname{ROut}(h',k),
+\]
+
+y análogamente para \(\equiv_{\mathcal L}\).
+
+Por RKA4:
+
+\[
+\equiv_{\mathcal K}
+=
+\equiv^{\mathrm{memo}}_{i,\rho}
+=
+\equiv_{\mathcal L}.
+\]
+
+Luego:
+
+\[
+\boxed{
+\operatorname{RoleAdequate}(\rho,\mathcal K)
+\land
+\operatorname{RoleAdequate}(\rho,\mathcal L)
+\Longrightarrow
+\ker(\mathcal K)=\ker(\mathcal L).
+}
+\]
+
+Éste es el principal guard anti-post-hoc. Dos test suites pueden tener tamaños, sintaxis y estrategias diferentes, pero si ambas son adecuadas **no pueden cambiar el quotient de historias**.
+
+Corolario inmediato:
+
+\[
+\boxed{
+\ker(\mathcal K)\neq\ker(\mathcal L)
+\Longrightarrow
+\neg\operatorname{RoleAdequate}(\mathcal K)
+\lor
+\neg\operatorname{RoleAdequate}(\mathcal L).
+}
+\]
+
+No existe una pluralidad legítima de memo-equivalences dependiente del gusto del analista para un mismo rol completamente fijado.
+
+#### 0.11.82d. Congruencia temporal bajo composición de continuaciones
+
+Supóngase que \(\operatorname{Cont}_{i,\rho}\) contiene una continuación identidad \(\epsilon_\rho\) y es cerrada bajo composición well-typed:
+
+\[
+p,c\in\operatorname{Cont}_{i,\rho}
+\land
+\operatorname{WF}(p\star c)
+\Longrightarrow
+p\star c\in\operatorname{Cont}_{i,\rho},
+\]
+
+con:
+
+\[
+(h\odot p)\odot c
+\simeq
+h\odot(p\star c).
+\]
+
+Entonces:
+
+\[
+\boxed{
+h\equiv^{\mathrm{memo}}_{i,\rho}h'
+\land
+\operatorname{App}(h,p)
+\land
+\operatorname{App}(h',p)
+\Longrightarrow
+h\odot p
+\equiv^{\mathrm{memo}}_{i,\rho}
+h'\odot p.
+}
+\]
+
+**Demostración.** Sea \(c\) cualquier continuación admisible del residual. Por closure, \(p\star c\) es una continuación del rol desde el history original. Como \(h\equiv^{\mathrm{memo}}h'\), ambos histories coinciden observationally bajo \(p\star c\). Por asociatividad de composición, esto equivale a comparar \(h\odot p\) y \(h'\odot p\) bajo \(c\). Como \(c\) era arbitraria, los residuals son memo-equivalentes. \(\square\)
+
+Este resultado descarga la **right-congruence temporal** de memo-equivalence para roles cuya continuación posea esa estructura composicional. No demuestra todavía toda la composicionalidad entre roles distintos.
+
+#### 0.11.82e. Modelo RA-A — máquinas de Mealy con bound independiente
+
+Considérese la clase:
+
+\[
+\mathfrak M_N
+\]
+
+de máquinas de Mealy deterministas sobre alfabetos fijos \(A/B\), cada una con como máximo \(N\) estados. El bound \(N\) forma parte de la especificación previa de la clase y no se obtiene inspeccionando el par de máquinas.
+
+La semántica completa del rol es:
+
+\[
+\operatorname{Cont}_{\rho_{\mathrm{IO}}}
+=
+A^*.
+\]
+
+Sea:
+
+\[
+\mathcal K_N
+:=
+A^{\le N^2},
+\]
+
+el conjunto de palabras de longitud a lo sumo \(N^2\).
+
+Si dos máquinas \(M,M'\in\mathfrak M_N\) no son observationally equivalent, existe una palabra discriminante. Considérese una de longitud mínima. Antes del primer output distinto, la ejecución conjunta visita pares de estados de:
+
+\[
+Q_M\times Q_{M'},
+\]
+
+que contiene como máximo \(N^2\) pares. Una palabra mínima no puede repetir un mismo par antes de discriminar: eliminar el ciclo produciría una palabra discriminante más corta. Por tanto existe un discriminador de longitud a lo sumo \(N^2\).
+
+Luego:
+
+\[
+\boxed{
+\operatorname{RoleAdequate}
+(
+\rho_{\mathrm{IO}},
+A^{\le N^2}
+).
+}
+\]
+
+La base es finita sin ser post hoc porque su suficiencia viene de un teorema estructural sobre **toda** la clase \(\mathfrak M_N\).
+
+Si se elimina el bound \(N\), la misma familia finita deja de estar justificada: RKA5 impide extrapolar el resultado a máquinas arbitrariamente grandes.
+
+#### 0.11.82f. Modelo RA-B — servicio KV: una base infinita parametrizada y necesaria
+
+Para el servicio key/value del modelo anterior, supónganse keys tomadas de un dominio \(K\) no finito y semántica determinista de:
+
+\[
+\operatorname{Put},
+\quad
+\operatorname{Get},
+\quad
+\operatorname{Delete}.
+\]
+
+La semántica completa contiene todas las secuencias finitas well-typed de requests.
+
+Considérese la base esquemática:
+
+\[
+\mathcal K_{\mathrm{KV}}
+=
+\{
+\operatorname{Get}(k)
+\mid
+k\in K
+\}.
+\]
+
+Si dos estados abstractos \(m,m'\) producen el mismo resultado para todo \(\operatorname{Get}(k)\), entonces:
+
+\[
+\forall k\in K:
+m(k)=m'(k),
+\]
+
+incluyendo ausencia/presencia. Por extensionalidad del mapa:
+
+\[
+m=m'.
+\]
+
+Dado que Put/Delete/Get son deterministas sobre ese estado abstracto, una inducción sobre la longitud de cualquier secuencia futura demuestra que ambos histories producen las mismas respuestas bajo toda continuación completa. Por tanto:
+
+\[
+\boxed{
+\operatorname{RoleAdequate}
+(
+\rho_{\mathrm{KV}},
+\mathcal K_{\mathrm{KV}}
+).
+}
+\]
+
+El ejemplo muestra que RoleAdequate no exige una base finita.
+
+De hecho, ninguna base finita de Get puede ser adecuada cuando \(K\) es infinito. Si una suite finita menciona solo:
+
+\[
+k_1,\ldots,k_n,
+\]
+
+escoja:
+
+\[
+k_*\notin\{k_1,\ldots,k_n\}.
+\]
+
+Existen dos estados que coinciden en todos los \(k_1,\ldots,k_n\) y difieren solo en \(k_*\). La suite finita no los distingue, pero:
+
+\[
+\operatorname{Get}(k_*)
+\]
+
+sí. Por RKA4:
+
+\[
+\boxed{
+\neg\operatorname{RoleAdequate}
+(
+\rho_{\mathrm{KV}},
+\mathcal K_{\mathrm{finite}}
+).
+}
+\]
+
+Esto bloquea directamente la tentación de usar un test corpus finito como si demostrase equivalencia universal.
+
+#### 0.11.82g. Modelo RA-C — puerto AC: sampling no equivale a adecuación
+
+En el rol eléctrico:
+
+\[
+\rho_{\mathrm{AC}},
+\]
+
+la familia completa de continuaciones contiene todas las cargas/perturbaciones admitidas por el envelope contractual:
+
+\[
+\operatorname{Cont}_{\rho_{\mathrm{AC}}}
+=
+\Gamma^{\rho_{\mathrm{AC}}}.
+\]
+
+Un conjunto finito de cargas de laboratorio:
+
+\[
+\mathcal K_{\mathrm{sample}}
+=
+\{
+\gamma_1,\ldots,\gamma_n
+\}
+\]
+
+no es RoleAdequate por el mero hecho de que dos fuentes coincidan en él. En una clase funcional suficientemente rica pueden existir dos relaciones de puerto que coincidan exactamente en esos puntos y difieran en otra carga admisible \(\gamma_*\).
+
+Por tanto:
+
+\[
+\boxed{
+\text{finite sampling}
 \not\Rightarrow
-h_i\equiv^{\mathrm{memo}}_{i,\rho}h'_i.
+\operatorname{RoleAdequate}.
+}
 \]
 
-La dirección explicativa va al revés: si la teoría justifica la equivalencia por continuaciones, entonces puede buscarse una representación canónica o un estado suficiente para esa clase.
+Hay dos rutas legítimas:
 
-La familia \(\mathcal K_{i,\rho}\) tampoco puede escogerse vacía o degenerada para forzar equivalencia universal. Debe venir con una justificación de **role adequacy**:
+1. tomar como base la familia completa del envelope cuando el marco fundacional lo permita; o
+2. restringir independientemente la clase física a un modelo identificable —por ejemplo una familia paramétrica de puertos— y demostrar un theorem de system identification según el cual una familia de probes fijada de antemano determina todos los parámetros role-relevant.
+
+En el modelo Thévenin/LTI usado antes, no basta decir “medimos varias cargas”. Debe demostrarse que los probes elegidos identifican \(V_{\mathrm{oc}}\), \(Z_{\mathrm{out}}\), protección y cualquier otra dimensión incluida en \(\mathcal Q^{\rho_{\mathrm{AC}}}\) sobre el bandwidth contractual.
+
+RKA5 convierte así la diferencia entre **test engineering** y **equivalencia ontológicamente autorizada** en una obligación formal.
+
+#### 0.11.82h. Stress tests de RoleAdequate
+
+**RK-T1 — empty basis.** \(\mathcal K=\varnothing\) hace equivalentes todas las historias por vacuidad. Si el rol tiene más de una clase contextual, falla RKA7.
+
+**RK-T2 — pair-crafted basis.** Se inspeccionan \(h,h'\) y se eligen solo continuaciones en las que coinciden. Falla RKA3 aunque los tests sean individualmente role-admisibles.
+
+**RK-T3 — short-horizon deception.** Dos histories coinciden durante \(n\) pasos y divergen en \(n+1\). Usar continuaciones de longitud \(\le n\) falla RKA4/RKA5 salvo theorem independiente de finite characterization.
+
+**RK-T4 — internal oracle.** Un test lee directamente un campo privado que nunca puede afectar la interfaz. Puede distinguir histories, pero falla RKA2/IC2: no pertenece al rol.
+
+**RK-T5 — intersection trick.** Se cuantifica solo sobre continuaciones aplicables a ambos histories. Una capacidad presente en uno y ausente en otro desaparece del test. Falla RKA6.
+
+**RK-T6 — initial-only suite.** Una base caracteriza el estado inicial pero, tras una transición admisible, dos residuals que la base no sabe separar aparecen como iguales. Falla RKA9.
+
+**RK-T7 — benchmark overfitting.** Una implementación memoriza las respuestas del corpus \(\mathcal K\) pero diverge fuera de él. Esto demuestra que la suite no era característica: falla RKA4.
+
+**RK-T8 — provenance oracle.** Se añade un test “¿de qué historia vienes?” aunque provenance no pertenezca al rol. Falla RKA2; IC9 preserva provenance objetiva sin convertirla automáticamente en observable de interfaz.
+
+#### 0.11.82i. Estado de RoleAdequate
+
+Queda formalmente fijada la dependencia correcta:
 
 \[
-\operatorname{RoleAdequate}^{\mathsf M}_i(\rho,\mathcal K_{i,\rho}).
+\boxed{
+\mathcal T_\rho+\mathbb I^\rho
+\Longrightarrow
+\operatorname{Cont}_{i,\rho}
+\Longrightarrow
+\equiv^{\mathrm{memo}}_{i,\rho}.
+}
 \]
 
-Como mínimo debe ser no vacía cuando existan continuaciones relevantes, incluir los tests capaces de discriminar las diferencias que la teoría atribuye al rol y permanecer estable bajo recodificaciones fieles.
+Solo después puede introducirse una base:
+
+\[
+\boxed{
+\operatorname{RoleAdequate}
+(
+\rho,\mathcal K
+)
+\Longrightarrow
+\ker(\mathcal K)
+=
+\ker(
+\operatorname{Cont}_{i,\rho}
+).
+}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\mathcal K
+\text{ demuestra la memo-equivalence;}
+\qquad
+\mathcal K
+\text{ no la crea.}
+}
+\]
+
+RKA1–RKA10, el teorema de invariancia de base y los modelos Mealy/KV/AC cierran la deuda específica de **formalizar RoleAdequate y la clase admisible de continuaciones sin circularidad ni selección post hoc**.
+
+Además, bajo closure y asociatividad de las continuaciones del rol, la memo-equivalence completa queda demostrada como equivalencia y right-congruence temporal. Permanece abierta la composicionalidad más fuerte entre roles/interfaces distintos y su coordinación con MemoState/update/invalidation.
 
 #### 0.11.83. Memo-state: estado suficiente y reentrante
 
@@ -8836,17 +9463,16 @@ Y aparecen tres resultados arquitectónicos fuertes:
 }
 \]
 
-La deuda específica de InterfaceContract/trace semantics + IC1–IC10 queda **RESOLVED formal** en §§0.11.81f–0.11.81l: perfil interactivo, semántica de branching, obligations IC formalizadas, downstream substitutability, Bake-kernel theorem y tres modelos no triviales (Mealy, KV stateful y AC físico). Para cerrar REV-07h completo falta:
+Las deudas de InterfaceContract/trace semantics + IC1–IC10 y de RoleAdequate quedan **RESOLVED formal** en §§0.11.81f–0.11.82i. La memo-equivalence completa se define ahora sobre todas las continuaciones role-admisibles; una \(\mathcal K\) solo es base característica si RKA1–RKA10 prueban que induce el mismo kernel. Bajo closure/associativity se obtiene además equivalencia + right-congruence temporal. Para cerrar REV-07h completo falta:
 
-1. formalizar RoleAdequate y la clase admisible de continuaciones sin circularidad;
-2. demostrar condiciones bajo las cuales \(\equiv^{\mathrm{memo}}_{i,\rho}\) es una equivalencia bien definida y composicional, coordinada con la equivalencia de interfaz ya descargada;
-3. distinguir cuándo Interface/MemoState son estructuras ontológicas actuales y cuándo solo representaciones semánticas;
-4. dar una semántica de update/invalidation coordinada con cambios de contrato de interfaz;
-5. coordinar B1–B10 con el nuevo criterio \(q_{\mathbb I^\rho}=d_\beta\circ\operatorname{Bake}\) y extender el Bake-kernel theorem más allá de los modelos actuales;
-6. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
-7. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
-8. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
-9. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
+1. completar la composicionalidad de \(\equiv^{\mathrm{memo}}_{i,\rho}\) entre roles/interfaces distintos, más allá de la right-congruence temporal ya demostrada;
+2. distinguir cuándo Interface/MemoState son estructuras ontológicas actuales y cuándo solo representaciones semánticas;
+3. dar una semántica de update/invalidation coordinada con cambios de contrato de interfaz;
+4. coordinar B1–B10 con el criterio \(q_{\mathbb I^\rho}=d_\beta\circ\operatorname{Bake}\) y extender el Bake-kernel theorem más allá de los modelos actuales;
+5. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
+6. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
+7. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
+8. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
 
 La ganancia inmediata no es demostrar identidad contextual, sino aislar la estructura que faltaba entre individuación y recontextualización:
 
