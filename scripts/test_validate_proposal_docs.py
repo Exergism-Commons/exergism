@@ -3,18 +3,23 @@ from __future__ import annotations
 
 import unittest
 
-from scripts.validate_proposal_docs import MarkdownDocument, NORMATIVE, validate_index_typing
+from scripts.validate_proposal_docs import (
+    MarkdownDocument,
+    NORMATIVE,
+    validate_archive,
+    validate_index_typing,
+)
 
 
 class IndexTypingGuardTests(unittest.TestCase):
     def assert_rejected(self, tex: str) -> None:
         document = MarkdownDocument(f"$" + tex + "$")
         with self.assertRaises(AssertionError):
-            validate_index_typing(document, 0, len(document.lines))
+            validate_index_typing(NORMATIVE, document, 0, len(document.lines))
 
     def assert_allowed(self, tex: str) -> None:
         document = MarkdownDocument(f"$" + tex + "$")
-        validate_index_typing(document, 0, len(document.lines))
+        validate_index_typing(NORMATIVE, document, 0, len(document.lines))
 
     def test_rejects_bare_index_quantifier_spellings(self) -> None:
         for tex in (
@@ -66,6 +71,7 @@ class IndexTypingGuardTests(unittest.TestCase):
         for tex in (
             r"\operatorname{Real}_i(x_i)",
             r"\operatorname{Real}_j(x_i)",
+            r"\operatorname{Real}_k(x_i)",
             r"\operatorname{Real}_{\mathrm{i}}(x_i)",
         ):
             with self.subTest(tex=tex):
@@ -90,6 +96,15 @@ class ProseProjectionTests(unittest.TestCase):
         for term in ("SharedOntSpace", "GeneFamily/GeneBasis", "RegimeClosure", "RegimeTotal"):
             with self.subTest(term=term):
                 self.assertIn(term, projected)
+
+
+class ArchiveContractTests(unittest.TestCase):
+    def test_keywords_without_canonical_polarity_do_not_satisfy_banner(self) -> None:
+        document = MarkdownDocument(
+            "> This archive is NOT SUPERSEDED and is not actually no normativo.\n"
+        )
+        with self.assertRaises(AssertionError):
+            validate_archive(document)
 
 
 class RawHtmlGuardTests(unittest.TestCase):
