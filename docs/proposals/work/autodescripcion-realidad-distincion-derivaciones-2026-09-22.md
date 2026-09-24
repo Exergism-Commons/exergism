@@ -5145,7 +5145,7 @@ $$
 
 Esta expresión sigue siendo esquemática: ni $\mathcal G_i/\!\sim_i$ se asume como quotient set-theoretic ni los índices se convierten en objetos. Su función es fijar el nuevo orden de investigación:
 
-$$
+$
 \boxed{
 \operatorname{OntOrigin}_i
 \Longrightarrow
@@ -5157,21 +5157,13 @@ $$
 \Longrightarrow
 \operatorname{ContinuationProfile}_i
 \Longrightarrow
-\operatorname{FaithfulContinuation}^{\mathsf M}.
+\operatorname{FaithfulContinuation}^{\mathsf M}
 }
-$$
+$
 
-Por tanto el próximo ataque a $\Omega_i$ debe responder primero:
+fue una **ruta provisional**. Queda SUPERSEDED por §§0.11.91a–0.11.92: ContinuationProfile se deriva sin $\Omega_i$, a partir de PersistenceBasis + contract state + memo-equivalence + quotient dynamics; FaithfulContinuation usa después un ProfileMorphism + provenance. $\Omega_i$ permanece PARTIAL como posible canonicalización posterior de estructura generativa + perfiles + Bake/Prov data, nunca como premisa necesaria de FC3.
 
-1. qué hace admisible una trivialización sin presuponer identidad de contexto;
-2. si toda ontogénesis exige trivialización o solo algunas;
-3. cuándo el baking es conservativo y cuándo quotient/no-inyectivo;
-4. qué información mínima debe sobrevivir para provenance;
-5. cómo se induce $\sim_i$ sin circularidad;
-6. si la firma resultante puede ser canónica sin reificar $R_i$;
-7. cómo se relacionan estas nociones con GenEvent, OntOrigin y GenesisConstitutiveUnity.
-
-FC3 y $\Omega_i$ permanecen **PARTIAL**. La novedad es que la deuda ya no es “escoger invariantes”, sino caracterizar formalmente la **trivialización que decide qué diferencias dejan de importar al cambiar de nivel/contexto**.
+La deuda vigente de $\Omega_i$ es por tanto distinta: decidir si una familia contextualmente suficiente de perfiles y estructura generativa admite una normal form canónica sin reificar $R_i$, borrar provenance relevante ni usarse retroactivamente para ContextIndividuation.
 
 #### 0.11.48. REV-07g — Cellular Reality: la individuación precede al índice
 
