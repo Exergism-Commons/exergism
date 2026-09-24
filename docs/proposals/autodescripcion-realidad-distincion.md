@@ -142,11 +142,10 @@ $$
 
 solo está bien formada en ese contexto.
 
-**Admisión del índice.** El subíndice no produce por notación la unidad que etiqueta. El uso ontológico de un parámetro $i$ presupone una **individuación contextual** metateóricamente admisible. La propuesta general no fija una world-making relation universal: permite que una teoría independiente $\mathcal T$ descargue el criterio mediante:
+**Admisión del índice.** El subíndice no produce por notación la unidad que etiqueta. Usar ontológicamente \(i\) presupone una individuación contextual metateóricamente admisible. La propuesta general no fija una world-making relation universal: una teoría independiente \(\mathcal T\) puede descargar el criterio solo mediante:
 
 $$
-\operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi)
-\land
+\operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi)\land
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi)
 \Rightarrow
 \operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
@@ -154,19 +153,7 @@ $$
 \operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi,\mathcal T).
 $$
 
-La relatividad a $\mathcal T$ pertenece a la **descarga del criterio**, no a la realidad individuada: una teoría no crea por descripción el contexto que pretende justificar. IndAdequate exige, como mínimo, fidelidad de la estructura usada, independencia respecto del target, fundamento positivo, invariancia bajo recodificación, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina frente a cortes rivales y ausencia de totalización por estipulación. Los tests completos están en REV-07g.
-
-La admisión de $i$ **no implica**:
-
-$$
-\operatorname{RegimeTotal}_i,
-\qquad
-\operatorname{REC}_i,
-$$
-
-que permanecen obligaciones posteriores. Durante una derivación puede usarse un parámetro provisional $\widehat{i}$ para comprobar una candidatura; eso no equivale a haber admitido un nuevo contexto.
-
-Una revisión posterior que retire una admisión defectuosa (IndexRetraction) es una corrección metateórica y no debe confundirse con ContextCessation, que sería la terminación ontológica de una individuación previamente correcta.
+La relatividad a \(\mathcal T\) pertenece a la **descarga**, no a la realidad individuada. IndAdequate exige fidelidad estructural, independencia del target, fundamento positivo, invariancia, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina de cortes rivales y no-totalización; REV-07g contiene los tests completos. IndexAdmission no implica RegimeTotal ni REC. Un parámetro provisional \(\widehat{i}\) puede servir para auditar una candidatura sin admitirla. IndexRetraction corrige una admisión metateórica defectuosa y no equivale a ContextCessation ontológica.
 
 ### 1.4. Juicios metaontológicos de contexto
 
