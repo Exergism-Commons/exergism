@@ -604,6 +604,9 @@ LATEX2TEXT_CONTEXT.add_context_category(
     prepend=True,
     macros=[
         MacroTextSpec("ne", simplify_repl="≠"),
+        MacroTextSpec("neq", simplify_repl="≠"),
+        MacroTextSpec("in", simplify_repl="∈"),
+        MacroTextSpec("notin", simplify_repl="∉"),
     ],
 )
 LATEX_TO_TEXT = LatexNodes2Text(latex_context=LATEX2TEXT_CONTEXT)
@@ -626,7 +629,7 @@ def rendered_quantifier_violation(rendered: str) -> str | None:
     pattern = re.compile(
         rf"(?P<quantifier>[∃∀∄])"
         rf"(?P<decoration>\s*(?:(?:!\s*)|(?:[\^_]\s*[^\s]+\s*))*)"
-        rf"(?P<index>{indices})(?![A-Za-z0-9_])"
+        rf"(?<![A-Za-z0-9_])(?P<index>{indices})(?![A-Za-z0-9_])"
     )
 
     for match in pattern.finditer(rendered):
@@ -654,8 +657,6 @@ def rendered_relation_violation(rendered: str) -> str | None:
             return "membership of context metavariable in an index domain I"
 
         for right in sorted(CONTEXT_INDEX_NAMES):
-            if left == right:
-                continue
             if re.search(
                 rf"{left_pattern}\s*≠\s*{bare_context_pattern(right)}",
                 rendered,
@@ -708,20 +709,6 @@ def rendered_text_has_invalid_real_index(rendered: str) -> bool:
             return True
 
     return False
-
-def leading_context_index(nodes: list[Any]) -> str | None:
-    for name in sorted(CONTEXT_INDEX_NAMES):
-        if tex_text_starts_with_bare_name(nodes, name):
-            return name
-    return None
-
-
-def trailing_context_index(nodes: list[Any]) -> str | None:
-    for name in sorted(CONTEXT_INDEX_NAMES):
-        if tex_text_ends_with_bare_name(nodes, name):
-            return name
-    return None
-
 
 def validate_index_typing(
     path: Path,
