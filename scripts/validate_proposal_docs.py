@@ -653,6 +653,21 @@ def previous_significant_tex_node(nodes: list[Any], index: int) -> tuple[int, An
     return None
 
 
+def tex_group_plain_text(node: Any) -> str | None:
+    if not isinstance(node, LatexGroupNode):
+        return None
+
+    parts: list[str] = []
+    for child in node.nodelist:
+        if isinstance(child, LatexCharsNode):
+            parts.append(child.chars)
+        elif tex_node_is_spacing(child):
+            continue
+        else:
+            return None
+    return "".join(parts).strip()
+
+
 def operatorname_text(node: LatexMacroNode) -> str | None:
     if node.macroname != "operatorname":
         return None
@@ -666,20 +681,7 @@ def operatorname_text(node: LatexMacroNode) -> str | None:
     if not arguments:
         return None
 
-    argument = arguments[0]
-    nodelist = getattr(argument, "nodelist", None)
-    if nodelist is None:
-        return None
-
-    parts: list[str] = []
-    for child in nodelist:
-        if isinstance(child, LatexCharsNode):
-            parts.append(child.chars)
-        elif tex_node_is_spacing(child):
-            continue
-        else:
-            return None
-    return "".join(parts).strip()
+    return tex_group_plain_text(arguments[0])
 
 
 def find_index_typing_violation(nodes: list[Any]) -> str | None:
@@ -714,13 +716,27 @@ def find_index_typing_violation(nodes: list[Any]) -> str | None:
                 ):
                     return "membership of index metavariable i in an index domain I"
 
-        if isinstance(node, LatexMacroNode) and operatorname_text(node) == "Real":
-            following = next_significant_tex_node(nodes, index + 1)
-            if following is None or not (
-                isinstance(following[1], LatexCharsNode)
-                and following[1].chars.lstrip().startswith("_")
-            ):
-                return "unindexed Real predicate"
+        if isinstance(node, LatexMacroNode) and node.macroname == "operatorname":
+            name = operatorname_text(node)
+            name_end = index
+
+            # pylatexenc's default context may leave an unknown macro argument as a
+            # following group instead of attaching it to nodeargd. Both are AST forms.
+            if name is None:
+                argument = next_significant_tex_node(nodes, index + 1)
+                if argument is not None:
+                    candidate = tex_group_plain_text(argument[1])
+                    if candidate is not None:
+                        name = candidate
+                        name_end = argument[0]
+
+            if name == "Real":
+                following = next_significant_tex_node(nodes, name_end + 1)
+                if following is None or not (
+                    isinstance(following[1], LatexCharsNode)
+                    and following[1].chars.lstrip().startswith("_")
+                ):
+                    return "unindexed Real predicate"
 
         for child_nodes in tex_child_nodelists(node):
             violation = find_index_typing_violation(child_nodes)
