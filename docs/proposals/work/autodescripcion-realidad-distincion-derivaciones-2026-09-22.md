@@ -7996,7 +7996,35 @@ P_{\mathrm{grid}},
 P_{\mathrm{inv}},
 \]
 
-por ejemplo red+transformación frente a batería+inversor+regulación. Si para toda carga admisible producen el mismo perfil role-relative:
+por ejemplo red+transformación frente a batería+inversor+regulación. Para obtener una descarga no tautológica, supóngase que dentro del bandwidth y envelope declarados ambos realizan la misma relación de puerto de Thévenin:
+
+\[
+V(t)
+=
+V_{\mathrm{oc}}(t)
+-
+(Z_{\mathrm{out}}*I)(t),
+\]
+
+con el mismo \(V_{\mathrm{oc}}\), la misma impedancia operacional \(Z_{\mathrm{out}}\) y la misma función de protección role-relevant. Para toda carga admisible \(\gamma\), cuya ley de respuesta puede escribirse:
+
+\[
+I
+=
+L_\gamma[V],
+\]
+
+el par cerrado fuente+carga satisface en ambos casos exactamente la misma ecuación de frontera:
+
+\[
+V
+=
+V_{\mathrm{oc}}
+-
+Z_{\mathrm{out}}*L_\gamma[V].
+\]
+
+Cuando esa ecuación tiene la misma solución admisible bajo las condiciones del contrato, ambas fuentes inducen los mismos \(V/I\) y, por construcción, los mismos observables derivados \(f,\operatorname{THD},I_{\mathrm{PE}}\) y estados de protección incluidos en \(\mathcal Q^{\rho_{\mathrm{AC}}}\). Por tanto:
 
 \[
 \forall\gamma\in\Gamma^{\rho_{\mathrm{AC}}}:
@@ -8007,13 +8035,17 @@ por ejemplo red+transformación frente a batería+inversor+regulación. Si para 
 (P_{\mathrm{inv}})(\gamma),
 \]
 
-entonces:
+y se deriva:
 
 \[
+\boxed{
 P_{\mathrm{grid}}
 \equiv_{\mathbb I^{\rho_{\mathrm{AC}}}}
 P_{\mathrm{inv}}.
+}
 \]
+
+La equivalencia es de puerto dentro del envelope contractual, no identidad física de las fuentes. Fuera de ese bandwidth, con otra clase de cargas o si la protección deja de coincidir, la conclusión no está licenciada.
 
 La descarga de IC1–IC10 exige aquí una condición física adicional que hace al criterio falsable: el puerto declarado debe ser un cut efectivo para el rol. En un test rig con acoplos relevantes confinados al puerto eléctrico, IC5 se satisface. Si el consumidor también cambia por calor radiado, campo electromagnético, vibración, ground coupling u otra vía no representada, entonces:
 
