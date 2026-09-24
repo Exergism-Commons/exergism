@@ -4664,6 +4664,8 @@ $$
 \boxed{
 \text{ContinuationProfile no puede seguir siendo primitivo.}
 }
+
+**Resolución posterior:** §§0.11.91a–0.11.91i derivan ContinuationProfile desde PersistenceBasis, memo-equivalence y quotient dynamics; esta deuda deja de permanecer abierta a nivel de criterio.
 $$
 
 Debe derivarse de una estructura independiente que determine qué transformaciones son internas a un contexto y qué roles ontológicos de sus contenidos deben preservarse a través de ellas.
@@ -11313,103 +11315,621 @@ cuando:
 
 Entonces InterfaceWall demuestra **subdeterminación relativa al canal**. REV-15 solo podrá promoverla a Muro genealógico fuerte si se prueba que el canal relevante es exhaustivo para la reconstrucción considerada.
 
-#### 0.11.91. Relación con Ship of Theseus y persistencia diacrónica
+#### 0.11.91. Derivación de ContinuationProfile: de invariantes elegidos a dinámica quotientada
 
-Memoization ofrece una vía concreta para investigar la deuda que REV-07g dejó abierta.
+Ship of Theseus había dejado FC3 abierto porque ContinuationProfile era una lista primitiva de rasgos supuestamente importantes. La maquinaria de Interface/Memoization permite eliminar esa primitivización.
 
-Sea una unidad diacrónica con etapas:
-
-\[
-P_i^{(0)}
-\leadsto
-P_i^{(1)}
-\leadsto
-\cdots
-\leadsto
-P_i^{(n)}.
-\]
-
-La identidad no se decide por:
-
-\[
-\operatorname{Parts}(P_i^{(0)})
-=
-\operatorname{Parts}(P_i^{(n)}).
-\]
-
-Una candidata más fuerte es la existencia de una cadena coherente de estados suficientes:
-
-\[
-m_i^{(0)}
-\rightsquigarrow
-m_i^{(1)}
-\rightsquigarrow
-\cdots
-\rightsquigarrow
-m_i^{(n)},
-\]
-
-donde cada actualización satisface el contrato de memoization y las invalidaciones necesarias están justificadas.
-
-Esto no demuestra todavía:
-
-\[
-P_i^{(0)}
-\equiv_{\mathrm{identity}}
-P_i^{(n)}.
-\]
-
-Sí proporciona una estructura objetiva que ContinuationProfile puede intentar preservar sin escoger invariantes post hoc.
-
-En consecuencia, REV-07h propone estudiar:
+La idea central es:
 
 \[
 \boxed{
-\operatorname{MemoContinuation}^{\mathsf M}
-\Longrightarrow?
 \operatorname{ContinuationProfile}
-\Longrightarrow
-\operatorname{FaithfulContinuation}^{\mathsf M},
+\neq
+\text{lista de propiedades que deben permanecer iguales}.
 }
 \]
 
-sin afirmar aún ninguna de las implicaciones como teorema universal.
+Un perfil de continuación debe describir **qué futuros role-relevant siguen abiertos, cómo evoluciona el estado suficiente y qué estructura debe conmutar durante esa evolución**.
 
-#### 0.11.92. Relación con \(\Omega_i\): posible memo-normal form, no definición vigente
+Para ello introducimos primero una base source-side fijada antes de mirar cualquier candidato descendiente.
 
-REV-07e reubicó \(\Omega_i\) como posible representación canónica de estructura generativa módulo trivializaciones admisibles. REV-07h ofrece ahora una construcción candidata más precisa.
+#### 0.11.91a. PersistenceBasis independiente del descendiente
 
-Si una teoría dispone de una familia adecuada de roles:
-
-\[
-\mathcal R_i=\{\rho_1,\rho_2,\ldots\},
-\]
-
-y de estructuras de memoization legítimas:
+Para un token o SourceUnit \(x_i\), una **PersistenceBasis** es:
 
 \[
-\mathcal M_i^{\rho_1},
-\mathcal M_i^{\rho_2},
-\ldots,
+\boxed{
+\operatorname{PersistenceBasis}^{\mathsf M}_i
+(
+x_i;\Pi_i^x,\psi
+)
+}
 \]
 
-puede investigarse si existe alguna canonicalización conjunta:
+con:
+
+\[
+\Pi_i^x
+=
+\left\langle
+\mathcal R_x,
+\Theta_x,
+\mathcal G_x,
+\mathfrak P_x,
+\mathcal N_x
+\right\rangle.
+\]
+
+Sus componentes son:
+
+- \(\mathcal R_x\): familia de roles cuya continuidad está grounded source-side;
+- \(\Theta_x\): contract state conjunto, cerrado bajo interaction roles relevantes;
+- \(\mathcal G_x\): generadores de transformación/update internos que la teoría source-side admite;
+- \(\mathfrak P_x\): requisitos de provenance/lineage que una continuación debe satisfacer;
+- \(\mathcal N_x\): política de novedad permitida —qué cambios pueden aparecer sin destruir por ello la continuación.
+
+El witness \(\psi\) debe descargar **PB1–PB8**.
+
+**PB1 — present-source grounding.** La selección se fundamenta en estructura actual de \(x_i\): SourceUnit, dependencias constitutivas/causales/organizacionales, InterfaceContracts o dinámica productiva ya justificadas. No se deriva de un futuro child.
+
+**PB2 — candidate independence.**
+
+\[
+\operatorname{IndependentOfChild}^{\mathsf M}
+(
+\Pi_i^x,x_k
+)
+\]
+
+para todo candidato posterior \(x_k\). Ningún componente de \(\Pi_i^x\) puede seleccionarse porque precisamente ese candidato lo conserve.
+
+**PB3 — role grounding.** Todo \(\rho\in\mathcal R_x\) debe contar con una razón source-side independiente para formar parte de la persistencia examinada. Un rol decorativo o inventado ad hoc no entra en el perfil.
+
+**PB4 — interaction closure.** Si dos roles de \(\mathcal R_x\) presentan SynRel o una dependencia cross-role independently grounded, \(\Theta_x\) debe incluir el interaction role/contract correspondiente. No se permite construir persistencia a partir de marginals ignorando una interacción conocida.
+
+**PB5 — transition grounding.** Cada \(g\in\mathcal G_x\) debe ser una transformación well-typed admitida por la teoría actual del source —por ejemplo update, proceso productivo, reemplazo organizacional o transición operacional— y no una transformación inventada para conectar retrospectivamente dos endpoints.
+
+**PB6 — maintenance coverage.** Toda dependencia source-side cuya alteración pueda cambiar la satisfacción futura de algún rol de \(\Theta_x\) debe quedar representada por el contract state, un interaction role o los generadores de transición. Si una dependencia relevante queda fuera, la base es incompleta.
+
+**PB7 — provenance/novelty independence.** \(\mathfrak P_x\) y \(\mathcal N_x\) se fijan antes de evaluar al descendiente. La teoría puede permitir novedad, branching o quotienting, pero debe decirlo antes del caso concreto.
+
+**PB8 — recoding + no ontological promotion.** Recodificaciones fieles preservan la base; PersistenceBasis no implica por sí sola ContextIndividuation, identidad absoluta ni RegimeTotal.
+
+PersistenceBasis no pretende decidir de manera universal qué hace que “un barco sea el mismo barco”. Hace una afirmación más precisa: **dada una teoría de persistencia source-side independently grounded, fija todo lo que el test de continuación puede consultar**.
+
+#### 0.11.91b. Quotient dinámico de continuación
+
+Sea:
+
+\[
+E_{\Theta_x}
+=
+\equiv^{\mathrm{memo}}_{i,\Theta_x}
+\]
+
+la memo-equivalence completa inducida por el contract state de la PersistenceBasis.
+
+Sea \(h_x\) una historia actual que termina en la realización \(x_i\). Denotamos:
+
+\[
+q_x
+:=
+[h_x]_{E_{\Theta_x}}.
+\]
+
+Sea:
+
+\[
+\operatorname{Cl}_{\mathcal G_x}
+\]
+
+la menor clausura de continuaciones generada por \(\mathcal G_x\) y las continuation semantics de \(\Theta_x\).
+
+Definimos el espacio alcanzable quotientado:
+
+\[
+Q_x^\Pi
+:=
+\left\{
+[h_x\odot c]_{E_{\Theta_x}}
+\;\middle|\;
+c\in\operatorname{Cl}_{\mathcal G_x},
+\;
+\operatorname{App}(h_x,c)
+\right\}.
+\]
+
+Para cada generador \(g\in\mathcal G_x\), proponemos:
+
+\[
+[h]
+\xrightarrow{g}_{\Pi}
+[h\odot g].
+\]
+
+Esta transición está bien definida solo si:
+
+\[
+\boxed{
+E_{\Theta_x}
+\text{ es right-congruence para todo }g\in\mathcal G_x.
+}
+\]
+
+Si falla, el supuesto estado suficiente no soporta la dinámica de persistencia: debe refinarse el memo/contract state antes de hablar de un ContinuationProfile reentrante.
+
+La observación contractual quotientada es:
+
+\[
+O^\Pi_x([h])
+:=
+\operatorname{Obs}_{\Theta_x}(h),
+\]
+
+entendida módulo la equivalencia observacional fijada por \(\Theta_x\).
+
+#### 0.11.91c. Definición derivada de ContinuationProfile
+
+Cuando PB1–PB8 están descargadas y las transiciones quotient son well-defined, definimos:
+
+\[
+\boxed{
+\operatorname{ContinuationProfile}_i
+(
+x_i;\Pi_i^x
+)
+:=
+\mathsf{CP}_i^x
+}
+\]
+
+con:
+
+\[
+\boxed{
+\mathsf{CP}_i^x
+=
+\left\langle
+Q_x^\Pi,
+q_x,
+\mathcal G_x,
+\Rightarrow_\Pi,
+O_x^\Pi,
+\mathfrak P_x,
+\mathcal N_x
+\right\rangle.
+}
+\]
+
+Por tanto el perfil es un **sistema de transición apuntado y observado**, no una colección de invariantes extensionales.
+
+Sus componentes responden a preguntas distintas:
+
+\[
+\begin{array}{rcl}
+Q_x^\Pi &:& \text{qué estados futuros cuentan como equivalentes para la persistencia},\\
+q_x &:& \text{estado quotient actual},\\
+\mathcal G_x &:& \text{qué transformaciones internas están autorizadas},\\
+\Rightarrow_\Pi &:& \text{cómo evolucionan las clases bajo esas transformaciones},\\
+O_x^\Pi &:& \text{qué conducta contractual debe seguir siendo observable},\\
+\mathfrak P_x &:& \text{qué lineage exige una continuación real},\\
+\mathcal N_x &:& \text{qué novedad puede aparecer sin destruir continuidad}.
+\end{array}
+\]
+
+El perfil puede ser infinito, branching o no determinista. No presupone que exista una lista finita de propiedades esenciales.
+
+#### 0.11.91d. CP-T1 — well-definedness theorem
+
+**CP-T1.** Si:
+
+1. \(\operatorname{PersistenceBasis}(x_i;\Pi,\psi)\);
+2. \(E_\Theta\) es una equivalencia;
+3. \(E_\Theta\) es right-congruence bajo cada generador \(g\in\mathcal G_x\);
+4. \(O^\Pi_x\) es constante sobre clases \(E_\Theta\);
+
+entonces \(\mathsf{CP}_i^x\) es independiente del representante history elegido dentro de cada clase.
+
+**Demostración.** Sean:
+
+\[
+hE_\Theta h'.
+\]
+
+Por right-congruence:
+
+\[
+h\odot g
+E_\Theta
+h'\odot g,
+\]
+
+luego la clase target de la transición no depende del representante. Por definición de \(E_\Theta\), las observaciones contractuales tampoco dependen del representante. Las clausuras compuestas siguen por inducción sobre continuaciones finitas y por el principio adicional de closure cuando la semántica sea infinitaria/continua. \(\square\)
+
+Así el ContinuationProfile está derivado del quotient semántico y de su dinámica; no de una codificación particular del history.
+
+#### 0.11.91e. Realización por MemoState: el perfil no se reifica automáticamente
+
+\(\mathsf{CP}_i^x\) sigue siendo una estructura metateórica. No implica que exista dentro de \(i\) un objeto cuyo contenido sea literalmente el quotient.
+
+Si existe:
+
+\[
+\operatorname{OnticMemoImpl}^{\mathsf M}_i
+(
+\mu_i;M_i,\Theta_x,\omega
+)
+\]
+
+y updates:
+
+\[
+U_g:M_i\to M_i
+\]
+
+que satisfacen MU-T1 para los generadores de \(\mathcal G_x\), entonces el sistema de estados memo realiza el perfil mediante:
+
+\[
+r_\mu:
+M_i
+\to
+Q_x^\Pi,
+\qquad
+r_\mu(\mu(h))
+=
+[h]_{E_{\Theta_x}}.
+\]
+
+Para un MemoExact, \(r_\mu\) identifica exactamente las clases del perfil. Para un MemoOvercomplete, varios estados memo pueden mapear a la misma clase contractual.
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{OnticMemoImpl}
+\text{ puede realizar }
+\operatorname{ContinuationProfile},
+}
+\]
+
+pero:
+
+\[
+\boxed{
+\operatorname{ContinuationProfile}
+\not\Rightarrow
+\operatorname{OnticMemoImpl}.
+}
+\]
+
+#### 0.11.91f. ProfileMorphism: preservación dinámica entre source y descendant
+
+Sean:
+
+\[
+\mathsf{CP}_i^x
+\qquad\text{y}\qquad
+\mathsf{CP}_k^y.
+\]
+
+Una traducción de continuidad:
+
+\[
+\tau
+=
+\langle
+\tau_G,
+\tau_O
+\rangle
+\]
+
+puede enviar un generador source a una continuación target:
+
+\[
+\tau_G(g)
+\in
+\operatorname{Cont}_{k,\Theta_y},
+\]
+
+no necesariamente a un único step atómico.
+
+Definimos:
+
+\[
+\boxed{
+\operatorname{ProfileMorphism}^{\mathsf M}_{i\to k}
+(
+\mathsf{CP}_i^x,
+\mathsf{CP}_k^y;
+\Phi,\tau
+)
+}
+\]
+
+cuando se satisfacen **PM1–PM8**.
+
+**PM1 — root preservation.**
+
+\[
+\Phi(q_x)=q_y
+\]
+
+al nivel contractual declarado.
+
+**PM2 — transition simulation.** Si:
+
+\[
+q\xrightarrow{g}_\Pi q',
+\]
+
+entonces:
+
+\[
+\Phi(q)
+\xRightarrow{\tau_G(g)}
+\Phi(q').
+\]
+
+La flecha target puede expandir un source step en una secuencia, proceso o realization equivalente.
+
+**PM3 — observation preservation.**
+
+\[
+O_y(\Phi(q))
+\simeq_\tau
+\tau_O(O_x(q))
+\]
+
+para todas las dimensiones que \(\Theta_x\) exige preservar.
+
+**PM4 — explicit transformation.** Una estructura source declarada transformable puede cambiar solo mediante una regla de \(\mathcal N_x\) o traducción explicitada; no puede desaparecer silenciosamente.
+
+**PM5 — permitted novelty.** El target puede contener estados, observables o dependencias adicionales siempre que no contradigan PM2–PM4 ni la política \(\mathcal N_x\).
+
+**PM6 — interaction preservation.** Interaction roles incluidos por PB4 deben preservarse/traducirse conjuntamente. No basta con preservar cada marginal si el source profile contiene SynRel relevante.
+
+**PM7 — recoding invariance.** Recodificaciones fieles de ambos perfiles transportan \(\Phi,\tau\) sin cambiar la existencia del morphism.
+
+**PM8 — no inverse requirement.** \(\Phi\) no tiene que ser inyectiva ni sobreyectiva. Continuación permite branching, implementation expansion y quotienting autorizado; un morphism no implica identidad.
+
+#### 0.11.91g. FC3 queda descargado: FaithfulContinuation derivada
+
+Reformulamos la arquitectura de FaithfulContinuation.
+
+Para admitir:
+
+\[
+\operatorname{FaithfulContinuation}^{\mathsf M}_{i\to k}
+(
+x_i,y_k;
+\gamma,\tau
+),
+\]
+
+se requiere:
+
+1. endpoints correctamente tipados;
+2. una PersistenceBasis source-side:
+
+\[
+\operatorname{PersistenceBasis}^{\mathsf M}_i
+(
+x_i;\Pi_i^x,\psi
+);
+\]
+
+3. el ContinuationProfile derivado \(\mathsf{CP}_i^x\);
+4. una PersistenceBasis/profile target compatible cuando el target vaya a soportar continuidad ulterior;
+5. provenance independently grounded de la trayectoria \(\gamma\), mediante ProvLink o witness específico de formación;
+6. un ProfileMorphism:
+
+\[
+\operatorname{ProfileMorphism}^{\mathsf M}_{i\to k}
+(
+\mathsf{CP}_i^x,
+\mathsf{CP}_k^y;
+\Phi,\tau
+);
+\]
+
+7. no retroactivity y no index collapse.
+
+Con ello, la antigua FC3:
+
+\[
+\text{“existe un ContinuationProfile previo no post hoc”}
+\]
+
+queda sustituida por un criterio constructivo:
+
+\[
+\boxed{
+\operatorname{PersistenceBasis}
++
+E_\Theta
++
+\text{quotient dynamics}
+\Longrightarrow
+\operatorname{ContinuationProfile}.
+}
+\]
+
+La independencia respecto del child viene de PB2, no de una promesa informal.
+
+FC4 y FC5 quedan absorbidas por PM2–PM4; FC6 por PM5; FC9 por PM7. FC2 sigue siendo indispensable y separado: un ProfileMorphism perfecto sin provenance describe una réplica estructural, no una continuación genealógica.
+
+FC10/auditability exige ahora exhibir:
+
+\[
+\boxed{
+\psi,\;
+\Theta_x,\;
+\mathsf{CP}_i^x,\;
+\pi_\gamma,\;
+\Phi,\;
+\tau
+}
+\]
+
+o equivalentes formalmente transportados. No exige que el child reconstruya internamente toda la provenance.
+
+#### 0.11.91h. FC-T1 — réplica, branching y composición
+
+**Réplica perfecta.** Puede existir:
+
+\[
+\operatorname{ProfileMorphism}
+(
+\mathsf{CP}_i^x,
+\mathsf{CP}_k^z
+)
+\]
+
+sin ProvLink. Entonces:
+
+\[
+\boxed{
+\operatorname{ProfileMorphism}
+\not\Rightarrow
+\operatorname{FaithfulContinuation}.
+}
+\]
+
+Se conserva el resultado F1 sin recurrir a semejanza superficial.
+
+**Branching.** Un mismo profile source puede admitir:
+
+\[
+\Phi_1:
+\mathsf{CP}_i^x\to\mathsf{CP}_k^{y_1},
+\qquad
+\Phi_2:
+\mathsf{CP}_i^x\to\mathsf{CP}_k^{y_2}
+\]
+
+con provenance válida para ambas trayectorias. FaithfulContinuation sigue siendo relacional, no funcional.
+
+**Composición condicional.** Supóngase:
+
+\[
+x_i
+\overset{FC}{\longrightarrow}
+y_k
+\overset{FC}{\longrightarrow}
+z_\ell.
+\]
+
+Si:
+
+1. los ProfileMorphisms son composables;
+2. las traducciones satisfacen coherencia:
+
+\[
+\tau_{i\ell}
+\simeq
+\tau_{k\ell}\circ\tau_{ik};
+\]
+
+3. la provenance compone como witness metateórico;
+4. no ocurre una invalidación intermedia del contract state no reparada mediante rehydration;
+
+entonces:
+
+\[
+\boxed{
+\operatorname{FC}_{i\to k}(x,y)
++
+\operatorname{FC}_{k\to\ell}(y,z)
++
+\operatorname{FCStageCompatibility}
+\Longrightarrow
+\operatorname{FC}_{i\to\ell}(x,z).
+}
+\]
+
+Así la antigua cautela “FC no es transitiva automáticamente” se conserva, pero ahora sabemos exactamente qué hace falta para componerla.
+
+#### 0.11.91i. Ship of Theseus: qué queda resuelto y qué no
+
+Sea una secuencia:
+
+\[
+x^{(0)}
+\leadsto
+x^{(1)}
+\leadsto
+\cdots
+\leadsto
+x^{(n)}
+\]
+
+en la que incluso todos los constituyentes materiales pueden haber sido reemplazados.
+
+Si existe una PersistenceBasis independently grounded y cada transición induce updates well-defined sobre el mismo quotient dinámico —o refinements correctamente rehidratados—, entonces el cambio total de piezas **no refuta** la continuidad:
+
+\[
+\operatorname{Parts}(x^{(0)})
+\cap
+\operatorname{Parts}(x^{(n)})
+=
+\varnothing
+\]
+
+es compatible con una cadena de ProfileMorphisms/updates.
+
+A la inversa, conservar todas las piezas tampoco basta si se rompe la dinámica contractual, la provenance exigida o aparece una invalidación no reparada.
+
+La maquinaria no pretende resolver por decreto todos los casos ordinarios de “el mismo barco”. Si una teoría no puede justificar PB1–PB8 para el barco, no obtiene una respuesta gratuita. Lo que sí queda resuelto es la circularidad formal de FC3:
+
+\[
+\boxed{
+\text{el perfil ya no se selecciona mirando qué conserva el descendiente.}
+}
+\]
+
+Se deriva source-side de roles, interfaces, interactions, memo-equivalence y dinámica de update previamente justificados.
+
+Por tanto la deuda específica de **derivar ContinuationProfile y coordinarlo con FaithfulContinuation sin invariantes post hoc** queda **RESOLVED a nivel de criterio**.
+
+#### 0.11.92. Relación con \(\Omega_i\): ContinuationProfile ya no depende de \(\Omega_i\)
+
+REV-07e había dejado abierta una ruta provisional en la que \(\Omega_i\) podía anteceder a ContinuationProfile. Esa dirección queda ahora **SUPERSEDED**: §§0.11.91a–0.11.91i derivan \(\mathsf{CP}_i^x\) directamente desde PersistenceBasis + contract state + memo-equivalence + quotient dynamics.
+
+Por tanto no se usa:
+
+\[
+\Omega_i
+\Longrightarrow
+\operatorname{ContinuationProfile}_i.
+\]
+
+La pregunta restante va en la dirección opuesta. Si una teoría dispone de una familia independently grounded de PersistenceBases y perfiles:
+
+\[
+\left\{
+\mathsf{CP}_i^x
+\right\}_{x\in\mathcal U_i},
+\]
+
+coordinada con estructura generativa y Bakes admisibles, puede investigarse si existe alguna canonicalización conjunta:
 
 \[
 \Omega_i
 \stackrel{?}{\simeq}
 \operatorname{Can}
 \left(
-\{\mathcal M_i^\rho\}_{\rho\in\mathcal R_i}
+\text{generative structure},
+\{\mathsf{CP}_i^x\},
+\text{admissible Bake/Prov data}
 \right).
 \]
 
 No se adopta esta igualdad como definición. Permanecen al menos cuatro deudas:
 
-1. qué familia de roles es suficiente y no elegida post hoc;
-2. cómo combinar roles potencialmente no equivalentes;
-3. si existe canonicalización sin pérdida de estructura necesaria para continuidad;
-4. cómo coordinarla con trivializaciones quotient y provenance.
+1. qué familia de PersistenceBases/perfiles es suficiente para una firma de contexto y no meramente para units locales;
+2. cómo canonicalizar perfiles branching, interaction roles y transformaciones sin borrar estructura generativa relevante;
+3. si existe una normal form canónica bajo recoding y Bakes admisibles;
+4. cómo coordinar esa canonicalización con provenance y ContextIndividuation sin usar \(\Omega_i\) retroactivamente.
 
 La ruta de dependencia admisible sería:
 
@@ -11421,11 +11941,13 @@ i
 \to
 \text{estructura generativa/iterativa}
 \to
-\text{memoization adecuada}
+\operatorname{PersistenceBasis}
 \to
-\Omega_i
+\operatorname{ContinuationProfile}
 \to
-\text{auditoría de continuidad/baking}.
+\text{auditoría de continuidad/baking}
+\to?
+\Omega_i.
 }
 \]
 
@@ -11503,10 +12025,9 @@ Y aparecen tres resultados arquitectónicos fuertes:
 
 Las deudas de InterfaceContract, RoleAdequate y MemoState/update/invalidation quedan **RESOLVED formal/a nivel de criterio**; la composicionalidad cross-role queda **RESOLVED condicionalmente**. §§0.11.87–0.11.87i coordinan B1–B10 con esos resultados: B7 usa ahora decodificación entre quotients contractuales source/target, BS-T1 demuestra soundness, la composición horizontal exige preservar interaction information, la vertical exige ContractAlignment y BS-T2 prueba no-recovery desde un Bake ya colapsado; RehydrateAdequate caracteriza side information suficiente. Para cerrar REV-07h completo falta:
 
-1. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
-2. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
-3. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
-4. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
+1. decidir si alguna implementación TR-M basada en PersistenceBasis/ContinuationProfile puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
+2. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
+3. investigar, sin presuponerlo, si una familia contextualmente adecuada de ContinuationProfiles + estructura generativa/Bake puede inducir \(\Omega_i\).
 
 La ganancia inmediata no es demostrar identidad contextual, sino aislar la estructura que faltaba entre individuación y recontextualización:
 
