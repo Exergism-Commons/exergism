@@ -5451,6 +5451,224 @@ $$
 
 y la membrana deja de ser metáfora si se entiende como **perfil de frontera tipada, clausura, epistemología e interfaces**, manteniendo esas capas formalmente separadas.
 
+#### 0.11.55. Auditoría de dependencias: la maquinaria vigente todavía no deriva la individuación inicial
+
+REV-07g permite formular una pregunta más dura: ¿puede $\chi$ eliminarse en favor de nociones ya presentes?
+
+La respuesta actual es **no, no globalmente**. Cada candidato existente falla por una razón distinta.
+
+**ContextUnity / JointRealizable es demasiado débil.**
+
+$$
+\operatorname{ContextUnity}^{\mathsf M}(C_a,C_b)
+:=
+\operatorname{JointRealizable}^{\mathsf M}(C_a,C_b)
+$$
+
+solo prueba realizabilidad conjunta. §0.11.6 ya mostró que una integración estable puede revelar SharedOntSpace o constituir ContextGenesis. Por tanto JointRealizable no decide por sí solo si hay una unidad preexistente.
+
+**GeneUnity / CommonGround es demasiado fuerte.** REV-07f permite una $R_i$ multigeneal con varias GeneUnit independientes. Exigir common ground global volvería a introducir monogeneidad por la puerta de atrás.
+
+**RegimeTotal llega demasiado tarde.** La fórmula:
+
+$$
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+$$
+
+ya presupone que $\mathfrak G_i$ es una GeneBasis tipada en **el mismo contexto $i$**. No puede explicar sin circularidad por qué ese $i$ era una unidad.
+
+**REC llega aún más tarde.** Es consecuencia de RegimeTotal y, por tanto, no puede fundamentar el corte que RegimeTotal ya presupone.
+
+**El Muro tiene la dirección equivocada.** Restringe inferencias epistemológicas desde $U_i$; una sandbox opaca puede satisfacer el patrón epistémico sin ser una unidad ontológica total.
+
+**$\Omega_i$ es post-individuación.** §0.11.47 la reubica como posible representación canónica de estructura generativa módulo trivialización. Usarla para crear el contexto cuyo historial debe resumir sería circular.
+
+**GenesisConstitutiveUnity sí explica algo, pero solo localmente.** Puede justificar la unidad child-side de una génesis concreta; no explica por sí sola la individuación de un contexto preexistente que no se esté tratando como hijo de una ContextGenesis conocida.
+
+El resultado de dependencia es:
+
+$$
+\boxed{
+\text{la doctrina actual presupone una noción de identidad/unidad de contexto
+que todavía no reduce a sus demás predicados.}
+}
+$$
+
+Esto no es una inconsistencia. Es exactamente la deuda que ya anunciaba el estado normativo al exigir justificar independientemente «qué hace que dos dominios pertenezcan al mismo régimen $i$». REV-07g la aísla ahora como problema de **individuación contextual**.
+
+#### 0.11.56. Metavariable provisional frente a índice admitido
+
+Hay una circularidad aparente en ContextGenesis:
+
+1. para probar GenesisConstitutiveUnity escribimos ya $x_k,g_k,\operatorname{OriginUnity}_k$;
+2. pero el propósito de esa prueba es precisamente justificar que existe un contexto nuevo $k$.
+
+La salida no es eliminar el tipado provisional, sino distinguir su estatus lógico.
+
+Usaremos esquemáticamente:
+
+$$
+\widehat{k}
+$$
+
+para un **parámetro de prueba provisional**. Permite comprobar si una candidatura child-side es internamente tipable y satisface las obligaciones de unidad, pero no afirma todavía que se haya admitido un nuevo contexto ontológico.
+
+Por tanto:
+
+$$
+\boxed{
+\text{usar }\widehat{k}\text{ para chequear una candidatura}
+\not\Rightarrow
+\text{haber justificado }k.
+}
+$$
+
+La descarga final sería un juicio metateórico, no un evento objeto:
+
+$$
+\operatorname{IndexAdmission}^{\mathsf M}
+(C_{\widehat{k}}\Downarrow k;\chi).
+$$
+
+Este juicio no introduce a $k$ como miembro de un dominio de índices. Registra que la candidatura provisional ha satisfecho un criterio de individuación suficiente para que el metalenguaje use en adelante $k$ como metavariable de contexto admitida.
+
+La secuencia conceptual correcta pasa a ser:
+
+$$
+\boxed{
+C
+\xrightarrow{\text{provisional typing}}
+C_{\widehat{k}}
+\xrightarrow{\chi}
+\operatorname{IndexAdmission}^{\mathsf M}(C_{\widehat{k}}\Downarrow k)
+\xrightarrow{}
+\text{investigación de RegimeTotal}_k.
+}
+$$
+
+Así se conserva la intuición de que el índice es consecuencia de individuación sin exigir que la individuación se formule en un lenguaje completamente carente de tipos. Lo prioritario es la **justificación** del tipo, no la inexistencia de scaffolding tipado durante la prueba.
+
+#### 0.11.57. La ontogénesis puede descargar parte de $\chi$; SharedOntSpace no
+
+Para un hijo genuinamente constituido, la maquinaria ya ofrece un candidato parcial de individuación:
+
+$$
+\chi^{\mathrm{gen}}_{\widehat{k}}
+:=
+\langle
+g_{\widehat{k}},
+\operatorname{GenesisConstitutiveUnity}_{\widehat{k}},
+\operatorname{OntOrigin}_{\widehat{k}},
+\operatorname{NoInternalFormation}
+\rangle,
+$$
+
+entendido otra vez como esquema metateórico y no como tupla-objeto.
+
+La pieza decisiva es combinar:
+
+1. unidad constitutiva child-side;
+2. OntOrigin no retroactivo;
+3. el test de §0.11.22: si toda la formación es representable como OntProd/GenEvent interno de un precursor, no hay motivo para admitir un índice nuevo;
+4. CI6–CI8: invariancia de recodificación, granularidad no arbitraria y anti-agregación.
+
+Esto sugiere una regla candidata:
+
+$$
+\boxed{
+\operatorname{GenuineContextGenesis}^{\mathsf M}
++
+\chi^{\mathrm{gen}}_{\widehat{k}}
+\Longrightarrow
+\operatorname{IndexAdmission}^{\mathsf M}
+(C_{\widehat{k}}\Downarrow k).
+}
+$$
+
+No se declara todavía teorema porque NoInternalFormation y la unicidad/granularidad de la individuación necesitan una semántica independiente.
+
+El caso SharedOntSpace es más difícil. Precisamente porque puede ser multigeneal:
+
+$$
+\operatorname{SharedOntSpace}^{\mathsf M}
+\not\Rightarrow
+\operatorname{CommonGround}^{\mathsf M},
+$$
+
+ni OriginUnity global ni una génesis child-side pueden fundar su unidad. Hace falta una noción adicional de **Native/ambient Context Individuation** que explique por qué varias genealogías pertenecen a un mismo espacio previo sin definirlo simplemente como «todo lo que hemos decidido tipar junto».
+
+Esto divide REV-07g en dos deudas:
+
+$$
+\boxed{
+\begin{array}{ll}
+\text{GI:} & \text{individuación por génesis — parcialmente descargable con REV-07e;}\\
+\text{AI:} & \text{individuación de espacio preexistente — todavía abierta.}
+\end{array}
+}
+$$
+
+La segunda es la deuda fundamental. Si AI no se resuelve, SharedOntSpace sigue siendo una noción bien tipada para razonar condicionalmente, pero la teoría no posee todavía un criterio no circular completo para **descubrir** dónde termina una unidad contextual preexistente y empieza otra.
+
+#### 0.11.58. Resultado: Cellular Reality localiza el verdadero problema de identidad
+
+La principal ganancia de REV-07g no es haber demostrado que la realidad «es una célula». Es haber separado tres preguntas que antes podían confundirse:
+
+$$
+\boxed{
+\begin{aligned}
+\text{Individuación sincrónica:}&\quad
+\text{¿por qué esto cuenta como una unidad contextual?}\\
+\text{Persistencia diacrónica:}&\quad
+\text{¿por qué sigue siendo la misma unidad tras cambiar?}\\
+\text{Ontogénesis:}&\quad
+\text{¿cuándo una transformación constituye una unidad nueva?}
+\end{aligned}
+}
+$$
+
+La arquitectura vigente tiene respuestas parciales muy distintas:
+
+- **sincronía:** abierta en el caso SharedOntSpace/ambient;
+- **persistencia:** abierta en FC3/$\Omega_i$/trivialización;
+- **ontogénesis:** bastante más desarrollada mediante ContextGenesis + GenesisConstitutiveUnity + No-Weak-Genesis.
+
+Por tanto no conviene introducir un nuevo primitivo CellIdentity. El target más económico es fortalecer una única familia metateórica de juicios de **ContextIndividuation**, de la que la admisión del índice sea una salida representacional:
+
+$$
+\boxed{
+\operatorname{ContextIndividuation}^{\mathsf M}
+\Longrightarrow
+\operatorname{IndexAdmission}^{\mathsf M}.
+}
+$$
+
+Después:
+
+$$
+\operatorname{IndexAdmission}^{\mathsf M}
+\not\Rightarrow
+\operatorname{RegimeTotal},
+$$
+
+porque haber individuado un contexto no demuestra todavía que su GeneBasis, RegimeClosure y scope total existan. Esto mantiene limpia la jerarquía:
+
+$$
+\boxed{
+\text{individuación}
+<
+\text{tipado admitido}
+<
+\text{totalización de régimen}
+<
+\text{REC}.
+}
+$$
+
+El Muro permanece ortogonal como restricción epistemológica.
+
+En consecuencia, **Cellular Reality es útil incluso si el nombre se abandona después**: ha revelado que la deuda de identidad de REV-07 no es una sola. La teoría distingue ahora nacimiento, persistencia y unidad sincrónica, y el agujero más profundo está en la última para contextos preexistentes multigeneales.
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 **Advertencia PureOntRel.** Una relación pura puede servir como enlace ontológico de marco sin preservar una única genealogía. Por ello no se incorpora automáticamente a $\Lambda_*$ cuando esta pretende reconstruir $\operatorname{Generated}^{*}$: si conecta dos genealogías sin common ground, produciría sobreinclusión y haría fallar $\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}$. Su admisión como enlace reconstructivo requiere una justificación adicional de soundness; RelIntegrable por sí sola no basta.
