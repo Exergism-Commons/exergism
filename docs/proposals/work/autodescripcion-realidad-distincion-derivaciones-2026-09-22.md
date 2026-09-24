@@ -6759,6 +6759,302 @@ La versión fuerte de Cellular Reality queda así:
 no “todo \(R_i\) es una célula porque tiene subíndice y closure”.
 
 
+#### 0.11.79a. No-R no debe reificarse como estado precursor
+
+La intuición «si nada existiera, de algún modo tendría que surgir algo» debe separarse de una transición ontológica literal:
+
+$
+\operatorname{NoR}
+\longrightarrow
+\operatorname{ExistsR}.
+$
+
+La formulación anterior sería engañosa si se leyera como una dinámica, porque:
+
+$
+\operatorname{NoR}
+:\Longleftrightarrow
+\neg\operatorname{ExistsR}
+$
+
+es una **metasentencia**, no un objeto, sustrato, estado físico ni contexto precursor capaz de ejecutar una operación. En particular, esta ruta queda descartada:
+
+$
+\text{Nothing}
+\xrightarrow{\operatorname{Inv}}
+R_i.
+$
+
+También queda descartado inferir existencia a partir de una mera negación lógica:
+
+$
+\neg\operatorname{ExistsR}
+\not\Rightarrow
+\operatorname{ExistsR}.
+$
+
+Por tanto, si la intuición contiene una tesis metafísica defendible, no puede ser «la Nada produce algo», sino una tesis de **imposibilidad de realización de la ausencia absoluta**.
+
+Introducimos solo como esquema de investigación un marcador metateórico:
+
+$
+\operatorname{Null}^{\mathsf M},
+$
+
+que **no denota una entidad**. Abrevia la candidatura límite «ausencia de toda determinación ontológica realizada». La pregunta no es qué propiedades tiene una cosa llamada Null, sino si una candidatura de ausencia absoluta puede contar coherentemente como realización.
+
+La hipótesis fuerte sería:
+
+$
+\boxed{
+\neg\operatorname{AdmissiblyRealizable}^{\mathsf M}
+(\operatorname{Null}^{\mathsf M})
+}
+$
+
+o, si una futura metalógica modal lo permite sin introducir un dominio ilícito de mundos/contextos:
+
+$
+\neg\Diamond^{\mathsf M}\operatorname{NoR}.
+$
+
+Esta última notación es **provisional**: REV-07g no presupone todavía una semántica modal global capaz de cuantificar sobre realizaciones de todos los contextos. No puede usarse para importar de contrabando Absolute Generality, un conjunto de mundos posibles ni un sort ontológico de índices.
+
+#### 0.11.79b. Reductio candidato: realización implica determinación
+
+La vía conceptualmente más fuerte no hace que la nada «actúe». Ataca la coherencia de una realización absolutamente indeterminada.
+
+Sea, todavía esquemáticamente:
+
+$
+\operatorname{Realization}^{\mathsf M}(C)
+$
+
+un juicio metateórico de realización que **no** equivale por definición a `ExistsR`, RegimeTotal, IndexAdmission ni ContextIndividuation. Su contenido debe justificarse independientemente antes de hacer trabajo doctrinal.
+
+La hipótesis mínima a investigar es:
+
+$
+\boxed{
+\operatorname{Realization}^{\mathsf M}(C)
+\Rightarrow
+\operatorname{Determinate}^{\mathsf M}(C).
+}
+$
+
+No significa que toda realidad deba poseer una descripción completa, clásica o bivalente. `Determinate` significa únicamente que la realización no puede ser absolutamente carente de toda diferencia ontológicamente eficaz: debe haber algún rasgo cuya presencia/ausencia, estructura, rol o límite impida identificarla con una ausencia total de determinación.
+
+Si además `Null^M` se caracteriza exactamente por:
+
+$
+\operatorname{Null}^{\mathsf M}(C)
+\Rightarrow
+\neg\operatorname{Determinate}^{\mathsf M}(C),
+$
+
+entonces la conjunción:
+
+$
+\operatorname{Realization}^{\mathsf M}(C)
+\land
+\operatorname{Null}^{\mathsf M}(C)
+$
+
+sería incoherente bajo esas premisas.
+
+El objetivo sería obtener un resultado del tipo:
+
+$
+\boxed{
+\operatorname{Realization}^{\mathsf M}(C)
+\Rightarrow
+\neg\operatorname{Null}^{\mathsf M}(C).
+}
+$
+
+Esto todavía **no demuestra** `ExistsR`. Para hacerlo harían falta al menos dos puentes independientes:
+
+1. justificar que existe alguna `Realization^M` sin presuponer `ExistsR`;
+2. demostrar que una realización así satisface la arquitectura exigida por REV-07/REV-07g hasta producir una instanciación admisible de RegimeTotal.
+
+Sin esos puentes, la tesis solo muestra una incompatibilidad conceptual entre «realización» y «ausencia absoluta de determinación».
+
+#### 0.11.79c. La distinción cambia de papel: de causa del ser a condición de individuación
+
+Esta separación corrige la hipótesis anterior de una «inversión primordial».
+
+No necesitamos postular:
+
+$
+\text{indeterminación}
+\xrightarrow{\operatorname{Inv}^{0}}
+\text{primera distinción}
+\xrightarrow{}
+R_i.
+$
+
+La inversión ordinaria ya presupone una distinción orientada:
+
+$
+D=\langle A,B\rangle,
+\qquad
+\operatorname{Inv}(D)=\langle B,A\rangle,
+$
+
+por lo que usar la misma operación para explicar la primera distinción sería circular salvo que `Inv^0` recibiese una semántica independiente. Mientras esa semántica no exista, `Inv^0` no debe entrar en el núcleo.
+
+La arquitectura de investigación queda dividida en dos preguntas:
+
+$
+\boxed{
+\begin{array}{ll}
+\mathrm{NQ}:&
+\text{¿puede la ausencia absoluta ser una realización admisible?}\\[1mm]
+\mathrm{IQ}:&
+\text{dada alguna realización, ¿qué diferencia efectiva funda su individuación contextual?}
+\end{array}
+}
+$
+
+Una respuesta negativa fuerte a NQ podría explicar por qué no hay No-R sin convertir la Nada en causa. Una respuesta positiva a IQ podría descargar una teoría concreta de `ContextIndividuation`.
+
+El candidato de IQ ya no es «cualquier diferencia». Debe ser una **distinción efectiva**:
+
+$
+\operatorname{EffDist}^{\mathsf M}_{\mathcal T}(C;\delta),
+$
+
+donde una teoría independiente `\mathcal T` justifica que `\delta` hace una diferencia constitutiva para el corte contextual. El esquema sería:
+
+$
+\operatorname{EffDist}^{\mathsf M}_{\mathcal T}(C;\delta)
+\land
+\operatorname{DistAdequate}^{\mathsf M}(\mathcal T,C,\delta)
+\Rightarrow
+\operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi_{\delta}),
+$
+
+y solo entonces:
+
+$
+\operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi_{\delta})
+\land
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_{\delta})
+\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_{\delta})
+\Rightarrow
+\operatorname{IndexAdmission}^{\mathsf M}
+(C\Downarrow i;\chi_{\delta},\mathcal T).
+$
+
+`DistAdequate` debe heredar al menos IA0–IA10 y añadir guards específicos:
+
+1. **DA1 / no bare partition:** una bipartición descriptiva `A|B` no basta; debe existir estructura positiva que haga ontológicamente eficaz la diferencia.
+2. **DA2 / no null reification:** `\delta` no se obtiene atribuyendo propiedades, operaciones o potencia causal a Nothing/NoR.
+3. **DA3 / effectivity:** variar, eliminar o invertir la diferencia debe alterar alguna condición relevante de co-tipado, boundary production, organización o interfaces bajo `\mathcal T`; una etiqueta sin consecuencias falla.
+4. **DA4 / target independence:** el efecto no se define como «aquello que produce exactamente el contexto que queremos admitir».
+5. **DA5 / rival-distinction discipline:** si dos diferencias efectivas inducen cortes incompatibles del mismo nivel, se exige equivalencia, nesting explícito o rechazo de al menos una.
+6. **DA6 / no context proliferation:** diferencias internas ordinarias de un subsistema no producen automáticamente nuevos contextos.
+7. **DA7 / genesis sensitivity:** una diferencia preexistente y una diferencia constituida por una formación deben poder distinguir SharedOntSpace de ContextGenesis.
+8. **DA8 / persistence debt:** una distinción sincrónica no decide por sí sola identidad diacrónica; sigue abierta la coordinación con ContinuationProfile, `\Omega_i` y FaithfulContinuation.
+
+Por tanto:
+
+$
+\boxed{
+\text{difference}
+\not\Rightarrow
+\text{ContextIndividuation},
+}
+$
+
+pero queda abierta la ruta:
+
+$
+\boxed{
+\text{independently grounded effective distinction}
+\Rightarrow
+\operatorname{Ind}_{\mathcal T}
+\Rightarrow
+\text{ContextIndividuation}.
+}
+$
+
+#### 0.11.79d. Stress tests para NQ/IQ
+
+**ND1 — “el hecho de que nada exista existe”.** Se intenta refutar No-R diciendo que existe el hecho/proposición «nada existe».
+
+Falla por cambio ilegítimo de nivel. La disponibilidad metalingüística de una sentencia no produce un hecho objeto ni una GeneUnit.
+
+**ND2 — “Nothing tiene una propiedad”.** Se atribuye a Nothing la propiedad de ser nada, indeterminada, inestable o capaz de invertirse.
+
+Falla DA2: reifica exactamente aquello cuya ausencia se pretendía analizar.
+
+**ND3 — negación clásica.** De `NoR = not ExistsR` se pretende derivar `ExistsR`.
+
+Inválido sin una premisa adicional. NQ requiere una tesis metafísica independiente sobre realizabilidad/determinación.
+
+**ND4 — determinación semántica.** Se argumenta que, como podemos describir `Null^M`, ya está determinada.
+
+Falla: determinación de una representación metalingüística no implica determinación ontológica de lo representado.
+
+**ND5 — partición arbitraria.** Dada una realización, un analista selecciona cualquier predicado `P` y usa `P/not-P` como primera distinción.
+
+Falla DA1/DA4/DA5. La distinción debe hacer trabajo world-making independientemente del interés descriptivo.
+
+**ND6 — quantum/indeterminacy objection.** Se interpreta `Determinate^M` como valores clásicos completos y se concluye que la indeterminación física refuta el esquema.
+
+El ataque falla contra la versión mínima: `Determinate^M` no exige valores definidos para toda magnitud; exige únicamente no-nullidad ontológica, esto es, alguna estructura/diferencia efectiva.
+
+**ND7 — empty structure.** Una teoría formal admite una estructura con dominio vacío y la identifica con No-R.
+
+No basta. La existencia matemática/metalingüística de una estructura vacía no demuestra que constituya una realización ontológica admisible ni que satisfaga los puentes de REV-07.
+
+**ND8 — existence smuggling.** Se define `Realization^M(C)` de tal manera que ya implique RegimeTotal o ExistsR.
+
+Falla metodológicamente. El reductio sería circular y no añade evidencia.
+
+#### 0.11.79e. Resultado provisional
+
+La investigación queda reordenada:
+
+$
+\boxed{
+\text{No-R / null-realizability problem}
+\quad\text{antes de}\quad
+\text{context-individuation problem}.
+}
+$
+
+La cadena heurística más prometedora es:
+
+$
+\text{no absolute null realization}
+\leadsto
+\text{some ontological realization}
+\leadsto
+\text{effective determination}
+\leadsto
+\text{effective distinction}
+\leadsto
+\text{ContextIndividuation}
+\leadsto
+\text{IndexAdmission}
+\leadsto
+\text{REV-07 genealogy/closure}.
+$
+
+Las flechas `\leadsto` son **obligaciones de investigación**, no implicaciones demostradas.
+
+Esto produce una separación conceptual importante:
+
+- la imposibilidad de No-R, si se demuestra, respondería a por qué no puede haber ausencia ontológica absoluta;
+- la distinción efectiva respondería a cómo una realización obtiene una frontera/unidad contextual;
+- RegimeTotal respondería a cómo esa unidad realiza exhaustivamente un régimen;
+- REV-07h seguiría tratando cómo unidades ya individuadas exponen interfaces, memorizan estado relevante y pueden ser baked en otros contextos.
+
+La hipótesis de inversión queda por ahora degradada: puede reaparecer como operación sobre distinciones ya orientadas, pero **no** se usa para producir existencia ni para fundar la primera individuación.
+
 #### 0.11.80. REV-07h — Interface, Memoization y Baking: qué puede importar aguas abajo
 
 REV-07e introdujo GenesisTrivialization para expresar que una rama parental compleja puede quedar representada child-side por una contribución suficiente. REV-07g mostró después que la individuación no puede darse por supuesta: el índice registra una unidad ya justificada y no crea por sí mismo el corte que etiqueta.
