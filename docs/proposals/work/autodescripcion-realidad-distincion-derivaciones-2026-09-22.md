@@ -5669,6 +5669,249 @@ El Muro permanece ortogonal como restricción epistemológica.
 
 En consecuencia, **Cellular Reality es útil incluso si el nombre se abandona después**: ha revelado que la deuda de identidad de REV-07 no es una sola. La teoría distingue ahora nacimiento, persistencia y unidad sincrónica, y el agujero más profundo está en la última para contextos preexistentes multigeneales.
 
+#### 0.11.59. La ruta pre-ontológica no puede fabricar individuación contextual
+
+La clausura generalizada \(\mathcal C_*\) parece a primera vista un candidato natural para AI porque se construye antes de fijar un índice. Esa lectura es incorrecta.
+
+Por diseño:
+
+\[
+T_q^{\mathcal C}
+:=
+\mathcal C_*(\{q\})
+\]
+
+es solo un carrier candidato relativo a reglas \(\mathfrak G_*\) independientes. El teorema:
+
+\[
+\mathrm{CSet}
++
+\mathrm{CProcStable}
++
+\mathrm{CWF}
++
+\mathrm{SigSmall}_{\mathcal C}
++
+\mathrm{ActualSep}_{\mathcal C}
+\Rightarrow
+\operatorname{SemTotal}_{\mathcal C}(S_q^{\mathcal C})
+\]
+
+es explícitamente pre-ontológico. No contiene SameRegime, CoReal, StructAdm\(_i\), CS, CC ni un juicio de identidad de contexto.
+
+El salto ontológico aparece solo después mediante:
+
+\[
+\eta_i^{\mathcal C}:
+T_q^{\mathcal C}
+\rightsquigarrow
+\{x_i\},
+\]
+
+junto con CS\({}^{gen}_{\mathcal C,i}\), CC\({}^{gen}_{\mathcal C,i}\), RA y las obligaciones de realización de scope.
+
+Por tanto usar ahora \(\mathcal C_*\) para **definir** el contexto \(i\) invertiría la dependencia:
+
+\[
+\mathcal C_*
+\Longrightarrow
+i
+\Longrightarrow
+\eta_i^{\mathcal C},
+\]
+
+cuando la arquitectura vigente solo autoriza:
+
+\[
+\mathcal C_*
++
+\eta_i^{\mathcal C}
++
+\text{adecuación ontológica}
+\Longrightarrow
+\text{reconstrucción dentro de }i.
+\]
+
+La conclusión es:
+
+\[
+\boxed{
+\operatorname{SemTotal}_{\mathcal C}
+\not\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}.
+}
+\]
+
+Esto no es una nueva limitación de la Ruta B; preserva exactamente la separación por la que fue construida. Una clausura semántica puede ser matemáticamente exhaustiva respecto de su carrier y seguir sin decir por qué ese carrier corresponde a **una** unidad ontológica en vez de a una selección representacional.
+
+#### 0.11.60. SharedOntSpace tampoco descarga AI: presupone una instanciación común
+
+La formulación vigente dice:
+
+\[
+\operatorname{SharedOntSpace}^{\mathsf M}(C_a,C_b;k)
+\]
+
+cuando existe una **instanciación admisible \(k\)** en la que ambos candidatos tienen realizaciones fieles y su coexistencia no depende constitutivamente del hecho integrador usado para descubrirla.
+
+Esto es correcto como criterio **relativo a una unidad contextual ya disponible**. Pero precisamente por contener \(k\) no puede servir como explicación última de la admisibilidad de \(k\).
+
+REV-07g obliga a distinguir dos preguntas:
+
+\[
+\boxed{
+\begin{aligned}
+\text{coalescencia local:}&\quad
+\text{¿deben }C_a,C_b\text{ tratarse dentro del mismo contexto?}\\
+\text{individuación global:}&\quad
+\text{¿qué hace que ese contexto sea una unidad y dónde termina?}
+\end{aligned}
+}
+\]
+
+SharedOntSpace puede aportar evidencia fuerte para la primera. No responde automáticamente a la segunda.
+
+En particular, cerrar transitivamente una relación de co-realizabilidad tampoco resuelve el problema:
+
+\[
+\operatorname{JointRealizable}^{\mathsf M}
+\stackrel{*}{\longrightarrow}
+\text{contexto}
+\]
+
+reintroduciría por otra vía la vieja idea de que conectividad/amalgamabilidad **define** SameRegime. El documento ya la rechazó: la conectividad solo puede reconstruir una unidad caracterizada independientemente.
+
+Tampoco puede elegirse un contexto maximal bajo JointRealizable. Además de revivir REV-08, la maximalidad sería una propiedad de una familia de candidatos, no una explicación de por qué el corte maximal obtenido es una unidad ontológica bona fide.
+
+#### 0.11.61. Resultado de no-reducción arquitectónica para AI
+
+Con el vocabulario actualmente disponible, los candidatos se reparten así:
+
+| Recurso | Por qué no descarga AI |
+|---|---|
+| OntOrigin / GeneUnit | demasiado local; varias genealogías independientes pueden compartir contexto |
+| CommonGround / GeneUnity | demasiado fuerte; excluiría el SharedOntSpace multigeneal de REV-07f |
+| JointRealizable / ContextUnity | demasiado débil; no decide SharedOntSpace frente a ContextGenesis |
+| SharedOntSpace | ya cuantifica sobre una instanciación común admisible |
+| \(\mathcal C_*\) / SemTotal\(_{\mathcal C}\) | semántico y pre-ontológico por construcción |
+| RegimeTotal | downstream; presupone GeneBasis ya tipada en el mismo contexto |
+| REC | consecuencia de RegimeTotal |
+| Muro | restricción epistemológica, no criterio de unidad |
+| \(\Omega_i\) | post-individuación y dependiente de estructura generativa/trivialización |
+| GenesisConstitutiveUnity | útil para un hijo constituido; no cubre una unidad ambiental preexistente |
+
+Por tanto obtenemos un **resultado de no-reducción arquitectónica**, no un teorema de indefinibilidad lógica absoluta:
+
+\[
+\boxed{
+\text{AI no está actualmente descargada por ninguna combinación ya justificada
+de la maquinaria vigente sin añadir semántica nueva.}
+}
+\]
+
+La precisión “ya justificada” importa. No se afirma que sea imposible definir ContextIndividuation a partir de alguna teoría futura; se afirma que hacerlo hoy reutilizando sin más los predicados anteriores produciría o circularidad, o sobre-restricción monogeneal, o infra-determinación.
+
+Un stress test resume el problema. Dos historias pueden desembocar en la misma presentación conjunta:
+
+\[
+C_a,C_b \leadsto C_{\widehat{k}},
+\]
+
+pero diferir en prioridad ontológica:
+
+\[
+\begin{array}{ll}
+\text{Historia A:} & C_{\widehat{k}}\text{ preexiste y una integración solo lo revela;}\\
+\text{Historia B:} & C_{\widehat{k}}\text{ existe constitutivamente por la integración.}
+\end{array}
+\]
+
+Una descripción estática del carrier final no distingue A de B. Por eso la individuación no puede reducirse simplemente a “qué hay dentro” de la realización final.
+
+#### 0.11.62. Opción mínima honesta: ContextIndividuation como juicio metaontológico primitivo restringido
+
+Hasta disponer de una teoría independiente más reductiva, la opción formalmente más limpia es no esconder la deuda.
+
+Introducimos provisionalmente:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\]
+
+como **juicio metaontológico primitivo sujeto a criterios de admisibilidad**, no como entidad, proceso ni hecho objeto.
+
+Esto no significa “cualquier corte vale”. \(\chi\) debe satisfacer como mínimo las obligaciones CI1–CI8 ya fijadas y, además:
+
+1. **CI9 / boundary coherence:** el corte no puede seccionar una relación objeto cuya propia semántica exija que sus relata estén co-tipados en una única realización; si aparece tal relación, o el corte era erróneo o debe modelarse una interfaz ontogénica distinta.
+2. **CI10 / no connectivity definition:** conectividad, amalgamabilidad o closure de links pueden aportar evidencia, pero no constituyen por definición la identidad contextual.
+3. **CI11 / no maximality definition:** maximalidad semántica o maximal joint realizability no individúan por sí mismas el contexto.
+4. **CI12 / genesis sensitivity:** el juicio debe distinguir una unidad preexistente de una unidad cuya existencia depende constitutivamente de una formación.
+5. **CI13 / level discipline:** si dos individuaciones admisibles están anidadas, debe existir una semántica explícita de nivel/embedding; la teoría no puede tratarlas simultáneamente como índices rivales del mismo nivel sin justificar esa relación.
+6. **CI14 / no totality smuggling:** ContextIndividuation e IndexAdmission no implican RegimeTotal, OntTotal ni REC.
+
+La salida sigue siendo:
+
+\[
+\boxed{
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\Rightarrow
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi).
+}
+\]
+
+La ventaja de declarar esta primitividad provisional es metodológica: la teoría deja visible exactamente qué necesita de una futura ontología de individuación. La alternativa —definir \(i\) por GeneBasis, por conectividad, por maximalidad o por SemTotal— volvería a esconder circularidades ya detectadas.
+
+Esta primitividad puede ser **teoría-relativa**. Una física concreta, una ontología de procesos o una teoría independiente de sistemas podría descargar \(\chi\) mediante estructura adicional. La propuesta general no debe inventar esa estructura para garantizar ExistsR.
+
+#### 0.11.63. Consecuencia para ExistsR: REV-07g no es meramente decorativo
+
+La forma vigente:
+
+\[
+\operatorname{ExistsR}
+:\Longleftrightarrow
+\exists^{\mathsf M} i\;
+\bigl(
+\exists\mathfrak G_i\exists R_i\;
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+\bigr)
+\]
+
+usa \(\exists^{\mathsf M}i\) como abreviatura sobre **instanciaciones admisibles del parámetro contextual**, no como cuantificador objeto.
+
+Si ahora se sostiene:
+
+\[
+\text{admisibilidad de }i
+\Leftarrow
+\operatorname{ContextIndividuation}^{\mathsf M},
+\]
+
+entonces un witness no circular de ExistsR debe cargar también con esa obligación. No basta con escribir un subíndice y demostrar RegimeTotal condicionalmente dentro de él.
+
+Por ello REV-07g debe distinguir dos alcances:
+
+- **teoremas condicionales por contexto:** continúan siendo válidos fijando un \(i\) admisible como parámetro;
+- **programa fuerte de existencia:** para exhibir un witness de ExistsR hay que justificar además la admisibilidad/individuación del contexto usado.
+
+En ese segundo alcance, AI/GI pertenecen a la deuda fundacional de REV-07:
+
+\[
+\boxed{
+\operatorname{ContextIndividuation}^{\mathsf M}
++
+\operatorname{IndexAdmission}^{\mathsf M}
++
+\operatorname{RegimeTotal}
+\Longrightarrow
+\text{witness admisible para ExistsR}.
+}
+\]
+
+No se adopta la conversa ni se afirma que ContextIndividuation baste para RegimeTotal.
+
+La consecuencia práctica es que REV-07g deja de ser una extensión puramente opcional si la PR pretende cerrar el **argumento no circular de existencia**. Puede seguir siendo no bloqueante para estudiar algebraicamente un contexto ya fijado, pero es blocker para convertir ese estudio en un witness ontológico fuerte de ExistsR.
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 **Advertencia PureOntRel.** Una relación pura puede servir como enlace ontológico de marco sin preservar una única genealogía. Por ello no se incorpora automáticamente a $\Lambda_*$ cuando esta pretende reconstruir $\operatorname{Generated}^{*}$: si conecta dos genealogías sin common ground, produciría sobreinclusión y haría fallar $\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}$. Su admisión como enlace reconstructivo requiere una justificación adicional de soundness; RelIntegrable por sí sola no basta.
