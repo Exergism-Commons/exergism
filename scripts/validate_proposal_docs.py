@@ -59,6 +59,88 @@ CANONICAL_PRESENTATION = r"""\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \Rightarrow
 \operatorname{Presents}_i(S_i,R_i)."""
 
+CANONICAL_REGIME_GENERATED = r"""\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
+:\Longleftrightarrow
+\exists C_i[
+\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)
+\land
+x_i\in C_i
+]."""
+
+CANONICAL_REGIME_TOTAL = r"""\boxed{
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+:\Longleftrightarrow
+\operatorname{GeneBasis}_i(\mathfrak G_i)
+\land
+\forall x_i[
+\operatorname{Within}_i(x_i,R_i)
+\Longleftrightarrow
+\operatorname{Real}_i(x_i)
+\Longleftrightarrow
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
+].
+}"""
+
+CANONICAL_GENE_FAMILY = r"""\boxed{
+\begin{aligned}
+\operatorname{GeneFamily}_i(\mathfrak G_i)
+:\Longleftrightarrow\;&
+A\neq_{\mathsf M}\varnothing\\
+&\land
+\forall^{\mathsf M}\alpha\in A\;
+\operatorname{GeneUnit}_i(
+\mathcal O_{\alpha,i},
+C_{\alpha,i}
+)\\
+&\land
+\forall^{\mathsf M}\alpha,\beta\in A[
+\alpha\neq_{\mathsf M}\beta
+\land
+\operatorname{GeneOverlap}_i(
+G_{\alpha,i},
+G_{\beta,i}
+)
+\Rightarrow
+\operatorname{OverlapCoherence}_i(
+G_{\alpha,i},
+G_{\beta,i}
+)
+].
+\end{aligned}
+}"""
+
+CANONICAL_REGIME_CLOSURE = r"""\boxed{
+\begin{aligned}
+\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)
+:\Longleftrightarrow
+\exists B_i[
+&\operatorname{FamilyBase}_i(\mathfrak G_i,B_i)
+\land
+B_i\preceq C_i
+\land
+\Gamma_i(C_i)=C_i\\
+&\land
+\forall Y_i[
+B_i\preceq Y_i
+\land
+\Gamma_i(Y_i)=Y_i
+\Rightarrow
+C_i\preceq Y_i
+]
+].
+\end{aligned}
+}"""
+
+CANONICAL_GENE_BASIS = r"""\boxed{
+\operatorname{GeneBasis}_i(\mathfrak G_i)
+:\Longleftrightarrow
+\operatorname{GeneFamily}_i(\mathfrak G_i)
+\land
+\mathrm{RGCExists}_i(\mathfrak G_i)
+\land
+\mathrm{FamilyIrredundant}_i(\mathfrak G_i).
+}"""
+
 DISTINCT_OVERLAP_FRAGMENT = (
     "\\alpha\\neq_{\\mathsf M}\\beta\n"
     "\\land\n"
@@ -102,16 +184,26 @@ class MarkdownDocument:
     def __init__(self, text: str) -> None:
         self.text = normalize_source(text)
         self.lines = self.text.split("\n")
-        self.tokens = MARKDOWN.parse(self.text)
+        self.env: dict[str, Any] = {}
+        self.tokens = MARKDOWN.parse(self.text, self.env)
         self.hidden_lines: set[int] = set()
+        covered_lines: set[int] = set()
 
-        # These token types are not active Markdown prose/contracts. Their source ranges are
-        # authoritative CommonMark parser output, including all raw-HTML block families.
+        # Source coverage is parser-owned. Top-level token maps tell us which physical lines
+        # participate in emitted CommonMark blocks; nonblank uncovered lines are parser-consumed
+        # syntax such as link-reference definitions and must not satisfy source contracts.
         for token in self.tokens:
-            if token.type not in {"fence", "code_block", "html_block"} or token.map is None:
-                continue
-            start, end = token.map
-            self.hidden_lines.update(range(start, end))
+            if token.level == 0 and token.map is not None:
+                start, end = token.map
+                covered_lines.update(range(start, end))
+
+            if token.type in {"fence", "code_block", "html_block"} and token.map is not None:
+                start, end = token.map
+                self.hidden_lines.update(range(start, end))
+
+        for line_no, line in enumerate(self.lines):
+            if line_no not in covered_lines and line.strip(" \t") != "":
+                self.hidden_lines.add(line_no)
 
     def active_text(self, start: int = 0, end: int | None = None) -> str:
         if end is None:
@@ -357,22 +449,58 @@ def validate_regime_total_contract(
     ledger: MarkdownDocument,
     technical: MarkdownDocument,
 ) -> None:
-    current = normative.active_text().split("# II. Historia cronológica", 1)[0]
     visible_ledger = ledger.active_text()
-    visible_technical = technical.active_text()
 
-    required_current = {
-        r"\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)": "RegimeTotal totality target",
-        r"\operatorname{RegimeClosure}_i(\mathfrak G_i,C_i)": "RegimeClosure definition",
-        r"\operatorname{GeneFamily}_i(\mathfrak G_i)": "explicit GeneFamily contract",
-        r"\operatorname{GeneBasis}_i(\mathfrak G_i)": "GeneBasis guard",
-        r"\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)": "RegimeGenerated membership",
-    }
-    for snippet, description in required_current.items():
-        if snippet not in current:
-            fail(
-                f"REV-07f regression: normative proposal is missing canonical {description}"
-            )
+    totalization_section = normative.section(
+        3,
+        "$R_i$ — totalización genealógica mono- y multigeneal",
+    )
+    require_canonical_display_after(
+        totalization_section,
+        "§5.1 define GeneBasis, FamilyBase, RegimeClosure y:",
+        CANONICAL_REGIME_GENERATED,
+        "REV-07f RegimeGenerated* definition",
+    )
+    require_canonical_display_after(
+        totalization_section,
+        "La totalización general es:",
+        CANONICAL_REGIME_TOTAL,
+        "REV-07f RegimeTotal definition",
+    )
+
+    genealogy_section = normative.section(
+        3,
+        "5.1. Criterio primario: origen unificado + generación independiente",
+    )
+    require_canonical_display_after(
+        genealogy_section,
+        "Formalmente:",
+        CANONICAL_GENE_FAMILY,
+        "REV-07f GeneFamily definition",
+    )
+    require_canonical_display_after(
+        genealogy_section,
+        "La closure del régimen **no** es esa unión. Debe volver a cerrar el mismo operador generativo para recoger producción transversal:",
+        CANONICAL_REGIME_CLOSURE,
+        "REV-07f RegimeClosure definition",
+    )
+    require_canonical_display_after(
+        genealogy_section,
+        "Finalmente:",
+        CANONICAL_GENE_BASIS,
+        "REV-07f GeneBasis definition",
+    )
+
+    technical_genealogy_section = technical.section(
+        3,
+        "0.10a. REV-07f — RegimeTotal multigeneal",
+    )
+    require_canonical_display_after(
+        technical_genealogy_section,
+        "Definimos:",
+        CANONICAL_GENE_FAMILY,
+        "REV-07f technical GeneFamily definition",
+    )
 
     existsr_section = normative.section(
         3,
@@ -394,12 +522,6 @@ def validate_regime_total_contract(
         (4, "RT-07-MG-TRIV — Singleton-per-token attack"),
     ):
         technical.section(level, heading)
-
-    if DISTINCT_OVERLAP_FRAGMENT not in current or DISTINCT_OVERLAP_FRAGMENT not in visible_technical:
-        fail(
-            "REV-07f regression: GeneFamily must retain the canonical distinct-member "
-            "OverlapCoherence guard in both active documents"
-        )
 
     xp_section = technical.section(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
