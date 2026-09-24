@@ -3049,9 +3049,9 @@ $$
 
 $A$ no es un sort ontológico ni una colección de contextos: solo parametriza los miembros de la familia en la metateoría. La formación de $\mathfrak G_i$ presupone que todos esos miembros ya están tipados en el mismo contexto $i$; por tanto GeneFamily no demuestra SharedOntSpace.
 
-Definimos:
+Definimos GeneFamily:
 
-$$
+$
 \boxed{
 \begin{aligned}
 \operatorname{GeneFamily}_i(\mathfrak G_i)
