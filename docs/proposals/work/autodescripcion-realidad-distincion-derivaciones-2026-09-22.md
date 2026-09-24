@@ -6105,6 +6105,182 @@ Esta organización permite continuar REV-07 sin fingir que AI está resuelta. El
 2. aceptar ContextIndividuation como primitivo metaontológico restringido;
 3. parametrizarla por teoría concreta y demostrar un teorema de transporte de criterios de individuación hacia IndexAdmission.
 
+#### 0.11.68. Ruta de trabajo preferida: esquema de individuación parametrizado por teoría
+
+Entre WMR, PRI y TR, la ruta provisionalmente más conservadora para una ontología general es **TR**: no fijar universalmente qué estructura individúa todo contexto, sino especificar qué debe demostrar cualquier teoría que pretenda hacerlo.
+
+Sea \(\mathcal T\) una teoría ontológica/física independientemente motivada. Introducimos un juicio metateórico relativo:
+
+\[
+\operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi),
+\]
+
+leído: “según la estructura objetiva que \(\mathcal T\) afirma y con testigo \(\chi\), la candidatura \(C\) constituye una unidad contextual”.
+
+\(\mathcal T\) no es un objeto dentro de \(C\), ni un supercontexto, ni un elemento de un dominio ontológico de teorías. Es un parámetro del metalenguaje.
+
+Para que el juicio pueda alimentar IndexAdmission exigimos:
+
+\[
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi).
+\]
+
+Sus obligaciones mínimas son:
+
+1. **IA1 / theory independence:** \(\mathcal T\) está justificada por razones independientes del deseo de obtener precisamente el corte \(C\); no se construye ad hoc a partir del target.
+2. **IA2 / target independence:** \(\operatorname{Ind}_{\mathcal T}\) no usa \(R_i\), RegimeTotal, REC, SameRegime ni la existencia previa del índice que pretende admitir.
+3. **IA3 / positive grounding:** debe existir estructura positiva de \(\mathcal T\) que funde el corte; no basta la ausencia de enlaces con el exterior.
+4. **IA4 / recoding invariance:** recodificaciones fieles de la misma estructura preservan el juicio.
+5. **IA5 / boundary coherence:** ningún hecho objeto que \(\mathcal T\) considere fundamentalmente co-tipado queda cortado arbitrariamente por la frontera.
+6. **IA6 / anti-aggregation:** envolver una pluralidad de unidades ya individuadas en una descripción conjunta no produce una nueva unidad sin estructura adicional.
+7. **IA7 / genesis discrimination:** la teoría debe poder distinguir, cuando sea relevante, una unidad preexistente de otra constituida por una génesis.
+8. **IA8 / rival-cut discipline:** cortes incompatibles inducidos por la misma \(\mathcal T\) requieren equivalencia, una semántica explícita de nesting/nivel o rechazo de al menos uno.
+9. **IA9 / no totality smuggling:** individuar el contexto no demuestra que su scope esté exhaustivamente realizado.
+10. **IA10 / auditability:** debe poder señalarse qué rasgos de \(\mathcal T\) hacen el trabajo de individuación y qué contraejemplo haría fallar el criterio.
+
+Entonces la regla de admisión queda:
+
+\[
+\boxed{
+\operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi)
+\land
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi)
+\Rightarrow
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi,\mathcal T).
+}
+\]
+
+Esta regla no convierte la teoría \(\mathcal T\) en una realidad superior. Solo hace explícita la descarga del criterio.
+
+El caso PRI se recupera como límite si una futura metafísica sostiene que no existe una reducción ulterior y toma ContextIndividuation como fundamental. WMR se recupera como caso de TR si \(\mathcal T\) proporciona una world-making structure adecuada.
+
+#### 0.11.69. Equivalencia de testigos: varias pruebas no deben multiplicar índices
+
+La individuación puede tener varias evidencias independientes. Por ejemplo, una teoría podría reconocer la misma frontera mediante dos estructuras distintas. No queremos:
+
+\[
+\chi_1\neq\chi_2
+\Rightarrow
+i\neq j.
+\]
+
+Introducimos esquemáticamente:
+
+\[
+\chi_1
+\approx^{\mathsf M}_{C,\mathcal T}
+\chi_2
+\]
+
+cuando ambos testigos, bajo \(\mathcal T\), inducen:
+
+1. el mismo corte contextual;
+2. el mismo régimen de tipado objeto;
+3. las mismas clases de interfaces ontogénicas admisibles;
+4. los mismos juicios de identidad contextual relevantes, módulo recodificación fiel.
+
+Entonces:
+
+\[
+\boxed{
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi_1,\mathcal T)
+\land
+\chi_1\approx^{\mathsf M}_{C,\mathcal T}\chi_2
+\Rightarrow
+\chi_2\text{ no licencia un índice distinto por sí solo.}
+}
+\]
+
+La inversa tampoco vale: dos testigos no equivalentes no implican automáticamente dos contextos. Pueden revelar niveles distintos o una disputa aún no resuelta sobre el corte.
+
+Esto evita una nueva versión del problema de “colisiones”: aquí **múltiples certificados de la misma individuación son convergencia evidencial**, no multiplicación ontológica.
+
+#### 0.11.70. Auditoría posterior con \(\Omega_i\) sin circularidad
+
+Una vez admitido \(i\), REV-07e intenta derivar una firma ontogénica:
+
+\[
+\Omega_i
+\]
+
+desde la estructura generativa/iterativa y sus trivializaciones admisibles.
+
+Aunque \(\Omega_i\) no puede usarse retroactivamente como fundamento inicial de \(i\), sí puede funcionar como **auditor posterior** de la individuación:
+
+\[
+\operatorname{BoundaryCompatible}^{\mathsf M}(\chi,\Omega_i).
+\]
+
+Si la firma derivada muestra que transformaciones clasificadas por \(\chi\) como cross-boundary son en realidad iteraciones internas de la misma estructura, o viceversa, aparece una inconsistencia que debe resolverse.
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{BoundaryCompatible}^{\mathsf M}(\chi,\Omega_i)
+}
+\]
+
+es una condición de coherencia posterior, no una premisa de IndexAdmission.
+
+Esto produce un bucle epistemológico legítimo sin bucle definicional:
+
+\[
+\chi
+\to
+i
+\to
+\text{estructura generativa}
+\to
+\Omega_i
+\to
+\text{auditoría de }\chi.
+\]
+
+El último paso puede obligar a revisar nuestra **clasificación** del contexto, pero no altera retroactivamente los hechos ontológicos.
+
+#### 0.11.71. IndexRetraction no es ContextCessation
+
+La lectura celular introduce una distinción necesaria entre dos maneras muy distintas de “dejar de tener un índice”.
+
+**Revisión metateórica.** Descubrimos que el testigo de individuación era defectuoso, que dos candidatos eran en realidad SharedOntSpace o que un corte era un coarse-graining arbitrario. Entonces puede haber:
+
+\[
+\operatorname{IndexRetraction}^{\mathsf M}(C\Downarrow i;\epsilon).
+\]
+
+Esto significa que el metalenguaje **retira una admisión previa**. No describe un evento ontológico en \(i\).
+
+**Cesación ontológica.** Un contexto previamente bien individuado deja de continuar como tal:
+
+\[
+\operatorname{ContextCessation}^{\mathsf M}(i;\delta).
+\]
+
+Aquí la ontología cambia; la clasificación anterior no era un error.
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{IndexRetraction}^{\mathsf M}
+\neq
+\operatorname{ContextCessation}^{\mathsf M}.
+}
+\]
+
+Y tampoco:
+
+\[
+\operatorname{IndexRetraction}^{\mathsf M}(i)
+\Rightarrow
+\text{“}R_i\text{ fue destruido”.}
+\]
+
+Una reindexación epistémica puede revelar que nunca hubo dos contextos. Una ContextCessation genuina presupone, por el contrario, que sí hubo una individuación correcta cuya continuidad terminó.
+
+Esta distinción será obligatoria al volver sobre la pregunta “¿puede destruirse un \(R_i\)?”. Sin ella se confundiría corrección de nuestro mapa ontológico con muerte de aquello que el mapa pretendía describir.
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 **Advertencia PureOntRel.** Una relación pura puede servir como enlace ontológico de marco sin preservar una única genealogía. Por ello no se incorpora automáticamente a $\Lambda_*$ cuando esta pretende reconstruir $\operatorname{Generated}^{*}$: si conecta dos genealogías sin common ground, produciría sobreinclusión y haría fallar $\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}$. Su admisión como enlace reconstructivo requiere una justificación adicional de soundness; RelIntegrable por sí sola no basta.
