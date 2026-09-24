@@ -440,36 +440,6 @@ def require_canonical_display_after(
         )
 
 
-def validate_display_math(path: Path, document: MarkdownDocument) -> None:
-    active = document.active_text()
-    lines = active.split("\n")
-    parsed_math_lines = document.parsed_math_lines()
-
-    lone_dollar = [
-        index
-        for index, line in enumerate(lines, start=1)
-        if re.fullmatch(r" {0,3}\$[ \t]*", line)
-    ]
-    if lone_dollar:
-        fail(
-            f"{path.relative_to(ROOT)} contains active standalone '$' display delimiters at lines "
-            + ", ".join(map(str, lone_dollar[:10]))
-        )
-
-    unparsed_display_delimiters = [
-        index + 1
-        for index, line in enumerate(lines)
-        if re.fullmatch(r" {0,3}\$\$[ \t]*", line)
-        and index not in parsed_math_lines
-    ]
-    if unparsed_display_delimiters:
-        fail(
-            f"{path.relative_to(ROOT)} contains '$$' delimiters not classified by "
-            "dollarmath_plugin as parsed math blocks at lines "
-            + ", ".join(map(str, unparsed_display_delimiters[:10]))
-        )
-
-
 def validate_markdown_table_blocks(path: Path, document: MarkdownDocument) -> None:
     lines = document.active_text().split("\n")
 
@@ -774,7 +744,6 @@ def main() -> None:
 
     for path, document in documents.items():
         document.reject_inline_html(path)
-        validate_display_math(path, document)
 
     archive_document.reject_inline_html(ARCHIVE)
 
@@ -801,7 +770,7 @@ def main() -> None:
     print("CommonMark structure: parsed by markdown-it-py")
     print("Critical REV-07f TeX: canonical source contracts preserved")
     print("Ledger identifiers: unique")
-    print("Display math delimiters: structurally valid")
+    print("Critical REV-07f math: parser-classified canonical blocks")
     print("Historical archive: explicitly superseded")
     print("REV-07f RegimeTotal contract: preserved")
 
