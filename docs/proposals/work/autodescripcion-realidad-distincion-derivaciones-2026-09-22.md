@@ -8857,6 +8857,700 @@ RKA1–RKA10, el teorema de invariancia de base y los modelos Mealy/KV/AC cierra
 
 Además, bajo closure y asociatividad de las continuaciones del rol, la memo-equivalence completa queda demostrada como equivalencia y right-congruence temporal. Permanece abierta la composicionalidad más fuerte entre roles/interfaces distintos y su coordinación con MemoState/update/invalidation.
 
+
+#### 0.11.82j. Composición cross-role: por qué la intersección de kernels no basta
+
+Sea una familia finita o set-indexed de roles ya justificados:
+
+\[
+\mathbf R
+=
+\{\rho_a\}_{a\in A},
+\]
+
+cada uno con su interfaz \(\mathbb I^{\rho_a}\), su semántica completa de continuación \(\operatorname{Cont}_{i,\rho_a}\) y su memo-equivalence:
+
+\[
+E_a
+:=
+\equiv^{\mathrm{memo}}_{i,\rho_a}.
+\]
+
+El candidato ingenuo para la equivalencia conjunta sería:
+
+\[
+E_{\wedge}
+:=
+\bigcap_{a\in A}E_a.
+\]
+
+Pero en general:
+
+\[
+\boxed{
+E_{\wedge}
+\not\subseteq
+E_{\otimes},
+}
+\]
+
+donde \(E_{\otimes}\) es la memo-equivalence del rol compuesto \(\rho_{\otimes}\).
+
+La razón es estructural: una continuación compuesta puede intercalar acciones de roles distintos y hacer visible una dependencia que ninguna semántica aislada puede excitar.
+
+Definimos la **relevancia sinérgica cross-role**:
+
+\[
+\boxed{
+\operatorname{SynRel}_{\mathbf R}(h,h')
+:\Longleftrightarrow
+h\,E_{\wedge}\,h'
+\land
+h\not E_{\otimes}h'.
+}
+\]
+
+SynRel no es todavía la relación de emergencia del programa emergentista. Afirma únicamente que una diferencia irrelevante bajo cada rol considerado aisladamente se vuelve discriminable bajo la semántica de su composición.
+
+Si existe un witness mínimo \(c_{\otimes}\in\operatorname{Cont}_{i,\rho_\otimes}\) que distingue \(h,h'\), llamamos:
+
+\[
+\operatorname{CrossRoleWitness}
+(
+h,h';c_\otimes
+).
+\]
+
+Un witness genuinamente cross-role debe usar al menos dos tags/puertos de rol o un interaction primitive declarado; si pertenece enteramente a un único \(\rho_a\), contradice \(hE_ah'\).
+
+#### 0.11.82k. Contraejemplo CR-X: write/read acoplados
+
+Sean dos histories \(H_L,H_U\) con estado inicial visible \(x=0\).
+
+Hay dos roles:
+
+\[
+\rho_A
+=
+\text{writer},
+\qquad
+\rho_B
+=
+\text{reader}.
+\]
+
+El rol \(A\) admite únicamente:
+
+\[
+\operatorname{SetA}(1)
+\mapsto
+\operatorname{Ack}.
+\]
+
+El rol \(B\), considerado aisladamente, admite únicamente secuencias de:
+
+\[
+\operatorname{ReadB}()
+\]
+
+y no modifica estado.
+
+En \(H_L\) los puertos están **linked**:
+
+\[
+\operatorname{SetA}(1)
+\text{ actualiza el estado que lee B}.
+\]
+
+En \(H_U\) están **unlinked**:
+
+\[
+\operatorname{SetA}(1)
+\text{ actualiza un estado privado de A y no el estado leído por B}.
+\]
+
+Aislando cada rol:
+
+\[
+H_L
+\equiv^{\mathrm{memo}}_{\rho_A}
+H_U,
+\]
+
+porque toda continuación de \(A\) produce los mismos Ack, y:
+
+\[
+H_L
+\equiv^{\mathrm{memo}}_{\rho_B}
+H_U,
+\]
+
+porque sin acciones de \(A\), \(B\) lee siempre el mismo estado inicial \(0\).
+
+Sin embargo el rol compuesto admite:
+
+\[
+c_\otimes
+=
+\operatorname{SetA}(1)
+\star
+\operatorname{ReadB}().
+\]
+
+Entonces:
+
+\[
+\operatorname{ROut}_{\otimes}(H_L,c_\otimes)
+=
+\langle Ack,1\rangle,
+\]
+
+mientras:
+
+\[
+\operatorname{ROut}_{\otimes}(H_U,c_\otimes)
+=
+\langle Ack,0\rangle.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+H_L
+E_{\wedge}
+H_U
+\quad\land\quad
+H_L
+\not E_{\otimes}
+H_U.
+}
+\]
+
+El fallo exacto es que \(E_B\) no es estable bajo una acción de \(A\). Tras SetA(1):
+
+\[
+H_L\odot \operatorname{SetA}(1)
+\not E_B
+H_U\odot \operatorname{SetA}(1).
+\]
+
+Así la right-congruence demostrada dentro de cada rol no implica congruencia bajo acciones de otros roles.
+
+#### 0.11.82l. Especificación del rol compuesto
+
+El rol compuesto no se obtiene escribiendo simplemente \(\rho_1\times\rho_2\). Debe existir una especificación independiente:
+
+\[
+\mathbb C_{i,\mathbf R}^{\otimes}
+=
+\left\langle
+\mathcal A_{\otimes},
+\epsilon_{\otimes},
+\star_{\otimes},
+\operatorname{WF}_{\otimes},
+\operatorname{Cl}_{\otimes}
+\right\rangle
+\]
+
+que determine:
+
+\[
+\operatorname{Cont}_{i,\rho_{\otimes}}
+=
+\operatorname{Cl}_{\otimes}
+(
+\mathcal A_\otimes\cup\{\epsilon_\otimes\}
+).
+\]
+
+Distinguimos dos casos.
+
+**Composición separable.** No aparecen primitives interaction-only:
+
+\[
+\boxed{
+\mathcal A_\otimes
+=
+\bigsqcup_{a\in A}
+\jmath_a(\mathcal A_{i,\rho_a}),
+}
+\]
+
+donde \(\jmath_a\) etiqueta fielmente cada generador componente. Toda conducta conjunta se construye por interleaving/composición de acciones ya pertenecientes a algún rol.
+
+**Composición no separable.** Existe al menos un generador:
+
+\[
+g_\times
+\in
+\mathcal A_\otimes
+\setminus
+\bigsqcup_a
+\jmath_a(\mathcal A_{i,\rho_a}).
+\]
+
+Ese generador no puede heredarse gratuitamente. Debe recibir semántica independiente —por ejemplo mediante un interaction role \(\rho_\times\), una extensión explícita del contrato o una teoría de sincronización— antes de entrar en una equivalencia compuesta.
+
+La mera coexistencia de interfaces no licencia primitives conjuntos nuevos.
+
+#### 0.11.82m. RoleCompositionAdequate: obligaciones CR1–CR8
+
+Introducimos:
+
+\[
+\operatorname{RoleCompositionAdequate}^{\mathsf M}_i
+(
+\mathbf R,
+\rho_\otimes;
+\chi
+),
+\]
+
+leído: \(\chi\) demuestra que la composición de los roles de \(\mathbf R\) es semánticamente adecuada para derivar la equivalencia conjunta.
+
+**CR1 — independent composite specification.** \(\mathbb C^\otimes\) y la semántica observacional conjunta se fijan sin inspeccionar el par \(h,h'\) ni el quotient que se desea obtener.
+
+**CR2 — conservative embedding.** Cada continuación componente se embebe preservando aplicabilidad y observación:
+
+\[
+\operatorname{ROut}_{\rho_a}(h,c)
+\simeq_{\rho_a}
+\operatorname{ROut}_{\otimes}
+(h,\jmath_a(c))
+\big|_{\rho_a}.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+E_\otimes
+\subseteq
+E_\wedge.
+}
+\]
+
+La composición puede distinguir más, nunca borrar legítimamente una diferencia que ya era visible en un rol componente.
+
+**CR3 — generator coverage.** Para derivar composición desde los roles existentes, todo generador conjunto debe provenir de algún componente:
+
+\[
+\mathcal A_\otimes
+=
+\bigsqcup_a\jmath_a(\mathcal A_{i,\rho_a}).
+\]
+
+Si hay un \(g_\times\) nuevo, CR3 falla hasta justificarlo como interaction primitive con contrato propio.
+
+**CR4 — joint step congruence.** La intersección:
+
+\[
+E_\wedge
+=
+\bigcap_a E_a
+\]
+
+debe ser una congruencia para **cada** generador de la composición. Para todo \(g\in\mathcal A_\otimes\):
+
+\[
+hE_\wedge h'
+\Longrightarrow
+\operatorname{Step}_\otimes(h,g)
+\;\widehat E_\wedge\;
+\operatorname{Step}_\otimes(h',g),
+\]
+
+donde \(\widehat E_\wedge\) exige simultáneamente:
+
+1. mismo status role-relevant de aplicabilidad/inaplicabilidad;
+2. outputs step-local equivalentes;
+3. si ambos steps producen residuals \(r,r'\), entonces \(rE_\wedge r'\).
+
+CR4 es el guard que falla en CR-X.
+
+**CR5 — no joint hidden observer.** El resultado de una continuación compuesta debe factorizar por la secuencia de resultados step-local y estado contractual explícito:
+
+\[
+\operatorname{ROut}_\otimes
+(h,g_1\star\cdots\star g_n)
+=
+\widehat O_\otimes
+\left(
+o_1,\ldots,o_n
+\right),
+\]
+
+con cada \(o_m\) generado por el step correspondiente. No puede existir un observador conjunto que lea estructura interna que ninguno de los contratos componentes ni un interaction contract declarado exponen.
+
+**CR6 — closure compatibility.** \(\operatorname{Cl}_\otimes\) no puede introducir por cierre una interacción semánticamente nueva que no esté cubierta por CR3–CR5. Límites, sincronización, concurrencia, fairness o topologías continuas requieren preservación demostrada, no una extrapolación desde secuencias finitas.
+
+**CR7 — recoding/composition invariance.** Recodificar fielmente componentes y luego componer debe inducir el mismo kernel que componer y después transportar la codificación.
+
+**CR8 — no ontological promotion.**
+
+\[
+\operatorname{RoleCompositionAdequate}
+\not\Rightarrow
+\operatorname{ContextIndividuation},
+\operatorname{CommonGround},
+\operatorname{RegimeTotal}
+\]
+
+ni identidad de las SourceUnits participantes.
+
+#### 0.11.82n. Teorema de composición segura
+
+**CR-T1 — kernel intersection theorem.** Si CR1–CR6 están descargadas para una composición separable y las continuaciones compuestas se generan por composición finita well-typed, entonces:
+
+\[
+\boxed{
+E_\otimes
+=
+E_\wedge
+=
+\bigcap_{a\in A}
+\equiv^{\mathrm{memo}}_{i,\rho_a}.
+}
+\]
+
+**Demostración.**
+
+Por CR2:
+
+\[
+E_\otimes\subseteq E_\wedge.
+\]
+
+Para la conversa, sea:
+
+\[
+hE_\wedge h'.
+\]
+
+Tomemos cualquier continuación compuesta:
+
+\[
+c_\otimes
+=
+g_1\star\cdots\star g_n.
+\]
+
+Por inducción en \(n\):
+
+- caso \(n=0\): la continuación identidad preserva \(E_\wedge\);
+- paso inductivo: por CR4, aplicar \(g_{m+1}\) a residuals \(E_\wedge\)-equivalentes produce outputs equivalentes y residuals que siguen en \(E_\wedge\).
+
+Por CR5, la observación conjunta está completamente determinada por esos outputs step-local; por tanto las dos ejecuciones producen resultados \(\rho_\otimes\)-equivalentes. Como \(c_\otimes\) era arbitraria:
+
+\[
+hE_\otimes h'.
+\]
+
+Luego:
+
+\[
+E_\wedge\subseteq E_\otimes.
+\]
+
+Combinando inclusiones:
+
+\[
+E_\otimes=E_\wedge.
+\qquad\square
+\]
+
+Para closures infinitarias, concurrentes o continuas, el argumento anterior no se extiende automáticamente: CR6 exige el principio de preservación correspondiente.
+
+#### 0.11.82o. Modelo positivo CR-P: dos namespaces KV independientes
+
+Sea un estado:
+
+\[
+m
+=
+(m_A,m_B)
+\]
+
+con dos namespaces disjuntos. El rol \(\rho_A\) opera solo sobre \(m_A\) y \(\rho_B\) solo sobre \(m_B\).
+
+Las operaciones son:
+
+\[
+Put_A,Get_A,Delete_A
+\]
+
+y:
+
+\[
+Put_B,Get_B,Delete_B.
+\]
+
+No hay operaciones cross-namespace ni shared hidden state.
+
+La equivalencia de cada rol coincide con igualdad extensional de su coordenada:
+
+\[
+mE_A m'
+\Longleftrightarrow
+m_A=m'_A,
+\]
+
+\[
+mE_B m'
+\Longleftrightarrow
+m_B=m'_B.
+\]
+
+Luego:
+
+\[
+mE_\wedge m'
+\Longleftrightarrow
+(m_A,m_B)=(m'_A,m'_B).
+\]
+
+Cualquier acción \(A\) modifica solo la primera coordenada y cualquier acción \(B\) solo la segunda, de modo que \(E_\wedge\) es step-congruence bajo todos los generadores. Las observaciones conjuntas son únicamente la secuencia de respuestas API.
+
+Se descargan CR1–CR6 y:
+
+\[
+\boxed{
+E_\otimes
+=
+E_A\cap E_B.
+}
+\]
+
+La independencia ontológica de los namespaces no es necesaria como tesis general; aquí funciona como witness suficiente de no-interferencia operacional.
+
+#### 0.11.82p. Interaction roles: cómo representar sinergia real sin esconderla
+
+Cuando CR3 o CR4 fallan porque existe una interacción real entre roles, la respuesta correcta no es forzar:
+
+\[
+E_\otimes=E_\wedge.
+\]
+
+Se introduce explícitamente una capa de interacción:
+
+\[
+\rho_\times,
+\]
+
+con su propia teoría, interfaz/trace semantics cuando proceda y continuación:
+
+\[
+\operatorname{Cont}_{i,\rho_\times}.
+\]
+
+Entonces la familia relevante pasa a ser:
+
+\[
+\mathbf R^+
+=
+\mathbf R\cup\{\rho_\times\}.
+\]
+
+La diferencia cross-role deja de ser una sorpresa escondida y se convierte en una dimensión contractual explícita.
+
+En CR-X, \(\rho_\times\) contiene al menos la dependencia:
+
+\[
+SetA
+\leadsto
+ReadB.
+\]
+
+Una vez esa interacción entra en la especificación, \(H_L\) y \(H_U\) ya no son equivalentes respecto de la familia enriquecida.
+
+Esto proporciona una regla arquitectónica:
+
+\[
+\boxed{
+\text{si la interacción crea poder discriminante nuevo,}
+\;
+\text{la interacción debe entrar en el contrato.}
+}
+\]
+
+No debe ocultarse dentro de una supuesta composición automática.
+
+#### 0.11.82q. Consecuencia para Baking: Bakes sound por separado pueden componer mal
+
+Sea para cada rol:
+
+\[
+B_a
+=
+\operatorname{Bake}_{\rho_a}
+\]
+
+un Bake individualmente sound:
+
+\[
+\ker(B_a)
+\subseteq
+E_a.
+\]
+
+Considérese el Bake producto:
+
+\[
+B_\Pi(h)
+=
+\langle
+B_a(h)
+\rangle_{a\in A}.
+\]
+
+Entonces:
+
+\[
+\ker(B_\Pi)
+=
+\bigcap_{a\in A}
+\ker(B_a).
+\]
+
+De la soundness individual solo se deriva:
+
+\[
+\ker(B_\Pi)
+\subseteq
+E_\wedge.
+\]
+
+Pero el contrato compuesto exige:
+
+\[
+\boxed{
+\ker(B_\Pi)
+\subseteq
+E_\otimes.
+}
+\]
+
+Si existe relevancia sinérgica:
+
+\[
+E_\otimes
+\subsetneq
+E_\wedge,
+\]
+
+la primera inclusión no basta.
+
+En particular, si cada Bake es quotient exacto de su rol:
+
+\[
+\ker(B_a)=E_a,
+\]
+
+entonces:
+
+\[
+\ker(B_\Pi)=E_\wedge.
+\]
+
+Por tanto, ante cualquier witness:
+
+\[
+hE_\wedge h'
+\land
+h\not E_\otimes h',
+\]
+
+obtenemos:
+
+\[
+B_\Pi(h)=B_\Pi(h')
+\]
+
+aunque la composición debe distinguirlos. Luego:
+
+\[
+\boxed{
+\operatorname{ExactBake}_{\rho_1}
++
+\cdots+
+\operatorname{ExactBake}_{\rho_n}
+\not\Rightarrow
+\operatorname{SoundBake}_{\rho_\otimes}.
+}
+\]
+
+Esto es una deuda genuina de composición, no un bug accidental de implementación.
+
+El criterio correcto para baking multi-role vuelve a ser:
+
+\[
+q_{\otimes}
+=
+d_{\otimes}
+\circ
+B_\Pi
+\]
+
+o, equivalentemente en kernel form:
+
+\[
+\ker(B_\Pi)
+\subseteq
+E_\otimes.
+\]
+
+Bajo CR-T1, \(E_\otimes=E_\wedge\), por lo que exact Bakes componentes sí pueden componerse de forma sound. Si CR-T1 falla, hace falta conservar información adicional sobre la interacción.
+
+#### 0.11.82r. Stress tests de composición cross-role
+
+**CR-S1 — marginal equivalence fallacy.** Igualdad bajo cada rol aislado se promueve a igualdad conjunta. CR-X refuta la regla; falla CR4.
+
+**CR-S2 — undeclared synchronization.** Se añade un primitive simultáneo que no pertenece a ningún rol componente. Falla CR3.
+
+**CR-S3 — hidden joint observer.** El compositor inspecciona un identificador interno compartido aunque ningún contrato lo exponen. Falla CR5.
+
+**CR-S4 — applicability coupling.** Una acción de \(A\) habilita/deshabilita una operación de \(B\), pero la composición ignora ese cambio. Falla CR4 por enabledness no congruente.
+
+**CR-S5 — finite-interleaving extrapolation.** Todos los interleavings finitos coinciden, pero una condición de límite/fairness distingue ejecuciones infinitas. Falla CR6 si no existe theorem de preservación.
+
+**CR-S6 — product-Bake collision.** Dos exact Bakes individuales colapsan un par que un cross-role witness distingue. Falla composite Bake soundness aunque cada componente satisfaga su contrato.
+
+**CR-S7 — context promotion.** Una interacción robusta entre roles se usa para inferir un nuevo contexto. Falla CR8; la interacción puede seguir siendo una relación interna a un contexto ya individuado.
+
+#### 0.11.82s. Estado de la composicionalidad cross-role
+
+La deuda queda separada en dos resultados.
+
+Primero, el caso general:
+
+\[
+\boxed{
+\bigcap_a
+\equiv^{\mathrm{memo}}_{\rho_a}
+\not\Rightarrow
+\equiv^{\mathrm{memo}}_{\rho_\otimes}.
+}
+\]
+
+La diferencia exacta se captura por \(\operatorname{SynRel}_{\mathbf R}\).
+
+Segundo, bajo RoleCompositionAdequate/CR1–CR8 y composición separable:
+
+\[
+\boxed{
+\equiv^{\mathrm{memo}}_{\rho_\otimes}
+=
+\bigcap_a
+\equiv^{\mathrm{memo}}_{\rho_a}.
+}
+\]
+
+Así la composicionalidad cross-role queda **RESOLVED condicionalmente**: ya no existe una regla universal de producto, pero sí un criterio suficiente explícito y falsable para derivarla. Las interacciones no separables deben declararse como interaction roles/contracts y no esconderse en el compositor.
+
+La consecuencia para REV-07h es importante: MemoState multi-role no puede limitarse a almacenar por separado un memo-state para cada rol. Debe preservar además toda información necesaria para los interaction roles que hagan fallar CR-T1. Ésta pasa a ser la entrada correcta para la siguiente deuda: **estatus ontológico/semántico de MemoState y semántica de update/invalidation**, especialmente cuando cambia el conjunto de roles o aparece una nueva interacción.
+
+
 #### 0.11.83. Memo-state: estado suficiente y reentrante
 
 La quotient class:
@@ -9509,16 +10203,15 @@ Y aparecen tres resultados arquitectónicos fuertes:
 }
 \]
 
-Las deudas de InterfaceContract/trace semantics + IC1–IC10 y de RoleAdequate quedan **RESOLVED formal** en §§0.11.81f–0.11.82i. La memo-equivalence completa se define ahora sobre todas las continuaciones role-admisibles; una \(\mathcal K\) solo es base característica si RKA1–RKA10 prueban que induce el mismo kernel. Bajo closure/associativity se obtiene además equivalencia + right-congruence temporal. Para cerrar REV-07h completo falta:
+Las deudas de InterfaceContract/trace semantics + IC1–IC10 y de RoleAdequate quedan **RESOLVED formal** en §§0.11.81f–0.11.82i. La composicionalidad cross-role queda **RESOLVED condicionalmente** en §§0.11.82j–0.11.82s: en general la intersección de kernels individuales no basta; bajo RoleCompositionAdequate/CR1–CR8 se demuestra \(E_\otimes=\bigcap_aE_a\), y las interacciones no separables deben declararse como interaction roles. Para cerrar REV-07h completo falta:
 
-1. completar la composicionalidad de \(\equiv^{\mathrm{memo}}_{i,\rho}\) entre roles/interfaces distintos, más allá de la right-congruence temporal ya demostrada;
-2. distinguir cuándo Interface/MemoState son estructuras ontológicas actuales y cuándo solo representaciones semánticas;
-3. dar una semántica de update/invalidation coordinada con cambios de contrato de interfaz;
-4. coordinar B1–B10 con el criterio \(q_{\mathbb I^\rho}=d_\beta\circ\operatorname{Bake}\) y extender el Bake-kernel theorem más allá de los modelos actuales;
-5. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
-6. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
-7. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
-8. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
+1. distinguir cuándo Interface/MemoState son estructuras ontológicas actuales y cuándo solo representaciones semánticas;
+2. dar una semántica de update/invalidation coordinada con cambios de contrato, conjunto de roles e interaction roles;
+3. coordinar B1–B10 con el criterio \(q_{\mathbb I^\rho}=d_\beta\circ\operatorname{Bake}\), incluyendo composite Bake soundness;
+4. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
+5. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
+6. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
+7. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
 
 La ganancia inmediata no es demostrar identidad contextual, sino aislar la estructura que faltaba entre individuación y recontextualización:
 
