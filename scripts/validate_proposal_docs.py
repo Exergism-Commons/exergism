@@ -27,9 +27,13 @@ HIDDEN_BLOCK_BOUNDARY = "\u241e"
 
 # Structural Markdown semantics are delegated to a standards-conformant CommonMark parser.
 # Do not reintroduce regex/state-machine parsing for fences, indented code, HTML blocks or comments.
-MARKDOWN = MarkdownIt("commonmark", {"html": True}).use(
-    dollarmath_plugin,
-    allow_blank_lines=True,
+MARKDOWN = (
+    MarkdownIt("commonmark", {"html": True})
+    .enable("table")
+    .use(
+        dollarmath_plugin,
+        allow_blank_lines=True,
+    )
 )
 
 # Critical TeX is a canonical source contract, not a LaTeX-equivalence problem. Semantically
@@ -373,6 +377,35 @@ class MarkdownDocument:
             and line_no <= token.map[0] < end
         ]
 
+    def table_rows(self, start: int = 0, end: int | None = None) -> list[list[str]]:
+        if end is None:
+            end = len(self.lines)
+
+        rows: list[list[str]] = []
+        index = 0
+        while index < len(self.tokens):
+            token = self.tokens[index]
+            if (
+                token.type != "tr_open"
+                or token.map is None
+                or not (start <= token.map[0] and token.map[1] <= end)
+            ):
+                index += 1
+                continue
+
+            cells: list[str] = []
+            cursor = index + 1
+            while cursor < len(self.tokens) and self.tokens[cursor].type != "tr_close":
+                child = self.tokens[cursor]
+                if child.type == "inline":
+                    cells.append(visible_inline_text(child))
+                cursor += 1
+
+            rows.append(cells)
+            index = cursor + 1
+
+        return rows
+
     def parsed_blockquote_texts(self, start: int, end: int) -> list[str]:
         results: list[str] = []
         index = 0
@@ -501,30 +534,48 @@ def validate_markdown_table_blocks(path: Path, document: MarkdownDocument) -> No
 
 
 def validate_ledger(document: MarkdownDocument) -> None:
-    lines = document.active_text().split("\n")
+    headings = document.headings()
+    if sum(
+        1
+        for level, title, _ in headings
+        if level == 1 and title == "Ledger de revisión — autodescripción, realidad y distinción"
+    ) != 1:
+        fail("Review ledger must contain exactly one parsed top-level ledger title")
 
-    if sum(line.startswith("# Ledger de revisión") for line in lines) != 1:
-        fail("Review ledger must contain exactly one active top-level ledger title")
-    if sum(line == "## Estados" for line in lines) != 1:
-        fail("Review ledger must contain exactly one active '## Estados' section")
-    if sum(line.startswith("| FORM-02 |") for line in lines) != 1:
-        fail("Review ledger must contain exactly one active FORM-02 row")
+    if sum(
+        1
+        for level, title, _ in headings
+        if level == 2 and title == "Estados"
+    ) != 1:
+        fail("Review ledger must contain exactly one parsed 'Estados' section")
+
+    rows = document.table_rows()
+    body_rows = [
+        row
+        for row in rows
+        if row and row[0] != "ID"
+    ]
+
+    if sum(1 for row in body_rows if row and row[0] == "FORM-02") != 1:
+        fail("Review ledger must contain exactly one parsed FORM-02 table row")
+
+    if sum(1 for row in body_rows if row and row[0] == "REV-07f") != 1:
+        fail("REV-07f regression: review ledger must contain exactly one parsed REV-07f table row")
 
     seen: dict[str, int] = {}
     duplicates: list[str] = []
-    for line_number, line in enumerate(lines, start=1):
-        if not line.startswith("|"):
+    for row_number, row in enumerate(body_rows, start=1):
+        if not row:
             continue
-        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-        if not cells:
-            continue
-        identifier = cells[0]
+        identifier = row[0].strip()
         if not PRIMARY_LEDGER_ID.fullmatch(identifier):
             continue
         if identifier in seen:
-            duplicates.append(f"{identifier} (lines {seen[identifier]} and {line_number})")
+            duplicates.append(
+                f"{identifier} (parsed rows {seen[identifier]} and {row_number})"
+            )
         else:
-            seen[identifier] = line_number
+            seen[identifier] = row_number
 
     if duplicates:
         fail("Duplicate primary ledger identifiers: " + "; ".join(duplicates))
@@ -560,8 +611,6 @@ def validate_regime_total_contract(
     ledger: MarkdownDocument,
     technical: MarkdownDocument,
 ) -> None:
-    visible_ledger = ledger.active_text()
-
     totalization_bounds = normative.section_bounds(
         3,
         "1.6. $R_i$ — totalización genealógica mono- y multigeneal",
@@ -624,9 +673,6 @@ def validate_regime_total_contract(
         CANONICAL_EXISTSR,
         "REV-07f active normative ExistsR formula",
     )
-
-    if sum(line.startswith("| REV-07f |") for line in visible_ledger.split("\n")) != 1:
-        fail("REV-07f regression: review ledger must contain exactly one active REV-07f row")
 
     for level, heading in (
         (4, "RT-07-MG — Multigeneal Reality Test"),
@@ -763,7 +809,6 @@ def main() -> None:
 
     archive_document.reject_inline_html(ARCHIVE)
 
-    validate_markdown_table_blocks(LEDGER, documents[LEDGER])
     validate_ledger(documents[LEDGER])
     validate_archive(archive_document)
 
