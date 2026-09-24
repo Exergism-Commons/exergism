@@ -8159,15 +8159,40 @@ La equivalencia viene de la primera. \(\mathcal K_{i,\rho}\) solo puede servir c
 
 #### 0.11.82a. Semántica completa de continuación del rol
 
-Una teoría independiente del rol \(\mathcal T_\rho\), coordinada con \(\mathbb I_i^\rho\), induce:
+Una teoría independiente del rol \(\mathcal T_\rho\), coordinada con \(\mathbb I_i^\rho\), fija primero una especificación de continuación:
 
 \[
-\operatorname{Cont}_{i,\rho},
+\mathbb C_{i,\rho}
+=
+\langle
+\mathcal A_{i,\rho},
+\epsilon_\rho,
+\star_\rho,
+\operatorname{WF}_{i,\rho},
+\operatorname{Cl}_\rho
+\rangle,
 \]
 
-la familia de **todas las continuaciones role-admisibles** que pueden ser relevantes para el comportamiento futuro expuesto por la interfaz.
+donde \(\mathcal A_{i,\rho}\) contiene los generadores/acciones/estrategias atómicas autorizadas por el rol, \(\epsilon_\rho\) es la continuación identidad cuando exista, \(\star_\rho\) es composición tipada, WF fija well-formedness y \(\operatorname{Cl}_\rho\) declara las operaciones de cierre temporal que la teoría del rol licencia. Para roles continuos, un generador puede ser ya un perfil completo de carga/control; no se presupone discretización.
 
-No se permite definir \(\operatorname{Cont}_{i,\rho}\) a partir de:
+La familia completa se define por la **menor clausura autorizada**:
+
+\[
+\boxed{
+\operatorname{Cont}_{i,\rho}
+:=
+\operatorname{Cl}_\rho
+(
+\mathcal A_{i,\rho}\cup\{\epsilon_\rho\}
+).
+}
+\]
+
+Minimalidad significa que no se añaden continuaciones externas al rol; closure significa que tampoco se omiten arbitrariamente composiciones o evoluciones exigidas por sus reglas. Así la arbitrariedad no se desplaza de \(\mathcal K\) a \(\operatorname{Cont}\).
+
+La coordinación con la interfaz exige además que todo generador role-observable tenga interpretación mediante las estrategias/trazas de \(\mathbb I_i^\rho\), y que toda interacción declarada relevante por el rol pueda representarse por alguna continuación de \(\operatorname{Cont}_{i,\rho}\).
+
+No se permite definir \(\mathbb C_{i,\rho}\) ni \(\operatorname{Cont}_{i,\rho}\) a partir de:
 
 - un par concreto \(h,h'\) que se quiera identificar;
 - el MemoState que se desea obtener;
@@ -8261,16 +8286,24 @@ donde \(\kappa\) es el witness que demuestra que \(\mathcal K_{i,\rho}\) caracte
 
 Para evitar confusión con RA de REV-24, denominamos **RKA1–RKA10** a sus obligaciones.
 
-**RKA1 — independent role grounding.** La teoría \(\mathcal T_\rho\), la interfaz \(\mathbb I_i^\rho\) y la familia completa \(\operatorname{Cont}_{i,\rho}\) se fijan independientemente de los histories concretos a comparar:
+**RKA1 — independent role grounding.** La teoría \(\mathcal T_\rho\), la interfaz \(\mathbb I_i^\rho\), la especificación \(\mathbb C_{i,\rho}\) y su menor clausura \(\operatorname{Cont}_{i,\rho}\) se fijan independientemente de los histories concretos a comparar:
 
 \[
 \operatorname{IndependentRoleSpec}^{\mathsf M}
 (
 \mathcal T_\rho,
 \mathbb I_i^\rho,
+\mathbb C_{i,\rho}
+)
+\land
+\operatorname{LeastRoleClosure}^{\mathsf M}
+(
+\mathbb C_{i,\rho},
 \operatorname{Cont}_{i,\rho}
 ).
 \]
+
+Este segundo conjunct es necesario: una teoría no descarga RKA1 si simplemente bautiza como “todas las continuaciones” a un subconjunto escogido para eliminar un contraejemplo.
 
 **RKA2 — admissible-test soundness.**
 
@@ -8293,20 +8326,19 @@ Una prueba que observa variables internas, provenance o estados que el rol no pu
 
 Se permiten parámetros fijados por la **clase del rol** —por ejemplo un bound \(N\) de estados declarado antes de observar las máquinas—, no parámetros obtenidos inspeccionando el par bajo comparación.
 
-**RKA4 — characteristic completeness.** Esta es la obligación central:
+**RKA4 — characteristic completeness.** Esta es la obligación central y cuantifica sobre **todos** los histories admisibles, no solo sobre una muestra:
 
 \[
 \boxed{
-\begin{aligned}
-&
+\forall h,h'\in\mathcal H_i:
+\left[
 \forall c\in\mathcal K_{i,\rho}\;
 \operatorname{ROut}_{i,\rho}(h,c)
 \simeq_\rho
 \operatorname{ROut}_{i,\rho}(h',c)
-\\
-&\qquad\Longrightarrow
+\right]
+\Longrightarrow
 h\equiv^{\mathrm{memo}}_{i,\rho}h'.
-\end{aligned}
 }
 \]
 
@@ -8482,7 +8514,17 @@ h\equiv_{\mathcal K}h'
 \operatorname{ROut}(h',k),
 \]
 
-y análogamente para \(\equiv_{\mathcal L}\).
+y análogamente para \(\equiv_{\mathcal L}\). Usamos como abreviatura metateórica:
+
+\[
+\ker(\mathcal K)
+:=
+\{
+(h,h')
+\mid
+h\equiv_{\mathcal K}h'
+\}.
+\]
 
 Por RKA4:
 
@@ -8534,13 +8576,17 @@ p,c\in\operatorname{Cont}_{i,\rho}
 p\star c\in\operatorname{Cont}_{i,\rho},
 \]
 
-con:
+con asociatividad observacional:
 
 \[
-(h\odot p)\odot c
-\simeq
-h\odot(p\star c).
+\operatorname{ROut}_{i,\rho}
+(h,p\star c)
+\simeq_\rho
+\operatorname{ROut}_{i,\rho}
+(h\odot p,c)
 \]
+
+siempre que ambas expresiones estén well-typed, incluyendo concordancia de aplicabilidad/inaplicabilidad.
 
 Entonces:
 
@@ -8570,7 +8616,7 @@ Considérese la clase:
 \mathfrak M_N
 \]
 
-de máquinas de Mealy deterministas sobre alfabetos fijos \(A/B\), cada una con como máximo \(N\) estados. El bound \(N\) forma parte de la especificación previa de la clase y no se obtiene inspeccionando el par de máquinas.
+de máquinas de Mealy deterministas sobre alfabetos **finitos y fijos** \(A/B\), cada una con como máximo \(N\) estados. El bound \(N\) forma parte de la especificación previa de la clase y no se obtiene inspeccionando el par de máquinas.
 
 La semántica completa del rol es:
 
