@@ -4275,7 +4275,7 @@ El contrato mínimo es:
 
 1. **FC1 / typed endpoints:** $x_i$ está bien tipado en $i$ y $x_k$ en $k$; nunca aparecen juntos en una fórmula objeto.
 2. **FC2 / provenance:** la relación depende de una historia de formación concreta; semejanza, isomorfismo o duplicación accidental no bastan.
-3. **FC3 / prior profile:** existe un ContinuationProfile no trivial fijado independientemente del candidato child-side; no se seleccionan post hoc justo las propiedades que $x_k$ conserva.
+3. **FC3 / derived prior profile:** existe un ContinuationProfile no trivial derivado source-side de una PersistenceSpec/PersistenceBasis independently grounded; §§0.11.91a–0.11.91j formalizan el criterio y prohíben seleccionar post hoc justo lo que $x_k$ conserva.
 4. **FC4 / translated preservation:** para cada rasgo declarado preservado $\varphi_i$ del perfil, $\tau_{ik}(\varphi_i)$ vale de $x_k$.
 5. **FC5 / genealogical commuting where preserved:** si una dependencia, relación o paso generativo del perfil tiene continuaciones declaradas para todos sus relata, la estructura correspondiente se preserva o se marca explícitamente como transformada.
 6. **FC6 / permitted novelty:** $x_k$ puede adquirir hechos y dependencias nuevos, especialmente respecto de $g_k$; continuidad no significa copia total.
@@ -11833,9 +11833,11 @@ FC10/auditability exige ahora exhibir:
 
 \[
 \boxed{
+\mathbb P_i^x,\;
 \psi,\;
 \Theta_x,\;
 \mathsf{CP}_i^x,\;
+\mathsf{TRP}_{k}^{y\mid\tau\Pi},\;
 \pi_\gamma,\;
 \Phi,\;
 \tau
@@ -11852,7 +11854,7 @@ o equivalentes formalmente transportados. No exige que el child reconstruya inte
 \operatorname{ProfileMorphism}
 (
 \mathsf{CP}_i^x,
-\mathsf{CP}_k^z
+\mathsf{TRP}_k^{z\mid\tau\Pi}
 )
 \]
 
