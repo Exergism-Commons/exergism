@@ -286,11 +286,13 @@ def require_canonical_display(
     expected: str,
     description: str,
 ) -> None:
-    canonical_source = "$\n" + expected + "\n$"
-    if section.count(canonical_source) != 1:
+    canonical_source = "$$\n" + expected + "\n$$"
+    source_count = section.count(canonical_source)
+    if source_count != 1:
         fail(
-            f"{description} must occur exactly once as its canonical $...$ source "
-            "inside the designated definition section"
+            f"{description} must occur exactly once as its canonical $$...$$ source "
+            "inside the designated definition section "
+            f"(display_count={source_count}, formula_count={section.count(expected)})"
         )
 
 
