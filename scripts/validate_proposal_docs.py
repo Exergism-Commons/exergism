@@ -159,7 +159,12 @@ def validate_archive(text: str) -> None:
 
 
 def strip_html_comments(text: str) -> str:
-    return re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+    return re.sub(
+        r"<!--.*?-->",
+        lambda match: "\n" * match.group(0).count("\n"),
+        text,
+        flags=re.DOTALL,
+    )
 
 
 def markdown_lines_visible(text: str) -> list[tuple[int, str]]:
