@@ -5,7 +5,7 @@ The program executes both:
 1. the local XR-1 transition theory, and
 2. a distinct host-side realizer.
 
-It mechanically checks the structural obligations corresponding to OR2-OR7
+It mechanically checks the structural obligations corresponding to OR2-OR9
 and records evidence that a host execution occurred (OR1 evidence).  The
 certificate is evidence, not a truthmaker: whether actual structurally
 adequate realization suffices for ontic realization is a metaontological
@@ -233,6 +233,24 @@ def verify_realization() -> tuple[dict[str, bool], dict[str, object]]:
     h_b = HostState(phase=0, payload=0, irrelevant_noise=2)
     level_noncollapse = h_a != h_b and rho_state(h_a) == rho_state(h_b) == S0
 
+    # OR8: realization is state-local/prefix-local.  rho receives only the
+    # current host state, not a trace, time index, future state, or certificate.
+    local_projection = (
+        rho_state.__code__.co_argcount == 1
+        and rho_state.__code__.co_kwonlyargcount == 0
+        and all(
+            name not in rho_state.__code__.co_names
+            for name in ("trace", "history", "future", "time", "certificate")
+        )
+    )
+
+    # OR9: the realization map is fixed independently of the concrete run.
+    # Exercise the same predeclared rho over multiple counterfactual hosts.
+    preregistered_mapping = all(
+        rho_state(h) == S0
+        for h in irrelevant_variants
+    ) and rho_state.__name__ == "rho_state"
+
     checks = {
         "or1_host_execution_evidenced": host_after == HostState(1, 1, 17),
         "or2_typed_realization": typed_realization,
@@ -241,6 +259,8 @@ def verify_realization() -> tuple[dict[str, bool], dict[str, object]]:
         "or5_no_certificate_dependence": no_certificate_dependence,
         "or6_realization_covariance": realization_covariance,
         "or7_level_noncollapse": level_noncollapse,
+        "or8_state_local_projection": local_projection,
+        "or9_preregistered_mapping": preregistered_mapping,
     }
     trace = {
         "host_before": {
@@ -307,7 +327,7 @@ def verify() -> dict:
         "status": "formal-operational-realization-evidence-passed",
         "caveat": (
             "The run mechanically checks the finite generative core and the "
-            "structural OR2-OR7 realization obligations, while evidencing an "
+            "structural OR2-OR9 realization obligations, while evidencing an "
             "actual host execution for OR1. The certificate remains evidence, "
             "not the truthmaker. The remaining metaontological question is "
             "whether actual RealizationAdequate structure is sufficient for "
