@@ -617,25 +617,34 @@ def validate_archive(document: MarkdownDocument) -> None:
         fail("Historical pre-consolidation archive must carry a visible SUPERSEDED/non-normative banner")
 
 
+def normalize_tex_spacing_for_index_guard(text: str) -> str:
+    # This is deliberately only a lexical normalization for EXT-02, not a TeX parser.
+    # Standard spacing commands are semantically irrelevant between a quantifier and its
+    # variable; trivial braces around bare i are likewise normalized. Superscripts such as
+    # \\exists^{\\mathsf M} i remain structurally present and therefore do not match.
+    normalized = re.sub(r"\\\\(?: |[,;:!]|quad\\b|qquad\\b)", " ", text)
+    normalized = re.sub(r"\\{\\s*\\}", " ", normalized)
+    normalized = re.sub(r"\\{\\s*i\\s*\\}", " i ", normalized)
+    return normalized
+
+
 def validate_index_typing(current: str) -> None:
-    tex_gap = r"(?:\s|\\[,;:!]|\\(?:quad|qquad)|\{\s*\})*"
-    index_i = r"(?:i\b|\{\s*i\s*\})"
     checks = {
-        rf"\\exists!?{tex_gap}{index_i}": "object-level existential quantification over index metavariable i",
-        rf"\\forall{tex_gap}{index_i}": "object-level universal quantification over index metavariable i",
-        r"i\s*\\neq\s*j|j\s*\\neq\s*i": "ordinary i\\neq j index relation",
-        r"i\s*\\in\s*I\b": "membership of index metavariable i in an index domain I",
-        r"\\operatorname\{Real\}\(x\)": "unindexed Real(x) predicate",
+        r"\\\\exists!?\\s+i\\b": "object-level existential quantification over index metavariable i",
+        r"\\\\forall\\s+i\\b": "object-level universal quantification over index metavariable i",
+        r"i\\s*\\\\neq\\s*j|j\\s*\\\\neq\\s*i": "ordinary i\\neq j index relation",
+        r"i\\s*\\\\in\\s*I\\b": "membership of index metavariable i in an index domain I",
+        r"\\\\operatorname\\{Real\\}\\(x\\)": "unindexed Real(x) predicate",
     }
 
-    for pattern, description in checks.items():
-        match = re.search(pattern, current)
-        if match:
-            line = current.count("\n", 0, match.start()) + 1
-            fail(
-                f"{NORMATIVE.relative_to(ROOT)} reintroduces {description} at active line {line}; "
-                "indices are meta-level type parameters (EXT-02)"
-            )
+    for line_number, source_line in enumerate(current.split("\\n"), start=1):
+        normalized_line = normalize_tex_spacing_for_index_guard(source_line)
+        for pattern, description in checks.items():
+            if re.search(pattern, normalized_line):
+                fail(
+                    f"{NORMATIVE.relative_to(ROOT)} reintroduces {description} "
+                    f"at active line {line_number}; indices are meta-level type parameters (EXT-02)"
+                )
 
 
 def validate_regime_total_contract(
