@@ -174,19 +174,37 @@ def normalize_source(text: str) -> str:
     return text.replace("\r\n", "\n").replace("\r", "\n")
 
 
-def inline_plain_text(token: Any) -> str:
-    if token.children:
-        parts: list[str] = []
-        for child in token.children:
-            if child.type in {"text", "code_inline"}:
-                parts.append(child.content)
-            elif child.type == "math_inline":
-                markup = child.markup or "$"
-                parts.append(f"{markup}{child.content}{markup}")
-            elif child.type in {"softbreak", "hardbreak"}:
-                parts.append(" ")
-        return "".join(parts).strip()
-    return token.content.strip()
+def visible_inline_text(token: Any) -> str:
+    if not token.children:
+        return token.content.strip()
+
+    parts: list[str] = []
+    transparent = {
+        "em_open",
+        "em_close",
+        "strong_open",
+        "strong_close",
+        "link_open",
+        "link_close",
+    }
+
+    for child in token.children:
+        if child.type in {"text", "code_inline"}:
+            parts.append(child.content)
+        elif child.type == "math_inline":
+            markup = child.markup or "$"
+            parts.append(f"{markup}{child.content}{markup}")
+        elif child.type in {"softbreak", "hardbreak"}:
+            parts.append(" ")
+        elif child.type in transparent:
+            continue
+        elif child.type in {"image", "html_inline"}:
+            parts.append(HIDDEN_BLOCK_BOUNDARY)
+        else:
+            # Unknown visible inline nodes must never disappear from semantic identity.
+            parts.append(HIDDEN_BLOCK_BOUNDARY)
+
+    return "".join(parts).strip()
 
 
 class MarkdownDocument:
@@ -228,6 +246,33 @@ class MarkdownDocument:
             for line_no in range(start, end)
         )
 
+    def semantic_text(self, start: int = 0, end: int | None = None) -> str:
+        if end is None:
+            end = len(self.lines)
+
+        parts: list[str] = []
+        for token in self.tokens:
+            if token.map is None:
+                continue
+            if not (start <= token.map[0] and token.map[1] <= end):
+                continue
+
+            if token.type == "inline":
+                parts.append(visible_inline_text(token))
+            elif token.type in {"math_block", "math_block_label"}:
+                parts.append(token.content.strip())
+
+        return "\n".join(part for part in parts if part)
+
+    def parsed_math_lines(self) -> set[int]:
+        result: set[int] = set()
+        for token in self.tokens:
+            if token.type not in {"math_block", "math_block_label"} or token.map is None:
+                continue
+            start, end = token.map
+            result.update(range(start, end))
+        return result
+
     def headings(self) -> list[tuple[int, str, int]]:
         result: list[tuple[int, str, int]] = []
         for index, token in enumerate(self.tokens):
@@ -236,7 +281,7 @@ class MarkdownDocument:
             if index + 1 >= len(self.tokens) or self.tokens[index + 1].type != "inline":
                 continue
             level = int(token.tag[1:])
-            title = inline_plain_text(self.tokens[index + 1])
+            title = visible_inline_text(self.tokens[index + 1])
             result.append((level, title, token.map[0]))
         return result
 
@@ -299,19 +344,7 @@ class MarkdownDocument:
             if not (start <= token.map[0] and token.map[1] <= end):
                 continue
 
-            parts: list[str] = []
-            for child in token.children or []:
-                if child.type == "text":
-                    parts.append(child.content)
-                elif child.type == "math_inline":
-                    markup = child.markup or "$"
-                    parts.append(f"{markup}{child.content}{markup}")
-                elif child.type in {"softbreak", "hardbreak"}:
-                    parts.append("\n")
-                elif child.type == "code_inline":
-                    parts.append(HIDDEN_BLOCK_BOUNDARY)
-
-            if marker in "".join(parts):
+            if marker in visible_inline_text(token):
                 matches.append((index, token))
         return matches
 
@@ -350,7 +383,7 @@ class MarkdownDocument:
                     if depth == 0:
                         break
                 elif depth == 1 and child.type == "inline":
-                    inline_parts.append(inline_plain_text(child))
+                    inline_parts.append(visible_inline_text(child))
                 cursor += 1
 
             results.append("\n".join(inline_parts).strip())
@@ -410,6 +443,7 @@ def require_canonical_display_after(
 def validate_display_math(path: Path, document: MarkdownDocument) -> None:
     active = document.active_text()
     lines = active.split("\n")
+    parsed_math_lines = document.parsed_math_lines()
 
     lone_dollar = [
         index
@@ -422,15 +456,17 @@ def validate_display_math(path: Path, document: MarkdownDocument) -> None:
             + ", ".join(map(str, lone_dollar[:10]))
         )
 
-    display_delimiters = sum(
-        1
-        for line in lines
+    unparsed_display_delimiters = [
+        index + 1
+        for index, line in enumerate(lines)
         if re.fullmatch(r" {0,3}\$\$[ \t]*", line)
-    )
-    if display_delimiters % 2:
+        and index not in parsed_math_lines
+    ]
+    if unparsed_display_delimiters:
         fail(
-            f"{path.relative_to(ROOT)} has an odd number of active '$$' display delimiters: "
-            f"{display_delimiters}"
+            f"{path.relative_to(ROOT)} contains '$$' delimiters not classified by "
+            "dollarmath_plugin as parsed math blocks at lines "
+            + ", ".join(map(str, unparsed_display_delimiters[:10]))
         )
 
 
@@ -509,8 +545,8 @@ def validate_ledger(document: MarkdownDocument) -> None:
 
 
 def validate_archive(document: MarkdownDocument) -> None:
-    first_lines = "\n".join(document.active_text().split("\n")[:8])
-    if "SUPERSEDED" not in first_lines or "no normativo" not in first_lines:
+    first_visible = document.semantic_text(0, min(8, len(document.lines)))
+    if "SUPERSEDED" not in first_visible or "no normativo" not in first_visible:
         fail("Historical pre-consolidation archive must carry a visible SUPERSEDED/non-normative banner")
 
 
@@ -645,10 +681,11 @@ def validate_regime_total_contract(
         "REV-07f §8.5 presentation implication",
     )
 
-    pure_relation_section = technical.section(
+    pure_relation_bounds = technical.section_bounds(
         4,
         "0.4.6. Stress test mixto: relación–genealogía–relación",
     )
+    pure_relation_section = technical.semantic_text(*pure_relation_bounds)
     if "ensamblaje de GeneTotal" in pure_relation_section:
         fail(
             "REV-07f regression: active pure-relation assembly discussion again "
@@ -662,7 +699,7 @@ def validate_regime_total_contract(
             )
 
     plural_route_bounds = technical.section_bounds(5, "Ruta plural")
-    plural_route_section = technical.active_text(*plural_route_bounds)
+    plural_route_section = technical.semantic_text(*plural_route_bounds)
     status_quotes = [
         text
         for text in technical.parsed_blockquote_texts(*plural_route_bounds)
@@ -678,10 +715,11 @@ def validate_regime_total_contract(
             "REV-07f regression: plural route again assigns PARTIAL status to REV-24d"
         )
 
-    historical_dilemma = technical.section(
+    historical_bounds = technical.section_bounds(
         4,
         "0.11.3. HISTORICAL — dilema monogeneal pre-REV-07f",
     )
+    historical_dilemma = technical.semantic_text(*historical_bounds)
     if r"\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)" not in historical_dilemma:
         fail(
             "REV-07f regression: historical single-origin dilemma no longer records "
@@ -738,6 +776,8 @@ def main() -> None:
         document.reject_inline_html(path)
         validate_display_math(path, document)
 
+    archive_document.reject_inline_html(ARCHIVE)
+
     validate_markdown_table_blocks(LEDGER, documents[LEDGER])
     validate_ledger(documents[LEDGER])
     validate_archive(archive_document)
@@ -746,7 +786,7 @@ def main() -> None:
         1,
         "II. Historia cronológica de la propuesta",
     )
-    current_normative = documents[NORMATIVE].active_text(0, history_start)
+    current_normative = documents[NORMATIVE].semantic_text(0, history_start)
     validate_index_typing(current_normative)
 
     validate_regime_total_contract(
