@@ -34,6 +34,10 @@ class IndexTypingGuardTests(unittest.TestCase):
             r"{{\forall}} i\;P_i",
             r"\mathop{\exists} i\;P_i",
             r"\mathop{\forall} i\;P_i",
+            r"\exists! i\;P_i",
+            r"\nexists i\;P_i",
+            r"\exists^{X} i\;P_i",
+            r"\forall_{q} i\;P_i",
         ):
             with self.subTest(tex=tex):
                 self.assert_rejected(tex)
@@ -58,6 +62,7 @@ class IndexTypingGuardTests(unittest.TestCase):
             r"i{\in}I",
             r"i\mathrel{\neq}j",
             r"i\mathrel{\in}I",
+            r"i\ne j",
             r"\operatorname{Real}(x)",
             r"\operatorname{Real}_x(x)",
             r"\operatorname{Real}_{\phantom{i}}(x)",
