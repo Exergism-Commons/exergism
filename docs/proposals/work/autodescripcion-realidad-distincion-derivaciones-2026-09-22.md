@@ -436,7 +436,7 @@ Así, REV-01 ya no debe formularse como «derivar F1–F3» sin más. Las opcion
 
 ### Estado de REV-03
 
-REV-03 permanece **PARTIAL**.
+REV-03 permanece **PARTIAL** respecto de la suficiencia doctrinal general de la noción mínima. **Reutilización posterior:** §§0.11.69j–0.11.69o conectan esta misma definición event-local con TR-M/IA0 mediante EpsilonAlignment y la ruta restringida \(\varepsilon\)RSP; no se redefine la emergencia para conseguir ese resultado.
 
 La candidata ahora:
 
@@ -6582,6 +6582,312 @@ Por tanto deben distinguirse tres statuses:
 3. **A-PRIORI / UNCONDITIONAL:** ExistsR se obtiene sin premisa contingente de actualidad, por ejemplo si NQ queda demostrado.
 
 Esta distinción evita llamar “incondicional” a una prueba cuya única condición ha sido descargada empíricamente.
+
+#### 0.11.69j. Reentrada de \(\varepsilon\): emergencia como descarga positiva de IA0
+
+La maquinaria de REV-03 fue construida al principio de la PR precisamente con una propiedad que ahora resulta crucial:
+
+\[
+\boxed{
+\mathcal E_M
+\text{ se define sin usar }R,\operatorname{RegimeTotal},\operatorname{Adm}
+\text{ ni posibilidad ontológica derivada.}
+}
+\]
+
+Además, un evento emergente exige actualización efectiva:
+
+\[
+e=(s_0,P,s_1)\in\mathcal E_M
+\]
+
+solo si:
+
+\[
+s_0\xrightarrow{+}_{M,\mathrm{act}}s_1
+\]
+
+junto con Macro-invariancia, novedad de \(P\) y un OrgWitness que controla el perfil local y demuestra capacidad dinámica habilitada.
+
+Por tanto \(\varepsilon\) aporta una forma pre-indexada de **estructura organizacional efectivamente operativa**.
+
+Sin embargo, REV-03 fue deliberadamente modesta:
+
+\[
+e\in\mathcal E_M
+\not\Rightarrow
+\text{irreducibilidad metafísica}
+\]
+
+y:
+
+\[
+e\in\mathcal E_M
+\not\Rightarrow
+\operatorname{ContextIndividuation}.
+\]
+
+La microdinámica puede implementar completamente la capacidad emergente.
+
+La conexión correcta con TR-M exige una capa adicional de alineación.
+
+#### 0.11.69k. EA1–EA8 — EpsilonAlignment
+
+Sea \(C\) una candidatura pre-indexada con MemoContextCriterion y sea \(M_C\) una representación system-relative de su dinámica.
+
+Definimos:
+
+\[
+\boxed{
+\operatorname{EpsilonAligned}^{\mathsf M}_{\mathcal T}
+(
+C,e,\varrho;\epsilon
+)
+}
+\]
+
+cuando \(\epsilon\) descarga:
+
+1. **EA1 / realized actuality:** el path actual del evento \(e\) es la proyección, mediante una realización OR1–OR9, de una transición/proceso host-side efectivo.
+2. **EA2 / event locality:** \(s_0,P,s_1\) y el OrgWitness están tipados dentro de la misma candidatura \(C\); no se ensamblan relata de contextos rivales.
+3. **EA3 / organizational control:** el witness compara configuraciones con perfil local equivalente y diferencia organizacional pertinente, exactamente como exige REV-03.
+4. **EA4 / dynamical efficacy:** la organización de \(s_1\) habilita al menos una capacidad/traza ausente en el comparador controlado.
+5. **EA5 / individuation alignment:** las relaciones organizacionales que hacen trabajo en \(P\) y Enables pertenecen a la misma estructura positiva que MC3–MC7 usa para justificar boundary, typing, interface mediation o counterfactual autonomy. Una emergencia accidental dentro de un contenedor arbitrario no individúa el contenedor.
+6. **EA6 / interaction coverage:** las dependencias que producen la capacidad emergente no atraviesan hidden bypasses omitidos por la frontera; si lo hacen, MC4 obliga a ampliar/revisar el contexto.
+7. **EA7 / recoding covariance:** recodificaciones fieles preservan el evento emergente y su alineación, además de OR6.
+8. **EA8 / no post-hoc emergence cut:** \(M_C\), \(P\), el tipo de OrgWitness y la estructura usada para individuar \(C\) se fijan independientemente del run concreto; no se eligen después para hacer aparecer emergencia.
+
+La conjunción:
+
+\[
+\operatorname{RealizedEmergence}^{\mathsf M}
+(
+H,C,e;\varrho
+)
+\]
+
+abrevia:
+
+\[
+\operatorname{ActualStructuralRealization}(H,C;\varrho)
++
+e\in\mathcal E_{M_C}
++
+\operatorname{EpsilonAligned}(C,e,\varrho).
+\]
+
+#### 0.11.69l. \(\varepsilon\)-RSP — suficiencia emergentista restringida
+
+El corpus canónico de Exergism ya se presenta como **metafísica emergentista** y atribuye a configuraciones emergentes niveles, propiedades y dinámicas propias. Esa doctrina no justifica el RSP genérico para toda abstracción estructural imaginable, pero sí motiva una regla mucho más estrecha.
+
+Definimos:
+
+\[
+\boxed{
+\varepsilon\mathrm{RSP}
+:
+\operatorname{RealizedEmergence}(H,C,e;\varrho)
++
+\operatorname{MCAdequate}(C)
+\Rightarrow
+IA0(C).
+}
+\]
+
+Su lectura es:
+
+> una estructura local no obtiene structural fidelity por ser describible como autómata; la obtiene, bajo TR-M, cuando una organización efectivamente realizada y boundary-aligned produce una macro-novedad invariante y una capacidad dinámica diferencial bajo control del mismo perfil local.
+
+\(\varepsilon\)RSP es estrictamente más estrecho que RSP:
+
+\[
+\boxed{
+\varepsilon\mathrm{RSP}
+\not\equiv
+\mathrm{RSP}.
+}
+\]
+
+No autoriza:
+
+\[
+\operatorname{ActualStructuralRealization}
+\Rightarrow
+IA0
+\]
+
+para cualquier coarse-graining.
+
+Solo autoriza la descarga cuando se satisface la maquinaria emergentista de REV-03 y su alineación con TR-M.
+
+#### 0.11.69m. EF-T1 — por qué \(\varepsilon\)RSP no es mera etiqueta descriptiva
+
+Bajo EA1–EA8:
+
+- la macrocaracterística \(P\) es invariante a renombrado;
+- el perfil local está controlado;
+- variar la organización cambia \(P\);
+- esa organización cambia el conjunto de capacidades/trazas disponibles;
+- el evento que produce el nuevo estado fue efectivamente realizado;
+- OR8/OR9 impiden definir retrospectivamente el mapping que hace aparecer esa organización;
+- MC3–MC7 alinean esa eficacia con la frontera/contextualidad propuesta.
+
+Por tanto el contenido usado para IA0 posee simultáneamente:
+
+\[
+\boxed{
+\text{actuality}
++
+\text{organization dependence}
++
+\text{counterfactual discrimination}
++
+\text{dynamical efficacy}
++
+\text{boundary alignment}
++
+\text{covariance}.
+}
+\]
+
+Esto es exactamente el tipo de evidencia positiva que IA0 reclamaba frente a consistencia interna, conveniencia predictiva o ajuste puramente descriptivo.
+
+La única decisión doctrinal restante en \(\varepsilon\)RSP es emergentista:
+
+> ¿una organización actual con eficacia dinámica propia, correctamente individuada y realizada, cuenta como estructura ontológicamente relevante a ese nivel?
+
+A diferencia de RSP genérico, ésta coincide directamente con el compromiso emergentista que el sistema ya declara.
+
+#### 0.11.69n. XR-\(\varepsilon\): XR-1 reutiliza el toy emergentista original
+
+XR-1 se refina sin ampliar su scope actual.
+
+Interpretamos:
+
+\[
+s_0=p
+\]
+
+como la configuración camino de cuatro componentes ready, y:
+
+\[
+s_1=c
+\]
+
+como la configuración ciclo tras el evento actual:
+
+\[
+p\xrightarrow{\texttt{close}}_{\mathrm{act}}c.
+\]
+
+Sea:
+
+\[
+P(s)=\beta_1(G(s)).
+\]
+
+Entonces:
+
+\[
+P(p)=0,
+\qquad
+P(c)=1.
+\]
+
+Los cuatro componentes conservan el mismo perfil local:
+
+\[
+L(p)\cong L(c),
+\]
+
+y:
+
+\[
+\texttt{activate}
+\in
+\operatorname{Traces}(c)
+\setminus
+\operatorname{Traces}(p).
+\]
+
+Luego \(p\) funciona como OrgWitness controlado para \(c\), exactamente según REV-03:
+
+\[
+\boxed{
+(p,P,c)\in\mathcal E_{M_{XR1}}.
+}
+\]
+
+La configuración alcanzable por activate puede permanecer **potencial**: no entra en el scope actual XR-1 porque OrgWitness compara capacidades disponibles, no exige que toda capacidad se actualice.
+
+El script scripts/xr1_witness.py verifica ahora:
+
+- la actualización real host-side \(p\to c\);
+- invariancia de \(\beta_1\) bajo todas las \(4!\) permutaciones type-preserving;
+- igualdad del perfil local de los cuatro componentes;
+- novedad macroestructural \(0\to1\);
+- disponibilidad de activate solo tras la reorganización;
+- OR2–OR9 de la realización host/local.
+
+Así XR-1 deja de ser solo una DTS mínima:
+
+\[
+\boxed{
+XR1
+=
+\text{finite GeneTotal candidate}
++
+\text{actual realized }\varepsilon\text{-event}.
+}
+\]
+
+#### 0.11.69o. XR\(\varepsilon\)-T — ruta emergentista hacia ExistsR
+
+Para XR-1, EA1–EA8 quedan descargables por construcción y por los tests ejecutables, mientras MC1–MC10 e IA1–IA10 ya fueron auditados.
+
+Si se adopta la regla doctrinal restringida \(\varepsilon\)RSP, entonces:
+
+\[
+\operatorname{RealizedEmergence}_{XR1}
++
+\operatorname{MCAdequate}_{XR1}
+\Rightarrow
+IA0_{XR1}.
+\]
+
+Junto con el resto de IndAdequate y XR1-F/R/S:
+
+\[
+\boxed{
+\varepsilon\mathrm{RSP}
++
+\operatorname{RealizedEmergence}_{XR1}
++
+\operatorname{IndAdequate}^{1\text{--}10}_{XR1}
+\Rightarrow
+\operatorname{ExistsR}.
+}
+\]
+
+La superscript \(1\text{--}10\) indica que IA0 es descargado específicamente por \(\varepsilon\)RSP; no se presupone dos veces.
+
+Esto **no** convierte ExistsR en teorema a priori. NFA-T1 sigue aplicando: RealizedEmergence contiene actualidad positiva y por ello no es Null-compatible.
+
+Pero sí reemplaza el RSP genérico por una ruta específicamente exergista:
+
+\[
+\boxed{
+\text{actual emergence}
+\to
+\text{structural fidelity}
+\to
+\text{context individuation}
+\to
+\operatorname{RegimeTotal}
+\to
+\operatorname{ExistsR}.
+}
+\]
 
 #### 0.11.70. Auditoría posterior con \(\Omega_i\) sin circularidad
 
