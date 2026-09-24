@@ -32,6 +32,8 @@ MAX_SECTION4_LINES = 400
 
 PRIMARY_LEDGER_ID = re.compile(r"^(REV-\d+[a-z]?|DOC-\d+|FORM-\d+)$")
 HIDDEN_BLOCK_BOUNDARY = "\u241e"
+CONTEXT_INDEX_NAMES = frozenset({"i", "j", "k"})
+INVISIBLE_TEX_MACROS = frozenset({"phantom", "hphantom", "vphantom"})
 
 # Structural Markdown semantics are delegated to a standards-conformant CommonMark parser.
 # Do not reintroduce regex/state-machine parsing for fences, indented code, HTML blocks or comments.
@@ -163,6 +165,18 @@ PLURAL_STATUS_TEXT = (
     "Status contract: REV-24d = UNCHANGED; "
     "scope realization owner = REV-07/RegimeTotal; "
     "Actual/CoReal plural route = NON-DISCHARGING for RegimeGenerated*."
+)
+
+CANONICAL_ARCHIVE_BANNER = (
+    "SUPERSEDED — archivo histórico, no normativo. "
+    "Esta instantánea conserva deliberadamente formulaciones anteriores a REV-24 "
+    "en las que máximos formales/semánticos fueron denominados $R_i$ "
+    "(incluidos $R_i^{\\mathrm{proc}}$ y $R_i^A(t)$). "
+    "Esas promociones están retiradas. "
+    "La formulación vigente distingue $S_i$ como máximo semántico de $R_i$ "
+    "como alcance ontológico y exige un puente independiente REV-24/$\\mathrm{OTB}_i$. "
+    "Véase ../autodescripcion-realidad-distincion.md. "
+    "No debe usarse este archivo para establecer el estado actual de la propuesta."
 )
 
 
@@ -477,25 +491,6 @@ class MarkdownDocument:
         return results
 
 
-def require_canonical_display(
-    document: MarkdownDocument,
-    bounds: tuple[int, int],
-    expected: str,
-    description: str,
-) -> None:
-    start, end = bounds
-    matches = [
-        token
-        for token in document.math_blocks(start, end)
-        if token.content.strip() == expected
-    ]
-    if len(matches) != 1:
-        fail(
-            f"{description} must occur exactly once as a parsed canonical math_block "
-            "inside the designated definition section"
-        )
-
-
 def require_canonical_display_after(
     document: MarkdownDocument,
     bounds: tuple[int, int],
@@ -578,10 +573,10 @@ def validate_archive(document: MarkdownDocument) -> None:
         0,
         min(8, len(document.lines)),
     )
-    if len(banners) != 1 or "SUPERSEDED" not in banners[0] or "no normativo" not in banners[0]:
+    if banners != [CANONICAL_ARCHIVE_BANNER]:
         fail(
-            "Historical pre-consolidation archive must carry exactly one parsed "
-            "top-level SUPERSEDED/non-normative banner blockquote near the top"
+            "Historical pre-consolidation archive must carry exactly the canonical "
+            "parsed top-level SUPERSEDED/non-normative banner near the top"
         )
 
 
@@ -605,6 +600,19 @@ def tex_text_ends_with_bare_name(nodes: list[Any], name: str) -> bool:
         rf"(?<![A-Za-z0-9_]){re.escape(name)}\s*$",
         tex_nodes_text(nodes),
     ) is not None
+
+
+def find_forbidden_invisible_tex_macro(nodes: list[Any]) -> str | None:
+    for node in nodes:
+        if isinstance(node, LatexMacroNode) and node.macroname in INVISIBLE_TEX_MACROS:
+            return node.macroname
+
+        for child_nodes in tex_child_nodelists(node):
+            forbidden = find_forbidden_invisible_tex_macro(child_nodes)
+            if forbidden is not None:
+                return forbidden
+
+    return None
 
 
 def flatten_transparent_tex_groups(nodes: list[Any]) -> list[Any]:
@@ -635,18 +643,18 @@ def tex_child_nodelists(node: Any) -> list[list[Any]]:
     return children
 
 
-def rendered_text_has_unindexed_real(rendered: str) -> bool:
+def rendered_text_has_invalid_real_index(rendered: str) -> bool:
+    allowed = "".join(sorted(CONTEXT_INDEX_NAMES))
+    pattern = re.compile(
+        rf"^_\\s*([{re.escape(allowed)}])\\s*(?=\\()"
+    )
+
     for match in re.finditer(r"(?<![A-Za-z0-9])Real(?![A-Za-z0-9])", rendered):
         suffix = rendered[match.end() :].lstrip()
-        if not suffix.startswith("_"):
-            return True
-
-        operand = suffix[1:].lstrip()
-        if not operand or operand[0] in "([{":
+        if pattern.match(suffix) is None:
             return True
 
     return False
-
 
 def find_index_typing_violation(nodes: list[Any]) -> str | None:
     nodes = flatten_transparent_tex_groups(nodes)
@@ -687,6 +695,7 @@ def find_index_typing_violation(nodes: list[Any]) -> str | None:
 
 
 def validate_index_typing(
+    path: Path,
     document: MarkdownDocument,
     start: int,
     end: int,
@@ -701,16 +710,24 @@ def validate_index_typing(
             )
 
         parsed_nodes = list(nodes)
-        if rendered_text_has_unindexed_real(tex_nodes_text(parsed_nodes)):
+        forbidden_macro = find_forbidden_invisible_tex_macro(parsed_nodes)
+        if forbidden_macro is not None:
             fail(
-                f"{NORMATIVE.relative_to(ROOT)} reintroduces unindexed Real predicate "
-                f"near active line {line_number}; indices are meta-level type parameters (EXT-02)"
+                f"{path.relative_to(ROOT)} uses invisible TeX macro \\{forbidden_macro} "
+                f"near active line {line_number}; active proposal math must have auditable visible semantics"
+            )
+
+        if rendered_text_has_invalid_real_index(tex_nodes_text(parsed_nodes)):
+            fail(
+                f"{path.relative_to(ROOT)} reintroduces Real with a missing or invalid context index "
+                f"near active line {line_number}; allowed context metavariables are "
+                f"{', '.join(sorted(CONTEXT_INDEX_NAMES))} (EXT-02)"
             )
 
         violation = find_index_typing_violation(parsed_nodes)
         if violation is not None:
             fail(
-                f"{NORMATIVE.relative_to(ROOT)} reintroduces {violation} "
+                f"{path.relative_to(ROOT)} reintroduces {violation} "
                 f"near active line {line_number}; indices are meta-level type parameters (EXT-02)"
             )
 
@@ -722,15 +739,17 @@ def validate_regime_total_contract(
         3,
         "1.6. $R_i$ — totalización genealógica mono- y multigeneal",
     )
-    require_canonical_display(
+    require_canonical_display_after(
         normative,
         totalization_bounds,
+        r"Para una familia metateóricamente parametrizada $\mathfrak G_i$ de GeneUnit ya tipadas en el mismo contexto, §5.1 define GeneBasis, FamilyBase, RegimeClosure y:",
         CANONICAL_REGIME_GENERATED,
         "REV-07f RegimeGenerated* definition",
     )
-    require_canonical_display(
+    require_canonical_display_after(
         normative,
         totalization_bounds,
+        "La totalización general es:",
         CANONICAL_REGIME_TOTAL,
         "REV-07f RegimeTotal definition",
     )
@@ -739,21 +758,24 @@ def validate_regime_total_contract(
         3,
         "5.1. Criterio primario: origen unificado + generación independiente",
     )
-    require_canonical_display(
+    require_canonical_display_after(
         normative,
         genealogy_bounds,
+        "Formalmente:",
         CANONICAL_GENE_FAMILY,
         "REV-07f GeneFamily definition",
     )
-    require_canonical_display(
+    require_canonical_display_after(
         normative,
         genealogy_bounds,
+        "La closure del régimen no es esa unión. Debe volver a cerrar el mismo operador generativo para recoger producción transversal:",
         CANONICAL_REGIME_CLOSURE,
         "REV-07f RegimeClosure definition",
     )
-    require_canonical_display(
+    require_canonical_display_after(
         normative,
         genealogy_bounds,
+        "Finalmente:",
         CANONICAL_GENE_BASIS,
         "REV-07f GeneBasis definition",
     )
@@ -762,9 +784,10 @@ def validate_regime_total_contract(
         3,
         "0.10a. REV-07f — RegimeTotal multigeneal",
     )
-    require_canonical_display(
+    require_canonical_display_after(
         technical,
         technical_genealogy_bounds,
+        "Definimos GeneFamily:",
         CANONICAL_GENE_FAMILY,
         "REV-07f technical GeneFamily definition",
     )
@@ -860,9 +883,10 @@ def validate_regime_total_contract(
         4,
         "0.11.3. HISTORICAL — dilema monogeneal pre-REV-07f",
     )
-    require_canonical_display(
+    require_canonical_display_after(
         technical,
         historical_bounds,
+        "REV-07f retira la inferencia de que esto obliga a buscar un único origen común. En la arquitectura vigente, si ambas genealogías ya están justificadamente tipadas en el mismo SharedOntSpace, pueden formar una GeneFamily y la totalidad se expresa mediante:",
         CANONICAL_HISTORICAL_REGIME_TOTAL,
         "REV-07f historical current RegimeTotal architecture",
     )
@@ -913,9 +937,16 @@ def main() -> None:
         "II. Historia cronológica de la propuesta",
     )
     validate_index_typing(
+        NORMATIVE,
         documents[NORMATIVE],
         0,
         history_start,
+    )
+    validate_index_typing(
+        TECHNICAL,
+        documents[TECHNICAL],
+        0,
+        len(documents[TECHNICAL].lines),
     )
 
     validate_regime_total_contract(
