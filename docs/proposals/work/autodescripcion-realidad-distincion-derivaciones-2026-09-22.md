@@ -6324,6 +6324,190 @@ Una reindexación epistémica puede revelar que nunca hubo dos contextos. Una Co
 
 Esta distinción será obligatoria al volver sobre la pregunta “¿puede destruirse un \(R_i\)?”. Sin ella se confundiría corrección de nuestro mapa ontológico con muerte de aquello que el mapa pretendía describir.
 
+#### 0.11.72. IndAdequate no es un nuevo primitivo
+
+Para que TR no desplace simplemente la caja negra de \(\chi\) a IndAdequate, fijamos su estatus:
+
+\[
+\boxed{
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi)
+:=
+\bigwedge_{m=0}^{10}\mathrm{IA}_m(\mathcal T,C,\chi).
+}
+\]
+
+Es una **abreviatura de auditoría**, no un hecho metaontológico adicional que pueda postularse sin descarga.
+
+Análogamente, \(\operatorname{Ind}_{\mathcal T}\) no recibe una definición universal en el núcleo. Cada teoría \(\mathcal T\) debe especificar qué estructura concreta pretende hacer el trabajo de individuación y demostrar que satisface IA0–IA10.
+
+Por tanto la arquitectura no permite:
+
+\[
+\operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi)
+\quad\text{“por estipulación”.}
+\]
+
+Debe existir una reducción theory-specific explícita:
+
+\[
+\operatorname{Criterion}_{\mathcal T}(C;\chi)
+\Longleftrightarrow
+\text{condiciones internas concretas de }\mathcal T,
+\]
+
+y después verificarse:
+
+\[
+\operatorname{Criterion}_{\mathcal T}
++
+\mathrm{IA0\text{-}IA10}
+\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}.
+\]
+
+El núcleo general controla la forma de la descarga; no inventa su contenido.
+
+#### 0.11.73. Toy TR-W: una world-making relation theory-specific sí puede descargar un índice
+
+Para mostrar que TR no es vacía, consideremos una teoría de juguete \(\mathcal T_W\) que postula independientemente una relación fundamental \(W\) y justifica:
+
+\[
+\operatorname{WorldMaker}_{\mathcal T_W}(W).
+\]
+
+Esta tesis es parte del contenido propio de \(\mathcal T_W\), no una definición construida desde \(R_i\), SameRegime o el índice final.
+
+Sean cuatro tokens pre-indexados:
+
+\[
+a,b,c,d,
+\]
+
+y supongamos que la estructura \(W\) satisface:
+
+\[
+W(a,b),
+\qquad
+W(b,c),
+\]
+
+sin ningún \(W\)-camino entre \(d\) y \(\{a,b,c\}\).
+
+Definimos dentro de \(\mathcal T_W\):
+
+\[
+x\equiv_W y
+\Longleftrightarrow
+\text{existe un camino finito de }W\text{ entre }x\text{ e }y,
+\]
+
+y los carriers candidatos:
+
+\[
+C_1=[a]_{\equiv_W}=\{a,b,c\},
+\qquad
+C_2=[d]_{\equiv_W}=\{d\}.
+\]
+
+Aquí la conectividad **no** pretende ser una definición universal de contexto. Funciona porque \(\mathcal T_W\) ha justificado independientemente que \(W\), y no una relación arbitraria, es world-making.
+
+Si además:
+
+1. \(W\) es estructuralmente fiel para el dominio del toy (IA0);
+2. WorldMaker\(_{\mathcal T_W}\) no se define mediante los componentes que queremos obtener (IA1–IA2);
+3. la presencia de \(W\) es positiva y no mera ausencia de exterior (IA3);
+4. isomorfismos de la estructura \(W\) preservan sus componentes (IA4);
+5. ninguna relación que \(\mathcal T_W\) declare necesariamente co-contextual cruza entre \(C_1\) y \(C_2\) (IA5);
+6. las restantes IA6–IA10 quedan satisfechas,
+
+entonces:
+
+\[
+\operatorname{Ind}_{\mathcal T_W}^{\mathsf M}(C_1;\chi_W)
+\land
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T_W,C_1,\chi_W)
+\]
+
+puede descargar:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}(C_1;\chi_W)
+\Rightarrow
+\operatorname{IndexAdmission}^{\mathsf M}(C_1\Downarrow i;\chi_W,\mathcal T_W).
+\]
+
+Y análogamente para \(C_2\).
+
+El toy demuestra únicamente **consistencia arquitectónica** de TR: existe al menos una forma no circular en que una teoría suficientemente rica puede proporcionar el criterio que el núcleo deja parametrizado.
+
+No demuestra que \(W\) exista en nuestra ontología ni que todo contexto real sea \(W\)-conexo.
+
+#### 0.11.74. Stress tests de TR-W
+
+**TW1 — relación elegida post hoc.** Se define \(W\) como “la relación que conecta exactamente los tokens que queremos meter en \(C_1\)”.
+
+Falla IA1/IA2. La aparente individuación es una codificación del target.
+
+**TW2 — relación demasiado pobre.** Aparece un hecho fundamental \(F(a,d)\) que, por la semántica independiente de \(\mathcal T_W\), exige que \(a\) y \(d\) sean relata del mismo contexto, pero \(W\) los mantiene separados.
+
+Falla IA0 o IA5. La teoría debe ampliar/revisar su world-making structure o retirar la admisión; no puede declarar \(F\) mal tipado solo para proteger el índice.
+
+**TW3 — enlace constitutivamente nuevo.** Antes de una formación no existe estructura que haga worldmates a dos sectores; la propia formación produce por primera vez el witness \(W_k\) que los unifica.
+
+No es automáticamente SharedOntSpace. Si la existencia de la nueva unidad depende constitutivamente de esa formación, el caso migra a GI/ContextGenesis.
+
+**TW4 — dos world-makers rivales.** \(\mathcal T\) ofrece \(W_1\) y \(W_2\), ambos aparentemente adecuados, pero sus componentes inducen cortes incompatibles del mismo nivel.
+
+Falla IA8 hasta demostrar:
+
+\[
+W_1\sim_{\mathrm{ind}}W_2,
+\]
+
+una relación legítima de nesting/nivel, o una razón para descartar al menos uno.
+
+**TW5 — mismo corte, estructuras distintas.** \(W_1\) y \(W_2\) inducen la misma individuación aunque sean relaciones distintas.
+
+No hay multiplicación de índice. Los witnesses pueden ser distintos pero equivalentes respecto de ContextIndividuation, conforme §0.11.69.
+
+#### 0.11.75. Rehabilitación condicionada de la conectividad
+
+El toy revela una corrección importante a una lectura demasiado fuerte de las rondas anteriores.
+
+La conclusión vigente no es:
+
+\[
+\boxed{
+\text{“la conectividad nunca puede individuar un contexto”.}
+}
+\]
+
+Es:
+
+\[
+\boxed{
+\text{la conectividad de una relación elegida ad hoc
+no puede definir por sí sola SameRegime.}
+}
+\]
+
+Si una teoría independiente demuestra que una relación o estructura \(W\) es constitutiva de worldmatehood, sus componentes conexas **sí pueden** ser una implementación legítima del criterio de ContextIndividuation para esa teoría.
+
+La diferencia de dependencia es:
+
+\[
+\begin{array}{ll}
+\text{circular:}&
+\text{SameContext}\Rightarrow\text{elegimos enlaces}\Rightarrow\text{componentes}\Rightarrow\text{SameContext};\\[2mm]
+\text{admisible:}&
+\mathcal T\Rightarrow\operatorname{WorldMaker}(W)
+\Rightarrow\text{componentes de }W
+\Rightarrow\operatorname{ContextIndividuation}.
+\end{array}
+\]
+
+Esto también recoloca la reconstrucción histórica mediante \(\Lambda_*\). \(\Lambda_*\) no debe recuperar poder individuador por defecto, pero una teoría concreta podría demostrar que una subfamilia o estructura derivada de ella satisface un criterio world-making independiente. En ese caso la conectividad dejaría de ser mero algoritmo de reconstrucción y adquiriría una justificación ontológica adicional **theory-specific**.
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 **Advertencia PureOntRel.** Una relación pura puede servir como enlace ontológico de marco sin preservar una única genealogía. Por ello no se incorpora automáticamente a $\Lambda_*$ cuando esta pretende reconstruir $\operatorname{Generated}^{*}$: si conecta dos genealogías sin common ground, produciría sobreinclusión y haría fallar $\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}$. Su admisión como enlace reconstructivo requiere una justificación adicional de soundness; RelIntegrable por sí sola no basta.
