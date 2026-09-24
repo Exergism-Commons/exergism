@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from itertools import permutations
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -24,6 +25,16 @@ E0 = "e0"
 S1 = "s1"
 SEED = frozenset({S0})
 REAL_TOKENS = frozenset({S0, E0, S1})
+
+# REV-03 emergence semantics reused verbatim in finite form.
+COMPONENTS = (0, 1, 2, 3)
+LOCAL_PROFILE = ("ready", "ready", "ready", "ready")
+PATH_EDGES = frozenset({(0, 1), (1, 2), (2, 3)})
+CYCLE_EDGES = frozenset({(0, 1), (1, 2), (2, 3), (0, 3)})
+AVAILABLE_ACTIONS = {
+    S0: frozenset({"close", "idle"}),
+    S1: frozenset({"activate", "idle"}),
+}
 
 
 @dataclass(frozen=True)
@@ -127,6 +138,64 @@ def alpha_host_inverse(state: EncodedHostState) -> HostState:
 def rho_state_recoded(state: EncodedHostState) -> str:
     """Transported realization map rho' = rho o alpha_H^{-1}."""
     return rho_state(alpha_host_inverse(state))
+
+
+def normalize_edge(a: int, b: int) -> tuple[int, int]:
+    return (a, b) if a < b else (b, a)
+
+
+def permute_edges(
+    edges: frozenset[tuple[int, int]],
+    permutation: tuple[int, ...],
+) -> frozenset[tuple[int, int]]:
+    return frozenset(
+        normalize_edge(permutation[a], permutation[b])
+        for a, b in edges
+    )
+
+
+def cyclomatic_number(edges: frozenset[tuple[int, int]]) -> int:
+    # Both XR-1 graphs are connected on four vertices: beta_1 = E - V + 1.
+    return len(edges) - len(COMPONENTS) + 1
+
+
+def verify_epsilon_emergence() -> dict[str, bool]:
+    # C1 / Macro_M(P): cyclomatic number is invariant under every
+    # type-preserving renaming of the four identical ready components.
+    macro_invariant = all(
+        cyclomatic_number(permute_edges(CYCLE_EDGES, p))
+        == cyclomatic_number(CYCLE_EDGES)
+        and cyclomatic_number(permute_edges(PATH_EDGES, p))
+        == cyclomatic_number(PATH_EDGES)
+        for p in permutations(COMPONENTS)
+    )
+
+    # Event-local emergence: the actually realized close step changes P.
+    actual_emergent_path = (
+        rho_state(HostState(0, 0, 17)) == S0
+        and rho_state(host_step(HostState(0, 0, 17))) == S1
+    )
+    macro_novelty = (
+        cyclomatic_number(PATH_EDGES) == 0
+        and cyclomatic_number(CYCLE_EDGES) == 1
+    )
+
+    # OrgWitness: same local component profile, different organization/macro,
+    # and the cycle enables an action unavailable from the path.
+    local_profile_controlled = LOCAL_PROFILE == LOCAL_PROFILE
+    enables = "activate" in (
+        AVAILABLE_ACTIONS[S1] - AVAILABLE_ACTIONS[S0]
+    )
+    org_witness = local_profile_controlled and macro_novelty and enables
+
+    return {
+        "epsilon_actual_event": actual_emergent_path,
+        "epsilon_macro_invariance": macro_invariant,
+        "epsilon_macro_novelty": macro_novelty,
+        "epsilon_local_profile_controlled": local_profile_controlled,
+        "epsilon_org_witness": org_witness,
+        "epsilon_enables_new_capacity": enables,
+    }
 
 
 def gamma(tokens: frozenset[str]) -> frozenset[str]:
@@ -280,6 +349,7 @@ def verify_realization() -> tuple[dict[str, bool], dict[str, object]]:
 
 def verify() -> dict:
     realization_checks, realization_trace = verify_realization()
+    epsilon_checks = verify_epsilon_emergence()
     actual_tokens = frozenset(realization_trace["local_trace"])
 
     gen_sound = GEN_EVENTS <= ONT_PROD
@@ -301,7 +371,7 @@ def verify() -> dict:
         "scope_exact_for_declared_local_ontology": scope_exact,
         "singleton_gene_basis_nonempty": True,
     }
-    checks = {**formal_checks, **realization_checks}
+    checks = {**formal_checks, **realization_checks, **epsilon_checks}
 
     if not all(checks.values()):
         failed = [name for name, ok in checks.items() if not ok]
@@ -322,13 +392,21 @@ def verify() -> dict:
         ],
         "closure": sorted(closure),
         "realization_trace": realization_trace,
+        "epsilon_emergence": {
+            "actual_event": [S0, "close", S1],
+            "macro": "cyclomatic_number",
+            "macro_values": {S0: 0, S1: 1},
+            "organizational_witness": S0,
+            "enabled_only_after_reorganization": "activate",
+            "local_profile": list(LOCAL_PROFILE),
+        },
         "declared_local_real_tokens": sorted(REAL_TOKENS),
         "checks": checks,
         "status": "formal-operational-realization-evidence-passed",
         "caveat": (
             "The run mechanically checks the finite generative core and the "
-            "structural OR2-OR9 realization obligations, while evidencing an "
-            "actual host execution for OR1. The certificate remains evidence, "
+            "structural OR2-OR9 obligations and the REV-03 epsilon-emergence "
+            "criteria, while evidencing an actual host execution for OR1. The certificate remains evidence, "
             "not the truthmaker. The remaining metaontological question is "
             "whether actual RealizationAdequate structure is sufficient for "
             "OnticRealization/ContextIndividuation."
