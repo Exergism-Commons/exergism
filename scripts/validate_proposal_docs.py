@@ -28,7 +28,7 @@ RAW_HTML_BLOCK_TAG = re.compile(
     r"frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|"
     r"nav|noframes|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|"
     r"tfoot|th|thead|title|tr|track|ul"
-    r")(?=(?:[ \\t]|/?>|$))",
+    r")(?=(?:[ \t]|/?>|$))",
     flags=re.IGNORECASE,
 )
 
