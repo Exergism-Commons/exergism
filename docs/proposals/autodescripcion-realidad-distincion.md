@@ -666,7 +666,7 @@ Los bloqueadores activos relevantes pasan a ser:
 
 ## 3.1. Resumen formal vigente
 
-Las demostraciones, contraejemplos y modelos de trabajo que originaron este estado se han movido al [documento de derivaciones técnicas](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md). Esta sección registra solo resultados vigentes.
+Las demostraciones, contraejemplos y modelos de trabajo están en [derivaciones técnicas](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md); su linaje, rescates y formulaciones retiradas están inventariados en el [mapa de arqueología conceptual](work/autodescripcion-realidad-distincion-arqueologia-2026-09-25.md). Esta sección registra solo resultados vigentes.
 
 | Finding | Estado | Resultado vigente |
 |---|---|---|
@@ -2203,7 +2203,7 @@ Para dominios procesuales de un régimen fijo $i$, se ha demostrado formalmente 
 Por tanto:
 
 - **REV-10: RESOLVED** para la ruta vigente; la premisa oculta de StageFactorization ya no se usa.
-- **REV-09: PARTIAL**; falta demostrar que la unión/direct limit formal de una cadena de dominios procesuales admisibles sigue siendo un dominio ontológicamente admisible de $i$.
+- **REV-09: RESOLVED set-indexed** bajo `Adm_i := StructAdm_i`; la cuestión class-sized/smallness ya no pertenece a REV-09 y queda en REV-22/23/25.
 
 La compacidad lógica y la maquinaria categórica pueden seguir siendo herramientas futuras para justificar esa admisibilidad, pero no cuentan como resultados ontológicos por sí mismas.
 
@@ -2493,9 +2493,9 @@ La revisión muestra que $\mathcal E$ nunca llegó a definirse de manera indepen
 
 ### Estado actual
 
-**OPEN / SUPERSEDED EN PARTE.**
+**MIXED — ontología SUPERSEDED, emergencia RESCUED.**
 
-La idea de cierre sigue siendo un programa; la formulación original ya no cuenta como demostración.
+La identidad $R=F(R)$ no cuenta como demostración. En cambio, la definición independiente de $\varepsilon$, $F_M/EClosed/SemTotal$ y el toy organizacional fueron rescatados; XR-$\varepsilon$ reutiliza hoy esa emergencia en la ruta a `ExistsR`.
 
 Literatura relevante: Broad, Bedau, Kim, Humphreys y Crutchfield.
 
@@ -2524,9 +2524,9 @@ La clausura interna no certifica totalidad absoluta.
 
 ### Estado actual
 
-- Muro: **DEFERRED** históricamente como epistemología. **Corrección normativa posterior (§10):** REC no es otra versión del Muro; queda reclasificado como consecuencia estructural condicionada a `OntTotal`.
-- Many-$R$: **OPEN**.
-- $\operatorname{VA}(o)=R_i$: **SUPERSEDED/SUSPENDIDO**.
+- Muro: **ACTIVE OPEN DEBT** en REV-15; InterfaceWall aporta hoy un mecanismo parcial de subdeterminación, sin demostrar todavía el Muro fuerte.
+- Many-$R$: **OPEN no bloqueante** en REV-26; nesting/Generation ya no presuponen una única realidad maximal.
+- $\operatorname{VA}(o)=R_i$: **SUPERSEDED**; REC queda separado como consecuencia posterior a RegimeTotal.
 
 ---
 
@@ -2559,9 +2559,9 @@ Esta discusión reproduce problemas existentes en la literatura sobre **absolute
 
 ### Estado actual
 
-**OPEN.**
+**SPLIT.** No-$R$/NQ y la disciplina de indexación siguen activas; Absolute Generality y comprensión plural global están DEFERRED en REV-26a/b porque ya no bloquean `ExistsR`.
 
-Lectura obligatoria: Rayo & Uzquiano (2006), Fine, Glanzberg, Hellman, Linnebo, Shapiro & Wright, Uzquiano, Williamson y Studd (2019).
+La literatura de generalidad absoluta sigue siendo relevante para extensiones globales, no para el witness local de existencia.
 
 ---
 
@@ -2598,9 +2598,9 @@ Convertir C2 en parte de SameIndex hizo la conclusión demasiado analítica resp
 
 ### Estado actual
 
-**SURVIVES como lema matemático condicional; puente ontológico OPEN.**
+**ACTIVE SUPPORT, no ruta primaria a existencia.** Zorn/maximalidad sobreviven como infraestructura condicional para `SemTotal`; `ExistsR` se intenta ahora por REV-07/XR-$\varepsilon$, no por maximalidad semántica.
 
-El uso de Zorn se limita de momento a estructuras set-sized. Para clases propias harían falta compromisos fundacionales adicionales.
+El uso de Zorn permanece set-sized; los problemas de smallness se mantienen en las rutas semánticas REV-22/23/25.
 
 ---
 
@@ -2626,7 +2626,7 @@ Además, la derivación por localidad escondía otra hipótesis: si un testigo c
 
 ### Estado actual
 
-**OPEN.**
+**HISTORICAL PROBLEM RESOLVED para la ruta vigente.** La inferencia de StageFactorization fue eliminada; locality/source-presence preserva `EClosed` bajo cadenas set-indexed. Compactness/colimits quedan como herramientas opcionales, no pruebas ontológicas.
 
 ---
 
@@ -2667,9 +2667,9 @@ Estas extensiones se construyeron antes de resolver las premisas más básicas s
 
 ### Estado actual
 
-**DEFERRED.**
+**MIXED — gran parte RESCUED.** El dominio procesual, actual-vs-available, branching formal y continuidad diacrónica son ahora infraestructura activa; meta-capacidades/potentialismo radical como tesis ontológicas y branching cuántico siguen fuera del núcleo.
 
-Se reabrirán solo después de cerrar el núcleo.
+No debe leerse esta fase como descartada: varias piezas reaparecen en REV-19, InterfaceContract, ContinuationProfile, NFA y XR-$\varepsilon$.
 
 ---
 
