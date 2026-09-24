@@ -3,35 +3,13 @@ from __future__ import annotations
 
 import unittest
 
-from pylatexenc.latexwalker import LatexWalker
-
 from scripts.validate_proposal_docs import (
     CONTEXT_INDEX_NAMES,
     MarkdownDocument,
     NORMATIVE,
-    tex_nodes_text,
     validate_archive,
     validate_index_typing,
 )
-
-
-class PylatexencShapeDiagnostics(unittest.TestCase):
-    def test_shapes(self) -> None:
-        payload = []
-        for tex in (
-            r"\exists^{X} i\;P_i",
-            r"\forall_{q} i\;P_i",
-            r"i\ne j",
-        ):
-            nodes, _, _ = LatexWalker(tex).get_latex_nodes()
-            payload.append(
-                {
-                    "tex": tex,
-                    "nodes": repr(nodes),
-                    "rendered": tex_nodes_text(list(nodes)),
-                }
-            )
-        self.fail(repr(payload))
 
 
 class IndexTypingGuardTests(unittest.TestCase):
@@ -79,6 +57,8 @@ class IndexTypingGuardTests(unittest.TestCase):
     def test_allows_metalinguistic_and_indexed_object_quantifiers(self) -> None:
         for tex in (
             r"\exists^{\mathsf M} i",
+            r"\exists^{\mathsf M} j",
+            r"\forall^{\mathsf M} k",
             r"\exists x_i\;P(x_i)",
             r"\forall x_i\;P(x_i)",
         ):
@@ -115,6 +95,16 @@ class IndexTypingGuardTests(unittest.TestCase):
                     continue
                 with self.subTest(left=left, right=right):
                     self.assert_rejected(rf"{left}\neq {right}")
+
+    def test_rejects_dynamic_tex_definitions(self) -> None:
+        for tex in (
+            r"\newcommand{\Q}{\exists}\Q i",
+            r"\def\Q{\exists}\Q i",
+            r"\let\Q\exists\Q i",
+            r"\csname exists\endcsname i",
+        ):
+            with self.subTest(tex=tex):
+                self.assert_rejected(tex)
 
     def test_allows_indexed_real(self) -> None:
         for tex in (
