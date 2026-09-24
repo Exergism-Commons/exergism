@@ -151,10 +151,10 @@ DISTINCT_OVERLAP_FRAGMENT = (
     "\\operatorname{GeneOverlap}_i"
 )
 
-PLURAL_STATUS_LINE = (
-    "> **Status contract:** `REV-24d = UNCHANGED`; "
-    "`scope realization owner = REV-07/RegimeTotal`; "
-    "`Actual/CoReal plural route = NON-DISCHARGING for RegimeGenerated*`."
+PLURAL_STATUS_TEXT = (
+    "Status contract: REV-24d = UNCHANGED; "
+    "scope realization owner = REV-07/RegimeTotal; "
+    "Actual/CoReal plural route = NON-DISCHARGING for RegimeGenerated*."
 )
 
 
@@ -251,7 +251,7 @@ class MarkdownDocument:
                     "proposal contracts use CommonMark prose/blocks only"
                 )
 
-    def section(self, level: int, title: str) -> str:
+    def section_bounds(self, level: int, title: str) -> tuple[int, int]:
         headings = self.headings()
         matches = [
             (position, line_no)
@@ -269,80 +269,139 @@ class MarkdownDocument:
             if next_level <= level:
                 end = next_line
                 break
+        return start, end
+
+    def section(self, level: int, title: str) -> str:
+        start, end = self.section_bounds(level, title)
         return self.active_text(start, end)
 
+    def heading_start(self, level: int, title: str) -> int:
+        start, _ = self.section_bounds(level, title)
+        return start
 
-def display_math_blocks(text: str) -> list[str]:
-    blocks: list[str] = []
-    current: list[str] | None = None
+    def math_blocks(self, start: int, end: int) -> list[Any]:
+        return [
+            token
+            for token in self.tokens
+            if token.type == "math_block"
+            and token.map is not None
+            and start <= token.map[0]
+            and token.map[1] <= end
+        ]
 
-    for line in text.split("\n"):
-        delimiter = re.fullmatch(r" {0,3}\$\$[ \t]*", line)
-        if delimiter:
-            if current is None:
-                current = []
-            else:
-                blocks.append("\n".join(current).strip())
-                current = None
-            continue
+    def marker_inline_tokens(self, start: int, end: int, marker: str) -> list[tuple[int, Any]]:
+        matches: list[tuple[int, Any]] = []
+        for index, token in enumerate(self.tokens):
+            if token.type != "inline" or token.map is None:
+                continue
+            if not (start <= token.map[0] and token.map[1] <= end):
+                continue
 
-        if current is not None:
-            current.append(line)
+            parts: list[str] = []
+            for child in token.children or []:
+                if child.type == "text":
+                    parts.append(child.content)
+                elif child.type == "math_inline":
+                    markup = child.markup or "$"
+                    parts.append(f"{markup}{child.content}{markup}")
+                elif child.type in {"softbreak", "hardbreak"}:
+                    parts.append("\n")
+                elif child.type == "code_inline":
+                    parts.append(HIDDEN_BLOCK_BOUNDARY)
 
-    if current is not None:
-        fail("Unclosed active display-math block inside validated Markdown")
-    return blocks
+            if marker in "".join(parts):
+                matches.append((index, token))
+        return matches
+
+    def root_blocks_after(self, token_index: int, line_no: int, end: int) -> list[Any]:
+        return [
+            token
+            for token in self.tokens[token_index + 1 :]
+            if token.level == 0
+            and token.map is not None
+            and line_no <= token.map[0] < end
+        ]
+
+    def parsed_blockquote_texts(self, start: int, end: int) -> list[str]:
+        results: list[str] = []
+        index = 0
+        while index < len(self.tokens):
+            token = self.tokens[index]
+            if (
+                token.type != "blockquote_open"
+                or token.level != 0
+                or token.map is None
+                or not (start <= token.map[0] and token.map[1] <= end)
+            ):
+                index += 1
+                continue
+
+            depth = 1
+            inline_parts: list[str] = []
+            cursor = index + 1
+            while cursor < len(self.tokens) and depth:
+                child = self.tokens[cursor]
+                if child.type == "blockquote_open":
+                    depth += 1
+                elif child.type == "blockquote_close":
+                    depth -= 1
+                    if depth == 0:
+                        break
+                elif depth == 1 and child.type == "inline":
+                    inline_parts.append(inline_plain_text(child))
+                cursor += 1
+
+            results.append("\n".join(inline_parts).strip())
+            index = cursor + 1
+        return results
 
 
 def require_canonical_display(
-    section: str,
+    document: MarkdownDocument,
+    bounds: tuple[int, int],
     expected: str,
     description: str,
 ) -> None:
-    canonical_source = "$$\n" + expected + "\n$$"
-    source_count = section.count(canonical_source)
-    if source_count != 1:
+    start, end = bounds
+    matches = [
+        token
+        for token in document.math_blocks(start, end)
+        if token.content.strip() == expected
+    ]
+    if len(matches) != 1:
         fail(
-            f"{description} must occur exactly once as its canonical $$...$$ source "
-            "inside the designated definition section "
-            f"(display_count={source_count}, formula_count={section.count(expected)})"
+            f"{description} must occur exactly once as a parsed canonical math_block "
+            "inside the designated definition section"
         )
 
 
 def require_canonical_display_after(
-    section: str,
+    document: MarkdownDocument,
+    bounds: tuple[int, int],
     marker: str,
     expected: str,
     description: str,
 ) -> None:
-    if section.count(marker) != 1:
-        fail(f"{description} must have exactly one canonical doctrinal marker: {marker}")
+    start, end = bounds
+    markers = document.marker_inline_tokens(start, end, marker)
+    if len(markers) != 1:
+        fail(f"{description} must have exactly one parsed doctrinal marker: {marker}")
 
-    tail = section.split(marker, 1)[1]
-    lines = tail.split("\n")
-    index = 0
-    while index < len(lines) and re.fullmatch(r"[ \t]*", lines[index]):
-        index += 1
+    marker_index, marker_token = markers[0]
+    if marker_token.map is None:
+        fail(f"{description} marker has no parser source map")
 
-    if index >= len(lines) or not re.fullmatch(r" {0,3}\$\$[ \t]*", lines[index]):
+    next_blocks = document.root_blocks_after(marker_index, marker_token.map[1], end)
+    if not next_blocks or next_blocks[0].type != "math_block":
         fail(
-            f"{description} must begin at the first active block after its doctrinal marker"
+            f"{description} must be the first parsed block after its doctrinal marker"
         )
 
-    index += 1
-    block: list[str] = []
-    while index < len(lines) and not re.fullmatch(r" {0,3}\$\$[ \t]*", lines[index]):
-        block.append(lines[index])
-        index += 1
-
-    if index >= len(lines):
-        fail(f"{description} has an unclosed canonical display after its marker")
-
-    actual = "\n".join(block).strip()
-    if actual != expected:
+    math_token = next_blocks[0]
+    if math_token.content.strip() != expected:
         fail(
-            f"{description} must use the canonical TeX source immediately after its marker; "
-            "equivalent TeX reformatting is intentionally not accepted by CI"
+            f"{description} must use the canonical TeX content in the parsed math_block "
+            "immediately after its marker"
         )
 
 
@@ -479,57 +538,64 @@ def validate_regime_total_contract(
 ) -> None:
     visible_ledger = ledger.active_text()
 
-    totalization_section = normative.section(
+    totalization_bounds = normative.section_bounds(
         3,
         "1.6. $R_i$ — totalización genealógica mono- y multigeneal",
     )
     require_canonical_display(
-        totalization_section,
+        normative,
+        totalization_bounds,
         CANONICAL_REGIME_GENERATED,
         "REV-07f RegimeGenerated* definition",
     )
     require_canonical_display(
-        totalization_section,
+        normative,
+        totalization_bounds,
         CANONICAL_REGIME_TOTAL,
         "REV-07f RegimeTotal definition",
     )
 
-    genealogy_section = normative.section(
+    genealogy_bounds = normative.section_bounds(
         3,
         "5.1. Criterio primario: origen unificado + generación independiente",
     )
     require_canonical_display(
-        genealogy_section,
+        normative,
+        genealogy_bounds,
         CANONICAL_GENE_FAMILY,
         "REV-07f GeneFamily definition",
     )
     require_canonical_display(
-        genealogy_section,
+        normative,
+        genealogy_bounds,
         CANONICAL_REGIME_CLOSURE,
         "REV-07f RegimeClosure definition",
     )
     require_canonical_display(
-        genealogy_section,
+        normative,
+        genealogy_bounds,
         CANONICAL_GENE_BASIS,
         "REV-07f GeneBasis definition",
     )
 
-    technical_genealogy_section = technical.section(
+    technical_genealogy_bounds = technical.section_bounds(
         3,
         "0.10a. REV-07f — RegimeTotal multigeneal",
     )
     require_canonical_display(
-        technical_genealogy_section,
+        technical,
+        technical_genealogy_bounds,
         CANONICAL_GENE_FAMILY,
         "REV-07f technical GeneFamily definition",
     )
 
-    existsr_section = normative.section(
+    existsr_bounds = normative.section_bounds(
         3,
         "1.9. ExistsR es una metasentencia, no un cuantificador sobre índices",
     )
     require_canonical_display_after(
-        existsr_section,
+        normative,
+        existsr_bounds,
         "El target doctrinal se escribe ahora:",
         CANONICAL_EXISTSR,
         "REV-07f active normative ExistsR formula",
@@ -545,29 +611,33 @@ def validate_regime_total_contract(
     ):
         technical.section(level, heading)
 
-    xp_section = technical.section(4, "RT-07-XP — Transversal Production Test")
+    xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
-        xp_section,
+        technical,
+        xp_bounds,
         "Supongamos ahora explícitamente:",
         CANONICAL_XP_RGC_EXISTS,
         "RT-07-XP affirmative RGCExists premise",
     )
     require_canonical_display_after(
-        xp_section,
+        technical,
+        xp_bounds,
         "y fijemos un testigo $C_k$ tal que:",
         CANONICAL_XP_CLOSURE,
         "RT-07-XP explicit RegimeClosure witness",
     )
     require_canonical_display_after(
-        xp_section,
+        technical,
+        xp_bounds,
         "Por tanto:",
         CANONICAL_XP_STRICT_INCLUSION,
         "RT-07-XP strict transversal-growth conclusion",
     )
 
-    presentation_section = technical.section(4, "8.5. ExistsR como metasentencia")
+    presentation_bounds = technical.section_bounds(4, "8.5. ExistsR como metasentencia")
     require_canonical_display_after(
-        presentation_section,
+        technical,
+        presentation_bounds,
         "y una presentación semántica produce únicamente:",
         CANONICAL_PRESENTATION,
         "REV-07f §8.5 presentation implication",
@@ -589,16 +659,17 @@ def validate_regime_total_contract(
                 f"missing current regime-level term {term}"
             )
 
-    plural_route_section = technical.section(5, "Ruta plural")
-    active_status_lines = [
-        line
-        for line in plural_route_section.split("\n")
-        if re.fullmatch(r" {0,3}" + re.escape(PLURAL_STATUS_LINE), line)
+    plural_route_bounds = technical.section_bounds(5, "Ruta plural")
+    plural_route_section = technical.active_text(*plural_route_bounds)
+    status_quotes = [
+        text
+        for text in technical.parsed_blockquote_texts(*plural_route_bounds)
+        if text == PLURAL_STATUS_TEXT
     ]
-    if len(active_status_lines) != 1:
+    if len(status_quotes) != 1:
         fail(
             "REV-07f regression: plural-route status must appear exactly once as "
-            "the canonical active top-level blockquote contract"
+            "a parsed top-level blockquote with the canonical contract"
         )
     if re.search(r"REV-24d[^\n]{0,120}\bPARTIAL\b", plural_route_section):
         fail(
@@ -669,9 +740,11 @@ def main() -> None:
     validate_ledger(documents[LEDGER])
     validate_archive(archive_document)
 
-    current_normative = documents[NORMATIVE].active_text().split(
-        "# II. Historia cronológica", 1
-    )[0]
+    history_start = documents[NORMATIVE].heading_start(
+        1,
+        "II. Historia cronológica de la propuesta",
+    )
+    current_normative = documents[NORMATIVE].active_text(0, history_start)
     validate_index_typing(current_normative)
 
     validate_regime_total_contract(
