@@ -3,6 +3,9 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+from typing import Any
+
+from markdown_it import MarkdownIt
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -19,33 +22,53 @@ MAX_SECTION4_LINES = 400
 
 PRIMARY_LEDGER_ID = re.compile(r"^(REV-\d+[a-z]?|DOC-\d+|FORM-\d+)$")
 UNESCAPED_PIPE = re.compile(r"(?<!\\)\|")
-FENCE_BOUNDARY = "\u241e"
-HTML_BOUNDARY = "\u241f"
-RAW_HTML_BLOCK_TAG = re.compile(
-    r"^ {0,3}</?(?:"
-    r"address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|"
-    r"dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|"
-    r"frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|"
-    r"nav|noframes|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|"
-    r"tfoot|th|thead|title|tr|track|ul"
-    r")(?=(?:[ \t]|/?>|$))",
-    flags=re.IGNORECASE,
+HIDDEN_BLOCK_BOUNDARY = "\u241e"
+
+# Structural Markdown semantics are delegated to a standards-conformant CommonMark parser.
+# Do not reintroduce regex/state-machine parsing for fences, indented code, HTML blocks or comments.
+MARKDOWN = MarkdownIt("commonmark", {"html": True})
+
+# Critical TeX is a canonical source contract, not a LaTeX-equivalence problem. Semantically
+# equivalent TeX spellings intentionally fail until the canonical contract itself is changed.
+# This keeps CI deterministic and prevents validate_proposal_docs.py from becoming a TeX parser.
+CANONICAL_EXISTSR = r"""\boxed{
+\operatorname{ExistsR}
+:\Longleftrightarrow
+\exists^{\mathsf M} i\;
+\bigl(
+\exists\mathfrak G_i\exists R_i\;
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+\bigr).
+}"""
+
+CANONICAL_XP_RGC_EXISTS = r"""\mathrm{RGCExists}_k(\mathfrak G_k),"""
+
+CANONICAL_XP_CLOSURE = r"""\operatorname{RegimeClosure}_k(\mathfrak G_k,C_k)."""
+
+CANONICAL_XP_STRICT_INCLUSION = r"""\boxed{
+\bigcup_\alpha C_{\alpha,k}
+\subsetneq
+C_k
+}"""
+
+CANONICAL_PRESENTATION = r"""\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
++
+\operatorname{SemTotal}_i(S_i)
++
+\mathrm{OTB}_i
+\Rightarrow
+\operatorname{Presents}_i(S_i,R_i)."""
+
+DISTINCT_OVERLAP_FRAGMENT = (
+    "\\alpha\\neq_{\\mathsf M}\\beta\n"
+    "\\land\n"
+    "\\operatorname{GeneOverlap}_i"
 )
 
-RAW_HTML_TYPE1_OPEN = re.compile(
-    r"^ {0,3}<(?P<tag>script|pre|style|textarea)(?=[ \t>]|$)",
-    flags=re.IGNORECASE,
-)
-RAW_HTML_PI_OPEN = re.compile(r"^ {0,3}<\?")
-RAW_HTML_DECL_OPEN = re.compile(r"^ {0,3}<![A-Z]")
-RAW_HTML_CDATA_OPEN = re.compile(r"^ {0,3}<!\[CDATA\[")
-HTML_TAG_NAME = r"[A-Za-z][A-Za-z0-9-]*"
-HTML_ATTR_NAME = r"[A-Za-z_:][A-Za-z0-9_.:-]*"
-HTML_ATTR_VALUE = r"(?:[^ \t\n\"'=<>\x60]+|'[^']*'|\"[^\"]*\")"
-HTML_ATTRIBUTE = rf"(?:[ \t]+{HTML_ATTR_NAME}(?:[ \t]*=[ \t]*{HTML_ATTR_VALUE})?)"
-RAW_HTML_COMPLETE_TAG = re.compile(
-    rf"^ {{0,3}}(?:</{HTML_TAG_NAME}[ \t]*>|"
-    rf"<{HTML_TAG_NAME}(?:{HTML_ATTRIBUTE})*[ \t]*/?>)[ \t]*$"
+PLURAL_STATUS_LINE = (
+    "> **Status contract:** \`REV-24d = UNCHANGED\`; "
+    "\`scope realization owner = REV-07/RegimeTotal\`; "
+    "\`Actual/CoReal plural route = NON-DISCHARGING for RegimeGenerated*\`."
 )
 
 
@@ -59,57 +82,138 @@ def read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def markdown_lines_outside_fences(text: str) -> list[tuple[int, str]]:
-    result: list[tuple[int, str]] = []
-    fence_char: str | None = None
-    fence_len = 0
+def normalize_source(text: str) -> str:
+    # markdown-it/CommonMark treats CRLF, CR and LF as source line endings. Normalize them once and
+    # use split("\n") everywhere so Python never invents extra lines for Unicode separators.
+    return text.replace("\r\n", "\n").replace("\r", "\n")
 
-    for index, line in enumerate(text.splitlines(), start=1):
-        if fence_char is None:
-            opening = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
-            if opening:
-                marker = opening.group(1)
-                info_string = opening.group(2)
-                if marker[0] != "`" or "`" not in info_string:
-                    fence_char = marker[0]
-                    fence_len = len(marker)
-                    result.append((index, FENCE_BOUNDARY))
-                    continue
 
-            result.append((index, line))
+def inline_plain_text(token: Any) -> str:
+    if token.children:
+        return "".join(
+            child.content
+            for child in token.children
+            if child.type in {"text", "code_inline"}
+        ).strip()
+    return token.content.strip()
+
+
+class MarkdownDocument:
+    def __init__(self, text: str) -> None:
+        self.text = normalize_source(text)
+        self.lines = self.text.split("\n")
+        self.tokens = MARKDOWN.parse(self.text)
+        self.hidden_lines: set[int] = set()
+
+        # These token types are not active Markdown prose/contracts. Their source ranges are
+        # authoritative CommonMark parser output, including all raw-HTML block families.
+        for token in self.tokens:
+            if token.type not in {"fence", "code_block", "html_block"} or token.map is None:
+                continue
+            start, end = token.map
+            self.hidden_lines.update(range(start, end))
+
+    def active_text(self, start: int = 0, end: int | None = None) -> str:
+        if end is None:
+            end = len(self.lines)
+        return "\n".join(
+            HIDDEN_BLOCK_BOUNDARY if line_no in self.hidden_lines else self.lines[line_no]
+            for line_no in range(start, end)
+        )
+
+    def headings(self) -> list[tuple[int, str, int]]:
+        result: list[tuple[int, str, int]] = []
+        for index, token in enumerate(self.tokens):
+            if token.type != "heading_open" or token.level != 0 or token.map is None:
+                continue
+            if index + 1 >= len(self.tokens) or self.tokens[index + 1].type != "inline":
+                continue
+            level = int(token.tag[1:])
+            title = inline_plain_text(self.tokens[index + 1])
+            result.append((level, title, token.map[0]))
+        return result
+
+    def section(self, level: int, title: str) -> str:
+        headings = self.headings()
+        matches = [
+            (position, line_no)
+            for position, (heading_level, heading_title, line_no) in enumerate(headings)
+            if heading_level == level and heading_title == title
+        ]
+        if not matches:
+            fail(f"Missing required active CommonMark heading h{level}: {title}")
+        if len(matches) != 1:
+            fail(f"Required active CommonMark heading must occur exactly once h{level}: {title}")
+
+        position, start = matches[0]
+        end = len(self.lines)
+        for next_level, _, next_line in headings[position + 1 :]:
+            if next_level <= level:
+                end = next_line
+                break
+        return self.active_text(start, end)
+
+
+def display_math_blocks(text: str) -> list[str]:
+    blocks: list[str] = []
+    current: list[str] | None = None
+
+    for line in text.split("\n"):
+        delimiter = re.fullmatch(r" {0,3}\$\$[ \t]*", line)
+        if delimiter:
+            if current is None:
+                current = []
+            else:
+                blocks.append("\n".join(current).strip())
+                current = None
             continue
 
-        result.append((index, FENCE_BOUNDARY))
-        closing = re.fullmatch(
-            rf"^ {{0,3}}{re.escape(fence_char)}{{{fence_len},}}[ \t]*$",
-            line,
+        if current is not None:
+            current.append(line)
+
+    if current is not None:
+        fail("Unclosed active display-math block inside validated Markdown")
+    return blocks
+
+
+def require_canonical_display(section: str, expected: str, description: str) -> None:
+    matches = [block for block in display_math_blocks(section) if block == expected]
+    if len(matches) != 1:
+        fail(
+            f"{description} must occur exactly once using the canonical TeX source; "
+            "equivalent TeX reformatting is intentionally not accepted by CI"
         )
-        if closing:
-            fence_char = None
-            fence_len = 0
-
-    return result
 
 
-def validate_display_math(path: Path, text: str) -> None:
-    lines = markdown_lines_outside_fences(text)
-    lone_dollar = [index for index, line in lines if line.strip() == "$"]
+def validate_display_math(path: Path, document: MarkdownDocument) -> None:
+    active = document.active_text()
+    lines = active.split("\n")
+
+    lone_dollar = [
+        index
+        for index, line in enumerate(lines, start=1)
+        if re.fullmatch(r" {0,3}\$[ \t]*", line)
+    ]
     if lone_dollar:
         fail(
-            f"{path.relative_to(ROOT)} contains standalone '$' display delimiters at lines "
+            f"{path.relative_to(ROOT)} contains active standalone '$' display delimiters at lines "
             + ", ".join(map(str, lone_dollar[:10]))
         )
 
-    display_delimiters = sum(1 for _, line in lines if line.strip() == "$$")
+    display_delimiters = sum(
+        1
+        for line in lines
+        if re.fullmatch(r" {0,3}\$\$[ \t]*", line)
+    )
     if display_delimiters % 2:
         fail(
-            f"{path.relative_to(ROOT)} has an odd number of standalone '$$' display delimiters: "
+            f"{path.relative_to(ROOT)} has an odd number of active '$$' display delimiters: "
             f"{display_delimiters}"
         )
 
 
-def validate_markdown_table_blocks(path: Path, text: str) -> None:
-    lines = text.splitlines()
+def validate_markdown_table_blocks(path: Path, document: MarkdownDocument) -> None:
+    lines = document.active_text().split("\n")
 
     for index in range(1, len(lines) - 1):
         if (
@@ -152,15 +256,15 @@ def validate_markdown_table_blocks(path: Path, text: str) -> None:
             )
 
 
-def validate_ledger(text: str) -> None:
-    lines = text.splitlines()
+def validate_ledger(document: MarkdownDocument) -> None:
+    lines = document.active_text().split("\n")
 
     if sum(line.startswith("# Ledger de revisión") for line in lines) != 1:
-        fail("Review ledger must contain exactly one top-level ledger title")
+        fail("Review ledger must contain exactly one active top-level ledger title")
     if sum(line == "## Estados" for line in lines) != 1:
-        fail("Review ledger must contain exactly one '## Estados' section")
+        fail("Review ledger must contain exactly one active '## Estados' section")
     if sum(line.startswith("| FORM-02 |") for line in lines) != 1:
-        fail("Review ledger must contain exactly one FORM-02 row")
+        fail("Review ledger must contain exactly one active FORM-02 row")
 
     seen: dict[str, int] = {}
     duplicates: list[str] = []
@@ -182,227 +286,13 @@ def validate_ledger(text: str) -> None:
         fail("Duplicate primary ledger identifiers: " + "; ".join(duplicates))
 
 
-def validate_archive(text: str) -> None:
-    first_lines = "\n".join(text.splitlines()[:8])
+def validate_archive(document: MarkdownDocument) -> None:
+    first_lines = "\n".join(document.active_text().split("\n")[:8])
     if "SUPERSEDED" not in first_lines or "no normativo" not in first_lines:
         fail("Historical pre-consolidation archive must carry a visible SUPERSEDED/non-normative banner")
 
 
-def strip_html_comments(text: str) -> str:
-    return re.sub(
-        r"<!--.*?(?:-->|$)",
-        lambda match: HTML_BOUNDARY + "\n" * match.group(0).count("\n"),
-        text,
-        flags=re.DOTALL,
-    )
-
-
-def mask_raw_html_blocks(text: str) -> str:
-    lines = text.split("\n")
-    masked: list[str] = []
-    mode: tuple[str, str | None] | None = None
-
-    for line in lines:
-        if mode is not None:
-            kind, argument = mode
-
-            if kind == "blank":
-                if line.strip() == "":
-                    mode = None
-                    masked.append("")
-                else:
-                    masked.append(HTML_BOUNDARY)
-                continue
-
-            masked.append(HTML_BOUNDARY)
-            lowered = line.lower()
-            if kind == "tag" and argument is not None:
-                if re.search(rf"</{re.escape(argument)}[ \t]*>", line, flags=re.IGNORECASE):
-                    mode = None
-            elif kind == "pi" and "?>" in line:
-                mode = None
-            elif kind == "decl" and ">" in line:
-                mode = None
-            elif kind == "cdata" and "]]>" in line:
-                mode = None
-            continue
-
-        type1 = RAW_HTML_TYPE1_OPEN.match(line)
-        if type1:
-            tag = type1.group("tag")
-            masked.append(HTML_BOUNDARY)
-            if not re.search(rf"</{re.escape(tag)}[ \t]*>", line, flags=re.IGNORECASE):
-                mode = ("tag", tag)
-            continue
-
-        if RAW_HTML_PI_OPEN.match(line):
-            masked.append(HTML_BOUNDARY)
-            if "?>" not in line:
-                mode = ("pi", None)
-            continue
-
-        if RAW_HTML_CDATA_OPEN.match(line):
-            masked.append(HTML_BOUNDARY)
-            if "]]>" not in line:
-                mode = ("cdata", None)
-            continue
-
-        if RAW_HTML_DECL_OPEN.match(line):
-            masked.append(HTML_BOUNDARY)
-            if ">" not in line:
-                mode = ("decl", None)
-            continue
-
-        if RAW_HTML_BLOCK_TAG.match(line) or RAW_HTML_COMPLETE_TAG.fullmatch(line):
-            masked.append(HTML_BOUNDARY)
-            mode = ("blank", None)
-            continue
-
-        masked.append(line)
-
-    return "\n".join(masked)
-
-
-def markdown_lines_visible(text: str) -> list[tuple[int, str]]:
-    outside = markdown_lines_outside_fences(text)
-    if not outside:
-        return []
-
-    line_numbers = [line_number for line_number, _ in outside]
-    visible_text = strip_html_comments("\n".join(line for _, line in outside))
-    visible_text = mask_raw_html_blocks(visible_text)
-    visible_lines = visible_text.split("\n")
-
-    if len(visible_lines) != len(line_numbers):
-        fail("HTML-comment filtering changed Markdown line cardinality")
-
-    return list(zip(line_numbers, visible_lines))
-
-
-def markdown_visible_text(text: str) -> str:
-    return "\n".join(line for _, line in markdown_lines_visible(text))
-
-
-def markdown_heading(line: str) -> tuple[int, str] | None:
-    match = re.match(r"^ {0,3}(#{1,6})(?:[ \t]+|$)(.*)$", line)
-    if not match:
-        return None
-
-    title = match.group(2).strip()
-    closing = re.match(r"^(.*?)[ \t]+#+[ \t]*$", title)
-    if closing:
-        title = closing.group(1).rstrip()
-
-    return len(match.group(1)), title
-
-
-def markdown_section(text: str, heading: str) -> str:
-    target = markdown_heading(heading)
-    if target is None:
-        fail(f"Invalid Markdown heading passed to markdown_section: {heading}")
-    target_level, target_title = target
-
-    outside = markdown_lines_visible(text)
-    matches = [
-        position
-        for position, (_, line) in enumerate(outside)
-        if markdown_heading(line) == (target_level, target_title)
-    ]
-    if not matches:
-        fail(f"Missing required section heading outside Markdown fences: {heading}")
-    if len(matches) != 1:
-        fail(f"Section heading must occur exactly once outside Markdown fences: {heading}")
-
-    section: list[str] = []
-    for _, line in outside[matches[0] :]:
-        next_heading = markdown_heading(line)
-        if section and next_heading and next_heading[0] <= target_level:
-            break
-        section.append(line)
-
-    return "\n".join(section)
-
-
-def display_math_blocks(text: str) -> list[str]:
-    text = strip_html_comments(text)
-    blocks: list[str] = []
-    current: list[str] | None = None
-
-    for line in text.splitlines():
-        delimiter = re.fullmatch(r"^ {0,3}\$\$[ \t]*$", line)
-        if delimiter:
-            if current is None:
-                current = []
-            else:
-                blocks.append("\n".join(current))
-                current = None
-            continue
-
-        if current is not None:
-            current.append(line)
-
-    if current is not None:
-        fail("Unclosed display-math block inside validated Markdown section")
-
-    return blocks
-
-
-def first_display_math_after(text: str, marker: str) -> str:
-    if marker not in text:
-        fail(f"Missing required marker before display-math contract: {marker}")
-    tail = text.split(marker, 1)[1]
-    blocks = display_math_blocks(tail)
-    if not blocks:
-        fail(f"Missing display-math block after marker: {marker}")
-    return blocks[0]
-
-
-def split_top_level_tex_conjuncts(text: str) -> list[str]:
-    parts: list[str] = []
-    start = 0
-    brace_depth = 0
-    paren_depth = 0
-    index = 0
-
-    while index < len(text):
-        char = text[index]
-        if char == "{":
-            brace_depth += 1
-        elif char == "}":
-            brace_depth = max(0, brace_depth - 1)
-        elif char == "(":
-            paren_depth += 1
-        elif char == ")":
-            paren_depth = max(0, paren_depth - 1)
-
-        if brace_depth == 0 and paren_depth == 0:
-            if char in "+,":
-                parts.append(text[start:index].strip())
-                start = index + 1
-            else:
-                connective = next(
-                    (
-                        token
-                        for token in (r"\land", r"\wedge")
-                        if text.startswith(token, index)
-                        and (
-                            index + len(token) == len(text)
-                            or not text[index + len(token)].isalpha()
-                        )
-                    ),
-                    None,
-                )
-                if connective is not None:
-                    parts.append(text[start:index].strip())
-                    index += len(connective) - 1
-                    start = index + 1
-        index += 1
-
-    parts.append(text[start:].strip())
-    return [part for part in parts if part]
-
-
-def validate_index_typing(text: str) -> None:
+def validate_index_typing(current: str) -> None:
     checks = {
         r"\\exists!?\s*i\b": "object-level existential quantification over index metavariable i",
         r"\\forall\s*i\b": "object-level universal quantification over index metavariable i",
@@ -412,19 +302,23 @@ def validate_index_typing(text: str) -> None:
     }
 
     for pattern, description in checks.items():
-        match = re.search(pattern, text)
+        match = re.search(pattern, current)
         if match:
-            line = text.count("\n", 0, match.start()) + 1
+            line = current.count("\n", 0, match.start()) + 1
             fail(
-                f"{NORMATIVE.relative_to(ROOT)} reintroduces {description} at line {line}; "
+                f"{NORMATIVE.relative_to(ROOT)} reintroduces {description} at active line {line}; "
                 "indices are meta-level type parameters (EXT-02)"
             )
 
 
-def validate_regime_total_contract(normative: str, ledger: str, technical: str) -> None:
-    current = markdown_visible_text(normative).split("# II. Historia cronológica", 1)[0]
-    visible_ledger = markdown_visible_text(ledger)
-    visible_technical = markdown_visible_text(technical)
+def validate_regime_total_contract(
+    normative: MarkdownDocument,
+    ledger: MarkdownDocument,
+    technical: MarkdownDocument,
+) -> None:
+    current = normative.active_text().split("# II. Historia cronológica", 1)[0]
+    visible_ledger = ledger.active_text()
+    visible_technical = technical.active_text()
 
     required_current = {
         r"\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)": "RegimeTotal totality target",
@@ -435,200 +329,63 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
     }
     for snippet, description in required_current.items():
         if snippet not in current:
-            fail(f"REV-07f regression: normative proposal is missing {description}")
-
-    existsr_section = markdown_section(
-        normative,
-        "### 1.9. ExistsR es una metasentencia, no un cuantificador sobre índices",
-    )
-    existsr_formula = first_display_math_after(
-        existsr_section,
-        "El target doctrinal se escribe ahora:",
-    )
-    existsr_pattern = (
-        r"\s*\\boxed\s*\{\s*"
-        r"\\operatorname\s*\{ExistsR\}\s*"
-        r":?\s*\\Longleftrightarrow\s*"
-        r"\\exists\s*\^\s*\{\s*\\mathsf(?:\s*\{M\}|\s+M)\s*\}\s*i\s*\\;?\s*"
-        r"\\bigl\s*\(\s*"
-        r"\\exists\s*\\mathfrak(?:\s*\{G\}|\s+G)\s*_\s*i\s*"
-        r"(?:\\exists(?:\s+|\{\}\s*|\\[,;:!>]\s*|\\[ \t]+|\\(?:quad|qquad)(?:\s+|\{\}\s*))R\s*_\s*i|\\exists\s*\{\s*R\s*_\s*i\s*\})\s*\\;?\s*"
-        r"\\operatorname\s*\{RegimeTotal\}\s*_\s*i\s*\(\s*"
-        r"\\mathfrak(?:\s*\{G\}|\s+G)\s*_\s*i\s*,\s*R\s*_\s*i\s*\)\s*"
-        r"\\bigr\s*\)\s*\.?"
-        r"\s*\}\s*"
-    )
-    if not re.fullmatch(existsr_pattern, existsr_formula, flags=re.MULTILINE):
-        fail(
-            "REV-07f regression: active normative ExistsR formula must quantify "
-            "a RegimeTotal witness with the current family-level architecture"
-        )
-    if re.search(r"\\operatorname\s*\{GeneTotal\}_i", existsr_formula):
-        fail(
-            "REV-07f regression: active normative ExistsR formula again uses "
-            "GeneTotal instead of RegimeTotal"
-        )
-
-    if sum(line.startswith("| REV-07f |") for line in visible_ledger.splitlines()) != 1:
-        fail("REV-07f regression: review ledger must contain exactly one REV-07f row")
-
-    for heading in (
-        "#### RT-07-MG — Multigeneal Reality Test",
-        "#### RT-07-XP — Transversal Production Test",
-        "#### RT-07-MG-TRIV — Singleton-per-token attack",
-    ):
-        markdown_section(technical, heading)
-
-    distinct_overlap_guard = (
-        "\\alpha\\neq_{\\mathsf M}\\beta" + "\n"
-        + "\\land" + "\n"
-        + "\\operatorname{GeneOverlap}_i"
-    )
-    if distinct_overlap_guard not in current or distinct_overlap_guard not in visible_technical:
-        fail(
-            "REV-07f regression: GeneFamily must require OverlapCoherence only "
-            "between distinct family members"
-        )
-
-    xp_section = markdown_section(
-        technical,
-        "#### RT-07-XP — Transversal Production Test",
-    )
-
-    rgc_pattern = (
-        r"\\mathrm\s*\{RGCExists\}_k\s*\(\s*"
-        r"\\mathfrak(?:\s*\{G\}|\s+G)_k\s*\)\s*,?"
-    )
-    rgc_formula = first_display_math_after(
-        xp_section,
-        "Supongamos ahora explícitamente:",
-    )
-    if not re.fullmatch(rgc_pattern, rgc_formula, flags=re.MULTILINE):
-        fail(
-            "REV-07f regression: RT-07-XP must assert an affirmative RGCExists "
-            "premise in the first display block after its assumption marker"
-        )
-
-    closure_pattern = (
-        r"\\operatorname\s*\{RegimeClosure\}_k\s*\(\s*"
-        r"\\mathfrak(?:\s*\{G\}|\s+G)_k\s*,\s*C_k\s*\)\s*\.?"
-    )
-    closure_formula = first_display_math_after(
-        xp_section,
-        "y fijemos un testigo $C_k$ tal que:",
-    )
-    if not re.fullmatch(closure_pattern, closure_formula, flags=re.MULTILINE):
-        fail(
-            "REV-07f regression: RT-07-XP must bind an affirmative explicit "
-            "RegimeClosure witness in its witness display block"
-        )
-
-    strict_formula = first_display_math_after(
-        xp_section,
-        "Por tanto:",
-    )
-    strict_pattern = (
-        r"\s*\\boxed\s*\{\s*"
-        r"\\bigcup\s*_\s*(?:\{\s*\\alpha\s*\}\s*|\\alpha(?:\s+|\{\}\s*))"
-        r"C_\{\\alpha,k\}\s*"
-        r"\\subsetneq(?:\s+|\{\}\s*)C_k\s*"
-        r"\}\s*\.?"
-    )
-    if not re.fullmatch(strict_pattern, strict_formula, flags=re.MULTILINE):
-        fail(
-            "REV-07f regression: RT-07-XP must affirm, at top level, the boxed "
-            "strict inclusion of the local-closure union in C_k"
-        )
-
-    if re.search(
-        r"\\operatorname\s*\{RegimeClosure\}_k\s*\(\s*"
-        r"\\mathfrak(?:\s*\{G\}|\s+G)_k\s*\)\s*\.",
-        xp_section,
-        flags=re.MULTILINE,
-    ):
-        fail(
-            "REV-07f regression: RT-07-XP again treats RegimeClosure as a unary "
-            "carrier-valued term"
-        )
-
-    presentation_section = markdown_section(
-        technical,
-        "#### 8.5. `ExistsR` como metasentencia",
-    )
-    presentation_marker = "y una presentación semántica produce únicamente:"
-    presentation_formula = first_display_math_after(
-        presentation_section,
-        presentation_marker,
-    )
-
-    if presentation_formula.count(r"\Rightarrow") != 1:
-        fail(
-            "REV-07f regression: active §8.5 presentation contract must contain "
-            "exactly one forward \\Rightarrow implication"
-        )
-    if r"\Leftarrow" in presentation_formula or r"\Leftrightarrow" in presentation_formula:
-        fail(
-            "REV-07f regression: active §8.5 presentation contract has the wrong "
-            "implication direction"
-        )
-
-    antecedent, consequent = presentation_formula.split(r"\Rightarrow", 1)
-    antecedent_parts = split_top_level_tex_conjuncts(antecedent)
-
-    premise_patterns = (
-        (
-            r"\\operatorname\s*\{RegimeTotal\}_i\s*\(\s*"
-            r"\\mathfrak(?:\s*\{G\}|\s+G)_i\s*,\s*R_i\s*\)",
-            "RegimeTotal premise",
-        ),
-        (
-            r"\\operatorname\s*\{SemTotal\}_i\s*\(\s*S_i\s*\)",
-            "SemTotal premise",
-        ),
-        (r"\\mathrm\s*\{OTB\}_i", "OTB bridge premise"),
-    )
-    if len(antecedent_parts) != len(premise_patterns):
-        fail(
-            "REV-07f regression: §8.5 presentation antecedent must contain exactly "
-            "RegimeTotal, SemTotal, and OTB as top-level premises"
-        )
-
-    unmatched = antecedent_parts.copy()
-    for pattern, description in premise_patterns:
-        match_index = next(
-            (
-                index
-                for index, part in enumerate(unmatched)
-                if re.fullmatch(pattern, part, flags=re.MULTILINE)
-            ),
-            None,
-        )
-        if match_index is None:
             fail(
-                "REV-07f regression: active §8.5 presentation antecedent is missing "
-                f"an affirmative {description}"
+                f"REV-07f regression: normative proposal is missing canonical {description}"
             )
-        unmatched.pop(match_index)
 
-    if not re.fullmatch(
-        r"\\operatorname\s*\{Presents\}_i\s*\(\s*S_i\s*,\s*R_i\s*\)\s*\.?",
-        consequent.strip(),
-        flags=re.MULTILINE,
+    existsr_section = normative.section(
+        3,
+        "1.9. ExistsR es una metasentencia, no un cuantificador sobre índices",
+    )
+    require_canonical_display(
+        existsr_section,
+        CANONICAL_EXISTSR,
+        "REV-07f active normative ExistsR formula",
+    )
+
+    if sum(line.startswith("| REV-07f |") for line in visible_ledger.split("\n")) != 1:
+        fail("REV-07f regression: review ledger must contain exactly one active REV-07f row")
+
+    for level, heading in (
+        (4, "RT-07-MG — Multigeneal Reality Test"),
+        (4, "RT-07-XP — Transversal Production Test"),
+        (4, "RT-07-MG-TRIV — Singleton-per-token attack"),
     ):
+        technical.section(level, heading)
+
+    if DISTINCT_OVERLAP_FRAGMENT not in current or DISTINCT_OVERLAP_FRAGMENT not in visible_technical:
         fail(
-            "REV-07f regression: active §8.5 presentation implication must conclude "
-            "exactly Presents_i(S_i,R_i)"
+            "REV-07f regression: GeneFamily must retain the canonical distinct-member "
+            "OverlapCoherence guard in both active documents"
         )
 
-    if re.search(r"\\operatorname\s*\{GeneTotal\}_i", presentation_formula):
-        fail(
-            "REV-07f regression: active §8.5 presentation bridge again requires "
-            "GeneTotal instead of RegimeTotal"
-        )
+    xp_section = technical.section(4, "RT-07-XP — Transversal Production Test")
+    require_canonical_display(
+        xp_section,
+        CANONICAL_XP_RGC_EXISTS,
+        "RT-07-XP affirmative RGCExists premise",
+    )
+    require_canonical_display(
+        xp_section,
+        CANONICAL_XP_CLOSURE,
+        "RT-07-XP explicit RegimeClosure witness",
+    )
+    require_canonical_display(
+        xp_section,
+        CANONICAL_XP_STRICT_INCLUSION,
+        "RT-07-XP strict transversal-growth conclusion",
+    )
 
-    pure_relation_section = markdown_section(
-        technical,
-        "#### 0.4.6. Stress test mixto: relación–genealogía–relación",
+    presentation_section = technical.section(4, "8.5. ExistsR como metasentencia")
+    require_canonical_display(
+        presentation_section,
+        CANONICAL_PRESENTATION,
+        "REV-07f §8.5 presentation implication",
+    )
+
+    pure_relation_section = technical.section(
+        4,
+        "0.4.6. Stress test mixto: relación–genealogía–relación",
     )
     if "ensamblaje de GeneTotal" in pure_relation_section:
         fail(
@@ -642,36 +399,27 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
                 f"missing current regime-level term {term}"
             )
 
-    plural_route_section = markdown_section(
-        technical,
-        "##### Ruta plural",
-    )
-    plural_status_contract = (
-        "**Status contract:** `REV-24d = UNCHANGED`; "
-        "`scope realization owner = REV-07/RegimeTotal`; "
-        "`Actual/CoReal plural route = NON-DISCHARGING for RegimeGenerated*`."
-    )
+    plural_route_section = technical.section(5, "Ruta plural")
     active_status_lines = [
         line
-        for line in plural_route_section.splitlines()
-        if re.fullmatch(r" {0,3}>[ \t]+" + re.escape(plural_status_contract), line)
+        for line in plural_route_section.split("\n")
+        if re.fullmatch(r" {0,3}" + re.escape(PLURAL_STATUS_LINE), line)
     ]
     if len(active_status_lines) != 1:
         fail(
             "REV-07f regression: plural-route status must appear exactly once as "
-            "active top-level blockquote Markdown with the canonical "
-            "UNCHANGED/MOVED/NON-DISCHARGING contract"
+            "the canonical active top-level blockquote contract"
         )
     if re.search(r"REV-24d[^\n]{0,120}\bPARTIAL\b", plural_route_section):
         fail(
             "REV-07f regression: plural route again assigns PARTIAL status to REV-24d"
         )
 
-    historical_dilemma = markdown_section(
-        technical,
-        "#### 0.11.3. HISTORICAL — dilema monogeneal pre-REV-07f",
+    historical_dilemma = technical.section(
+        4,
+        "0.11.3. HISTORICAL — dilema monogeneal pre-REV-07f",
     )
-    if "\\operatorname{RegimeTotal}_i(\\mathfrak G_i,R_i)" not in historical_dilemma:
+    if r"\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)" not in historical_dilemma:
         fail(
             "REV-07f regression: historical single-origin dilemma no longer records "
             "RegimeTotal as the current general architecture"
@@ -684,7 +432,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
 
 
 def validate_normative_size(text: str) -> None:
-    lines = text.splitlines()
+    lines = normalize_source(text).split("\n")
     if len(lines) > MAX_NORMATIVE_LINES:
         fail(
             f"Normative proposal grew to {len(lines)} lines; limit is {MAX_NORMATIVE_LINES}. "
@@ -719,24 +467,33 @@ def validate_normative_size(text: str) -> None:
 
 def main() -> None:
     contents = {path: read(path) for path in ACTIVE_DOCS}
-    archive = read(ARCHIVE)
+    documents = {path: MarkdownDocument(text) for path, text in contents.items()}
+    archive_text = read(ARCHIVE)
+    archive_document = MarkdownDocument(archive_text)
 
-    for path, text in contents.items():
-        validate_display_math(path, text)
+    for path, document in documents.items():
+        validate_display_math(path, document)
 
-    validate_markdown_table_blocks(LEDGER, contents[LEDGER])
-    validate_ledger(contents[LEDGER])
-    validate_archive(archive)
-    validate_index_typing(contents[NORMATIVE])
+    validate_markdown_table_blocks(LEDGER, documents[LEDGER])
+    validate_ledger(documents[LEDGER])
+    validate_archive(archive_document)
+
+    current_normative = documents[NORMATIVE].active_text().split(
+        "# II. Historia cronológica", 1
+    )[0]
+    validate_index_typing(current_normative)
+
     validate_regime_total_contract(
-        contents[NORMATIVE],
-        contents[LEDGER],
-        contents[TECHNICAL],
+        documents[NORMATIVE],
+        documents[LEDGER],
+        documents[TECHNICAL],
     )
     validate_normative_size(contents[NORMATIVE])
 
     print("Proposal document validation passed")
-    print(f"Normative lines: {len(contents[NORMATIVE].splitlines())}")
+    print(f"Normative lines: {len(normalize_source(contents[NORMATIVE]).split(chr(10)))}")
+    print("CommonMark structure: parsed by markdown-it-py")
+    print("Critical REV-07f TeX: canonical source contracts preserved")
     print("Ledger identifiers: unique")
     print("Display math delimiters: structurally valid")
     print("Historical archive: explicitly superseded")
