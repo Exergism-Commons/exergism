@@ -354,7 +354,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         r"\s*\\boxed\s*\{\s*"
         r"\\operatorname\s*\{ExistsR\}\s*"
         r":?\s*\\Longleftrightarrow\s*"
-        r"\\exists\s*\^\s*\{\s*\\mathsf\s*\{M\}\s*\}\s*i\s*\\;?\s*"
+        r"\\exists\s*\^\s*\{\s*\\mathsf(?:\s*\{M\}|\s+M)\s*\}\s*i\s*\\;?\s*"
         r"\\bigl\s*\(\s*"
         r"\\exists\s*\\mathfrak(?:\s*\{G\}|\s+G)_i\s*"
         r"\\exists\s*R_i\s*\\;?\s*"
