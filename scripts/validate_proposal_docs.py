@@ -162,6 +162,21 @@ def strip_html_comments(text: str) -> str:
     return re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
 
 
+def markdown_lines_visible(text: str) -> list[tuple[int, str]]:
+    outside = markdown_lines_outside_fences(text)
+    if not outside:
+        return []
+
+    line_numbers = [line_number for line_number, _ in outside]
+    visible_text = strip_html_comments("\n".join(line for _, line in outside))
+    visible_lines = visible_text.split("\n")
+
+    if len(visible_lines) != len(line_numbers):
+        fail("HTML-comment filtering changed Markdown line cardinality")
+
+    return list(zip(line_numbers, visible_lines))
+
+
 def markdown_heading(line: str) -> tuple[int, str] | None:
     match = re.match(r"^ {0,3}(#{1,6})(?:[ \t]+|$)(.*)$", line)
     if not match:
@@ -181,7 +196,7 @@ def markdown_section(text: str, heading: str) -> str:
         fail(f"Invalid Markdown heading passed to markdown_section: {heading}")
     target_level, target_title = target
 
-    outside = markdown_lines_outside_fences(strip_html_comments(text))
+    outside = markdown_lines_visible(text)
     matches = [
         position
         for position, (_, line) in enumerate(outside)
