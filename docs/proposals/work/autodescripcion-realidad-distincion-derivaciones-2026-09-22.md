@@ -9508,7 +9508,7 @@ Bajo CR-T1, \(E_\otimes=E_\wedge\), por lo que exact Bakes componentes sí puede
 
 **CR-S2 — undeclared synchronization.** Se añade un primitive simultáneo que no pertenece a ningún rol componente. Falla CR3.
 
-**CR-S3 — hidden joint observer.** El compositor inspecciona un identificador interno compartido aunque ningún contrato lo exponen. Falla CR5.
+**CR-S3 — hidden joint observer.** El compositor inspecciona un identificador interno compartido aunque ningún contrato lo expone. Falla CR5.
 
 **CR-S4 — applicability coupling.** Una acción de \(A\) habilita/deshabilita una operación de \(B\), pero la composición ignora ese cambio. Falla CR4 por enabledness no congruente.
 
