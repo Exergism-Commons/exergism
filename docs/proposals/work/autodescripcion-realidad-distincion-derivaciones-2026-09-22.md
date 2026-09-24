@@ -1257,9 +1257,9 @@ El predicado anterior no requiere que todos los eventos formen un **objeto ontol
 
 Pero esto no resuelve por sí solo el debate de generalidad absoluta: si ni siquiera esa cuantificación global fuese legítima, la definición tendría que relativizarse a familias locales.
 
-### Estado de REV-18
+### Estado histórico de REV-18
 
-REV-18 permanece **PARTIAL**.
+**HISTORICAL — SUPERSEDED STATUS.** En este punto REV-18 permanecía PARTIAL. La formulación normativa posterior lo cierra en tipado mediante fragmentos semánticos positivos actuales (X=(T_X,\Phi_X)), incidencia como pertenencia al carrier y `EClosed_i` como propiedad del contenido. Conservar lo que sigue como deuda histórica que condujo a esa solución, no como status vigente.
 
 Se ha reducido el puente a una relación de incidencia y un predicado $\operatorname{EClosed}$, eliminando la necesidad del embedding fuerte $J_i$.
 
@@ -1491,9 +1491,9 @@ y la cuestión de si cadenas así poseen una cota sigue siendo exactamente la ob
 
 Tampoco se presupone una estructura global de todos los eventos. La cuantificación sobre “todo evento emergente actual pertinente” puede mantenerse metalingüística mientras REV-11/generalidad siga abierta.
 
-### 3.5.8. Estado de REV-19
+### 3.5.8. Estado histórico de REV-19
 
-REV-19 pasa de **OPEN** a **PARTIAL**.
+**HISTORICAL — SUPERSEDED STATUS.** Aquí REV-19 pasó de OPEN a PARTIAL. La arquitectura procesual posterior cerró el problema de tipado/orden: el status vigente es RESOLVED en ese alcance. Las obligaciones ontológicas que sobrevivieron fueron reasignadas a REV-18/20/09/07 en vez de mantener REV-19 artificialmente abierto.
 
 Se ha resuelto el error de tipos más inmediato:
 
@@ -1965,9 +1965,9 @@ Por tanto:
 
 Esto no afirma que toda noción futura de emergencia sea finitaria. Si se introdujeran eventos con condiciones de habilitación esencialmente infinitarias que no pudieran empaquetarse en un estado/origen representado, habría que reabrir una obligación de compactitud apropiada.
 
-### 3.7.6. Estado de REV-09
+### 3.7.6. Estado histórico de REV-09
 
-REV-09 pasa de **OPEN** a **PARTIAL**.
+**HISTORICAL — SUPERSEDED STATUS.** Aquí REV-09 pasó de OPEN a PARTIAL. Posteriormente, con `Adm_i := StructAdm_i`, las uniones de cadenas set-indexed preservan admisibilidad y `EClosed`; el status vigente es RESOLVED para el alcance set-indexed. La cuestión class-sized/smallness quedó trasladada a REV-22/23/25.
 
 Se ha demostrado que EClosed se preserva formalmente bajo uniones de cadenas compatibles.
 
