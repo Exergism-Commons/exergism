@@ -155,6 +155,8 @@ $$
 
 La relatividad a \(\mathcal T\) pertenece a la **descarga**, no a la realidad individuada. IndAdequate exige fidelidad estructural, independencia del target, fundamento positivo, invariancia, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina de cortes rivales y no-totalización; REV-07g contiene los tests completos. IndexAdmission no implica RegimeTotal ni REC. Un parámetro provisional \(\widehat{i}\) puede servir para auditar una candidatura sin admitirla. IndexRetraction corrige una admisión metateórica defectuosa y no equivale a ContextCessation ontológica.
 
+**Nada absoluta frente a individuación.** REV-07g separa ahora dos deudas que no deben colapsarse. `NoR := not ExistsR` es una metasentencia y no un estado precursor, objeto o sustrato capaz de producir una realidad; por tanto la propuesta no usa una transición `Nothing -> R_i` ni una «inversión de la Nada». Queda abierta, como hipótesis independiente, la cuestión de si una ausencia absoluta de determinación puede ser una realización metaontológicamente admisible. Incluso una respuesta negativa no basta por sí sola para `ExistsR`: hace falta un puente no circular desde realizabilidad a la arquitectura de RegimeTotal. Separadamente, una distinción solo puede fundamentar ContextIndividuation si es efectiva y positivamente justificada por una teoría independiente; una partición descriptiva `A|B` no individúa un contexto por sí sola.
+
 ### 1.4. Juicios metaontológicos de contexto
 
 Introducimos como juicios metateóricos —no predicados ontológicos— identidad e incompatibilidad:
