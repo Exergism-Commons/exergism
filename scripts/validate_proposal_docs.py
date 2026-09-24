@@ -656,35 +656,49 @@ def rendered_text_has_invalid_real_index(rendered: str) -> bool:
 
     return False
 
+def leading_context_index(nodes: list[Any]) -> str | None:
+    for name in sorted(CONTEXT_INDEX_NAMES):
+        if tex_text_starts_with_bare_name(nodes, name):
+            return name
+    return None
+
+
+def trailing_context_index(nodes: list[Any]) -> str | None:
+    for name in sorted(CONTEXT_INDEX_NAMES):
+        if tex_text_ends_with_bare_name(nodes, name):
+            return name
+    return None
+
+
 def find_index_typing_violation(nodes: list[Any]) -> str | None:
     nodes = flatten_transparent_tex_groups(nodes)
 
     for index, node in enumerate(nodes):
         if isinstance(node, LatexMacroNode) and node.macroname in {"exists", "forall"}:
-            if tex_text_starts_with_bare_name(nodes[index + 1 :], "i"):
+            quantified_index = leading_context_index(nodes[index + 1 :])
+            if quantified_index is not None:
                 return (
-                    "object-level existential quantification over index metavariable i"
+                    f"object-level existential quantification over index metavariable {quantified_index}"
                     if node.macroname == "exists"
-                    else "object-level universal quantification over index metavariable i"
+                    else f"object-level universal quantification over index metavariable {quantified_index}"
                 )
 
         if isinstance(node, LatexMacroNode) and node.macroname == "neq":
-            if (
-                tex_text_ends_with_bare_name(nodes[:index], "i")
-                and tex_text_starts_with_bare_name(nodes[index + 1 :], "j")
-            ) or (
-                tex_text_ends_with_bare_name(nodes[:index], "j")
-                and tex_text_starts_with_bare_name(nodes[index + 1 :], "i")
-            ):
-                return "ordinary i\\neq j index relation"
+            left_index = trailing_context_index(nodes[:index])
+            right_index = leading_context_index(nodes[index + 1 :])
+            if left_index is not None and right_index is not None:
+                return f"ordinary {left_index}\\neq {right_index} index relation"
 
         if isinstance(node, LatexMacroNode) and node.macroname == "in":
+            left_index = trailing_context_index(nodes[:index])
             if (
-                tex_text_ends_with_bare_name(nodes[:index], "i")
+                left_index is not None
                 and tex_text_starts_with_bare_name(nodes[index + 1 :], "I")
             ):
-                return "membership of index metavariable i in an index domain I"
-
+                return (
+                    f"membership of index metavariable {left_index} "
+                    "in an index domain I"
+                )
 
         for child_nodes in tex_child_nodelists(node):
             violation = find_index_typing_violation(child_nodes)
@@ -705,7 +719,7 @@ def validate_index_typing(
             nodes, _, _ = LatexWalker(fragment).get_latex_nodes()
         except Exception as exc:
             fail(
-                f"{NORMATIVE.relative_to(ROOT)} contains TeX that pylatexenc cannot parse "
+                f"{path.relative_to(ROOT)} contains TeX that pylatexenc cannot parse "
                 f"near active line {line_number}: {exc}"
             )
 
