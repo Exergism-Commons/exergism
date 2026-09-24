@@ -635,34 +635,17 @@ def tex_child_nodelists(node: Any) -> list[list[Any]]:
     return children
 
 
-def operatorname_text(node: LatexMacroNode) -> str | None:
-    if node.macroname != "operatorname":
-        return None
+def rendered_text_has_unindexed_real(rendered: str) -> bool:
+    for match in re.finditer(r"(?<![A-Za-z0-9])Real(?![A-Za-z0-9])", rendered):
+        suffix = rendered[match.end() :].lstrip()
+        if not suffix.startswith("_"):
+            return True
 
-    nodeargd = getattr(node, "nodeargd", None)
-    arguments = [
-        argument
-        for argument in (getattr(nodeargd, "argnlist", []) or [])
-        if argument is not None
-    ]
-    if not arguments:
-        return None
+        operand = suffix[1:].lstrip()
+        if not operand or operand[0] in "([{":
+            return True
 
-    return tex_nodes_text([arguments[0]]).strip()
-
-
-def rendered_suffix_has_nonempty_subscript(nodes: list[Any]) -> bool:
-    rendered = tex_nodes_text(nodes).lstrip()
-    if not rendered.startswith("_"):
-        return False
-
-    operand = rendered[1:].lstrip()
-    if not operand:
-        return False
-
-    # An empty TeX group disappears in the semantic projection, leaving the
-    # predicate's following argument delimiter as the first visible character.
-    return operand[0] not in "([{"
+    return False
 
 
 def find_index_typing_violation(nodes: list[Any]) -> str | None:
@@ -694,23 +677,6 @@ def find_index_typing_violation(nodes: list[Any]) -> str | None:
             ):
                 return "membership of index metavariable i in an index domain I"
 
-        if isinstance(node, LatexMacroNode) and node.macroname == "operatorname":
-            name = operatorname_text(node)
-            name_end = index
-
-            # pylatexenc may leave an unknown macro argument as a following group.
-            # The group is still parser output; LatexNodes2Text supplies its semantics.
-            if (
-                name is None
-                and index + 1 < len(nodes)
-                and isinstance(nodes[index + 1], LatexGroupNode)
-            ):
-                name = tex_nodes_text([nodes[index + 1]]).strip()
-                name_end = index + 1
-
-            if name == "Real":
-                if not rendered_suffix_has_nonempty_subscript(nodes[name_end + 1 :]):
-                    return "unindexed Real predicate"
 
         for child_nodes in tex_child_nodelists(node):
             violation = find_index_typing_violation(child_nodes)
@@ -734,7 +700,14 @@ def validate_index_typing(
                 f"near active line {line_number}: {exc}"
             )
 
-        violation = find_index_typing_violation(list(nodes))
+        parsed_nodes = list(nodes)
+        if rendered_text_has_unindexed_real(tex_nodes_text(parsed_nodes)):
+            fail(
+                f"{NORMATIVE.relative_to(ROOT)} reintroduces unindexed Real predicate "
+                f"near active line {line_number}; indices are meta-level type parameters (EXT-02)"
+            )
+
+        violation = find_index_typing_violation(parsed_nodes)
         if violation is not None:
             fail(
                 f"{NORMATIVE.relative_to(ROOT)} reintroduces {violation} "
