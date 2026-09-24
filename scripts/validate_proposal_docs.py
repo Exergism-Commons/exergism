@@ -377,32 +377,62 @@ class MarkdownDocument:
             and line_no <= token.map[0] < end
         ]
 
-    def table_rows(self, start: int = 0, end: int | None = None) -> list[list[str]]:
-        if end is None:
-            end = len(self.lines)
+    def table_body_rows(
+        self,
+        start: int,
+        end: int,
+        description: str,
+    ) -> list[list[str]]:
+        table_indices = [
+            index
+            for index, token in enumerate(self.tokens)
+            if token.type == "table_open"
+            and token.map is not None
+            and start <= token.map[0]
+            and token.map[1] <= end
+        ]
+        if len(table_indices) != 1:
+            fail(
+                f"{description} must contain exactly one parsed table "
+                f"(found {len(table_indices)})"
+            )
 
+        table_index = table_indices[0]
         rows: list[list[str]] = []
-        index = 0
+        in_tbody = False
+        index = table_index + 1
+
         while index < len(self.tokens):
             token = self.tokens[index]
-            if (
-                token.type != "tr_open"
-                or token.map is None
-                or not (start <= token.map[0] and token.map[1] <= end)
-            ):
+            if token.type == "table_close":
+                break
+            if token.type == "tbody_open":
+                in_tbody = True
+                index += 1
+                continue
+            if token.type == "tbody_close":
+                in_tbody = False
                 index += 1
                 continue
 
-            cells: list[str] = []
-            cursor = index + 1
-            while cursor < len(self.tokens) and self.tokens[cursor].type != "tr_close":
-                child = self.tokens[cursor]
-                if child.type == "inline":
-                    cells.append(visible_inline_text(child))
-                cursor += 1
+            if in_tbody and token.type == "tr_open":
+                cells: list[str] = []
+                cursor = index + 1
+                while cursor < len(self.tokens) and self.tokens[cursor].type != "tr_close":
+                    child = self.tokens[cursor]
+                    if child.type == "inline":
+                        cells.append(visible_inline_text(child))
+                    cursor += 1
+                rows.append(cells)
+                index = cursor + 1
+                continue
 
-            rows.append(cells)
-            index = cursor + 1
+            index += 1
+
+        if index >= len(self.tokens) or self.tokens[index].type != "table_close":
+            fail(f"{description} parsed table is not structurally closed")
+        if not rows:
+            fail(f"{description} parsed table body is empty")
 
         return rows
 
@@ -549,12 +579,11 @@ def validate_ledger(document: MarkdownDocument) -> None:
     ) != 1:
         fail("Review ledger must contain exactly one parsed 'Estados' section")
 
-    rows = document.table_rows()
-    body_rows = [
-        row
-        for row in rows
-        if row and row[0] != "ID"
-    ]
+    priority_bounds = document.section_bounds(2, "Prioridad de trabajo")
+    body_rows = document.table_body_rows(
+        *priority_bounds,
+        description="Review ledger Prioridad de trabajo section",
+    )
 
     if sum(1 for row in body_rows if row and row[0] == "FORM-02") != 1:
         fail("Review ledger must contain exactly one parsed FORM-02 table row")
