@@ -20,6 +20,17 @@ MAX_SECTION4_LINES = 400
 PRIMARY_LEDGER_ID = re.compile(r"^(REV-\d+[a-z]?|DOC-\d+|FORM-\d+)$")
 UNESCAPED_PIPE = re.compile(r"(?<!\\)\|")
 FENCE_BOUNDARY = "\u241e"
+HTML_BOUNDARY = "\u241f"
+RAW_HTML_BLOCK_TAG = re.compile(
+    r"^ {0,3}</?(?:"
+    r"address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|"
+    r"dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|"
+    r"frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|"
+    r"nav|noframes|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|"
+    r"tfoot|th|thead|title|tr|track|ul"
+    r")(?=(?:[ \\t]|/?>|$))",
+    flags=re.IGNORECASE,
+)
 
 
 def fail(message: str) -> None:
@@ -170,6 +181,30 @@ def strip_html_comments(text: str) -> str:
     )
 
 
+def mask_raw_html_blocks(text: str) -> str:
+    lines = text.split("\n")
+    masked: list[str] = []
+    in_block = False
+
+    for line in lines:
+        if in_block:
+            if line.strip() == "":
+                in_block = False
+                masked.append("")
+            else:
+                masked.append(HTML_BOUNDARY)
+            continue
+
+        if RAW_HTML_BLOCK_TAG.match(line):
+            in_block = True
+            masked.append(HTML_BOUNDARY)
+            continue
+
+        masked.append(line)
+
+    return "\n".join(masked)
+
+
 def markdown_lines_visible(text: str) -> list[tuple[int, str]]:
     outside = markdown_lines_outside_fences(text)
     if not outside:
@@ -177,6 +212,7 @@ def markdown_lines_visible(text: str) -> list[tuple[int, str]]:
 
     line_numbers = [line_number for line_number, _ in outside]
     visible_text = strip_html_comments("\n".join(line for _, line in outside))
+    visible_text = mask_raw_html_blocks(visible_text)
     visible_lines = visible_text.split("\n")
 
     if len(visible_lines) != len(line_numbers):
@@ -358,7 +394,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         r"\\exists\s*\^\s*\{\s*\\mathsf(?:\s*\{M\}|\s+M)\s*\}\s*i\s*\\;?\s*"
         r"\\bigl\s*\(\s*"
         r"\\exists\s*\\mathfrak(?:\s*\{G\}|\s+G)\s*_\s*i\s*"
-        r"\\exists\s*R\s*_\s*i\s*\\;?\s*"
+        r"\\exists(?:\s+|\{\}\s*)R\s*_\s*i\s*\\;?\s*"
         r"\\operatorname\s*\{RegimeTotal\}\s*_\s*i\s*\(\s*"
         r"\\mathfrak(?:\s*\{G\}|\s+G)\s*_\s*i\s*,\s*R\s*_\s*i\s*\)\s*"
         r"\\bigr\s*\)\s*\.?"
