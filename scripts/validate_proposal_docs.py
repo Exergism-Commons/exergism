@@ -10,8 +10,6 @@ from markdown_it import MarkdownIt
 from mdit_py_plugins.dollarmath import dollarmath_plugin
 from pylatexenc.latex2text import LatexNodes2Text
 from pylatexenc.latexwalker import (
-    LatexCharsNode,
-    LatexCommentNode,
     LatexEnvironmentNode,
     LatexGroupNode,
     LatexMacroNode,
@@ -33,7 +31,6 @@ MAX_NORMATIVE_LINES = 2850
 MAX_SECTION4_LINES = 400
 
 PRIMARY_LEDGER_ID = re.compile(r"^(REV-\d+[a-z]?|DOC-\d+|FORM-\d+)$")
-UNESCAPED_PIPE = re.compile(r"(?<!\\)\|")
 HIDDEN_BLOCK_BOUNDARY = "\u241e"
 
 # Structural Markdown semantics are delegated to a standards-conformant CommonMark parser.
