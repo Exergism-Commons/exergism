@@ -4,6 +4,7 @@ from __future__ import annotations
 import unittest
 
 from scripts.validate_proposal_docs import (
+    CONTEXT_INDEX_NAMES,
     MarkdownDocument,
     NORMATIVE,
     validate_archive,
@@ -42,6 +43,17 @@ class IndexTypingGuardTests(unittest.TestCase):
             with self.subTest(tex=tex):
                 self.assert_rejected(tex)
 
+    def test_rejects_every_declared_context_index_as_object_quantifier(self) -> None:
+        for name in sorted(CONTEXT_INDEX_NAMES):
+            for tex in (
+                rf"\exists {name}\;P_{name}",
+                rf"\forall {name}\;P_{name}",
+                rf"\exists\mathrm{{{name}}}\;P_{name}",
+                rf"{{\forall}} {name}\;P_{name}",
+            ):
+                with self.subTest(name=name, tex=tex):
+                    self.assert_rejected(tex)
+
     def test_allows_metalinguistic_and_indexed_object_quantifiers(self) -> None:
         for tex in (
             r"\exists^{\mathsf M} i",
@@ -71,6 +83,16 @@ class IndexTypingGuardTests(unittest.TestCase):
         ):
             with self.subTest(tex=tex):
                 self.assert_rejected(tex)
+
+    def test_rejects_relations_for_every_declared_context_index(self) -> None:
+        names = sorted(CONTEXT_INDEX_NAMES)
+        for left in names:
+            self.assert_rejected(rf"{left}\in I")
+            for right in names:
+                if left == right:
+                    continue
+                with self.subTest(left=left, right=right):
+                    self.assert_rejected(rf"{left}\neq {right}")
 
     def test_allows_indexed_real(self) -> None:
         for tex in (
