@@ -39,6 +39,8 @@ class IndexTypingGuardTests(unittest.TestCase):
             r"\nexists i\;P_i",
             r"\exists^{X} i\;P_i",
             r"\forall_{q} i\;P_i",
+            r"\exists^X i\;P_i",
+            r"\forall_q i\;P_i",
         ):
             with self.subTest(tex=tex):
                 self.assert_rejected(tex)
@@ -77,6 +79,9 @@ class IndexTypingGuardTests(unittest.TestCase):
             r"i\mathrel{\neq}j",
             r"i\mathrel{\in}I",
             r"i\ne j",
+            r"i\mathrel{\ne}j",
+            r"i\notin I",
+            r"i≠j",
             r"\operatorname{Real}(x)",
             r"\operatorname{Real}_x(x)",
             r"\operatorname{Real}_{\phantom{i}}(x)",
@@ -90,11 +95,11 @@ class IndexTypingGuardTests(unittest.TestCase):
         names = sorted(CONTEXT_INDEX_NAMES)
         for left in names:
             self.assert_rejected(rf"{left}\in I")
+            self.assert_rejected(rf"{left}\notin I")
             for right in names:
-                if left == right:
-                    continue
                 with self.subTest(left=left, right=right):
                     self.assert_rejected(rf"{left}\neq {right}")
+                    self.assert_rejected(rf"{left}\ne {right}")
 
     def test_rejects_dynamic_tex_definitions(self) -> None:
         for tex in (
