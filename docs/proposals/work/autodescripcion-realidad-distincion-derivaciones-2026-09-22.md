@@ -6326,17 +6326,37 @@ Esta distinción será obligatoria al volver sobre la pregunta “¿puede destru
 
 #### 0.11.72. IndAdequate no es un nuevo primitivo
 
-Para que TR no desplace simplemente la caja negra de \(\chi\) a IndAdequate, fijamos su estatus:
+Para que TR no desplace simplemente la caja negra de \(\chi\) a IndAdequate, separamos dos contratos.
+
+Las obligaciones sobre la **individuación objetiva** son:
+
+\[
+\operatorname{ContextAdequate}^{\mathsf M}(C,\chi)
+:=
+\bigwedge_{n=1}^{14}\mathrm{CI}_n(C,\chi).
+\]
+
+Las obligaciones sobre la **descarga proporcionada por una teoría** son:
+
+\[
+\operatorname{DischargeAdequate}^{\mathsf M}(\mathcal T,C,\chi)
+:=
+\bigwedge_{m=0}^{10}\mathrm{IA}_m(\mathcal T,C,\chi).
+\]
+
+Y usamos solo como abreviatura:
 
 \[
 \boxed{
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi)
 :=
-\bigwedge_{m=0}^{10}\mathrm{IA}_m(\mathcal T,C,\chi).
+\operatorname{ContextAdequate}^{\mathsf M}(C,\chi)
+\land
+\operatorname{DischargeAdequate}^{\mathsf M}(\mathcal T,C,\chi).
 }
 \]
 
-Es una **abreviatura de auditoría**, no un hecho metaontológico adicional que pueda postularse sin descarga.
+Ninguno de estos nombres introduce un hecho metaontológico adicional que pueda postularse sin descarga: son **bundles de obligaciones de auditoría**.
 
 Análogamente, \(\operatorname{Ind}_{\mathcal T}\) no recibe una definición universal en el núcleo. Cada teoría \(\mathcal T\) debe especificar qué estructura concreta pretende hacer el trabajo de individuación y demostrar que satisface IA0–IA10.
 
@@ -6437,6 +6457,14 @@ puede descargar:
 \]
 
 Y análogamente para \(C_2\).
+
+La admisión de ambos carriers como contextos distintos no implica todavía:
+
+\[
+i\mathrel{\#}j.
+\]
+
+La incompatibilidad es un juicio metaontológico adicional. El toy descarga diferencia de contexto bajo \(\mathcal T_W\), no todas las relaciones posibles entre los contextos admitidos.
 
 El toy demuestra únicamente **consistencia arquitectónica** de TR: existe al menos una forma no circular en que una teoría suficientemente rica puede proporcionar el criterio que el núcleo deja parametrizado.
 
