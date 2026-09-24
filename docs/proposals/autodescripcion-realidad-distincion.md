@@ -1472,7 +1472,7 @@ Para un operador extensivo e idempotente, F1 + F3 bastan para elevar cotas a pun
 1. la existencia/adecuación de una base $\mathcal O_i$ y de su clausura ontológica —REV-07—;
 2. la adecuación de $\Lambda_*$ o $\mathcal C_*$ como reconstrucción de esa genealogía;
 3. REV-24c/RA y, por tanto, la presentación completa por $S_i$;
-4. $\operatorname{ExistsR}$ sin cerrar la obligación genealógica de REV-07;
+4. $\operatorname{ExistsR}$ incondicional: XR-1 ya descarga por exhaustión finita GeneUnit/GenComplete/GCExists/scope y prueba $\mathrm{XR1\text{-}ACT}+\mathrm{IndAdequate}_{XR1}\Rightarrow\operatorname{ExistsR}$; falta descargar XA4/structural fidelity del nivel software para eliminar esa premisa;
 5. One-$R$/Many-$R$ y cualquier generalidad meta-indexada, que quedan en REV-26 y no bloquean el target principal.
 
 Esta separación es normativa. Cualquier detalle técnico nuevo debe incorporarse primero al documento work/; el normativo solo se amplía cuando cambie uno de estos enunciados, dependencias o estados.
@@ -2006,7 +2006,7 @@ REV-07h refina la hipótesis de trivialización de REV-07e separando SourceUnit,
 
 Memoization no es hashing ni criterio automático de contexto: $\operatorname{MemoState}\not\Rightarrow\operatorname{ContextIndividuation}$. Pero tampoco vale $\operatorname{Subsystem}\Rightarrow\neg\operatorname{Context}$: una teoría puede descargar TR-M pre-indexadamente mediante typing local, boundary/interface mediation, reentrant quotient dynamics, MaintRole/interaction coverage y MC1–MC10 + IndAdequate. Así un termostato, servicio, organismo o proceso puede ser objeto del host $k$ y simultáneamente contexto anidado $j$, relacionado solo por $\operatorname{ContextEmbedding}^{\mathsf M}(j\hookrightarrow k;e)$; no se escribe $R_j\in R_k$ ni se infiere $j\#k$. La prohibición correcta es no-free-promotion: memoria, frontera espacial o empaquetado por sí solos no crean contexto; arbitrary aggregation falla MC8. PersistenceSpec/ContinuationProfile gobierna después la identidad diacrónica del contexto. InterfaceWall sigue siendo subdeterminación relativa al canal, no Muro fuerte.
 
-**Estado: PARTIAL — REV-07. REV-07f queda resuelto arquitectónicamente por GeneBasis + RegimeClosure + RegimeTotal; REV-07g mantiene abierta la individuación contextual y REV-07h mantiene abierta la descarga formal de memoization/baking. La existencia concreta sigue dependiendo de REV-07b/c, ContextIndividuation admisible y scope realization. REV-24 queda reservado a la presentación semántica de un $R_i$ ya justificado.**
+**Estado: PARTIAL — REV-07.** REV-07f queda resuelto arquitectónicamente y XR-1 aporta un witness singleton finito ejecutable: la instancia descarga GenSound/GenComplete, GCExists, GeneUnit y scope exacto, por lo que `XR1-ACT + IndAdequate_XR1 -> ExistsR`. REV-07b/c/d siguen abiertos como tesis universales, pero no bloquean XR-1. `ExistsR` aún no se marca incondicional porque XA4 debe justificar structural fidelity/legitimidad ontológica del nivel software actual. REV-24 sigue reservado a presentar un $R_i$ ya justificado.
 
 ## 6. Metaontología de contextos — REV-26
 
