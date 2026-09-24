@@ -286,10 +286,10 @@ def require_canonical_display(
     expected: str,
     description: str,
 ) -> None:
-    matches = [block for block in display_math_blocks(section) if block == expected]
-    if len(matches) != 1:
+    canonical_source = "$\n" + expected + "\n$"
+    if section.count(canonical_source) != 1:
         fail(
-            f"{description} must occur exactly once as its canonical display "
+            f"{description} must occur exactly once as its canonical $...$ source "
             "inside the designated definition section"
         )
 
