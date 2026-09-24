@@ -5861,7 +5861,7 @@ La salida sigue siendo:
 
 La ventaja de declarar esta primitividad provisional es metodológica: la teoría deja visible exactamente qué necesita de una futura ontología de individuación. La alternativa —definir \(i\) por GeneBasis, por conectividad, por maximalidad o por SemTotal— volvería a esconder circularidades ya detectadas.
 
-Esta primitividad puede ser **teoría-relativa**. Una física concreta, una ontología de procesos o una teoría independiente de sistemas podría descargar \(\chi\) mediante estructura adicional. La propuesta general no debe inventar esa estructura para garantizar ExistsR.
+La **descarga** de esta deuda puede ser relativa a una teoría, pero el target no lo es: una física concreta, una ontología de procesos o una teoría independiente de sistemas puede aportar estructura que justifique \(\chi\) sin hacer que la individuación dependa de nuestra elección descriptiva. La propuesta general no debe inventar esa estructura para garantizar ExistsR.
 
 #### 0.11.63. Consecuencia para ExistsR: REV-07g no es meramente decorativo
 
@@ -6109,13 +6109,21 @@ Esta organización permite continuar REV-07 sin fingir que AI está resuelta. El
 
 Entre WMR, PRI y TR, la ruta provisionalmente más conservadora para una ontología general es **TR**: no fijar universalmente qué estructura individúa todo contexto, sino especificar qué debe demostrar cualquier teoría que pretenda hacerlo.
 
-Sea \(\mathcal T\) una teoría ontológica/física independientemente motivada. Introducimos un juicio metateórico relativo:
+Sea \(\mathcal T\) una teoría ontológica/física independientemente motivada. Introducimos un juicio metateórico de **descarga**:
 
 \[
 \operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi),
 \]
 
-leído: “según la estructura objetiva que \(\mathcal T\) afirma y con testigo \(\chi\), la candidatura \(C\) constituye una unidad contextual”.
+leído: “\(\mathcal T\), mediante la estructura representada por \(\chi\), ofrece un criterio para justificar que \(C\) constituye una unidad contextual”.
+
+El target permanece objetivo:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi).
+\]
+
+Por tanto \(\operatorname{Ind}_{\mathcal T}\) no significa “\(C\) es una unidad porque \(\mathcal T\) lo dice”. Una teoría falsa, meramente instrumental o estructuralmente infiel no puede fabricar un contexto ontológico.
 
 \(\mathcal T\) no es un objeto dentro de \(C\), ni un supercontexto, ni un elemento de un dominio ontológico de teorías. Es un parámetro del metalenguaje.
 
@@ -6127,6 +6135,7 @@ Para que el juicio pueda alimentar IndexAdmission exigimos:
 
 Sus obligaciones mínimas son:
 
+0. **IA0 / structural fidelity:** la parte de \(\mathcal T\) usada por el criterio debe representar fielmente la estructura ontológica relevante para \(C\); consistencia interna, conveniencia predictiva o ajuste descriptivo por sí solos no bastan.
 1. **IA1 / theory independence:** \(\mathcal T\) está justificada por razones independientes del deseo de obtener precisamente el corte \(C\); no se construye ad hoc a partir del target.
 2. **IA2 / target independence:** \(\operatorname{Ind}_{\mathcal T}\) no usa \(R_i\), RegimeTotal, REC, SameRegime ni la existencia previa del índice que pretende admitir.
 3. **IA3 / positive grounding:** debe existir estructura positiva de \(\mathcal T\) que funde el corte; no basta la ausencia de enlaces con el exterior.
@@ -6138,7 +6147,7 @@ Sus obligaciones mínimas son:
 9. **IA9 / no totality smuggling:** individuar el contexto no demuestra que su scope esté exhaustivamente realizado.
 10. **IA10 / auditability:** debe poder señalarse qué rasgos de \(\mathcal T\) hacen el trabajo de individuación y qué contraejemplo haría fallar el criterio.
 
-Entonces la regla de admisión queda:
+Entonces la descarga correcta tiene dos pasos:
 
 \[
 \boxed{
@@ -6146,13 +6155,47 @@ Entonces la regla de admisión queda:
 \land
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi)
 \Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\Rightarrow
 \operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi,\mathcal T).
 }
 \]
 
-Esta regla no convierte la teoría \(\mathcal T\) en una realidad superior. Solo hace explícita la descarga del criterio.
+La primera implicación es la obligación de soundness de la descarga; la segunda es la regla formal de admisión. La teoría \(\mathcal T\) no se convierte en una realidad superior ni en creadora de la unidad que certifica.
 
 El caso PRI se recupera como límite si una futura metafísica sostiene que no existe una reducción ulterior y toma ContextIndividuation como fundamental. WMR se recupera como caso de TR si \(\mathcal T\) proporciona una world-making structure adecuada.
+
+#### 0.11.68a. Descarga relativa a teoría no es relativismo ontológico
+
+Dos teorías \(\mathcal T_1,\mathcal T_2\) pueden proporcionar criterios distintos para la misma individuación objetiva:
+
+\[
+\operatorname{Ind}_{\mathcal T_1}^{\mathsf M}(C;\chi_1),
+\qquad
+\operatorname{Ind}_{\mathcal T_2}^{\mathsf M}(C;\chi_2),
+\]
+
+sin que existan por ello dos realidades “relativas a teorías”.
+
+Si ambas descargas son adecuadas y sus testigos son equivalentes respecto del corte, ambas convergen sobre el mismo target:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}(C).
+\]
+
+Si divergen, la divergencia es un conflicto entre criterios/teorías que debe resolverse mediante IA0–IA10, evidencia adicional o una semántica de niveles. No se infiere automáticamente pluralidad ontológica.
+
+Por tanto:
+
+\[
+\boxed{
+\text{theory-relative discharge}
+\neq
+\text{theory-relative reality}.
+}
+\]
+
+Esto también limita IndexRetraction: abandonar una teoría puede retirar nuestra justificación para un índice, pero solo muestra que la admisión anterior fue epistémicamente defectuosa si la nueva evaluación invalida su witness. No produce ContextCessation ni reescribe retroactivamente la ontología.
 
 #### 0.11.69. Equivalencia de testigos: varias pruebas no deben multiplicar índices
 
