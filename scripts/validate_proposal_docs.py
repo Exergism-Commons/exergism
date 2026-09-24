@@ -133,6 +133,19 @@ class MarkdownDocument:
             result.append((level, title, token.map[0]))
         return result
 
+    def reject_inline_html(self, path: Path) -> None:
+        for token in self.tokens:
+            if token.type != "inline" or not token.children:
+                continue
+            if any(child.type == "html_inline" for child in token.children):
+                location = ""
+                if token.map is not None:
+                    location = f" near line {token.map[0] + 1}"
+                fail(
+                    f"{path.relative_to(ROOT)} contains active inline raw HTML/comment{location}; "
+                    "proposal contracts use CommonMark prose/blocks only"
+                )
+
     def section(self, level: int, title: str) -> str:
         headings = self.headings()
         matches = [
@@ -176,11 +189,39 @@ def display_math_blocks(text: str) -> list[str]:
     return blocks
 
 
-def require_canonical_display(section: str, expected: str, description: str) -> None:
-    matches = [block for block in display_math_blocks(section) if block == expected]
-    if len(matches) != 1:
+def require_canonical_display_after(
+    section: str,
+    marker: str,
+    expected: str,
+    description: str,
+) -> None:
+    if section.count(marker) != 1:
+        fail(f"{description} must have exactly one canonical doctrinal marker: {marker}")
+
+    tail = section.split(marker, 1)[1]
+    lines = tail.split("\n")
+    index = 0
+    while index < len(lines) and re.fullmatch(r"[ \t]*", lines[index]):
+        index += 1
+
+    if index >= len(lines) or not re.fullmatch(r" {0,3}\$\$[ \t]*", lines[index]):
         fail(
-            f"{description} must occur exactly once using the canonical TeX source; "
+            f"{description} must begin at the first active block after its doctrinal marker"
+        )
+
+    index += 1
+    block: list[str] = []
+    while index < len(lines) and not re.fullmatch(r" {0,3}\$\$[ \t]*", lines[index]):
+        block.append(lines[index])
+        index += 1
+
+    if index >= len(lines):
+        fail(f"{description} has an unclosed canonical display after its marker")
+
+    actual = "\n".join(block).strip()
+    if actual != expected:
+        fail(
+            f"{description} must use the canonical TeX source immediately after its marker; "
             "equivalent TeX reformatting is intentionally not accepted by CI"
         )
 
@@ -337,8 +378,9 @@ def validate_regime_total_contract(
         3,
         "1.9. ExistsR es una metasentencia, no un cuantificador sobre índices",
     )
-    require_canonical_display(
+    require_canonical_display_after(
         existsr_section,
+        "El target doctrinal se escribe ahora:",
         CANONICAL_EXISTSR,
         "REV-07f active normative ExistsR formula",
     )
@@ -360,25 +402,29 @@ def validate_regime_total_contract(
         )
 
     xp_section = technical.section(4, "RT-07-XP — Transversal Production Test")
-    require_canonical_display(
+    require_canonical_display_after(
         xp_section,
+        "Supongamos ahora explícitamente:",
         CANONICAL_XP_RGC_EXISTS,
         "RT-07-XP affirmative RGCExists premise",
     )
-    require_canonical_display(
+    require_canonical_display_after(
         xp_section,
+        "y fijemos un testigo $C_k$ tal que:",
         CANONICAL_XP_CLOSURE,
         "RT-07-XP explicit RegimeClosure witness",
     )
-    require_canonical_display(
+    require_canonical_display_after(
         xp_section,
+        "Por tanto:",
         CANONICAL_XP_STRICT_INCLUSION,
         "RT-07-XP strict transversal-growth conclusion",
     )
 
     presentation_section = technical.section(4, "8.5. ExistsR como metasentencia")
-    require_canonical_display(
+    require_canonical_display_after(
         presentation_section,
+        "y una presentación semántica produce únicamente:",
         CANONICAL_PRESENTATION,
         "REV-07f §8.5 presentation implication",
     )
@@ -472,6 +518,7 @@ def main() -> None:
     archive_document = MarkdownDocument(archive_text)
 
     for path, document in documents.items():
+        document.reject_inline_html(path)
         validate_display_math(path, document)
 
     validate_markdown_table_blocks(LEDGER, documents[LEDGER])
