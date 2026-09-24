@@ -6310,7 +6310,7 @@ Esto bloquea dos errores opuestos.
 
 Puede haber un contexto real cuya individuación no sea actualmente accesible a ningún observador/certificador.
 
-#### 0.11.69b. OR1–OR7 — realización ontológica estructural
+#### 0.11.69b. OR1–OR9 — realización ontológica estructural
 
 Para que \(\operatorname{OnticRealization}^{\mathsf M}(H,C;\varrho)\) pueda alimentar IA0, exigimos:
 
@@ -6338,6 +6338,8 @@ T_C\circ\varrho.
 
 cuando esas inversas/transportes estén definidos al nivel apropiado.
 7. **OR7 / level non-collapse:** que \(H\) realice \(C\) no identifica ambos niveles ni convierte automáticamente todos los tokens host-side en tokens locales.
+8. **OR8 / state-locality + prefix locality:** \(\varrho\) debe depender del estado/estructura host-side disponible en el punto relevante, no del futuro completo, de la posición temporal global ni de una clasificación retrospectiva de la trayectoria. Si dos prefixes host-side son localmente equivalentes para la teoría, no pueden mapearse distinto porque posteriormente diverjan.
+9. **OR9 / pre-registration / anti-gerrymandering:** la regla que determina \(\varrho\) y las variables host-side relevantes debe fijarse independientemente del run concreto que pretende realizar. No cuenta una partición construida después de observar la trayectoria para forzar conmutación con cualquier autómata deseado.
 
 Definimos:
 
@@ -6348,7 +6350,7 @@ H,C,\varrho
 )
 \]
 
-por OR1–OR7.
+por OR1–OR9.
 
 IA0/structural fidelity puede descargarse por una OnticRealization adecuada. La teoría sigue haciendo trabajo epistémico/descriptivo; la realización hace el trabajo ontológico.
 
@@ -13499,9 +13501,9 @@ H,C;\varrho
 }
 \]
 
-donde StructuralRealization abrevia OR2–OR7.
+donde StructuralRealization abrevia OR2–OR9.
 
-El script XR-1 verifica mecánicamente OR2–OR7 sobre un host realizer distinto del autómata local y aporta evidencia de que el paso host fue efectivamente ejecutado.
+El script XR-1 verifica mecánicamente OR2–OR9 sobre un host realizer distinto del autómata local y aporta evidencia de que el paso host fue efectivamente ejecutado.
 
 #### 0.11.91ah. XR1-REAL — realización actual y principio de suficiencia
 
@@ -13535,7 +13537,9 @@ OR3 &: \varrho_a\circ T_H=T_C\circ\varrho_a,\\
 OR4 &: \text{screening-off de variación irrelevante + sensibilidad relevante},\\
 OR5 &: \varrho_a\text{ no depende del certificado},\\
 OR6 &: \text{covariancia bajo recodificación fiel},\\
-OR7 &: \text{no colapso host/local}.
+OR7 &: \text{no colapso host/local},\\
+OR8 &: \text{proyección state/prefix-local},\\
+OR9 &: \text{mapping predeclarado, no ajustado post hoc}.
 \end{array}
 }
 \]
@@ -13558,7 +13562,7 @@ IA0(C).
 
 **RSP — Realization Sufficiency Principle** dice que una estructura local cuya dinámica y typing están efectivamente realizados, contrafácticamente soportados y covariantemente preservados posee structural fidelity suficiente para la descarga ontológica de ese nivel.
 
-RSP no dice que una descripción correcta cree realidad. Exige primero un realizador actual independiente de la descripción. Tampoco hace toda abstracción real: OR2–OR7 + MC1–MC10 excluyen correlaciones, agregaciones arbitrarias y coarse-grainings sin soporte dinámico.
+RSP no dice que una descripción correcta cree realidad. Exige primero un realizador actual independiente de la descripción. Tampoco hace toda abstracción real: OR2–OR9 + MC1–MC10 excluyen correlaciones, agregaciones arbitrarias, coarse-grainings sin soporte dinámico y mappings gerrymandered construidos desde el futuro o post hoc.
 
 La cuestión doctrinal queda así perfectamente aislada:
 
@@ -13628,9 +13632,9 @@ REV-07b/c permanecen abiertos universalmente, pero no bloquean este existential 
 
 **XR-A4 — tokens físicos ocultos.** Pertenecen al host salvo que la teoría los tipifique como locales. Si son constitutivamente necesarios al nivel declarado, XA3/XA5 obliga a incorporarlos y XR-1 debe rehacerse.
 
-**XR-A5 — software no es realidad.** La objeción solo derrota XR-1 si muestra que no existe una realización OR1–OR7 del nivel local en el proceso host. Una prohibición nominal contra «software» no basta; tampoco basta afirmar realizabilidad sin exhibir structural/dynamical support.
+**XR-A5 — software no es realidad.** La objeción solo derrota XR-1 si muestra que no existe una realización OR1–OR9 del nivel local en el proceso host. Una prohibición nominal contra «software» no basta; tampoco basta afirmar realizabilidad sin exhibir structural/dynamical support.
 
-**XR-A6 — CI no prueba metafísica.** Correcto. CI proporciona un evidence witness reproducible; no es el truthmaker. La carga ontológica está en XR1-REAL/OR1–OR7 + IndAdequate.
+**XR-A6 — CI no prueba metafísica.** Correcto. CI proporciona un evidence witness reproducible; no es el truthmaker. La carga ontológica está en XR1-REAL/OR1–OR9 + IndAdequate.
 
 **XR-A7 — scope setificado.** No: \(rr_{XR1}\) es plural finito explícito.
 
@@ -13650,9 +13654,9 @@ XR-1 demuestra:
 }
 \]
 
-La máquina/CI descargan el núcleo formal y aportan evidencia reproducible de un run. El punto que el código no decide por sí solo es XR1-REAL: que exista una relación de realización OR1–OR7 entre el proceso host actual y la máquina local.
+La máquina/CI descargan el núcleo formal y aportan evidencia reproducible de un run. El punto que el código no decide por sí solo es XR1-REAL: que exista una relación de realización OR1–OR9 entre el proceso host actual y la máquina local.
 
-Por tanto ExistsR **todavía no se marca como demostrado incondicionalmente**. XR-1 descarga mecánicamente OR2–OR7 y aporta evidencia reproducible de OR1 para un run actual; IA1–IA10 quedan auditadas contra la teoría independiente DTS. La deuda filosófica se concentra ahora en RSP: si actual structural realization es suficiente para IA0. Si se adopta RSP, XR1-T entrega \(\operatorname{ExistsR}\) por la ruta realizacional.
+Por tanto ExistsR **todavía no se marca como demostrado incondicionalmente**. XR-1 descarga mecánicamente OR2–OR9 y aporta evidencia reproducible de OR1 para un run actual; IA1–IA10 quedan auditadas contra la teoría independiente DTS. La deuda filosófica se concentra ahora en RSP: si actual structural realization es suficiente para IA0. Si se adopta RSP, XR1-T entrega \(\operatorname{ExistsR}\) por la ruta realizacional.
 
 #### 0.11.92. Relación con \(\Omega_i\): ContinuationProfile ya no depende de \(\Omega_i\)
 
