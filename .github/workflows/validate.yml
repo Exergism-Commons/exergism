@@ -28,6 +28,9 @@ jobs:
       - name: Validate proposal documents
         run: python scripts/validate_proposal_docs.py
 
+      - name: Test proposal validator
+        run: python -m unittest scripts/test_validate_proposal_docs.py
+
       - name: Regenerate ontology and require clean output
         run: |
           python scripts/generate_ontology.py
