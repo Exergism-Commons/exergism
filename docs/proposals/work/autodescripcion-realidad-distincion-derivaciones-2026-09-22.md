@@ -6593,7 +6593,7 @@ Esto confirma la separación de §0.11.58: unidad, persistencia y ontogénesis s
 
 #### 0.11.77. Individuación anidada exige ContextEmbedding, no inclusión literal cross-index
 
-Una teoría puede justificar unidades en varios niveles. Para no convertir cada subsistema en una realidad por mera inclusión, ambos niveles deben satisfacer independientemente ContextIndividuation.
+Una teoría puede justificar unidades en varios niveles, y una unidad puede ser simultáneamente **subsistema respecto de un host** y **contexto respecto de su propia arena local**. La inclusión/realización host-side no basta por sí sola para crear el contexto, pero tampoco lo invalida: ambos niveles deben satisfacer un criterio adecuado de ContextIndividuation.
 
 Si \(i\) y \(k\) están legítimamente individuados, una relación de nesting se expresa solo metateóricamente:
 
@@ -6618,7 +6618,7 @@ Requisitos mínimos:
 3. **CE3 / faithfulness:** preserva exactamente la estructura declarada, no toda propiedad por defecto.
 4. **CE4 / no collapse:** \(i\hookrightarrow k\) no implica \(i\simeq_{\mathrm{idx}}k\).
 5. **CE5 / no incompatibility shortcut:** el embedding tampoco decide por sí solo \(i\#k\); eso exige su criterio propio.
-6. **CE6 / level explicitness:** la teoría debe declarar qué diferencia ontológica justifica tratar ambos niveles como contextos y no uno como mero subsistema del otro.
+6. **CE6 / level explicitness:** la teoría debe declarar la relación de nivel/embedding entre ambas individuaciones. “Subsystem” no es la negación de “context”: si ambos criterios se descargan, el nivel menor es un contexto anidado realizado en el host.
 
 Solo con una relación de este tipo puede empezar a formularse en serio una arquitectura “celular dentro de celular”. Y aun entonces:
 
@@ -6948,9 +6948,9 @@ $
 3. **DA3 / effectivity:** variar, eliminar o invertir la diferencia debe alterar alguna condición relevante de co-tipado, boundary production, organización o interfaces bajo `\mathcal T`; una etiqueta sin consecuencias falla.
 4. **DA4 / target independence:** el efecto no se define como «aquello que produce exactamente el contexto que queremos admitir».
 5. **DA5 / rival-distinction discipline:** si dos diferencias efectivas inducen cortes incompatibles del mismo nivel, se exige equivalencia, nesting explícito o rechazo de al menos una.
-6. **DA6 / no context proliferation:** diferencias internas ordinarias de un subsistema no producen automáticamente nuevos contextos.
+6. **DA6 / no free promotion:** una diferencia interna ordinaria no produce automáticamente un contexto, pero tampoco se prohíbe que una unidad interna sea un contexto anidado. Si satisface independientemente un criterio TR-W/TR-O/TR-M u otro IndAdequate, la multiplicación de contextos es una consecuencia ontológica admisible, no un error de proliferación.
 7. **DA7 / genesis sensitivity:** una diferencia preexistente y una diferencia constituida por una formación deben poder distinguir SharedOntSpace de ContextGenesis.
-8. **DA8 / persistence debt:** una distinción sincrónica no decide por sí sola identidad diacrónica; sigue abierta la coordinación con ContinuationProfile, `\Omega_i` y FaithfulContinuation.
+8. **DA8 / persistence separation:** una distinción sincrónica no decide por sí sola identidad diacrónica; si descarga ContextIndividuation, PersistenceBasis/ContinuationProfile/FaithfulContinuation gobiernan después su persistencia. \(\Omega_i\) no es requisito previo.
 
 Por tanto:
 
@@ -10317,25 +10317,37 @@ Por ello la identidad producida por memoization es:
 
 no identidad ontológica absoluta por decreto.
 
-Una teoría que pretenda elevar una memoization a criterio de ContextIndividuation debe demostrar algo adicional: que el conjunto de roles usado por la memoization captura precisamente la estructura world-making, organizacional o boundary-grounding relevante para la unidad contextual. Sin esa descarga, una caché funcional sigue siendo una caché funcional, no una nueva realidad.
+La revisión posterior de §§0.11.91k–0.11.91r corrige una cautela demasiado fuerte: que una unidad sea normalmente descrita como **subsistema** no impide que sea además un **contexto anidado**. “Subsistema” describe su relación con un host; “contexto” describe si posee una arena local de tipado, frontera/interfaz y dinámica suficientemente individuadas.
 
-Esto abre una implementación candidata de la ruta theory-relative de REV-07g:
+Esto mantiene abierta —y formaliza— una implementación genuina de la ruta theory-relative:
 
 \[
 \mathrm{TR\text{-}M}.
 \]
 
-Esquemáticamente:
+Su criterio no es “tener memoria”. Es disponer, **pre-indexadamente**, de una máquina contextual local cuya dinámica reentrante y frontera de interfaz descarguen CI/IA sin usar el índice resultante. Bajo los guards de §§0.11.91k–0.11.91r, un termostato, un servicio KV, una célula o un proceso pueden ser contextos anidados si la teoría correspondiente justifica esa estructura; estar realizados dentro de otro contexto no los descalifica.
+
+Por tanto sigue siendo falso:
 
 \[
-\operatorname{MemoCriterion}_{\mathcal T}(C;\mu,\mathcal R)
-+
-\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_\mu)
+\operatorname{MemoState}
 \Rightarrow
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_\mu).
+\operatorname{ContextIndividuation},
 \]
 
-TR-M no se declara teorema ni se identifica con TR-O. TR-O individúa mediante cierre organizacional/endogenous boundary; TR-M lo haría mediante una familia de estados suficientes reentrantes cuya estructura debe demostrar además relevancia contextual. Una teoría concreta podría satisfacer ambas descripciones.
+pero puede valer:
+
+\[
+\boxed{
+\operatorname{MemoContextCriterion}_{\mathcal T}(C;\Xi)
++
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_\Xi)
+\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_\Xi).
+}
+\]
+
+TR-M no se identifica con TR-O ni TR-W. Puede solaparse con ellas cuando la misma estructura local es además organizational closure o world-making structure.
 
 #### 0.11.86. Baking se separa de ContextGenesis
 
@@ -11984,6 +11996,395 @@ Por tanto la deuda específica de **derivar ContinuationProfile y coordinarlo co
 
 Estos tests muestran que la construcción evita simultáneamente dos trivializaciones opuestas: no permite declarar continuidad escogiendo lo que sobrevivió, ni exige identidad material/estructural total para conservarla.
 
+#### 0.11.91k. TR-M revisado: contextos locales y anidados
+
+La objeción “un termostato o un servicio KV son solo subsistemas” no resuelve la cuestión de individuación. Un mismo realizador puede ocupar dos estatutos compatibles:
+
+\[
+\boxed{
+\text{objeto/subsistema en el host}
+\quad+\quad
+\text{contexto para una arena interna}.
+}
+\]
+
+No se identifica el token host-side con el contexto interno. Si ambos niveles son admitidos, su relación se expresa después mediante:
+
+\[
+\operatorname{ContextEmbedding}^{\mathsf M}(j\hookrightarrow k;e).
+\]
+
+Por tanto TR-M debe intentar individuar **local contextuality**, no “worldhood maximal”.
+
+Sea \(C\) una candidatura pre-indexada. Una teoría \(\mathcal T\) propone:
+
+\[
+\boxed{
+\operatorname{MemoContextCriterion}_{\mathcal T}^{\mathsf M}
+(
+C;\Xi_C
+)
+}
+\]
+
+con:
+
+\[
+\Xi_C
+=
+\left\langle
+\widehat{\Lambda}_C,
+\widehat{\mathbb I}_C,
+\widehat{\mathbb P}_C,
+\widehat{\mathsf{CP}}_C,
+\partial_C
+\right\rangle.
+\]
+
+Aquí:
+
+- \(\widehat{\Lambda}_C\) es un esquema local de typing/operations definido sobre la candidatura, no sobre un índice ya admitido;
+- \(\widehat{\mathbb I}_C\) fija las interfaces entre dinámica local y entorno;
+- \(\widehat{\mathbb P}_C\) es una PersistenceSpec pre-indexada;
+- \(\widehat{\mathsf{CP}}_C\) es el quotient dinámico candidato inducido por esa spec;
+- \(\partial_C\) es el boundary/cut efectivo que media las dependencias relevantes entre local y externo.
+
+La notación con sombrero importa: estas estructuras deben construirse sin usar \(\operatorname{Real}_i\), \(R_i\), SameRegime o la mera existencia del índice que pretenden justificar.
+
+#### 0.11.91l. MC1–MC10: cuándo una máquina local puede descargar contextualidad
+
+Para que MemoContextCriterion pueda alimentar \(\operatorname{Ind}_{\mathcal T}\), exigimos **MC1–MC10**.
+
+**MC1 — pre-index independence.** \(\Xi_C\) se especifica sobre una candidatura \(C\) sin usar el índice, RegimeTotal, REC ni un ContextEmbedding futuro como premisa de su propia individuación.
+
+**MC2 — local typing power.** \(\widehat{\Lambda}_C\) no es solo una etiqueta. Debe distinguir operaciones/estados localmente well-typed de inputs externos que requieren una regla de interfaz/traducción:
+
+\[
+\operatorname{LocalWF}_{\widehat\Lambda_C}
+\neq
+\text{WF global irrestricta}.
+\]
+
+Así se descarga una versión pre-indexada de CI3.
+
+**MC3 — positive boundary.** \(\partial_C\) debe estar positivamente grounded por estructura causal, operacional, constitutiva, protocolar u organizacional de \(\mathcal T\). No basta “todo lo que decidimos llamar interior”.
+
+**MC4 — interface mediation.** Toda dependencia externa que \(\mathcal T\) considere relevante para la dinámica local debe atravesar \(\widehat{\mathbb I}_C\) o un interaction contract declarado:
+
+\[
+\forall p\in
+Path_{\mathcal T}
+(
+\mathrm{Ext}\leadsto\mathrm{Local}
+):
+\quad
+p\cap\partial_C\neq\varnothing.
+\]
+
+Los hidden bypasses invalidan el boundary declarado o fuerzan a ampliarlo.
+
+**MC5 — reentrant local state.** Existe un quotient de histories candidato cuya evolución bajo MaintStep es well-defined:
+
+\[
+\widehat E_C
+\text{ es right-congruence bajo }
+\widehat{\mathcal G}_C.
+\]
+
+No se exige memoria física no trivial: un sistema memoryless puede tener una única clase reentrante si el resto de guards es no trivial.
+
+**MC6 — role/interaction coverage.** Todos los MaintRole independently grounded y sus SynRel relevantes están incluidos. No puede obtenerse contextualidad escogiendo solo las interfaces que hacen parecer autónomo al candidato.
+
+**MC7 — counterfactual autonomy.** Fijado un estado local quotientado y una misma secuencia de inputs de interfaz, variar detalles host-side que \(\mathcal T\) declara externos/irrelevantes no cambia la evolución/observación local:
+
+\[
+\widehat q
++
+\operatorname{InputTrace}_{\partial_C}
+\Longrightarrow
+\operatorname{LocalFuture}
+\]
+
+módulo la branching semantics admitida.
+
+Esto no exige aislamiento causal absoluto; exige **screening-off por la frontera declarada**.
+
+**MC8 — anti-arbitrary aggregation.** Si \(C=A\sqcup B\) se forma juntando dos máquinas contextuales sin boundary conjunto, interaction closure ni dinámica que las unifique, la suma no hereda contextualidad solo por empaquetado descriptivo.
+
+**MC9 — level/rival-cut discipline.** Cortes anidados pueden ser simultáneamente válidos. Cortes incompatibles del mismo nivel requieren equivalencia, overlap semantics explícita o una razón theory-specific para privilegiar uno. Nesting no cuenta como rivalidad.
+
+**MC10 — genesis/persistence discipline.** El criterio distingue que una máquina local preexista, sea constituida por ContextGenesis o cese. Su ContinuationProfile gobierna persistencia, pero no retrocrea la individuación inicial.
+
+Definimos:
+
+\[
+\operatorname{MCAdequate}^{\mathsf M}
+(
+\mathcal T,C,\Xi_C
+)
+\]
+
+como MC1–MC10 más los CI1–CI14/IA0–IA10 aplicables.
+
+#### 0.11.91m. TM-T1 — descarga condicional de TR-M
+
+Si:
+
+\[
+\operatorname{MemoContextCriterion}_{\mathcal T}^{\mathsf M}
+(
+C;\Xi_C
+)
+\]
+
+y:
+
+\[
+\operatorname{MCAdequate}^{\mathsf M}
+(
+\mathcal T,C,\Xi_C
+),
+\]
+
+entonces la estructura pre-indexada puede actuar como la reducción theory-specific exigida por §0.11.72:
+
+\[
+\boxed{
+\operatorname{MemoContextCriterion}_{\mathcal T}(C;\Xi_C)
++
+\operatorname{MCAdequate}(\mathcal T,C,\Xi_C)
+\Rightarrow
+\operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi_{\Xi})
+}
+\]
+
+y, si la descarga general IndAdequate queda satisfecha:
+
+\[
+\boxed{
+\operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi_{\Xi})
++
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_\Xi)
+\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_\Xi).
+}
+\]
+
+TR-M es así una realización legítima de TR, no la regla:
+
+\[
+\operatorname{MemoState}\Rightarrow\operatorname{ContextIndividuation}.
+\]
+
+La diferencia está precisamente en MC1–MC10.
+
+#### 0.11.91n. TM-T2 — nesting theorem: subsystem no excluye contexto
+
+Supóngase que el host \(H\) ya descarga:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}(H;\chi_H)
+\Rightarrow
+H\Downarrow k,
+\]
+
+y una candidatura local \(C\) realizada host-side descarga independientemente TR-M:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_C)
+\Rightarrow
+C\Downarrow j.
+\]
+
+Si existe un witness host/local que satisface CE1–CE6, entonces:
+
+\[
+\boxed{
+\operatorname{ContextEmbedding}^{\mathsf M}
+(
+j\hookrightarrow k;e
+).
+}
+\]
+
+De ello no se sigue:
+
+\[
+j\simeq_{\mathrm{idx}}k,
+\]
+
+ni:
+
+\[
+j\#k.
+\]
+
+Tampoco se escribe:
+
+\[
+R_j\in R_k.
+\]
+
+El host contiene una realización/presentación \(c_k\) del contexto \(j\), y \(e\) relaciona ambas estructuras metateóricamente.
+
+Por tanto:
+
+\[
+\boxed{
+\text{subsystem}(C,H)
+\not\Rightarrow
+\neg\text{context}(C).
+}
+\]
+
+La doctrina pasa de **anti-proliferation** a **disciplined contextual abundance**.
+
+#### 0.11.91o. Modelo TM-A — servicio KV como contexto software anidado
+
+Sea una teoría software \(\mathcal T_{\mathrm{KV}}\) que toma como primitivas operacionales:
+
+\[
+Put,\;Get,\;Delete
+\]
+
+sobre un store persistente.
+
+La candidatura \(C_{KV}\) posee:
+
+- typing local de keys/values/requests;
+- interfaz API explícita;
+- estado snapshot/event-sourced suficiente;
+- update reentrante;
+- RoleAdequate para futuras requests;
+- hidden-bypass discipline respecto de la semántica software declarada.
+
+Entonces puede satisfacer MC1–MC10 y ser admitida como contexto:
+
+\[
+C_{KV}\Downarrow j.
+\]
+
+El proceso/VM/máquina que la aloja puede estar ya en otro contexto \(k\):
+
+\[
+j\hookrightarrow k.
+\]
+
+Un debugger que modifica memoria “por detrás” no refuta automáticamente el contexto software. Si \(\mathcal T_{\mathrm{KV}}\) excluye ese canal de su ontología operacional, es un hecho de otro nivel. Si la teoría pretende capturar además esa intervención como fundamental para la dinámica del servicio, MC4 obliga a ampliar la interfaz o retirar la descarga.
+
+Así la contextualidad sigue siendo objetiva **respecto de una teoría estructuralmente fiel a su nivel**, no una ficción elegida por conveniencia.
+
+#### 0.11.91p. Modelo TM-B — termostato como contexto físico/control anidado
+
+Sea \(C_T\) un termostato con estado controlador \(m\), sensor input \(s(t)\), alimentación, outputs hacia actuador y una dinámica:
+
+\[
+m_{t+1}
+=
+U(m_t,s_t).
+\]
+
+Una teoría de control/física local puede fijar:
+
+\[
+\widehat{\Lambda}_T,
+\quad
+\widehat{\mathbb I}_T,
+\quad
+\widehat{\mathbb P}_T.
+\]
+
+Si toda influencia relevante para el comportamiento controlador entra mediante los canales declarados —sensor, alimentación, perturbaciones incluidas por el modelo— y la evolución interna factoriza por \(m\) + inputs, MC3–MC7 pueden descargarse.
+
+Entonces no hay contradicción en:
+
+\[
+\boxed{
+\text{termostato}
+=
+\text{objeto físico en }k
++
+\text{contexto de control }j.
+}
+\]
+
+Si radiación, manipulación mecánica o EMI cambian su estado por un canal omitido que la teoría considera relevante, falla MC4 hasta ampliar la membrana funcional.
+
+#### 0.11.91q. Modelo TM-C — agregación arbitraria sigue fallando
+
+Tómense un termostato \(T\) y un servicio KV \(D\) que no comparten:
+
+- boundary conjunto;
+- transition closure conjunta;
+- interaction role constitutivo;
+- local typing scheme que los trate como una única máquina.
+
+Construir:
+
+\[
+C=T\sqcup D
+\]
+
+en una estructura de datos no satisface MC8.
+
+Por tanto la nueva doctrina no implica:
+
+\[
+\boxed{
+\text{cualquier subconjunto arbitrario}
+\Rightarrow
+\text{contexto}.
+}
+\]
+
+Sí permite que \(T\), \(D\), el host que los contiene y quizá una unidad mayor que realmente los integre sean **todos contextos en niveles distintos** si cada uno descarga su criterio.
+
+#### 0.11.91r. Consecuencias doctrinales de TR-M
+
+TR-M obliga a separar definitivamente:
+
+\[
+\boxed{
+\text{contexto}
+\neq
+\text{mundo maximal}
+\neq
+\text{objeto host-side}.
+}
+\]
+
+Un contexto es una arena local independently individuated de typing/dynamics/interfaces. Puede estar embebido en otra arena.
+
+Así, la “Cellular Reality” gana una lectura literal estructural:
+
+\[
+\boxed{
+\text{contextos pueden contener realizaciones de otros contextos}
+}
+\]
+
+sin convertir índices en objetos ni permitir import/export literal de tokens.
+
+El guard correcto deja de ser:
+
+\[
+\text{“no demasiados contextos”.}
+\]
+
+Pasa a ser:
+
+\[
+\boxed{
+\text{“ningún contexto sin criterio de individuación grounded,}
+\;
+\text{y ningún nesting sin embedding explícito”.}
+}
+\]
+
+Esto también modifica cómo interpretar \(i\#j\): índices distintos no son por ello incompatibles. Embedding, SharedOntSpace, genealogía o coexistencia pueden bloquear esa inferencia. \(i\#j\) sigue reservado para ausencia de common ontological typing en el sentido fuerte ya definido.
+
+La deuda TR-M queda por tanto **RESOLVED condicionalmente**: existe una ruta formal no circular mediante una máquina contextual pre-indexada y MC1–MC10; su éxito en cada dominio depende de una teoría \(\mathcal T\) que descargue structural fidelity e IndAdequate.
+
 #### 0.11.92. Relación con \(\Omega_i\): ContinuationProfile ya no depende de \(\Omega_i\)
 
 REV-07e había dejado abierta una ruta provisional en la que \(\Omega_i\) podía anteceder a ContinuationProfile. Esa dirección queda ahora **SUPERSEDED**: §§0.11.91a–0.11.91i derivan \(\mathsf{CP}_i^x\) directamente desde PersistenceBasis + contract state + memo-equivalence + quotient dynamics.
@@ -12054,7 +12455,7 @@ i
 
 **MB3 — rol post hoc.** Después de observar dos histories distintas se define \(\rho\) precisamente para ignorar su diferencia. Falla M2/SU2 aunque el quotient resultante sea matemáticamente coherente.
 
-**MB4 — subsistema ordinario.** Un termostato, un organismo o un proceso computacional dentro de \(R_i\) puede poseer un MemoState excelente. De ello no se sigue ContextIndividuation. Falla cualquier intento de promoverlo a \(R_j\) sin una descarga adicional de REV-07g.
+**MB4 — subsistema/contexto anidado.** Un termostato, organismo, servicio o proceso dentro de una realización host puede poseer un MemoState excelente. El MemoState solo no basta, pero la condición de subsistema tampoco lo excluye: si una presentación pre-indexada satisface TR-M/MC1–MC10 + IndAdequate, puede admitirse como contexto \(j\) embebido en el host \(i\). Lo que falla es la promoción gratuita, no la contextualidad anidada.
 
 **MB5 — reemplazo completo de componentes.** Todos los componentes de una SourceUnit cambian, pero la cadena de memo-states conserva suficiencia/reentrancy con invalidaciones correctas. El caso permanece compatible con persistencia y muestra por qué la identidad no puede reducirse al snapshot material.
 
@@ -12118,9 +12519,10 @@ Y aparecen tres resultados arquitectónicos fuertes:
 
 Las deudas de InterfaceContract, RoleAdequate y MemoState/update/invalidation quedan **RESOLVED formal/a nivel de criterio**; la composicionalidad cross-role queda **RESOLVED condicionalmente**. §§0.11.87–0.11.87i coordinan B1–B10 con esos resultados: B7 usa ahora decodificación entre quotients contractuales source/target, BS-T1 demuestra soundness, la composición horizontal exige preservar interaction information, la vertical exige ContractAlignment y BS-T2 prueba no-recovery desde un Bake ya colapsado; RehydrateAdequate caracteriza side information suficiente. Para cerrar REV-07h completo falta:
 
-1. decidir si alguna implementación TR-M basada en PersistenceBasis/ContinuationProfile puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
-2. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
-3. investigar, sin presuponerlo, si una familia contextualmente adecuada de ContinuationProfiles + estructura generativa/Bake puede inducir \(\Omega_i\).
+1. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
+2. investigar, sin presuponerlo, si una familia contextualmente adecuada de ContinuationProfiles + estructura generativa/Bake puede inducir \(\Omega_i\).
+
+TR-M queda **RESOLVED condicionalmente** en §§0.11.91k–0.11.91r: MemoState no individúa por sí solo, pero una máquina contextual pre-indexada que satisface MC1–MC10 + IndAdequate puede descargar un contexto local/anidado.
 
 La ganancia inmediata no es demostrar identidad contextual, sino aislar la estructura que faltaba entre individuación y recontextualización:
 
