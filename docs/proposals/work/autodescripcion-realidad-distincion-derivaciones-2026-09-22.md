@@ -6759,7 +6759,7 @@ La versión fuerte de Cellular Reality queda así:
 no “todo \(R_i\) es una célula porque tiene subíndice y closure”.
 
 
-#### 0.11.80. REV-07h — Memoization y Baking: individuar el source antes de recontextualizarlo
+#### 0.11.80. REV-07h — Interface, Memoization y Baking: qué puede importar aguas abajo
 
 REV-07e introdujo GenesisTrivialization para expresar que una rama parental compleja puede quedar representada child-side por una contribución suficiente. REV-07g mostró después que la individuación no puede darse por supuesta: el índice registra una unidad ya justificada y no crea por sí mismo el corte que etiqueta.
 
@@ -6771,13 +6771,15 @@ Estas dos líneas revelan una deuda intermedia. Si se escribe directamente:
 
 para una estructura compleja \(P_i\), la notación presupone silenciosamente que ya sabemos por qué exactamente \(P_i\) —con ese alcance, esa historia y esa granularidad— constituye la unidad que debe ser transportada. Sin un criterio previo, el baking puede esconder el mismo coarse-graining arbitrario que CI7/CI8 y IA6/IA8 intentan bloquear.
 
-REV-07h separa por ello tres operaciones conceptualmente distintas:
+REV-07h separa ahora cuatro niveles conceptualmente distintos:
 
 \[
 \boxed{
 \text{estructura/historia compleja}
-\;\xrightarrow{\text{unitización source-side}}\;
+\;\xrightarrow{\text{unitización}}\;
 \text{SourceUnit}
+\;\xrightarrow{\text{Interface}}\;
+\text{contrato observable/causal}
 \;\xrightarrow{\text{Bake}}\;
 \text{realización target-native}
 \;\xrightarrow[\text{cuando aplique}]{\text{ContextGenesis}}\;
@@ -6785,24 +6787,38 @@ REV-07h separa por ello tres operaciones conceptualmente distintas:
 }
 \]
 
-La tesis central es:
+La pieza central ya no es memoization aislada, sino la **interfaz**. Una interfaz determina qué aspectos de una SourceUnit pueden hacer diferencia aguas abajo y, por tanto, qué diferencias upstream pueden ser legítimamente quotientadas sin alterar el rol consumido.
+
+Las tesis de trabajo pasan a ser:
 
 \[
 \boxed{
-\textbf{Memoization unitizes; baking recontextualizes.}
+\textbf{The interface determines relevance.}
 }
 \]
 
-Pero memoization no se convierte en requisito universal de todo baking. Una entidad simple o una unidad ya individuada por una teoría independiente puede satisfacer SourceUnit sin memoization. El requisito general es más débil:
+\[
+\boxed{
+\textbf{Memoization preserves an interface through history.}
+}
+\]
+
+\[
+\boxed{
+\textbf{Baking realizes an interface across contexts.}
+}
+\]
+
+Memoization no se convierte en requisito universal de todo baking. Una entidad simple o una unidad ya individuada por una teoría independiente puede satisfacer SourceUnit y exponer una interfaz sin memoization. El requisito general es:
 
 \[
 \boxed{
 \operatorname{Bake}^{\mathsf M}_{i\to k}
-\text{ exige una SourceUnit source-side independientemente justificada.}
+\text{ exige una SourceUnit y una InterfaceContract source-side independientemente justificadas.}
 }
 \]
 
-Memoization es la candidata específica para obtener esa SourceUnit cuando el source es una historia, proceso o estructura cuya identidad no coincide con un snapshot ni con una lista fija de componentes.
+Memoization es la candidata específica para estructuras históricas cuya capacidad de seguir satisfaciendo una interfaz depende de conservar estado suficiente acerca de su pasado.
 
 #### 0.11.81. SourceUnit: el contrato previo a cualquier baking
 
@@ -6838,9 +6854,224 @@ Por tanto:
 
 Esta guardia es esencial: un subsistema, proceso, organismo o máquina puede ser una unidad funcionalmente robusta dentro de \(R_i\) sin convertirse por ello en un nuevo contexto \(R_j\).
 
+#### 0.11.81a. InterfaceContract: el límite de relevancia downstream
+
+Introducimos el juicio metateórico:
+
+\[
+\operatorname{InterfaceContract}^{\mathsf M}_i
+(u_i;I_i^\rho,\rho,\iota),
+\]
+
+leído: la SourceUnit \(u_i\) expone, para el rol \(\rho\), una interfaz \(I_i^\rho\) cuya semántica está justificada por el witness \(\iota\).
+
+\(I_i^\rho\) no es necesariamente un conector físico, una superficie espacial ni un objeto adicional. Puede ser una familia de magnitudes, eventos, operaciones, mensajes, disposiciones, invariantes o trazas a través de las cuales otra estructura depende de \(u_i\).
+
+El caso intuitivo es una fuente eléctrica conectada a un ordenador. La historia upstream puede contener generación nuclear, solar, baterías, red, transformación y regulación. El ordenador no necesita que esas historias sean idénticas. Necesita que la interfaz eléctrica relevante satisfaga su contrato dentro de tolerancias admisibles.
+
+Formalmente, sea:
+
+\[
+\operatorname{Tr}_{I^\rho}(u_i)
+\]
+
+la familia de trazas/comportamientos que \(u_i\) puede presentar a través de \(I^\rho\). Definimos equivalencia de interfaz:
+
+\[
+\boxed{
+u_i
+\equiv^{\mathsf M}_{I^\rho}
+v_j
+\Longleftrightarrow
+\operatorname{Tr}_{I^\rho}(u_i)
+\simeq_\rho
+\operatorname{Tr}_{I^\rho}(v_j),
+}
+\]
+
+donde la comparación cross-index es estrictamente metateórica y \(\simeq_\rho\) compara solo la estructura declarada por el contrato.
+
+La consecuencia conceptual es:
+
+\[
+u_i\not\simeq v_j
+\]
+
+puede coexistir con:
+
+\[
+u_i\equiv^{\mathsf M}_{I^\rho}v_j.
+\]
+
+Por tanto la equivalencia de interfaz no afirma identidad de source, historia ni contexto. Afirma **indistinguibilidad respecto de lo que el consumidor puede recibir mediante ese contrato**.
+
+#### 0.11.81b. Obligaciones IC1–IC10 de una interfaz admisible
+
+Para que una interfaz haga trabajo ontológico y no sea una proyección escogida a conveniencia, exigimos:
+
+1. **IC1 / source grounding:** la interfaz depende de estructura real de la SourceUnit; no es solo una lista externa de observables seleccionados por el analista.
+2. **IC2 / consumer relevance:** cada dimensión del contrato tiene una semántica que explica qué dependencia aguas abajo puede afectar.
+3. **IC3 / contract independence:** el contrato se fija independientemente de qué sources concretos se quiere hacer equivalentes.
+4. **IC4 / trace adequacy:** las trazas retenidas son suficientes para discriminar todas las diferencias que la teoría considera relevantes para \(\rho\).
+5. **IC5 / no hidden bypass:** ninguna dependencia atribuida al rol puede saltarse la interfaz y depender de estructura upstream que el contrato declara irrelevante.
+6. **IC6 / recoding invariance:** implementaciones o codificaciones fieles preservan la equivalencia de interfaz.
+7. **IC7 / non-vacuity:** una interfaz vacía o constante no puede trivializar universalmente sources salvo que la teoría demuestre que el rol es realmente trivial.
+8. **IC8 / compositional discipline:** conectar interfaces no autoriza por sí solo a identificar sus SourceUnit ni sus contextos.
+9. **IC9 / provenance retention:** equivalencia de interfaz no borra provenance objetiva ni convierte historias distintas en una única historia.
+10. **IC10 / no context inference:** compartir interfaz o ser interface-equivalent no implica SharedOntSpace, ContextIndividuation, IndexAdmission ni RegimeTotal.
+
+IC5 es la obligación crítica. Si el consumidor puede depender de una diferencia upstream por una vía no representada en \(I^\rho\), la interfaz no screens off esa diferencia y no puede justificar quotient baking.
+
+#### 0.11.81c. El kernel legítimo viene de la interfaz
+
+REV-07h había exigido en B7 un declared kernel para impedir que un Bake no inyectivo borrase diferencias arbitrarias. La interfaz proporciona ahora el fundamento de ese kernel.
+
+Definimos:
+
+\[
+\ker(I^\rho)
+:=
+\{
+(u,v)
+\mid
+u\equiv^{\mathsf M}_{I^\rho}v
+\}.
+\]
+
+No se exige que este kernel sea un conjunto objeto; la notación resume metateóricamente la equivalencia inducida por el contrato.
+
+El principio de soundness de quotient baking pasa a ser:
+
+\[
+\boxed{
+\ker(\operatorname{Bake}^{\rho,\beta})
+\subseteq
+\ker(I^\rho),
+}
+\]
+
+entendido de nuevo metateóricamente.
+
+Es decir: Bake puede colapsar menos diferencias de las que la interfaz tolera, pero no más. Si:
+
+\[
+\operatorname{Bake}(u)
+=
+\operatorname{Bake}(v)
+\]
+
+mientras:
+
+\[
+u\not\equiv^{\mathsf M}_{I^\rho}v,
+\]
+
+la igualdad de outputs es una **colisión no autorizada**, no SignatureConvergence legítima.
+
+Esto invierte la dependencia anterior:
+
+\[
+\boxed{
+\text{el quotient no lo decide Bake;}
+\quad
+\text{lo licencia la semántica de la interfaz.}
+}
+\]
+
+#### 0.11.81d. Factorización por interfaz
+
+La forma más fuerte del screening-off puede escribirse:
+
+\[
+u_i
+\longrightarrow
+I_i^\rho
+\longrightarrow
+C_k,
+\]
+
+donde \(C_k\) representa dependencias/consecuencias target-side asociadas al rol.
+
+La condición de interfaz exige que, para esas consecuencias:
+
+\[
+\boxed{
+\text{Upstream detail}
+\perp
+C_k
+\mid
+I^\rho,
+}
+\]
+
+usando \(\perp\) solo como notación estructural de screening-off, no como independencia probabilística salvo teoría adicional.
+
+Equivalentemente: una vez fijada la realización de \(I^\rho\), diferencias upstream que pertenecen a \(\ker(I^\rho)\) no deben alterar ninguna consecuencia declarada como dependiente únicamente de ese rol.
+
+Esta es la versión conceptualmente más precisa del antiguo GT3/GT4.
+
+#### 0.11.81e. Toy eléctrico: provenance distinta, interfaz equivalente
+
+Sean dos historias upstream:
+
+\[
+P_{\mathrm{nuc}},
+\qquad
+P_{\mathrm{solar}},
+\]
+
+con estructuras internas y provenance distintas:
+
+\[
+P_{\mathrm{nuc}}
+\not\simeq
+P_{\mathrm{solar}}.
+\]
+
+Supóngase que ambas alimentan una interfaz eléctrica \(I_{\mathrm{AC}}\) cuyo contrato exige, esquemáticamente:
+
+\[
+\langle
+V(t),f(t),\operatorname{stability}(t),\operatorname{protection}(t)
+\rangle
+\in
+\mathcal A_{\mathrm{AC}},
+\]
+
+para una región admisible \(\mathcal A_{\mathrm{AC}}\).
+
+Si ambas histories producen el mismo conjunto relevante de trazas dentro de ese contrato:
+
+\[
+P_{\mathrm{nuc}}
+\equiv^{\mathsf M}_{I_{\mathrm{AC}}}
+P_{\mathrm{solar}},
+\]
+
+un consumidor cuya dependencia factoriza completamente por \(I_{\mathrm{AC}}\) no necesita reconstruir cuál de las dos histories upstream obtuvo.
+
+Pero la provenance sigue siendo distinta:
+
+\[
+\operatorname{Prov}(P_{\mathrm{nuc}})
+\neq
+\operatorname{Prov}(P_{\mathrm{solar}}).
+\]
+
+El toy muestra exactamente la distinción buscada:
+
+\[
+\boxed{
+\text{downstream equivalence}
+\neq
+\text{upstream identity}.
+}
+\]
+
+
 #### 0.11.82. Memoization no es hashing: equivalencia por continuaciones
 
-Sea \(\mathcal H_i\) una familia de historias/configuraciones source-side admisibles y sea \(\mathcal K_{i,\rho}\) una familia independientemente especificada de continuaciones relevantes para el rol \(\rho\).
+Sea \(\mathcal H_i\) una familia de historias/configuraciones source-side admisibles y sea \(I_i^\rho\) una interfaz previamente justificada por IC1–IC10. Sea además \(\mathcal K_{i,\rho}\) una familia independientemente especificada de continuaciones relevantes para comprobar que la historia sigue satisfaciendo esa interfaz.
 
 Introducimos una observación/evaluación relativa al rol:
 
@@ -6906,7 +7137,7 @@ Las obligaciones mínimas son:
 
 1. **M1 / actuality:** \(m_i\) es actual en \(i\); una canonicalización semántica externa no crea un memo-state ontológico.
 2. **M2 / role independence:** \(\rho\) y su familia de continuaciones se justifican independientemente del deseo de identificar precisamente \(h_i\) con otra historia.
-3. **M3 / sufficiency:** respecto de \(\rho\), las dependencias posteriores relevantes pueden resolverse mediante \(m_i\) sin reabrir toda la historia interna de \(h_i\).
+3. **M3 / interface sufficiency:** respecto de \(\rho\), \(m_i\) conserva exactamente la información histórica necesaria para seguir determinando una realización correcta de \(I_i^\rho\) sin reabrir toda la historia interna de \(h_i\).
 4. **M4 / reentrancy:** \(m_i\) puede actuar como estado de entrada para continuaciones futuras del rol; no es solo un resumen retrospectivo.
 5. **M5 / equivalence soundness:** historias asignadas al mismo memo-state satisfacen la equivalencia por continuaciones declarada.
 6. **M6 / discrimination completeness:** si una diferencia altera alguna continuación relevante de \(\rho\), la teoría no puede conservar silenciosamente el mismo memo-state sin una actualización explícita.
@@ -6935,7 +7166,21 @@ y obtenemos una vía suficiente hacia SourceUnit:
 }
 \]
 
-La unitización recae en el estado suficiente reentrante, no en una caja dibujada alrededor de una colección arbitraria de hechos.
+La unitización recae en el estado suficiente reentrante, no en una caja dibujada alrededor de una colección arbitraria de hechos. Pero el memo-state ya no fija por sí mismo qué debe importar downstream: esa carga pertenece a la interfaz.
+
+La dependencia correcta es:
+
+\[
+\boxed{
+\text{history}
+\xrightarrow{\operatorname{Memo}}
+\text{state sufficient to maintain }I^\rho
+\xrightarrow{}
+I^\rho.
+}
+\]
+
+Así memoization conserva una interfaz a través del cambio; no inventa la interfaz que pretende conservar.
 
 #### 0.11.84. Invalidation: la condición que impide identidad por conveniencia
 
@@ -6957,13 +7202,13 @@ Si el cambio no altera ninguna continuación relevante para \(\rho\), puede ser 
 \mu^\rho(h_i^{(t+1)}).
 \]
 
-Pero si existe una continuación discriminante:
+Pero si existe una continuación discriminante que cambia la interfaz o sus trazas relevantes:
 
 \[
 \exists c_i\in\mathcal K_{i,\rho}:
-\operatorname{Obs}_{i,\rho}(h_i^{(t)}\odot c_i)
+\operatorname{Tr}_{I^\rho}(h_i^{(t)}\odot c_i)
 \not\simeq_\rho
-\operatorname{Obs}_{i,\rho}(h_i^{(t+1)}\odot c_i),
+\operatorname{Tr}_{I^\rho}(h_i^{(t+1)}\odot c_i),
 \]
 
 entonces la teoría debe registrar:
@@ -7042,16 +7287,16 @@ Definimos baking como juicio metateórico genérico:
 \[
 \boxed{
 \operatorname{Bake}^{\mathsf M}_{i\to k}
-(u_i\Downarrow\sigma_k;\rho,\beta),
+(u_i\Downarrow\sigma_k;I^\rho,\beta),
 }
 \]
 
 donde:
 
 - \(u_i\) es una SourceUnit ya justificada en \(i\);
+- \(I^\rho\) es una InterfaceContract admisible que fija qué puede importar aguas abajo para el rol \(\rho\);
 - \(\sigma_k\) es una realización actual y bien tipada de \(k\);
-- \(\rho\) fija el rol para el que el source debe seguir siendo suficiente;
-- \(\beta\) es el contrato de preservación/trivialización.
+- \(\beta\) especifica cómo se realiza/preserva esa interfaz en el target.
 
 Bake no es una función objeto entre índices. No existe un token que atraviese literalmente una frontera:
 
@@ -7079,7 +7324,7 @@ Para admitir:
 
 \[
 \operatorname{Bake}^{\mathsf M}_{i\to k}
-(u_i\Downarrow\sigma_k;\rho,\beta),
+(u_i\Downarrow\sigma_k;I^\rho,\beta),
 \]
 
 se exige provisionalmente:
@@ -7088,9 +7333,9 @@ se exige provisionalmente:
 2. **B2 / target actuality:** \(\sigma_k\) es contenido actual de \(k\); la operación meta no fabrica por sí sola ontología child/target-side.
 3. **B3 / provenance:** existe dependencia histórica/ontogénica suficiente para atribuir \(\sigma_k\) a \(u_i\); coincidencia, semejanza o isomorfismo no bastan.
 4. **B4 / typed realization:** toda consecuencia objeto ocurre en el lenguaje de \(k\). Bake no introduce predicados cross-index.
-5. **B5 / preservation contract:** \(\beta\) declara qué estructura de \(\rho\) debe preservarse y qué diferencias pueden dejar de ser operativas.
-6. **B6 / target factorization:** toda dependencia target-side atribuida a la contribución baked factoriza, para el rol declarado, a través de \(\sigma_k\).
-7. **B7 / declared kernel:** si Bake es no inyectivo, la equivalencia inducida debe corresponder exactamente a diferencias autorizadas por \(\beta\), no a colisiones accidentales.
+5. **B5 / interface realization:** existe \(\operatorname{InterfaceContract}^{\mathsf M}_i(u_i;I_i^\rho,\rho,\iota)\) y \(\beta\) declara cómo \(\sigma_k\) realiza target-side la estructura de interfaz que debe preservarse.
+6. **B6 / target factorization:** toda dependencia target-side atribuida al rol factoriza a través de la realización de \(I^\rho\) en \(\sigma_k\); no existe hidden bypass hacia detalles upstream declarados irrelevantes.
+7. **B7 / interface-bounded kernel:** si Bake es no inyectivo, su kernel debe estar contenido en \(\ker(I^\rho)\). \(\beta\) no puede autorizar por sí solo diferencias que la semántica de la interfaz distingue.
 8. **B8 / recoding invariance:** codificaciones fieles de source y target preservan el juicio.
 9. **B9 / no retroactivity:** trivializar diferencias para \(k\) no elimina ni reescribe hechos reales de \(i\).
 10. **B10 / no genesis inference:** baking por sí solo no prueba ContextGenesis, ContextMerger, TokenMerger, IndexAdmission ni RegimeTotal.
@@ -7106,7 +7351,7 @@ u_i\text{ importa en }k
 }
 \]
 
-B7 endurece el antiguo GT4: la no-inyectividad puede ser una virtud solo cuando la teoría declara qué quotient está realizando.
+B7 endurece el antiguo GT4: la no-inyectividad puede ser una virtud solo cuando la interfaz, no el mero deseo de comprimir, hace esas diferencias downstream-irrelevant. El contrato \(\beta\) implementa el quotient; \(I^\rho\) lo licencia.
 
 #### 0.11.88. ConservativeBake y QuotientBake
 
@@ -7125,7 +7370,7 @@ La nueva separación permite conservar la taxonomía previa sin identificarla co
 
 \[
 \operatorname{Bake}^{\mathsf M}_{i\to k}
-(u_i\Downarrow\sigma_k;\rho,\beta),
+(u_i\Downarrow\sigma_k;I^\rho,\beta),
 \]
 
 \[
@@ -7153,16 +7398,17 @@ La igualdad de outputs baked ya no plantea por defecto un “problema de colisi�
 
 \[
 \boxed{
-\text{¿la igualdad pertenece al kernel declarado por }\beta
+\text{¿la igualdad está licenciada por }\ker(I^\rho)
+\text{ y realizada correctamente por }\beta,
 \text{ o es una pérdida de distinción no autorizada?}
 }
 \]
 
 Solo en el primer caso la colisión es una quotient convergence legítima.
 
-#### 0.11.89. Dos kernels distintos: Memo no es Bake
+#### 0.11.89. Tres niveles de equivalencia: Memo, Interface y Bake
 
-Esta separación impide confundir dos equivalencias conceptualmente diferentes.
+Esta separación impide confundir tres equivalencias conceptualmente diferentes.
 
 El kernel de memoization:
 
@@ -7174,15 +7420,33 @@ h'_i
 
 dice que diferencias internas de dos historias no son necesarias para sus continuaciones source-side bajo \(\rho\).
 
+La equivalencia de interfaz:
+
+\[
+u_i
+\equiv^{\mathsf M}_{I^\rho}
+v_j
+\]
+
+dice que, pese a poder seguir siendo SourceUnit e historias distintas, ambas presentan el mismo comportamiento relevante al consumidor bajo el contrato.
+
 El kernel de baking:
 
 \[
 u_i
-\sim^{\mathsf M}_{\operatorname{Bake},k,\rho,\beta}
+\sim^{\mathsf M}_{\operatorname{Bake},k,I^\rho,\beta}
 v_j
 \]
 
-dice que diferencias entre SourceUnit ya individuadas dejan de ser necesarias para un rol target-side bajo \(\beta\).
+dice que la realización target-side colapsa efectivamente esas fuentes. Para ser sound debe respetar:
+
+\[
+\ker(\operatorname{Bake}^{I^\rho,\beta})
+\subseteq
+\ker(I^\rho).
+\]
+
+Así Interface fija la máxima equivalencia downstream admisible y Bake decide qué parte de esa equivalencia realiza de hecho.
 
 Por tanto puede ocurrir:
 
@@ -7209,14 +7473,16 @@ La composición conceptual queda:
 \[
 \boxed{
 P_i
-\xrightarrow{\operatorname{Memo}^{\rho}}
+\xrightarrow{\operatorname{Memo}^{I^\rho}}
 m_i
-\overset{\mathsf M}{\xrightarrow{\operatorname{Bake}^{\rho,\beta}_{i\to k}}}
+\longrightarrow
+I_i^\rho
+\overset{\mathsf M}{\xrightarrow{\operatorname{Bake}^{I^\rho,\beta}_{i\to k}}}
 \sigma_k.
 }
 \]
 
-La primera flecha resuelve “¿qué unidad source-side persiste/puede reutilizarse?”. La segunda resuelve “¿qué de esa unidad necesita existir operacionalmente en el target?”.
+Memo responde “¿qué del pasado necesito conservar para seguir satisfaciendo la interfaz?”. Interface responde “¿qué puede importar al consumidor?”. Bake responde “¿cómo realizo ese contrato dentro del target?”.
 
 #### 0.11.90. GenesisTrivialization pasa a ser una aplicación de Bake
 
@@ -7263,6 +7529,54 @@ Los antiguos GT1–GT7 se redistribuyen:
 - ContextGenesis deja de ser condición para hablar de baking en general.
 
 Esto reduce la sobrecarga conceptual de REV-07e y permite reutilizar la teoría de baking en ContextEmbedding, FaithfulContinuation y otras interfaces futuras sin fingir que toda recontextualización es nacimiento de un contexto.
+
+#### 0.11.90a. Interface Wall: una forma estructural candidata del Muro genealógico
+
+La interfaz permite formular con más precisión la subdeterminación genealógica de REV-15.
+
+Supóngase:
+
+\[
+P_i\not\simeq Q_j,
+\qquad
+P_i\equiv^{\mathsf M}_{I^\rho}Q_j.
+\]
+
+Si además toda evidencia disponible para un consumidor \(C_k\) sobre ese upstream factoriza por \(I^\rho\), entonces desde ese canal:
+
+\[
+\operatorname{Evidence}_{C_k}(P_i)
+=
+\operatorname{Evidence}_{C_k}(Q_j).
+\]
+
+Bajo esas condiciones, la provenance completa no es recuperable **desde la interfaz sola**:
+
+\[
+\boxed{
+I^\rho
+\not\Rightarrow
+\text{unique upstream provenance}.
+}
+\]
+
+Esto es más fuerte que mera ignorancia contingente, pero todavía más débil que el Muro universal. Para obtener irreconstruibilidad de principio hay que demostrar además que no existe ningún canal independiente, certificado persistente o interfaz lateral que discrimine los representantes del kernel.
+
+Definimos por ello solo el candidato:
+
+\[
+\operatorname{InterfaceWall}^{\mathsf M}
+(P_i,Q_j;I^\rho,C_k)
+\]
+
+cuando:
+
+1. \(P_i\not\simeq Q_j\);
+2. \(P_i\equiv_{I^\rho}^{\mathsf M}Q_j\);
+3. toda evidencia downstream relevante de \(C_k\) sobre esa contribución factoriza por \(I^\rho\);
+4. no se ha supuesto ya la ausencia absoluta de otros canales para obtener la conclusión.
+
+Entonces InterfaceWall demuestra **subdeterminación relativa al canal**. REV-15 solo podrá promoverla a Muro genealógico fuerte si se prueba que el canal relevante es exhaustivo para la reconstrucción considerada.
 
 #### 0.11.91. Relación con Ship of Theseus y persistencia diacrónica
 
@@ -7396,6 +7710,12 @@ i
 
 **MB6 — mismo memo-state, provenance distinta.** Dos historias source-side pueden ser memo-equivalentes para \(\rho\) y conservar provenance objetiva distinta. Memoization no borra el pasado; solo determina qué diferencias siguen siendo necesarias para ese rol.
 
+**MB6a — interfaz vacía.** Se define \(I^\rho\) sin dimensiones discriminantes y todas las sources resultan equivalentes. Falla IC2/IC4/IC7. Una interfaz no puede justificar quotient por ser deliberadamente ciega.
+
+**MB6b — hidden bypass.** Dos sources son equivalentes en la interfaz declarada, pero el consumidor depende además de una variable upstream por otro canal. Falla IC5/B6. La interfaz no screens off la diferencia.
+
+**MB6c — misma interfaz, provenance distinta.** Dos sistemas energéticos internamente distintos presentan trazas equivalentes en \(I_{\mathrm{AC}}\). No hay identidad upstream; sí equivalencia downstream para consumidores cuyo acoplamiento factoriza por esa interfaz.
+
 **MB7 — quotient bake legítimo.** Dos SourceUnit no memo-equivalentes producen la misma \(\sigma_k\), y la diferencia cae dentro del kernel declarado por \(\beta\). Es SignatureConvergence candidata, no colisión defectuosa.
 
 **MB8 — quotient bake excesivo.** Dos SourceUnit producen la misma \(\sigma_k\), pero una diferencia eliminada cambia una dependencia target-side atribuida a \(\rho\). Falla B6/B7; el baking es unsound.
@@ -7413,8 +7733,10 @@ Se obtiene una separación no presente en REV-07e:
 \[
 \boxed{
 \begin{array}{rcl}
-\text{Memoization} &:& \text{historia compleja}\to\text{SourceUnit role-relative},\\
-\text{Baking} &:& \text{SourceUnit}\to\text{realización target-native},\\
+\text{SourceUnit} &:& \text{qué estructura cuenta como unidad para un rol},\\
+\text{Interface} &:& \text{qué de esa unidad puede importar downstream},\\
+\text{Memoization} &:& \text{qué historia debe conservarse para mantener la interfaz},\\
+\text{Baking} &:& \text{cómo se realiza la interfaz en otro contexto},\\
 \text{GenesisTrivialization} &:& \text{Bake usado constitutivamente en ContextGenesis}.
 \end{array}
 }
@@ -7446,16 +7768,25 @@ Y aparecen tres resultados arquitectónicos fuertes:
 
 Para cerrar REV-07h falta:
 
-1. formalizar RoleAdequate y la clase admisible de continuaciones sin circularidad;
-2. demostrar condiciones bajo las cuales \(\equiv^{\mathrm{memo}}_{i,\rho}\) es realmente una equivalencia bien definida y composicional;
-3. distinguir cuándo un MemoState es estructura ontológica actual y cuándo solo una representación semántica;
-4. dar una semántica de update/invalidation coordinada con la teoría temporal/procesual;
-5. demostrar B6/B7 en ejemplos no triviales de baking;
-6. coordinar SourceUnit/MemoContinuation con ContinuationProfile y FaithfulContinuation;
-7. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
-8. investigar, sin presuponerlo, si una familia de memoizations adecuadas puede inducir \(\Omega_i\).
+1. formalizar InterfaceContract/trace semantics y demostrar IC1–IC10 en ejemplos no triviales;
+2. formalizar RoleAdequate y la clase admisible de continuaciones sin circularidad;
+3. demostrar condiciones bajo las cuales \(\equiv^{\mathrm{memo}}_{i,\rho}\) y \(\equiv^{\mathsf M}_{I^\rho}\) son equivalencias bien definidas y composicionales;
+4. distinguir cuándo Interface/MemoState son estructuras ontológicas actuales y cuándo solo representaciones semánticas;
+5. dar una semántica de update/invalidation coordinada con cambios de contrato de interfaz;
+6. demostrar IC5/B6 y \(\ker(\operatorname{Bake})\subseteq\ker(I^\rho)\) en ejemplos no triviales;
+7. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
+8. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
+9. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
+10. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
 
-La ganancia inmediata no es demostrar identidad contextual, sino localizar la interfaz correcta entre **individuación operativa de estructura compleja** y **recontextualización ontogénica**.
+La ganancia inmediata no es demostrar identidad contextual, sino aislar la estructura que faltaba entre individuación y recontextualización:
+
+\[
+\boxed{
+\text{la interfaz fija qué diferencias upstream pueden dejar de importar downstream.}
+\]
+
+Memoization mantiene esa interfaz a través de la historia; invalidation marca cuándo deja de hacerlo; Bake realiza la interfaz en el target; GenesisTrivialization usa esa realización constitutivamente durante una génesis.
 
 
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
