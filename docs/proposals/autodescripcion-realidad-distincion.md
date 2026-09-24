@@ -44,12 +44,12 @@ Las etiquetas históricas [D], [A], [I], [H], [O], [C] se conservan solo cuando 
 
 Esta es la única sección que debe usarse para responder “¿qué sostiene ahora la propuesta?”.
 
-## 1. Objetivo conceptual — totalidad de régimen frente a Realidad Total
+## 1. Objetivo conceptual — totalidad de régimen, totalidad absoluta y generaciones contextuales
 
 La auditoría de REV-24 obliga a separar dos preguntas que la versión anterior volvió a mezclar:
 
 1. ¿existe un alcance ontológico exhaustivo **de algún régimen**?;
-2. ¿existe el $R$ de la doctrina original, es decir, la **totalidad de todo lo real**?
+2. ¿existe alguna tesis adicional de **totalidad absoluta**? Ésta fue una lectura histórica del $R$ no indexado, pero la arquitectura generacional ya no identifica «realidad original» con totalidad global: una realidad original es un $R_i^{[0]}$ de generación 0.
 
 Estas tesis no son equivalentes.
 
@@ -173,7 +173,7 @@ $$
 
 «los contextos son genuinamente incompatibles».
 
-$i\mathrel{\#}j$ no describe una relación real entre $R_i$ y $R_j$: es una restricción de tipado. REV-07e añade además la descendencia metaontológica $i\prec_{\mathrm{ctx}}k$ cuando una ContextGenesis tiene a $i$ como precursor de $k$. Descendencia, equivalencia e incompatibilidad no forman una dicotomía/partición automática.
+$i\mathrel{\#}j$ no describe una relación real entre $R_i$ y $R_j$: es una restricción de tipado. La descendencia metaontológica se refina ahora con generaciones contextuales: `CtxParent` exige GenuineContextGenesis constitutiva; una realidad Gen0 posee OriginaryContext/OG1–OG6 y no se obtiene por mera ausencia de padres conocidos; para genealogías finitas well-founded, el child recibe rank $1+\max$ de los ranks parentales y `GenSig` conserva modo de génesis + parent spectrum. Generation depth no es embedding depth ni complejidad estructural; puede haber múltiples $R_i^{[0]}$ y un contexto anidado puede tener rank mayor, menor o igual que su host. Descendencia, embedding, equivalencia e incompatibilidad no forman una dicotomía/partición automática.
 
 Por ello, si:
 
@@ -1986,7 +1986,7 @@ REV-07 permanece **PARTIAL**. La arquitectura elimina ya la agregación arbitrar
 5. qué ruta —$\Lambda_*$ finita o $\mathcal C_*$ generalizada— reconstruye adecuadamente RegimeClosure, incluida la producción transversal;
 6. qué principio de scope/pluralidad realiza esa closure como $R_i$ sin setificarla;
 7. **espacio compartido vs ontogénesis:** descargar existencia/totalización bajo la bifurcación ya fijada: SharedOntSpace preexistente o ContextGenesis fuerte; no se admite ontogénesis débil.
-8. **interface/memoization/baking:** InterfaceContract/RoleAdequate quedan formalizados; cross-role composition queda condicionalmente resuelta; MemoState/update/invalidation, B1–B10, ContinuationProfile/FaithfulContinuation y TR-M quedan resueltos a nivel de criterio/condicional. TR-M usa una máquina contextual pre-indexada + MC1–MC10: subsystem no excluye context y ContextEmbedding disciplina nesting. Permanecen InterfaceWall fuerte y $\Omega_i$.
+8. **interface/memoization/baking:** InterfaceContract/RoleAdequate quedan formalizados; cross-role composition queda condicionalmente resuelta; MemoState/update/invalidation, B1–B10, ContinuationProfile/FaithfulContinuation y TR-M quedan resueltos a nivel de criterio/condicional. TR-M usa una máquina contextual pre-indexada + MC1–MC10: subsystem no excluye context y ContextEmbedding disciplina nesting. La estratificación Generation/GenSig clasifica además profundidad y geometría ontogénica sin convertir nesting en genealogía. Permanecen InterfaceWall fuerte y $\Omega_i$.
 
 Una convergencia bien tipada prueba como máximo realizabilidad conjunta, no co-origen:
 
