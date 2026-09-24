@@ -12956,6 +12956,279 @@ R_i^{[0]}
 
 y las demás realidades se clasifican por cómo emergen genealógicamente de interacciones constitutivas entre contextos anteriores.
 
+#### 0.11.91ac. XR-1 — witness mínimo ejecutable para \(\operatorname{ExistsR}\)
+
+La definición vigente de ExistsR es existencial. Por tanto no exige cerrar REV-07b/c/d universalmente: basta una instancia concreta en la que sus obligaciones queden descargadas.
+
+XR-1 es una máquina software finita:
+
+\[
+s_0\xrightarrow{e_0}s_1.
+\]
+
+Su teoría operacional pre-indexada \(\mathcal T_{\mathrm{XR1}}\) fija primero, independientemente de GenEvent, una única instancia productiva actual:
+
+\[
+\operatorname{ProcessProd}(e_0,\{s_0\},s_1),
+\]
+
+con footprint:
+
+\[
+\{s_0,e_0,s_1\}.
+\]
+
+El inventario formal contiene exactamente:
+
+\[
+\operatorname{GenEvent}(e_0,\{s_0\},s_1).
+\]
+
+El script `scripts/xr1_witness.py` ejecuta realmente el episodio, compara OntProd operacional con GenEvent, calcula la closure y emite un certificado que CI conserva como artifact.
+
+Esto no convierte ejecución en ontología por sintaxis. Separa el núcleo formal-operacional de la descarga metaontológica.
+
+#### 0.11.91ad. XR1-F — descarga formal/generativa
+
+Tomamos:
+
+\[
+\mathcal O_{\mathrm{XR1}}=\{s_0\}.
+\]
+
+OriginUnity es vacua respecto de particiones no triviales del singleton. RootClosed vale porque la teoría local no contiene OntProd con target \(s_0\). La producción host-side del proceso no se reescribe como OntProd interno.
+
+La relación productiva y el inventario generativo coinciden extensionalmente, pero están especificados por rutas distintas:
+
+\[
+\mathsf{OntProd}_{XR1}
+=
+\mathsf{GenEvent}_{XR1}
+=
+\{\langle e_0,\{s_0\},s_1\rangle\}.
+\]
+
+Por exhaustión finita:
+
+\[
+\boxed{\mathrm{GenSound}_{XR1}\land\mathrm{GenComplete}_{XR1}.}
+\]
+
+El operador satisface:
+
+\[
+\Gamma(\{s_0\})=\{s_0,e_0,s_1\}
+\]
+
+y:
+
+\[
+\Gamma(\{s_0,e_0,s_1\})=\{s_0,e_0,s_1\}.
+\]
+
+Todo fixed point que contiene \(s_0\) contiene el footprint completo. Luego:
+
+\[
+\boxed{
+\operatorname{GenClosure}
+(
+\mathcal O_{XR1},
+C_{XR1}
+)
+}
+\]
+
+con:
+
+\[
+C_{XR1}=\{s_0,e_0,s_1\}.
+\]
+
+Así GCExists queda demostrado para esta instancia finita, aunque REV-07c siga abierto universalmente. El singleton no posee subconfiguración originaria propia no vacía con la misma closure, luego Irredundant vale. Por tanto OntOrigin y GeneUnit quedan descargados para XR-1.
+
+#### 0.11.91ae. XR1-R — realidad local independiente de la closure
+
+Sea \(a\) una ejecución concreta. La semántica operacional fija independientemente:
+
+\[
+\operatorname{ExecToken}_{\mathcal T_{XR1}}(a,x)
+\]
+
+cuando \(x\) ocurre efectivamente como state/event token local.
+
+El run ejecutado tiene:
+
+\[
+\operatorname{ExecTokens}(a)=\{s_0,e_0,s_1\}.
+\]
+
+Definimos:
+
+\[
+\operatorname{Real}^{a}_{XR1}(x)
+\Longleftrightarrow
+\operatorname{ExecToken}_{\mathcal T_{XR1}}(a,x).
+\]
+
+Esto no menciona GenClosure. Independientemente:
+
+\[
+C_{XR1}=\{s_0,e_0,s_1\}.
+\]
+
+Luego:
+
+\[
+\boxed{
+\operatorname{Real}^{a}_{XR1}(x)
+\Longleftrightarrow
+x\in C_{XR1}.
+}
+\]
+
+#### 0.11.91af. XR1-S — scope finito
+
+XR-1 no necesita comprensión irrestricta. Introducimos directamente el plural finito:
+
+\[
+rr_{XR1}=s_0,e_0,s_1
+\]
+
+con:
+
+\[
+x\prec rr_{XR1}
+\Longleftrightarrow
+x=s_0\lor x=e_0\lor x=s_1.
+\]
+
+Entonces:
+
+\[
+x\prec rr_{XR1}
+\Longleftrightarrow
+\operatorname{Real}^{a}_{XR1}(x)
+\Longleftrightarrow
+x\in C_{XR1}.
+\]
+
+Escribimos \(R_{XR1}\) para ese scope plural sin convertirlo en objeto colector.
+
+#### 0.11.91ag. XR1-C — descarga TR-M
+
+La candidatura dispone pre-indexadamente de typing local State/Event, transición operacional, frontera de proceso, interfaces de boot/termination y estado reentrante. Bajo \(\mathcal T_{XR1}\), MC1–MC10 se descargan así: la especificación no usa el índice; typing y boundary son positivos; toda influencia admitida entra por interfaces declaradas; el update es determinista; no hay roles/interacciones omitidos; fijado estado + inputs el futuro lógico queda determinado; no existe agregación arbitraria; el host puede ser otro contexto vía ContextEmbedding; y genesis/persistence permanecen separados.
+
+Esto satisface el perfil estructural de MemoContextCriterion. Queda, sin embargo, una obligación separada:
+
+\[
+\boxed{\mathrm{XR1\text{-}ACT}.}
+\]
+
+#### 0.11.91ah. XR1-ACT — puente de actualidad
+
+Que CI ejecute `scripts/xr1_witness.py` prueba operacionalmente que existe un run \(a\). No se adopta:
+
+\[
+\operatorname{ActualExecution}(a)
+\Rightarrow
+\operatorname{ContextIndividuation}.
+\]
+
+XR1-ACT exige:
+
+1. XA1: el run es efectivamente realizado;
+2. XA2: \(s_0,e_0,s_1\) denotan states/events efectivos del nivel software, no solo strings del certificado;
+3. XA3: la teoría local no omite otros tokens de sus propios sorts en el episodio;
+4. XA4: el nivel software posee legitimidad ontológica/structural fidelity y no es mera abreviatura sin truthmakers;
+5. XA5: interpreter, OS, runner y hardware pertenecen al host salvo realización/interfaz explícita;
+6. XA6: recodificaciones/implementaciones fieles preservan la descarga.
+
+Entonces:
+
+\[
+\boxed{
+\mathrm{XR1\text{-}ACT}
++
+\mathrm{MCAdequate}
++
+\mathrm{IndAdequate}
+\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(C_{XR1};\chi_{XR1}).
+}
+\]
+
+El artifact CI aporta evidencia directa para XA1 y para la estructura operacional. No prueba por sí solo XA4.
+
+#### 0.11.91ai. XR1-T — teorema existencial condicional
+
+Tras IndexAdmission tomamos la familia singleton:
+
+\[
+\mathfrak G_{XR1}
+=
+\{\langle\mathcal O_{XR1},C_{XR1}\rangle\}.
+\]
+
+Por el singleton compatibility theorem, XR1-F/R/S descargan:
+
+\[
+\operatorname{RegimeTotal}_{i_{XR1}}
+(
+\mathfrak G_{XR1},
+R_{XR1}
+).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\mathrm{XR1\text{-}ACT}
++
+\mathrm{IndAdequate}_{XR1}
+\Rightarrow
+\operatorname{ExistsR}.
+}
+\]
+
+REV-07b/c permanecen abiertos universalmente, pero no bloquean este existential witness porque GenComplete y GCExists han sido probados por exhaustión finita para XR-1.
+
+#### 0.11.91aj. Ataques adversariales
+
+**XR-A1 — Real definido como closure.** No: Real se fija por ExecToken y la coincidencia se demuestra después.
+
+**XR-A2 — GenComplete tautológico.** No: ProcessProd procede de la semántica operacional y GenEvent se audita contra ella.
+
+**XR-A3 — singleton origin trivial.** Hace vacua OriginUnity, pero no RootClosed, GenAdequate, GCExists, Irredundant, ContextIndividuation ni scope exactness. El contrato vigente no prohíbe orígenes singleton.
+
+**XR-A4 — tokens físicos ocultos.** Pertenecen al host salvo que la teoría los tipifique como locales. Si son constitutivamente necesarios al nivel declarado, XA3/XA5 obliga a incorporarlos y XR-1 debe rehacerse.
+
+**XR-A5 — software no es realidad.** Éste es el ataque decisivo a XA4. Si la doctrina niega realidad a todo nivel software, XR-1 no prueba ExistsR y habrá que buscar witness físico/organizacional.
+
+**XR-A6 — CI no prueba metafísica.** Correcto. CI prueba run + núcleo finito; no sustituye IndAdequate/XA4.
+
+**XR-A7 — scope setificado.** No: \(rr_{XR1}\) es plural finito explícito.
+
+#### 0.11.91ak. Estado de XR-1
+
+XR-1 demuestra:
+
+\[
+\boxed{
+\text{formal/generative witness}
++
+\text{actual execution}
++
+\text{ontological level legitimacy}
+\Rightarrow
+\operatorname{ExistsR}.
+}
+\]
+
+La máquina/CI descargan el núcleo formal y actual execution. El único punto que el código no puede decidir es XA4/structural fidelity del nivel software.
+
+Por tanto ExistsR **todavía no se marca como demostrado incondicionalmente**. La deuda existencial queda reducida a una pregunta explícita: si una ejecución software actual, localmente individuada y estructuralmente fiel cuenta como realización ontológica de su nivel. Si esa premisa se acepta y se descarga IndAdequate, XR1-T entrega inmediatamente \(\operatorname{ExistsR}\).
+
 #### 0.11.92. Relación con \(\Omega_i\): ContinuationProfile ya no depende de \(\Omega_i\)
 
 REV-07e había dejado abierta una ruta provisional en la que \(\Omega_i\) podía anteceder a ContinuationProfile. Esa dirección queda ahora **SUPERSEDED**: §§0.11.91a–0.11.91i derivan \(\mathsf{CP}_i^x\) directamente desde PersistenceBasis + contract state + memo-equivalence + quotient dynamics.
