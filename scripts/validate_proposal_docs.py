@@ -158,6 +158,10 @@ def validate_archive(text: str) -> None:
         fail("Historical pre-consolidation archive must carry a visible SUPERSEDED/non-normative banner")
 
 
+def strip_html_comments(text: str) -> str:
+    return re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+
+
 def markdown_heading(line: str) -> tuple[int, str] | None:
     match = re.match(r"^ {0,3}(#{1,6})(?:[ \t]+|$)(.*)$", line)
     if not match:
@@ -177,7 +181,7 @@ def markdown_section(text: str, heading: str) -> str:
         fail(f"Invalid Markdown heading passed to markdown_section: {heading}")
     target_level, target_title = target
 
-    outside = markdown_lines_outside_fences(text)
+    outside = markdown_lines_outside_fences(strip_html_comments(text))
     matches = [
         position
         for position, (_, line) in enumerate(outside)
@@ -199,6 +203,7 @@ def markdown_section(text: str, heading: str) -> str:
 
 
 def display_math_blocks(text: str) -> list[str]:
+    text = strip_html_comments(text)
     blocks: list[str] = []
     current: list[str] | None = None
 
@@ -380,9 +385,9 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
     )
     strict_pattern = (
         r"\s*\\boxed\s*\{\s*"
-        r"\\bigcup\s*_\s*(?:\{\s*\\alpha\s*\}\s*|\\alpha\s+)"
+        r"\\bigcup\s*_\s*(?:\{\s*\\alpha\s*\}\s*|\\alpha(?:\s+|\{\}\s*))"
         r"C_\{\\alpha,k\}\s*"
-        r"\\subsetneq\s*C_k\s*"
+        r"\\subsetneq(?:\s+|\{\}\s*)C_k\s*"
         r"\}\s*\.?"
     )
     if not re.fullmatch(strict_pattern, strict_formula, flags=re.MULTILINE):
