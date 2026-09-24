@@ -10375,38 +10375,649 @@ Puede haber baking en continuidad, embedding, reconstrucción o composición sin
 
 #### 0.11.87. Contrato B1–B10 de baking
 
-Para admitir:
+La formulación anterior de B7 hablaba de \(\ker(Bake)\) como si el output relevante fuese la identidad literal de \(\sigma_k\). Eso es demasiado intensional: dos realizaciones target-side distintas pueden implementar exactamente el mismo contrato.
+
+Por tanto Baking se tipa ahora respecto de un **contract state**:
 
 \[
-\operatorname{Bake}^{\mathsf M}_{i\to k}
-(u_i\Downarrow\sigma_k;I^\rho,\beta),
+\Theta
+=
+\langle
+\rho,
+\mathbb I^\rho,
+\operatorname{Cont}_\rho,
+\text{interaction roles cuando apliquen}
+\rangle.
 \]
 
-se exige provisionalmente:
+Sea:
 
-1. **B1 / source unit:** \(\operatorname{SourceUnit}^{\mathsf M}_i(u_i;\rho,\upsilon)\). No se bakea una colección compleja cuyo corte source-side carece de fundamento.
-2. **B2 / target actuality:** \(\sigma_k\) es contenido actual de \(k\); la operación meta no fabrica por sí sola ontología child/target-side.
-3. **B3 / provenance:** existe dependencia histórica/ontogénica suficiente para atribuir \(\sigma_k\) a \(u_i\); coincidencia, semejanza o isomorfismo no bastan.
-4. **B4 / typed realization:** toda consecuencia objeto ocurre en el lenguaje de \(k\). Bake no introduce predicados cross-index.
-5. **B5 / interface realization:** existe \(\operatorname{InterfaceContract}^{\mathsf M}_i(u_i;I_i^\rho,\rho,\iota)\) y \(\beta\) declara cómo \(\sigma_k\) realiza target-side la estructura de interfaz que debe preservarse.
-6. **B6 / target factorization:** toda dependencia target-side atribuida al rol factoriza a través de la realización de \(I^\rho\) en \(\sigma_k\); no existe hidden bypass hacia detalles upstream declarados irrelevantes.
-7. **B7 / interface-bounded kernel:** si Bake es no inyectivo, su kernel debe estar contenido en \(\ker(I^\rho)\). \(\beta\) no puede autorizar por sí solo diferencias que la semántica de la interfaz distingue.
-8. **B8 / recoding invariance:** codificaciones fieles de source y target preservan el juicio.
-9. **B9 / no retroactivity:** trivializar diferencias para \(k\) no elimina ni reescribe hechos reales de \(i\).
-10. **B10 / no genesis inference:** baking por sí solo no prueba ContextGenesis, ContextMerger, TokenMerger, IndexAdmission ni RegimeTotal.
+\[
+E^S_\Theta
+\]
 
-B6 expresa la idea operacional central:
+la equivalencia source-side autorizada por ese contrato y:
+
+\[
+q^S_\Theta(u)
+=
+[u]_{E^S_\Theta}
+\]
+
+su quotient metateórico.
+
+En el target \(k\) definimos una equivalencia contractual:
+
+\[
+\sigma_k
+\approx^T_{\Theta,k}
+\tau_k
+\]
+
+cuando ambas realizaciones presentan el mismo perfil target-side para \(\Theta\), incluyendo interacciones declaradas. Escribimos:
+
+\[
+q^T_{\Theta,k}(\sigma_k)
+=
+[\sigma_k]_{\approx^T_{\Theta,k}}.
+\]
+
+La igualdad de tokens target no es necesaria:
+
+\[
+\sigma_k\neq\tau_k
+\]
+
+puede coexistir con:
+
+\[
+q^T_{\Theta,k}(\sigma_k)
+=
+q^T_{\Theta,k}(\tau_k).
+\]
+
+El juicio de baking queda:
 
 \[
 \boxed{
-\text{respecto de }\rho,
-\quad
-u_i\text{ importa en }k
-\text{ mediante }\sigma_k.
+\operatorname{Bake}^{\mathsf M}_{i\to k}
+(
+u_i\Downarrow\sigma_k;
+\Theta,\beta,\pi
+),
 }
 \]
 
-B7 endurece el antiguo GT4: la no-inyectividad puede ser una virtud solo cuando la interfaz, no el mero deseo de comprimir, hace esas diferencias downstream-irrelevant. El contrato \(\beta\) implementa el quotient; \(I^\rho\) lo licencia.
+donde \(\beta\) es el witness de realización contractual y \(\pi\) el witness de provenance. Ambos hacen trabajos distintos: \(\beta\) demuestra sustitución downstream; \(\pi\) demuestra por qué esa realización target puede atribuirse a esa source y no a una coincidencia independiente.
+
+Se exige:
+
+1. **B1 / source unit:** existe \(\operatorname{SourceUnit}^{\mathsf M}_i(u_i;\rho,\upsilon)\) compatible con \(\Theta\). Bake no selecciona retrospectivamente qué agregado source-side debe contar como unidad.
+2. **B2 / target actuality:** \(\sigma_k\) es contenido actual de \(k\). El juicio metateórico no fabrica ontología target-side.
+3. **B3 / provenance grounding:** \(\operatorname{ProvLink}^{\mathsf M}_{i\to k}(u_i,\sigma_k;\pi)\) debe estar independently justified. Igualdad de interfaz, semejanza, correlación o isomorfismo no bastan.
+4. **B4 / typed realization:** todo predicado objeto sobre \(\sigma_k\) está tipado en \(k\); Bake no introduce relaciones objeto cross-index.
+5. **B5 / target contract realization:** \(\beta\) demuestra que \(\sigma_k\) realiza target-side el contrato \(\Theta\), incluidos interaction roles relevantes, con una traducción de trazas/perfiles explícita.
+6. **B6 / target factorization:** toda consecuencia target-side atribuida a \(\Theta\) factoriza por el perfil contractual de \(\sigma_k\). No existe hidden bypass hacia detalles upstream que \(\Theta\) declara quotientables.
+7. **B7 / quotient decodability:** existe una decodificación metateórica \(d_\beta\) tal que, para todo source admisible bakeado por \(\beta\),
+
+\[
+\boxed{
+q^S_\Theta(u)
+=
+d_\beta
+\left(
+q^T_{\Theta,k}(\sigma)
+\right).
+}
+\]
+
+8. **B8 / recoding invariance:** recodificaciones fieles source/target y traducciones fieles del contrato preservan el juicio y el diagrama B7.
+9. **B9 / provenance retention + no retroactivity:** quotientar diferencias para \(\Theta\) no elimina hechos source-side ni autoriza a identificar sus provenance. Si la provenance no se codifica en \(\sigma_k\), puede quedar no reconstruible desde ese canal, pero no deja de ser objetiva.
+10. **B10 / no genesis/context inference:** Bake no implica ContextGenesis, ContextMerger, TokenMerger, ContextIndividuation, IndexAdmission ni RegimeTotal.
+
+B7 reemplaza la antigua formulación meramente extensional de kernel por una condición más fuerte y tipada. El target debe conservar suficiente estructura contractual para recuperar **la clase source autorizada**, no el token source completo.
+
+#### 0.11.87a. Provenance no es equivalencia de interfaz
+
+Introducimos el witness:
+
+\[
+\operatorname{ProvLink}^{\mathsf M}_{i\to k}
+(
+u_i,\sigma_k;\pi
+).
+\]
+
+\(\pi\) debe satisfacer al menos:
+
+- **PV1 / source-target anchoring:** identifica source y target actuales ya independientemente tipados;
+- **PV2 / genealogical support:** aporta una cadena histórica, productiva, constitutiva, transmisiva o documental cuya teoría explique la atribución target-from-source;
+- **PV3 / no similarity inference:** \(u\equiv_I\sigma\), semejanza o isomorfismo no producen ProvLink;
+- **PV4 / non-circularity:** \(\pi\) no puede usar como premisa el Bake, GenesisTrivialization o provenance que pretende justificar;
+- **PV5 / chain transparency:** si el witness pasa por etapas intermedias, éstas se registran metateóricamente; no se reemplaza una cadena por una relación objeto cross-index;
+- **PV6 / non-uniqueness tolerance:** varias sources pueden contribuir a una realización target y una source puede tener varias realizaciones; provenance no presupone función ni identidad.
+
+Así se separan dos preguntas:
+
+\[
+\boxed{
+\begin{array}{rcl}
+\beta &:& \text{¿realiza correctamente el target el contrato?}\\
+\pi &:& \text{¿por qué esta realización procede de esta source?}
+\end{array}
+}
+\]
+
+Puede existir una implementación target perfectamente interface-equivalent pero sin \(\pi\); entonces hay **independent reimplementation**, no Bake desde esa source.
+
+#### 0.11.87b. BS-T1 — teorema general de soundness de Bake
+
+Definimos la equivalencia inducida por la realización target:
+
+\[
+u
+\equiv^{\beta}_{T,\Theta}
+v
+\]
+
+cuando existen realizaciones bakeadas \(\sigma,\tau\) tales que:
+
+\[
+q^T_{\Theta,k}(\sigma)
+=
+q^T_{\Theta,k}(\tau).
+\]
+
+Si B7 vale, entonces:
+
+\[
+\boxed{
+\equiv^{\beta}_{T,\Theta}
+\subseteq
+E^S_\Theta.
+}
+\]
+
+**Demostración.** Si los perfiles target coinciden, aplicar el mismo decoder \(d_\beta\) produce:
+
+\[
+q^S_\Theta(u)
+=
+d_\beta(q^T(\sigma))
+=
+d_\beta(q^T(\tau))
+=
+q^S_\Theta(v).
+\]
+
+Luego \(uE^S_\Theta v\). \(\square\)
+
+Ésta es la forma correcta de:
+
+\[
+\ker(Bake)\subseteq\ker(I^\rho).
+\]
+
+El kernel relevante es el del **perfil contractual target**, no el de identidad literal de tokens.
+
+Si además:
+
+\[
+uE^S_\Theta v
+\Longrightarrow
+u\equiv^\beta_{T,\Theta}v,
+\]
+
+el Bake es **contract-exact**:
+
+\[
+\boxed{
+\equiv^\beta_{T,\Theta}
+=
+E^S_\Theta.
+}
+\]
+
+Un Bake puede ser sound y conservar más distinciones que el contrato requiere.
+
+#### 0.11.87c. Horizontal composition: product Bake y interaction debt
+
+Sea una familia de roles:
+
+\[
+\mathbf R
+=
+\{\rho_a\}_{a\in A}
+\]
+
+con Bakes individuales \(B_a\) y contract states \(\Theta_a\). Supóngase cada uno sound:
+
+\[
+\equiv^{B_a}_{T,\Theta_a}
+\subseteq
+E_a.
+\]
+
+El producto:
+
+\[
+B_\Pi(u)
+=
+\langle
+B_a(u)
+\rangle_{a\in A}
+\]
+
+solo preserva por defecto la equivalencia marginal:
+
+\[
+E_\wedge
+=
+\bigcap_aE_a.
+\]
+
+El contrato compuesto requiere:
+
+\[
+E_\otimes.
+\]
+
+Por tanto definimos:
+
+\[
+\boxed{
+\operatorname{CompositeBakeSound}
+(
+B_\Pi;\Theta_\otimes
+)
+}
+\]
+
+si existe un decoder conjunto:
+
+\[
+d_\otimes
+\]
+
+tal que:
+
+\[
+\boxed{
+q^S_{\Theta_\otimes}(u)
+=
+d_\otimes
+\left(
+q^T_{\Theta_\otimes,k}
+(B_\Pi(u))
+\right).
+}
+\]
+
+De aquí:
+
+\[
+\equiv^{B_\Pi}_{T,\Theta_\otimes}
+\subseteq
+E_\otimes.
+\]
+
+La soundness de cada componente no basta cuando:
+
+\[
+E_\otimes
+\subsetneq
+E_\wedge.
+\]
+
+En particular, si cada Bake es exacto marginalmente:
+
+\[
+\equiv^{B_a}_{T,\Theta_a}=E_a,
+\]
+
+pero existe SynRel, el producto que conserva únicamente esas clases marginales colapsa al menos un par que \(E_\otimes\) separa.
+
+Por tanto:
+
+\[
+\boxed{
+\bigwedge_a
+\operatorname{BakeSound}(B_a;\Theta_a)
+\not\Rightarrow
+\operatorname{CompositeBakeSound}(B_\Pi;\Theta_\otimes).
+}
+\]
+
+Bajo CR-T1, si:
+
+\[
+E_\otimes=E_\wedge
+\]
+
+y la composición target no añade hidden observers, los decoders marginales pueden combinarse para obtener un decoder conjunto. En el caso no separable hace falta información adicional de interacción.
+
+#### 0.11.87d. Interaction-aware Bake
+
+Cuando existe:
+
+\[
+\operatorname{SynRel}_{\mathbf R},
+\]
+
+un target sound debe conservar además una contribución de interacción:
+
+\[
+B_\times(u).
+\]
+
+Definimos el Bake enriquecido:
+
+\[
+B_+(u)
+=
+\left\langle
+\{B_a(u)\}_{a\in A},
+B_\times(u)
+\right\rangle.
+\]
+
+La condición suficiente es:
+
+\[
+\boxed{
+q^S_{\Theta_\otimes}
+=
+d_+
+\circ
+q^T_{\Theta_\otimes,k}
+\circ
+B_+.
+}
+\]
+
+No se exige que \(B_\times\) sea un objeto separado si la interacción está realizada de forma distribuida; la notación representa la **información adicional** que evita la colisión conjunta.
+
+En CR-X, esa información debe distinguir al menos el caso linked del caso unlinked. Guardar por separado el estado del writer y el del reader sin preservar su wiring no basta.
+
+#### 0.11.87e. Vertical composition: encadenar Bakes sin perder soundness
+
+Considérese:
+
+\[
+i
+\overset{B_1}{\longrightarrow}
+k
+\overset{B_2}{\longrightarrow}
+\ell
+\]
+
+como abreviatura metateórica de dos familias de juicios Bake compatibles.
+
+Supóngase que la primera etapa admite:
+
+\[
+q^S_{\Theta,i}
+=
+d_1
+\circ
+q^T_{\Theta,k}
+\circ
+B_1,
+\]
+
+y la segunda preserva precisamente esa clase intermedia:
+
+\[
+q^T_{\Theta,k}
+=
+d_2
+\circ
+q^T_{\Theta,\ell}
+\circ
+B_2.
+\]
+
+Entonces:
+
+\[
+q^S_{\Theta,i}
+=
+d_1
+\circ
+d_2
+\circ
+q^T_{\Theta,\ell}
+\circ
+B_2
+\circ
+B_1.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{BakeSound}(B_1)
++
+\operatorname{BakeSound}(B_2)
++
+\operatorname{ContractAlignment}
+\Longrightarrow
+\operatorname{BakeSound}(B_2\circ B_1).
+}
+\]
+
+La condición ContractAlignment es esencial. Dos etapas individualmente sound para **contratos distintos** no pueden componerse por mera transitividad verbal.
+
+La provenance también se conserva solo como cadena:
+
+\[
+\pi_{i\to k}
+\star
+\pi_{k\to\ell}.
+\]
+
+No se infiere una relación causal objeto \(i\to\ell\); se conserva un witness metateórico de lineage compuesto.
+
+#### 0.11.87f. Bake invalidation bajo refinement contractual
+
+Sea un Bake sound para \(\Theta\), con abstracción target:
+
+\[
+b_\Theta(u)
+:=
+q^T_{\Theta,k}(\sigma_u).
+\]
+
+Supóngase un refinement:
+
+\[
+E_{\Theta'}
+\subseteq
+E_\Theta.
+\]
+
+Definimos:
+
+\[
+\operatorname{BakeInvalidate}
+(
+B;
+\Theta\rightsquigarrow\Theta'
+)
+\]
+
+cuando:
+
+\[
+\operatorname{BakeSound}(B;\Theta)
+\]
+
+pero:
+
+\[
+\neg
+\operatorname{BakeSound}(B;\Theta').
+\]
+
+Equivalentemente existe un par:
+
+\[
+b_\Theta(u)
+=
+b_\Theta(v)
+\]
+
+tal que:
+
+\[
+u\not E_{\Theta'}v.
+\]
+
+Esto es el análogo target-side de Memo invalidation.
+
+#### 0.11.87g. BS-T2 — no rehydration desde un Bake ya colapsado
+
+Supóngase:
+
+\[
+\operatorname{BakeInvalidate}
+(
+B;
+\Theta\rightsquigarrow\Theta'
+).
+\]
+
+Entonces existen \(u,v\) con el mismo perfil baked viejo:
+
+\[
+b_\Theta(u)=b_\Theta(v)
+\]
+
+pero:
+
+\[
+u\not E_{\Theta'}v.
+\]
+
+Para cualquier postprocesamiento que dependa únicamente de ese perfil:
+
+\[
+F:
+\operatorname{Im}(b_\Theta)
+\to Z,
+\]
+
+se cumple:
+
+\[
+F(b_\Theta(u))
+=
+F(b_\Theta(v)).
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\forall F:
+\quad
+F\circ b_\Theta
+\text{ sigue siendo unsound para }\Theta'.
+}
+\]
+
+Éste es **BS-T2 — baked no-recovery theorem**.
+
+El target solo puede rehidratarse si recibe side information adicional:
+
+\[
+z(u),
+\]
+
+y la representación aumentada:
+
+\[
+\widetilde b(u)
+=
+\langle
+b_\Theta(u),z(u)
+\rangle
+\]
+
+satisface:
+
+\[
+\boxed{
+\ker(\widetilde b)
+\subseteq
+E_{\Theta'}.
+}
+\]
+
+Definimos:
+
+\[
+\operatorname{RehydrateAdequate}
+(
+z;
+B,\Theta'
+)
+\]
+
+exactamente por esa inclusión.
+
+La provenance puede actuar como \(z\), pero **solo si es discriminativamente suficiente** para \(\Theta'\). Un certificado que dice “procede de P” sin conservar la diferencia concreta requerida por el nuevo contrato no rehidrata nada.
+
+#### 0.11.87h. Provenance-preserving y provenance-erasing Bake
+
+La existencia objetiva de \(\pi\) no implica que el target la conserve internamente.
+
+Distinguimos:
+
+\[
+\operatorname{ProvPreservingBake}
+\]
+
+cuando existe una codificación target-side \(p_k(\sigma)\) y un decoder de provenance suficiente para la clase declarada, frente a:
+
+\[
+\operatorname{ProvErasingBake},
+\]
+
+cuando B9 conserva la verdad objetiva del lineage pero el perfil target contractual no permite reconstruirla.
+
+Un QuotientBake puede ser perfectamente sound y a la vez provenance-erasing.
+
+Esta distinción enlaza rehydration con InterfaceWall:
+
+- si provenance persiste en un canal lateral/certificado, puede servir como side information para refinements futuros;
+- si fue borrada de **todos** los canales físicamente/ontológicamente disponibles, no puede reaparecer por postprocesamiento del Bake.
+
+La segunda afirmación todavía no demuestra el Muro genealógico fuerte: exige demostrar exhaustividad de canales, deuda que permanece en REV-15.
+
+#### 0.11.87i. Estado de B1–B10
+
+B1–B10 quedan ahora coordinadas con la semántica previa:
+
+\[
+\boxed{
+\begin{array}{rcl}
+\text{SourceUnit} &\to& \text{B1},\\
+\text{actualidad target} &\to& \text{B2},\\
+\text{ProvLink} &\to& \text{B3/B9},\\
+\text{typing} &\to& \text{B4},\\
+\text{Interface/RoleComposition} &\to& \text{B5/B6},\\
+q^S_\Theta=d_\beta\circ q^T_{\Theta,k} &\to& \text{B7},\\
+\text{recoding} &\to& \text{B8},\\
+\text{no context inference} &\to& \text{B10}.
+\end{array}
+}
+\]
+
+BS-T1 prueba el kernel bound contractual; horizontal composition identifica la interaction debt; vertical composition es sound bajo ContractAlignment; BS-T2 demuestra no-recovery tras quotient baking; RehydrateAdequate caracteriza la información lateral suficiente para reparar un refinement.
+
+Por tanto la deuda específica de **coordinar B1–B10 con la semántica de interfaces/memoization, composite Bake soundness y rehydration/provenance** queda **RESOLVED a nivel de criterio**.
 
 #### 0.11.88. ConservativeBake y QuotientBake
 
@@ -10496,12 +11107,12 @@ v_j
 dice que la realización target-side colapsa efectivamente esas fuentes. Para ser sound debe respetar:
 
 \[
-\ker(\operatorname{Bake}^{I^\rho,\beta})
+\equiv^{\beta}_{T,\Theta}
 \subseteq
-\ker(I^\rho).
+E^S_\Theta.
 \]
 
-Así Interface fija la máxima equivalencia downstream admisible y Bake decide qué parte de esa equivalencia realiza de hecho.
+Así Interface/contract state fija la máxima equivalencia downstream admisible y Bake decide qué parte de esa equivalencia realiza de hecho, comparando perfiles target y no identidad literal de tokens.
 
 Por tanto puede ocurrir:
 
@@ -10771,7 +11382,7 @@ i
 
 **MB6c — misma interfaz, provenance distinta.** Dos sistemas energéticos internamente distintos presentan trazas equivalentes en \(I_{\mathrm{AC}}\). No hay identidad upstream; sí equivalencia downstream para consumidores cuyo acoplamiento factoriza por esa interfaz.
 
-**MB7 — quotient bake legítimo.** Dos SourceUnit no memo-equivalentes producen la misma \(\sigma_k\), y la diferencia cae dentro del kernel declarado por \(\beta\). Es SignatureConvergence candidata, no colisión defectuosa.
+**MB7 — quotient bake legítimo.** Dos SourceUnit no memo-equivalentes producen la misma \(\sigma_k\), y la igualdad target-side satisface B7 respecto de \(E^S_\Theta\). Es SignatureConvergence candidata, no colisión defectuosa.
 
 **MB8 — quotient bake excesivo.** Dos SourceUnit producen la misma \(\sigma_k\), pero una diferencia eliminada cambia una dependencia target-side atribuida a \(\rho\). Falla B6/B7; el baking es unsound.
 
@@ -10821,13 +11432,12 @@ Y aparecen tres resultados arquitectónicos fuertes:
 }
 \]
 
-Las deudas de InterfaceContract/trace semantics + IC1–IC10 y de RoleAdequate quedan **RESOLVED formal**; la composicionalidad cross-role queda **RESOLVED condicionalmente**. §§0.11.83a–0.11.84g distinguen ahora SemanticMemo de OnticMemoImpl y resuelven update/invalidation a nivel de criterio: MemoSound exige \(\ker(\mu)\subseteq E_\Theta\), update existe exactamente cuando el kernel del memo es congruente bajo la transición, y MI-T2 prueba que información ya quotientada no puede recuperarse desde el memo antiguo tras un refinement. Para cerrar REV-07h completo falta:
+Las deudas de InterfaceContract, RoleAdequate y MemoState/update/invalidation quedan **RESOLVED formal/a nivel de criterio**; la composicionalidad cross-role queda **RESOLVED condicionalmente**. §§0.11.87–0.11.87i coordinan B1–B10 con esos resultados: B7 usa ahora decodificación entre quotients contractuales source/target, BS-T1 demuestra soundness, la composición horizontal exige preservar interaction information, la vertical exige ContractAlignment y BS-T2 prueba no-recovery desde un Bake ya colapsado; RehydrateAdequate caracteriza side information suficiente. Para cerrar REV-07h completo falta:
 
-1. coordinar B1–B10 con \(q_{\mathbb I^\rho}=d_\beta\circ\operatorname{Bake}\), incluyendo composite Bake soundness y rehydration/provenance;
-2. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
-3. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
-4. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
-5. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
+1. coordinar SourceUnit/MemoContinuation/Interface con ContinuationProfile y FaithfulContinuation;
+2. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
+3. precisar cuándo InterfaceWall es mera subdeterminación de canal y cuándo puede elevarse a irreconstruibilidad genealógica de principio;
+4. investigar, sin presuponerlo, si una familia de memoizations/interfaces adecuadas puede inducir \(\Omega_i\).
 
 La ganancia inmediata no es demostrar identidad contextual, sino aislar la estructura que faltaba entre individuación y recontextualización:
 
