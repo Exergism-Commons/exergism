@@ -5171,6 +5171,282 @@ Por tanto el próximo ataque a $\Omega_i$ debe responder primero:
 
 FC3 y $\Omega_i$ permanecen **PARTIAL**. La novedad es que la deuda ya no es “escoger invariantes”, sino caracterizar formalmente la **trivialización que decide qué diferencias dejan de importar al cambiar de nivel/contexto**.
 
+#### 0.11.48. REV-07g — Cellular Reality: la individuación precede al índice
+
+La arquitectura vigente permite formular una hipótesis más precisa que la antigua intuición de «realidad fractal»: una realidad indexada puede tratarse **estructuralmente como una unidad celular** si la analogía se descarga en condiciones formales de individuación, frontera, persistencia y ontogénesis. «Celular» no significa aquí biológico, espacial ni microscópico.
+
+La primera corrección es de orden explicativo:
+
+$$
+\boxed{
+\text{individuación}
+\Longrightarrow
+\text{tipado/contexto}
+\Longrightarrow
+\text{ascripción del metavariable }i,
+}
+$$
+
+no:
+
+$$
+i\Longrightarrow\text{individuación}.
+$$
+
+EXT-02 ya impide convertir $i$ en una entidad o miembro de un dominio de índices. REV-07g añade que el índice tampoco debe cargar con la tarea metafísica de **crear** la diferencia que etiqueta. Si dos candidatos resultan ser realizables dentro del mismo espacio ontológico preexistente, SharedOntSpace obliga a retirar la separación provisional; si una ContextGenesis constituye una unidad nueva, el nuevo índice registra esa novedad después de justificarla.
+
+Introducimos por ello, solo como obligación metateórica abierta, un testigo pre-indexado:
+
+$$
+\operatorname{IndividuationWitness}^{\mathsf M}(C;\chi).
+$$
+
+$C$ es aquí un candidato todavía no tratado como $R_i$, y $\chi$ no es una pieza adicional de realidad. Para que el testigo no sea una renominación del índice debe satisfacer al menos:
+
+1. **CI1 / pre-indexación:** su definición no usa $\operatorname{Real}_i$, SameRegime$_i$, $R_i$ ni la mera existencia del índice que pretende justificar;
+2. **CI2 / no extensionalidad instantánea:** no identifica el contexto con un snapshot o con la lista actual de sus componentes;
+3. **CI3 / poder de tipado:** explica por qué cierto contenido puede entrar en una misma semántica objeto y por qué otro contenido exigiría reindexación;
+4. **CI4 / anclaje generativo:** es compatible con OntOrigin, OntProd/GenEvent, RegimeClosure y la distinción SharedOntSpace/ContextGenesis;
+5. **CI5 / persistencia no post hoc:** no se selecciona retrospectivamente para hacer verdadera una FaithfulContinuation concreta;
+6. **CI6 / invariancia de recodificación:** representaciones isomorfas del mismo soporte ontológico no producen individuaciones distintas por accidente notacional.
+
+La relación entre $\chi$ y $\Omega_i$ queda deliberadamente asimétrica. $\chi$ pretende descargar la deuda **pre-indexada** de por qué hay una unidad contextual; $\Omega_i$ sigue siendo un candidato **post-individuación** a representación canónica de la estructura generativa/iterativa módulo trivializaciones admisibles. Por tanto no se identifica:
+
+$$
+\chi=\Omega_i.
+$$
+
+Una ruta de investigación compatible con §0.11.47 es:
+
+$$
+\boxed{
+\operatorname{IndividuationWitness}^{\mathsf M}(C;\chi)
+\Longrightarrow
+\text{contexto tipado }i
+\Longrightarrow
+\text{estructura generativa/iterativa}_i
+\Longrightarrow
+\Omega_i.
+}
+$$
+
+Las flechas son obligaciones; no se afirma todavía el teorema.
+
+#### 0.11.49. La «membrana» es un perfil estratificado, no una pared única
+
+La sugerencia:
+
+$$
+\text{membrana}
+\stackrel{?}{=}
+\text{typing boundary}+\text{Muro}+\text{REC}
+$$
+
+captura una intuición importante, pero las tres piezas tienen tipos y direcciones lógicas distintos. Colapsarlas en un único predicado primitivo destruiría precisamente las distinciones ganadas por REV-15, EXT-01 y EXT-02.
+
+REV-07g usa **membrana** solo como nombre de trabajo para un perfil de frontera con cuatro capas:
+
+1. **TB / frontera de tipado.** Una vez individuado $i$, $\mathcal L_i$ determina qué términos y predicados forman fórmulas objeto bien tipadas. Para $i\#j$, un supuesto hecho objeto transversal no es falso sino mal tipado.
+2. **OC / clausura de alcance.** Si se demuestra $\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)$, el scope es genealógicamente exhaustivo para ese régimen. De aquí se obtiene REC como consecuencia estructural; REC no individúa el contexto ni demuestra su existencia.
+3. **EB / frontera epistémica.** El Muro mínimo impide inferir exhaustividad ontológica desde la mera ausencia de una extensión accesible de $U_i$. La versión fuerte sigue OPEN en REV-15.
+4. **IF / interfaces ontogénicas.** La frontera no es impermeabilidad absoluta. ContextGenesis, FaithfulContinuation, Provenance y GenesisTrivialization permiten relaciones **metateóricas** entre contextos sin introducir hechos objeto cross-index.
+
+Esquemáticamente:
+
+$$
+\boxed{
+\partial^{\mathrm{cell}}_i
+\sim
+\langle
+\mathrm{TB}_i,
+\mathrm{OC}_i,
+\mathrm{EB}_i,
+\mathrm{IF}_i
+\rangle,
+}
+$$
+
+pero $\partial^{\mathrm{cell}}_i$ no se introduce todavía como objeto de la ontología ni la tupla como definición literal. Es un bookkeeping metateórico para impedir tres colapsos:
+
+$$
+\mathrm{TB}\neq\mathrm{REC},
+\qquad
+\mathrm{REC}\neq\mathrm{Muro},
+\qquad
+\mathrm{Muro}\neq\mathrm{IF}.
+$$
+
+La analogía celular mejora así: una membrana no es simplemente «lo que aísla», sino la estructura que mantiene una individuación mientras regula qué tipos de continuidad, intercambio o génesis son admisibles. En esta propuesta ese «intercambio» nunca autoriza por sí mismo un predicado objeto cross-index.
+
+#### 0.11.50. Qué haría no trivial a Cellular Reality
+
+Si «célula» significase solo:
+
+$$
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
++
+\operatorname{REC}_i(R_i)
++
+\text{tipado},
+$$
+
+REV-07g sería una abreviatura decorativa: REC ya sigue de RegimeTotal y el tipado ya pertenece a la arquitectura indexada.
+
+La tesis solo añade contenido si obliga a resolver la **individuación diacrónica**. El candidato fuerte es:
+
+$$
+\operatorname{RealityCell}^{\mathsf M}(i)
+$$
+
+como clasificación metateórica de una realización que dispone de:
+
+- fundamento no circular de individuación;
+- frontera de tipado estable;
+- clausura generativa suficiente para RegimeTotal;
+- criterio de persistencia bajo transformación interna;
+- interfaces tipadas para génesis/convergencia;
+- y, si se pretende hablar de destrucción o muerte, un criterio positivo de cesación.
+
+Por tanto:
+
+$$
+\boxed{
+\text{Cellular Reality}
+\text{ no se cierra con RegimeTotal; hereda el problema de identidad de REV-07e.}
+}
+$$
+
+Esto explica por qué Ship of Theseus no era un problema lateral. En una lectura celular, es exactamente el ataque a la pregunta «¿qué hace que esta unidad siga siendo esta unidad mientras cambia casi todo su contenido?».
+
+#### 0.11.51. Ciclo ontogénico: metabolismo, budding, fission, fusion y cesación
+
+La arquitectura actual ya contiene casi todas las operaciones necesarias para hablar de un ciclo celular sin añadir hechos cross-index.
+
+**Transformación interna / metabolismo ontológico.** OntProd/GenEvent y RegimeClosure pueden cambiar ampliamente el contenido sin cambiar automáticamente de índice:
+
+$$
+X_i^{(a)}
+\leadsto
+X_i^{(b)}.
+$$
+
+**Budding.** Una ContextGenesis puede producir un hijo $k$ mientras una realización del padre sigue co-realizada. PersistentParent es entonces evidencia de coexistencia padre–hijo y bloquea inferir $i\#k$ por mera descendencia.
+
+**Fusion.** ContextMerger es el análogo estructural de fusión: varias ramas parentales son constitutivamente necesarias para una unidad $k$. Sigue sin implicar TokenMerger.
+
+**Fission/division.** El branching de continuaciones puede producir varios descendientes. Para llamarlo división fuerte, sin embargo, no basta con que existan $k_1,k_2$: hace falta además explicar qué ocurre con la identidad parental.
+
+Esto abre una deuda que la teoría actual no posee:
+
+$$
+\boxed{
+\operatorname{ContextCessation}^{\mathsf M}(i;\delta).
+}
+$$
+
+No se define por negación:
+
+$$
+\neg\operatorname{PersistentParent}^{\mathsf M}(i,k)
+\not\Rightarrow
+\operatorname{ContextCessation}^{\mathsf M}(i).
+$$
+
+La ausencia de un testigo de persistencia puede ser mera falta de información, exactamente el tipo de inferencia que el Muro obliga a tratar con cuidado. Una futura condición positiva de cesación deberá cumplir al menos:
+
+1. **CCe1 / witness positivo:** existir una base metateóricamente justificable para afirmar terminación, no mero fracaso de reconstrucción;
+2. **CCe2 / no retroactividad:** cesar no vuelve irreales los hechos históricos de $i$ ni reescribe su provenance;
+3. **CCe3 / descendencia compatible:** un hijo puede persistir aunque el padre cese;
+4. **CCe4 / separación de quotient:** pérdida de reconstructibilidad por GenesisTrivialization no cuenta por sí sola como muerte del padre;
+5. **CCe5 / compatibilidad temporal:** la definición debe coordinarse con la semántica procesual antes de introducir instantes terminales ad hoc.
+
+Hasta cerrar esta deuda, decir que un $R_i$ puede «ser destruido» solo puede significar provisionalmente **cesación de su continuación contextual**, no borrado ontológico de todo lo que fue real en $i$.
+
+#### 0.11.52. Fractalidad pasa a ser una tesis secundaria
+
+REV-13 cerró correctamente el uso argumental de «fractal» porque no había patrón, escala ni métrica de autosimilitud. Cellular Reality no reabre ese defecto.
+
+La implicación:
+
+$$
+\operatorname{CellularReality}
+\Rightarrow
+\operatorname{FractalReality}
+$$
+
+**no** está justificada.
+
+Para recuperar una tesis fractal harían falta, como mínimo:
+
+1. una relación tipada de anidamiento o embedding entre contextos que no colapse en mero subdominio del mismo $i$;
+2. recurrencia de una misma arquitectura de individuación/frontera en varios niveles;
+3. un criterio explícito de similitud estructural;
+4. una noción de escala o jerarquía respecto de la cual esa recurrencia sea no trivial.
+
+En ausencia de eso, la relación correcta es metodológica:
+
+$$
+\boxed{
+\text{celularidad}
+\quad\text{puede generar una arquitectura recursiva;}
+\quad
+\text{fractalidad exigiría demostrar además autosimilitud.}
+}
+$$
+
+Así «realidad celular» es conceptualmente anterior y más débil que «realidad fractal». Una realidad podría estar individuada en células contextuales, con génesis, fusión y cesación, sin exhibir ninguna autosimilitud.
+
+#### 0.11.53. Stress tests de la lectura celular
+
+**C1 — sandbox opaca.** Un dominio puede imitar el Muro porque ningún observador interno ve un exterior. Si no hay RegimeTotal ni fundamento independiente de individuación, eso no basta para convertirlo en RealityCell. La opacidad no crea membrana ontológica.
+
+**C2 — subsistema ordinario.** Una región o subsistema dentro de $R_i$ puede poseer una frontera física nítida y seguir siendo contenido de $i$. Una boundary espacial no produce por sí sola un nuevo contexto.
+
+**C3 — SharedOntSpace.** Dos candidatos provisionales aparentemente separados que admiten realizabilidad conjunta en un espacio preexistente no son dos células ontológicas por decreto. Deben re-tiparse dentro de la unidad común.
+
+**C4 — child con padre persistente.** $i\prec_{\mathrm{ctx}}k$ y PersistentParent pueden coexistir. Por tanto la individuación de $k$ no exige que $i$ sea destruido ni que padre e hijo sean mutuamente exteriores en sentido espacial.
+
+**C5 — quotient convergence.** Si $P_i\sim_k^{\mathsf M}Q_j$, el hijo puede trivializar diferencias parentales sin que $i$ y $j$ se vuelvan retrospectivamente la misma célula. La igualdad de una contribución baked no es identidad de contexto.
+
+**C6 — reemplazo total de componentes.** Sustituir todos los tokens de una realización a lo largo de una historia no decide por sí solo si el índice persiste. Este test sigue abierto hasta que $\chi$, $\Omega_i$ y ContinuationProfile queden coordinados sin circularidad.
+
+#### 0.11.54. Estado de REV-07g
+
+REV-07g queda **PARTIAL / hipótesis arquitectónica**.
+
+Lo ya obtenido es una descomposición útil:
+
+$$
+\boxed{
+\text{individuación}
+\rightarrow
+\text{índice/tipado}
+\rightarrow
+\text{RegimeTotal/REC}
+}
+$$
+
+junto con una capa epistémica separada —Muro— y una capa de interfaces ontogénicas —ContextGenesis/FC/Provenance/Trivialization—.
+
+Lo que todavía falta para convertir Cellular Reality en extensión formal fuerte es:
+
+1. definir $\operatorname{IndividuationWitness}^{\mathsf M}$ sin reutilizar el índice ni RegimeTotal de forma circular;
+2. demostrar que ese fundamento induce una frontera de tipado suficientemente determinada;
+3. cerrar la identidad diacrónica coordinando $\chi$, trivialización, $\Omega_i$ y ContinuationProfile;
+4. dar un criterio positivo de ContextCessation;
+5. decidir si existe una relación legítima de embedding/nesting entre contextos;
+6. solo entonces reevaluar si alguna subclase de arquitecturas celulares satisface un criterio real de fractalidad.
+
+La tesis central queda, por ahora:
+
+$$
+\boxed{
+\textbf{Indexing is the notation of individuation, not its source.}
+}
+$$
+
+y la membrana deja de ser metáfora si se entiende como **perfil de frontera tipada, clausura, epistemología e interfaces**, manteniendo esas capas formalmente separadas.
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 **Advertencia PureOntRel.** Una relación pura puede servir como enlace ontológico de marco sin preservar una única genealogía. Por ello no se incorpora automáticamente a $\Lambda_*$ cuando esta pretende reconstruir $\operatorname{Generated}^{*}$: si conecta dos genealogías sin common ground, produciría sobreinclusión y haría fallar $\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}$. Su admisión como enlace reconstructivo requiere una justificación adicional de soundness; RelIntegrable por sí sola no basta.
