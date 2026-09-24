@@ -3051,7 +3051,7 @@ $A$ no es un sort ontológico ni una colección de contextos: solo parametriza l
 
 Definimos GeneFamily:
 
-$
+$$
 \boxed{
 \begin{aligned}
 \operatorname{GeneFamily}_i(\mathfrak G_i)
