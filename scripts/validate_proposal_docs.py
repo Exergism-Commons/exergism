@@ -14,6 +14,7 @@ from pylatexenc.latexwalker import (
     LatexGroupNode,
     LatexMacroNode,
     LatexMathNode,
+    LatexSpecialsNode,
     LatexWalker,
 )
 
@@ -34,6 +35,24 @@ PRIMARY_LEDGER_ID = re.compile(r"^(REV-\d+[a-z]?|DOC-\d+|FORM-\d+)$")
 HIDDEN_BLOCK_BOUNDARY = "\u241e"
 CONTEXT_INDEX_NAMES = frozenset({"i", "j", "k"})
 INVISIBLE_TEX_MACROS = frozenset({"phantom", "hphantom", "vphantom"})
+DYNAMIC_TEX_MACROS = frozenset(
+    {
+        "newcommand",
+        "renewcommand",
+        "providecommand",
+        "def",
+        "gdef",
+        "edef",
+        "xdef",
+        "let",
+        "futurelet",
+        "csname",
+        "endcsname",
+        "expandafter",
+        "DeclareMathOperator",
+    }
+)
+FORBIDDEN_TEX_MACROS = INVISIBLE_TEX_MACROS | DYNAMIC_TEX_MACROS
 
 # Structural Markdown semantics are delegated to a standards-conformant CommonMark parser.
 # Do not reintroduce regex/state-machine parsing for fences, indented code, HTML blocks or comments.
@@ -602,19 +621,6 @@ def tex_text_ends_with_bare_name(nodes: list[Any], name: str) -> bool:
     ) is not None
 
 
-def find_forbidden_invisible_tex_macro(nodes: list[Any]) -> str | None:
-    for node in nodes:
-        if isinstance(node, LatexMacroNode) and node.macroname in INVISIBLE_TEX_MACROS:
-            return node.macroname
-
-        for child_nodes in tex_child_nodelists(node):
-            forbidden = find_forbidden_invisible_tex_macro(child_nodes)
-            if forbidden is not None:
-                return forbidden
-
-    return None
-
-
 def flatten_transparent_tex_groups(nodes: list[Any]) -> list[Any]:
     flattened: list[Any] = []
     for node in nodes:
@@ -628,20 +634,91 @@ def flatten_transparent_tex_groups(nodes: list[Any]) -> list[Any]:
 def tex_child_nodelists(node: Any) -> list[list[Any]]:
     children: list[list[Any]] = []
 
-    if isinstance(node, (LatexGroupNode, LatexEnvironmentNode, LatexMathNode)):
-        children.append(list(node.nodelist))
+    nodelist = getattr(node, "nodelist", None)
+    if nodelist is not None:
+        children.append(list(nodelist))
 
-    if isinstance(node, LatexMacroNode):
-        nodeargd = getattr(node, "nodeargd", None)
-        for argument in getattr(nodeargd, "argnlist", []) or []:
-            if argument is None:
-                continue
-            nodelist = getattr(argument, "nodelist", None)
-            if nodelist is not None:
-                children.append(list(nodelist))
+    nodeargd = getattr(node, "nodeargd", None)
+    for argument in getattr(nodeargd, "argnlist", []) or []:
+        if argument is None:
+            continue
+        argument_nodes = getattr(argument, "nodelist", None)
+        if argument_nodes is not None:
+            children.append(list(argument_nodes))
 
     return children
 
+
+def find_forbidden_tex_macro(nodes: list[Any]) -> str | None:
+    for node in nodes:
+        if isinstance(node, LatexMacroNode) and node.macroname in FORBIDDEN_TEX_MACROS:
+            return node.macroname
+
+        for child_nodes in tex_child_nodelists(node):
+            forbidden = find_forbidden_tex_macro(child_nodes)
+            if forbidden is not None:
+                return forbidden
+
+    return None
+
+
+def specials_argument_text(node: Any) -> str:
+    nodeargd = getattr(node, "nodeargd", None)
+    arguments = [
+        argument
+        for argument in (getattr(nodeargd, "argnlist", []) or [])
+        if argument is not None
+    ]
+    if not arguments:
+        return ""
+    return tex_nodes_text(arguments).strip()
+
+
+def quantifier_binder(
+    nodes: list[Any],
+    index: int,
+) -> tuple[bool, str]:
+    meta_level = False
+    cursor = index + 1
+
+    while cursor < len(nodes):
+        node = nodes[cursor]
+
+        if isinstance(node, LatexSpecialsNode) and node.specials_chars in {"^", "_"}:
+            if (
+                node.specials_chars == "^"
+                and specials_argument_text(node) == "M"
+            ):
+                meta_level = True
+            cursor += 1
+            continue
+
+        rendered_node = tex_nodes_text([node])
+        if rendered_node.strip() == "":
+            cursor += 1
+            continue
+
+        break
+
+    binder = tex_nodes_text(nodes[cursor:]).lstrip()
+    if binder.startswith("!"):
+        binder = binder[1:].lstrip()
+
+    return meta_level, binder
+
+
+def rendered_relation_violation(rendered: str) -> str | None:
+    bare_i = r"(?<![A-Za-z0-9_])i(?![A-Za-z0-9_])"
+    bare_j = r"(?<![A-Za-z0-9_])j(?![A-Za-z0-9_])"
+    bare_I = r"(?<![A-Za-z0-9_])I(?![A-Za-z0-9_])"
+
+    if re.search(rf"{bare_i}\s*≠\s*{bare_j}|{bare_j}\s*≠\s*{bare_i}", rendered):
+        return "ordinary i\\neq j index relation"
+
+    if re.search(rf"{bare_i}\s*∈\s*{bare_I}", rendered):
+        return "membership of index metavariable i in an index domain I"
+
+    return None
 
 def rendered_text_has_invalid_real_index(rendered: str) -> bool:
     allowed = "".join(sorted(CONTEXT_INDEX_NAMES))
@@ -674,31 +751,22 @@ def find_index_typing_violation(nodes: list[Any]) -> str | None:
     nodes = flatten_transparent_tex_groups(nodes)
 
     for index, node in enumerate(nodes):
-        if isinstance(node, LatexMacroNode) and node.macroname in {"exists", "forall"}:
-            quantified_index = leading_context_index(nodes[index + 1 :])
-            if quantified_index is not None:
-                return (
-                    f"object-level existential quantification over index metavariable {quantified_index}"
-                    if node.macroname == "exists"
-                    else f"object-level universal quantification over index metavariable {quantified_index}"
-                )
-
-        if isinstance(node, LatexMacroNode) and node.macroname == "neq":
-            left_index = trailing_context_index(nodes[:index])
-            right_index = leading_context_index(nodes[index + 1 :])
-            if left_index is not None and right_index is not None:
-                return f"ordinary {left_index}\\neq {right_index} index relation"
-
-        if isinstance(node, LatexMacroNode) and node.macroname == "in":
-            left_index = trailing_context_index(nodes[:index])
+        if isinstance(node, LatexMacroNode) and node.macroname in {
+            "exists",
+            "forall",
+            "nexists",
+        }:
+            meta_level, binder = quantifier_binder(nodes, index)
             if (
-                left_index is not None
-                and tex_text_starts_with_bare_name(nodes[index + 1 :], "I")
-            ):
-                return (
-                    f"membership of index metavariable {left_index} "
-                    "in an index domain I"
+                re.match(r"i(?![A-Za-z0-9_])", binder)
+                and not (
+                    meta_level
+                    and node.macroname in {"exists", "forall"}
                 )
+            ):
+                if node.macroname == "forall":
+                    return "object-level universal quantification over index metavariable i"
+                return "object-level existential quantification over index metavariable i"
 
         for child_nodes in tex_child_nodelists(node):
             violation = find_index_typing_violation(child_nodes)
@@ -706,7 +774,6 @@ def find_index_typing_violation(nodes: list[Any]) -> str | None:
                 return violation
 
     return None
-
 
 def validate_index_typing(
     path: Path,
@@ -724,18 +791,27 @@ def validate_index_typing(
             )
 
         parsed_nodes = list(nodes)
-        forbidden_macro = find_forbidden_invisible_tex_macro(parsed_nodes)
+        forbidden_macro = find_forbidden_tex_macro(parsed_nodes)
         if forbidden_macro is not None:
             fail(
-                f"{path.relative_to(ROOT)} uses invisible TeX macro \\{forbidden_macro} "
-                f"near active line {line_number}; active proposal math must have auditable visible semantics"
+                f"{path.relative_to(ROOT)} uses forbidden TeX macro \\{forbidden_macro} "
+                f"near active line {line_number}; active proposal math must remain statically auditable"
             )
 
-        if rendered_text_has_invalid_real_index(tex_nodes_text(parsed_nodes)):
+        rendered = tex_nodes_text(parsed_nodes)
+
+        if rendered_text_has_invalid_real_index(rendered):
             fail(
                 f"{path.relative_to(ROOT)} reintroduces Real with a missing or invalid context index "
                 f"near active line {line_number}; allowed context metavariables are "
                 f"{', '.join(sorted(CONTEXT_INDEX_NAMES))} (EXT-02)"
+            )
+
+        relation_violation = rendered_relation_violation(rendered)
+        if relation_violation is not None:
+            fail(
+                f"{path.relative_to(ROOT)} reintroduces {relation_violation} "
+                f"near active line {line_number}; indices are meta-level type parameters (EXT-02)"
             )
 
         violation = find_index_typing_violation(parsed_nodes)
