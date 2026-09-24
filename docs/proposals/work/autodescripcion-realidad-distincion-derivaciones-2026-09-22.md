@@ -6758,6 +6758,706 @@ La versión fuerte de Cellular Reality queda así:
 
 no “todo \(R_i\) es una célula porque tiene subíndice y closure”.
 
+
+#### 0.11.80. REV-07h — Memoization y Baking: individuar el source antes de recontextualizarlo
+
+REV-07e introdujo GenesisTrivialization para expresar que una rama parental compleja puede quedar representada child-side por una contribución suficiente. REV-07g mostró después que la individuación no puede darse por supuesta: el índice registra una unidad ya justificada y no crea por sí mismo el corte que etiqueta.
+
+Estas dos líneas revelan una deuda intermedia. Si se escribe directamente:
+
+\[
+\operatorname{Bake}_{i\to k}(P_i),
+\]
+
+para una estructura compleja \(P_i\), la notación presupone silenciosamente que ya sabemos por qué exactamente \(P_i\) —con ese alcance, esa historia y esa granularidad— constituye la unidad que debe ser transportada. Sin un criterio previo, el baking puede esconder el mismo coarse-graining arbitrario que CI7/CI8 y IA6/IA8 intentan bloquear.
+
+REV-07h separa por ello tres operaciones conceptualmente distintas:
+
+\[
+\boxed{
+\text{estructura/historia compleja}
+\;\xrightarrow{\text{unitización source-side}}\;
+\text{SourceUnit}
+\;\xrightarrow{\text{Bake}}\;
+\text{realización target-native}
+\;\xrightarrow[\text{cuando aplique}]{\text{ContextGenesis}}\;
+\text{GenesisTrivialization}.
+}
+\]
+
+La tesis central es:
+
+\[
+\boxed{
+\textbf{Memoization unitizes; baking recontextualizes.}
+}
+\]
+
+Pero memoization no se convierte en requisito universal de todo baking. Una entidad simple o una unidad ya individuada por una teoría independiente puede satisfacer SourceUnit sin memoization. El requisito general es más débil:
+
+\[
+\boxed{
+\operatorname{Bake}^{\mathsf M}_{i\to k}
+\text{ exige una SourceUnit source-side independientemente justificada.}
+}
+\]
+
+Memoization es la candidata específica para obtener esa SourceUnit cuando el source es una historia, proceso o estructura cuya identidad no coincide con un snapshot ni con una lista fija de componentes.
+
+#### 0.11.81. SourceUnit: el contrato previo a cualquier baking
+
+Introducimos el juicio metateórico:
+
+\[
+\operatorname{SourceUnit}^{\mathsf M}_i(u_i;\rho,\upsilon),
+\]
+
+leído: \(u_i\) está suficientemente individuado dentro de \(i\) para desempeñar el rol \(\rho\), bajo el witness de unitización \(\upsilon\).
+
+\(\rho\) es explícito porque una estructura puede constituir una unidad para una familia de dependencias sin ser una unidad absoluta para toda descripción posible. \(\upsilon\) registra qué fundamento hace legítimo el corte: puede ser memoization, una estructura organizacional, un criterio world-making theory-specific o cualquier descarga independiente compatible con REV-07g.
+
+SourceUnit debe satisfacer al menos:
+
+1. **SU1 / source actuality:** el contenido cuya unidad se afirma pertenece realmente a \(i\); una descripción externa no fabrica la unidad.
+2. **SU2 / non-arbitrary scope:** el corte no se elige post hoc para producir el resultado baked deseado.
+3. **SU3 / role explicitness:** se declara qué familia de usos, dependencias o continuaciones fija \(\rho\).
+4. **SU4 / recoding invariance:** recodificaciones fieles no cambian la unidad por accidente notacional.
+5. **SU5 / anti-aggregation:** envolver estructuras independientes en una representación conjunta no crea una SourceUnit sin estructura integradora adicional.
+6. **SU6 / temporal discipline:** para fuentes diacrónicas, la identidad no se reduce a igualdad de componentes instantáneos.
+7. **SU7 / no context promotion:** ser SourceUnit para \(\rho\) no implica ContextIndividuation, IndexAdmission, RegimeTotal ni REC.
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{SourceUnit}^{\mathsf M}_i(u_i;\rho,\upsilon)
+\not\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(u_i).
+}
+\]
+
+Esta guardia es esencial: un subsistema, proceso, organismo o máquina puede ser una unidad funcionalmente robusta dentro de \(R_i\) sin convertirse por ello en un nuevo contexto \(R_j\).
+
+#### 0.11.82. Memoization no es hashing: equivalencia por continuaciones
+
+Sea \(\mathcal H_i\) una familia de historias/configuraciones source-side admisibles y sea \(\mathcal K_{i,\rho}\) una familia independientemente especificada de continuaciones relevantes para el rol \(\rho\).
+
+Introducimos una observación/evaluación relativa al rol:
+
+\[
+\operatorname{Obs}_{i,\rho}(h_i\odot c_i),
+\]
+
+donde \(h_i\odot c_i\) significa prolongar la historia \(h_i\) mediante la continuación \(c_i\) cuando la composición está bien formada.
+
+Definimos provisionalmente la equivalencia de memoization:
+
+\[
+\boxed{
+h_i\equiv^{\mathrm{memo}}_{i,\rho}h'_i
+\Longleftrightarrow
+\forall c_i\in\mathcal K_{i,\rho}\;
+\operatorname{Obs}_{i,\rho}(h_i\odot c_i)
+\simeq_{\rho}
+\operatorname{Obs}_{i,\rho}(h'_i\odot c_i).
+}
+\]
+
+Dos historias son memo-equivalentes cuando ninguna continuación admisible relevante para \(\rho\) necesita distinguirlas.
+
+Esto no es un hash. Una igualdad accidental de código, nombre, vector o firma no basta:
+
+\[
+\operatorname{Code}(h_i)=\operatorname{Code}(h'_i)
+\not\Rightarrow
+h_i\equiv^{\mathrm{memo}}_{i,\rho}h'_i.
+\]
+
+La dirección explicativa va al revés: si la teoría justifica la equivalencia por continuaciones, entonces puede buscarse una representación canónica o un estado suficiente para esa clase.
+
+La familia \(\mathcal K_{i,\rho}\) tampoco puede escogerse vacía o degenerada para forzar equivalencia universal. Debe venir con una justificación de **role adequacy**:
+
+\[
+\operatorname{RoleAdequate}^{\mathsf M}_i(\rho,\mathcal K_{i,\rho}).
+\]
+
+Como mínimo debe ser no vacía cuando existan continuaciones relevantes, incluir los tests capaces de discriminar las diferencias que la teoría atribuye al rol y permanecer estable bajo recodificaciones fieles.
+
+#### 0.11.83. Memo-state: estado suficiente y reentrante
+
+La quotient class:
+
+\[
+[h_i]_{\equiv^{\mathrm{memo}}_{i,\rho}}
+\]
+
+es todavía una construcción metateórica. No se sigue de ella que exista dentro de \(i\) un objeto ontológico que sea literalmente esa clase.
+
+La versión fuerte de memoization exige una realización source-side:
+
+\[
+\operatorname{MemoState}^{\mathsf M}_i
+(h_i\Downarrow m_i;\rho,\mu),
+\]
+
+donde \(m_i\) es una estructura/estado actual de \(i\) y \(\mu\) es el witness que explica cómo \(m_i\) realiza la información suficiente del historial para el rol.
+
+Las obligaciones mínimas son:
+
+1. **M1 / actuality:** \(m_i\) es actual en \(i\); una canonicalización semántica externa no crea un memo-state ontológico.
+2. **M2 / role independence:** \(\rho\) y su familia de continuaciones se justifican independientemente del deseo de identificar precisamente \(h_i\) con otra historia.
+3. **M3 / sufficiency:** respecto de \(\rho\), las dependencias posteriores relevantes pueden resolverse mediante \(m_i\) sin reabrir toda la historia interna de \(h_i\).
+4. **M4 / reentrancy:** \(m_i\) puede actuar como estado de entrada para continuaciones futuras del rol; no es solo un resumen retrospectivo.
+5. **M5 / equivalence soundness:** historias asignadas al mismo memo-state satisfacen la equivalencia por continuaciones declarada.
+6. **M6 / discrimination completeness:** si una diferencia altera alguna continuación relevante de \(\rho\), la teoría no puede conservar silenciosamente el mismo memo-state sin una actualización explícita.
+7. **M7 / recoding invariance:** la memoization no depende de identificadores, ordenaciones o codificaciones accidentales.
+8. **M8 / provenance retention:** colapsar diferencias para \(\rho\) no implica que las historias objetivamente distintas dejen de haber ocurrido.
+9. **M9 / anti-aggregation:** concatenar descripciones de dos fuentes independientes no genera por sí solo un memo-state unitario.
+10. **M10 / no context inference:** MemoState no implica ContextIndividuation ni totalización.
+
+Cuando M1–M10 están descargadas, usamos:
+
+\[
+\boxed{
+\operatorname{MemoIndividuated}^{\mathsf M}_i
+(h_i;m_i,\rho,\mu)
+}
+\]
+
+y obtenemos una vía suficiente hacia SourceUnit:
+
+\[
+\boxed{
+\operatorname{MemoIndividuated}^{\mathsf M}_i
+(h_i;m_i,\rho,\mu)
+\Rightarrow
+\operatorname{SourceUnit}^{\mathsf M}_i(m_i;\rho,\mu).
+}
+\]
+
+La unitización recae en el estado suficiente reentrante, no en una caja dibujada alrededor de una colección arbitraria de hechos.
+
+#### 0.11.84. Invalidation: la condición que impide identidad por conveniencia
+
+La analogía informática produce aquí una obligación ontológica útil: una memoization seria necesita una semántica de invalidación.
+
+Sean dos etapas de una historia:
+
+\[
+h_i^{(t)}
+\leadsto
+h_i^{(t+1)}.
+\]
+
+Si el cambio no altera ninguna continuación relevante para \(\rho\), puede ser legítimo conservar el mismo estado suficiente o actualizarlo mediante una transición equivalente:
+
+\[
+\mu^\rho(h_i^{(t)})
+\simeq_\rho
+\mu^\rho(h_i^{(t+1)}).
+\]
+
+Pero si existe una continuación discriminante:
+
+\[
+\exists c_i\in\mathcal K_{i,\rho}:
+\operatorname{Obs}_{i,\rho}(h_i^{(t)}\odot c_i)
+\not\simeq_\rho
+\operatorname{Obs}_{i,\rho}(h_i^{(t+1)}\odot c_i),
+\]
+
+entonces la teoría debe registrar:
+
+\[
+\boxed{
+\operatorname{Invalidate}^{\mathsf M}_{i,\rho}
+(m_i^{(t)}\rightsquigarrow m_i^{(t+1)})
+}
+\]
+
+o abandonar la afirmación de que ambos estados implementan el mismo memo para ese rol.
+
+No se adopta todavía:
+
+\[
+\operatorname{Invalidate}
+\Longleftrightarrow
+\operatorname{ContextCessation}.
+\]
+
+La invalidación de un rol puede ser una transformación interna perfectamente compatible con persistencia del contexto. Su valor para Ship of Theseus es más preciso: proporciona un criterio no extensional para preguntar **qué cambios obligan a revisar la identidad operacional de una unidad**.
+
+Así, reemplazar todos los componentes puede ser compatible con persistencia de una SourceUnit si la cadena de actualizaciones de memo-state permanece válida; conservar todos los componentes puede ser insuficiente si cambia una dependencia que obliga a invalidar el memo relevante.
+
+#### 0.11.85. Memoization es role-relative sin convertirse en relativismo ontológico
+
+Puede ocurrir:
+
+\[
+h_i\equiv^{\mathrm{memo}}_{i,\rho_1}h'_i
+\]
+
+pero:
+
+\[
+h_i\not\equiv^{\mathrm{memo}}_{i,\rho_2}h'_i.
+\]
+
+Esto no significa que la historia objetiva dependa del observador ni que \(h_i\) y \(h'_i\) sean “la misma cosa” sin calificación. Significa que una diferencia puede ser irrelevante para un contrato de continuación y decisiva para otro.
+
+Por ello la identidad producida por memoization es:
+
+\[
+\boxed{
+\text{role-unit identity},
+}
+\]
+
+no identidad ontológica absoluta por decreto.
+
+Una teoría que pretenda elevar una memoization a criterio de ContextIndividuation debe demostrar algo adicional: que el conjunto de roles usado por la memoization captura precisamente la estructura world-making, organizacional o boundary-grounding relevante para la unidad contextual. Sin esa descarga, una caché funcional sigue siendo una caché funcional, no una nueva realidad.
+
+Esto abre una implementación candidata de la ruta theory-relative de REV-07g:
+
+\[
+\mathrm{TR\text{-}M}.
+\]
+
+Esquemáticamente:
+
+\[
+\operatorname{MemoCriterion}_{\mathcal T}(C;\mu,\mathcal R)
++
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_\mu)
+\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_\mu).
+\]
+
+TR-M no se declara teorema ni se identifica con TR-O. TR-O individúa mediante cierre organizacional/endogenous boundary; TR-M lo haría mediante una familia de estados suficientes reentrantes cuya estructura debe demostrar además relevancia contextual. Una teoría concreta podría satisfacer ambas descripciones.
+
+#### 0.11.86. Baking se separa de ContextGenesis
+
+Definimos baking como juicio metateórico genérico:
+
+\[
+\boxed{
+\operatorname{Bake}^{\mathsf M}_{i\to k}
+(u_i\Downarrow\sigma_k;\rho,\beta),
+}
+\]
+
+donde:
+
+- \(u_i\) es una SourceUnit ya justificada en \(i\);
+- \(\sigma_k\) es una realización actual y bien tipada de \(k\);
+- \(\rho\) fija el rol para el que el source debe seguir siendo suficiente;
+- \(\beta\) es el contrato de preservación/trivialización.
+
+Bake no es una función objeto entre índices. No existe un token que atraviese literalmente una frontera:
+
+\[
+u_i\not\in R_k.
+\]
+
+El juicio dice que existe una relación de provenance y suficiencia por la que una estructura target-native \(\sigma_k\) puede desempeñar en \(k\) el rol heredado de \(u_i\).
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{Bake}^{\mathsf M}_{i\to k}
+\not\Rightarrow
+\operatorname{ContextGenesis}^{\mathsf M}.
+}
+\]
+
+Puede haber baking en continuidad, embedding, reconstrucción o composición sin que nazca un contexto nuevo. ContextGenesis es una aplicación ontogénica particular, no la definición general de baking.
+
+#### 0.11.87. Contrato B1–B10 de baking
+
+Para admitir:
+
+\[
+\operatorname{Bake}^{\mathsf M}_{i\to k}
+(u_i\Downarrow\sigma_k;\rho,\beta),
+\]
+
+se exige provisionalmente:
+
+1. **B1 / source unit:** \(\operatorname{SourceUnit}^{\mathsf M}_i(u_i;\rho,\upsilon)\). No se bakea una colección compleja cuyo corte source-side carece de fundamento.
+2. **B2 / target actuality:** \(\sigma_k\) es contenido actual de \(k\); la operación meta no fabrica por sí sola ontología child/target-side.
+3. **B3 / provenance:** existe dependencia histórica/ontogénica suficiente para atribuir \(\sigma_k\) a \(u_i\); coincidencia, semejanza o isomorfismo no bastan.
+4. **B4 / typed realization:** toda consecuencia objeto ocurre en el lenguaje de \(k\). Bake no introduce predicados cross-index.
+5. **B5 / preservation contract:** \(\beta\) declara qué estructura de \(\rho\) debe preservarse y qué diferencias pueden dejar de ser operativas.
+6. **B6 / target factorization:** toda dependencia target-side atribuida a la contribución baked factoriza, para el rol declarado, a través de \(\sigma_k\).
+7. **B7 / declared kernel:** si Bake es no inyectivo, la equivalencia inducida debe corresponder exactamente a diferencias autorizadas por \(\beta\), no a colisiones accidentales.
+8. **B8 / recoding invariance:** codificaciones fieles de source y target preservan el juicio.
+9. **B9 / no retroactivity:** trivializar diferencias para \(k\) no elimina ni reescribe hechos reales de \(i\).
+10. **B10 / no genesis inference:** baking por sí solo no prueba ContextGenesis, ContextMerger, TokenMerger, IndexAdmission ni RegimeTotal.
+
+B6 expresa la idea operacional central:
+
+\[
+\boxed{
+\text{respecto de }\rho,
+\quad
+u_i\text{ importa en }k
+\text{ mediante }\sigma_k.
+}
+\]
+
+B7 endurece el antiguo GT4: la no-inyectividad puede ser una virtud solo cuando la teoría declara qué quotient está realizando.
+
+#### 0.11.88. ConservativeBake y QuotientBake
+
+La nueva separación permite conservar la taxonomía previa sin identificarla con GenesisTrivialization.
+
+**ConservativeBake.** El contrato \(\beta\) preserva información suficiente para reconstruir la SourceUnit relevante, dada una teoría de decodificación:
+
+\[
+\operatorname{Bake}^{\mathsf M}_{i\to k}
+(u_i\Downarrow\sigma_k;\rho,\beta)
++
+\operatorname{Recoverable}^{\mathsf M}(u_i\mid\sigma_k,\beta).
+\]
+
+**QuotientBake.** Dos SourceUnit genuinamente distintas pueden realizar la misma contribución target-side:
+
+\[
+\operatorname{Bake}^{\mathsf M}_{i\to k}
+(u_i\Downarrow\sigma_k;\rho,\beta),
+\]
+
+\[
+\operatorname{Bake}^{\mathsf M}_{j\to k}
+(v_j\Downarrow\sigma_k;\rho,\beta),
+\]
+
+con:
+
+\[
+u_i\not\simeq v_j.
+\]
+
+Definimos solo metateóricamente el kernel inducido:
+
+\[
+u_i
+\sim^{\mathsf M}_{\operatorname{Bake},k,\rho,\beta}
+v_j
+\]
+
+cuando ambos caen en la misma realización target-side bajo el mismo contrato admisible.
+
+La igualdad de outputs baked ya no plantea por defecto un “problema de colisión”. La pregunta correcta es:
+
+\[
+\boxed{
+\text{¿la igualdad pertenece al kernel declarado por }\beta
+\text{ o es una pérdida de distinción no autorizada?}
+}
+\]
+
+Solo en el primer caso la colisión es una quotient convergence legítima.
+
+#### 0.11.89. Dos kernels distintos: Memo no es Bake
+
+Esta separación impide confundir dos equivalencias conceptualmente diferentes.
+
+El kernel de memoization:
+
+\[
+h_i
+\equiv^{\mathrm{memo}}_{i,\rho}
+h'_i
+\]
+
+dice que diferencias internas de dos historias no son necesarias para sus continuaciones source-side bajo \(\rho\).
+
+El kernel de baking:
+
+\[
+u_i
+\sim^{\mathsf M}_{\operatorname{Bake},k,\rho,\beta}
+v_j
+\]
+
+dice que diferencias entre SourceUnit ya individuadas dejan de ser necesarias para un rol target-side bajo \(\beta\).
+
+Por tanto puede ocurrir:
+
+\[
+h_i
+\not\equiv^{\mathrm{memo}}_{i,\rho}
+h'_i
+\]
+
+mientras:
+
+\[
+\operatorname{Bake}(m_i)
+=
+\operatorname{Bake}(m'_i)
+\]
+
+como abreviatura metateórica de dos juicios Bake con el mismo output.
+
+Esta geometría es exactamente la que necesita SignatureConvergence: dos fuentes que siguen siendo realmente diferentes source-side pueden converger en una misma contribución porque **el hijo trivializa una diferencia que el padre todavía necesitaba**.
+
+La composición conceptual queda:
+
+\[
+\boxed{
+P_i
+\xrightarrow{\operatorname{Memo}^{\rho}}
+m_i
+\overset{\mathsf M}{\xrightarrow{\operatorname{Bake}^{\rho,\beta}_{i\to k}}}
+\sigma_k.
+}
+\]
+
+La primera flecha resuelve “¿qué unidad source-side persiste/puede reutilizarse?”. La segunda resuelve “¿qué de esa unidad necesita existir operacionalmente en el target?”.
+
+#### 0.11.90. GenesisTrivialization pasa a ser una aplicación de Bake
+
+REV-07e queda refinado, no eliminado.
+
+Para una ContextGenesis real:
+
+\[
+\operatorname{ContextGenesis}^{\mathsf M}(\ldots\Rightarrow k;\gamma),
+\]
+
+una contribución parental puede satisfacer:
+
+\[
+\operatorname{Bake}^{\mathsf M}_{i\to k}
+(u_i\Downarrow\sigma_k;\rho,\beta).
+\]
+
+Cuando además esa realización desempeña el papel constitutivo/suficiente exigido por la formación \(\gamma\), obtenemos el caso ontogénico:
+
+\[
+\boxed{
+\operatorname{GenesisTrivialization}^{\mathsf M}_{i\to k}
+(u_i\Rightarrow\sigma_k;\gamma,\rho,\beta).
+}
+\]
+
+Por tanto, arquitectónicamente:
+
+\[
+\boxed{
+\operatorname{GenesisTrivialization}
+\subset
+\operatorname{Bake},
+}
+\]
+
+entendiendo \(\subset\) aquí como relación entre clases de juicios metateóricos, no como inclusión de objetos.
+
+Los antiguos GT1–GT7 se redistribuyen:
+
+- provenance, actuality, factorization, screening-off, no-retroactivity y recoding invariance pasan a obligaciones generales B2–B9;
+- la conexión específica con una formación constitutiva permanece en GenesisTrivialization;
+- ContextGenesis deja de ser condición para hablar de baking en general.
+
+Esto reduce la sobrecarga conceptual de REV-07e y permite reutilizar la teoría de baking en ContextEmbedding, FaithfulContinuation y otras interfaces futuras sin fingir que toda recontextualización es nacimiento de un contexto.
+
+#### 0.11.91. Relación con Ship of Theseus y persistencia diacrónica
+
+Memoization ofrece una vía concreta para investigar la deuda que REV-07g dejó abierta.
+
+Sea una unidad diacrónica con etapas:
+
+\[
+P_i^{(0)}
+\leadsto
+P_i^{(1)}
+\leadsto
+\cdots
+\leadsto
+P_i^{(n)}.
+\]
+
+La identidad no se decide por:
+
+\[
+\operatorname{Parts}(P_i^{(0)})
+=
+\operatorname{Parts}(P_i^{(n)}).
+\]
+
+Una candidata más fuerte es la existencia de una cadena coherente de estados suficientes:
+
+\[
+m_i^{(0)}
+\rightsquigarrow
+m_i^{(1)}
+\rightsquigarrow
+\cdots
+\rightsquigarrow
+m_i^{(n)},
+\]
+
+donde cada actualización satisface el contrato de memoization y las invalidaciones necesarias están justificadas.
+
+Esto no demuestra todavía:
+
+\[
+P_i^{(0)}
+\equiv_{\mathrm{identity}}
+P_i^{(n)}.
+\]
+
+Sí proporciona una estructura objetiva que ContinuationProfile puede intentar preservar sin escoger invariantes post hoc.
+
+En consecuencia, REV-07h propone estudiar:
+
+\[
+\boxed{
+\operatorname{MemoContinuation}^{\mathsf M}
+\Longrightarrow?
+\operatorname{ContinuationProfile}
+\Longrightarrow
+\operatorname{FaithfulContinuation}^{\mathsf M},
+}
+\]
+
+sin afirmar aún ninguna de las implicaciones como teorema universal.
+
+#### 0.11.92. Relación con \(\Omega_i\): posible memo-normal form, no definición vigente
+
+REV-07e reubicó \(\Omega_i\) como posible representación canónica de estructura generativa módulo trivializaciones admisibles. REV-07h ofrece ahora una construcción candidata más precisa.
+
+Si una teoría dispone de una familia adecuada de roles:
+
+\[
+\mathcal R_i=\{\rho_1,\rho_2,\ldots\},
+\]
+
+y de estructuras de memoization legítimas:
+
+\[
+\mathcal M_i^{\rho_1},
+\mathcal M_i^{\rho_2},
+\ldots,
+\]
+
+puede investigarse si existe alguna canonicalización conjunta:
+
+\[
+\Omega_i
+\stackrel{?}{\simeq}
+\operatorname{Can}
+\left(
+\{\mathcal M_i^\rho\}_{\rho\in\mathcal R_i}
+\right).
+\]
+
+No se adopta esta igualdad como definición. Permanecen al menos cuatro deudas:
+
+1. qué familia de roles es suficiente y no elegida post hoc;
+2. cómo combinar roles potencialmente no equivalentes;
+3. si existe canonicalización sin pérdida de estructura necesaria para continuidad;
+4. cómo coordinarla con trivializaciones quotient y provenance.
+
+La ruta de dependencia admisible sería:
+
+\[
+\boxed{
+\chi
+\to
+i
+\to
+\text{estructura generativa/iterativa}
+\to
+\text{memoization adecuada}
+\to
+\Omega_i
+\to
+\text{auditoría de continuidad/baking}.
+}
+\]
+
+\(\Omega_i\) sigue sin poder usarse retroactivamente para crear la individuación inicial de \(i\).
+
+#### 0.11.93. Stress tests de REV-07h
+
+**MB1 — hash collision.** Dos historias reciben el mismo código pero existe \(c_i\in\mathcal K_{i,\rho}\) que las distingue. Falla M5/M6. No existe memo-equivalence aunque la representación colisione.
+
+**MB2 — rol vacío.** Se toma \(\mathcal K_{i,\rho}=\varnothing\), por lo que todas las historias resultan vacuamente equivalentes. Falla RoleAdequate/M2. La memoization trivial no individúa nada.
+
+**MB3 — rol post hoc.** Después de observar dos histories distintas se define \(\rho\) precisamente para ignorar su diferencia. Falla M2/SU2 aunque el quotient resultante sea matemáticamente coherente.
+
+**MB4 — subsistema ordinario.** Un termostato, un organismo o un proceso computacional dentro de \(R_i\) puede poseer un MemoState excelente. De ello no se sigue ContextIndividuation. Falla cualquier intento de promoverlo a \(R_j\) sin una descarga adicional de REV-07g.
+
+**MB5 — reemplazo completo de componentes.** Todos los componentes de una SourceUnit cambian, pero la cadena de memo-states conserva suficiencia/reentrancy con invalidaciones correctas. El caso permanece compatible con persistencia y muestra por qué la identidad no puede reducirse al snapshot material.
+
+**MB6 — mismo memo-state, provenance distinta.** Dos historias source-side pueden ser memo-equivalentes para \(\rho\) y conservar provenance objetiva distinta. Memoization no borra el pasado; solo determina qué diferencias siguen siendo necesarias para ese rol.
+
+**MB7 — quotient bake legítimo.** Dos SourceUnit no memo-equivalentes producen la misma \(\sigma_k\), y la diferencia cae dentro del kernel declarado por \(\beta\). Es SignatureConvergence candidata, no colisión defectuosa.
+
+**MB8 — quotient bake excesivo.** Dos SourceUnit producen la misma \(\sigma_k\), pero una diferencia eliminada cambia una dependencia target-side atribuida a \(\rho\). Falla B6/B7; el baking es unsound.
+
+**MB9 — baking sin memoization.** Un source elemental ya está individuado por una teoría independiente y satisface SourceUnit directamente. Bake puede ser admisible. Esto refuta la versión demasiado fuerte “todo baking requiere memoization” y conserva solo el requisito correcto de unitización previa.
+
+**MB10 — baking sin génesis.** Una SourceUnit tiene realización fiel dentro de una estructura host/embedded target sin nueva ContextGenesis. Bake puede valer mientras GenesisTrivialization no. Esto prueba que ambas nociones no deben identificarse.
+
+#### 0.11.94. Estado de REV-07h
+
+REV-07h queda **PARTIAL / arquitectura candidata**.
+
+Se obtiene una separación no presente en REV-07e:
+
+\[
+\boxed{
+\begin{array}{rcl}
+\text{Memoization} &:& \text{historia compleja}\to\text{SourceUnit role-relative},\\
+\text{Baking} &:& \text{SourceUnit}\to\text{realización target-native},\\
+\text{GenesisTrivialization} &:& \text{Bake usado constitutivamente en ContextGenesis}.
+\end{array}
+}
+\]
+
+Y aparecen tres resultados arquitectónicos fuertes:
+
+\[
+\boxed{
+\operatorname{Bake}
+\text{ no debe seleccionar por sí mismo qué cuenta como su source complejo;}
+}
+\]
+
+\[
+\boxed{
+\operatorname{MemoIndividuated}
+\not\Rightarrow
+\operatorname{ContextIndividuation};
+}
+\]
+
+\[
+\boxed{
+\operatorname{GenesisTrivialization}
+\text{ es una especialización ontogénica de Bake, no su definición.}
+}
+\]
+
+Para cerrar REV-07h falta:
+
+1. formalizar RoleAdequate y la clase admisible de continuaciones sin circularidad;
+2. demostrar condiciones bajo las cuales \(\equiv^{\mathrm{memo}}_{i,\rho}\) es realmente una equivalencia bien definida y composicional;
+3. distinguir cuándo un MemoState es estructura ontológica actual y cuándo solo una representación semántica;
+4. dar una semántica de update/invalidation coordinada con la teoría temporal/procesual;
+5. demostrar B6/B7 en ejemplos no triviales de baking;
+6. coordinar SourceUnit/MemoContinuation con ContinuationProfile y FaithfulContinuation;
+7. decidir si alguna implementación TR-M puede satisfacer los guards de REV-07g sin colapsar subsistemas ordinarios en contextos;
+8. investigar, sin presuponerlo, si una familia de memoizations adecuadas puede inducir \(\Omega_i\).
+
+La ganancia inmediata no es demostrar identidad contextual, sino localizar la interfaz correcta entre **individuación operativa de estructura compleja** y **recontextualización ontogénica**.
+
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 **Advertencia PureOntRel.** Una relación pura puede servir como enlace ontológico de marco sin preservar una única genealogía. Por ello no se incorpora automáticamente a $\Lambda_*$ cuando esta pretende reconstruir $\operatorname{Generated}^{*}$: si conecta dos genealogías sin common ground, produciría sobreinclusión y haría fallar $\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}$. Su admisión como enlace reconstructivo requiere una justificación adicional de soundness; RelIntegrable por sí sola no basta.
