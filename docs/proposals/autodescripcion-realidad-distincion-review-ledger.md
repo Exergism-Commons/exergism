@@ -76,6 +76,10 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 | DOC-04 | MAJOR | PARTIAL | **Referencias insuficientes.** | Todos los bloques conceptuales. | Toda tesis que reutilice/debata literatura existente debe citar autores y obra; añadir mapa bibliográfico temático con relevancia exacta. |
 | DOC-05 | MAJOR | RESOLVED | **88 puntos de investigación sin jerarquía.** | Programa de investigación. | Convertirlos en backlog vinculado a IDs del ledger; eliminar duplicados y priorizar bloqueadores/majors/minors. |
 
+## Checkpoints históricos de revisión
+
+> **HISTORICAL SNAPSHOTS — NO USAR COMO STATUS VIGENTE.** Los bloques narrativos hasta la tabla/registro vivo conservan cómo evolucionaron los findings durante la PR. Sus etiquetas OPEN/PARTIAL/RESOLVED describen el momento en que se escribieron. El status vigente está en las filas REV-* actuales y en el mapa de arqueología conceptual: `work/autodescripcion-realidad-distincion-arqueologia-2026-09-25.md`.
+
 ## Avance de REV-03
 
 - **REV-03 permanece PARTIAL.** La candidata independiente se ha corregido para que la emergencia esté localizada al evento concreto: el estado resultante debe tener un comparador con el mismo perfil local y distinto valor macro, y debe habilitar al menos una traza de transición que el comparador no puede ejecutar.
@@ -89,22 +93,22 @@ Primero se resuelven los bloqueadores que deciden si el argumento habla realment
 - **REV-01 RESOLVED:** fijado $M$, la relación de eventos induce un operador $F_M$ de alcanzabilidad emergente. Extensividad, monotonía interna e idempotencia se demuestran. La revisión del argumento de Zorn muestra además que F2 era redundante: F1 + F3 bastan para elevar cotas y para el paso de exhaustividad.
 - **REV-02 RESOLVED:** el inhibidor no es un contraejemplo a F2 interna porque cambia el sistema y por tanto cambia el operador. Se conserva el contraejemplo cross-system y el lema de extensión conservativa como caracterización de cuándo los eventos sí se transportan.
 - **REV-04 RESOLVED:** el toy produce el punto fijo propio $S=\{p,c\}$ con $F_M(S)=S\neq\Sigma_M$.
-- **REV-18 PARTIAL:** ya existe un puente mínimo por incidencia y `EClosed`; sigue pendiente justificarlo ontológicamente y demostrar sus propiedades sobre dominios procesuales.
+- **REV-18 PARTIAL [snapshot histórico]:** ya existía un puente mínimo por incidencia y `EClosed`. **Status vigente posterior:** RESOLVED en tipado mediante fragmentos positivos actuales; no leer este bullet como deuda actual.
 ## Nuevos bloqueadores tras normalizar el teorema
 
-- **REV-18 PARTIAL:** el puente mínimo se reduce a incidencia de configuraciones/eventos actuales en dominios y al predicado `EClosed`; ya no se exige un embedding fuerte en un powerset.
+- **REV-18 PARTIAL [snapshot histórico]:** el puente mínimo se reducía a incidencia + `EClosed`. **Status vigente posterior:** RESOLVED en su problema de tipos.
 - **REV-19 RESOLVED:** el tipo y el orden procesual quedan fijados; las deudas restantes pertenecen a admisibilidad, K1/K2 y puente ontológico.
-- **REV-20 OPEN:** K1/cofinalidad es una premisa sustantiva nueva de la forma operator-free; definir qué significa cerrado no demuestra que todo dominio tenga una extensión cerrada.
-- **REV-09 PARTIAL** concentra la admisibilidad ontológica de la cota K2; **REV-10 RESOLVED** porque la ruta vigente ya no usa la factorización oculta; **REV-07** concentra K3/directedness.
+- **REV-20 OPEN [snapshot histórico]:** K1/cofinalidad aparecía como premisa sustantiva. **Status vigente posterior:** PARTIAL/subordinado; bajo StructAdm+COV, K1↔PSB y PON implica PSB.
+- **REV-09 PARTIAL [snapshot histórico]** concentraba K2; **status vigente posterior:** REV-09 RESOLVED set-indexed, con la cuestión class-sized trasladada a REV-22/23/25. REV-10 sigue RESOLVED.
 ## Avance de REV-20
 
-- **REV-20 permanece OPEN.** K1 se caracteriza exactamente como cofinalidad de los dominios cerrados.
+- **REV-20 permanece OPEN [snapshot histórico].** K1 se caracterizaba como cofinalidad. **Status vigente posterior:** PARTIAL/subordinado a PSB/PON en la ruta correspondiente.
 - Bajo elección, K1 equivale a la existencia de un selector extensivo e idempotente $F$ con $\operatorname{Fix}(F)=\mathfrak K$; no implica monotonía.
 - Se demuestra independencia: en $\mathfrak D=\{0<1\}$ con $\mathfrak K=\{0\}$, K2 y K3 se cumplen pero K1 falla.
 - El toy system-relative sí satisface K1 mediante $Y=F_M(X)$; la deuda restante es específicamente ontológica/procesual.
 ## Avance de K2 / REV-09–10
 
-- **REV-09 pasa a PARTIAL.** Para cadenas de fragmentos procesuales compatibles, la unión formal de dominios E-closed sigue siendo E-closed: cualquier origen presente en la unión ya aparece en algún estadio, cuyo cierre contiene también evento y resultado.
+- **REV-09 pasa a PARTIAL [snapshot histórico].** Se demostró preservación formal de EClosed bajo unión. **Status vigente posterior:** RESOLVED set-indexed una vez adoptado `Adm_i := StructAdm_i`.
 - La deuda restante es ontológica: demostrar que la unión/direct limit formal pertenece realmente a $\mathfrak D_i^{\mathrm{proc}}$ o que existe otra cota procesual admisible.
 - **REV-10 queda RESOLVED para la ruta vigente.** La inferencia oculta de presentabilidad/factorización de H8 ha sido eliminada; no se usa para probar preservación de cierre.
 ## Localidad ontológica de la emergencia
@@ -214,6 +218,7 @@ Cada cambio que cierre o avance un finding debe añadir aquí: estado nuevo, evi
 
 | Fecha | ID | Cambio | Evidencia | Commit |
 |---|---|---|---|---|
+| 2026-09-25 | ARCH-01 conceptual archaeology | Auditoría de linaje completa: conceptos históricos clasificados como ACTIVE CORE / ACTIVE SUPPORT / CONDITIONAL ROUTE / SUPERSEDED / OPEN DEBT; se rescatan explícitamente ε, proceso/branching, locality y Cluster-R refinado; se retiran como rutas vigentes supramedium global, Ω∞, ManyMany-R, witness-truthmaker y R=F(R) ontológico. Los checkpoints antiguos del ledger se marcan como históricos para evitar contradicciones con las filas vivas. | `work/autodescripcion-realidad-distincion-arqueologia-2026-09-25.md` | b6d1c6c, 51921cb, c793192 |
 | 2026-09-24 | XR-1 minimal ExistsR witness | XR-1 queda rebasado sobre la teoría independiente de sistemas de transición deterministas. El host realizer distinto del autómata local verifica OR2–OR9: typing, conmutación dinámica, soporte contrafáctico, independencia del certificado, covariancia, no-colapso, state/prefix locality y pre-registration. CI aporta evidence de OR1. IA1–IA10 quedan auditadas; XR-ε añade la definición REV-03 original sobre el mismo run: path→cycle, macro β1 0→1, perfil local controlado y `activate` disponible solo tras reorganización. EpsilonAlignment EA1–EA8 alinea esa eficacia con TR-M; εRSP sustituye al RSP genérico como puente preferido a IA0. NFA-T1/T2 demuestra que ninguna teoría Null-compatible puede implicar ExistsR: o actuality positiva o NQ. | derivaciones REV-07 §§0.11.69a–0.11.69i, 0.11.91ac–0.11.91ak + scripts/xr1_witness.py. | ec84c8c, b1a37e9, b7e7192, 4a6700c, fe9c2fc |
 | 2026-09-24 | REV-07g contextual generations | Introducida la estratificación genealógica de contextos. CtxParent solo nace de GenuineContextGenesis constitutiva; embedding/FC/Bake/SharedOntSpace no crean parentalidad. OriginaryContext OG1–OG6 define Gen0 con root ground positivo + parent completeness, no por desconocimiento. Para genealogías finitas y well-founded, \(Gen(k)=1+\max Gen(parent)\); GR1–GR8 disciplinan rank y GenSig conserva modo de génesis, espectro parental y persistencia certificada. Generation depth y ContextEmbedding depth son coordenadas ortogonales. \(R_i^{[0]}\) se interpreta como realidad contextual original, no totalidad global. | derivaciones REV-07 §§0.11.91s–0.11.91ab. | dd6ae36 |
 | 2026-09-24 | REV-07h / REV-07g TR-M nested contextuality | Rechazada la identificación “subsistema = no-contexto”. TR-M se reformula como criterio pre-indexado de contextualidad local: \(\Xi_C=\langle\widehat\Lambda_C,\widehat{\mathbb I}_C,\widehat{\mathbb P}_C,\widehat{\mathsf{CP}}_C,\partial_C\rangle\), con MC1–MC10 para typing local, positive boundary, interface mediation, reentrant quotient dynamics, role/interaction coverage, counterfactual autonomy, anti-arbitrary aggregation, level discipline y genesis/persistence. TM-T1 descarga ContextIndividuation condicionalmente vía IndAdequate; TM-T2 permite ContextEmbedding de contexts anidados. DA6 pasa de no-context-proliferation a no-free-promotion. | derivaciones REV-07 §§0.11.91k–0.11.91r. | b1bc3b8 |
