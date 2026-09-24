@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from markdown_it import MarkdownIt
+from mdit_py_plugins.dollarmath import dollarmath_plugin
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -26,7 +27,10 @@ HIDDEN_BLOCK_BOUNDARY = "\u241e"
 
 # Structural Markdown semantics are delegated to a standards-conformant CommonMark parser.
 # Do not reintroduce regex/state-machine parsing for fences, indented code, HTML blocks or comments.
-MARKDOWN = MarkdownIt("commonmark", {"html": True})
+MARKDOWN = MarkdownIt("commonmark", {"html": True}).use(
+    dollarmath_plugin,
+    allow_blank_lines=True,
+)
 
 # Critical TeX is a canonical source contract, not a LaTeX-equivalence problem. Semantically
 # equivalent TeX spellings intentionally fail until the canonical contract itself is changed.
@@ -172,11 +176,14 @@ def normalize_source(text: str) -> str:
 
 def inline_plain_text(token: Any) -> str:
     if token.children:
-        return "".join(
-            child.content
-            for child in token.children
-            if child.type in {"text", "code_inline"}
-        ).strip()
+        parts: list[str] = []
+        for child in token.children:
+            if child.type in {"text", "code_inline"}:
+                parts.append(child.content)
+            elif child.type == "math_inline":
+                markup = child.markup or "$"
+                parts.append(f"{markup}{child.content}{markup}")
+        return "".join(parts).strip()
     return token.content.strip()
 
 
