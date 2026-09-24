@@ -6434,12 +6434,152 @@ o incluso la consecuencia condicional:
 
 No puede obtener una afirmación contingente de actualidad solo de la satisfacibilidad del modelo.
 
-Para cerrar ExistsR quedan conceptualmente dos rutas no circulares:
+Por NFA-T1/NFA-T2, para cerrar ExistsR quedan conceptualmente dos rutas no circulares:
 
 1. **ruta realizacional/empírica:** exhibir alguna OnticRealization actual y adecuada; el witness que la evidencia se elimina de la conclusión por WC-T1;
 2. **ruta NQ/a priori:** demostrar independientemente que NoR no es una realización admisible, de modo que alguna realización no nula sea necesaria.
 
 La primera necesita actualidad pero no observador privilegiado. La segunda evitaría la premisa empírica, pero continúa abierta.
+
+#### 0.11.69f. NFA-T1 — No-Free-Actuality theorem
+
+La distinción witness/truthmaker permite aislar un límite lógico general.
+
+Sea \(\Sigma\) un conjunto de premisas metateóricas. Definimos:
+
+\[
+\boxed{
+\operatorname{NullCompatible}^{\mathsf M}(\Sigma)
+}
+\]
+
+cuando existe una interpretación/realización nula admisible del metalenguaje en la que:
+
+\[
+\operatorname{NoR}
+\]
+
+y todas las fórmulas de \(\Sigma\) permanecen satisfechas.
+
+No se introduce con ello un objeto “mundo nulo”. Es una propiedad semántica de la teoría/premisas: **las premisas no excluyen la ausencia de toda instanciación RegimeTotal**.
+
+Entonces, por soundness elemental de consecuencia:
+
+\[
+\boxed{
+\operatorname{NullCompatible}^{\mathsf M}(\Sigma)
+\Rightarrow
+\Sigma
+\not\models
+\operatorname{ExistsR}.
+}
+\]
+
+**Demostración.** Si \(\Sigma\models ExistsR\), toda interpretación admisible que satisface \(\Sigma\) satisface ExistsR. Pero NullCompatible aporta una interpretación admisible que satisface \(\Sigma\land NoR\). Contradicción. \(\square\)
+
+Éste es **NFA-T1 — No-Free-Actuality**.
+
+Su contenido es fuerte:
+
+> ninguna colección de definiciones, consistencia interna, closures, morphisms o principios puramente condicionales que siga siendo compatible con NoR puede demostrar ExistsR.
+
+#### 0.11.69g. NFA-T2 — dicotomía de rutas hacia ExistsR
+
+De NFA-T1 sigue que toda prueba no circular de ExistsR debe contener al menos una premisa \(\phi\) tal que:
+
+\[
+\neg
+\operatorname{NullCompatible}^{\mathsf M}(\{\phi\}),
+\]
+
+o demostrar que Null no es admisible en absoluto.
+
+Por tanto las rutas exhaustivas a este nivel son:
+
+\[
+\boxed{
+\begin{array}{ll}
+\textbf{A / actuality route:}
+&
+\operatorname{ActualStructuralRealization}(H,C;\varrho)
+\text{ u otra premisa actual positiva};
+\\[1mm]
+\textbf{B / NQ route:}
+&
+\neg\operatorname{AdmissiblyRealizable}^{\mathsf M}(\operatorname{Null}^{\mathsf M}).
+\end{array}
+}
+\]
+
+La ruta A es contingente/realizacional. La ruta B sería necesaria/a priori si pudiera demostrarse.
+
+No hay una tercera ruta puramente formal basada solo en construir un modelo no nulo:
+
+\[
+\operatorname{Model}(C)
+\not\Rightarrow
+\operatorname{ExistsR}.
+\]
+
+#### 0.11.69h. RSP no es la premisa de actualidad
+
+RSP:
+
+\[
+\operatorname{ActualStructuralRealization}(H,C;\varrho)
++
+\operatorname{MCAdequate}(C)
+\Rightarrow
+IA0(C)
+\]
+
+es un principio de **suficiencia de realización**, no de existencia.
+
+Bajo Null, su antecedente ActualStructuralRealization es falso; por tanto RSP puede ser verdadero vacuamente. En consecuencia:
+
+\[
+\boxed{
+\mathrm{RSP}
+\not\Rightarrow
+\operatorname{ExistsR}.
+}
+\]
+
+La carga anti-Null está en:
+
+\[
+\operatorname{Obtains}^{\mathsf M}(H),
+\]
+
+no en el evidence witness ni en RSP.
+
+Esto evita un desplazamiento del problema: sustituir “el certificado existe” por “RSP es verdadero” tampoco demuestra actualidad.
+
+#### 0.11.69i. Consecuencia epistemológica: prueba empírica vs prueba a priori
+
+Una descarga de la ruta A puede justificar ExistsR del mismo modo que una prueba empírica de existencia justifica cualquier existential contingente:
+
+\[
+\operatorname{Evidences}(\chi;\operatorname{Obtains}(H))
+\]
+
+más una teoría adecuada permite inferir racionalmente:
+
+\[
+\operatorname{Obtains}(H),
+\]
+
+sin hacer de \(\chi\) un truthmaker.
+
+Pero la inferencia seguirá siendo **empírico-metateórica**, no un teorema de lógica pura.
+
+Por tanto deben distinguirse tres statuses:
+
+1. **FORMAL-CONDITIONAL:** \(\phi\Rightarrow ExistsR\);
+2. **EMPIRICALLY-DISCHARGED:** existe evidencia independiente adecuada para la premisa actual \(\phi\);
+3. **A-PRIORI / UNCONDITIONAL:** ExistsR se obtiene sin premisa contingente de actualidad, por ejemplo si NQ queda demostrado.
+
+Esta distinción evita llamar “incondicional” a una prueba cuya única condición ha sido descargada empíricamente.
 
 #### 0.11.70. Auditoría posterior con \(\Omega_i\) sin circularidad
 
