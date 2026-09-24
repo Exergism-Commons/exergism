@@ -8128,13 +8128,21 @@ u\equiv_{\mathbb I^\rho}v
 
 \[
 \boxed{
-q_{\mathbb I^\rho}=d_\beta\circ\operatorname{Bake}
+q^S_{\Theta}
+=
+d_\beta
+\circ
+q^T_{\Theta,k}
+\circ
+\operatorname{Bake}
 \Longrightarrow
-\ker(\operatorname{Bake})
+\equiv^\beta_{T,\Theta}
 \subseteq
-\ker(\mathbb I^\rho).
+E^S_\Theta.
 }
 \]
+
+La forma con quotient target contractual se desarrolla y generaliza en §0.11.87; evita identificar el kernel de Bake con igualdad literal de tokens target.
 
 Esto cierra la deuda específica de **formalizar InterfaceContract/trace semantics y demostrar IC1–IC10 en ejemplos no triviales**. No cierra REV-07h completo: RoleAdequate, memo-equivalence composicional, update/invalidation, la coordinación con ContinuationProfile/TR-M, InterfaceWall fuerte y la posible inducción de \(\Omega_i\) permanecen abiertos.
 
@@ -11023,49 +11031,54 @@ Por tanto la deuda específica de **coordinar B1–B10 con la semántica de inte
 
 La nueva separación permite conservar la taxonomía previa sin identificarla con GenesisTrivialization.
 
-**ConservativeBake.** El contrato \(\beta\) preserva información suficiente para reconstruir la SourceUnit relevante, dada una teoría de decodificación:
+**ConservativeBake.** El contrato \(\beta\) preserva información suficiente para reconstruir la SourceUnit relevante, dada una teoría de decodificación adicional a B7:
 
 \[
 \operatorname{Bake}^{\mathsf M}_{i\to k}
-(u_i\Downarrow\sigma_k;\rho,\beta)
+(u_i\Downarrow\sigma_k;\Theta,\beta,\pi)
 +
-\operatorname{Recoverable}^{\mathsf M}(u_i\mid\sigma_k,\beta).
+\operatorname{Recoverable}^{\mathsf M}(u_i\mid\sigma_k,\beta,\pi).
 \]
 
-**QuotientBake.** Dos SourceUnit genuinamente distintas pueden realizar la misma contribución target-side:
+ConservativeBake es más fuerte que BakeSound: B7 solo exige recuperar la **clase contractual source**, mientras ConservativeBake exige recuperar la SourceUnit al nivel declarado por la teoría de reconstrucción.
+
+**QuotientBake.** Dos SourceUnit genuinamente distintas pueden realizar target tokens distintos o iguales y, sin embargo, caer en la misma clase contractual target:
 
 \[
 \operatorname{Bake}^{\mathsf M}_{i\to k}
-(u_i\Downarrow\sigma_k;I^\rho,\beta),
+(u_i\Downarrow\sigma_k;\Theta,\beta,\pi_u),
 \]
 
 \[
 \operatorname{Bake}^{\mathsf M}_{j\to k}
-(v_j\Downarrow\sigma_k;\rho,\beta),
+(v_j\Downarrow\tau_k;\Theta,\beta,\pi_v),
 \]
 
 con:
 
 \[
-u_i\not\simeq v_j.
+u_i\not\simeq v_j,
+\qquad
+q^T_{\Theta,k}(\sigma_k)
+=
+q^T_{\Theta,k}(\tau_k).
 \]
 
-Definimos solo metateóricamente el kernel inducido:
+Definimos solo metateóricamente:
 
 \[
 u_i
-\sim^{\mathsf M}_{\operatorname{Bake},k,\rho,\beta}
+\sim^{\mathsf M}_{\operatorname{Bake},k,\Theta,\beta}
 v_j
+\Longleftrightarrow
+u_i\equiv^\beta_{T,\Theta}v_j.
 \]
 
-cuando ambos caen en la misma realización target-side bajo el mismo contrato admisible.
-
-La igualdad de outputs baked ya no plantea por defecto un “problema de colisión”. La pregunta correcta es:
+La igualdad literal de outputs deja de ser el criterio. La pregunta correcta es:
 
 \[
 \boxed{
-\text{¿la igualdad está licenciada por }\ker(I^\rho)
-\text{ y realizada correctamente por }\beta,
+\text{¿la equivalencia contractual target satisface B7 respecto de }E^S_\Theta,
 \text{ o es una pérdida de distinción no autorizada?}
 }
 \]
@@ -11096,15 +11109,17 @@ v_j
 
 dice que, pese a poder seguir siendo SourceUnit e historias distintas, ambas presentan el mismo comportamiento relevante al consumidor bajo el contrato.
 
-El kernel de baking:
+La equivalencia inducida por baking:
 
 \[
 u_i
-\sim^{\mathsf M}_{\operatorname{Bake},k,I^\rho,\beta}
+\sim^{\mathsf M}_{\operatorname{Bake},k,\Theta,\beta}
 v_j
+\Longleftrightarrow
+u_i\equiv^\beta_{T,\Theta}v_j
 \]
 
-dice que la realización target-side colapsa efectivamente esas fuentes. Para ser sound debe respetar:
+dice que las realizaciones target-side caen en la misma clase contractual, aunque sus tokens puedan seguir siendo distintos. Para ser sound debe respetar:
 
 \[
 \equiv^{\beta}_{T,\Theta}
@@ -11125,12 +11140,18 @@ h'_i
 mientras:
 
 \[
+q^T_{\Theta,k}
+(
 \operatorname{Bake}(m_i)
+)
 =
+q^T_{\Theta,k}
+(
 \operatorname{Bake}(m'_i)
+).
 \]
 
-como abreviatura metateórica de dos juicios Bake con el mismo output.
+La abreviatura expresa igualdad de clase contractual target, no identidad necesaria de los tokens realizados.
 
 Esta geometría es exactamente la que necesita SignatureConvergence: dos fuentes que siguen siendo realmente diferentes source-side pueden converger en una misma contribución porque **el hijo trivializa una diferencia que el padre todavía necesitaba**.
 
@@ -11139,11 +11160,11 @@ La composición conceptual queda:
 \[
 \boxed{
 P_i
-\xrightarrow{\operatorname{Memo}^{I^\rho}}
+\xrightarrow{\operatorname{Memo}^{\Theta}}
 m_i
 \longrightarrow
-I_i^\rho
-\overset{\mathsf M}{\xrightarrow{\operatorname{Bake}^{I^\rho,\beta}_{i\to k}}}
+\mathbb I_i^\rho
+\overset{\mathsf M}{\xrightarrow{\operatorname{Bake}^{\Theta,\beta,\pi}_{i\to k}}}
 \sigma_k.
 }
 \]
@@ -11164,7 +11185,7 @@ una contribución parental puede satisfacer:
 
 \[
 \operatorname{Bake}^{\mathsf M}_{i\to k}
-(u_i\Downarrow\sigma_k;\rho,\beta).
+(u_i\Downarrow\sigma_k;\Theta,\beta,\pi).
 \]
 
 Cuando además esa realización desempeña el papel constitutivo/suficiente exigido por la formación \(\gamma\), obtenemos el caso ontogénico:
@@ -11172,7 +11193,7 @@ Cuando además esa realización desempeña el papel constitutivo/suficiente exig
 \[
 \boxed{
 \operatorname{GenesisTrivialization}^{\mathsf M}_{i\to k}
-(u_i\Rightarrow\sigma_k;\gamma,\rho,\beta).
+(u_i\Rightarrow\sigma_k;\gamma,\Theta,\beta,\pi).
 }
 \]
 
