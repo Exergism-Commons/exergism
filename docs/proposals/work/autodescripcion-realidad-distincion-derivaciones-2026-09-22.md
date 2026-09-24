@@ -6536,6 +6536,228 @@ La diferencia de dependencia es:
 
 Esto también recoloca la reconstrucción histórica mediante \(\Lambda_*\). \(\Lambda_*\) no debe recuperar poder individuador por defecto, pero una teoría concreta podría demostrar que una subfamilia o estructura derivada de ella satisface un criterio world-making independiente. En ese caso la conectividad dejaría de ser mero algoritmo de reconstrucción y adquiriría una justificación ontológica adicional **theory-specific**.
 
+#### 0.11.76. Un world-maker sincrónico no resuelve persistencia diacrónica
+
+El toy TR-W individúa componentes en una presentación estática. Supongamos ahora una teoría con etapas \(s,t\) y world-making structures:
+
+\[
+W_s,
+\qquad
+W_t.
+\]
+
+Puede ocurrir:
+
+\[
+C_s=[a]_{W_s},
+\qquad
+C_t=[a']_{W_t},
+\]
+
+con una modificación extensa de conexiones.
+
+Ni:
+
+\[
+C_s=C_t
+\]
+
+ni:
+
+\[
+C_s\neq C_t
+\]
+
+se siguen de la mera comparación extensional de componentes.
+
+Un split de \(W\):
+
+\[
+C_s
+\leadsto
+C_t^{(1)}\sqcup C_t^{(2)}
+\]
+
+puede corresponder a:
+
+- fission genuina;
+- persistencia de un padre más aparición de un hijo;
+- transformación interna donde la desconexión relevante no destruye la unidad;
+- o error en haber tomado \(W\) como criterio suficiente de persistencia.
+
+Por tanto TR-W descarga, como máximo, **individuación sincrónica** si la teoría lo justifica. La identidad diacrónica sigue requiriendo ContinuationProfile, \(\Omega\), FaithfulContinuation u otra semántica de persistencia:
+
+\[
+\boxed{
+\operatorname{WorldMaker}_{\mathcal T}(W)
+\not\Rightarrow
+\text{criterio de identidad temporal del contexto}.
+}
+\]
+
+Esto confirma la separación de §0.11.58: unidad, persistencia y ontogénesis son problemas distintos aunque una teoría concreta pueda relacionarlos.
+
+#### 0.11.77. Individuación anidada exige ContextEmbedding, no inclusión literal cross-index
+
+Una teoría puede justificar unidades en varios niveles. Para no convertir cada subsistema en una realidad por mera inclusión, ambos niveles deben satisfacer independientemente ContextIndividuation.
+
+Si \(i\) y \(k\) están legítimamente individuados, una relación de nesting se expresa solo metateóricamente:
+
+\[
+\operatorname{ContextEmbedding}^{\mathsf M}(i\hookrightarrow k;e),
+\]
+
+donde \(e\) es un testigo de representación/realización fiel entre estructuras tipadas.
+
+No se escribe:
+
+\[
+R_i\in R_k
+\]
+
+ni se reutiliza literalmente un token \(x_i\) como objeto de \(k\). Si existe representación child/host-side, aparecen términos correctamente tipados y un mapa metateórico, del mismo modo que FaithfulContinuation evita transporte literal cross-index.
+
+Requisitos mínimos:
+
+1. **CE1 / dual individuation:** \(i\) y \(k\) están admitidos por criterios independientes; embedding no crea ninguno de los dos.
+2. **CE2 / typed realization:** \(e\) relaciona presentaciones tipadas sin introducir fórmulas objeto cross-index.
+3. **CE3 / faithfulness:** preserva exactamente la estructura declarada, no toda propiedad por defecto.
+4. **CE4 / no collapse:** \(i\hookrightarrow k\) no implica \(i\simeq_{\mathrm{idx}}k\).
+5. **CE5 / no incompatibility shortcut:** el embedding tampoco decide por sí solo \(i\#k\); eso exige su criterio propio.
+6. **CE6 / level explicitness:** la teoría debe declarar qué diferencia ontológica justifica tratar ambos niveles como contextos y no uno como mero subsistema del otro.
+
+Solo con una relación de este tipo puede empezar a formularse en serio una arquitectura “celular dentro de celular”. Y aun entonces:
+
+\[
+\operatorname{ContextEmbedding}^{\mathsf M}
+\not\Rightarrow
+\text{fractalidad}.
+\]
+
+Faltan recurrencia estructural, una noción de escala/nivel y similitud no trivial.
+
+#### 0.11.78. La frontera puede ser endógena: TR-O frente a TR-W
+
+La analogía celular sería demasiado pobre si toda individuación exigiera una world-making relation externa ya dada. En organismos, una frontera puede estar mantenida por la propia organización cuya unidad ayuda a constituir.
+
+Esto no viola IA1/IA2 si distinguimos **circularidad definicional** de **dependencia constitutiva mutua**.
+
+Sea una teoría \(\mathcal T_O\) que especifica independientemente reglas organizacionales \(\mathfrak B_{\mathcal T_O}\). Sobre presentaciones candidatas —no sobre realidades ya indexadas— esas reglas inducen un operador de actualización:
+
+\[
+\mathcal J_{\mathcal T_O}(P).
+\]
+
+Una candidatura organizacionalmente cerrada satisface:
+
+\[
+\mathcal J_{\mathcal T_O}(P_*)
+\simeq
+P_*,
+\]
+
+donde \(\simeq\) es equivalencia de presentación apropiada, no identidad ontológica asumida.
+
+Para que este fixed point tenga valor individuador se exige al menos:
+
+1. **EO1 / rule independence:** \(\mathfrak B_{\mathcal T_O}\) se especifica sin usar el \(P_*\) final, el índice resultante, RegimeTotal o REC.
+2. **EO2 / non-identity operator:** \(\mathcal J_{\mathcal T_O}\) no es el operador identidad ni hace fijo todo candidato.
+3. **EO3 / boundary production:** la organización genera/mantiene estructura que discrimina interior, exterior e interfaces de manera positiva.
+4. **EO4 / organizational dependence:** quitar la estructura de frontera altera la organización relevante, y quitar la organización relevante impide mantener la frontera; no basta una envoltura externa accidental.
+5. **EO5 / recoding robustness:** el fixed point no depende de una codificación particular.
+6. **EO6 / rival-solution discipline:** múltiples fixed points incompatibles requieren criterio de nivel, equivalencia o selección independiente.
+7. **EO7 / genesis sensitivity:** la aparición de un nuevo fixed point no se identifica automáticamente con ContextGenesis; debe probarse novedad constitutiva y no mera reconfiguración interna.
+8. **EO8 / no totality inference:** cierre organizacional no implica RegimeTotal ni REC.
+
+Llamemos provisionalmente a esta familia **TR-O**.
+
+TR-W y TR-O son dos realizaciones distintas del esquema general:
+
+\[
+\boxed{
+\begin{array}{ll}
+\mathrm{TR\text{-}W}:&
+\text{individuación por estructura world-making independently characterized;}\\
+\mathrm{TR\text{-}O}:&
+\text{individuación por cierre organizacional/endogenous boundary.}
+\end{array}
+}
+\]
+
+No se afirma que agoten las posibilidades.
+
+La literatura sobre autopoiesis y closure of constraints sirve aquí como precedente de que una frontera mantenida endógenamente puede coexistir con apertura causal/material; no demuestra que \(R_i\) sea un organismo ni que \(\mathcal J_{\mathcal T_O}\) exista para la realidad.
+
+#### 0.11.79. Relectura definitiva de “membrana = typing boundary + Muro + REC”
+
+Con REV-07g avanzado podemos responder con más precisión a la intuición inicial.
+
+La expresión:
+
+\[
+\text{membrana}
+\stackrel{?}{=}
+\mathrm{TB}+\mathrm{Muro}+\mathrm{REC}
+\]
+
+mezcla **fundamento de individuación** con **consecuencias/roles de una unidad ya individuada**.
+
+TB aparece una vez que el contexto ha sido admitido y se fija su sort.
+
+REC aparece todavía más tarde, como consecuencia de RegimeTotal.
+
+El Muro es una restricción epistemológica sobre lo que puede certificarse desde dentro; tampoco produce por sí mismo la unidad.
+
+Por tanto el orden correcto es:
+
+\[
+\boxed{
+\text{Individuation Ground}
+\Longrightarrow
+\text{Context Boundary / IndexAdmission}
+\Longrightarrow
+\mathrm{TB}
+\Longrightarrow
+\text{investigación de RegimeTotal}
+\Longrightarrow
+\mathrm{REC},
+}
+\]
+
+mientras el Muro corta transversalmente las inferencias epistémicas.
+
+Las capas TB/OC/EB/IF de §0.11.49 siguen siendo útiles, pero deben llamarse **perfil funcional de la membrana**, no fundamento de la membrana.
+
+En una implementación TR-W, el ground puede ser \(W\).
+
+En una implementación TR-O, el ground puede ser una organización endógena/fixed point independientemente especificada.
+
+Esto evita la circularidad:
+
+\[
+\mathrm{REC}
+\Rightarrow
+\text{“hay una célula”}
+\]
+
+que sería inválida porque REC ya presupone una totalización dentro de un contexto.
+
+La versión fuerte de Cellular Reality queda así:
+
+\[
+\boxed{
+\text{Cellular Reality}
+=
+\text{individuación fundamentada}
++
+\text{boundary profile}
++
+\text{persistencia/ontogénesis disciplinadas},
+}
+\]
+
+no “todo \(R_i\) es una célula porque tiene subíndice y closure”.
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 **Advertencia PureOntRel.** Una relación pura puede servir como enlace ontológico de marco sin preservar una única genealogía. Por ello no se incorpora automáticamente a $\Lambda_*$ cuando esta pretende reconstruir $\operatorname{Generated}^{*}$: si conecta dos genealogías sin common ground, produciría sobreinclusión y haría fallar $\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}$. Su admisión como enlace reconstructivo requiere una justificación adicional de soundness; RelIntegrable por sí sola no basta.
