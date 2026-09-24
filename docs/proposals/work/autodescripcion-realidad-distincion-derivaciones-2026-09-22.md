@@ -11327,6 +11327,21 @@ Para ello introducimos primero una base source-side fijada antes de mirar cualqu
 
 #### 0.11.91a. PersistenceBasis independiente del descendiente
 
+Para evitar desplazar la selección post hoc desde ContinuationProfile hacia la propia PersistenceBasis, una teoría de persistencia \(\mathcal T_P\) debe fijar previamente una especificación source-side:
+
+\[
+\mathbb P_i^x
+=
+\left\langle
+\operatorname{MaintRole},
+\operatorname{MaintStep},
+\operatorname{ProvPolicy},
+\operatorname{NoveltyPolicy}
+\right\rangle.
+\]
+
+Estos clasificadores no pueden mencionar un child candidato, un ProfileMorphism futuro ni el resultado deseado de FaithfulContinuation.
+
 Para un token o SourceUnit \(x_i\), una **PersistenceBasis** es:
 
 \[
@@ -11402,7 +11417,7 @@ Puede estudiarse una continuidad deliberadamente scoped respecto de un subconjun
 \operatorname{FaithfulContinuation}^{\mathsf M,\mathcal S}.
 \]
 
-Una continuación scoped no puede promoverse por omisión a FaithfulContinuation no cualificada.
+Una continuación scoped no puede promoverse por omisión a FaithfulContinuation no cualificada. Del mismo modo, si existen PersistenceSpecs rivales \(\mathbb P\) y \(\mathbb P'\), el juicio debe escribirse theory-relative; no hay una elección silenciosa de la teoría que favorezca al candidato.
 
 **PB4 — interaction closure.** Si dos roles de \(\mathcal R_x\) presentan SynRel o una dependencia cross-role independently grounded, \(\Theta_x\) debe incluir el interaction role/contract correspondiente. No se permite construir persistencia a partir de marginals ignorando una interacción conocida.
 
@@ -11412,9 +11427,9 @@ Una continuación scoped no puede promoverse por omisión a FaithfulContinuation
 
 **PB7 — provenance/novelty independence.** \(\mathfrak P_x\) y \(\mathcal N_x\) se fijan antes de evaluar al descendiente. La teoría puede permitir novedad, branching o quotienting, pero debe decirlo antes del caso concreto.
 
-**PB8 — recoding + no ontological promotion.** Recodificaciones fieles preservan la base; PersistenceBasis no implica por sí sola ContextIndividuation, identidad absoluta ni RegimeTotal.
+**PB8 — least closure + recoding + no ontological promotion.** \(\Pi_i^x\) debe ser la menor estructura cerrada que satisface los clasificadores de \(\mathbb P_i^x\), PB3–PB7 y las reglas de interaction/transition closure. No pueden añadirse ni omitirse componentes solo para alterar el resultado del test. Recodificaciones fieles preservan esa closure; PersistenceBasis no implica por sí sola ContextIndividuation, identidad absoluta ni RegimeTotal.
 
-PersistenceBasis no pretende decidir de manera universal qué hace que “un barco sea el mismo barco”. Hace una afirmación más precisa: **dada una teoría de persistencia source-side independently grounded, fija todo lo que el test de continuación puede consultar**.
+PersistenceBasis no pretende decidir de manera universal qué hace que “un barco sea el mismo barco”. Hace una afirmación más precisa: **dada una teoría de persistencia source-side independently grounded, fija todo lo que el test de continuación puede consultar**. Si hay teorías de persistencia rivales, los juicios deben quedar indexados por \(\mathcal T_P\); la notación no cualificada solo suprime ese parámetro cuando la teoría ambiente ya lo ha fijado.
 
 #### 0.11.91b. Quotient dinámico de continuación
 
@@ -11538,9 +11553,27 @@ O_x^\Pi &:& \text{qué conducta contractual debe seguir siendo observable},\\
 
 El perfil puede ser infinito, branching o no determinista. No presupone que exista una lista finita de propiedades esenciales.
 
-#### 0.11.91d. CP-T1 — well-definedness theorem
+#### 0.11.91d. CP-T0/CP-T1 — invariancia de base y well-definedness
 
-**CP-T1.** Si:
+**CP-T0 — persistence-basis invariance.** Sean \(\Pi\) y \(\Pi'\) dos realizaciones de PersistenceBasis para el mismo \(x_i\) y la misma especificación \(\mathbb P_i^x\), ambas satisfaciendo least closure y recoding invariance. Entonces las diferencias puramente representacionales entre ambas no pueden alterar la semántica de continuidad: sus sistemas quotient deben ser bisimilares mediante una recodificación que preserve root, labels role-relevant y observaciones:
+
+\[
+\boxed{
+\operatorname{PersistenceBasis}_{\mathbb P}(x;\Pi)
+\land
+\operatorname{PersistenceBasis}_{\mathbb P}(x;\Pi')
+\Longrightarrow
+\mathsf{CP}(x;\Pi)
+\simeq_{\mathrm{bis}}
+\mathsf{CP}(x;\Pi').
+}
+\]
+
+Si dos supuestas bases para la **misma** \(\mathbb P\) producen perfiles no bisimilares, al menos una viola least closure, coverage o recoding invariance. Si proceden de especificaciones \(\mathbb P\) genuinamente rivales, el desacuerdo es teórico y debe hacerse explícito; no se oculta bajo una FaithfulContinuation no indexada.
+
+**CP-T1 — well-definedness.** Si:
+
+
 
 1. \(\operatorname{PersistenceBasis}(x_i;\Pi,\psi)\);
 2. \(E_\Theta\) es una equivalencia;
