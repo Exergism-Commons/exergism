@@ -32,6 +32,22 @@ RAW_HTML_BLOCK_TAG = re.compile(
     flags=re.IGNORECASE,
 )
 
+RAW_HTML_TYPE1_OPEN = re.compile(
+    r"^ {0,3}<(?P<tag>script|pre|style|textarea)(?=[ \t>]|$)",
+    flags=re.IGNORECASE,
+)
+RAW_HTML_PI_OPEN = re.compile(r"^ {0,3}<\?")
+RAW_HTML_DECL_OPEN = re.compile(r"^ {0,3}<![A-Z]")
+RAW_HTML_CDATA_OPEN = re.compile(r"^ {0,3}<!\[CDATA\[")
+HTML_TAG_NAME = r"[A-Za-z][A-Za-z0-9-]*"
+HTML_ATTR_NAME = r"[A-Za-z_:][A-Za-z0-9_.:-]*"
+HTML_ATTR_VALUE = r"(?:[^ \t\n\"'=<>\x60]+|'[^']*'|\"[^\"]*\")"
+HTML_ATTRIBUTE = rf"(?:[ \t]+{HTML_ATTR_NAME}(?:[ \t]*=[ \t]*{HTML_ATTR_VALUE})?)"
+RAW_HTML_COMPLETE_TAG = re.compile(
+    rf"^ {{0,3}}(?:</{HTML_TAG_NAME}[ \t]*>|"
+    rf"<{HTML_TAG_NAME}(?:{HTML_ATTRIBUTE})*[ \t]*/?>)[ \t]*$"
+)
+
 
 def fail(message: str) -> None:
     raise AssertionError(message)
@@ -175,7 +191,7 @@ def validate_archive(text: str) -> None:
 def strip_html_comments(text: str) -> str:
     return re.sub(
         r"<!--.*?(?:-->|$)",
-        lambda match: "\n" * match.group(0).count("\n"),
+        lambda match: HTML_BOUNDARY + "\n" * match.group(0).count("\n"),
         text,
         flags=re.DOTALL,
     )
@@ -184,20 +200,62 @@ def strip_html_comments(text: str) -> str:
 def mask_raw_html_blocks(text: str) -> str:
     lines = text.split("\n")
     masked: list[str] = []
-    in_block = False
+    mode: tuple[str, str | None] | None = None
 
     for line in lines:
-        if in_block:
-            if line.strip() == "":
-                in_block = False
-                masked.append("")
-            else:
-                masked.append(HTML_BOUNDARY)
+        if mode is not None:
+            kind, argument = mode
+
+            if kind == "blank":
+                if line.strip() == "":
+                    mode = None
+                    masked.append("")
+                else:
+                    masked.append(HTML_BOUNDARY)
+                continue
+
+            masked.append(HTML_BOUNDARY)
+            lowered = line.lower()
+            if kind == "tag" and argument is not None:
+                if re.search(rf"</{re.escape(argument)}[ \t]*>", line, flags=re.IGNORECASE):
+                    mode = None
+            elif kind == "pi" and "?>" in line:
+                mode = None
+            elif kind == "decl" and ">" in line:
+                mode = None
+            elif kind == "cdata" and "]]>" in line:
+                mode = None
             continue
 
-        if RAW_HTML_BLOCK_TAG.match(line):
-            in_block = True
+        type1 = RAW_HTML_TYPE1_OPEN.match(line)
+        if type1:
+            tag = type1.group("tag")
             masked.append(HTML_BOUNDARY)
+            if not re.search(rf"</{re.escape(tag)}[ \t]*>", line, flags=re.IGNORECASE):
+                mode = ("tag", tag)
+            continue
+
+        if RAW_HTML_PI_OPEN.match(line):
+            masked.append(HTML_BOUNDARY)
+            if "?>" not in line:
+                mode = ("pi", None)
+            continue
+
+        if RAW_HTML_CDATA_OPEN.match(line):
+            masked.append(HTML_BOUNDARY)
+            if "]]>" not in line:
+                mode = ("cdata", None)
+            continue
+
+        if RAW_HTML_DECL_OPEN.match(line):
+            masked.append(HTML_BOUNDARY)
+            if ">" not in line:
+                mode = ("decl", None)
+            continue
+
+        if RAW_HTML_BLOCK_TAG.match(line) or RAW_HTML_COMPLETE_TAG.fullmatch(line):
+            masked.append(HTML_BOUNDARY)
+            mode = ("blank", None)
             continue
 
         masked.append(line)
@@ -394,7 +452,7 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         r"\\exists\s*\^\s*\{\s*\\mathsf(?:\s*\{M\}|\s+M)\s*\}\s*i\s*\\;?\s*"
         r"\\bigl\s*\(\s*"
         r"\\exists\s*\\mathfrak(?:\s*\{G\}|\s+G)\s*_\s*i\s*"
-        r"\\exists(?:\s+|\{\}\s*)R\s*_\s*i\s*\\;?\s*"
+        r"(?:\\exists(?:\s+|\{\}\s*|\\[,;:!>]\s*|\\[ \t]+|\\(?:quad|qquad)(?:\s+|\{\}\s*))R\s*_\s*i|\\exists\s*\{\s*R\s*_\s*i\s*\})\s*\\;?\s*"
         r"\\operatorname\s*\{RegimeTotal\}\s*_\s*i\s*\(\s*"
         r"\\mathfrak(?:\s*\{G\}|\s+G)\s*_\s*i\s*,\s*R\s*_\s*i\s*\)\s*"
         r"\\bigr\s*\)\s*\.?"
