@@ -12385,6 +12385,577 @@ Esto también modifica cómo interpretar \(i\#j\): índices distintos no son por
 
 La deuda TR-M queda por tanto **RESOLVED condicionalmente**: existe una ruta formal no circular mediante una máquina contextual pre-indexada y MC1–MC10; su éxito en cada dominio depende de una teoría \(\mathcal T\) que descargue structural fidelity e IndAdequate.
 
+#### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
+
+La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
+
+Una realidad/contexto puede ser **original** o puede depender ontogénicamente de otros contextos.
+
+Definimos primero la relación parental:
+
+\[
+\boxed{
+\operatorname{CtxParent}^{\mathsf M}
+(
+p,k;\gamma
+)
+}
+\]
+
+cuando existe una GenuineContextGenesis que constituye \(k\) y \(p\) pertenece a la familia de precursores **constitutivamente necesarios** de esa génesis.
+
+Por tanto:
+
+\[
+\operatorname{CtxParent}(p,k;\gamma)
+\Rightarrow
+p\prec_{\mathrm{ctx}} k.
+\]
+
+La conversa no se adopta si \(\prec_{\mathrm{ctx}}\) se usa en algún pasaje con sentido más débil de precursor/provenance.
+
+No generan parentalidad contextual por sí solos:
+
+\[
+\operatorname{ContextEmbedding},
+\quad
+\operatorname{FaithfulContinuation},
+\quad
+\operatorname{Bake},
+\quad
+\operatorname{SharedOntSpace}.
+\]
+
+En particular:
+
+\[
+j\hookrightarrow k
+\not\Rightarrow
+\operatorname{CtxParent}(k,j)
+\]
+
+y:
+
+\[
+j\hookrightarrow k
+\not\Rightarrow
+\operatorname{CtxParent}(j,k).
+\]
+
+**Generación mide génesis, no nesting.**
+
+#### 0.11.91t. Generación 0: realidad original
+
+Introducimos un juicio theory-relative de originalidad:
+
+\[
+\boxed{
+\operatorname{OriginaryContext}^{\mathsf M}_{\mathcal T}
+(
+i;\zeta
+)
+}
+\]
+
+donde \(\zeta\) debe satisfacer **OG1–OG6**.
+
+**OG1 — admitted context.** \(i\) ya ha satisfecho ContextIndividuation/IndexAdmission por una ruta independiente. Ser Gen0 no crea el índice.
+
+**OG2 — independent root ground.** La teoría aporta un fundamento positivo para la unidad de \(i\) que no depende de una ContextGenesis parental.
+
+**OG3 — parent completeness.** La teoría posee suficiente cobertura genealógica para que la ausencia de padres contextuales no sea mera ausencia de información.
+
+**OG4 — no hidden negative inference.**
+
+\[
+\neg\exists\gamma,p\;
+\operatorname{KnownCtxParent}(p,i;\gamma)
+\]
+
+no basta para OriginaryContext.
+
+**OG5 — recoding invariance.** Recodificaciones fieles preservan la clasificación de originalidad.
+
+**OG6 — no totality/maximality.** Ser original no implica ser maximal, contener todos los demás contextos, agotar lo real ni ser único.
+
+Definimos entonces:
+
+\[
+\boxed{
+\operatorname{Generation}^{\mathsf M}_{\mathcal T}(i,0)
+:\Longleftrightarrow
+\operatorname{OriginaryContext}^{\mathsf M}_{\mathcal T}(i;\zeta)
+}
+\]
+
+para algún witness \(\zeta\) adecuado.
+
+Ésta es la lectura precisa de **realidad de generación 0**.
+
+Puede haber:
+
+\[
+R_i^{[0]},
+\qquad
+R_j^{[0]},
+\qquad
+R_k^{[0]}
+\]
+
+sin que exista una entidad superior que los reúna.
+
+La notación:
+
+\[
+R_i^{[0]}
+\]
+
+es solo una anotación metateórica:
+
+\[
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
++
+\operatorname{Generation}(i,0).
+\]
+
+No añade un nuevo tipo objeto.
+
+En este sentido, la intuición histórica del \(R\) “original” encuentra un sucesor más preciso en \(R_i^{[0]}\): **una realidad no derivada de otra realidad contextual**, no “la totalidad de todo lo real”.
+
+#### 0.11.91u. Rank generacional finito
+
+Sea una GenuineContextGenesis de \(k\) con familia parental completa:
+
+\[
+\mathcal P_k
+=
+\{p_1,\ldots,p_m\}.
+\]
+
+Si todos los padres tienen rank finito:
+
+\[
+\operatorname{Generation}(p_r,n_r),
+\]
+
+definimos:
+
+\[
+\boxed{
+\operatorname{Generation}(k,n)
+}
+\]
+
+con:
+
+\[
+\boxed{
+n
+=
+1+\max_{1\le r\le m} n_r.
+}
+\]
+
+Para una génesis unaria:
+
+\[
+\operatorname{Generation}(p,n)
++
+\operatorname{CtxParent}(p,k)
+\Rightarrow
+\operatorname{Generation}(k,n+1).
+\]
+
+Para dos Gen0:
+
+\[
+0+0
+\overset{\text{genesis}}{\longrightarrow}
+1.
+\]
+
+Para un Gen0 y un Gen1:
+
+\[
+0+1
+\overset{\text{genesis}}{\longrightarrow}
+2.
+\]
+
+El uso de \(\max+1\) garantiza:
+
+\[
+\boxed{
+\operatorname{CtxParent}(p,k)
+\Rightarrow
+\operatorname{GenRank}(p)
+<
+\operatorname{GenRank}(k).
+}
+\]
+
+Así el rank mide la **máxima profundidad ontogénica requerida** por la existencia contextual actual.
+
+No cuenta tiempo cronológico ni distancia espacial.
+
+#### 0.11.91v. GR1–GR8: cuándo el rank está bien definido
+
+Definimos:
+
+\[
+\operatorname{GenerationAdequate}^{\mathsf M}_{\mathcal T}
+(
+i;n,\omega
+)
+\]
+
+con **GR1–GR8**.
+
+**GR1 — grounded genesis.** Cada arista parental usada en el rank procede de GenuineContextGenesis, no de semejanza, causalidad, embedding o coexistencia.
+
+**GR2 — complete parent family.** La familia parental usada por cada génesis contiene todos los contextos constitutivamente necesarios según la teoría.
+
+**GR3 — rival genealogy discipline.** Si dos reconstrucciones adecuadas de la génesis del mismo contexto producen parent families incompatibles, el rank queda unresolved hasta demostrar equivalencia, nesting genealógico explícito o descartar al menos una.
+
+**GR4 — well-foundedness.** El componente genealógico rankeado no contiene ciclos de dependencia parental. Una teoría que permita genealogías no well-founded necesita una semántica distinta; no se le asigna fraudulentamente un natural.
+
+**GR5 — no unknown-to-zero.** Falta de provenance o Muro genealógico no autorizan Gen0.
+
+**GR6 — witness invariance.** Dos witnesses equivalentes de la misma génesis inducen el mismo rank.
+
+**GR7 — no embedding depth substitution.** La profundidad de ContextEmbedding no entra en el cálculo del rank generacional.
+
+**GR8 — no complexity inflation.** El rank no se interpreta como número de piezas, sofisticación, información, valor o tamaño.
+
+Si GR1–GR8 no pueden descargarse:
+
+\[
+\operatorname{GenerationUnresolved}^{\mathsf M}_{\mathcal T}(i)
+\]
+
+es la clasificación correcta.
+
+#### 0.11.91w. Firma generacional: el número no basta
+
+El rank:
+
+\[
+n
+\]
+
+colapsa información relevante. Dos contextos Gen2 pueden proceder de genealogías muy distintas.
+
+Definimos por ello una **GenerationSignature**:
+
+\[
+\boxed{
+\operatorname{GenSig}^{\mathsf M}_{\mathcal T}(k)
+=
+\left\langle
+n_k,
+\mu_k,
+\mathsf{ParSpec}_k,
+\nu_k
+\right\rangle.
+}
+\]
+
+Donde:
+
+- \(n_k\) es el rank;
+- \(\mu_k\) es el modo de génesis: originary, unary, multi-parent, y subtipos theory-specific como ContextMerger cuando estén justificados;
+- \(\mathsf{ParSpec}_k\) es el multiset/espectro de ranks parentales:
+
+\[
+\mathsf{ParSpec}_k
+=
+[n_1,\ldots,n_m];
+\]
+
+- \(\nu_k\) registra únicamente patrones de persistencia parental positivamente certificados —por ejemplo qué parents satisfacen PersistentParent—, sin inferir cesación de los demás por silencio.
+
+Así pueden distinguirse:
+
+\[
+\mathrm{Gen1}
+\langle
+multi,[0,0]
+\rangle
+\]
+
+de:
+
+\[
+\mathrm{Gen1}
+\langle
+unary,[0]
+\rangle,
+\]
+
+y:
+
+\[
+\mathrm{Gen2}
+\langle
+multi,[0,1]
+\rangle
+\]
+
+de:
+
+\[
+\mathrm{Gen2}
+\langle
+unary,[1]
+\rangle.
+\]
+
+La generación tiene por tanto **altura** y **geometría**.
+
+#### 0.11.91x. Escala de simplicidad ontogénica
+
+El rank induce una noción restringida de simplicidad:
+
+\[
+\boxed{
+i
+\prec_{\mathrm{gen}}
+j
+:\Longleftrightarrow
+\operatorname{GenRank}(i)
+<
+\operatorname{GenRank}(j).
+}
+\]
+
+La lectura correcta es:
+
+> \(i\) requiere menos capas de ContextGenesis en su provenance constitutiva que \(j\).
+
+Por tanto Gen0 es minimal en **profundidad genealógica contextual**.
+
+Pero no se deriva:
+
+\[
+\operatorname{GenRank}(i)
+<
+\operatorname{GenRank}(j)
+\Rightarrow
+\operatorname{StructuralComplexity}(i)
+<
+\operatorname{StructuralComplexity}(j).
+\]
+
+Una realidad Gen0 puede contener una dinámica enormemente compleja y una Gen4 ser operacionalmente trivial.
+
+Por eso “escala de simplicidad” solo es válida como abreviatura de:
+
+\[
+\boxed{
+\text{ontogenic dependency depth}.
+}
+\]
+
+#### 0.11.91y. Generación y nesting son coordenadas ortogonales
+
+La nueva arquitectura permite distinguir situaciones que antes quedaban mezcladas.
+
+Puede ocurrir:
+
+\[
+j\hookrightarrow k
+\]
+
+con:
+
+\[
+\operatorname{GenRank}(j)
+=
+\operatorname{GenRank}(k),
+\]
+
+si dos contextos de la misma generación quedan embebidos por una relación posterior no constitutiva.
+
+También puede ocurrir:
+
+\[
+j\hookrightarrow k,
+\qquad
+\operatorname{GenRank}(j)
+>
+\operatorname{GenRank}(k),
+\]
+
+por ejemplo cuando un contexto de generación alta se realiza dentro de un host genealógicamente más básico.
+
+O:
+
+\[
+j\hookrightarrow k,
+\qquad
+\operatorname{GenRank}(j)
+<
+\operatorname{GenRank}(k),
+\]
+
+si el host es él mismo resultado de una ontogénesis más profunda.
+
+Por tanto:
+
+\[
+\boxed{
+\text{generation depth}
+\neq
+\text{embedding depth}.
+}
+\]
+
+Un host solo cuenta como parent de un contexto embebido si participó **constitutivamente** en la ContextGenesis de ese contexto.
+
+Esto proporciona una segunda coordenada para la Cellular Reality:
+
+\[
+\boxed{
+\text{contextual position}
+\sim
+\left\langle
+\text{generation},
+\text{embedding relations},
+\text{generation signature}
+\right\rangle.
+}
+\]
+
+No es una dirección objeto ni convierte índices en puntos de un espacio.
+
+#### 0.11.91z. Root theorem y generaciones derivadas
+
+Para cualquier contexto con rank finito:
+
+\[
+\operatorname{Generation}(k,n),
+\]
+
+si \(n>0\), existe al menos una cadena parental:
+
+\[
+p_0
+\prec_{\mathrm{ctx}}
+p_1
+\prec_{\mathrm{ctx}}
+\cdots
+\prec_{\mathrm{ctx}}
+p_n=k
+\]
+
+tal que:
+
+\[
+\operatorname{Generation}(p_r,r)
+\]
+
+tras elegir una rama de profundidad máxima.
+
+Por inducción:
+
+\[
+\boxed{
+\operatorname{Generation}(k,n)
+\Rightarrow
+\exists^{\mathsf M}p_0\;
+[
+\operatorname{Generation}(p_0,0)
+\land
+p_0\prec_{\mathrm{ctx}}^{*}k
+].
+}
+\]
+
+Esto no dice que haya **una** raíz universal.
+
+Puede haber múltiples Gen0 y una generación multiparental puede reunir linajes procedentes de varias de ellas.
+
+La consecuencia conceptual es exactamente:
+
+\[
+\boxed{
+\text{las generaciones derivadas son genealogías de interacción entre realidades originales.}
+}
+\]
+
+#### 0.11.91aa. Stress tests generacionales
+
+**GN-S1 — unknown ancestry = Gen0.** No conocemos ningún parent de \(i\), luego se declara Gen0. Falla OG3/GR5.
+
+**GN-S2 — embedding counted as parent.** Un servicio \(j\) corre dentro de host \(k\), luego se pone \(Gen(j)=Gen(k)+1\). Falla GR1/GR7 salvo que exista una ContextGenesis constitutiva independiente.
+
+**GN-S3 — interaction without genesis.** Dos Gen0 interactúan dentro de SharedOntSpace. No aparece Gen1 por la mera interacción:
+
+\[
+\operatorname{interaction}
+\not\Rightarrow
+\operatorname{ContextGenesis}.
+\]
+
+Solo una interacción que constituya un nuevo contexto genera nueva generación.
+
+**GN-S4 — multi-parent flattening.** Dos Gen2 tienen el mismo rank pero parent spectra distintos. El rank coincide; GenSig los distingue.
+
+**GN-S5 — complexity confusion.** Una Gen0 físicamente complejísima se declara “menos compleja” que una Gen3 simple. Solo puede afirmarse menor ontogenic dependency depth.
+
+**GN-S6 — hidden cycle.** \(i\) se usa como ancestor de \(j\) y \(j\) como ancestor constitutivo de \(i\). Falla GR4; no se asigna rank natural.
+
+**GN-S7 — universal root smuggling.** De que todo contexto rankeado tenga algún Gen0 ancestor se infiere una única realidad original. No se sigue: varias raíces son compatibles con toda la arquitectura.
+
+#### 0.11.91ab. Estado de la hipótesis generacional
+
+La hipótesis queda formalizada sin tocar ExistsR:
+
+\[
+\operatorname{ExistsR}
+\]
+
+sigue afirmando únicamente que existe al menos un contexto con RegimeTotal.
+
+Introducimos opcionalmente:
+
+\[
+\boxed{
+\operatorname{ExistsGen0R}
+:\Longleftrightarrow
+\exists^{\mathsf M}i\;
+\exists\mathfrak G_i\exists R_i[
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+\land
+\operatorname{Generation}(i,0)
+].
+}
+\]
+
+No se adopta:
+
+\[
+\operatorname{ExistsR}
+\Rightarrow
+\operatorname{ExistsGen0R}
+\]
+
+sin una hipótesis de well-foundedness/completitud genealógica suficiente.
+
+La ganancia doctrinal es otra: una vez admitida la pluralidad y nesting de contextos, **Generation** permite estratificarlos por dependencia ontogénica sin volver a una totalidad global.
+
+La intuición del antiguo \(R\) se conserva mejor como:
+
+\[
+\boxed{
+R_i^{[0]}
+=
+\text{realidad contextual original}
+}
+\]
+
+y las demás realidades se clasifican por cómo emergen genealógicamente de interacciones constitutivas entre contextos anteriores.
+
 #### 0.11.92. Relación con \(\Omega_i\): ContinuationProfile ya no depende de \(\Omega_i\)
 
 REV-07e había dejado abierta una ruta provisional en la que \(\Omega_i\) podía anteceder a ContinuationProfile. Esa dirección queda ahora **SUPERSEDED**: §§0.11.91a–0.11.91i derivan \(\mathsf{CP}_i^x\) directamente desde PersistenceBasis + contract state + memo-equivalence + quotient dynamics.
