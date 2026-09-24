@@ -10761,6 +10761,17 @@ k
 
 como abreviatura metateórica de dos familias de juicios Bake compatibles.
 
+Para que la segunda etapa esté siquiera tipada, cada realización intermedia \(\sigma_k=B_1(u_i)\) que entre en \(B_2\) debe satisfacer una SourceUnit adecuada en \(k\):
+
+\[
+\operatorname{SourceUnit}^{\mathsf M}_k
+(
+\sigma_k;\rho_2,\upsilon_2
+).
+\]
+
+Definimos **StageCompatibility** como la conjunción de esa unitización intermedia, compatibilidad de typing/provenance y alineación del quotient que la segunda etapa promete preservar.
+
 Supóngase que la primera etapa admite:
 
 \[
@@ -10773,7 +10784,7 @@ q^T_{\Theta,k}
 B_1,
 \]
 
-y la segunda preserva precisamente esa clase intermedia:
+y que, bajo StageCompatibility, la segunda preserva precisamente esa clase intermedia:
 
 \[
 q^T_{\Theta,k}
@@ -10809,13 +10820,13 @@ Por tanto:
 +
 \operatorname{BakeSound}(B_2)
 +
-\operatorname{ContractAlignment}
+\operatorname{StageCompatibility}
 \Longrightarrow
 \operatorname{BakeSound}(B_2\circ B_1).
 }
 \]
 
-La condición ContractAlignment es esencial. Dos etapas individualmente sound para **contratos distintos** no pueden componerse por mera transitividad verbal.
+La condición StageCompatibility es esencial e incluye ContractAlignment. Dos etapas individualmente sound para contratos distintos, o cuyo target intermedio no sea una SourceUnit admisible para la segunda, no pueden componerse por mera transitividad verbal.
 
 La provenance también se conserva solo como cadena:
 
@@ -10963,19 +10974,56 @@ E_{\Theta'}.
 }
 \]
 
-Definimos:
+No basta con postular un \(z\) matemáticamente discriminante. Introducimos:
 
 \[
+\operatorname{RehydrateSource}^{\mathsf M}
+(
+z;B,\Theta',\zeta
+),
+\]
+
+donde \(\zeta\) descarga:
+
+1. **RH1 / actuality or persistence:** \(z\) existe actualmente o persiste en un registro/canal cuya teoría admite como real;
+2. **RH2 / independent grounding:** su contenido no se define usando la respuesta correcta que la rehydration pretende reconstruir;
+3. **RH3 / accessibility:** el procedimiento de rehydration dispone de un canal tipado para adquirir \(z\);
+4. **RH4 / recoding/provenance discipline:** recodificaciones fieles preservan su poder discriminante y, si \(z\) contiene provenance, esa provenance cuenta con witness independiente.
+
+Definimos entonces:
+
+\[
+\boxed{
 \operatorname{RehydrateAdequate}
 (
 z;
 B,\Theta'
 )
+}
 \]
 
-exactamente por esa inclusión.
+si:
 
-La provenance puede actuar como \(z\), pero **solo si es discriminativamente suficiente** para \(\Theta'\). Un certificado que dice “procede de P” sin conservar la diferencia concreta requerida por el nuevo contrato no rehidrata nada.
+\[
+\operatorname{RehydrateSource}^{\mathsf M}
+(
+z;B,\Theta',\zeta
+)
+\]
+
+y:
+
+\[
+\ker
+\left(
+u\mapsto
+\langle b_\Theta(u),z(u)\rangle
+\right)
+\subseteq
+E_{\Theta'}.
+\]
+
+La provenance puede actuar como \(z\), pero **solo si está disponible y es discriminativamente suficiente** para \(\Theta'\). Un certificado que dice “procede de P” sin conservar la diferencia concreta requerida por el nuevo contrato no rehidrata nada.
 
 #### 0.11.87h. Provenance-preserving y provenance-erasing Bake
 
@@ -11023,7 +11071,7 @@ q^S_\Theta=d_\beta\circ q^T_{\Theta,k} &\to& \text{B7},\\
 }
 \]
 
-BS-T1 prueba el kernel bound contractual; horizontal composition identifica la interaction debt; vertical composition es sound bajo ContractAlignment; BS-T2 demuestra no-recovery tras quotient baking; RehydrateAdequate caracteriza la información lateral suficiente para reparar un refinement.
+BS-T1 prueba el kernel bound contractual; horizontal composition identifica la interaction debt; vertical composition es sound bajo StageCompatibility —incluida unitización intermedia y ContractAlignment—; BS-T2 demuestra no-recovery tras quotient baking; RehydrateSource RH1–RH4 + RehydrateAdequate caracterizan información lateral real, accesible y suficiente para reparar un refinement.
 
 Por tanto la deuda específica de **coordinar B1–B10 con la semántica de interfaces/memoization, composite Bake soundness y rehydration/provenance** queda **RESOLVED a nivel de criterio**.
 
