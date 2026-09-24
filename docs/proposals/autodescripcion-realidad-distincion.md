@@ -136,11 +136,35 @@ ni presupone que los índices sean enumerables, accesibles entre sí o comparabl
 
 Cada contexto $i$ determina su propio tipado ontológico. Una variable escrita $x_i$ pertenece al sort/contexto de objetos de $i$; una fórmula:
 
-$$
+$
 \operatorname{Real}_i(x_i)
-$$
+$
 
 solo está bien formada en ese contexto.
+
+**Admisión del índice.** El subíndice no produce por notación la unidad que etiqueta. El uso ontológico de un parámetro $i$ presupone una **individuación contextual** metateóricamente admisible. La propuesta general no fija una world-making relation universal: permite que una teoría independiente $\mathcal T$ descargue el criterio mediante:
+
+$
+\operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi)
+\land
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi)
+\Rightarrow
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi,\mathcal T).
+$
+
+IndAdequate exige, como mínimo, independencia respecto del target, fundamento positivo, invariancia bajo recodificación, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina frente a cortes rivales y ausencia de totalización por estipulación. Los tests completos están en REV-07g.
+
+La admisión de $i$ **no implica**:
+
+$
+\operatorname{RegimeTotal}_i,
+\qquad
+\operatorname{REC}_i,
+$
+
+que permanecen obligaciones posteriores. Durante una derivación puede usarse un parámetro provisional $\widehat{i}$ para comprobar una candidatura; eso no equivale a haber admitido un nuevo contexto.
+
+Una revisión posterior que retire una admisión defectuosa (IndexRetraction) es una corrección metateórica y no debe confundirse con ContextCessation, que sería la terminación ontológica de una individuación previamente correcta.
 
 ### 1.4. Juicios metaontológicos de contexto
 
@@ -642,6 +666,7 @@ El programa dispone de dos construcciones semánticas condicionales. La ruta fin
 Los bloqueadores activos relevantes pasan a ser:
 
 - **REV-07:** origen y clausura ontológica del régimen: justificar $\operatorname{OntOrigin}_i$, una relación objetivo independiente $\operatorname{OntProd}_i$, una implementación $\operatorname{GenEvent}_i$ con GenSound + GenComplete, y $\mathrm{GCExists}_i$ antes de usar la clausura abreviada; $\operatorname{GenStep}_i$ queda solo como proyección auxiliar y $\Lambda_*$/$\mathcal C_*$ como reconstrucciones candidatas de esa genealogía;
+- **REV-07g:** individuación contextual previa a la admisión del índice. Para un witness fuerte de ExistsR, no basta demostrar RegimeTotal condicionalmente bajo un subíndice: la instanciación contextual usada por $\exists^{\mathsf M}i$ debe ser admisible. AI-UD muestra que el reducto objeto interno no recupera siempre la partición contextual; la ruta de trabajo parametriza la descarga mediante $\operatorname{Ind}_{\mathcal T}^{\mathsf M}$ + IndAdequate. No bloquea resultados condicionales con $i$ ya fijado;
 - **REV-23:** PON — smallness por-token de la ruta finita; la ruta generalizada puede sustituirlo por `CSet/TransClSmall`;
 - **REV-24:** puente de presentación: dado un $R_i$ genealógico justificado por REV-07, demostrar que $S_i$ lo presenta adecuadamente mediante OA/MC/RA;
 - **REV-25:** smallness de la firma y legitimidad del paso por Separation sobre «actualmente verdadero»;
@@ -670,6 +695,7 @@ Las demostraciones, contraejemplos y modelos de trabajo que originaron este esta
 | REV-23 | OPEN para ruta finita | PON no está justificada. Hace set-sized el componente finitamente conectado, pero la ruta generalizada puede sustituirla por `CSet/TransClSmall`. Ninguna condición de smallness implica por sí sola `ExistsR`. |
 | REV-24 | OPEN blocker doctrinal local | El máximo semántico no produce un $R_i$. REV-07 debe justificar primero $\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)$; REV-24 queda reducido a OA/MC/RA sobre la closure de régimen para demostrar $\operatorname{Presents}_i(S_i,R_i)$. Su cierre fortalece `ExistsR` a `WitnessedR`; no crea existencia ontológica. |
 | REV-25 | OPEN blocker fundacional/semántico | El teorema usa smallness de la firma y un paso de Separation sobre los hechos «actualmente verdaderos». Deben justificarse la firma/aridades y la disponibilidad metateórica del predicado de actualidad. |
+| REV-07g | PARTIAL / blocker de witness fuerte | La identidad contextual no se obtiene de JointRealizable, CommonGround, $\mathcal C_*$, RegimeTotal, REC ni $\Omega_i$ sin circularidad/sobre-restricción. AI-UD muestra subdeterminación si se permiten sectores sin estructura transversal. La ruta vigente usa ContextIndividuation theory-relative + IndAdequate antes de IndexAdmission; la individuación no implica totalidad. |
 | REV-26 | OPEN extensión metaontológica | **One-$R$/Many-$R$ y generalidad entre índices.** No bloquea $\operatorname{ExistsR}$. Un origen común entre dos candidatos implica que pertenecen al mismo índice; Many-$R$ genuino exige índices incompatibles por tipado, no una condición adicional de aislamiento. |
 
 ### Corrección histórica importante sobre F2
@@ -713,7 +739,7 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 
 La existencia ontológica y su representación quedan ahora separadas:
 
-1. **REV-07:** justificar GeneUnit locales, una GeneBasis no redundante, la relación objetivo independiente $\operatorname{OntProd}_i$, una implementación $\operatorname{GenEvent}_i$ sound-and-complete y existencia de RegimeClosure; solo entonces $\operatorname{RegimeGenerated}^{*}_i$ puede realizar un $R_i$, mientras $\operatorname{GenStep}_i$ permanece una proyección auxiliar;
+1. **REV-07/REV-07g:** justificar primero una individuación contextual admisible/IndexAdmission y, dentro de ese contexto, GeneUnit locales, una GeneBasis no redundante, la relación objetivo independiente $\operatorname{OntProd}_i$, una implementación $\operatorname{GenEvent}_i$ sound-and-complete y existencia de RegimeClosure; solo entonces $\operatorname{RegimeGenerated}^{*}_i$ puede realizar un $R_i$, mientras $\operatorname{GenStep}_i$ permanece una proyección auxiliar;
 2. **REV-23:** justificar PON solo si se conserva la reconstrucción finita por $\Lambda_*$;
 3. **REV-24:** dado un $R_i$ genealógico ya justificado, demostrar OA/MC/RA y $\operatorname{Presents}_i(S_i,R_i)$;
 4. **REV-25:** justificar la smallness de firma/aridades y el predicado de actualidad usado por Separation.
