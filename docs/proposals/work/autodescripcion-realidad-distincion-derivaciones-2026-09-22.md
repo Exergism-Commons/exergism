@@ -13175,7 +13175,9 @@ XR-1 es una máquina software finita:
 s_0\xrightarrow{e_0}s_1.
 \]
 
-Su teoría operacional pre-indexada \(\mathcal T_{\mathrm{XR1}}\) fija primero, independientemente de GenEvent, una única instancia productiva actual:
+XR-1 **no introduce una teoría ontológica ad hoc propia**. Se interpreta como una instancia mínima de \(\mathcal T_{\mathrm{DTS}}\), la teoría ordinaria de sistemas de transición deterministas finitos: un conjunto tipado de states, un alfabeto de events y una función/relación de transición parcial. La motivación y semántica de \(\mathcal T_{\mathrm{DTS}}\) son independientes del objetivo ExistsR; XR-1 solo selecciona su instancia no trivial mínima.
+
+En esa teoría operacional pre-indexada se fija primero, independientemente de GenEvent, una única instancia productiva actual:
 
 \[
 \operatorname{ProcessProd}(e_0,\{s_0\},s_1),
@@ -13260,7 +13262,7 @@ Así GCExists queda demostrado para esta instancia finita, aunque REV-07c siga a
 Sea \(a\) una ejecución concreta. La semántica operacional fija independientemente:
 
 \[
-\operatorname{ExecToken}_{\mathcal T_{XR1}}(a,x)
+\operatorname{ExecToken}_{\mathcal T_{DTS}}(a,x)
 \]
 
 cuando \(x\) ocurre efectivamente como state/event token local.
@@ -13276,7 +13278,7 @@ Definimos:
 \[
 \operatorname{Real}^{a}_{XR1}(x)
 \Longleftrightarrow
-\operatorname{ExecToken}_{\mathcal T_{XR1}}(a,x).
+\operatorname{ExecToken}_{\mathcal T_{DTS}}(a,x).
 \]
 
 Esto no menciona GenClosure. Independientemente:
@@ -13323,76 +13325,118 @@ x\in C_{XR1}.
 
 Escribimos \(R_{XR1}\) para ese scope plural sin convertirlo en objeto colector.
 
-#### 0.11.91ag. XR1-C — descarga TR-M
+#### 0.11.91ag. XR1-C — descarga TR-M e IndAdequate
 
-La candidatura dispone pre-indexadamente de typing local State/Event, transición operacional, frontera de proceso, interfaces de boot/termination y estado reentrante. Bajo \(\mathcal T_{XR1}\), MC1–MC10 se descargan así: la especificación no usa el índice; typing y boundary son positivos; toda influencia admitida entra por interfaces declaradas; el update es determinista; no hay roles/interacciones omitidos; fijado estado + inputs el futuro lógico queda determinado; no existe agregación arbitraria; el host puede ser otro contexto vía ContextEmbedding; y genesis/persistence permanecen separados.
+La candidatura dispone pre-indexadamente de typing local State/Event, transición operacional, frontera de proceso, interfaces de boot/termination y estado reentrante.
 
-Esto satisface el perfil estructural de MemoContextCriterion. Queda, sin embargo, una obligación separada:
+Bajo la teoría independiente \(\mathcal T_{\mathrm{DTS}}\), MC1–MC10 se descargan: la especificación no usa el índice; typing y boundary son positivos; toda influencia admitida entra por interfaces declaradas; el update es determinista; no hay roles/interacciones omitidos; fijado estado + inputs el futuro lógico queda determinado; no existe agregación arbitraria; el host puede ser otro contexto vía ContextEmbedding; y genesis/persistence permanecen separados.
 
-\[
-\boxed{\mathrm{XR1\text{-}REAL}.}
-\]
+Además XR-1 permite auditar **IA1–IA10** sin introducir el target como premisa:
 
-#### 0.11.91ah. XR1-REAL — realización actual sin witness privilegiado
+- **IA1:** \(\mathcal T_{\mathrm{DTS}}\) es una teoría matemática/operacional general anterior e independiente de XR-1; la instancia fue elegida por minimalidad, no para fabricar su frontera.
+- **IA2:** ninguna regla DTS menciona \(R_i\), RegimeTotal, REC, SameRegime ni un índice admitido.
+- **IA3:** el corte está positivamente grounded por sorts, transición y realization boundary.
+- **IA4:** OR6 y el test de recoding covariance preservan la individuación bajo codificación fiel.
+- **IA5:** los grados host-side ignorados por \(\varrho\) deben quedar contrafácticamente screened-off; si afectan la transición local, OR4/MC4 fallan.
+- **IA6:** XR-1 posee una sola máquina transitionally integrated; juntar otra máquina independiente no hereda el criterio.
+- **IA7:** boot/formation del realizador se distingue de sus pasos internos; la transición \(s_0\to s_1\) no se usa para explicar retroactivamente la existencia del contexto.
+- **IA8:** el corte local y el host son niveles nested, no rival cuts del mismo nivel.
+- **IA9:** ContextIndividuation no basta para scope; XR1-S descarga el scope por separado.
+- **IA10:** OR/MC/XR-A1–A7 identifican explícitamente qué haría fallar la individuación.
 
-El run de CI es **evidence**, no truthmaker constitutivo del contexto. Introducimos:
-
-\[
-\operatorname{OnticRealization}^{\mathsf M}
-(
-H_a,C_{XR1};\varrho_a
-)
-\]
-
-donde \(H_a\) es el proceso host efectivamente ejecutado y \(\varrho_a\) relaciona sus estados/transiciones relevantes con:
-
-\[
-s_0,\;e_0,\;s_1.
-\]
-
-La descarga XR1-REAL exige OR1–OR7. En particular:
-
-- el proceso host obtiene efectivamente;
-- la proyección preserva State/Event typing;
-- la transición host/local conmuta;
-- la dinámica local está contrafácticamente soportada por el realizador y no meramente correlacionada;
-- la realización no menciona CI, logs o certificado;
-- otra implementación fiel puede realizar el mismo contexto mediante una \(\varrho'\) equivalente;
-- host y contexto local no colapsan.
-
-El archivo `xr1-witness.json` producido por CI satisface únicamente:
-
-\[
-\operatorname{Evidences}^{\mathsf M}
-(
-\chi_{CI};
-\operatorname{OnticRealization}(H_a,C_{XR1};\varrho_a)
-).
-\]
-
-Por WC-T1, la conclusión ontológica no contiene \(\chi_{CI}\).
-
-La antigua XA4 queda absorbida por:
+Queda entonces concentrada IA0 en la realización estructural actual:
 
 \[
 \boxed{
-\operatorname{RealizationAdequate}(H_a,C_{XR1},\varrho_a)
-\Rightarrow
-IA0_{\mathrm{XR1}}.
+\operatorname{ActualStructuralRealization}^{\mathsf M}
+(
+H,C;\varrho
+)
+:=
+\operatorname{Obtains}^{\mathsf M}(H)
+\land
+\operatorname{StructuralRealization}^{\mathsf M}(H,C;\varrho),
 }
 \]
 
-No añadimos por tanto un axioma especial “software is real”. Lo que debe demostrarse es que la ejecución concreta **realiza** de manera estructural y contrafácticamente robusta la máquina local. Si no existe tal \(\varrho_a\), XR-1 falla; si existe, que la implementación sea software, hardware, biológica o híbrida es secundario para el criterio.
+donde StructuralRealization abrevia OR2–OR7.
 
-Así:
+El script XR-1 verifica mecánicamente OR2–OR7 sobre un host realizer distinto del autómata local y aporta evidencia de que el paso host fue efectivamente ejecutado.
+
+#### 0.11.91ah. XR1-REAL — realización actual y principio de suficiencia
+
+El run de CI es evidence, no truthmaker. El truthmaker candidato es una estructura host-side efectiva:
+
+\[
+\operatorname{ActualStructuralRealization}^{\mathsf M}
+(
+H_a,C_{XR1};\varrho_a
+).
+\]
+
+Para XR-1, el realizer host contiene estructura adicional que no pertenece al contexto local —por ejemplo irrelevant_noise— y:
+
+\[
+\varrho_a:
+H_a
+\to
+\{s_0,s_1,e_0\}
+\]
+
+es many-to-one respecto de esa estructura. Esto descarga OR7 y evita identificar modelo y realizador.
+
+La verificación ejecutable comprueba:
 
 \[
 \boxed{
+\begin{array}{ll}
+OR2 &: \text{typed realization},\\
+OR3 &: \varrho_a\circ T_H=T_C\circ\varrho_a,\\
+OR4 &: \text{screening-off de variación irrelevante + sensibilidad relevante},\\
+OR5 &: \varrho_a\text{ no depende del certificado},\\
+OR6 &: \text{covariancia bajo recodificación fiel},\\
+OR7 &: \text{no colapso host/local}.
+\end{array}
+}
+\]
+
+El paso efectivamente ejecutado aporta evidencia de OR1/Obtains. Por WitnessCovariance, ningún certificado concreto entra en la conclusión.
+
+Aquí queda expuesto el único principio metafísico sustantivo de la ruta realizacional:
+
+\[
+\boxed{
+\mathrm{RSP}
+:
+\operatorname{ActualStructuralRealization}(H,C;\varrho)
++
+\operatorname{MCAdequate}(C)
+\Rightarrow
+IA0(C).
+}
+\]
+
+**RSP — Realization Sufficiency Principle** dice que una estructura local cuya dinámica y typing están efectivamente realizados, contrafácticamente soportados y covariantemente preservados posee structural fidelity suficiente para la descarga ontológica de ese nivel.
+
+RSP no dice que una descripción correcta cree realidad. Exige primero un realizador actual independiente de la descripción. Tampoco hace toda abstracción real: OR2–OR7 + MC1–MC10 excluyen correlaciones, agregaciones arbitrarias y coarse-grainings sin soporte dinámico.
+
+La cuestión doctrinal queda así perfectamente aislada:
+
+- si TR-M pretende reconocer software, control, células u otros niveles multiply realizable como contextos reales, **alguna forma de RSP es necesaria**;
+- negar RSP obliga a restringir TR-M a una teoría más fuerte de realization/truthmaking;
+- aceptarlo permite descargar IA0 de XR-1 sin axioma especial «software is real».
+
+Por tanto:
+
+\[
+\boxed{
+\mathrm{RSP}
++
 \mathrm{XR1\text{-}REAL}
 +
 \mathrm{MCAdequate}
 +
-\mathrm{IndAdequate}
+IA1\text{--}IA10
 \Rightarrow
 \operatorname{ContextIndividuation}^{\mathsf M}(C_{XR1}).
 }
@@ -13422,6 +13466,8 @@ Por tanto:
 
 \[
 \boxed{
+\mathrm{RSP}
++
 \mathrm{XR1\text{-}REAL}
 +
 \mathrm{IndAdequate}_{XR1}
@@ -13466,7 +13512,7 @@ XR-1 demuestra:
 
 La máquina/CI descargan el núcleo formal y aportan evidencia reproducible de un run. El punto que el código no decide por sí solo es XR1-REAL: que exista una relación de realización OR1–OR7 entre el proceso host actual y la máquina local.
 
-Por tanto ExistsR **todavía no se marca como demostrado incondicionalmente**. La deuda existencial queda reducida a demostrar XR1-REAL/OR1–OR7 para alguna ejecución actual; el evidence witness concreto es eliminable por WitnessCovariance. Si XR1-REAL e IndAdequate se descargan, XR1-T entrega inmediatamente \(\operatorname{ExistsR}\).
+Por tanto ExistsR **todavía no se marca como demostrado incondicionalmente**. XR-1 descarga mecánicamente OR2–OR7 y aporta evidencia reproducible de OR1 para un run actual; IA1–IA10 quedan auditadas contra la teoría independiente DTS. La deuda filosófica se concentra ahora en RSP: si actual structural realization es suficiente para IA0. Si se adopta RSP, XR1-T entrega \(\operatorname{ExistsR}\) por la ruta realizacional.
 
 #### 0.11.92. Relación con \(\Omega_i\): ContinuationProfile ya no depende de \(\Omega_i\)
 
