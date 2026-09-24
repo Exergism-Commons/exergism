@@ -8138,7 +8138,7 @@ E^S_\Theta.
 
 La forma con quotient target contractual se desarrolla y generaliza en §0.11.87; evita identificar el kernel de Bake con igualdad literal de tokens target.
 
-Esto cierra la deuda específica de **formalizar InterfaceContract/trace semantics y demostrar IC1–IC10 en ejemplos no triviales**. No cierra REV-07h completo: RoleAdequate, memo-equivalence composicional, update/invalidation, la coordinación con ContinuationProfile/TR-M, InterfaceWall fuerte y la posible inducción de \(\Omega_i\) permanecen abiertos.
+Esto cierra la deuda específica de **formalizar InterfaceContract/trace semantics y demostrar IC1–IC10 en ejemplos no triviales**. Las deudas posteriores de RoleAdequate, memo-equivalence composicional, update/invalidation, ContinuationProfile y TR-M quedan resueltas más adelante en REV-07h; permanecen abiertos InterfaceWall fuerte y la posible inducción de \(\Omega_i\).
 
 
 #### 0.11.82. Memoization no es hashing: equivalencia por continuaciones
