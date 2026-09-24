@@ -19,6 +19,7 @@ MAX_SECTION4_LINES = 400
 
 PRIMARY_LEDGER_ID = re.compile(r"^(REV-\d+[a-z]?|DOC-\d+|FORM-\d+)$")
 UNESCAPED_PIPE = re.compile(r"(?<!\\)\|")
+FENCE_BOUNDARY = "\u241e"
 
 
 def fail(message: str) -> None:
@@ -45,13 +46,13 @@ def markdown_lines_outside_fences(text: str) -> list[tuple[int, str]]:
                 if marker[0] != "`" or "`" not in info_string:
                     fence_char = marker[0]
                     fence_len = len(marker)
-                    result.append((index, ""))
+                    result.append((index, FENCE_BOUNDARY))
                     continue
 
             result.append((index, line))
             continue
 
-        result.append((index, ""))
+        result.append((index, FENCE_BOUNDARY))
         closing = re.fullmatch(
             rf"^ {{0,3}}{re.escape(fence_char)}{{{fence_len},}}[ \t]*$",
             line,
@@ -356,10 +357,10 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         r":?\s*\\Longleftrightarrow\s*"
         r"\\exists\s*\^\s*\{\s*\\mathsf(?:\s*\{M\}|\s+M)\s*\}\s*i\s*\\;?\s*"
         r"\\bigl\s*\(\s*"
-        r"\\exists\s*\\mathfrak(?:\s*\{G\}|\s+G)_i\s*"
-        r"\\exists\s*R_i\s*\\;?\s*"
-        r"\\operatorname\s*\{RegimeTotal\}_i\s*\(\s*"
-        r"\\mathfrak(?:\s*\{G\}|\s+G)_i\s*,\s*R_i\s*\)\s*"
+        r"\\exists\s*\\mathfrak(?:\s*\{G\}|\s+G)\s*_\s*i\s*"
+        r"\\exists\s*R\s*_\s*i\s*\\;?\s*"
+        r"\\operatorname\s*\{RegimeTotal\}\s*_\s*i\s*\(\s*"
+        r"\\mathfrak(?:\s*\{G\}|\s+G)\s*_\s*i\s*,\s*R\s*_\s*i\s*\)\s*"
         r"\\bigr\s*\)\s*\.?"
         r"\s*\}\s*"
     )
@@ -552,13 +553,19 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         "##### Ruta plural",
     )
     plural_status_contract = (
-        "> **Status contract:** `REV-24d = UNCHANGED`; "
+        "**Status contract:** `REV-24d = UNCHANGED`; "
         "`scope realization owner = REV-07/RegimeTotal`; "
         "`Actual/CoReal plural route = NON-DISCHARGING for RegimeGenerated*`."
     )
-    if plural_route_section.count(plural_status_contract) != 1:
+    active_status_lines = [
+        line
+        for line in plural_route_section.splitlines()
+        if re.fullmatch(r" {0,3}>[ \t]+" + re.escape(plural_status_contract), line)
+    ]
+    if len(active_status_lines) != 1:
         fail(
-            "REV-07f regression: plural-route status must preserve the canonical "
+            "REV-07f regression: plural-route status must appear exactly once as "
+            "active top-level blockquote Markdown with the canonical "
             "UNCHANGED/MOVED/NON-DISCHARGING contract"
         )
     if re.search(r"REV-24d[^\n]{0,120}\bPARTIAL\b", plural_route_section):
