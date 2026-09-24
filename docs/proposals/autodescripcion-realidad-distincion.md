@@ -148,12 +148,12 @@ $$
 \operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi)\land
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi)
 \Rightarrow
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
 \Rightarrow
 \operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi,\mathcal T).
 $$
 
-La relatividad a \(\mathcal T\) pertenece a la **descarga**, no a la realidad individuada. IndAdequate exige fidelidad estructural, independencia del target, fundamento positivo, invariancia, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina de cortes rivales y no-totalización; REV-07g contiene los tests completos. IndexAdmission no implica RegimeTotal ni REC. Un parámetro provisional \(\widehat{i}\) puede servir para auditar una candidatura sin admitirla. IndexRetraction corrige una admisión metateórica defectuosa y no equivale a ContextCessation ontológica. **Nada absoluta frente a individuación.** REV-07g separa ahora dos deudas: `NoR := not ExistsR` es una metasentencia, no un estado precursor u objeto capaz de producir realidad, de modo que no se usa `Nothing -> R_i` ni una «inversión de la Nada». Queda abierta la hipótesis de si una ausencia absoluta de determinación puede ser una realización admisible, pero incluso excluirla no prueba por sí solo `ExistsR`: falta un puente no circular hacia RegimeTotal. Separadamente, una distinción solo puede fundamentar ContextIndividuation si es efectiva y positivamente justificada por una teoría independiente; una partición descriptiva `A|B` no basta.
+La relatividad a \(\mathcal T\) y el witness \(\chi\) pertenecen a la **descarga/auditoría**, no a la realidad individuada: el target objetivo es $\operatorname{ContextIndividuation}^{\mathsf M}(C)$. IndAdequate exige fidelidad estructural, independencia del target, fundamento positivo, invariancia, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina de cortes rivales y no-totalización; REV-07g contiene los tests completos. IndexAdmission no implica RegimeTotal ni REC. Un parámetro provisional \(\widehat{i}\) puede servir para auditar una candidatura sin admitirla. IndexRetraction corrige una admisión metateórica defectuosa y no equivale a ContextCessation ontológica. **Nada absoluta frente a individuación.** REV-07g separa ahora dos deudas: `NoR := not ExistsR` es una metasentencia, no un estado precursor u objeto capaz de producir realidad, de modo que no se usa `Nothing -> R_i` ni una «inversión de la Nada». Queda abierta la hipótesis de si una ausencia absoluta de determinación puede ser una realización admisible, pero incluso excluirla no prueba por sí solo `ExistsR`: falta un puente no circular hacia RegimeTotal. Separadamente, una distinción solo puede fundamentar ContextIndividuation si es efectiva y positivamente justificada por una teoría independiente; una partición descriptiva `A|B` no basta.
 
 ### 1.4. Juicios metaontológicos de contexto
 
@@ -1472,7 +1472,7 @@ Para un operador extensivo e idempotente, F1 + F3 bastan para elevar cotas a pun
 1. la existencia/adecuación de una base $\mathcal O_i$ y de su clausura ontológica —REV-07—;
 2. la adecuación de $\Lambda_*$ o $\mathcal C_*$ como reconstrucción de esa genealogía;
 3. REV-24c/RA y, por tanto, la presentación completa por $S_i$;
-4. $\operatorname{ExistsR}$ incondicional: XR-1 ya descarga por exhaustión finita GeneUnit/GenComplete/GCExists/scope y prueba $\mathrm{XR1\text{-}ACT}+\mathrm{IndAdequate}_{XR1}\Rightarrow\operatorname{ExistsR}$; falta descargar XA4/structural fidelity del nivel software para eliminar esa premisa;
+4. $\operatorname{ExistsR}$ incondicional: XR-1 descarga por exhaustión finita GeneUnit/GenComplete/GCExists/scope y prueba $\mathrm{XR1\text{-}REAL}+\mathrm{IndAdequate}_{XR1}\Rightarrow\operatorname{ExistsR}$; el certificado CI es evidencia eliminable, mientras la deuda real es demostrar una $\operatorname{OnticRealization}$ OR1–OR7 del proceso host;
 5. One-$R$/Many-$R$ y cualquier generalidad meta-indexada, que quedan en REV-26 y no bloquean el target principal.
 
 Esta separación es normativa. Cualquier detalle técnico nuevo debe incorporarse primero al documento work/; el normativo solo se amplía cuando cambie uno de estos enunciados, dependencias o estados.
@@ -2006,7 +2006,7 @@ REV-07h refina la hipótesis de trivialización de REV-07e separando SourceUnit,
 
 Memoization no es hashing ni criterio automático de contexto: $\operatorname{MemoState}\not\Rightarrow\operatorname{ContextIndividuation}$. Pero tampoco vale $\operatorname{Subsystem}\Rightarrow\neg\operatorname{Context}$: una teoría puede descargar TR-M pre-indexadamente mediante typing local, boundary/interface mediation, reentrant quotient dynamics, MaintRole/interaction coverage y MC1–MC10 + IndAdequate. Así un termostato, servicio, organismo o proceso puede ser objeto del host $k$ y simultáneamente contexto anidado $j$, relacionado solo por $\operatorname{ContextEmbedding}^{\mathsf M}(j\hookrightarrow k;e)$; no se escribe $R_j\in R_k$ ni se infiere $j\#k$. La prohibición correcta es no-free-promotion: memoria, frontera espacial o empaquetado por sí solos no crean contexto; arbitrary aggregation falla MC8. PersistenceSpec/ContinuationProfile gobierna después la identidad diacrónica del contexto. InterfaceWall sigue siendo subdeterminación relativa al canal, no Muro fuerte.
 
-**Estado: PARTIAL — REV-07.** REV-07f queda resuelto arquitectónicamente y XR-1 aporta un witness singleton finito ejecutable: la instancia descarga GenSound/GenComplete, GCExists, GeneUnit y scope exacto, por lo que `XR1-ACT + IndAdequate_XR1 -> ExistsR`. REV-07b/c/d siguen abiertos como tesis universales, pero no bloquean XR-1. `ExistsR` aún no se marca incondicional porque XA4 debe justificar structural fidelity/legitimidad ontológica del nivel software actual. REV-24 sigue reservado a presentar un $R_i$ ya justificado.
+**Estado: PARTIAL — REV-07.** REV-07f queda resuelto arquitectónicamente y XR-1 aporta un candidato singleton finito ejecutable: GenSound/GenComplete, GCExists, GeneUnit y scope exacto quedan descargados, de modo que `XR1-REAL + IndAdequate_XR1 -> ExistsR`. El certificado CI es evidence witness, no truthmaker; WitnessCovariance elimina cualquier observador privilegiado de la conclusión. REV-07b/c/d siguen abiertos universalmente, pero no bloquean XR-1. Falta demostrar una OnticRealization OR1–OR7 del run host para cerrar ExistsR incondicionalmente.
 
 ## 6. Metaontología de contextos — REV-26
 
