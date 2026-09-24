@@ -652,17 +652,17 @@ Por tanto, REV-01, REV-02 y REV-04 están cerrados en sus criterios originales, 
 
 El programa dispone de dos construcciones semánticas condicionales. La ruta finita usa el carrier tipado $T^{\Lambda}_{i,q}=[q_i]_{\sim_i}$, PON y $\operatorname{StructAdm}_i$. La ruta generalizada es deliberadamente pre-ontológica: usa $T_q^{\mathcal C}$, `CFragAdm_C`, CSet/CWF/CProcStable y smallness/Separation relativas a la clausura; solo tras adecuación genealógica puede reindexarse como un régimen. Ninguna ruta semántica demuestra por sí sola $\operatorname{ExistsR}$; tampoco decide metateóricamente One-$R$ frente a Many-$R$.
 
-Los bloqueadores activos relevantes pasan a ser:
+Las deudas activas se organizan ahora por capa:
 
-- **REV-07:** origen y clausura ontológica del régimen: justificar $\operatorname{OntOrigin}_i$, una relación objetivo independiente $\operatorname{OntProd}_i$, una implementación $\operatorname{GenEvent}_i$ con GenSound + GenComplete, y $\mathrm{GCExists}_i$ antes de usar la clausura abreviada; $\operatorname{GenStep}_i$ queda solo como proyección auxiliar y $\Lambda_*$/$\mathcal C_*$ como reconstrucciones candidatas de esa genealogía;
-- **REV-07g:** individuación contextual previa a la admisión del índice. Para un witness fuerte de ExistsR, no basta demostrar RegimeTotal condicionalmente bajo un subíndice: la instanciación contextual usada por $\exists^{\mathsf M}i$ debe ser admisible. AI-UD muestra que el reducto objeto interno no recupera siempre la partición contextual; la ruta de trabajo parametriza la descarga mediante $\operatorname{Ind}_{\mathcal T}^{\mathsf M}$ + IndAdequate. No bloquea resultados condicionales con $i$ ya fijado;
-- **REV-23:** PON — smallness por-token de la ruta finita; la ruta generalizada puede sustituirlo por `CSet/TransClSmall`;
-- **REV-24:** puente de presentación: dado un $R_i$ genealógico justificado por REV-07, demostrar que $S_i$ lo presenta adecuadamente mediante OA/MC/RA;
-- **REV-25:** smallness de la firma y legitimidad del paso por Separation sobre «actualmente verdadero»;
-- **REV-20:** PSB/K1, ahora derivables de PON en la ruta estructural;
-- **REV-22:** aplicabilidad de Zorn, subordinada a las premisas de smallness aunque la ruta directa a $\operatorname{SemTotal}$ no lo necesita;
-- **REV-15:** consecuencias metaontológicas discriminantes;
-- **REV-26:** extensión metaontológica no bloqueante para el target principal: One-$R$/Many-$R$, generalidad absoluta y comparación entre índices;
+- **Existencia — REV-07 / XR-$\varepsilon$:** OntOrigin/OntProd/GenEvent/RegimeClosure siguen PARTIAL universalmente, pero XR-$\varepsilon$ descarga una instancia finita y da $\varepsilon$RSP + RealizedEmergence + IndAdequate$^{1\text{--}10}\Rightarrow ExistsR$; NFA-T1 muestra que la alternativa a priori exige NQ.
+- **Individuación — REV-07g:** ContextIndividuation es witness-free; TR-W/TR-O/TR-M son rutas theory-relative, nesting usa ContextEmbedding y Generation/GenSig separa profundidad ontogénica de embedding. El guard es no-free-promotion, no anti-proliferation.
+- **Continuidad/interfaces — REV-07h:** Interface/Memo/Bake/ContinuationProfile/FaithfulContinuation están resueltos a nivel de criterio; permanecen InterfaceWall→Muro fuerte y la posible canonicalización posterior $\Omega_i$.
+- **Emergencia semántica — REV-03/18/19/09/10/21:** $\varepsilon$, proceso, EClosed y SemTotal forman infraestructura activa; no crean por sí solos $R_i$.
+- **Presentación — REV-24/25:** OA/MC/RA, firma y Separation buscan $Presents_i/WitnessedR$ una vez exista RegimeTotal; no son premisas de ExistsR.
+- **Smallness/maximalidad — REV-20/22/23:** rutas subordinadas o alternativas de SemTotal; PON solo bloquea la reconstrucción finita correspondiente.
+- **Muro — REV-15:** InterfaceWall aporta subdeterminación de canal; sigue abierta la irreconstructibilidad genealógica de principio.
+- **Metaontología — REV-26:** One-$R$/Many-$R$, generalidad absoluta y comparación global permanecen extensiones no bloqueantes.
+- **Arqueología:** el linaje de supramedium, Cluster-R, proceso, fractalidad, $\Omega_\infty$, REC/Muro y demás formulaciones retiradas se mantiene explícito en el mapa de arqueología conceptual;
 
 ## 3.1. Resumen formal vigente
 
@@ -684,7 +684,7 @@ Las demostraciones, contraejemplos y modelos de trabajo están en [derivaciones 
 | REV-23 | OPEN para ruta finita | PON no está justificada. Hace set-sized el componente finitamente conectado, pero la ruta generalizada puede sustituirla por `CSet/TransClSmall`. Ninguna condición de smallness implica por sí sola `ExistsR`. |
 | REV-24 | OPEN blocker doctrinal local | El máximo semántico no produce un $R_i$. REV-07 debe justificar primero $\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)$; REV-24 queda reducido a OA/MC/RA sobre la closure de régimen para demostrar $\operatorname{Presents}_i(S_i,R_i)$. Su cierre fortalece `ExistsR` a `WitnessedR`; no crea existencia ontológica. |
 | REV-25 | OPEN blocker fundacional/semántico | El teorema usa smallness de la firma y un paso de Separation sobre los hechos «actualmente verdaderos». Deben justificarse la firma/aridades y la disponibilidad metateórica del predicado de actualidad. |
-| REV-07g | PARTIAL / blocker de witness fuerte | La identidad contextual no se obtiene de JointRealizable, CommonGround, $\mathcal C_*$, RegimeTotal, REC ni $\Omega_i$ sin circularidad/sobre-restricción. AI-UD muestra subdeterminación si se permiten sectores sin estructura transversal. La ruta vigente usa ContextIndividuation theory-relative + IndAdequate antes de IndexAdmission; la individuación no implica totalidad. |
+| REV-07g/07h | PARTIAL global / major subcriteria resolved | ContextIndividuation es objetivo y witness-free; TR-M permite contextos anidados bajo MC1–MC10, Generation/GenSig estratifica genealogía, y OR1–OR9 + WitnessCovariance separan realization de evidence. Interface/Memo/Bake/ContinuationProfile/FaithfulContinuation están resueltos a nivel de criterio. XR-$\varepsilon$ alinea la emergencia original con TR-M mediante EA1–EA8 y usa $\varepsilon$RSP para IA0. Permanecen NQ para la ruta a priori, InterfaceWall→Muro fuerte y $\Omega_i$ como posible output tardío. |
 | REV-26 | OPEN extensión metaontológica | **One-$R$/Many-$R$ y generalidad entre índices.** No bloquea $\operatorname{ExistsR}$. Un origen común entre dos candidatos implica que pertenecen al mismo índice; Many-$R$ genuino exige índices incompatibles por tipado, no una condición adicional de aislamiento. |
 
 ### Corrección histórica importante sobre F2
