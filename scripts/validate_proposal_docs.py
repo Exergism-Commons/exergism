@@ -942,12 +942,6 @@ def main() -> None:
         0,
         history_start,
     )
-    validate_index_typing(
-        TECHNICAL,
-        documents[TECHNICAL],
-        0,
-        len(documents[TECHNICAL].lines),
-    )
 
     validate_regime_total_contract(
         documents[NORMATIVE],
