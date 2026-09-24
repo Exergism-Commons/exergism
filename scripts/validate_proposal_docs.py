@@ -639,7 +639,7 @@ def validate_regime_total_contract(
     require_canonical_display_after(
         technical,
         xp_bounds,
-        "Supongamos ahora explícitamente:",
+        "puede ocurrir, porque ningún cierre local dispone de ambos antecedentes. Supongamos ahora explícitamente:",
         CANONICAL_XP_RGC_EXISTS,
         "RT-07-XP affirmative RGCExists premise",
     )
