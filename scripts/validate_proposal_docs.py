@@ -343,6 +343,7 @@ class MarkdownDocument:
             token
             for token in self.tokens
             if token.type == "math_block"
+            and token.level == 0
             and token.map is not None
             and start <= token.map[0]
             and token.map[1] <= end
@@ -617,9 +618,11 @@ def validate_archive(document: MarkdownDocument) -> None:
 
 
 def validate_index_typing(current: str) -> None:
+    tex_gap = r"(?:\s|\\[,;:!]|\\(?:quad|qquad)|\{\s*\})*"
+    index_i = r"(?:i\b|\{\s*i\s*\})"
     checks = {
-        r"\\exists!?\s*i\b": "object-level existential quantification over index metavariable i",
-        r"\\forall\s*i\b": "object-level universal quantification over index metavariable i",
+        rf"\\exists!?{tex_gap}{index_i}": "object-level existential quantification over index metavariable i",
+        rf"\\forall{tex_gap}{index_i}": "object-level universal quantification over index metavariable i",
         r"i\s*\\neq\s*j|j\s*\\neq\s*i": "ordinary i\\neq j index relation",
         r"i\s*\\in\s*I\b": "membership of index metavariable i in an index domain I",
         r"\\operatorname\{Real\}\(x\)": "unindexed Real(x) predicate",
@@ -793,33 +796,19 @@ def validate_regime_total_contract(
         )
 
 
-def validate_normative_size(text: str) -> None:
-    lines = normalize_source(text).split("\n")
-    if len(lines) > MAX_NORMATIVE_LINES:
+def validate_normative_size(document: MarkdownDocument) -> None:
+    line_count = len(document.lines)
+    if line_count > MAX_NORMATIVE_LINES:
         fail(
-            f"Normative proposal grew to {len(lines)} lines; limit is {MAX_NORMATIVE_LINES}. "
+            f"Normative proposal grew to {line_count} lines; limit is {MAX_NORMATIVE_LINES}. "
             "Move technical derivations to docs/proposals/work/."
         )
 
-    section4_start = next(
-        (index for index, line in enumerate(lines) if line.startswith("## 4.")),
-        None,
+    section4_start, section4_end = document.section_bounds(
+        2,
+        "4. Núcleo formal vigente",
     )
-    if section4_start is None:
-        fail("Normative proposal is missing section 4")
-
-    section5_start = next(
-        (
-            index
-            for index, line in enumerate(lines[section4_start + 1 :], start=section4_start + 1)
-            if line.startswith("## 5.")
-        ),
-        None,
-    )
-    if section5_start is None:
-        fail("Normative proposal is missing section 5 after section 4")
-
-    section4_lines = section5_start - section4_start
+    section4_lines = section4_end - section4_start
     if section4_lines > MAX_SECTION4_LINES:
         fail(
             f"Normative section 4 grew to {section4_lines} lines; limit is {MAX_SECTION4_LINES}. "
@@ -853,7 +842,7 @@ def main() -> None:
         documents[LEDGER],
         documents[TECHNICAL],
     )
-    validate_normative_size(contents[NORMATIVE])
+    validate_normative_size(documents[NORMATIVE])
 
     print("Proposal document validation passed")
     print(f"Normative lines: {len(normalize_source(contents[NORMATIVE]).split(chr(10)))}")
