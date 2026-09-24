@@ -45,11 +45,13 @@ def markdown_lines_outside_fences(text: str) -> list[tuple[int, str]]:
                 if marker[0] != "`" or "`" not in info_string:
                     fence_char = marker[0]
                     fence_len = len(marker)
+                    result.append((index, ""))
                     continue
 
             result.append((index, line))
             continue
 
+        result.append((index, ""))
         closing = re.fullmatch(
             rf"^ {{0,3}}{re.escape(fence_char)}{{{fence_len},}}[ \t]*$",
             line,
@@ -335,20 +337,41 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         r"\operatorname{GeneFamily}_i(\mathfrak G_i)": "explicit GeneFamily contract",
         r"\operatorname{GeneBasis}_i(\mathfrak G_i)": "GeneBasis guard",
         r"\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)": "RegimeGenerated membership",
-        "\\exists\\mathfrak G_i\\exists R_i\\;" + "\n" + "\\operatorname{RegimeTotal}_i(\\mathfrak G_i,R_i)": "ExistsR RegimeTotal witness",
     }
     for snippet, description in required_current.items():
         if snippet not in current:
             fail(f"REV-07f regression: normative proposal is missing {description}")
 
-    old_exists_witness = (
-        "\\exists\\mathcal O_i\\exists R_i\\;" + "\n"
-        + "\\operatorname{GeneTotal}_i(\\mathcal O_i,R_i)"
+    existsr_section = markdown_section(
+        normative,
+        "### 1.9. ExistsR es una metasentencia, no un cuantificador sobre índices",
     )
-    if old_exists_witness in current:
+    existsr_formula = first_display_math_after(
+        existsr_section,
+        "El target doctrinal se escribe ahora:",
+    )
+    existsr_pattern = (
+        r"\s*\\boxed\s*\{\s*"
+        r"\\operatorname\s*\{ExistsR\}\s*"
+        r":?\s*\\Longleftrightarrow\s*"
+        r"\\exists\s*\^\s*\{\s*\\mathsf\s*\{M\}\s*\}\s*i\s*\\;?\s*"
+        r"\\bigl\s*\(\s*"
+        r"\\exists\s*\\mathfrak(?:\s*\{G\}|\s+G)_i\s*"
+        r"\\exists\s*R_i\s*\\;?\s*"
+        r"\\operatorname\s*\{RegimeTotal\}_i\s*\(\s*"
+        r"\\mathfrak(?:\s*\{G\}|\s+G)_i\s*,\s*R_i\s*\)\s*"
+        r"\\bigr\s*\)\s*\.?"
+        r"\s*\}\s*"
+    )
+    if not re.fullmatch(existsr_pattern, existsr_formula, flags=re.MULTILINE):
         fail(
-            "REV-07f regression: active normative text again uses GeneTotal as the "
-            "general ExistsR witness; total existence must range over RegimeTotal"
+            "REV-07f regression: active normative ExistsR formula must quantify "
+            "a RegimeTotal witness with the current family-level architecture"
+        )
+    if re.search(r"\\operatorname\s*\{GeneTotal\}_i", existsr_formula):
+        fail(
+            "REV-07f regression: active normative ExistsR formula again uses "
+            "GeneTotal instead of RegimeTotal"
         )
 
     if sum(line.startswith("| REV-07f |") for line in visible_ledger.splitlines()) != 1:
@@ -528,17 +551,20 @@ def validate_regime_total_contract(normative: str, ledger: str, technical: str) 
         technical,
         "##### Ruta plural",
     )
-    if "REV-24d pasa a PARTIAL" in plural_route_section:
+    plural_status_contract = (
+        "> **Status contract:** `REV-24d = UNCHANGED`; "
+        "`scope realization owner = REV-07/RegimeTotal`; "
+        "`Actual/CoReal plural route = NON-DISCHARGING for RegimeGenerated*`."
+    )
+    if plural_route_section.count(plural_status_contract) != 1:
         fail(
-            "REV-07f regression: plural-route scope realization again changes "
-            "REV-24d status instead of remaining under REV-07/RegimeTotal"
+            "REV-07f regression: plural-route status must preserve the canonical "
+            "UNCHANGED/MOVED/NON-DISCHARGING contract"
         )
-    for term in ("MOVED", "REV-07/RegimeTotal", "RegimeGenerated*", "REV-24"):
-        if term not in plural_route_section:
-            fail(
-                "REV-07f regression: plural-route status explanation is missing "
-                f"current responsibility marker {term}"
-            )
+    if re.search(r"REV-24d[^\n]{0,120}\bPARTIAL\b", plural_route_section):
+        fail(
+            "REV-07f regression: plural route again assigns PARTIAL status to REV-24d"
+        )
 
     historical_dilemma = markdown_section(
         technical,
