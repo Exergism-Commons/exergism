@@ -5912,6 +5912,199 @@ No se adopta la conversa ni se afirma que ContextIndividuation baste para Regime
 
 La consecuencia práctica es que REV-07g deja de ser una extensión puramente opcional si la PR pretende cerrar el **argumento no circular de existencia**. Puede seguir siendo no bloqueante para estudiar algebraicamente un contexto ya fijado, pero es blocker para convertir ese estudio en un witness ontológico fuerte de ExistsR.
 
+#### 0.11.64. Stress test de indistinguibilidad: un contexto desconectado frente a dos contextos
+
+Consideremos dos GeneUnit pre-indexadas \(A\) y \(B\) cuya estructura interna está independientemente especificada. Supóngase:
+
+1. no hay CommonGround entre ellas;
+2. no hay OntProd transversal;
+3. no hay PureOntRel transversal;
+4. no hay dependencia constitutiva entre ellas;
+5. no hay ningún predicado objeto adicional que tome simultáneamente relata de \(A\) y \(B\).
+
+Comparemos dos lecturas metaontológicas.
+
+**Modelo S — shared ambient context.** Existe una candidatura \(\widehat{k}\) en la que \(A\) y \(B\) son dos sectores desconectados de un mismo contexto preexistente:
+
+\[
+A_{\widehat{k}}
+\sqcup
+B_{\widehat{k}}.
+\]
+
+**Modelo P — plurality.** \(A\) y \(B\) pertenecen a contextos distintos \(i\) y \(j\), sin ningún hecho objeto transversal:
+
+\[
+A_i
+\qquad
+B_j.
+\]
+
+Ahora olvidemos únicamente las etiquetas contextuales y conservemos toda la estructura objeto interna de cada sector. Por hipótesis no existe ninguna relación transversal que pueda perderse. El reducto estructural queda:
+
+\[
+\mathcal M_A\sqcup\mathcal M_B
+\]
+
+en ambos casos.
+
+Por tanto cualquier criterio construido **solo** con las propiedades y relaciones objeto internas de \(A\) y \(B\) asigna el mismo perfil a S y P. Sin estructura ambiental adicional no puede recuperar qué partición contextual estaba presente.
+
+Esto produce el lema adversarial:
+
+\[
+\boxed{
+\textbf{AI-UD:}
+\quad
+\text{si un contexto puede contener sectores ontológicamente desconectados,}
+\\
+\text{la partición de contexto no es recuperable en general
+del reducto objeto intrínseco de esos sectores.}
+}
+\]
+
+AI-UD es condicional. No afirma que existan de hecho tales sectores desconectados. Afirma que **REV-07f los permite actualmente** al admitir SharedOntSpace multigeneal sin CommonGround ni exigir un enlace transversal universal.
+
+La conclusión no depende de que S y P sean “el mismo mundo” en un sentido previo; precisamente muestra que esa diferencia no aparece en el vocabulario objeto supuesto por el stress test.
+
+#### 0.11.65. Tres salidas frente a AI-UD
+
+AI-UD obliga a elegir, o al menos distinguir, tres arquitecturas posibles.
+
+**Ruta WMR — world-making structure.** Se fortalece la doctrina y se exige que toda unidad contextual posea alguna estructura independiente \(W\) que haga de world-making relation/structure:
+
+\[
+\operatorname{WorldMaking}^{\mathsf M}(W;C)
+\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_W).
+\]
+
+\(W\) no tiene por qué ser binaria, local, espaciotemporal ni siquiera una única relación. Pero debe ser natural/ontológicamente justificada, recoding-invariant y suficientemente discriminante para decidir co-contextualidad.
+
+Precio: esta ruta **excluye o reinterpreta** el caso de sectores completamente desconectados dentro de un mismo contexto. Además abre una nueva versión de ProdCoverage: ¿qué familia de estructuras puede hacer mundo?
+
+**Ruta PRI — co-contextualidad primitiva restringida.** Se acepta que el hecho metaontológico de pertenecer a una misma unidad contextual no superviene en general sobre las relaciones objeto locales disponibles:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}
+\quad\text{primitivo sujeto a CI1--CI14.}
+\]
+
+Precio: el programa deja de ser reductivo en este punto. Ventaja: no inventa un enlace universal que REV-07f no ha demostrado.
+
+**Ruta TR — descarga teoría-relativa.** La ontología general deja \(\chi\) parametrizado y exige que cada teoría concreta proporcione su criterio:
+
+\[
+\mathcal T
+\vdash
+\operatorname{ContextCriterion}_{\mathcal T}
+\Longrightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}.
+\]
+
+En una teoría podría ser estructura espaciotemporal; en otra, una relación más fundamental; en otra, una condición organizacional. La propuesta general impone solo los guards CI1–CI14.
+
+Estas rutas no son equivalentes. En particular:
+
+\[
+\boxed{
+\mathrm{TR}
+\neq
+\mathrm{PRI}
+}
+\]
+
+porque TR conserva la aspiración reductiva **localmente a una teoría**, mientras PRI acepta primitividad incluso después de fijarla.
+
+La literatura de worldmate muestra precedentes de WMR —por ejemplo, relaciones espaciotemporales en Lewis o propuestas de entanglement en ontologías no espaciales—, pero no autoriza a importar ninguna como solución universal.
+
+#### 0.11.66. Consecuencia para la metáfora de membrana: bona fide frente a fiat
+
+AI-UD también endurece la lectura celular.
+
+Si dos particiones rivales del mismo contenido satisfacen todas las propiedades intrínsecas disponibles y ninguna estructura adicional selecciona una, llamar “membrana” a una de ellas sería, en el mejor de los casos, una **demarcación fiat** de la representación.
+
+Por tanto REV-07g debe distinguir:
+
+\[
+\boxed{
+\text{boundary represented}
+\neq
+\text{boundary ontologically grounded}.
+}
+\]
+
+La distinción bona fide/fiat de Smith y Varzi es solo un precedente analógico sobre fronteras espaciales; no se traslada literalmente a contextos metafísicos. El punto metodológico sí permanece: una línea de demarcación puede ser precisa y útil sin corresponder por ello a una discontinuidad ontológica independiente.
+
+Así, una verdadera Cellular Reality fuerte exigiría:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\]
+
+con \(\chi\) suficientemente independiente para impedir que la “membrana” sea simplemente el contorno elegido por nuestra representación.
+
+Esto refuerza CI7/CI13: si hay nesting legítimo, debe estar ontológicamente estructurado; si solo hay múltiples coarse-grainings equivalentes, no debemos multiplicar índices.
+
+#### 0.11.67. Qué puede salvarse sin decidir todavía WMR/PRI/TR
+
+No es necesario elegir hoy una metafísica universal de individuación para conservar la arquitectura ganada.
+
+Podemos fijar el contrato mínimo:
+
+\[
+\boxed{
+\operatorname{AdmissibleContext}^{\mathsf M}(C;\chi)
+:=
+\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\land
+\mathrm{CI1\text{-}CI14}(C,\chi).
+}
+\]
+
+y usar:
+
+\[
+\operatorname{AdmissibleContext}^{\mathsf M}(C;\chi)
+\Rightarrow
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi).
+\]
+
+El símbolo “:=” aquí es solo una abreviatura de contrato metateórico, no una reducción ontológica de \(\chi\).
+
+A partir de ahí las obligaciones quedan ordenadas:
+
+\[
+\boxed{
+\begin{array}{rcl}
+\text{ContextIndividuation} &\to& \text{IndexAdmission}\\
+&\to& \text{GeneBasis/RegimeClosure}\\
+&\to& \text{RegimeTotal}\\
+&\to& \text{REC},
+\end{array}
+}
+\]
+
+mientras:
+
+\[
+\text{Muro}
+\]
+
+permanece transversal como límite epistemológico y:
+
+\[
+\text{ContextGenesis / FaithfulContinuation / Trivialization}
+\]
+
+describen interfaces y dinámica entre individuaciones.
+
+Esta organización permite continuar REV-07 sin fingir que AI está resuelta. El siguiente target formal ya no es “buscar más propiedades de la célula”, sino decidir si la propuesta quiere:
+
+1. postular una WMR abstracta y someterla a countermodels;
+2. aceptar ContextIndividuation como primitivo metaontológico restringido;
+3. parametrizarla por teoría concreta y demostrar un teorema de transporte de criterios de individuación hacia IndexAdmission.
+
 **RECONSTRUCTION LAYER.** La maquinaria de enlaces que sigue se conserva únicamente para comprobar si $\Lambda_*$ o $\mathcal C_*$ reconstruyen la clausura generativa. Queda SUPERSEDED cualquier lectura en la que conectividad finita defina primariamente el régimen.
 
 **Advertencia PureOntRel.** Una relación pura puede servir como enlace ontológico de marco sin preservar una única genealogía. Por ello no se incorpora automáticamente a $\Lambda_*$ cuando esta pretende reconstruir $\operatorname{Generated}^{*}$: si conecta dos genealogías sin common ground, produciría sobreinclusión y haría fallar $\mathrm{RS}^{\mathrm{gen}}_{\Lambda,i}$. Su admisión como enlace reconstructivo requiere una justificación adicional de soundness; RelIntegrable por sí sola no basta.
