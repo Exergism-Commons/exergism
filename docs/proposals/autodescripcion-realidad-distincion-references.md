@@ -301,7 +301,44 @@ $$
 
 pero deja completamente abierto el segundo paso, que sigue siendo REV-24/$\mathrm{OTB}_i$.
 
-## 14. Política de citación futura
+## 14. Individuación, fronteras y continuidad organizacional
+
+Estas referencias sirven como **adversarios y precedentes conceptuales** para REV-07g. Ninguna demuestra que una realidad metafísica sea literalmente un organismo o una célula. Su utilidad es más estrecha: mostrar que frontera, cierre, individuación y persistencia pueden separarse de la identidad material instantánea y que una frontera no tiene por qué equivaler a aislamiento absoluto.
+
+- **Barry Smith & Achille C. Varzi (2000), “Fiat and Bona Fide Boundaries”, _Philosophy and Phenomenological Research_ 60(2), 401–420.** Distingue fronteras físicas/bona fide de fronteras fiat y muestra que «tener un límite» no es una noción ontológicamente unívoca. REV-07g usa esta literatura negativamente: la frontera de tipado no debe confundirse con una superficie espacial ni declararse bona fide por mera analogía. DOI: https://doi.org/10.2307/2653492
+- **Francisco J. Varela, Humberto R. Maturana & Ricardo Uribe (1974), “Autopoiesis: The organization of living systems, its characterization and a model”, _BioSystems_ 5(4), 187–196.** Formula la organización autopoiética como una clase de sistemas cuya organización produce y mantiene la propia unidad. Es un precedente para exigir que «celular» se descargue en una organización explícita y no en semejanza visual. DOI: https://doi.org/10.1016/0303-2647(74)90031-8
+- **Maël Montévil & Matteo Mossio (2015), “Biological organisation as closure of constraints”, _Journal of Theoretical Biology_ 372, 179–191.** Caracteriza organización mediante closure de constraints mutuamente dependientes y discute esa closure como herramienta para marcar fronteras entre sistemas biológicos interactuantes. REV-07g toma de aquí una cautela estructural: apertura/interacción y cierre organizacional no son contradictorios. DOI: https://doi.org/10.1016/j.jtbi.2015.02.029
+- **Alvaro Moreno & Matteo Mossio (2015), _Biological Autonomy: A Philosophical and Theoretical Enquiry_.** Desarrolla closure, autonomía y dimensión histórica de la organización. Se usa solo para comparar arquitecturas de auto-mantenimiento e identidad, no para importar normatividad biológica a $R_i$. DOI: https://doi.org/10.1007/978-94-017-9837-2
+- **James DiFrisco (2018), “Biological Processes: Criteria of Identity and Persistence”, en _Everything Flows: Towards a Processual Philosophy of Biology_.** Examina individuation y persistence de procesos mediante cohesión causal y continuidad/genidentity. Es un adversario directo de cualquier definición de identidad contextual basada solo en conservar componentes o propiedades estáticas. DOI: https://doi.org/10.1093/oso/9780198779636.003.0004
+- **Maël Montévil & Matteo Mossio (2020), “The Identity of Organisms in Scientific Practice: Integrating Historical and Relational Conceptions”, _Frontiers in Physiology_ 11:611.** Distingue dimensiones históricas/genealógicas y organizacionales de identidad y discute continuidad organizacional a través del cambio. REV-07g lo usa como precedente para no identificar individuación sincrónica, identidad diacrónica y genealogía. DOI: https://doi.org/10.3389/fphys.2020.00611
+
+### Uso en REV-07g
+
+La comparación relevante es estrictamente estructural:
+
+1. una frontera puede individuarse sin ser una pared espacial;
+2. closure y apertura/interacción pueden coexistir si operan sobre dimensiones distintas;
+3. identidad sincrónica y persistencia diacrónica requieren criterios diferentes;
+4. genealogía y organización pueden aportar información complementaria sobre identidad;
+5. reemplazo de componentes no decide por sí solo continuidad.
+
+Por ello la literatura refuerza la decisión metodológica de separar en REV-07g:
+
+$
+\mathrm{TB}
+\;|\;
+\mathrm{OC}
+\;|\;
+\mathrm{EB}
+\;|\;
+\mathrm{IF},
+$
+
+y de mantener $\operatorname{IndividuationWitness}^{\mathsf M}$, $\Omega_i$, ContinuationProfile y ContextCessation como obligaciones distintas hasta demostrar sus enlaces.
+
+**Límite explícito:** autopoiesis, closure of constraints e identidad de organismos son teorías de sistemas biológicos. Aquí no se usan como evidencia de que $R_i$ sea vivo, autopoiético, espacialmente acotado ni materialmente semipermeable.
+
+## 15. Política de citación futura
 
 Antes de añadir un concepto nuevo al núcleo:
 
