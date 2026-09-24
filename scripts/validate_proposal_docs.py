@@ -651,7 +651,7 @@ def rendered_relation_violation(rendered: str) -> str | None:
         left_pattern = bare_context_pattern(left)
 
         if re.search(
-            rf"{left_pattern}\s*∈\s*(?<![A-Za-z0-9_])I(?![A-Za-z0-9_])",
+            rf"{left_pattern}\s*[∈∉]\s*(?<![A-Za-z0-9_])I(?![A-Za-z0-9_])",
             rendered,
         ):
             return "membership of context metavariable in an index domain I"
