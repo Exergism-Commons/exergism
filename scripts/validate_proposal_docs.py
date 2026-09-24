@@ -215,9 +215,17 @@ class MarkdownDocument:
         self.tokens = MARKDOWN.parse(self.text, self.env)
         self.hidden_lines: set[int] = set()
 
-        # Hidden block ranges come directly from CommonMark tokens.
+        # Non-prose source ranges come directly from parser tokens. Math remains available
+        # semantically through math_block tokens, but its raw source must never satisfy prose,
+        # table, ledger, or other source-structural guards.
         for token in self.tokens:
-            if token.type in {"fence", "code_block", "html_block"} and token.map is not None:
+            if token.type in {
+                "fence",
+                "code_block",
+                "html_block",
+                "math_block",
+                "math_block_label",
+            } and token.map is not None:
                 start, end = token.map
                 self.hidden_lines.update(range(start, end))
 
@@ -344,7 +352,15 @@ class MarkdownDocument:
             if not (start <= token.map[0] and token.map[1] <= end):
                 continue
 
-            if marker in visible_inline_text(token):
+            # A doctrinal marker is a complete root paragraph, not a substring inside
+            # a disclaimer, quotation, list item, blockquote, or larger sentence.
+            if (
+                index == 0
+                or self.tokens[index - 1].type != "paragraph_open"
+                or self.tokens[index - 1].level != 0
+            ):
+                continue
+            if visible_inline_text(token) == marker:
                 matches.append((index, token))
         return matches
 
