@@ -8751,7 +8751,7 @@ Si se adopta esta fundamentación, $R_i$ puede permanecer como notación doctrin
 
 Esta ruta no se extiende automáticamente a $R_{\mathrm{abs}}$: la comprensión plural irrestricta sobre un dominio absolutamente general es filosóficamente controvertida y algunas lógicas plurales críticas la restringen.
 
-Así REV-24d pasa a PARTIAL: existe una derivación condicional precisa, pero la PR aún no adopta definitivamente PFO/PFO+ ni una variante crítica como base formal.
+Esta ruta **no cambia el estado de REV-24d**: el target de scope realization fue MOVED a REV-07/RegimeTotal. La derivación plural anterior queda como antecedente histórico/condicional para la obligación de realización de scope de REV-07, y además conserva el perfil superseded `Actual/CoReal(-,q)`; por tanto no descarga por sí sola el target vigente basado en la extensión `RegimeGenerated*`. REV-24 permanece restringido a presentación de una realidad ya justificada.
 
 #### 8.4. Esquema vigente de presentación
 
