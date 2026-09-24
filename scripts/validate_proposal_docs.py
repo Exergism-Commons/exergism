@@ -183,6 +183,8 @@ def inline_plain_text(token: Any) -> str:
             elif child.type == "math_inline":
                 markup = child.markup or "$"
                 parts.append(f"{markup}{child.content}{markup}")
+            elif child.type in {"softbreak", "hardbreak"}:
+                parts.append(" ")
         return "".join(parts).strip()
     return token.content.strip()
 
