@@ -453,7 +453,7 @@ def validate_regime_total_contract(
 
     totalization_section = normative.section(
         3,
-        "$R_i$ — totalización genealógica mono- y multigeneal",
+        "1.6. $R_i$ — totalización genealógica mono- y multigeneal",
     )
     require_canonical_display_after(
         totalization_section,
