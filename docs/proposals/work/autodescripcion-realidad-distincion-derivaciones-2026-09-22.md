@@ -8753,6 +8753,8 @@ Esta ruta no se extiende automáticamente a $R_{\mathrm{abs}}$: la comprensión 
 
 Esta ruta **no cambia el estado de REV-24d**: el target de scope realization fue MOVED a REV-07/RegimeTotal. La derivación plural anterior queda como antecedente histórico/condicional para la obligación de realización de scope de REV-07, y además conserva el perfil superseded `Actual/CoReal(-,q)`; por tanto no descarga por sí sola el target vigente basado en la extensión `RegimeGenerated*`. REV-24 permanece restringido a presentación de una realidad ya justificada.
 
+> **Status contract:** `REV-24d = UNCHANGED`; `scope realization owner = REV-07/RegimeTotal`; `Actual/CoReal plural route = NON-DISCHARGING for RegimeGenerated*`.
+
 #### 8.4. Esquema vigente de presentación
 
 El esquema pre-genealógico que hacía que REV-24 produjese un $R_i$ queda **SUPERSEDED**.
