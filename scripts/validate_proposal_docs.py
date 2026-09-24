@@ -211,6 +211,13 @@ class MarkdownDocument:
             start, end = mapping
             self.hidden_lines.update(range(start, end))
 
+        for duplicate in self.env.get("duplicate_refs", []):
+            mapping = duplicate.get("map")
+            if mapping is None:
+                continue
+            start, end = mapping
+            self.hidden_lines.update(range(start, end))
+
     def active_text(self, start: int = 0, end: int | None = None) -> str:
         if end is None:
             end = len(self.lines)
