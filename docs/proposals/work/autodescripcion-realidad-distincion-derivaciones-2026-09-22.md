@@ -13639,6 +13639,361 @@ El avance concreto sobre IA8/MC9 es:
 
 REV-07g permanece PARTIAL globalmente porque ninguna teoría universal decide todos los casos de individuación. Pero **No-Free-Promotion y rival-cut discipline quedan ahora cerrados a nivel de criterio**: sabemos qué inferencias están prohibidas, qué tipos de resolución permiten coexistencia y qué clase de estructura adicional debe aportar una teoría concreta.
 
+#### 0.11.91r-k. Protocolo de robustez cross-domain
+
+No-Free-Promotion solo es interesante si el mismo contrato distingue candidaturas en dominios donde las fuentes de unidad son radicalmente distintas. Para evitar adaptar retrospectivamente los guards a cada ejemplo, fijamos antes de mirar los casos el siguiente protocolo:
+
+\[
+\boxed{
+\operatorname{DomainAudit}_{\mathcal T}^{\mathsf M}
+(C;\Xi,\chi)
+}
+\]
+
+requiere, sin alterar IA0–IA10 ni MC1–MC10:
+
+1. una reducción theory-specific explícita de \(\operatorname{Criterion}_{\mathcal T}(C)\);
+2. un witness pre-indexado \(\Xi\) que no use el resultado deseado;
+3. descarga positiva de boundary/typing/dynamics y no solo ausencia de exterior;
+4. tratamiento de todos los bypasses que la propia \(\mathcal T\) considere relevantes;
+5. un rival cut negativo construido dentro del mismo dominio;
+6. una candidatura nested o de orden superior que muestre que el test no es anti-proliferation;
+7. separación entre **evidence of a boundary** y **ground of contextual unity**;
+8. ausencia de cualquier inferencia directa hacia RegimeTotal.
+
+El protocolo tiene una regla adicional de disciplina de nivel que no añade un axioma nuevo, sino que explicita conjuntamente IA0, IA1, MC4 y MC7:
+
+**DL1 / no level escape.** Una teoría efectiva no puede salvar un cut declarando simplemente “fuera de nivel” un mecanismo que altera las transiciones, observables o persistencia que su propio criterio usa para individuar \(C\). O el mecanismo se incorpora como input/interface/interaction relevante, o la descarga falla.
+
+Por tanto:
+
+\[
+\boxed{
+\text{abstracción legítima}
+\neq
+\text{omisión conveniente}.
+}
+\]
+
+Una microdiferencia puede quedar quotientada si, fijados el estado local y los inputs declarados, no cambia el futuro relevante. Si sí lo cambia, MC7 impide esconderla bajo coarse-graining.
+
+#### 0.11.91r-l. SW-A — software: servicio KV realizado frente a API puramente nominal
+
+Tomemos \(\mathcal T_{\mathrm{SW}}\) como una teoría operacional de un servicio realmente ejecutado. No basta el documento de API. La candidatura positiva \(C_{\mathrm{KV}}\) debe poseer en la realización:
+
+\[
+\Xi_{\mathrm{KV}}
+=
+\langle
+\widehat\Lambda_{\mathrm{req/state}},
+\widehat{\mathbb I}_{\mathrm{API+host}},
+\widehat{\mathbb P}_{\mathrm{service}},
+\widehat{\mathsf{CP}}_{\mathrm{KV}},
+\partial_{\mathrm{proc}}
+\rangle.
+\]
+
+La descarga usa exactamente MC1–MC10:
+
+- **MC1:** el proceso/store se especifica antes de admitir índice;
+- **MC2:** requests, keys, values, estado y errores poseen typing operacional local;
+- **MC3:** process isolation, address-space/state ownership y protocolo proporcionan estructura positiva; una etiqueta de microservicio no basta;
+- **MC4:** requests, almacenamiento, clock/IO y host interventions que \(\mathcal T_{\mathrm{SW}}\) considere semánticamente eficaces deben aparecer como interfaces o interaction channels;
+- **MC5:** snapshot/event-state suficiente factoriza la continuación;
+- **MC6:** background tasks, retries, timers, replication y demás roles relevantes no pueden omitirse para fabricar autonomía;
+- **MC7:** fijados estado e input trace, variaciones host-side declaradas irrelevantes no alteran la continuación operacional;
+- **MC8:** dos procesos puestos bajo un mismo deployment label no se vuelven una unidad;
+- **MC9:** proceso, VM y host pueden ser nested si cada uno descarga su criterio;
+- **MC10:** restart, migration y replacement se tratan con ContinuationProfile, no por identidad material.
+
+El **rival cut negativo** es:
+
+\[
+C_{\mathrm{odd}}
+=
+\text{mitad de las keys}
++
+\text{la mitad de un worker}
+\]
+
+seleccionado por una regla construida después de observar la implementación. Aunque sea enumerable con precisión, corta roles y state transitions sin boundary mediation propia. Falla IA1/IA3/IA5 y MC3/MC4/MC6.
+
+El ataque importante es el debugger/host bypass. Si un debugger puede cambiar memoria de modo que altera la transición del servicio:
+
+\[
+m_t
+\leadsto
+m'_t
+\]
+
+sin pasar por ninguna entrada reconocida por \(\widehat{\mathbb I}\), solo hay dos opciones admisibles:
+
+1. \(\mathcal T_{\mathrm{SW}}\) considera esa intervención posible y relevante: entonces MC4 obliga a modelarla como host-intervention channel;
+2. pretende ignorarla mientras sigue usando transiciones que la intervención puede alterar: entonces DL1/MC7 hacen fallar la descarga.
+
+No se permite responder “el debugger no cuenta” únicamente porque estorba al cut.
+
+**Resultado SW-R.** Un servicio software puede ser un candidato fuerte de contexto **cuando su unidad está realizada operacionalmente** y la abstracción satisface screening-off. Una especificación/API por sí sola es evidence insuficiente:
+
+\[
+\boxed{
+\operatorname{APISpec}(C)
+\not\Rightarrow
+\operatorname{ContextIndividuation}(C).
+}
+\]
+
+Esto separa artefacto descriptivo de máquina contextual realizada.
+
+#### 0.11.91r-m. BIO-A — célula: boundary material + organización mantenida
+
+Sea \(\mathcal T_{\mathrm{BIO}}\) una teoría biológica de organización celular que toma en serio, al menos, regulación, metabolismo, transporte, reparación/reproducción de componentes relevantes y persistencia organizacional.
+
+La candidatura \(C_{\mathrm{cell}}\) no se individúa por la membrana desnuda. Su witness usa conjuntamente:
+
+\[
+\Xi_{\mathrm{cell}}
+=
+\langle
+\widehat\Lambda_{\mathrm{bio}},
+\widehat{\mathbb I}_{\mathrm{transport/signaling}},
+\widehat{\mathbb P}_{\mathrm{org}},
+\widehat{\mathsf{CP}}_{\mathrm{org}},
+\partial_{\mathrm{cell}}
+\rangle.
+\]
+
+El grounding positivo puede incluir una teoría independently justified de closure organizacional/autopoiesis, pero Exergism no identifica sin argumento su propia RegimeClosure con biological closure of constraints.
+
+Aplicando el mismo contrato:
+
+- **MC2:** la teoría distingue estados/procesos internos y entradas ambientales relevantes;
+- **MC3:** la membrana y la organización que la produce/mantiene aportan un boundary positivo; la superficie sola no basta;
+- **MC4:** nutrientes, señales, intercambio iónico, fuerzas, calor u otros canales que la teoría considere relevantes deben estar mediados/modelados;
+- **MC5:** existe una dinámica reentrante a nivel organizacional aunque cambien continuamente moléculas concretas;
+- **MC6:** pathways o constraints críticos no pueden eliminarse para que aparezca artificialmente closure;
+- **MC7:** variación ambiental no transmitida por los canales/variables relevantes debe quedar screened-off respecto de la continuación organizacional;
+- **MC8:** célula + molécula cercana no heredan unidad por proximidad;
+- **MC9:** organelo, célula y organismo pueden ser candidaturas nested si cada una posee grounding independiente;
+- **MC10:** división, muerte y diferenciación requieren semántica de genesis/persistence/cessation, no snapshots.
+
+El **rival cut negativo** es la mitad geométrica de una célula:
+
+\[
+C_{\frac12}
+=
+\{x\in C_{\mathrm{cell}}:
+x\text{ está a un lado de un plano }p\}.
+\]
+
+Salvo que una estructura biológica independiente coincida con ese cut, secciona transporte, regulación y organización sin boundary propio. NFP-T3 lo rechaza como witness.
+
+El caso positivo nested puede ser un organelo solo si \(\mathcal T_{\mathrm{BIO}}\) demuestra más que membership espacial: boundary/interface propio, dinámica local, roles suficientes y una relación CE1–CE6 con la célula. No se adopta:
+
+\[
+\text{organelo}
+\Rightarrow
+\text{contexto}.
+\]
+
+**Resultado BIO-R.** La célula proporciona un test especialmente fuerte porque material boundary, organization y persistence pueden converger sobre la misma candidatura sin ser idénticos entre sí:
+
+\[
+\boxed{
+\text{material boundary}
++
+\text{organizational unity}
++
+\text{mediated openness}
+}
+\]
+
+es compatible con ContextIndividuation sin exigir aislamiento. Esto apoya la lectura celular de la arquitectura, pero no la demuestra universalmente.
+
+#### 0.11.91r-n. PHY-A — termostato/control: el diagrama de bloques no es todavía ontología física
+
+Sea \(\mathcal T_{\mathrm{CTRL}}\) una teoría de control realizada físicamente con controlador \(m\), sensor, alimentación y actuador:
+
+\[
+m_{t+1}
+=
+U(m_t,s_t,u_t).
+\]
+
+El modelo TM-B mostraba que esta estructura puede satisfacer MC3–MC7. La auditoría cross-domain introduce ahora un adversario más duro: un **block diagram** diseñado por el ingeniero puede coincidir con una dinámica útil sin que su boundary funcional sea por ello una frontera ontológica autónoma.
+
+Por tanto distinguimos:
+
+\[
+\operatorname{ControlDecomposition}(C;\partial)
+\]
+
+de:
+
+\[
+\operatorname{GroundedControlUnit}_{\mathcal T_{\mathrm{CTRL}}}(C;\Xi).
+\]
+
+El segundo exige que el boundary funcional esté realizado por estructura causal/operacional efectiva:
+
+- sensor/actuator channels y power/perturbation paths identificados;
+- estado controlador reentrante;
+- factorization del futuro por state + input trace;
+- ausencia de bypass relevante no modelado;
+- persistence/role closure suficiente.
+
+Un dibujo del sistema no satisface estas condiciones por sí mismo.
+
+El rival cut negativo puede ser:
+
+\[
+C_{\mathrm{board-left}}
+\]
+
+la mitad izquierda de la PCB. Si corta feedback, alimentación y state propagation sin interface propia, falla el mismo contrato que en software y biología.
+
+El test de orden superior es más interesante. Considérese:
+
+\[
+C_T
+=
+\text{thermostat}
+\]
+
+y:
+
+\[
+C_{TR}
+=
+\text{thermostat + room + heater}.
+\]
+
+El segundo **no** hereda contextualidad de \(C_T\). Puede, sin embargo, descargar una nueva unidad si la teoría demuestra closed-loop dynamics relevante:
+
+\[
+T
+\rightarrow
+Heater
+\rightarrow
+Room
+\rightarrow
+Sensor
+\rightarrow
+T
+\]
+
+con estado conjunto, interaction closure y boundary mediating la relación con el exterior. Éste es precisamente un posible:
+
+\[
+\operatorname{JointUnitGround}
+(T,Room,Heater\Rightarrow C_{TR};\zeta).
+\]
+
+Por tanto NFP-T2 no impide sistemas de control de orden superior; exige que su unidad esté en la dinámica conjunta, no en la llave dibujada alrededor.
+
+**Resultado PHY-R.** \(\mathcal T_{\mathrm{CTRL}}\) puede descargar una **unidad contextual de control** si el diagrama factoriza una organización causal real y pasa DL1. No se obtiene gratuitamente una afirmación de “fundamental physical worldhood”:
+
+\[
+\boxed{
+\text{control-context witness}
+\not\Rightarrow
+\text{maximal/fundamental physical context}.
+}
+\]
+
+Esto es compatible con TR: ContextIndividuation no exige maximalidad y un contexto puede estar realizado dentro de otro nivel físico.
+
+#### 0.11.91r-o. DR-T1 — resultado de portabilidad de criterio, no de identidad de mecanismo
+
+Los tres dominios no comparten un único world-maker:
+
+\[
+W_{\mathrm{software}}
+\neq
+W_{\mathrm{biology}}
+\neq
+W_{\mathrm{control}}.
+\]
+
+Tampoco comparten una única clase material de boundary. Lo que permanece invariante es la **forma de la carga de prueba**:
+
+\[
+\boxed{
+\begin{array}{c}
+\text{positive grounded unity}\\
++\text{local typing / admissible operations}\\
++\text{interface-mediated openness}\\
++\text{reentrant dynamics / persistence}\\
++\text{counterfactual screening}\\
++\text{anti-aggregation}\\
++\text{rival-cut closure}
+\end{array}
+}
+\]
+
+Cada dominio realiza estas obligaciones mediante recursos distintos.
+
+Definimos:
+
+\[
+\operatorname{CriterionPortable}^{\mathsf M}
+(D_1,D_2,D_3)
+\]
+
+cuando una misma lista de obligaciones puede auditar candidaturas en los tres dominios sin:
+
+1. añadir una excepción domain-specific a IA0–IA10/MC1–MC10;
+2. retirar un counterexample solo porque falla un dominio favorito;
+3. identificar los mecanismos concretos de grounding entre dominios.
+
+Para SW-A, BIO-A y PHY-A la auditoría anterior proporciona un witness de **portabilidad de criterio** en este sentido limitado:
+
+\[
+\boxed{
+\operatorname{CriterionPortable}^{\mathsf M}
+(\mathrm{SW},\mathrm{BIO},\mathrm{CTRL}).
+}
+\]
+
+Esto **no** demuestra:
+
+\[
+\forall \mathcal T\;\exists C\;
+\operatorname{ContextIndividuation}(C),
+\]
+
+ni demuestra que los tres candidatos positivos sean efectivamente contextos del mundo actual sin las premisas empíricas/ontológicas de sus respectivas teorías.
+
+El resultado es metodológico-formal: el contrato no necesita convertirse en “biología disfrazada”, “teoría de software disfrazada” o “control theory disfrazada” para distinguir promoción gratuita de individuación plausible.
+
+#### 0.11.91r-p. Asimetría empírica entre dominios
+
+La portabilidad no implica igual fuerza evidencial.
+
+- **Software:** la unidad puede estar fuertemente realizada operacionalmente, pero hay que vigilar que specification/design intent no sustituya causal realization.
+- **Biología:** material boundary, self-maintaining organization y persistence ofrecen varias fuentes parcialmente independientes de grounding; el caso puede ser más robusto, pero sigue dependiendo de una teoría biológica concreta.
+- **Control:** la factorización funcional es especialmente susceptible a cortes diseñados por el modelador; DL1 y MC7 son aquí decisivos para distinguir un closed-loop real de un mero block diagram.
+
+Por tanto no adoptamos un ranking ontológico entre dominios. Registramos únicamente que los **failure modes son distintos** y que el mismo contrato los detecta.
+
+La consecuencia para Cellular Reality es:
+
+\[
+\boxed{
+\text{substrate-independence candidate}
+=
+\text{portable individuation obligations},
+}
+\]
+
+no:
+
+\[
+\text{todos los substratos realizan las mismas fronteras o mecanismos}.
+\]
+
+Éste es el punto relevante para un futuro paper: la tesis no necesita que una célula, una CPU y un controlador “sean la misma clase de cosa”. Necesita que **ser contexto** sea una propiedad estructural descargable por mecanismos distintos sin cambiar el criterio de admisibilidad.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
