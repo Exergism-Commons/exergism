@@ -13302,7 +13302,7 @@ Definimos entonces adecuación conjunta:
 \boxed{
 \begin{aligned}
 \operatorname{PairIndAdequate}_{\mathcal T}^{\mathsf M}
-(C,D\mid P)
+(C,D\mid P;\chi_C,\chi_D)
 :\Longleftrightarrow\;&
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_C)\\
 &\land
@@ -13335,7 +13335,8 @@ implica:
 \[
 \boxed{
 \neg
-\operatorname{PairIndAdequate}_{\mathcal T}(C,D\mid P).
+\operatorname{PairIndAdequate}_{\mathcal T}
+(C,D\mid P;\chi_C,\chi_D).
 }
 \]
 
@@ -13482,7 +13483,8 @@ entonces el witness basado en \(P\) falla IA1–IA4 y, en TR-M, MC2–MC7:
 \operatorname{TargetSelectedSubcut}_{\mathcal T}(C_P;P)
 \Rightarrow
 \neg
-\operatorname{IndAdequate}_{\mathcal T}(C_P;\chi_P).
+\operatorname{IndAdequate}^{\mathsf M}
+(\mathcal T,C_P,\chi_P).
 }
 \]
 
@@ -13506,15 +13508,15 @@ Pero TM-T2 sí permite demostrar la compatibilidad estructural de abundancia:
 \boxed{
 \begin{aligned}
 &
-\operatorname{ContextIndividuation}(C)
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
 \land
-\operatorname{ContextIndividuation}(H)\\
+\operatorname{ContextIndividuation}^{\mathsf M}(H)\\
 &
 \land
-\operatorname{EmbeddingAdequate}^{\mathsf M}(C,H;e)
+\mathrm{CE1\text{-}CE6}(C,H;e)
 \\
 &\Rightarrow
-\text{la contextualidad de }C\text{ y }H\text{ es conjuntamente admisible.}
+\text{tras IndexAdmission, TM-T2 puede descargar ContextEmbedding.}
 \end{aligned}
 }
 \]
@@ -13580,7 +13582,8 @@ Por tanto el caso queda:
 \land
 \neg\operatorname{RivalResolution}
 \Rightarrow
-\neg\operatorname{PairIndAdequate}.
+\neg\operatorname{PairIndAdequate}
+(\Pi_1,\Pi_2\mid P;\chi_1,\chi_2).
 }
 \]
 
