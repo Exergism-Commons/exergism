@@ -14548,7 +14548,13 @@ Su forma rigurosa es:
 
 Para Redis, E. coli y Nest, la evidencia externa puede contribuir a IA0-R y a partes de UG2–UG5, pero ninguna auditoría actual demuestra exhaustivamente UnitGroundAdequate.
 
-Para XR-\(\varepsilon\), el script y EA1–EA8 descargan IA0-R. Falta un argumento independiente de UG3–UG6 que muestre que la organización path→cycle no es simplemente un real emergent pattern dentro del host, sino el ground de la unidad contextual exacta \(C_{XR1}\).
+Para XR-\(\varepsilon\), el script y EA1–EA8 aportan evidencia positiva
+para IA0-R. La promoción mediante \(\varepsilon RSP\text{-}R\) sigue siendo
+condicional a la adecuación theory-specific correspondiente; DTS-UG6 demuestra
+posteriormente que esa adecuación no estaba completamente descargada por el DTS
+desnudo. Independientemente, falta cerrar UnitGroundAdequate para mostrar que la
+organización path→cycle constituye/discrimina la unidad contextual exacta
+\(C_{XR1}\).
 
 Por tanto:
 
@@ -14557,7 +14563,7 @@ Por tanto:
 XR\varepsilon
 \text{ sigue siendo un witness formal/realizacional fuerte,}
 \quad
-\text{pero ExistsR conserva una deuda explícita de IA0-U.}
+\text{pero ExistsR conserva deuda tanto de criterio como de IA0-U.}
 }
 \]
 
@@ -15130,7 +15136,7 @@ Por tanto, si logramos descargar UG6 para XR-1 mediante una enumeración/teorema
 }
 \]
 
-Eso cerraría IA0-U para el witness finito **sin** afirmar todavía que el criterio general esté universalmente resuelto.
+Eso cerraría IA0-U para el witness finito **sin** afirmar todavía que el criterio general esté universalmente resuelto. Tras DTS-UG6 debe añadirse: **UG6 es el único blocker de UnitGroundAdequate_XR1, no el único blocker de XR1-T/ExistsR**; MCAdequate/IndAdequate conservan además la deuda de teoría de interfaz/roles.
 
 Para los tres casos empíricos, UG4–UG6 siguen parciales. El próximo target formal de mayor rendimiento es, por tanto:
 
@@ -17562,13 +17568,28 @@ REV-07b/c permanecen abiertos universalmente, pero no bloquean la parte generati
 
 **XR-A7 — scope setificado.** No: \(rr_{XR1}\) es plural finito explícito.
 
-#### 0.11.91ak. Estado de XR-1
+#### 0.11.91ak. Estado de XR-1 — corregido tras DTS-UG6
 
-XR-1 demuestra un **witness formal/generativo + ejecución actual + realized modal support**. Eso ya no se presenta como suficiente para ExistsR.
+XR-1 demuestra un **witness formal/generativo + ejecución estructural actual** y
+aporta evidencia fuerte para realized modal support. Eso ya no se presenta como
+suficiente para ExistsR.
 
-La máquina/CI descargan el núcleo formal, OR2–OR9 y evidencia reproducible de OR1 para un run. IA1–IA10 quedan auditadas contra la teoría independiente DTS. Tras el ataque IA0, la deuda filosófica restante es **IA0-U / UnitGroundAdequate**: mostrar que la estructura local realizada es la que constituye/discrimina la unidad contextual exacta y no solo un real pattern eficaz.
+La máquina/CI descargan el núcleo formal, OR2–OR9 y evidencia reproducible de
+OR1 para un run. IA1–IA10 han sido auditadas individualmente. Sin embargo,
+DTS-UG6 demuestra que la antigua frase “MCAdequate/IndAdequate descargados”
+era demasiado fuerte: MC4/MC6/MC7/MC9 y la cobertura objetiva correspondiente
+siguen parciales bajo el DTS desnudo.
 
-Por tanto ExistsR sigue siendo **FORMAL-CONDITIONAL** respecto de ese bridge de unidad.
+Por tanto hay **dos deudas distintas**:
+
+1. **IA0-U / UnitGroundAdequate:** dentro de este bundle, UG6 sigue siendo el
+   único guard pendiente para XR-1;
+2. **descarga del criterio theory-specific:** MCAdequate,
+   Ind_DTS y `IndAdequate^{1--10}` no pueden tratarse como cerrados mientras
+   la teoría carezca de la cobertura de interfaz/roles/rival cuts detectada por
+   DTS-UG6.
+
+XR1-T permanece **FORMAL-CONDITIONAL** respecto de ambas.
 
 #### 0.11.92. Relación con \(\Omega_i\): ContinuationProfile ya no depende de \(\Omega_i\)
 
