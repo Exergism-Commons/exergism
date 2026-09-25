@@ -14269,6 +14269,203 @@ Esto es un avance para Cellular Reality porque desplaza la duda. La objeción ya
 
 Ese es ahora el punto exacto donde debe concentrarse una futura defensa de IA0/IndAdequate.
 
+#### 0.11.91r-v. IA0 se descompone: realidad estructural no es todavía unidad contextual
+
+La auditoría EMP-T1 dejó el cuello en IA0. El ataque adversarial revela que “structural fidelity” estaba haciendo dos trabajos:
+
+\[
+\boxed{
+IA0
+=
+IA0\text{-}R
++
+IA0\text{-}U.
+}
+\]
+
+**IA0-R / realized modal support.** La estructura invocada por \(\mathcal T\) está efectivamente realizada y soporta las dependencias modales/counterfactuals que el criterio le atribuye. OR1–OR9, RealizedEmergence y evidencia independiente pueden descargar esta parte.
+
+**IA0-U / individuation relevance.** La estructura realizada no es solo un patrón, mecanismo o variable macro real: hace trabajo constitutivo/discriminante para **la unidad de \(C\)**, es decir, para el mismo perfil pre-indexado de typing, boundary, interface mediation y dinámica que pretende justificar ContextIndividuation.
+
+Por tanto queda rechazado:
+
+\[
+\boxed{
+IA0\text{-}R
+\not\Rightarrow
+IA0.
+}
+\]
+
+Y también:
+
+\[
+\boxed{
+\operatorname{RealPattern}(P)
+\not\Rightarrow
+\operatorname{ContextIndividuation}(C).
+}
+\]
+
+La ontología puede ser realistamente plural respecto de patterns/effective structures sin que cada patrón real genere automáticamente un índice.
+
+#### 0.11.91r-w. UnitGroundAdequate — qué falta para IA0-U
+
+TR-M ya dispone de un perfil pre-indexado:
+
+\[
+\Xi_C
+=
+\left\langle
+\widehat\Lambda_C,
+\widehat{\mathbb I}_C,
+\widehat{\mathbb P}_C,
+\widehat{\mathsf{CP}}_C,
+\partial_C
+\right\rangle.
+\]
+
+Introducimos un witness theory-specific \(g\) de **ground de unidad** y el juicio:
+
+\[
+\boxed{
+\operatorname{UnitGroundAdequate}^{\mathsf M}
+(
+\mathcal T,C;g,\Xi_C
+).
+}
+\]
+
+No es un nuevo truthmaker por nombre. Es un bundle de obligaciones que debe reducirse a estructura concreta de \(\mathcal T\):
+
+1. **UG1 / pre-index independence:** \(g\) se caracteriza sin \(R_i\), ContextIndividuation, IndexAdmission, RegimeTotal o SameRegime.
+2. **UG2 / positive actuality:** \(g\) está efectivamente realizado; una regularidad del modelo o una frontera dibujada no bastan.
+3. **UG3 / profile relevance:** \(g\) fundamenta al menos una parte no eliminable de \(\Xi_C\); si se elimina \(g\) de la teoría sin alterar typing, boundary, interfaces, persistence/dynamics ni rival-cut status, \(g\) no estaba individuando \(C\).
+4. **UG4 / constitutive sensitivity:** existen perturbaciones/intervenciones admisibles sobre \(g\) que, manteniendo fijo lo irrelevante, alteran el perfil de unidad de \(C\) o fuerzan reindividuación/revisión del cut. No basta que alteren una output variable cualquiera.
+5. **UG5 / exterior screening de unidad:** fijados \(g\), las interfaces declaradas y el estado relevante, variaciones externas que \(\mathcal T\) declara irrelevantes no cambian el perfil de unidad; si lo hacen aparece un hidden constitutive bypass.
+6. **UG6 / rival-cut discrimination:** \(g\) debe resolver o clasificar las rivalidades relevantes mediante equivalencia, nesting, overlap, genesis o rejection; no puede ser compatible indiferentemente con cualquier partición conveniente.
+7. **UG7 / no real-pattern promotion:** projectability, compresión, macroeficacia, autonomía causal o utilidad explicativa de \(P\) no cuentan por sí solas como UG3–UG6.
+8. **UG8 / covariance:** recodificaciones fieles y witnesses epistémicos alternativos preservan el mismo juicio de ground de unidad.
+
+Entonces:
+
+\[
+\boxed{
+IA0\text{-}R(C)
++
+\operatorname{UnitGroundAdequate}_{\mathcal T}(C;g,\Xi_C)
+\Rightarrow
+IA0(C).
+}
+\]
+
+Esta regla explicita el contenido de IA0; no prueba universalmente que exista \(g\). Cada dominio debe exhibirlo.
+
+#### 0.11.91r-x. Countermodels contra la promoción de estructura real a contexto
+
+**IA0-X1 — real pattern sin ground de unidad.** Un host realiza un patrón macro \(P\) que es recoding-invariant, projectable, dinámicamente eficaz y contrafácticamente robusto. Sin embargo \(P\) puede borrarse de la teoría de individuación sin cambiar \(\Xi_C\), o puede aparecer sobre múltiples cuts incompatibles. Entonces IA0-R vale, UG3/UG6 fallan y no se obtiene contexto.
+
+**IA0-X2 — mecanismo real relativo a fenómeno.** Una descomposición mecanística puede identificar componentes/actividades reales y explicar un fenómeno seleccionado. Eso establece estructura causal efectiva, pero la descomposición puede depender del fenómeno explanandum y no seleccionar una unidad contextual autónoma. IA0-R puede valer mientras IA0-U quede abierta.
+
+**IA0-X3 — causal emergence sin contextualidad.** Incluso si una macrodescripción supera a una microdescripción respecto de una métrica causal/informacional, eso demuestra relevancia causal de la macroescala, no que su partition sea una unidad contextual. Hace falta UG3–UG6.
+
+**IA0-X4 — dos patrones efectivos cruzados.** El mismo host puede soportar dos patterns \(P,Q\) igualmente projectables y modalmente robustos cuyos cuts se cruzan. Si ninguno aporta una resolución grounded de la rivalidad, admitir ambos índices por mera realidad de patrón viola IA8/UG6.
+
+Estos countermodels no sostienen que patterns, mecanismos o macrocausas sean irreales. Precisamente funcionan porque pueden ser **reales sin ser automáticamente context-individuating**.
+
+#### 0.11.91r-y. Resultado adversarial sobre RSP y \(\varepsilon\)RSP
+
+La forma genérica:
+
+\[
+\operatorname{ActualStructuralRealization}
++
+\operatorname{MCAdequate}
+\Rightarrow
+IA0
+\]
+
+queda rechazada como demasiado fuerte.
+
+La forma emergentista anterior:
+
+\[
+\operatorname{RealizedEmergence}
++
+\operatorname{MCAdequate}
+\Rightarrow
+IA0
+\]
+
+también queda **SUPERSEDED** en su conclusión completa.
+
+Lo que sí sobrevive es:
+
+\[
+\boxed{
+\operatorname{RealizedEmergence}
++
+\operatorname{MCAdequate}
+\Rightarrow
+IA0\text{-}R.
+}
+\]
+
+Para llegar a IA0:
+
+\[
+\boxed{
+IA0\text{-}R
++
+\operatorname{UnitGroundAdequate}
+\Rightarrow
+IA0.
+}
+\]
+
+Por tanto la emergencia deja de ser el bridge metafísico final. Hace un trabajo indispensable pero más preciso: demuestra que la organización no es una ficción descriptiva. El paso desde **estructura real** a **unidad contextual** pertenece a la teoría de individuación.
+
+#### 0.11.91r-z. Consecuencia para Cellular Reality y XR-\(\varepsilon\)
+
+El resultado adversarial fortalece la arquitectura aunque debilite el teorema existencial condicional previo.
+
+Cellular Reality ya no puede formularse como:
+
+\[
+\text{real organization}
+\Rightarrow
+\text{context}.
+\]
+
+Su forma rigurosa es:
+
+\[
+\boxed{
+\text{real modal organization}
++
+\text{ground of unity}
+\Rightarrow
+\text{admissible context individuation}.
+}
+\]
+
+Para Redis, E. coli y Nest, la evidencia externa puede contribuir a IA0-R y a partes de UG2–UG5, pero ninguna auditoría actual demuestra exhaustivamente UnitGroundAdequate.
+
+Para XR-\(\varepsilon\), el script y EA1–EA8 descargan IA0-R. Falta un argumento independiente de UG3–UG6 que muestre que la organización path→cycle no es simplemente un real emergent pattern dentro del host, sino el ground de la unidad contextual exacta \(C_{XR1}\).
+
+Por tanto:
+
+\[
+\boxed{
+XR\varepsilon
+\text{ sigue siendo un witness formal/realizacional fuerte,}
+\quad
+\text{pero ExistsR conserva una deuda explícita de IA0-U.}
+}
+\]
+
+Esta revisión elimina el riesgo de obtener ContextIndividuation simplemente porque Exergism ya es emergentista.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
