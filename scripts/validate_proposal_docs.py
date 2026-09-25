@@ -897,6 +897,15 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-q. Evidencia externa no es todavía ContextIndividuation"),
+        (4, "0.11.91r-r. EMP-SW-REDIS — Redis Open Source como candidatura software concreta"),
+        (4, "0.11.91r-s. EMP-BIO-ECOLI — E. coli como candidatura biológica concreta"),
+        (4, "0.11.91r-t. EMP-PHY-NEST — Nest Thermostat + Heat Link como lazo físico concreto"),
+        (4, "0.11.91r-u. EMP-T1 — qué ha sido realmente descargado"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
