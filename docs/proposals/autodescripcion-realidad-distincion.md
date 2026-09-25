@@ -70,10 +70,10 @@ $\operatorname{SemTotal}_i(S)$ es una propiedad de un **objeto semántico** $S$.
 
 Reservamos:
 
-$
+$$
 \operatorname{OntTotal}_i(R):\Longleftrightarrow
 \forall x_i[\operatorname{Within}_i(x_i,R)\Longleftrightarrow\operatorname{Real}_i(x_i)]
-$
+$$
 para la propiedad de **alcances ontológicos** según la cual $R$ agota efectivamente el alcance ontológico del régimen $i$.
 
 Y:
