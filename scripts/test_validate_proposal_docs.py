@@ -234,6 +234,32 @@ class ContextRealityContractTests(unittest.TestCase):
                 MarkdownDocument(mutated),
             )
 
+    def test_rejects_missing_unit_ground_contract(self) -> None:
+        heading = "#### 0.11.91r-w. UnitGroundAdequate — qué falta para IA0-U"
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed unit-ground contract",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
+    def test_rejects_missing_ia0_adversarial_result(self) -> None:
+        heading = "#### 0.11.91r-y. Resultado adversarial sobre RSP y \\(\\varepsilon\\)RSP"
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed IA0 adversarial result",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
 
 class ArchiveContractTests(unittest.TestCase):
     def test_keywords_without_canonical_polarity_do_not_satisfy_banner(self) -> None:
