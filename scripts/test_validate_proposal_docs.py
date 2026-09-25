@@ -149,7 +149,9 @@ class ProseProjectionTests(unittest.TestCase):
 class ContextRealityContractTests(unittest.TestCase):
     def setUp(self) -> None:
         self.normative_source = NORMATIVE.read_text(encoding="utf-8")
-        self.technical = MarkdownDocument(TECHNICAL.read_text(encoding="utf-8"))
+        self.normative = MarkdownDocument(self.normative_source)
+        self.technical_source = TECHNICAL.read_text(encoding="utf-8")
+        self.technical = MarkdownDocument(self.technical_source)
 
     def assert_contract_rejected(self, source: str) -> None:
         with self.assertRaises(AssertionError):
@@ -173,6 +175,35 @@ class ContextRealityContractTests(unittest.TestCase):
             1,
         )
         self.assert_contract_rejected(mutated)
+
+    def test_rejects_missing_rival_cut_contract(self) -> None:
+        heading = "#### 0.11.91r-c. RC-T1 — unresolved rival-cut theorem"
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed rival-cut theorem",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
+    def test_rejects_missing_no_free_promotion_contract(self) -> None:
+        heading = (
+            "#### 0.11.91r-d. No-Free-Promotion: el target es el witness, "
+            "no prohibir contextos abundantes"
+        )
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed no-free-promotion contract",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
 
 
 class ArchiveContractTests(unittest.TestCase):
