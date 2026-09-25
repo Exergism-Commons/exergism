@@ -16044,6 +16044,175 @@ El research target queda reducido de “qué es una unidad contextual” a una p
 
 > ¿puede una relación de realización host→component descargarse con cobertura suficiente sin exigir una descripción microscópicamente total del host ni esconder dependencias constitutivas?
 
+#### 0.11.91r-bn. RCA-X1 — ninguna batería finita prueba ausencia universal de hidden constituents
+
+Sea:
+
+\[
+\Delta
+=
+\{\delta_1,\ldots,\delta_n\}
+\]
+
+una batería finita de intervenciones sobre un realizador \(H\), y supongamos que todas proyectan correctamente a la teoría local o preservan el perfil.
+
+Construimos dos realizadores:
+
+\[
+H
+\qquad\text{y}\qquad
+H^{+z},
+\]
+
+tales que:
+
+1. son observacionalmente indistinguibles bajo toda \(\delta_k\in\Delta\);
+2. inducen exactamente la misma traza local y los mismos certificados para la batería;
+3. \(H^{+z}\) contiene una dependencia adicional \(z\) no activada por ninguna \(\delta_k\);
+4. existe una intervención \(\delta_z\notin\Delta\) bajo la cual \(z\) altera una parte constitutiva de \(\Xi_C\) sin estar proyectada por \(\varrho\) ni clasificada por el envelope.
+
+Entonces:
+
+\[
+\forall \delta\in\Delta:
+\operatorname{Obs}_{\delta}(H)
+=
+\operatorname{Obs}_{\delta}(H^{+z}),
+\]
+
+pero RealizerCoverageAdequate puede tener distinto valor en ambos realizadores.
+
+Por tanto:
+
+\[
+\boxed{
+\text{finite intervention success}
+\not\Rightarrow
+\operatorname{RealizerCoverageAdequate}.
+}
+\]
+
+Esto no convierte los tests en inútiles: pueden **falsar** RCA y descargar familias concretas, pero no establecer por enumeración finita la ausencia de toda dependencia oculta.
+
+#### 0.11.91r-bo. RCA-T1 — hace falta una teoría del realizador, no infinitos tests
+
+Para cerrar RCA introducimos una teoría independiente del realizador:
+
+\[
+\mathcal H
+=
+\langle
+Q_H,
+\Lambda_H,
+\to_H,
+\mathsf{Dep}_H,
+\mathsf{Fault}_H
+\rangle.
+\]
+
+No tiene que ser una microfísica total. Debe cubrir el vocabulario host-side que se afirma relevante para la realización actual.
+
+Definimos:
+
+\[
+\boxed{
+\operatorname{HostProjectionComplete}^{\mathsf M}
+(
+\mathcal H,\mathcal T,H;
+\varrho,\mathcal E
+)
+}
+\]
+
+si toda transición/dependencia admitida por \(\mathcal H\) cae en una clase predefinida:
+
+1. **HPC1 / local step:** proyecta a una transición de \(\mathcal T\);
+2. **HPC2 / interface step:** proyecta a una interacción de \(\mathcal A\);
+3. **HPC3 / stutter:** preserva \(\Xi_C\) y pertenece a \(\mathcal N\) o a una equivalencia de realización;
+4. **HPC4 / fault/lifecycle:** proyecta a \(\mathcal F\) o pérdida observable de realización;
+5. **HPC5 / recoding/refinement:** cambia implementación sin cambiar el perfil abstracto;
+6. **HPC6 / no residual relevant step:** no queda una transición/dependencia que altere \(\Xi_C\) fuera de HPC1–HPC5.
+
+Además:
+
+- **HPC7 / independent grammar:** las clases de \(\mathcal H\) se fijan sin usar el éxito de \(C\);
+- **HPC8 / counterexample openness:** una nueva transición host-side reproducible no cubierta invalida HostProjectionComplete hasta revisar \(\mathcal H\).
+
+Entonces:
+
+\[
+\boxed{
+\operatorname{HostTheoryAdequate}(\mathcal H,H)
++
+\operatorname{HostProjectionComplete}
+\Rightarrow
+\operatorname{RealizerCoverageAdequate}.
+}
+\]
+
+La carga se desplaza correctamente desde “hemos probado muchos casos” a “tenemos una abstracción host→local cuya cobertura puede auditarse”.
+
+#### 0.11.91r-bp. No-Microscopic-Totality — RCA no exige describir todos los microestados
+
+HostTheoryAdequate no significa que \(\mathcal H\) enumere cada transistor, scheduler tick o estado físico.
+
+La obligación relevante es más estrecha:
+
+\[
+\boxed{
+\text{todo factor reconocido como constitutivamente capaz de alterar }\Xi_C
+\text{ debe proyectar o invalidar la realización.}
+}
+\]
+
+Los detalles microfísicos pueden quedar quotientados cuando la teoría independiente del host justifica que, respecto del perfil:
+
+\[
+h_1\sim_{\varrho,\mathcal E} h_2.
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{realizer coverage}
+\neq
+\text{microscopic totality}.
+}
+\]
+
+Pero la equivalencia tampoco se decreta. Si un detalle previamente quotientado produce un UnitProfileBreak reproducible, HPC8 obliga a refinar la teoría.
+
+Este principio evita una regresión infinita puramente epistemológica: cada nivel de realización puede usar una teoría independently grounded y falsable sin pretender agotar físicamente su sustrato.
+
+#### 0.11.91r-bq. Relación con abstract interpretation y equivalencia conductual
+
+La forma de HostProjectionComplete tiene precedentes formales claros:
+
+- abstract interpretation permite describir computaciones concretas en un dominio abstracto conservando la información relevante para las propiedades objetivo;
+- simulation/bisimulation-style relations permiten demostrar que pasos concretos y abstractos preservan una conducta observacional seleccionada;
+- I/O/interface theories añaden la distinción sistema/entorno necesaria para no confundir stutter interno con interacción exterior.
+
+Exergism añade una exigencia propia: la propiedad preservada no es solo comportamiento observable, sino el **pre-index unit profile** usado por IA0-U.
+
+Por tanto no se infiere:
+
+\[
+\text{sound abstraction}
+\Rightarrow
+\text{ContextIndividuation}.
+\]
+
+La inferencia permitida es únicamente:
+
+\[
+\text{sound host projection}
+\Rightarrow
+\text{evidence para RCA},
+\]
+
+dentro del resto de UnitGroundAdequate.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
