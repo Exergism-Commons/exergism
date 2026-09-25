@@ -221,6 +221,19 @@ class ContextRealityContractTests(unittest.TestCase):
                 MarkdownDocument(mutated),
             )
 
+    def test_rejects_missing_empirical_non_promotion_contract(self) -> None:
+        heading = "#### 0.11.91r-u. EMP-T1 — qué ha sido realmente descargado"
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed empirical non-promotion contract",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
 
 class ArchiveContractTests(unittest.TestCase):
     def test_keywords_without_canonical_polarity_do_not_satisfy_banner(self) -> None:
