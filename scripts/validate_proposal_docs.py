@@ -915,6 +915,17 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-aa. UGAudit — PASS, PARTIAL y FAIL son estados epistémicos de descarga"),
+        (4, "0.11.91r-ab. UG-XR1 — auditoría del witness ejecutable"),
+        (4, "0.11.91r-ac. UG-REDIS — proceso/estado/protocolo como ground candidato"),
+        (4, "0.11.91r-ad. UG-ECOLI — organización mantenida como ground candidato"),
+        (4, "0.11.91r-ae. UG-NEST — closed-loop control como ground candidato"),
+        (4, "0.11.91r-af. UG-COMP — comparación sin ranking ontológico"),
+        (4, "0.11.91r-ag. UG-T1 — ninguna descarga completa todavía"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
