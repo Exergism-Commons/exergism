@@ -6944,11 +6944,11 @@ Por tanto el contenido usado para IA0 posee simultáneamente:
 
 Esto es exactamente el tipo de evidencia positiva que IA0 reclamaba frente a consistencia interna, conveniencia predictiva o ajuste puramente descriptivo.
 
-La única decisión doctrinal restante en \(\varepsilon\)RSP es emergentista:
+Lo que EA1–EA8 demuestra con fuerza es **realidad modal/organizacional de la estructura**. El ataque IA0 añade una pregunta distinta:
 
-> ¿una organización actual con eficacia dinámica propia, correctamente individuada y realizada, cuenta como estructura ontológicamente relevante a ese nivel?
+> ¿la estructura que produce esa macroeficacia es además la estructura que constituye o discrimina la unidad contextual de \(C\)?
 
-A diferencia de RSP genérico, ésta coincide directamente con el compromiso emergentista que el sistema ya declara.
+Responder “sí” solo porque la macroestructura es real sería **real-pattern promotion**. La respuesta exige IA0-U / UnitGroundAdequate. Por tanto EF-T1 respalda \(\varepsilon\)RSP-R, no el antiguo \(\varepsilon\)RSP_full.
 
 #### 0.11.69n. XR-\(\varepsilon\): XR-1 reutiliza el toy emergentista original
 
