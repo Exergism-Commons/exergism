@@ -7075,7 +7075,11 @@ Por tanto la ruta correcta queda:
 +
 \operatorname{RealizedEmergence}_{XR1}
 +
+\operatorname{MCAdequate}_{XR1}
++
 \operatorname{UnitGroundAdequate}_{XR1}
++
+\operatorname{Ind}_{\mathcal T_{\mathrm{DTS}}}^{\mathsf M}(C_{XR1};\chi_{XR1})
 +
 \operatorname{IndAdequate}^{1\text{--}10}_{XR1}
 \Rightarrow
@@ -7204,6 +7208,33 @@ Y usamos solo como abreviatura:
 \operatorname{DischargeAdequate}^{\mathsf M}(\mathcal T,C,\chi).
 }
 \]
+
+Cuando IA0 se descarga por una ruta separada usamos la abreviatura:
+
+\[
+\boxed{
+\operatorname{IndAdequate}^{1\text{--}10}_{\mathcal T}(C,\chi)
+:=
+\operatorname{ContextAdequate}^{\mathsf M}(C,\chi)
+\land
+\bigwedge_{m=1}^{10}
+\mathrm{IA}_m(\mathcal T,C,\chi).
+}
+\]
+
+Esta notación **no contiene IA0**. Por tanto:
+
+\[
+IA0
++
+\operatorname{IndAdequate}^{1\text{--}10}_{\mathcal T}(C,\chi)
+\Longleftrightarrow
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi).
+\]
+
+Su función es impedir que una ruta que pretende descargar IA0 mediante
+realización + UnitGroundAdequate vuelva a introducir IA0 ocultamente dentro de
+\(\operatorname{IndAdequate}\).
 
 Ninguno de estos nombres introduce un hecho metaontológico adicional que pueda postularse sin descarga: son **bundles de obligaciones de auditoría**.
 
@@ -17299,13 +17330,60 @@ x\in C_{XR1}.
 
 Escribimos \(R_{XR1}\) para ese scope plural sin convertirlo en objeto colector.
 
-#### 0.11.91ag. XR1-C — descarga TR-M e IndAdequate
+#### 0.11.91ag. XR1-C — descarga histórica revisada tras DTS-UG6
 
-La candidatura dispone pre-indexadamente de typing local State/Event, transición operacional, frontera de proceso, interfaces de boot/termination y estado reentrante.
+La candidatura dispone pre-indexadamente de typing local State/Event, transición
+operacional, frontera de proceso, interfaces de boot/termination y estado
+reentrante.
 
-Bajo la teoría independiente \(\mathcal T_{\mathrm{DTS}}\), MC1–MC10 se descargan: la especificación no usa el índice; typing y boundary son positivos; toda influencia admitida entra por interfaces declaradas; el update es determinista; no hay roles/interacciones omitidos; fijado estado + inputs el futuro lógico queda determinado; no existe agregación arbitraria; el host puede ser otro contexto vía ContextEmbedding; y genesis/persistence permanecen separados.
+La versión inicial de esta sección afirmaba que
+\(\mathcal T_{\mathrm{DTS}}\) descargaba MC1–MC10 por completo. El finding
+posterior DTS-UG6 (§0.11.91r-ap) demuestra que esa afirmación era demasiado
+fuerte: un DTS desnudo no fija independientemente input/output/environment,
+component interfaces ni la clase completa de rival cuts.
 
-Además XR-1 permite auditar **IA1–IA10** sin introducir el target como premisa:
+La auditoría corregida es:
+
+\[
+\boxed{
+\begin{array}{c|cccccccccc}
+&MC1&MC2&MC3&MC4&MC5&MC6&MC7&MC8&MC9&MC10\\
+\hline
+XR1/DTS
+&P&P&P&\partial&P&\partial&\partial&P&\partial&P
+\end{array}
+}
+\]
+
+donde \(P\) significa descarga positiva y \(\partial\) deuda no cerrada.
+
+En particular:
+
+- **MC4** queda PARTIAL porque DTS no contiene por sí solo una semántica
+  exhaustiva de mediación environment/component;
+- **MC6** queda PARTIAL porque role/interaction coverage no puede derivarse del
+  alfabeto DTS desnudo;
+- **MC7** tiene controles positivos como \`irrelevant_noise\`, pero no coverage
+  suficiente para promover ese test finito a autonomía contractual completa;
+- **MC9** queda PARTIAL por RivalClassCompleteness.
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{MCAdequate}_{XR1/DTS}
+=
+\mathsf{PARTIAL}.
+}
+\]
+
+XR-2/T-IODTS nace precisamente para atacar parte de esta deuda. No debe
+reescribirse retroactivamente XR-1 como si ya la hubiese resuelto.
+
+XR-1 sí permite auditar **IA1–IA10** sin introducir el target como premisa,
+pero esos findings son evidencia de guards individuales; no equivalen por sí
+solos a \(\operatorname{IndAdequate}^{1\text{--}10}\) mientras
+ContextAdequate/MC4/MC6/MC9 sigan incompletos:
 
 - **IA1:** \(\mathcal T_{\mathrm{DTS}}\) es una teoría matemática/operacional general anterior e independiente de XR-1; la instancia fue elegida por minimalidad, no para fabricar su frontera.
 - **IA2:** ninguna regla DTS menciona \(R_i\), RegimeTotal, REC, SameRegime ni un índice admitido.
@@ -17414,11 +17492,13 @@ Por tanto:
 +
 \mathrm{XR1\text{-}REAL}
 +
-\mathrm{MCAdequate}
+\operatorname{MCAdequate}_{XR1}
 +
 \operatorname{UnitGroundAdequate}_{XR1}
 +
-IA1\text{--}IA10
+\operatorname{Ind}_{\mathcal T_{\mathrm{DTS}}}^{\mathsf M}(C_{XR1};\chi_{XR1})
++
+\operatorname{IndAdequate}^{1\text{--}10}_{XR1}
 \Rightarrow
 \operatorname{ContextIndividuation}^{\mathsf M}(C_{XR1}).
 }
@@ -17452,15 +17532,19 @@ Por tanto:
 +
 \mathrm{XR1\text{-}REAL}
 +
+\operatorname{MCAdequate}_{XR1}
++
 \operatorname{UnitGroundAdequate}_{XR1}
 +
-\mathrm{IndAdequate}_{XR1}
+\operatorname{Ind}_{\mathcal T_{\mathrm{DTS}}}^{\mathsf M}(C_{XR1};\chi_{XR1})
++
+\operatorname{IndAdequate}^{1\text{--}10}_{XR1}
 \Rightarrow
 \operatorname{ExistsR}.
 }
 \]
 
-REV-07b/c permanecen abiertos universalmente, pero no bloquean este existential witness porque GenComplete y GCExists han sido probados por exhaustión finita para XR-1.
+REV-07b/c permanecen abiertos universalmente, pero no bloquean la parte generativa de este witness porque GenComplete y GCExists han sido probados por exhaustión finita para XR-1. **XR1-T permanece FORMAL-CONDITIONAL y no está actualmente descargado como prueba de ExistsR**, porque MCAdequate/IndAdequate^{1--10} y UnitGroundAdequate conservan deuda tras DTS-UG6.
 
 #### 0.11.91aj. Ataques adversariales
 
