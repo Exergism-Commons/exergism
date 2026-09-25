@@ -6718,25 +6718,25 @@ No hay una tercera ruta puramente formal basada solo en construir un modelo no n
 \operatorname{ExistsR}.
 \]
 
-#### 0.11.69h. RSP no es la premisa de actualidad
+#### 0.11.69h. RSP-R no es la premisa de actualidad
 
-RSP:
+La regla vigente de soporte realizacional es:
 
 \[
 \operatorname{ActualStructuralRealization}(H,C;\varrho)
 +
 \operatorname{MCAdequate}(C)
 \Rightarrow
-IA0(C)
+IA0\text{-}R(C).
 \]
 
-es un principio de **suficiencia de realización**, no de existencia.
+Es un principio de **soporte de realización**, no de existencia.
 
-Bajo Null, su antecedente ActualStructuralRealization es falso; por tanto RSP puede ser verdadero vacuamente. En consecuencia:
+Bajo Null, su antecedente ActualStructuralRealization es falso; por tanto RSP-R puede ser verdadero vacuamente. En consecuencia:
 
 \[
 \boxed{
-\mathrm{RSP}
+\mathrm{RSP\text{-}R}
 \not\Rightarrow
 \operatorname{ExistsR}.
 }
@@ -6748,9 +6748,9 @@ La carga anti-Null está en:
 \operatorname{Obtains}^{\mathsf M}(H),
 \]
 
-no en el evidence witness ni en RSP.
+no en el evidence witness, RSP-R ni UnitGroundAdequate.
 
-Esto evita un desplazamiento del problema: sustituir “el certificado existe” por “RSP es verdadero” tampoco demuestra actualidad.
+La antigua RSP hacia IA0 completo queda SUPERSEDED. Sustituir “el certificado existe” por “la estructura está realizada” tampoco resuelve por sí solo IA0-U.
 
 #### 0.11.69i. Consecuencia epistemológica: prueba empírica vs prueba a priori
 
