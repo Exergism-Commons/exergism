@@ -937,6 +937,18 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-aq. T-IODTS — ruta independiente de teoría de interfaz"),
+        (4, "0.11.91r-ar. XR-I/O — interfaz pre-registrada para ejecuciones posteriores"),
+        (4, "0.11.91r-at. IAI-T1 — Interface Assignment Independence"),
+        (4, "0.11.91r-av. Requisitos de XR-2 — componente realmente abierto"),
+        (4, "0.11.91r-aw. XR2-E — ejecución efectiva del componente abierto"),
+        (4, "0.11.91r-ax. IAI-XR2 — qué cambia respecto de XR-I/O nominal"),
+        (4, "0.11.91r-ay. XR2-UG finding — interface actuality tampoco basta"),
+        (4, "0.11.91r-az. Consecuencia metodológica: boundary evidence y unity evidence son distintas"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
