@@ -17398,9 +17398,14 @@ ContextAdequate/MC4/MC6/MC9 sigan incompletos:
 - **IA5:** los grados host-side ignorados por \(\varrho\) deben quedar contrafácticamente screened-off; si afectan la transición local, OR4/MC4 fallan.
 - **IA6:** XR-1 posee una sola máquina transitionally integrated; juntar otra máquina independiente no hereda el criterio.
 - **IA7:** boot/formation del realizador se distingue de sus pasos internos; la transición \(s_0\to s_1\) no se usa para explicar retroactivamente la existencia del contexto.
-- **IA8:** el corte local y el host son niveles nested, no rival cuts del mismo nivel.
+- **IA8:** **PARTIAL.** La realización host/local aporta una semántica candidata de nivel, pero no puede usarse `ContextEmbedding` como premisa porque CE1 exige dual individuation y embedding no crea ninguno de los dos contextos. Para excluir host/local como rival cuts del mismo nivel hace falta una justificación pre-indexada, target-independent, de que responden a niveles/preguntas de individuación distintos; DTS por sí solo no cierra esa carga.
 - **IA9:** ContextIndividuation no basta para scope; XR1-S descarga el scope por separado.
 - **IA10:** OR/MC/XR-A1–A7 identifican explícitamente qué haría fallar la individuación.
+
+La auditoría IA1–IA10 anterior es por guard. Tras DTS-UG6 y la corrección
+CE1/IA8, no debe leerse como una descarga conjunta de
+`IndAdequate^{1--10}`: IA8 queda PARTIAL y MC4/MC6/MC7/MC9 mantienen además
+deuda de criterio.
 
 Queda entonces concentrada IA0 en la realización estructural actual:
 
