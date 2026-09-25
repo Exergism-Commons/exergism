@@ -968,6 +968,14 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-br. XR2-HOST — batería adversarial concreta sobre el realizador"),
+        (4, "0.11.91r-bs. START-X1 — el start-method era una dependencia host no modelada"),
+        (4, "0.11.91r-bt. RCAAudit actualizado tras los ataques host"),
+        (4, "0.11.91r-bu. HOST-T1 — resultado adversarial de la ronda"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
