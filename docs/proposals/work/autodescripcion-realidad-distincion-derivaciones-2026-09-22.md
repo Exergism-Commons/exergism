@@ -15369,6 +15369,167 @@ IAI2 + IAI4 + RCC5 + UG6.
 
 Solo después tendría sentido volver a preguntar si XR-2 descarga UnitGroundAdequate completo.
 
+#### 0.11.91r-aw. XR2-E — ejecución efectiva del componente abierto
+
+XR-2 queda implementado en scripts/xr2_open_component.py y ejecutado por CI después de pre-registrar su teoría candidata de interfaz.
+
+La realización host-side usa:
+
+\[
+E_H
+\quad\text{(proceso environment/parent)}
+\]
+
+y:
+
+\[
+C_H
+\quad\text{(proceso component/child)}
+\]
+
+con PIDs distintos y un channel IPC de multiprocessing.
+
+El episodio actual es:
+
+\[
+E_H
+\xrightarrow{\texttt{close}}
+C_H
+:
+s_0\to s_1
+\xrightarrow{\texttt{activate}}
+E_H.
+\]
+
+CI verifica:
+
+\[
+\boxed{
+\begin{array}{ll}
+XIO1 &: \text{environment y component son procesos distintos};\\
+XIO2 &: \text{input/output/internal partition disjunta y exhaustiva};\\
+XIO3 &: \texttt{close}\text{ entra realmente y }\texttt{activate}\text{ sale realmente};\\
+XIO4 &: \text{el worker recibe el channel como única entrada environment-side};\\
+XIO5 &: \text{el receiver environment-side observa }\texttt{activate};\\
+XIO6 &: \text{dos environment-noise controls distintos producen la misma traza local};\\
+XIO8 &: \text{GenSound/GenComplete y scope exacto incluyen ambos interaction tokens}.
+\end{array}
+}
+\]
+
+El scope actual XR-2 es:
+
+\[
+\{s_0,\texttt{close},s_1,\texttt{activate}\}.
+\]
+
+La closure se obtiene en dos etapas:
+
+\[
+\{s_0\}
+\leadsto
+\{s_0,\texttt{close},s_1\}
+\leadsto
+\{s_0,\texttt{close},s_1,\texttt{activate}\}.
+\]
+
+Por tanto XR-2 no oculta el output actual fuera de RegimeGenerated: la disciplina XIO8 queda satisfecha para la instancia finita.
+
+#### 0.11.91r-ax. IAI-XR2 — qué cambia respecto de XR-I/O nominal
+
+XR-2 permite elevar:
+
+\[
+IAI2=\mathsf{PASS},
+\qquad
+IAI4=\mathsf{PASS}.
+\]
+
+Hay mediación realizada y un environment witness distinto.
+
+Además:
+
+- **IAI1 / control locus:** \(\texttt{close}\) es enviado por environment y \(\texttt{activate}\) emitido por component; PASS para el run;
+- **IAI3 / no relabel rescue:** la polaridad está fijada en código antes de la ejecución certificada; PASS respecto de este run;
+- **IAI6 / covariance:** sigue respaldada por la disciplina representacional previa, pero no se ha añadido todavía un segundo IPC recoding; PARTIAL-PASS;
+- **IAI5 / bypass accounting:** permanece PARTIAL porque la realización corre sobre OS/runtime y no se ha demostrado una cobertura exhaustiva de señales, termination, scheduler/IPC failure u otras intervenciones host-side constitutivas.
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{InterfaceAssignmentIndependent}_{XR2}
+\text{ está mucho más descargado, pero no cerrado globalmente.}
+}
+\]
+
+#### 0.11.91r-ay. XR2-UG finding — interface actuality tampoco basta
+
+XR-2 derrota una objeción concreta contra XR-1:
+
+> “la interfaz solo existe en el dibujo/modelo”.
+
+Ahora existe una interacción actual entre estructuras host-side distintas.
+
+Pero no se adopta:
+
+\[
+\boxed{
+\text{actual IPC boundary}
+\Rightarrow
+\operatorname{ContextIndividuation}.
+}
+\]
+
+La auditoría UnitGround de XR-2 queda provisionalmente:
+
+\[
+\begin{array}{lll}
+UG1 & \mathsf{PASS} & \text{teoría/firma pre-registradas};\\
+UG2 & \mathsf{PASS} & \text{component + environment + IPC actual};\\
+UG3 & \mathsf{PASS} & \text{quitar channel/polaridad destruye el perfil open-component declarado};\\
+UG4 & \mathsf{PARTIAL} & \text{no hay todavía CIT positivo de UnitProfileBreak específico de XR-2};\\
+UG5 & \mathsf{PARTIAL} & \text{negative environment control pasa, pero bypass accounting no es exhaustivo};\\
+UG6 & \mathsf{PARTIAL} & \text{state split/quotient se rechazan, pero RCC1–RCC6 aún no están demostrados};\\
+UG7 & \mathsf{PASS} & \text{IPC actuality no se promueve automáticamente a ontología};\\
+UG8 & \mathsf{PARTIAL\text{-}PASS} & \text{estructura formal covariante, falta recoding IPC explícito}.
+\end{array}
+\]
+
+El avance real es que **IAI2/IAI4 dejan de ser deuda abstracta**.
+
+El cuello restante se concentra ahora en:
+
+\[
+\boxed{
+UG4 + UG5 + UG6
+}
+\]
+
+para XR-2 y, dentro de UG6, en:
+
+\[
+\boxed{
+RCC1\text{--}RCC6.
+}
+\]
+
+#### 0.11.91r-az. Consecuencia metodológica: boundary evidence y unity evidence son distintas
+
+XR-2 obliga a separar:
+
+\[
+\boxed{
+\text{boundary actuality}
+\neq
+\text{unity sufficiency}.
+}
+\]
+
+Un OS process, pipe, membrana biológica o protocolo puede suministrar evidencia muy fuerte de **dónde ocurren interacciones mediadas**. Todavía hace falta demostrar que esa estructura selecciona la unidad frente a todos los rivales relevantes y no es solo una frontera útil dentro de un host mayor.
+
+Esto preserva No-Free-Promotion incluso después de abandonar toys puramente cerrados.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
