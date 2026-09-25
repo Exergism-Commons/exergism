@@ -15856,6 +15856,194 @@ UG6\text{-}H.
 
 Ambas deudas son ahora dos caras del mismo problema: **cobertura de la relación entre firma y realizador**, no falta de una frontera operacional.
 
+#### 0.11.91r-bj. RealizerCoverageAdequate — el bridge firma↔host
+
+UG5 y UG6-H comparten la misma deuda: la teoría local puede ser internamente completa y, sin embargo, omitir una dependencia constitutivamente relevante presente en el realizador.
+
+Introducimos:
+
+\[
+\boxed{
+\operatorname{RealizerCoverageAdequate}^{\mathsf M}
+(
+\mathcal T,C,H;
+\varrho,
+\mathcal E
+)
+}
+\]
+
+donde \(\mathcal E\) es el RealizationEnvelope vigente.
+
+No sustituye OR1–OR9. OR1–OR9 preguntan si \(H\) realiza fielmente la dinámica local. RCA pregunta además si **la abstracción ha cubierto las dependencias host-side que importan para la unidad**.
+
+Requisitos:
+
+1. **RCA1 / independent host theory:** la semántica relevante de \(H\) y de \(\varrho\) se fija sin ContextIndividuation/IndexAdmission;
+2. **RCA2 / dependency projection:** toda dependencia host-side que la teoría del realizador reconoce como capaz de cambiar typing, interface, continuation o boundary proyecta a state/interface/fault de \(\mathcal T\), o invalida explícitamente la realización;
+3. **RCA3 / no hidden constituent:** no existe un elemento/relación host-side conocido como necesario para las transiciones/roles constitutivos que sea invisible tanto a \(\varrho\) como al envelope;
+4. **RCA4 / fault projection:** fallos/lifecycle events relevantes se proyectan a \(\mathcal F\) o a pérdida observable de realization; nunca a \(\mathcal N\);
+5. **RCA5 / irrelevant covariance:** variaciones host-side declaradas irrelevantes y admitidas por la teoría preservan \(\Xi_C\);
+6. **RCA6 / host-rival projection:** cualquier cut rival construible desde dependencias host-side reconocidas induce un rival de firma, un higher-order/nested case o una violación observable de realization/envelope;
+7. **RCA7 / recoding invariance:** recodificaciones fieles del realizador preservan la clasificación de dependencias;
+8. **RCA8 / falsifiability:** un counterexample host-side no proyectado reabre RCA/UG5/UG6-H en vez de ser excluido retrospectivamente.
+
+Entonces:
+
+\[
+\boxed{
+\operatorname{RealizerCoverageAdequate}
++
+UG6\text{-}S
+\Rightarrow
+UG5
++
+UG6\text{-}H.
+}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{RealizerCoverageAdequate}
++
+UG6\text{-}S
+\Rightarrow
+UG5+UG6.
+}
+\]
+
+La regla no resuelve RCA; concentra la deuda sin duplicarla.
+
+#### 0.11.91r-bk. RCA no es MC6/MC7 renombrado
+
+MC6 y MC7 operan en la candidatura pre-indexada:
+
+- MC6 exige cobertura de roles/interacciones relevantes;
+- MC7 exige screening-off contrafactual respecto del nivel declarado.
+
+RCA añade una obligación **inter-level**:
+
+\[
+H
+\xrightarrow{\varrho}
+C.
+\]
+
+Pregunta si la teoría que justifica el paso host→local es suficientemente completa para sostener precisamente MC6/MC7 y UG5/UG6-H.
+
+Por tanto:
+
+\[
+\boxed{
+MC6/MC7
+\text{ son obligaciones locales;}
+\qquad
+RCA
+\text{ es la auditoría del bridge de realización.}
+}
+\]
+
+Si el realizador se tratara como mero “hardware irrelevante” sin RCA, el programa reintroduciría por debajo el mismo no-free-promotion que intenta bloquear por arriba.
+
+#### 0.11.91r-bl. RCA-XR2 — auditoría actual
+
+Para XR-2:
+
+\[
+H_{XR2}
+=
+\text{Python process pair + multiprocessing IPC + runtime/OS realization}.
+\]
+
+Estado:
+
+\[
+\begin{array}{lll}
+RCA1 & \mathsf{PASS} &
+\text{la semántica process/IPC y la firma I/O se fijan independientemente};\\
+RCA2 & \mathsf{PARTIAL} &
+\text{channel, output-role break y unsupported input están proyectados; no toda dependencia runtime/OS};\\
+RCA3 & \mathsf{PARTIAL} &
+\text{no se ha probado ausencia de hidden constituents del runtime/OS};\\
+RCA4 & \mathsf{PARTIAL} &
+\text{unsupported input se clasifica como fault; lifecycle/channel-loss coverage no está agotada};\\
+RCA5 & \mathsf{PASS} &
+\text{environment_noise y la recodificación fiel preservan el profile};\\
+RCA6 & \mathsf{PARTIAL} &
+\text{UG6-S pasa, pero no todo host rival conocido está probado proyectable};\\
+RCA7 & \mathsf{PASS} &
+\text{state/action recoding preserva polaridad y trace structure};\\
+RCA8 & \mathsf{PASS} &
+\text{RE7 y los guards obligan a reabrir ante bypass reproducible}.
+\end{array}
+\]
+
+Así:
+
+\[
+\boxed{
+\operatorname{RCAAudit}_{XR2}
+=
+\langle
+P,\partial,\partial,\partial,P,\partial,P,P
+\rangle.
+}
+\]
+
+El resultado explica por qué añadir más tests de firma tiene rendimiento decreciente: la deuda restante ya no está dentro del autómata.
+
+#### 0.11.91r-bm. Teorema de cuello de botella XR-2
+
+Con las descargas actuales:
+
+\[
+UG1,UG2,UG3,UG4,UG7,UG8
+=
+\mathsf{PASS},
+\]
+
+y:
+
+\[
+UG6\text{-}S
+=
+\mathsf{PASS}.
+\]
+
+Por §0.11.91r-bj, cerrar RCA bastaría para descargar simultáneamente:
+
+\[
+UG5
+\quad\text{y}\quad
+UG6\text{-}H,
+\]
+
+y por tanto:
+
+\[
+\boxed{
+\operatorname{RealizerCoverageAdequate}_{XR2}
+\Rightarrow
+\operatorname{UnitGroundAdequate}_{XR2}.
+}
+\]
+
+Esto **no** equivale a:
+
+\[
+\operatorname{RealizerCoverageAdequate}_{XR2}
+\Rightarrow
+\operatorname{ExistsR},
+\]
+
+porque todavía deben mantenerse las demás obligaciones de IndAdequate, IndexAdmission y RegimeTotal del witness correspondiente.
+
+El research target queda reducido de “qué es una unidad contextual” a una pregunta mucho más concreta para XR-2:
+
+> ¿puede una relación de realización host→component descargarse con cobertura suficiente sin exigir una descripción microscópicamente total del host ni esconder dependencias constitutivas?
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
