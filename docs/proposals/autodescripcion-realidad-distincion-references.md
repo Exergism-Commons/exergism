@@ -342,6 +342,31 @@ y de mantener $\operatorname{IndividuationWitness}^{\mathsf M}$, $\Omega_i$, Con
 
 **Límite explícito:** autopoiesis, closure of constraints e identidad de organismos son teorías de sistemas biológicos. Aquí no se usan como evidencia de que $R_i$ sea vivo, autopoiético, espacialmente acotado ni materialmente semipermeable.
 
+### 14.1. Evidencia de caso para la auditoría cross-domain
+
+Estas fuentes no se usan como autoridad metafísica. Se usan para fijar **hechos externos independientes** sobre mecanismos/implementaciones concretas que después se mapean, de forma explícitamente falible, a obligaciones IA/MC en las derivaciones.
+
+- **Redis Open Source — documentación oficial de comandos.** Redis describe interacción client/server mediante comandos con nombres, argumentos, respuestas y errores definidos. Se usa para respaldar MC2 y parte de MC4 en EMP-SW-REDIS; no demuestra por sí sola ContextIndividuation. https://redis.io/docs/latest/develop/using-commands/
+- **Redis Open Source — reference/specifications.** La documentación identifica RESP como wire protocol y expone el vocabulario/protocolos del servidor. Se usa para fijar el boundary operacional documentado. https://redis.io/docs/latest/develop/reference/
+- **Redis Open Source — event library.** La documentación interna describe el event loop propio, polling del sistema operativo y timers. Se usa como evidencia de dinámica/event mediation implementada, no como prueba de aislamiento del host. https://redis.io/docs/latest/operate/oss_and_stack/reference/internals/internals-rediseventlib/
+- **Redis Open Source — persistence.** RDB/AOF permiten preservar o reconstruir el dataset tras restart; AOF registra write operations y las replayea al arranque. Se usa para continuidad/reentrada a nivel software, separándola explícitamente de identidad ontológica. https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/
+- **Anna Konovalova (2021), “Homeostasis of the Gram-Negative Cell Envelope”.** Revisa envelope homeostasis, stress responses, selective uptake, respiration, secretion y reparación/remodelado en bacterias Gram-negativas. Se usa para MC3/MC4/MC5 en EMP-BIO-ECOLI. PMCID: PMC8577651. https://pmc.ncbi.nlm.nih.gov/articles/PMC8577651/
+- **“Regulation Systems of Bacteria such as Escherichia coli in Response to Nutrient Limitation and Environmental Stresses” (2014).** Revisa active transport y regulación frente a disponibilidad de nutrientes/estrés. Se usa para mediated openness y dinámica regulatoria. PMCID: PMC4018673. https://pmc.ncbi.nlm.nih.gov/articles/PMC4018673/
+- **“Localization, Assembly, and Activation of the Escherichia coli Cell Division Machinery” (2022).** Revisa divisome, FtsZ, síntesis/remodelado de peptidoglicano, invaginación del envelope y scission. Se usa para genesis/division en MC10 sin convertir división celular en definición general de ContextGenesis. PMCID: PMC8919703. https://pmc.ncbi.nlm.nih.gov/articles/PMC8919703/
+- **Google Nest — Temperature Sensor.** La documentación oficial establece que el sensor activo envía la lectura de temperatura al termostato y que esa lectura controla cuándo se enciende/apaga el sistema. Se usa para input mediation y closed-loop behavior en EMP-PHY-NEST. https://support.google.com/googlehome/answer/9248154
+- **Google Nest — Heat Link (Europa).** La documentación oficial establece que el termostato detecta temperatura y envía al Heat Link la señal que ordena encender/apagar la calefacción. Se usa para output mediation y unidad funcional realizada. https://support.google.com/googlenest/answer/9256498
+- **Google Nest — schedules/sensors.** La documentación describe cómo la selección temporal del sensor activo determina qué lectura usa el termostato para alcanzar la temperatura programada. Se usa para estado/continuación del control, no para inferir persistencia ontológica. https://support.google.com/googlehome/answer/10184481
+
+**Límite de uso.** Estas fuentes pueden respaldar proposiciones como “existe un event loop implementado”, “la envoltura bacteriana media transporte/homeostasis” o “el Heat Link activa la calefacción”. No respaldan directamente el salto:
+
+$
+\operatorname{mechanism/documentation}
+\Rightarrow
+\operatorname{ContextIndividuation}.
+$
+
+Ese bridge sigue siendo una obligación propia de REV-07g/IA0.
+
 ## 15. Política de citación futura
 
 Antes de añadir un concepto nuevo al núcleo:
