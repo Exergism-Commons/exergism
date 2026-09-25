@@ -345,8 +345,8 @@ class ContextRealityContractTests(unittest.TestCase):
 
     def test_rejects_missing_finite_test_countermodel(self) -> None:
         heading = (
-            "#### 0.11.91r-bn. RCA-X1 — ninguna batería finita prueba "
-            "ausencia universal de hidden constituents"
+            "#### 0.11.91r-bn. RCA-X1 — límite de baterías finitas "
+            "dentro de un contrato"
         )
         mutated = self.technical_source.replace(
             heading,
@@ -361,8 +361,8 @@ class ContextRealityContractTests(unittest.TestCase):
 
     def test_rejects_missing_host_projection_contract(self) -> None:
         heading = (
-            "#### 0.11.91r-bo. RCA-T1 — hace falta una teoría del "
-            "realizador, no infinitos tests"
+            "#### 0.11.91r-bo. RCA-T1 — SUPERSEDED como teoría "
+            "host autónoma"
         )
         mutated = self.technical_source.replace(
             heading,
@@ -390,8 +390,8 @@ class ContextRealityContractTests(unittest.TestCase):
 
     def test_rejects_missing_hmp_projection_result(self) -> None:
         heading = (
-            "#### 0.11.91r-bw. HMP-T1 — HostProjectionComplete "
-            "sobre la gramática declarada"
+            "#### 0.11.91r-bw. HMP-T1 — completitud de clasificación "
+            "sobre la gramática diagnóstica"
         )
         mutated = self.technical_source.replace(
             heading,
@@ -407,8 +407,8 @@ class ContextRealityContractTests(unittest.TestCase):
 
     def test_rejects_missing_superseded_host_x1_correction(self) -> None:
         heading = (
-            "#### 0.11.91r-by. HOST-X1 — HMP-XR2 no sobrevive "
-            "como teoría host adecuada"
+            "#### 0.11.91r-by. HOST-X1 — SUPERSEDED: mecanismo omitido "
+            "no implica constituyente omitido"
         )
         mutated = self.technical_source.replace(
             heading,
@@ -423,8 +423,8 @@ class ContextRealityContractTests(unittest.TestCase):
 
     def test_rejects_missing_hta_redundancy_correction(self) -> None:
         heading = (
-            "#### 0.11.91r-ca. HTA-X1 — ninguna auditoría finita cierra "
-            "HostTheoryAdequate en sentido absoluto"
+            "#### 0.11.91r-ca. HTA-X1 — REDUNDANT con RCA-X1; "
+            "no crea un nuevo blocker"
         )
         mutated = self.technical_source.replace(
             heading,
@@ -439,8 +439,8 @@ class ContextRealityContractTests(unittest.TestCase):
 
     def test_rejects_missing_parallel_host_contract_rejection(self) -> None:
         heading = (
-            "#### 0.11.91r-cb. HTA-K — HostTheoryAdequate relativo "
-            "a un contrato host independiente"
+            "#### 0.11.91r-cb. HTA-K — SUPERSEDED: "
+            "no crear un contrato host paralelo"
         )
         mutated = self.technical_source.replace(
             heading,
