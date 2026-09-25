@@ -6209,6 +6209,189 @@ Por tanto:
 
 Esto también limita IndexRetraction: abandonar una teoría puede retirar nuestra justificación para un índice, pero solo muestra que la admisión anterior fue epistémicamente defectuosa si la nueva evaluación invalida su witness. No produce ContextCessation ni reescribe retroactivamente la ontología.
 
+#### 0.11.68b. R-FORM — de ContextIndividuation a \(R_i\) sin fabricar totality
+
+La arquitectura anterior ya imponía la dirección:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
+\Rightarrow
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i),
+\]
+
+pero dejaba implícito qué significa exactamente pasar de un índice admitido a la notación \(R_i\). Si se interpreta esa flecha como existencia automática de una realidad total, IA9/CI14 quedan violados. Si, por el contrario, se exige RegimeTotal antes de poder escribir \(R_i\), reaparece la circularidad porque RegimeTotal ya presupone una GeneBasis comúnmente tipada por \(i\).
+
+La solución es distinguir **formación tipada** de **totalización ontológica**.
+
+Definimos la regla metateórica:
+
+\[
+\boxed{
+\frac{
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
+\qquad
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
+}{
+\vdash^{\mathsf M} R_i:\mathsf{OntScope}_i
+}
+\quad(\mathrm{R\text{-}FORM})
+}
+\]
+
+La conclusión no es un hecho objeto ni un existencial ontológico. Significa únicamente que, una vez individuado \(C\) y admitido su parámetro contextual \(i\), el metalenguaje puede usar \(R_i\) como **candidato de scope ontológico de ese contexto** y puede formar expresiones como:
+
+\[
+\operatorname{Within}_i(x_i,R_i),
+\qquad
+\operatorname{OntTotal}_i(R_i),
+\qquad
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i).
+\]
+
+No se introduce un predicado adicional ContextReality: la procedencia de \(R_i\) ya queda transportada por IndexAdmission y por el propio tipado \(i\). Duplicar esa información en una entidad puente solo reificaría la relación metateórica.
+
+**RF1 / no existence promotion.**
+
+\[
+\vdash^{\mathsf M}R_i:\mathsf{OntScope}_i
+\not\Rightarrow
+\operatorname{OntTotal}_i(R_i).
+\]
+
+**RF2 / no genealogical promotion.**
+
+\[
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
+\not\Rightarrow
+\exists\mathfrak G_i\;
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i).
+\]
+
+**RF3 / no bootstrap.** RegimeTotal solo puede evaluarse bajo un índice ya admitido. No se autoriza:
+
+\[
+\operatorname{RegimeTotal}_{\widehat{i}}(\mathfrak G,R)
+\Rightarrow
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i),
+\]
+
+porque el antecedente usa precisamente el typing cuya legitimidad intenta demostrar. Un cálculo provisional bajo \(\widehat{i}\) puede ser evidence de una descarga independiente, pero no convierte RegimeTotal en criterio de individuación.
+
+La jerarquía correcta queda:
+
+\[
+\boxed{
+\operatorname{ContextIndividuation}
+\longrightarrow
+\operatorname{IndexAdmission}
+\longrightarrow
+\mathrm{WF}(R_i)
+\longrightarrow
+\operatorname{RegimeTotal}
+\longrightarrow
+\operatorname{OntTotal}.
+}
+\]
+
+La tercera flecha es una **regla de formación** y la cuarta exige toda la maquinaria REV-07f; no son implicaciones ontológicas homogéneas.
+
+#### 0.11.68c. CI–RT bridge y coextensionalidad del scope
+
+Una instancia fuerte queda ahora normalizada como:
+
+\[
+\boxed{
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
+\land
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
+\land
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+\Rightarrow
+\operatorname{OntTotal}_i(R_i)
+\land
+\operatorname{ExistsR}.
+}
+\]
+
+Esto no añade poder deductivo misterioso a RegimeTotal. Hace explícitas dos cargas que antes estaban repartidas entre la semántica de \(\exists^{\mathsf M}i\) y REV-07g:
+
+1. \(i\) debe proceder de una individuación admisible;
+2. el scope \(R_i\) debe ser totalizado genealógicamente, no solo estar bien formado.
+
+La conclusión ExistsR usa una sola instancia admitida como witness del metaschema. Por No-Free-Actuality, una descarga de ContextIndividuation que pretenda participar en un witness existencial debe además respetar IA0/realization; R-FORM por sí sola no aporta actualidad.
+
+Hay además una consecuencia útil. Supóngase el mismo índice admitido \(i\) y dos scopes candidatos:
+
+\[
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i),
+\qquad
+\operatorname{RegimeTotal}_i(\mathfrak H_i,R'_i).
+\]
+
+Por definición de RegimeTotal:
+
+\[
+\forall x_i[
+\operatorname{Within}_i(x_i,R_i)
+\leftrightarrow
+\operatorname{Real}_i(x_i)
+],
+\]
+
+y:
+
+\[
+\forall x_i[
+\operatorname{Within}_i(x_i,R'_i)
+\leftrightarrow
+\operatorname{Real}_i(x_i)
+].
+\]
+
+Luego:
+
+\[
+\boxed{
+\forall x_i[
+\operatorname{Within}_i(x_i,R_i)
+\leftrightarrow
+\operatorname{Within}_i(x_i,R'_i)
+].
+}
+\]
+
+Por tanto dos descargas RegimeTotal bajo el mismo índice no producen dos realidades contextuales distintas: producen scopes **coextensionales respecto de Within**. La teoría no infiere \(R_i=R'_i\) porque \(R_i\) no debe reificarse como objeto con identidad adicional y no se ha postulado extensionalidad de scopes.
+
+Este resultado también aclara la relación con GeneBasis. Puede haber dos GeneBasis adecuadas que converjan extensionalmente sobre el mismo contenido real; decidir si son genealógicamente equivalentes es una cuestión posterior de identidad de genealogía, no de individuación de contexto.
+
+#### 0.11.68d. Semántica explícita de \(\exists^{\mathsf M}i\)
+
+La expresión:
+
+\[
+\exists^{\mathsf M}i\;\Phi_i
+\]
+
+no significa “hay un objeto \(i\)”. Significa que el metalenguaje dispone de una **instanciación admitida** del parámetro contextual. Tras REV-07g, esa admisibilidad debe transportar provenance de:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
+\land
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i).
+\]
+
+Por tanto un subíndice escrito por conveniencia, un \(\widehat{i}\) provisional o un carrier semántico etiquetado no satisfacen el metaschema. Esta precisión bloquea el siguiente falso atajo:
+
+\[
+\text{escribir }i
+\;+\;
+\text{demostrar RegimeTotal condicionalmente}
+\;\not\Rightarrow\;
+\operatorname{ExistsR}.
+\]
+
+Para ExistsR debe existir una instancia de RegimeTotal cuyo índice sea **admisible en el sentido anterior**. La descarga de esa admisibilidad puede variar entre teorías sin relativizar el target ContextIndividuation.
+
 #### 0.11.69. Equivalencia de testigos: varias pruebas no deben multiplicar índices
 
 La individuación puede tener varias evidencias independientes. Por ejemplo, una teoría podría reconocer la misma frontera mediante dos estructuras distintas. No queremos:
