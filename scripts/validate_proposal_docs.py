@@ -1118,6 +1118,45 @@ def validate_architecture_archaeology(document: MarkdownDocument) -> None:
                 f"reappeared: {fragment!r}"
             )
 
+def validate_current_theory_invariants(technical: MarkdownDocument) -> None:
+    """Reject known architecture regressions in the active technical corpus."""
+    witnessed_target = re.compile(
+        r"\\operatorname\{ContextIndividuation\}\^\{\\mathsf M\}"
+        r"\s*\([^\)\n]*;[^\)\n]*\)"
+    )
+    if witnessed_target.search(technical.text):
+        fail(
+            "WitnessCovariance regression: active ContextIndividuation target "
+            "must not carry an evidence witness argument"
+        )
+
+    required_fragments = (
+        "MCAdequate abrevia exclusivamente MC1–MC10.",
+        r"\operatorname{IndAdequate}^{1\text{--}10}_{\mathcal T}",
+        "XR1-C — descarga histórica revisada tras DTS-UG6",
+        r"\operatorname{MCAdequate}_{XR1/DTS}",
+        "XR1-T permanece FORMAL-CONDITIONAL",
+        "RCA-T1 — SUPERSEDED como teoría host autónoma",
+        "HTA-K — SUPERSEDED: no crear un contrato host paralelo",
+    )
+    for fragment in required_fragments:
+        if fragment not in technical.text:
+            fail(
+                "Current theory architecture regression: missing invariant "
+                f"{fragment!r}"
+            )
+
+    forbidden_fragments = (
+        "como MC1–MC10 más los CI1–CI14/IA0–IA10 aplicables.",
+        "Bajo la teoría independiente \\(\\mathcal T_{\\mathrm{DTS}}\\), MC1–MC10 se descargan:",
+    )
+    for fragment in forbidden_fragments:
+        if fragment in technical.text:
+            fail(
+                "Current theory architecture regression: superseded statement "
+                f"reappeared: {fragment!r}"
+            )
+
 
 def validate_normative_size(document: MarkdownDocument) -> None:
     line_count = len(document.lines)
@@ -1153,6 +1192,7 @@ def main() -> None:
     validate_ledger(documents[LEDGER])
     validate_archive(archive_document)
     validate_architecture_archaeology(documents[ARCHAEOLOGY])
+    validate_current_theory_invariants(documents[TECHNICAL])
 
     history_start = documents[NORMATIVE].heading_start(
         1,
@@ -1179,6 +1219,7 @@ def main() -> None:
     print("Critical REV-07f math: parser-classified canonical blocks")
     print("Historical archive: explicitly superseded")
     print("Architecture archaeology: current dependency invariants preserved")
+    print("Current technical theory: architecture invariants preserved")
     print("REV-07f RegimeTotal contract: preserved")
 
 
