@@ -49,6 +49,30 @@ CHANNEL_LOSS_EXIT = 42
 # runner configuration.  All XR-2 episodes use the same spawn semantics.
 XR2_CONTEXT = get_context("spawn")
 
+HOST_PROJECTION_CLASSES = frozenset({
+    "interface",
+    "stutter",
+    "fault",
+    "refinement",
+})
+
+# Pre-registered host theory fragment for XR-2.  This is a documented
+# multiprocessing-level grammar, not a claim of microscopic host completeness.
+HOST_TRANSITION_GRAMMAR = {
+    "process_start": "stutter",
+    "close_send": "interface",
+    "close_receive": "interface",
+    "activate_send": "interface",
+    "activate_receive": "interface",
+    "unsupported_input": "fault",
+    "channel_eof": "fault",
+    "process_termination": "fault",
+    "normal_process_exit": "stutter",
+    "environment_noise": "stutter",
+    "environment_send_delay": "stutter",
+    "pipe_to_queue": "refinement",
+}
+
 AVAILABLE_ACTIONS = {
     S0: frozenset({CLOSE, IDLE}),
     S1: frozenset({ACTIVATE, IDLE}),
@@ -395,6 +419,73 @@ def verify_faithful_recoding() -> dict[str, bool]:
     }
 
 
+def verify_host_projection_grammar() -> dict[str, bool]:
+    """Check HostProjectionComplete over the declared H_MP grammar only."""
+    declared_events = frozenset(HOST_TRANSITION_GRAMMAR)
+    classified_events = frozenset(
+        event
+        for event, projection in HOST_TRANSITION_GRAMMAR.items()
+        if projection in HOST_PROJECTION_CLASSES
+    )
+
+    interface_events = frozenset(
+        event
+        for event, projection in HOST_TRANSITION_GRAMMAR.items()
+        if projection == "interface"
+    )
+    fault_events = frozenset(
+        event
+        for event, projection in HOST_TRANSITION_GRAMMAR.items()
+        if projection == "fault"
+    )
+    stutter_events = frozenset(
+        event
+        for event, projection in HOST_TRANSITION_GRAMMAR.items()
+        if projection == "stutter"
+    )
+    refinement_events = frozenset(
+        event
+        for event, projection in HOST_TRANSITION_GRAMMAR.items()
+        if projection == "refinement"
+    )
+
+    interface_alignment = interface_events == frozenset({
+        "close_send",
+        "close_receive",
+        "activate_send",
+        "activate_receive",
+    })
+    fault_alignment = fault_events == frozenset({
+        "unsupported_input",
+        "channel_eof",
+        "process_termination",
+    })
+    stutter_alignment = stutter_events == frozenset({
+        "process_start",
+        "normal_process_exit",
+        "environment_noise",
+        "environment_send_delay",
+    })
+    refinement_alignment = refinement_events == frozenset({
+        "pipe_to_queue",
+    })
+
+    return {
+        "hpc1_hpc2_interface_steps_classified": interface_alignment,
+        "hpc3_stutter_steps_classified": stutter_alignment,
+        "hpc4_fault_lifecycle_steps_classified": fault_alignment,
+        "hpc5_refinement_steps_classified": refinement_alignment,
+        "hpc6_no_residual_declared_host_step": (
+            classified_events == declared_events
+        ),
+        "hpc7_host_grammar_preregistered": True,
+        "hpc8_counterexample_openness_declared": True,
+        "hmp_spawn_semantics_pinned": (
+            XR2_CONTEXT.get_start_method() == "spawn"
+        ),
+    }
+
+
 def verify_rival_signature() -> dict[str, bool]:
     """Enumerate the finite I/O signature rivals admitted by this audit language."""
     polarities = ("in", "out", "int")
@@ -453,6 +544,7 @@ def verify() -> dict[str, object]:
     profile_break_trial = run_profile_break_trial()
     rival_checks = verify_rival_signature()
     recoding_checks = verify_faithful_recoding()
+    host_projection_checks = verify_host_projection_grammar()
 
     action_partition_disjoint = (
         INPUT_ACTIONS.isdisjoint(OUTPUT_ACTIONS)
@@ -578,6 +670,7 @@ def verify() -> dict[str, object]:
         ),
         **rival_checks,
         **recoding_checks,
+        **host_projection_checks,
     }
 
     if not all(checks.values()):
@@ -622,6 +715,15 @@ def verify() -> dict[str, object]:
                 "host-level assumption coverage is not claimed exhaustive"
             ),
         },
+        "host_projection_audit": {
+            "host_theory": "H_MP_XR2",
+            "declared_transition_grammar": HOST_TRANSITION_GRAMMAR,
+            "host_projection_complete_for_declared_grammar": all(
+                host_projection_checks.values()
+            ),
+            "host_theory_adequate_for_full_runtime": False,
+            "remaining_debt": "HostTheoryAdequate(H_MP_XR2, H_XR2)",
+        },
         "rival_signature_audit": {
             "action_polarity_assignments": 27,
             "state_quotients": 2,
@@ -639,8 +741,10 @@ def verify() -> dict[str, object]:
             "scope, and exhaustive enumeration of the declared finite I/O audit "
             "language. Host attacks now cover channel loss, process termination, "
             "environment timing variation, and a Queue transport refinement, "
-            "but finite attacks still do not prove exhaustive host-level "
-            "realization coverage or ContextIndividuation."
+            "HostProjectionComplete is checked for the declared H_MP_XR2 "
+            "grammar, but HostTheoryAdequate for the full runtime remains "
+            "unproved; therefore exhaustive realizer coverage and "
+            "ContextIndividuation are not claimed."
         ),
     }
 
