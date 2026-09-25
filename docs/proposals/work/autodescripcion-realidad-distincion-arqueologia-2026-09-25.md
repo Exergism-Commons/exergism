@@ -48,7 +48,7 @@ eq M') | **RESOLVED / ACTIVE SUPPORT** |
 | Baking/trivialización | procesos complejos sustituidos por resultados | Interface/Memo/Bake + GenesisTrivialization | **ACTIVE CORE** |
 | “No context proliferation” | evitar termostatos/caches como contextos | no-free-promotion + nested contextuality | **SUPERSEDED** |
 | Witness constitutivo | certificar realidad | evidence witness vs OnticRealization | **SUPERSEDED** |
-| RSP genérico | realización estructural → IA0 | εRSP para XR-ε | **NARROWED / fallback only** |
+| RSP genérico | realización estructural → IA0 | εRSP-R para XR-ε → IA0-R; IA0-U queda en UnitGroundAdequate | **SUPERSEDED en conclusión completa / ACTIVE SUPPORT para IA0-R** |
 
 ---
 
@@ -98,23 +98,21 @@ El supramedio como único medio envolvente con papel fundacional ya no participa
 
 Fue rescatada casi íntegramente.
 
-La definición event-local:
+La definición event-local de ε con actualización efectiva, Macro-invariance,
+OrgWitness y Enables sigue siendo válida y ahora alimenta únicamente la rama
+de realidad estructural:
 
 [
-e=(s_0,P,s_1)inmathcal E_M
+\operatorname{RealizedEmergence}
+\to
+\varepsilon RSP\text{-}R
+\to
+IA0\text{-}R.
 ]
 
-con actualización efectiva, Macro-invariance, OrgWitness y Enables sigue siendo válida y ahora alimenta:
-
-[
-operatorname{RealizedEmergence}
-	o
-arepsilon RSP
-	o
-IA0.
-]
-
-XR-ε reutiliza el toy path→cycle original **sin redefinir ε**.
+La antigua conclusión \(\varepsilon RSP\to IA0\) queda **SUPERSEDED**.
+IA0-U pertenece a UnitGroundAdequate. XR-ε reutiliza el toy path→cycle original
+**sin redefinir ε**.
 
 **Clasificación:** ACTIVE CORE.
 
@@ -156,20 +154,38 @@ SemTotal
 
 resuelve preguntas sobre cierre y exhaustividad **dentro de un régimen ya tipado**.
 
-El arco de existencia actual es distinto:
+El arco de existencia actual es distinto y no omite la deuda de unidad:
 
 [
-arepsilon	ext{-event actual}
+\operatorname{RealizedEmergence}
 +
-TR	ext{-}M
+\varepsilon RSP\text{-}R
+\to
+IA0\text{-}R,
+]
+
+[
+IA0\text{-}R
 +
-operatorname{OnticRealization}
-	o
-ContextIndividuation
-	o
-RegimeTotal
-	o
-ExistsR.
+\operatorname{UnitGroundAdequate}
+\to
+IA0,
+]
+
+y solo después:
+
+[
+\operatorname{Ind}_{\mathcal T}
++
+\operatorname{IndAdequate}
+\to
+\operatorname{ContextIndividuation}
+\to
+\operatorname{IndexAdmission}
+\to
+\operatorname{RegimeTotal}
+\to
+\operatorname{ExistsR}.
 ]
 
 REV-24 queda como puente posterior:
@@ -276,32 +292,40 @@ El Common-Ground Principle fuerte fue atacado por contramodelo y **no** es regla
 
 “Fractal” fue correctamente retirado de las inferencias por carecer de criterio matemático.
 
-La intuición multiescalar sobrevivió de forma más precisa como:
+La intuición multiescalar sobrevivió en **dos ejes distintos**.
+
+El eje de nesting es:
 
 [
-	ext{nested contexts}
+\text{nested contexts}
 +
-	ext{ContextEmbedding}
-+
-	ext{ContextGenesis}
-+
-operatorname{Generation}.
+\operatorname{ContextEmbedding}.
 ]
 
-Las nuevas coordenadas son ortogonales:
+El eje ontogénico es:
 
 [
-	ext{embedding depth}
-
-eq
-	ext{generation depth}.
+\operatorname{ContextGenesis}
+\to
+\operatorname{CtxParent}
+\to
+\operatorname{Generation}
++
+\operatorname{GenSig}.
 ]
+
+Las coordenadas son ortogonales:
 
 [
-GenSig
+\boxed{
+\text{embedding depth}
+\neq
+\text{generation depth}.
+}
 ]
 
-conserva geometría genealógica sin reclamar autosimilitud fractal.
+ContextEmbedding no genera parentalidad contextual; GenSig conserva geometría
+genealógica sin reclamar autosimilitud fractal.
 
 **Clasificación:** fractal inference SUPERSEDED; Cellular/Generation ACTIVE CORE.
 
