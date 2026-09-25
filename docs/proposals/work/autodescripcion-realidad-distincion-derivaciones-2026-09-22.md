@@ -14542,8 +14542,8 @@ UG2 & \mathsf{PASS} &
 \text{el run host-side es ejecutado y OR1 queda evidenciado};\\
 UG3 & \mathsf{PASS} &
 \text{quitar transition integration altera }\widehat{\mathbb P},\widehat{\mathsf{CP}}\text{ y el typing dinámico};\\
-UG4 & \mathsf{PARTIAL} &
-\text{phase/payload perturbations destruyen la realización, pero no se ha probado una teoría general de reindividuación};\\
+UG4 & \mathsf{PASS} &
+\text{CIT-XR1 usa phase/payload como brazo positivo e irrelevant_noise como control negativo sin presuponer identidad};\\
 UG5 & \mathsf{PASS} &
 \texttt{irrelevant_noise}\text{ se varía explícitamente y queda screened-off};\\
 UG6 & \mathsf{PARTIAL} &
@@ -14562,14 +14562,14 @@ Por tanto:
 \operatorname{UGAudit}_{XR1}
 =
 \langle
-P,P,P,\partial,P,\partial,P,P
+P,P,P,P,P,\partial,P,P
 \rangle,
 }
 \]
 
 donde \(P=\mathsf{PASS}\) y \(\partial=\mathsf{PARTIAL}\).
 
-**XR1-UG-R.** XR-1 no falla UnitGroundAdequate; le faltan descargas positivas de UG4 y, sobre todo, UG6. La deuda deja de ser una sospecha amorfa de “software quizá no sea real”: es una obligación concreta de **rival-cut discrimination + constitutive reindividuation**.
+**XR1-UG-R.** CIT-XR1 cierra UG4 sin usar ContextIndividuation como premisa. La única deuda UnitGround restante para XR-1 es UG6 / rival-cut discrimination.
 
 #### 0.11.91r-ac. UG-REDIS — proceso/estado/protocolo como ground candidato
 
@@ -14739,7 +14739,7 @@ La matriz conjunta es:
 \begin{array}{c|cccccccc}
  & UG1&UG2&UG3&UG4&UG5&UG6&UG7&UG8\\
 \hline
-XR1   &P&P&P&\partial&P&\partial&P&P\\
+XR1   &P&P&P&P&P&\partial&P&P\\
 Redis &P&\partial&P&\partial&\partial&\partial&P&P\\
 Ecoli &P&P&P&\partial&\partial&\partial&P&P\\
 Nest  &P&\partial&P&\partial&\partial&\partial&P&P
@@ -14752,10 +14752,7 @@ No es un ranking de “qué cosa es más real”. La matriz mide **qué obligaci
 Dos hallazgos sí son robustos:
 
 1. **UG3 no es el cuello principal.** En los cuatro casos puede identificarse estructura cuya eliminación cambia el perfil local relevante.
-2. **UG4–UG6 concentran la deuda.** Lo difícil no es mostrar que algo está organizado, sino demostrar que su organización:
-   - determina contrafácticamente cuándo cambia la unidad;
-   - screens off adecuadamente el exterior constitutivo;
-   - discrimina el cut frente a alternativas rivales.
+2. **UG4–UG6 concentran la deuda cross-domain, pero XR-1 ya cierra UG4 por CIT.** Lo difícil en los casos empíricos sigue siendo demostrar sensibilidad constitutiva con controles; para XR-1 la deuda se reduce a discriminar exhaustivamente cuts rivales.
 
 Esto refina el problema de IA0-U:
 
@@ -14793,10 +14790,10 @@ Esto **no** implica que ninguno sea contexto. Implica que el corpus todavía no 
 La consecuencia para la estrategia de investigación es precisa. Añadir más casos similares tiene rendimiento decreciente. El siguiente trabajo debe centrarse en formalizar y atacar:
 
 \[
-UG4,\quad UG5,\quad UG6.
+UG5,\quad UG6,
 \]
 
-En particular, hay que decidir si puede construirse un criterio de **constitutive intervention** que distinga:
+El criterio de **constitutive intervention** queda resuelto a nivel formal por CIT/UnitProfileBreak y descargado para XR-1. Para los casos empíricos sigue faltando evidencia controlada que distinga:
 
 \[
 \text{cambio de comportamiento dentro de la misma unidad}
