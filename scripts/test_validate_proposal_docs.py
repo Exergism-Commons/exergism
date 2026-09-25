@@ -403,6 +403,55 @@ class ContextRealityContractTests(unittest.TestCase):
             )
 
 
+    def test_rejects_missing_host_adequacy_refutation(self) -> None:
+        heading = (
+            "#### 0.11.91r-by. HOST-X1 — HMP-XR2 no sobrevive "
+            "como teoría host adecuada"
+        )
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed host adequacy refutation",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
+    def test_rejects_missing_absolute_hta_countermodel(self) -> None:
+        heading = (
+            "#### 0.11.91r-ca. HTA-X1 — ninguna auditoría finita cierra "
+            "HostTheoryAdequate en sentido absoluto"
+        )
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed absolute HTA countermodel",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
+    def test_rejects_missing_contract_relative_hta(self) -> None:
+        heading = (
+            "#### 0.11.91r-cb. HTA-K — HostTheoryAdequate relativo "
+            "a un contrato host independiente"
+        )
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed contract-relative HTA",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
+
 class ArchiveContractTests(unittest.TestCase):
     def test_keywords_without_canonical_polarity_do_not_satisfy_banner(self) -> None:
         document = MarkdownDocument(

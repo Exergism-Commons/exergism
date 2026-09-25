@@ -983,6 +983,15 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-by. HOST-X1 — HMP-XR2 no sobrevive como teoría host adecuada"),
+        (4, "0.11.91r-bz. HOST-SUPPORT — necesidad de realización no implica constitución de la unidad"),
+        (4, "0.11.91r-ca. HTA-X1 — ninguna auditoría finita cierra HostTheoryAdequate en sentido absoluto"),
+        (4, "0.11.91r-cb. HTA-K — HostTheoryAdequate relativo a un contrato host independiente"),
+        (4, "0.11.91r-cc. HOST-ADEQ-XR2 — resultado de la ronda y reparación mínima"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,

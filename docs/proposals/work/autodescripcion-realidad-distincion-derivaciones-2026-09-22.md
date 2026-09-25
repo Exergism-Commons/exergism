@@ -16499,6 +16499,354 @@ no falta de clasificación interna ni falta de tests sobre la gramática.
 
 La siguiente objeción adversarial debe exhibir **un tipo de dependencia host constitutivamente relevante que no esté representado en \(\mathcal H_{MP}^{XR2}\)**. Si no puede hacerse bajo una teoría independiente suficientemente rica del runtime, podría cerrarse HostTheoryAdequate; no se cerrará simplemente por no encontrar más ejemplos.
 
+
+#### 0.11.91r-by. HOST-X1 — HMP-XR2 no sobrevive como teoría host adecuada
+
+La auditoría adversarial de `HOST-ADEQ` encuentra ahora un counterexample **positivo** contra la suficiencia de la gramática declarada en §0.11.91r-bv.
+
+El realizador certificado por CI no es un autómata abstracto ejecutado sobre un canal opaco. El workflow fija Python 3.12 sobre un runner Linux y XR-2 fuerza `spawn`. La semántica pública y la implementación CPython correspondiente exhiben dependencias host adicionales que la gramática vigente no representa:
+
+1. `spawn` arranca un intérprete nuevo y requiere bootstrap/import del módulo principal;
+2. en POSIX, `spawn` usa además un `resource_tracker` y canales auxiliares de bootstrap;
+3. `Connection.send()` / `recv()` serializan y reconstruyen objetos mediante `pickle`;
+4. `Connection` añade framing de mensajes sobre el descriptor/handle subyacente;
+5. en POSIX, `Pipe(duplex=True)` se realiza mediante `socket.socketpair()`, no mediante un pipe unidireccional simple;
+6. el refinement `Pipe -> Queue` introduce buffer, locks/semaphores y un feeder thread que vuelca datos serializados a un pipe subyacente.
+
+Definamos la familia de dependencias conocidas omitidas:
+
+\[
+\mathcal Z_{XR2}
+=
+\{
+\text{spawn-bootstrap},
+\text{main-import},
+\text{resource-tracker},
+\text{serialization},
+\text{framing},
+\text{descriptor-carrier},
+\text{queue-feeder/synchronization}
+\}.
+\]
+
+No todas esas dependencias tienen por qué ser partes constitutivas de la unidad candidata. Pero varias son **necesarias para actualizar la interfaz realizada** o para el refinement host que la auditoría usa como evidencia. Su fallo puede impedir `close -> activate`, cambiar la entrega observable o invalidar la realización.
+
+Por tanto la inferencia anterior:
+
+\[
+\operatorname{HostProjectionComplete}
+(
+\mathcal H_{MP}^{XR2},\ldots
+)
+\Rightarrow
+\text{“la teoría host es suficientemente rica”}
+\]
+
+queda rechazada.
+
+El resultado correcto es:
+
+\[
+\boxed{
+\operatorname{HostProjectionComplete}
+(
+\mathcal H_{MP}^{XR2},\ldots
+)
+=
+\mathsf{PASS}_{\text{declared grammar}}
+}
+\]
+
+junto con:
+
+\[
+\boxed{
+\operatorname{HostTheoryAdequate}
+(
+\mathcal H_{MP}^{XR2},
+H_{XR2}
+)
+=
+\mathsf{FAIL}
+}
+\]
+
+para **esa candidatura de teoría host**, porque existe una familia independientemente conocida de dependencias relevantes no representadas.
+
+Esto no refuta XR-2 ni `HostProjectionComplete`. Refuta únicamente el salto desde “clasifico todo lo que declaré” a “declaré todo lo relevante”.
+
+#### 0.11.91r-bz. HOST-SUPPORT — necesidad de realización no implica constitución de la unidad
+
+HOST-X1 descubre una distinción que la formulación anterior de RCA no hacía con suficiente precisión.
+
+Sea \(d\) una dependencia reconocida del realizador \(H\). No adoptamos:
+
+\[
+\operatorname{NecessaryForRealization}(d,C)
+\Rightarrow
+\operatorname{UnitConstitutive}(d,C).
+\]
+
+Un scheduler, un descriptor, el bootstrap del intérprete o una rutina de framing pueden ser necesarios para que la realización ocurra sin formar parte de la unidad que se intenta individuar.
+
+Introducimos una clase explícita de **carrier/support dependence**.
+
+Sea \(\mathcal K\) un contrato host independiente. Definimos:
+
+\[
+\boxed{
+\operatorname{CarrierTransparent}^{\mathsf M}_{\mathcal K}
+(
+d,C,H;
+\alpha,\varrho,\mathcal E,\Xi_C
+)
+}
+\]
+
+cuando se satisfacen conjuntamente:
+
+1. **CT1 / recognized dependence:** \(d\) pertenece a una clase de dependencias reconocida por \(\mathcal K\);
+2. **CT2 / successful weak preservation:** variaciones de \(d\) que siguen satisfaciendo el contrato de carrier pueden introducir pasos host internos, pero su proyección por \(\alpha/\varrho\) preserva la misma traza observable de \(\Xi_C\) salvo stutter;
+3. **CT3 / explicit failure projection:** el fallo de \(d\) proyecta a una clase `fault/lifecycle`, a una violación explícita de \(\mathcal E\), o a ausencia de realización actual; nunca a una modificación silenciosa de \(\Xi_C\);
+4. **CT4 / no hidden branch:** no existe una rama reconocida por \(\mathcal K\) en la que \(d\) cambie typing, boundary, interface o continuation sin que ese cambio aparezca en la proyección;
+5. **CT5 / rival sensitivity:** si una variación de \(d\) produce una nueva unidad/cut rival en vez de mero soporte, `CarrierTransparent` falla y la dependencia debe reclasificarse;
+6. **CT6 / recoding covariance:** una recodificación fiel del carrier preserva la clasificación support/constitutive/fault.
+
+Entonces:
+
+\[
+\boxed{
+\operatorname{CarrierSupport}_{\mathcal K}(d,C,H)
+\not\Rightarrow
+\operatorname{UnitConstitutive}(d,C)
+}
+\]
+
+y también:
+
+\[
+\boxed{
+\neg\operatorname{CarrierTransparent}_{\mathcal K}(d,\ldots)
+\Rightarrow
+\text{reopen HOST-ADEQ/RCA}.
+}
+\]
+
+La función de esta distinción es impedir dos colapsos opuestos:
+
+- convertir todo el sustrato necesario en parte de la célula contextual;
+- declarar “infraestructura” a cualquier dependencia incómoda y esconder un constituyente real.
+
+#### 0.11.91r-ca. HTA-X1 — ninguna auditoría finita cierra HostTheoryAdequate en sentido absoluto
+
+La dificultad de RCA-X1 reaparece un nivel más abajo.
+
+Sea \(\mathcal H\) una teoría host finita y \(\Delta\) una batería finita de observaciones/intervenciones compatible con ella.
+
+Construimos un realizador \(H\) y una extensión \(H^{+z}\) tales que:
+
+1. coinciden bajo todos los eventos y dependencias representados por \(\mathcal H\);
+2. coinciden bajo toda intervención de \(\Delta\);
+3. \(H^{+z}\) contiene una dependencia adicional \(z\) no representada;
+4. existe una condición admisible bajo la cual \(z\) altera \(\Xi_C\) sin proyectar a local/interface/fault/refinement/support.
+
+Entonces:
+
+\[
+\operatorname{Obs}_{\Delta}(H)
+=
+\operatorname{Obs}_{\Delta}(H^{+z}),
+\]
+
+pero:
+
+\[
+\operatorname{HostTheoryAdequate}(\mathcal H,H)
+\]
+
+y:
+
+\[
+\operatorname{HostTheoryAdequate}(\mathcal H,H^{+z})
+\]
+
+pueden diferir.
+
+Por tanto:
+
+\[
+\boxed{
+\text{finite host grammar}
++
+\text{finite successful audit}
+\not\Rightarrow
+\operatorname{HostTheoryAdequate}_{\mathrm{absolute}}.
+}
+\]
+
+El resultado no dice que una teoría del realizador sea inútil. Dice que su suficiencia siempre debe estar **scoped por un contrato independiente que determine qué clases de dependencia pretende cubrir**.
+
+Sin ese scope, “no quedan hidden constituents” vuelve a ser una universal empírica imposible de descargar por enumeración.
+
+#### 0.11.91r-cb. HTA-K — HostTheoryAdequate relativo a un contrato host independiente
+
+La reparación consiste en hacer explícita la relatividad que ya estaba implícita en `Ind_T`, RealizationEnvelope y las teorías de interfaz.
+
+Introducimos un contrato host:
+
+\[
+\mathcal K_H
+=
+\langle
+V_H,
+P_H,
+D_H,
+F_H,
+S_H,
+\equiv_H
+\rangle,
+\]
+
+donde:
+
+- \(V_H\) fija runtime/version family y condiciones de plataforma relevantes;
+- \(P_H\) fija las operaciones host cuya semántica se usa;
+- \(D_H\) fija clases de dependencia reconocidas;
+- \(F_H\) fija fallos/lifecycle violations reconocidos;
+- \(S_H\) fija dependencias de carrier/support;
+- \(\equiv_H\) fija equivalencias de implementación permitidas.
+
+Definimos:
+
+\[
+\boxed{
+\operatorname{HostTheoryAdequate}^{\mathsf M}_{\mathcal K_H}
+(
+\mathcal H,H;
+\alpha,\varrho,\mathcal E,\Xi_C
+)
+}
+\]
+
+mediante **HTA1–HTA8**:
+
+1. **HTA1 / scope identity:** la ejecución actual identifica un runtime/plataforma/start-method dentro del scope de \(\mathcal K_H\);
+2. **HTA2 / independent semantics:** \(\mathcal K_H\) y las clases de \(\mathcal H\) se fijan desde semántica/documentación/implementación independiente, no desde el éxito de `ContextIndividuation`;
+3. **HTA3 / recognized-dependency coverage:** toda dependencia de \(D_H\) alcanzable en la ruta de realización afirmada tiene representación en \(\mathcal H\);
+4. **HTA4 / constitutive-support discipline:** cada dependencia relevante queda clasificada como projected local/interface, fault/lifecycle, refinement o carrier/support; `support` no funciona como cajón de sastre;
+5. **HTA5 / carrier transparency:** toda dependencia clasificada como support descarga CT1–CT6;
+6. **HTA6 / host-rival sensitivity:** toda dependencia reconocida que induzca un rival de unidad, typing o boundary reabre UG5/UG6-H en vez de ser quotientada;
+7. **HTA7 / refinement covariance:** implementaciones relacionadas por \(\equiv_H\) preservan la proyección o declaran explícitamente una pérdida de realización;
+8. **HTA8 / drift and counterexample openness:** cambio de versión/plataforma fuera de scope, nueva dependencia documentada o counterexample reproducible invalida el certificado hasta revisar \(\mathcal K_H/\mathcal H\).
+
+El cierre permitido pasa a ser:
+
+\[
+\boxed{
+\operatorname{HostTheoryAdequate}_{\mathcal K_H}
++
+\operatorname{HostProjectionComplete}
+\Rightarrow
+\operatorname{RealizerCoverageAdequate}_{\mathcal K_H}.
+}
+\]
+
+Y, manteniendo UG6-S:
+
+\[
+\boxed{
+\operatorname{RealizerCoverageAdequate}_{\mathcal K_H}
++
+UG6\text{-}S
+\Rightarrow
+UG5+UG6.
+}
+\]
+
+No se infiere una suficiencia host absoluta. Se obtiene una descarga **contract-relative, version-scoped y falsable**, exactamente como exige una investigación reproducible.
+
+#### 0.11.91r-cc. HOST-ADEQ-XR2 — resultado de la ronda y reparación mínima
+
+La ronda adversarial produce por tanto tres resultados distintos.
+
+Primero, la gramática anterior queda falsada como candidata adecuada:
+
+\[
+\boxed{
+\operatorname{HostTheoryAdequate}
+(
+\mathcal H_{MP}^{XR2},
+H_{XR2}
+)
+=
+\mathsf{FAIL}.
+}
+\]
+
+Segundo, la noción metodológica sobrevive solo en forma contract-relative:
+
+\[
+\boxed{
+\operatorname{HostTheoryAdequate}_{\mathcal K_H}
+}
+\]
+
+con HTA1–HTA8 y `CarrierTransparent`.
+
+Tercero, XR-2 **no obtiene todavía** el cierre de RCA. La ruta correcta es construir una \(\mathcal K_{XR2}\) suficientemente estrecha y una nueva \(\mathcal H_{XR2}^{+}\) que cubra al menos:
+
+\[
+\{
+\text{spawn/bootstrap},
+\text{endpoint ownership/transfer},
+\text{message codec/framing},
+\text{OS carrier},
+\text{scheduling/progress},
+\text{lifecycle/fault}
+\}.
+\]
+
+El refinement `Pipe -> Queue` añade además:
+
+\[
+\{
+\text{buffer},
+\text{feeder thread},
+\text{locks/semaphores},
+\text{queue flush/finalization}
+\},
+\]
+
+por lo que mantenerlo encarece `HOST-ADEQ`.
+
+La reparación experimental preferida es minimizar el realizador antes de ampliar la ontología:
+
+1. reemplazar `send()/recv()` por un protocolo de bytes pre-registrado mediante `send_bytes()/recv_bytes()`, eliminando `pickle` de la interfaz constitutiva;
+2. usar canales con polaridad física explícita para input/output cuando sea posible;
+3. sustituir `Pipe -> Queue` por un refinement de transporte más pequeño que no introduzca feeder thread/semaphore si ese refinement no es necesario para el target;
+4. fijar y registrar el scope efectivo del host contract usado por CI;
+5. volver a ejecutar HOST-ADEQ intentando encontrar una dependencia reconocida de \(\mathcal K_{XR2}\) no cubierta.
+
+El estado queda:
+
+\[
+\boxed{
+\operatorname{HostProjectionComplete}_{\text{old grammar}}
+=
+\mathsf{PASS},
+\qquad
+\operatorname{HostTheoryAdequate}_{\text{old grammar}}
+=
+\mathsf{FAIL},
+\qquad
+\operatorname{HostTheoryAdequate}_{\mathcal K_{XR2}}
+=
+\mathsf{OPEN}.
+}
+\]
+
+Esto es un avance más fuerte que mantener `PARTIAL`: ahora sabemos **por qué** la candidatura anterior falla y qué forma debe tener un cierre que no sea circular.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
