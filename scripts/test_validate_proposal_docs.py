@@ -4,11 +4,15 @@ from __future__ import annotations
 import unittest
 
 from scripts.validate_proposal_docs import (
+    CANONICAL_CI_RT_BRIDGE,
+    CANONICAL_R_FORM,
     CONTEXT_INDEX_NAMES,
     MarkdownDocument,
     NORMATIVE,
+    TECHNICAL,
     validate_archive,
     validate_index_typing,
+    validate_regime_total_contract,
 )
 
 
@@ -140,6 +144,35 @@ class ProseProjectionTests(unittest.TestCase):
         for term in ("SharedOntSpace", "GeneFamily/GeneBasis", "RegimeClosure", "RegimeTotal"):
             with self.subTest(term=term):
                 self.assertIn(term, projected)
+
+
+class ContextRealityContractTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.normative_source = NORMATIVE.read_text(encoding="utf-8")
+        self.technical = MarkdownDocument(TECHNICAL.read_text(encoding="utf-8"))
+
+    def assert_contract_rejected(self, source: str) -> None:
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                MarkdownDocument(source),
+                self.technical,
+            )
+
+    def test_rejects_missing_r_form_bridge(self) -> None:
+        mutated = self.normative_source.replace(
+            CANONICAL_R_FORM,
+            r"\boxed{\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)}",
+            1,
+        )
+        self.assert_contract_rejected(mutated)
+
+    def test_rejects_missing_ci_rt_bridge(self) -> None:
+        mutated = self.normative_source.replace(
+            CANONICAL_CI_RT_BRIDGE,
+            r"\boxed{\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)}",
+            1,
+        )
+        self.assert_contract_rejected(mutated)
 
 
 class ArchiveContractTests(unittest.TestCase):
