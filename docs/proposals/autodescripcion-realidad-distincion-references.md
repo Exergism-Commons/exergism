@@ -405,6 +405,16 @@ UG5 usa ahora un RealizationEnvelope para evitar dos extremos: exigir aislamient
 
 **Límite.** Assume/guarantee reasoning no convierte assumptions en inmunidades ontológicas. Si aparece una dependencia reproducible que altera \(\Xi_C\) y no está clasificada como ordinary interaction o fault/cessation, RE7 obliga a revisar el envelope y UG5 vuelve a PARTIAL.
 
+### 14.5. HostProjectionComplete: abstracción del realizador y semántica de multiprocessing
+
+La nueva deuda RCA no se intenta cerrar por acumulación de tests. Se apoya en una teoría independiente del realizador y en precedentes formales de abstracción sound.
+
+- **Python 3.14 — multiprocessing.** La documentación oficial fija semántica independiente para Process, Pipe/Connection, Queue, exitcode, terminate() y lifecycle. En particular, los procesos tienen identidad/liveness/exit status observables; Pipe() crea endpoints de comunicación; Connection.recv() produce EOF cuando el extremo emisor desaparece; terminate() finaliza el proceso y puede corromper pipes/queues en uso. Estas reglas se usan para construir \(\mathcal H_{MP}\) y clasificar channel loss/process termination como fault/lifecycle, no como variaciones irrelevantes. https://docs.python.org/3/library/multiprocessing.html
+- **Patrick Cousot & Radhia Cousot (1977), “Abstract interpretation: a unified lattice model for static analysis of programs by construction or approximation of fixpoints”.** Formaliza la relación entre una semántica concreta y un dominio abstracto que conserva la información relevante para propiedades objetivo. Se usa como precedente para HostProjectionComplete: \(\varrho\) puede quotientar detalles del host solo bajo una relación de abstracción independently justified y sound para el perfil que se audita. DOI: https://doi.org/10.1145/512950.512973
+- **Simulation/bisimulation tradition.** La equivalencia conductual de sistemas de transición ofrece el precedente para exigir que pasos concretos sean emparejados por pasos abstractos, stutter permitido o clases de fault explícitas. La propuesta no importa ninguna noción estándar como criterio ontológico suficiente; solo usa la disciplina de correspondencia paso-a-paso como antecedente técnico de HPC1–HPC8.
+
+**Límite.** Una teoría sound del host no demuestra ContextIndividuation. Su función es descargar el bridge de realización. Si una dependencia concreta del runtime/OS produce un UnitProfileBreak que \(\mathcal H\) no proyecta, HPC8 obliga a reabrir RCA.
+
 ## 15. Política de citación futura
 
 Antes de añadir un concepto nuevo al núcleo:
