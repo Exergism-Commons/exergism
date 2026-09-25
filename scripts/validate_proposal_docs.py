@@ -77,6 +77,29 @@ CANONICAL_EXISTSR = r"""\boxed{
 \bigr).
 }"""
 
+CANONICAL_R_FORM = r"""\boxed{
+\frac{
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
+\qquad
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
+}{
+\vdash^{\mathsf M} R_i:\mathsf{OntScope}_i
+}
+\quad(\mathrm{R\text{-}FORM})
+}"""
+
+CANONICAL_CI_RT_BRIDGE = r"""\boxed{
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
+\land
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
+\land
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+\Rightarrow
+\operatorname{OntTotal}_i(R_i)
+\land
+\operatorname{ExistsR}.
+}"""
+
 CANONICAL_XP_RGC_EXISTS = r"""\mathrm{RGCExists}_k(\mathfrak G_k),"""
 
 CANONICAL_XP_CLOSURE = r"""\operatorname{RegimeClosure}_k(\mathfrak G_k,C_k)."""
@@ -760,6 +783,18 @@ def validate_regime_total_contract(
     normative: MarkdownDocument,
     technical: MarkdownDocument,
 ) -> None:
+    individuation_bounds = normative.section_bounds(
+        3,
+        "1.3. El índice es un parámetro de tipo, no una entidad",
+    )
+    require_canonical_display_after(
+        normative,
+        individuation_bounds,
+        "Puente de formación hacia R_i. IndexAdmission no crea una realidad ni demuestra su totalidad. Su función es licenciar el sort contextual bajo el cual las expresiones indexadas pasan a estar bien formadas. Lo representamos mediante una regla de formación metateórica, no mediante un existencial objeto:",
+        CANONICAL_R_FORM,
+        "REV-07g R-FORM bridge",
+    )
+
     totalization_bounds = normative.section_bounds(
         3,
         "1.6. $R_i$ — totalización genealógica mono- y multigeneal",
@@ -827,6 +862,13 @@ def validate_regime_total_contract(
         "El target doctrinal se escribe ahora:",
         CANONICAL_EXISTSR,
         "REV-07f active normative ExistsR formula",
+    )
+    require_canonical_display_after(
+        normative,
+        existsr_bounds,
+        "Con la semántica anterior, el puente completo puede mostrarse sin colapsar sus etapas:",
+        CANONICAL_CI_RT_BRIDGE,
+        "REV-07g ContextIndividuation-RegimeTotal bridge",
     )
 
     for level, heading in (
