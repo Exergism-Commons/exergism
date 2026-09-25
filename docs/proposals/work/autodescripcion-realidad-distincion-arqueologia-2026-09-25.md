@@ -343,116 +343,237 @@ GenerationSignature puede acabar formando parte de esa canonicalización, pero n
 
 ## 10. Arcos actuales que organizan toda la PR
 
-### A. Arco de emergencia actual
+Este mapa expresa **dependencias arquitectónicas**, no una secuencia temporal única.
+
+### A. Actualidad y existencia
+
+NFA-T1 deja dos rutas no circulares para una prueba fuerte de existencia:
 
 [
-arepsilon
-	o
-RealizedEmergence
-	o
-arepsilon RSP
-	o
-IA0.
+\boxed{
+\text{actual realization}
+\quad\text{o}\quad
+NQ\text{ / exclusión a priori de Null}.
+}
 ]
 
-### B. Arco de individuación contextual
+El evidence witness nunca es el truthmaker.
+
+### B. Realidad estructural / emergencia
 
 [
-Ind_{mathcal T}
-+
-IndAdequate
-	o
-ContextIndividuation
-	o
-IndexAdmission.
+\boxed{
+\varepsilon
+\to
+\operatorname{RealizedEmergence}
+\to
+\varepsilon RSP\text{-}R
+\to
+IA0\text{-}R.
+}
 ]
 
-### C. Arco genealógico de realidad
+Esta rama demuestra realidad/modalidad de la organización. **No produce IA0-U ni ContextIndividuation.**
+
+### C. Individuación contextual
+
+Una teoría concreta aporta un criterio:
 
 [
-OntOrigin
+\operatorname{Criterion}_{\mathcal T}
 +
-OntProd
+CI1\text{--}CI14
 +
-GenEvent
+IA1\text{--}IA10
 +
-RegimeClosure
-	o
-RegimeTotal
-	o
-ExistsR.
+IA0\text{-}R
++
+IA0\text{-}U
+\to
+\operatorname{ContextIndividuation}
+\to
+\operatorname{IndexAdmission}
+\to
+R\text{-FORM}.
 ]
 
-### D. Arco de presentación semántica
+TR-M es una reducción theory-specific mediante MemoContextCriterion/MC1–MC10.
+UnitGroundAdequate descarga IA0-U; no sustituye el resto de IndAdequate.
+
+### D. Genealogía y totalidad de régimen
+
+Una vez admitido el contexto:
 
 [
-mathcal E_i
-	o
+\boxed{
+\operatorname{GeneUnit}
+\to
+\operatorname{GeneFamily/GeneBasis}
+\to
+\operatorname{RegimeClosure}
+\to
+\operatorname{RegimeTotal}
+\to
+\operatorname{OntTotal}
+\to
+REC.
+}
+]
+
+Un RegimeTotal en una instanciación contextual admisible proporciona el witness
+de ExistsR. RegimeTotal no puede bootstrapear IndexAdmission.
+
+### E. Presentación semántica
+
+[
+\mathcal E_i
+\to
 EClosed_i
-	o
-SemTotal_i
-+
-OTB_i
-	o
-Presents_i.
+\to
+SemTotal_i.
 ]
 
-### E. Arco de interfaz/continuidad
+Solo después de una realidad genealógica ya justificada:
 
 [
-SourceUnit
-	o
-InterfaceContract
-	o
-MemoState
-	o
-Bake
-	o
-ContinuationProfile
-	o
-FaithfulContinuation.
+SemTotal_i+OTB_i
+\to
+Presents_i
+\to
+WitnessedR.
 ]
 
-### F. Arco celular/generacional
+SemTotal nunca crea (R_i).
+
+### F. Interface, memoization, baking y persistencia
+
+Ésta **no es una cadena lineal**.
 
 [
-ContextGenesis
+\operatorname{SourceUnit}
 +
-ContextEmbedding
-	o
-nested contexts
-+
-Generation
-+
-GenSig.
+\operatorname{InterfaceContract}
+\to
+\operatorname{RoleAdequate/RoleCompositionAdequate}.
 ]
 
-### G. Arco de existencia fuerte
-
-Ruta realizacional:
+Desde el contract state se derivan memo-equivalence y, cuando existe realización
+source-side suficiente:
 
 [
-RealizedEmergence_{XR1}
-+
-arepsilon RSP
-+
-IndAdequate^{1	ext{--}10}
-	o
-ExistsR.
+\operatorname{SemanticMemo}
+\to
+\operatorname{OnticMemoImpl}
+\to
+\operatorname{Update/Invalidate/Rehydrate}.
 ]
 
-Ruta a priori:
+Bake es otra rama:
 
 [
-NQ
-	o?
-
-eg NoR
-	o
-ExistsR.
+\operatorname{SourceUnit}
++
+\operatorname{InterfaceContract}
++
+\operatorname{ProvLink}
+\to
+\operatorname{Bake},
 ]
 
-NFA-T1 impide una tercera ruta puramente sintáctica que permanezca Null-compatible.
+con GenesisTrivialization como aplicación ontogénica de Bake.
+
+La persistencia se deriva por:
+
+[
+\operatorname{PersistenceBasis}
++
+E_\Theta
++
+\text{quotient dynamics}
+\to
+\operatorname{ContinuationProfile},
+]
+
+y después:
+
+[
+\operatorname{ContinuationProfile}
++
+\operatorname{TargetRealizationProfile}
++
+\operatorname{ProfileMorphism}
++
+\operatorname{provenance}
+\to
+\operatorname{FaithfulContinuation}.
+]
+
+Bake puede participar en una realización target, pero **ContinuationProfile no se deriva de Bake**.
+
+### G. Shared space, genesis, embedding y generaciones
+
+SharedOntSpace y ContextGenesis son alternativas conceptuales para explicar una
+integración; ninguna se reduce a la otra.
+
+ContextEmbedding describe nesting entre contextos ya individuados:
+
+[
+\operatorname{ContextEmbedding}(j\hookrightarrow k).
+]
+
+La generación procede exclusivamente de genealogía contextual genuina:
+
+[
+\operatorname{ContextGenesis}
+\to
+\operatorname{CtxParent}
+\to
+\operatorname{Generation/GenSig}.
+]
+
+Por tanto:
+
+[
+\boxed{
+\text{generation depth}
+\neq
+\text{embedding depth}.
+}
+]
+
+ContextEmbedding por sí solo no crea CtxParent ni aumenta generación.
+
+### H. Epistemología y canonicalización
+
+InterfaceWall aporta subdeterminación relativa a canal. El Muro fuerte requiere
+además demostrar exhaustividad de canales y sigue OPEN.
+
+(Omega_i) es como máximo una canonicalización **post-individuación**. No puede
+fundar ContextIndividuation ni ContinuationProfile.
+
+### I. Regla arquitectónica de ownership
+
+Antes de crear un predicado nuevo se debe identificar qué capa es propietaria de
+la obligación:
+
+[
+\begin{array}{rcl}
+\text{actual realization} &\to& OR/NFA,\\
+\text{downstream relevance} &\to& InterfaceContract/RoleAdequate,\\
+\text{history sufficiency} &\to& Memo/PersistenceBasis,\\
+\text{cross-role interaction} &\to& RoleComposition/interaction roles,\\
+\text{unit grounding} &\to& IA/MC/UG,\\
+\text{external screening} &\to& MC7/RE/UG5,\\
+\text{rival cuts} &\to& IA8/MC9/UG6/RC,\\
+\text{genealogical exhaustivity} &\to& RegimeTotal,\\
+\text{semantic presentation} &\to& SemTotal/OTB,\\
+\text{reconstructibility} &\to& InterfaceWall/Muro.
+\end{array}
+]
+
+Una nueva capa solo es legítima si demuestra contenido no reducible a esos
+owners. Si solo reempaqueta sus guards, debe ser una vista de auditoría, no una
+nueva deuda ontológica.
 
 ---
 
@@ -462,7 +583,8 @@ NFA-T1 impide una tercera ruta puramente sintáctica que permanezca Null-compati
 
 - (arepsilon)RSP sigue siendo un compromiso emergentista de suficiencia, no teorema de lógica pura.
 - NQ: inadmisibilidad de Null sigue abierta.
-- REV-07b/c/d siguen abiertos universalmente aunque XR-ε los descargue localmente en la instancia finita.
+- REV-07b/c/d siguen abiertos universalmente aunque XR-ε descargue localmente parte de la instancia finita.
+- XR-2 mantiene UG5 y UG6-H PARTIAL por coverage de contrato/roles/interacciones y rival cuts; no existe un blocker autónomo `HostTheoryAdequate`.
 
 ### Muro / reconstructibilidad
 
@@ -516,5 +638,9 @@ Antes de introducir un nuevo término o declarar una vieja ruta “muerta”:
 5. no eliminar contraejemplos o teoremas negativos que sigan limitando rutas actuales;
 6. actualizar simultáneamente normativo, ledger y este mapa cuando cambie el status;
 7. si un concepto reaparece —como (arepsilon)— demostrar que se reutiliza **sin redefinirlo retrospectivamente** para obtener la conclusión deseada.
+
+8. antes de crear un nuevo predicado de adecuación/cobertura, construir un mapa explícito hacia los guards activos que ya cubren la misma obligación;
+9. si el nuevo predicado es reducible a una conjunción de guards existentes, tratarlo como alias o vista de auditoría, no como nueva capa ontológica;
+10. ningún finding de implementación puede promoverse a finding ontológico sin demostrar que la diferencia sobrevive al InterfaceContract/contract state o afecta directamente una obligación de individuación propietaria.
 
 La función de este documento es precisamente evitar que una futura refactorización pierda de vista que gran parte de la arquitectura vigente es una **transformación de trabajo anterior, no una sustitución total**.
