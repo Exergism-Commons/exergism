@@ -248,7 +248,7 @@ class ContextRealityContractTests(unittest.TestCase):
             )
 
     def test_rejects_missing_ia0_adversarial_result(self) -> None:
-        heading = "#### 0.11.91r-y. Resultado adversarial sobre RSP y \\(\\varepsilon\\)RSP"
+        heading = "#### 0.11.91r-y. Resultado adversarial sobre RSP y epsilon-RSP"
         mutated = self.technical_source.replace(
             heading,
             "#### removed IA0 adversarial result",
