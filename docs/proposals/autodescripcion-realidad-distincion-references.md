@@ -386,6 +386,16 @@ $
 
 La primera carga es IA0-R. La segunda es IA0-U y exige UnitGroundAdequate UG1–UG8.
 
+### 14.3. Teorías de interfaz para el finding DTS-UG6
+
+La deuda `RivalClassCompleteness_XR1` no debe cerrarse añadiendo ports/interfaces ad hoc a XR-1. Existen teorías independientes de componentes que ya incorporan explícitamente interacción sistema/entorno.
+
+- **Nancy A. Lynch & Mark R. Tuttle (1987), “Hierarchical Correctness Proofs for Distributed Algorithms”.** Introduce el modelo de input/output automata para computación distribuida asíncrona, haciendo explícita la interacción entre sistema y entorno. Se usa como precedente de que un transition model enriquecido con inputs/outputs puede fijar una semántica de frontera independientemente de Exergism. DOI: https://doi.org/10.1145/41840.41852
+- **Luca de Alfaro & Thomas A. Henzinger (2001), “Interface Automata”.** Formaliza interfaces temporales con assumptions sobre inputs y guarantees sobre outputs, además de compatibility/refinement de componentes. Se usa como precedente directo para una futura teoría XR-I/O capaz de formular RCC4/RCC5 sin definir la frontera desde el target. DOI: https://doi.org/10.1145/503209.503226
+- **Luca de Alfaro & Thomas A. Henzinger (2001), “Interface Theories for Component-Based Design”.** Desarrolla una teoría composicional de interfaces de componentes; se cita como antecedente metodológico adicional, no como ontología importada. EMSOFT 2001, LNCS 2211, pp. 148–165.
+
+**Uso restringido.** Estas teorías muestran que input/output/environment boundaries pueden formalizarse independientemente. No demuestran que una interface automaton sea automáticamente una unidad ontológica. Si se adopta una variante para XR-I/O, deberá volver a pasar IA0-R, UnitGroundAdequate y rival-cut audit.
+
 ## 15. Política de citación futura
 
 Antes de añadir un concepto nuevo al núcleo:
