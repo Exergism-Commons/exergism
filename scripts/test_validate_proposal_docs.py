@@ -315,6 +315,32 @@ class ContextRealityContractTests(unittest.TestCase):
                 MarkdownDocument(mutated),
             )
 
+    def test_rejects_missing_realization_envelope_contract(self) -> None:
+        heading = "#### 0.11.91r-ba. UG5 no exige aislamiento físico absoluto: RealizationEnvelope"
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed realization envelope",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
+    def test_rejects_missing_realizer_coverage_contract(self) -> None:
+        heading = "#### 0.11.91r-bj. RealizerCoverageAdequate — el bridge firma↔host"
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed realizer coverage contract",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
 
 class ArchiveContractTests(unittest.TestCase):
     def test_keywords_without_canonical_polarity_do_not_satisfy_banner(self) -> None:
