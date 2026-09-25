@@ -13237,6 +13237,405 @@ Esto también modifica cómo interpretar \(i\#j\): índices distintos no son por
 
 La deuda TR-M queda por tanto **RESOLVED condicionalmente**: existe una ruta formal no circular mediante una máquina contextual pre-indexada y MC1–MC10; su éxito en cada dominio depende de una teoría \(\mathcal T\) que descargue structural fidelity e IndAdequate.
 
+#### 0.11.91r-a. Rival cuts: la adecuación de individuación es también una obligación entre candidatos
+
+IA8 y MC9 no pueden quedar como cautelas verbales. Una teoría puede satisfacer aparentemente todos los tests locales para una candidatura y, sin embargo, producir dos cortes incompatibles cuando se la aplica a la misma presentación pre-indexada.
+
+Introducimos por ello un juicio **de auditoría**, no un hecho objeto:
+
+\[
+\operatorname{CutProposal}_{\mathcal T}^{\mathsf M}
+(C\mid P;\kappa_C),
+\]
+
+donde \(P\) es una presentación común usada únicamente para comparar candidaturas antes de IndexAdmission y \(\kappa_C\) registra la estructura theory-specific que propone el corte. \(P\) no es un supercontexto ontológico ni \(\kappa_C\) una frontera ya admitida.
+
+Dos propuestas son **rival cuts del mismo nivel** cuando:
+
+\[
+\boxed{
+\operatorname{RivalCut}_{\mathcal T}^{\mathsf M}
+(C,D\mid P)
+}
+\]
+
+y se cumplen conjuntamente:
+
+1. ambas son propuestas de \(\mathcal T\) sobre la misma presentación de auditoría \(P\);
+2. sus clasificaciones interior/exterior o sus boundaries son incompatibles de forma no meramente notacional;
+3. ninguna está ya justificada como un nivel local contenido en la otra;
+4. no se trata simplemente de dos candidatos disjuntos que no compiten por el mismo soporte;
+5. la diferencia no se explica por comparar etapas distintas de una ContextGenesis o de persistencia.
+
+La condición 4 es esencial: **pluralidad no es rivalidad**. Dos contextos separados pueden ser ambos legítimos sin necesitar que uno derrote al otro. RivalCut se reserva para dos intentos incompatibles de responder a la misma pregunta de individuación al mismo nivel.
+
+#### 0.11.91r-b. Resoluciones admisibles de un rival cut
+
+Definimos un bundle metateórico de resolución:
+
+\[
+\operatorname{RivalResolution}_{\mathcal T}^{\mathsf M}
+(C,D\mid P)
+\]
+
+si se descarga al menos una de las siguientes rutas con estructura independently grounded:
+
+1. **RE / equivalencia de individuación:** los dos cuts son recodificaciones fieles o witnesses diferentes de la misma unidad objetiva:
+
+\[
+C\simeq_{\mathrm{ind}}^{\mathsf M}D.
+\]
+
+2. **RN / nesting:** ambos candidatos descargan individuación propia y existe una semántica pre-indexada de nivel/local realization que, tras admisión, puede satisfacer CE1–CE6 y producir ContextEmbedding. En este caso no son rivales del mismo nivel.
+
+3. **RO / overlap semantics:** \(\mathcal T\) justifica explícitamente por qué dos unidades parcialmente solapadas pueden ser ontológicamente distintas sin que el solapamiento sea una selección arbitraria. La mera intersección extensional no cuenta como semántica de overlap.
+
+4. **RG / genesis staging:** la aparente incompatibilidad proviene de comparar una unidad preexistente con una unidad constituida en una etapa posterior; ContextGenesis/ContinuationProfile decide la relación, no IA8 por sí sola.
+
+5. **RP / priority or rejection:** \(\mathcal T\) contiene una razón target-independent para mostrar que uno de los cortes falla IA0–IA10/CI1–CI14.
+
+No se incluye una opción “ambos valen porque son perspectivas útiles”. La utilidad descriptiva puede justificar dos coarse-grainings, pero no dos ContextIndividuation objetivas sin una de las rutas anteriores.
+
+Definimos entonces adecuación conjunta:
+
+\[
+\boxed{
+\begin{aligned}
+\operatorname{PairIndAdequate}_{\mathcal T}^{\mathsf M}
+(C,D\mid P)
+:\Longleftrightarrow\;&
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_C)\\
+&\land
+\operatorname{IndAdequate}^{\mathsf M}(\mathcal T,D,\chi_D)\\
+&\land
+\bigl(
+\operatorname{RivalCut}_{\mathcal T}(C,D\mid P)
+\Rightarrow
+\operatorname{RivalResolution}_{\mathcal T}(C,D\mid P)
+\bigr).
+\end{aligned}
+}
+\]
+
+La definición no vuelve relativa la individuación: formaliza que IA8 es **global respecto de las alternativas que la misma teoría es capaz de generar**, no un check aislado por candidato.
+
+#### 0.11.91r-c. RC-T1 — unresolved rival-cut theorem
+
+De la definición anterior:
+
+\[
+\operatorname{RivalCut}_{\mathcal T}(C,D\mid P)
+\land
+\neg
+\operatorname{RivalResolution}_{\mathcal T}(C,D\mid P)
+\]
+
+implica:
+
+\[
+\boxed{
+\neg
+\operatorname{PairIndAdequate}_{\mathcal T}(C,D\mid P).
+}
+\]
+
+Por tanto dos cuts incompatibles del mismo nivel **no pueden autorizar conjuntamente dos IndexAdmission** mediante el mismo paquete de adecuación mientras la rivalidad permanezca sin resolver.
+
+Esto no demuestra:
+
+\[
+\neg\operatorname{ContextIndividuation}(C)
+\quad\text{o}\quad
+\neg\operatorname{ContextIndividuation}(D).
+\]
+
+La conclusión es epistemológico-metateórica y más estricta: la teoría \(\mathcal T\) todavía **no ha descargado de forma suficiente** la individuación conjunta. Puede faltar estructura, uno de los witnesses puede ser erróneo o puede existir una semántica de nesting/overlap todavía no formulada.
+
+RC-T1 evita convertir underdetermination en pluralidad ontológica por decreto.
+
+#### 0.11.91r-d. No-Free-Promotion: el target es el witness, no prohibir contextos abundantes
+
+El guard de Cellular Reality no debe formularse como:
+
+\[
+\text{“pocos contextos”.}
+\]
+
+Eso sería incompatible con TM-T2 y con la posibilidad real de nested contexts.
+
+Definimos en cambio una propiedad del **soporte de promoción**:
+
+\[
+\operatorname{PackagingOnly}_{\mathcal T}^{\mathsf M}
+(C;\chi)
+\]
+
+cuando \(\chi\) obtiene el candidato únicamente a partir de una o varias de estas operaciones:
+
+- enumerar un conjunto de componentes;
+- introducir una etiqueta o nombre común;
+- encerrarlos en un contenedor o región descriptiva;
+- seleccionar una coordenada, mitad geométrica o predicado construido desde el target;
+- tomar la unión de unidades ya individuadas;
+- exigir solo ausencia de interacción visible con el exterior;
+
+y no aporta ninguna estructura positiva theory-specific que descargue IA3/IA5/IA6 o, para TR-M, MC2–MC8.
+
+**NFP-T1 — no promotion from packaging.**
+
+\[
+\boxed{
+\operatorname{PackagingOnly}_{\mathcal T}(C;\chi)
+\Rightarrow
+\neg
+\operatorname{IndAdequate}^{\mathsf M}
+(\mathcal T,C,\chi).
+}
+\]
+
+La conclusión es deliberadamente **witness-relative**. No se infiere que \(C\) no pueda ser un contexto. Se infiere que **ese modo de seleccionarlo** no basta. Otra estructura independiente \(\chi'\) podría descargar legítimamente la misma unidad:
+
+\[
+\operatorname{PackagingOnly}(C;\chi)
+\land
+\operatorname{IndAdequate}(C;\chi')
+\]
+
+es consistente.
+
+Este punto impide que No-Free-Promotion se convierta en un principio conservador anti-emergencia.
+
+#### 0.11.91r-e. NFP-T2 — la unión de contextos no hereda contextualidad
+
+Sean dos candidaturas \(A,B\) que descargan independientemente ContextIndividuation. Formemos la presentación conjunta:
+
+\[
+U=A\sqcup B.
+\]
+
+Introducimos solo como nombre de auditoría:
+
+\[
+\operatorname{JointUnitGround}_{\mathcal T}^{\mathsf M}
+(A,B\Rightarrow U;\zeta)
+\]
+
+para cualquier estructura positiva independiente que explique por qué la pluralidad constituye además **una unidad**: por ejemplo una world-making structure conjunta, interaction closure constitutiva, dinámica reentrante conjunta o GenuineContextGenesis. El núcleo no identifica universalmente cuál de ellas debe existir.
+
+Si no existe un ground de ese tipo y el único apoyo de \(U\) es la unión descriptiva:
+
+\[
+\neg\exists\zeta\;
+\operatorname{JointUnitGround}_{\mathcal T}(A,B\Rightarrow U;\zeta),
+\]
+
+entonces no vale:
+
+\[
+\operatorname{ContextIndividuation}(A)
++
+\operatorname{ContextIndividuation}(B)
+\Rightarrow
+\operatorname{ContextIndividuation}(U).
+\]
+
+Más precisamente, el witness heredado por mera unión cae bajo NFP-T1/IA6/MC8:
+
+\[
+\boxed{
+\operatorname{Ind}(A)
+\land
+\operatorname{Ind}(B)
+\land
+\neg\operatorname{JointUnitGround}(A,B\Rightarrow U)
+\not\Rightarrow
+\operatorname{Ind}(U).
+}
+\]
+
+Esto no prohíbe contextos de orden superior. Dice exactamente qué les falta: **una razón positiva de unidad adicional a la contextualidad de sus partes**.
+
+#### 0.11.91r-f. NFP-T3 — un subcut descriptivo tampoco hereda contextualidad
+
+Sea \(H\) una candidatura ya individuada y sea:
+
+\[
+C_P
+=
+\{x\in H\mid P(x)\},
+\]
+
+donde \(P\) es un predicado seleccionado porque produce el subgrupo que queremos tratar como contexto.
+
+Si:
+
+1. \(P\) no está independently grounded por \(\mathcal T\);
+2. no induce typing local adicional;
+3. no existe boundary/interface mediation positiva;
+4. no existe dinámica/persistencia local que haga trabajo de screening-off;
+5. recodificaciones fieles pueden cambiar \(P\) sin cambiar la estructura ontológica,
+
+entonces el witness basado en \(P\) falla IA1–IA4 y, en TR-M, MC2–MC7:
+
+\[
+\boxed{
+\operatorname{TargetSelectedSubcut}_{\mathcal T}(C_P;P)
+\Rightarrow
+\neg
+\operatorname{IndAdequate}_{\mathcal T}(C_P;\chi_P).
+}
+\]
+
+De nuevo, esto no demuestra que ninguna mitad espacial, módulo o subestructura pueda ser contexto. Si una teoría independiente aporta una frontera bona fide, una interfaz, closure o world-making structure para exactamente esa región, aparece otro witness y el resultado puede cambiar.
+
+#### 0.11.91r-g. NFP-T4 — contextual abundance theorem
+
+No-Free-Promotion tiene una conversa importante **que no debe añadirse**:
+
+\[
+\neg\operatorname{PackagingOnly}(C)
+\not\Rightarrow
+\operatorname{ContextIndividuation}(C).
+\]
+
+Evitar arbitrariedad es necesario para la descarga, no suficiente.
+
+Pero TM-T2 sí permite demostrar la compatibilidad estructural de abundancia:
+
+\[
+\boxed{
+\begin{aligned}
+&
+\operatorname{ContextIndividuation}(C)
+\land
+\operatorname{ContextIndividuation}(H)\\
+&
+\land
+\operatorname{EmbeddingAdequate}^{\mathsf M}(C,H;e)
+\\
+&\Rightarrow
+\text{la contextualidad de }C\text{ y }H\text{ es conjuntamente admisible.}
+\end{aligned}
+}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\text{No-Free-Promotion}
+\neq
+\text{No-Context-Proliferation}.
+}
+\]
+
+Puede haber muchos niveles reales de individuación. Lo que no puede haber es una **promoción inferencial gratuita** desde membership, packaging, geometría o conveniencia descriptiva hasta ContextIndividuation.
+
+#### 0.11.91r-h. RC-X — particiones cruzadas bajo simetría
+
+Construyamos un stress test mínimo sobre cuatro módulos pre-indexados:
+
+\[
+a,b,c,d.
+\]
+
+Una teoría \(\mathcal T_S\) ve exactamente la misma estructura local en los cuatro y admite un automorfismo:
+
+\[
+\pi:
+b\leftrightarrow c
+\]
+
+que preserva todos sus predicados y relaciones independently grounded.
+
+Considérense dos particiones:
+
+\[
+\Pi_1
+=
+\{\{a,b\},\{c,d\}\},
+\]
+
+y:
+
+\[
+\Pi_2
+=
+\{\{a,c\},\{b,d\}\}.
+\]
+
+Supóngase que los únicos witnesses de “unidad” son precisamente las etiquetas de bloque elegidas en \(\Pi_1\) o \(\Pi_2\). No existe boundary, world-maker, interaction closure, génesis o dinámica adicional que seleccione una partición.
+
+Entonces:
+
+- privilegiar \(\Pi_1\) frente a \(\Pi_2\) viola IA1/IA2/IA4;
+- admitir ambas como dos sistemas de contextos rivales del mismo nivel viola IA8 mientras no exista RivalResolution;
+- describirlas como dos coarse-grainings útiles es compatible con la teoría, pero no descarga dos ontologías contextuales.
+
+Por tanto el caso queda:
+
+\[
+\boxed{
+\operatorname{RivalCut}_{\mathcal T_S}(\Pi_1,\Pi_2)
+\land
+\neg\operatorname{RivalResolution}
+\Rightarrow
+\neg\operatorname{PairIndAdequate}.
+}
+\]
+
+RC-X es el adversario formal de “cualquier partición puede ser una realidad”.
+
+#### 0.11.91r-i. Batería adversarial de No-Free-Promotion
+
+**NFP-X1 — caja con piedras.** Una caja proporciona una frontera espacial descriptivamente precisa, pero si \(\mathcal T\) no atribuye a esa frontera typing local, mediation, closure o dinámica unificadora, el witness “están dentro de la misma caja” es PackagingOnly. No se descarga contexto.
+
+**NFP-X2 — mitad izquierda de un ordenador.** El predicado geométrico “\(x\) está a la izquierda del plano \(p\)” corta arbitrariamente buses, memoria, procesos y relaciones que la propia teoría computacional considera co-funcionales. Falla IA3/IA5 y normalmente MC4/MC6/MC7. No se sigue que ninguna región física pueda ser contexto; falla ese cut.
+
+**NFP-X3 — RAM + silla.** La unión tiene una descripción extensional exacta pero ninguna razón positiva de unidad. Falla NFP-T2.
+
+**NFP-P1 — ordenador funcional.** Bajo una teoría que justifique typing de instrucciones/estado, buses/interfaces, dinámica reentrante, roles completos y boundary mediation, el ordenador completo puede descargar TR-M. Su éxito no proviene de “ser una caja”.
+
+**NFP-P2 — CPU dentro del ordenador.** Una CPU puede descargar un contexto local propio si su ISA/estado/interfaces/dinámica satisfacen independientemente MC1–MC10. Si además CE1–CE6 relacionan su realización con el host, CPU y ordenador son contextos nested, no rival cuts.
+
+**NFP-P3 — dos servicios coordinados.** Dos microservicios independientes no constituyen automáticamente un tercer contexto por compartir datacenter. Si un protocolo constitutivo, estado conjunto, interaction role no separable o dinámica reentrante de orden superior proporciona JointUnitGround, la composición puede convertirse en un contexto adicional. Sin ese ground permanecen dos unidades relacionadas.
+
+**NFP-P4 — célula biológica.** La membrana física por sí sola no basta. Una teoría biológica puede, sin embargo, aportar closure organizacional, regulación, interfaces metabólicas, persistencia y counterfactual autonomy suficientes para una descarga theory-specific. La conclusión correcta es “candidata fuerte bajo una teoría adecuada”, no “toda cosa con membrana es \(R_i\)”.
+
+Esta batería demuestra que el criterio no selecciona una **escala privilegiada**. Selecciona una clase de **justificaciones de unidad**.
+
+#### 0.11.91r-j. Resultado doctrinal: unidad, escala y dimensión se desacoplan
+
+Con RC-T1 y NFP-T1–T4, la lectura fuerte de Cellular Reality puede formularse sin maximalismo ni perspectivismo:
+
+\[
+\boxed{
+R_i
+\text{ no significa una escala de realidad;}
+\quad
+R_i
+\text{ exige una unidad de individuación ontológicamente admisible.}
+}
+\]
+
+De aquí no se sigue que toda cosa individuada tenga RegimeTotal: R-FORM mantiene separada la formación del scope de su totalización genealógica.
+
+Tampoco se sigue que dos niveles admisibles deban competir. Si una célula, un organismo, un ordenador, una CPU o un proceso descargan criterios independientes y sus relaciones de nivel están justificadas, la teoría admite **disciplined contextual abundance**.
+
+El avance concreto sobre IA8/MC9 es:
+
+\[
+\boxed{
+\text{local adequacy}
++
+\text{rival-cut closure}
+\Rightarrow
+\text{admissible individuation audit}.
+}
+\]
+
+REV-07g permanece PARTIAL globalmente porque ninguna teoría universal decide todos los casos de individuación. Pero **No-Free-Promotion y rival-cut discipline quedan ahora cerrados a nivel de criterio**: sabemos qué inferencias están prohibidas, qué tipos de resolución permiten coexistencia y qué clase de estructura adicional debe aportar una teoría concreta.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
