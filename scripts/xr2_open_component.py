@@ -17,7 +17,7 @@ import os
 import time
 from dataclasses import dataclass
 from itertools import product
-from multiprocessing import Pipe, Process, Queue
+from multiprocessing import Pipe, Process, Queue, get_context
 from pathlib import Path
 from queue import Empty
 
@@ -200,14 +200,16 @@ def run_trial(
 
 
 def run_channel_loss_trial() -> dict[str, object]:
-    """Close the sole sender of a one-way channel before any input is delivered."""
-    recv_conn, send_conn = Pipe(duplex=False)
-    process = Process(target=channel_loss_worker, args=(recv_conn,))
+    """Close the sole sender under spawn so no hidden sender handle survives."""
+    ctx = get_context("spawn")
+    recv_conn, send_conn = ctx.Pipe(duplex=False)
+    process = ctx.Process(target=channel_loss_worker, args=(recv_conn,))
     process.start()
     recv_conn.close()
 
-    # The environment owns the only sending endpoint.  Closing it makes EOF
-    # the only admissible result on the component-side receive endpoint.
+    # Under spawn, the component receives only the explicitly passed receive
+    # endpoint.  Closing the environment's sole sender therefore makes EOF
+    # observable instead of depending on inherited descriptors.
     send_conn.close()
     process.join(timeout=10)
 
@@ -218,6 +220,7 @@ def run_channel_loss_trial() -> dict[str, object]:
 
     return {
         "intervention": "channel_loss",
+        "start_method": "spawn",
         "process_exitcode": process.exitcode,
         "classified_as_realization_fault": process.exitcode == CHANNEL_LOSS_EXIT,
         "normal_transition_observed": False,
