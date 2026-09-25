@@ -15045,6 +15045,152 @@ UG6_{XR1}.
 
 XR-1 es finito y puede permitir un ataque exhaustivo sobre la clase de cuts admitida por \(\mathcal T_{\mathrm{DTS}}\). La condición crítica será no definir esa clase usando retrospectivamente la closure o el scope que queremos justificar.
 
+#### 0.11.91r-am. XR1FiniteRivalClass — clase adversarial pre-indexada
+
+El audit ejecutable de UG6 no puede cuantificar sobre “todo cut imaginable” sin convertir la obligación en una clase informal incontrolable. Definimos primero una clase adversarial generada exclusivamente por estructura pre-indexada de XR-1:
+
+\[
+\boxed{
+\mathfrak R^{\mathrm{fin}}_{XR1}
+}
+\]
+
+contiene:
+
+1. **role subcuts:** todos los subconjuntos propios no vacíos de los roles declarados \(\{s_0,e_0,s_1\}\);
+2. **fixed-signature state maps:** todos los maps binarios desde las dos clases host coherentes pre/post hacia \(\{s_0,s_1\}\);
+3. **state quotients:** el quotient no trivial que identifica \(s_0\sim s_1\);
+4. **noise refinements:** refinamientos cuya única nueva distinción depende de \(\texttt{irrelevant\_noise}\);
+5. **faithful recodings:** transportes que solo cambian representación y deben clasificarse como equivalencia, no como nueva unidad.
+
+La clase se define antes de ContextIndividuation y sin usar GeneClosure, RegimeTotal o el scope final.
+
+#### 0.11.91r-an. XR1-RC-T1 — cierre exhaustivo dentro de la clase finita
+
+El script scripts/xr1_witness.py verifica ahora cuatro hechos adicionales.
+
+**FR1 / proper role cuts fail fixed signature.** Todo subcut propio omite al menos un miembro del footprint de la única transición productiva:
+
+\[
+\{s_0,e_0,s_1\}.
+\]
+
+Por tanto no preserva la misma signature transicional completa.
+
+**FR2 / fixed-signature state mapping is unique.** Hay exactamente cuatro funciones binarias sobre las dos clases host coherentes. Exigiendo surjectivity y la transición dirigida declarada:
+
+\[
+s_0\xrightarrow{e_0}s_1,
+\]
+
+solo sobrevive la asignación canónica pre→\(s_0\), post→\(s_1\).
+
+**FR3 / merged-state quotient is not observationally faithful.**
+
+\[
+\operatorname{Available}(s_0)
+\neq
+\operatorname{Available}(s_1),
+\]
+
+porque \(\texttt{close}\) e \(\texttt{activate}\) pertenecen a perfiles distintos. El quotient \(s_0\sim s_1\) borra una distinción operacional declarada.
+
+**FR4 / noise-only refinements fail relevance.** \(\rho\) es sintácticamente independiente de \(\texttt{irrelevant\_noise}\), y OR4 ya demuestra screening-off bajo variaciones de esa coordenada. Una unidad adicional distinguida solo por noise falla UG3/UG7.
+
+Así:
+
+\[
+\boxed{
+\forall D\in\mathfrak R^{\mathrm{fin}}_{XR1},
+\quad
+D
+\text{ es rechazado o equivalente al cut XR-1}.
+}
+\]
+
+Esto es un resultado UG6 real, pero todavía **relativo a la clase**.
+
+#### 0.11.91r-ao. RivalClassCompleteness — lo que falta para convertir FR1–FR4 en UG6 completo
+
+Definimos:
+
+\[
+\boxed{
+\operatorname{RivalClassComplete}^{\mathsf M}_{\mathcal T}
+(
+C,\mathfrak R
+)
+}
+\]
+
+cuando todo same-level rival cut que la teoría \(\mathcal T\) puede formular mediante su vocabulario/estructuras admisibles satisface al menos una de estas condiciones:
+
+1. pertenece a \(\mathfrak R\);
+2. es una faithful recoding de un miembro;
+3. está clasificado independientemente como nesting/overlap/genesis y por tanto no compite al mismo nivel;
+4. viola una regla preexistente de \(\mathcal T\) no introducida para proteger \(C\).
+
+Exigimos además:
+
+- **RCC1 / signature closure:** \(\mathfrak R\) cubre todas las construcciones de cut permitidas por la firma relevante;
+- **RCC2 / recoding closure:** recodificaciones fieles no crean escapes;
+- **RCC3 / no target filter:** la pertenencia a \(\mathfrak R\) no usa “preserva \(C\)” como criterio;
+- **RCC4 / observable closure:** todos los observables/ports/roles que \(\mathcal T\) permite usar para individuación están incluidos;
+- **RCC5 / environment closure:** no se excluyen arbitrariamente cortes inducidos por diferentes interacciones con el entorno;
+- **RCC6 / auditability:** un contraejemplo concreto puede falsar completeness exhibiendo un rival permitido fuera de \(\mathfrak R\).
+
+Entonces:
+
+\[
+\boxed{
+\operatorname{XR1FiniteRivalAudit}
++
+\operatorname{RivalClassComplete}_{\mathcal T}
+(C_{XR1},\mathfrak R^{\mathrm{fin}}_{XR1})
+\Rightarrow
+UG6_{XR1}.
+}
+\]
+
+#### 0.11.91r-ap. DTS-UG6 finding — un DTS desnudo no demuestra RivalClassCompleteness
+
+La teoría determinista de transición usada hasta ahora fija states, events y transición. Eso basta para OR/GenClosure de XR-1, pero no contiene por sí sola una teoría general de:
+
+- qué actions son inputs, outputs o internal;
+- qué interacciones pertenecen al environment;
+- qué assumptions/guarantees definen una component interface;
+- qué refinements preservan la frontera de componente;
+- qué candidate cuts son admisibles como componentes del mismo nivel.
+
+Por tanto no podemos demostrar RCC4–RCC5 desde la estructura de un DTS desnudo sin añadir una premisa nueva.
+
+El resultado correcto es:
+
+\[
+\boxed{
+\mathcal T_{\mathrm{DTS}}
+\not\vdash
+\operatorname{RivalClassComplete}
+(
+C_{XR1},
+\mathfrak R^{\mathrm{fin}}_{XR1}
+).
+}
+\]
+
+No es un contraejemplo a XR-1. Es un **insufficiency finding sobre la teoría usada para individuarlo**.
+
+La literatura de I/O automata e interface automata ofrece precedentes independientes para una teoría más rica donde component/environment boundary, input/output actions, compatibility y refinement forman parte del formalismo. Una futura ruta XR-I/O puede usar ese vocabulario **si se especifica independientemente antes de volver a auditar el cut**.
+
+Por tanto no fortalecemos \(\mathcal T_{\mathrm{DTS}}\) ad hoc en esta sección. Registramos la deuda:
+
+\[
+\boxed{
+\operatorname{RivalClassCompleteness}_{XR1}
+\quad\text{requiere una teoría de interfaz/componente independiente.}
+}
+\]
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
