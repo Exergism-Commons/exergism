@@ -15530,6 +15530,169 @@ Un OS process, pipe, membrana biológica o protocolo puede suministrar evidencia
 
 Esto preserva No-Free-Promotion incluso después de abandonar toys puramente cerrados.
 
+#### 0.11.91r-ba. UG5 no exige aislamiento físico absoluto: RealizationEnvelope
+
+UG5 no puede significar:
+
+\[
+\forall \delta_{\mathrm{physical}}
+\quad
+\delta
+\text{ no altera }C,
+\]
+
+porque entonces ningún organismo, proceso software o sistema de control abierto podría satisfacerlo.
+
+Pero tampoco aceptamos:
+
+\[
+\text{“esa perturbación está fuera de nivel”}
+\]
+
+como cláusula libre.
+
+Introducimos un **RealizationEnvelope** theory-relative y falsable:
+
+\[
+\boxed{
+\operatorname{RealizationEnvelope}^{\mathsf M}_{\mathcal T}
+(
+C;\mathcal A,\mathcal F,\mathcal N,\Gamma
+)
+}
+\]
+
+donde:
+
+- \(\mathcal A\) = interacciones environment/component ordinarias admitidas por la teoría;
+- \(\mathcal F\) = fault/lifecycle interventions relevantes que pueden romper el perfil o producir cessation y, por tanto, **no** se llaman irrelevantes;
+- \(\mathcal N\) = variaciones declaradas irrelevantes que deben quedar screened-off;
+- \(\Gamma\) = assumptions explícitas de realización necesarias para interpretar el componente en ese nivel.
+
+La partición no puede definirse desde el resultado. Debe fijarse independientemente y ser revisable por evidencia.
+
+**RE1 / exhaustive classification relative to the theory.** Toda intervención que \(\mathcal T\) reconoce como relevante para la realización cae en \(\mathcal A\cup\mathcal F\cup\mathcal N\) o fuerza revisión del envelope.
+
+**RE2 / ordinary mediation.** Toda \(\delta\in\mathcal A\) actúa mediante interfaces/channels declarados.
+
+**RE3 / fault honesty.** Ninguna \(\delta\in\mathcal F\) puede presentarse como contraejemplo irrelevante; si rompe \(\Xi_C\), cuenta como fault/cessation/UnitProfileBreak según la teoría.
+
+**RE4 / negative screening.** Toda \(\delta\in\mathcal N\) preserva el perfil relevante dentro de las assumptions \(\Gamma\).
+
+**RE5 / assumption observability.** Una violación de \(\Gamma\) debe ser detectable como assumption violation, crash/fault o pérdida de realization; no puede reinterpretarse silenciosamente como comportamiento normal.
+
+**RE6 / no protective assumptions.** \(\Gamma\) no puede incluir “el cut \(C\) sigue siendo la unidad” ni excluir exactamente los casos que derrotan la individuación.
+
+**RE7 / extension pressure.** Si aparece una intervención reproducible que altera \(\Xi_C\) sin pertenecer a \(\mathcal A\) o \(\mathcal F\), UG5 falla hasta revisar el envelope.
+
+Así UG5 se vuelve una obligación de **cobertura de interacción**, no de invulnerabilidad.
+
+#### 0.11.91r-bb. UG5-T1 — Constitutive Screening relativo al envelope
+
+Definimos:
+
+\[
+\operatorname{EnvelopeScreeningAdequate}^{\mathsf M}
+(
+C;\mathcal A,\mathcal F,\mathcal N,\Gamma
+)
+\]
+
+si RE1–RE7 están descargados y:
+
+\[
+\forall \delta\in\mathcal N:
+\neg\operatorname{UnitProfileBreak}(C,\Xi_C;\delta),
+\]
+
+mientras:
+
+\[
+\forall \delta\in\mathcal A:
+\delta
+\text{ factoriza por la interfaz declarada},
+\]
+
+y toda \(\delta\in\mathcal F\) que rompe el perfil queda clasificada positivamente como fault/cessation en vez de ocultarse.
+
+Entonces:
+
+\[
+\boxed{
+\operatorname{EnvelopeScreeningAdequate}
+\Rightarrow
+UG5.
+}
+\]
+
+Esto es compatible con sistemas abiertos: el exterior puede afectar al contexto, pero debe hacerlo mediante canales o clases de fault explícitas.
+
+#### 0.11.91r-bc. XR2-Envelope — contrato ejecutable mínimo
+
+Para XR-2 fijamos antes del run:
+
+\[
+\mathcal A_{XR2}
+=
+\{\texttt{close}\},
+\]
+
+\[
+\mathcal F_{XR2}
+=
+\{\texttt{unsupported\_input},\texttt{channel\_loss}\},
+\]
+
+\[
+\mathcal N_{XR2}
+=
+\{\texttt{environment\_noise}\},
+\]
+
+y assumptions:
+
+\[
+\Gamma_{XR2}
+=
+\{
+\text{component process starts},
+\text{IPC endpoint exists until the classified episode terminates}
+\}.
+\]
+
+La clasificación no afirma que el OS sea irrelevante. Un kill/crash que impida el episodio viola \(\Gamma\) y se registra como pérdida de realización/cessation candidate, no como una variación de \(\mathcal N\).
+
+Para fortalecer RE3/RE5, XR-2 debe ejecutar tres familias:
+
+1. **normal:** close produce \(s_1\) + activate;
+2. **negative control:** cambia environment_noise sin cambiar la traza;
+3. **fault arm:** un input no soportado produce una respuesta de error explícita y no se confunde con la transición normal.
+
+El envelope sigue siendo **finito y relativo a \(\mathcal T_{\mathrm{IODTS}}\)**. No pretende enumerar todos los fallos físicos del ordenador.
+
+#### 0.11.91r-bd. Theory-relative screening no es relativismo ontológico
+
+El qualifier “relative to \(\mathcal T\)” no significa que cualquier teoría pueda declarar conveniente su exterior.
+
+La teoría debe:
+
+- tener una semántica independiente de component/environment interaction;
+- permitir falsar su envelope;
+- registrar nuevas dependencias relevantes cuando se descubren;
+- mantener separadas ordinary interaction, fault/cessation e irrelevant variation.
+
+Por tanto:
+
+\[
+\boxed{
+\text{theory-relative screening}
+\neq
+\text{arbitrary exclusion}.
+}
+\]
+
+La relación es análoga a assume/guarantee contracts: el componente garantiza ciertas conductas bajo assumptions explícitas sobre environments permisibles; una violación de assumptions no prueba la guarantee, pero tampoco puede esconderse como si fuera una variación irrelevante.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
