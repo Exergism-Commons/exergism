@@ -70,11 +70,11 @@ $\operatorname{SemTotal}_i(S)$ es una propiedad de un **objeto semántico** $S$.
 
 Reservamos:
 
-$$
-\operatorname{OntTotal}_i(R)
-$$
-
-para una propiedad de **alcances ontológicos**: $R$ agota efectivamente el alcance ontológico del régimen $i$.
+$
+\operatorname{OntTotal}_i(R):\Longleftrightarrow
+\forall x_i[\operatorname{Within}_i(x_i,R)\Longleftrightarrow\operatorname{Real}_i(x_i)]
+$
+para la propiedad de **alcances ontológicos** según la cual $R$ agota efectivamente el alcance ontológico del régimen $i$.
 
 Y:
 
@@ -318,7 +318,7 @@ $$
 }
 $$
 
-RegimeClosure vuelve a cerrar $\Gamma_i$ sobre la base conjunta y por ello incluye producción transversal entre unidades; la mera unión $\bigcup_\alpha C_{\alpha,i}$ no basta. La familia es no vacía, overlap-coherent e irredundante respecto de su propia closure, y su tipado común debe estar justificado **antes** de formar la familia: GeneBasis no puede fabricar SharedOntSpace.
+RegimeClosure vuelve a cerrar $\Gamma_i$ sobre la base conjunta y por ello incluye producción transversal entre unidades; la mera unión $\bigcup_\alpha C_{\alpha,i}$ no basta. Como RegimeTotal exige $\operatorname{Within}_i(x_i,R_i)\leftrightarrow\operatorname{Real}_i(x_i)$ para todo $x_i$, queda explícito el puente $\boxed{\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)\Rightarrow\operatorname{OntTotal}_i(R_i)}$. La familia es no vacía, overlap-coherent e irredundante respecto de su propia closure, y su tipado común debe estar justificado **antes** de formar la familia: GeneBasis no puede fabricar SharedOntSpace.
 
 Para $C_i$ la GenClosure de $\mathcal O_i$:
 
@@ -1930,7 +1930,7 @@ La completeness exige cobertura del contenido generado:
 $$
 \mathrm{CC}^{\mathrm{gen}}_{\mathcal C,i}:
 \quad
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
 \Rightarrow
 \exists a\in T_q^{\mathcal C}\;
 \eta_i^{\mathcal C}(a)=x_i.
