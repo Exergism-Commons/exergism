@@ -790,7 +790,7 @@ def validate_regime_total_contract(
     require_canonical_display_after(
         normative,
         individuation_bounds,
-        "Puente de formación hacia R_i. IndexAdmission no crea una realidad ni demuestra su totalidad. Su función es licenciar el sort contextual bajo el cual las expresiones indexadas pasan a estar bien formadas. Lo representamos mediante una regla de formación metateórica, no mediante un existencial objeto:",
+        "Puente de formación hacia R_i. IndexAdmission no crea una realidad ni demuestra su totalidad; solo licencia el sort contextual y la formación de un candidato de scope:",
         CANONICAL_R_FORM,
         "REV-07g R-FORM bridge",
     )
