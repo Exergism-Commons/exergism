@@ -976,6 +976,13 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-bv. \\(\\mathcal H_{MP}^{XR2}\\) — teoría host pre-registrada"),
+        (4, "0.11.91r-bw. HMP-T1 — HostProjectionComplete sobre la gramática declarada"),
+        (4, "0.11.91r-bx. HOST-ADEQ — la deuda se mueve a la adecuación de \\(\\mathcal H_{MP}\\)"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
