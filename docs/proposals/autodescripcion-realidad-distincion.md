@@ -484,6 +484,7 @@ $$
 \operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \bigr).
 }
+$
 
 Con la semántica anterior, el puente completo puede mostrarse sin colapsar sus etapas:
 
@@ -502,7 +503,6 @@ $$
 $$
 
 La primera conjunción licencia el contexto y su tipado; RegimeTotal descarga la exhaustividad genealógica del scope; \(\operatorname{OntTotal}\) es consecuencia de esa exhaustividad. Ninguna de las tres etapas se usa para definir retroactivamente las anteriores.
-$$
 
 Y:
 
