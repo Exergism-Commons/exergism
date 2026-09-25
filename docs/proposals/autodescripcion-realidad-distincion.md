@@ -155,7 +155,7 @@ $$
 
 La relatividad a \(\mathcal T\) y el witness \(\chi\) pertenecen a la **descarga/auditoría**, no a la realidad individuada: el target objetivo es $\operatorname{ContextIndividuation}^{\mathsf M}(C)$. IndAdequate exige fidelidad estructural, independencia del target, fundamento positivo, invariancia, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina de cortes rivales y no-totalización; REV-07g contiene los tests completos. IndexAdmission no implica RegimeTotal ni REC. Un parámetro provisional \(\widehat{i}\) puede servir para auditar una candidatura sin admitirla. IndexRetraction corrige una admisión metateórica defectuosa y no equivale a ContextCessation ontológica.
 
-**Puente de formación hacia R_i.** IndexAdmission no crea una realidad ni demuestra su totalidad. Su función es licenciar el sort contextual bajo el cual las expresiones indexadas pasan a estar bien formadas. Lo representamos mediante una **regla de formación metateórica**, no mediante un existencial objeto:
+**Puente de formación hacia R_i.** IndexAdmission no crea una realidad ni demuestra su totalidad; solo licencia el sort contextual y la formación de un candidato de scope:
 
 $$
 \boxed{
@@ -170,17 +170,9 @@ $$
 }
 $$
 
-\(R_i\) designa aquí un **candidato de alcance ontológico tipado por el contexto admitido \(i\)**. R-FORM no añade una entidad nueva al inventario, no afirma \(\operatorname{OntTotal}_i(R_i)\) y no implica que exista una GeneBasis exhaustiva. En particular:
+R-FORM no implica OntTotal ni RegimeTotal, y RegimeTotal no puede usarse retroactivamente para justificar la individuación o el índice que presupone.
 
-$$
-\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
-\not\Rightarrow
-\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i).
-$$
-
-La dirección es asimétrica: ContextIndividuation fundamenta IndexAdmission; IndexAdmission licencia el lenguaje de \(R_i\); solo una descarga genealógica posterior puede establecer RegimeTotal. RegimeTotal no puede usarse retroactivamente para fabricar la individuación o el índice que su propia formulación ya presupone.
-
-**Nada absoluta frente a individuación.** REV-07g separa ahora dos deudas: `NoR := not ExistsR` es una metasentencia, no un estado precursor u objeto capaz de producir realidad, de modo que no se usa `Nothing -> R_i` ni una «inversión de la Nada». Queda abierta la hipótesis de si una ausencia absoluta de determinación puede ser una realización admisible, pero incluso excluirla no prueba por sí solo `ExistsR`: falta un puente no circular hacia RegimeTotal. Separadamente, una distinción solo puede fundamentar ContextIndividuation si es efectiva y positivamente justificada por una teoría independiente; una partición descriptiva `A|B` no basta.
+**Nada absoluta frente a individuación.****Nada absoluta frente a individuación.** REV-07g separa ahora dos deudas: `NoR := not ExistsR` es una metasentencia, no un estado precursor u objeto capaz de producir realidad, de modo que no se usa `Nothing -> R_i` ni una «inversión de la Nada». Queda abierta la hipótesis de si una ausencia absoluta de determinación puede ser una realización admisible, pero incluso excluirla no prueba por sí solo `ExistsR`: falta un puente no circular hacia RegimeTotal. Separadamente, una distinción solo puede fundamentar ContextIndividuation si es efectiva y positivamente justificada por una teoría independiente; una partición descriptiva `A|B` no basta.
 
 ### 1.4. Juicios metaontológicos de contexto
 
@@ -347,29 +339,9 @@ $$
 
 RegimeClosure vuelve a cerrar $\Gamma_i$ sobre la base conjunta y por ello incluye producción transversal entre unidades; la mera unión $\bigcup_\alpha C_{\alpha,i}$ no basta. Como RegimeTotal exige $\operatorname{Within}_i(x_i,R_i)\leftrightarrow\operatorname{Real}_i(x_i)$ para todo $x_i$, queda explícito el puente $\boxed{\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)\Rightarrow\operatorname{OntTotal}_i(R_i)}$. La familia es no vacía, overlap-coherent e irredundante respecto de su propia closure, y su tipado común debe estar justificado **antes** de formar la familia: GeneBasis no puede fabricar SharedOntSpace.
 
-**Condición de formación de RegimeTotal.** Una aserción \(\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)\) solo es doctrinalmente admisible bajo un \(i\) previamente admitido y un \(R_i\) bien formado por R-FORM. Esto es una **side condition de tipado**, no una nueva premisa interna de RegimeTotal y tampoco una inferencia \(\operatorname{RegimeTotal}\Rightarrow\operatorname{ContextIndividuation}\) que pudiera emplearse para bootstrapear el índice. RegimeTotal hace un trabajo posterior y distinto: identifica el scope tipado como exhaustivo respecto de \(\operatorname{Real}_i\) y de la RegimeClosure de una GeneBasis adecuada.
+**Condición de formación de RegimeTotal.** \(\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)\) solo es admisible bajo un \(i\) previamente admitido y un \(R_i\) bien formado por R-FORM. Esta side condition impide usar RegimeTotal para bootstrapear ContextIndividuation. Dos RegimeTotal bajo el mismo \(i\) son coextensionales respecto de Within; la prueba está en las derivaciones técnicas.
 
-Si dos candidatos de scope \(R_i\) y \(R'_i\) satisfacen RegimeTotal bajo el mismo índice admitido —posiblemente mediante GeneBasis distintas—, ambos son necesariamente coextensionales respecto de Within:
-
-$$
-\boxed{
-\begin{aligned}
-&\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
-\land
-\operatorname{RegimeTotal}_i(\mathfrak H_i,R'_i)\\
-&\qquad\Rightarrow
-\forall x_i[
-\operatorname{Within}_i(x_i,R_i)
-\Longleftrightarrow
-\operatorname{Within}_i(x_i,R'_i)
-].
-\end{aligned}
-}
-$$
-
-No inferimos identidad objeto \(R_i=R'_i\) sin un principio extensional adicional; tampoco aparecen dos contextos, porque la individuación y el índice ya eran los mismos.
-
-Para $C_i$ la GenClosure de $\mathcal O_i$:
+Para $C_i$ la GenClosure de $\mathcal O_i$:Para $C_i$ la GenClosure de $\mathcal O_i$:
 
 $$
 \boxed{
@@ -460,17 +432,7 @@ con el significado:
 
 > existe una instanciación admisible del parámetro de contexto $i$ para la cual la sentencia indexada $\Phi_i$ está satisfecha.
 
-$\exists^{\mathsf M}$ **no** es un cuantificador del lenguaje ontológico y no presupone un dominio $I$ de índices. En esta propuesta, que una instanciación de \(i\) sea **admisible** exige provenance metateórica de ContextIndividuation e IndexAdmission. Esquemáticamente, para usar una instancia de \(\exists^{\mathsf M}i\;\Phi_i\) debe existir una candidatura \(C\) tal que:
-
-$$
-\operatorname{ContextIndividuation}^{\mathsf M}(C)
-\land
-\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
-\land
-\Phi_i.
-$$
-
-La vía concreta que descargue ContextIndividuation —TR, una world-making theory adecuada o una primitividad restringida— es independiente de esta semántica. Escribir un subíndice o introducir un parámetro provisional \(\widehat{i}\) no satisface \(\exists^{\mathsf M}i\).
+$\exists^{\mathsf M}$ **no** es un cuantificador del lenguaje ontológico y no presupone un dominio $I$ de índices. En esta propuesta, «admisible» exige provenance metateórica de ContextIndividuation e IndexAdmission; un subíndice escrito o un parámetro provisional no satisfacen $\exists^{\mathsf M}i$.
 
 El target doctrinal se escribe ahora:
 
@@ -729,19 +691,9 @@ Por tanto, REV-01, REV-02 y REV-04 están cerrados en sus criterios originales, 
 
 El programa dispone de dos construcciones semánticas condicionales. La ruta finita usa el carrier tipado $T^{\Lambda}_{i,q}=[q_i]_{\sim_i}$, PON y $\operatorname{StructAdm}_i$. La ruta generalizada es deliberadamente pre-ontológica: usa $T_q^{\mathcal C}$, `CFragAdm_C`, CSet/CWF/CProcStable y smallness/Separation relativas a la clausura; solo tras adecuación genealógica puede reindexarse como un régimen. Ninguna ruta semántica demuestra por sí sola $\operatorname{ExistsR}$; tampoco decide metateóricamente One-$R$ frente a Many-$R$.
 
-Las deudas activas se organizan ahora por capa:
+Las deudas activas por capa se condensan en el resumen formal vigente y se desarrollan en el ledger; esa clasificación, no la cronología exploratoria, gobierna el estado actual.
 
-- **Existencia — REV-07 / XR-$\varepsilon$:** OntOrigin/OntProd/GenEvent/RegimeClosure siguen PARTIAL universalmente, pero XR-$\varepsilon$ descarga una instancia finita y da $\varepsilon$RSP + RealizedEmergence + IndAdequate$^{1\text{--}10}\Rightarrow ExistsR$; NFA-T1 muestra que la alternativa a priori exige NQ.
-- **Individuación — REV-07g:** ContextIndividuation es witness-free; TR-W/TR-O/TR-M son rutas theory-relative, nesting usa ContextEmbedding y Generation/GenSig separa profundidad ontogénica de embedding. El guard es no-free-promotion, no anti-proliferation.
-- **Continuidad/interfaces — REV-07h:** Interface/Memo/Bake/ContinuationProfile/FaithfulContinuation están resueltos a nivel de criterio; permanecen InterfaceWall→Muro fuerte y la posible canonicalización posterior $\Omega_i$.
-- **Emergencia semántica — REV-03/18/19/09/10/21:** $\varepsilon$, proceso, EClosed y SemTotal forman infraestructura activa; no crean por sí solos $R_i$.
-- **Presentación — REV-24/25:** OA/MC/RA, firma y Separation buscan $Presents_i/WitnessedR$ una vez exista RegimeTotal; no son premisas de ExistsR.
-- **Smallness/maximalidad — REV-20/22/23:** rutas subordinadas o alternativas de SemTotal; PON solo bloquea la reconstrucción finita correspondiente.
-- **Muro — REV-15:** InterfaceWall aporta subdeterminación de canal; sigue abierta la irreconstructibilidad genealógica de principio.
-- **Metaontología — REV-26:** One-$R$/Many-$R$, generalidad absoluta y comparación global permanecen extensiones no bloqueantes.
-- **Arqueología:** el linaje de supramedium, Cluster-R, proceso, fractalidad, $\Omega_\infty$, REC/Muro y demás formulaciones retiradas se mantiene explícito en el mapa de arqueología conceptual;
-
-## 3.1. Resumen formal vigente
+## 3.1. Resumen formal vigente## 3.1. Resumen formal vigente
 
 Las demostraciones, contraejemplos y modelos de trabajo están en [derivaciones técnicas](work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md); su linaje, rescates y formulaciones retiradas están inventariados en el [mapa de arqueología conceptual](work/autodescripcion-realidad-distincion-arqueologia-2026-09-25.md). Esta sección registra solo resultados vigentes.
 
@@ -766,42 +718,13 @@ Las demostraciones, contraejemplos y modelos de trabajo están en [derivaciones 
 
 ### Corrección histórica importante sobre F2
 
-Durante la exploración se sostuvo temporalmente que sin F2 no podía elevarse una cota $U$ de una cadena de puntos fijos a una cota fija. Ese diagnóstico fue **erróneo** y queda marcado `SUPERSEDED` en el documento técnico.
-
-Si:
-
-$$
-X\preceq U
-$$
-
-y F1 da:
-
-$$
-U\preceq F(U),
-$$
-
-entonces, por transitividad:
-
-$$
-X\preceq F(U).
-$$
-
-F2 no interviene. F3 garantiza después:
-
-$$
-F(F(U))=F(U).
-$$
-
-Por tanto, la monotonía interna de $F_M$ sigue siendo verdadera, pero **no es necesaria para ese paso de Zorn**.
+El diagnóstico histórico que hacía F2 necesario para elevar cotas está **SUPERSEDED**: F1 + transitividad bastan para $X\preceq F(U)$ y F3 fija $F(U)$. La prueba y el historial permanecen en las derivaciones técnicas.
 
 ### Alcance de los cierres formales
 
-Los cierres de REV-01 y REV-04 son deliberadamente limitados:
+REV-01/04 son cierres formales limitados: no resuelven la suficiencia doctrinal general de emergencia ni garantizan discriminación en sistemas ricos; esas deudas permanecen en REV-03 y el ledger.
 
-- REV-01 demuestra propiedades formales de una clausura reflexivo-transitiva; esas propiedades valdrían para cualquier relación binaria del mismo tipo. El contenido específicamente emergentista reside en la definición y justificación de $\mathcal E_M$, todavía PARTIAL bajo REV-03.
-- REV-04 demuestra la existencia de un punto fijo propio en un toy mínimo. No demuestra por sí solo que $F_M$ siga siendo discriminante en sistemas con redes densas o fuertemente conectadas de eventos emergentes. Esa cuestión se registra separadamente en el ledger.
-
-### Blockers ontológicos actuales
+### Blockers ontológicos actuales### Blockers ontológicos actuales
 
 La existencia ontológica y su representación quedan ahora separadas:
 
