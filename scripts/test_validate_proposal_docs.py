@@ -11,6 +11,7 @@ from scripts.validate_proposal_docs import (
     NORMATIVE,
     TECHNICAL,
     validate_archive,
+    validate_architecture_archaeology,
     validate_index_typing,
     validate_regime_total_contract,
 )
@@ -450,6 +451,32 @@ class ContextRealityContractTests(unittest.TestCase):
                 self.normative,
                 MarkdownDocument(mutated),
             )
+
+class ArchitectureArchaeologyTests(unittest.TestCase):
+    def setUp(self) -> None:
+        from scripts.validate_proposal_docs import ARCHAEOLOGY
+        self.source = ARCHAEOLOGY.read_text(encoding="utf-8")
+
+    def test_current_architecture_map_passes(self) -> None:
+        validate_architecture_archaeology(MarkdownDocument(self.source))
+
+    def test_rejects_bake_to_continuation_regression(self) -> None:
+        mutated = self.source.replace(
+            "ContinuationProfile no se deriva de Bake",
+            "ContinuationProfile se deriva de Bake",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_architecture_archaeology(MarkdownDocument(mutated))
+
+    def test_rejects_embedding_generation_regression(self) -> None:
+        mutated = self.source.replace(
+            "ContextEmbedding por sí solo no crea CtxParent ni aumenta generación.",
+            "ContextEmbedding puede aumentar generación.",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_architecture_archaeology(MarkdownDocument(mutated))
 
 
 class ArchiveContractTests(unittest.TestCase):
