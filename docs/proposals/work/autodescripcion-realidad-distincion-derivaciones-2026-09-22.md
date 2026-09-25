@@ -15481,37 +15481,9 @@ Pero no se adopta:
 }
 \]
 
-La auditoría UnitGround de XR-2 queda provisionalmente:
+La primera auditoría UnitGround de XR-2 dejó UG4/UG5/UG6 abiertos y UG8 parcialmente apoyado. Esa clasificación queda **SUPERSEDED** por §§0.11.91r-ba–bi: el CIT positivo posterior cierra UG4, la recodificación explícita cierra UG8 y la enumeración de firma cierra UG6-S. Permanecen UG5 y UG6-H.
 
-\[
-\begin{array}{lll}
-UG1 & \mathsf{PASS} & \text{teoría/firma pre-registradas};\\
-UG2 & \mathsf{PASS} & \text{component + environment + IPC actual};\\
-UG3 & \mathsf{PASS} & \text{quitar channel/polaridad destruye el perfil open-component declarado};\\
-UG4 & \mathsf{PARTIAL} & \text{no hay todavía CIT positivo de UnitProfileBreak específico de XR-2};\\
-UG5 & \mathsf{PARTIAL} & \text{negative environment control pasa, pero bypass accounting no es exhaustivo};\\
-UG6 & \mathsf{PARTIAL} & \text{state split/quotient se rechazan, pero RCC1–RCC6 aún no están demostrados};\\
-UG7 & \mathsf{PASS} & \text{IPC actuality no se promueve automáticamente a ontología};\\
-UG8 & \mathsf{PARTIAL\text{-}PASS} & \text{estructura formal covariante, falta recoding IPC explícito}.
-\end{array}
-\]
-
-El avance real es que **IAI2/IAI4 dejan de ser deuda abstracta**.
-
-El cuello restante se concentra ahora en:
-
-\[
-\boxed{
-UG4 + UG5 + UG6
-}
-\]
-
-para XR-2 y, dentro de UG6, en:
-
-\[
-\boxed{
-RCC1\text{--}RCC6.
-}
+El avance estable de esta sección es que **IAI2/IAI4 dejan de ser deuda abstracta**; la descarga final detallada se mantiene en §0.11.91r-bi.
 \]
 
 #### 0.11.91r-az. Consecuencia metodológica: boundary evidence y unity evidence son distintas
