@@ -887,6 +887,16 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-k. Protocolo de robustez cross-domain"),
+        (4, "0.11.91r-l. SW-A — software: servicio KV realizado frente a API puramente nominal"),
+        (4, "0.11.91r-m. BIO-A — célula: boundary material + organización mantenida"),
+        (4, "0.11.91r-n. PHY-A — termostato/control: el diagrama de bloques no es todavía ontología física"),
+        (4, "0.11.91r-o. DR-T1 — resultado de portabilidad de criterio, no de identidad de mecanismo"),
+        (4, "0.11.91r-p. Asimetría empírica entre dominios"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
