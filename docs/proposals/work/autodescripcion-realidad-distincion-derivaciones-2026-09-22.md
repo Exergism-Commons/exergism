@@ -17308,9 +17308,10 @@ x\in C_{XR1}.
 }
 \]
 
-#### 0.11.91af. XR1-S — scope finito
+#### 0.11.91af. XR1-S — evidencia pre-indexada de scope finito
 
-XR-1 no necesita comprensión irrestricta. Introducimos directamente el plural finito:
+XR-1 no necesita comprensión irrestricta. Antes de ContextIndividuation e
+IndexAdmission solo introducimos el plural finito **pre-indexado**:
 
 \[
 rr_{XR1}=s_0,e_0,s_1
@@ -17321,10 +17322,10 @@ con:
 \[
 x\prec rr_{XR1}
 \Longleftrightarrow
-x=s_0\lor x=e_0\lor x=s_1.
+x=s_0\lor x=e_0\lor x=s_1,
 \]
 
-Entonces:
+y:
 
 \[
 x\prec rr_{XR1}
@@ -17334,7 +17335,50 @@ x\prec rr_{XR1}
 x\in C_{XR1}.
 \]
 
-Escribimos \(R_{XR1}\) para ese scope plural sin convertirlo en objeto colector.
+Este resultado es **scope evidence**, no R-FORM. En particular, en esta etapa
+no se escribe todavía \(R_{XR1}\) ni \(R_{i_{XR1}}\).
+
+Solo condicionalmente, si:
+
+\[
+\operatorname{ContextIndividuation}^{\mathsf M}(C_{XR1})
+\land
+\operatorname{IndexAdmission}^{\mathsf M}
+(C_{XR1}\Downarrow i_{XR1};\chi_{XR1},\mathcal T_{\mathrm{DTS}}),
+\]
+
+R-FORM licencia:
+
+\[
+\vdash^{\mathsf M}
+R_{i_{XR1}}:\mathsf{OntScope}_{i_{XR1}}.
+\]
+
+La notación post-admission:
+
+\[
+s_{0,i_{XR1}},\quad
+e_{0,i_{XR1}},\quad
+s_{1,i_{XR1}}
+\]
+
+es la **lectura tipada de la presentación admitida** por \(C_{XR1}\Downarrow
+i_{XR1}\); no afirma identidad literal de tokens a través de contextos ni
+introduce un mapa ontológico adicional. Bajo esa lectura:
+
+\[
+\operatorname{Within}_{i_{XR1}}(x_{i_{XR1}},R_{i_{XR1}})
+\Longleftrightarrow
+\operatorname{Real}_{i_{XR1}}(x_{i_{XR1}})
+\Longleftrightarrow
+x_{i_{XR1}}
+\in
+\{s_{0,i_{XR1}},e_{0,i_{XR1}},s_{1,i_{XR1}}\}.
+\]
+
+Así XR1-S aporta antes de la admisión la evidencia exacta que, **después** de
+IndexAdmission/R-FORM, puede descargarse como scope indexado. No se usa el
+scope para bootstrapear el índice.
 
 #### 0.11.91ag. XR1-C — descarga histórica revisada tras DTS-UG6
 
@@ -17399,7 +17443,7 @@ ContextAdequate/MC4/MC6/MC9 sigan incompletos:
 - **IA6:** XR-1 posee una sola máquina transitionally integrated; juntar otra máquina independiente no hereda el criterio.
 - **IA7:** boot/formation del realizador se distingue de sus pasos internos; la transición \(s_0\to s_1\) no se usa para explicar retroactivamente la existencia del contexto.
 - **IA8:** **PARTIAL.** La realización host/local aporta una semántica candidata de nivel, pero no puede usarse `ContextEmbedding` como premisa porque CE1 exige dual individuation y embedding no crea ninguno de los dos contextos. Para excluir host/local como rival cuts del mismo nivel hace falta una justificación pre-indexada, target-independent, de que responden a niveles/preguntas de individuación distintos; DTS por sí solo no cierra esa carga.
-- **IA9:** ContextIndividuation no basta para scope; XR1-S descarga el scope por separado.
+- **IA9:** ContextIndividuation no basta para totality; XR1-S aporta evidencia pre-indexada de scope y solo IndexAdmission + R-FORM licencian después (R_{i_{XR1}}).
 - **IA10:** OR/MC/XR-A1–A7 identifican explícitamente qué haría fallar la individuación.
 
 La auditoría IA1–IA10 anterior es por guard. Tras DTS-UG6 y la corrección
@@ -17517,21 +17561,35 @@ Por tanto:
 
 #### 0.11.91ai. XR1-T — teorema existencial condicional
 
-Tras IndexAdmission tomamos la familia singleton:
+Tras ContextIndividuation + IndexAdmission, la presentación XR-1 recibe su
+lectura local tipada. Escribimos abreviadamente:
 
 \[
-\mathfrak G_{XR1}
-=
-\{\langle\mathcal O_{XR1},C_{XR1}\rangle\}.
+\mathcal O_{XR1,i}
+\quad\text{y}\quad
+C_{XR1,i}
 \]
 
-Por el singleton compatibility theorem, XR1-F/R/S descargan:
+para las lecturas \(i_{XR1}\)-tipadas de los witnesses pre-indexados
+\(\mathcal O_{XR1}\) y \(C_{XR1}\). Esta notación depende de la admisión ya
+descargada; no la antecede.
+
+Tomamos entonces la familia singleton:
+
+\[
+\mathfrak G_{XR1,i}
+=
+\{\langle\mathcal O_{XR1,i},C_{XR1,i}\rangle\}.
+\]
+
+R-FORM licencia \(R_{i_{XR1}}\), y el singleton compatibility theorem junto
+con XR1-F/R/S, ahora bajo la lectura tipada, descarga condicionalmente:
 
 \[
 \operatorname{RegimeTotal}_{i_{XR1}}
 (
-\mathfrak G_{XR1},
-R_{XR1}
+\mathfrak G_{XR1,i},
+R_{i_{XR1}}
 ).
 \]
 
@@ -17571,7 +17629,7 @@ REV-07b/c permanecen abiertos universalmente, pero no bloquean la parte generati
 
 **XR-A6 — CI no prueba metafísica.** Correcto. CI proporciona un evidence witness reproducible; no es el truthmaker. La carga ontológica está en XR1-REAL/OR1–OR9 + IndAdequate.
 
-**XR-A7 — scope setificado.** No: \(rr_{XR1}\) es plural finito explícito.
+**XR-A7 — scope setificado o R prematuro.** No: \(rr_{XR1}\) es plural finito pre-indexado. No se forma \(R_{i_{XR1}}\) hasta ContextIndividuation + IndexAdmission + R-FORM, y la lectura tipada de los witnesses se introduce solo después.
 
 #### 0.11.91ak. Estado de XR-1 — corregido tras DTS-UG6
 
