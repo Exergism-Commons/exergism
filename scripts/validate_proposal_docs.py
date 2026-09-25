@@ -878,6 +878,15 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-c. RC-T1 — unresolved rival-cut theorem"),
+        (4, "0.11.91r-d. No-Free-Promotion: el target es el witness, no prohibir contextos abundantes"),
+        (4, "0.11.91r-g. NFP-T4 — contextual abundance theorem"),
+        (4, "0.11.91r-h. RC-X — particiones cruzadas bajo simetría"),
+        (4, "0.11.91r-j. Resultado doctrinal: unidad, escala y dimensión se desacoplan"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
