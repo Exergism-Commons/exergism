@@ -954,41 +954,41 @@ def validate_regime_total_contract(
         (4, "0.11.91r-bb. UG5-T1 — Constitutive Screening relativo al envelope"),
         (4, "0.11.91r-be. UG6 se descompone: signature rivals frente a host rivals"),
         (4, "0.11.91r-bg. XR2-SIG-T — descarga de UG6-S"),
-        (4, "0.11.91r-bj. RealizerCoverageAdequate — el bridge firma↔host"),
-        (4, "0.11.91r-bl. RCA-XR2 — auditoría actual"),
-        (4, "0.11.91r-bm. Teorema de cuello de botella XR-2"),
+        (4, "0.11.91r-bj. RCAAudit — vista derivada, no nuevo criterio"),
+        (4, "0.11.91r-bl. XR2-RCAAudit — evidencia actual"),
+        (4, "0.11.91r-bm. Cuello de botella XR-2 corregido"),
     ):
         technical.section_bounds(level, heading)
 
     for level, heading in (
-        (4, "0.11.91r-bn. RCA-X1 — ninguna batería finita prueba ausencia universal de hidden constituents"),
-        (4, "0.11.91r-bo. RCA-T1 — hace falta una teoría del realizador, no infinitos tests"),
-        (4, "0.11.91r-bp. No-Microscopic-Totality — RCA no exige describir todos los microestados"),
+        (4, "0.11.91r-bn. RCA-X1 — límite de baterías finitas dentro de un contrato"),
+        (4, "0.11.91r-bo. RCA-T1 — SUPERSEDED como teoría host autónoma"),
+        (4, "0.11.91r-bp. No-Microscopic-Totality — derivado del kernel de interfaz"),
         (4, "0.11.91r-bq. Relación con abstract interpretation y equivalencia conductual"),
     ):
         technical.section_bounds(level, heading)
 
     for level, heading in (
-        (4, "0.11.91r-br. XR2-HOST — batería adversarial concreta sobre el realizador"),
-        (4, "0.11.91r-bs. START-X1 — el start-method era una dependencia host no modelada"),
-        (4, "0.11.91r-bt. RCAAudit actualizado tras los ataques host"),
-        (4, "0.11.91r-bu. HOST-T1 — resultado adversarial de la ronda"),
+        (4, "0.11.91r-br. XR2-HOST — probes de realización, no expansión ontológica"),
+        (4, "0.11.91r-bs. START-X1 — dependencia de realización, no constitución automática"),
+        (4, "0.11.91r-bt. RCAAudit actualizado como evidencia de guards existentes"),
+        (4, "0.11.91r-bu. HOST-T1 — resultado adversarial reinterpretado"),
     ):
         technical.section_bounds(level, heading)
 
     for level, heading in (
-        (4, "0.11.91r-bv. HMP-XR2 — teoría host pre-registrada"),
-        (4, "0.11.91r-bw. HMP-T1 — HostProjectionComplete sobre la gramática declarada"),
-        (4, "0.11.91r-bx. HOST-ADEQ — la deuda se mueve a la adecuación de HMP-XR2"),
+        (4, "0.11.91r-bv. HMP-XR2 — gramática diagnóstica pre-registrada"),
+        (4, "0.11.91r-bw. HMP-T1 — completitud de clasificación sobre la gramática diagnóstica"),
+        (4, "0.11.91r-bx. HOST-ADEQ — SUPERSEDED como deuda autónoma"),
     ):
         technical.section_bounds(level, heading)
 
     for level, heading in (
-        (4, "0.11.91r-by. HOST-X1 — HMP-XR2 no sobrevive como teoría host adecuada"),
-        (4, "0.11.91r-bz. HOST-SUPPORT — necesidad de realización no implica constitución de la unidad"),
-        (4, "0.11.91r-ca. HTA-X1 — ninguna auditoría finita cierra HostTheoryAdequate en sentido absoluto"),
-        (4, "0.11.91r-cb. HTA-K — HostTheoryAdequate relativo a un contrato host independiente"),
-        (4, "0.11.91r-cc. HOST-ADEQ-XR2 — resultado de la ronda y reparación mínima"),
+        (4, "0.11.91r-by. HOST-X1 — SUPERSEDED: mecanismo omitido no implica constituyente omitido"),
+        (4, "0.11.91r-bz. HOST-SUPPORT — absorbido por InterfaceContract/MC/RE"),
+        (4, "0.11.91r-ca. HTA-X1 — REDUNDANT con RCA-X1; no crea un nuevo blocker"),
+        (4, "0.11.91r-cb. HTA-K — SUPERSEDED: no crear un contrato host paralelo"),
+        (4, "0.11.91r-cc. XR2-ADEQ — deuda vigente devuelta a IC/MC/UG"),
     ):
         technical.section_bounds(level, heading)
 
