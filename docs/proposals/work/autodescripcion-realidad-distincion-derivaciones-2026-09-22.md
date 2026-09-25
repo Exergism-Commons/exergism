@@ -12965,13 +12965,67 @@ Esto no exige aislamiento causal absoluto; exige **screening-off por la frontera
 Definimos:
 
 \[
+\boxed{
 \operatorname{MCAdequate}^{\mathsf M}
 (
 \mathcal T,C,\Xi_C
 )
+:\Longleftrightarrow
+\bigwedge_{n=1}^{10}MC_n(\mathcal T,C,\Xi_C).
+}
 \]
 
-como MC1–MC10 más los CI1–CI14/IA0–IA10 aplicables.
+**MCAdequate abrevia exclusivamente MC1–MC10.** No contiene CI1–CI14 ni
+IA0–IA10 como conjuncts. La formulación anterior que decía “MC1–MC10 más los
+CI/IA aplicables” queda **SUPERSEDED** porque, tras la separación
+IA0 = IA0-R + IA0-U, haría circular cualquier uso de MCAdequate para aportar
+evidencia a IA0-R o para construir \(\operatorname{Ind}_{\mathcal T}\).
+
+La relación correcta es de **descarga**, no de inclusión definicional. Por
+ejemplo:
+
+\[
+\begin{array}{rcl}
+MC1 &\rightsquigarrow& CI1/IA2\text{ evidence},\\
+MC2 &\rightsquigarrow& CI3\text{ evidence},\\
+MC3 &\rightsquigarrow& IA3\text{ evidence},\\
+MC4 &\rightsquigarrow& CI9/IC5\text{ evidence},\\
+MC6 &\rightsquigarrow& role/interaction\ coverage,\\
+MC7 &\rightsquigarrow& UG5/externals\ screening\ evidence,\\
+MC8 &\rightsquigarrow& CI8/IA6\text{ evidence},\\
+MC9 &\rightsquigarrow& CI7/CI13/IA8/UG6\text{ evidence},\\
+MC10 &\rightsquigarrow& CI12/IA7\text{ evidence}.
+\end{array}
+\]
+
+Ninguna flecha anterior sustituye la descarga independiente del guard target.
+En particular:
+
+\[
+\operatorname{MCAdequate}
+\not\Rightarrow
+IA0,
+\]
+
+mientras la ruta vigente mantiene:
+
+\[
+\operatorname{RealizedEmergence}
++
+\operatorname{MCAdequate}
+\Rightarrow
+IA0\text{-}R
+\]
+
+solo bajo \(\varepsilon RSP\text{-}R\), y:
+
+\[
+IA0\text{-}R
++
+\operatorname{UnitGroundAdequate}
+\Rightarrow
+IA0.
+\]
 
 #### 0.11.91m. TM-T1 — descarga condicional de TR-M
 
