@@ -341,6 +341,38 @@ class ContextRealityContractTests(unittest.TestCase):
                 MarkdownDocument(mutated),
             )
 
+    def test_rejects_missing_finite_test_countermodel(self) -> None:
+        heading = (
+            "#### 0.11.91r-bn. RCA-X1 — ninguna batería finita prueba "
+            "ausencia universal de hidden constituents"
+        )
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed finite-test countermodel",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
+    def test_rejects_missing_host_projection_contract(self) -> None:
+        heading = (
+            "#### 0.11.91r-bo. RCA-T1 — hace falta una teoría del "
+            "realizador, no infinitos tests"
+        )
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed host projection contract",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
 
 class ArchiveContractTests(unittest.TestCase):
     def test_keywords_without_canonical_polarity_do_not_satisfy_banner(self) -> None:
