@@ -5420,42 +5420,63 @@ Así «realidad celular» es conceptualmente anterior y más débil que «realid
 
 **C7 — coarse-graining rival.** Una misma presentación puede admitir dos particiones descriptivas igualmente cómodas. Si $\chi_1$ individúa «células» finas y $\chi_2$ unidades gruesas, la teoría no puede convertir ambas en índices ontológicos por conveniencia. Debe mostrar que una de las particiones carece de CI1–CI8, que ambas representan niveles ontológicos genuinamente distintos mediante una futura relación de embedding, o que son metateóricamente equivalentes. Este es el ataque principal contra una celularidad meramente perspectival.
 
-#### 0.11.54. Estado de REV-07g
+#### 0.11.54. Estado actualizado de REV-07g
 
-REV-07g queda **PARTIAL / hipótesis arquitectónica**.
+REV-07g permanece **PARTIAL**, pero por razones mucho más estrechas que en la
+primera formulación de Cellular Reality.
 
-Lo ya obtenido es una descomposición útil:
+Ya están arquitectónicamente separados y formalizados:
 
-$$
+- ContextIndividuation como target objetivo y `Ind_T` como descarga theory-specific;
+- ContextAdequate CI1–CI14 y DischargeAdequate IA0–IA10;
+- IndexAdmission y R-FORM, sin totality smuggling;
+- TR-W, TR-O y TR-M como familias de descarga candidatas;
+- InterfaceContract/RoleAdequate/RoleCompositionAdequate;
+- MemoState/update/invalidation y Baking B1–B10;
+- PersistenceBasis → ContinuationProfile → ProfileMorphism/FaithfulContinuation;
+- RivalCut/No-Free-Promotion, ContextEmbedding con dual individuation;
+- ContextGenesis frente a SharedOntSpace, y Generation separada de embedding;
+- UnitGroundAdequate con IA0-R/IA0-U separados.
+
+Por tanto ya no son deudas vigentes:
+
+\[
 \boxed{
-\text{individuación}
-\rightarrow
-\text{índice/tipado}
-\rightarrow
-\text{RegimeTotal/REC}
+\text{definir un witness genérico }\chi
+\quad\text{o}\quad
+\Omega_i\to ContinuationProfile
 }
-$$
+\]
 
-junto con una capa epistémica separada —Muro— y una capa de interfaces ontogénicas —ContextGenesis/FC/Provenance/Trivialization—.
+como se decía en la versión histórica de esta sección.
 
-Lo que todavía falta para convertir Cellular Reality en extensión formal fuerte es:
+Las deudas activas son otras:
 
-1. definir $\operatorname{IndividuationWitness}^{\mathsf M}$ sin reutilizar el índice ni RegimeTotal de forma circular;
-2. demostrar que ese fundamento induce una frontera de tipado suficientemente determinada y no depende de un coarse-graining arbitrario;
-3. cerrar la identidad diacrónica coordinando $\chi$, trivialización, $\Omega_i$ y ContinuationProfile;
-4. dar un criterio positivo de ContextCessation;
-5. decidir si existe una relación legítima de embedding/nesting entre contextos y cómo se distingue de una partición puramente descriptiva;
-6. solo entonces reevaluar si alguna subclase de arquitecturas celulares satisface un criterio real de fractalidad.
+1. **descarga concreta de individuación:** para un witness de ExistsR hay que
+   exhibir una teoría/caso que descargue realmente `Ind_T + IndAdequate`; la
+   arquitectura general no inventa un world-maker universal;
+2. **XR-1/XR-2:** cerrar contract/role/interaction coverage y rival-cut
+   discrimination suficientes para MCAdequate/IndAdequate y UnitGround;
+3. **ContextCessation:** existe disciplina para distinguirla de IndexRetraction,
+   pero falta un criterio positivo general;
+4. **Muro fuerte:** InterfaceWall solo demuestra subdeterminación relativa al
+   canal; falta exhaustividad de canales;
+5. **Omega:** queda únicamente como posible canonicalización posterior, no como
+   premisa de persistencia ni individuación;
+6. **aplicaciones empíricas:** Redis/E. coli/Nest siguen siendo audits parciales,
+   no demostraciones de ContextIndividuation.
 
-La tesis central queda, por ahora:
+La tesis central permanece:
 
-$$
+\[
 \boxed{
 \textbf{Indexing is the notation of individuation, not its source.}
 }
-$$
+\]
 
-y la membrana deja de ser metáfora si se entiende como **perfil de frontera tipada, clausura, epistemología e interfaces**, manteniendo esas capas formalmente separadas.
+y la Cellular Reality vigente significa pluralidad/nesting posible de unidades
+contextuales independientemente individuadas, no autosimilitud fractal ni
+proliferación gratuita de índices.
 
 #### 0.11.55. Auditoría de dependencias: la maquinaria vigente todavía no deriva la individuación inicial
 
