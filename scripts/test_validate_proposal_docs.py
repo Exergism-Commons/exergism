@@ -12,6 +12,7 @@ from scripts.validate_proposal_docs import (
     TECHNICAL,
     validate_archive,
     validate_architecture_archaeology,
+    validate_current_theory_invariants,
     validate_index_typing,
     validate_regime_total_contract,
 )
@@ -451,6 +452,28 @@ class ContextRealityContractTests(unittest.TestCase):
                 self.normative,
                 MarkdownDocument(mutated),
             )
+class CurrentTheoryInvariantTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.source = TECHNICAL.read_text(encoding="utf-8")
+
+    def test_current_technical_architecture_passes(self) -> None:
+        validate_current_theory_invariants(MarkdownDocument(self.source))
+
+    def test_rejects_witness_as_context_individuation_argument(self) -> None:
+        mutated = self.source + (
+            "\\n\\n$\\operatorname{ContextIndividuation}^{\\mathsf M}"
+            "(C;\\chi)$\\n"
+        )
+        with self.assertRaises(AssertionError):
+            validate_current_theory_invariants(MarkdownDocument(mutated))
+
+    def test_rejects_old_mcadequate_bundle(self) -> None:
+        mutated = self.source + (
+            "\\ncomo MC1–MC10 más los CI1–CI14/IA0–IA10 aplicables.\\n"
+        )
+        with self.assertRaises(AssertionError):
+            validate_current_theory_invariants(MarkdownDocument(mutated))
+
 
 class ArchitectureArchaeologyTests(unittest.TestCase):
     def setUp(self) -> None:
