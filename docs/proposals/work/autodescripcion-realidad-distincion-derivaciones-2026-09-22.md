@@ -16213,6 +16213,155 @@ La inferencia permitida es únicamente:
 
 dentro del resto de UnitGroundAdequate.
 
+#### 0.11.91r-br. XR2-HOST — batería adversarial concreta sobre el realizador
+
+Tras introducir RCA se atacan cuatro familias host-side que no pertenecen al autómata local:
+
+1. **timing/scheduling surrogate:** retrasar el envío environment-side sin cambiar mensaje ni estado;
+2. **channel loss:** desaparecer el único sender antes de entregar input;
+3. **process termination:** terminar el component process antes de completar el episodio;
+4. **transport refinement:** sustituir el Pipe dúplex por un par de Queues manteniendo la misma firma I/O.
+
+El resultado ejecutable, bajo una única semántica host pre-registrada con start-method spawn, es:
+
+\[
+\boxed{
+\begin{array}{lll}
+\text{send delay} &\mapsto& \text{stutter / irrelevant variation};\\
+\text{channel loss} &\mapsto& \text{realization fault};\\
+\text{process termination} &\mapsto& \text{lifecycle fault};\\
+\text{Pipe}\to\text{Queue} &\mapsto& \text{implementation refinement}.
+\end{array}
+}
+\]
+
+CI verifica respectivamente:
+
+- re4_environment_send_delay_screened;
+- rca4_channel_loss_projects_to_fault;
+- rca4_process_termination_projects_to_lifecycle_fault;
+- rca7_queue_transport_preserves_profile.
+
+No aparece en esta batería un bypass que altere \(\Xi_C\) y quede simultáneamente fuera de interface, fault/lifecycle, stutter y refinement.
+
+#### 0.11.91r-bs. START-X1 — el start-method era una dependencia host no modelada
+
+La primera implementación de channel-loss usó la configuración de multiprocessing heredada del runner. El test no terminaba después de cerrar el sender.
+
+Una segunda versión hizo explícito spawn solo para el fault arm y sí obtuvo EOF. Pero eso habría comparado realizadores distintos.
+
+La corrección final fija:
+
+\[
+\boxed{
+\mathsf{StartMethod}_{XR2}
+=
+\mathrm{spawn}
+}
+\]
+
+para **todos** los episodios XR-2: normal, fault, CIT y transport-refinement.
+
+Por tanto el start-method pasa a formar parte de la teoría host declarada, no del ambiente accidental del runner.
+
+El finding importante no es que otro start-method sea ontológicamente inválido. Es:
+
+\[
+\boxed{
+\text{ambient implementation parameter}
+\text{ puede afectar fault observability}
+}
+\]
+
+y, por tanto, no puede descartarse como detalle irrelevante antes de auditar su proyección.
+
+START-X1 es un ejemplo concreto de por qué RCA3/RCA4 no podían darse por cerrados desde la firma I/O sola.
+
+#### 0.11.91r-bt. RCAAudit actualizado tras los ataques host
+
+La evidencia nueva fortalece la auditoría pero no cambia todavía su status global:
+
+\[
+\begin{array}{lll}
+RCA1 & \mathsf{PASS} &
+\text{firma I/O + start-method spawn + API host quedan explícitos};\\
+RCA2 & \mathsf{PARTIAL} &
+\text{más familias proyectadas, pero no existe aún HostProjectionComplete};\\
+RCA3 & \mathsf{PARTIAL} &
+\text{START-X1 demuestra precisamente que pueden aparecer constituents omitidos};\\
+RCA4 & \mathsf{PARTIAL} &
+\text{unsupported input, channel loss y process termination están clasificados, no todo fault del runtime/OS};\\
+RCA5 & \mathsf{PASS} &
+\text{noise y timing delay preservan el profile bajo el envelope};\\
+RCA6 & \mathsf{PARTIAL} &
+\text{UG6-S pasa, pero host-rival projection aún no es completa};\\
+RCA7 & \mathsf{PASS} &
+\text{Pipe→Queue + recoding state/action preservan el perfil};\\
+RCA8 & \mathsf{PASS} &
+\text{los fallos anteriores reabrieron efectivamente el diseño en vez de excluirse}.
+\end{array}
+\]
+
+Así se mantiene:
+
+\[
+\boxed{
+\operatorname{RCAAudit}_{XR2}
+=
+\langle
+P,\partial,\partial,\partial,P,\partial,P,P
+\rangle.
+}
+\]
+
+La misma matriz tiene ahora **más evidencia positiva**, pero no se eleva artificialmente a PASS total.
+
+#### 0.11.91r-bu. HOST-T1 — resultado adversarial de la ronda
+
+La ronda produce simultáneamente un resultado positivo y uno negativo.
+
+**Positivo.** Para las familias host efectivamente atacadas:
+
+\[
+\boxed{
+\text{no se encontró una dependencia no proyectable.}
+}
+\]
+
+**Negativo.** Por RCA-X1:
+
+\[
+\boxed{
+\text{ningún número finito de ataques}
+\Rightarrow
+\operatorname{RealizerCoverageAdequate}.
+}
+\]
+
+Por tanto el siguiente paso **no** es añadir indefinidamente más fault injections.
+
+El target formal pasa a ser:
+
+\[
+\boxed{
+\mathcal H_{MP}
++
+\operatorname{HostProjectionComplete}
+}
+\]
+
+donde \(\mathcal H_{MP}\) debe fijar independientemente el fragmento de semántica multiprocessing que se afirma suficiente para la realización XR-2 y demostrar que sus transiciones relevantes quedan cubiertas por HPC1–HPC5.
+
+Solo después puede intentarse:
+
+\[
+\operatorname{HostTheoryAdequate}(\mathcal H_{MP},H_{XR2})
++
+\operatorname{HostProjectionComplete}
+\Rightarrow
+\operatorname{RealizerCoverageAdequate}_{XR2}.
+\]
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
