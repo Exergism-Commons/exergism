@@ -452,6 +452,24 @@ class ContextRealityContractTests(unittest.TestCase):
                 self.normative,
                 MarkdownDocument(mutated),
             )
+
+    def test_rejects_missing_realization_constitution_separation(self) -> None:
+        mutated = self.normative_source.replace(
+            "confundía necesidad causal/de realización con constitución ontológica",
+            "equipara necesidad de realización y constitución ontológica",
+            1,
+        )
+        self.assert_contract_rejected(mutated)
+
+    def test_rejects_autonomous_realizer_coverage_return(self) -> None:
+        marker = "| REV-26 |"
+        mutated = self.normative_source.replace(
+            marker,
+            "`RealizerCoverageAdequate` RCA1–RCA8 unifica la deuda\n" + marker,
+            1,
+        )
+        self.assert_contract_rejected(mutated)
+
 class CurrentTheoryInvariantTests(unittest.TestCase):
     def setUp(self) -> None:
         self.source = TECHNICAL.read_text(encoding="utf-8")
