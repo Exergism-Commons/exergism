@@ -926,6 +926,17 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-ah. UnitProfileBreak — sensibilidad constitutiva sin presuponer reindividuación"),
+        (4, "0.11.91r-ai. CIT — Constitutive Intervention Test"),
+        (4, "0.11.91r-aj. CIT-XR1 — XR-1 sí descarga UG4"),
+        (4, "0.11.91r-am. XR1FiniteRivalClass — clase adversarial pre-indexada"),
+        (4, "0.11.91r-an. XR1-RC-T1 — cierre exhaustivo dentro de la clase finita"),
+        (4, "0.11.91r-ao. RivalClassCompleteness — lo que falta para convertir FR1–FR4 en UG6 completo"),
+        (4, "0.11.91r-ap. DTS-UG6 finding — un DTS desnudo no demuestra RivalClassCompleteness"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
