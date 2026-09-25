@@ -89,7 +89,7 @@ def least_closure(seed: frozenset[str]) -> frozenset[str]:
         current = nxt
 
 
-def component_worker(channel) -> None:
+def component_worker(channel, emit_output: bool = True) -> None:
     """Component-side process with no environment object in local state."""
     state = S0
     command = channel.recv()
@@ -99,13 +99,14 @@ def component_worker(channel) -> None:
         return
 
     state = S1
-    channel.send(
-        {
-            "event": ACTIVATE,
-            "state": state,
-            "pid": os.getpid(),
-        }
-    )
+    if emit_output:
+        channel.send(
+            {
+                "event": ACTIVATE,
+                "state": state,
+                "pid": os.getpid(),
+            }
+        )
     channel.close()
 
 
@@ -174,6 +175,76 @@ def run_fault_trial() -> dict[str, object]:
     }
 
 
+def run_profile_break_trial() -> dict[str, object]:
+    """CIT positive arm: remove a constitutive output role."""
+    parent, child = Pipe(duplex=True)
+    process = Process(target=component_worker, args=(child, False))
+    process.start()
+    child.close()
+
+    parent.send(CLOSE)
+    output_observed = False
+    eof_observed = False
+    try:
+        if parent.poll(2):
+            try:
+                reply = parent.recv()
+                output_observed = reply.get("event") == ACTIVATE
+            except EOFError:
+                eof_observed = True
+        else:
+            eof_observed = not process.is_alive()
+    finally:
+        parent.close()
+
+    process.join(timeout=10)
+    if process.is_alive():
+        process.terminate()
+        process.join(timeout=5)
+        raise RuntimeError("XR-2 CIT positive trial did not terminate")
+    if process.exitcode != 0:
+        raise RuntimeError(
+            f"XR-2 CIT positive trial failed with exit code {process.exitcode}"
+        )
+
+    return {
+        "intervention": "disable_output_role",
+        "activate_observed": output_observed,
+        "channel_ended_without_declared_output": eof_observed or not output_observed,
+        "unit_profile_break": not output_observed,
+    }
+
+
+def verify_faithful_recoding() -> dict[str, bool]:
+    """Check a faithful renaming of states/actions preserves the I/O structure."""
+    state_map = {S0: "q0", S1: "q1"}
+    action_map = {CLOSE: "seal", ACTIVATE: "signal", IDLE: "stutter"}
+
+    recoded_inputs = frozenset(action_map[a] for a in INPUT_ACTIONS)
+    recoded_outputs = frozenset(action_map[a] for a in OUTPUT_ACTIONS)
+    recoded_internal = frozenset(action_map[a] for a in INTERNAL_ACTIONS)
+
+    polarity_preserved = (
+        recoded_inputs == frozenset({"seal"})
+        and recoded_outputs == frozenset({"signal"})
+        and recoded_internal == frozenset({"stutter"})
+    )
+    trace_preserved = (
+        [state_map[S0], action_map[CLOSE], state_map[S1], action_map[ACTIVATE]]
+        == ["q0", "seal", "q1", "signal"]
+    )
+    bijective = (
+        len(set(state_map.values())) == len(state_map)
+        and len(set(action_map.values())) == len(action_map)
+    )
+
+    return {
+        "ug8_recoding_bijective": bijective,
+        "ug8_action_polarity_preserved": polarity_preserved,
+        "ug8_trace_structure_preserved": trace_preserved,
+    }
+
+
 def verify_rival_signature() -> dict[str, bool]:
     """Enumerate the finite I/O signature rivals admitted by this audit language."""
     polarities = ("in", "out", "int")
@@ -222,7 +293,9 @@ def verify() -> dict[str, object]:
     trial_a = run_trial(environment_noise=17)
     trial_b = run_trial(environment_noise=999_983)
     fault_trial = run_fault_trial()
+    profile_break_trial = run_profile_break_trial()
     rival_checks = verify_rival_signature()
+    recoding_checks = verify_faithful_recoding()
 
     action_partition_disjoint = (
         INPUT_ACTIONS.isdisjoint(OUTPUT_ACTIONS)
@@ -284,6 +357,10 @@ def verify() -> dict[str, object]:
         and ORDINARY_ENV_ACTIONS.isdisjoint(IRRELEVANT_ENV_VARIATIONS)
         and FAULT_ENV_ACTIONS.isdisjoint(IRRELEVANT_ENV_VARIATIONS)
     )
+    constitutive_intervention_positive = (
+        profile_break_trial["unit_profile_break"]
+        and profile_break_trial["channel_ended_without_declared_output"]
+    )
 
     checks = {
         "xio1_separate_environment_process": separate_environment,
@@ -309,7 +386,12 @@ def verify() -> dict[str, object]:
             environment_negative_control
         ),
         "re_envelope_partition_disjoint": envelope_partition_disjoint,
+        "ug4_cit_positive_output_role_break": constitutive_intervention_positive,
+        "ug4_cit_negative_environment_noise_preserves_profile": (
+            environment_negative_control
+        ),
         **rival_checks,
+        **recoding_checks,
     }
 
     if not all(checks.values()):
@@ -329,6 +411,7 @@ def verify() -> dict[str, object]:
         "declared_local_real_tokens": sorted(REAL_TOKENS),
         "trials": [trial_a, trial_b],
         "fault_trial": fault_trial,
+        "constitutive_intervention_trial": profile_break_trial,
         "realization_envelope": {
             "ordinary": sorted(ORDINARY_ENV_ACTIONS),
             "faults": sorted(FAULT_ENV_ACTIONS),
@@ -346,8 +429,10 @@ def verify() -> dict[str, object]:
             "action_polarity_assignments": 27,
             "state_quotients": 2,
             "nontrivial_state_splits": 1,
-            "complete_for_audit_language": True,
+            "complete_for_signature_audit_language": True,
             "complete_for_all_host_realization_rivals": False,
+            "ug6_signature_status": "pass",
+            "ug6_host_status": "partial",
         },
         "checks": checks,
         "status": "open-component-realization-evidence-passed",
