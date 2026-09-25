@@ -15191,6 +15191,184 @@ Por tanto no fortalecemos \(\mathcal T_{\mathrm{DTS}}\) ad hoc en esta sección.
 }
 \]
 
+#### 0.11.91r-aq. T-IODTS — ruta independiente de teoría de interfaz
+
+La insuficiencia de \(\mathcal T_{\mathrm{DTS}}\) no obliga a inventar una semántica específica de Exergism. I/O automata e interface automata proporcionan precedentes independientes donde el sistema se modela con interacción explícita con el entorno.
+
+Adoptamos solo como **candidate theory**, no como ontología ya validada:
+
+\[
+\mathcal T_{\mathrm{IODTS}}
+=
+\langle
+S,
+A^{in},
+A^{out},
+A^{int},
+\to
+\rangle,
+\]
+
+con \(A^{in},A^{out},A^{int}\) disjuntos y cuya unión agota el alfabeto relevante.
+
+La motivación independiente es operacional:
+
+- inputs son acciones controladas/proporcionadas por el entorno;
+- outputs son acciones localmente controladas y externamente expuestas;
+- internal actions permanecen bajo control del componente y no cruzan su interfaz declarada;
+- compatibility/refinement se evalúan respecto de esa polaridad y dinámica, no de un contorno dibujado después.
+
+Exergism no importa la conclusión “todo I/O automaton es contexto”. Solo usa esta teoría como una posible fuente independently grounded para RCC4/RCC5.
+
+#### 0.11.91r-ar. XR-I/O — interfaz pre-registrada para ejecuciones posteriores
+
+El script XR-1 contiene ahora, antes de nuevas ejecuciones, la firma candidata:
+
+\[
+A^{in}_{XR}
+=
+\varnothing,
+\]
+
+\[
+A^{out}_{XR}
+=
+\{\texttt{activate}\},
+\]
+
+\[
+A^{int}_{XR}
+=
+\{\texttt{close},\texttt{idle}\}.
+\]
+
+La asignación se registra en código y CI verifica:
+
+1. disjointness de las tres clases;
+2. exhaustividad sobre las actions declaradas;
+3. \(\texttt{close}\) solo está habilitada en \(s_0\) y se clasifica internal;
+4. \(\texttt{activate}\) solo está habilitada en \(s_1\) y se clasifica output;
+5. \(\texttt{idle}\) permanece internal en ambos estados;
+6. el único split no trivial de \(\{s_0,s_1\}\) hace cruzar la transición internal \(\texttt{close}\), por lo que no preserva la misma component interface.
+
+Esto mejora UG6 porque la frontera deja de ser solo un subconjunto de roles: hay una semántica explícita de action ownership.
+
+#### 0.11.91r-as. IO-RC-T1 — qué rivales elimina la firma de interfaz
+
+Bajo la firma fija anterior:
+
+- separar \(s_0\) y \(s_1\) en dos componentes convertiría \(\texttt{close}\) de internal a cross-boundary; no preserva la misma interface;
+- identificar \(s_0\sim s_1\) elimina la diferencia de enabled output \(\texttt{activate}\);
+- añadir \(\texttt{irrelevant\_noise}\) como estado local introduce una distinción que no afecta ninguna action/interface/continuation relevante;
+- recodificaciones fieles permanecen equivalentes;
+- proper role cuts siguen fallando FR1.
+
+Así la teoría de interfaz reduce materialmente la clase rival.
+
+Sin embargo:
+
+\[
+\boxed{
+\text{pre-registered interface signature}
+\not\Rightarrow
+\text{ontically grounded interface}.
+}
+\]
+
+#### 0.11.91r-at. IAI-T1 — Interface Assignment Independence
+
+Para usar \(\mathcal T_{\mathrm{IODTS}}\) en IA0-U necesitamos una condición adicional:
+
+\[
+\boxed{
+\operatorname{InterfaceAssignmentIndependent}^{\mathsf M}
+(
+C,
+A^{in},A^{out},A^{int};
+\eta
+).
+}
+\]
+
+\(\eta\) debe justificar la polaridad/control de las actions mediante estructura operacional independiente del objetivo de obtener el cut.
+
+Requisitos mínimos:
+
+1. **IAI1 / control locus:** la clasificación input/output/internal corresponde a quién puede producir/aceptar la acción en la realización, no al nombre del label;
+2. **IAI2 / realized mediation:** al menos las clases de interacción usadas para ground de frontera poseen una realización host/environment efectiva;
+3. **IAI3 / no relabel rescue:** cambiar una action de internal a output no puede hacerse solo para salvar un rival cut;
+4. **IAI4 / environment witness:** cuando se afirma una interacción externa, existe una estructura environment-side distinta del estado local;
+5. **IAI5 / bypass accounting:** interacciones relevantes no clasificadas fuerzan revisión de la firma;
+6. **IAI6 / covariance:** recodificaciones fieles preservan la polaridad/control operacional.
+
+Entonces:
+
+\[
+\operatorname{InterfaceAssignmentIndependent}
++
+\operatorname{XR1FiniteRivalAudit}
+\]
+
+puede alimentar RCC4/RCC5.
+
+#### 0.11.91r-au. XR-I/O todavía no cierra IAI2/IAI4
+
+La firma recién pre-registrada resuelve el problema **post-hoc** para runs futuros, pero no fabrica una interacción externa que el witness actual no contiene.
+
+En el XR-1 vigente:
+
+- \(\texttt{close}\) se ejecuta dentro de la función host-side;
+- \(\texttt{activate}\) aparece como capacidad habilitada, no como output efectivamente emitido hacia un environment token distinto;
+- no existe todavía una estructura environment-side cuya interacción sea parte del run certificado.
+
+Por tanto:
+
+\[
+\boxed{
+IAI1/IAI3/IAI6
+\text{ son fuertes candidatos,}
+\qquad
+IAI2/IAI4
+\text{ permanecen abiertos.}
+}
+\]
+
+Y en consecuencia:
+
+\[
+\boxed{
+UG6_{XR1}
+\text{ sigue PARTIAL.}
+}
+\]
+
+La pre-registration no se usa retroactivamente para elevar el status del run anterior.
+
+#### 0.11.91r-av. Requisitos de XR-2 — componente realmente abierto
+
+El siguiente witness ejecutable debe añadir una interacción environment/component sin perder las garantías formales ganadas.
+
+Definimos el target **XR-2** por obligaciones, todavía no por implementación:
+
+1. **XIO1 / separate environment:** existe \(E_H\) host-side distinto del component state;
+2. **XIO2 / pre-registered channel:** input/output/internal alphabet y channel semantics se fijan en código antes del run;
+3. **XIO3 / actual input or output:** al menos una transición actual cruza la interfaz mediante el channel declarado;
+4. **XIO4 / local mediation:** el efecto del environment sobre el estado local factoriza por el input channel; no hay acceso oculto necesario;
+5. **XIO5 / output witness:** cuando una capacidad output se declara constitutiva, existe un receiver/environment-side observation independiente;
+6. **XIO6 / negative controls:** variaciones environment-side fuera del channel que se declaran irrelevantes quedan screened-off;
+7. **XIO7 / rival closure:** la semántica I/O permite demostrar RCC1–RCC6 para la clase de cuts del witness;
+8. **XIO8 / scope discipline:** cualquier interaction token actual se coordina con OntProd/GenEvent/RegimeTotal; no se ocultan eventos reales fuera del scope para salvar el witness.
+
+XR-2 no debe ser “XR-1 con más código”. Su razón de ser es atacar exactamente:
+
+\[
+\boxed{
+IAI2 + IAI4 + RCC5 + UG6.
+}
+\]
+
+Solo después tendría sentido volver a preguntar si XR-2 descarga UnitGroundAdequate completo.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
