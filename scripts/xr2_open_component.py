@@ -328,9 +328,13 @@ def verify() -> dict[str, object]:
         and trial_a["received_output"] == trial_b["received_output"]
     )
 
+    worker_args = component_worker.__code__.co_varnames[
+        : component_worker.__code__.co_argcount
+    ]
     channel_mediation = (
-        component_worker.__code__.co_argcount == 1
+        worker_args == ("channel", "emit_output")
         and "environment_noise" not in component_worker.__code__.co_names
+        and "environment_noise" not in worker_args
     )
 
     closure = least_closure(SEED)
