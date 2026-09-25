@@ -23,9 +23,10 @@ NORMATIVE = ROOT / "docs/proposals/autodescripcion-realidad-distincion.md"
 LEDGER = ROOT / "docs/proposals/autodescripcion-realidad-distincion-review-ledger.md"
 REFERENCES = ROOT / "docs/proposals/autodescripcion-realidad-distincion-references.md"
 TECHNICAL = ROOT / "docs/proposals/work/autodescripcion-realidad-distincion-derivaciones-2026-09-22.md"
+ARCHAEOLOGY = ROOT / "docs/proposals/work/autodescripcion-realidad-distincion-arqueologia-2026-09-25.md"
 ARCHIVE = ROOT / "docs/proposals/archive/autodescripcion-realidad-distincion-pre-consolidacion-2026-09-22.md"
 
-ACTIVE_DOCS = (NORMATIVE, LEDGER, REFERENCES, TECHNICAL)
+ACTIVE_DOCS = (NORMATIVE, LEDGER, REFERENCES, TECHNICAL, ARCHAEOLOGY)
 
 MAX_NORMATIVE_LINES = 2850
 MAX_SECTION4_LINES = 400
@@ -1078,6 +1079,45 @@ def validate_regime_total_contract(
             "GeneTotal architecture as current"
         )
 
+def validate_architecture_archaeology(document: MarkdownDocument) -> None:
+    """Keep the repository architecture map aligned with the active theory."""
+    for level, heading in (
+        (2, "10. Arcos actuales que organizan toda la PR"),
+        (3, "B. Realidad estructural / emergencia"),
+        (3, "C. Individuación contextual"),
+        (3, "F. Interface, memoization, baking y persistencia"),
+        (3, "G. Shared space, genesis, embedding y generaciones"),
+        (3, "I. Regla arquitectónica de ownership"),
+        (2, "13. Política de arqueología a partir de ahora"),
+    ):
+        document.section_bounds(level, heading)
+
+    required_fragments = (
+        r"\varepsilon RSP\text{-}R",
+        r"IA0\text{-}R",
+        "No produce IA0-U ni ContextIndividuation.",
+        "ContinuationProfile no se deriva de Bake",
+        "ContextEmbedding por sí solo no crea CtxParent ni aumenta generación.",
+        "no existe un blocker autónomo `HostTheoryAdequate`",
+        "si el nuevo predicado es reducible a una conjunción de guards existentes",
+    )
+    for fragment in required_fragments:
+        if fragment not in document.text:
+            fail(
+                "Architecture archaeology regression: missing current invariant "
+                f"{fragment!r}"
+            )
+
+    forbidden_fragments = (
+        "realización estructural → IA0 | εRSP para XR-ε",
+    )
+    for fragment in forbidden_fragments:
+        if fragment in document.text:
+            fail(
+                "Architecture archaeology regression: superseded dependency path "
+                f"reappeared: {fragment!r}"
+            )
+
 
 def validate_normative_size(document: MarkdownDocument) -> None:
     line_count = len(document.lines)
@@ -1112,6 +1152,7 @@ def main() -> None:
 
     validate_ledger(documents[LEDGER])
     validate_archive(archive_document)
+    validate_architecture_archaeology(documents[ARCHAEOLOGY])
 
     history_start = documents[NORMATIVE].heading_start(
         1,
@@ -1137,6 +1178,7 @@ def main() -> None:
     print("Ledger identifiers: unique")
     print("Critical REV-07f math: parser-classified canonical blocks")
     print("Historical archive: explicitly superseded")
+    print("Architecture archaeology: current dependency invariants preserved")
     print("REV-07f RegimeTotal contract: preserved")
 
 
