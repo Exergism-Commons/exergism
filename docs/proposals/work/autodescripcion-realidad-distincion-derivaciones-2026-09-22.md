@@ -15693,6 +15693,197 @@ Por tanto:
 
 La relación es análoga a assume/guarantee contracts: el componente garantiza ciertas conductas bajo assumptions explícitas sobre environments permisibles; una violación de assumptions no prueba la guarantee, pero tampoco puede esconderse como si fuera una variación irrelevante.
 
+#### 0.11.91r-be. UG6 se descompone: signature rivals frente a host rivals
+
+La noción anterior de RivalClassCompleteness mezclaba dos espacios adversariales distintos.
+
+Definimos:
+
+\[
+\boxed{
+UG6
+=
+UG6\text{-}S
++
+UG6\text{-}H.
+}
+\]
+
+**UG6-S / signature rival discrimination.** Todo rival del mismo nivel expresable mediante los constructores de la teoría formal usada para individuar \(C\) es rechazado, clasificado como equivalente o reclasificado independientemente como nesting/overlap/genesis.
+
+**UG6-H / host rival coverage.** La realización concreta no contiene una estructura constitutivamente relevante que genere un rival del mismo nivel y que haya sido omitida por la firma formal.
+
+Así:
+
+\[
+UG6\text{-}S
+\]
+
+es una obligación de completitud **intra-teoría**, mientras:
+
+\[
+UG6\text{-}H
+\]
+
+es una obligación de adecuación de la teoría respecto de su realizador.
+
+No se adopta:
+
+\[
+UG6\text{-}S
+\Rightarrow
+UG6.
+\]
+
+#### 0.11.91r-bf. RivalGrammar de \(\mathcal T_{\mathrm{IODTS}}\)
+
+Para el witness finito XR-2 fijamos antes de la conclusión una gramática de transformaciones rivales generada por los primitivos de la teoría:
+
+1. **state quotient/partition:** identificar o separar estados locales;
+2. **action-polarity reassignment:** reasignar cada action a input/output/internal;
+3. **environment refinement:** introducir distinciones environment-side presentes en el RealizationEnvelope;
+4. **closed composition:** añadir el environment al componente y obtener un sistema compuesto de orden superior;
+5. **faithful recoding:** renombrar estados/actions preservando transición y polaridad.
+
+La gramática no usa \(R_i\), RegimeTotal ni “preserva el contexto correcto” para seleccionar sus miembros.
+
+Para XR-2 la parte combinatoria finita es explícita:
+
+\[
+3^3=27
+\]
+
+asignaciones de polaridad para:
+
+\[
+\{\texttt{close},\texttt{activate},\texttt{idle}\},
+\]
+
+dos quotients relevantes sobre \(\{s_0,s_1\}\) —identidad y merge— y un split no trivial de los dos estados.
+
+#### 0.11.91r-bg. XR2-SIG-T — descarga de UG6-S
+
+El script enumera las 27 asignaciones de polaridad. El control locus realizado selecciona una única asignación:
+
+\[
+\texttt{close}\mapsto in,
+\qquad
+\texttt{activate}\mapsto out,
+\qquad
+\texttt{idle}\mapsto internal.
+\]
+
+Las otras 26 contradicen quién produce/recibe efectivamente las actions en el episodio host-side.
+
+Además:
+
+- el quotient \(s_0\sim s_1\) borra la diferencia de enabled external profile;
+- el split \(s_0|s_1\) no preserva la misma ownership/interface de la transición input-mediated;
+- el refinement por environment_noise falla UG3/RE4 porque la variación queda screened-off;
+- añadir \(E_H\) al component produce el **closed composition** \(E_H\oplus C_H\), candidato de orden superior, no un same-level rival del open component;
+- la recodificación explícita \(s_0,s_1,\texttt{close},\texttt{activate},\texttt{idle}\mapsto q_0,q_1,\texttt{seal},\texttt{signal},\texttt{stutter}\) preserva polaridad y trace structure y queda clasificada como equivalencia.
+
+Por tanto:
+
+\[
+\boxed{
+UG6\text{-}S_{XR2}
+=
+\mathsf{PASS}.
+}
+\]
+
+Este PASS es exhaustivo **respecto de la RivalGrammar declarada de \(\mathcal T_{\mathrm{IODTS}}\)**.
+
+#### 0.11.91r-bh. UG6-H sigue abierto
+
+La realización XR-2 vive sobre Python, multiprocessing, un OS y hardware. La firma I/O no enumera directamente toda estructura host-side posible.
+
+UG6-H exige que cualquier dependencia host-side constitutivamente relevante:
+
+1. esté absorbida por la relación de realización y preserve el mismo perfil;
+2. aparezca como ordinary interaction de \(\mathcal A\);
+3. aparezca como fault/lifecycle event de \(\mathcal F\);
+4. o falsifique de forma observable la realization/envelope vigente.
+
+Si aparece una dependencia que altera \(\Xi_C\) sin caer en ninguno de estos casos, XR-2 falla UG6-H hasta revisar la teoría.
+
+Con la evidencia actual:
+
+\[
+\boxed{
+UG6\text{-}H_{XR2}
+=
+\mathsf{PARTIAL}.
+}
+\]
+
+y, por tanto:
+
+\[
+\boxed{
+UG6_{XR2}
+=
+\mathsf{PARTIAL}.
+}
+\]
+
+Esto evita dos errores opuestos: exigir una enumeración microscópica de todo el hardware o declarar completa una firma porque el modelador decidió ignorar el host.
+
+#### 0.11.91r-bi. Estado actualizado de UnitGround para XR-2
+
+El nuevo CIT positivo elimina el rol output y produce una pérdida observable del output constitutivo, mientras el control environment_noise deja intacta la traza. Por tanto:
+
+\[
+\boxed{
+UG4_{XR2}
+=
+\mathsf{PASS}.
+}
+\]
+
+La recodificación explícita preserva state/action typing, polaridad y estructura de trace:
+
+\[
+\boxed{
+UG8_{XR2}
+=
+\mathsf{PASS}.
+}
+\]
+
+La auditoría queda:
+
+\[
+\boxed{
+\operatorname{UGAudit}_{XR2}
+=
+\langle
+P,P,P,P,\partial,\partial,P,P
+\rangle.
+}
+\]
+
+con refinamiento:
+
+\[
+UG6\text{-}S=P,
+\qquad
+UG6\text{-}H=\partial.
+\]
+
+El cuello de XR-2 se reduce por tanto a:
+
+\[
+\boxed{
+UG5
++
+UG6\text{-}H.
+}
+\]
+
+Ambas deudas son ahora dos caras del mismo problema: **cobertura de la relación entre firma y realizador**, no falta de una frontera operacional.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
