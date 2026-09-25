@@ -716,13 +716,19 @@ def verify() -> dict[str, object]:
             ),
         },
         "host_projection_audit": {
-            "host_theory": "H_MP_XR2",
+            "diagnostic_grammar": "H_MP_XR2",
             "declared_transition_grammar": HOST_TRANSITION_GRAMMAR,
-            "host_projection_complete_for_declared_grammar": all(
+            "classification_complete_for_declared_grammar": all(
                 host_projection_checks.values()
             ),
-            "host_theory_adequate_for_full_runtime": False,
-            "remaining_debt": "HostTheoryAdequate(H_MP_XR2, H_XR2)",
+            "claim_scope": (
+                "implementation-side diagnostic evidence only; relevance is "
+                "owned by InterfaceContract/MC/RE/UG guards"
+            ),
+            "remaining_debt": (
+                "contract/role/interactions coverage and same-level rival-cut "
+                "discrimination"
+            ),
         },
         "rival_signature_audit": {
             "action_polarity_assignments": 27,
@@ -741,10 +747,9 @@ def verify() -> dict[str, object]:
             "scope, and exhaustive enumeration of the declared finite I/O audit "
             "language. Host attacks now cover channel loss, process termination, "
             "environment timing variation, and a Queue transport refinement, "
-            "HostProjectionComplete is checked for the declared H_MP_XR2 "
-            "grammar, but HostTheoryAdequate for the full runtime remains "
-            "unproved; therefore exhaustive realizer coverage and "
-            "ContextIndividuation are not claimed."
+            "classification is checked for the declared H_MP_XR2 diagnostic "
+            "grammar, but that grammar is not an ontology of the full runtime; "
+            "contract/role coverage and ContextIndividuation are not claimed."
         ),
     }
 
