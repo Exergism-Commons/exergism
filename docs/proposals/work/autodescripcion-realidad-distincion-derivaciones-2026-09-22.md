@@ -14341,7 +14341,7 @@ No es un nuevo truthmaker por nombre. Es un bundle de obligaciones que debe redu
 1. **UG1 / pre-index independence:** \(g\) se caracteriza sin \(R_i\), ContextIndividuation, IndexAdmission, RegimeTotal o SameRegime.
 2. **UG2 / positive actuality:** \(g\) está efectivamente realizado; una regularidad del modelo o una frontera dibujada no bastan.
 3. **UG3 / profile relevance:** \(g\) fundamenta al menos una parte no eliminable de \(\Xi_C\); si se elimina \(g\) de la teoría sin alterar typing, boundary, interfaces, persistence/dynamics ni rival-cut status, \(g\) no estaba individuando \(C\).
-4. **UG4 / constitutive sensitivity:** existen perturbaciones/intervenciones admisibles sobre \(g\) que, manteniendo fijo lo irrelevante, alteran el perfil de unidad de \(C\) o fuerzan reindividuación/revisión del cut. No basta que alteren una output variable cualquiera.
+4. **UG4 / constitutive sensitivity:** existen intervenciones admisibles sobre \(g\), fijadas pre-indexadamente y con controles negativos apropiados, que producen un `UnitProfileBreak` en \(\Xi_C\). `UnitProfileBreak` se define sin ContextIndividuation/IndexAdmission: exige pérdida de typing/boundary/interface/continuation/rival-cut coherence del perfil candidato, no mera variación de output.
 5. **UG5 / exterior screening de unidad:** fijados \(g\), las interfaces declaradas y el estado relevante, variaciones externas que \(\mathcal T\) declara irrelevantes no cambian el perfil de unidad; si lo hacen aparece un hidden constitutive bypass.
 6. **UG6 / rival-cut discrimination:** \(g\) debe resolver o clasificar las rivalidades relevantes mediante equivalencia, nesting, overlap, genesis o rejection; no puede ser compatible indiferentemente con cualquier partición conveniente.
 7. **UG7 / no real-pattern promotion:** projectability, compresión, macroeficacia, autonomía causal o utilidad explicativa de \(P\) no cuentan por sí solas como UG3–UG6.
@@ -14809,6 +14809,244 @@ de:
 \]
 
 Sin esa distinción, UG4 corre el riesgo de presuponer exactamente la individuación que pretende fundamentar.
+
+#### 0.11.91r-ah. UnitProfileBreak — sensibilidad constitutiva sin presuponer reindividuación
+
+La formulación inicial de UG4 contenía una circularidad potencial: exigir una intervención que “fuerce reindividuación” puede presuponer que ya sabemos qué cuenta como la misma unidad.
+
+La reemplazamos por un test completamente pre-indexado.
+
+Sea:
+
+\[
+\Xi_C
+=
+\left\langle
+\widehat\Lambda_C,
+\widehat{\mathbb I}_C,
+\widehat{\mathbb P}_C,
+\widehat{\mathsf{CP}}_C,
+\partial_C
+\right\rangle.
+\]
+
+Definimos:
+
+\[
+\boxed{
+\operatorname{UnitProfileBreak}^{\mathsf M}_{\mathcal T}
+(
+C,\Xi_C;\delta
+)
+}
+\]
+
+cuando una intervención \(\delta\) produce al menos uno de estos fallos, evaluados sin usar ContextIndividuation:
+
+1. **UPB1 / typing break:** operaciones/estados anteriormente co-tipados dejan de satisfacer las reglas locales que justificaban \(\widehat\Lambda_C\);
+2. **UPB2 / boundary break:** \(\partial_C\) deja de mediar una dependencia que la teoría considera constitutivamente relevante;
+3. **UPB3 / interface break:** aparece una dependencia relevante que no factoriza por \(\widehat{\mathbb I}_C\);
+4. **UPB4 / continuation break:** la dinámica ya no induce el mismo tipo de continuation profile o deja de estar definida bajo el contract state correspondiente;
+5. **UPB5 / closure/role break:** un rol constitutivo previamente cubierto desaparece o queda desacoplado de la organización candidata;
+6. **UPB6 / rival-cut break:** la estructura que privilegiaba \(C\) deja de discriminarlo frente a un rival cut anteriormente rechazado.
+
+No cuenta como UnitProfileBreak:
+
+\[
+\text{output changes}
+\quad\text{con}\quad
+\Xi_C\text{ preservado}.
+\]
+
+Así distinguimos:
+
+\[
+\boxed{
+\text{behavioral sensitivity}
+\neq
+\text{constitutive sensitivity}.
+}
+\]
+
+#### 0.11.91r-ai. CIT — Constitutive Intervention Test
+
+Sea \(\Delta_g\) una familia pre-registrada de intervenciones sobre el ground candidato \(g\), definida sin usar el resultado “\(C\) es contexto”.
+
+Definimos:
+
+\[
+\operatorname{CITAdequate}^{\mathsf M}
+(
+\mathcal T,C;g,\Xi_C,\Delta_g
+)
+\]
+
+si:
+
+1. **CIT1 / preregistration:** \(g,\Xi_C,\Delta_g\) se fijan antes de observar qué intervención favorece el cut;
+2. **CIT2 / positive arm:** existe \(\delta^+\in\Delta_g\) que altera una parte del ground postulada como constitutiva y produce UnitProfileBreak;
+3. **CIT3 / negative control:** existe \(\delta^-\) sobre una variable declarada irrelevante que cambia físicamente/operacionalmente el host sin producir UnitProfileBreak;
+4. **CIT4 / matched background:** las diferencias no dirigidas al contraste relevante se mantienen fijas o quedan explícitamente modeladas;
+5. **CIT5 / no output substitution:** un cambio de output sin UPB1–UPB6 no satisface CIT2;
+6. **CIT6 / recoding covariance:** recodificaciones fieles preservan qué intervenciones son constitutive-positive y cuáles controles;
+7. **CIT7 / bypass discipline:** si \(\delta\) actúa por un canal no representado pero constitutivamente relevante, el resultado es revisar \(\Xi_C\), no declararlo “externo”;
+8. **CIT8 / no identity premise:** ninguna condición contiene SameContext, ContextIndividuation, IndexAdmission o “reindividuación” como antecedente.
+
+Entonces UG4 se descarga por:
+
+\[
+\boxed{
+\operatorname{CITAdequate}
+\Rightarrow
+UG4.
+}
+\]
+
+CIT no demuestra UG5 ni UG6. Una unidad puede ser constitutivamente sensible a su ground y seguir mal delimitada respecto del exterior o de rival cuts.
+
+#### 0.11.91r-aj. CIT-XR1 — XR-1 sí descarga UG4
+
+XR-1 ya contiene un experimento mínimo de intervención:
+
+- variables localmente relevantes: \(\texttt{phase}\), \(\texttt{payload}\);
+- control host-side declarado irrelevante: \(\texttt{irrelevant\_noise}\);
+- mapping \(\varrho\) pre-registrado;
+- transición host/local pre-registrada.
+
+El script prueba:
+
+\[
+\delta^-:
+\texttt{irrelevant\_noise}
+\mapsto
+n
+\]
+
+para múltiples \(n\), manteniendo:
+
+\[
+\rho(h)=s_0,
+\qquad
+\rho(T_H(h))=s_1.
+\]
+
+Por tanto el control negativo no produce UnitProfileBreak.
+
+En cambio:
+
+\[
+\delta^+_1:
+(\texttt{phase}=0,\texttt{payload}=0)
+\mapsto
+(0,1)
+\]
+
+o:
+
+\[
+\delta^+_2:
+(0,0)
+\mapsto
+(1,0)
+\]
+
+hacen que \(\rho\) deje de reconocer un estado local válido. Eso es un UPB1/UPB4: se rompe el typing/continuation profile de la realización candidata, no solo una salida.
+
+OR5/OR8/OR9 aportan preregistration/no-certificate/prefix-locality y OR6 la covariancia.
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{CITAdequate}_{XR1}
+}
+\]
+
+y actualizamos:
+
+\[
+\boxed{
+UG4_{XR1}=\mathsf{PASS}.
+}
+\]
+
+La matriz XR-1 pasa a:
+
+\[
+\operatorname{UGAudit}_{XR1}
+=
+\langle
+P,P,P,P,P,\partial,P,P
+\rangle.
+\]
+
+**Resultado:** para XR-1 la única deuda UnitGround restante es ahora **UG6 / rival-cut discrimination**.
+
+#### 0.11.91r-ak. CIT no promociona automáticamente los casos empíricos
+
+Para Redis, E. coli y Nest existen perturbaciones naturales plausibles:
+
+- crash/configuration/state corruption;
+- envelope damage/stress/division perturbations;
+- sensor/wiring/power/controller perturbations.
+
+Pero el corpus actual no posee para ellos un diseño de intervención suficientemente especificado que separe:
+
+\[
+\delta^+
+\quad\text{de}\quad
+\delta^-
+\]
+
+bajo background matching y mida UPB1–UPB6.
+
+Por tanto permanecen:
+
+\[
+UG4_{\mathrm{Redis}}
+=
+UG4_{\mathrm{Ecoli}}
+=
+UG4_{\mathrm{Nest}}
+=
+\mathsf{PARTIAL}.
+\]
+
+Esto evita convertir “sabemos que el sistema cambia cuando lo dañamos” en constitutive sensitivity.
+
+#### 0.11.91r-al. Deuda reducida: UG5 y UG6, con UG6 único blocker de XR-1
+
+Tras CIT-XR1:
+
+\[
+\boxed{
+\operatorname{UGAudit}_{XR1}
+=
+\langle
+P,P,P,P,P,\partial,P,P
+\rangle.
+}
+\]
+
+Por tanto, si logramos descargar UG6 para XR-1 mediante una enumeración/teorema de rival cuts pre-indexados, tendremos:
+
+\[
+\boxed{
+\operatorname{UnitGroundAdequate}_{XR1}.
+}
+\]
+
+Eso cerraría IA0-U para el witness finito **sin** afirmar todavía que el criterio general esté universalmente resuelto.
+
+Para los tres casos empíricos, UG4–UG6 siguen parciales. El próximo target formal de mayor rendimiento es, por tanto:
+
+\[
+\boxed{
+UG6_{XR1}.
+}
+\]
+
+XR-1 es finito y puede permitir un ataque exhaustivo sobre la clase de cuts admitida por \(\mathcal T_{\mathrm{DTS}}\). La condición crítica será no definir esa clase usando retrospectivamente la closure o el scope que queremos justificar.
 
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
