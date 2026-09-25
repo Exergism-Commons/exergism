@@ -16362,6 +16362,143 @@ Solo después puede intentarse:
 \operatorname{RealizerCoverageAdequate}_{XR2}.
 \]
 
+#### 0.11.91r-bv. \(\mathcal H_{MP}^{XR2}\) — teoría host pre-registrada
+
+A partir de la semántica pública de multiprocessing y de los recursos realmente usados por XR-2, se fija antes de la conclusión la gramática host:
+
+\[
+\mathcal H_{MP}^{XR2}
+=
+\langle
+Q_H,
+\Lambda_H,
+\to_H,
+\mathsf{Class}_H
+\rangle.
+\]
+
+La clasificación declarada es:
+
+\[
+\begin{array}{l|l}
+\text{host event} & \text{projection class}\\
+\hline
+\text{process start} & stutter\\
+\texttt{close send/receive} & interface\\
+\texttt{activate send/receive} & interface\\
+\text{unsupported input} & fault\\
+\text{channel EOF} & fault\\
+\text{process termination} & fault\\
+\text{normal process exit} & stutter\\
+\text{environment noise} & stutter\\
+\text{environment send delay} & stutter\\
+\text{Pipe}\to\text{Queue} & refinement
+\end{array}
+\]
+
+El start-method es parte explícita de la teoría:
+
+\[
+\mathsf{StartMethod}_{XR2}
+=
+spawn.
+\]
+
+No se afirma que esta gramática agote Python, el OS o la microfísica. Es el fragmento host que la investigación declara usar para realizar el witness.
+
+#### 0.11.91r-bw. HMP-T1 — HostProjectionComplete sobre la gramática declarada
+
+El ejecutable verifica:
+
+1. **HPC1/HPC2:** todos los pasos send/receive declarados quedan clasificados como interface;
+2. **HPC3:** process start/normal exit, environment_noise y environment_send_delay quedan clasificados como stutter;
+3. **HPC4:** unsupported input, channel EOF y process termination quedan clasificados como fault/lifecycle;
+4. **HPC5:** Pipe→Queue queda clasificado como refinement;
+5. **HPC6:** ningún evento de la gramática queda sin clase;
+6. **HPC7:** la gramática existe como constante pre-registrada, no se construye desde el resultado del run;
+7. **HPC8:** la arquitectura mantiene extension pressure: un nuevo host event relevante no cubierto debe añadirse/reabrir la auditoría;
+8. el start-method observado por el checker es spawn.
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{HostProjectionComplete}
+(
+\mathcal H_{MP}^{XR2},
+\mathcal T_{\mathrm{IODTS}},
+H_{XR2};
+\varrho,\mathcal E
+)
+}
+\]
+
+queda **PASS respecto de la gramática declarada**.
+
+Esto no entra en contradicción con RCA-X1: RCA-X1 prohibía derivar completitud universal desde una batería finita. HMP-T1 demuestra completitud formal sobre un lenguaje host explícitamente fijado.
+
+#### 0.11.91r-bx. HOST-ADEQ — la deuda se mueve a la adecuación de \(\mathcal H_{MP}\)
+
+Queda abierta:
+
+\[
+\boxed{
+\operatorname{HostTheoryAdequate}
+(
+\mathcal H_{MP}^{XR2},
+H_{XR2}
+).
+}
+\]
+
+La pregunta ya no es si los eventos **dentro** de la gramática proyectan: eso está cerrado por HMP-T1.
+
+La pregunta es si la gramática omite algún tipo de dependencia del runtime/OS que sea constitutivamente relevante para \(\Xi_C\).
+
+Con el estado actual:
+
+\[
+\boxed{
+\operatorname{HostProjectionComplete}_{XR2}
+=
+\mathsf{PASS},
+}
+\]
+
+pero:
+
+\[
+\boxed{
+\operatorname{HostTheoryAdequate}_{XR2}
+=
+\mathsf{PARTIAL}.
+}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{RealizerCoverageAdequate}_{XR2}
+=
+\mathsf{PARTIAL}.
+}
+\]
+
+El cuello se ha estrechado otra vez:
+
+\[
+\boxed{
+\text{RCA debt}
+=
+\text{adequacy of the declared host theory},
+}
+\]
+
+no falta de clasificación interna ni falta de tests sobre la gramática.
+
+La siguiente objeción adversarial debe exhibir **un tipo de dependencia host constitutivamente relevante que no esté representado en \(\mathcal H_{MP}^{XR2}\)**. Si no puede hacerse bajo una teoría independiente suficientemente rica del runtime, podría cerrarse HostTheoryAdequate; no se cerrará simplemente por no encontrar más ejemplos.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
