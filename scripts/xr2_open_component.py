@@ -125,6 +125,17 @@ def component_worker(channel, emit_output: bool = True) -> None:
     channel.close()
 
 
+def channel_loss_worker(recv_conn) -> None:
+    """Dedicated one-way receive endpoint for an unambiguous channel-loss fault."""
+    try:
+        recv_conn.recv()
+    except EOFError:
+        recv_conn.close()
+        raise SystemExit(CHANNEL_LOSS_EXIT)
+
+    recv_conn.close()
+
+
 def queue_component_worker(input_queue, output_queue) -> None:
     """Faithful transport refinement using multiprocessing queues."""
     try:
@@ -189,13 +200,15 @@ def run_trial(
 
 
 def run_channel_loss_trial() -> dict[str, object]:
-    """Close the environment endpoint before any input is delivered."""
-    parent, child = Pipe(duplex=True)
-    process = Process(target=component_worker, args=(child,))
+    """Close the sole sender of a one-way channel before any input is delivered."""
+    recv_conn, send_conn = Pipe(duplex=False)
+    process = Process(target=channel_loss_worker, args=(recv_conn,))
     process.start()
-    child.close()
+    recv_conn.close()
 
-    parent.close()
+    # The environment owns the only sending endpoint.  Closing it makes EOF
+    # the only admissible result on the component-side receive endpoint.
+    send_conn.close()
     process.join(timeout=10)
 
     if process.is_alive():
