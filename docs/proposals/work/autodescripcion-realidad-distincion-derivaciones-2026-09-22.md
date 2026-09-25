@@ -5987,8 +5987,10 @@ AI-UD obliga a elegir, o al menos distinguir, tres arquitecturas posibles.
 
 \[
 \operatorname{WorldMaking}^{\mathsf M}(W;C)
++
+\operatorname{ContextAdequate}^{\mathsf M}(C,\chi_W)
 \Rightarrow
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_W).
+\operatorname{ContextIndividuation}^{\mathsf M}(C).
 \]
 
 \(W\) no tiene por qué ser binaria, local, espaciotemporal ni siquiera una única relación. Pero debe ser natural/ontológicamente justificada, recoding-invariant y suficientemente discriminante para decidir co-contextualidad.
@@ -6051,10 +6053,10 @@ La distinción bona fide/fiat de Smith y Varzi es solo un precedente analógico 
 Así, una verdadera Cellular Reality fuerte exigiría:
 
 \[
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
 \]
 
-con \(\chi\) suficientemente independiente para impedir que la “membrana” sea simplemente el contorno elegido por nuestra representación.
+con un witness \(\chi\) suficientemente independiente para impedir que la “membrana” sea simplemente el contorno elegido por nuestra representación.
 
 Esto refuerza CI7/CI13: si hay nesting legítimo, debe estar ontológicamente estructurado; si solo hay múltiples coarse-grainings equivalentes, no debemos multiplicar índices.
 
