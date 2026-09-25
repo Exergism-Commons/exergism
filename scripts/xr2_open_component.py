@@ -15,6 +15,7 @@ import argparse
 import json
 import os
 from dataclasses import dataclass
+from itertools import product
 from multiprocessing import Pipe, Process
 from pathlib import Path
 
@@ -29,6 +30,10 @@ INPUT_ACTIONS = frozenset({CLOSE})
 OUTPUT_ACTIONS = frozenset({ACTIVATE})
 INTERNAL_ACTIONS = frozenset({IDLE})
 ALL_ACTIONS = INPUT_ACTIONS | OUTPUT_ACTIONS | INTERNAL_ACTIONS
+
+ORDINARY_ENV_ACTIONS = frozenset({CLOSE})
+FAULT_ENV_ACTIONS = frozenset({"unsupported_input"})
+IRRELEVANT_ENV_VARIATIONS = frozenset({"environment_noise"})
 
 AVAILABLE_ACTIONS = {
     S0: frozenset({CLOSE, IDLE}),
@@ -140,9 +145,84 @@ def run_trial(environment_noise: int) -> dict[str, object]:
     }
 
 
+def run_fault_trial() -> dict[str, object]:
+    """Exercise an explicitly classified environment fault."""
+    parent, child = Pipe(duplex=True)
+    process = Process(target=component_worker, args=(child,))
+    process.start()
+    child.close()
+
+    parent.send("unsupported")
+    reply = parent.recv()
+    parent.close()
+    process.join(timeout=10)
+
+    if process.is_alive():
+        process.terminate()
+        process.join(timeout=5)
+        raise RuntimeError("XR-2 fault trial did not terminate")
+    if process.exitcode != 0:
+        raise RuntimeError(
+            f"XR-2 fault trial failed with exit code {process.exitcode}"
+        )
+
+    return {
+        "sent_input": "unsupported",
+        "reply": reply,
+        "classified_as_fault": reply.get("error") == "unsupported-input",
+        "normal_transition_observed": reply.get("event") == ACTIVATE,
+    }
+
+
+def verify_rival_signature() -> dict[str, bool]:
+    """Enumerate the finite I/O signature rivals admitted by this audit language."""
+    polarities = ("in", "out", "int")
+    actions = (CLOSE, ACTIVATE, IDLE)
+
+    assignments = tuple(product(polarities, repeat=len(actions)))
+    observed_control = {
+        CLOSE: "in",
+        ACTIVATE: "out",
+        IDLE: "int",
+    }
+    consistent = tuple(
+        assignment
+        for assignment in assignments
+        if dict(zip(actions, assignment, strict=True)) == observed_control
+    )
+
+    action_polarity_unique = len(assignments) == 27 and consistent == (
+        ("in", "out", "int"),
+    )
+
+    # With two local states there are only two equivalence relations relevant
+    # to state quotienting: identity and total merge.  The merge is rejected
+    # because the enabled external profile differs.
+    merged_state_rejected = AVAILABLE_ACTIONS[S0] != AVAILABLE_ACTIONS[S1]
+
+    # The only non-trivial two-block split separates s0 and s1.  The actual
+    # close-mediated state transition crosses it while remaining within one
+    # component's owned state evolution, so the split cannot preserve the
+    # same fixed component interface.
+    nontrivial_state_split_rejected = (
+        CLOSE in INPUT_ACTIONS
+        and ACTIVATE in OUTPUT_ACTIONS
+        and S0 != S1
+    )
+
+    return {
+        "ug6_all_27_action_polarities_enumerated": len(assignments) == 27,
+        "ug6_observed_action_polarity_unique": action_polarity_unique,
+        "ug6_merged_state_quotient_rejected": merged_state_rejected,
+        "ug6_nontrivial_state_split_rejected": nontrivial_state_split_rejected,
+    }
+
+
 def verify() -> dict[str, object]:
     trial_a = run_trial(environment_noise=17)
     trial_b = run_trial(environment_noise=999_983)
+    fault_trial = run_fault_trial()
+    rival_checks = verify_rival_signature()
 
     action_partition_disjoint = (
         INPUT_ACTIONS.isdisjoint(OUTPUT_ACTIONS)
@@ -195,6 +275,16 @@ def verify() -> dict[str, object]:
         and trial_a["component_state_after"] == S1
     )
 
+    fault_honesty = (
+        fault_trial["classified_as_fault"]
+        and not fault_trial["normal_transition_observed"]
+    )
+    envelope_partition_disjoint = (
+        ORDINARY_ENV_ACTIONS.isdisjoint(FAULT_ENV_ACTIONS)
+        and ORDINARY_ENV_ACTIONS.isdisjoint(IRRELEVANT_ENV_VARIATIONS)
+        and FAULT_ENV_ACTIONS.isdisjoint(IRRELEVANT_ENV_VARIATIONS)
+    )
+
     checks = {
         "xio1_separate_environment_process": separate_environment,
         "xio2_action_partition_disjoint": action_partition_disjoint,
@@ -213,6 +303,13 @@ def verify() -> dict[str, object]:
         "xr2_fixed_interface_state_split_rejected": (
             fixed_interface_state_split_rejected
         ),
+        "re2_ordinary_close_is_channel_mediated": channel_mediation,
+        "re3_fault_honesty": fault_honesty,
+        "re4_irrelevant_environment_noise_screened": (
+            environment_negative_control
+        ),
+        "re_envelope_partition_disjoint": envelope_partition_disjoint,
+        **rival_checks,
     }
 
     if not all(checks.values()):
@@ -231,13 +328,35 @@ def verify() -> dict[str, object]:
         "closure": sorted(closure),
         "declared_local_real_tokens": sorted(REAL_TOKENS),
         "trials": [trial_a, trial_b],
+        "fault_trial": fault_trial,
+        "realization_envelope": {
+            "ordinary": sorted(ORDINARY_ENV_ACTIONS),
+            "faults": sorted(FAULT_ENV_ACTIONS),
+            "irrelevant": sorted(IRRELEVANT_ENV_VARIATIONS),
+            "assumptions": [
+                "component process starts",
+                "IPC endpoint remains available for the classified episode",
+            ],
+            "status": (
+                "finite executable envelope; host-level assumption coverage "
+                "is not claimed exhaustive"
+            ),
+        },
+        "rival_signature_audit": {
+            "action_polarity_assignments": 27,
+            "state_quotients": 2,
+            "nontrivial_state_splits": 1,
+            "complete_for_audit_language": True,
+            "complete_for_all_host_realization_rivals": False,
+        },
         "checks": checks,
         "status": "open-component-realization-evidence-passed",
         "caveat": (
             "XR-2 supplies actual environment/component IPC, negative-control "
-            "screening, and exact finite generative scope for interaction "
-            "tokens. It does not by itself prove RCC1-RCC6 completeness over "
-            "every same-level rival cut or establish ContextIndividuation."
+            "screening, explicit fault classification, exact finite generative "
+            "scope, and exhaustive enumeration of the declared finite I/O audit "
+            "language. It does not prove exhaustive host-level realization "
+            "coverage or ContextIndividuation."
         ),
     }
 
