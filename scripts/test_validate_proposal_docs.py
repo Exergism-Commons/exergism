@@ -205,6 +205,22 @@ class ContextRealityContractTests(unittest.TestCase):
                 MarkdownDocument(mutated),
             )
 
+    def test_rejects_missing_cross_domain_portability_contract(self) -> None:
+        heading = (
+            "#### 0.11.91r-o. DR-T1 — resultado de portabilidad de criterio, "
+            "no de identidad de mecanismo"
+        )
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed cross-domain portability contract",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
 
 class ArchiveContractTests(unittest.TestCase):
     def test_keywords_without_canonical_polarity_do_not_satisfy_banner(self) -> None:
