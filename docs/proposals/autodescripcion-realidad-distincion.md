@@ -153,7 +153,9 @@ $$
 \operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi,\mathcal T).
 $$
 
-La relatividad a \(\mathcal T\) y el witness \(\chi\) pertenecen a la **descarga/auditoría**, no a la realidad individuada: el target objetivo es $\operatorname{ContextIndividuation}^{\mathsf M}(C)$. IndAdequate exige fidelidad estructural, independencia del target, fundamento positivo, invariancia, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina de cortes rivales y no-totalización; REV-07g contiene los tests completos. IndexAdmission no implica RegimeTotal ni REC. Un parámetro provisional \(\widehat{i}\) puede servir para auditar una candidatura sin admitirla. IndexRetraction corrige una admisión metateórica defectuosa y no equivale a ContextCessation ontológica. **Puente de formación hacia R_i.** IndexAdmission no crea una realidad ni demuestra su totalidad. Su función es licenciar el sort contextual bajo el cual las expresiones indexadas pasan a estar bien formadas. Lo representamos mediante una **regla de formación metateórica**, no mediante un existencial objeto:
+La relatividad a \(\mathcal T\) y el witness \(\chi\) pertenecen a la **descarga/auditoría**, no a la realidad individuada: el target objetivo es $\operatorname{ContextIndividuation}^{\mathsf M}(C)$. IndAdequate exige fidelidad estructural, independencia del target, fundamento positivo, invariancia, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina de cortes rivales y no-totalización; REV-07g contiene los tests completos. IndexAdmission no implica RegimeTotal ni REC. Un parámetro provisional \(\widehat{i}\) puede servir para auditar una candidatura sin admitirla. IndexRetraction corrige una admisión metateórica defectuosa y no equivale a ContextCessation ontológica.
+
+**Puente de formación hacia R_i.** IndexAdmission no crea una realidad ni demuestra su totalidad. Su función es licenciar el sort contextual bajo el cual las expresiones indexadas pasan a estar bien formadas. Lo representamos mediante una **regla de formación metateórica**, no mediante un existencial objeto:
 
 $$
 \boxed{
