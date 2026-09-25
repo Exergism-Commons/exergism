@@ -949,6 +949,17 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-ba. UG5 no exige aislamiento físico absoluto: RealizationEnvelope"),
+        (4, "0.11.91r-bb. UG5-T1 — Constitutive Screening relativo al envelope"),
+        (4, "0.11.91r-be. UG6 se descompone: signature rivals frente a host rivals"),
+        (4, "0.11.91r-bg. XR2-SIG-T — descarga de UG6-S"),
+        (4, "0.11.91r-bj. RealizerCoverageAdequate — el bridge firma↔host"),
+        (4, "0.11.91r-bl. RCA-XR2 — auditoría actual"),
+        (4, "0.11.91r-bm. Teorema de cuello de botella XR-2"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
