@@ -41,6 +41,16 @@ jobs:
           path: xr1-evidence.json
           if-no-files-found: error
 
+      - name: Execute XR-2 open-component evidence
+        run: python scripts/xr2_open_component.py --certificate xr2-evidence.json
+
+      - name: Upload XR-2 open-component evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: xr2-evidence-${{ github.sha }}
+          path: xr2-evidence.json
+          if-no-files-found: error
+
       - name: Regenerate ontology and require clean output
         run: |
           python scripts/generate_ontology.py
