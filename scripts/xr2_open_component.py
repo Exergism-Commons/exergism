@@ -14,10 +14,12 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import time
 from dataclasses import dataclass
 from itertools import product
-from multiprocessing import Pipe, Process
+from multiprocessing import Pipe, Process, Queue
 from pathlib import Path
+from queue import Empty
 
 
 S0 = "s0"
@@ -32,8 +34,16 @@ INTERNAL_ACTIONS = frozenset({IDLE})
 ALL_ACTIONS = INPUT_ACTIONS | OUTPUT_ACTIONS | INTERNAL_ACTIONS
 
 ORDINARY_ENV_ACTIONS = frozenset({CLOSE})
-FAULT_ENV_ACTIONS = frozenset({"unsupported_input"})
-IRRELEVANT_ENV_VARIATIONS = frozenset({"environment_noise"})
+FAULT_ENV_ACTIONS = frozenset({
+    "unsupported_input",
+    "channel_loss",
+    "process_termination",
+})
+IRRELEVANT_ENV_VARIATIONS = frozenset({
+    "environment_noise",
+    "environment_send_delay",
+})
+CHANNEL_LOSS_EXIT = 42
 
 AVAILABLE_ACTIONS = {
     S0: frozenset({CLOSE, IDLE}),
@@ -92,7 +102,12 @@ def least_closure(seed: frozenset[str]) -> frozenset[str]:
 def component_worker(channel, emit_output: bool = True) -> None:
     """Component-side process with no environment object in local state."""
     state = S0
-    command = channel.recv()
+    try:
+        command = channel.recv()
+    except EOFError:
+        channel.close()
+        raise SystemExit(CHANNEL_LOSS_EXIT)
+
     if command != CLOSE:
         channel.send({"error": "unsupported-input", "pid": os.getpid()})
         channel.close()
@@ -110,7 +125,31 @@ def component_worker(channel, emit_output: bool = True) -> None:
     channel.close()
 
 
-def run_trial(environment_noise: int) -> dict[str, object]:
+def queue_component_worker(input_queue, output_queue) -> None:
+    """Faithful transport refinement using multiprocessing queues."""
+    try:
+        command = input_queue.get(timeout=5)
+    except Empty:
+        output_queue.put({"error": "channel-loss", "pid": os.getpid()})
+        return
+
+    if command != CLOSE:
+        output_queue.put({"error": "unsupported-input", "pid": os.getpid()})
+        return
+
+    output_queue.put(
+        {
+            "event": ACTIVATE,
+            "state": S1,
+            "pid": os.getpid(),
+        }
+    )
+
+
+def run_trial(
+    environment_noise: int,
+    environment_send_delay: float = 0.0,
+) -> dict[str, object]:
     """Run one actual environment/component IPC episode."""
     parent, child = Pipe(duplex=True)
     process = Process(target=component_worker, args=(child,))
@@ -120,6 +159,8 @@ def run_trial(environment_noise: int) -> dict[str, object]:
     child_pid = process.pid
     parent_pid = os.getpid()
 
+    if environment_send_delay:
+        time.sleep(environment_send_delay)
     parent.send(CLOSE)
     reply = parent.recv()
     parent.close()
@@ -136,6 +177,7 @@ def run_trial(environment_noise: int) -> dict[str, object]:
 
     return {
         "environment_noise": environment_noise,
+        "environment_send_delay": environment_send_delay,
         "parent_pid": parent_pid,
         "child_pid": child_pid,
         "sent_input": CLOSE,
@@ -143,6 +185,95 @@ def run_trial(environment_noise: int) -> dict[str, object]:
         "component_state_after": reply.get("state"),
         "reply_pid": reply.get("pid"),
         "local_trace": [S0, CLOSE, S1, ACTIVATE],
+    }
+
+
+def run_channel_loss_trial() -> dict[str, object]:
+    """Close the environment endpoint before any input is delivered."""
+    parent, child = Pipe(duplex=True)
+    process = Process(target=component_worker, args=(child,))
+    process.start()
+    child.close()
+
+    parent.close()
+    process.join(timeout=10)
+
+    if process.is_alive():
+        process.terminate()
+        process.join(timeout=5)
+        raise RuntimeError("XR-2 channel-loss trial did not terminate")
+
+    return {
+        "intervention": "channel_loss",
+        "process_exitcode": process.exitcode,
+        "classified_as_realization_fault": process.exitcode == CHANNEL_LOSS_EXIT,
+        "normal_transition_observed": False,
+    }
+
+
+def run_process_termination_trial() -> dict[str, object]:
+    """Terminate the component before the ordinary input episode completes."""
+    parent, child = Pipe(duplex=True)
+    process = Process(target=component_worker, args=(child,))
+    process.start()
+    child.close()
+
+    process.terminate()
+    process.join(timeout=10)
+    parent.close()
+
+    if process.is_alive():
+        process.kill()
+        process.join(timeout=5)
+        raise RuntimeError("XR-2 termination trial did not terminate")
+
+    return {
+        "intervention": "process_termination",
+        "process_exitcode": process.exitcode,
+        "classified_as_lifecycle_fault": process.exitcode not in (None, 0),
+        "normal_transition_observed": False,
+    }
+
+
+def run_queue_transport_trial() -> dict[str, object]:
+    """Run the same I/O contract through Queue rather than duplex Pipe."""
+    input_queue = Queue()
+    output_queue = Queue()
+    process = Process(
+        target=queue_component_worker,
+        args=(input_queue, output_queue),
+    )
+    process.start()
+
+    input_queue.put(CLOSE)
+    reply = output_queue.get(timeout=10)
+    process.join(timeout=10)
+
+    if process.is_alive():
+        process.terminate()
+        process.join(timeout=5)
+        raise RuntimeError("XR-2 queue transport trial did not terminate")
+    if process.exitcode != 0:
+        raise RuntimeError(
+            f"XR-2 queue transport failed with exit code {process.exitcode}"
+        )
+
+    input_queue.close()
+    output_queue.close()
+    input_queue.join_thread()
+    output_queue.join_thread()
+
+    return {
+        "transport": "multiprocessing.Queue",
+        "sent_input": CLOSE,
+        "received_output": reply.get("event"),
+        "component_state_after": reply.get("state"),
+        "reply_pid": reply.get("pid"),
+        "local_trace": [S0, CLOSE, S1, ACTIVATE],
+        "profile_preserved": (
+            reply.get("event") == ACTIVATE
+            and reply.get("state") == S1
+        ),
     }
 
 
@@ -292,6 +423,13 @@ def verify_rival_signature() -> dict[str, bool]:
 def verify() -> dict[str, object]:
     trial_a = run_trial(environment_noise=17)
     trial_b = run_trial(environment_noise=999_983)
+    delayed_trial = run_trial(
+        environment_noise=17,
+        environment_send_delay=0.05,
+    )
+    channel_loss_trial = run_channel_loss_trial()
+    termination_trial = run_process_termination_trial()
+    queue_transport_trial = run_queue_transport_trial()
     fault_trial = run_fault_trial()
     profile_break_trial = run_profile_break_trial()
     rival_checks = verify_rival_signature()
@@ -326,6 +464,23 @@ def verify() -> dict[str, object]:
         trial_a["environment_noise"] != trial_b["environment_noise"]
         and trial_a["local_trace"] == trial_b["local_trace"]
         and trial_a["received_output"] == trial_b["received_output"]
+    )
+    scheduling_delay_screened = (
+        delayed_trial["environment_send_delay"] > 0
+        and delayed_trial["local_trace"] == trial_a["local_trace"]
+        and delayed_trial["received_output"] == trial_a["received_output"]
+    )
+    queue_transport_preserves_profile = (
+        queue_transport_trial["profile_preserved"]
+        and queue_transport_trial["local_trace"] == trial_a["local_trace"]
+    )
+    channel_loss_classified = (
+        channel_loss_trial["classified_as_realization_fault"]
+        and not channel_loss_trial["normal_transition_observed"]
+    )
+    process_termination_classified = (
+        termination_trial["classified_as_lifecycle_fault"]
+        and not termination_trial["normal_transition_observed"]
     )
 
     worker_args = component_worker.__code__.co_varnames[
@@ -389,6 +544,14 @@ def verify() -> dict[str, object]:
         "re4_irrelevant_environment_noise_screened": (
             environment_negative_control
         ),
+        "re4_environment_send_delay_screened": scheduling_delay_screened,
+        "rca4_channel_loss_projects_to_fault": channel_loss_classified,
+        "rca4_process_termination_projects_to_lifecycle_fault": (
+            process_termination_classified
+        ),
+        "rca7_queue_transport_preserves_profile": (
+            queue_transport_preserves_profile
+        ),
         "re_envelope_partition_disjoint": envelope_partition_disjoint,
         "ug4_cit_positive_output_role_break": constitutive_intervention_positive,
         "ug4_cit_negative_environment_noise_preserves_profile": (
@@ -413,7 +576,12 @@ def verify() -> dict[str, object]:
         "seed": sorted(SEED),
         "closure": sorted(closure),
         "declared_local_real_tokens": sorted(REAL_TOKENS),
-        "trials": [trial_a, trial_b],
+        "trials": [trial_a, trial_b, delayed_trial],
+        "host_dependency_attacks": {
+            "channel_loss": channel_loss_trial,
+            "process_termination": termination_trial,
+            "queue_transport_refinement": queue_transport_trial,
+        },
         "fault_trial": fault_trial,
         "constitutive_intervention_trial": profile_break_trial,
         "realization_envelope": {
@@ -425,8 +593,9 @@ def verify() -> dict[str, object]:
                 "IPC endpoint remains available for the classified episode",
             ],
             "status": (
-                "finite executable envelope; host-level assumption coverage "
-                "is not claimed exhaustive"
+                "finite executable envelope with tested ordinary, fault, "
+                "lifecycle, timing, and transport-refinement families; "
+                "host-level assumption coverage is not claimed exhaustive"
             ),
         },
         "rival_signature_audit": {
@@ -444,8 +613,10 @@ def verify() -> dict[str, object]:
             "XR-2 supplies actual environment/component IPC, negative-control "
             "screening, explicit fault classification, exact finite generative "
             "scope, and exhaustive enumeration of the declared finite I/O audit "
-            "language. It does not prove exhaustive host-level realization "
-            "coverage or ContextIndividuation."
+            "language. Host attacks now cover channel loss, process termination, "
+            "environment timing variation, and a Queue transport refinement, "
+            "but finite attacks still do not prove exhaustive host-level "
+            "realization coverage or ContextIndividuation."
         ),
     }
 
