@@ -960,6 +960,14 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-bn. RCA-X1 — ninguna batería finita prueba ausencia universal de hidden constituents"),
+        (4, "0.11.91r-bo. RCA-T1 — hace falta una teoría del realizador, no infinitos tests"),
+        (4, "0.11.91r-bp. No-Microscopic-Totality — RCA no exige describir todos los microestados"),
+        (4, "0.11.91r-bq. Relación con abstract interpretation y equivalencia conductual"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
