@@ -16362,7 +16362,7 @@ Solo después puede intentarse:
 \operatorname{RealizerCoverageAdequate}_{XR2}.
 \]
 
-#### 0.11.91r-bv. \(\mathcal H_{MP}^{XR2}\) — teoría host pre-registrada
+#### 0.11.91r-bv. HMP-XR2 — teoría host pre-registrada
 
 A partir de la semántica pública de multiprocessing y de los recursos realmente usados por XR-2, se fija antes de la conclusión la gramática host:
 
@@ -16437,7 +16437,7 @@ queda **PASS respecto de la gramática declarada**.
 
 Esto no entra en contradicción con RCA-X1: RCA-X1 prohibía derivar completitud universal desde una batería finita. HMP-T1 demuestra completitud formal sobre un lenguaje host explícitamente fijado.
 
-#### 0.11.91r-bx. HOST-ADEQ — la deuda se mueve a la adecuación de \(\mathcal H_{MP}\)
+#### 0.11.91r-bx. HOST-ADEQ — la deuda se mueve a la adecuación de HMP-XR2
 
 Queda abierta:
 
