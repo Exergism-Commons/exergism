@@ -484,7 +484,7 @@ $$
 \operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \bigr).
 }
-$
+$$
 
 Con la semántica anterior, el puente completo puede mostrarse sin colapsar sus etapas:
 
