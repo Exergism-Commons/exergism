@@ -14466,6 +14466,350 @@ XR\varepsilon
 
 Esta revisión elimina el riesgo de obtener ContextIndividuation simplemente porque Exergism ya es emergentista.
 
+#### 0.11.91r-aa. UGAudit — PASS, PARTIAL y FAIL son estados epistémicos de descarga
+
+Para aplicar UG1–UG8 sin convertir ausencia de evidencia en inexistencia ontológica, introducimos:
+
+\[
+\operatorname{UGAudit}^{\mathsf M}
+(
+\mathcal T,C;g,\Xi_C,E
+)
+\in
+\{\mathsf{PASS},\mathsf{PARTIAL},\mathsf{FAIL}\}^{8}.
+\]
+
+La clasificación es **por obligación**:
+
+- **PASS:** la teoría + evidencia disponible descargan positivamente el guard;
+- **PARTIAL:** el guard no ha sido refutado, pero la descarga es incompleta o depende de evidencia/intervenciones no disponibles;
+- **FAIL:** existe una razón positiva para negar el guard al witness \(g\) propuesto.
+
+No se adopta:
+
+\[
+\mathsf{PARTIAL}
+\Rightarrow
+\neg\operatorname{UnitGroundAdequate}.
+\]
+
+Ni:
+
+\[
+\mathsf{PASS}
+\Rightarrow
+\operatorname{ContextIndividuation},
+\]
+
+si faltan otras obligaciones de IndAdequate.
+
+**UG-T0 / complete discharge.**
+
+\[
+\boxed{
+\operatorname{UnitGroundAdequate}
+\Rightarrow
+\bigwedge_{k=1}^{8}
+\operatorname{UGAudit}_k=\mathsf{PASS}.
+}
+\]
+
+La conversa solo vale cuando cada PASS proviene de la teoría/evidencia declaradas y no de una etiqueta manual.
+
+#### 0.11.91r-ab. UG-XR1 — auditoría del witness ejecutable
+
+Para XR-1 el candidato natural de ground no es la macropropiedad \(\beta_1\) aislada. Tomamos:
+
+\[
+g_{XR1}
+=
+\langle
+\text{typed host/local realization},
+\text{transition integration},
+\text{declared interaction boundary}
+\rangle.
+\]
+
+La organización path→cycle aporta IA0-R, pero \(g_{XR1}\) pretende hacer el trabajo de **unidad**.
+
+Auditoría:
+
+\[
+\begin{array}{lll}
+UG1 & \mathsf{PASS} &
+g_{XR1}\text{ se define en DTS/host realization antes de }R_i;\\
+UG2 & \mathsf{PASS} &
+\text{el run host-side es ejecutado y OR1 queda evidenciado};\\
+UG3 & \mathsf{PASS} &
+\text{quitar transition integration altera }\widehat{\mathbb P},\widehat{\mathsf{CP}}\text{ y el typing dinámico};\\
+UG4 & \mathsf{PARTIAL} &
+\text{phase/payload perturbations destruyen la realización, pero no se ha probado una teoría general de reindividuación};\\
+UG5 & \mathsf{PASS} &
+\texttt{irrelevant_noise}\text{ se varía explícitamente y queda screened-off};\\
+UG6 & \mathsf{PARTIAL} &
+\text{anti-gerrymandering existe, pero el script no enumera rival cuts alternativos y demuestra su rechazo};\\
+UG7 & \mathsf{PASS} &
+\beta_1\text{/emergencia ya no se usan como ground suficiente};\\
+UG8 & \mathsf{PASS} &
+\text{OR6 verifica una recodificación fiel del host/local mapping}.
+\end{array}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{UGAudit}_{XR1}
+=
+\langle
+P,P,P,\partial,P,\partial,P,P
+\rangle,
+}
+\]
+
+donde \(P=\mathsf{PASS}\) y \(\partial=\mathsf{PARTIAL}\).
+
+**XR1-UG-R.** XR-1 no falla UnitGroundAdequate; le faltan descargas positivas de UG4 y, sobre todo, UG6. La deuda deja de ser una sospecha amorfa de “software quizá no sea real”: es una obligación concreta de **rival-cut discrimination + constitutive reindividuation**.
+
+#### 0.11.91r-ac. UG-REDIS — proceso/estado/protocolo como ground candidato
+
+Para Redis tomamos:
+
+\[
+g_{\mathrm{Redis}}
+=
+\langle
+\text{server process},
+\text{owned dataset/state},
+\text{event loop},
+\text{RESP/command boundary},
+\text{persistence machinery}
+\rangle.
+\]
+
+No tomamos “Redis” como brand, deployment label ni API document.
+
+Auditoría con las fuentes de §14.1:
+
+\[
+\begin{array}{lll}
+UG1 & \mathsf{PASS} &
+\text{process/protocol/state se especifican independientemente de Exergism};\\
+UG2 & \mathsf{PARTIAL} &
+\text{la implementación es real/documentada, pero aquí no se observa un token server concreto};\\
+UG3 & \mathsf{PASS} &
+\text{event loop, dataset ownership y protocol boundary son no eliminables para el perfil declarado};\\
+UG4 & \mathsf{PARTIAL} &
+\text{crash/restart/configuration muestran sensibilidad, pero falta una intervención diseñada para reindividuación};\\
+UG5 & \mathsf{PARTIAL} &
+\text{host signals, debugger writes, scheduler/memory faults y otros bypasses no están agotados};\\
+UG6 & \mathsf{PARTIAL} &
+\text{cuts como odd-keys+half-worker son rechazables por roles, pero no existe una enumeración/teorema de rival cuts};\\
+UG7 & \mathsf{PASS} &
+\text{la utilidad de la API o predictibilidad del servicio no se usan como suficiencia};\\
+UG8 & \mathsf{PASS} &
+\text{renaming/serialization/implementation-preserving recodings no cambian el criterio arquitectónico}.
+\end{array}
+\]
+
+Así:
+
+\[
+\boxed{
+\operatorname{UGAudit}_{Redis}
+=
+\langle
+P,\partial,P,\partial,\partial,\partial,P,P
+\rangle.
+}
+\]
+
+Redis sigue siendo un **evidence-backed candidate**, no una descarga de UnitGroundAdequate.
+
+#### 0.11.91r-ad. UG-ECOLI — organización mantenida como ground candidato
+
+Para E. coli, el candidato de ground no es “tener membrana”, sino una organización integrada:
+
+\[
+g_{\mathrm{Ecoli}}
+=
+\langle
+\text{cell-envelope homeostasis},
+\text{regulated transport},
+\text{metabolic/regulatory organization},
+\text{division/repair machinery}
+\rangle.
+\]
+
+Auditoría:
+
+\[
+\begin{array}{lll}
+UG1 & \mathsf{PASS} &
+\text{los mecanismos biológicos se caracterizan sin el target metaontológico};\\
+UG2 & \mathsf{PASS} &
+\text{los mecanismos están experimentalmente observados en células reales, aunque no se siga aquí un token único};\\
+UG3 & \mathsf{PASS} &
+\text{envelope/homeostasis/transport son constitutivos del perfil celular usado};\\
+UG4 & \mathsf{PARTIAL} &
+\text{stress/damage/division muestran sensibilidad constitutiva, pero la transición exacta a reindividuación/cessation no está formalizada};\\
+UG5 & \mathsf{PARTIAL} &
+\text{la apertura mediada está bien respaldada, no el screening-off de toda perturbación relevante};\\
+UG6 & \mathsf{PARTIAL} &
+\text{half-cell y molecule+cell cuts quedan mal fundados, pero no hay completitud sobre todas las particiones biológicas rivales};\\
+UG7 & \mathsf{PASS} &
+\text{homeostasis/autopoiesis/closure no se convierten por nombre en suficiencia ontológica};\\
+UG8 & \mathsf{PASS} &
+\text{el criterio depende de organización/mecanismo, no de nombres moleculares o representación particular}.
+\end{array}
+\]
+
+Por tanto:
+
+\[
+\boxed{
+\operatorname{UGAudit}_{Ecoli}
+=
+\langle
+P,P,P,\partial,\partial,\partial,P,P
+\rangle.
+}
+\]
+
+E. coli tiene una descarga empírica más directa de UG2–UG4 que los artefactos documentales, pero **UG5/UG6 siguen PARTIAL**. No se declara UnitGroundAdequate completo.
+
+#### 0.11.91r-ae. UG-NEST — closed-loop control como ground candidato
+
+Para Nest/Heat Link:
+
+\[
+g_{\mathrm{Nest}}
+=
+\langle
+\text{sensor selection},
+\text{controller state/schedule},
+\text{Heat Link actuation},
+\text{closed-loop feedback}
+\rangle.
+\]
+
+Auditoría:
+
+\[
+\begin{array}{lll}
+UG1 & \mathsf{PASS} &
+\text{la arquitectura de control existe independientemente de la ontología};\\
+UG2 & \mathsf{PARTIAL} &
+\text{el producto físico está documentado, pero no se instrumenta aquí una instalación/token concreto};\\
+UG3 & \mathsf{PASS} &
+\text{quitar sensing/actuation/feedback destruye el perfil de control declarado};\\
+UG4 & \mathsf{PARTIAL} &
+\text{cambiar sensor/setpoint/wiring altera control, pero no se formaliza cuándo cambia la unidad};\\
+UG5 & \mathsf{PARTIAL} &
+\text{manual override, power, HVAC internals y perturbaciones ambientales no están exhaustivamente screened};\\
+UG6 & \mathsf{PARTIAL} &
+\text{PCB-half y arbitrary-room-union fallan, pero el lazo ampliado home-loop permanece un rival/higher-order candidate};\\
+UG7 & \mathsf{PASS} &
+\text{closed-loop usefulness no se identifica con contextualidad};\\
+UG8 & \mathsf{PASS} &
+\text{el criterio es invariante a representaciones fieles del mismo lazo}.
+\end{array}
+\]
+
+Luego:
+
+\[
+\boxed{
+\operatorname{UGAudit}_{Nest}
+=
+\langle
+P,\partial,P,\partial,\partial,\partial,P,P
+\rangle.
+}
+\]
+
+El resultado se parece a Redis por una razón metodológica: la documentación fija bien la arquitectura nominal/funcional, pero no proporciona por sí sola la intervención completa necesaria para UG4–UG6.
+
+#### 0.11.91r-af. UG-COMP — comparación sin ranking ontológico
+
+La matriz conjunta es:
+
+\[
+\boxed{
+\begin{array}{c|cccccccc}
+ & UG1&UG2&UG3&UG4&UG5&UG6&UG7&UG8\\
+\hline
+XR1   &P&P&P&\partial&P&\partial&P&P\\
+Redis &P&\partial&P&\partial&\partial&\partial&P&P\\
+Ecoli &P&P&P&\partial&\partial&\partial&P&P\\
+Nest  &P&\partial&P&\partial&\partial&\partial&P&P
+\end{array}
+}
+\]
+
+No es un ranking de “qué cosa es más real”. La matriz mide **qué obligaciones hemos descargado con la teoría/evidencia actual**.
+
+Dos hallazgos sí son robustos:
+
+1. **UG3 no es el cuello principal.** En los cuatro casos puede identificarse estructura cuya eliminación cambia el perfil local relevante.
+2. **UG4–UG6 concentran la deuda.** Lo difícil no es mostrar que algo está organizado, sino demostrar que su organización:
+   - determina contrafácticamente cuándo cambia la unidad;
+   - screens off adecuadamente el exterior constitutivo;
+   - discrimina el cut frente a alternativas rivales.
+
+Esto refina el problema de IA0-U:
+
+\[
+\boxed{
+\text{unity grounding}
+\approx
+\text{constitutive sensitivity}
++
+\text{constitutive screening}
++
+\text{rival-cut discrimination},
+}
+\]
+
+sin definirlo todavía como equivalencia.
+
+#### 0.11.91r-ag. UG-T1 — ninguna descarga completa todavía
+
+Con la evidencia y teoría actuales:
+
+\[
+\boxed{
+\neg\operatorname{Discharged}^{\mathsf M}
+(
+\operatorname{UnitGroundAdequate}_{XR1}
+)
+}
+\]
+
+y análogamente para Redis, E. coli y Nest.
+
+Esto **no** implica que ninguno sea contexto. Implica que el corpus todavía no posee una prueba positiva completa de UG1–UG8 para ninguno.
+
+La consecuencia para la estrategia de investigación es precisa. Añadir más casos similares tiene rendimiento decreciente. El siguiente trabajo debe centrarse en formalizar y atacar:
+
+\[
+UG4,\quad UG5,\quad UG6.
+\]
+
+En particular, hay que decidir si puede construirse un criterio de **constitutive intervention** que distinga:
+
+\[
+\text{cambio de comportamiento dentro de la misma unidad}
+\]
+
+de:
+
+\[
+\text{cambio que destruye, divide, fusiona o reindividúa la unidad}.
+\]
+
+Sin esa distinción, UG4 corre el riesgo de presuponer exactamente la individuación que pretende fundamentar.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
