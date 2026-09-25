@@ -19,8 +19,27 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install validation dependencies
+        run: python -m pip install --disable-pip-version-check -r scripts/validation-requirements.txt
+
       - name: Validate repository
         run: python scripts/validate_repository.py
+
+      - name: Validate proposal documents
+        run: python scripts/validate_proposal_docs.py
+
+      - name: Test proposal validator
+        run: python -m unittest scripts/test_validate_proposal_docs.py
+
+      - name: Execute XR-1 realization evidence
+        run: python scripts/xr1_witness.py --certificate xr1-evidence.json
+
+      - name: Upload XR-1 realization evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: xr1-evidence-${{ github.sha }}
+          path: xr1-evidence.json
+          if-no-files-found: error
 
       - name: Regenerate ontology and require clean output
         run: |
