@@ -14373,7 +14373,7 @@ Esta regla explicita el contenido de IA0; no prueba universalmente que exista \(
 
 Estos countermodels no sostienen que patterns, mecanismos o macrocausas sean irreales. Precisamente funcionan porque pueden ser **reales sin ser automáticamente context-individuating**.
 
-#### 0.11.91r-y. Resultado adversarial sobre RSP y \(\varepsilon\)RSP
+#### 0.11.91r-y. Resultado adversarial sobre RSP y epsilon-RSP
 
 La forma genérica:
 
@@ -14425,7 +14425,7 @@ IA0.
 
 Por tanto la emergencia deja de ser el bridge metafísico final. Hace un trabajo indispensable pero más preciso: demuestra que la organización no es una ficción descriptiva. El paso desde **estructura real** a **unidad contextual** pertenece a la teoría de individuación.
 
-#### 0.11.91r-z. Consecuencia para Cellular Reality y XR-\(\varepsilon\)
+#### 0.11.91r-z. Consecuencia para Cellular Reality y XR-epsilon
 
 El resultado adversarial fortalece la arquitectura aunque debilite el teorema existencial condicional previo.
 
