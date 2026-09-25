@@ -910,8 +910,8 @@ def validate_regime_total_contract(
         (4, "0.11.91r-v. IA0 se descompone: realidad estructural no es todavía unidad contextual"),
         (4, "0.11.91r-w. UnitGroundAdequate — qué falta para IA0-U"),
         (4, "0.11.91r-x. Countermodels contra la promoción de estructura real a contexto"),
-        (4, "0.11.91r-y. Resultado adversarial sobre RSP y \\(\\varepsilon\\)RSP"),
-        (4, "0.11.91r-z. Consecuencia para Cellular Reality y XR-\\(\\varepsilon\\)"),
+        (4, "0.11.91r-y. Resultado adversarial sobre RSP y epsilon-RSP"),
+        (4, "0.11.91r-z. Consecuencia para Cellular Reality y XR-epsilon"),
     ):
         technical.section_bounds(level, heading)
 
