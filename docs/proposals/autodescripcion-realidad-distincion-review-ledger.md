@@ -15,7 +15,7 @@
 
 ## Prioridad de trabajo
 
-Primero se resuelven los bloqueadores que deciden si el argumento habla realmente de emergencia. Después se corrigen totalización/indexación y C1. Solo entonces se reintroducen extensiones temporales, REC/Muro, Many-R, fractalidad o nomenclatura teológica.
+La prioridad vigente ya no es demostrar que existe emergencia ni volver a diseñar totalización. El cuello principal de la ruta realizacional está en **individuación contextual**: mantener IA0-R/IA0-U separados, descargar el criterio theory-specific sin circularidad y cerrar contract/role/interaction coverage + same-level rival cuts para el witness. XR-1 conserva la parte generativa/scope y realización OR1–OR9, pero XR1-T es FORMAL-CONDITIONAL; XR-2/T-IODTS aporta evidencia adicional de interfaz y UG4/UG8/UG6-S sin crear una nueva capa host. Solo después de una descarga efectiva de ContextIndividuation/IndexAdmission tiene sentido promover el witness a RegimeTotal/ExistsR y, posteriormente, volver a REV-24/25 para presentación semántica. NQ permanece como ruta a priori separada; REC/Muro, One-R/Many-R y Ω_i no deben reintroducirse como premisas.
 
 | ID | Severidad | Estado | Finding | Dónde muerde | Criterio de cierre |
 |---|---|---|---|---|---|
