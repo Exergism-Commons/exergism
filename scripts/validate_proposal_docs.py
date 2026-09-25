@@ -872,6 +872,31 @@ def validate_regime_total_contract(
         "REV-07g ContextIndividuation-RegimeTotal bridge",
     )
 
+    current_summary_bounds = normative.section_bounds(
+        2,
+        "3.1. Resumen formal vigente",
+    )
+    current_summary = "\n".join(
+        normative.lines[current_summary_bounds[0] : current_summary_bounds[1]]
+    )
+    for fragment in (
+        "confundía necesidad causal/de realización con constitución ontológica",
+        "NecessaryForRealization(d,C)",
+        "no autoriza `UnitConstitutive(d,C)` ni `ContextMembership(d,C)`",
+        "InterfaceContract`/`RoleAdequate` → relevancia → auditoría del realizador",
+        "nunca host exhaustivo → constitución del contexto",
+    ):
+        if fragment not in current_summary:
+            fail(
+                "HostTheoryAdequate regression: normative current state lost the "
+                f"realization/constitution separation {fragment!r}"
+            )
+    if "`RealizerCoverageAdequate` RCA1–RCA8 unifica la deuda" in current_summary:
+        fail(
+            "HostTheoryAdequate regression: current normative state again treats "
+            "RealizerCoverageAdequate as an autonomous adequacy layer"
+        )
+
     for level, heading in (
         (4, "RT-07-MG — Multigeneal Reality Test"),
         (4, "RT-07-XP — Transversal Production Test"),
@@ -1137,6 +1162,9 @@ def validate_current_theory_invariants(technical: MarkdownDocument) -> None:
         r"\operatorname{MCAdequate}_{XR1/DTS}",
         "XR1-T permanece FORMAL-CONDITIONAL",
         "RCA-T1 — SUPERSEDED como teoría host autónoma",
+        "No-Microscopic-Totality — derivado del kernel de interfaz",
+        "NecessaryForThisRealizationTest",
+        "HOST-X1 — SUPERSEDED: mecanismo omitido no implica constituyente omitido",
         "HTA-K — SUPERSEDED: no crear un contrato host paralelo",
     )
     for fragment in required_fragments:
