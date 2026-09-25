@@ -341,7 +341,7 @@ RegimeClosure vuelve a cerrar $\Gamma_i$ sobre la base conjunta y por ello inclu
 
 **Condición de formación de RegimeTotal.** \(\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)\) solo es admisible bajo un \(i\) previamente admitido y un \(R_i\) bien formado por R-FORM. Esta side condition impide usar RegimeTotal para bootstrapear ContextIndividuation. Dos RegimeTotal bajo el mismo \(i\) son coextensionales respecto de Within; la prueba está en las derivaciones técnicas.
 
-Para $C_i$ la GenClosure de $\mathcal O_i$:Para $C_i$ la GenClosure de $\mathcal O_i$:
+Para $C_i$ la GenClosure de $\mathcal O_i$:
 
 $$
 \boxed{
@@ -724,7 +724,7 @@ El diagnóstico histórico que hacía F2 necesario para elevar cotas está **SUP
 
 REV-01/04 son cierres formales limitados: no resuelven la suficiencia doctrinal general de emergencia ni garantizan discriminación en sistemas ricos; esas deudas permanecen en REV-03 y el ledger.
 
-### Blockers ontológicos actuales### Blockers ontológicos actuales
+### Blockers ontológicos actuales
 
 La existencia ontológica y su representación quedan ahora separadas:
 
