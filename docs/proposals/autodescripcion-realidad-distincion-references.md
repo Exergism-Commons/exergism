@@ -367,6 +367,25 @@ $
 
 Ese bridge sigue siendo una obligación propia de REV-07g/IA0.
 
+### 14.2. IA0: patrones reales, mecanismos y autonomía no equivalen automáticamente a contexto
+
+La auditoría adversarial de IA0 usa esta literatura **negativamente**: para bloquear el salto desde realidad/eficacia de una estructura de nivel especial a ContextIndividuation sin un argumento adicional de unidad.
+
+- **Stanford Encyclopedia of Philosophy, “Structural Realism”, §4/§4.4.** Resume la noción de effective ontology y la familia de criterios de real patterns: estructuras que soportan generalizaciones projectables, explicación/predicción y modalidad pueden justificar realismo sobre entidades/patrones de ciencias especiales sin exigir fundamentalidad. REV-07g toma precisamente esta posibilidad como countermodel a IA0-R → IA0: ser un patrón real no basta para ser una unidad contextual. https://plato.stanford.edu/entries/structural-realism/
+- **Carl Craver, James Tabery & Phyllis Illari, “Mechanisms in Science”, Stanford Encyclopedia of Philosophy.** La literatura mecanicista trata los niveles como locales a mecanismos/fenómenos y distingue organización causal de una jerarquía global de la realidad. Se usa contra la inferencia “mecanismo real → contexto”: una descomposición puede ser causalmente seria y, aun así, depender del explanandum y requerir una teoría adicional de individuación. https://plato.stanford.edu/entries/science-mechanisms/
+- **Peter Fazekas & Gergely Kertesz (2019), “Are Higher Mechanistic Levels Causally Autonomous?”, _Philosophy of Science_ 86(5), 847–857.** Analiza argumentos de autonomía causal de niveles mecanicistas y concluye que ni siquiera el recurso a constraints establece por sí solo autonomía causal superior. Se usa como adversario de cualquier lectura de MC7/UG7 que convierta autonomía o constraints en suficiencia ontológica automática. DOI: https://doi.org/10.1086/705450
+- **Erik P. Hoel, Larissa Albantakis & Giulio Tononi (2013), “Quantifying causal emergence shows that macro can beat micro”, _PNAS_ 110(49).** Ya citado en la sección de emergencia; para IA0 se usa adicionalmente como stress test: incluso una macroescala con mayor effective information puede establecer relevancia causal de la macrodescripción sin decidir por sí sola si esa partición constituye una unidad contextual. https://pmc.ncbi.nlm.nih.gov/articles/PMC3856819/
+
+**Consecuencia metodológica.** La propuesta distingue ahora:
+
+$
+\text{real/projectable/modal structure}
+\neq
+\text{context-individuating structure}.
+$
+
+La primera carga es IA0-R. La segunda es IA0-U y exige UnitGroundAdequate UG1–UG8.
+
 ## 15. Política de citación futura
 
 Antes de añadir un concepto nuevo al núcleo:
