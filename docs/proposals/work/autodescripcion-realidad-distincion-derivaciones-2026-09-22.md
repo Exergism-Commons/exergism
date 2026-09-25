@@ -6871,49 +6871,46 @@ e\in\mathcal E_{M_C}
 \operatorname{EpsilonAligned}(C,e,\varrho).
 \]
 
-#### 0.11.69l. \(\varepsilon\)-RSP — suficiencia emergentista restringida
+#### 0.11.69l. \(\varepsilon\)-RSP — revisión tras el ataque a IA0
 
-El corpus canónico de Exergism ya se presenta como **metafísica emergentista** y atribuye a configuraciones emergentes niveles, propiedades y dinámicas propias. Esa doctrina no justifica el RSP genérico para toda abstracción estructural imaginable, pero sí motiva una regla mucho más estrecha.
+La formulación provisional original era:
 
-Definimos:
+\[
+\operatorname{RealizedEmergence}
++
+\operatorname{MCAdequate}
+\Rightarrow
+IA0.
+\]
+
+La auditoría posterior de §§0.11.91r-q–z muestra que esa inferencia colapsaba dos cargas diferentes. Una estructura macro puede estar realmente realizada, ser projectable, contrafácticamente robusta y causal/dinámicamente eficaz sin que se siga todavía que **esa estructura individúe una arena contextual**.
+
+Por tanto la versión que infería IA0 completo queda:
 
 \[
 \boxed{
-\varepsilon\mathrm{RSP}
+\varepsilon\mathrm{RSP}_{\mathrm{full}}
+\quad\textbf{SUPERSEDED}.
+}
+\]
+
+La consecuencia conservada es únicamente:
+
+\[
+\boxed{
+\varepsilon\mathrm{RSP\text{-}R}
 :
 \operatorname{RealizedEmergence}(H,C,e;\varrho)
 +
 \operatorname{MCAdequate}(C)
 \Rightarrow
-IA0(C).
+IA0\text{-}R(C).
 }
 \]
 
-Su lectura es:
+Es decir: la emergencia realizada puede descargar **realized modal support** para la estructura usada por el criterio. Para IA0 completo falta además IA0-U / UnitGroundAdequate, formalizado en §§0.11.91r-v–z.
 
-> una estructura local no obtiene structural fidelity por ser describible como autómata; la obtiene, bajo TR-M, cuando una organización efectivamente realizada y boundary-aligned produce una macro-novedad invariante y una capacidad dinámica diferencial bajo control del mismo perfil local.
-
-\(\varepsilon\)RSP es estrictamente más estrecho que RSP:
-
-\[
-\boxed{
-\varepsilon\mathrm{RSP}
-\not\equiv
-\mathrm{RSP}.
-}
-\]
-
-No autoriza:
-
-\[
-\operatorname{ActualStructuralRealization}
-\Rightarrow
-IA0
-\]
-
-para cualquier coarse-graining.
-
-Solo autoriza la descarga cuando se satisface la maquinaria emergentista de REV-03 y su alineación con TR-M.
+Esto no debilita REV-03: solo impide usar emergencia real como atajo desde “macroestructura real” hasta “contexto individuado”.
 
 #### 0.11.69m. EF-T1 — por qué \(\varepsilon\)RSP no es mera etiqueta descriptiva
 
