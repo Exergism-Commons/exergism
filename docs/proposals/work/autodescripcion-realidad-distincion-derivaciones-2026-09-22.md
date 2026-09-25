@@ -7292,7 +7292,7 @@ entonces:
 puede descargar:
 
 \[
-\operatorname{ContextIndividuation}^{\mathsf M}(C_1;\chi_W)
+\operatorname{ContextIndividuation}^{\mathsf M}(C_1)
 \Rightarrow
 \operatorname{IndexAdmission}^{\mathsf M}(C_1\Downarrow i;\chi_W,\mathcal T_W).
 \]
@@ -7782,7 +7782,7 @@ $$
 \land
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_{\delta})
 \Rightarrow
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_{\delta})
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
 \Rightarrow
 \operatorname{IndexAdmission}^{\mathsf M}
 (C\Downarrow i;\chi_{\delta},\mathcal T).
@@ -11190,7 +11190,7 @@ pero puede valer:
 +
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_\Xi)
 \Rightarrow
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_\Xi).
+\operatorname{ContextIndividuation}^{\mathsf M}(C).
 }
 \]
 
@@ -13067,9 +13067,13 @@ y, si la descarga general IndAdequate queda satisfecha:
 +
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_\Xi)
 \Rightarrow
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_\Xi).
+\operatorname{ContextIndividuation}^{\mathsf M}(C).
 }
 \]
+
+El witness \(\chi_{\Xi}\) permanece en \(\operatorname{Ind}_{\mathcal T}\) y
+puede conservarse como provenance/audit metadata de IndexAdmission, pero no es
+argumento del target ontológico ContextIndividuation, conforme WitnessCovariance.
 
 TR-M es así una realización legítima de TR, no la regla:
 
@@ -13084,7 +13088,7 @@ La diferencia está precisamente en MC1–MC10.
 Supóngase que el host \(H\) ya descarga:
 
 \[
-\operatorname{ContextIndividuation}^{\mathsf M}(H;\chi_H)
+\operatorname{ContextIndividuation}^{\mathsf M}(H)
 \Rightarrow
 H\Downarrow k,
 \]
@@ -13092,7 +13096,7 @@ H\Downarrow k,
 y una candidatura local \(C\) realizada host-side descarga independientemente TR-M:
 
 \[
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi_C)
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
 \Rightarrow
 C\Downarrow j.
 \]
