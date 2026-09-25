@@ -906,6 +906,15 @@ def validate_regime_total_contract(
     ):
         technical.section_bounds(level, heading)
 
+    for level, heading in (
+        (4, "0.11.91r-v. IA0 se descompone: realidad estructural no es todavía unidad contextual"),
+        (4, "0.11.91r-w. UnitGroundAdequate — qué falta para IA0-U"),
+        (4, "0.11.91r-x. Countermodels contra la promoción de estructura real a contexto"),
+        (4, "0.11.91r-y. Resultado adversarial sobre RSP y \\(\\varepsilon\\)RSP"),
+        (4, "0.11.91r-z. Consecuencia para Cellular Reality y XR-\\(\\varepsilon\\)"),
+    ):
+        technical.section_bounds(level, heading)
+
     xp_bounds = technical.section_bounds(4, "RT-07-XP — Transversal Production Test")
     require_canonical_display_after(
         technical,
