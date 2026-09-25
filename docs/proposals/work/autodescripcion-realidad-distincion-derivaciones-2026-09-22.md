@@ -3200,17 +3200,17 @@ $$
 \operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
 ].
 }
-$
+$$
 
 Como la cláusula central incluye exhaustividad extensional del scope respecto de todo contenido real del contexto:
 
-$
+$$
 \boxed{
 \operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \Rightarrow
 \operatorname{OntTotal}_i(R_i).
 }
-$
+$$
 
 Este puente es una consecuencia de RegimeTotal, no una premisa adicional ni una propiedad obtenida desde SemTotal.
 
@@ -5157,7 +5157,7 @@ $$
 
 Esta expresión sigue siendo esquemática: ni $\mathcal G_i/\!\sim_i$ se asume como quotient set-theoretic ni los índices se convierten en objetos. Su función es fijar el nuevo orden de investigación:
 
-$
+$$
 \boxed{
 \operatorname{OntOrigin}_i
 \Longrightarrow
@@ -5171,7 +5171,7 @@ $
 \Longrightarrow
 \operatorname{FaithfulContinuation}^{\mathsf M}
 }
-$
+$$
 
 fue una **ruta provisional**. Queda SUPERSEDED por §§0.11.91a–0.11.92: ContinuationProfile se deriva sin $\Omega_i$, a partir de PersistenceBasis + contract state + memo-equivalence + quotient dynamics; FaithfulContinuation usa después un ProfileMorphism + provenance. $\Omega_i$ permanece PARTIAL como posible canonicalización posterior de estructura generativa + perfiles + Bake/Prov data, nunca como premisa necesaria de FC3.
 
@@ -7426,60 +7426,60 @@ no “todo \(R_i\) es una célula porque tiene subíndice y closure”.
 
 La intuición «si nada existiera, de algún modo tendría que surgir algo» debe separarse de una transición ontológica literal:
 
-$
+$$
 \operatorname{NoR}
 \longrightarrow
 \operatorname{ExistsR}.
-$
+$$
 
 La formulación anterior sería engañosa si se leyera como una dinámica, porque:
 
-$
+$$
 \operatorname{NoR}
 :\Longleftrightarrow
 \neg\operatorname{ExistsR}
-$
+$$
 
 es una **metasentencia**, no un objeto, sustrato, estado físico ni contexto precursor capaz de ejecutar una operación. En particular, esta ruta queda descartada:
 
-$
+$$
 \text{Nothing}
 \xrightarrow{\operatorname{Inv}}
 R_i.
-$
+$$
 
 También queda descartado inferir existencia a partir de una mera negación lógica:
 
-$
+$$
 \neg\operatorname{ExistsR}
 \not\Rightarrow
 \operatorname{ExistsR}.
-$
+$$
 
 Por tanto, si la intuición contiene una tesis metafísica defendible, no puede ser «la Nada produce algo», sino una tesis de **imposibilidad de realización de la ausencia absoluta**.
 
 Introducimos solo como esquema de investigación un marcador metateórico:
 
-$
+$$
 \operatorname{Null}^{\mathsf M},
-$
+$$
 
 que **no denota una entidad**. Abrevia la candidatura límite «ausencia de toda determinación ontológica realizada». La pregunta no es qué propiedades tiene una cosa llamada Null, sino si una candidatura de ausencia absoluta puede contar coherentemente como realización.
 
 La hipótesis fuerte sería:
 
-$
+$$
 \boxed{
 \neg\operatorname{AdmissiblyRealizable}^{\mathsf M}
 (\operatorname{Null}^{\mathsf M})
 }
-$
+$$
 
 o, si una futura metalógica modal lo permite sin introducir un dominio ilícito de mundos/contextos:
 
-$
+$$
 \neg\Diamond^{\mathsf M}\operatorname{NoR}.
-$
+$$
 
 Esta última notación es **provisional**: REV-07g no presupone todavía una semántica modal global capaz de cuantificar sobre realizaciones de todos los contextos. No puede usarse para importar de contrabando Absolute Generality, un conjunto de mundos posibles ni un sort ontológico de índices.
 
@@ -7489,51 +7489,51 @@ La vía conceptualmente más fuerte no hace que la nada «actúe». Ataca la coh
 
 Sea, todavía esquemáticamente:
 
-$
+$$
 \operatorname{Realization}^{\mathsf M}(C)
-$
+$$
 
 un juicio metateórico de realización que **no** equivale por definición a `ExistsR`, RegimeTotal, IndexAdmission ni ContextIndividuation. Su contenido debe justificarse independientemente antes de hacer trabajo doctrinal.
 
 La hipótesis mínima a investigar es:
 
-$
+$$
 \boxed{
 \operatorname{Realization}^{\mathsf M}(C)
 \Rightarrow
 \operatorname{Determinate}^{\mathsf M}(C).
 }
-$
+$$
 
 No significa que toda realidad deba poseer una descripción completa, clásica o bivalente. `Determinate` significa únicamente que la realización no puede ser absolutamente carente de toda diferencia ontológicamente eficaz: debe haber algún rasgo cuya presencia/ausencia, estructura, rol o límite impida identificarla con una ausencia total de determinación.
 
 Si además `Null^M` se caracteriza exactamente por:
 
-$
+$$
 \operatorname{Null}^{\mathsf M}(C)
 \Rightarrow
 \neg\operatorname{Determinate}^{\mathsf M}(C),
-$
+$$
 
 entonces la conjunción:
 
-$
+$$
 \operatorname{Realization}^{\mathsf M}(C)
 \land
 \operatorname{Null}^{\mathsf M}(C)
-$
+$$
 
 sería incoherente bajo esas premisas.
 
 El objetivo sería obtener un resultado del tipo:
 
-$
+$$
 \boxed{
 \operatorname{Realization}^{\mathsf M}(C)
 \Rightarrow
 \neg\operatorname{Null}^{\mathsf M}(C).
 }
-$
+$$
 
 Esto todavía **no demuestra** `ExistsR`. Para hacerlo harían falta al menos dos puentes independientes:
 
@@ -7548,27 +7548,27 @@ Esta separación corrige la hipótesis anterior de una «inversión primordial»
 
 No necesitamos postular:
 
-$
+$$
 \text{indeterminación}
 \xrightarrow{\operatorname{Inv}^{0}}
 \text{primera distinción}
 \xrightarrow{}
 R_i.
-$
+$$
 
 La inversión ordinaria ya presupone una distinción orientada:
 
-$
+$$
 D=\langle A,B\rangle,
 \qquad
 \operatorname{Inv}(D)=\langle B,A\rangle,
-$
+$$
 
 por lo que usar la misma operación para explicar la primera distinción sería circular salvo que `Inv^0` recibiese una semántica independiente. Mientras esa semántica no exista, `Inv^0` no debe entrar en el núcleo.
 
 La arquitectura de investigación queda dividida en dos preguntas:
 
-$
+$$
 \boxed{
 \begin{array}{ll}
 \mathrm{NQ}:&
@@ -7577,29 +7577,29 @@ $
 \text{dada alguna realización, ¿qué diferencia efectiva funda su individuación contextual?}
 \end{array}
 }
-$
+$$
 
 Una respuesta negativa fuerte a NQ podría explicar por qué no hay No-R sin convertir la Nada en causa. Una respuesta positiva a IQ podría descargar una teoría concreta de `ContextIndividuation`.
 
 El candidato de IQ ya no es «cualquier diferencia». Debe ser una **distinción efectiva**:
 
-$
+$$
 \operatorname{EffDist}^{\mathsf M}_{\mathcal T}(C;\delta),
-$
+$$
 
 donde una teoría independiente `\mathcal T` justifica que `\delta` hace una diferencia constitutiva para el corte contextual. El esquema sería:
 
-$
+$$
 \operatorname{EffDist}^{\mathsf M}_{\mathcal T}(C;\delta)
 \land
 \operatorname{DistAdequate}^{\mathsf M}(\mathcal T,C,\delta)
 \Rightarrow
 \operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi_{\delta}),
-$
+$$
 
 y solo entonces:
 
-$
+$$
 \operatorname{Ind}_{\mathcal T}^{\mathsf M}(C;\chi_{\delta})
 \land
 \operatorname{IndAdequate}^{\mathsf M}(\mathcal T,C,\chi_{\delta})
@@ -7608,7 +7608,7 @@ $
 \Rightarrow
 \operatorname{IndexAdmission}^{\mathsf M}
 (C\Downarrow i;\chi_{\delta},\mathcal T).
-$
+$$
 
 `DistAdequate` debe heredar al menos IA0–IA10 y añadir guards específicos:
 
@@ -7623,17 +7623,17 @@ $
 
 Por tanto:
 
-$
+$$
 \boxed{
 \text{difference}
 \not\Rightarrow
 \text{ContextIndividuation},
 }
-$
+$$
 
 pero queda abierta la ruta:
 
-$
+$$
 \boxed{
 \text{independently grounded effective distinction}
 \Rightarrow
@@ -7641,7 +7641,7 @@ $
 \Rightarrow
 \text{ContextIndividuation}.
 }
-$
+$$
 
 #### 0.11.79d. Stress tests para NQ/IQ
 
@@ -7681,17 +7681,17 @@ Falla metodológicamente. El reductio sería circular y no añade evidencia.
 
 La investigación queda reordenada:
 
-$
+$$
 \boxed{
 \text{No-R / null-realizability problem}
 \quad\text{antes de}\quad
 \text{context-individuation problem}.
 }
-$
+$$
 
 La cadena heurística más prometedora es:
 
-$
+$$
 \text{no absolute null realization}
 \leadsto
 \text{some ontological realization}
@@ -7705,7 +7705,7 @@ $
 \text{IndexAdmission}
 \leadsto
 \text{REV-07 genealogy/closure}.
-$
+$$
 
 Las flechas `\leadsto` son **obligaciones de investigación**, no implicaciones demostradas.
 
@@ -17308,9 +17308,9 @@ a\in T_q^{\mathcal C}
 \eta_i^{\mathcal C}(a)=x_i
 \Rightarrow
 \operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i),
-$
+$$
 
-$
+$$
 \mathrm{CC}^{\mathrm{gen}}_{\mathcal C,i}:
 \quad
 \operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
