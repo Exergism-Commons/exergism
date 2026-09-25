@@ -302,6 +302,19 @@ class ContextRealityContractTests(unittest.TestCase):
                 MarkdownDocument(mutated),
             )
 
+    def test_rejects_missing_xr2_open_component_result(self) -> None:
+        heading = "#### 0.11.91r-aw. XR2-E — ejecución efectiva del componente abierto"
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed XR-2 open-component result",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
 
 class ArchiveContractTests(unittest.TestCase):
     def test_keywords_without_canonical_polarity_do_not_satisfy_banner(self) -> None:
