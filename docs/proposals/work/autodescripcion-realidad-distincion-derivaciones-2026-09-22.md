@@ -15856,996 +15856,651 @@ UG6\text{-}H.
 
 Ambas deudas son ahora dos caras del mismo problema: **cobertura de la relación entre firma y realizador**, no falta de una frontera operacional.
 
-#### 0.11.91r-bj. RealizerCoverageAdequate — el bridge firma↔host
+#### 0.11.91r-bj. RCAAudit — vista derivada, no nuevo criterio
 
-UG5 y UG6-H comparten la misma deuda: la teoría local puede ser internamente completa y, sin embargo, omitir una dependencia constitutivamente relevante presente en el realizador.
+La auditoría arquitectónica posterior detecta que la formulación inicial de
+`RealizerCoverageAdequate` estaba empezando a duplicar obligaciones ya
+propietarias de REV-07g/07h.
 
-Introducimos:
+No introducimos por tanto un nuevo criterio ontológico autónomo entre el host y
+la unidad. Conservamos **RCAAudit** únicamente como una vista de auditoría que
+pregunta cómo la evidencia de una realización concreta descarga obligaciones
+ya existentes.
 
-\[
+El ownership correcto es:
+
+[
+\begin{array}{rcl}
+\text{independencia del criterio}
+&\rightsquigarrow&
+IA1,\ IC3,\ MC1,\\
+\text{relevancia role-side}
+&\rightsquigarrow&
+IC2,\ IC4,\ MC6,\ PB6,\\
+\text{no hidden bypass}
+&\rightsquigarrow&
+IC5,\ MC4,\\
+\text{screening del exterior}
+&\rightsquigarrow&
+MC7,\ RE1\text{--}RE7,\ UG5,\\
+\text{fault/lifecycle honesty}
+&\rightsquigarrow&
+RE3,\ RE5,\\
+\text{rival cuts}
+&\rightsquigarrow&
+IA8,\ MC9,\ UG6,\ RC\text{-}T1,\\
+\text{recoding}
+&\rightsquigarrow&
+IA4,\ IC6,\ OR6,\ UG8,\\
+\text{falsabilidad/auditabilidad}
+&\rightsquigarrow&
+IA10,\ RE7.
+\end{array}
+]
+
+RCAAudit no añade ninguna verdad que no pueda reducirse a esos contratos. Su
+función es de bookkeeping experimental:
+
+[
 \boxed{
-\operatorname{RealizerCoverageAdequate}^{\mathsf M}
-(
-\mathcal T,C,H;
-\varrho,
-\mathcal E
-)
+\operatorname{RCAAudit}
+=
+\text{evidence map over existing obligations}.
 }
-\]
+]
 
-donde \(\mathcal E\) es el RealizationEnvelope vigente.
+Esta corrección evita que cada nivel de implementación genere una nueva teoría
+de cobertura sobre la teoría anterior.
 
-No sustituye OR1–OR9. OR1–OR9 preguntan si \(H\) realiza fielmente la dinámica local. RCA pregunta además si **la abstracción ha cubierto las dependencias host-side que importan para la unidad**.
+#### 0.11.91r-bk. Corrección de ownership — RCA sí estaba reempaquetando IC/MC/UG
 
-Requisitos:
+La formulación histórica de §0.11.91r-bk afirmaba que RCA era una obligación
+inter-level conceptualmente distinta de MC6/MC7. Esa afirmación queda
+**SUPERSEDED**.
 
-1. **RCA1 / independent host theory:** la semántica relevante de \(H\) y de \(\varrho\) se fija sin ContextIndividuation/IndexAdmission;
-2. **RCA2 / dependency projection:** toda dependencia host-side que la teoría del realizador reconoce como capaz de cambiar typing, interface, continuation o boundary proyecta a state/interface/fault de \(\mathcal T\), o invalida explícitamente la realización;
-3. **RCA3 / no hidden constituent:** no existe un elemento/relación host-side conocido como necesario para las transiciones/roles constitutivos que sea invisible tanto a \(\varrho\) como al envelope;
-4. **RCA4 / fault projection:** fallos/lifecycle events relevantes se proyectan a \(\mathcal F\) o a pérdida observable de realization; nunca a \(\mathcal N\);
-5. **RCA5 / irrelevant covariance:** variaciones host-side declaradas irrelevantes y admitidas por la teoría preservan \(\Xi_C\);
-6. **RCA6 / host-rival projection:** cualquier cut rival construible desde dependencias host-side reconocidas induce un rival de firma, un higher-order/nested case o una violación observable de realization/envelope;
-7. **RCA7 / recoding invariance:** recodificaciones fieles del realizador preservan la clasificación de dependencias;
-8. **RCA8 / falsifiability:** un counterexample host-side no proyectado reabre RCA/UG5/UG6-H en vez de ser excluido retrospectivamente.
+Existe una diferencia de lugar de evidencia: algunos tests se ejecutan en el
+host y otros se formulan en la candidatura local. Pero eso no crea una nueva
+categoría ontológica.
 
-Entonces:
+Si una dependencia host-side puede cambiar una consecuencia role-relevant sin
+atravesar la interfaz declarada, el fallo ya tiene nombre:
 
-\[
+[
 \boxed{
-\operatorname{RealizerCoverageAdequate}
-+
-UG6\text{-}S
-\Rightarrow
-UG5
-+
-UG6\text{-}H.
+\neg IC5
+\quad\text{o}\quad
+\neg MC4.
 }
-\]
+]
 
-Por tanto:
+Si una interacción/rol relevante fue omitido del contract state:
 
-\[
+[
 \boxed{
-\operatorname{RealizerCoverageAdequate}
-+
-UG6\text{-}S
-\Rightarrow
-UG5+UG6.
+\neg MC6
+\quad\text{o, para persistencia,}\quad
+\neg PB6.
 }
-\]
+]
 
-La regla no resuelve RCA; concentra la deuda sin duplicarla.
+Si una variación declarada irrelevante cambia el futuro local una vez fijados
+estado relevante e input de interfaz:
 
-#### 0.11.91r-bk. RCA no es MC6/MC7 renombrado
-
-MC6 y MC7 operan en la candidatura pre-indexada:
-
-- MC6 exige cobertura de roles/interacciones relevantes;
-- MC7 exige screening-off contrafactual respecto del nivel declarado.
-
-RCA añade una obligación **inter-level**:
-
-\[
-H
-\xrightarrow{\varrho}
-C.
-\]
-
-Pregunta si la teoría que justifica el paso host→local es suficientemente completa para sostener precisamente MC6/MC7 y UG5/UG6-H.
-
-Por tanto:
-
-\[
+[
 \boxed{
-MC6/MC7
-\text{ son obligaciones locales;}
-\qquad
-RCA
-\text{ es la auditoría del bridge de realización.}
+\neg MC7
+\quad\text{y}\quad
+\neg UG5.
 }
-\]
+]
 
-Si el realizador se tratara como mero “hardware irrelevante” sin RCA, el programa reintroduciría por debajo el mismo no-free-promotion que intenta bloquear por arriba.
+Y si esa estructura soporta un same-level rival cut no resuelto:
 
-#### 0.11.91r-bl. RCA-XR2 — auditoría actual
+[
+\boxed{
+\neg MC9
+\quad\text{y}\quad
+\neg UG6.
+}
+]
 
-Para XR-2:
+Por tanto el host puede aportar el witness del fallo, pero no necesita un nuevo
+predicado para que el fallo exista.
 
-\[
+#### 0.11.91r-bl. XR2-RCAAudit — evidencia actual
+
+XR-2 sigue siendo útil porque aporta evidencia ejecutable para varias
+obligaciones existentes.
+
+[
 H_{XR2}
 =
-\text{Python process pair + multiprocessing IPC + runtime/OS realization}.
-\]
+\text{process pair + IPC realization}.
+]
 
-Estado:
+La auditoría vigente se lee ahora así:
 
-\[
+[
 \begin{array}{lll}
-RCA1 & \mathsf{PASS} &
-\text{la semántica process/IPC y la firma I/O se fijan independientemente};\\
-RCA2 & \mathsf{PARTIAL} &
-\text{channel, output-role break y unsupported input están proyectados; no toda dependencia runtime/OS};\\
-RCA3 & \mathsf{PARTIAL} &
-\text{no se ha probado ausencia de hidden constituents del runtime/OS};\\
-RCA4 & \mathsf{PARTIAL} &
-\text{unsupported input se clasifica como fault; lifecycle/channel-loss coverage no está agotada};\\
-RCA5 & \mathsf{PASS} &
-\text{environment_noise y la recodificación fiel preservan el profile};\\
-RCA6 & \mathsf{PARTIAL} &
-\text{UG6-S pasa, pero no todo host rival conocido está probado proyectable};\\
-RCA7 & \mathsf{PASS} &
-\text{state/action recoding preserva polaridad y trace structure};\\
-RCA8 & \mathsf{PASS} &
-\text{RE7 y los guards obligan a reabrir ante bypass reproducible}.
+IC/MC\text{ interface actuality}
+& \mathsf{PASS\;evidence} &
+\text{input/output reales y receptor externo};\\
+RE2
+& \mathsf{PASS\;evidence} &
+\texttt{close}\text{ entra por el canal declarado};\\
+RE3/RE5
+& \mathsf{PASS\;evidence\;for\;tested\;families} &
+\text{unsupported input, channel loss y termination se hacen visibles};\\
+MC7/RE4
+& \mathsf{PASS\;evidence\;for\;tested\;controls} &
+\text{noise y delay preservan el perfil declarado};\\
+UG8/IC6
+& \mathsf{PASS\;evidence} &
+\text{recodificación fiel preserva polaridad y traza};\\
+UG6\text{-}S
+& \mathsf{PASS} &
+\text{la RivalGrammar finita declarada se enumera exhaustivamente};\\
+MC6/UG6\text{-}H
+& \mathsf{PARTIAL} &
+\text{la completitud del conjunto de roles/interacciones constitutivos no está demostrada};\\
+UG5
+& \mathsf{PARTIAL} &
+\text{los controles ejecutados no sustituyen la cobertura contractual completa}.
 \end{array}
-\]
+]
 
-Así:
+No se infiere de aquí una teoría exhaustiva del runtime.
 
-\[
-\boxed{
-\operatorname{RCAAudit}_{XR2}
-=
-\langle
-P,\partial,\partial,\partial,P,\partial,P,P
-\rangle.
-}
-\]
-
-El resultado explica por qué añadir más tests de firma tiene rendimiento decreciente: la deuda restante ya no está dentro del autómata.
-
-#### 0.11.91r-bm. Teorema de cuello de botella XR-2
+#### 0.11.91r-bm. Cuello de botella XR-2 corregido
 
 Con las descargas actuales:
 
-\[
+[
 UG1,UG2,UG3,UG4,UG7,UG8
 =
 \mathsf{PASS},
-\]
+]
 
 y:
 
-\[
+[
 UG6\text{-}S
 =
 \mathsf{PASS}.
-\]
+]
 
-Por §0.11.91r-bj, cerrar RCA bastaría para descargar simultáneamente:
+La deuda restante no es:
 
-\[
-UG5
-\quad\text{y}\quad
-UG6\text{-}H,
-\]
+[
+\text{“modelar completamente Python/OS/hardware”}.
+]
 
-y por tanto:
+Es demostrar, para la teoría de individuación usada por XR-2, que el contract
+state y la frontera pre-indexada son adecuados:
 
-\[
+[
 \boxed{
-\operatorname{RealizerCoverageAdequate}_{XR2}
-\Rightarrow
+IC4+IC5+MC4+MC6+MC7+MC9
+}
+]
+
+con la evidencia RE/CIT/rival-cut correspondiente.
+
+Si esas obligaciones descargan UG5 y UG6-H, entonces:
+
+[
+\boxed{
 \operatorname{UnitGroundAdequate}_{XR2}.
 }
-\]
+]
 
-Esto **no** equivale a:
+No aparece un bridge ontológico adicional entre ellas y UnitGroundAdequate.
 
-\[
-\operatorname{RealizerCoverageAdequate}_{XR2}
-\Rightarrow
-\operatorname{ExistsR},
-\]
+#### 0.11.91r-bn. RCA-X1 — límite de baterías finitas dentro de un contrato
 
-porque todavía deben mantenerse las demás obligaciones de IndAdequate, IndexAdmission y RegimeTotal del witness correspondiente.
+El contraejemplo de la batería finita se conserva, pero cambia su lectura.
 
-El research target queda reducido de “qué es una unidad contextual” a una pregunta mucho más concreta para XR-2:
+Una familia finita de tests:
 
-> ¿puede una relación de realización host→component descargarse con cobertura suficiente sin exigir una descripción microscópicamente total del host ni esconder dependencias constitutivas?
+[
+\Delta=\{\delta_1,\ldots,\delta_n\}
+]
 
-#### 0.11.91r-bn. RCA-X1 — ninguna batería finita prueba ausencia universal de hidden constituents
-
-Sea:
-
-\[
-\Delta
-=
-\{\delta_1,\ldots,\delta_n\}
-\]
-
-una batería finita de intervenciones sobre un realizador \(H\), y supongamos que todas proyectan correctamente a la teoría local o preservan el perfil.
-
-Construimos dos realizadores:
-
-\[
-H
-\qquad\text{y}\qquad
-H^{+z},
-\]
-
-tales que:
-
-1. son observacionalmente indistinguibles bajo toda \(\delta_k\in\Delta\);
-2. inducen exactamente la misma traza local y los mismos certificados para la batería;
-3. \(H^{+z}\) contiene una dependencia adicional \(z\) no activada por ninguna \(\delta_k\);
-4. existe una intervención \(\delta_z\notin\Delta\) bajo la cual \(z\) altera una parte constitutiva de \(\Xi_C\) sin estar proyectada por \(\varrho\) ni clasificada por el envelope.
-
-Entonces:
-
-\[
-\forall \delta\in\Delta:
-\operatorname{Obs}_{\delta}(H)
-=
-\operatorname{Obs}_{\delta}(H^{+z}),
-\]
-
-pero RealizerCoverageAdequate puede tener distinto valor en ambos realizadores.
+no demuestra por sí sola que un InterfaceContract, una PersistenceBasis o una
+familia de roles sea completa. Puede existir una diferencia (z) no excitada
+por (Delta) que una continuación role-relevant sí discrimine.
 
 Por tanto:
 
-\[
+[
 \boxed{
 \text{finite intervention success}
 \not\Rightarrow
-\operatorname{RealizerCoverageAdequate}.
+IC4+IC5+MC6+PB6.
 }
-\]
+]
 
-Esto no convierte los tests en inútiles: pueden **falsar** RCA y descargar familias concretas, pero no establecer por enumeración finita la ausencia de toda dependencia oculta.
+Éste no es un argumento para crear una teoría exhaustiva del host. Es la razón
+por la que la completitud debe venir de semántica independiente del rol,
+RoleAdequate/RoleCompositionAdequate, coverage de MaintRole/interactions o un
+teorema estructural equivalente.
 
-#### 0.11.91r-bo. RCA-T1 — hace falta una teoría del realizador, no infinitos tests
+#### 0.11.91r-bo. RCA-T1 — SUPERSEDED como teoría host autónoma
 
-Para cerrar RCA introducimos una teoría independiente del realizador:
+La propuesta histórica introdujo:
 
-\[
+[
 \mathcal H
 =
-\langle
-Q_H,
-\Lambda_H,
-\to_H,
-\mathsf{Dep}_H,
-\mathsf{Fault}_H
-\rangle.
-\]
+\langle Q_H,\Lambda_H,\to_H,\mathsf{Dep}_H,\mathsf{Fault}_H\rangle
+]
 
-No tiene que ser una microfísica total. Debe cubrir el vocabulario host-side que se afirma relevante para la realización actual.
+y un predicado separado `HostTheoryAdequate`.
 
-Definimos:
+Como capa ontológica independiente, esa ruta queda **SUPERSEDED**.
 
-\[
-\boxed{
-\operatorname{HostProjectionComplete}^{\mathsf M}
-(
-\mathcal H,\mathcal T,H;
-\varrho,\mathcal E
-)
-}
-\]
+Una semántica del runtime puede seguir usándose como fuente externa para
+demostrar hechos concretos —qué hace un canal, cuándo aparece EOF, qué significa
+terminate, etc.—, pero no crea un nuevo nivel de adecuación entre la realización
+y los contratos ya existentes.
 
-si toda transición/dependencia admitida por \(\mathcal H\) cae en una clase predefinida:
+La regla anterior:
 
-1. **HPC1 / local step:** proyecta a una transición de \(\mathcal T\);
-2. **HPC2 / interface step:** proyecta a una interacción de \(\mathcal A\);
-3. **HPC3 / stutter:** preserva \(\Xi_C\) y pertenece a \(\mathcal N\) o a una equivalencia de realización;
-4. **HPC4 / fault/lifecycle:** proyecta a \(\mathcal F\) o pérdida observable de realización;
-5. **HPC5 / recoding/refinement:** cambia implementación sin cambiar el perfil abstracto;
-6. **HPC6 / no residual relevant step:** no queda una transición/dependencia que altere \(\Xi_C\) fuera de HPC1–HPC5.
-
-Además:
-
-- **HPC7 / independent grammar:** las clases de \(\mathcal H\) se fijan sin usar el éxito de \(C\);
-- **HPC8 / counterexample openness:** una nueva transición host-side reproducible no cubierta invalida HostProjectionComplete hasta revisar \(\mathcal H\).
-
-Entonces:
-
-\[
-\boxed{
-\operatorname{HostTheoryAdequate}(\mathcal H,H)
+[
+\operatorname{HostTheoryAdequate}
 +
 \operatorname{HostProjectionComplete}
 \Rightarrow
-\operatorname{RealizerCoverageAdequate}.
-}
-\]
+\operatorname{RealizerCoverageAdequate}
+]
 
-La carga se desplaza correctamente desde “hemos probado muchos casos” a “tenemos una abstracción host→local cuya cobertura puede auditarse”.
+se retira del núcleo activo.
 
-#### 0.11.91r-bp. No-Microscopic-Totality — RCA no exige describir todos los microestados
+#### 0.11.91r-bp. No-Microscopic-Totality — derivado del kernel de interfaz
 
-HostTheoryAdequate no significa que \(\mathcal H\) enumere cada transistor, scheduler tick o estado físico.
+El principio correcto ya estaba contenido en REV-07h.
 
-La obligación relevante es más estrecha:
+Sea (mathbb I^ho) un InterfaceContract adecuado. Si dos realizaciones
+upstream satisfacen:
 
-\[
+[
+u
+\equiv_{\mathbb I^\rho}^{\mathsf M}
+v,
+]
+
+las diferencias entre ellas pertenecen al quotient autorizado para ese rol.
+No hace falta incorporar al downstream la historia causal completa, cada
+scheduler tick ni cada mecanismo interno del realizador.
+
+En forma de screening:
+
+[
 \boxed{
-\text{todo factor reconocido como constitutivamente capaz de alterar }\Xi_C
-\text{ debe proyectar o invalidar la realización.}
+\text{Upstream detail}
+\perp
+\text{downstream consequence}
+\mid
+\mathbb I^\rho
 }
-\]
+]
 
-Los detalles microfísicos pueden quedar quotientados cuando la teoría independiente del host justifica que, respecto del perfil:
+cuando IC4/IC5 están descargadas.
 
-\[
-h_1\sim_{\varrho,\mathcal E} h_2.
-\]
+Y para Bake:
+
+[
+\boxed{
+\ker(Bake)
+\subseteq
+\ker(\mathbb I^\rho).
+}
+]
 
 Por tanto:
 
-\[
+[
 \boxed{
-\text{realizer coverage}
+\text{realization adequacy}
 \neq
-\text{microscopic totality}.
+\text{microscopic host totality}.
 }
-\]
+]
 
-Pero la equivalencia tampoco se decreta. Si un detalle previamente quotientado produce un UnitProfileBreak reproducible, HPC8 obliga a refinar la teoría.
-
-Este principio evita una regresión infinita puramente epistemológica: cada nivel de realización puede usar una teoría independently grounded y falsable sin pretender agotar físicamente su sustrato.
+Si una diferencia profunda cambia una continuación role-relevant, entonces no
+estaba legítimamente en el kernel: falla IC4/IC5, MC6/MC7 o el contract state
+debe refinarse. No se añade el mecanismo profundo como constituyente por el mero
+hecho de ser causalmente necesario para la implementación.
 
 #### 0.11.91r-bq. Relación con abstract interpretation y equivalencia conductual
 
-La forma de HostProjectionComplete tiene precedentes formales claros:
+Abstract interpretation, simulation y bisimulation siguen siendo precedentes
+técnicos útiles para construir proyecciones ejecutables del realizador.
 
-- abstract interpretation permite describir computaciones concretas en un dominio abstracto conservando la información relevante para las propiedades objetivo;
-- simulation/bisimulation-style relations permiten demostrar que pasos concretos y abstractos preservan una conducta observacional seleccionada;
-- I/O/interface theories añaden la distinción sistema/entorno necesaria para no confundir stutter interno con interacción exterior.
+Su papel queda restringido:
 
-Exergism añade una exigencia propia: la propiedad preservada no es solo comportamiento observable, sino el **pre-index unit profile** usado por IA0-U.
-
-Por tanto no se infiere:
-
-\[
-\text{sound abstraction}
-\Rightarrow
-\text{ContextIndividuation}.
-\]
-
-La inferencia permitida es únicamente:
-
-\[
-\text{sound host projection}
-\Rightarrow
-\text{evidence para RCA},
-\]
-
-dentro del resto de UnitGroundAdequate.
-
-#### 0.11.91r-br. XR2-HOST — batería adversarial concreta sobre el realizador
-
-Tras introducir RCA se atacan cuatro familias host-side que no pertenecen al autómata local:
-
-1. **timing/scheduling surrogate:** retrasar el envío environment-side sin cambiar mensaje ni estado;
-2. **channel loss:** desaparecer el único sender antes de entregar input;
-3. **process termination:** terminar el component process antes de completar el episodio;
-4. **transport refinement:** sustituir el Pipe dúplex por un par de Queues manteniendo la misma firma I/O.
-
-El resultado ejecutable, bajo una única semántica host pre-registrada con start-method spawn, es:
-
-\[
+[
 \boxed{
-\begin{array}{lll}
-\text{send delay} &\mapsto& \text{stutter / irrelevant variation};\\
-\text{channel loss} &\mapsto& \text{realization fault};\\
-\text{process termination} &\mapsto& \text{lifecycle fault};\\
-\text{Pipe}\to\text{Queue} &\mapsto& \text{implementation refinement}.
-\end{array}
+\text{implementation proof technique}
+\not\Rightarrow
+\text{new ontological layer}.
 }
-\]
+]
 
-CI verifica respectivamente:
+Una proyección host/local puede aportar evidencia de IC6, RE4, OR6 o de que un
+refinement preserva el mismo perfil contractual. La semántica de qué diferencias
+pueden olvidarse sigue viniendo del contrato/rol independently grounded.
 
-- re4_environment_send_delay_screened;
-- rca4_channel_loss_projects_to_fault;
-- rca4_process_termination_projects_to_lifecycle_fault;
-- rca7_queue_transport_preserves_profile.
+#### 0.11.91r-br. XR2-HOST — probes de realización, no expansión ontológica
 
-No aparece en esta batería un bypass que altere \(\Xi_C\) y quede simultáneamente fuera de interface, fault/lifecycle, stutter y refinement.
+Se conservan los ataques ejecutables ya implementados:
 
-#### 0.11.91r-bs. START-X1 — el start-method era una dependencia host no modelada
+1. delay del envío del environment;
+2. channel loss;
+3. process termination;
+4. refinement Pipe→Queue.
 
-La primera implementación de channel-loss usó la configuración de multiprocessing heredada del runner. El test no terminaba después de cerrar el sender.
+Sus resultados actuales son evidencia:
 
-Una segunda versión hizo explícito spawn solo para el fault arm y sí obtuvo EOF. Pero eso habría comparado realizadores distintos.
+- delay: preserva el perfil declarado;
+- channel loss: hace visible pérdida/fault de realización;
+- process termination: hace visible lifecycle failure;
+- Pipe→Queue: preserva el perfil contractual probado.
 
-La corrección final fija:
+Estos probes pueden falsar RE/IC/MC si producen una diferencia no prevista.
+No enumeran los constituyentes ontológicos de (R_i).
 
-\[
+#### 0.11.91r-bs. START-X1 — dependencia de realización, no constitución automática
+
+La ronda anterior descubrió que el test de channel-loss dependía del método de
+arranque. Bajo herencia de descriptors el experimento podía quedar bloqueado;
+con `spawn` la ownership del endpoint queda suficientemente controlada para el
+test.
+
+El hallazgo se conserva:
+
+[
+StartMethod_{XR2}=spawn.
+]
+
+Pero su lectura correcta es:
+
+[
 \boxed{
-\mathsf{StartMethod}_{XR2}
-=
-\mathrm{spawn}
-}
-\]
-
-para **todos** los episodios XR-2: normal, fault, CIT y transport-refinement.
-
-Por tanto el start-method pasa a formar parte de la teoría host declarada, no del ambiente accidental del runner.
-
-El finding importante no es que otro start-method sea ontológicamente inválido. Es:
-
-\[
-\boxed{
-\text{ambient implementation parameter}
-\text{ puede afectar fault observability}
-}
-\]
-
-y, por tanto, no puede descartarse como detalle irrelevante antes de auditar su proyección.
-
-START-X1 es un ejemplo concreto de por qué RCA3/RCA4 no podían darse por cerrados desde la firma I/O sola.
-
-#### 0.11.91r-bt. RCAAudit actualizado tras los ataques host
-
-La evidencia nueva fortalece la auditoría pero no cambia todavía su status global:
-
-\[
-\begin{array}{lll}
-RCA1 & \mathsf{PASS} &
-\text{firma I/O + start-method spawn + API host quedan explícitos};\\
-RCA2 & \mathsf{PARTIAL} &
-\text{más familias proyectadas, pero no existe aún HostProjectionComplete};\\
-RCA3 & \mathsf{PARTIAL} &
-\text{START-X1 demuestra precisamente que pueden aparecer constituents omitidos};\\
-RCA4 & \mathsf{PARTIAL} &
-\text{unsupported input, channel loss y process termination están clasificados, no todo fault del runtime/OS};\\
-RCA5 & \mathsf{PASS} &
-\text{noise y timing delay preservan el profile bajo el envelope};\\
-RCA6 & \mathsf{PARTIAL} &
-\text{UG6-S pasa, pero host-rival projection aún no es completa};\\
-RCA7 & \mathsf{PASS} &
-\text{Pipe→Queue + recoding state/action preservan el perfil};\\
-RCA8 & \mathsf{PASS} &
-\text{los fallos anteriores reabrieron efectivamente el diseño en vez de excluirse}.
-\end{array}
-\]
-
-Así se mantiene:
-
-\[
-\boxed{
-\operatorname{RCAAudit}_{XR2}
-=
-\langle
-P,\partial,\partial,\partial,P,\partial,P,P
-\rangle.
-}
-\]
-
-La misma matriz tiene ahora **más evidencia positiva**, pero no se eleva artificialmente a PASS total.
-
-#### 0.11.91r-bu. HOST-T1 — resultado adversarial de la ronda
-
-La ronda produce simultáneamente un resultado positivo y uno negativo.
-
-**Positivo.** Para las familias host efectivamente atacadas:
-
-\[
-\boxed{
-\text{no se encontró una dependencia no proyectable.}
-}
-\]
-
-**Negativo.** Por RCA-X1:
-
-\[
-\boxed{
-\text{ningún número finito de ataques}
-\Rightarrow
-\operatorname{RealizerCoverageAdequate}.
-}
-\]
-
-Por tanto el siguiente paso **no** es añadir indefinidamente más fault injections.
-
-El target formal pasa a ser:
-
-\[
-\boxed{
-\mathcal H_{MP}
-+
-\operatorname{HostProjectionComplete}
-}
-\]
-
-donde \(\mathcal H_{MP}\) debe fijar independientemente el fragmento de semántica multiprocessing que se afirma suficiente para la realización XR-2 y demostrar que sus transiciones relevantes quedan cubiertas por HPC1–HPC5.
-
-Solo después puede intentarse:
-
-\[
-\operatorname{HostTheoryAdequate}(\mathcal H_{MP},H_{XR2})
-+
-\operatorname{HostProjectionComplete}
-\Rightarrow
-\operatorname{RealizerCoverageAdequate}_{XR2}.
-\]
-
-#### 0.11.91r-bv. HMP-XR2 — teoría host pre-registrada
-
-A partir de la semántica pública de multiprocessing y de los recursos realmente usados por XR-2, se fija antes de la conclusión la gramática host:
-
-\[
-\mathcal H_{MP}^{XR2}
-=
-\langle
-Q_H,
-\Lambda_H,
-\to_H,
-\mathsf{Class}_H
-\rangle.
-\]
-
-La clasificación declarada es:
-
-\[
-\begin{array}{l|l}
-\text{host event} & \text{projection class}\\
-\hline
-\text{process start} & stutter\\
-\texttt{close send/receive} & interface\\
-\texttt{activate send/receive} & interface\\
-\text{unsupported input} & fault\\
-\text{channel EOF} & fault\\
-\text{process termination} & fault\\
-\text{normal process exit} & stutter\\
-\text{environment noise} & stutter\\
-\text{environment send delay} & stutter\\
-\text{Pipe}\to\text{Queue} & refinement
-\end{array}
-\]
-
-El start-method es parte explícita de la teoría:
-
-\[
-\mathsf{StartMethod}_{XR2}
-=
-spawn.
-\]
-
-No se afirma que esta gramática agote Python, el OS o la microfísica. Es el fragmento host que la investigación declara usar para realizar el witness.
-
-#### 0.11.91r-bw. HMP-T1 — HostProjectionComplete sobre la gramática declarada
-
-El ejecutable verifica:
-
-1. **HPC1/HPC2:** todos los pasos send/receive declarados quedan clasificados como interface;
-2. **HPC3:** process start/normal exit, environment_noise y environment_send_delay quedan clasificados como stutter;
-3. **HPC4:** unsupported input, channel EOF y process termination quedan clasificados como fault/lifecycle;
-4. **HPC5:** Pipe→Queue queda clasificado como refinement;
-5. **HPC6:** ningún evento de la gramática queda sin clase;
-6. **HPC7:** la gramática existe como constante pre-registrada, no se construye desde el resultado del run;
-7. **HPC8:** la arquitectura mantiene extension pressure: un nuevo host event relevante no cubierto debe añadirse/reabrir la auditoría;
-8. el start-method observado por el checker es spawn.
-
-Por tanto:
-
-\[
-\boxed{
-\operatorname{HostProjectionComplete}
-(
-\mathcal H_{MP}^{XR2},
-\mathcal T_{\mathrm{IODTS}},
-H_{XR2};
-\varrho,\mathcal E
-)
-}
-\]
-
-queda **PASS respecto de la gramática declarada**.
-
-Esto no entra en contradicción con RCA-X1: RCA-X1 prohibía derivar completitud universal desde una batería finita. HMP-T1 demuestra completitud formal sobre un lenguaje host explícitamente fijado.
-
-#### 0.11.91r-bx. HOST-ADEQ — la deuda se mueve a la adecuación de HMP-XR2
-
-Queda abierta:
-
-\[
-\boxed{
-\operatorname{HostTheoryAdequate}
-(
-\mathcal H_{MP}^{XR2},
-H_{XR2}
-).
-}
-\]
-
-La pregunta ya no es si los eventos **dentro** de la gramática proyectan: eso está cerrado por HMP-T1.
-
-La pregunta es si la gramática omite algún tipo de dependencia del runtime/OS que sea constitutivamente relevante para \(\Xi_C\).
-
-Con el estado actual:
-
-\[
-\boxed{
-\operatorname{HostProjectionComplete}_{XR2}
-=
-\mathsf{PASS},
-}
-\]
-
-pero:
-
-\[
-\boxed{
-\operatorname{HostTheoryAdequate}_{XR2}
-=
-\mathsf{PARTIAL}.
-}
-\]
-
-Por tanto:
-
-\[
-\boxed{
-\operatorname{RealizerCoverageAdequate}_{XR2}
-=
-\mathsf{PARTIAL}.
-}
-\]
-
-El cuello se ha estrechado otra vez:
-
-\[
-\boxed{
-\text{RCA debt}
-=
-\text{adequacy of the declared host theory},
-}
-\]
-
-no falta de clasificación interna ni falta de tests sobre la gramática.
-
-La siguiente objeción adversarial debe exhibir **un tipo de dependencia host constitutivamente relevante que no esté representado en \(\mathcal H_{MP}^{XR2}\)**. Si no puede hacerse bajo una teoría independiente suficientemente rica del runtime, podría cerrarse HostTheoryAdequate; no se cerrará simplemente por no encontrar más ejemplos.
-
-
-#### 0.11.91r-by. HOST-X1 — HMP-XR2 no sobrevive como teoría host adecuada
-
-La auditoría adversarial de `HOST-ADEQ` encuentra ahora un counterexample **positivo** contra la suficiencia de la gramática declarada en §0.11.91r-bv.
-
-El realizador certificado por CI no es un autómata abstracto ejecutado sobre un canal opaco. El workflow fija Python 3.12 sobre un runner Linux y XR-2 fuerza `spawn`. La semántica pública y la implementación CPython correspondiente exhiben dependencias host adicionales que la gramática vigente no representa:
-
-1. `spawn` arranca un intérprete nuevo y requiere bootstrap/import del módulo principal;
-2. en POSIX, `spawn` usa además un `resource_tracker` y canales auxiliares de bootstrap;
-3. `Connection.send()` / `recv()` serializan y reconstruyen objetos mediante `pickle`;
-4. `Connection` añade framing de mensajes sobre el descriptor/handle subyacente;
-5. en POSIX, `Pipe(duplex=True)` se realiza mediante `socket.socketpair()`, no mediante un pipe unidireccional simple;
-6. el refinement `Pipe -> Queue` introduce buffer, locks/semaphores y un feeder thread que vuelca datos serializados a un pipe subyacente.
-
-Definamos la familia de dependencias conocidas omitidas:
-
-\[
-\mathcal Z_{XR2}
-=
-\{
-\text{spawn-bootstrap},
-\text{main-import},
-\text{resource-tracker},
-\text{serialization},
-\text{framing},
-\text{descriptor-carrier},
-\text{queue-feeder/synchronization}
-\}.
-\]
-
-No todas esas dependencias tienen por qué ser partes constitutivas de la unidad candidata. Pero varias son **necesarias para actualizar la interfaz realizada** o para el refinement host que la auditoría usa como evidencia. Su fallo puede impedir `close -> activate`, cambiar la entrega observable o invalidar la realización.
-
-Por tanto la inferencia anterior:
-
-\[
-\operatorname{HostProjectionComplete}
-(
-\mathcal H_{MP}^{XR2},\ldots
-)
-\Rightarrow
-\text{“la teoría host es suficientemente rica”}
-\]
-
-queda rechazada.
-
-El resultado correcto es:
-
-\[
-\boxed{
-\operatorname{HostProjectionComplete}
-(
-\mathcal H_{MP}^{XR2},\ldots
-)
-=
-\mathsf{PASS}_{\text{declared grammar}}
-}
-\]
-
-junto con:
-
-\[
-\boxed{
-\operatorname{HostTheoryAdequate}
-(
-\mathcal H_{MP}^{XR2},
-H_{XR2}
-)
-=
-\mathsf{FAIL}
-}
-\]
-
-para **esa candidatura de teoría host**, porque existe una familia independientemente conocida de dependencias relevantes no representadas.
-
-Esto no refuta XR-2 ni `HostProjectionComplete`. Refuta únicamente el salto desde “clasifico todo lo que declaré” a “declaré todo lo relevante”.
-
-#### 0.11.91r-bz. HOST-SUPPORT — necesidad de realización no implica constitución de la unidad
-
-HOST-X1 descubre una distinción que la formulación anterior de RCA no hacía con suficiente precisión.
-
-Sea \(d\) una dependencia reconocida del realizador \(H\). No adoptamos:
-
-\[
-\operatorname{NecessaryForRealization}(d,C)
-\Rightarrow
+\operatorname{NecessaryForThisRealizationTest}(d)
+\not\Rightarrow
 \operatorname{UnitConstitutive}(d,C).
-\]
-
-Un scheduler, un descriptor, el bootstrap del intérprete o una rutina de framing pueden ser necesarios para que la realización ocurra sin formar parte de la unidad que se intenta individuar.
-
-Introducimos una clase explícita de **carrier/support dependence**.
-
-Sea \(\mathcal K\) un contrato host independiente. Definimos:
-
-\[
-\boxed{
-\operatorname{CarrierTransparent}^{\mathsf M}_{\mathcal K}
-(
-d,C,H;
-\alpha,\varrho,\mathcal E,\Xi_C
-)
 }
-\]
+]
 
-cuando se satisfacen conjuntamente:
+`spawn` forma parte del setup/assumptions del witness ejecutable. Solo
+adquiriría relevancia para la unidad si una diferencia entre métodos de arranque
+sobrevive al contrato o cambia una obligación de individuación.
 
-1. **CT1 / recognized dependence:** \(d\) pertenece a una clase de dependencias reconocida por \(\mathcal K\);
-2. **CT2 / successful weak preservation:** variaciones de \(d\) que siguen satisfaciendo el contrato de carrier pueden introducir pasos host internos, pero su proyección por \(\alpha/\varrho\) preserva la misma traza observable de \(\Xi_C\) salvo stutter;
-3. **CT3 / explicit failure projection:** el fallo de \(d\) proyecta a una clase `fault/lifecycle`, a una violación explícita de \(\mathcal E\), o a ausencia de realización actual; nunca a una modificación silenciosa de \(\Xi_C\);
-4. **CT4 / no hidden branch:** no existe una rama reconocida por \(\mathcal K\) en la que \(d\) cambie typing, boundary, interface o continuation sin que ese cambio aparezca en la proyección;
-5. **CT5 / rival sensitivity:** si una variación de \(d\) produce una nueva unidad/cut rival en vez de mero soporte, `CarrierTransparent` falla y la dependencia debe reclasificarse;
-6. **CT6 / recoding covariance:** una recodificación fiel del carrier preserva la clasificación support/constitutive/fault.
+#### 0.11.91r-bt. RCAAudit actualizado como evidencia de guards existentes
 
-Entonces:
+La batería host-side descarga únicamente familias concretas de evidencia:
 
-\[
+[
 \boxed{
-\operatorname{CarrierSupport}_{\mathcal K}(d,C,H)
-\not\Rightarrow
-\operatorname{UnitConstitutive}(d,C)
+\begin{array}{rcl}
+\text{delay/noise} &\rightsquigarrow& RE4,MC7,UG5\text{ evidence},\\
+\text{channel loss/termination} &\rightsquigarrow& RE3,RE5\text{ evidence},\\
+\text{transport refinement} &\rightsquigarrow& IC6,UG8\text{ evidence},\\
+\text{endpoint ownership} &\rightsquigarrow& IC1,MC4\text{ evidence}.
+\end{array}
 }
-\]
+]
 
-y también:
+No existe un PASS agregado de “host completeness” derivado de estos tests.
 
-\[
+#### 0.11.91r-bu. HOST-T1 — resultado adversarial reinterpretado
+
+La ronda host no cerró ni refutó por sí sola la individuación.
+
+Lo que sí mostró es útil:
+
+[
 \boxed{
-\neg\operatorname{CarrierTransparent}_{\mathcal K}(d,\ldots)
-\Rightarrow
-\text{reopen HOST-ADEQ/RCA}.
+\text{un detalle de implementación puede invalidar un experimento}
+]
+
+sin que por ello:
+
+[
+\boxed{
+\text{todo detalle de implementación pertenezca al contexto}.
 }
-\]
+]
 
-La función de esta distinción es impedir dos colapsos opuestos:
+La distinción entre falla del witness de realización y falla del contrato
+ontológico de individuación queda obligatoria.
 
-- convertir todo el sustrato necesario en parte de la célula contextual;
-- declarar “infraestructura” a cualquier dependencia incómoda y esconder un constituyente real.
+#### 0.11.91r-bv. HMP-XR2 — gramática diagnóstica pre-registrada
 
-#### 0.11.91r-ca. HTA-X1 — ninguna auditoría finita cierra HostTheoryAdequate en sentido absoluto
+La gramática (mathcal H_{MP}^{XR2}) se conserva como lenguaje de diagnóstico
+del ejecutable XR-2. Clasifica los eventos que el script decidió auditar:
+start/exit, I/O declarada, faults probados, noise/delay y transport refinement.
 
-La dificultad de RCA-X1 reaparece un nivel más abajo.
+No se interpreta como ontología exhaustiva de Python, del OS ni del hardware.
 
-Sea \(\mathcal H\) una teoría host finita y \(\Delta\) una batería finita de observaciones/intervenciones compatible con ella.
+#### 0.11.91r-bw. HMP-T1 — completitud de clasificación sobre la gramática diagnóstica
 
-Construimos un realizador \(H\) y una extensión \(H^{+z}\) tales que:
+El checker demuestra:
 
-1. coinciden bajo todos los eventos y dependencias representados por \(\mathcal H\);
-2. coinciden bajo toda intervención de \(\Delta\);
-3. \(H^{+z}\) contiene una dependencia adicional \(z\) no representada;
-4. existe una condición admisible bajo la cual \(z\) altera \(\Xi_C\) sin proyectar a local/interface/fault/refinement/support.
-
-Entonces:
-
-\[
-\operatorname{Obs}_{\Delta}(H)
-=
-\operatorname{Obs}_{\Delta}(H^{+z}),
-\]
-
-pero:
-
-\[
-\operatorname{HostTheoryAdequate}(\mathcal H,H)
-\]
-
-y:
-
-\[
-\operatorname{HostTheoryAdequate}(\mathcal H,H^{+z})
-\]
-
-pueden diferir.
-
-Por tanto:
-
-\[
+[
 \boxed{
-\text{finite host grammar}
-+
-\text{finite successful audit}
-\not\Rightarrow
-\operatorname{HostTheoryAdequate}_{\mathrm{absolute}}.
-}
-\]
-
-El resultado no dice que una teoría del realizador sea inútil. Dice que su suficiencia siempre debe estar **scoped por un contrato independiente que determine qué clases de dependencia pretende cubrir**.
-
-Sin ese scope, “no quedan hidden constituents” vuelve a ser una universal empírica imposible de descargar por enumeración.
-
-#### 0.11.91r-cb. HTA-K — HostTheoryAdequate relativo a un contrato host independiente
-
-La reparación consiste en hacer explícita la relatividad que ya estaba implícita en `Ind_T`, RealizationEnvelope y las teorías de interfaz.
-
-Introducimos un contrato host:
-
-\[
-\mathcal K_H
-=
-\langle
-V_H,
-P_H,
-D_H,
-F_H,
-S_H,
-\equiv_H
-\rangle,
-\]
-
-donde:
-
-- \(V_H\) fija runtime/version family y condiciones de plataforma relevantes;
-- \(P_H\) fija las operaciones host cuya semántica se usa;
-- \(D_H\) fija clases de dependencia reconocidas;
-- \(F_H\) fija fallos/lifecycle violations reconocidos;
-- \(S_H\) fija dependencias de carrier/support;
-- \(\equiv_H\) fija equivalencias de implementación permitidas.
-
-Definimos:
-
-\[
-\boxed{
-\operatorname{HostTheoryAdequate}^{\mathsf M}_{\mathcal K_H}
-(
-\mathcal H,H;
-\alpha,\varrho,\mathcal E,\Xi_C
-)
-}
-\]
-
-mediante **HTA1–HTA8**:
-
-1. **HTA1 / scope identity:** la ejecución actual identifica un runtime/plataforma/start-method dentro del scope de \(\mathcal K_H\);
-2. **HTA2 / independent semantics:** \(\mathcal K_H\) y las clases de \(\mathcal H\) se fijan desde semántica/documentación/implementación independiente, no desde el éxito de `ContextIndividuation`;
-3. **HTA3 / recognized-dependency coverage:** toda dependencia de \(D_H\) alcanzable en la ruta de realización afirmada tiene representación en \(\mathcal H\);
-4. **HTA4 / constitutive-support discipline:** cada dependencia relevante queda clasificada como projected local/interface, fault/lifecycle, refinement o carrier/support; `support` no funciona como cajón de sastre;
-5. **HTA5 / carrier transparency:** toda dependencia clasificada como support descarga CT1–CT6;
-6. **HTA6 / host-rival sensitivity:** toda dependencia reconocida que induzca un rival de unidad, typing o boundary reabre UG5/UG6-H en vez de ser quotientada;
-7. **HTA7 / refinement covariance:** implementaciones relacionadas por \(\equiv_H\) preservan la proyección o declaran explícitamente una pérdida de realización;
-8. **HTA8 / drift and counterexample openness:** cambio de versión/plataforma fuera de scope, nueva dependencia documentada o counterexample reproducible invalida el certificado hasta revisar \(\mathcal K_H/\mathcal H\).
-
-El cierre permitido pasa a ser:
-
-\[
-\boxed{
-\operatorname{HostTheoryAdequate}_{\mathcal K_H}
-+
 \operatorname{HostProjectionComplete}
-\Rightarrow
-\operatorname{RealizerCoverageAdequate}_{\mathcal K_H}.
+(
+\mathcal H_{MP}^{XR2}
+)
+=
+\mathsf{PASS}_{\text{declared diagnostic grammar}}.
 }
-\]
+]
 
-Y, manteniendo UG6-S:
+La lectura queda estrictamente limitada a:
 
-\[
-\boxed{
-\operatorname{RealizerCoverageAdequate}_{\mathcal K_H}
-+
-UG6\text{-}S
-\Rightarrow
-UG5+UG6.
-}
-\]
+> cada evento declarado en esa gramática recibe una clasificación consistente.
 
-No se infiere una suficiencia host absoluta. Se obtiene una descarga **contract-relative, version-scoped y falsable**, exactamente como exige una investigación reproducible.
+No sigue ninguna tesis de completitud de constituyentes ni de roles
+contextuales.
 
-#### 0.11.91r-cc. HOST-ADEQ-XR2 — resultado de la ronda y reparación mínima
+#### 0.11.91r-bx. HOST-ADEQ — SUPERSEDED como deuda autónoma
 
-La ronda adversarial produce por tanto tres resultados distintos.
+La pregunta histórica era:
 
-Primero, la gramática anterior queda falsada como candidata adecuada:
-
-\[
-\boxed{
+[
 \operatorname{HostTheoryAdequate}
 (
 \mathcal H_{MP}^{XR2},
 H_{XR2}
-)
+)?
+]
+
+Se retira como blocker independiente.
+
+La pregunta vigente vuelve a la arquitectura ya existente:
+
+> ¿el InterfaceContract/contract state usado por XR-2 retiene todas las
+> diferencias role-relevant y media todas las dependencias atribuidas al rol,
+> y la teoría de individuación cubre todos los roles/interacciones y rival cuts
+> que afirma constitutivos?
+
+Eso se descarga mediante:
+
+[
+IC4,IC5,MC4,MC6,MC7,MC9,UG5,UG6,
+]
+
+no mediante una teoría exhaustiva del host.
+
+#### 0.11.91r-by. HOST-X1 — SUPERSEDED: mecanismo omitido no implica constituyente omitido
+
+La ronda del 25 de septiembre afirmó provisionalmente que descubrir
+`spawn-bootstrap`, `resource_tracker`, serialización, framing,
+`socketpair` o internals de Queue bastaba para concluir:
+
+[
+\operatorname{HostTheoryAdequate}
 =
 \mathsf{FAIL}.
-}
-\]
+]
 
-Segundo, la noción metodológica sobrevive solo en forma contract-relative:
+Esa inferencia es **inválida** y queda SUPERSEDED.
 
-\[
+REV-07h ya había demostrado el patrón contrario: upstream implementations
+pueden diferir radicalmente y seguir siendo equivalentes para un consumidor si
+las diferencias quedan en:
+
+[
+\ker(\mathbb I^\rho).
+]
+
+La mera necesidad causal de un mecanismo para realizar el canal no demuestra
+que ese mecanismo sea role-relevant, unit-constitutive ni parte del contexto.
+
+El finding útil que sobrevive es más débil:
+
+[
 \boxed{
-\operatorname{HostTheoryAdequate}_{\mathcal K_H}
+\text{mecanismo host descubierto}
+\Rightarrow
+\text{nuevo probe posible},
 }
-\]
+]
 
-con HTA1–HTA8 y `CarrierTransparent`.
+y solo si ese probe revela una diferencia role-relevant no mediada aparece un
+fallo de IC/MC/UG.
 
-Tercero, XR-2 **no obtiene todavía** el cierre de RCA. La ruta correcta es construir una \(\mathcal K_{XR2}\) suficientemente estrecha y una nueva \(\mathcal H_{XR2}^{+}\) que cubra al menos:
+#### 0.11.91r-bz. HOST-SUPPORT — absorbido por InterfaceContract/MC/RE
 
-\[
-\{
-\text{spawn/bootstrap},
-\text{endpoint ownership/transfer},
-\text{message codec/framing},
-\text{OS carrier},
-\text{scheduling/progress},
-\text{lifecycle/fault}
-\}.
-\]
+La distinción correcta:
 
-El refinement `Pipe -> Queue` añade además:
+[
+\operatorname{NecessaryForRealization}
+\not\Rightarrow
+\operatorname{UnitConstitutive}
+]
 
-\[
-\{
-\text{buffer},
-\text{feeder thread},
-\text{locks/semaphores},
-\text{queue flush/finalization}
-\},
-\]
+se conserva.
 
-por lo que mantenerlo encarece `HOST-ADEQ`.
+Pero no introducimos `CarrierTransparent` como un predicado nuevo.
 
-La reparación experimental preferida es minimizar el realizador antes de ampliar la ontología:
+Su contenido ya está repartido sin pérdida:
 
-1. reemplazar `send()/recv()` por un protocolo de bytes pre-registrado mediante `send_bytes()/recv_bytes()`, eliminando `pickle` de la interfaz constitutiva;
-2. usar canales con polaridad física explícita para input/output cuando sea posible;
-3. sustituir `Pipe -> Queue` por un refinement de transporte más pequeño que no introduzca feeder thread/semaphore si ese refinement no es necesario para el target;
-4. fijar y registrar el scope efectivo del host contract usado por CI;
-5. volver a ejecutar HOST-ADEQ intentando encontrar una dependencia reconocida de \(\mathcal K_{XR2}\) no cubierta.
+- preservación downstream: IC4/IC5;
+- no hidden bypass: IC5/MC4;
+- variación irrelevante: MC7/RE4;
+- fault visible: RE3/RE5;
+- recoding/refinement: IC6/UG8;
+- rival cut: MC9/UG6.
 
-El estado queda:
+Por tanto `CarrierTransparent` queda **SUPERSEDED como duplicación**.
 
-\[
+#### 0.11.91r-ca. HTA-X1 — REDUNDANT con RCA-X1; no crea un nuevo blocker
+
+El argumento “una batería finita no prueba ausencia universal de mecanismos
+ocultos” es correcto como límite epistemológico, pero ya estaba contenido en
+RCA-X1 y, más profundamente, en la diferencia entre tests finitos y
+RoleAdequate/IC4/IC5/MC6.
+
+No se introduce:
+
+[
+\operatorname{HostTheoryAdequate}_{absolute}
+]
+
+como target que luego resulte imposible de cerrar.
+
+La teoría solo debe justificar la completitud relevante para el contrato que
+realmente afirma, con los guards anti-post-hoc existentes.
+
+#### 0.11.91r-cb. HTA-K — SUPERSEDED: no crear un contrato host paralelo
+
+La propuesta provisional:
+
+[
+\mathcal K_H
+=
+\langle V_H,P_H,D_H,F_H,S_H,\equiv_H\rangle
+]
+
+queda retirada del núcleo.
+
+Sus campos reimplementaban estructuras ya existentes:
+
+[
+\begin{array}{rcl}
+\text{operaciones/observables}
+&\rightsquigarrow&
+\Sigma^\rho,\Gamma^\rho,\mathcal Q^\rho,\\
+\text{dependencias relevantes}
+&\rightsquigarrow&
+\operatorname{Dep}_\rho,\ IC2,\ IC4,\ MC6,\\
+\text{faults}
+&\rightsquigarrow&
+\mathcal F\text{ de RealizationEnvelope},\\
+\text{support/refinement}
+&\rightsquigarrow&
+\ker(\mathbb I^\rho),\ IC6,\\
+\text{equivalencia}
+&\rightsquigarrow&
+\equiv_{\mathbb I^\rho},\ E_\Theta.
+\end{array}
+]
+
+Crear (mathcal K_H) habría producido exactamente la regresión arquitectónica
+que REV-07h ya evitaba.
+
+#### 0.11.91r-cc. XR2-ADEQ — deuda vigente devuelta a IC/MC/UG
+
+El estado coherente después de la auditoría es:
+
+[
 \boxed{
-\operatorname{HostProjectionComplete}_{\text{old grammar}}
-=
-\mathsf{PASS},
+UG4_{XR2}=\mathsf{PASS},
 \qquad
-\operatorname{HostTheoryAdequate}_{\text{old grammar}}
-=
-\mathsf{FAIL},
+UG8_{XR2}=\mathsf{PASS},
 \qquad
-\operatorname{HostTheoryAdequate}_{\mathcal K_{XR2}}
-=
-\mathsf{OPEN}.
+UG6\text{-}S_{XR2}=\mathsf{PASS}.
 }
-\]
+]
 
-Esto es un avance más fuerte que mantener `PARTIAL`: ahora sabemos **por qué** la candidatura anterior falla y qué forma debe tener un cierre que no sea circular.
+Y:
+
+[
+\boxed{
+UG5_{XR2}=\mathsf{PARTIAL},
+\qquad
+UG6\text{-}H_{XR2}=\mathsf{PARTIAL}.
+}
+]
+
+La causa de esos PARTIAL no se formula como “faltan piezas del runtime”. Se
+formula con el vocabulario ya canónico:
+
+[
+\boxed{
+\text{remaining XR2 debt}
+=
+\text{contract/role/interactions coverage}
++
+\text{same-level rival-cut discrimination}.
+}
+]
+
+El siguiente ataque debe intentar producir una de estas dos cosas:
+
+1. una diferencia independently role-relevant que el InterfaceContract de XR-2
+   colapse o que alcance la dinámica local por un hidden bypass;
+2. un role/interaction o same-level rival cut constitutivamente relevante que
+   MC6/MC9/UG6 no haya cubierto.
+
+Si un mecanismo de CPython cambia pero no produce ninguno de esos dos efectos,
+es precisamente el tipo de diferencia upstream que la teoría de
+Interface/Memoization/Bake permite quotientar.
+
 
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
