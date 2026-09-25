@@ -153,7 +153,32 @@ $$
 \operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi,\mathcal T).
 $$
 
-La relatividad a \(\mathcal T\) y el witness \(\chi\) pertenecen a la **descarga/auditoría**, no a la realidad individuada: el target objetivo es $\operatorname{ContextIndividuation}^{\mathsf M}(C)$. IndAdequate exige fidelidad estructural, independencia del target, fundamento positivo, invariancia, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina de cortes rivales y no-totalización; REV-07g contiene los tests completos. IndexAdmission no implica RegimeTotal ni REC. Un parámetro provisional \(\widehat{i}\) puede servir para auditar una candidatura sin admitirla. IndexRetraction corrige una admisión metateórica defectuosa y no equivale a ContextCessation ontológica. **Nada absoluta frente a individuación.** REV-07g separa ahora dos deudas: `NoR := not ExistsR` es una metasentencia, no un estado precursor u objeto capaz de producir realidad, de modo que no se usa `Nothing -> R_i` ni una «inversión de la Nada». Queda abierta la hipótesis de si una ausencia absoluta de determinación puede ser una realización admisible, pero incluso excluirla no prueba por sí solo `ExistsR`: falta un puente no circular hacia RegimeTotal. Separadamente, una distinción solo puede fundamentar ContextIndividuation si es efectiva y positivamente justificada por una teoría independiente; una partición descriptiva `A|B` no basta.
+La relatividad a \(\mathcal T\) y el witness \(\chi\) pertenecen a la **descarga/auditoría**, no a la realidad individuada: el target objetivo es $\operatorname{ContextIndividuation}^{\mathsf M}(C)$. IndAdequate exige fidelidad estructural, independencia del target, fundamento positivo, invariancia, coherencia de frontera, anti-agregación, discriminación de génesis, disciplina de cortes rivales y no-totalización; REV-07g contiene los tests completos. IndexAdmission no implica RegimeTotal ni REC. Un parámetro provisional \(\widehat{i}\) puede servir para auditar una candidatura sin admitirla. IndexRetraction corrige una admisión metateórica defectuosa y no equivale a ContextCessation ontológica. **Puente de formación hacia \(R_i\).** IndexAdmission no crea una realidad ni demuestra su totalidad. Su función es licenciar el sort contextual bajo el cual las expresiones indexadas pasan a estar bien formadas. Lo representamos mediante una **regla de formación metateórica**, no mediante un existencial objeto:
+
+$$
+\boxed{
+\frac{
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
+\qquad
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
+}{
+\vdash^{\mathsf M} R_i:\mathsf{OntScope}_i
+}
+\quad(\mathrm{R\text{-}FORM})
+}
+$$
+
+\(R_i\) designa aquí un **candidato de alcance ontológico tipado por el contexto admitido \(i\)**. R-FORM no añade una entidad nueva al inventario, no afirma \(\operatorname{OntTotal}_i(R_i)\) y no implica que exista una GeneBasis exhaustiva. En particular:
+
+$$
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
+\not\Rightarrow
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i).
+$$
+
+La dirección es asimétrica: ContextIndividuation fundamenta IndexAdmission; IndexAdmission licencia el lenguaje de \(R_i\); solo una descarga genealógica posterior puede establecer RegimeTotal. RegimeTotal no puede usarse retroactivamente para fabricar la individuación o el índice que su propia formulación ya presupone.
+
+**Nada absoluta frente a individuación.** REV-07g separa ahora dos deudas: `NoR := not ExistsR` es una metasentencia, no un estado precursor u objeto capaz de producir realidad, de modo que no se usa `Nothing -> R_i` ni una «inversión de la Nada». Queda abierta la hipótesis de si una ausencia absoluta de determinación puede ser una realización admisible, pero incluso excluirla no prueba por sí solo `ExistsR`: falta un puente no circular hacia RegimeTotal. Separadamente, una distinción solo puede fundamentar ContextIndividuation si es efectiva y positivamente justificada por una teoría independiente; una partición descriptiva `A|B` no basta.
 
 ### 1.4. Juicios metaontológicos de contexto
 
@@ -320,6 +345,28 @@ $$
 
 RegimeClosure vuelve a cerrar $\Gamma_i$ sobre la base conjunta y por ello incluye producción transversal entre unidades; la mera unión $\bigcup_\alpha C_{\alpha,i}$ no basta. Como RegimeTotal exige $\operatorname{Within}_i(x_i,R_i)\leftrightarrow\operatorname{Real}_i(x_i)$ para todo $x_i$, queda explícito el puente $\boxed{\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)\Rightarrow\operatorname{OntTotal}_i(R_i)}$. La familia es no vacía, overlap-coherent e irredundante respecto de su propia closure, y su tipado común debe estar justificado **antes** de formar la familia: GeneBasis no puede fabricar SharedOntSpace.
 
+**Condición de formación de RegimeTotal.** Una aserción \(\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)\) solo es doctrinalmente admisible bajo un \(i\) previamente admitido y un \(R_i\) bien formado por R-FORM. Esto es una **side condition de tipado**, no una nueva premisa interna de RegimeTotal y tampoco una inferencia \(\operatorname{RegimeTotal}\Rightarrow\operatorname{ContextIndividuation}\) que pudiera emplearse para bootstrapear el índice. RegimeTotal hace un trabajo posterior y distinto: identifica el scope tipado como exhaustivo respecto de \(\operatorname{Real}_i\) y de la RegimeClosure de una GeneBasis adecuada.
+
+Si dos candidatos de scope \(R_i\) y \(R'_i\) satisfacen RegimeTotal bajo el mismo índice admitido —posiblemente mediante GeneBasis distintas—, ambos son necesariamente coextensionales respecto de Within:
+
+$$
+\boxed{
+\begin{aligned}
+&\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+\land
+\operatorname{RegimeTotal}_i(\mathfrak H_i,R'_i)\\
+&\qquad\Rightarrow
+\forall x_i[
+\operatorname{Within}_i(x_i,R_i)
+\Longleftrightarrow
+\operatorname{Within}_i(x_i,R'_i)
+].
+\end{aligned}
+}
+$$
+
+No inferimos identidad objeto \(R_i=R'_i\) sin un principio extensional adicional; tampoco aparecen dos contextos, porque la individuación y el índice ya eran los mismos.
+
 Para $C_i$ la GenClosure de $\mathcal O_i$:
 
 $$
@@ -411,7 +458,17 @@ con el significado:
 
 > existe una instanciación admisible del parámetro de contexto $i$ para la cual la sentencia indexada $\Phi_i$ está satisfecha.
 
-$\exists^{\mathsf M}$ **no** es un cuantificador del lenguaje ontológico y no presupone un dominio $I$ de índices.
+$\exists^{\mathsf M}$ **no** es un cuantificador del lenguaje ontológico y no presupone un dominio $I$ de índices. En esta propuesta, que una instanciación de \(i\) sea **admisible** exige provenance metateórica de ContextIndividuation e IndexAdmission. Esquemáticamente, para usar una instancia de \(\exists^{\mathsf M}i\;\Phi_i\) debe existir una candidatura \(C\) tal que:
+
+$$
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
+\land
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
+\land
+\Phi_i.
+$$
+
+La vía concreta que descargue ContextIndividuation —TR, una world-making theory adecuada o una primitividad restringida— es independiente de esta semántica. Escribir un subíndice o introducir un parámetro provisional \(\widehat{i}\) no satisface \(\exists^{\mathsf M}i\).
 
 El target doctrinal se escribe ahora:
 
@@ -425,6 +482,24 @@ $$
 \operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
 \bigr).
 }
+
+Con la semántica anterior, el puente completo puede mostrarse sin colapsar sus etapas:
+
+$$
+\boxed{
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
+\land
+\operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i)
+\land
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+\Rightarrow
+\operatorname{OntTotal}_i(R_i)
+\land
+\operatorname{ExistsR}.
+}
+$$
+
+La primera conjunción licencia el contexto y su tipado; RegimeTotal descarga la exhaustividad genealógica del scope; \(\operatorname{OntTotal}\) es consecuencia de esa exhaustividad. Ninguna de las tres etapas se usa para definir retroactivamente las anteriores.
 $$
 
 Y:
@@ -728,7 +803,7 @@ Los cierres de REV-01 y REV-04 son deliberadamente limitados:
 
 La existencia ontológica y su representación quedan ahora separadas:
 
-1. **REV-07/REV-07g:** justificar primero una individuación contextual admisible/IndexAdmission y, dentro de ese contexto, GeneUnit locales, una GeneBasis no redundante, la relación objetivo independiente $\operatorname{OntProd}_i$, una implementación $\operatorname{GenEvent}_i$ sound-and-complete y existencia de RegimeClosure; solo entonces $\operatorname{RegimeGenerated}^{*}_i$ puede realizar un $R_i$, mientras $\operatorname{GenStep}_i$ permanece una proyección auxiliar;
+1. **REV-07/REV-07g:** justificar primero ContextIndividuation e IndexAdmission; R-FORM licencia entonces un candidato de scope $R_i$ sin totalizarlo. Dentro de ese contexto deben justificarse GeneUnit locales, una GeneBasis no redundante, la relación objetivo independiente $\operatorname{OntProd}_i$, una implementación $\operatorname{GenEvent}_i$ sound-and-complete y existencia de RegimeClosure; solo RegimeTotal convierte ese scope tipado en un alcance genealógicamente exhaustivo, mientras $\operatorname{GenStep}_i$ permanece una proyección auxiliar;
 2. **REV-23:** justificar PON solo si se conserva la reconstrucción finita por $\Lambda_*$;
 3. **REV-24:** dado un $R_i$ genealógico ya justificado, demostrar OA/MC/RA y $\operatorname{Presents}_i(S_i,R_i)$;
 4. **REV-25:** justificar la smallness de firma/aridades y el predicado de actualidad usado por Separation.
