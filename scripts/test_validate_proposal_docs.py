@@ -373,6 +373,19 @@ class ContextRealityContractTests(unittest.TestCase):
                 MarkdownDocument(mutated),
             )
 
+    def test_rejects_missing_xr2_host_attack_result(self) -> None:
+        heading = "#### 0.11.91r-bu. HOST-T1 — resultado adversarial de la ronda"
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed XR-2 host attack result",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
 
 class ArchiveContractTests(unittest.TestCase):
     def test_keywords_without_canonical_polarity_do_not_satisfy_banner(self) -> None:
