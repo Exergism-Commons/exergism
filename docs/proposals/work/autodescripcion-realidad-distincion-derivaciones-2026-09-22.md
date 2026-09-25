@@ -5838,13 +5838,19 @@ Una descripción estática del carrier final no distingue A de B. Por eso la ind
 
 Hasta disponer de una teoría independiente más reductiva, la opción formalmente más limpia es no esconder la deuda.
 
-Introducimos provisionalmente:
+Introducimos provisionalmente el target objetivo:
 
 \[
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
 \]
 
-como **juicio metaontológico primitivo sujeto a criterios de admisibilidad**, no como entidad, proceso ni hecho objeto.
+y tratamos \(\chi\) únicamente como witness/certificate de su descarga mediante
+\(\operatorname{ContextAdequate}^{\mathsf M}(C,\chi)\). La notación histórica
+\(\operatorname{ContextIndividuation}(C;\chi)\) queda SUPERSEDED en aridad y
+debe leerse solo como anotación de provenance epistémica.
+
+ContextIndividuation es un **juicio metaontológico primitivo sujeto a criterios
+de admisibilidad**, no una entidad, proceso ni hecho objeto.
 
 Esto no significa “cualquier corte vale”. \(\chi\) debe satisfacer como mínimo las obligaciones CI1–CI8 ya fijadas y, además:
 
@@ -5859,7 +5865,7 @@ La salida sigue siendo:
 
 \[
 \boxed{
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
 \Rightarrow
 \operatorname{IndexAdmission}^{\mathsf M}(C\Downarrow i;\chi).
 }
@@ -6062,7 +6068,7 @@ Podemos fijar el contrato mínimo:
 \boxed{
 \operatorname{AdmissibleContext}^{\mathsf M}(C;\chi)
 :=
-\operatorname{ContextIndividuation}^{\mathsf M}(C;\chi)
+\operatorname{ContextIndividuation}^{\mathsf M}(C)
 \land
 \mathrm{CI1\text{-}CI14}(C,\chi).
 }
