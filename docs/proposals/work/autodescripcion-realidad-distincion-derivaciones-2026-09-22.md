@@ -13994,6 +13994,286 @@ no:
 
 Éste es el punto relevante para un futuro paper: la tesis no necesita que una célula, una CPU y un controlador “sean la misma clase de cosa”. Necesita que **ser contexto** sea una propiedad estructural descargable por mecanismos distintos sin cambiar el criterio de admisibilidad.
 
+#### 0.11.91r-q. Evidencia externa no es todavía ContextIndividuation
+
+La ronda anterior demostró portabilidad del **criterio** entre dominios. El siguiente paso es más exigente: sustituir los toys por sistemas concretos documentados externamente.
+
+Para no convertir documentación técnica o literatura empírica en metafísica por decreto, introducimos solo un juicio de auditoría:
+
+\[
+\operatorname{EmpiricalSupport}^{\mathsf M}
+(E,C;Q),
+\]
+
+leído: el conjunto de fuentes/evidencias \(E\) respalda de forma independiente la proposición estructural \(Q\) sobre la candidatura \(C\).
+
+No se adopta:
+
+\[
+\boxed{
+\operatorname{EmpiricalSupport}(E,C;Q)
+\not\Rightarrow
+\operatorname{ContextIndividuation}^{\mathsf M}(C).
+}
+\]
+
+La evidencia puede descargar premisas concretas de IA/MC, pero sigue haciendo falta demostrar que el mapping:
+
+\[
+Q_1,\dots,Q_n
+\Longrightarrow
+\mathrm{IA/MC\ obligations}
+\]
+
+es adecuado y que no quedan bypasses o rival cuts relevantes omitidos.
+
+Distinguimos tres clases de evidencia sin imponer un ranking ontológico universal:
+
+1. **implementation/documentation evidence:** especificaciones, código fuente y documentación oficial muestran la arquitectura efectivamente implementada;
+2. **mechanism evidence:** literatura experimental/biológica o documentación funcional establece mecanismos causalmente eficaces;
+3. **token/run evidence:** observación de una instancia concreta ejecutándose/funcionando.
+
+Una arquitectura documentada puede ser real como artefacto sin que esta auditoría haya observado un token particular; un mecanismo biológico puede estar experimentalmente bien establecido sin que se haya seguido una célula concreta de principio a fin. Ninguno de esos huecos debe ocultarse bajo IA0.
+
+#### 0.11.91r-r. EMP-SW-REDIS — Redis Open Source como candidatura software concreta
+
+Tomamos ahora un sistema software específico: **Redis Open Source server**.
+
+Fuentes externas verificables:
+
+- la documentación oficial define una interacción client/server por comandos: el cliente envía una orden y el servidor procesa y devuelve una respuesta;
+- RESP es el wire protocol de Redis y el servidor expone un vocabulario explícito de comandos/capacidades;
+- Redis implementa un event loop propio basado en polling del sistema operativo y timers;
+- Redis puede reconstruir su dataset tras restart mediante RDB y/o AOF; AOF registra write operations y las replayea para reconstruir estado.
+
+Fuentes:
+- https://redis.io/docs/latest/develop/using-commands/
+- https://redis.io/docs/latest/develop/reference/
+- https://redis.io/docs/latest/operate/oss_and_stack/reference/internals/internals-rediseventlib/
+- https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/
+
+Mapeo conservador:
+
+\[
+\begin{array}{lll}
+\mathrm{MC2} & \text{fuerte} &
+\text{commands/arguments/replies proporcionan typing operacional explícito};\\
+\mathrm{MC3} & \text{parcial-fuerte} &
+\text{server state + protocol endpoints son estructura positiva, no mera etiqueta};\\
+\mathrm{MC4} & \text{fuerte para el nivel declarado} &
+\text{socket I/O/timers/persistence aparecen como canales efectivos};\\
+\mathrm{MC5} & \text{fuerte} &
+\text{dataset + event loop + persistence soportan continuidad/reentrada};\\
+\mathrm{MC6} & \text{parcial} &
+\text{background persistence, timers y client roles están documentados, no todos los host effects};\\
+\mathrm{MC7} & \text{parcial} &
+\text{la documentación no demuestra por sí sola screening-off frente a todo host-side intervention};\\
+\mathrm{MC8} & \text{fuerte} &
+\text{un deployment label o unión con otro proceso no aparece como fuente de unidad};\\
+\mathrm{MC10} & \text{parcial-fuerte} &
+\text{restart/reconstruction están documentados, pero identidad ontológica no se sigue de persistence}.
+\end{array}
+\]
+
+La objeción debugger/host del stress test anterior permanece real. La existencia de una event loop y un protocolo no demuestra que cualquier modificación de memoria, señal OS o fallo de hardware sea irrelevant. DL1 exige que, si la teoría software pretende incluir esos mecanismos en el mismo nivel causal, se modelen como inputs/interventions.
+
+**Resultado REDIS-R.** Redis es una candidatura software **externamente respaldada a nivel de implementación** para TR-M. Pero estas fuentes no constituyen token/run evidence de una instancia particular ni descargan por sí solas IA0:
+
+\[
+\boxed{
+\operatorname{RedisImplementationEvidence}
+\Rightarrow
+\text{strong TR-M candidate}
+\not\Rightarrow
+\operatorname{ContextIndividuation}.
+}
+\]
+
+#### 0.11.91r-s. EMP-BIO-ECOLI — E. coli como candidatura biológica concreta
+
+Tomamos **Escherichia coli**, no “una célula” abstracta.
+
+La literatura revisada establece al menos:
+
+1. la envoltura de bacterias Gram-negativas define una frontera con el ambiente y participa en uptake selectivo, respiración y secreción;
+2. existen envelope-stress responses que detectan daño/defectos de ensamblaje y regulan reparación/remodelado para sostener supervivencia;
+3. E. coli dispone de transporte activo/regulado de nutrientes a través de membrana, incluido uptake dependiente de disponibilidad ambiental;
+4. la división se ejecuta mediante un divisome trans-envelope; el proceso coordina FtsZ, síntesis/remodelado de peptidoglicano, invaginación de envelope y scission en dos células hijas.
+
+Fuentes:
+- A. Konovalova, “Homeostasis of the Gram-Negative Cell Envelope” (2021), PMC8577651: https://pmc.ncbi.nlm.nih.gov/articles/PMC8577651/
+- “Regulation Systems of Bacteria such as Escherichia coli in Response to Nutrient Limitation and Environmental Stresses”, PMC4018673: https://pmc.ncbi.nlm.nih.gov/articles/PMC4018673/
+- “Localization, Assembly, and Activation of the Escherichia coli Cell Division Machinery”, PMC8919703: https://pmc.ncbi.nlm.nih.gov/articles/PMC8919703/
+
+Mapeo:
+
+\[
+\begin{array}{lll}
+\mathrm{MC2} & \text{fuerte a nivel biológico} &
+\text{la teoría distingue procesos/estados internos y señales/transportes};\\
+\mathrm{MC3} & \text{fuerte} &
+\text{envelope + homeostasis proporcionan boundary positivo y mantenido};\\
+\mathrm{MC4} & \text{fuerte pero no exhaustivo} &
+\text{transport/signaling/respiration muestran apertura mediada};\\
+\mathrm{MC5} & \text{fuerte-candidata} &
+\text{regulación/homeostasis soportan dinámica organizacional reentrante};\\
+\mathrm{MC6} & \text{parcial} &
+\text{ningún pequeño corpus bibliográfico demuestra cobertura causal completa};\\
+\mathrm{MC7} & \text{parcial} &
+\text{la robustez/homeostasis apoya screening, no demuestra autonomía contrafactual total};\\
+\mathrm{MC8} & \text{fuerte} &
+\text{proximidad o inclusión espacial de moléculas externas no genera unidad};\\
+\mathrm{MC10} & \text{fuerte para genesis, parcial para persistence} &
+\text{divisome/scission documentan división; identidad diacrónica sigue siendo teoría adicional}.
+\end{array}
+\]
+
+El rival cut “media célula geométrica” queda especialmente mal parado: la literatura atribuye las funciones de boundary, transport, stress response y division a una arquitectura distribuida que ese plano corta arbitrariamente.
+
+**Resultado ECOLI-R.** E. coli es el caso de los tres con evidencia causal/experimental más directamente alineada con unidad mantenida y apertura mediada. Aun así, no convertimos esa robustez en una prueba de ContextIndividuation porque MC6/MC7 y el bridge IA0 siguen siendo obligaciones:
+
+\[
+\boxed{
+\operatorname{EColiMechanismEvidence}
+\Rightarrow
+\text{strong evidence-backed candidate}
+\not\Rightarrow
+\operatorname{ContextIndividuation}.
+}
+\]
+
+#### 0.11.91r-t. EMP-PHY-NEST — Nest Thermostat + Heat Link como lazo físico concreto
+
+Tomamos un sistema físico/control comercial y documentado: **Google Nest Thermostat en configuración europea con Heat Link**.
+
+La documentación oficial establece:
+
+- el termostato detecta temperatura ambiente y puede usar sensores externos;
+- cuando un Nest Temperature Sensor está activo, su lectura se usa para decidir cuándo encender/apagar el sistema;
+- el termostato mantiene la temperatura programada enviando una señal al Heat Link;
+- el Heat Link es el dispositivo que ordena al sistema de calefacción encenderse/apagarse;
+- schedules y selección de sensor cambian qué input de temperatura controla el lazo.
+
+Fuentes:
+- https://support.google.com/googlehome/answer/9248154
+- https://support.google.com/googlenest/answer/9256498
+- https://support.google.com/googlehome/answer/10184481
+
+Mapeo:
+
+\[
+\begin{array}{lll}
+\mathrm{MC2} & \text{fuerte} &
+\text{temperature/setpoint/mode/sensor selection tienen semántica operacional};\\
+\mathrm{MC3} & \text{fuerte para control} &
+\text{thermostat + Heat Link realizan una unidad funcional física, no solo un diagrama};\\
+\mathrm{MC4} & \text{fuerte para el lazo declarado} &
+\text{sensor data y señal Heat Link median input/output de control};\\
+\mathrm{MC5} & \text{fuerte-candidata} &
+\text{setpoint/schedule/sensor state determinan continuación del control};\\
+\mathrm{MC6} & \text{parcial} &
+\text{manual override, wiring faults, power loss y HVAC internals no quedan agotados};\\
+\mathrm{MC7} & \text{parcial} &
+\text{closed-loop behavior está documentado, pero no screening-off de toda perturbación física};\\
+\mathrm{MC8} & \text{fuerte} &
+\text{meter una habitación adicional bajo una llave descriptiva no crea unidad};\\
+\mathrm{MC10} & \text{parcial} &
+\text{schedule/state transitions están claras; persistence/cessation ontológica no}.
+\end{array}
+\]
+
+Este caso aclara además el higher-order candidate:
+
+\[
+C_{\mathrm{home-loop}}
+=
+\text{thermostat + Heat Link + heater + room}.
+\]
+
+La documentación confirma feedback físico entre lectura de temperatura y activación de calefacción, pero no basta por sí sola para afirmar que toda esa composición forma un contexto adicional. Para eso sigue siendo necesaria una teoría que justifique JointUnitGround y su boundary frente al resto de la vivienda/ambiente.
+
+**Resultado NEST-R.**
+
+\[
+\boxed{
+\operatorname{NestControlEvidence}
+\Rightarrow
+\text{real physical-control candidate}
+\not\Rightarrow
+\operatorname{ContextIndividuation}.
+}
+\]
+
+#### 0.11.91r-u. EMP-T1 — qué ha sido realmente descargado
+
+La comparación ya no es solo entre toys. Tenemos tres sistemas concretos con fuentes externas heterogéneas:
+
+\[
+\mathrm{Redis},
+\qquad
+\mathrm{E.\ coli},
+\qquad
+\mathrm{Nest/HeatLink}.
+\]
+
+En los tres, el mismo esquema identifica correctamente:
+
+- una unidad positiva más fuerte que packaging;
+- operaciones/estados localmente definidos;
+- apertura por interfaces/canales;
+- dinámica reentrante o regulada;
+- un rival cut arbitrario que falla;
+- posibles contextos nested/higher-order que requieren grounding adicional.
+
+No apareció una excepción domain-specific nueva a IA0–IA10/MC1–MC10.
+
+Pero la auditoría también localiza el cuello de botella común:
+
+\[
+\boxed{
+\mathrm{MC6}
++
+\mathrm{MC7}
++
+\mathrm{IA0}
+}
+\]
+
+son justamente donde evidencia de mecanismos/documentación deja de equivaler a una demostración ontológica completa.
+
+Por tanto el resultado empírico honesto es:
+
+\[
+\boxed{
+\begin{aligned}
+&
+\operatorname{ExternalEvidence}
++
+\operatorname{CrossDomainMappingAdequate}\\
+&\Rightarrow
+\operatorname{EvidenceBackedContextCandidate},
+\end{aligned}
+}
+\]
+
+pero:
+
+\[
+\boxed{
+\operatorname{EvidenceBackedContextCandidate}
+\not\Rightarrow
+\operatorname{ContextIndividuation}.
+}
+\]
+
+**EMP-T1 — empirical non-promotion.** La misma disciplina de No-Free-Promotion se aplica a la propia evidencia científica/técnica: una lista convincente de mecanismos no debe promocionarse automáticamente a ontología. El bridge necesita quedar identificado y defendido.
+
+Esto es un avance para Cellular Reality porque desplaza la duda. La objeción ya no es “el contrato solo funciona en toys”. La deuda queda más precisa:
+
+> ¿qué evidencia/teoría es suficiente para pasar de una estructura causal-organizacional bien respaldada a la afirmación objetiva de que existe una unidad contextual?
+
+Ese es ahora el punto exacto donde debe concentrarse una futura defensa de IA0/IndAdequate.
+
 #### 0.11.91s. Generaciones contextuales: profundidad ontogénica, no totalidad
 
 La nueva lectura de contextos anidados permite introducir una distinción que no estaba disponible cuando \(R\) se trataba como si tuviera que ser una totalidad maximal.
