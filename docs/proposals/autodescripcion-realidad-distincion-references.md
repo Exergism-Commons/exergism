@@ -328,7 +328,7 @@ La comparación relevante es estrictamente estructural:
 
 Por ello la literatura refuerza la decisión metodológica de separar en REV-07g:
 
-$
+$$
 \mathrm{TB}
 \;|\;
 \mathrm{OC}
@@ -336,7 +336,7 @@ $
 \mathrm{EB}
 \;|\;
 \mathrm{IF},
-$
+$$
 
 y de mantener $\operatorname{IndividuationWitness}^{\mathsf M}$, $\Omega_i$, ContinuationProfile y ContextCessation como obligaciones distintas hasta demostrar sus enlaces.
 
