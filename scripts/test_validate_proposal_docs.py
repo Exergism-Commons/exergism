@@ -329,7 +329,7 @@ class ContextRealityContractTests(unittest.TestCase):
             )
 
     def test_rejects_missing_realizer_coverage_contract(self) -> None:
-        heading = "#### 0.11.91r-bj. RealizerCoverageAdequate — el bridge firma↔host"
+        heading = "#### 0.11.91r-bj. RCAAudit — vista derivada, no nuevo criterio"
         mutated = self.technical_source.replace(
             heading,
             "#### removed realizer coverage contract",
@@ -374,7 +374,7 @@ class ContextRealityContractTests(unittest.TestCase):
             )
 
     def test_rejects_missing_xr2_host_attack_result(self) -> None:
-        heading = "#### 0.11.91r-bu. HOST-T1 — resultado adversarial de la ronda"
+        heading = "#### 0.11.91r-bu. HOST-T1 — resultado adversarial reinterpretado"
         mutated = self.technical_source.replace(
             heading,
             "#### removed XR-2 host attack result",
@@ -403,14 +403,14 @@ class ContextRealityContractTests(unittest.TestCase):
             )
 
 
-    def test_rejects_missing_host_adequacy_refutation(self) -> None:
+    def test_rejects_missing_superseded_host_x1_correction(self) -> None:
         heading = (
             "#### 0.11.91r-by. HOST-X1 — HMP-XR2 no sobrevive "
             "como teoría host adecuada"
         )
         mutated = self.technical_source.replace(
             heading,
-            "#### removed host adequacy refutation",
+            "#### removed superseded HOST-X1 correction",
             1,
         )
         with self.assertRaises(AssertionError):
@@ -419,14 +419,14 @@ class ContextRealityContractTests(unittest.TestCase):
                 MarkdownDocument(mutated),
             )
 
-    def test_rejects_missing_absolute_hta_countermodel(self) -> None:
+    def test_rejects_missing_hta_redundancy_correction(self) -> None:
         heading = (
             "#### 0.11.91r-ca. HTA-X1 — ninguna auditoría finita cierra "
             "HostTheoryAdequate en sentido absoluto"
         )
         mutated = self.technical_source.replace(
             heading,
-            "#### removed absolute HTA countermodel",
+            "#### removed HTA redundancy correction",
             1,
         )
         with self.assertRaises(AssertionError):
@@ -435,14 +435,14 @@ class ContextRealityContractTests(unittest.TestCase):
                 MarkdownDocument(mutated),
             )
 
-    def test_rejects_missing_contract_relative_hta(self) -> None:
+    def test_rejects_missing_parallel_host_contract_rejection(self) -> None:
         heading = (
             "#### 0.11.91r-cb. HTA-K — HostTheoryAdequate relativo "
             "a un contrato host independiente"
         )
         mutated = self.technical_source.replace(
             heading,
-            "#### removed contract-relative HTA",
+            "#### removed parallel host contract rejection",
             1,
         )
         with self.assertRaises(AssertionError):
