@@ -6145,7 +6145,7 @@ Para que el juicio pueda alimentar IndexAdmission exigimos:
 
 Sus obligaciones mínimas son:
 
-0. **IA0 / structural fidelity:** la parte de \(\mathcal T\) usada por el criterio debe representar fielmente la estructura ontológica relevante para \(C\); consistencia interna, conveniencia predictiva o ajuste descriptivo por sí solos no bastan.
+0. **IA0 / structural fidelity:** la parte de \(\mathcal T\) usada por el criterio debe satisfacer dos obligaciones distintas: **IA0-R / realized modal support**, es decir, representar estructura efectivamente realizada y contrafácticamente soportada; y **IA0-U / individuation relevance**, es decir, justificar que esa misma estructura hace trabajo constitutivo/discriminante para la unidad contextual de \(C\), no solo para alguna propiedad, predicción o macroconducta real. Consistencia interna, conveniencia predictiva, projectability o causal efficacy por sí solas no bastan.
 1. **IA1 / theory independence:** \(\mathcal T\) está justificada por razones independientes del deseo de obtener precisamente el corte \(C\); no se construye ad hoc a partir del target.
 2. **IA2 / target independence:** \(\operatorname{Ind}_{\mathcal T}\) no usa \(R_i\), RegimeTotal, REC, SameRegime ni la existencia previa del índice que pretende admitir.
 3. **IA3 / positive grounding:** debe existir estructura positiva de \(\mathcal T\) que funde el corte; no basta la ausencia de enlaces con el exterior.
