@@ -7033,27 +7033,41 @@ XR1
 }
 \]
 
-#### 0.11.69o. XR\(\varepsilon\)-T — ruta emergentista hacia ExistsR
+#### 0.11.69o. XR\(\varepsilon\)-T — ruta emergentista revisada hacia ExistsR
 
 Para XR-1, EA1–EA8 quedan descargables por construcción y por los tests ejecutables, mientras MC1–MC10 e IA1–IA10 ya fueron auditados.
 
-Si se adopta la regla doctrinal restringida \(\varepsilon\)RSP, entonces:
+La conclusión automática es ahora solo:
 
 \[
 \operatorname{RealizedEmergence}_{XR1}
 +
 \operatorname{MCAdequate}_{XR1}
 \Rightarrow
-IA0_{XR1}.
+IA0\text{-}R_{XR1}.
 \]
 
-Junto con el resto de IndAdequate y XR1-F/R/S:
+Para obtener IA0 completo se necesita además:
+
+\[
+\operatorname{UnitGroundAdequate}^{\mathsf M}
+(
+\mathcal T_{\mathrm{DTS}},
+C_{XR1};
+g_{XR1},
+\Xi_{XR1}
+).
+\]
+
+Por tanto la ruta correcta queda:
 
 \[
 \boxed{
-\varepsilon\mathrm{RSP}
+\varepsilon\mathrm{RSP\text{-}R}
 +
 \operatorname{RealizedEmergence}_{XR1}
++
+\operatorname{UnitGroundAdequate}_{XR1}
 +
 \operatorname{IndAdequate}^{1\text{--}10}_{XR1}
 \Rightarrow
@@ -7061,25 +7075,9 @@ Junto con el resto de IndAdequate y XR1-F/R/S:
 }
 \]
 
-La superscript \(1\text{--}10\) indica que IA0 es descargado específicamente por \(\varepsilon\)RSP; no se presupone dos veces.
+La superscript \(1\text{--}10\) indica que IA0 se descarga por separado: su parte **R** procede de emergencia realizada y su parte **U** requiere un ground de individuación adicional.
 
-Esto **no** convierte ExistsR en teorema a priori. NFA-T1 sigue aplicando: RealizedEmergence contiene actualidad positiva y por ello no es Null-compatible.
-
-Pero sí reemplaza el RSP genérico por una ruta específicamente exergista:
-
-\[
-\boxed{
-\text{actual emergence}
-\to
-\text{structural fidelity}
-\to
-\text{context individuation}
-\to
-\operatorname{RegimeTotal}
-\to
-\operatorname{ExistsR}.
-}
-\]
+Esto sigue siendo una ruta realizacional, no a priori. Pero ahora deja visible exactamente el compromiso metafísico que antes quedaba escondido dentro de \(\varepsilon\)RSP.
 
 #### 0.11.70. Auditoría posterior con \(\Omega_i\) sin circularidad
 
