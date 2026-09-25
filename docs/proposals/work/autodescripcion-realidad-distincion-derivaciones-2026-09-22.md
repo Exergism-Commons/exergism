@@ -3200,7 +3200,19 @@ $$
 \operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
 ].
 }
-$$
+$
+
+Como la cláusula central incluye exhaustividad extensional del scope respecto de todo contenido real del contexto:
+
+$
+\boxed{
+\operatorname{RegimeTotal}_i(\mathfrak G_i,R_i)
+\Rightarrow
+\operatorname{OntTotal}_i(R_i).
+}
+$
+
+Este puente es una consecuencia de RegimeTotal, no una premisa adicional ni una propiedad obtenida desde SemTotal.
 
 #### Singleton compatibility theorem
 
@@ -17295,19 +17307,19 @@ a\in T_q^{\mathcal C}
 \land
 \eta_i^{\mathcal C}(a)=x_i
 \Rightarrow
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i),
-$$
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i),
+$
 
-$$
+$
 \mathrm{CC}^{\mathrm{gen}}_{\mathcal C,i}:
 \quad
-\operatorname{Generated}^{*}_i(\mathcal O_i,x_i)
+\operatorname{RegimeGenerated}^{*}_i(\mathfrak G_i,x_i)
 \Rightarrow
 \exists a\in T_q^{\mathcal C}\;
 \eta_i^{\mathcal C}(a)=x_i.
 $$
 
-La fidelidad/injectividad estructural del mapa pertenece a RA. Solo después de esta realización es legítimo hablar de la clausura candidata como representación de una genealogía indexada.
+La fidelidad/injectividad estructural del mapa pertenece a RA. Aunque esta subsección conserva la derivación histórica de Ruta B, CS/CC se han elevado aquí a `RegimeGenerated*` para no reintroducir accidentalmente el caso monogeneal tras REV-07f. Solo después de esta realización es legítimo hablar de la clausura candidata como representación de una genealogía indexada.
 
 Para reconstruir el máximo semántico se añade:
 
