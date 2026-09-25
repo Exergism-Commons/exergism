@@ -15276,39 +15276,45 @@ OR9 &: \text{mapping predeclarado, no ajustado post hoc}.
 
 El paso efectivamente ejecutado aporta evidencia de OR1/Obtains. Por WitnessCovariance, ningún certificado concreto entra en la conclusión.
 
-Aquí queda expuesto el único principio metafísico sustantivo de la ruta realizacional:
+Aquí queda expuesta la parte **realizacional** de IA0:
 
 \[
 \boxed{
-\mathrm{RSP}
+\mathrm{RSP\text{-}R}
 :
 \operatorname{ActualStructuralRealization}(H,C;\varrho)
 +
 \operatorname{MCAdequate}(C)
 \Rightarrow
-IA0(C).
+IA0\text{-}R(C).
 }
 \]
 
-**RSP — Realization Sufficiency Principle** dice que una estructura local cuya dinámica y typing están efectivamente realizados, contrafácticamente soportados y covariantemente preservados posee structural fidelity suficiente para la descarga ontológica de ese nivel.
+**RSP-R — Realization Support Principle** dice únicamente que una estructura local cuya dinámica y typing están efectivamente realizados, contrafácticamente soportados y covariantemente preservados no es una mera ficción descriptiva.
 
-RSP no dice que una descripción correcta cree realidad. Exige primero un realizador actual independiente de la descripción. Tampoco hace toda abstracción real: OR2–OR9 + MC1–MC10 excluyen correlaciones, agregaciones arbitrarias, coarse-grainings sin soporte dinámico y mappings gerrymandered construidos desde el futuro o post hoc.
+La antigua conclusión:
 
-La cuestión doctrinal queda así perfectamente aislada:
+\[
+\operatorname{ActualStructuralRealization}
++
+\operatorname{MCAdequate}
+\Rightarrow
+IA0
+\]
 
-- si TR-M pretende reconocer software, control, células u otros niveles multiply realizable como contextos reales, **alguna forma de RSP es necesaria**;
-- negar RSP obliga a restringir TR-M a una teoría más fuerte de realization/truthmaking;
-- aceptarlo permite descargar IA0 de XR-1 sin axioma especial «software is real».
+queda **SUPERSEDED** por §§0.11.91r-v–z. OR2–OR9 + MC1–MC10 pueden establecer realization y autonomía estructural; todavía falta UnitGroundAdequate para mostrar que esa estructura es unity-making para el cut exacto.
 
 Por tanto:
 
 \[
 \boxed{
-\mathrm{RSP}
+\mathrm{RSP\text{-}R}
 +
 \mathrm{XR1\text{-}REAL}
 +
 \mathrm{MCAdequate}
++
+\operatorname{UnitGroundAdequate}_{XR1}
 +
 IA1\text{--}IA10
 \Rightarrow
@@ -15340,9 +15346,11 @@ Por tanto:
 
 \[
 \boxed{
-\mathrm{RSP}
+\mathrm{RSP\text{-}R}
 +
 \mathrm{XR1\text{-}REAL}
++
+\operatorname{UnitGroundAdequate}_{XR1}
 +
 \mathrm{IndAdequate}_{XR1}
 \Rightarrow
@@ -15370,23 +15378,11 @@ REV-07b/c permanecen abiertos universalmente, pero no bloquean este existential 
 
 #### 0.11.91ak. Estado de XR-1
 
-XR-1 demuestra:
+XR-1 demuestra un **witness formal/generativo + ejecución actual + realized modal support**. Eso ya no se presenta como suficiente para ExistsR.
 
-\[
-\boxed{
-\text{formal/generative witness}
-+
-\text{actual execution}
-+
-\text{adequate ontic realization}
-\Rightarrow
-\operatorname{ExistsR}.
-}
-\]
+La máquina/CI descargan el núcleo formal, OR2–OR9 y evidencia reproducible de OR1 para un run. IA1–IA10 quedan auditadas contra la teoría independiente DTS. Tras el ataque IA0, la deuda filosófica restante es **IA0-U / UnitGroundAdequate**: mostrar que la estructura local realizada es la que constituye/discrimina la unidad contextual exacta y no solo un real pattern eficaz.
 
-La máquina/CI descargan el núcleo formal y aportan evidencia reproducible de un run. El punto que el código no decide por sí solo es XR1-REAL: que exista una relación de realización OR1–OR9 entre el proceso host actual y la máquina local.
-
-Por tanto ExistsR **todavía no se marca como demostrado incondicionalmente**. XR-1 descarga mecánicamente OR2–OR9 y aporta evidencia reproducible de OR1 para un run actual; IA1–IA10 quedan auditadas contra la teoría independiente DTS. La deuda filosófica se concentra ahora en RSP: si actual structural realization es suficiente para IA0. Si se adopta RSP, XR1-T entrega \(\operatorname{ExistsR}\) por la ruta realizacional.
+Por tanto ExistsR sigue siendo **FORMAL-CONDITIONAL** respecto de ese bridge de unidad.
 
 #### 0.11.92. Relación con \(\Omega_i\): ContinuationProfile ya no depende de \(\Omega_i\)
 
