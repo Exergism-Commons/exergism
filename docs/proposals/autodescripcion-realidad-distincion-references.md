@@ -396,6 +396,15 @@ La deuda `RivalClassCompleteness_XR1` no debe cerrarse añadiendo ports/interfac
 
 **Uso restringido.** Estas teorías muestran que input/output/environment boundaries pueden formalizarse independientemente. No demuestran que una interface automaton sea automáticamente una unidad ontológica. Si se adopta una variante para XR-I/O, deberá volver a pasar IA0-R, UnitGroundAdequate y rival-cut audit.
 
+### 14.4. Assume/guarantee y RealizationEnvelope
+
+UG5 usa ahora un RealizationEnvelope para evitar dos extremos: exigir aislamiento físico absoluto o permitir que una teoría declare cualquier perturbación incómoda “fuera de nivel”. La motivación formal procede de contract-based design, donde assumptions sobre environments permisibles y guarantees del componente se mantienen explícitas y separadas.
+
+- **Contract-based design / assume-guarantee tradition.** La literatura de contratos formaliza componentes mediante assumptions sobre el entorno y guarantees sobre el comportamiento del componente bajo esas assumptions. El uso aquí es estrictamente metodológico: \(\Gamma\) en RealizationEnvelope debe ser explícita, falsable y no contener la conclusión ontológica. Un assumption violation no cuenta como negative control satisfecho. Véase, por ejemplo, la exposición de contracts con assumptions/guarantees y separación de responsabilidades en sistemas heterogéneos: https://link.springer.com/article/10.1007/s10703-017-0294-7
+- **Information-flow interfaces / interface contracts.** Trabajos recientes distinguen implementaciones de una interfaz y environments permisibles mediante constraints explícitas, reforzando que “environment” no tiene por qué significar cualquier estado físico concebible sino una clase formalmente especificada y auditable. Se usa como precedente de RE1–RE7, no como prueba de contexto ontológico. https://link.springer.com/article/10.1007/s10703-024-00447-0
+
+**Límite.** Assume/guarantee reasoning no convierte assumptions en inmunidades ontológicas. Si aparece una dependencia reproducible que altera \(\Xi_C\) y no está clasificada como ordinary interaction o fault/cessation, RE7 obliga a revisar el envelope y UG5 vuelve a PARTIAL.
+
 ## 15. Política de citación futura
 
 Antes de añadir un concepto nuevo al núcleo:
