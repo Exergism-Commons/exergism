@@ -260,6 +260,48 @@ class ContextRealityContractTests(unittest.TestCase):
                 MarkdownDocument(mutated),
             )
 
+    def test_rejects_missing_unit_ground_cross_case_audit(self) -> None:
+        heading = "#### 0.11.91r-af. UG-COMP — comparación sin ranking ontológico"
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed unit-ground cross-case audit",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
+    def test_rejects_missing_constitutive_intervention_contract(self) -> None:
+        heading = "#### 0.11.91r-ai. CIT — Constitutive Intervention Test"
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed constitutive intervention contract",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
+    def test_rejects_missing_rival_class_completeness_finding(self) -> None:
+        heading = (
+            "#### 0.11.91r-ap. DTS-UG6 finding — un DTS desnudo "
+            "no demuestra RivalClassCompleteness"
+        )
+        mutated = self.technical_source.replace(
+            heading,
+            "#### removed rival-class completeness finding",
+            1,
+        )
+        with self.assertRaises(AssertionError):
+            validate_regime_total_contract(
+                self.normative,
+                MarkdownDocument(mutated),
+            )
+
 
 class ArchiveContractTests(unittest.TestCase):
     def test_keywords_without_canonical_polarity_do_not_satisfy_banner(self) -> None:
