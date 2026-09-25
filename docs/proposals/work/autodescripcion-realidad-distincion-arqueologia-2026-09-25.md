@@ -177,7 +177,9 @@ y solo después:
 [
 \operatorname{Ind}_{\mathcal T}
 +
-\operatorname{IndAdequate}
+\operatorname{IndAdequate}^{1\text{--}10}
++
+IA0
 \to
 \operatorname{ContextIndividuation}
 \to
