@@ -17,7 +17,7 @@ import os
 import time
 from dataclasses import dataclass
 from itertools import product
-from multiprocessing import Pipe, Process, Queue, get_context
+from multiprocessing import get_context
 from pathlib import Path
 from queue import Empty
 
@@ -44,6 +44,10 @@ IRRELEVANT_ENV_VARIATIONS = frozenset({
     "environment_send_delay",
 })
 CHANNEL_LOSS_EXIT = 42
+
+# The start method is part of the pre-registered host theory, not ambient
+# runner configuration.  All XR-2 episodes use the same spawn semantics.
+XR2_CONTEXT = get_context("spawn")
 
 AVAILABLE_ACTIONS = {
     S0: frozenset({CLOSE, IDLE}),
@@ -162,8 +166,8 @@ def run_trial(
     environment_send_delay: float = 0.0,
 ) -> dict[str, object]:
     """Run one actual environment/component IPC episode."""
-    parent, child = Pipe(duplex=True)
-    process = Process(target=component_worker, args=(child,))
+    parent, child = XR2_CONTEXT.Pipe(duplex=True)
+    process = XR2_CONTEXT.Process(target=component_worker, args=(child,))
     process.start()
     child.close()
 
@@ -201,9 +205,8 @@ def run_trial(
 
 def run_channel_loss_trial() -> dict[str, object]:
     """Close the sole sender under spawn so no hidden sender handle survives."""
-    ctx = get_context("spawn")
-    recv_conn, send_conn = ctx.Pipe(duplex=False)
-    process = ctx.Process(target=channel_loss_worker, args=(recv_conn,))
+    recv_conn, send_conn = XR2_CONTEXT.Pipe(duplex=False)
+    process = XR2_CONTEXT.Process(target=channel_loss_worker, args=(recv_conn,))
     process.start()
     recv_conn.close()
 
@@ -229,8 +232,8 @@ def run_channel_loss_trial() -> dict[str, object]:
 
 def run_process_termination_trial() -> dict[str, object]:
     """Terminate the component before the ordinary input episode completes."""
-    parent, child = Pipe(duplex=True)
-    process = Process(target=component_worker, args=(child,))
+    parent, child = XR2_CONTEXT.Pipe(duplex=True)
+    process = XR2_CONTEXT.Process(target=component_worker, args=(child,))
     process.start()
     child.close()
 
@@ -253,9 +256,9 @@ def run_process_termination_trial() -> dict[str, object]:
 
 def run_queue_transport_trial() -> dict[str, object]:
     """Run the same I/O contract through Queue rather than duplex Pipe."""
-    input_queue = Queue()
-    output_queue = Queue()
-    process = Process(
+    input_queue = XR2_CONTEXT.Queue()
+    output_queue = XR2_CONTEXT.Queue()
+    process = XR2_CONTEXT.Process(
         target=queue_component_worker,
         args=(input_queue, output_queue),
     )
@@ -295,8 +298,8 @@ def run_queue_transport_trial() -> dict[str, object]:
 
 def run_fault_trial() -> dict[str, object]:
     """Exercise an explicitly classified environment fault."""
-    parent, child = Pipe(duplex=True)
-    process = Process(target=component_worker, args=(child,))
+    parent, child = XR2_CONTEXT.Pipe(duplex=True)
+    process = XR2_CONTEXT.Process(target=component_worker, args=(child,))
     process.start()
     child.close()
 
@@ -324,8 +327,8 @@ def run_fault_trial() -> dict[str, object]:
 
 def run_profile_break_trial() -> dict[str, object]:
     """CIT positive arm: remove a constitutive output role."""
-    parent, child = Pipe(duplex=True)
-    process = Process(target=component_worker, args=(child, False))
+    parent, child = XR2_CONTEXT.Pipe(duplex=True)
+    process = XR2_CONTEXT.Process(target=component_worker, args=(child, False))
     process.start()
     child.close()
 
@@ -584,6 +587,11 @@ def verify() -> dict[str, object]:
     return {
         "evidence_target": "XR-2",
         "theory_candidate": "T_IODTS",
+        "host_theory": {
+            "runtime": "python-multiprocessing",
+            "start_method": "spawn",
+            "start_method_preregistered": True,
+        },
         "interface": {
             "inputs": sorted(INPUT_ACTIONS),
             "outputs": sorted(OUTPUT_ACTIONS),
