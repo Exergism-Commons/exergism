@@ -28,6 +28,7 @@ version-controlled tree.
 - `canonical_content_schema.json` — structural contract for `content/*.json`.
 - `scripts/` — validation, migration and ontology-generation tooling.
 - `manifest.json` — inventory, canonical reading order and release state.
+- `PUBLICATIONS.md` — scholarly outputs derived from the canonical corpus, with DOI and provenance links.
 - `GOVERNANCE.md` — canonical-change and anti-capture governance.
 - `LICENSE.md` — explicit mixed-license boundary for corpus and tooling.
 
