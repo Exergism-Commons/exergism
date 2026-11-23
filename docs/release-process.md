@@ -43,4 +43,6 @@ The generated manifest is intentionally a release artifact rather than a tracked
 
 `.github/workflows/release.yml` runs on `main`. It only publishes when `manifest.json` declares a release `ready` and the corresponding tag does not already exist. It validates the exact commit, generates the release manifest, archives the source tree, creates the immutable tag and publishes the GitHub release assets.
 
+The release notes of version `X.Y.Z` live in `docs/release-notes-vX.Y.Z.md`. The workflow publishes that file, and `scripts/validate_repository.py` refuses a `ready` release without it.
+
 Later changes to `main` do not alter an existing release.

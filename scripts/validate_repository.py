@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import tempfile
 import xml.etree.ElementTree as ET
@@ -32,6 +33,15 @@ REQUIRED_PROJECT_FILES = {
     "formal/FORMAL-MODEL-STATUS.md",
     "reviews/2026-08-17-v0.1.0-adversarial-review.md",
 }
+
+# Persistent identifiers of the derived ontology, stated independently of the
+# generator so a generator change cannot silently redefine them.
+ONTOLOGY_IRI = "https://id.exergism.org/ontology/exergism"
+VOCABULARY_NAMESPACE = "https://id.exergism.org/exergism#"
+LEGACY_VOCABULARY_NAMESPACE = "http://www.exergia.org/ns/"
+OWL_NAMESPACE = "http://www.w3.org/2002/07/owl#"
+RDF_NAMESPACE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+SEMVER = re.compile(r"^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$")
 
 FORBIDDEN_ONTOLOGY_TERMS = {
     "RestrictedParty",
@@ -70,6 +80,11 @@ def validate_project_contract() -> None:
             fail(f"LICENSE.md missing required boundary marker: {marker}")
 
 
+def release_notes_path(version: str) -> str:
+    # Must match the --notes-file selection in .github/workflows/release.yml.
+    return f"docs/release-notes-v{version}.md"
+
+
 def validate_manifest() -> dict:
     manifest = load_json(ROOT / "manifest.json")
     if manifest.get("manifest_version") != 2:
@@ -79,10 +94,15 @@ def validate_manifest() -> dict:
     release = manifest.get("release")
     if not isinstance(release, dict):
         fail("manifest.release must be an object")
-    if release.get("version") != "0.1.0" or release.get("tag") != "v0.1.0":
-        fail("Unexpected v0.1.0 release identity")
+    version = release.get("version")
+    if not isinstance(version, str) or not SEMVER.fullmatch(version):
+        fail(f"release.version must be a semantic version, got {version!r}")
+    if release.get("tag") != f"v{version}":
+        fail(f"release.tag must be v{version}, got {release.get('tag')!r}")
     if release.get("status") not in {"candidate", "ready"}:
         fail("release.status must be candidate or ready")
+    if release.get("status") == "ready" and not (ROOT / release_notes_path(version)).is_file():
+        fail(f"A ready release needs its notes: {release_notes_path(version)}")
 
     ordered = manifest["philosophical_corpus"]["order"]
     actual = sorted(path.name for path in CONTENT_DIR.glob("*.json"))
@@ -227,11 +247,25 @@ def validate_examples() -> None:
         fail("Toma de Kabul example is incomplete")
 
 
+def validate_ontology_identity(document: ET.ElementTree, text: str) -> None:
+    declared = [
+        node.get(f"{{{RDF_NAMESPACE}}}about")
+        for node in document.getroot().findall(f"{{{OWL_NAMESPACE}}}Ontology")
+    ]
+    if declared != [ONTOLOGY_IRI]:
+        fail(f"ontology.owl must declare exactly one owl:Ontology <{ONTOLOGY_IRI}>, got {declared!r}")
+    if VOCABULARY_NAMESPACE not in text:
+        fail(f"ontology.owl does not use the vocabulary namespace {VOCABULARY_NAMESPACE}")
+    if LEGACY_VOCABULARY_NAMESPACE in text:
+        fail(f"ontology.owl still uses the legacy namespace {LEGACY_VOCABULARY_NAMESPACE}")
+
+
 def validate_ontology_reproducibility() -> None:
     try:
-        ET.parse(ONTOLOGY_PATH)
+        document = ET.parse(ONTOLOGY_PATH)
     except ET.ParseError as exc:
         raise AssertionError(f"ontology.owl is not well-formed XML: {exc}") from exc
+    validate_ontology_identity(document, ONTOLOGY_PATH.read_text(encoding="utf-8"))
 
     builder = OntologyBuilder()
     builder.build()

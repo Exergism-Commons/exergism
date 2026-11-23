@@ -10,7 +10,10 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 
-BASE_IRI = "http://www.exergia.org/ns/"
+BASE_IRI = "https://id.exergism.org/exergism#"
+# Vocabulary terms use the hash namespace above; the ontology document itself
+# is identified by its persistent route.
+ONTOLOGY_IRI = "https://id.exergism.org/ontology/exergism"
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT_DIR = ROOT / "content"
 ONTOLOGY_PATH = ROOT / "ontology.owl"
@@ -1640,7 +1643,7 @@ class OntologyBuilder:
             '  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"',
             '  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">',
             "",
-            f'  <owl:Ontology rdf:about="{BASE_IRI}"/>',
+            f'  <owl:Ontology rdf:about="{ONTOLOGY_IRI}"/>',
             "",
         ]
 
