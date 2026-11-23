@@ -80,6 +80,11 @@ def validate_project_contract() -> None:
             fail(f"LICENSE.md missing required boundary marker: {marker}")
 
 
+def release_notes_path(version: str) -> str:
+    # Must match the --notes-file selection in .github/workflows/release.yml.
+    return f"docs/release-notes-v{version}.md"
+
+
 def validate_manifest() -> dict:
     manifest = load_json(ROOT / "manifest.json")
     if manifest.get("manifest_version") != 2:
@@ -89,10 +94,15 @@ def validate_manifest() -> dict:
     release = manifest.get("release")
     if not isinstance(release, dict):
         fail("manifest.release must be an object")
-    if release.get("version") != "0.1.0" or release.get("tag") != "v0.1.0":
-        fail("Unexpected v0.1.0 release identity")
+    version = release.get("version")
+    if not isinstance(version, str) or not SEMVER.fullmatch(version):
+        fail(f"release.version must be a semantic version, got {version!r}")
+    if release.get("tag") != f"v{version}":
+        fail(f"release.tag must be v{version}, got {release.get('tag')!r}")
     if release.get("status") not in {"candidate", "ready"}:
         fail("release.status must be candidate or ready")
+    if release.get("status") == "ready" and not (ROOT / release_notes_path(version)).is_file():
+        fail(f"A ready release needs its notes: {release_notes_path(version)}")
 
     ordered = manifest["philosophical_corpus"]["order"]
     actual = sorted(path.name for path in CONTENT_DIR.glob("*.json"))

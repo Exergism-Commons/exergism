@@ -128,7 +128,7 @@ jobs:
             if gh release create "$TAG" \
               --verify-tag \
               --title "Exergism $VERSION" \
-              --notes-file docs/release-notes-v0.1.0.md \
+              --notes-file "docs/release-notes-v$VERSION.md" \
               release-manifest.json "exergism-$VERSION.tar.gz" SHA256SUMS; then
               exit 0
             fi
