@@ -1,0 +1,427 @@
+# Mapa de literatura y referencias — autodescripción, realidad y distinción
+
+Este archivo acompaña a la propuesta principal y al ledger de revisión. No pretende demostrar la doctrina por autoridad. Su función es impedir que problemas ya tratados en lógica, metafísica, filosofía de la ciencia o teoría de categorías se presenten como si fueran nuevos.
+
+## Regla de uso
+
+Cada referencia debe aparecer en el documento principal solo cuando haga trabajo concreto: antecedente, alternativa, contraejemplo, técnica formal o límite conocido. Cuando la posición del autor sea controvertida, se describe como posición del autor, no como hecho establecido.
+
+## 1. Generalidad absoluta, cuantificación irrestricta e indefinida extensibilidad
+
+### Obra de referencia colectiva
+
+- **Agustín Rayo & Gabriel Uzquiano (eds.) (2006), _Absolute Generality_. Oxford University Press.** Volumen central sobre si es coherente cuantificar sobre absolutamente todo y sobre alternativas relativistas/contextualistas. DOI: https://doi.org/10.1093/oso/9780199276424.001.0001
+  - **Kit Fine**, “Relatively Unrestricted Quantification” — motivos para negar generalidad absoluta, incluida la extensibilidad indefinida.
+  - **Michael Glanzberg**, “Context and Unrestricted Quantification” — contextualismo y restricciones de dominio; conecta con Dummett y Parsons.
+  - **Geoffrey Hellman**, “Against ‘Absolutely Everything’!” — crítica explícita a la cuantificación absolutamente irrestricta.
+  - **Shaughan Lavine**, “Something About Everything” — universalidad de la cuantificación.
+  - **Øystein Linnebo**, “Sets, Properties, and Unrestricted Quantification” — cuantificación irrestricta y conjuntos/propiedades.
+  - **Vann McGee**, “There’s a Rule for Everything” — generalización y reglas.
+  - **Charles Parsons**, “The Problem of Absolute Universality” — problema de universalidad absoluta.
+  - **Agustín Rayo**, “Beyond Plurals” — límites y jerarquías de recursos plurales/superplurales.
+  - **Stewart Shapiro & Crispin Wright**, “All Things Indefinitely Extensible” — extensibilidad indefinida aplicada a totalidades matemáticas.
+  - **Gabriel Uzquiano**, “Unrestricted Unrestricted Quantification: The Cardinal Problem of Absolute Generality” — problemas cardinales de generalidad absoluta.
+  - **Alan Weir**, “Is it too much to Ask, to Ask for Everything?” — tensiones de cuantificación total.
+  - **Timothy Williamson**, “Absolute Identity and Absolute Generality” — análisis/defensa de generalidad absoluta por analogía con identidad.
+
+### Expansionismo contemporáneo
+
+- **J. P. Studd (2019), _Everything, More or Less: A Defence of Generality Relativism_. Oxford University Press.** Defensa sistemática del relativismo de generalidad; distingue restrictionism y expansionism y desarrolla cómo puede expandirse un universo de discurso. DOI: https://doi.org/10.1093/oso/9780198719649.001.0001
+  - Cap. 4, “Restrictionism and Expansionism”: https://doi.org/10.1093/oso/9780198719649.003.0004
+  - Cap. 8, “How Universes Expand”: https://doi.org/10.1093/oso/9780198719649.003.0008
+
+### Dummett e indefinida extensibilidad
+
+- **Michael Dummett** — antecedente central de la noción de “indefinitely extensible concept”. La recepción contemporánea aparece explícitamente en Glanzberg (2006), Shapiro & Wright (2006) y Studd (2019).
+
+### Uso en REV-26a / AG
+
+REV-26a no toma la cuantificación absolutamente irrestricta como un hecho lógico neutral. Rayo–Uzquiano reúnen el debate entre defensas de generalidad absoluta y enfoques relativistas/contextualistas; Studd proporciona una defensa sistemática de generality relativism/expansionism. La propuesta usa esta literatura para fijar la carga correcta:
+
+- AG debe justificarse si se quiere que Real(x) tenga alcance absolutamente global;
+- negar AG no equivale a descubrir una entidad real «fuera» de un scope ya absoluto;
+- el restrictionist/expansionist debe dar una semántica coherente de contextos y expansiones sin usar tácitamente el mismo cuantificador absoluto que rechaza.
+
+Ninguna referencia de este bloque demuestra AG ni su negación.
+
+## 2. Cuantificación plural y totalidades no conjuntistas
+
+- **George Boolos (1984), “To Be is to Be a Value of a Variable (or to Be Some Values of Some Variables)”, _Journal of Philosophy_ 81.** Punto de partida moderno de la cuantificación plural como recurso para hablar de muchos objetos sin reificarlos necesariamente como un conjunto.
+- **George Boolos (1985), “Nominalist Platonism”, _Philosophical Review_ 94.**
+- **Øystein Linnebo**, “Plural Quantification”, _Stanford Encyclopedia of Philosophy_, rev. 18 Aug 2026. Presenta la lógica plural estándar y el esquema de comprensión $\exists u\,\phi(u)\rightarrow\exists xx\forall u(u\prec xx\leftrightarrow\phi(u))$, y registra la controversia sobre su estatus lógico/ontológicamente inocente: https://plato.stanford.edu/entries/plural-quant/
+- **Salvatore Florio & Øystein Linnebo (2021), _The Many and the One: A Philosophical Study of Plural Logic_. Oxford University Press.** Desarrolla, entre otras cosas, una lógica plural crítica que restringe comprensión en dominios extensionally indefinite; es especialmente relevante para no extrapolar automáticamente la ruta plural local de REV-24d a una pluralidad universal de absolutamente todo.
+- **Agustín Rayo** y literatura posterior sobre plurales/superplurales deben considerarse cuando se use Scope(Real) sin objeto colector.
+
+### Uso en REV-24d
+
+La ruta plural de Scope Realization usa únicamente una instancia explícita de comprensión para $\varphi_q(x)=\operatorname{Actual}(x)\land\operatorname{CoReal}(x,q)$. Esto puede realizar un alcance local como pluralidad $rr_i$ sin setificarlo, siempre que esa instancia de comprensión sea legítima. No se presupone comprensión irrestricta para $R_{\mathrm{abs}}$; el paso a «absolutamente todo» permanece dentro del debate de generalidad absoluta y critical plural logic.
+
+### Uso en REV-26b / APC$_{Real}$
+
+La existencia absoluta condicional usa una instancia más fuerte:
+
+$$
+(\exists x\,\operatorname{Real}(x))
+\Rightarrow
+\exists rr_{\mathrm{abs}}\,
+\forall x[
+x\prec rr_{\mathrm{abs}}
+\leftrightarrow
+\operatorname{Real}(x)
+].
+$$
+
+La lógica plural estándar proporciona el patrón formal de comprensión, pero su aplicación a un dominio pretendidamente absolutamente general no se trata como automática. Florio–Linnebo y la literatura sobre critical plural logic son relevantes precisamente porque permiten separar:
+
+1. la validez de recursos plurales locales;
+2. la legitimidad de una comprensión plural absolutamente exhaustiva.
+
+Por eso APC$_{Real}$ permanece como blocker independiente de AG.
+
+## 3. Emergencia
+
+La propuesta distingue ahora una candidata propia de **emergencia organizacional dinámicamente efectiva** de otras nociones existentes. La literatura no ofrece una definición unificada que pueda importarse sin decisión filosófica.
+
+- **C. D. Broad (1925), _The Mind and Its Place in Nature_.** Antecedente clásico del emergentismo británico. Su criterio enfatiza que las propiedades características de ciertos todos organizados no se obtienen a partir del conocimiento de los componentes aislados o en organizaciones diferentes. Contexto y discusión: https://plato.stanford.edu/entries/properties-emergent/
+- **Mark A. Bedau (1997), “Weak Emergence”, _Noûs_ 31, 375–399.** Define una macropropiedad débilmente emergente mediante derivabilidad desde microdinámica y condiciones externas solo por simulación. DOI: https://doi.org/10.1111/0029-4624.31.s11.17
+- **William C. Wimsatt, “Aggregativity: Reductive Heuristics for Finding Emergence”, reimpreso en Bedau & Humphreys (2008).** Analiza emergencia a través de fallos de agregatividad e interdependencia organizacional. DOI del capítulo: https://doi.org/10.7551/mitpress/9780262026215.003.0007
+- **Jaegwon Kim (2010), “Emergence: Core Ideas and Issues”, en _Essays in the Metaphysics of Mind_.** Señala que superveniencia e irreducibilidad, tomadas juntas, siguen dejando pendiente una caracterización positiva robusta de emergencia. DOI: https://doi.org/10.1093/acprof:oso/9780199585878.003.0004
+- **Mark A. Bedau & Paul Humphreys (eds.) (2008), _Emergence: Contemporary Readings in Philosophy and Science_. MIT Press.** Reúne a Bedau, Kim, Wimsatt, Anderson, Chalmers, Dennett y otros: https://doi.org/10.7551/mitpress/9780262026215.001.0001
+- **Paul Humphreys (2016), _Emergence: A Philosophical Account_. Oxford University Press.** Desarrolla transformational emergence como teoría ontológica diacrónica y argumenta que no hay una única cuenta unificadora de emergencia. DOI: https://doi.org/10.1093/acprof:oso/9780190620325.001.0001
+- **Paul Humphreys, “Ontological Emergence”, cap. 2 de la obra anterior.** Incluye transformational emergence, fusion/defusion y ejemplos como covalent bonding. DOI: https://doi.org/10.1093/acprof:oso/9780190620325.003.0002
+- **James P. Crutchfield**, “Is Anything Ever New? Considering Emergence”, en Bedau & Humphreys (2008) — relevante para exigir contenido preciso a la noción de novedad.
+- **Erik P. Hoel, Larissa Albantakis & Giulio Tononi (2013), “Quantifying causal emergence shows that macro can beat micro”, _PNAS_ 110(49).** Formaliza causal emergence comparando effective information entre escalas; se usa aquí solo como posible refinamiento cuantitativo más fuerte, no como definición base: https://pmc.ncbi.nlm.nih.gov/articles/PMC3856819/
+
+### Uso en REV-03
+
+La candidata actual adopta tres rasgos mínimos:
+
+1. **macro-invariancia** frente a renombrados equivalentes;
+2. **dependencia organizacional** con perfil local fijo;
+3. **eficacia dinámica mínima**: la organización cambia qué sucesores estructurales son accesibles.
+
+No identifica emergencia con irreducibilidad fuerte, downward causation, impredecibilidad o causal emergence cuantitativa. Esas nociones quedan como posibles extensiones que requerirían justificación independiente.
+
+**Estado:** REV-03 queda PARTIAL hasta comprobar que esta definición no es demasiado estrecha ni demasiado amplia para la doctrina.
+
+
+### Sistemas de transición y trazas
+
+- **Robin Milner (1980), _A Calculus of Communicating Systems_. Springer, LNCS 92.** Referencia clásica para semánticas de procesos mediante sistemas de transición etiquetados y acciones observables. DOI: https://doi.org/10.1007/3-540-10235-3
+- **Robin Milner (1989), _Communication and Concurrency_. Prentice Hall.** Desarrollo posterior de semántica operacional, equivalencias y comportamiento de procesos.
+
+En REV-03 se usa una noción extremadamente modesta inspirada en esta tradición: comparar configuraciones por las secuencias de etiquetas de transición que pueden ejecutar. No se asume que el mundo físico sea literalmente un proceso CCS ni que trace equivalence sea la ontología correcta; solo se utiliza como herramienta formal para distinguir una diferencia estructural inerte de una organización que habilita capacidades dinámicas.
+
+### Preservación conductual, simulación y trazas
+
+- **R. J. van Glabbeek (1990), “The Linear Time–Branching Time Spectrum”, CONCUR ’90.** Organiza nociones de equivalencia y preorder conductual sobre sistemas de transición; es relevante para no confundir preservación de trazas, simulación y equivalencia fuerte. DOI: https://doi.org/10.1007/BFb0039066
+- **Hennessy & Milner (1980), “On Observing Nondeterminism and Concurrency”.** Antecedente central de equivalencia observacional sobre sistemas de transición. DOI: https://doi.org/10.1007/3-540-10003-2_79
+
+REV-02 usa una noción ad hoc de **extensión conservativa** suficientemente fuerte para preservar los testigos de emergencia: preservación de caminos y preservación/reflexión de trazas del alfabeto antiguo. No se afirma que esa sea una noción estándar con ese nombre; se construye explícitamente y se compara con la literatura de simulación/equivalencia para evitar sobreafirmaciones.
+
+### Wimsatt, referencia primaria
+
+- **William C. Wimsatt (1997), “Aggregativity: Reductive Heuristics for Finding Emergence”, _Philosophy of Science_ 64(S4), S372–S384.** La emergencia puede analizarse mediante fallos de agregatividad y dependencia del modo de organización de las partes; compatible con reducción. DOI: https://doi.org/10.1086/392615
+
+
+## 4. Grounding, fundamento y razón suficiente
+
+- **Kit Fine (2012), “Guide to Ground”, en Correia & Schnieder (eds.), _Metaphysical Grounding_. Cambridge University Press.** https://doi.org/10.1017/CBO9781139149136.002
+- **Fabrice Correia & Benjamin Schnieder (eds.) (2012), _Metaphysical Grounding: Understanding the Structure of Reality_. Cambridge University Press.** Debates sobre grounding, transitividad, escepticismo y razón suficiente: https://doi.org/10.1017/CBO9781139149136
+- **Jonathan Schaffer**, “On What Grounds What” — antecedente contemporáneo de estructuración metafísica por grounding; debe consultarse si GroundsPossibility, Ground o foundation vuelven al núcleo.
+- **Ross P. Cameron / literatura sobre infinite regress y grounding.** La discusión contemporánea distingue foundationalism de well-foundedness estricta y admite modelos donde una entidad está ultimadamente anclada en un fundamento solo a través de infinitos intermediarios. Se usa como stress test contra FID, no como adopción de metaphysical infinitism: https://plato.stanford.edu/entries/infinite-regress/ y su suplemento sobre metaphysical foundationalism/well-foundedness.
+- **Leibniz** y la tradición del **Principle of Sufficient Reason** son pertinentes si se intenta excluir AbsoluteBruteNovelty. La PR no debe introducir un PSR fuerte sin declararlo.
+
+### Uso en REV-07a — dependencia constitutiva
+
+REV-07a no identifica sus esquemas con doctrinas de la literatura:
+
+- **Fine / Correia–Schnieder** justifican tratar grounding como una relación metafísica distinta de causalidad, pero **no** autorizan inferir que todo grounding sea recíproco o cíclico. Por eso el modo núcleo se denomina MOD (mutual ontological dependence), no “mutual grounding”; una teoría concreta de grounding puede implementarlo solo si admite independientemente ese caso.
+- **Tahko–Lowe** respaldan la distinción general entre dependencia existencial y dependencia de identidad. Esa distinción motiva los dos predicados base de REV-07a: ConstExistDep e IdDep. La propuesta no toma ninguna definición concreta de esa literatura como teorema propio.
+- **Schaffer** y la literatura de holismo/no-separabilidad se usan adversarialmente para HC: muestran por qué una estructura global puede ser ontológicamente relevante, pero no prueban que cualquier no-factorización, correlación o totalidad constituya esencialmente sus relata.
+- **Winskel** y process philosophy solo justifican que procesos, roles y dependencias puedan tratarse formalmente como estructura. No demuestran PC: una participación procesual cuenta como constitutiva únicamente cuando se demuestra IdDep o ConstExistDep, no por ser source/target/input de un evento.
+
+La regla metodológica es por tanto estricta:
+
+$$
+\text{literature precedent}
+\not\Rightarrow
+\operatorname{EssConDep}.
+$$
+
+Cada instancia usada por OriginUnity debe proporcionar un testigo local conforme a ECD1–ECD7 y una ruta explícita por IdDep o ConstExistDep.
+
+### Uso en REV-07b — producción ontológica
+
+La taxonomía CAU/CON/GRD/PRC usa la literatura solo para separar familias de dependencia:
+
+- la literatura de **causación** impide reducir CAU a correlación, precedencia o background;
+- **mereología/constitución** obliga a distinguir CON de parthood o agregación arbitraria;
+- **grounding y dependencia ontológica** motivan GRD como modo no necesariamente temporal ni causal;
+- **event structures/process philosophy** permiten formalizar PRC sin identificar mera sucesión o participación con producción ontológica.
+
+Ninguna referencia demuestra que esas cuatro familias sean exhaustivas. Esa afirmación es exactamente ProdCoverage y permanece como obligación propia de REV-07b.
+
+### Identidad de régimen y relaciones de worldmate
+
+- **David Lewis (1986), _On the Plurality of Worlds_.** En su modal realism, los worldmates se identifican mediante conexión espaciotemporal y los mundos distintos quedan aislados entre sí. La propuesta no adopta su modal realism ni limita toda unidad ontológica a espaciotiempo; se usa solo como antecedente metodológico de definir pertenencia a un mundo mediante una relación independiente de la existencia previa de una cota común. Resumen y discusión: https://plato.stanford.edu/entries/possible-worlds/ y https://plato.stanford.edu/entries/david-lewis/
+- **George Darby (2009), “Lewis's Worldmate Relation and the Apparent Failure of Humean Supervenience”, _Dialectica_ 63(2):195–204.** Discute la dependencia del criterio de worldmate respecto de relaciones espaciotemporales y la posibilidad de ampliar la categoría relevante a relaciones naturales externas. Es útil para REV-07g porque muestra que la pregunta “¿qué hace que dos entidades sean worldmates?” es una obligación metafísica independiente de la mera enumeración de contenidos. DOI: https://doi.org/10.1111/j.1746-8361.2009.01192.x
+- **Rasmus Jaksland (2021), “Entanglement as the world-making relation: distance from entanglement”, _Synthese_ 198:9661–9693.** Formula explícitamente el problema de una world-making relation que explique por qué una pluralidad forma una sola configuración y explora entanglement como candidato en ontologías no espaciales. Para REV-07g sirve como precedente del problema, no como solución: adoptar distancia, entanglement u otra relación concreta requeriría una teoría física independiente y no puede imponerse en la ontología general. DOI: https://doi.org/10.1007/s11229-020-02671-7
+- **Jonathan Schaffer (2010), “Monism: The Priority of the Whole”, _The Philosophical Review_ 119(1):31–76.** Defiende priority monism: el cosmos como todo concreto máximo sería fundamental respecto de sus partes. Es relevante como prueba adversarial para REV-24b: «ser partes del mismo todo máximo» no puede usarse aquí como definición independiente de `CoReal`, porque presupondría precisamente la unidad/totalidad que se intenta justificar. DOI: https://doi.org/10.1215/00318108-2009-025
+- **Jonathan Schaffer (2010), “The Internal Relatedness of All Things”, _Mind_ 119(474):341–376.** Explora una tesis fuerte de relatedness interna universal y argumentos monistas. Se usa como caso límite para preguntar si una ontología holista puede introducir unidad que no se deje reducir sin resto a enlaces locales previamente seleccionados. DOI: https://doi.org/10.1093/mind/fzq033
+- **Richard Healey, “Holism and Nonseparability in Physics”, Stanford Encyclopedia of Philosophy, rev. 2022.** Distingue holismo, no-separabilidad y separabilidad de estados; documenta que la física cuántica y teorías gauge pueden desafiar reconstrucciones puramente locales del estado del todo. Se usa como test contra la suficiencia automática de conectividad local, no como prueba de una ontología holista ni de `CoReal`: https://plato.stanford.edu/entries/physics-holism/
+- **Topologist’s sine curve** (ejemplo clásico de topología general). Es un espacio conectado pero no path-connected; se usa únicamente como contraejemplo matemático a la inferencia «unidad/conectividad global ⇒ cadena finita de enlaces tipo camino». No se propone como modelo físico de la realidad. Referencia panorámica: https://mathworld.wolfram.com/TopologistsSineCurve.html
+- **Tuomas E. Tahko & E. Jonathan Lowe, “Ontological Dependence”, Stanford Encyclopedia of Philosophy, rev. 2025.** La dependencia ontológica comprende una familia de relaciones distintas de la mera causalidad y puede incluir dependencia existencial o de identidad. Es relevante para permitir que la familia $\Lambda$ de enlaces de REV-07 sea más amplia que causalidad física sin convertirla en mera semejanza: https://plato.stanford.edu/entries/dependence-ontological/
+
+- **Achille Varzi et al., “Mereology”, Stanford Encyclopedia of Philosophy, rev. 2026.** La literatura distingue parthood de relaciones vecinas como constitución, composición y membership, y subraya que no toda relación intuitivamente «parte-de» tiene el mismo estatus ontológico. Esto impide tratar $\Lambda_{\mathrm{constit}}$ como una categoría homogénea sin análisis adicional: https://plato.stanford.edu/entries/mereology/
+- **“The Metaphysics of Causation”, Stanford Encyclopedia of Philosophy.** La causalidad plantea cuestiones independientes sobre relata, conexión, dirección y selección; por tanto $\Lambda_{\mathrm{causal}}$ no puede reducirse a una mera correlación ni a cualquier condición de background: https://plato.stanford.edu/entries/causation-metaphysics/
+- **William Donnelly & Laurent Freidel (2016), “Local subsystems in gauge theory and gravity”, _Journal of High Energy Physics_ 2016, 102.** Las restricciones gauge/gravitatorias hacen no trivial la definición de subsistemas locales; la construcción introduce grados de libertad de borde para obtener espacios de fase regionales gauge-invariant. Se usa como stress test de FID: no-factorización no implica ausencia de un testigo relacional finito si los datos de borde son ontológicamente admitidos. DOI: https://doi.org/10.1007/JHEP09(2016)102
+- **Horacio Casini, Marina Huerta & José Alejandro Rosabal (2014), “Remarks on entanglement entropy for gauge fields”, _Physical Review D_ 89, 085012.** Las constraints gauge pueden impedir la factorización del Hilbert físico en factores asociados a regiones complementarias y producen centros/ambigüedades de subálgebra. Se usa contra una lectura ingenuamente localista de la integración. DOI: https://doi.org/10.1103/PhysRevD.89.085012
+- **Horacio Casini, Marina Huerta, Javier M. Magán & Diego Pontello (2020), “Entanglement entropy and superselection sectors I. Global symmetries”, _Journal of High Energy Physics_ 2020, 014.** Documenta fallos de aditividad/dualidad ligados a sectores de superselección; en ejemplos concretos aparecen operadores que no son generados por un número finito de álgebras locales y pueden surgir tras completación/doble conmutante. Se usa como adversario de cualquier lectura de FID como generación local finita. DOI: https://doi.org/10.1007/JHEP02(2020)014
+- **Christopher J. Fewster & Kasia Rejzner (2020), “Algebraic Quantum Field Theory — an Introduction”.** En la formulación $C^*$, el álgebra cuasilocal/global se obtiene como límite inductivo/completación de las álgebras locales; la unión local es densa y no tiene por qué coincidir con la completación. Proporciona el modelo matemático principal para el contraesquema de dependencia de límite de REV-24b. DOI: https://doi.org/10.1007/978-3-030-38941-3_1 ; arXiv: https://arxiv.org/abs/1904.04051
+
+### Uso adversarial en REV-24b / FID
+
+Estas referencias no prueban que FID sea falsa. Sí excluyen una formulación más fuerte según la cual todo contenido real tendría que aparecer o generarse en algún estadio local finito. La versión vigente de FID exige solo una cadena finita de **testigos ontológicos admisibles**. Gauge edge data, Wilson/twist operators o relaciones globales pueden contar como testigos únicamente si satisfacen $\mathrm{WA}$ independientemente; las completaciones cuasilocales proporcionan el caso de prueba más directo para preguntar si existe contenido actual de límite sin tal testigo.
+
+### Uso en REV-07 / REV-07g
+
+La ruta histórica que pretendía **definir** SameRegime mediante componentes conexas de una relación $\bowtie$ ya no es normativa. Conectividad, FID y las clausuras de enlaces son ahora herramientas de reconstrucción de una unidad contextual que debe estar independientemente justificada.
+
+La literatura de worldmate conserva una función más precisa: confirma que “qué hace que una pluralidad pertenezca al mismo mundo/contexto” es una pregunta metafísica propia. Lewis ofrece una descarga espaciotemporal muy fuerte; Darby muestra que la clase de relaciones relevante podría ser más amplia; Jaksland traslada explícitamente el problema a ontologías no espaciales y propone entanglement como candidato físico. REV-07g no adopta ninguno de esos criterios. Los usa como evidencia de que **ContextIndividuation necesita fundamento**, no de que deba reducirse a connectedness.
+
+Para REV-24b estas referencias siguen usándose adversarialmente: Schaffer muestra que apelar al «todo» puede trasladar la carga en vez de resolverla; y la literatura sobre no-separabilidad obliga a comprobar que ninguna unidad física relevante quede invisible para una taxonomía exclusivamente local.
+
+## 5. Operadores de cierre, puntos fijos y teoría de órdenes
+
+- **Bronisław Knaster & Alfred Tarski / Alfred Tarski** — tradición del teorema de punto fijo para funciones monótonas sobre retículos completos. Relevante para distinguir un resultado de teoría de órdenes de una tesis ontológica.
+- **Max Zorn (1935)** — lema de Zorn; en ZF es equivalente al Axioma de Elección. Resumen histórico/fundacional: https://plato.stanford.edu/entries/axiom-choice/
+- **Samson Abramsky & Achim Jung (1994/1995), “Domain Theory”, _Handbook of Logic in Computer Science_.** Dominios, completitud dirigida y puntos fijos: https://doi.org/10.1093/oso/9780198537625.003.0001
+
+**Consecuencia:** cualquier “teorema ontológico” que sea formalmente un resultado de orden debe declarar qué parte es matemática y qué puente ontológico sigue abierto.
+
+### Tarski, closure operators y puntos fijos
+
+- **Alfred Tarski (1955), “A Lattice-Theoretical Fixpoint Theorem and Its Applications”, _Pacific Journal of Mathematics_ 5, 285–309.** Demuestra que los puntos fijos de una función monótona sobre un retículo completo forman un retículo completo. Texto: https://projecteuclid.org/journals/pacific-journal-of-mathematics/volume-5/issue-2/A-lattice-theoretical-fixpoint-theorem-and-its-applications/pjm/1103044538.full
+- **Nathalie Caspard & Bernard Monjardet (1999), “The lattices of Moore families and closure operators on a finite set: a survey”.** Resume la equivalencia clásica entre familias de Moore y closure operators extensivos, monótonos e idempotentes. DOI: https://doi.org/10.1016/S1571-0653(04)00013-7
+
+En la propuesta revisada estas referencias sirven para distinguir dos cosas: la teoría estándar de closure operators, donde la monotonía forma parte de la definición, y el lema operator-free K1–K3 usado por la ruta de Zorn. El resultado propio no pretende generalizar Tarski; solo observa que F2 es redundante en el paso concreto de elevar una cota de puntos fijos cuando F1 y F3 ya están disponibles.
+
+## 6. Compacidad, diagramas y teoría de modelos
+
+- **Abraham Robinson (1963), _Introduction to Model Theory and to the Metamathematics of Algebra_. North-Holland.** Antecedente clásico del uso sistemático de diagramas en teoría de modelos. La construcción vigente de S usa solo el **diagrama positivo**: las sentencias atómicas verdaderas una vez nombrados los elementos del carrier; no añade automáticamente los literales negativos del diagrama atómico completo.
+- **Wilfrid Hodges (1993), _Model Theory_. Cambridge University Press, §1.4.** Presenta diag(A) como los literales cerrados verdaderos y diag⁺(A) como las sentencias atómicas verdaderas; su Diagram Lemma relaciona preservación del diagrama positivo con homomorfismos y del diagrama completo con embeddings.
+- **Teorema de compacidad de primer orden** — si toda parte finita de una teoría de primer orden tiene modelo, la teoría completa tiene modelo.
+- **Lema del diagrama** — un modelo del diagrama de una estructura da un embedding de la estructura en el modelo.
+- Referencia panorámica: **“First-order Model Theory”, Stanford Encyclopedia of Philosophy**: https://plato.stanford.edu/entries/modeltheory-fo/
+
+### Uso en las rutas semánticas
+
+Para cualquier carrier T de la propuesta:
+
+$$
+\operatorname{Diag}^{+}_{\mathcal L}(T)
+:=
+\{\varphi\in\operatorname{Atoms}_{\mathcal L}(T)\mid\operatorname{Actual}(\varphi)\}.
+$$
+
+Por tanto $\Phi^{\mathrm{all}}$ no es una colección ad hoc: es el **diagrama atómico positivo actual** del carrier, bajo la firma elegida y la interpretación de Actual. Esto no convierte S en una realidad ni demuestra RA/Presents: el Diagram Lemma es una herramienta representacional, no un puente ontológico.
+
+**Consecuencia:** compacidad o teoría de diagramas produce/controla modelos y morfismos. No produce por sí sola un dominio ontológicamente actual. El puente de modelo formal a actualidad debe aparecer como hipótesis independiente.
+
+## 7. Colímites dirigidos, presentabilidad y accesibilidad
+
+- **Jiří Adámek & Jiří Rosický (1994), _Locally Presentable and Accessible Categories_. Cambridge University Press.** Colímites dirigidos, objetos presentables y categorías accesibles. DOI: https://doi.org/10.1017/CBO9780511600579
+  - Cap. 1: https://doi.org/10.1017/CBO9780511600579.004
+  - Cap. 2: https://doi.org/10.1017/CBO9780511600579.005
+- **Robert Paré & Jiří Rosický (2013), “Colimits of accessible categories”.** Relevante para no tratar preservación de colímites como automática: https://doi.org/10.1017/S0305004113000030
+
+**Consecuencia:** REV-10 debe distinguir LocalWitness de presentabilidad/factorización; H11 no cierra C1 salvo que existencia/preservación del colímite se derive de estructura independiente.
+
+## 8. Proceso, tiempo y branching
+
+- **Alfred North Whitehead (1929), _Process and Reality_.** Antecedente mayor de ontología procesual.
+- **Nicholas Rescher (1996), _Process Metaphysics_.** Desarrollo contemporáneo de metafísica de procesos.
+- **“Branching Time”, Stanford Encyclopedia of Philosophy**: https://plato.stanford.edu/entries/branching-time/ — distingue branching temporal de presentismo, eternalismo y growing block.
+- **Nuel Belnap, Michael Perloff & Ming Xu (2001), _Facing the Future: Agents and Choices in Our Indeterminist World_.** Referencia importante para estructuras de branching time.
+- **Hugh Everett III (1957), “‘Relative State’ Formulation of Quantum Mechanics”, _Reviews of Modern Physics_ 29, 454.** https://doi.org/10.1103/RevModPhys.29.454
+
+**Límite explícito:** Everett/branching no demuestra fractalidad ni obliga a Many-Worlds dentro de esta propuesta. Solo justifica que una formalización no debe asumir linealidad sin argumento.
+
+### Event structures y dominios procesuales
+
+- **Glynn Winskel (1987), “Event Structures”.** Introduce estructuras de eventos como modelos de procesos mediante ocurrencias, dependencia causal y consistencia/enabling. PDF: https://www.cl.cam.ac.uk/~gw104/Winskel1987_Chapter_EventStructures.pdf
+- **Glynn Winskel (1989), “An Introduction to Event Structures”, en _Linear Time, Branching Time and Partial Order in Logics and Models for Concurrency_.** DOI: https://doi.org/10.1007/BFb0013026
+- **Process Philosophy, Stanford Encyclopedia of Philosophy.** Survey sobre ontologías en las que dinámica, devenir y ocurrencia son categorías centrales: https://plato.stanford.edu/entries/process-philosophy/
+
+REV-19 toma de estas referencias solo una idea formal mínima: un dominio emergentista puede modelarse como fragmento de proceso con tokens de estados/eventos y dependencia no necesariamente lineal. No se adopta una metafísica procesual completa, Whitehead fuerte ni una ontología de todos los futuros.
+
+## 9. Fractalidad
+
+- **Benoît Mandelbrot (1982), _The Fractal Geometry of Nature_.** Referencia canónica para fractales geométricos/matemáticos.
+
+En esta propuesta “fractal” no debe usarse como resultado salvo que se definan patrón, escala y medida de autosimilitud. Hasta entonces es metáfora o hipótesis motivacional y no entra en ninguna derivación.
+
+## 10. Tiempo de Planck
+
+El **tiempo de Planck** es una unidad/escala construida a partir de constantes fundamentales. Esta propuesta no lo usa como “tick” demostrado de la realidad ni como discretización obligatoria del tiempo. Cualquier estructura de estadios es abstracta hasta que una teoría física independiente justifique otra cosa.
+
+## 11. Kant y función regulativa
+
+- **Immanuel Kant, _Critique of Pure Reason_.** Relevante solo como comparación metodológica si R termina funcionando como horizonte regulativo no certificable empíricamente. La propuesta debe distinguir explícitamente una teoría ontológica de una idea regulativa.
+
+## 12. Teología negativa / nombre «Dios»
+
+Si «Dios» se conserva como nombre apofático de la Verdad Absoluta, debe quedar separado de toda inferencia sobre agencia, voluntad, personalidad o fundamento causal.
+
+Antecedentes amplios: **Pseudo-Dionysius** y **Maimonides**, entre otros autores de teología negativa. Estas referencias son histórico-comparativas; no prueban ninguna tesis de la propuesta.
+
+## 13. Horizontes, observables gravitatorios y reconstrucción holográfica
+
+Estas referencias se usan únicamente como **precedentes físicos y motivación estructural** para distinguir acceso causal/empírico, representación de observables y alcance ontológico. No demuestran $\operatorname{ExistsR}$, no prueban REV-24 y no establecen que nuestro universo sea una simulación, una sandbox ni un espacio de de Sitter o AdS.
+
+- **Venkatesa Chandrasekaran, Roberto Longo, Geoff Penington & Edward Witten (2023), “An algebra of observables for de Sitter space”, _Journal of High Energy Physics_ 2023, 82.** Construye un álgebra de observables para un static patch de de Sitter con operadores gravitacionalmente vestidos respecto de la worldline de un observador. Sirve como precedente técnico para separar un horizonte/perspectiva físicamente accesible de la estructura algebraica mediante la que se representan sus observables. DOI: https://doi.org/10.1007/JHEP02(2023)082
+- **William Donnelly & Steven B. Giddings (2016), “Observables, gravitational dressing, and obstructions to locality and subsystems”, _Physical Review D_ 94, 104038.** Muestra que, al acoplarse a gravedad, operadores con cargas no nulas requieren gravitational dressing no local y discute obstáculos a la noción estándar de subsistema/localidad. Apoya la cautela contra modelar $U_i\to S_i$ como simple inclusión literal de objetos locales. DOI: https://doi.org/10.1103/PhysRevD.94.104038
+- **Ahmed Almheiri, Xi Dong & Daniel Harlow (2015), “Bulk locality and quantum error correction in AdS/CFT”, _Journal of High Energy Physics_ 2015, 163.** Interpreta aspectos de la reconstrucción del bulk en AdS/CFT mediante operator-algebra quantum error correction. Se usa como precedente de que una misma información física puede admitir reconstrucciones redundantes/no triviales, no como prueba de identidad ontológica entre descripciones. DOI: https://doi.org/10.1007/JHEP04(2015)163
+- **Xi Dong, Daniel Harlow & Aron C. Wall (2016), “Reconstruction of Bulk Operators within the Entanglement Wedge in Gauge-Gravity Duality”, _Physical Review Letters_ 117, 021601.** Demuestra, bajo las hipótesis de AdS/CFT empleadas en el trabajo, reconstrucción de operadores del bulk en el entanglement wedge, ampliando el alcance respecto de la causal wedge. Es el precedente técnico más claro aquí para no identificar accesibilidad causal con reconstruibilidad representacional. DOI: https://doi.org/10.1103/PhysRevLett.117.021601
+
+### Uso en $U_i/S_i/R_i$ y el Muro
+
+La propuesta extrae solo tres cautelas metodológicas:
+
+1. un horizonte causal/empírico $U_i$ no tiene por qué coincidir con el álgebra o estructura representacional que codifica lo inferible desde él;
+2. reconstruibilidad y acceso causal directo pueden divergir en teorías físicas bien definidas;
+3. pluralidad de descripciones o reconstrucciones no autoriza por sí sola pluralidad ontológica.
+
+Por tanto, esta literatura **motiva** la arquitectura:
+
+$$
+U_i
+\xrightarrow{\operatorname{Rep}_i}
+S_i
+\dashrightarrow
+R_i,
+$$
+
+pero deja completamente abierto el segundo paso, que sigue siendo REV-24/$\mathrm{OTB}_i$.
+
+## 14. Individuación, fronteras y continuidad organizacional
+
+Estas referencias sirven como **adversarios y precedentes conceptuales** para REV-07g. Ninguna demuestra que una realidad metafísica sea literalmente un organismo o una célula. Su utilidad es más estrecha: mostrar que frontera, cierre, individuación y persistencia pueden separarse de la identidad material instantánea y que una frontera no tiene por qué equivaler a aislamiento absoluto.
+
+- **Barry Smith & Achille C. Varzi (2000), “Fiat and Bona Fide Boundaries”, _Philosophy and Phenomenological Research_ 60(2), 401–420.** Distingue fronteras físicas/bona fide de fronteras fiat y muestra que «tener un límite» no es una noción ontológicamente unívoca. REV-07g usa esta literatura negativamente: la frontera de tipado no debe confundirse con una superficie espacial ni declararse bona fide por mera analogía. DOI: https://doi.org/10.2307/2653492
+- **Francisco J. Varela, Humberto R. Maturana & Ricardo Uribe (1974), “Autopoiesis: The organization of living systems, its characterization and a model”, _BioSystems_ 5(4), 187–196.** Formula la organización autopoiética como una clase de sistemas cuya organización produce y mantiene la propia unidad. Es un precedente para exigir que «celular» se descargue en una organización explícita y no en semejanza visual. DOI: https://doi.org/10.1016/0303-2647(74)90031-8
+- **Maël Montévil & Matteo Mossio (2015), “Biological organisation as closure of constraints”, _Journal of Theoretical Biology_ 372, 179–191.** Caracteriza organización mediante closure de constraints mutuamente dependientes y discute esa closure como herramienta para marcar fronteras entre sistemas biológicos interactuantes. REV-07g toma de aquí una cautela estructural: apertura/interacción y cierre organizacional no son contradictorios. DOI: https://doi.org/10.1016/j.jtbi.2015.02.029
+- **Alvaro Moreno & Matteo Mossio (2015), _Biological Autonomy: A Philosophical and Theoretical Enquiry_.** Desarrolla closure, autonomía y dimensión histórica de la organización. Se usa solo para comparar arquitecturas de auto-mantenimiento e identidad, no para importar normatividad biológica a $R_i$. DOI: https://doi.org/10.1007/978-94-017-9837-2
+- **James DiFrisco (2018), “Biological Processes: Criteria of Identity and Persistence”, en _Everything Flows: Towards a Processual Philosophy of Biology_.** Examina individuation y persistence de procesos mediante cohesión causal y continuidad/genidentity. Es un adversario directo de cualquier definición de identidad contextual basada solo en conservar componentes o propiedades estáticas. DOI: https://doi.org/10.1093/oso/9780198779636.003.0004
+- **Maël Montévil & Matteo Mossio (2020), “The Identity of Organisms in Scientific Practice: Integrating Historical and Relational Conceptions”, _Frontiers in Physiology_ 11:611.** Distingue dimensiones históricas/genealógicas y organizacionales de identidad y discute continuidad organizacional a través del cambio. REV-07g lo usa como precedente para no identificar individuación sincrónica, identidad diacrónica y genealogía. DOI: https://doi.org/10.3389/fphys.2020.00611
+
+### Uso en REV-07g
+
+La comparación relevante es estrictamente estructural:
+
+1. una frontera puede individuarse sin ser una pared espacial;
+2. closure y apertura/interacción pueden coexistir si operan sobre dimensiones distintas;
+3. identidad sincrónica y persistencia diacrónica requieren criterios diferentes;
+4. genealogía y organización pueden aportar información complementaria sobre identidad;
+5. reemplazo de componentes no decide por sí solo continuidad.
+
+Por ello la literatura refuerza la decisión metodológica de separar en REV-07g:
+
+$$
+\mathrm{TB}
+\;|\;
+\mathrm{OC}
+\;|\;
+\mathrm{EB}
+\;|\;
+\mathrm{IF},
+$$
+
+y de mantener $\operatorname{IndividuationWitness}^{\mathsf M}$, $\Omega_i$, ContinuationProfile y ContextCessation como obligaciones distintas hasta demostrar sus enlaces.
+
+**Límite explícito:** autopoiesis, closure of constraints e identidad de organismos son teorías de sistemas biológicos. Aquí no se usan como evidencia de que $R_i$ sea vivo, autopoiético, espacialmente acotado ni materialmente semipermeable.
+
+### 14.1. Evidencia de caso para la auditoría cross-domain
+
+Estas fuentes no se usan como autoridad metafísica. Se usan para fijar **hechos externos independientes** sobre mecanismos/implementaciones concretas que después se mapean, de forma explícitamente falible, a obligaciones IA/MC en las derivaciones.
+
+- **Redis Open Source — documentación oficial de comandos.** Redis describe interacción client/server mediante comandos con nombres, argumentos, respuestas y errores definidos. Se usa para respaldar MC2 y parte de MC4 en EMP-SW-REDIS; no demuestra por sí sola ContextIndividuation. https://redis.io/docs/latest/develop/using-commands/
+- **Redis Open Source — reference/specifications.** La documentación identifica RESP como wire protocol y expone el vocabulario/protocolos del servidor. Se usa para fijar el boundary operacional documentado. https://redis.io/docs/latest/develop/reference/
+- **Redis Open Source — event library.** La documentación interna describe el event loop propio, polling del sistema operativo y timers. Se usa como evidencia de dinámica/event mediation implementada, no como prueba de aislamiento del host. https://redis.io/docs/latest/operate/oss_and_stack/reference/internals/internals-rediseventlib/
+- **Redis Open Source — persistence.** RDB/AOF permiten preservar o reconstruir el dataset tras restart; AOF registra write operations y las replayea al arranque. Se usa para continuidad/reentrada a nivel software, separándola explícitamente de identidad ontológica. https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/
+- **Anna Konovalova (2021), “Homeostasis of the Gram-Negative Cell Envelope”.** Revisa envelope homeostasis, stress responses, selective uptake, respiration, secretion y reparación/remodelado en bacterias Gram-negativas. Se usa para MC3/MC4/MC5 en EMP-BIO-ECOLI. PMCID: PMC8577651. https://pmc.ncbi.nlm.nih.gov/articles/PMC8577651/
+- **“Regulation Systems of Bacteria such as Escherichia coli in Response to Nutrient Limitation and Environmental Stresses” (2014).** Revisa active transport y regulación frente a disponibilidad de nutrientes/estrés. Se usa para mediated openness y dinámica regulatoria. PMCID: PMC4018673. https://pmc.ncbi.nlm.nih.gov/articles/PMC4018673/
+- **“Localization, Assembly, and Activation of the Escherichia coli Cell Division Machinery” (2022).** Revisa divisome, FtsZ, síntesis/remodelado de peptidoglicano, invaginación del envelope y scission. Se usa para genesis/division en MC10 sin convertir división celular en definición general de ContextGenesis. PMCID: PMC8919703. https://pmc.ncbi.nlm.nih.gov/articles/PMC8919703/
+- **Google Nest — Temperature Sensor.** La documentación oficial establece que el sensor activo envía la lectura de temperatura al termostato y que esa lectura controla cuándo se enciende/apaga el sistema. Se usa para input mediation y closed-loop behavior en EMP-PHY-NEST. https://support.google.com/googlehome/answer/9248154
+- **Google Nest — Heat Link (Europa).** La documentación oficial establece que el termostato detecta temperatura y envía al Heat Link la señal que ordena encender/apagar la calefacción. Se usa para output mediation y unidad funcional realizada. https://support.google.com/googlenest/answer/9256498
+- **Google Nest — schedules/sensors.** La documentación describe cómo la selección temporal del sensor activo determina qué lectura usa el termostato para alcanzar la temperatura programada. Se usa para estado/continuación del control, no para inferir persistencia ontológica. https://support.google.com/googlehome/answer/10184481
+
+**Límite de uso.** Estas fuentes pueden respaldar proposiciones como “existe un event loop implementado”, “la envoltura bacteriana media transporte/homeostasis” o “el Heat Link activa la calefacción”. No respaldan directamente el salto:
+
+$
+\operatorname{mechanism/documentation}
+\Rightarrow
+\operatorname{ContextIndividuation}.
+$
+
+Ese bridge sigue siendo una obligación propia de REV-07g/IA0.
+
+### 14.2. IA0: patrones reales, mecanismos y autonomía no equivalen automáticamente a contexto
+
+La auditoría adversarial de IA0 usa esta literatura **negativamente**: para bloquear el salto desde realidad/eficacia de una estructura de nivel especial a ContextIndividuation sin un argumento adicional de unidad.
+
+- **Stanford Encyclopedia of Philosophy, “Structural Realism”, §4/§4.4.** Resume la noción de effective ontology y la familia de criterios de real patterns: estructuras que soportan generalizaciones projectables, explicación/predicción y modalidad pueden justificar realismo sobre entidades/patrones de ciencias especiales sin exigir fundamentalidad. REV-07g toma precisamente esta posibilidad como countermodel a IA0-R → IA0: ser un patrón real no basta para ser una unidad contextual. https://plato.stanford.edu/entries/structural-realism/
+- **Carl Craver, James Tabery & Phyllis Illari, “Mechanisms in Science”, Stanford Encyclopedia of Philosophy.** La literatura mecanicista trata los niveles como locales a mecanismos/fenómenos y distingue organización causal de una jerarquía global de la realidad. Se usa contra la inferencia “mecanismo real → contexto”: una descomposición puede ser causalmente seria y, aun así, depender del explanandum y requerir una teoría adicional de individuación. https://plato.stanford.edu/entries/science-mechanisms/
+- **Peter Fazekas & Gergely Kertesz (2019), “Are Higher Mechanistic Levels Causally Autonomous?”, _Philosophy of Science_ 86(5), 847–857.** Analiza argumentos de autonomía causal de niveles mecanicistas y concluye que ni siquiera el recurso a constraints establece por sí solo autonomía causal superior. Se usa como adversario de cualquier lectura de MC7/UG7 que convierta autonomía o constraints en suficiencia ontológica automática. DOI: https://doi.org/10.1086/705450
+- **Erik P. Hoel, Larissa Albantakis & Giulio Tononi (2013), “Quantifying causal emergence shows that macro can beat micro”, _PNAS_ 110(49).** Ya citado en la sección de emergencia; para IA0 se usa adicionalmente como stress test: incluso una macroescala con mayor effective information puede establecer relevancia causal de la macrodescripción sin decidir por sí sola si esa partición constituye una unidad contextual. https://pmc.ncbi.nlm.nih.gov/articles/PMC3856819/
+
+**Consecuencia metodológica.** La propuesta distingue ahora:
+
+$
+\text{real/projectable/modal structure}
+\neq
+\text{context-individuating structure}.
+$
+
+La primera carga es IA0-R. La segunda es IA0-U y exige UnitGroundAdequate UG1–UG8.
+
+### 14.3. Teorías de interfaz para el finding DTS-UG6
+
+La deuda `RivalClassCompleteness_XR1` no debe cerrarse añadiendo ports/interfaces ad hoc a XR-1. Existen teorías independientes de componentes que ya incorporan explícitamente interacción sistema/entorno.
+
+- **Nancy A. Lynch & Mark R. Tuttle (1987), “Hierarchical Correctness Proofs for Distributed Algorithms”.** Introduce el modelo de input/output automata para computación distribuida asíncrona, haciendo explícita la interacción entre sistema y entorno. Se usa como precedente de que un transition model enriquecido con inputs/outputs puede fijar una semántica de frontera independientemente de Exergism. DOI: https://doi.org/10.1145/41840.41852
+- **Luca de Alfaro & Thomas A. Henzinger (2001), “Interface Automata”.** Formaliza interfaces temporales con assumptions sobre inputs y guarantees sobre outputs, además de compatibility/refinement de componentes. Se usa como precedente directo para una futura teoría XR-I/O capaz de formular RCC4/RCC5 sin definir la frontera desde el target. DOI: https://doi.org/10.1145/503209.503226
+- **Luca de Alfaro & Thomas A. Henzinger (2001), “Interface Theories for Component-Based Design”.** Desarrolla una teoría composicional de interfaces de componentes; se cita como antecedente metodológico adicional, no como ontología importada. EMSOFT 2001, LNCS 2211, pp. 148–165.
+
+**Uso restringido.** Estas teorías muestran que input/output/environment boundaries pueden formalizarse independientemente. No demuestran que una interface automaton sea automáticamente una unidad ontológica. Si se adopta una variante para XR-I/O, deberá volver a pasar IA0-R, UnitGroundAdequate y rival-cut audit.
+
+### 14.4. Assume/guarantee y RealizationEnvelope
+
+UG5 usa ahora un RealizationEnvelope para evitar dos extremos: exigir aislamiento físico absoluto o permitir que una teoría declare cualquier perturbación incómoda “fuera de nivel”. La motivación formal procede de contract-based design, donde assumptions sobre environments permisibles y guarantees del componente se mantienen explícitas y separadas.
+
+- **Contract-based design / assume-guarantee tradition.** La literatura de contratos formaliza componentes mediante assumptions sobre el entorno y guarantees sobre el comportamiento del componente bajo esas assumptions. El uso aquí es estrictamente metodológico: \(\Gamma\) en RealizationEnvelope debe ser explícita, falsable y no contener la conclusión ontológica. Un assumption violation no cuenta como negative control satisfecho. Véase, por ejemplo, la exposición de contracts con assumptions/guarantees y separación de responsabilidades en sistemas heterogéneos: https://link.springer.com/article/10.1007/s10703-017-0294-7
+- **Information-flow interfaces / interface contracts.** Trabajos recientes distinguen implementaciones de una interfaz y environments permisibles mediante constraints explícitas, reforzando que “environment” no tiene por qué significar cualquier estado físico concebible sino una clase formalmente especificada y auditable. Se usa como precedente de RE1–RE7, no como prueba de contexto ontológico. https://link.springer.com/article/10.1007/s10703-024-00447-0
+
+**Límite.** Assume/guarantee reasoning no convierte assumptions en inmunidades ontológicas. Si aparece una dependencia reproducible que altera \(\Xi_C\) y no está clasificada como ordinary interaction o fault/cessation, RE7 obliga a revisar el envelope y UG5 vuelve a PARTIAL.
+
+### 14.5. HostProjectionComplete: abstracción del realizador y semántica de multiprocessing
+
+La nueva deuda RCA no se intenta cerrar por acumulación de tests. Se apoya en una teoría independiente del realizador y en precedentes formales de abstracción sound.
+
+- **Python 3.12 — `multiprocessing` (documentación oficial).** Ésta es la familia de runtime usada por el workflow XR-2. La documentación fija `spawn` como arranque de un intérprete nuevo, describe el `resource tracker` en POSIX, especifica que `Connection.send()/recv()` serializa/reconstruye objetos, que `send_bytes()/recv_bytes()` transporta mensajes binarios completos y que `Queue` serializa objetos y usa un feeder thread sobre un pipe. También documenta que `terminate()` puede corromper pipes/queues en uso. Estas reglas son evidencia independiente para HOST-X1 y para el futuro contrato `K_XR2`. https://docs.python.org/3.12/library/multiprocessing.html
+- **CPython 3.12 — implementación de `multiprocessing` (`connection.py`, `queues.py`, `popen_spawn_posix.py`, `resource_tracker.py`).** La fuente muestra que en POSIX `Pipe(duplex=True)` usa `socket.socketpair()`, que `Connection` aplica serialización/framing y lee/escribe sobre descriptors, que `Queue` añade buffer/locks/semaphore/feeder thread, y que `spawn` usa bootstrap pipes y el `resource_tracker`. Tras la auditoría arquitectónica, estos detalles se usan solo para diseñar probes y caracterizar assumptions de realización. Su mera omisión de una gramática abstracta no demuestra que sean constituyentes del contexto: solo importan ontológicamente si una diferencia correspondiente sobrevive al InterfaceContract, crea un hidden bypass, revela role/interaction coverage incompleta o soporta un rival cut. https://github.com/python/cpython/tree/3.12/Lib/multiprocessing
+- **Patrick Cousot & Radhia Cousot (1977), “Abstract interpretation: a unified lattice model for static analysis of programs by construction or approximation of fixpoints”.** Formaliza la relación entre una semántica concreta y un dominio abstracto que conserva la información relevante para propiedades objetivo. Se usa como precedente para HostProjectionComplete: \(\varrho\) puede quotientar detalles del host solo bajo una relación de abstracción independently justified y sound para el perfil que se audita. DOI: https://doi.org/10.1145/512950.512973
+- **Simulation/bisimulation tradition.** La equivalencia conductual de sistemas de transición ofrece el precedente para exigir que pasos concretos sean emparejados por pasos abstractos, stutter permitido o clases de fault explícitas. La propuesta no importa ninguna noción estándar como criterio ontológico suficiente; solo usa la disciplina de correspondencia paso-a-paso como antecedente técnico de HPC1–HPC8.
+
+**Límite.** Una teoría sound del host no demuestra ContextIndividuation. Su función es descargar el bridge de realización. Si una dependencia concreta del runtime/OS produce un UnitProfileBreak que \(\mathcal H\) no proyecta, HPC8 obliga a reabrir RCA.
+
+## 15. Política de citación futura
+
+Antes de añadir un concepto nuevo al núcleo:
+
+1. buscar antecedentes terminológicos y formales;
+2. citar al menos una fuente primaria o monografía académica y, cuando exista, un survey/enciclopedia especializada;
+3. indicar si la propuesta adopta, modifica o rechaza la noción existente;
+4. no usar un nombre nuevo para una estructura ya conocida sin explicar la diferencia;
+5. añadir al ledger cualquier deuda bibliográfica que afecte a una inferencia.
